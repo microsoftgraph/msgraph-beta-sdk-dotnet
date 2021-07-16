@@ -41,7 +41,7 @@ namespace Microsoft.Graph.TermStore
         /// <param name="setToCreate">The Set to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Set.</returns>
-        public async System.Threading.Tasks.Task<Set> CreateAsync(Set setToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Set> CreateAsync(Set setToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.TermStore
         /// <param name="setToCreate">The Set to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Set}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Set>> CreateResponseAsync(Set setToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Set>> CreateResponseAsync(Set setToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
             await this.SendAsync<Set>(null, cancellationToken).ConfigureAwait(false);
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Set.</returns>
-        public async System.Threading.Tasks.Task<Set> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Set> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Set>(null, cancellationToken).ConfigureAwait(false);
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Set}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Set>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Set>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<Set>(null, cancellationToken);
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.TermStore
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Set.</returns>
-        public async System.Threading.Tasks.Task<Set> UpdateAsync(Set setToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Set> UpdateAsync(Set setToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.TermStore
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Set}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Set>> UpdateResponseAsync(Set setToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Set>> UpdateResponseAsync(Set setToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.TermStore
         /// <param name="setToUpdate">The Set object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<Set> PutAsync(Set setToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Set> PutAsync(Set setToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.TermStore
         /// <param name="setToUpdate">The Set object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await of <see cref="GraphResponse{Set}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Set>> PutResponseAsync(Set setToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Set>> PutResponseAsync(Set setToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="serviceHealthIssueToCreate">The ServiceHealthIssue to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServiceHealthIssue.</returns>
-        System.Threading.Tasks.Task<ServiceHealthIssue> CreateAsync(ServiceHealthIssue serviceHealthIssueToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ServiceHealthIssue> CreateAsync(ServiceHealthIssue serviceHealthIssueToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ServiceHealthIssue using POST and returns a <see cref="GraphResponse{ServiceHealthIssue}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="serviceHealthIssueToCreate">The ServiceHealthIssue to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ServiceHealthIssue}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ServiceHealthIssue>> CreateResponseAsync(ServiceHealthIssue serviceHealthIssueToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ServiceHealthIssue>> CreateResponseAsync(ServiceHealthIssue serviceHealthIssueToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ServiceHealthIssue.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ServiceHealthIssue and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ServiceHealthIssue.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ServiceHealthIssue.</returns>
-        System.Threading.Tasks.Task<ServiceHealthIssue> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ServiceHealthIssue> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ServiceHealthIssue and returns a <see cref="GraphResponse{ServiceHealthIssue}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ServiceHealthIssue}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ServiceHealthIssue>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ServiceHealthIssue>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ServiceHealthIssue using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ServiceHealthIssue.</returns>
-        System.Threading.Tasks.Task<ServiceHealthIssue> UpdateAsync(ServiceHealthIssue serviceHealthIssueToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ServiceHealthIssue> UpdateAsync(ServiceHealthIssue serviceHealthIssueToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ServiceHealthIssue using PATCH and returns a <see cref="GraphResponse{ServiceHealthIssue}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ServiceHealthIssue}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ServiceHealthIssue>> UpdateResponseAsync(ServiceHealthIssue serviceHealthIssueToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ServiceHealthIssue>> UpdateResponseAsync(ServiceHealthIssue serviceHealthIssueToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ServiceHealthIssue using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="serviceHealthIssueToUpdate">The ServiceHealthIssue object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ServiceHealthIssue> PutAsync(ServiceHealthIssue serviceHealthIssueToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ServiceHealthIssue> PutAsync(ServiceHealthIssue serviceHealthIssueToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ServiceHealthIssue using PUT and returns a <see cref="GraphResponse{ServiceHealthIssue}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="serviceHealthIssueToUpdate">The ServiceHealthIssue object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ServiceHealthIssue}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ServiceHealthIssue>> PutResponseAsync(ServiceHealthIssue serviceHealthIssueToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ServiceHealthIssue>> PutResponseAsync(ServiceHealthIssue serviceHealthIssueToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

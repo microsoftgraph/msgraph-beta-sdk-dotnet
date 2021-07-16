@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserTransitiveMemberOfCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IUserTransitiveMemberOfCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UserTransitiveMemberOfCollectionWithReferencesResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -59,7 +59,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserTransitiveMemberOfCollectionWithReferencesResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserTransitiveMemberOfCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserTransitiveMemberOfCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UserTransitiveMemberOfCollectionWithReferencesResponse>(null, cancellationToken);

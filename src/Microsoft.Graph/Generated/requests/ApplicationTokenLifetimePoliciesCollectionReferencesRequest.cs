@@ -38,7 +38,7 @@ namespace Microsoft.Graph
         /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task AddAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <param name="tokenLifetimePolicy">The TokenLifetimePolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(TokenLifetimePolicy tokenLifetimePolicy, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;

@@ -38,7 +38,7 @@ namespace Microsoft.Graph
         /// <param name="educationSchool">The EducationSchool to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(EducationSchool educationSchool, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task AddAsync(EducationSchool educationSchool, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <param name="educationSchool">The EducationSchool to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(EducationSchool educationSchool, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(EducationSchool educationSchool, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;

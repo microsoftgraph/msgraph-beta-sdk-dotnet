@@ -26,7 +26,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="catalogEntry">The CatalogEntry to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CatalogEntry.</returns>
-        System.Threading.Tasks.Task<CatalogEntry> AddAsync(CatalogEntry catalogEntry, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CatalogEntry> AddAsync(CatalogEntry catalogEntry, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified CatalogEntry to the collection via POST and returns a <see cref="GraphResponse{CatalogEntry}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="catalogEntry">The CatalogEntry to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CatalogEntry}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CatalogEntry>> AddResponseAsync(CatalogEntry catalogEntry, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CatalogEntry>> AddResponseAsync(CatalogEntry catalogEntry, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICatalogEntriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ICatalogEntriesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CatalogEntriesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CatalogEntriesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CatalogEntriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CatalogEntriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

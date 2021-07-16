@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="androidForWorkCertificateProfileBaseToCreate">The AndroidForWorkCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> CreateAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> CreateAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AndroidForWorkCertificateProfileBase using POST and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="androidForWorkCertificateProfileBaseToCreate">The AndroidForWorkCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> CreateResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> CreateResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidForWorkCertificateProfileBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidForWorkCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidForWorkCertificateProfileBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidForWorkCertificateProfileBase and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidForWorkCertificateProfileBase using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkCertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> UpdateAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> UpdateAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidForWorkCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> UpdateResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> UpdateResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidForWorkCertificateProfileBase using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="androidForWorkCertificateProfileBaseToUpdate">The AndroidForWorkCertificateProfileBase object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> PutAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidForWorkCertificateProfileBase> PutAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidForWorkCertificateProfileBase using PUT and returns a <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="androidForWorkCertificateProfileBaseToUpdate">The AndroidForWorkCertificateProfileBase object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AndroidForWorkCertificateProfileBase}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> PutResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkCertificateProfileBase>> PutResponseAsync(AndroidForWorkCertificateProfileBase androidForWorkCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

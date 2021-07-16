@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="placeToCreate">The Place to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Place.</returns>
-        System.Threading.Tasks.Task<Place> CreateAsync(Place placeToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Place> CreateAsync(Place placeToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Place using POST and returns a <see cref="GraphResponse{Place}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="placeToCreate">The Place to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Place>> CreateResponseAsync(Place placeToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Place>> CreateResponseAsync(Place placeToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Place.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Place and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Place.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Place.</returns>
-        System.Threading.Tasks.Task<Place> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Place> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Place and returns a <see cref="GraphResponse{Place}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Place>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Place>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Place using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Place.</returns>
-        System.Threading.Tasks.Task<Place> UpdateAsync(Place placeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Place> UpdateAsync(Place placeToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Place using PATCH and returns a <see cref="GraphResponse{Place}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Place>> UpdateResponseAsync(Place placeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Place>> UpdateResponseAsync(Place placeToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Place using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="placeToUpdate">The Place object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Place> PutAsync(Place placeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Place> PutAsync(Place placeToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Place using PUT and returns a <see cref="GraphResponse{Place}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="placeToUpdate">The Place object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Place}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Place>> PutResponseAsync(Place placeToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Place>> PutResponseAsync(Place placeToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

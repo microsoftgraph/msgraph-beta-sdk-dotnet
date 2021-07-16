@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IUserAgreementAcceptancesCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IUserAgreementAcceptancesCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="activityHistoryItem">The ActivityHistoryItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActivityHistoryItem.</returns>
-        System.Threading.Tasks.Task<ActivityHistoryItem> AddAsync(ActivityHistoryItem activityHistoryItem, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ActivityHistoryItem> AddAsync(ActivityHistoryItem activityHistoryItem, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ActivityHistoryItem to the collection via POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="activityHistoryItem">The ActivityHistoryItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> AddResponseAsync(ActivityHistoryItem activityHistoryItem, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> AddResponseAsync(ActivityHistoryItem activityHistoryItem, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserActivityHistoryItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IUserActivityHistoryItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{UserActivityHistoryItemsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserActivityHistoryItemsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserActivityHistoryItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserActivityHistoryItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

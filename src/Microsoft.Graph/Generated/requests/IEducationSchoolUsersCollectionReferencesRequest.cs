@@ -24,14 +24,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationUser">The EducationUser to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(EducationUser educationUser, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task AddAsync(EducationUser educationUser, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified EducationUser to the collection via POST and returns a <see cref="GraphResponse{EducationUser}"/> object of the request.
         /// </summary>
         /// <param name="educationUser">The EducationUser to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(EducationUser educationUser, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(EducationUser educationUser, CancellationToken cancellationToken = default);
 
     }
 }

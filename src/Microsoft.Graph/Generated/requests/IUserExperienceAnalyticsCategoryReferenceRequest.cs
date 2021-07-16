@@ -23,14 +23,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsCategory reference and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Puts the specified UserExperienceAnalyticsCategory reference.
@@ -38,7 +38,7 @@ namespace Microsoft.Graph
         /// <param name="id">The UserExperienceAnalyticsCategory reference reference to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task PutAsync(string id, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Puts the specified UserExperienceAnalyticsCategory reference and returns a <see cref="GraphResponse"/> object
@@ -46,6 +46,6 @@ namespace Microsoft.Graph
         /// <param name="id">The UserExperienceAnalyticsCategory reference reference to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> PutResponseAsync(string id, CancellationToken cancellationToken = default);
     }
 }

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="profilePhotoToCreate">The ProfilePhoto to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProfilePhoto.</returns>
-        System.Threading.Tasks.Task<ProfilePhoto> CreateAsync(ProfilePhoto profilePhotoToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ProfilePhoto> CreateAsync(ProfilePhoto profilePhotoToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ProfilePhoto using POST and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="profilePhotoToCreate">The ProfilePhoto to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> CreateResponseAsync(ProfilePhoto profilePhotoToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> CreateResponseAsync(ProfilePhoto profilePhotoToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ProfilePhoto.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ProfilePhoto and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ProfilePhoto.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProfilePhoto.</returns>
-        System.Threading.Tasks.Task<ProfilePhoto> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ProfilePhoto> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ProfilePhoto and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ProfilePhoto using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ProfilePhoto.</returns>
-        System.Threading.Tasks.Task<ProfilePhoto> UpdateAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ProfilePhoto> UpdateAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ProfilePhoto using PATCH and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> UpdateResponseAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> UpdateResponseAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ProfilePhoto using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="profilePhotoToUpdate">The ProfilePhoto object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ProfilePhoto> PutAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ProfilePhoto> PutAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ProfilePhoto using PUT and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="profilePhotoToUpdate">The ProfilePhoto object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ProfilePhoto}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> PutResponseAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> PutResponseAsync(ProfilePhoto profilePhotoToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

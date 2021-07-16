@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="lookupResultRow">The LookupResultRow to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LookupResultRow.</returns>
-        public System.Threading.Tasks.Task<LookupResultRow> AddAsync(LookupResultRow lookupResultRow, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<LookupResultRow> AddAsync(LookupResultRow lookupResultRow, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="lookupResultRow">The LookupResultRow to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LookupResultRow}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<LookupResultRow>> AddResponseAsync(LookupResultRow lookupResultRow, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<LookupResultRow>> AddResponseAsync(LookupResultRow lookupResultRow, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IExactMatchLookupJobMatchingRowsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IExactMatchLookupJobMatchingRowsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ExactMatchLookupJobMatchingRowsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExactMatchLookupJobMatchingRowsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExactMatchLookupJobMatchingRowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchLookupJobMatchingRowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ExactMatchLookupJobMatchingRowsCollectionResponse>(null, cancellationToken);

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionBase.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> CreateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> CreateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AndroidDeviceComplianceLocalActionBase using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="androidDeviceComplianceLocalActionBaseToCreate">The AndroidDeviceComplianceLocalActionBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> CreateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> CreateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidDeviceComplianceLocalActionBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidDeviceComplianceLocalActionBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceComplianceLocalActionBase.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidDeviceComplianceLocalActionBase and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceComplianceLocalActionBase.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> UpdateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> UpdateAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidDeviceComplianceLocalActionBase using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidDeviceComplianceLocalActionBase using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="androidDeviceComplianceLocalActionBaseToUpdate">The AndroidDeviceComplianceLocalActionBase object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> PutAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionBase> PutAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidDeviceComplianceLocalActionBase using PUT and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="androidDeviceComplianceLocalActionBaseToUpdate">The AndroidDeviceComplianceLocalActionBase object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AndroidDeviceComplianceLocalActionBase}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> PutResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionBase>> PutResponseAsync(AndroidDeviceComplianceLocalActionBase androidDeviceComplianceLocalActionBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

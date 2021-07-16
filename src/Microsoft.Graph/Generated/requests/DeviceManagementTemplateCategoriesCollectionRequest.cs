@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementTemplateSettingCategory">The DeviceManagementTemplateSettingCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementTemplateSettingCategory.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementTemplateSettingCategory> AddAsync(DeviceManagementTemplateSettingCategory deviceManagementTemplateSettingCategory, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<DeviceManagementTemplateSettingCategory> AddAsync(DeviceManagementTemplateSettingCategory deviceManagementTemplateSettingCategory, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementTemplateSettingCategory">The DeviceManagementTemplateSettingCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementTemplateSettingCategory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateSettingCategory>> AddResponseAsync(DeviceManagementTemplateSettingCategory deviceManagementTemplateSettingCategory, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateSettingCategory>> AddResponseAsync(DeviceManagementTemplateSettingCategory deviceManagementTemplateSettingCategory, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementTemplateCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDeviceManagementTemplateCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementTemplateCategoriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementTemplateCategoriesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplateCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementTemplateCategoriesCollectionResponse>(null, cancellationToken);

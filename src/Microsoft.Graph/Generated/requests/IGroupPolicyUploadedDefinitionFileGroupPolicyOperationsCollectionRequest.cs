@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyOperation">The GroupPolicyOperation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyOperation.</returns>
-        System.Threading.Tasks.Task<GroupPolicyOperation> AddAsync(GroupPolicyOperation groupPolicyOperation, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GroupPolicyOperation> AddAsync(GroupPolicyOperation groupPolicyOperation, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified GroupPolicyOperation to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyOperation}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyOperation">The GroupPolicyOperation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyOperation>> AddResponseAsync(GroupPolicyOperation groupPolicyOperation, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyOperation>> AddResponseAsync(GroupPolicyOperation groupPolicyOperation, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IGroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyUploadedDefinitionFileGroupPolicyOperationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

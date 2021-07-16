@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="managementCondition">The ManagementCondition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagementCondition.</returns>
-        System.Threading.Tasks.Task<ManagementCondition> AddAsync(ManagementCondition managementCondition, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ManagementCondition> AddAsync(ManagementCondition managementCondition, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ManagementCondition to the collection via POST and returns a <see cref="GraphResponse{ManagementCondition}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="managementCondition">The ManagementCondition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> AddResponseAsync(ManagementCondition managementCondition, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> AddResponseAsync(ManagementCondition managementCondition, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementManagementConditionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceManagementManagementConditionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementManagementConditionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementManagementConditionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagementConditionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementManagementConditionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

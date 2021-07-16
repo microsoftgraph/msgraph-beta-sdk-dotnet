@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsWifiEnterpriseEAPConfigurationToCreate">The WindowsWifiEnterpriseEAPConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsWifiEnterpriseEAPConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> CreateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> CreateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified WindowsWifiEnterpriseEAPConfiguration using POST and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windowsWifiEnterpriseEAPConfigurationToCreate">The WindowsWifiEnterpriseEAPConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> CreateResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> CreateResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsWifiEnterpriseEAPConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsWifiEnterpriseEAPConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsWifiEnterpriseEAPConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsWifiEnterpriseEAPConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsWifiEnterpriseEAPConfiguration and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsWifiEnterpriseEAPConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> UpdateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> UpdateAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> UpdateResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> UpdateResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windowsWifiEnterpriseEAPConfigurationToUpdate">The WindowsWifiEnterpriseEAPConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> PutAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsWifiEnterpriseEAPConfiguration> PutAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsWifiEnterpriseEAPConfiguration using PUT and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windowsWifiEnterpriseEAPConfigurationToUpdate">The WindowsWifiEnterpriseEAPConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfiguration}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> PutResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfiguration>> PutResponseAsync(WindowsWifiEnterpriseEAPConfiguration windowsWifiEnterpriseEAPConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

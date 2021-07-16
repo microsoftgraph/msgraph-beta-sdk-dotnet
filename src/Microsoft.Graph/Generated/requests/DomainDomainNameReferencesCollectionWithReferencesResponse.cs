@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDomainDomainNameReferencesCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDomainDomainNameReferencesCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

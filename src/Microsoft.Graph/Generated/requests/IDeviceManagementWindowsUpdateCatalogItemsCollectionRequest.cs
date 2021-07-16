@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsUpdateCatalogItem">The WindowsUpdateCatalogItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUpdateCatalogItem.</returns>
-        System.Threading.Tasks.Task<WindowsUpdateCatalogItem> AddAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsUpdateCatalogItem> AddAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified WindowsUpdateCatalogItem to the collection via POST and returns a <see cref="GraphResponse{WindowsUpdateCatalogItem}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="windowsUpdateCatalogItem">The WindowsUpdateCatalogItem to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsUpdateCatalogItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateCatalogItem>> AddResponseAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateCatalogItem>> AddResponseAsync(WindowsUpdateCatalogItem windowsUpdateCatalogItem, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementWindowsUpdateCatalogItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceManagementWindowsUpdateCatalogItemsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsUpdateCatalogItemsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsUpdateCatalogItemsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsUpdateCatalogItemsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

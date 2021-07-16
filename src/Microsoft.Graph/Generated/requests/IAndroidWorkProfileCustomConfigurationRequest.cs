@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> CreateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> CreateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AndroidWorkProfileCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> CreateResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> CreateResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidWorkProfileCustomConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidWorkProfileCustomConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidWorkProfileCustomConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidWorkProfileCustomConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileCustomConfiguration using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> UpdateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> UpdateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileCustomConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> UpdateResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> UpdateResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileCustomConfiguration using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="androidWorkProfileCustomConfigurationToUpdate">The AndroidWorkProfileCustomConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> PutAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> PutAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileCustomConfiguration using PUT and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="androidWorkProfileCustomConfigurationToUpdate">The AndroidWorkProfileCustomConfiguration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> PutResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> PutResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

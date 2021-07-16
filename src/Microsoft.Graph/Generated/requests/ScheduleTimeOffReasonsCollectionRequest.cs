@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="timeOffReason">The TimeOffReason to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TimeOffReason.</returns>
-        public System.Threading.Tasks.Task<TimeOffReason> AddAsync(TimeOffReason timeOffReason, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<TimeOffReason> AddAsync(TimeOffReason timeOffReason, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="timeOffReason">The TimeOffReason to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> AddResponseAsync(TimeOffReason timeOffReason, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> AddResponseAsync(TimeOffReason timeOffReason, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IScheduleTimeOffReasonsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IScheduleTimeOffReasonsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ScheduleTimeOffReasonsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ScheduleTimeOffReasonsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ScheduleTimeOffReasonsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ScheduleTimeOffReasonsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ScheduleTimeOffReasonsCollectionResponse>(null, cancellationToken);

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="generalLedgerEntry">The GeneralLedgerEntry to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GeneralLedgerEntry.</returns>
-        public System.Threading.Tasks.Task<GeneralLedgerEntry> AddAsync(GeneralLedgerEntry generalLedgerEntry, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GeneralLedgerEntry> AddAsync(GeneralLedgerEntry generalLedgerEntry, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="generalLedgerEntry">The GeneralLedgerEntry to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GeneralLedgerEntry}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> AddResponseAsync(GeneralLedgerEntry generalLedgerEntry, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> AddResponseAsync(GeneralLedgerEntry generalLedgerEntry, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICompanyGeneralLedgerEntriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ICompanyGeneralLedgerEntriesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CompanyGeneralLedgerEntriesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyGeneralLedgerEntriesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CompanyGeneralLedgerEntriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<CompanyGeneralLedgerEntriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<CompanyGeneralLedgerEntriesCollectionResponse>(null, cancellationToken);

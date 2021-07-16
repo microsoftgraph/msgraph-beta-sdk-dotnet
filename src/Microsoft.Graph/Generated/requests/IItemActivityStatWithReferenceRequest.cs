@@ -25,14 +25,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemActivityStat.</returns>
-        System.Threading.Tasks.Task<ItemActivityStat> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ItemActivityStat> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ItemActivityStat and returns a <see cref="GraphResponse{ItemActivityStat}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified ItemActivityStat using POST.
@@ -40,7 +40,7 @@ namespace Microsoft.Graph
         /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemActivityStat.</returns>
-        System.Threading.Tasks.Task<ItemActivityStat> CreateAsync(ItemActivityStat itemActivityStatToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ItemActivityStat> CreateAsync(ItemActivityStat itemActivityStatToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified ItemActivityStat using POST and returns a <see cref="GraphResponse{ItemActivityStat}"/> object.
@@ -48,7 +48,7 @@ namespace Microsoft.Graph
         /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> CreateResponseAsync(ItemActivityStat itemActivityStatToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> CreateResponseAsync(ItemActivityStat itemActivityStatToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Updates the specified ItemActivityStat using PATCH.
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemActivityStat.</returns>
-        System.Threading.Tasks.Task<ItemActivityStat> UpdateAsync(ItemActivityStat itemActivityStatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ItemActivityStat> UpdateAsync(ItemActivityStat itemActivityStatToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Updates the specified ItemActivityStat using PATCH and returns a <see cref="GraphResponse{ItemActivityStat}"/> object.
@@ -66,21 +66,21 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> UpdateResponseAsync(ItemActivityStat itemActivityStatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> UpdateResponseAsync(ItemActivityStat itemActivityStatToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified ItemActivityStat.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified ItemActivityStat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

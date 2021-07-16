@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IServicePrincipalOauth2PermissionGrantsCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

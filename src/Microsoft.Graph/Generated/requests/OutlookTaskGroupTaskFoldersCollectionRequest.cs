@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="outlookTaskFolder">The OutlookTaskFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookTaskFolder.</returns>
-        public System.Threading.Tasks.Task<OutlookTaskFolder> AddAsync(OutlookTaskFolder outlookTaskFolder, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<OutlookTaskFolder> AddAsync(OutlookTaskFolder outlookTaskFolder, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="outlookTaskFolder">The OutlookTaskFolder to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookTaskFolder}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolder>> AddResponseAsync(OutlookTaskFolder outlookTaskFolder, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<OutlookTaskFolder>> AddResponseAsync(OutlookTaskFolder outlookTaskFolder, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IOutlookTaskGroupTaskFoldersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IOutlookTaskGroupTaskFoldersCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<OutlookTaskGroupTaskFoldersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OutlookTaskGroupTaskFoldersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OutlookTaskGroupTaskFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<OutlookTaskGroupTaskFoldersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<OutlookTaskGroupTaskFoldersCollectionResponse>(null, cancellationToken);

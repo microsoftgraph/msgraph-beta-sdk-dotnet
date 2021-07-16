@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="filterOperatorSchema">The FilterOperatorSchema to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FilterOperatorSchema.</returns>
-        System.Threading.Tasks.Task<FilterOperatorSchema> AddAsync(FilterOperatorSchema filterOperatorSchema, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<FilterOperatorSchema> AddAsync(FilterOperatorSchema filterOperatorSchema, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified FilterOperatorSchema to the collection via POST and returns a <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="filterOperatorSchema">The FilterOperatorSchema to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FilterOperatorSchema}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> AddResponseAsync(FilterOperatorSchema filterOperatorSchema, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<FilterOperatorSchema>> AddResponseAsync(FilterOperatorSchema filterOperatorSchema, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServiceFilterOperatorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IGraphServiceFilterOperatorsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceFilterOperatorsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceFilterOperatorsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GraphServiceFilterOperatorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GraphServiceFilterOperatorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

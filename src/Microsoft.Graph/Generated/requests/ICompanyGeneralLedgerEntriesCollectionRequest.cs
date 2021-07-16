@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="generalLedgerEntry">The GeneralLedgerEntry to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GeneralLedgerEntry.</returns>
-        System.Threading.Tasks.Task<GeneralLedgerEntry> AddAsync(GeneralLedgerEntry generalLedgerEntry, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GeneralLedgerEntry> AddAsync(GeneralLedgerEntry generalLedgerEntry, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified GeneralLedgerEntry to the collection via POST and returns a <see cref="GraphResponse{GeneralLedgerEntry}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="generalLedgerEntry">The GeneralLedgerEntry to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GeneralLedgerEntry}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> AddResponseAsync(GeneralLedgerEntry generalLedgerEntry, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GeneralLedgerEntry>> AddResponseAsync(GeneralLedgerEntry generalLedgerEntry, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyGeneralLedgerEntriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ICompanyGeneralLedgerEntriesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CompanyGeneralLedgerEntriesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CompanyGeneralLedgerEntriesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CompanyGeneralLedgerEntriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CompanyGeneralLedgerEntriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IPlannerUserRosterPlansCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IPlannerUserRosterPlansCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

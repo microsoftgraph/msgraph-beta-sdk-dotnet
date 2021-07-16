@@ -39,7 +39,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cloudPcConnection">The CloudPcConnection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcConnection.</returns>
-        public System.Threading.Tasks.Task<CloudPcConnection> AddAsync(CloudPcConnection cloudPcConnection, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<CloudPcConnection> AddAsync(CloudPcConnection cloudPcConnection, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cloudPcConnection">The CloudPcConnection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcConnection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> AddResponseAsync(CloudPcConnection cloudPcConnection, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<CloudPcConnection>> AddResponseAsync(CloudPcConnection cloudPcConnection, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedTenantCloudPcConnectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IManagedTenantCloudPcConnectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ManagedTenantCloudPcConnectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedTenantCloudPcConnectionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantCloudPcConnectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantCloudPcConnectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ManagedTenantCloudPcConnectionsCollectionResponse>(null, cancellationToken);

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="termsAndConditionsGroupAssignmentToCreate">The TermsAndConditionsGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsAndConditionsGroupAssignment.</returns>
-        System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> CreateAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> CreateAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified TermsAndConditionsGroupAssignment using POST and returns a <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="termsAndConditionsGroupAssignmentToCreate">The TermsAndConditionsGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> CreateResponseAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> CreateResponseAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TermsAndConditionsGroupAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TermsAndConditionsGroupAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TermsAndConditionsGroupAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TermsAndConditionsGroupAssignment.</returns>
-        System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TermsAndConditionsGroupAssignment and returns a <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TermsAndConditionsGroupAssignment using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TermsAndConditionsGroupAssignment.</returns>
-        System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> UpdateAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> UpdateAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TermsAndConditionsGroupAssignment using PATCH and returns a <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> UpdateResponseAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> UpdateResponseAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TermsAndConditionsGroupAssignment using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="termsAndConditionsGroupAssignmentToUpdate">The TermsAndConditionsGroupAssignment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> PutAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TermsAndConditionsGroupAssignment> PutAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TermsAndConditionsGroupAssignment using PUT and returns a <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="termsAndConditionsGroupAssignmentToUpdate">The TermsAndConditionsGroupAssignment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{TermsAndConditionsGroupAssignment}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> PutResponseAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsGroupAssignment>> PutResponseAsync(TermsAndConditionsGroupAssignment termsAndConditionsGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

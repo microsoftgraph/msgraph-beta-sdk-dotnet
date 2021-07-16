@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="accessPackageCatalog">The AccessPackageCatalog to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageCatalog.</returns>
-        public System.Threading.Tasks.Task<AccessPackageCatalog> AddAsync(AccessPackageCatalog accessPackageCatalog, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<AccessPackageCatalog> AddAsync(AccessPackageCatalog accessPackageCatalog, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="accessPackageCatalog">The AccessPackageCatalog to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageCatalog}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalog>> AddResponseAsync(AccessPackageCatalog accessPackageCatalog, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalog>> AddResponseAsync(AccessPackageCatalog accessPackageCatalog, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IEntitlementManagementAccessPackageCatalogsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IEntitlementManagementAccessPackageCatalogsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<EntitlementManagementAccessPackageCatalogsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EntitlementManagementAccessPackageCatalogsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagementAccessPackageCatalogsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagementAccessPackageCatalogsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<EntitlementManagementAccessPackageCatalogsCollectionResponse>(null, cancellationToken);

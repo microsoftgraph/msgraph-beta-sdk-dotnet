@@ -37,7 +37,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserCountsCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>(null, cancellationToken);
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserCountsCollectionPage> PatchAsync(YammerDeviceUsageUserCounts yammerdeviceusageusercounts,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PATCH;
             var response = await this.SendAsync<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>(yammerdeviceusageusercounts, cancellationToken).ConfigureAwait(false);
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="yammerdeviceusageusercounts">The YammerDeviceUsageUserCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>> PatchResponseAsync(YammerDeviceUsageUserCounts yammerdeviceusageusercounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>> PatchResponseAsync(YammerDeviceUsageUserCounts yammerdeviceusageusercounts, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>(yammerdeviceusageusercounts, cancellationToken);
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserCountsCollectionPage> PutAsync(YammerDeviceUsageUserCounts yammerdeviceusageusercounts,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PUT;
             var response = await this.SendAsync<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>(yammerdeviceusageusercounts, cancellationToken).ConfigureAwait(false);
@@ -126,7 +126,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="yammerdeviceusageusercounts">The YammerDeviceUsageUserCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>> PutResponseAsync(YammerDeviceUsageUserCounts yammerdeviceusageusercounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>> PutResponseAsync(YammerDeviceUsageUserCounts yammerdeviceusageusercounts, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PUT;
             return this.SendAsyncWithGraphResponse<ReportRootGetYammerDeviceUsageUserCountsCollectionResponse>(yammerdeviceusageusercounts, cancellationToken);

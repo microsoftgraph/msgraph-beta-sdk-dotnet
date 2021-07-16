@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="macOSSoftwareUpdateStateSummary">The MacOSSoftwareUpdateStateSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSSoftwareUpdateStateSummary.</returns>
-        public System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> AddAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> AddAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummary, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="macOSSoftwareUpdateStateSummary">The MacOSSoftwareUpdateStateSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> AddResponseAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> AddResponseAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummary, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IMacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<MacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateCategorySummaryUpdateStateSummariesCollectionResponse>(null, cancellationToken);

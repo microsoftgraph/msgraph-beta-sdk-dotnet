@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="todoTask">The TodoTask to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TodoTask.</returns>
-        public System.Threading.Tasks.Task<TodoTask> AddAsync(TodoTask todoTask, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<TodoTask> AddAsync(TodoTask todoTask, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="todoTask">The TodoTask to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TodoTask}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TodoTask>> AddResponseAsync(TodoTask todoTask, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<TodoTask>> AddResponseAsync(TodoTask todoTask, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ITodoTaskListTasksCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<ITodoTaskListTasksCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<TodoTaskListTasksCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TodoTaskListTasksCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TodoTaskListTasksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<TodoTaskListTasksCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<TodoTaskListTasksCollectionResponse>(null, cancellationToken);

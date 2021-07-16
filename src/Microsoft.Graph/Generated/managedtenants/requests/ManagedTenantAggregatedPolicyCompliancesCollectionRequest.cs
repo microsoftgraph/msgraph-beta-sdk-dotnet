@@ -39,7 +39,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="aggregatedPolicyCompliance">The AggregatedPolicyCompliance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AggregatedPolicyCompliance.</returns>
-        public System.Threading.Tasks.Task<AggregatedPolicyCompliance> AddAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<AggregatedPolicyCompliance> AddAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="aggregatedPolicyCompliance">The AggregatedPolicyCompliance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AggregatedPolicyCompliance}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AggregatedPolicyCompliance>> AddResponseAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AggregatedPolicyCompliance>> AddResponseAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedTenantAggregatedPolicyCompliancesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IManagedTenantAggregatedPolicyCompliancesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ManagedTenantAggregatedPolicyCompliancesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedTenantAggregatedPolicyCompliancesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantAggregatedPolicyCompliancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantAggregatedPolicyCompliancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ManagedTenantAggregatedPolicyCompliancesCollectionResponse>(null, cancellationToken);

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="ndesConnector">The NdesConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NdesConnector.</returns>
-        System.Threading.Tasks.Task<NdesConnector> AddAsync(NdesConnector ndesConnector, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<NdesConnector> AddAsync(NdesConnector ndesConnector, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified NdesConnector to the collection via POST and returns a <see cref="GraphResponse{NdesConnector}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="ndesConnector">The NdesConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NdesConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NdesConnector>> AddResponseAsync(NdesConnector ndesConnector, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<NdesConnector>> AddResponseAsync(NdesConnector ndesConnector, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementNdesConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceManagementNdesConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementNdesConnectorsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementNdesConnectorsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementNdesConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementNdesConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

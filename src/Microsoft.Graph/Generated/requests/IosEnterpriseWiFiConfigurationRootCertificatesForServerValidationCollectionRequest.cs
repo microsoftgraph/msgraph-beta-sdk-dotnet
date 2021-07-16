@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="iosTrustedRootCertificate">The IosTrustedRootCertificate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<IosTrustedRootCertificate> AddAsync(IosTrustedRootCertificate iosTrustedRootCertificate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<IosTrustedRootCertificate> AddAsync(IosTrustedRootCertificate iosTrustedRootCertificate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="iosTrustedRootCertificate">The IosTrustedRootCertificate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosTrustedRootCertificate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosTrustedRootCertificate>> AddResponseAsync(IosTrustedRootCertificate iosTrustedRootCertificate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<IosTrustedRootCertificate>> AddResponseAsync(IosTrustedRootCertificate iosTrustedRootCertificate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<IosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<IosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<IosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionResponse>(null, cancellationToken);

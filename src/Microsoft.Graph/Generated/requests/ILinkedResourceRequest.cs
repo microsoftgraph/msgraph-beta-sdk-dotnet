@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="linkedResourceToCreate">The LinkedResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LinkedResource.</returns>
-        System.Threading.Tasks.Task<LinkedResource> CreateAsync(LinkedResource linkedResourceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<LinkedResource> CreateAsync(LinkedResource linkedResourceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified LinkedResource using POST and returns a <see cref="GraphResponse{LinkedResource}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="linkedResourceToCreate">The LinkedResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> CreateResponseAsync(LinkedResource linkedResourceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> CreateResponseAsync(LinkedResource linkedResourceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified LinkedResource.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified LinkedResource and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified LinkedResource.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The LinkedResource.</returns>
-        System.Threading.Tasks.Task<LinkedResource> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<LinkedResource> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified LinkedResource and returns a <see cref="GraphResponse{LinkedResource}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified LinkedResource using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated LinkedResource.</returns>
-        System.Threading.Tasks.Task<LinkedResource> UpdateAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<LinkedResource> UpdateAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified LinkedResource using PATCH and returns a <see cref="GraphResponse{LinkedResource}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> UpdateResponseAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> UpdateResponseAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified LinkedResource using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="linkedResourceToUpdate">The LinkedResource object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<LinkedResource> PutAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<LinkedResource> PutAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified LinkedResource using PUT and returns a <see cref="GraphResponse{LinkedResource}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="linkedResourceToUpdate">The LinkedResource object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{LinkedResource}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> PutResponseAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> PutResponseAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

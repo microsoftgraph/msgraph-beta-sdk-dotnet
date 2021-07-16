@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainDnsRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsRecord> AddAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DomainDnsRecord> AddAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified DomainDnsRecord to the collection via POST and returns a <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> AddResponseAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> AddResponseAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDomainServiceConfigurationRecordsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDomainServiceConfigurationRecordsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DomainServiceConfigurationRecordsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainServiceConfigurationRecordsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DomainServiceConfigurationRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DomainServiceConfigurationRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

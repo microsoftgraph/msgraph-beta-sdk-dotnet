@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="deviceConfigurationConflictSummary">The DeviceConfigurationConflictSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationConflictSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> AddAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<DeviceConfigurationConflictSummary> AddAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="deviceConfigurationConflictSummary">The DeviceConfigurationConflictSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationConflictSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> AddResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationConflictSummary>> AddResponseAsync(DeviceConfigurationConflictSummary deviceConfigurationConflictSummary, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationConflictSummaryCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDeviceManagementDeviceConfigurationConflictSummaryCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementDeviceConfigurationConflictSummaryCollectionResponse>(null, cancellationToken);

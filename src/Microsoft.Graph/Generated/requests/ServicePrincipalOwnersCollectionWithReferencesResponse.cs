@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IServicePrincipalOwnersCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IServicePrincipalOwnersCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

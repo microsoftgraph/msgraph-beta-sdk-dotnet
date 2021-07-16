@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windows81TrustedRootCertificate">The Windows81TrustedRootCertificate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows81TrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> AddAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows81TrustedRootCertificate> AddAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified Windows81TrustedRootCertificate to the collection via POST and returns a <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="windows81TrustedRootCertificate">The Windows81TrustedRootCertificate to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows81TrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> AddResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows81TrustedRootCertificate>> AddResponseAsync(Windows81TrustedRootCertificate windows81TrustedRootCertificate, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

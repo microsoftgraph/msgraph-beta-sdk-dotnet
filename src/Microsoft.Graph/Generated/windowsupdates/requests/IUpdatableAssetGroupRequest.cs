@@ -26,7 +26,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="updatableAssetGroupToCreate">The UpdatableAssetGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UpdatableAssetGroup.</returns>
-        System.Threading.Tasks.Task<UpdatableAssetGroup> CreateAsync(UpdatableAssetGroup updatableAssetGroupToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UpdatableAssetGroup> CreateAsync(UpdatableAssetGroup updatableAssetGroupToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified UpdatableAssetGroup using POST and returns a <see cref="GraphResponse{UpdatableAssetGroup}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="updatableAssetGroupToCreate">The UpdatableAssetGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UpdatableAssetGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroup>> CreateResponseAsync(UpdatableAssetGroup updatableAssetGroupToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroup>> CreateResponseAsync(UpdatableAssetGroup updatableAssetGroupToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UpdatableAssetGroup.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UpdatableAssetGroup and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UpdatableAssetGroup.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UpdatableAssetGroup.</returns>
-        System.Threading.Tasks.Task<UpdatableAssetGroup> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UpdatableAssetGroup> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UpdatableAssetGroup and returns a <see cref="GraphResponse{UpdatableAssetGroup}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UpdatableAssetGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroup>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroup>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UpdatableAssetGroup using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UpdatableAssetGroup.</returns>
-        System.Threading.Tasks.Task<UpdatableAssetGroup> UpdateAsync(UpdatableAssetGroup updatableAssetGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UpdatableAssetGroup> UpdateAsync(UpdatableAssetGroup updatableAssetGroupToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UpdatableAssetGroup using PATCH and returns a <see cref="GraphResponse{UpdatableAssetGroup}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UpdatableAssetGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroup>> UpdateResponseAsync(UpdatableAssetGroup updatableAssetGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroup>> UpdateResponseAsync(UpdatableAssetGroup updatableAssetGroupToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UpdatableAssetGroup using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="updatableAssetGroupToUpdate">The UpdatableAssetGroup object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<UpdatableAssetGroup> PutAsync(UpdatableAssetGroup updatableAssetGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UpdatableAssetGroup> PutAsync(UpdatableAssetGroup updatableAssetGroupToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UpdatableAssetGroup using PUT and returns a <see cref="GraphResponse{UpdatableAssetGroup}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="updatableAssetGroupToUpdate">The UpdatableAssetGroup object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{UpdatableAssetGroup}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroup>> PutResponseAsync(UpdatableAssetGroup updatableAssetGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroup>> PutResponseAsync(UpdatableAssetGroup updatableAssetGroupToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IManagementConditionManagementConditionStatementsCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IManagementConditionManagementConditionStatementsCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

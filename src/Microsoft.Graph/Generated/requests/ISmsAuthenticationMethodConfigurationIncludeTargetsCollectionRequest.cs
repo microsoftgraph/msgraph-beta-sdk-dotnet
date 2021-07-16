@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="smsAuthenticationMethodTarget">The SmsAuthenticationMethodTarget to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SmsAuthenticationMethodTarget.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> AddAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTarget, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> AddAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTarget, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified SmsAuthenticationMethodTarget to the collection via POST and returns a <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="smsAuthenticationMethodTarget">The SmsAuthenticationMethodTarget to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodTarget>> AddResponseAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTarget, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodTarget>> AddResponseAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTarget, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISmsAuthenticationMethodConfigurationIncludeTargetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ISmsAuthenticationMethodConfigurationIncludeTargetsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SmsAuthenticationMethodConfigurationIncludeTargetsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SmsAuthenticationMethodConfigurationIncludeTargetsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfigurationIncludeTargetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodConfigurationIncludeTargetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

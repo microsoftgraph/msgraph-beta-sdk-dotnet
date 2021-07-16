@@ -37,7 +37,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetEmailAppUsageUserDetailCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReportRootGetEmailAppUsageUserDetailCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetEmailAppUsageUserDetailCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetEmailAppUsageUserDetailCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ReportRootGetEmailAppUsageUserDetailCollectionResponse>(null, cancellationToken);
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetEmailAppUsageUserDetailCollectionPage> PatchAsync(EmailAppUsageUserDetail emailappusageuserdetail,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PATCH;
             var response = await this.SendAsync<ReportRootGetEmailAppUsageUserDetailCollectionResponse>(emailappusageuserdetail, cancellationToken).ConfigureAwait(false);
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="emailappusageuserdetail">The EmailAppUsageUserDetail object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetEmailAppUsageUserDetailCollectionResponse>> PatchResponseAsync(EmailAppUsageUserDetail emailappusageuserdetail, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetEmailAppUsageUserDetailCollectionResponse>> PatchResponseAsync(EmailAppUsageUserDetail emailappusageuserdetail, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<ReportRootGetEmailAppUsageUserDetailCollectionResponse>(emailappusageuserdetail, cancellationToken);
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetEmailAppUsageUserDetailCollectionPage> PutAsync(EmailAppUsageUserDetail emailappusageuserdetail,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PUT;
             var response = await this.SendAsync<ReportRootGetEmailAppUsageUserDetailCollectionResponse>(emailappusageuserdetail, cancellationToken).ConfigureAwait(false);
@@ -126,7 +126,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="emailappusageuserdetail">The EmailAppUsageUserDetail object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetEmailAppUsageUserDetailCollectionResponse>> PutResponseAsync(EmailAppUsageUserDetail emailappusageuserdetail, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetEmailAppUsageUserDetailCollectionResponse>> PutResponseAsync(EmailAppUsageUserDetail emailappusageuserdetail, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PUT;
             return this.SendAsyncWithGraphResponse<ReportRootGetEmailAppUsageUserDetailCollectionResponse>(emailappusageuserdetail, cancellationToken);

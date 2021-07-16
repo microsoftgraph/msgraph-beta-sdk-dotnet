@@ -26,7 +26,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="credentialUserRegistrationsSummaryToCreate">The CredentialUserRegistrationsSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CredentialUserRegistrationsSummary.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> CreateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> CreateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified CredentialUserRegistrationsSummary using POST and returns a <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="credentialUserRegistrationsSummaryToCreate">The CredentialUserRegistrationsSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> CreateResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> CreateResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CredentialUserRegistrationsSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CredentialUserRegistrationsSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CredentialUserRegistrationsSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CredentialUserRegistrationsSummary.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CredentialUserRegistrationsSummary and returns a <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CredentialUserRegistrationsSummary using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CredentialUserRegistrationsSummary.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> UpdateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> UpdateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CredentialUserRegistrationsSummary using PATCH and returns a <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> UpdateResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> UpdateResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CredentialUserRegistrationsSummary using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="credentialUserRegistrationsSummaryToUpdate">The CredentialUserRegistrationsSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> PutAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> PutAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CredentialUserRegistrationsSummary using PUT and returns a <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="credentialUserRegistrationsSummaryToUpdate">The CredentialUserRegistrationsSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> PutResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> PutResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

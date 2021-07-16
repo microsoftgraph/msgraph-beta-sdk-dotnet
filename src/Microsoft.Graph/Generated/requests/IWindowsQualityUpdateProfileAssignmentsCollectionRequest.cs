@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsQualityUpdateProfileAssignment">The WindowsQualityUpdateProfileAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsQualityUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsQualityUpdateProfileAssignment> AddAsync(WindowsQualityUpdateProfileAssignment windowsQualityUpdateProfileAssignment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsQualityUpdateProfileAssignment> AddAsync(WindowsQualityUpdateProfileAssignment windowsQualityUpdateProfileAssignment, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified WindowsQualityUpdateProfileAssignment to the collection via POST and returns a <see cref="GraphResponse{WindowsQualityUpdateProfileAssignment}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="windowsQualityUpdateProfileAssignment">The WindowsQualityUpdateProfileAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfileAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfileAssignment>> AddResponseAsync(WindowsQualityUpdateProfileAssignment windowsQualityUpdateProfileAssignment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfileAssignment>> AddResponseAsync(WindowsQualityUpdateProfileAssignment windowsQualityUpdateProfileAssignment, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsQualityUpdateProfileAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IWindowsQualityUpdateProfileAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{WindowsQualityUpdateProfileAssignmentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfileAssignmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfileAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfileAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

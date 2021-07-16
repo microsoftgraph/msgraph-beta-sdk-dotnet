@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyDefinitionValue">The GroupPolicyDefinitionValue to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyDefinitionValue.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyDefinitionValue> AddAsync(GroupPolicyDefinitionValue groupPolicyDefinitionValue, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GroupPolicyDefinitionValue> AddAsync(GroupPolicyDefinitionValue groupPolicyDefinitionValue, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyDefinitionValue">The GroupPolicyDefinitionValue to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyDefinitionValue}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionValue>> AddResponseAsync(GroupPolicyDefinitionValue groupPolicyDefinitionValue, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyDefinitionValue>> AddResponseAsync(GroupPolicyDefinitionValue groupPolicyDefinitionValue, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGroupPolicyConfigurationDefinitionValuesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IGroupPolicyConfigurationDefinitionValuesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GroupPolicyConfigurationDefinitionValuesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyConfigurationDefinitionValuesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationDefinitionValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfigurationDefinitionValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<GroupPolicyConfigurationDefinitionValuesCollectionResponse>(null, cancellationToken);

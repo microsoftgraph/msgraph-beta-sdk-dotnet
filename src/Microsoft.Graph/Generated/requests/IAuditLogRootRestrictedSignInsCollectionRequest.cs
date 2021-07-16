@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="restrictedSignIn">The RestrictedSignIn to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RestrictedSignIn.</returns>
-        System.Threading.Tasks.Task<RestrictedSignIn> AddAsync(RestrictedSignIn restrictedSignIn, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RestrictedSignIn> AddAsync(RestrictedSignIn restrictedSignIn, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified RestrictedSignIn to the collection via POST and returns a <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="restrictedSignIn">The RestrictedSignIn to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RestrictedSignIn>> AddResponseAsync(RestrictedSignIn restrictedSignIn, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RestrictedSignIn>> AddResponseAsync(RestrictedSignIn restrictedSignIn, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IAuditLogRootRestrictedSignInsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IAuditLogRootRestrictedSignInsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{AuditLogRootRestrictedSignInsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuditLogRootRestrictedSignInsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AuditLogRootRestrictedSignInsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AuditLogRootRestrictedSignInsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

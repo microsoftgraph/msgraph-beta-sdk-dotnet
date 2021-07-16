@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="localizedNotificationMessage">The LocalizedNotificationMessage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LocalizedNotificationMessage.</returns>
-        System.Threading.Tasks.Task<LocalizedNotificationMessage> AddAsync(LocalizedNotificationMessage localizedNotificationMessage, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<LocalizedNotificationMessage> AddAsync(LocalizedNotificationMessage localizedNotificationMessage, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified LocalizedNotificationMessage to the collection via POST and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="localizedNotificationMessage">The LocalizedNotificationMessage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> AddResponseAsync(LocalizedNotificationMessage localizedNotificationMessage, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> AddResponseAsync(LocalizedNotificationMessage localizedNotificationMessage, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<INotificationMessageTemplateLocalizedNotificationMessagesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{NotificationMessageTemplateLocalizedNotificationMessagesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NotificationMessageTemplateLocalizedNotificationMessagesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplateLocalizedNotificationMessagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplateLocalizedNotificationMessagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

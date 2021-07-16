@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="b2cIdentityUserFlow">The B2cIdentityUserFlow to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created B2cIdentityUserFlow.</returns>
-        public System.Threading.Tasks.Task<B2cIdentityUserFlow> AddAsync(B2cIdentityUserFlow b2cIdentityUserFlow, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<B2cIdentityUserFlow> AddAsync(B2cIdentityUserFlow b2cIdentityUserFlow, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="b2cIdentityUserFlow">The B2cIdentityUserFlow to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlow}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> AddResponseAsync(B2cIdentityUserFlow b2cIdentityUserFlow, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlow>> AddResponseAsync(B2cIdentityUserFlow b2cIdentityUserFlow, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IIdentityContainerB2cUserFlowsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IIdentityContainerB2cUserFlowsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<IdentityContainerB2cUserFlowsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IdentityContainerB2cUserFlowsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IdentityContainerB2cUserFlowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<IdentityContainerB2cUserFlowsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<IdentityContainerB2cUserFlowsCollectionResponse>(null, cancellationToken);

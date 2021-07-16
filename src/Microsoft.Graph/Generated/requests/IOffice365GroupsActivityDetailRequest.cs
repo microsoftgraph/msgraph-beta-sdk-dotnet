@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="office365GroupsActivityDetailToCreate">The Office365GroupsActivityDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Office365GroupsActivityDetail.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityDetail> CreateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Office365GroupsActivityDetail> CreateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Office365GroupsActivityDetail using POST and returns a <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="office365GroupsActivityDetailToCreate">The Office365GroupsActivityDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> CreateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> CreateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Office365GroupsActivityDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Office365GroupsActivityDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Office365GroupsActivityDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365GroupsActivityDetail.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Office365GroupsActivityDetail> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Office365GroupsActivityDetail and returns a <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Office365GroupsActivityDetail using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365GroupsActivityDetail.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityDetail> UpdateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Office365GroupsActivityDetail> UpdateAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Office365GroupsActivityDetail using PATCH and returns a <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> UpdateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> UpdateResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Office365GroupsActivityDetail using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="office365GroupsActivityDetailToUpdate">The Office365GroupsActivityDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityDetail> PutAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Office365GroupsActivityDetail> PutAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Office365GroupsActivityDetail using PUT and returns a <see cref="GraphResponse{Office365GroupsActivityDetail}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="office365GroupsActivityDetailToUpdate">The Office365GroupsActivityDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Office365GroupsActivityDetail}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> PutResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityDetail>> PutResponseAsync(Office365GroupsActivityDetail office365GroupsActivityDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

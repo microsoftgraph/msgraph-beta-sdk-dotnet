@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="vendorToCreate">The Vendor to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Vendor.</returns>
-        System.Threading.Tasks.Task<Vendor> CreateAsync(Vendor vendorToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Vendor> CreateAsync(Vendor vendorToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Vendor using POST and returns a <see cref="GraphResponse{Vendor}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="vendorToCreate">The Vendor to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Vendor>> CreateResponseAsync(Vendor vendorToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> CreateResponseAsync(Vendor vendorToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Vendor.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Vendor and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Vendor.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Vendor.</returns>
-        System.Threading.Tasks.Task<Vendor> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Vendor> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Vendor and returns a <see cref="GraphResponse{Vendor}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Vendor>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Vendor using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Vendor.</returns>
-        System.Threading.Tasks.Task<Vendor> UpdateAsync(Vendor vendorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Vendor> UpdateAsync(Vendor vendorToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Vendor using PATCH and returns a <see cref="GraphResponse{Vendor}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Vendor}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Vendor>> UpdateResponseAsync(Vendor vendorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> UpdateResponseAsync(Vendor vendorToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Vendor using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="vendorToUpdate">The Vendor object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Vendor> PutAsync(Vendor vendorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Vendor> PutAsync(Vendor vendorToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Vendor using PUT and returns a <see cref="GraphResponse{Vendor}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="vendorToUpdate">The Vendor object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Vendor}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Vendor>> PutResponseAsync(Vendor vendorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Vendor>> PutResponseAsync(Vendor vendorToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="updatableAsset">The UpdatableAsset to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UpdatableAsset.</returns>
-        public System.Threading.Tasks.Task<UpdatableAsset> AddAsync(UpdatableAsset updatableAsset, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<UpdatableAsset> AddAsync(UpdatableAsset updatableAsset, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="updatableAsset">The UpdatableAsset to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UpdatableAsset}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UpdatableAsset>> AddResponseAsync(UpdatableAsset updatableAsset, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UpdatableAsset>> AddResponseAsync(UpdatableAsset updatableAsset, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUpdatableAssetGroupMembersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IUpdatableAssetGroupMembersCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UpdatableAssetGroupMembersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UpdatableAssetGroupMembersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroupMembersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UpdatableAssetGroupMembersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UpdatableAssetGroupMembersCollectionResponse>(null, cancellationToken);

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="offerShiftRequestObjectToCreate">The OfferShiftRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OfferShiftRequestObject.</returns>
-        System.Threading.Tasks.Task<OfferShiftRequestObject> CreateAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfferShiftRequestObject> CreateAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified OfferShiftRequestObject using POST and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="offerShiftRequestObjectToCreate">The OfferShiftRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> CreateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> CreateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OfferShiftRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OfferShiftRequestObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OfferShiftRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OfferShiftRequestObject.</returns>
-        System.Threading.Tasks.Task<OfferShiftRequestObject> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfferShiftRequestObject> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OfferShiftRequestObject and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfferShiftRequestObject using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OfferShiftRequestObject.</returns>
-        System.Threading.Tasks.Task<OfferShiftRequestObject> UpdateAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfferShiftRequestObject> UpdateAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfferShiftRequestObject using PATCH and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> UpdateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> UpdateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfferShiftRequestObject using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="offerShiftRequestObjectToUpdate">The OfferShiftRequestObject object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<OfferShiftRequestObject> PutAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfferShiftRequestObject> PutAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfferShiftRequestObject using PUT and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="offerShiftRequestObjectToUpdate">The OfferShiftRequestObject object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{OfferShiftRequestObject}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> PutResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> PutResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

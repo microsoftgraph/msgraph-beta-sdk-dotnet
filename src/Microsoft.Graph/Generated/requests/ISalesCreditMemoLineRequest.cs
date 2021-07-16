@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="salesCreditMemoLineToCreate">The SalesCreditMemoLine to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SalesCreditMemoLine.</returns>
-        System.Threading.Tasks.Task<SalesCreditMemoLine> CreateAsync(SalesCreditMemoLine salesCreditMemoLineToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SalesCreditMemoLine> CreateAsync(SalesCreditMemoLine salesCreditMemoLineToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified SalesCreditMemoLine using POST and returns a <see cref="GraphResponse{SalesCreditMemoLine}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="salesCreditMemoLineToCreate">The SalesCreditMemoLine to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesCreditMemoLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> CreateResponseAsync(SalesCreditMemoLine salesCreditMemoLineToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> CreateResponseAsync(SalesCreditMemoLine salesCreditMemoLineToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SalesCreditMemoLine.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SalesCreditMemoLine and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SalesCreditMemoLine.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SalesCreditMemoLine.</returns>
-        System.Threading.Tasks.Task<SalesCreditMemoLine> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SalesCreditMemoLine> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SalesCreditMemoLine and returns a <see cref="GraphResponse{SalesCreditMemoLine}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SalesCreditMemoLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SalesCreditMemoLine using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SalesCreditMemoLine.</returns>
-        System.Threading.Tasks.Task<SalesCreditMemoLine> UpdateAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SalesCreditMemoLine> UpdateAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SalesCreditMemoLine using PATCH and returns a <see cref="GraphResponse{SalesCreditMemoLine}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SalesCreditMemoLine}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> UpdateResponseAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> UpdateResponseAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SalesCreditMemoLine using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="salesCreditMemoLineToUpdate">The SalesCreditMemoLine object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<SalesCreditMemoLine> PutAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SalesCreditMemoLine> PutAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SalesCreditMemoLine using PUT and returns a <see cref="GraphResponse{SalesCreditMemoLine}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="salesCreditMemoLineToUpdate">The SalesCreditMemoLine object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{SalesCreditMemoLine}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> PutResponseAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SalesCreditMemoLine>> PutResponseAsync(SalesCreditMemoLine salesCreditMemoLineToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

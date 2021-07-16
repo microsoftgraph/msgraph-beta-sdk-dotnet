@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="officeGraphInsightsToCreate">The OfficeGraphInsights to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OfficeGraphInsights.</returns>
-        System.Threading.Tasks.Task<OfficeGraphInsights> CreateAsync(OfficeGraphInsights officeGraphInsightsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfficeGraphInsights> CreateAsync(OfficeGraphInsights officeGraphInsightsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified OfficeGraphInsights using POST and returns a <see cref="GraphResponse{OfficeGraphInsights}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="officeGraphInsightsToCreate">The OfficeGraphInsights to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeGraphInsights}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> CreateResponseAsync(OfficeGraphInsights officeGraphInsightsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> CreateResponseAsync(OfficeGraphInsights officeGraphInsightsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OfficeGraphInsights.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified OfficeGraphInsights and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OfficeGraphInsights.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OfficeGraphInsights.</returns>
-        System.Threading.Tasks.Task<OfficeGraphInsights> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfficeGraphInsights> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified OfficeGraphInsights and returns a <see cref="GraphResponse{OfficeGraphInsights}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{OfficeGraphInsights}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfficeGraphInsights using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OfficeGraphInsights.</returns>
-        System.Threading.Tasks.Task<OfficeGraphInsights> UpdateAsync(OfficeGraphInsights officeGraphInsightsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfficeGraphInsights> UpdateAsync(OfficeGraphInsights officeGraphInsightsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfficeGraphInsights using PATCH and returns a <see cref="GraphResponse{OfficeGraphInsights}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{OfficeGraphInsights}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> UpdateResponseAsync(OfficeGraphInsights officeGraphInsightsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> UpdateResponseAsync(OfficeGraphInsights officeGraphInsightsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfficeGraphInsights using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="officeGraphInsightsToUpdate">The OfficeGraphInsights object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<OfficeGraphInsights> PutAsync(OfficeGraphInsights officeGraphInsightsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<OfficeGraphInsights> PutAsync(OfficeGraphInsights officeGraphInsightsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified OfficeGraphInsights using PUT and returns a <see cref="GraphResponse{OfficeGraphInsights}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="officeGraphInsightsToUpdate">The OfficeGraphInsights object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{OfficeGraphInsights}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> PutResponseAsync(OfficeGraphInsights officeGraphInsightsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> PutResponseAsync(OfficeGraphInsights officeGraphInsightsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

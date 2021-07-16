@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="connectorGroup">The ConnectorGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConnectorGroup.</returns>
-        System.Threading.Tasks.Task<ConnectorGroup> AddAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ConnectorGroup> AddAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ConnectorGroup to the collection via POST and returns a <see cref="GraphResponse{ConnectorGroup}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="connectorGroup">The ConnectorGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> AddResponseAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> AddResponseAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IConnectorMemberOfCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IConnectorMemberOfCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ConnectorMemberOfCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConnectorMemberOfCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConnectorMemberOfCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ConnectorMemberOfCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

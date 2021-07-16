@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <param name="windows10PkcsCertificateProfileToCreate">The Windows10PkcsCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10PkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> CreateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> CreateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -56,7 +56,7 @@ namespace Microsoft.Graph
         /// <param name="windows10PkcsCertificateProfileToCreate">The Windows10PkcsCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> CreateResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToCreate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> CreateResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -68,7 +68,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
             await this.SendAsync<Windows10PkcsCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
             return this.SendAsyncWithGraphResponse(null, cancellationToken);
@@ -90,7 +90,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10PkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Windows10PkcsCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
@@ -103,7 +103,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<Windows10PkcsCertificateProfile>(null, cancellationToken);
@@ -116,7 +116,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10PkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> UpdateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> UpdateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
@@ -132,7 +132,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> UpdateResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> UpdateResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
@@ -145,7 +145,7 @@ namespace Microsoft.Graph
         /// <param name="windows10PkcsCertificateProfileToUpdate">The Windows10PkcsCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> PutAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> PutAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
@@ -160,7 +160,7 @@ namespace Microsoft.Graph
         /// <param name="windows10PkcsCertificateProfileToUpdate">The Windows10PkcsCertificateProfile object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await of <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> PutResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> PutResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;

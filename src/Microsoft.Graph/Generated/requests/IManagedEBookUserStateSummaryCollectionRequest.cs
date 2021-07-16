@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="userInstallStateSummary">The UserInstallStateSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserInstallStateSummary.</returns>
-        System.Threading.Tasks.Task<UserInstallStateSummary> AddAsync(UserInstallStateSummary userInstallStateSummary, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserInstallStateSummary> AddAsync(UserInstallStateSummary userInstallStateSummary, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified UserInstallStateSummary to the collection via POST and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="userInstallStateSummary">The UserInstallStateSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> AddResponseAsync(UserInstallStateSummary userInstallStateSummary, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> AddResponseAsync(UserInstallStateSummary userInstallStateSummary, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedEBookUserStateSummaryCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IManagedEBookUserStateSummaryCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedEBookUserStateSummaryCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedEBookUserStateSummaryCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedEBookUserStateSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookUserStateSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

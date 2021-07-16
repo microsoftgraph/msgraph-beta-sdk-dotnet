@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windowsHelloForBusinessAuthenticationMethodToCreate">The WindowsHelloForBusinessAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsHelloForBusinessAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> CreateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> CreateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified WindowsHelloForBusinessAuthenticationMethod using POST and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windowsHelloForBusinessAuthenticationMethodToCreate">The WindowsHelloForBusinessAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> CreateResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> CreateResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsHelloForBusinessAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsHelloForBusinessAuthenticationMethod and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsHelloForBusinessAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsHelloForBusinessAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsHelloForBusinessAuthenticationMethod and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsHelloForBusinessAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> UpdateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> UpdateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PATCH and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> UpdateResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> UpdateResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windowsHelloForBusinessAuthenticationMethodToUpdate">The WindowsHelloForBusinessAuthenticationMethod object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> PutAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> PutAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsHelloForBusinessAuthenticationMethod using PUT and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windowsHelloForBusinessAuthenticationMethodToUpdate">The WindowsHelloForBusinessAuthenticationMethod object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> PutResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> PutResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

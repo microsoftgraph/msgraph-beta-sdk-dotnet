@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="teamsDeviceUsageUserDetailToCreate">The TeamsDeviceUsageUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> CreateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> CreateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified TeamsDeviceUsageUserDetail using POST and returns a <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="teamsDeviceUsageUserDetailToCreate">The TeamsDeviceUsageUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> CreateResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> CreateResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TeamsDeviceUsageUserDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TeamsDeviceUsageUserDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TeamsDeviceUsageUserDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TeamsDeviceUsageUserDetail and returns a <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamsDeviceUsageUserDetail using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> UpdateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> UpdateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamsDeviceUsageUserDetail using PATCH and returns a <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> UpdateResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> UpdateResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamsDeviceUsageUserDetail using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="teamsDeviceUsageUserDetailToUpdate">The TeamsDeviceUsageUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> PutAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> PutAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamsDeviceUsageUserDetail using PUT and returns a <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="teamsDeviceUsageUserDetailToUpdate">The TeamsDeviceUsageUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> PutResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> PutResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

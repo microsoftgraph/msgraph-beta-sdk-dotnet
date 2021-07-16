@@ -37,7 +37,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityDistributionUserCountsCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>(null, cancellationToken);
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityDistributionUserCountsCollectionPage> PatchAsync(TeamsUserActivityDistributionUserCounts teamsuseractivitydistributionusercounts,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PATCH;
             var response = await this.SendAsync<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>(teamsuseractivitydistributionusercounts, cancellationToken).ConfigureAwait(false);
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="teamsuseractivitydistributionusercounts">The TeamsUserActivityDistributionUserCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>> PatchResponseAsync(TeamsUserActivityDistributionUserCounts teamsuseractivitydistributionusercounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>> PatchResponseAsync(TeamsUserActivityDistributionUserCounts teamsuseractivitydistributionusercounts, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PATCH;
             return this.SendAsyncWithGraphResponse<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>(teamsuseractivitydistributionusercounts, cancellationToken);
@@ -105,7 +105,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public async System.Threading.Tasks.Task<IReportRootGetTeamsUserActivityDistributionUserCountsCollectionPage> PutAsync(TeamsUserActivityDistributionUserCounts teamsuseractivitydistributionusercounts,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PUT;
             var response = await this.SendAsync<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>(teamsuseractivitydistributionusercounts, cancellationToken).ConfigureAwait(false);
@@ -126,7 +126,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="teamsuseractivitydistributionusercounts">The TeamsUserActivityDistributionUserCounts object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>> PutResponseAsync(TeamsUserActivityDistributionUserCounts teamsuseractivitydistributionusercounts, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>> PutResponseAsync(TeamsUserActivityDistributionUserCounts teamsuseractivitydistributionusercounts, CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.PUT;
             return this.SendAsyncWithGraphResponse<ReportRootGetTeamsUserActivityDistributionUserCountsCollectionResponse>(teamsuseractivitydistributionusercounts, cancellationToken);

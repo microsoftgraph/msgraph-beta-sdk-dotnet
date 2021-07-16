@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementDomainJoinConnectorToCreate">The DeviceManagementDomainJoinConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementDomainJoinConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> CreateAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> CreateAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified DeviceManagementDomainJoinConnector using POST and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementDomainJoinConnectorToCreate">The DeviceManagementDomainJoinConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> CreateResponseAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> CreateResponseAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementDomainJoinConnector.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementDomainJoinConnector and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementDomainJoinConnector.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementDomainJoinConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementDomainJoinConnector and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementDomainJoinConnector using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementDomainJoinConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> UpdateAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> UpdateAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementDomainJoinConnector using PATCH and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> UpdateResponseAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> UpdateResponseAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementDomainJoinConnector using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementDomainJoinConnectorToUpdate">The DeviceManagementDomainJoinConnector object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> PutAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementDomainJoinConnector> PutAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementDomainJoinConnector using PUT and returns a <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementDomainJoinConnectorToUpdate">The DeviceManagementDomainJoinConnector object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{DeviceManagementDomainJoinConnector}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> PutResponseAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementDomainJoinConnector>> PutResponseAsync(DeviceManagementDomainJoinConnector deviceManagementDomainJoinConnectorToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

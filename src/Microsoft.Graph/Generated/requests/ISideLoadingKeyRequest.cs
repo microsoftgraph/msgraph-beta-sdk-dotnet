@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="sideLoadingKeyToCreate">The SideLoadingKey to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SideLoadingKey.</returns>
-        System.Threading.Tasks.Task<SideLoadingKey> CreateAsync(SideLoadingKey sideLoadingKeyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SideLoadingKey> CreateAsync(SideLoadingKey sideLoadingKeyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified SideLoadingKey using POST and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="sideLoadingKeyToCreate">The SideLoadingKey to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> CreateResponseAsync(SideLoadingKey sideLoadingKeyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> CreateResponseAsync(SideLoadingKey sideLoadingKeyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SideLoadingKey.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SideLoadingKey and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SideLoadingKey.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SideLoadingKey.</returns>
-        System.Threading.Tasks.Task<SideLoadingKey> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SideLoadingKey> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SideLoadingKey and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SideLoadingKey using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SideLoadingKey.</returns>
-        System.Threading.Tasks.Task<SideLoadingKey> UpdateAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SideLoadingKey> UpdateAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SideLoadingKey using PATCH and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SideLoadingKey}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> UpdateResponseAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> UpdateResponseAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SideLoadingKey using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="sideLoadingKeyToUpdate">The SideLoadingKey object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<SideLoadingKey> PutAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SideLoadingKey> PutAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SideLoadingKey using PUT and returns a <see cref="GraphResponse{SideLoadingKey}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="sideLoadingKeyToUpdate">The SideLoadingKey object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{SideLoadingKey}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> PutResponseAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SideLoadingKey>> PutResponseAsync(SideLoadingKey sideLoadingKeyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

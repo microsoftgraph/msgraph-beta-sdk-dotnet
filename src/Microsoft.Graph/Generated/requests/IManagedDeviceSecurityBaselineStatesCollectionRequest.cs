@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="securityBaselineState">The SecurityBaselineState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityBaselineState.</returns>
-        System.Threading.Tasks.Task<SecurityBaselineState> AddAsync(SecurityBaselineState securityBaselineState, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SecurityBaselineState> AddAsync(SecurityBaselineState securityBaselineState, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified SecurityBaselineState to the collection via POST and returns a <see cref="GraphResponse{SecurityBaselineState}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="securityBaselineState">The SecurityBaselineState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityBaselineState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineState>> AddResponseAsync(SecurityBaselineState securityBaselineState, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SecurityBaselineState>> AddResponseAsync(SecurityBaselineState securityBaselineState, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedDeviceSecurityBaselineStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IManagedDeviceSecurityBaselineStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceSecurityBaselineStatesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceSecurityBaselineStatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceSecurityBaselineStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceSecurityBaselineStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="post">The Post to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Post.</returns>
-        System.Threading.Tasks.Task<Post> AddAsync(Post post, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Post> AddAsync(Post post, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified Post to the collection via POST and returns a <see cref="GraphResponse{Post}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="post">The Post to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Post}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Post>> AddResponseAsync(Post post, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Post>> AddResponseAsync(Post post, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IConversationThreadPostsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IConversationThreadPostsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ConversationThreadPostsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConversationThreadPostsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConversationThreadPostsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ConversationThreadPostsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

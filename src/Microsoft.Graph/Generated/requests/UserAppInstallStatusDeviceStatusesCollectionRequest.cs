@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="mobileAppInstallStatus">The MobileAppInstallStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppInstallStatus.</returns>
-        public System.Threading.Tasks.Task<MobileAppInstallStatus> AddAsync(MobileAppInstallStatus mobileAppInstallStatus, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<MobileAppInstallStatus> AddAsync(MobileAppInstallStatus mobileAppInstallStatus, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="mobileAppInstallStatus">The MobileAppInstallStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppInstallStatus}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> AddResponseAsync(MobileAppInstallStatus mobileAppInstallStatus, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppInstallStatus>> AddResponseAsync(MobileAppInstallStatus mobileAppInstallStatus, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUserAppInstallStatusDeviceStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IUserAppInstallStatusDeviceStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UserAppInstallStatusDeviceStatusesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserAppInstallStatusDeviceStatusesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatusDeviceStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatusDeviceStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UserAppInstallStatusDeviceStatusesCollectionResponse>(null, cancellationToken);

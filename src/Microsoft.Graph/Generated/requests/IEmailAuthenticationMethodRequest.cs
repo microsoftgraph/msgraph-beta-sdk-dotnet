@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="emailAuthenticationMethodToCreate">The EmailAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmailAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<EmailAuthenticationMethod> CreateAsync(EmailAuthenticationMethod emailAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EmailAuthenticationMethod> CreateAsync(EmailAuthenticationMethod emailAuthenticationMethodToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified EmailAuthenticationMethod using POST and returns a <see cref="GraphResponse{EmailAuthenticationMethod}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="emailAuthenticationMethodToCreate">The EmailAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> CreateResponseAsync(EmailAuthenticationMethod emailAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> CreateResponseAsync(EmailAuthenticationMethod emailAuthenticationMethodToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified EmailAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified EmailAuthenticationMethod and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified EmailAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmailAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<EmailAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EmailAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified EmailAuthenticationMethod and returns a <see cref="GraphResponse{EmailAuthenticationMethod}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EmailAuthenticationMethod using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmailAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<EmailAuthenticationMethod> UpdateAsync(EmailAuthenticationMethod emailAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EmailAuthenticationMethod> UpdateAsync(EmailAuthenticationMethod emailAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EmailAuthenticationMethod using PATCH and returns a <see cref="GraphResponse{EmailAuthenticationMethod}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethod}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> UpdateResponseAsync(EmailAuthenticationMethod emailAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> UpdateResponseAsync(EmailAuthenticationMethod emailAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EmailAuthenticationMethod using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="emailAuthenticationMethodToUpdate">The EmailAuthenticationMethod object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<EmailAuthenticationMethod> PutAsync(EmailAuthenticationMethod emailAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EmailAuthenticationMethod> PutAsync(EmailAuthenticationMethod emailAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EmailAuthenticationMethod using PUT and returns a <see cref="GraphResponse{EmailAuthenticationMethod}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="emailAuthenticationMethodToUpdate">The EmailAuthenticationMethod object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{EmailAuthenticationMethod}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> PutResponseAsync(EmailAuthenticationMethod emailAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethod>> PutResponseAsync(EmailAuthenticationMethod emailAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

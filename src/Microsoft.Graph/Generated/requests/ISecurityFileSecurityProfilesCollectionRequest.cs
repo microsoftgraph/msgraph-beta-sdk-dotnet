@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="fileSecurityProfile">The FileSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FileSecurityProfile.</returns>
-        System.Threading.Tasks.Task<FileSecurityProfile> AddAsync(FileSecurityProfile fileSecurityProfile, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<FileSecurityProfile> AddAsync(FileSecurityProfile fileSecurityProfile, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified FileSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="fileSecurityProfile">The FileSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{FileSecurityProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> AddResponseAsync(FileSecurityProfile fileSecurityProfile, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<FileSecurityProfile>> AddResponseAsync(FileSecurityProfile fileSecurityProfile, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecurityFileSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ISecurityFileSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{SecurityFileSecurityProfilesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SecurityFileSecurityProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SecurityFileSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SecurityFileSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

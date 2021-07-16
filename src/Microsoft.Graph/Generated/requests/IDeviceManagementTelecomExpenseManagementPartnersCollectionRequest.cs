@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="telecomExpenseManagementPartner">The TelecomExpenseManagementPartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TelecomExpenseManagementPartner.</returns>
-        System.Threading.Tasks.Task<TelecomExpenseManagementPartner> AddAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TelecomExpenseManagementPartner> AddAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified TelecomExpenseManagementPartner to the collection via POST and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="telecomExpenseManagementPartner">The TelecomExpenseManagementPartner to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> AddResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> AddResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementTelecomExpenseManagementPartnersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceManagementTelecomExpenseManagementPartnersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementTelecomExpenseManagementPartnersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementTelecomExpenseManagementPartnersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTelecomExpenseManagementPartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTelecomExpenseManagementPartnersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

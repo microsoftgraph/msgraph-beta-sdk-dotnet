@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementExchangeConnector">The DeviceManagementExchangeConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementExchangeConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeConnector> AddAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceManagementExchangeConnector> AddAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified DeviceManagementExchangeConnector to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="deviceManagementExchangeConnector">The DeviceManagementExchangeConnector to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> AddResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> AddResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnector, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementExchangeConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceManagementExchangeConnectorsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementExchangeConnectorsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnectorsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnectorsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

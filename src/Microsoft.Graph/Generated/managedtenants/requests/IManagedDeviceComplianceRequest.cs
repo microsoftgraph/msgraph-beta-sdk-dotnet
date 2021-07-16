@@ -26,7 +26,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="managedDeviceComplianceToCreate">The ManagedDeviceCompliance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceCompliance.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCompliance> CreateAsync(ManagedDeviceCompliance managedDeviceComplianceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ManagedDeviceCompliance> CreateAsync(ManagedDeviceCompliance managedDeviceComplianceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ManagedDeviceCompliance using POST and returns a <see cref="GraphResponse{ManagedDeviceCompliance}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="managedDeviceComplianceToCreate">The ManagedDeviceCompliance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceCompliance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCompliance>> CreateResponseAsync(ManagedDeviceCompliance managedDeviceComplianceToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCompliance>> CreateResponseAsync(ManagedDeviceCompliance managedDeviceComplianceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ManagedDeviceCompliance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ManagedDeviceCompliance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ManagedDeviceCompliance.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceCompliance.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCompliance> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ManagedDeviceCompliance> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ManagedDeviceCompliance and returns a <see cref="GraphResponse{ManagedDeviceCompliance}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceCompliance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCompliance>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCompliance>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedDeviceCompliance using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceCompliance.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCompliance> UpdateAsync(ManagedDeviceCompliance managedDeviceComplianceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ManagedDeviceCompliance> UpdateAsync(ManagedDeviceCompliance managedDeviceComplianceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedDeviceCompliance using PATCH and returns a <see cref="GraphResponse{ManagedDeviceCompliance}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceCompliance}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCompliance>> UpdateResponseAsync(ManagedDeviceCompliance managedDeviceComplianceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCompliance>> UpdateResponseAsync(ManagedDeviceCompliance managedDeviceComplianceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedDeviceCompliance using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="managedDeviceComplianceToUpdate">The ManagedDeviceCompliance object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceCompliance> PutAsync(ManagedDeviceCompliance managedDeviceComplianceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ManagedDeviceCompliance> PutAsync(ManagedDeviceCompliance managedDeviceComplianceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedDeviceCompliance using PUT and returns a <see cref="GraphResponse{ManagedDeviceCompliance}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="managedDeviceComplianceToUpdate">The ManagedDeviceCompliance object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ManagedDeviceCompliance}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCompliance>> PutResponseAsync(ManagedDeviceCompliance managedDeviceComplianceToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceCompliance>> PutResponseAsync(ManagedDeviceCompliance managedDeviceComplianceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="windowsHelloForBusinessAuthenticationMethod">The WindowsHelloForBusinessAuthenticationMethod to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsHelloForBusinessAuthenticationMethod.</returns>
-        public System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> AddAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> AddAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethod, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="windowsHelloForBusinessAuthenticationMethod">The WindowsHelloForBusinessAuthenticationMethod to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> AddResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> AddResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethod, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IAuthenticationWindowsHelloForBusinessMethodsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IAuthenticationWindowsHelloForBusinessMethodsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AuthenticationWindowsHelloForBusinessMethodsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AuthenticationWindowsHelloForBusinessMethodsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AuthenticationWindowsHelloForBusinessMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationWindowsHelloForBusinessMethodsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<AuthenticationWindowsHelloForBusinessMethodsCollectionResponse>(null, cancellationToken);

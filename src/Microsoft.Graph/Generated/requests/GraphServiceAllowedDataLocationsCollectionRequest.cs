@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AllowedDataLocation.</returns>
-        public System.Threading.Tasks.Task<AllowedDataLocation> AddAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<AllowedDataLocation> AddAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="allowedDataLocation">The AllowedDataLocation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> AddResponseAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> AddResponseAsync(AllowedDataLocation allowedDataLocation, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceAllowedDataLocationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IGraphServiceAllowedDataLocationsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceAllowedDataLocationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceAllowedDataLocationsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<GraphServiceAllowedDataLocationsCollectionResponse>(null, cancellationToken);

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="programControlToCreate">The ProgramControl to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProgramControl.</returns>
-        System.Threading.Tasks.Task<ProgramControl> CreateAsync(ProgramControl programControlToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ProgramControl> CreateAsync(ProgramControl programControlToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ProgramControl using POST and returns a <see cref="GraphResponse{ProgramControl}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="programControlToCreate">The ProgramControl to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProgramControl}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> CreateResponseAsync(ProgramControl programControlToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> CreateResponseAsync(ProgramControl programControlToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ProgramControl.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ProgramControl and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ProgramControl.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ProgramControl.</returns>
-        System.Threading.Tasks.Task<ProgramControl> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ProgramControl> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ProgramControl and returns a <see cref="GraphResponse{ProgramControl}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProgramControl}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ProgramControl using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ProgramControl.</returns>
-        System.Threading.Tasks.Task<ProgramControl> UpdateAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ProgramControl> UpdateAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ProgramControl using PATCH and returns a <see cref="GraphResponse{ProgramControl}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ProgramControl}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> UpdateResponseAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> UpdateResponseAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ProgramControl using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="programControlToUpdate">The ProgramControl object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ProgramControl> PutAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ProgramControl> PutAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ProgramControl using PUT and returns a <see cref="GraphResponse{ProgramControl}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="programControlToUpdate">The ProgramControl object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ProgramControl}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> PutResponseAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProgramControl>> PutResponseAsync(ProgramControl programControlToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

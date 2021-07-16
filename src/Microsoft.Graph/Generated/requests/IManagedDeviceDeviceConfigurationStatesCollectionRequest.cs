@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="deviceConfigurationState">The DeviceConfigurationState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationState.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationState> AddAsync(DeviceConfigurationState deviceConfigurationState, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceConfigurationState> AddAsync(DeviceConfigurationState deviceConfigurationState, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified DeviceConfigurationState to the collection via POST and returns a <see cref="GraphResponse{DeviceConfigurationState}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="deviceConfigurationState">The DeviceConfigurationState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationState}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationState>> AddResponseAsync(DeviceConfigurationState deviceConfigurationState, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationState>> AddResponseAsync(DeviceConfigurationState deviceConfigurationState, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedDeviceDeviceConfigurationStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IManagedDeviceDeviceConfigurationStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceDeviceConfigurationStatesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceDeviceConfigurationStatesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceDeviceConfigurationStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceDeviceConfigurationStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

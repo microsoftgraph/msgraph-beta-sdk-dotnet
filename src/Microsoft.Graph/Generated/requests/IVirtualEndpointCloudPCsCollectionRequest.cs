@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPC">The CloudPC to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPC.</returns>
-        System.Threading.Tasks.Task<CloudPC> AddAsync(CloudPC cloudPC, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<CloudPC> AddAsync(CloudPC cloudPC, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified CloudPC to the collection via POST and returns a <see cref="GraphResponse{CloudPC}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPC">The CloudPC to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPC}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CloudPC>> AddResponseAsync(CloudPC cloudPC, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CloudPC>> AddResponseAsync(CloudPC cloudPC, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IVirtualEndpointCloudPCsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IVirtualEndpointCloudPCsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointCloudPCsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VirtualEndpointCloudPCsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<VirtualEndpointCloudPCsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpointCloudPCsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="itemEmailToCreate">The ItemEmail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemEmail.</returns>
-        System.Threading.Tasks.Task<ItemEmail> CreateAsync(ItemEmail itemEmailToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ItemEmail> CreateAsync(ItemEmail itemEmailToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ItemEmail using POST and returns a <see cref="GraphResponse{ItemEmail}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="itemEmailToCreate">The ItemEmail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemEmail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> CreateResponseAsync(ItemEmail itemEmailToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> CreateResponseAsync(ItemEmail itemEmailToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ItemEmail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ItemEmail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ItemEmail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemEmail.</returns>
-        System.Threading.Tasks.Task<ItemEmail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ItemEmail> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ItemEmail and returns a <see cref="GraphResponse{ItemEmail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemEmail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ItemEmail using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemEmail.</returns>
-        System.Threading.Tasks.Task<ItemEmail> UpdateAsync(ItemEmail itemEmailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ItemEmail> UpdateAsync(ItemEmail itemEmailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ItemEmail using PATCH and returns a <see cref="GraphResponse{ItemEmail}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ItemEmail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> UpdateResponseAsync(ItemEmail itemEmailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> UpdateResponseAsync(ItemEmail itemEmailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ItemEmail using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="itemEmailToUpdate">The ItemEmail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ItemEmail> PutAsync(ItemEmail itemEmailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ItemEmail> PutAsync(ItemEmail itemEmailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ItemEmail using PUT and returns a <see cref="GraphResponse{ItemEmail}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="itemEmailToUpdate">The ItemEmail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ItemEmail}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> PutResponseAsync(ItemEmail itemEmailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> PutResponseAsync(ItemEmail itemEmailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

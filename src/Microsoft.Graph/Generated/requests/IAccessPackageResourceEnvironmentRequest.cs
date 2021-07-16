@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="accessPackageResourceEnvironmentToCreate">The AccessPackageResourceEnvironment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageResourceEnvironment.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> CreateAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> CreateAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AccessPackageResourceEnvironment using POST and returns a <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="accessPackageResourceEnvironmentToCreate">The AccessPackageResourceEnvironment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> CreateResponseAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> CreateResponseAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AccessPackageResourceEnvironment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AccessPackageResourceEnvironment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AccessPackageResourceEnvironment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageResourceEnvironment.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AccessPackageResourceEnvironment and returns a <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessPackageResourceEnvironment using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackageResourceEnvironment.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> UpdateAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> UpdateAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessPackageResourceEnvironment using PATCH and returns a <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> UpdateResponseAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> UpdateResponseAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessPackageResourceEnvironment using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="accessPackageResourceEnvironmentToUpdate">The AccessPackageResourceEnvironment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> PutAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AccessPackageResourceEnvironment> PutAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessPackageResourceEnvironment using PUT and returns a <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="accessPackageResourceEnvironmentToUpdate">The AccessPackageResourceEnvironment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AccessPackageResourceEnvironment}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> PutResponseAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceEnvironment>> PutResponseAsync(AccessPackageResourceEnvironment accessPackageResourceEnvironmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

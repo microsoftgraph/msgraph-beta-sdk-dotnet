@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyPresentationDropdownListToCreate">The GroupPolicyPresentationDropdownList to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationDropdownList.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> CreateAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> CreateAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified GroupPolicyPresentationDropdownList using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyPresentationDropdownListToCreate">The GroupPolicyPresentationDropdownList to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> CreateResponseAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> CreateResponseAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationDropdownList.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified GroupPolicyPresentationDropdownList and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationDropdownList.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationDropdownList.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified GroupPolicyPresentationDropdownList and returns a <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationDropdownList using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationDropdownList.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> UpdateAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> UpdateAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationDropdownList using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> UpdateResponseAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> UpdateResponseAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationDropdownList using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyPresentationDropdownListToUpdate">The GroupPolicyPresentationDropdownList object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> PutAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GroupPolicyPresentationDropdownList> PutAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified GroupPolicyPresentationDropdownList using PUT and returns a <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="groupPolicyPresentationDropdownListToUpdate">The GroupPolicyPresentationDropdownList object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{GroupPolicyPresentationDropdownList}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> PutResponseAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationDropdownList>> PutResponseAsync(GroupPolicyPresentationDropdownList groupPolicyPresentationDropdownListToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

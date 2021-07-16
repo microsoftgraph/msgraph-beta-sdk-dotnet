@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IPrinterShareAllowedUsersCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IPrinterShareAllowedUsersCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

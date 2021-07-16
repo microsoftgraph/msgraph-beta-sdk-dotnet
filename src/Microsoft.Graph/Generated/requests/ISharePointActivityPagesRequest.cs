@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="sharePointActivityPagesToCreate">The SharePointActivityPages to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharePointActivityPages.</returns>
-        System.Threading.Tasks.Task<SharePointActivityPages> CreateAsync(SharePointActivityPages sharePointActivityPagesToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SharePointActivityPages> CreateAsync(SharePointActivityPages sharePointActivityPagesToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified SharePointActivityPages using POST and returns a <see cref="GraphResponse{SharePointActivityPages}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="sharePointActivityPagesToCreate">The SharePointActivityPages to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharePointActivityPages}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> CreateResponseAsync(SharePointActivityPages sharePointActivityPagesToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> CreateResponseAsync(SharePointActivityPages sharePointActivityPagesToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SharePointActivityPages.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SharePointActivityPages and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SharePointActivityPages.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SharePointActivityPages.</returns>
-        System.Threading.Tasks.Task<SharePointActivityPages> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SharePointActivityPages> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SharePointActivityPages and returns a <see cref="GraphResponse{SharePointActivityPages}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharePointActivityPages}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SharePointActivityPages using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SharePointActivityPages.</returns>
-        System.Threading.Tasks.Task<SharePointActivityPages> UpdateAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SharePointActivityPages> UpdateAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SharePointActivityPages using PATCH and returns a <see cref="GraphResponse{SharePointActivityPages}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SharePointActivityPages}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> UpdateResponseAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> UpdateResponseAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SharePointActivityPages using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="sharePointActivityPagesToUpdate">The SharePointActivityPages object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<SharePointActivityPages> PutAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SharePointActivityPages> PutAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SharePointActivityPages using PUT and returns a <see cref="GraphResponse{SharePointActivityPages}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="sharePointActivityPagesToUpdate">The SharePointActivityPages object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{SharePointActivityPages}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> PutResponseAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SharePointActivityPages>> PutResponseAsync(SharePointActivityPages sharePointActivityPagesToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

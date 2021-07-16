@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="workbookChartLineFormatToCreate">The WorkbookChartLineFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartLineFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartLineFormat> CreateAsync(WorkbookChartLineFormat workbookChartLineFormatToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WorkbookChartLineFormat> CreateAsync(WorkbookChartLineFormat workbookChartLineFormatToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified WorkbookChartLineFormat using POST and returns a <see cref="GraphResponse{WorkbookChartLineFormat}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="workbookChartLineFormatToCreate">The WorkbookChartLineFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartLineFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLineFormat>> CreateResponseAsync(WorkbookChartLineFormat workbookChartLineFormatToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLineFormat>> CreateResponseAsync(WorkbookChartLineFormat workbookChartLineFormatToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkbookChartLineFormat.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkbookChartLineFormat and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkbookChartLineFormat.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkbookChartLineFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartLineFormat> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WorkbookChartLineFormat> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkbookChartLineFormat and returns a <see cref="GraphResponse{WorkbookChartLineFormat}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkbookChartLineFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLineFormat>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLineFormat>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookChartLineFormat using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkbookChartLineFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartLineFormat> UpdateAsync(WorkbookChartLineFormat workbookChartLineFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WorkbookChartLineFormat> UpdateAsync(WorkbookChartLineFormat workbookChartLineFormatToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookChartLineFormat using PATCH and returns a <see cref="GraphResponse{WorkbookChartLineFormat}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkbookChartLineFormat}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLineFormat>> UpdateResponseAsync(WorkbookChartLineFormat workbookChartLineFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLineFormat>> UpdateResponseAsync(WorkbookChartLineFormat workbookChartLineFormatToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookChartLineFormat using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="workbookChartLineFormatToUpdate">The WorkbookChartLineFormat object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<WorkbookChartLineFormat> PutAsync(WorkbookChartLineFormat workbookChartLineFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WorkbookChartLineFormat> PutAsync(WorkbookChartLineFormat workbookChartLineFormatToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkbookChartLineFormat using PUT and returns a <see cref="GraphResponse{WorkbookChartLineFormat}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="workbookChartLineFormatToUpdate">The WorkbookChartLineFormat object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{WorkbookChartLineFormat}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLineFormat>> PutResponseAsync(WorkbookChartLineFormat workbookChartLineFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLineFormat>> PutResponseAsync(WorkbookChartLineFormat workbookChartLineFormatToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

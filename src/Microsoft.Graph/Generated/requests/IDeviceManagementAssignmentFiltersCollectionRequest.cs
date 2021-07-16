@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="deviceAndAppManagementAssignmentFilter">The DeviceAndAppManagementAssignmentFilter to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAndAppManagementAssignmentFilter.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> AddAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceAndAppManagementAssignmentFilter> AddAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified DeviceAndAppManagementAssignmentFilter to the collection via POST and returns a <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="deviceAndAppManagementAssignmentFilter">The DeviceAndAppManagementAssignmentFilter to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementAssignmentFilter}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> AddResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementAssignmentFilter>> AddResponseAsync(DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementAssignmentFiltersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceManagementAssignmentFiltersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementAssignmentFiltersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementAssignmentFiltersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

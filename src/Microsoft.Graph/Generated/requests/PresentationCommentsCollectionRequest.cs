@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="documentComment">The DocumentComment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DocumentComment.</returns>
-        public System.Threading.Tasks.Task<DocumentComment> AddAsync(DocumentComment documentComment, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<DocumentComment> AddAsync(DocumentComment documentComment, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="documentComment">The DocumentComment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DocumentComment>> AddResponseAsync(DocumentComment documentComment, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DocumentComment>> AddResponseAsync(DocumentComment documentComment, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPresentationCommentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IPresentationCommentsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<PresentationCommentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PresentationCommentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PresentationCommentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<PresentationCommentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<PresentationCommentsCollectionResponse>(null, cancellationToken);

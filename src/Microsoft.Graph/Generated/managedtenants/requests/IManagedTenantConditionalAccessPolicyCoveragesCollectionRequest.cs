@@ -26,7 +26,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="conditionalAccessPolicyCoverage">The ConditionalAccessPolicyCoverage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConditionalAccessPolicyCoverage.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> AddAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverage, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> AddAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverage, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ConditionalAccessPolicyCoverage to the collection via POST and returns a <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="conditionalAccessPolicyCoverage">The ConditionalAccessPolicyCoverage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> AddResponseAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverage, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> AddResponseAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverage, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedTenantConditionalAccessPolicyCoveragesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IManagedTenantConditionalAccessPolicyCoveragesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedTenantConditionalAccessPolicyCoveragesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedTenantConditionalAccessPolicyCoveragesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedTenantConditionalAccessPolicyCoveragesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedTenantConditionalAccessPolicyCoveragesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

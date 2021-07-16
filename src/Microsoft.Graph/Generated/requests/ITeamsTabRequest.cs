@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="teamsTabToCreate">The TeamsTab to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsTab.</returns>
-        System.Threading.Tasks.Task<TeamsTab> CreateAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TeamsTab> CreateAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified TeamsTab using POST and returns a <see cref="GraphResponse{TeamsTab}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="teamsTabToCreate">The TeamsTab to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> CreateResponseAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> CreateResponseAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TeamsTab.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TeamsTab and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TeamsTab.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsTab.</returns>
-        System.Threading.Tasks.Task<TeamsTab> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TeamsTab> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TeamsTab and returns a <see cref="GraphResponse{TeamsTab}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamsTab using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsTab.</returns>
-        System.Threading.Tasks.Task<TeamsTab> UpdateAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TeamsTab> UpdateAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamsTab using PATCH and returns a <see cref="GraphResponse{TeamsTab}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> UpdateResponseAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> UpdateResponseAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamsTab using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="teamsTabToUpdate">The TeamsTab object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<TeamsTab> PutAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TeamsTab> PutAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamsTab using PUT and returns a <see cref="GraphResponse{TeamsTab}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="teamsTabToUpdate">The TeamsTab object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{TeamsTab}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> PutResponseAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> PutResponseAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="iosVppAppAssignedDeviceLicenseToCreate">The IosVppAppAssignedDeviceLicense to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosVppAppAssignedDeviceLicense.</returns>
-        System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> CreateAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> CreateAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified IosVppAppAssignedDeviceLicense using POST and returns a <see cref="GraphResponse{IosVppAppAssignedDeviceLicense}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="iosVppAppAssignedDeviceLicenseToCreate">The IosVppAppAssignedDeviceLicense to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosVppAppAssignedDeviceLicense}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedDeviceLicense>> CreateResponseAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedDeviceLicense>> CreateResponseAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IosVppAppAssignedDeviceLicense.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IosVppAppAssignedDeviceLicense and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IosVppAppAssignedDeviceLicense.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosVppAppAssignedDeviceLicense.</returns>
-        System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IosVppAppAssignedDeviceLicense and returns a <see cref="GraphResponse{IosVppAppAssignedDeviceLicense}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosVppAppAssignedDeviceLicense}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedDeviceLicense>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedDeviceLicense>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IosVppAppAssignedDeviceLicense using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosVppAppAssignedDeviceLicense.</returns>
-        System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> UpdateAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> UpdateAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IosVppAppAssignedDeviceLicense using PATCH and returns a <see cref="GraphResponse{IosVppAppAssignedDeviceLicense}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{IosVppAppAssignedDeviceLicense}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedDeviceLicense>> UpdateResponseAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedDeviceLicense>> UpdateResponseAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IosVppAppAssignedDeviceLicense using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="iosVppAppAssignedDeviceLicenseToUpdate">The IosVppAppAssignedDeviceLicense object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> PutAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IosVppAppAssignedDeviceLicense> PutAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IosVppAppAssignedDeviceLicense using PUT and returns a <see cref="GraphResponse{IosVppAppAssignedDeviceLicense}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="iosVppAppAssignedDeviceLicenseToUpdate">The IosVppAppAssignedDeviceLicense object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{IosVppAppAssignedDeviceLicense}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedDeviceLicense>> PutResponseAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedDeviceLicense>> PutResponseAsync(IosVppAppAssignedDeviceLicense iosVppAppAssignedDeviceLicenseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

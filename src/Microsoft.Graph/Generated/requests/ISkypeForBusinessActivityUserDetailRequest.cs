@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="skypeForBusinessActivityUserDetailToCreate">The SkypeForBusinessActivityUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SkypeForBusinessActivityUserDetail.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> CreateAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> CreateAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified SkypeForBusinessActivityUserDetail using POST and returns a <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="skypeForBusinessActivityUserDetailToCreate">The SkypeForBusinessActivityUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> CreateResponseAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> CreateResponseAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SkypeForBusinessActivityUserDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SkypeForBusinessActivityUserDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SkypeForBusinessActivityUserDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessActivityUserDetail.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SkypeForBusinessActivityUserDetail and returns a <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SkypeForBusinessActivityUserDetail using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SkypeForBusinessActivityUserDetail.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> UpdateAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> UpdateAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SkypeForBusinessActivityUserDetail using PATCH and returns a <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> UpdateResponseAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> UpdateResponseAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SkypeForBusinessActivityUserDetail using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="skypeForBusinessActivityUserDetailToUpdate">The SkypeForBusinessActivityUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> PutAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SkypeForBusinessActivityUserDetail> PutAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SkypeForBusinessActivityUserDetail using PUT and returns a <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="skypeForBusinessActivityUserDetailToUpdate">The SkypeForBusinessActivityUserDetail object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{SkypeForBusinessActivityUserDetail}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> PutResponseAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessActivityUserDetail>> PutResponseAsync(SkypeForBusinessActivityUserDetail skypeForBusinessActivityUserDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

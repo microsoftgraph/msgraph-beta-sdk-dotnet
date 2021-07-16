@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="userSource">The UserSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserSource.</returns>
-        System.Threading.Tasks.Task<UserSource> AddAsync(UserSource userSource, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserSource> AddAsync(UserSource userSource, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified UserSource to the collection via POST and returns a <see cref="GraphResponse{UserSource}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="userSource">The UserSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserSource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserSource>> AddResponseAsync(UserSource userSource, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserSource>> AddResponseAsync(UserSource userSource, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ILegalHoldUserSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ILegalHoldUserSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{LegalHoldUserSourcesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{LegalHoldUserSourcesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<LegalHoldUserSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<LegalHoldUserSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

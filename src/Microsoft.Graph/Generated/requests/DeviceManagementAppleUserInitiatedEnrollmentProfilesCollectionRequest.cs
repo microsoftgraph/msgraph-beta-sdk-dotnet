@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="appleUserInitiatedEnrollmentProfile">The AppleUserInitiatedEnrollmentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleUserInitiatedEnrollmentProfile.</returns>
-        public System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> AddAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfile, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<AppleUserInitiatedEnrollmentProfile> AddAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfile, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="appleUserInitiatedEnrollmentProfile">The AppleUserInitiatedEnrollmentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AppleUserInitiatedEnrollmentProfile}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfile>> AddResponseAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfile, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<AppleUserInitiatedEnrollmentProfile>> AddResponseAsync(AppleUserInitiatedEnrollmentProfile appleUserInitiatedEnrollmentProfile, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementAppleUserInitiatedEnrollmentProfilesCollectionResponse>(null, cancellationToken);

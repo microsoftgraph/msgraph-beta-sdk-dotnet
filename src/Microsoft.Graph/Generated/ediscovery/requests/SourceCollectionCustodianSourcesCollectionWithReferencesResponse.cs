@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets or sets the <see cref="ISourceCollectionCustodianSourcesCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public ISourceCollectionCustodianSourcesCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

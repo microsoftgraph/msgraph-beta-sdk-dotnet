@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPcOnPremisesConnection">The CloudPcOnPremisesConnection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcOnPremisesConnection.</returns>
-        public System.Threading.Tasks.Task<CloudPcOnPremisesConnection> AddAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnection, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<CloudPcOnPremisesConnection> AddAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnection, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="cloudPcOnPremisesConnection">The CloudPcOnPremisesConnection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CloudPcOnPremisesConnection}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<CloudPcOnPremisesConnection>> AddResponseAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnection, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<CloudPcOnPremisesConnection>> AddResponseAsync(CloudPcOnPremisesConnection cloudPcOnPremisesConnection, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IVirtualEndpointOnPremisesConnectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IVirtualEndpointOnPremisesConnectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<VirtualEndpointOnPremisesConnectionsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{VirtualEndpointOnPremisesConnectionsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpointOnPremisesConnectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpointOnPremisesConnectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<VirtualEndpointOnPremisesConnectionsCollectionResponse>(null, cancellationToken);

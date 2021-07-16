@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="noncustodialDataSource">The NoncustodialDataSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NoncustodialDataSource.</returns>
-        System.Threading.Tasks.Task<NoncustodialDataSource> AddAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<NoncustodialDataSource> AddAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified NoncustodialDataSource to the collection via POST and returns a <see cref="GraphResponse{NoncustodialDataSource}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="noncustodialDataSource">The NoncustodialDataSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{NoncustodialDataSource}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> AddResponseAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> AddResponseAsync(NoncustodialDataSource noncustodialDataSource, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICaseNoncustodialDataSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ICaseNoncustodialDataSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{CaseNoncustodialDataSourcesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{CaseNoncustodialDataSourcesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<CaseNoncustodialDataSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<CaseNoncustodialDataSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

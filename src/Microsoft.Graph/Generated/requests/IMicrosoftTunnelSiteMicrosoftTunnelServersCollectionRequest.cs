@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="microsoftTunnelServer">The MicrosoftTunnelServer to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelServer.</returns>
-        System.Threading.Tasks.Task<MicrosoftTunnelServer> AddAsync(MicrosoftTunnelServer microsoftTunnelServer, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MicrosoftTunnelServer> AddAsync(MicrosoftTunnelServer microsoftTunnelServer, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified MicrosoftTunnelServer to the collection via POST and returns a <see cref="GraphResponse{MicrosoftTunnelServer}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="microsoftTunnelServer">The MicrosoftTunnelServer to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServer}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServer>> AddResponseAsync(MicrosoftTunnelServer microsoftTunnelServer, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServer>> AddResponseAsync(MicrosoftTunnelServer microsoftTunnelServer, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMicrosoftTunnelSiteMicrosoftTunnelServersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IMicrosoftTunnelSiteMicrosoftTunnelServersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{MicrosoftTunnelSiteMicrosoftTunnelServersCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftTunnelSiteMicrosoftTunnelServersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSiteMicrosoftTunnelServersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSiteMicrosoftTunnelServersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

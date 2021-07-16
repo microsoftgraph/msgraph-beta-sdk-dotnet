@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="windows10XTrustedRootCertificateToCreate">The Windows10XTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10XTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> CreateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> CreateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Windows10XTrustedRootCertificate using POST and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="windows10XTrustedRootCertificateToCreate">The Windows10XTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> CreateResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> CreateResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows10XTrustedRootCertificate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows10XTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows10XTrustedRootCertificate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10XTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows10XTrustedRootCertificate and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10XTrustedRootCertificate using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10XTrustedRootCertificate.</returns>
-        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> UpdateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> UpdateAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10XTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> UpdateResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> UpdateResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10XTrustedRootCertificate using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="windows10XTrustedRootCertificateToUpdate">The Windows10XTrustedRootCertificate object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> PutAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows10XTrustedRootCertificate> PutAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows10XTrustedRootCertificate using PUT and returns a <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="windows10XTrustedRootCertificateToUpdate">The Windows10XTrustedRootCertificate object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Windows10XTrustedRootCertificate}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> PutResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows10XTrustedRootCertificate>> PutResponseAsync(Windows10XTrustedRootCertificate windows10XTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

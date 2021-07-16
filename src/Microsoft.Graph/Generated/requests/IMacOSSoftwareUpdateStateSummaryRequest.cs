@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="macOSSoftwareUpdateStateSummaryToCreate">The MacOSSoftwareUpdateStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSSoftwareUpdateStateSummary.</returns>
-        System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> CreateAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> CreateAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified MacOSSoftwareUpdateStateSummary using POST and returns a <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="macOSSoftwareUpdateStateSummaryToCreate">The MacOSSoftwareUpdateStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> CreateResponseAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> CreateResponseAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MacOSSoftwareUpdateStateSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MacOSSoftwareUpdateStateSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MacOSSoftwareUpdateStateSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSSoftwareUpdateStateSummary.</returns>
-        System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MacOSSoftwareUpdateStateSummary and returns a <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MacOSSoftwareUpdateStateSummary using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSSoftwareUpdateStateSummary.</returns>
-        System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> UpdateAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> UpdateAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MacOSSoftwareUpdateStateSummary using PATCH and returns a <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> UpdateResponseAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> UpdateResponseAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MacOSSoftwareUpdateStateSummary using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="macOSSoftwareUpdateStateSummaryToUpdate">The MacOSSoftwareUpdateStateSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> PutAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MacOSSoftwareUpdateStateSummary> PutAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MacOSSoftwareUpdateStateSummary using PUT and returns a <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="macOSSoftwareUpdateStateSummaryToUpdate">The MacOSSoftwareUpdateStateSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{MacOSSoftwareUpdateStateSummary}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> PutResponseAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateStateSummary>> PutResponseAsync(MacOSSoftwareUpdateStateSummary macOSSoftwareUpdateStateSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

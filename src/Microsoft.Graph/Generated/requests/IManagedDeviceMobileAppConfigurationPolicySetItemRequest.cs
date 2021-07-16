@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="managedDeviceMobileAppConfigurationPolicySetItemToCreate">The ManagedDeviceMobileAppConfigurationPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationPolicySetItem> CreateAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationPolicySetItem> CreateAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ManagedDeviceMobileAppConfigurationPolicySetItem using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationPolicySetItem}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="managedDeviceMobileAppConfigurationPolicySetItemToCreate">The ManagedDeviceMobileAppConfigurationPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationPolicySetItem>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationPolicySetItem>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfigurationPolicySetItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfigurationPolicySetItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ManagedDeviceMobileAppConfigurationPolicySetItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagedDeviceMobileAppConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationPolicySetItem> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ManagedDeviceMobileAppConfigurationPolicySetItem and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationPolicySetItem}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedDeviceMobileAppConfigurationPolicySetItem using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagedDeviceMobileAppConfigurationPolicySetItem.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationPolicySetItem> UpdateAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationPolicySetItem> UpdateAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedDeviceMobileAppConfigurationPolicySetItem using PATCH and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationPolicySetItem}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationPolicySetItem}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationPolicySetItem>> UpdateResponseAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationPolicySetItem>> UpdateResponseAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedDeviceMobileAppConfigurationPolicySetItem using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="managedDeviceMobileAppConfigurationPolicySetItemToUpdate">The ManagedDeviceMobileAppConfigurationPolicySetItem object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationPolicySetItem> PutAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationPolicySetItem> PutAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagedDeviceMobileAppConfigurationPolicySetItem using PUT and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationPolicySetItem}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="managedDeviceMobileAppConfigurationPolicySetItemToUpdate">The ManagedDeviceMobileAppConfigurationPolicySetItem object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationPolicySetItem}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationPolicySetItem>> PutResponseAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationPolicySetItem>> PutResponseAsync(ManagedDeviceMobileAppConfigurationPolicySetItem managedDeviceMobileAppConfigurationPolicySetItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

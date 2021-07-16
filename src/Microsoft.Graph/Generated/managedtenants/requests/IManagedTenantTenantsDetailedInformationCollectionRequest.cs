@@ -26,7 +26,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="tenantDetailedInformation">The TenantDetailedInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TenantDetailedInformation.</returns>
-        System.Threading.Tasks.Task<TenantDetailedInformation> AddAsync(TenantDetailedInformation tenantDetailedInformation, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TenantDetailedInformation> AddAsync(TenantDetailedInformation tenantDetailedInformation, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified TenantDetailedInformation to the collection via POST and returns a <see cref="GraphResponse{TenantDetailedInformation}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="tenantDetailedInformation">The TenantDetailedInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TenantDetailedInformation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TenantDetailedInformation>> AddResponseAsync(TenantDetailedInformation tenantDetailedInformation, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TenantDetailedInformation>> AddResponseAsync(TenantDetailedInformation tenantDetailedInformation, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedTenantTenantsDetailedInformationCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IManagedTenantTenantsDetailedInformationCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ManagedTenantTenantsDetailedInformationCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedTenantTenantsDetailedInformationCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedTenantTenantsDetailedInformationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ManagedTenantTenantsDetailedInformationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

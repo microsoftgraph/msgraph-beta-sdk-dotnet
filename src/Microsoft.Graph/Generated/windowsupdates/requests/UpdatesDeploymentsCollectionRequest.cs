@@ -39,7 +39,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="deployment">The Deployment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Deployment.</returns>
-        public System.Threading.Tasks.Task<Deployment> AddAsync(Deployment deployment, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<Deployment> AddAsync(Deployment deployment, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="deployment">The Deployment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Deployment}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Deployment>> AddResponseAsync(Deployment deployment, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<Deployment>> AddResponseAsync(Deployment deployment, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IUpdatesDeploymentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IUpdatesDeploymentsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<UpdatesDeploymentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UpdatesDeploymentsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UpdatesDeploymentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UpdatesDeploymentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<UpdatesDeploymentsCollectionResponse>(null, cancellationToken);

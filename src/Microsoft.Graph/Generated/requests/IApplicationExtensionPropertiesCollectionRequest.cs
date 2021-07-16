@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="extensionProperty">The ExtensionProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExtensionProperty.</returns>
-        System.Threading.Tasks.Task<ExtensionProperty> AddAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ExtensionProperty> AddAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ExtensionProperty to the collection via POST and returns a <see cref="GraphResponse{ExtensionProperty}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="extensionProperty">The ExtensionProperty to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> AddResponseAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> AddResponseAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IApplicationExtensionPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IApplicationExtensionPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ApplicationExtensionPropertiesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationExtensionPropertiesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationExtensionPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ApplicationExtensionPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

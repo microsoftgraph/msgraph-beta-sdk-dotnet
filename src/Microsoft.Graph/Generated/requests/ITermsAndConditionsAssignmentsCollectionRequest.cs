@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="termsAndConditionsAssignment">The TermsAndConditionsAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsAndConditionsAssignment.</returns>
-        System.Threading.Tasks.Task<TermsAndConditionsAssignment> AddAsync(TermsAndConditionsAssignment termsAndConditionsAssignment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TermsAndConditionsAssignment> AddAsync(TermsAndConditionsAssignment termsAndConditionsAssignment, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified TermsAndConditionsAssignment to the collection via POST and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="termsAndConditionsAssignment">The TermsAndConditionsAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> AddResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignment, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> AddResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignment, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ITermsAndConditionsAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ITermsAndConditionsAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{TermsAndConditionsAssignmentsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignmentsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

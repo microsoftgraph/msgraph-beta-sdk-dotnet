@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RecordOperation.</returns>
-        System.Threading.Tasks.Task<RecordOperation> CreateAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RecordOperation> CreateAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified RecordOperation using POST and returns a <see cref="GraphResponse{RecordOperation}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RecordOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> CreateResponseAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> CreateResponseAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified RecordOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified RecordOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified RecordOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RecordOperation.</returns>
-        System.Threading.Tasks.Task<RecordOperation> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RecordOperation> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified RecordOperation and returns a <see cref="GraphResponse{RecordOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{RecordOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RecordOperation using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RecordOperation.</returns>
-        System.Threading.Tasks.Task<RecordOperation> UpdateAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RecordOperation> UpdateAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RecordOperation using PATCH and returns a <see cref="GraphResponse{RecordOperation}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{RecordOperation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> UpdateResponseAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> UpdateResponseAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RecordOperation using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="recordOperationToUpdate">The RecordOperation object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<RecordOperation> PutAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<RecordOperation> PutAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RecordOperation using PUT and returns a <see cref="GraphResponse{RecordOperation}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="recordOperationToUpdate">The RecordOperation object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{RecordOperation}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> PutResponseAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> PutResponseAsync(RecordOperation recordOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

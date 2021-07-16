@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainDnsRecord.</returns>
-        public System.Threading.Tasks.Task<DomainDnsRecord> AddAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<DomainDnsRecord> AddAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="domainDnsRecord">The DomainDnsRecord to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> AddResponseAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> AddResponseAsync(DomainDnsRecord domainDnsRecord, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDomainServiceConfigurationRecordsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDomainServiceConfigurationRecordsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DomainServiceConfigurationRecordsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainServiceConfigurationRecordsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DomainServiceConfigurationRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DomainServiceConfigurationRecordsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DomainServiceConfigurationRecordsCollectionResponse>(null, cancellationToken);

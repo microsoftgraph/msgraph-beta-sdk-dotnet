@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="workforceIntegrationToCreate">The WorkforceIntegration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkforceIntegration.</returns>
-        System.Threading.Tasks.Task<WorkforceIntegration> CreateAsync(WorkforceIntegration workforceIntegrationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WorkforceIntegration> CreateAsync(WorkforceIntegration workforceIntegrationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified WorkforceIntegration using POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="workforceIntegrationToCreate">The WorkforceIntegration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> CreateResponseAsync(WorkforceIntegration workforceIntegrationToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> CreateResponseAsync(WorkforceIntegration workforceIntegrationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkforceIntegration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WorkforceIntegration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkforceIntegration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WorkforceIntegration.</returns>
-        System.Threading.Tasks.Task<WorkforceIntegration> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WorkforceIntegration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WorkforceIntegration and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkforceIntegration using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WorkforceIntegration.</returns>
-        System.Threading.Tasks.Task<WorkforceIntegration> UpdateAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WorkforceIntegration> UpdateAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkforceIntegration using PATCH and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> UpdateResponseAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> UpdateResponseAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkforceIntegration using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="workforceIntegrationToUpdate">The WorkforceIntegration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<WorkforceIntegration> PutAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<WorkforceIntegration> PutAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WorkforceIntegration using PUT and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="workforceIntegrationToUpdate">The WorkforceIntegration object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{WorkforceIntegration}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> PutResponseAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> PutResponseAsync(WorkforceIntegration workforceIntegrationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

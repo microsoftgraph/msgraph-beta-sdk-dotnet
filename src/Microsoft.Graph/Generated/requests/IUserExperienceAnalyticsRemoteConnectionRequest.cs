@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsRemoteConnectionToCreate">The UserExperienceAnalyticsRemoteConnection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsRemoteConnection.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRemoteConnection> CreateAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsRemoteConnection> CreateAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified UserExperienceAnalyticsRemoteConnection using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsRemoteConnection}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsRemoteConnectionToCreate">The UserExperienceAnalyticsRemoteConnection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRemoteConnection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRemoteConnection>> CreateResponseAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRemoteConnection>> CreateResponseAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsRemoteConnection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsRemoteConnection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsRemoteConnection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsRemoteConnection.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRemoteConnection> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsRemoteConnection> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsRemoteConnection and returns a <see cref="GraphResponse{UserExperienceAnalyticsRemoteConnection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRemoteConnection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRemoteConnection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRemoteConnection>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsRemoteConnection using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsRemoteConnection.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRemoteConnection> UpdateAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsRemoteConnection> UpdateAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsRemoteConnection using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsRemoteConnection}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRemoteConnection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRemoteConnection>> UpdateResponseAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRemoteConnection>> UpdateResponseAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsRemoteConnection using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsRemoteConnectionToUpdate">The UserExperienceAnalyticsRemoteConnection object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRemoteConnection> PutAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsRemoteConnection> PutAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsRemoteConnection using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsRemoteConnection}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsRemoteConnectionToUpdate">The UserExperienceAnalyticsRemoteConnection object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsRemoteConnection}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRemoteConnection>> PutResponseAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRemoteConnection>> PutResponseAsync(UserExperienceAnalyticsRemoteConnection userExperienceAnalyticsRemoteConnectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

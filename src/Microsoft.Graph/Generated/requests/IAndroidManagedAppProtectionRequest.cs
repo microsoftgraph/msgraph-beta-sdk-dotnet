@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="androidManagedAppProtectionToCreate">The AndroidManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppProtection> CreateAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidManagedAppProtection> CreateAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AndroidManagedAppProtection using POST and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="androidManagedAppProtectionToCreate">The AndroidManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> CreateResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> CreateResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidManagedAppProtection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidManagedAppProtection and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidManagedAppProtection.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppProtection> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidManagedAppProtection> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidManagedAppProtection and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedAppProtection using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppProtection> UpdateAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidManagedAppProtection> UpdateAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedAppProtection using PATCH and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> UpdateResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> UpdateResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedAppProtection using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="androidManagedAppProtectionToUpdate">The AndroidManagedAppProtection object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppProtection> PutAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidManagedAppProtection> PutAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedAppProtection using PUT and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="androidManagedAppProtectionToUpdate">The AndroidManagedAppProtection object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AndroidManagedAppProtection}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> PutResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> PutResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

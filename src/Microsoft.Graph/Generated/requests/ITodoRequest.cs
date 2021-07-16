@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="todoToCreate">The Todo to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Todo.</returns>
-        System.Threading.Tasks.Task<Todo> CreateAsync(Todo todoToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Todo> CreateAsync(Todo todoToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Todo using POST and returns a <see cref="GraphResponse{Todo}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="todoToCreate">The Todo to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Todo}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Todo>> CreateResponseAsync(Todo todoToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Todo>> CreateResponseAsync(Todo todoToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Todo.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Todo and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Todo.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Todo.</returns>
-        System.Threading.Tasks.Task<Todo> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Todo> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Todo and returns a <see cref="GraphResponse{Todo}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Todo}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Todo>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Todo>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Todo using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Todo.</returns>
-        System.Threading.Tasks.Task<Todo> UpdateAsync(Todo todoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Todo> UpdateAsync(Todo todoToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Todo using PATCH and returns a <see cref="GraphResponse{Todo}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Todo}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Todo>> UpdateResponseAsync(Todo todoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Todo>> UpdateResponseAsync(Todo todoToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Todo using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="todoToUpdate">The Todo object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Todo> PutAsync(Todo todoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Todo> PutAsync(Todo todoToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Todo using PUT and returns a <see cref="GraphResponse{Todo}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="todoToUpdate">The Todo object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Todo}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Todo>> PutResponseAsync(Todo todoToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Todo>> PutResponseAsync(Todo todoToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

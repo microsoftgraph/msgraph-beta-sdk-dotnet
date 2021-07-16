@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="applicationSignInDetailedSummary">The ApplicationSignInDetailedSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApplicationSignInDetailedSummary.</returns>
-        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> AddAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummary, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> AddAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummary, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ApplicationSignInDetailedSummary to the collection via POST and returns a <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="applicationSignInDetailedSummary">The ApplicationSignInDetailedSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> AddResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummary, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> AddResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummary, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IReportRootApplicationSignInDetailedSummaryCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IReportRootApplicationSignInDetailedSummaryCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ReportRootApplicationSignInDetailedSummaryCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReportRootApplicationSignInDetailedSummaryCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootApplicationSignInDetailedSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ReportRootApplicationSignInDetailedSummaryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

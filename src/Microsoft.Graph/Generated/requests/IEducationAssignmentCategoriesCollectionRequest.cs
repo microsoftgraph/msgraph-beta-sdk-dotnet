@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="educationCategory">The EducationCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationCategory.</returns>
-        System.Threading.Tasks.Task<EducationCategory> AddAsync(EducationCategory educationCategory, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EducationCategory> AddAsync(EducationCategory educationCategory, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified EducationCategory to the collection via POST and returns a <see cref="GraphResponse{EducationCategory}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="educationCategory">The EducationCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationCategory}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationCategory>> AddResponseAsync(EducationCategory educationCategory, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EducationCategory>> AddResponseAsync(EducationCategory educationCategory, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEducationAssignmentCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IEducationAssignmentCategoriesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{EducationAssignmentCategoriesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EducationAssignmentCategoriesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationAssignmentCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EducationAssignmentCategoriesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

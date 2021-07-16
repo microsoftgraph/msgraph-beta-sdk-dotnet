@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="itemPublication">The ItemPublication to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemPublication.</returns>
-        System.Threading.Tasks.Task<ItemPublication> AddAsync(ItemPublication itemPublication, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ItemPublication> AddAsync(ItemPublication itemPublication, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ItemPublication to the collection via POST and returns a <see cref="GraphResponse{ItemPublication}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="itemPublication">The ItemPublication to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ItemPublication}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> AddResponseAsync(ItemPublication itemPublication, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ItemPublication>> AddResponseAsync(ItemPublication itemPublication, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfilePublicationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IProfilePublicationsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ProfilePublicationsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ProfilePublicationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ProfilePublicationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ProfilePublicationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

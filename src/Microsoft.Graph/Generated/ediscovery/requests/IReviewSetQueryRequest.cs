@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="reviewSetQueryToCreate">The ReviewSetQuery to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ReviewSetQuery.</returns>
-        System.Threading.Tasks.Task<ReviewSetQuery> CreateAsync(ReviewSetQuery reviewSetQueryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ReviewSetQuery> CreateAsync(ReviewSetQuery reviewSetQueryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ReviewSetQuery using POST and returns a <see cref="GraphResponse{ReviewSetQuery}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="reviewSetQueryToCreate">The ReviewSetQuery to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReviewSetQuery}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> CreateResponseAsync(ReviewSetQuery reviewSetQueryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> CreateResponseAsync(ReviewSetQuery reviewSetQueryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ReviewSetQuery.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ReviewSetQuery and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ReviewSetQuery.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ReviewSetQuery.</returns>
-        System.Threading.Tasks.Task<ReviewSetQuery> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ReviewSetQuery> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ReviewSetQuery and returns a <see cref="GraphResponse{ReviewSetQuery}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ReviewSetQuery}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ReviewSetQuery using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ReviewSetQuery.</returns>
-        System.Threading.Tasks.Task<ReviewSetQuery> UpdateAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ReviewSetQuery> UpdateAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ReviewSetQuery using PATCH and returns a <see cref="GraphResponse{ReviewSetQuery}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ReviewSetQuery}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> UpdateResponseAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> UpdateResponseAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ReviewSetQuery using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="reviewSetQueryToUpdate">The ReviewSetQuery object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ReviewSetQuery> PutAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ReviewSetQuery> PutAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ReviewSetQuery using PUT and returns a <see cref="GraphResponse{ReviewSetQuery}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="reviewSetQueryToUpdate">The ReviewSetQuery object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ReviewSetQuery}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> PutResponseAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ReviewSetQuery>> PutResponseAsync(ReviewSetQuery reviewSetQueryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

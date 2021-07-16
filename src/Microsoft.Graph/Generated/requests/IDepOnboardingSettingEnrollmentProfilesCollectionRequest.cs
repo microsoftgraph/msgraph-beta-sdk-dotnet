@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="enrollmentProfile">The EnrollmentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EnrollmentProfile.</returns>
-        System.Threading.Tasks.Task<EnrollmentProfile> AddAsync(EnrollmentProfile enrollmentProfile, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<EnrollmentProfile> AddAsync(EnrollmentProfile enrollmentProfile, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified EnrollmentProfile to the collection via POST and returns a <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="enrollmentProfile">The EnrollmentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{EnrollmentProfile}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> AddResponseAsync(EnrollmentProfile enrollmentProfile, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentProfile>> AddResponseAsync(EnrollmentProfile enrollmentProfile, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDepOnboardingSettingEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDepOnboardingSettingEnrollmentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DepOnboardingSettingEnrollmentProfilesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DepOnboardingSettingEnrollmentProfilesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingEnrollmentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DepOnboardingSettingEnrollmentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

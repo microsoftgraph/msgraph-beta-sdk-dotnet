@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="androidManagedStoreWebAppToCreate">The AndroidManagedStoreWebApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidManagedStoreWebApp.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreWebApp> CreateAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidManagedStoreWebApp> CreateAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified AndroidManagedStoreWebApp using POST and returns a <see cref="GraphResponse{AndroidManagedStoreWebApp}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="androidManagedStoreWebAppToCreate">The AndroidManagedStoreWebApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidManagedStoreWebApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreWebApp>> CreateResponseAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreWebApp>> CreateResponseAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidManagedStoreWebApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidManagedStoreWebApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidManagedStoreWebApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidManagedStoreWebApp.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreWebApp> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidManagedStoreWebApp> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidManagedStoreWebApp and returns a <see cref="GraphResponse{AndroidManagedStoreWebApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{AndroidManagedStoreWebApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreWebApp>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreWebApp>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedStoreWebApp using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidManagedStoreWebApp.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreWebApp> UpdateAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidManagedStoreWebApp> UpdateAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedStoreWebApp using PATCH and returns a <see cref="GraphResponse{AndroidManagedStoreWebApp}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{AndroidManagedStoreWebApp}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreWebApp>> UpdateResponseAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreWebApp>> UpdateResponseAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedStoreWebApp using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="androidManagedStoreWebAppToUpdate">The AndroidManagedStoreWebApp object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreWebApp> PutAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<AndroidManagedStoreWebApp> PutAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedStoreWebApp using PUT and returns a <see cref="GraphResponse{AndroidManagedStoreWebApp}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="androidManagedStoreWebAppToUpdate">The AndroidManagedStoreWebApp object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{AndroidManagedStoreWebApp}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreWebApp>> PutResponseAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreWebApp>> PutResponseAsync(AndroidManagedStoreWebApp androidManagedStoreWebAppToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

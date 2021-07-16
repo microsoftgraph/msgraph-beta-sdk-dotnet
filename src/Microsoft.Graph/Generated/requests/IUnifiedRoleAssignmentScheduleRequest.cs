@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleAssignmentScheduleToCreate">The UnifiedRoleAssignmentSchedule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleAssignmentSchedule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> CreateAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> CreateAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified UnifiedRoleAssignmentSchedule using POST and returns a <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleAssignmentScheduleToCreate">The UnifiedRoleAssignmentSchedule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> CreateResponseAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> CreateResponseAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UnifiedRoleAssignmentSchedule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UnifiedRoleAssignmentSchedule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UnifiedRoleAssignmentSchedule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleAssignmentSchedule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UnifiedRoleAssignmentSchedule and returns a <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleAssignmentSchedule using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleAssignmentSchedule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> UpdateAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> UpdateAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleAssignmentSchedule using PATCH and returns a <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> UpdateResponseAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> UpdateResponseAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleAssignmentSchedule using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleAssignmentScheduleToUpdate">The UnifiedRoleAssignmentSchedule object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> PutAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentSchedule> PutAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleAssignmentSchedule using PUT and returns a <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="unifiedRoleAssignmentScheduleToUpdate">The UnifiedRoleAssignmentSchedule object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{UnifiedRoleAssignmentSchedule}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> PutResponseAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentSchedule>> PutResponseAsync(UnifiedRoleAssignmentSchedule unifiedRoleAssignmentScheduleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IDeviceAndAppManagementRoleAssignmentRoleScopeTagsCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IDeviceAndAppManagementRoleAssignmentRoleScopeTagsCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

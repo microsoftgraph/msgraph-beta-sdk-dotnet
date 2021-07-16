@@ -26,7 +26,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="windowsToCreate">The Windows to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows.</returns>
-        System.Threading.Tasks.Task<Windows> CreateAsync(Windows windowsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows> CreateAsync(Windows windowsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified Windows using POST and returns a <see cref="GraphResponse{Windows}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="windowsToCreate">The Windows to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows>> CreateResponseAsync(Windows windowsToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows>> CreateResponseAsync(Windows windowsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Windows and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows.</returns>
-        System.Threading.Tasks.Task<Windows> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Windows and returns a <see cref="GraphResponse{Windows}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{Windows}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows.</returns>
-        System.Threading.Tasks.Task<Windows> UpdateAsync(Windows windowsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows> UpdateAsync(Windows windowsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows using PATCH and returns a <see cref="GraphResponse{Windows}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{Windows}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows>> UpdateResponseAsync(Windows windowsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows>> UpdateResponseAsync(Windows windowsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="windowsToUpdate">The Windows object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Windows> PutAsync(Windows windowsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<Windows> PutAsync(Windows windowsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Windows using PUT and returns a <see cref="GraphResponse{Windows}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="windowsToUpdate">The Windows object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{Windows}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Windows>> PutResponseAsync(Windows windowsToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<Windows>> PutResponseAsync(Windows windowsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

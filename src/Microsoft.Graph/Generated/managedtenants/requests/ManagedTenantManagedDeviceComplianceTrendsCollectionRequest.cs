@@ -39,7 +39,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="managedDeviceComplianceTrend">The ManagedDeviceComplianceTrend to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceComplianceTrend.</returns>
-        public System.Threading.Tasks.Task<ManagedDeviceComplianceTrend> AddAsync(ManagedDeviceComplianceTrend managedDeviceComplianceTrend, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<ManagedDeviceComplianceTrend> AddAsync(ManagedDeviceComplianceTrend managedDeviceComplianceTrend, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="managedDeviceComplianceTrend">The ManagedDeviceComplianceTrend to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedDeviceComplianceTrend}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceComplianceTrend>> AddResponseAsync(ManagedDeviceComplianceTrend managedDeviceComplianceTrend, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceComplianceTrend>> AddResponseAsync(ManagedDeviceComplianceTrend managedDeviceComplianceTrend, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedTenantManagedDeviceComplianceTrendsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IManagedTenantManagedDeviceComplianceTrendsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ManagedTenantManagedDeviceComplianceTrendsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedTenantManagedDeviceComplianceTrendsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantManagedDeviceComplianceTrendsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantManagedDeviceComplianceTrendsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ManagedTenantManagedDeviceComplianceTrendsCollectionResponse>(null, cancellationToken);

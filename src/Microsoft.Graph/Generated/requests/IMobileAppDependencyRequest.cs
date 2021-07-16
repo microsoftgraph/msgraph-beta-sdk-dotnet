@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="mobileAppDependencyToCreate">The MobileAppDependency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppDependency.</returns>
-        System.Threading.Tasks.Task<MobileAppDependency> CreateAsync(MobileAppDependency mobileAppDependencyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MobileAppDependency> CreateAsync(MobileAppDependency mobileAppDependencyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified MobileAppDependency using POST and returns a <see cref="GraphResponse{MobileAppDependency}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="mobileAppDependencyToCreate">The MobileAppDependency to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppDependency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppDependency>> CreateResponseAsync(MobileAppDependency mobileAppDependencyToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MobileAppDependency>> CreateResponseAsync(MobileAppDependency mobileAppDependencyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MobileAppDependency.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MobileAppDependency and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MobileAppDependency.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppDependency.</returns>
-        System.Threading.Tasks.Task<MobileAppDependency> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MobileAppDependency> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MobileAppDependency and returns a <see cref="GraphResponse{MobileAppDependency}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MobileAppDependency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppDependency>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MobileAppDependency>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MobileAppDependency using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppDependency.</returns>
-        System.Threading.Tasks.Task<MobileAppDependency> UpdateAsync(MobileAppDependency mobileAppDependencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MobileAppDependency> UpdateAsync(MobileAppDependency mobileAppDependencyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MobileAppDependency using PATCH and returns a <see cref="GraphResponse{MobileAppDependency}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MobileAppDependency}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppDependency>> UpdateResponseAsync(MobileAppDependency mobileAppDependencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MobileAppDependency>> UpdateResponseAsync(MobileAppDependency mobileAppDependencyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MobileAppDependency using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="mobileAppDependencyToUpdate">The MobileAppDependency object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<MobileAppDependency> PutAsync(MobileAppDependency mobileAppDependencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<MobileAppDependency> PutAsync(MobileAppDependency mobileAppDependencyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MobileAppDependency using PUT and returns a <see cref="GraphResponse{MobileAppDependency}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="mobileAppDependencyToUpdate">The MobileAppDependency object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{MobileAppDependency}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MobileAppDependency>> PutResponseAsync(MobileAppDependency mobileAppDependencyToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<MobileAppDependency>> PutResponseAsync(MobileAppDependency mobileAppDependencyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

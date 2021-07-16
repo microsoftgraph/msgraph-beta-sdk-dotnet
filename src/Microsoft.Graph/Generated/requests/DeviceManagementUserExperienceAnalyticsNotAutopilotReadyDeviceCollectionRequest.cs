@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsNotAutopilotReadyDevice">The UserExperienceAnalyticsNotAutopilotReadyDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsNotAutopilotReadyDevice.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> AddAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDevice, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<UserExperienceAnalyticsNotAutopilotReadyDevice> AddAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDevice, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsNotAutopilotReadyDevice">The UserExperienceAnalyticsNotAutopilotReadyDevice to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsNotAutopilotReadyDevice}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsNotAutopilotReadyDevice>> AddResponseAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDevice, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsNotAutopilotReadyDevice>> AddResponseAsync(UserExperienceAnalyticsNotAutopilotReadyDevice userExperienceAnalyticsNotAutopilotReadyDevice, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse>(null, cancellationToken);

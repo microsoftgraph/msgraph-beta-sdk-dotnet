@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="privilegedAccessToCreate">The PrivilegedAccess to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedAccess.</returns>
-        System.Threading.Tasks.Task<PrivilegedAccess> CreateAsync(PrivilegedAccess privilegedAccessToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrivilegedAccess> CreateAsync(PrivilegedAccess privilegedAccessToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified PrivilegedAccess using POST and returns a <see cref="GraphResponse{PrivilegedAccess}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="privilegedAccessToCreate">The PrivilegedAccess to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedAccess}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> CreateResponseAsync(PrivilegedAccess privilegedAccessToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> CreateResponseAsync(PrivilegedAccess privilegedAccessToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PrivilegedAccess.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PrivilegedAccess and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PrivilegedAccess.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PrivilegedAccess.</returns>
-        System.Threading.Tasks.Task<PrivilegedAccess> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrivilegedAccess> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PrivilegedAccess and returns a <see cref="GraphResponse{PrivilegedAccess}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrivilegedAccess}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrivilegedAccess using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PrivilegedAccess.</returns>
-        System.Threading.Tasks.Task<PrivilegedAccess> UpdateAsync(PrivilegedAccess privilegedAccessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrivilegedAccess> UpdateAsync(PrivilegedAccess privilegedAccessToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrivilegedAccess using PATCH and returns a <see cref="GraphResponse{PrivilegedAccess}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{PrivilegedAccess}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> UpdateResponseAsync(PrivilegedAccess privilegedAccessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> UpdateResponseAsync(PrivilegedAccess privilegedAccessToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrivilegedAccess using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="privilegedAccessToUpdate">The PrivilegedAccess object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<PrivilegedAccess> PutAsync(PrivilegedAccess privilegedAccessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<PrivilegedAccess> PutAsync(PrivilegedAccess privilegedAccessToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PrivilegedAccess using PUT and returns a <see cref="GraphResponse{PrivilegedAccess}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="privilegedAccessToUpdate">The PrivilegedAccess object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{PrivilegedAccess}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> PutResponseAsync(PrivilegedAccess privilegedAccessToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedAccess>> PutResponseAsync(PrivilegedAccess privilegedAccessToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="sharedEmailDomainInvitation">The SharedEmailDomainInvitation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedEmailDomainInvitation.</returns>
-        System.Threading.Tasks.Task<SharedEmailDomainInvitation> AddAsync(SharedEmailDomainInvitation sharedEmailDomainInvitation, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SharedEmailDomainInvitation> AddAsync(SharedEmailDomainInvitation sharedEmailDomainInvitation, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified SharedEmailDomainInvitation to the collection via POST and returns a <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="sharedEmailDomainInvitation">The SharedEmailDomainInvitation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SharedEmailDomainInvitation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> AddResponseAsync(SharedEmailDomainInvitation sharedEmailDomainInvitation, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SharedEmailDomainInvitation>> AddResponseAsync(SharedEmailDomainInvitation sharedEmailDomainInvitation, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDomainSharedEmailDomainInvitationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDomainSharedEmailDomainInvitationsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DomainSharedEmailDomainInvitationsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DomainSharedEmailDomainInvitationsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DomainSharedEmailDomainInvitationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DomainSharedEmailDomainInvitationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

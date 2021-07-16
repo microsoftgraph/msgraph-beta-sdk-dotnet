@@ -19,7 +19,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets the <see cref="IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage"/> value.
         /// </summary>
-		[JsonPropertyName("value")]
+        [JsonPropertyName("value")]
         public IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage Value { get; set; }
 
         /// <summary>

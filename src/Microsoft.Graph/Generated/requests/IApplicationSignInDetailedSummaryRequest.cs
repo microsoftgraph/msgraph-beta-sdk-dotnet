@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="applicationSignInDetailedSummaryToCreate">The ApplicationSignInDetailedSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApplicationSignInDetailedSummary.</returns>
-        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> CreateAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> CreateAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified ApplicationSignInDetailedSummary using POST and returns a <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="applicationSignInDetailedSummaryToCreate">The ApplicationSignInDetailedSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> CreateResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> CreateResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ApplicationSignInDetailedSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ApplicationSignInDetailedSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ApplicationSignInDetailedSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ApplicationSignInDetailedSummary.</returns>
-        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ApplicationSignInDetailedSummary and returns a <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ApplicationSignInDetailedSummary using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ApplicationSignInDetailedSummary.</returns>
-        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> UpdateAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> UpdateAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ApplicationSignInDetailedSummary using PATCH and returns a <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> UpdateResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> UpdateResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ApplicationSignInDetailedSummary using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="applicationSignInDetailedSummaryToUpdate">The ApplicationSignInDetailedSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> PutAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ApplicationSignInDetailedSummary> PutAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ApplicationSignInDetailedSummary using PUT and returns a <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="applicationSignInDetailedSummaryToUpdate">The ApplicationSignInDetailedSummary object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{ApplicationSignInDetailedSummary}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> PutResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ApplicationSignInDetailedSummary>> PutResponseAsync(ApplicationSignInDetailedSummary applicationSignInDetailedSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

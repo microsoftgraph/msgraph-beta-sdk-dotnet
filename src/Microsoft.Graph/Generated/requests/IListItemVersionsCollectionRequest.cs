@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="listItemVersion">The ListItemVersion to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ListItemVersion.</returns>
-        System.Threading.Tasks.Task<ListItemVersion> AddAsync(ListItemVersion listItemVersion, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ListItemVersion> AddAsync(ListItemVersion listItemVersion, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ListItemVersion to the collection via POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="listItemVersion">The ListItemVersion to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> AddResponseAsync(ListItemVersion listItemVersion, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> AddResponseAsync(ListItemVersion listItemVersion, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IListItemVersionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IListItemVersionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ListItemVersionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ListItemVersionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ListItemVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

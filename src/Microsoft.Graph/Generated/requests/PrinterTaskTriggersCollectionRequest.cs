@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="printTaskTrigger">The PrintTaskTrigger to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrintTaskTrigger.</returns>
-        public System.Threading.Tasks.Task<PrintTaskTrigger> AddAsync(PrintTaskTrigger printTaskTrigger, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<PrintTaskTrigger> AddAsync(PrintTaskTrigger printTaskTrigger, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="printTaskTrigger">The PrintTaskTrigger to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrintTaskTrigger}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> AddResponseAsync(PrintTaskTrigger printTaskTrigger, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<PrintTaskTrigger>> AddResponseAsync(PrintTaskTrigger printTaskTrigger, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IPrinterTaskTriggersCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IPrinterTaskTriggersCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<PrinterTaskTriggersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{PrinterTaskTriggersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<PrinterTaskTriggersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<PrinterTaskTriggersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<PrinterTaskTriggersCollectionResponse>(null, cancellationToken);

@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsDeviceWithoutCloudIdentityToCreate">The UserExperienceAnalyticsDeviceWithoutCloudIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsDeviceWithoutCloudIdentity.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> CreateAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> CreateAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified UserExperienceAnalyticsDeviceWithoutCloudIdentity using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceWithoutCloudIdentity}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsDeviceWithoutCloudIdentityToCreate">The UserExperienceAnalyticsDeviceWithoutCloudIdentity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceWithoutCloudIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>> CreateResponseAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>> CreateResponseAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsDeviceWithoutCloudIdentity.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsDeviceWithoutCloudIdentity and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsDeviceWithoutCloudIdentity.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsDeviceWithoutCloudIdentity.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsDeviceWithoutCloudIdentity and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceWithoutCloudIdentity}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceWithoutCloudIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDeviceWithoutCloudIdentity using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsDeviceWithoutCloudIdentity.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> UpdateAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> UpdateAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDeviceWithoutCloudIdentity using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceWithoutCloudIdentity}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceWithoutCloudIdentity}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>> UpdateResponseAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>> UpdateResponseAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDeviceWithoutCloudIdentity using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate">The UserExperienceAnalyticsDeviceWithoutCloudIdentity object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> PutAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> PutAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDeviceWithoutCloudIdentity using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceWithoutCloudIdentity}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate">The UserExperienceAnalyticsDeviceWithoutCloudIdentity object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsDeviceWithoutCloudIdentity}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>> PutResponseAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceWithoutCloudIdentity>> PutResponseAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity userExperienceAnalyticsDeviceWithoutCloudIdentityToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

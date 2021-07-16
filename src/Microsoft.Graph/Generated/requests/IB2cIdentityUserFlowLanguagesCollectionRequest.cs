@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="userFlowLanguageConfiguration">The UserFlowLanguageConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserFlowLanguageConfiguration.</returns>
-        System.Threading.Tasks.Task<UserFlowLanguageConfiguration> AddAsync(UserFlowLanguageConfiguration userFlowLanguageConfiguration, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UserFlowLanguageConfiguration> AddAsync(UserFlowLanguageConfiguration userFlowLanguageConfiguration, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified UserFlowLanguageConfiguration to the collection via POST and returns a <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="userFlowLanguageConfiguration">The UserFlowLanguageConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UserFlowLanguageConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> AddResponseAsync(UserFlowLanguageConfiguration userFlowLanguageConfiguration, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UserFlowLanguageConfiguration>> AddResponseAsync(UserFlowLanguageConfiguration userFlowLanguageConfiguration, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IB2cIdentityUserFlowLanguagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IB2cIdentityUserFlowLanguagesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{B2cIdentityUserFlowLanguagesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{B2cIdentityUserFlowLanguagesCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlowLanguagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<B2cIdentityUserFlowLanguagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

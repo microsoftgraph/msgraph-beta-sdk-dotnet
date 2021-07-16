@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="exactMatchSession">The ExactMatchSession to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchSession.</returns>
-        System.Threading.Tasks.Task<ExactMatchSession> AddAsync(ExactMatchSession exactMatchSession, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<ExactMatchSession> AddAsync(ExactMatchSession exactMatchSession, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified ExactMatchSession to the collection via POST and returns a <see cref="GraphResponse{ExactMatchSession}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="exactMatchSession">The ExactMatchSession to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExactMatchSession}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> AddResponseAsync(ExactMatchSession exactMatchSession, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchSession>> AddResponseAsync(ExactMatchSession exactMatchSession, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IExactMatchDataStoreSessionsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IExactMatchDataStoreSessionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ExactMatchDataStoreSessionsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ExactMatchDataStoreSessionsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStoreSessionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStoreSessionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

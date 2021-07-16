@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="usageRight">The UsageRight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UsageRight.</returns>
-        System.Threading.Tasks.Task<UsageRight> AddAsync(UsageRight usageRight, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<UsageRight> AddAsync(UsageRight usageRight, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified UsageRight to the collection via POST and returns a <see cref="GraphResponse{UsageRight}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="usageRight">The UsageRight to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{UsageRight}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<UsageRight>> AddResponseAsync(UsageRight usageRight, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceUsageRightsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IDeviceUsageRightsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{DeviceUsageRightsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceUsageRightsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceUsageRightsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceUsageRightsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

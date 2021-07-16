@@ -44,7 +44,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<TenantTag> PostAsync(
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
             return this.SendAsync<TenantTag>(this.RequestBody, cancellationToken);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TenantTag>> PostResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<TenantTag>> PostResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<TenantTag>(this.RequestBody, cancellationToken);

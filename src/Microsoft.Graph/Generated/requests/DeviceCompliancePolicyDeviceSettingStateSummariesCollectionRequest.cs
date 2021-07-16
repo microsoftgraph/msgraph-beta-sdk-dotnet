@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="settingStateDeviceSummary">The SettingStateDeviceSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SettingStateDeviceSummary.</returns>
-        public System.Threading.Tasks.Task<SettingStateDeviceSummary> AddAsync(SettingStateDeviceSummary settingStateDeviceSummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<SettingStateDeviceSummary> AddAsync(SettingStateDeviceSummary settingStateDeviceSummary, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="settingStateDeviceSummary">The SettingStateDeviceSummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> AddResponseAsync(SettingStateDeviceSummary settingStateDeviceSummary, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> AddResponseAsync(SettingStateDeviceSummary settingStateDeviceSummary, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IDeviceCompliancePolicyDeviceSettingStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IDeviceCompliancePolicyDeviceSettingStateSummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<DeviceCompliancePolicyDeviceSettingStateSummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceSettingStateSummariesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceSettingStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceSettingStateSummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<DeviceCompliancePolicyDeviceSettingStateSummariesCollectionResponse>(null, cancellationToken);

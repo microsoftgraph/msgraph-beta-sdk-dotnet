@@ -27,14 +27,14 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<ISiteGetApplicableContentTypesForListCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default(CancellationToken));
+            CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<SiteGetApplicableContentTypesForListCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SiteGetApplicableContentTypesForListCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<ISiteGetApplicableContentTypesForListCollectionPage> PatchAsync(ContentType contenttype,
-            CancellationToken cancellationToken = default(CancellationToken));
+            CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="contenttype">The ContentType object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<SiteGetApplicableContentTypesForListCollectionResponse>> PatchResponseAsync(ContentType contenttype, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SiteGetApplicableContentTypesForListCollectionResponse>> PatchResponseAsync(ContentType contenttype, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<ISiteGetApplicableContentTypesForListCollectionPage> PutAsync(ContentType contenttype,
-            CancellationToken cancellationToken = default(CancellationToken));
+            CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
@@ -70,7 +70,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <param name="contenttype">The ContentType object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<SiteGetApplicableContentTypesForListCollectionResponse>> PutResponseAsync(ContentType contenttype, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SiteGetApplicableContentTypesForListCollectionResponse>> PutResponseAsync(ContentType contenttype, CancellationToken cancellationToken = default);
 
 
         /// <summary>

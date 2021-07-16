@@ -39,7 +39,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="tenantCustomizedInformation">The TenantCustomizedInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TenantCustomizedInformation.</returns>
-        public System.Threading.Tasks.Task<TenantCustomizedInformation> AddAsync(TenantCustomizedInformation tenantCustomizedInformation, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<TenantCustomizedInformation> AddAsync(TenantCustomizedInformation tenantCustomizedInformation, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="tenantCustomizedInformation">The TenantCustomizedInformation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TenantCustomizedInformation}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> AddResponseAsync(TenantCustomizedInformation tenantCustomizedInformation, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<TenantCustomizedInformation>> AddResponseAsync(TenantCustomizedInformation tenantCustomizedInformation, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedTenantTenantsCustomizedInformationCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IManagedTenantTenantsCustomizedInformationCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ManagedTenantTenantsCustomizedInformationCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ManagedTenantTenantsCustomizedInformationCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantTenantsCustomizedInformationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantTenantsCustomizedInformationCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ManagedTenantTenantsCustomizedInformationCollectionResponse>(null, cancellationToken);

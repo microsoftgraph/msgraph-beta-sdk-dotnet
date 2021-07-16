@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="serviceHealth">The ServiceHealth to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServiceHealth.</returns>
-        public System.Threading.Tasks.Task<ServiceHealth> AddAsync(ServiceHealth serviceHealth, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<ServiceHealth> AddAsync(ServiceHealth serviceHealth, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="serviceHealth">The ServiceHealth to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ServiceHealth}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ServiceHealth>> AddResponseAsync(ServiceHealth serviceHealth, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ServiceHealth>> AddResponseAsync(ServiceHealth serviceHealth, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IServiceAnnouncementHealthOverviewsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IServiceAnnouncementHealthOverviewsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ServiceAnnouncementHealthOverviewsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ServiceAnnouncementHealthOverviewsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementHealthOverviewsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementHealthOverviewsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ServiceAnnouncementHealthOverviewsCollectionResponse>(null, cancellationToken);

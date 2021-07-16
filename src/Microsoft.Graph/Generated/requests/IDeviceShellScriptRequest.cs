@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="deviceShellScriptToCreate">The DeviceShellScript to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceShellScript.</returns>
-        System.Threading.Tasks.Task<DeviceShellScript> CreateAsync(DeviceShellScript deviceShellScriptToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceShellScript> CreateAsync(DeviceShellScript deviceShellScriptToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified DeviceShellScript using POST and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph
         /// <param name="deviceShellScriptToCreate">The DeviceShellScript to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> CreateResponseAsync(DeviceShellScript deviceShellScriptToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> CreateResponseAsync(DeviceShellScript deviceShellScriptToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceShellScript.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceShellScript and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceShellScript.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceShellScript.</returns>
-        System.Threading.Tasks.Task<DeviceShellScript> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceShellScript> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceShellScript and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceShellScript using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceShellScript.</returns>
-        System.Threading.Tasks.Task<DeviceShellScript> UpdateAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceShellScript> UpdateAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceShellScript using PATCH and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> UpdateResponseAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> UpdateResponseAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceShellScript using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph
         /// <param name="deviceShellScriptToUpdate">The DeviceShellScript object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<DeviceShellScript> PutAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<DeviceShellScript> PutAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceShellScript using PUT and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph
         /// <param name="deviceShellScriptToUpdate">The DeviceShellScript object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{DeviceShellScript}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> PutResponseAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> PutResponseAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

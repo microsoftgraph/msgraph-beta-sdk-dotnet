@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="iosVppAppAssignedLicense">The IosVppAppAssignedLicense to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosVppAppAssignedLicense.</returns>
-        public System.Threading.Tasks.Task<IosVppAppAssignedLicense> AddAsync(IosVppAppAssignedLicense iosVppAppAssignedLicense, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<IosVppAppAssignedLicense> AddAsync(IosVppAppAssignedLicense iosVppAppAssignedLicense, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="iosVppAppAssignedLicense">The IosVppAppAssignedLicense to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosVppAppAssignedLicense}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicense>> AddResponseAsync(IosVppAppAssignedLicense iosVppAppAssignedLicense, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicense>> AddResponseAsync(IosVppAppAssignedLicense iosVppAppAssignedLicense, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IIosVppAppAssignedLicensesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IIosVppAppAssignedLicensesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<IosVppAppAssignedLicensesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{IosVppAppAssignedLicensesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicensesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<IosVppAppAssignedLicensesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<IosVppAppAssignedLicensesCollectionResponse>(null, cancellationToken);

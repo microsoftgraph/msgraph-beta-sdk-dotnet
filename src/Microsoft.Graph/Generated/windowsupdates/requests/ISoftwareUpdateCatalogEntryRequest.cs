@@ -26,7 +26,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="softwareUpdateCatalogEntryToCreate">The SoftwareUpdateCatalogEntry to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SoftwareUpdateCatalogEntry.</returns>
-        System.Threading.Tasks.Task<SoftwareUpdateCatalogEntry> CreateAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SoftwareUpdateCatalogEntry> CreateAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates the specified SoftwareUpdateCatalogEntry using POST and returns a <see cref="GraphResponse{SoftwareUpdateCatalogEntry}"/> object.
@@ -34,35 +34,35 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="softwareUpdateCatalogEntryToCreate">The SoftwareUpdateCatalogEntry to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SoftwareUpdateCatalogEntry}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateCatalogEntry>> CreateResponseAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToCreate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateCatalogEntry>> CreateResponseAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SoftwareUpdateCatalogEntry.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SoftwareUpdateCatalogEntry and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SoftwareUpdateCatalogEntry.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SoftwareUpdateCatalogEntry.</returns>
-        System.Threading.Tasks.Task<SoftwareUpdateCatalogEntry> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SoftwareUpdateCatalogEntry> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SoftwareUpdateCatalogEntry and returns a <see cref="GraphResponse{SoftwareUpdateCatalogEntry}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{SoftwareUpdateCatalogEntry}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateCatalogEntry>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateCatalogEntry>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SoftwareUpdateCatalogEntry using PATCH.
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SoftwareUpdateCatalogEntry.</returns>
-        System.Threading.Tasks.Task<SoftwareUpdateCatalogEntry> UpdateAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SoftwareUpdateCatalogEntry> UpdateAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SoftwareUpdateCatalogEntry using PATCH and returns a <see cref="GraphResponse{SoftwareUpdateCatalogEntry}"/> object.
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{SoftwareUpdateCatalogEntry}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateCatalogEntry>> UpdateResponseAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateCatalogEntry>> UpdateResponseAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SoftwareUpdateCatalogEntry using PUT.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="softwareUpdateCatalogEntryToUpdate">The SoftwareUpdateCatalogEntry object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<SoftwareUpdateCatalogEntry> PutAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<SoftwareUpdateCatalogEntry> PutAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SoftwareUpdateCatalogEntry using PUT and returns a <see cref="GraphResponse{SoftwareUpdateCatalogEntry}"/> object.
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="softwareUpdateCatalogEntryToUpdate">The SoftwareUpdateCatalogEntry object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse{SoftwareUpdateCatalogEntry}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateCatalogEntry>> PutResponseAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateCatalogEntry>> PutResponseAsync(SoftwareUpdateCatalogEntry softwareUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

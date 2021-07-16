@@ -26,7 +26,7 @@ namespace Microsoft.Graph
         /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsAppInstallation.</returns>
-        System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified TeamsAppInstallation to the collection via POST and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.
@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         /// <param name="teamsAppInstallation">The TeamsAppInstallation to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> AddResponseAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> AddResponseAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,14 +42,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IChatInstalledAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<IChatInstalledAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{ChatInstalledAppsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ChatInstalledAppsCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ChatInstalledAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
+        System.Threading.Tasks.Task<GraphResponse<ChatInstalledAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.
