@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         public IPolicyRootActivityBasedTimeoutPoliciesCollectionPage ActivityBasedTimeoutPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets app management policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appManagementPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootAppManagementPoliciesCollectionPage AppManagementPolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets authorization policy.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizationPolicy", Required = Newtonsoft.Json.Required.Default)]
@@ -66,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
         public IPolicyRootClaimsMappingPoliciesCollectionPage ClaimsMappingPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets default app management policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultAppManagementPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public TenantAppManagementPolicy DefaultAppManagementPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
@@ -126,6 +138,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySecurityDefaultsEnforcementPolicy", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mobile app management policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppManagementPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootMobileAppManagementPoliciesCollectionPage MobileAppManagementPolicies { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mobile device management policies.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileDeviceManagementPolicies", Required = Newtonsoft.Json.Required.Default)]
+        public IPolicyRootMobileDeviceManagementPoliciesCollectionPage MobileDeviceManagementPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets role management policies.

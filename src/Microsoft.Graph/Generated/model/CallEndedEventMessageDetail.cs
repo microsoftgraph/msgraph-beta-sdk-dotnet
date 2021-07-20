@@ -31,24 +31,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets callDuration.
+        /// Duration of the call.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callDuration", Required = Newtonsoft.Json.Required.Default)]
         public Duration CallDuration { get; set; }
     
         /// <summary>
+        /// Gets or sets callEventType.
+        /// Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callEventType", Required = Newtonsoft.Json.Required.Default)]
+        public TeamworkCallEventType? CallEventType { get; set; }
+    
+        /// <summary>
         /// Gets or sets callId.
+        /// Unique identifier of the call.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callId", Required = Newtonsoft.Json.Required.Default)]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callParticipants.
+        /// List of call participants.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callParticipants", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<CallParticipantInfo> CallParticipants { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Initiator { get; set; }

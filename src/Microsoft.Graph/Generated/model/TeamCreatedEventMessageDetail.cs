@@ -31,24 +31,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets teamDescription.
+        /// Description for the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamDescription", Required = Newtonsoft.Json.Required.Default)]
         public string TeamDescription { get; set; }
     
         /// <summary>
         /// Gets or sets teamDisplayName.
+        /// Display name of the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string TeamDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets teamId.
+        /// Unique identifier of the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamId", Required = Newtonsoft.Json.Required.Default)]
         public string TeamId { get; set; }

@@ -32,12 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets mode.
+        /// Mode to use for the filter. Possible values are include or exclude.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mode", Required = Newtonsoft.Json.Required.Default)]
         public FilterMode? Mode { get; set; }
     
         /// <summary>
         /// Gets or sets rule.
+        /// Rule syntax is similar to that used for membership rules for groups in Azure AD. For details, see rules with multiple expressions
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rule", Required = Newtonsoft.Json.Required.Default)]
         public string Rule { get; set; }

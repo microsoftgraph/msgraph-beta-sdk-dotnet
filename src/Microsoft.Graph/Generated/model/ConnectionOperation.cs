@@ -33,14 +33,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets error.
-        /// If status is failed, provides more information about the error that caused the failure.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
         public PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
         public ConnectionOperationStatus? Status { get; set; }

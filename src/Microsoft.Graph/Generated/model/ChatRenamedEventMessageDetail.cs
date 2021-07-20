@@ -31,18 +31,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets chatDisplayName.
+        /// The updated name of the chat.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string ChatDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets chatId.
+        /// Unique identifier of the chat.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatId", Required = Newtonsoft.Json.Required.Default)]
         public string ChatId { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Initiator { get; set; }

@@ -122,6 +122,12 @@ namespace Microsoft.Graph
         public string NotificationUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets notification url app id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "notificationUrlAppId", Required = Newtonsoft.Json.Required.Default)]
+        public string NotificationUrlAppId { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource.
         /// Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource. Required.
         /// </summary>

@@ -33,14 +33,12 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets base type.
-        /// Must be set to microsoft.graph.externalItem. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "baseType", Required = Newtonsoft.Json.Required.Default)]
         public string BaseType { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
-        /// The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<Property> Properties { get; set; }

@@ -38,6 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connected organization id.
+        /// The identifier of the connected organization of the subject.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganizationId", Required = Newtonsoft.Json.Required.Default)]
         public string ConnectedOrganizationId { get; set; }
@@ -58,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets object id.
-        /// The object ID of the subject.
+        /// The object identifier of the subject. null if the subject is not yet a user in the tenant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "objectId", Required = Newtonsoft.Json.Required.Default)]
         public string ObjectId { get; set; }
@@ -85,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connected organization.
+        /// The connected organization of the subject. Read-only. Nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectedOrganization", Required = Newtonsoft.Json.Required.Default)]
         public ConnectedOrganization ConnectedOrganization { get; set; }

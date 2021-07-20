@@ -108,14 +108,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource roles.
-        /// Read-only. Nullable.
+        /// Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRoles", Required = Newtonsoft.Json.Required.Default)]
         public IAccessPackageResourceAccessPackageResourceRolesCollectionPage AccessPackageResourceRoles { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource scopes.
-        /// Read-only. Nullable.
+        /// Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceScopes", Required = Newtonsoft.Json.Required.Default)]
         public IAccessPackageResourceAccessPackageResourceScopesCollectionPage AccessPackageResourceScopes { get; set; }

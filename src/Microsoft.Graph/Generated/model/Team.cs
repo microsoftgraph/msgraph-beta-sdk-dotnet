@@ -178,6 +178,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission grants.
+        /// A collection of permissions granted to apps to access the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrants", Required = Newtonsoft.Json.Required.Default)]
         public ITeamPermissionGrantsCollectionPage PermissionGrants { get; set; }
@@ -198,6 +199,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tags.
+        /// The tags associated with the team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tags", Required = Newtonsoft.Json.Required.Default)]
         public ITeamTagsCollectionPage Tags { get; set; }

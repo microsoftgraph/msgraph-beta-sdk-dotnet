@@ -31,18 +31,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets teamsAppDisplayName.
+        /// Display name of the teamsApp.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string TeamsAppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets teamsAppId.
+        /// Unique identifier of the teamsApp.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsAppId", Required = Newtonsoft.Json.Required.Default)]
         public string TeamsAppId { get; set; }

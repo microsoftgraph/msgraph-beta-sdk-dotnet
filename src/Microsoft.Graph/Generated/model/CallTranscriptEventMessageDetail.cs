@@ -31,18 +31,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets callId.
+        /// Unique identifier of the call.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callId", Required = Newtonsoft.Json.Required.Default)]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callTranscriptICalUid.
+        /// Unique identifier for a call transcript.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callTranscriptICalUid", Required = Newtonsoft.Json.Required.Default)]
         public string CallTranscriptICalUid { get; set; }
     
         /// <summary>
         /// Gets or sets meetingOrganizer.
+        /// The organizer of the meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingOrganizer", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet MeetingOrganizer { get; set; }

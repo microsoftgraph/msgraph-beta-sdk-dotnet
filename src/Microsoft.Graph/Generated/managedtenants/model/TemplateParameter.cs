@@ -32,30 +32,35 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets description.
+        /// The description for the template parameter. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the template parameter. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets jsonAllowedValues.
+        /// The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jsonAllowedValues", Required = Newtonsoft.Json.Required.Default)]
         public string JsonAllowedValues { get; set; }
     
         /// <summary>
         /// Gets or sets jsonDefaultValue.
+        /// The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jsonDefaultValue", Required = Newtonsoft.Json.Required.Default)]
         public string JsonDefaultValue { get; set; }
     
         /// <summary>
         /// Gets or sets valueType.
+        /// The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueType", Required = Newtonsoft.Json.Required.Default)]
         public ManagementParameterValueType? ValueType { get; set; }

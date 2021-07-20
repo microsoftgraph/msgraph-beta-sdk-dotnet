@@ -250,6 +250,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (policyRootToInitialize.AppManagementPolicies != null && policyRootToInitialize.AppManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.AppManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    policyRootToInitialize.AdditionalData.TryGetValue("appManagementPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        policyRootToInitialize.AppManagementPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (policyRootToInitialize.AuthorizationPolicy != null && policyRootToInitialize.AuthorizationPolicy.CurrentPage != null)
                 {
                     policyRootToInitialize.AuthorizationPolicy.AdditionalData = policyRootToInitialize.AdditionalData;
@@ -373,6 +389,38 @@ namespace Microsoft.Graph
                     if (!string.IsNullOrEmpty(nextPageLinkString))
                     {
                         policyRootToInitialize.ConditionalAccessPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (policyRootToInitialize.MobileAppManagementPolicies != null && policyRootToInitialize.MobileAppManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.MobileAppManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    policyRootToInitialize.AdditionalData.TryGetValue("mobileAppManagementPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        policyRootToInitialize.MobileAppManagementPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (policyRootToInitialize.MobileDeviceManagementPolicies != null && policyRootToInitialize.MobileDeviceManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.MobileDeviceManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    policyRootToInitialize.AdditionalData.TryGetValue("mobileDeviceManagementPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        policyRootToInitialize.MobileDeviceManagementPolicies.InitializeNextPageRequest(
                             this.Client,
                             nextPageLinkString);
                     }

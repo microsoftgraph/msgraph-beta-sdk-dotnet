@@ -31,12 +31,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets tabId.
+        /// Unique identifier of the tab.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tabId", Required = Newtonsoft.Json.Required.Default)]
         public string TabId { get; set; }

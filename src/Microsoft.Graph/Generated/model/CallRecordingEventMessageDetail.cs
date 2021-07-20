@@ -31,42 +31,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets callId.
+        /// Unique identifier of the call.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callId", Required = Newtonsoft.Json.Required.Default)]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingDisplayName.
+        /// Display name for the call recording.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRecordingDisplayName", Required = Newtonsoft.Json.Required.Default)]
         public string CallRecordingDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingDuration.
+        /// Duration of the call recording.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRecordingDuration", Required = Newtonsoft.Json.Required.Default)]
         public Duration CallRecordingDuration { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingStatus.
+        /// Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRecordingStatus", Required = Newtonsoft.Json.Required.Default)]
         public CallRecordingStatus? CallRecordingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingUrl.
+        /// Call recording URL.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRecordingUrl", Required = Newtonsoft.Json.Required.Default)]
         public string CallRecordingUrl { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets meetingOrganizer.
+        /// Organizer of the meeting.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "meetingOrganizer", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet MeetingOrganizer { get; set; }

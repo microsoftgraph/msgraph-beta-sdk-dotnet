@@ -385,17 +385,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceWorkbooks request builder.
-        /// </summary>
-        public IGraphServiceWorkbooksCollectionRequestBuilder Workbooks
-        {
-            get
-            {
-                return new GraphServiceWorkbooksCollectionRequestBuilder(this.BaseUrl + "/workbooks", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServicePlaces request builder.
         /// </summary>
         public IGraphServicePlacesCollectionRequestBuilder Places
@@ -612,6 +601,17 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceRiskyUsersCollectionRequestBuilder(this.BaseUrl + "/riskyUsers", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceMobilityManagementPolicies request builder.
+        /// </summary>
+        public IGraphServiceMobilityManagementPoliciesCollectionRequestBuilder MobilityManagementPolicies
+        {
+            get
+            {
+                return new GraphServiceMobilityManagementPoliciesCollectionRequestBuilder(this.BaseUrl + "/mobilityManagementPolicies", this);
             }
         }
     

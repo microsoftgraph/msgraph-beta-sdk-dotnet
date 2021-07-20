@@ -151,7 +151,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is sealed.
-        /// Specifies whether column can be changed.
+        /// Specifies whether the column can be changed.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSealed", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsSealed { get; set; }
@@ -186,7 +186,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets propagate changes.
-        /// If 'True' changes to this column will be propagated to lists that implement the column.
+        /// If true, changes to this column will be propagated to lists that implement the column.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propagateChanges", Required = Newtonsoft.Json.Required.Default)]
         public bool? PropagateChanges { get; set; }
@@ -200,7 +200,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets required.
-        /// Specifies whether the column value is not optional.
+        /// Specifies whether the column value isn't optional.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
         public bool? Required { get; set; }
@@ -228,7 +228,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// For site columns, the type of column. Read-only
+        /// For site columns, the type of column. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
         public ColumnTypes? Type { get; set; }

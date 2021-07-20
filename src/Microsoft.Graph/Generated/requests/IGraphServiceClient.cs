@@ -167,11 +167,6 @@ namespace Microsoft.Graph
         IGraphServiceSubscribedSkusCollectionRequestBuilder SubscribedSkus { get; }
     
         /// <summary>
-        /// Gets the GraphServiceWorkbooks request builder.
-        /// </summary>
-        IGraphServiceWorkbooksCollectionRequestBuilder Workbooks { get; }
-    
-        /// <summary>
         /// Gets the GraphServicePlaces request builder.
         /// </summary>
         IGraphServicePlacesCollectionRequestBuilder Places { get; }
@@ -270,6 +265,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceRiskyUsers request builder.
         /// </summary>
         IGraphServiceRiskyUsersCollectionRequestBuilder RiskyUsers { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceMobilityManagementPolicies request builder.
+        /// </summary>
+        IGraphServiceMobilityManagementPoliciesCollectionRequestBuilder MobilityManagementPolicies { get; }
     
         /// <summary>
         /// Gets the GraphServiceGovernanceResources request builder.

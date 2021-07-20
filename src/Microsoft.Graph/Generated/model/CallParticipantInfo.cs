@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets participant.
+        /// Identity of the call participant.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "participant", Required = Newtonsoft.Json.Required.Default)]
         public IdentitySet Participant { get; set; }

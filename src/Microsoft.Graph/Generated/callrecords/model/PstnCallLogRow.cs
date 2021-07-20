@@ -31,6 +31,12 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
+        /// Gets or sets callDurationSource.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callDurationSource", Required = Newtonsoft.Json.Required.Default)]
+        public PstnCallDurationSource? CallDurationSource { get; set; }
+    
+        /// <summary>
         /// Gets or sets calleeNumber.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeNumber", Required = Newtonsoft.Json.Required.Default)]
@@ -119,6 +125,12 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseCapability", Required = Newtonsoft.Json.Required.Default)]
         public string LicenseCapability { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operator.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "operator", Required = Newtonsoft.Json.Required.Default)]
+        public string Operator { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.

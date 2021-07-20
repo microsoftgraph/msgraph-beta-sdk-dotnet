@@ -32,30 +32,35 @@ namespace Microsoft.Graph.ManagedTenants
 	
         /// <summary>
         /// Gets or sets all tenants included.
+        /// A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allTenantsIncluded", Required = Newtonsoft.Json.Required.Default)]
         public bool? AllTenantsIncluded { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name for the tenant group. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets management actions.
+        /// The collection of management action associated with the tenant group. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementActions", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ManagementActionInfo> ManagementActions { get; set; }
     
         /// <summary>
         /// Gets or sets management intents.
+        /// The collection of management intents associated with the tenant group. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managementIntents", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<ManagementIntentInfo> ManagementIntents { get; set; }
     
         /// <summary>
         /// Gets or sets tenant ids.
+        /// The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> TenantIds { get; set; }

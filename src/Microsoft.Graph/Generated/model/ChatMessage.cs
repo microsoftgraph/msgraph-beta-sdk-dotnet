@@ -81,6 +81,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets event detail.
+        /// Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eventDetail", Required = Newtonsoft.Json.Required.Default)]
         public EventMessageDetail EventDetail { get; set; }
@@ -90,7 +91,7 @@ namespace Microsoft.Graph
         /// Read only. Details of the sender of the chat message.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
-        public IdentitySet From { get; set; }
+        public ChatMessageFromIdentitySet From { get; set; }
     
         /// <summary>
         /// Gets or sets importance.
@@ -129,7 +130,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets message type.
-        /// The type of chat message. The possible value is: message.
+        /// The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "messageType", Required = Newtonsoft.Json.Required.Default)]
         public ChatMessageType? MessageType { get; set; }

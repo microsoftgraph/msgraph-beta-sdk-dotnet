@@ -32,24 +32,28 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the workload. Required. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets offboardedDateTime.
+        /// The date and time the workload was offboarded. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "offboardedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OffboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardedDateTime.
+        /// The date and time the workload was onboarded. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardedDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OnboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardingStatus.
+        /// The onboarding status for the workload. Possible values are: notOnboarded, onboarded, unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingStatus", Required = Newtonsoft.Json.Required.Default)]
         public WorkloadOnboardingStatus? OnboardingStatus { get; set; }

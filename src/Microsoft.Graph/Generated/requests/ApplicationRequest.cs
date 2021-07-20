@@ -234,6 +234,22 @@ namespace Microsoft.Graph
             if (applicationToInitialize != null && applicationToInitialize.AdditionalData != null)
             {
 
+                if (applicationToInitialize.AppManagementPolicies != null && applicationToInitialize.AppManagementPolicies.CurrentPage != null)
+                {
+                    applicationToInitialize.AppManagementPolicies.AdditionalData = applicationToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    applicationToInitialize.AdditionalData.TryGetValue("appManagementPolicies@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        applicationToInitialize.AppManagementPolicies.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (applicationToInitialize.ExtensionProperties != null && applicationToInitialize.ExtensionProperties.CurrentPage != null)
                 {
                     applicationToInitialize.ExtensionProperties.AdditionalData = applicationToInitialize.AdditionalData;

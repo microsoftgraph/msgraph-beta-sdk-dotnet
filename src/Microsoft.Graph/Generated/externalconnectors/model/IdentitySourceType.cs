@@ -16,6 +16,7 @@ namespace Microsoft.Graph.ExternalConnectors
     /// <summary>
     /// The enum IdentitySourceType.
     /// </summary>
+    [Obsolete("The property named 'IdentitySource' will be deprecated in September 2021, please see the updated aclType usage.")]
     [JsonConverter(typeof(Microsoft.Graph.EnumConverter))]
     public enum IdentitySourceType
     {
