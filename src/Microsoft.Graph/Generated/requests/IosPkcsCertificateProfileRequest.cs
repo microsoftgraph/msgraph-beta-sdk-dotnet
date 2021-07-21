@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IosPkcsCertificateProfile using POST.
         /// </summary>
         /// <param name="iosPkcsCertificateProfileToCreate">The IosPkcsCertificateProfile to create.</param>
-        /// <returns>The created IosPkcsCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<IosPkcsCertificateProfile> CreateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToCreate)
-        {
-            return this.CreateAsync(iosPkcsCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosPkcsCertificateProfile using POST.
-        /// </summary>
-        /// <param name="iosPkcsCertificateProfileToCreate">The IosPkcsCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosPkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<IosPkcsCertificateProfile> CreateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosPkcsCertificateProfile> CreateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IosPkcsCertificateProfile>(iosPkcsCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IosPkcsCertificateProfile.
+        /// Creates the specified IosPkcsCertificateProfile using POST and returns a <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="iosPkcsCertificateProfileToCreate">The IosPkcsCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosPkcsCertificateProfile>> CreateResponseAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IosPkcsCertificateProfile>(iosPkcsCertificateProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IosPkcsCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IosPkcsCertificateProfile.
+        /// Deletes the specified IosPkcsCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosPkcsCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<IosPkcsCertificateProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosPkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<IosPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IosPkcsCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IosPkcsCertificateProfile using PATCH.
+        /// Gets the specified IosPkcsCertificateProfile and returns a <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object.
         /// </summary>
-        /// <param name="iosPkcsCertificateProfileToUpdate">The IosPkcsCertificateProfile to update.</param>
-        /// <returns>The updated IosPkcsCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<IosPkcsCertificateProfile> UpdateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosPkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(iosPkcsCertificateProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosPkcsCertificateProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosPkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<IosPkcsCertificateProfile> UpdateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosPkcsCertificateProfile> UpdateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
-			if (iosPkcsCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (iosPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosPkcsCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosPkcsCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (iosPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosPkcsCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IosPkcsCertificateProfile>(iosPkcsCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosPkcsCertificateProfile using PATCH and returns a <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosPkcsCertificateProfileToUpdate">The IosPkcsCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosPkcsCertificateProfile>> UpdateResponseAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IosPkcsCertificateProfile>(iosPkcsCertificateProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IosPkcsCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="iosPkcsCertificateProfileToUpdate">The IosPkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosPkcsCertificateProfile> PutAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosPkcsCertificateProfile>(iosPkcsCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosPkcsCertificateProfile using PUT and returns a <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosPkcsCertificateProfileToUpdate">The IosPkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosPkcsCertificateProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosPkcsCertificateProfile>> PutResponseAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosPkcsCertificateProfile>(iosPkcsCertificateProfileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IosPkcsCertificateProfile iosPkcsCertificateProfileToInitialize)
         {
 
-            if (iosPkcsCertificateProfileToInitialize != null && iosPkcsCertificateProfileToInitialize.AdditionalData != null)
+            if (iosPkcsCertificateProfileToInitialize != null)
             {
-
                 if (iosPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && iosPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    iosPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, iosPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = iosPkcsCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    iosPkcsCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        iosPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

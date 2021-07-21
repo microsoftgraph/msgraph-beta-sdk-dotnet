@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsManagementAppHealthSummary using POST.
         /// </summary>
         /// <param name="windowsManagementAppHealthSummaryToCreate">The WindowsManagementAppHealthSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsManagementAppHealthSummary.</returns>
-        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> CreateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate);        /// <summary>
-        /// Creates the specified WindowsManagementAppHealthSummary using POST.
+        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> CreateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WindowsManagementAppHealthSummary using POST and returns a <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object.
         /// </summary>
         /// <param name="windowsManagementAppHealthSummaryToCreate">The WindowsManagementAppHealthSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsManagementAppHealthSummary.</returns>
-        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> CreateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsManagementAppHealthSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> CreateResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsManagementAppHealthSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WindowsManagementAppHealthSummary.
+        /// Deletes the specified WindowsManagementAppHealthSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsManagementAppHealthSummary.</returns>
-        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsManagementAppHealthSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsManagementAppHealthSummary.</returns>
-        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WindowsManagementAppHealthSummary using PATCH.
+        /// Gets the specified WindowsManagementAppHealthSummary and returns a <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object.
         /// </summary>
-        /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary to update.</param>
-        /// <returns>The updated WindowsManagementAppHealthSummary.</returns>
-        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> UpdateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsManagementAppHealthSummary using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsManagementAppHealthSummary.</returns>
-        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> UpdateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> UpdateAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsManagementAppHealthSummary using PATCH and returns a <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> UpdateResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsManagementAppHealthSummary using PUT.
+        /// </summary>
+        /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsManagementAppHealthSummary> PutAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsManagementAppHealthSummary using PUT and returns a <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsManagementAppHealthSummaryToUpdate">The WindowsManagementAppHealthSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsManagementAppHealthSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsManagementAppHealthSummary>> PutResponseAsync(WindowsManagementAppHealthSummary windowsManagementAppHealthSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

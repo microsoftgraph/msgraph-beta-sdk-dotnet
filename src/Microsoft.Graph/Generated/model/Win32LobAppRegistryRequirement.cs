@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Win32LobAppRegistryRequirement.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<Win32LobAppRegistryRequirement>))]
     public partial class Win32LobAppRegistryRequirement : Win32LobAppRequirement
     {
         /// <summary>
@@ -33,28 +32,28 @@ namespace Microsoft.Graph
         /// Gets or sets check32BitOn64System.
         /// A value indicating whether this registry path is for checking 32-bit app on 64-bit system
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "check32BitOn64System", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("check32BitOn64System")]
         public bool? Check32BitOn64System { get; set; }
     
         /// <summary>
         /// Gets or sets detectionType.
         /// The registry data detection type. Possible values are: notConfigured, exists, doesNotExist, string, integer, version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "detectionType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("detectionType")]
         public Win32LobAppRegistryDetectionType? DetectionType { get; set; }
     
         /// <summary>
         /// Gets or sets keyPath.
         /// The registry key path to detect Win32 Line of Business (LoB) app
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keyPath", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keyPath")]
         public string KeyPath { get; set; }
     
         /// <summary>
         /// Gets or sets valueName.
         /// The registry value name
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("valueName")]
         public string ValueName { get; set; }
     
     }

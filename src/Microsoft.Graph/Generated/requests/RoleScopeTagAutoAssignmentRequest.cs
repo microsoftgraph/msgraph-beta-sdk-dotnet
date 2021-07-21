@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified RoleScopeTagAutoAssignment using POST.
         /// </summary>
         /// <param name="roleScopeTagAutoAssignmentToCreate">The RoleScopeTagAutoAssignment to create.</param>
-        /// <returns>The created RoleScopeTagAutoAssignment.</returns>
-        public System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> CreateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToCreate)
-        {
-            return this.CreateAsync(roleScopeTagAutoAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RoleScopeTagAutoAssignment using POST.
-        /// </summary>
-        /// <param name="roleScopeTagAutoAssignmentToCreate">The RoleScopeTagAutoAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleScopeTagAutoAssignment.</returns>
-        public async System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> CreateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> CreateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<RoleScopeTagAutoAssignment>(roleScopeTagAutoAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified RoleScopeTagAutoAssignment.
+        /// Creates the specified RoleScopeTagAutoAssignment using POST and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="roleScopeTagAutoAssignmentToCreate">The RoleScopeTagAutoAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> CreateResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<RoleScopeTagAutoAssignment>(roleScopeTagAutoAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<RoleScopeTagAutoAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified RoleScopeTagAutoAssignment.
+        /// Deletes the specified RoleScopeTagAutoAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The RoleScopeTagAutoAssignment.</returns>
-        public System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RoleScopeTagAutoAssignment.</returns>
-        public async System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<RoleScopeTagAutoAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified RoleScopeTagAutoAssignment using PATCH.
+        /// Gets the specified RoleScopeTagAutoAssignment and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object.
         /// </summary>
-        /// <param name="roleScopeTagAutoAssignmentToUpdate">The RoleScopeTagAutoAssignment to update.</param>
-        /// <returns>The updated RoleScopeTagAutoAssignment.</returns>
-        public System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> UpdateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(roleScopeTagAutoAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<RoleScopeTagAutoAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RoleScopeTagAutoAssignment.</returns>
-        public async System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> UpdateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> UpdateAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (roleScopeTagAutoAssignmentToUpdate.AdditionalData != null)
-			{
-				if (roleScopeTagAutoAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					roleScopeTagAutoAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roleScopeTagAutoAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (roleScopeTagAutoAssignmentToUpdate.AdditionalData != null)
-            {
-                if (roleScopeTagAutoAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    roleScopeTagAutoAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, roleScopeTagAutoAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<RoleScopeTagAutoAssignment>(roleScopeTagAutoAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RoleScopeTagAutoAssignment using PATCH and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleScopeTagAutoAssignmentToUpdate">The RoleScopeTagAutoAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> UpdateResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<RoleScopeTagAutoAssignment>(roleScopeTagAutoAssignmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified RoleScopeTagAutoAssignment using PUT.
+        /// </summary>
+        /// <param name="roleScopeTagAutoAssignmentToUpdate">The RoleScopeTagAutoAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<RoleScopeTagAutoAssignment> PutAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<RoleScopeTagAutoAssignment>(roleScopeTagAutoAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RoleScopeTagAutoAssignment using PUT and returns a <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleScopeTagAutoAssignmentToUpdate">The RoleScopeTagAutoAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{RoleScopeTagAutoAssignment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleScopeTagAutoAssignment>> PutResponseAsync(RoleScopeTagAutoAssignment roleScopeTagAutoAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<RoleScopeTagAutoAssignment>(roleScopeTagAutoAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

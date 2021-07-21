@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleScheduleInstanceBase using POST.
         /// </summary>
         /// <param name="unifiedRoleScheduleInstanceBaseToCreate">The UnifiedRoleScheduleInstanceBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleScheduleInstanceBase.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> CreateAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToCreate);        /// <summary>
-        /// Creates the specified UnifiedRoleScheduleInstanceBase using POST.
+        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> CreateAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified UnifiedRoleScheduleInstanceBase using POST and returns a <see cref="GraphResponse{UnifiedRoleScheduleInstanceBase}"/> object.
         /// </summary>
         /// <param name="unifiedRoleScheduleInstanceBaseToCreate">The UnifiedRoleScheduleInstanceBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UnifiedRoleScheduleInstanceBase.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> CreateAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnifiedRoleScheduleInstanceBase.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleScheduleInstanceBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleScheduleInstanceBase>> CreateResponseAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UnifiedRoleScheduleInstanceBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified UnifiedRoleScheduleInstanceBase.
+        /// Deletes the specified UnifiedRoleScheduleInstanceBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UnifiedRoleScheduleInstanceBase.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UnifiedRoleScheduleInstanceBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleScheduleInstanceBase.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified UnifiedRoleScheduleInstanceBase using PATCH.
+        /// Gets the specified UnifiedRoleScheduleInstanceBase and returns a <see cref="GraphResponse{UnifiedRoleScheduleInstanceBase}"/> object.
         /// </summary>
-        /// <param name="unifiedRoleScheduleInstanceBaseToUpdate">The UnifiedRoleScheduleInstanceBase to update.</param>
-        /// <returns>The updated UnifiedRoleScheduleInstanceBase.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> UpdateAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleScheduleInstanceBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleScheduleInstanceBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleScheduleInstanceBase using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleScheduleInstanceBase.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> UpdateAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> UpdateAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleScheduleInstanceBase using PATCH and returns a <see cref="GraphResponse{UnifiedRoleScheduleInstanceBase}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleScheduleInstanceBaseToUpdate">The UnifiedRoleScheduleInstanceBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleScheduleInstanceBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleScheduleInstanceBase>> UpdateResponseAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleScheduleInstanceBase using PUT.
+        /// </summary>
+        /// <param name="unifiedRoleScheduleInstanceBaseToUpdate">The UnifiedRoleScheduleInstanceBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UnifiedRoleScheduleInstanceBase> PutAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleScheduleInstanceBase using PUT and returns a <see cref="GraphResponse{UnifiedRoleScheduleInstanceBase}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleScheduleInstanceBaseToUpdate">The UnifiedRoleScheduleInstanceBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UnifiedRoleScheduleInstanceBase}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleScheduleInstanceBase>> PutResponseAsync(UnifiedRoleScheduleInstanceBase unifiedRoleScheduleInstanceBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UserAnalytics using POST.
         /// </summary>
         /// <param name="userAnalyticsToCreate">The UserAnalytics to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserAnalytics.</returns>
-        System.Threading.Tasks.Task<UserAnalytics> CreateAsync(UserAnalytics userAnalyticsToCreate);        /// <summary>
-        /// Creates the specified UserAnalytics using POST.
+        System.Threading.Tasks.Task<UserAnalytics> CreateAsync(UserAnalytics userAnalyticsToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified UserAnalytics using POST and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
         /// </summary>
         /// <param name="userAnalyticsToCreate">The UserAnalytics to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UserAnalytics.</returns>
-        System.Threading.Tasks.Task<UserAnalytics> CreateAsync(UserAnalytics userAnalyticsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserAnalytics.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UserAnalytics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> CreateResponseAsync(UserAnalytics userAnalyticsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserAnalytics.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified UserAnalytics.
+        /// Deletes the specified UserAnalytics and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserAnalytics.</returns>
-        System.Threading.Tasks.Task<UserAnalytics> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserAnalytics.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserAnalytics.</returns>
-        System.Threading.Tasks.Task<UserAnalytics> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserAnalytics> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified UserAnalytics using PATCH.
+        /// Gets the specified UserAnalytics and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
         /// </summary>
-        /// <param name="userAnalyticsToUpdate">The UserAnalytics to update.</param>
-        /// <returns>The updated UserAnalytics.</returns>
-        System.Threading.Tasks.Task<UserAnalytics> UpdateAsync(UserAnalytics userAnalyticsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserAnalytics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserAnalytics using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserAnalytics.</returns>
-        System.Threading.Tasks.Task<UserAnalytics> UpdateAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserAnalytics> UpdateAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserAnalytics using PATCH and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
+        /// </summary>
+        /// <param name="userAnalyticsToUpdate">The UserAnalytics to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserAnalytics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> UpdateResponseAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserAnalytics using PUT.
+        /// </summary>
+        /// <param name="userAnalyticsToUpdate">The UserAnalytics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserAnalytics> PutAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserAnalytics using PUT and returns a <see cref="GraphResponse{UserAnalytics}"/> object.
+        /// </summary>
+        /// <param name="userAnalyticsToUpdate">The UserAnalytics object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserAnalytics}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAnalytics>> PutResponseAsync(UserAnalytics userAnalyticsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified IosPkcsCertificateProfile using POST.
         /// </summary>
         /// <param name="iosPkcsCertificateProfileToCreate">The IosPkcsCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosPkcsCertificateProfile> CreateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToCreate);        /// <summary>
-        /// Creates the specified IosPkcsCertificateProfile using POST.
+        System.Threading.Tasks.Task<IosPkcsCertificateProfile> CreateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified IosPkcsCertificateProfile using POST and returns a <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object.
         /// </summary>
         /// <param name="iosPkcsCertificateProfileToCreate">The IosPkcsCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created IosPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosPkcsCertificateProfile> CreateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IosPkcsCertificateProfile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosPkcsCertificateProfile>> CreateResponseAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IosPkcsCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified IosPkcsCertificateProfile.
+        /// Deletes the specified IosPkcsCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosPkcsCertificateProfile> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IosPkcsCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IosPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified IosPkcsCertificateProfile using PATCH.
+        /// Gets the specified IosPkcsCertificateProfile and returns a <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object.
         /// </summary>
-        /// <param name="iosPkcsCertificateProfileToUpdate">The IosPkcsCertificateProfile to update.</param>
-        /// <returns>The updated IosPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosPkcsCertificateProfile> UpdateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosPkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IosPkcsCertificateProfile using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosPkcsCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosPkcsCertificateProfile> UpdateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IosPkcsCertificateProfile> UpdateAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IosPkcsCertificateProfile using PATCH and returns a <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosPkcsCertificateProfileToUpdate">The IosPkcsCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosPkcsCertificateProfile>> UpdateResponseAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IosPkcsCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="iosPkcsCertificateProfileToUpdate">The IosPkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IosPkcsCertificateProfile> PutAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IosPkcsCertificateProfile using PUT and returns a <see cref="GraphResponse{IosPkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosPkcsCertificateProfileToUpdate">The IosPkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IosPkcsCertificateProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosPkcsCertificateProfile>> PutResponseAsync(IosPkcsCertificateProfile iosPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

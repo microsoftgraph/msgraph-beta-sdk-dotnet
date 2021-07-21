@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceConfigurationGroupAssignment using POST.
         /// </summary>
         /// <param name="deviceConfigurationGroupAssignmentToCreate">The DeviceConfigurationGroupAssignment to create.</param>
-        /// <returns>The created DeviceConfigurationGroupAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> CreateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToCreate)
-        {
-            return this.CreateAsync(deviceConfigurationGroupAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceConfigurationGroupAssignment using POST.
-        /// </summary>
-        /// <param name="deviceConfigurationGroupAssignmentToCreate">The DeviceConfigurationGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationGroupAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> CreateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> CreateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceConfigurationGroupAssignment>(deviceConfigurationGroupAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceConfigurationGroupAssignment.
+        /// Creates the specified DeviceConfigurationGroupAssignment using POST and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceConfigurationGroupAssignmentToCreate">The DeviceConfigurationGroupAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> CreateResponseAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceConfigurationGroupAssignment>(deviceConfigurationGroupAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceConfigurationGroupAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceConfigurationGroupAssignment.
+        /// Deletes the specified DeviceConfigurationGroupAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceConfigurationGroupAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceConfigurationGroupAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceConfigurationGroupAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceConfigurationGroupAssignment using PATCH.
+        /// Gets the specified DeviceConfigurationGroupAssignment and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
         /// </summary>
-        /// <param name="deviceConfigurationGroupAssignmentToUpdate">The DeviceConfigurationGroupAssignment to update.</param>
-        /// <returns>The updated DeviceConfigurationGroupAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> UpdateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceConfigurationGroupAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceConfigurationGroupAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceConfigurationGroupAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> UpdateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> UpdateAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceConfigurationGroupAssignmentToUpdate.AdditionalData != null)
-			{
-				if (deviceConfigurationGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceConfigurationGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationGroupAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceConfigurationGroupAssignmentToUpdate.AdditionalData != null)
-            {
-                if (deviceConfigurationGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceConfigurationGroupAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationGroupAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceConfigurationGroupAssignment>(deviceConfigurationGroupAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationGroupAssignment using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationGroupAssignmentToUpdate">The DeviceConfigurationGroupAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> UpdateResponseAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceConfigurationGroupAssignment>(deviceConfigurationGroupAssignmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationGroupAssignment using PUT.
+        /// </summary>
+        /// <param name="deviceConfigurationGroupAssignmentToUpdate">The DeviceConfigurationGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceConfigurationGroupAssignment> PutAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceConfigurationGroupAssignment>(deviceConfigurationGroupAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationGroupAssignment using PUT and returns a <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationGroupAssignmentToUpdate">The DeviceConfigurationGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceConfigurationGroupAssignment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationGroupAssignment>> PutResponseAsync(DeviceConfigurationGroupAssignment deviceConfigurationGroupAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceConfigurationGroupAssignment>(deviceConfigurationGroupAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

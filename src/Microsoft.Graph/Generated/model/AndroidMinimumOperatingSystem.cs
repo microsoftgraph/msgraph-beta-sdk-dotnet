@@ -12,146 +12,137 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidMinimumOperatingSystem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidMinimumOperatingSystem>))]
     public partial class AndroidMinimumOperatingSystem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AndroidMinimumOperatingSystem"/> class.
-        /// </summary>
-        public AndroidMinimumOperatingSystem()
-        {
-            this.ODataType = "microsoft.graph.androidMinimumOperatingSystem";
-        }
 
         /// <summary>
         /// Gets or sets v10_0.
         /// Version 10.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v10_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v10_0")]
         public bool? V10_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v11_0.
         /// Version 11.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v11_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v11_0")]
         public bool? V11_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v4_0.
         /// Version 4.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v4_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v4_0")]
         public bool? V4_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v4_0_3.
         /// Version 4.0.3 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v4_0_3", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v4_0_3")]
         public bool? V4_0_3 { get; set; }
     
         /// <summary>
         /// Gets or sets v4_1.
         /// Version 4.1 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v4_1", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v4_1")]
         public bool? V4_1 { get; set; }
     
         /// <summary>
         /// Gets or sets v4_2.
         /// Version 4.2 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v4_2", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v4_2")]
         public bool? V4_2 { get; set; }
     
         /// <summary>
         /// Gets or sets v4_3.
         /// Version 4.3 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v4_3", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v4_3")]
         public bool? V4_3 { get; set; }
     
         /// <summary>
         /// Gets or sets v4_4.
         /// Version 4.4 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v4_4", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v4_4")]
         public bool? V4_4 { get; set; }
     
         /// <summary>
         /// Gets or sets v5_0.
         /// Version 5.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v5_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v5_0")]
         public bool? V5_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v5_1.
         /// Version 5.1 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v5_1", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v5_1")]
         public bool? V5_1 { get; set; }
     
         /// <summary>
         /// Gets or sets v6_0.
         /// Version 6.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v6_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v6_0")]
         public bool? V6_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v7_0.
         /// Version 7.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v7_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v7_0")]
         public bool? V7_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v7_1.
         /// Version 7.1 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v7_1", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v7_1")]
         public bool? V7_1 { get; set; }
     
         /// <summary>
         /// Gets or sets v8_0.
         /// Version 8.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v8_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v8_0")]
         public bool? V8_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v8_1.
         /// Version 8.1 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v8_1", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v8_1")]
         public bool? V8_1 { get; set; }
     
         /// <summary>
         /// Gets or sets v9_0.
         /// Version 9.0 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "v9_0", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("v9_0")]
         public bool? V9_0 { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

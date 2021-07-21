@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IEntitlementManagementAccessPackageResourceRoleScopesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AccessPackageResourceRoleScope to the collection via POST.
-        /// </summary>
-        /// <param name="accessPackageResourceRoleScope">The AccessPackageResourceRoleScope to add.</param>
-        /// <returns>The created AccessPackageResourceRoleScope.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceRoleScope> AddAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScope);
-
         /// <summary>
         /// Adds the specified AccessPackageResourceRoleScope to the collection via POST.
         /// </summary>
         /// <param name="accessPackageResourceRoleScope">The AccessPackageResourceRoleScope to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageResourceRoleScope.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceRoleScope> AddAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScope, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessPackageResourceRoleScope> AddAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScope, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AccessPackageResourceRoleScope to the collection via POST and returns a <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEntitlementManagementAccessPackageResourceRoleScopesCollectionPage> GetAsync();
+        /// <param name="accessPackageResourceRoleScope">The AccessPackageResourceRoleScope to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceRoleScope}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceRoleScope>> AddResponseAsync(AccessPackageResourceRoleScope accessPackageResourceRoleScope, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEntitlementManagementAccessPackageResourceRoleScopesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IEntitlementManagementAccessPackageResourceRoleScopesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EntitlementManagementAccessPackageResourceRoleScopesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagementAccessPackageResourceRoleScopesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagementAccessPackageResourceRoleScopesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,46 +12,37 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ClassificationAttribute.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ClassificationAttribute>))]
     public partial class ClassificationAttribute
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ClassificationAttribute"/> class.
-        /// </summary>
-        public ClassificationAttribute()
-        {
-            this.ODataType = "microsoft.graph.classificationAttribute";
-        }
 
         /// <summary>
         /// Gets or sets confidence.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidence", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("confidence")]
         public Int32? Confidence { get; set; }
     
         /// <summary>
         /// Gets or sets count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "count", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("count")]
         public Int32? Count { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

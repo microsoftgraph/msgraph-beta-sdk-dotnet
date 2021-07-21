@@ -12,34 +12,25 @@ namespace Microsoft.Graph.ExternalConnectors
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type External Group Member.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ExternalGroupMember>))]
     public partial class ExternalGroupMember : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The ExternalGroupMember constructor
-		///</summary>
-        public ExternalGroupMember()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.externalGroupMember";
-        }
-	
         /// <summary>
         /// Gets or sets identity source.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identitySource")]
         public IdentitySourceType? IdentitySource { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public ExternalGroupMemberType? Type { get; set; }
     
     }

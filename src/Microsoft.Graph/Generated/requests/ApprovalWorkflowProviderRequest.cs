@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ApprovalWorkflowProvider using POST.
         /// </summary>
         /// <param name="approvalWorkflowProviderToCreate">The ApprovalWorkflowProvider to create.</param>
-        /// <returns>The created ApprovalWorkflowProvider.</returns>
-        public System.Threading.Tasks.Task<ApprovalWorkflowProvider> CreateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate)
-        {
-            return this.CreateAsync(approvalWorkflowProviderToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ApprovalWorkflowProvider using POST.
-        /// </summary>
-        /// <param name="approvalWorkflowProviderToCreate">The ApprovalWorkflowProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApprovalWorkflowProvider.</returns>
-        public async System.Threading.Tasks.Task<ApprovalWorkflowProvider> CreateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApprovalWorkflowProvider> CreateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ApprovalWorkflowProvider>(approvalWorkflowProviderToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ApprovalWorkflowProvider.
+        /// Creates the specified ApprovalWorkflowProvider using POST and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="approvalWorkflowProviderToCreate">The ApprovalWorkflowProvider to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> CreateResponseAsync(ApprovalWorkflowProvider approvalWorkflowProviderToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ApprovalWorkflowProvider>(approvalWorkflowProviderToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ApprovalWorkflowProvider>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ApprovalWorkflowProvider.
+        /// Deletes the specified ApprovalWorkflowProvider and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ApprovalWorkflowProvider.</returns>
-        public System.Threading.Tasks.Task<ApprovalWorkflowProvider> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ApprovalWorkflowProvider.</returns>
-        public async System.Threading.Tasks.Task<ApprovalWorkflowProvider> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApprovalWorkflowProvider> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ApprovalWorkflowProvider>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ApprovalWorkflowProvider using PATCH.
+        /// Gets the specified ApprovalWorkflowProvider and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object.
         /// </summary>
-        /// <param name="approvalWorkflowProviderToUpdate">The ApprovalWorkflowProvider to update.</param>
-        /// <returns>The updated ApprovalWorkflowProvider.</returns>
-        public System.Threading.Tasks.Task<ApprovalWorkflowProvider> UpdateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(approvalWorkflowProviderToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ApprovalWorkflowProvider>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ApprovalWorkflowProvider.</returns>
-        public async System.Threading.Tasks.Task<ApprovalWorkflowProvider> UpdateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApprovalWorkflowProvider> UpdateAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate, CancellationToken cancellationToken = default)
         {
-			if (approvalWorkflowProviderToUpdate.AdditionalData != null)
-			{
-				if (approvalWorkflowProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					approvalWorkflowProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, approvalWorkflowProviderToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (approvalWorkflowProviderToUpdate.AdditionalData != null)
-            {
-                if (approvalWorkflowProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    approvalWorkflowProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, approvalWorkflowProviderToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ApprovalWorkflowProvider>(approvalWorkflowProviderToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ApprovalWorkflowProvider using PATCH and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object.
+        /// </summary>
+        /// <param name="approvalWorkflowProviderToUpdate">The ApprovalWorkflowProvider to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> UpdateResponseAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ApprovalWorkflowProvider>(approvalWorkflowProviderToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ApprovalWorkflowProvider using PUT.
+        /// </summary>
+        /// <param name="approvalWorkflowProviderToUpdate">The ApprovalWorkflowProvider object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ApprovalWorkflowProvider> PutAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ApprovalWorkflowProvider>(approvalWorkflowProviderToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ApprovalWorkflowProvider using PUT and returns a <see cref="GraphResponse{ApprovalWorkflowProvider}"/> object.
+        /// </summary>
+        /// <param name="approvalWorkflowProviderToUpdate">The ApprovalWorkflowProvider object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ApprovalWorkflowProvider}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalWorkflowProvider>> PutResponseAsync(ApprovalWorkflowProvider approvalWorkflowProviderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ApprovalWorkflowProvider>(approvalWorkflowProviderToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ApprovalWorkflowProvider approvalWorkflowProviderToInitialize)
         {
 
-            if (approvalWorkflowProviderToInitialize != null && approvalWorkflowProviderToInitialize.AdditionalData != null)
+            if (approvalWorkflowProviderToInitialize != null)
             {
-
                 if (approvalWorkflowProviderToInitialize.BusinessFlows != null && approvalWorkflowProviderToInitialize.BusinessFlows.CurrentPage != null)
                 {
+                    approvalWorkflowProviderToInitialize.BusinessFlows.InitializeNextPageRequest(this.Client, approvalWorkflowProviderToInitialize.BusinessFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalWorkflowProviderToInitialize.BusinessFlows.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("businessFlows@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalWorkflowProviderToInitialize.BusinessFlows.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision != null && approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.CurrentPage != null)
                 {
+                    approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.InitializeNextPageRequest(this.Client, approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecisionNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("businessFlowsWithRequestsAwaitingMyDecision@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalWorkflowProviderToInitialize.BusinessFlowsWithRequestsAwaitingMyDecision.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (approvalWorkflowProviderToInitialize.PolicyTemplates != null && approvalWorkflowProviderToInitialize.PolicyTemplates.CurrentPage != null)
                 {
+                    approvalWorkflowProviderToInitialize.PolicyTemplates.InitializeNextPageRequest(this.Client, approvalWorkflowProviderToInitialize.PolicyTemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     approvalWorkflowProviderToInitialize.PolicyTemplates.AdditionalData = approvalWorkflowProviderToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    approvalWorkflowProviderToInitialize.AdditionalData.TryGetValue("policyTemplates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        approvalWorkflowProviderToInitialize.PolicyTemplates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

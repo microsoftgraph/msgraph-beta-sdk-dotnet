@@ -20,33 +20,36 @@ namespace Microsoft.Graph.Ediscovery
     /// </summary>
     public partial interface ICaseSourceCollectionsCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified SourceCollection to the collection via POST.
-        /// </summary>
-        /// <param name="sourceCollection">The SourceCollection to add.</param>
-        /// <returns>The created SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> AddAsync(SourceCollection sourceCollection);
-
         /// <summary>
         /// Adds the specified SourceCollection to the collection via POST.
         /// </summary>
         /// <param name="sourceCollection">The SourceCollection to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> AddAsync(SourceCollection sourceCollection, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SourceCollection> AddAsync(SourceCollection sourceCollection, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SourceCollection to the collection via POST and returns a <see cref="GraphResponse{SourceCollection}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICaseSourceCollectionsCollectionPage> GetAsync();
+        /// <param name="sourceCollection">The SourceCollection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SourceCollection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SourceCollection>> AddResponseAsync(SourceCollection sourceCollection, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICaseSourceCollectionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICaseSourceCollectionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CaseSourceCollectionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CaseSourceCollectionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CaseSourceCollectionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

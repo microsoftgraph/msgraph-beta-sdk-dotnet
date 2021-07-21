@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WindowsAutopilotDeploymentProfile to the collection via POST.
-        /// </summary>
-        /// <param name="windowsAutopilotDeploymentProfile">The WindowsAutopilotDeploymentProfile to add.</param>
-        /// <returns>The created WindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> AddAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfile);
-
         /// <summary>
         /// Adds the specified WindowsAutopilotDeploymentProfile to the collection via POST.
         /// </summary>
         /// <param name="windowsAutopilotDeploymentProfile">The WindowsAutopilotDeploymentProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsAutopilotDeploymentProfile.</returns>
-        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> AddAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfile, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsAutopilotDeploymentProfile> AddAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfile, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WindowsAutopilotDeploymentProfile to the collection via POST and returns a <see cref="GraphResponse{WindowsAutopilotDeploymentProfile}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage> GetAsync();
+        /// <param name="windowsAutopilotDeploymentProfile">The WindowsAutopilotDeploymentProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsAutopilotDeploymentProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsAutopilotDeploymentProfile>> AddResponseAsync(WindowsAutopilotDeploymentProfile windowsAutopilotDeploymentProfile, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementWindowsAutopilotDeploymentProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementWindowsAutopilotDeploymentProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

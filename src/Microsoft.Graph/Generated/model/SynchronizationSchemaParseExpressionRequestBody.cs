@@ -9,35 +9,33 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SynchronizationSchemaParseExpressionRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SynchronizationSchemaParseExpressionRequestBody
     {
     
         /// <summary>
         /// Gets or sets Expression.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expression", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expression")]
         public string Expression { get; set; }
     
         /// <summary>
         /// Gets or sets TestInputObject.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "testInputObject", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("testInputObject")]
         public ExpressionInputObject TestInputObject { get; set; }
     
         /// <summary>
         /// Gets or sets TargetAttributeDefinition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetAttributeDefinition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetAttributeDefinition")]
         public AttributeDefinition TargetAttributeDefinition { get; set; }
     
     }

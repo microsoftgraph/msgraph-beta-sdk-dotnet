@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IEntitlementManagementAccessPackagesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AccessPackage to the collection via POST.
-        /// </summary>
-        /// <param name="accessPackage">The AccessPackage to add.</param>
-        /// <returns>The created AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> AddAsync(AccessPackage accessPackage);
-
         /// <summary>
         /// Adds the specified AccessPackage to the collection via POST.
         /// </summary>
         /// <param name="accessPackage">The AccessPackage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackage.</returns>
-        System.Threading.Tasks.Task<AccessPackage> AddAsync(AccessPackage accessPackage, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessPackage> AddAsync(AccessPackage accessPackage, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AccessPackage to the collection via POST and returns a <see cref="GraphResponse{AccessPackage}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEntitlementManagementAccessPackagesCollectionPage> GetAsync();
+        /// <param name="accessPackage">The AccessPackage to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackage>> AddResponseAsync(AccessPackage accessPackage, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IEntitlementManagementAccessPackagesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IEntitlementManagementAccessPackagesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{EntitlementManagementAccessPackagesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagementAccessPackagesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EntitlementManagementAccessPackagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

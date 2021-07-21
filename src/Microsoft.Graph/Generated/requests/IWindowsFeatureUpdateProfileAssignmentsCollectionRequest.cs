@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IWindowsFeatureUpdateProfileAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WindowsFeatureUpdateProfileAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="windowsFeatureUpdateProfileAssignment">The WindowsFeatureUpdateProfileAssignment to add.</param>
-        /// <returns>The created WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> AddAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignment);
-
         /// <summary>
         /// Adds the specified WindowsFeatureUpdateProfileAssignment to the collection via POST.
         /// </summary>
         /// <param name="windowsFeatureUpdateProfileAssignment">The WindowsFeatureUpdateProfileAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> AddAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> AddAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignment, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WindowsFeatureUpdateProfileAssignment to the collection via POST and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsFeatureUpdateProfileAssignmentsCollectionPage> GetAsync();
+        /// <param name="windowsFeatureUpdateProfileAssignment">The WindowsFeatureUpdateProfileAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> AddResponseAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignment, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsFeatureUpdateProfileAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IWindowsFeatureUpdateProfileAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

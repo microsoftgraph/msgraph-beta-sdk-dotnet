@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified VirtualEndpoint using POST.
         /// </summary>
         /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
-        /// <returns>The created VirtualEndpoint.</returns>
-        public System.Threading.Tasks.Task<VirtualEndpoint> CreateAsync(VirtualEndpoint virtualEndpointToCreate)
-        {
-            return this.CreateAsync(virtualEndpointToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified VirtualEndpoint using POST.
-        /// </summary>
-        /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VirtualEndpoint.</returns>
-        public async System.Threading.Tasks.Task<VirtualEndpoint> CreateAsync(VirtualEndpoint virtualEndpointToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<VirtualEndpoint> CreateAsync(VirtualEndpoint virtualEndpointToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<VirtualEndpoint>(virtualEndpointToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified VirtualEndpoint.
+        /// Creates the specified VirtualEndpoint using POST and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="virtualEndpointToCreate">The VirtualEndpoint to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> CreateResponseAsync(VirtualEndpoint virtualEndpointToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<VirtualEndpoint>(virtualEndpointToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<VirtualEndpoint>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified VirtualEndpoint.
+        /// Deletes the specified VirtualEndpoint and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The VirtualEndpoint.</returns>
-        public System.Threading.Tasks.Task<VirtualEndpoint> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The VirtualEndpoint.</returns>
-        public async System.Threading.Tasks.Task<VirtualEndpoint> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<VirtualEndpoint> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<VirtualEndpoint>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified VirtualEndpoint using PATCH.
+        /// Gets the specified VirtualEndpoint and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
         /// </summary>
-        /// <param name="virtualEndpointToUpdate">The VirtualEndpoint to update.</param>
-        /// <returns>The updated VirtualEndpoint.</returns>
-        public System.Threading.Tasks.Task<VirtualEndpoint> UpdateAsync(VirtualEndpoint virtualEndpointToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(virtualEndpointToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<VirtualEndpoint>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated VirtualEndpoint.</returns>
-        public async System.Threading.Tasks.Task<VirtualEndpoint> UpdateAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<VirtualEndpoint> UpdateAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken = default)
         {
-			if (virtualEndpointToUpdate.AdditionalData != null)
-			{
-				if (virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, virtualEndpointToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (virtualEndpointToUpdate.AdditionalData != null)
-            {
-                if (virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    virtualEndpointToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, virtualEndpointToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<VirtualEndpoint>(virtualEndpointToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified VirtualEndpoint using PATCH and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
+        /// </summary>
+        /// <param name="virtualEndpointToUpdate">The VirtualEndpoint to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpoint}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> UpdateResponseAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<VirtualEndpoint>(virtualEndpointToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified VirtualEndpoint using PUT.
+        /// </summary>
+        /// <param name="virtualEndpointToUpdate">The VirtualEndpoint object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<VirtualEndpoint> PutAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<VirtualEndpoint>(virtualEndpointToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified VirtualEndpoint using PUT and returns a <see cref="GraphResponse{VirtualEndpoint}"/> object.
+        /// </summary>
+        /// <param name="virtualEndpointToUpdate">The VirtualEndpoint object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{VirtualEndpoint}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VirtualEndpoint>> PutResponseAsync(VirtualEndpoint virtualEndpointToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<VirtualEndpoint>(virtualEndpointToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,103 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(VirtualEndpoint virtualEndpointToInitialize)
         {
 
-            if (virtualEndpointToInitialize != null && virtualEndpointToInitialize.AdditionalData != null)
+            if (virtualEndpointToInitialize != null)
             {
-
                 if (virtualEndpointToInitialize.AuditEvents != null && virtualEndpointToInitialize.AuditEvents.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.AuditEvents.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.AuditEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.AuditEvents.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("auditEvents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.AuditEvents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (virtualEndpointToInitialize.CloudPCs != null && virtualEndpointToInitialize.CloudPCs.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.CloudPCs.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.CloudPCsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.CloudPCs.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("cloudPCs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.CloudPCs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (virtualEndpointToInitialize.DeviceImages != null && virtualEndpointToInitialize.DeviceImages.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.DeviceImages.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.DeviceImagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.DeviceImages.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("deviceImages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.DeviceImages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (virtualEndpointToInitialize.OnPremisesConnections != null && virtualEndpointToInitialize.OnPremisesConnections.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.OnPremisesConnections.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.OnPremisesConnectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.OnPremisesConnections.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("onPremisesConnections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.OnPremisesConnections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (virtualEndpointToInitialize.ProvisioningPolicies != null && virtualEndpointToInitialize.ProvisioningPolicies.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.ProvisioningPolicies.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.ProvisioningPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.ProvisioningPolicies.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("provisioningPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.ProvisioningPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (virtualEndpointToInitialize.UserSettings != null && virtualEndpointToInitialize.UserSettings.CurrentPage != null)
                 {
+                    virtualEndpointToInitialize.UserSettings.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.UserSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.UserSettings.AdditionalData = virtualEndpointToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    virtualEndpointToInitialize.AdditionalData.TryGetValue("userSettings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        virtualEndpointToInitialize.UserSettings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

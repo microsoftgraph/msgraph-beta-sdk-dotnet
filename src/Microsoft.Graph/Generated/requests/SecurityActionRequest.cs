@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SecurityAction using POST.
         /// </summary>
         /// <param name="securityActionToCreate">The SecurityAction to create.</param>
-        /// <returns>The created SecurityAction.</returns>
-        public System.Threading.Tasks.Task<SecurityAction> CreateAsync(SecurityAction securityActionToCreate)
-        {
-            return this.CreateAsync(securityActionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SecurityAction using POST.
-        /// </summary>
-        /// <param name="securityActionToCreate">The SecurityAction to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityAction.</returns>
-        public async System.Threading.Tasks.Task<SecurityAction> CreateAsync(SecurityAction securityActionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityAction> CreateAsync(SecurityAction securityActionToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SecurityAction>(securityActionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SecurityAction.
+        /// Creates the specified SecurityAction using POST and returns a <see cref="GraphResponse{SecurityAction}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="securityActionToCreate">The SecurityAction to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityAction}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityAction>> CreateResponseAsync(SecurityAction securityActionToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SecurityAction>(securityActionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SecurityAction>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SecurityAction.
+        /// Deletes the specified SecurityAction and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SecurityAction.</returns>
-        public System.Threading.Tasks.Task<SecurityAction> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SecurityAction.</returns>
-        public async System.Threading.Tasks.Task<SecurityAction> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityAction> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SecurityAction>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SecurityAction using PATCH.
+        /// Gets the specified SecurityAction and returns a <see cref="GraphResponse{SecurityAction}"/> object.
         /// </summary>
-        /// <param name="securityActionToUpdate">The SecurityAction to update.</param>
-        /// <returns>The updated SecurityAction.</returns>
-        public System.Threading.Tasks.Task<SecurityAction> UpdateAsync(SecurityAction securityActionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityAction}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityAction>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(securityActionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SecurityAction>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SecurityAction.</returns>
-        public async System.Threading.Tasks.Task<SecurityAction> UpdateAsync(SecurityAction securityActionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SecurityAction> UpdateAsync(SecurityAction securityActionToUpdate, CancellationToken cancellationToken = default)
         {
-			if (securityActionToUpdate.AdditionalData != null)
-			{
-				if (securityActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					securityActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityActionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (securityActionToUpdate.AdditionalData != null)
-            {
-                if (securityActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    securityActionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, securityActionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SecurityAction>(securityActionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SecurityAction using PATCH and returns a <see cref="GraphResponse{SecurityAction}"/> object.
+        /// </summary>
+        /// <param name="securityActionToUpdate">The SecurityAction to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SecurityAction}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityAction>> UpdateResponseAsync(SecurityAction securityActionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SecurityAction>(securityActionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified SecurityAction using PUT.
+        /// </summary>
+        /// <param name="securityActionToUpdate">The SecurityAction object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SecurityAction> PutAsync(SecurityAction securityActionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SecurityAction>(securityActionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SecurityAction using PUT and returns a <see cref="GraphResponse{SecurityAction}"/> object.
+        /// </summary>
+        /// <param name="securityActionToUpdate">The SecurityAction object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SecurityAction}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityAction>> PutResponseAsync(SecurityAction securityActionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SecurityAction>(securityActionToUpdate, cancellationToken);
         }
 
         /// <summary>

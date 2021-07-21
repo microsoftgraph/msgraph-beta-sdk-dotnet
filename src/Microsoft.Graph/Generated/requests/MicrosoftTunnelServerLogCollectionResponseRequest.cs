@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftTunnelServerLogCollectionResponse using POST.
         /// </summary>
         /// <param name="microsoftTunnelServerLogCollectionResponseToCreate">The MicrosoftTunnelServerLogCollectionResponse to create.</param>
-        /// <returns>The created MicrosoftTunnelServerLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> CreateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToCreate)
-        {
-            return this.CreateAsync(microsoftTunnelServerLogCollectionResponseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MicrosoftTunnelServerLogCollectionResponse using POST.
-        /// </summary>
-        /// <param name="microsoftTunnelServerLogCollectionResponseToCreate">The MicrosoftTunnelServerLogCollectionResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelServerLogCollectionResponse.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> CreateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> CreateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MicrosoftTunnelServerLogCollectionResponse>(microsoftTunnelServerLogCollectionResponseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified MicrosoftTunnelServerLogCollectionResponse.
+        /// Creates the specified MicrosoftTunnelServerLogCollectionResponse using POST and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="microsoftTunnelServerLogCollectionResponseToCreate">The MicrosoftTunnelServerLogCollectionResponse to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> CreateResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MicrosoftTunnelServerLogCollectionResponse>(microsoftTunnelServerLogCollectionResponseToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MicrosoftTunnelServerLogCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified MicrosoftTunnelServerLogCollectionResponse.
+        /// Deletes the specified MicrosoftTunnelServerLogCollectionResponse and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MicrosoftTunnelServerLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftTunnelServerLogCollectionResponse.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<MicrosoftTunnelServerLogCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PATCH.
+        /// Gets the specified MicrosoftTunnelServerLogCollectionResponse and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
         /// </summary>
-        /// <param name="microsoftTunnelServerLogCollectionResponseToUpdate">The MicrosoftTunnelServerLogCollectionResponse to update.</param>
-        /// <returns>The updated MicrosoftTunnelServerLogCollectionResponse.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> UpdateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MicrosoftTunnelServerLogCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MicrosoftTunnelServerLogCollectionResponse.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> UpdateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> UpdateAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken = default)
         {
-			if (microsoftTunnelServerLogCollectionResponseToUpdate.AdditionalData != null)
-			{
-				if (microsoftTunnelServerLogCollectionResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					microsoftTunnelServerLogCollectionResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelServerLogCollectionResponseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (microsoftTunnelServerLogCollectionResponseToUpdate.AdditionalData != null)
-            {
-                if (microsoftTunnelServerLogCollectionResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    microsoftTunnelServerLogCollectionResponseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelServerLogCollectionResponseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MicrosoftTunnelServerLogCollectionResponse>(microsoftTunnelServerLogCollectionResponseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelServerLogCollectionResponseToUpdate">The MicrosoftTunnelServerLogCollectionResponse to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> UpdateResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<MicrosoftTunnelServerLogCollectionResponse>(microsoftTunnelServerLogCollectionResponseToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PUT.
+        /// </summary>
+        /// <param name="microsoftTunnelServerLogCollectionResponseToUpdate">The MicrosoftTunnelServerLogCollectionResponse object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MicrosoftTunnelServerLogCollectionResponse> PutAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MicrosoftTunnelServerLogCollectionResponse>(microsoftTunnelServerLogCollectionResponseToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelServerLogCollectionResponse using PUT and returns a <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelServerLogCollectionResponseToUpdate">The MicrosoftTunnelServerLogCollectionResponse object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MicrosoftTunnelServerLogCollectionResponse}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelServerLogCollectionResponse>> PutResponseAsync(MicrosoftTunnelServerLogCollectionResponse microsoftTunnelServerLogCollectionResponseToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MicrosoftTunnelServerLogCollectionResponse>(microsoftTunnelServerLogCollectionResponseToUpdate, cancellationToken);
         }
 
         /// <summary>

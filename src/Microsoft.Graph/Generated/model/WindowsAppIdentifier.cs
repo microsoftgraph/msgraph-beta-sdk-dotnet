@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type WindowsAppIdentifier.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsAppIdentifier : MobileAppIdentifier
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsAppId.
         /// The identifier for an app, as specified in the app store.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsAppId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsAppId")]
         public string WindowsAppId { get; set; }
     
     }

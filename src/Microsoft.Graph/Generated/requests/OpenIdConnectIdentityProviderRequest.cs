@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified OpenIdConnectIdentityProvider using POST.
         /// </summary>
         /// <param name="openIdConnectIdentityProviderToCreate">The OpenIdConnectIdentityProvider to create.</param>
-        /// <returns>The created OpenIdConnectIdentityProvider.</returns>
-        public System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> CreateAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToCreate)
-        {
-            return this.CreateAsync(openIdConnectIdentityProviderToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OpenIdConnectIdentityProvider using POST.
-        /// </summary>
-        /// <param name="openIdConnectIdentityProviderToCreate">The OpenIdConnectIdentityProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OpenIdConnectIdentityProvider.</returns>
-        public async System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> CreateAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> CreateAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<OpenIdConnectIdentityProvider>(openIdConnectIdentityProviderToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified OpenIdConnectIdentityProvider.
+        /// Creates the specified OpenIdConnectIdentityProvider using POST and returns a <see cref="GraphResponse{OpenIdConnectIdentityProvider}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="openIdConnectIdentityProviderToCreate">The OpenIdConnectIdentityProvider to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenIdConnectIdentityProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenIdConnectIdentityProvider>> CreateResponseAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OpenIdConnectIdentityProvider>(openIdConnectIdentityProviderToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<OpenIdConnectIdentityProvider>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified OpenIdConnectIdentityProvider.
+        /// Deletes the specified OpenIdConnectIdentityProvider and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OpenIdConnectIdentityProvider.</returns>
-        public System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OpenIdConnectIdentityProvider.</returns>
-        public async System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<OpenIdConnectIdentityProvider>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OpenIdConnectIdentityProvider using PATCH.
+        /// Gets the specified OpenIdConnectIdentityProvider and returns a <see cref="GraphResponse{OpenIdConnectIdentityProvider}"/> object.
         /// </summary>
-        /// <param name="openIdConnectIdentityProviderToUpdate">The OpenIdConnectIdentityProvider to update.</param>
-        /// <returns>The updated OpenIdConnectIdentityProvider.</returns>
-        public System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> UpdateAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenIdConnectIdentityProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenIdConnectIdentityProvider>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(openIdConnectIdentityProviderToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<OpenIdConnectIdentityProvider>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OpenIdConnectIdentityProvider.</returns>
-        public async System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> UpdateAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> UpdateAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToUpdate, CancellationToken cancellationToken = default)
         {
-			if (openIdConnectIdentityProviderToUpdate.AdditionalData != null)
-			{
-				if (openIdConnectIdentityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					openIdConnectIdentityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, openIdConnectIdentityProviderToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (openIdConnectIdentityProviderToUpdate.AdditionalData != null)
-            {
-                if (openIdConnectIdentityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    openIdConnectIdentityProviderToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, openIdConnectIdentityProviderToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<OpenIdConnectIdentityProvider>(openIdConnectIdentityProviderToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OpenIdConnectIdentityProvider using PATCH and returns a <see cref="GraphResponse{OpenIdConnectIdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="openIdConnectIdentityProviderToUpdate">The OpenIdConnectIdentityProvider to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OpenIdConnectIdentityProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenIdConnectIdentityProvider>> UpdateResponseAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<OpenIdConnectIdentityProvider>(openIdConnectIdentityProviderToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified OpenIdConnectIdentityProvider using PUT.
+        /// </summary>
+        /// <param name="openIdConnectIdentityProviderToUpdate">The OpenIdConnectIdentityProvider object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<OpenIdConnectIdentityProvider> PutAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<OpenIdConnectIdentityProvider>(openIdConnectIdentityProviderToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OpenIdConnectIdentityProvider using PUT and returns a <see cref="GraphResponse{OpenIdConnectIdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="openIdConnectIdentityProviderToUpdate">The OpenIdConnectIdentityProvider object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{OpenIdConnectIdentityProvider}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenIdConnectIdentityProvider>> PutResponseAsync(OpenIdConnectIdentityProvider openIdConnectIdentityProviderToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<OpenIdConnectIdentityProvider>(openIdConnectIdentityProviderToUpdate, cancellationToken);
         }
 
         /// <summary>

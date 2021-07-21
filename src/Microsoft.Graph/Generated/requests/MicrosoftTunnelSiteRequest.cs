@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftTunnelSite using POST.
         /// </summary>
         /// <param name="microsoftTunnelSiteToCreate">The MicrosoftTunnelSite to create.</param>
-        /// <returns>The created MicrosoftTunnelSite.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelSite> CreateAsync(MicrosoftTunnelSite microsoftTunnelSiteToCreate)
-        {
-            return this.CreateAsync(microsoftTunnelSiteToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MicrosoftTunnelSite using POST.
-        /// </summary>
-        /// <param name="microsoftTunnelSiteToCreate">The MicrosoftTunnelSite to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftTunnelSite.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftTunnelSite> CreateAsync(MicrosoftTunnelSite microsoftTunnelSiteToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftTunnelSite> CreateAsync(MicrosoftTunnelSite microsoftTunnelSiteToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MicrosoftTunnelSite>(microsoftTunnelSiteToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified MicrosoftTunnelSite.
+        /// Creates the specified MicrosoftTunnelSite using POST and returns a <see cref="GraphResponse{MicrosoftTunnelSite}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="microsoftTunnelSiteToCreate">The MicrosoftTunnelSite to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelSite}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> CreateResponseAsync(MicrosoftTunnelSite microsoftTunnelSiteToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MicrosoftTunnelSite>(microsoftTunnelSiteToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MicrosoftTunnelSite>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified MicrosoftTunnelSite.
+        /// Deletes the specified MicrosoftTunnelSite and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MicrosoftTunnelSite.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelSite> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MicrosoftTunnelSite.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftTunnelSite> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftTunnelSite> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<MicrosoftTunnelSite>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified MicrosoftTunnelSite using PATCH.
+        /// Gets the specified MicrosoftTunnelSite and returns a <see cref="GraphResponse{MicrosoftTunnelSite}"/> object.
         /// </summary>
-        /// <param name="microsoftTunnelSiteToUpdate">The MicrosoftTunnelSite to update.</param>
-        /// <returns>The updated MicrosoftTunnelSite.</returns>
-        public System.Threading.Tasks.Task<MicrosoftTunnelSite> UpdateAsync(MicrosoftTunnelSite microsoftTunnelSiteToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelSite}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(microsoftTunnelSiteToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MicrosoftTunnelSite>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MicrosoftTunnelSite.</returns>
-        public async System.Threading.Tasks.Task<MicrosoftTunnelSite> UpdateAsync(MicrosoftTunnelSite microsoftTunnelSiteToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MicrosoftTunnelSite> UpdateAsync(MicrosoftTunnelSite microsoftTunnelSiteToUpdate, CancellationToken cancellationToken = default)
         {
-			if (microsoftTunnelSiteToUpdate.AdditionalData != null)
-			{
-				if (microsoftTunnelSiteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					microsoftTunnelSiteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelSiteToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (microsoftTunnelSiteToUpdate.AdditionalData != null)
-            {
-                if (microsoftTunnelSiteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    microsoftTunnelSiteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, microsoftTunnelSiteToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MicrosoftTunnelSite>(microsoftTunnelSiteToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelSite using PATCH and returns a <see cref="GraphResponse{MicrosoftTunnelSite}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelSiteToUpdate">The MicrosoftTunnelSite to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MicrosoftTunnelSite}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> UpdateResponseAsync(MicrosoftTunnelSite microsoftTunnelSiteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<MicrosoftTunnelSite>(microsoftTunnelSiteToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelSite using PUT.
+        /// </summary>
+        /// <param name="microsoftTunnelSiteToUpdate">The MicrosoftTunnelSite object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MicrosoftTunnelSite> PutAsync(MicrosoftTunnelSite microsoftTunnelSiteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MicrosoftTunnelSite>(microsoftTunnelSiteToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MicrosoftTunnelSite using PUT and returns a <see cref="GraphResponse{MicrosoftTunnelSite}"/> object.
+        /// </summary>
+        /// <param name="microsoftTunnelSiteToUpdate">The MicrosoftTunnelSite object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MicrosoftTunnelSite}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftTunnelSite>> PutResponseAsync(MicrosoftTunnelSite microsoftTunnelSiteToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MicrosoftTunnelSite>(microsoftTunnelSiteToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MicrosoftTunnelSite microsoftTunnelSiteToInitialize)
         {
 
-            if (microsoftTunnelSiteToInitialize != null && microsoftTunnelSiteToInitialize.AdditionalData != null)
+            if (microsoftTunnelSiteToInitialize != null)
             {
-
                 if (microsoftTunnelSiteToInitialize.MicrosoftTunnelServers != null && microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.CurrentPage != null)
                 {
+                    microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.InitializeNextPageRequest(this.Client, microsoftTunnelSiteToInitialize.MicrosoftTunnelServersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.AdditionalData = microsoftTunnelSiteToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    microsoftTunnelSiteToInitialize.AdditionalData.TryGetValue("microsoftTunnelServers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        microsoftTunnelSiteToInitialize.MicrosoftTunnelServers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

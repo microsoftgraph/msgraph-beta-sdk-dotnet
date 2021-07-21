@@ -12,143 +12,199 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Policy Root.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PolicyRoot>))]
     public partial class PolicyRoot
     {
     
-		///<summary>
-		/// The PolicyRoot constructor
-		///</summary>
-        public PolicyRoot()
-        {
-            this.ODataType = "microsoft.graph.policyRoot";
-        }
-	
         /// <summary>
         /// Gets or sets authentication methods policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethodsPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethodsPolicy")]
         public AuthenticationMethodsPolicy AuthenticationMethodsPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets authentication flows policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationFlowsPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationFlowsPolicy")]
         public AuthenticationFlowsPolicy AuthenticationFlowsPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets b2c authentication methods policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "b2cAuthenticationMethodsPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("b2cAuthenticationMethodsPolicy")]
         public B2cAuthenticationMethodsPolicy B2cAuthenticationMethodsPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets activity based timeout policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityBasedTimeoutPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityBasedTimeoutPolicies")]
         public IPolicyRootActivityBasedTimeoutPoliciesCollectionPage ActivityBasedTimeoutPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets activityBasedTimeoutPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("activityBasedTimeoutPolicies@odata.nextLink")]
+        public string ActivityBasedTimeoutPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets authorization policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizationPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authorizationPolicy")]
         public IPolicyRootAuthorizationPolicyCollectionPage AuthorizationPolicy { get; set; }
+
+        /// <summary>
+        /// Gets or sets authorizationPolicyNextLink.
+        /// </summary>
+        [JsonPropertyName("authorizationPolicy@odata.nextLink")]
+        public string AuthorizationPolicyNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets claims mapping policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("claimsMappingPolicies")]
         public IPolicyRootClaimsMappingPoliciesCollectionPage ClaimsMappingPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets claimsMappingPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("claimsMappingPolicies@odata.nextLink")]
+        public string ClaimsMappingPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "homeRealmDiscoveryPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("homeRealmDiscoveryPolicies")]
         public IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage HomeRealmDiscoveryPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets homeRealmDiscoveryPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("homeRealmDiscoveryPolicies@odata.nextLink")]
+        public string HomeRealmDiscoveryPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets permission grant policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrantPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("permissionGrantPolicies")]
         public IPolicyRootPermissionGrantPoliciesCollectionPage PermissionGrantPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets permissionGrantPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("permissionGrantPolicies@odata.nextLink")]
+        public string PermissionGrantPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets token issuance policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenIssuancePolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tokenIssuancePolicies")]
         public IPolicyRootTokenIssuancePoliciesCollectionPage TokenIssuancePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets tokenIssuancePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("tokenIssuancePolicies@odata.nextLink")]
+        public string TokenIssuancePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets token lifetime policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tokenLifetimePolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tokenLifetimePolicies")]
         public IPolicyRootTokenLifetimePoliciesCollectionPage TokenLifetimePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets tokenLifetimePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("tokenLifetimePolicies@odata.nextLink")]
+        public string TokenLifetimePoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets feature rollout policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureRolloutPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("featureRolloutPolicies")]
         public IPolicyRootFeatureRolloutPoliciesCollectionPage FeatureRolloutPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets featureRolloutPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("featureRolloutPolicies@odata.nextLink")]
+        public string FeatureRolloutPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets access review policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviewPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessReviewPolicy")]
         public AccessReviewPolicy AccessReviewPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets admin consent request policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminConsentRequestPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("adminConsentRequestPolicy")]
         public AdminConsentRequestPolicy AdminConsentRequestPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets directory role access review policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "directoryRoleAccessReviewPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("directoryRoleAccessReviewPolicy")]
         public DirectoryRoleAccessReviewPolicy DirectoryRoleAccessReviewPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets conditional access policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionalAccessPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conditionalAccessPolicies")]
         public IPolicyRootConditionalAccessPoliciesCollectionPage ConditionalAccessPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets conditionalAccessPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("conditionalAccessPolicies@odata.nextLink")]
+        public string ConditionalAccessPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets identity security defaults enforcement policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identitySecurityDefaultsEnforcementPolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identitySecurityDefaultsEnforcementPolicy")]
         public IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets role management policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleManagementPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleManagementPolicies")]
         public IPolicyRootRoleManagementPoliciesCollectionPage RoleManagementPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleManagementPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("roleManagementPolicies@odata.nextLink")]
+        public string RoleManagementPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role management policy assignments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleManagementPolicyAssignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleManagementPolicyAssignments")]
         public IPolicyRootRoleManagementPolicyAssignmentsCollectionPage RoleManagementPolicyAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleManagementPolicyAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleManagementPolicyAssignments@odata.nextLink")]
+        public string RoleManagementPolicyAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     
     }

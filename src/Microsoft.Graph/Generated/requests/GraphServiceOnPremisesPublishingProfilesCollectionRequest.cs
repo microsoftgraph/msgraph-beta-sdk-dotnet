@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified OnPremisesPublishingProfile to the collection via POST.
-        /// </summary>
-        /// <param name="onPremisesPublishingProfile">The OnPremisesPublishingProfile to add.</param>
-        /// <returns>The created OnPremisesPublishingProfile.</returns>
-        public System.Threading.Tasks.Task<OnPremisesPublishingProfile> AddAsync(OnPremisesPublishingProfile onPremisesPublishingProfile)
-        {
-            return this.AddAsync(onPremisesPublishingProfile, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified OnPremisesPublishingProfile to the collection via POST.
         /// </summary>
         /// <param name="onPremisesPublishingProfile">The OnPremisesPublishingProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnPremisesPublishingProfile.</returns>
-        public System.Threading.Tasks.Task<OnPremisesPublishingProfile> AddAsync(OnPremisesPublishingProfile onPremisesPublishingProfile, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<OnPremisesPublishingProfile> AddAsync(OnPremisesPublishingProfile onPremisesPublishingProfile, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<OnPremisesPublishingProfile>(onPremisesPublishingProfile, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified OnPremisesPublishingProfile to the collection via POST and returns a <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceOnPremisesPublishingProfilesCollectionPage> GetAsync()
+        /// <param name="onPremisesPublishingProfile">The OnPremisesPublishingProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesPublishingProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesPublishingProfile>> AddResponseAsync(OnPremisesPublishingProfile onPremisesPublishingProfile, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OnPremisesPublishingProfile>(onPremisesPublishingProfile, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceOnPremisesPublishingProfilesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceOnPremisesPublishingProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<GraphServiceOnPremisesPublishingProfilesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceOnPremisesPublishingProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServiceOnPremisesPublishingProfilesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GraphServiceOnPremisesPublishingProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GraphServiceOnPremisesPublishingProfilesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

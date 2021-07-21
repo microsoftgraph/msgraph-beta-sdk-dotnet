@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AospDeviceOwnerDeviceConfiguration using POST.
         /// </summary>
         /// <param name="aospDeviceOwnerDeviceConfigurationToCreate">The AospDeviceOwnerDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AospDeviceOwnerDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> CreateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToCreate);        /// <summary>
-        /// Creates the specified AospDeviceOwnerDeviceConfiguration using POST.
+        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> CreateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AospDeviceOwnerDeviceConfiguration using POST and returns a <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="aospDeviceOwnerDeviceConfigurationToCreate">The AospDeviceOwnerDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AospDeviceOwnerDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> CreateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AospDeviceOwnerDeviceConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerDeviceConfiguration>> CreateResponseAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AospDeviceOwnerDeviceConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AospDeviceOwnerDeviceConfiguration.
+        /// Deletes the specified AospDeviceOwnerDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AospDeviceOwnerDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AospDeviceOwnerDeviceConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AospDeviceOwnerDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AospDeviceOwnerDeviceConfiguration using PATCH.
+        /// Gets the specified AospDeviceOwnerDeviceConfiguration and returns a <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object.
         /// </summary>
-        /// <param name="aospDeviceOwnerDeviceConfigurationToUpdate">The AospDeviceOwnerDeviceConfiguration to update.</param>
-        /// <returns>The updated AospDeviceOwnerDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> UpdateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AospDeviceOwnerDeviceConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AospDeviceOwnerDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> UpdateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> UpdateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AospDeviceOwnerDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="aospDeviceOwnerDeviceConfigurationToUpdate">The AospDeviceOwnerDeviceConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerDeviceConfiguration>> UpdateResponseAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AospDeviceOwnerDeviceConfiguration using PUT.
+        /// </summary>
+        /// <param name="aospDeviceOwnerDeviceConfigurationToUpdate">The AospDeviceOwnerDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> PutAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AospDeviceOwnerDeviceConfiguration using PUT and returns a <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="aospDeviceOwnerDeviceConfigurationToUpdate">The AospDeviceOwnerDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerDeviceConfiguration>> PutResponseAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

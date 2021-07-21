@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IdentityProtectionRoot using POST.
         /// </summary>
         /// <param name="identityProtectionRootToCreate">The IdentityProtectionRoot to create.</param>
-        /// <returns>The created IdentityProtectionRoot.</returns>
-        public System.Threading.Tasks.Task<IdentityProtectionRoot> CreateAsync(IdentityProtectionRoot identityProtectionRootToCreate)
-        {
-            return this.CreateAsync(identityProtectionRootToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IdentityProtectionRoot using POST.
-        /// </summary>
-        /// <param name="identityProtectionRootToCreate">The IdentityProtectionRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityProtectionRoot.</returns>
-        public async System.Threading.Tasks.Task<IdentityProtectionRoot> CreateAsync(IdentityProtectionRoot identityProtectionRootToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IdentityProtectionRoot> CreateAsync(IdentityProtectionRoot identityProtectionRootToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IdentityProtectionRoot>(identityProtectionRootToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IdentityProtectionRoot.
+        /// Creates the specified IdentityProtectionRoot using POST and returns a <see cref="GraphResponse{IdentityProtectionRoot}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="identityProtectionRootToCreate">The IdentityProtectionRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProtectionRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityProtectionRoot>> CreateResponseAsync(IdentityProtectionRoot identityProtectionRootToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IdentityProtectionRoot>(identityProtectionRootToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IdentityProtectionRoot>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IdentityProtectionRoot.
+        /// Deletes the specified IdentityProtectionRoot and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IdentityProtectionRoot.</returns>
-        public System.Threading.Tasks.Task<IdentityProtectionRoot> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IdentityProtectionRoot.</returns>
-        public async System.Threading.Tasks.Task<IdentityProtectionRoot> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IdentityProtectionRoot> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IdentityProtectionRoot>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IdentityProtectionRoot using PATCH.
+        /// Gets the specified IdentityProtectionRoot and returns a <see cref="GraphResponse{IdentityProtectionRoot}"/> object.
         /// </summary>
-        /// <param name="identityProtectionRootToUpdate">The IdentityProtectionRoot to update.</param>
-        /// <returns>The updated IdentityProtectionRoot.</returns>
-        public System.Threading.Tasks.Task<IdentityProtectionRoot> UpdateAsync(IdentityProtectionRoot identityProtectionRootToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProtectionRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityProtectionRoot>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(identityProtectionRootToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IdentityProtectionRoot>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IdentityProtectionRoot.</returns>
-        public async System.Threading.Tasks.Task<IdentityProtectionRoot> UpdateAsync(IdentityProtectionRoot identityProtectionRootToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IdentityProtectionRoot> UpdateAsync(IdentityProtectionRoot identityProtectionRootToUpdate, CancellationToken cancellationToken = default)
         {
-			if (identityProtectionRootToUpdate.AdditionalData != null)
-			{
-				if (identityProtectionRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					identityProtectionRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityProtectionRootToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (identityProtectionRootToUpdate.AdditionalData != null)
-            {
-                if (identityProtectionRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    identityProtectionRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, identityProtectionRootToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IdentityProtectionRoot>(identityProtectionRootToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IdentityProtectionRoot using PATCH and returns a <see cref="GraphResponse{IdentityProtectionRoot}"/> object.
+        /// </summary>
+        /// <param name="identityProtectionRootToUpdate">The IdentityProtectionRoot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IdentityProtectionRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityProtectionRoot>> UpdateResponseAsync(IdentityProtectionRoot identityProtectionRootToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IdentityProtectionRoot>(identityProtectionRootToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IdentityProtectionRoot using PUT.
+        /// </summary>
+        /// <param name="identityProtectionRootToUpdate">The IdentityProtectionRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IdentityProtectionRoot> PutAsync(IdentityProtectionRoot identityProtectionRootToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IdentityProtectionRoot>(identityProtectionRootToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IdentityProtectionRoot using PUT and returns a <see cref="GraphResponse{IdentityProtectionRoot}"/> object.
+        /// </summary>
+        /// <param name="identityProtectionRootToUpdate">The IdentityProtectionRoot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IdentityProtectionRoot}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityProtectionRoot>> PutResponseAsync(IdentityProtectionRoot identityProtectionRootToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IdentityProtectionRoot>(identityProtectionRootToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IdentityProtectionRoot identityProtectionRootToInitialize)
         {
 
-            if (identityProtectionRootToInitialize != null && identityProtectionRootToInitialize.AdditionalData != null)
+            if (identityProtectionRootToInitialize != null)
             {
-
                 if (identityProtectionRootToInitialize.RiskDetections != null && identityProtectionRootToInitialize.RiskDetections.CurrentPage != null)
                 {
+                    identityProtectionRootToInitialize.RiskDetections.InitializeNextPageRequest(this.Client, identityProtectionRootToInitialize.RiskDetectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityProtectionRootToInitialize.RiskDetections.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskDetections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityProtectionRootToInitialize.RiskDetections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (identityProtectionRootToInitialize.RiskyUsers != null && identityProtectionRootToInitialize.RiskyUsers.CurrentPage != null)
                 {
+                    identityProtectionRootToInitialize.RiskyUsers.InitializeNextPageRequest(this.Client, identityProtectionRootToInitialize.RiskyUsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     identityProtectionRootToInitialize.RiskyUsers.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    identityProtectionRootToInitialize.AdditionalData.TryGetValue("riskyUsers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        identityProtectionRootToInitialize.RiskyUsers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

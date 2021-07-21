@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserPendingAccessReviewInstancesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified AccessReviewInstance to the collection via POST.
-        /// </summary>
-        /// <param name="accessReviewInstance">The AccessReviewInstance to add.</param>
-        /// <returns>The created AccessReviewInstance.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstance> AddAsync(AccessReviewInstance accessReviewInstance);
-
         /// <summary>
         /// Adds the specified AccessReviewInstance to the collection via POST.
         /// </summary>
         /// <param name="accessReviewInstance">The AccessReviewInstance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewInstance.</returns>
-        System.Threading.Tasks.Task<AccessReviewInstance> AddAsync(AccessReviewInstance accessReviewInstance, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessReviewInstance> AddAsync(AccessReviewInstance accessReviewInstance, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AccessReviewInstance to the collection via POST and returns a <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserPendingAccessReviewInstancesCollectionPage> GetAsync();
+        /// <param name="accessReviewInstance">The AccessReviewInstance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewInstance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstance>> AddResponseAsync(AccessReviewInstance accessReviewInstance, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserPendingAccessReviewInstancesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IUserPendingAccessReviewInstancesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserPendingAccessReviewInstancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserPendingAccessReviewInstancesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserPendingAccessReviewInstancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

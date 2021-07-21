@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified GovernanceRoleDefinition using POST.
         /// </summary>
         /// <param name="governanceRoleDefinitionToCreate">The GovernanceRoleDefinition to create.</param>
-        /// <returns>The created GovernanceRoleDefinition.</returns>
-        public System.Threading.Tasks.Task<GovernanceRoleDefinition> CreateAsync(GovernanceRoleDefinition governanceRoleDefinitionToCreate)
-        {
-            return this.CreateAsync(governanceRoleDefinitionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GovernanceRoleDefinition using POST.
-        /// </summary>
-        /// <param name="governanceRoleDefinitionToCreate">The GovernanceRoleDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GovernanceRoleDefinition.</returns>
-        public async System.Threading.Tasks.Task<GovernanceRoleDefinition> CreateAsync(GovernanceRoleDefinition governanceRoleDefinitionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GovernanceRoleDefinition> CreateAsync(GovernanceRoleDefinition governanceRoleDefinitionToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<GovernanceRoleDefinition>(governanceRoleDefinitionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified GovernanceRoleDefinition.
+        /// Creates the specified GovernanceRoleDefinition using POST and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="governanceRoleDefinitionToCreate">The GovernanceRoleDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> CreateResponseAsync(GovernanceRoleDefinition governanceRoleDefinitionToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<GovernanceRoleDefinition>(governanceRoleDefinitionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<GovernanceRoleDefinition>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified GovernanceRoleDefinition.
+        /// Deletes the specified GovernanceRoleDefinition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GovernanceRoleDefinition.</returns>
-        public System.Threading.Tasks.Task<GovernanceRoleDefinition> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GovernanceRoleDefinition.</returns>
-        public async System.Threading.Tasks.Task<GovernanceRoleDefinition> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GovernanceRoleDefinition> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<GovernanceRoleDefinition>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified GovernanceRoleDefinition using PATCH.
+        /// Gets the specified GovernanceRoleDefinition and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
         /// </summary>
-        /// <param name="governanceRoleDefinitionToUpdate">The GovernanceRoleDefinition to update.</param>
-        /// <returns>The updated GovernanceRoleDefinition.</returns>
-        public System.Threading.Tasks.Task<GovernanceRoleDefinition> UpdateAsync(GovernanceRoleDefinition governanceRoleDefinitionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(governanceRoleDefinitionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GovernanceRoleDefinition>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GovernanceRoleDefinition.</returns>
-        public async System.Threading.Tasks.Task<GovernanceRoleDefinition> UpdateAsync(GovernanceRoleDefinition governanceRoleDefinitionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GovernanceRoleDefinition> UpdateAsync(GovernanceRoleDefinition governanceRoleDefinitionToUpdate, CancellationToken cancellationToken = default)
         {
-			if (governanceRoleDefinitionToUpdate.AdditionalData != null)
-			{
-				if (governanceRoleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					governanceRoleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, governanceRoleDefinitionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (governanceRoleDefinitionToUpdate.AdditionalData != null)
-            {
-                if (governanceRoleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    governanceRoleDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, governanceRoleDefinitionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<GovernanceRoleDefinition>(governanceRoleDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GovernanceRoleDefinition using PATCH and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="governanceRoleDefinitionToUpdate">The GovernanceRoleDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GovernanceRoleDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> UpdateResponseAsync(GovernanceRoleDefinition governanceRoleDefinitionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<GovernanceRoleDefinition>(governanceRoleDefinitionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified GovernanceRoleDefinition using PUT.
+        /// </summary>
+        /// <param name="governanceRoleDefinitionToUpdate">The GovernanceRoleDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<GovernanceRoleDefinition> PutAsync(GovernanceRoleDefinition governanceRoleDefinitionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<GovernanceRoleDefinition>(governanceRoleDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GovernanceRoleDefinition using PUT and returns a <see cref="GraphResponse{GovernanceRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="governanceRoleDefinitionToUpdate">The GovernanceRoleDefinition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{GovernanceRoleDefinition}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GovernanceRoleDefinition>> PutResponseAsync(GovernanceRoleDefinition governanceRoleDefinitionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<GovernanceRoleDefinition>(governanceRoleDefinitionToUpdate, cancellationToken);
         }
 
         /// <summary>

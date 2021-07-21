@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.ManagedTenants
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IManagedTenantWindowsProtectionStatesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<ManagedTenantWindowsProtectionStatesCollectionPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<ManagedTenantWindowsProtectionStatesCollectionPage>))]
     public interface IManagedTenantWindowsProtectionStatesCollectionPage : Microsoft.Graph.ICollectionPage<WindowsProtectionState>
     {
         /// <summary>

@@ -12,41 +12,32 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserExperienceSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UserExperienceSettings>))]
     public partial class UserExperienceSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserExperienceSettings"/> class.
-        /// </summary>
-        public UserExperienceSettings()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.userExperienceSettings";
-        }
 
         /// <summary>
         /// Gets or sets daysUntilForcedReboot.
         /// Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "daysUntilForcedReboot", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("daysUntilForcedReboot")]
         public Int32? DaysUntilForcedReboot { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

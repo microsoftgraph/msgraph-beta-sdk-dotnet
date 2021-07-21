@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ISecurityIpSecurityProfilesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified IpSecurityProfile to the collection via POST.
-        /// </summary>
-        /// <param name="ipSecurityProfile">The IpSecurityProfile to add.</param>
-        /// <returns>The created IpSecurityProfile.</returns>
-        System.Threading.Tasks.Task<IpSecurityProfile> AddAsync(IpSecurityProfile ipSecurityProfile);
-
         /// <summary>
         /// Adds the specified IpSecurityProfile to the collection via POST.
         /// </summary>
         /// <param name="ipSecurityProfile">The IpSecurityProfile to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IpSecurityProfile.</returns>
-        System.Threading.Tasks.Task<IpSecurityProfile> AddAsync(IpSecurityProfile ipSecurityProfile, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IpSecurityProfile> AddAsync(IpSecurityProfile ipSecurityProfile, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified IpSecurityProfile to the collection via POST and returns a <see cref="GraphResponse{IpSecurityProfile}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecurityIpSecurityProfilesCollectionPage> GetAsync();
+        /// <param name="ipSecurityProfile">The IpSecurityProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IpSecurityProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IpSecurityProfile>> AddResponseAsync(IpSecurityProfile ipSecurityProfile, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISecurityIpSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ISecurityIpSecurityProfilesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SecurityIpSecurityProfilesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityIpSecurityProfilesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecurityIpSecurityProfilesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

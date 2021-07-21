@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleManagementPolicyExpirationRule using POST.
         /// </summary>
         /// <param name="unifiedRoleManagementPolicyExpirationRuleToCreate">The UnifiedRoleManagementPolicyExpirationRule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleManagementPolicyExpirationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> CreateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToCreate);        /// <summary>
-        /// Creates the specified UnifiedRoleManagementPolicyExpirationRule using POST.
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> CreateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified UnifiedRoleManagementPolicyExpirationRule using POST and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
         /// </summary>
         /// <param name="unifiedRoleManagementPolicyExpirationRuleToCreate">The UnifiedRoleManagementPolicyExpirationRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UnifiedRoleManagementPolicyExpirationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> CreateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnifiedRoleManagementPolicyExpirationRule.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> CreateResponseAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UnifiedRoleManagementPolicyExpirationRule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified UnifiedRoleManagementPolicyExpirationRule.
+        /// Deletes the specified UnifiedRoleManagementPolicyExpirationRule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UnifiedRoleManagementPolicyExpirationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UnifiedRoleManagementPolicyExpirationRule.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleManagementPolicyExpirationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PATCH.
+        /// Gets the specified UnifiedRoleManagementPolicyExpirationRule and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
         /// </summary>
-        /// <param name="unifiedRoleManagementPolicyExpirationRuleToUpdate">The UnifiedRoleManagementPolicyExpirationRule to update.</param>
-        /// <returns>The updated UnifiedRoleManagementPolicyExpirationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> UpdateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleManagementPolicyExpirationRule.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> UpdateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> UpdateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PATCH and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyExpirationRuleToUpdate">The UnifiedRoleManagementPolicyExpirationRule to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> UpdateResponseAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PUT.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyExpirationRuleToUpdate">The UnifiedRoleManagementPolicyExpirationRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> PutAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PUT and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyExpirationRuleToUpdate">The UnifiedRoleManagementPolicyExpirationRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> PutResponseAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

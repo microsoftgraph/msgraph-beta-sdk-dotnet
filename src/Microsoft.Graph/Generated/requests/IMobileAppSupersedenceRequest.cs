@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppSupersedence using POST.
         /// </summary>
         /// <param name="mobileAppSupersedenceToCreate">The MobileAppSupersedence to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppSupersedence.</returns>
-        System.Threading.Tasks.Task<MobileAppSupersedence> CreateAsync(MobileAppSupersedence mobileAppSupersedenceToCreate);        /// <summary>
-        /// Creates the specified MobileAppSupersedence using POST.
+        System.Threading.Tasks.Task<MobileAppSupersedence> CreateAsync(MobileAppSupersedence mobileAppSupersedenceToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified MobileAppSupersedence using POST and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
         /// </summary>
         /// <param name="mobileAppSupersedenceToCreate">The MobileAppSupersedence to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MobileAppSupersedence.</returns>
-        System.Threading.Tasks.Task<MobileAppSupersedence> CreateAsync(MobileAppSupersedence mobileAppSupersedenceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MobileAppSupersedence.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MobileAppSupersedence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> CreateResponseAsync(MobileAppSupersedence mobileAppSupersedenceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MobileAppSupersedence.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified MobileAppSupersedence.
+        /// Deletes the specified MobileAppSupersedence and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MobileAppSupersedence.</returns>
-        System.Threading.Tasks.Task<MobileAppSupersedence> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MobileAppSupersedence.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppSupersedence.</returns>
-        System.Threading.Tasks.Task<MobileAppSupersedence> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppSupersedence> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified MobileAppSupersedence using PATCH.
+        /// Gets the specified MobileAppSupersedence and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
         /// </summary>
-        /// <param name="mobileAppSupersedenceToUpdate">The MobileAppSupersedence to update.</param>
-        /// <returns>The updated MobileAppSupersedence.</returns>
-        System.Threading.Tasks.Task<MobileAppSupersedence> UpdateAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppSupersedence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MobileAppSupersedence using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppSupersedence.</returns>
-        System.Threading.Tasks.Task<MobileAppSupersedence> UpdateAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppSupersedence> UpdateAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MobileAppSupersedence using PATCH and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
+        /// </summary>
+        /// <param name="mobileAppSupersedenceToUpdate">The MobileAppSupersedence to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppSupersedence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> UpdateResponseAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MobileAppSupersedence using PUT.
+        /// </summary>
+        /// <param name="mobileAppSupersedenceToUpdate">The MobileAppSupersedence object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MobileAppSupersedence> PutAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MobileAppSupersedence using PUT and returns a <see cref="GraphResponse{MobileAppSupersedence}"/> object.
+        /// </summary>
+        /// <param name="mobileAppSupersedenceToUpdate">The MobileAppSupersedence object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MobileAppSupersedence}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppSupersedence>> PutResponseAsync(MobileAppSupersedence mobileAppSupersedenceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

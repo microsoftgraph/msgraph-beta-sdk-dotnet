@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Boolean Setting Instance.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementBooleanSettingInstance : DeviceManagementSettingInstance
     {
     
-		///<summary>
-		/// The DeviceManagementBooleanSettingInstance constructor
-		///</summary>
+        ///<summary>
+        /// The DeviceManagementBooleanSettingInstance constructor
+        ///</summary>
         public DeviceManagementBooleanSettingInstance()
         {
             this.ODataType = "microsoft.graph.deviceManagementBooleanSettingInstance";
         }
-	
+
         /// <summary>
         /// Gets or sets value.
         /// The boolean value
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public bool? Value { get; set; }
     
     }

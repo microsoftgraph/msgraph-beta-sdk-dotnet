@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified RiskyUserHistoryItem using POST.
         /// </summary>
         /// <param name="riskyUserHistoryItemToCreate">The RiskyUserHistoryItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> CreateAsync(RiskyUserHistoryItem riskyUserHistoryItemToCreate);        /// <summary>
-        /// Creates the specified RiskyUserHistoryItem using POST.
+        System.Threading.Tasks.Task<RiskyUserHistoryItem> CreateAsync(RiskyUserHistoryItem riskyUserHistoryItemToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified RiskyUserHistoryItem using POST and returns a <see cref="GraphResponse{RiskyUserHistoryItem}"/> object.
         /// </summary>
         /// <param name="riskyUserHistoryItemToCreate">The RiskyUserHistoryItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> CreateAsync(RiskyUserHistoryItem riskyUserHistoryItemToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified RiskyUserHistoryItem.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{RiskyUserHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> CreateResponseAsync(RiskyUserHistoryItem riskyUserHistoryItemToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified RiskyUserHistoryItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified RiskyUserHistoryItem.
+        /// Deletes the specified RiskyUserHistoryItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified RiskyUserHistoryItem.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<RiskyUserHistoryItem> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified RiskyUserHistoryItem using PATCH.
+        /// Gets the specified RiskyUserHistoryItem and returns a <see cref="GraphResponse{RiskyUserHistoryItem}"/> object.
         /// </summary>
-        /// <param name="riskyUserHistoryItemToUpdate">The RiskyUserHistoryItem to update.</param>
-        /// <returns>The updated RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> UpdateAsync(RiskyUserHistoryItem riskyUserHistoryItemToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RiskyUserHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified RiskyUserHistoryItem using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RiskyUserHistoryItem.</returns>
-        System.Threading.Tasks.Task<RiskyUserHistoryItem> UpdateAsync(RiskyUserHistoryItem riskyUserHistoryItemToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<RiskyUserHistoryItem> UpdateAsync(RiskyUserHistoryItem riskyUserHistoryItemToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified RiskyUserHistoryItem using PATCH and returns a <see cref="GraphResponse{RiskyUserHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="riskyUserHistoryItemToUpdate">The RiskyUserHistoryItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RiskyUserHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> UpdateResponseAsync(RiskyUserHistoryItem riskyUserHistoryItemToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified RiskyUserHistoryItem using PUT.
+        /// </summary>
+        /// <param name="riskyUserHistoryItemToUpdate">The RiskyUserHistoryItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<RiskyUserHistoryItem> PutAsync(RiskyUserHistoryItem riskyUserHistoryItemToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified RiskyUserHistoryItem using PUT and returns a <see cref="GraphResponse{RiskyUserHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="riskyUserHistoryItemToUpdate">The RiskyUserHistoryItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{RiskyUserHistoryItem}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RiskyUserHistoryItem>> PutResponseAsync(RiskyUserHistoryItem riskyUserHistoryItemToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type VerifiedCustomDomainCertificatesMetadata.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<VerifiedCustomDomainCertificatesMetadata>))]
     public partial class VerifiedCustomDomainCertificatesMetadata
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VerifiedCustomDomainCertificatesMetadata"/> class.
-        /// </summary>
-        public VerifiedCustomDomainCertificatesMetadata()
-        {
-            this.ODataType = "microsoft.graph.verifiedCustomDomainCertificatesMetadata";
-        }
 
         /// <summary>
         /// Gets or sets expiryDate.
         /// The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiryDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expiryDate")]
         public DateTimeOffset? ExpiryDate { get; set; }
     
         /// <summary>
         /// Gets or sets issueDate.
         /// The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issueDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issueDate")]
         public DateTimeOffset? IssueDate { get; set; }
     
         /// <summary>
         /// Gets or sets issuerName.
         /// The issuer name of the custom domain certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "issuerName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("issuerName")]
         public string IssuerName { get; set; }
     
         /// <summary>
         /// Gets or sets subjectName.
         /// The subject name of the custom domain certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subjectName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("subjectName")]
         public string SubjectName { get; set; }
     
         /// <summary>
         /// Gets or sets thumbprint.
         /// The thumbprint associated with the custom domain certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbprint", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("thumbprint")]
         public string Thumbprint { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IBookingBusinessStaffMembersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified BookingStaffMember to the collection via POST.
-        /// </summary>
-        /// <param name="bookingStaffMember">The BookingStaffMember to add.</param>
-        /// <returns>The created BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> AddAsync(BookingStaffMember bookingStaffMember);
-
         /// <summary>
         /// Adds the specified BookingStaffMember to the collection via POST.
         /// </summary>
         /// <param name="bookingStaffMember">The BookingStaffMember to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> AddAsync(BookingStaffMember bookingStaffMember, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BookingStaffMember> AddAsync(BookingStaffMember bookingStaffMember, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified BookingStaffMember to the collection via POST and returns a <see cref="GraphResponse{BookingStaffMember}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IBookingBusinessStaffMembersCollectionPage> GetAsync();
+        /// <param name="bookingStaffMember">The BookingStaffMember to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingStaffMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> AddResponseAsync(BookingStaffMember bookingStaffMember, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IBookingBusinessStaffMembersCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IBookingBusinessStaffMembersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{BookingBusinessStaffMembersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusinessStaffMembersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingBusinessStaffMembersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

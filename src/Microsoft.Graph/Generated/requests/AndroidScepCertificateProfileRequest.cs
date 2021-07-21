@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidScepCertificateProfile using POST.
         /// </summary>
         /// <param name="androidScepCertificateProfileToCreate">The AndroidScepCertificateProfile to create.</param>
-        /// <returns>The created AndroidScepCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidScepCertificateProfile> CreateAsync(AndroidScepCertificateProfile androidScepCertificateProfileToCreate)
-        {
-            return this.CreateAsync(androidScepCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidScepCertificateProfile using POST.
-        /// </summary>
-        /// <param name="androidScepCertificateProfileToCreate">The AndroidScepCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidScepCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidScepCertificateProfile> CreateAsync(AndroidScepCertificateProfile androidScepCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidScepCertificateProfile> CreateAsync(AndroidScepCertificateProfile androidScepCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidScepCertificateProfile>(androidScepCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidScepCertificateProfile.
+        /// Creates the specified AndroidScepCertificateProfile using POST and returns a <see cref="GraphResponse{AndroidScepCertificateProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidScepCertificateProfileToCreate">The AndroidScepCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidScepCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidScepCertificateProfile>> CreateResponseAsync(AndroidScepCertificateProfile androidScepCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidScepCertificateProfile>(androidScepCertificateProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidScepCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidScepCertificateProfile.
+        /// Deletes the specified AndroidScepCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidScepCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidScepCertificateProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidScepCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidScepCertificateProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidScepCertificateProfile> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidScepCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidScepCertificateProfile using PATCH.
+        /// Gets the specified AndroidScepCertificateProfile and returns a <see cref="GraphResponse{AndroidScepCertificateProfile}"/> object.
         /// </summary>
-        /// <param name="androidScepCertificateProfileToUpdate">The AndroidScepCertificateProfile to update.</param>
-        /// <returns>The updated AndroidScepCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidScepCertificateProfile> UpdateAsync(AndroidScepCertificateProfile androidScepCertificateProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidScepCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(androidScepCertificateProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidScepCertificateProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidScepCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidScepCertificateProfile> UpdateAsync(AndroidScepCertificateProfile androidScepCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidScepCertificateProfile> UpdateAsync(AndroidScepCertificateProfile androidScepCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
-			if (androidScepCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (androidScepCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidScepCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidScepCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidScepCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (androidScepCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidScepCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidScepCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidScepCertificateProfile>(androidScepCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidScepCertificateProfile using PATCH and returns a <see cref="GraphResponse{AndroidScepCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="androidScepCertificateProfileToUpdate">The AndroidScepCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidScepCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidScepCertificateProfile>> UpdateResponseAsync(AndroidScepCertificateProfile androidScepCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidScepCertificateProfile>(androidScepCertificateProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidScepCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="androidScepCertificateProfileToUpdate">The AndroidScepCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidScepCertificateProfile> PutAsync(AndroidScepCertificateProfile androidScepCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidScepCertificateProfile>(androidScepCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidScepCertificateProfile using PUT and returns a <see cref="GraphResponse{AndroidScepCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="androidScepCertificateProfileToUpdate">The AndroidScepCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidScepCertificateProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidScepCertificateProfile>> PutResponseAsync(AndroidScepCertificateProfile androidScepCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidScepCertificateProfile>(androidScepCertificateProfileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AndroidScepCertificateProfile androidScepCertificateProfileToInitialize)
         {
 
-            if (androidScepCertificateProfileToInitialize != null && androidScepCertificateProfileToInitialize.AdditionalData != null)
+            if (androidScepCertificateProfileToInitialize != null)
             {
-
                 if (androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = androidScepCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    androidScepCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        androidScepCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

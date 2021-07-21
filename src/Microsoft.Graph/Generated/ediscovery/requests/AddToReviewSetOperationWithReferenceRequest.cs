@@ -38,117 +38,102 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified AddToReviewSetOperation.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AddToReviewSetOperation.</returns>
-        public System.Threading.Tasks.Task<AddToReviewSetOperation> GetAsync()
+        public async System.Threading.Tasks.Task<AddToReviewSetOperation> GetAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<AddToReviewSetOperation>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified AddToReviewSetOperation.
+        /// Gets the specified AddToReviewSetOperation and returns a <see cref="GraphResponse{AddToReviewSetOperation}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The AddToReviewSetOperation.</returns>
-        public async System.Threading.Tasks.Task<AddToReviewSetOperation> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{AddToReviewSetOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AddToReviewSetOperation>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<AddToReviewSetOperation>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AddToReviewSetOperation>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified AddToReviewSetOperation using POST.
         /// </summary>
         /// <param name="addToReviewSetOperationToCreate">The AddToReviewSetOperation to create.</param>
-        /// <returns>The created AddToReviewSetOperation.</returns>
-        public System.Threading.Tasks.Task<AddToReviewSetOperation> CreateAsync(AddToReviewSetOperation addToReviewSetOperationToCreate)
-        {
-            return this.CreateAsync(addToReviewSetOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AddToReviewSetOperation using POST.
-        /// </summary>
-        /// <param name="addToReviewSetOperationToCreate">The AddToReviewSetOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AddToReviewSetOperation.</returns>
-        public async System.Threading.Tasks.Task<AddToReviewSetOperation> CreateAsync(AddToReviewSetOperation addToReviewSetOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AddToReviewSetOperation> CreateAsync(AddToReviewSetOperation addToReviewSetOperationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AddToReviewSetOperation>(addToReviewSetOperationToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified AddToReviewSetOperation using PATCH.
+        /// Creates the specified AddToReviewSetOperation using POST and returns a <see cref="GraphResponse{AddToReviewSetOperation}"/> object.
         /// </summary>
-        /// <param name="addToReviewSetOperationToUpdate">The AddToReviewSetOperation to update.</param>
-        /// <returns>The updated AddToReviewSetOperation.</returns>
-        public System.Threading.Tasks.Task<AddToReviewSetOperation> UpdateAsync(AddToReviewSetOperation addToReviewSetOperationToUpdate)
+        /// <param name="addToReviewSetOperationToCreate">The AddToReviewSetOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AddToReviewSetOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AddToReviewSetOperation>> CreateResponseAsync(AddToReviewSetOperation addToReviewSetOperationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(addToReviewSetOperationToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AddToReviewSetOperation>(addToReviewSetOperationToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified AddToReviewSetOperation using PATCH.
         /// </summary>
         /// <param name="addToReviewSetOperationToUpdate">The AddToReviewSetOperation to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AddToReviewSetOperation.</returns>
-        public async System.Threading.Tasks.Task<AddToReviewSetOperation> UpdateAsync(AddToReviewSetOperation addToReviewSetOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AddToReviewSetOperation> UpdateAsync(AddToReviewSetOperation addToReviewSetOperationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (addToReviewSetOperationToUpdate.AdditionalData != null)
-			{
-				if (addToReviewSetOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					addToReviewSetOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, addToReviewSetOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (addToReviewSetOperationToUpdate.AdditionalData != null)
-            {
-                if (addToReviewSetOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    addToReviewSetOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, addToReviewSetOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AddToReviewSetOperation>(addToReviewSetOperationToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified AddToReviewSetOperation.
+        /// Updates the specified AddToReviewSetOperation using PATCH and returns a <see cref="GraphResponse{AddToReviewSetOperation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="addToReviewSetOperationToUpdate">The AddToReviewSetOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AddToReviewSetOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AddToReviewSetOperation>> UpdateResponseAsync(AddToReviewSetOperation addToReviewSetOperationToUpdate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AddToReviewSetOperation>(addToReviewSetOperationToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified AddToReviewSetOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AddToReviewSetOperation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified AddToReviewSetOperation and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface INoteMultiValueExtendedPropertiesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<NoteMultiValueExtendedPropertiesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<NoteMultiValueExtendedPropertiesCollectionPage>))]
     public interface INoteMultiValueExtendedPropertiesCollectionPage : ICollectionPage<MultiValueLegacyExtendedProperty>
     {
         /// <summary>

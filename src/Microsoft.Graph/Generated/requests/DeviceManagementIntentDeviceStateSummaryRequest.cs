@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementIntentDeviceStateSummary using POST.
         /// </summary>
         /// <param name="deviceManagementIntentDeviceStateSummaryToCreate">The DeviceManagementIntentDeviceStateSummary to create.</param>
-        /// <returns>The created DeviceManagementIntentDeviceStateSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> CreateAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToCreate)
-        {
-            return this.CreateAsync(deviceManagementIntentDeviceStateSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementIntentDeviceStateSummary using POST.
-        /// </summary>
-        /// <param name="deviceManagementIntentDeviceStateSummaryToCreate">The DeviceManagementIntentDeviceStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntentDeviceStateSummary.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> CreateAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> CreateAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementIntentDeviceStateSummary>(deviceManagementIntentDeviceStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagementIntentDeviceStateSummary.
+        /// Creates the specified DeviceManagementIntentDeviceStateSummary using POST and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementIntentDeviceStateSummaryToCreate">The DeviceManagementIntentDeviceStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStateSummary>> CreateResponseAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntentDeviceStateSummary>(deviceManagementIntentDeviceStateSummaryToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementIntentDeviceStateSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagementIntentDeviceStateSummary.
+        /// Deletes the specified DeviceManagementIntentDeviceStateSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementIntentDeviceStateSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntentDeviceStateSummary.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementIntentDeviceStateSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagementIntentDeviceStateSummary using PATCH.
+        /// Gets the specified DeviceManagementIntentDeviceStateSummary and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object.
         /// </summary>
-        /// <param name="deviceManagementIntentDeviceStateSummaryToUpdate">The DeviceManagementIntentDeviceStateSummary to update.</param>
-        /// <returns>The updated DeviceManagementIntentDeviceStateSummary.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> UpdateAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStateSummary>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceManagementIntentDeviceStateSummaryToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntentDeviceStateSummary>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntentDeviceStateSummary.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> UpdateAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> UpdateAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceManagementIntentDeviceStateSummaryToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementIntentDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementIntentDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentDeviceStateSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementIntentDeviceStateSummaryToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementIntentDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementIntentDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentDeviceStateSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementIntentDeviceStateSummary>(deviceManagementIntentDeviceStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentDeviceStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentDeviceStateSummaryToUpdate">The DeviceManagementIntentDeviceStateSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStateSummary>> UpdateResponseAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntentDeviceStateSummary>(deviceManagementIntentDeviceStateSummaryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentDeviceStateSummary using PUT.
+        /// </summary>
+        /// <param name="deviceManagementIntentDeviceStateSummaryToUpdate">The DeviceManagementIntentDeviceStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagementIntentDeviceStateSummary> PutAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagementIntentDeviceStateSummary>(deviceManagementIntentDeviceStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentDeviceStateSummary using PUT and returns a <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentDeviceStateSummaryToUpdate">The DeviceManagementIntentDeviceStateSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagementIntentDeviceStateSummary}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentDeviceStateSummary>> PutResponseAsync(DeviceManagementIntentDeviceStateSummary deviceManagementIntentDeviceStateSummaryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntentDeviceStateSummary>(deviceManagementIntentDeviceStateSummaryToUpdate, cancellationToken);
         }
 
         /// <summary>

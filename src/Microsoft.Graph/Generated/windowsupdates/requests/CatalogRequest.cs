@@ -39,34 +39,28 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Creates the specified Catalog using POST.
         /// </summary>
         /// <param name="catalogToCreate">The Catalog to create.</param>
-        /// <returns>The created Catalog.</returns>
-        public System.Threading.Tasks.Task<Catalog> CreateAsync(Catalog catalogToCreate)
-        {
-            return this.CreateAsync(catalogToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Catalog using POST.
-        /// </summary>
-        /// <param name="catalogToCreate">The Catalog to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Catalog.</returns>
-        public async System.Threading.Tasks.Task<Catalog> CreateAsync(Catalog catalogToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Catalog> CreateAsync(Catalog catalogToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Catalog>(catalogToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Catalog.
+        /// Creates the specified Catalog using POST and returns a <see cref="GraphResponse{Catalog}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="catalogToCreate">The Catalog to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Catalog}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Catalog>> CreateResponseAsync(Catalog catalogToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Catalog>(catalogToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Catalog>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Catalog.
+        /// Deletes the specified Catalog and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Catalog.</returns>
-        public System.Threading.Tasks.Task<Catalog> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Catalog.</returns>
-        public async System.Threading.Tasks.Task<Catalog> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Catalog> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Catalog>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Catalog using PATCH.
+        /// Gets the specified Catalog and returns a <see cref="GraphResponse{Catalog}"/> object.
         /// </summary>
-        /// <param name="catalogToUpdate">The Catalog to update.</param>
-        /// <returns>The updated Catalog.</returns>
-        public System.Threading.Tasks.Task<Catalog> UpdateAsync(Catalog catalogToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Catalog}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Catalog>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(catalogToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Catalog>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Catalog.</returns>
-        public async System.Threading.Tasks.Task<Catalog> UpdateAsync(Catalog catalogToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Catalog> UpdateAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default)
         {
-			if (catalogToUpdate.AdditionalData != null)
-			{
-				if (catalogToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					catalogToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, catalogToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (catalogToUpdate.AdditionalData != null)
-            {
-                if (catalogToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    catalogToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, catalogToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Catalog>(catalogToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Catalog using PATCH and returns a <see cref="GraphResponse{Catalog}"/> object.
+        /// </summary>
+        /// <param name="catalogToUpdate">The Catalog to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Catalog}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Catalog>> UpdateResponseAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Catalog>(catalogToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Catalog using PUT.
+        /// </summary>
+        /// <param name="catalogToUpdate">The Catalog object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Catalog> PutAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Catalog>(catalogToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Catalog using PUT and returns a <see cref="GraphResponse{Catalog}"/> object.
+        /// </summary>
+        /// <param name="catalogToUpdate">The Catalog object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Catalog}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Catalog>> PutResponseAsync(Catalog catalogToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Catalog>(catalogToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph.WindowsUpdates
         private void InitializeCollectionProperties(Catalog catalogToInitialize)
         {
 
-            if (catalogToInitialize != null && catalogToInitialize.AdditionalData != null)
+            if (catalogToInitialize != null)
             {
-
                 if (catalogToInitialize.Entries != null && catalogToInitialize.Entries.CurrentPage != null)
                 {
+                    catalogToInitialize.Entries.InitializeNextPageRequest(this.Client, catalogToInitialize.EntriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     catalogToInitialize.Entries.AdditionalData = catalogToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    catalogToInitialize.AdditionalData.TryGetValue("entries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        catalogToInitialize.Entries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

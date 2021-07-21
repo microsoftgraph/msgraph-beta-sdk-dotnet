@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IExactMatchLookupJobMatchingRowsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ExactMatchLookupJobMatchingRowsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ExactMatchLookupJobMatchingRowsCollectionPage>))]
     public interface IExactMatchLookupJobMatchingRowsCollectionPage : ICollectionPage<LookupResultRow>
     {
         /// <summary>

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkVpnConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkVpnConfigurationToCreate">The AndroidForWorkVpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> CreateAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkVpnConfiguration using POST.
+        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> CreateAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AndroidForWorkVpnConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object.
         /// </summary>
         /// <param name="androidForWorkVpnConfigurationToCreate">The AndroidForWorkVpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidForWorkVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> CreateAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidForWorkVpnConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkVpnConfiguration>> CreateResponseAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidForWorkVpnConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AndroidForWorkVpnConfiguration.
+        /// Deletes the specified AndroidForWorkVpnConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidForWorkVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidForWorkVpnConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AndroidForWorkVpnConfiguration using PATCH.
+        /// Gets the specified AndroidForWorkVpnConfiguration and returns a <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidForWorkVpnConfigurationToUpdate">The AndroidForWorkVpnConfiguration to update.</param>
-        /// <returns>The updated AndroidForWorkVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> UpdateAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkVpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidForWorkVpnConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkVpnConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> UpdateAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> UpdateAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkVpnConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkVpnConfigurationToUpdate">The AndroidForWorkVpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkVpnConfiguration>> UpdateResponseAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkVpnConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidForWorkVpnConfigurationToUpdate">The AndroidForWorkVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidForWorkVpnConfiguration> PutAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkVpnConfiguration using PUT and returns a <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkVpnConfigurationToUpdate">The AndroidForWorkVpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidForWorkVpnConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkVpnConfiguration>> PutResponseAsync(AndroidForWorkVpnConfiguration androidForWorkVpnConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementIntentAssignment using POST.
         /// </summary>
         /// <param name="deviceManagementIntentAssignmentToCreate">The DeviceManagementIntentAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntentAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> CreateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementIntentAssignment using POST.
+        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> CreateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementIntentAssignment using POST and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object.
         /// </summary>
         /// <param name="deviceManagementIntentAssignmentToCreate">The DeviceManagementIntentAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementIntentAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> CreateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementIntentAssignment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> CreateResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementIntentAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceManagementIntentAssignment.
+        /// Deletes the specified DeviceManagementIntentAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementIntentAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementIntentAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntentAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceManagementIntentAssignment using PATCH.
+        /// Gets the specified DeviceManagementIntentAssignment and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object.
         /// </summary>
-        /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment to update.</param>
-        /// <returns>The updated DeviceManagementIntentAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> UpdateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementIntentAssignment using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntentAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> UpdateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> UpdateAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentAssignment using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> UpdateResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentAssignment using PUT.
+        /// </summary>
+        /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementIntentAssignment> PutAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntentAssignment using PUT and returns a <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentAssignmentToUpdate">The DeviceManagementIntentAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementIntentAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntentAssignment>> PutResponseAsync(DeviceManagementIntentAssignment deviceManagementIntentAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

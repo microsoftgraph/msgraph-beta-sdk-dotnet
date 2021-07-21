@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanyJournalLinesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified JournalLine to the collection via POST.
-        /// </summary>
-        /// <param name="journalLine">The JournalLine to add.</param>
-        /// <returns>The created JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> AddAsync(JournalLine journalLine);
-
         /// <summary>
         /// Adds the specified JournalLine to the collection via POST.
         /// </summary>
         /// <param name="journalLine">The JournalLine to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> AddAsync(JournalLine journalLine, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<JournalLine> AddAsync(JournalLine journalLine, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified JournalLine to the collection via POST and returns a <see cref="GraphResponse{JournalLine}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyJournalLinesCollectionPage> GetAsync();
+        /// <param name="journalLine">The JournalLine to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JournalLine>> AddResponseAsync(JournalLine journalLine, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyJournalLinesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICompanyJournalLinesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyJournalLinesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyJournalLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

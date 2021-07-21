@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ItemPhone using POST.
         /// </summary>
         /// <param name="itemPhoneToCreate">The ItemPhone to create.</param>
-        /// <returns>The created ItemPhone.</returns>
-        public System.Threading.Tasks.Task<ItemPhone> CreateAsync(ItemPhone itemPhoneToCreate)
-        {
-            return this.CreateAsync(itemPhoneToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ItemPhone using POST.
-        /// </summary>
-        /// <param name="itemPhoneToCreate">The ItemPhone to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemPhone.</returns>
-        public async System.Threading.Tasks.Task<ItemPhone> CreateAsync(ItemPhone itemPhoneToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemPhone> CreateAsync(ItemPhone itemPhoneToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ItemPhone>(itemPhoneToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ItemPhone.
+        /// Creates the specified ItemPhone using POST and returns a <see cref="GraphResponse{ItemPhone}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="itemPhoneToCreate">The ItemPhone to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemPhone>> CreateResponseAsync(ItemPhone itemPhoneToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ItemPhone>(itemPhoneToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ItemPhone>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ItemPhone.
+        /// Deletes the specified ItemPhone and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ItemPhone.</returns>
-        public System.Threading.Tasks.Task<ItemPhone> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemPhone.</returns>
-        public async System.Threading.Tasks.Task<ItemPhone> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemPhone> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ItemPhone>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ItemPhone using PATCH.
+        /// Gets the specified ItemPhone and returns a <see cref="GraphResponse{ItemPhone}"/> object.
         /// </summary>
-        /// <param name="itemPhoneToUpdate">The ItemPhone to update.</param>
-        /// <returns>The updated ItemPhone.</returns>
-        public System.Threading.Tasks.Task<ItemPhone> UpdateAsync(ItemPhone itemPhoneToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemPhone>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(itemPhoneToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ItemPhone>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemPhone.</returns>
-        public async System.Threading.Tasks.Task<ItemPhone> UpdateAsync(ItemPhone itemPhoneToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ItemPhone> UpdateAsync(ItemPhone itemPhoneToUpdate, CancellationToken cancellationToken = default)
         {
-			if (itemPhoneToUpdate.AdditionalData != null)
-			{
-				if (itemPhoneToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					itemPhoneToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemPhoneToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (itemPhoneToUpdate.AdditionalData != null)
-            {
-                if (itemPhoneToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    itemPhoneToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemPhoneToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ItemPhone>(itemPhoneToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ItemPhone using PATCH and returns a <see cref="GraphResponse{ItemPhone}"/> object.
+        /// </summary>
+        /// <param name="itemPhoneToUpdate">The ItemPhone to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemPhone}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemPhone>> UpdateResponseAsync(ItemPhone itemPhoneToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ItemPhone>(itemPhoneToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ItemPhone using PUT.
+        /// </summary>
+        /// <param name="itemPhoneToUpdate">The ItemPhone object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ItemPhone> PutAsync(ItemPhone itemPhoneToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ItemPhone>(itemPhoneToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ItemPhone using PUT and returns a <see cref="GraphResponse{ItemPhone}"/> object.
+        /// </summary>
+        /// <param name="itemPhoneToUpdate">The ItemPhone object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ItemPhone}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemPhone>> PutResponseAsync(ItemPhone itemPhoneToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ItemPhone>(itemPhoneToUpdate, cancellationToken);
         }
 
         /// <summary>

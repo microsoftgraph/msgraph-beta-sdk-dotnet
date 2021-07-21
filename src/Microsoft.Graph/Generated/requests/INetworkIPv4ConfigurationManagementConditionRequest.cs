@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified NetworkIPv4ConfigurationManagementCondition using POST.
         /// </summary>
         /// <param name="networkIPv4ConfigurationManagementConditionToCreate">The NetworkIPv4ConfigurationManagementCondition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NetworkIPv4ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> CreateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate);        /// <summary>
-        /// Creates the specified NetworkIPv4ConfigurationManagementCondition using POST.
+        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> CreateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified NetworkIPv4ConfigurationManagementCondition using POST and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
         /// </summary>
         /// <param name="networkIPv4ConfigurationManagementConditionToCreate">The NetworkIPv4ConfigurationManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created NetworkIPv4ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> CreateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified NetworkIPv4ConfigurationManagementCondition.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> CreateResponseAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified NetworkIPv4ConfigurationManagementCondition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified NetworkIPv4ConfigurationManagementCondition.
+        /// Deletes the specified NetworkIPv4ConfigurationManagementCondition and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The NetworkIPv4ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified NetworkIPv4ConfigurationManagementCondition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NetworkIPv4ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PATCH.
+        /// Gets the specified NetworkIPv4ConfigurationManagementCondition and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
         /// </summary>
-        /// <param name="networkIPv4ConfigurationManagementConditionToUpdate">The NetworkIPv4ConfigurationManagementCondition to update.</param>
-        /// <returns>The updated NetworkIPv4ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> UpdateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated NetworkIPv4ConfigurationManagementCondition.</returns>
-        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> UpdateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> UpdateAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PATCH and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="networkIPv4ConfigurationManagementConditionToUpdate">The NetworkIPv4ConfigurationManagementCondition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> UpdateResponseAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PUT.
+        /// </summary>
+        /// <param name="networkIPv4ConfigurationManagementConditionToUpdate">The NetworkIPv4ConfigurationManagementCondition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<NetworkIPv4ConfigurationManagementCondition> PutAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified NetworkIPv4ConfigurationManagementCondition using PUT and returns a <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> object.
+        /// </summary>
+        /// <param name="networkIPv4ConfigurationManagementConditionToUpdate">The NetworkIPv4ConfigurationManagementCondition object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{NetworkIPv4ConfigurationManagementCondition}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NetworkIPv4ConfigurationManagementCondition>> PutResponseAsync(NetworkIPv4ConfigurationManagementCondition networkIPv4ConfigurationManagementConditionToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,133 +12,123 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Package Assignment Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessPackageAssignmentPolicy : Entity
     {
     
-		///<summary>
-		/// The AccessPackageAssignmentPolicy constructor
-		///</summary>
-        public AccessPackageAssignmentPolicy()
-        {
-            this.ODataType = "microsoft.graph.accessPackageAssignmentPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets access package id.
         /// ID of the access package.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageId")]
         public string AccessPackageId { get; set; }
     
         /// <summary>
         /// Gets or sets access review settings.
         /// Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviewSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessReviewSettings")]
         public AssignmentReviewSettings AccessReviewSettings { get; set; }
     
         /// <summary>
         /// Gets or sets can extend.
         /// Indicates whether a user can extend the access package assignment duration after approval.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "canExtend", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("canExtend")]
         public bool? CanExtend { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
         /// Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public string CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description of the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name of the policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets duration in days.
         /// The number of days in which assignments from this policy last until they are expired.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "durationInDays", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("durationInDays")]
         public Int32? DurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
         /// The expiration date for assignments created in this policy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets modified by.
         /// Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modifiedBy")]
         public string ModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets modified date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modifiedDateTime")]
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets questions.
         /// Questions that are posed to the  requestor.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "questions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("questions")]
         public IEnumerable<AccessPackageQuestion> Questions { get; set; }
     
         /// <summary>
         /// Gets or sets request approval settings.
         /// Who must approve requests for access package in this policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestApprovalSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestApprovalSettings")]
         public ApprovalSettings RequestApprovalSettings { get; set; }
     
         /// <summary>
         /// Gets or sets requestor settings.
         /// Who can request this access package from this policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "requestorSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("requestorSettings")]
         public RequestorSettings RequestorSettings { get; set; }
     
         /// <summary>
         /// Gets or sets access package.
         /// The access package with this policy. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackage")]
         public AccessPackage AccessPackage { get; set; }
     
         /// <summary>
         /// Gets or sets access package catalog.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageCatalog", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageCatalog")]
         public AccessPackageCatalog AccessPackageCatalog { get; set; }
     
     }

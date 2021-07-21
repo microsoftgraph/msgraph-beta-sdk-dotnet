@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified TeamsDeviceUsageUserDetail using POST.
         /// </summary>
         /// <param name="teamsDeviceUsageUserDetailToCreate">The TeamsDeviceUsageUserDetail to create.</param>
-        /// <returns>The created TeamsDeviceUsageUserDetail.</returns>
-        public System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> CreateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToCreate)
-        {
-            return this.CreateAsync(teamsDeviceUsageUserDetailToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamsDeviceUsageUserDetail using POST.
-        /// </summary>
-        /// <param name="teamsDeviceUsageUserDetailToCreate">The TeamsDeviceUsageUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsDeviceUsageUserDetail.</returns>
-        public async System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> CreateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> CreateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TeamsDeviceUsageUserDetail>(teamsDeviceUsageUserDetailToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified TeamsDeviceUsageUserDetail.
+        /// Creates the specified TeamsDeviceUsageUserDetail using POST and returns a <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="teamsDeviceUsageUserDetailToCreate">The TeamsDeviceUsageUserDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> CreateResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TeamsDeviceUsageUserDetail>(teamsDeviceUsageUserDetailToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TeamsDeviceUsageUserDetail>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified TeamsDeviceUsageUserDetail.
+        /// Deletes the specified TeamsDeviceUsageUserDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TeamsDeviceUsageUserDetail.</returns>
-        public System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsDeviceUsageUserDetail.</returns>
-        public async System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<TeamsDeviceUsageUserDetail>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified TeamsDeviceUsageUserDetail using PATCH.
+        /// Gets the specified TeamsDeviceUsageUserDetail and returns a <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object.
         /// </summary>
-        /// <param name="teamsDeviceUsageUserDetailToUpdate">The TeamsDeviceUsageUserDetail to update.</param>
-        /// <returns>The updated TeamsDeviceUsageUserDetail.</returns>
-        public System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> UpdateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(teamsDeviceUsageUserDetailToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TeamsDeviceUsageUserDetail>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsDeviceUsageUserDetail.</returns>
-        public async System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> UpdateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> UpdateAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default)
         {
-			if (teamsDeviceUsageUserDetailToUpdate.AdditionalData != null)
-			{
-				if (teamsDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamsDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsDeviceUsageUserDetailToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamsDeviceUsageUserDetailToUpdate.AdditionalData != null)
-            {
-                if (teamsDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamsDeviceUsageUserDetailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsDeviceUsageUserDetailToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TeamsDeviceUsageUserDetail>(teamsDeviceUsageUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsDeviceUsageUserDetail using PATCH and returns a <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="teamsDeviceUsageUserDetailToUpdate">The TeamsDeviceUsageUserDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> UpdateResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TeamsDeviceUsageUserDetail>(teamsDeviceUsageUserDetailToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsDeviceUsageUserDetail using PUT.
+        /// </summary>
+        /// <param name="teamsDeviceUsageUserDetailToUpdate">The TeamsDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<TeamsDeviceUsageUserDetail> PutAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<TeamsDeviceUsageUserDetail>(teamsDeviceUsageUserDetailToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsDeviceUsageUserDetail using PUT and returns a <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="teamsDeviceUsageUserDetailToUpdate">The TeamsDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{TeamsDeviceUsageUserDetail}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsDeviceUsageUserDetail>> PutResponseAsync(TeamsDeviceUsageUserDetail teamsDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<TeamsDeviceUsageUserDetail>(teamsDeviceUsageUserDetailToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -12,62 +12,53 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type RedundancyDetectionSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<RedundancyDetectionSettings>))]
     public partial class RedundancyDetectionSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RedundancyDetectionSettings"/> class.
-        /// </summary>
-        public RedundancyDetectionSettings()
-        {
-            this.ODataType = "microsoft.graph.ediscovery.redundancyDetectionSettings";
-        }
 
         /// <summary>
         /// Gets or sets isEnabled.
         /// Indicates whether email threading and near duplicate detection are enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets maxWords.
         /// See Minimum/maximum number of words to learn more.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxWords", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxWords")]
         public Int32? MaxWords { get; set; }
     
         /// <summary>
         /// Gets or sets minWords.
         /// See Minimum/maximum number of words to learn more.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minWords", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minWords")]
         public Int32? MinWords { get; set; }
     
         /// <summary>
         /// Gets or sets similarityThreshold.
         /// See Document and email similarity threshold to learn more.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "similarityThreshold", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("similarityThreshold")]
         public Int32? SimilarityThreshold { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

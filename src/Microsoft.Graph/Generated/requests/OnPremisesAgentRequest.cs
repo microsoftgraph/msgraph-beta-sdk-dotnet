@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified OnPremisesAgent using POST.
         /// </summary>
         /// <param name="onPremisesAgentToCreate">The OnPremisesAgent to create.</param>
-        /// <returns>The created OnPremisesAgent.</returns>
-        public System.Threading.Tasks.Task<OnPremisesAgent> CreateAsync(OnPremisesAgent onPremisesAgentToCreate)
-        {
-            return this.CreateAsync(onPremisesAgentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified OnPremisesAgent using POST.
-        /// </summary>
-        /// <param name="onPremisesAgentToCreate">The OnPremisesAgent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnPremisesAgent.</returns>
-        public async System.Threading.Tasks.Task<OnPremisesAgent> CreateAsync(OnPremisesAgent onPremisesAgentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnPremisesAgent> CreateAsync(OnPremisesAgent onPremisesAgentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<OnPremisesAgent>(onPremisesAgentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified OnPremisesAgent.
+        /// Creates the specified OnPremisesAgent using POST and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="onPremisesAgentToCreate">The OnPremisesAgent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> CreateResponseAsync(OnPremisesAgent onPremisesAgentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<OnPremisesAgent>(onPremisesAgentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<OnPremisesAgent>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified OnPremisesAgent.
+        /// Deletes the specified OnPremisesAgent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The OnPremisesAgent.</returns>
-        public System.Threading.Tasks.Task<OnPremisesAgent> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The OnPremisesAgent.</returns>
-        public async System.Threading.Tasks.Task<OnPremisesAgent> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnPremisesAgent> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<OnPremisesAgent>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OnPremisesAgent using PATCH.
+        /// Gets the specified OnPremisesAgent and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object.
         /// </summary>
-        /// <param name="onPremisesAgentToUpdate">The OnPremisesAgent to update.</param>
-        /// <returns>The updated OnPremisesAgent.</returns>
-        public System.Threading.Tasks.Task<OnPremisesAgent> UpdateAsync(OnPremisesAgent onPremisesAgentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(onPremisesAgentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<OnPremisesAgent>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated OnPremisesAgent.</returns>
-        public async System.Threading.Tasks.Task<OnPremisesAgent> UpdateAsync(OnPremisesAgent onPremisesAgentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<OnPremisesAgent> UpdateAsync(OnPremisesAgent onPremisesAgentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (onPremisesAgentToUpdate.AdditionalData != null)
-			{
-				if (onPremisesAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					onPremisesAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onPremisesAgentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (onPremisesAgentToUpdate.AdditionalData != null)
-            {
-                if (onPremisesAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    onPremisesAgentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onPremisesAgentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<OnPremisesAgent>(onPremisesAgentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnPremisesAgent using PATCH and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object.
+        /// </summary>
+        /// <param name="onPremisesAgentToUpdate">The OnPremisesAgent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnPremisesAgent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> UpdateResponseAsync(OnPremisesAgent onPremisesAgentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<OnPremisesAgent>(onPremisesAgentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified OnPremisesAgent using PUT.
+        /// </summary>
+        /// <param name="onPremisesAgentToUpdate">The OnPremisesAgent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<OnPremisesAgent> PutAsync(OnPremisesAgent onPremisesAgentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<OnPremisesAgent>(onPremisesAgentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified OnPremisesAgent using PUT and returns a <see cref="GraphResponse{OnPremisesAgent}"/> object.
+        /// </summary>
+        /// <param name="onPremisesAgentToUpdate">The OnPremisesAgent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{OnPremisesAgent}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesAgent>> PutResponseAsync(OnPremisesAgent onPremisesAgentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<OnPremisesAgent>(onPremisesAgentToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OnPremisesAgent onPremisesAgentToInitialize)
         {
 
-            if (onPremisesAgentToInitialize != null && onPremisesAgentToInitialize.AdditionalData != null)
+            if (onPremisesAgentToInitialize != null)
             {
-
                 if (onPremisesAgentToInitialize.AgentGroups != null && onPremisesAgentToInitialize.AgentGroups.CurrentPage != null)
                 {
+                    onPremisesAgentToInitialize.AgentGroups.InitializeNextPageRequest(this.Client, onPremisesAgentToInitialize.AgentGroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     onPremisesAgentToInitialize.AgentGroups.AdditionalData = onPremisesAgentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    onPremisesAgentToInitialize.AdditionalData.TryGetValue("agentGroups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        onPremisesAgentToInitialize.AgentGroups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

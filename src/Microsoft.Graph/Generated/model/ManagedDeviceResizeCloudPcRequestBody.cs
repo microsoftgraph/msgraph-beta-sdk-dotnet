@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceResizeCloudPcRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ManagedDeviceResizeCloudPcRequestBody
     {
     
         /// <summary>
         /// Gets or sets TargetServicePlanId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetServicePlanId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetServicePlanId")]
         public string TargetServicePlanId { get; set; }
     
     }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified PersonAnnotation using POST.
         /// </summary>
         /// <param name="personAnnotationToCreate">The PersonAnnotation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonAnnotation.</returns>
-        System.Threading.Tasks.Task<PersonAnnotation> CreateAsync(PersonAnnotation personAnnotationToCreate);        /// <summary>
-        /// Creates the specified PersonAnnotation using POST.
+        System.Threading.Tasks.Task<PersonAnnotation> CreateAsync(PersonAnnotation personAnnotationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified PersonAnnotation using POST and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
         /// </summary>
         /// <param name="personAnnotationToCreate">The PersonAnnotation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PersonAnnotation.</returns>
-        System.Threading.Tasks.Task<PersonAnnotation> CreateAsync(PersonAnnotation personAnnotationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PersonAnnotation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> CreateResponseAsync(PersonAnnotation personAnnotationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PersonAnnotation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified PersonAnnotation.
+        /// Deletes the specified PersonAnnotation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PersonAnnotation.</returns>
-        System.Threading.Tasks.Task<PersonAnnotation> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PersonAnnotation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PersonAnnotation.</returns>
-        System.Threading.Tasks.Task<PersonAnnotation> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PersonAnnotation> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified PersonAnnotation using PATCH.
+        /// Gets the specified PersonAnnotation and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
         /// </summary>
-        /// <param name="personAnnotationToUpdate">The PersonAnnotation to update.</param>
-        /// <returns>The updated PersonAnnotation.</returns>
-        System.Threading.Tasks.Task<PersonAnnotation> UpdateAsync(PersonAnnotation personAnnotationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PersonAnnotation using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PersonAnnotation.</returns>
-        System.Threading.Tasks.Task<PersonAnnotation> UpdateAsync(PersonAnnotation personAnnotationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PersonAnnotation> UpdateAsync(PersonAnnotation personAnnotationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PersonAnnotation using PATCH and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
+        /// </summary>
+        /// <param name="personAnnotationToUpdate">The PersonAnnotation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PersonAnnotation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> UpdateResponseAsync(PersonAnnotation personAnnotationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PersonAnnotation using PUT.
+        /// </summary>
+        /// <param name="personAnnotationToUpdate">The PersonAnnotation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PersonAnnotation> PutAsync(PersonAnnotation personAnnotationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PersonAnnotation using PUT and returns a <see cref="GraphResponse{PersonAnnotation}"/> object.
+        /// </summary>
+        /// <param name="personAnnotationToUpdate">The PersonAnnotation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PersonAnnotation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonAnnotation>> PutResponseAsync(PersonAnnotation personAnnotationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

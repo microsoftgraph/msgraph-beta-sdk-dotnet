@@ -12,81 +12,72 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DocumentSet.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DocumentSet>))]
     public partial class DocumentSet
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentSet"/> class.
-        /// </summary>
-        public DocumentSet()
-        {
-            this.ODataType = "microsoft.graph.documentSet";
-        }
 
         /// <summary>
         /// Gets or sets allowedContentTypes.
         /// Content types allowed in document set.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedContentTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedContentTypes")]
         public IEnumerable<ContentTypeInfo> AllowedContentTypes { get; set; }
     
         /// <summary>
         /// Gets or sets defaultContents.
         /// Default contents of document set.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultContents", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultContents")]
         public IEnumerable<DocumentSetContent> DefaultContents { get; set; }
     
         /// <summary>
         /// Gets or sets propagateWelcomePageChanges.
         /// Specifies whether to push welcome page changes to inherited content types.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propagateWelcomePageChanges", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("propagateWelcomePageChanges")]
         public bool? PropagateWelcomePageChanges { get; set; }
     
         /// <summary>
         /// Gets or sets shouldPrefixNameToFile.
         /// Add the name of the Document Set to each file name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shouldPrefixNameToFile", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shouldPrefixNameToFile")]
         public bool? ShouldPrefixNameToFile { get; set; }
     
         /// <summary>
         /// Gets or sets welcomePageUrl.
         /// Welcome page absolute URL.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "welcomePageUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("welcomePageUrl")]
         public string WelcomePageUrl { get; set; }
     
         /// <summary>
         /// Gets or sets sharedColumns.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sharedColumns", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sharedColumns")]
         public IEnumerable<ColumnDefinition> SharedColumns { get; set; }
     
         /// <summary>
         /// Gets or sets welcomePageColumns.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "welcomePageColumns", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("welcomePageColumns")]
         public IEnumerable<ColumnDefinition> WelcomePageColumns { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

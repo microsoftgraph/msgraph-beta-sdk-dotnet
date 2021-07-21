@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AccessPackageResource using POST.
         /// </summary>
         /// <param name="accessPackageResourceToCreate">The AccessPackageResource to create.</param>
-        /// <returns>The created AccessPackageResource.</returns>
-        public System.Threading.Tasks.Task<AccessPackageResource> CreateAsync(AccessPackageResource accessPackageResourceToCreate)
-        {
-            return this.CreateAsync(accessPackageResourceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AccessPackageResource using POST.
-        /// </summary>
-        /// <param name="accessPackageResourceToCreate">The AccessPackageResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageResource.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageResource> CreateAsync(AccessPackageResource accessPackageResourceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageResource> CreateAsync(AccessPackageResource accessPackageResourceToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AccessPackageResource>(accessPackageResourceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AccessPackageResource.
+        /// Creates the specified AccessPackageResource using POST and returns a <see cref="GraphResponse{AccessPackageResource}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="accessPackageResourceToCreate">The AccessPackageResource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResource>> CreateResponseAsync(AccessPackageResource accessPackageResourceToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AccessPackageResource>(accessPackageResourceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AccessPackageResource>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AccessPackageResource.
+        /// Deletes the specified AccessPackageResource and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AccessPackageResource.</returns>
-        public System.Threading.Tasks.Task<AccessPackageResource> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageResource.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageResource> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageResource> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AccessPackageResource>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AccessPackageResource using PATCH.
+        /// Gets the specified AccessPackageResource and returns a <see cref="GraphResponse{AccessPackageResource}"/> object.
         /// </summary>
-        /// <param name="accessPackageResourceToUpdate">The AccessPackageResource to update.</param>
-        /// <returns>The updated AccessPackageResource.</returns>
-        public System.Threading.Tasks.Task<AccessPackageResource> UpdateAsync(AccessPackageResource accessPackageResourceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResource>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(accessPackageResourceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AccessPackageResource>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackageResource.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageResource> UpdateAsync(AccessPackageResource accessPackageResourceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageResource> UpdateAsync(AccessPackageResource accessPackageResourceToUpdate, CancellationToken cancellationToken = default)
         {
-			if (accessPackageResourceToUpdate.AdditionalData != null)
-			{
-				if (accessPackageResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					accessPackageResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageResourceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (accessPackageResourceToUpdate.AdditionalData != null)
-            {
-                if (accessPackageResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    accessPackageResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageResourceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AccessPackageResource>(accessPackageResourceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AccessPackageResource using PATCH and returns a <see cref="GraphResponse{AccessPackageResource}"/> object.
+        /// </summary>
+        /// <param name="accessPackageResourceToUpdate">The AccessPackageResource to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResource>> UpdateResponseAsync(AccessPackageResource accessPackageResourceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AccessPackageResource>(accessPackageResourceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AccessPackageResource using PUT.
+        /// </summary>
+        /// <param name="accessPackageResourceToUpdate">The AccessPackageResource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AccessPackageResource> PutAsync(AccessPackageResource accessPackageResourceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AccessPackageResource>(accessPackageResourceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AccessPackageResource using PUT and returns a <see cref="GraphResponse{AccessPackageResource}"/> object.
+        /// </summary>
+        /// <param name="accessPackageResourceToUpdate">The AccessPackageResource object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AccessPackageResource}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageResource>> PutResponseAsync(AccessPackageResource accessPackageResourceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AccessPackageResource>(accessPackageResourceToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageResource accessPackageResourceToInitialize)
         {
 
-            if (accessPackageResourceToInitialize != null && accessPackageResourceToInitialize.AdditionalData != null)
+            if (accessPackageResourceToInitialize != null)
             {
-
                 if (accessPackageResourceToInitialize.AccessPackageResourceRoles != null && accessPackageResourceToInitialize.AccessPackageResourceRoles.CurrentPage != null)
                 {
+                    accessPackageResourceToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(this.Client, accessPackageResourceToInitialize.AccessPackageResourceRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageResourceToInitialize.AccessPackageResourceRoles.AdditionalData = accessPackageResourceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageResourceToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (accessPackageResourceToInitialize.AccessPackageResourceScopes != null && accessPackageResourceToInitialize.AccessPackageResourceScopes.CurrentPage != null)
                 {
+                    accessPackageResourceToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(this.Client, accessPackageResourceToInitialize.AccessPackageResourceScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageResourceToInitialize.AccessPackageResourceScopes.AdditionalData = accessPackageResourceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageResourceToInitialize.AdditionalData.TryGetValue("accessPackageResourceScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageResourceToInitialize.AccessPackageResourceScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleEligibilityScheduleRequestObject using POST.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleRequestObjectToCreate">The UnifiedRoleEligibilityScheduleRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleEligibilityScheduleRequestObject.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> CreateAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToCreate);        /// <summary>
-        /// Creates the specified UnifiedRoleEligibilityScheduleRequestObject using POST.
+        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> CreateAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified UnifiedRoleEligibilityScheduleRequestObject using POST and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleRequestObjectToCreate">The UnifiedRoleEligibilityScheduleRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UnifiedRoleEligibilityScheduleRequestObject.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> CreateAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UnifiedRoleEligibilityScheduleRequestObject.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleRequestObject>> CreateResponseAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UnifiedRoleEligibilityScheduleRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified UnifiedRoleEligibilityScheduleRequestObject.
+        /// Deletes the specified UnifiedRoleEligibilityScheduleRequestObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UnifiedRoleEligibilityScheduleRequestObject.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UnifiedRoleEligibilityScheduleRequestObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleEligibilityScheduleRequestObject.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified UnifiedRoleEligibilityScheduleRequestObject using PATCH.
+        /// Gets the specified UnifiedRoleEligibilityScheduleRequestObject and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object.
         /// </summary>
-        /// <param name="unifiedRoleEligibilityScheduleRequestObjectToUpdate">The UnifiedRoleEligibilityScheduleRequestObject to update.</param>
-        /// <returns>The updated UnifiedRoleEligibilityScheduleRequestObject.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> UpdateAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleRequestObject>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UnifiedRoleEligibilityScheduleRequestObject using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleEligibilityScheduleRequestObject.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> UpdateAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> UpdateAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleEligibilityScheduleRequestObject using PATCH and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleEligibilityScheduleRequestObjectToUpdate">The UnifiedRoleEligibilityScheduleRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleRequestObject>> UpdateResponseAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleEligibilityScheduleRequestObject using PUT.
+        /// </summary>
+        /// <param name="unifiedRoleEligibilityScheduleRequestObjectToUpdate">The UnifiedRoleEligibilityScheduleRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleRequestObject> PutAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleEligibilityScheduleRequestObject using PUT and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleEligibilityScheduleRequestObjectToUpdate">The UnifiedRoleEligibilityScheduleRequestObject object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UnifiedRoleEligibilityScheduleRequestObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleRequestObject>> PutResponseAsync(UnifiedRoleEligibilityScheduleRequestObject unifiedRoleEligibilityScheduleRequestObjectToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PurchaseInvoiceLine using POST.
         /// </summary>
         /// <param name="purchaseInvoiceLineToCreate">The PurchaseInvoiceLine to create.</param>
-        /// <returns>The created PurchaseInvoiceLine.</returns>
-        public System.Threading.Tasks.Task<PurchaseInvoiceLine> CreateAsync(PurchaseInvoiceLine purchaseInvoiceLineToCreate)
-        {
-            return this.CreateAsync(purchaseInvoiceLineToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PurchaseInvoiceLine using POST.
-        /// </summary>
-        /// <param name="purchaseInvoiceLineToCreate">The PurchaseInvoiceLine to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PurchaseInvoiceLine.</returns>
-        public async System.Threading.Tasks.Task<PurchaseInvoiceLine> CreateAsync(PurchaseInvoiceLine purchaseInvoiceLineToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PurchaseInvoiceLine> CreateAsync(PurchaseInvoiceLine purchaseInvoiceLineToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PurchaseInvoiceLine>(purchaseInvoiceLineToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PurchaseInvoiceLine.
+        /// Creates the specified PurchaseInvoiceLine using POST and returns a <see cref="GraphResponse{PurchaseInvoiceLine}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="purchaseInvoiceLineToCreate">The PurchaseInvoiceLine to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PurchaseInvoiceLine>> CreateResponseAsync(PurchaseInvoiceLine purchaseInvoiceLineToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PurchaseInvoiceLine>(purchaseInvoiceLineToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PurchaseInvoiceLine>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PurchaseInvoiceLine.
+        /// Deletes the specified PurchaseInvoiceLine and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PurchaseInvoiceLine.</returns>
-        public System.Threading.Tasks.Task<PurchaseInvoiceLine> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PurchaseInvoiceLine.</returns>
-        public async System.Threading.Tasks.Task<PurchaseInvoiceLine> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PurchaseInvoiceLine> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PurchaseInvoiceLine>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PurchaseInvoiceLine using PATCH.
+        /// Gets the specified PurchaseInvoiceLine and returns a <see cref="GraphResponse{PurchaseInvoiceLine}"/> object.
         /// </summary>
-        /// <param name="purchaseInvoiceLineToUpdate">The PurchaseInvoiceLine to update.</param>
-        /// <returns>The updated PurchaseInvoiceLine.</returns>
-        public System.Threading.Tasks.Task<PurchaseInvoiceLine> UpdateAsync(PurchaseInvoiceLine purchaseInvoiceLineToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PurchaseInvoiceLine>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(purchaseInvoiceLineToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PurchaseInvoiceLine>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PurchaseInvoiceLine.</returns>
-        public async System.Threading.Tasks.Task<PurchaseInvoiceLine> UpdateAsync(PurchaseInvoiceLine purchaseInvoiceLineToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PurchaseInvoiceLine> UpdateAsync(PurchaseInvoiceLine purchaseInvoiceLineToUpdate, CancellationToken cancellationToken = default)
         {
-			if (purchaseInvoiceLineToUpdate.AdditionalData != null)
-			{
-				if (purchaseInvoiceLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					purchaseInvoiceLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, purchaseInvoiceLineToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (purchaseInvoiceLineToUpdate.AdditionalData != null)
-            {
-                if (purchaseInvoiceLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    purchaseInvoiceLineToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, purchaseInvoiceLineToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PurchaseInvoiceLine>(purchaseInvoiceLineToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PurchaseInvoiceLine using PATCH and returns a <see cref="GraphResponse{PurchaseInvoiceLine}"/> object.
+        /// </summary>
+        /// <param name="purchaseInvoiceLineToUpdate">The PurchaseInvoiceLine to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PurchaseInvoiceLine>> UpdateResponseAsync(PurchaseInvoiceLine purchaseInvoiceLineToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PurchaseInvoiceLine>(purchaseInvoiceLineToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PurchaseInvoiceLine using PUT.
+        /// </summary>
+        /// <param name="purchaseInvoiceLineToUpdate">The PurchaseInvoiceLine object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PurchaseInvoiceLine> PutAsync(PurchaseInvoiceLine purchaseInvoiceLineToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PurchaseInvoiceLine>(purchaseInvoiceLineToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PurchaseInvoiceLine using PUT and returns a <see cref="GraphResponse{PurchaseInvoiceLine}"/> object.
+        /// </summary>
+        /// <param name="purchaseInvoiceLineToUpdate">The PurchaseInvoiceLine object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PurchaseInvoiceLine}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PurchaseInvoiceLine>> PutResponseAsync(PurchaseInvoiceLine purchaseInvoiceLineToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PurchaseInvoiceLine>(purchaseInvoiceLineToUpdate, cancellationToken);
         }
 
         /// <summary>

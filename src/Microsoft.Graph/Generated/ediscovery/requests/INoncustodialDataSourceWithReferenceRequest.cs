@@ -23,57 +23,64 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified NoncustodialDataSource.
         /// </summary>
-        /// <returns>The NoncustodialDataSource.</returns>
-        System.Threading.Tasks.Task<NoncustodialDataSource> GetAsync();
-
-        /// <summary>
-        /// Gets the specified NoncustodialDataSource.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The NoncustodialDataSource.</returns>
-        System.Threading.Tasks.Task<NoncustodialDataSource> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<NoncustodialDataSource> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the specified NoncustodialDataSource and returns a <see cref="GraphResponse{NoncustodialDataSource}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NoncustodialDataSource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified NoncustodialDataSource using POST.
         /// </summary>
         /// <param name="noncustodialDataSourceToCreate">The NoncustodialDataSource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NoncustodialDataSource.</returns>
-        System.Threading.Tasks.Task<NoncustodialDataSource> CreateAsync(NoncustodialDataSource noncustodialDataSourceToCreate);        /// <summary>
-        /// Creates the specified NoncustodialDataSource using POST.
+        System.Threading.Tasks.Task<NoncustodialDataSource> CreateAsync(NoncustodialDataSource noncustodialDataSourceToCreate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Creates the specified NoncustodialDataSource using POST and returns a <see cref="GraphResponse{NoncustodialDataSource}"/> object.
         /// </summary>
         /// <param name="noncustodialDataSourceToCreate">The NoncustodialDataSource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created NoncustodialDataSource.</returns>
-        System.Threading.Tasks.Task<NoncustodialDataSource> CreateAsync(NoncustodialDataSource noncustodialDataSourceToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{NoncustodialDataSource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> CreateResponseAsync(NoncustodialDataSource noncustodialDataSourceToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
-        /// Updates the specified NoncustodialDataSource using PATCH.
-        /// </summary>
-        /// <param name="noncustodialDataSourceToUpdate">The NoncustodialDataSource to update.</param>
-        /// <returns>The updated NoncustodialDataSource.</returns>
-        System.Threading.Tasks.Task<NoncustodialDataSource> UpdateAsync(NoncustodialDataSource noncustodialDataSourceToUpdate);
-
-        /// <summary>
         /// Updates the specified NoncustodialDataSource using PATCH.
         /// </summary>
         /// <param name="noncustodialDataSourceToUpdate">The NoncustodialDataSource to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated NoncustodialDataSource.</returns>
-        System.Threading.Tasks.Task<NoncustodialDataSource> UpdateAsync(NoncustodialDataSource noncustodialDataSourceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<NoncustodialDataSource> UpdateAsync(NoncustodialDataSource noncustodialDataSourceToUpdate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Updates the specified NoncustodialDataSource using PATCH and returns a <see cref="GraphResponse{NoncustodialDataSource}"/> object.
+        /// </summary>
+        /// <param name="noncustodialDataSourceToUpdate">The NoncustodialDataSource to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{NoncustodialDataSource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NoncustodialDataSource>> UpdateResponseAsync(NoncustodialDataSource noncustodialDataSourceToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified NoncustodialDataSource.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified NoncustodialDataSource.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Deletes the specified NoncustodialDataSource and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

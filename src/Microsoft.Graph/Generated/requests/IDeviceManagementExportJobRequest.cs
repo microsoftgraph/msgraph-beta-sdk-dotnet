@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementExportJob using POST.
         /// </summary>
         /// <param name="deviceManagementExportJobToCreate">The DeviceManagementExportJob to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementExportJob.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExportJob> CreateAsync(DeviceManagementExportJob deviceManagementExportJobToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementExportJob using POST.
+        System.Threading.Tasks.Task<DeviceManagementExportJob> CreateAsync(DeviceManagementExportJob deviceManagementExportJobToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementExportJob using POST and returns a <see cref="GraphResponse{DeviceManagementExportJob}"/> object.
         /// </summary>
         /// <param name="deviceManagementExportJobToCreate">The DeviceManagementExportJob to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementExportJob.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExportJob> CreateAsync(DeviceManagementExportJob deviceManagementExportJobToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementExportJob.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExportJob}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExportJob>> CreateResponseAsync(DeviceManagementExportJob deviceManagementExportJobToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementExportJob.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceManagementExportJob.
+        /// Deletes the specified DeviceManagementExportJob and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementExportJob.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExportJob> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementExportJob.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementExportJob.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExportJob> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementExportJob> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceManagementExportJob using PATCH.
+        /// Gets the specified DeviceManagementExportJob and returns a <see cref="GraphResponse{DeviceManagementExportJob}"/> object.
         /// </summary>
-        /// <param name="deviceManagementExportJobToUpdate">The DeviceManagementExportJob to update.</param>
-        /// <returns>The updated DeviceManagementExportJob.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExportJob> UpdateAsync(DeviceManagementExportJob deviceManagementExportJobToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExportJob}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExportJob>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementExportJob using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementExportJob.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExportJob> UpdateAsync(DeviceManagementExportJob deviceManagementExportJobToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementExportJob> UpdateAsync(DeviceManagementExportJob deviceManagementExportJobToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementExportJob using PATCH and returns a <see cref="GraphResponse{DeviceManagementExportJob}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementExportJobToUpdate">The DeviceManagementExportJob to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExportJob}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExportJob>> UpdateResponseAsync(DeviceManagementExportJob deviceManagementExportJobToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementExportJob using PUT.
+        /// </summary>
+        /// <param name="deviceManagementExportJobToUpdate">The DeviceManagementExportJob object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementExportJob> PutAsync(DeviceManagementExportJob deviceManagementExportJobToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementExportJob using PUT and returns a <see cref="GraphResponse{DeviceManagementExportJob}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementExportJobToUpdate">The DeviceManagementExportJob object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementExportJob}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExportJob>> PutResponseAsync(DeviceManagementExportJob deviceManagementExportJobToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsKioskConfiguration using POST.
         /// </summary>
         /// <param name="windowsKioskConfigurationToCreate">The WindowsKioskConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsKioskConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsKioskConfiguration> CreateAsync(WindowsKioskConfiguration windowsKioskConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsKioskConfiguration using POST.
+        System.Threading.Tasks.Task<WindowsKioskConfiguration> CreateAsync(WindowsKioskConfiguration windowsKioskConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WindowsKioskConfiguration using POST and returns a <see cref="GraphResponse{WindowsKioskConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsKioskConfigurationToCreate">The WindowsKioskConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsKioskConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsKioskConfiguration> CreateAsync(WindowsKioskConfiguration windowsKioskConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsKioskConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsKioskConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsKioskConfiguration>> CreateResponseAsync(WindowsKioskConfiguration windowsKioskConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsKioskConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WindowsKioskConfiguration.
+        /// Deletes the specified WindowsKioskConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsKioskConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsKioskConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsKioskConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsKioskConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsKioskConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsKioskConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WindowsKioskConfiguration using PATCH.
+        /// Gets the specified WindowsKioskConfiguration and returns a <see cref="GraphResponse{WindowsKioskConfiguration}"/> object.
         /// </summary>
-        /// <param name="windowsKioskConfigurationToUpdate">The WindowsKioskConfiguration to update.</param>
-        /// <returns>The updated WindowsKioskConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsKioskConfiguration> UpdateAsync(WindowsKioskConfiguration windowsKioskConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsKioskConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsKioskConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsKioskConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsKioskConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsKioskConfiguration> UpdateAsync(WindowsKioskConfiguration windowsKioskConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsKioskConfiguration> UpdateAsync(WindowsKioskConfiguration windowsKioskConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsKioskConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsKioskConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsKioskConfigurationToUpdate">The WindowsKioskConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsKioskConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsKioskConfiguration>> UpdateResponseAsync(WindowsKioskConfiguration windowsKioskConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsKioskConfiguration using PUT.
+        /// </summary>
+        /// <param name="windowsKioskConfigurationToUpdate">The WindowsKioskConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsKioskConfiguration> PutAsync(WindowsKioskConfiguration windowsKioskConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsKioskConfiguration using PUT and returns a <see cref="GraphResponse{WindowsKioskConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsKioskConfigurationToUpdate">The WindowsKioskConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsKioskConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsKioskConfiguration>> PutResponseAsync(WindowsKioskConfiguration windowsKioskConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

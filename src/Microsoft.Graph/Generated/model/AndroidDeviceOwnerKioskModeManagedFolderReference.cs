@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidDeviceOwnerKioskModeManagedFolderReference.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidDeviceOwnerKioskModeManagedFolderReference : AndroidDeviceOwnerKioskModeHomeScreenItem
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets folderIdentifier.
         /// Unique identifier for the folder
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "folderIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("folderIdentifier")]
         public string FolderIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets folderName.
         /// Name of the folder
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "folderName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("folderName")]
         public string FolderName { get; set; }
     
     }

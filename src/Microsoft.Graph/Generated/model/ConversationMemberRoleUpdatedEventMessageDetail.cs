@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ConversationMemberRoleUpdatedEventMessageDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ConversationMemberRoleUpdatedEventMessageDetail : EventMessageDetail
     {
         /// <summary>
@@ -32,19 +30,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets conversationMemberRoles.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationMemberRoles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conversationMemberRoles")]
         public IEnumerable<string> ConversationMemberRoles { get; set; }
     
         /// <summary>
         /// Gets or sets conversationMemberUser.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conversationMemberUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conversationMemberUser")]
         public Identity ConversationMemberUser { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
     }

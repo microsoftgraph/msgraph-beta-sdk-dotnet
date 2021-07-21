@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IGraphServiceProgramControlTypesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<GraphServiceProgramControlTypesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<GraphServiceProgramControlTypesCollectionPage>))]
     public interface IGraphServiceProgramControlTypesCollectionPage : ICollectionPage<ProgramControlType>
     {
         /// <summary>

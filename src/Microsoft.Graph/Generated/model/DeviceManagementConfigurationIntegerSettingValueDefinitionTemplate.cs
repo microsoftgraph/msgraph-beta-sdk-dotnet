@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>))]
     public partial class DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate"/> class.
-        /// </summary>
-        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinitionTemplate";
-        }
 
         /// <summary>
         /// Gets or sets maxValue.
         /// Integer Setting Maximum Value. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maxValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maxValue")]
         public Int32? MaxValue { get; set; }
     
         /// <summary>
         /// Gets or sets minValue.
         /// Integer Setting Minimum Value. Valid values -2147483648 to 2147483647
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minValue")]
         public Int32? MinValue { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

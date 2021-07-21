@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanyPurchaseInvoiceLinesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PurchaseInvoiceLine to the collection via POST.
-        /// </summary>
-        /// <param name="purchaseInvoiceLine">The PurchaseInvoiceLine to add.</param>
-        /// <returns>The created PurchaseInvoiceLine.</returns>
-        System.Threading.Tasks.Task<PurchaseInvoiceLine> AddAsync(PurchaseInvoiceLine purchaseInvoiceLine);
-
         /// <summary>
         /// Adds the specified PurchaseInvoiceLine to the collection via POST.
         /// </summary>
         /// <param name="purchaseInvoiceLine">The PurchaseInvoiceLine to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PurchaseInvoiceLine.</returns>
-        System.Threading.Tasks.Task<PurchaseInvoiceLine> AddAsync(PurchaseInvoiceLine purchaseInvoiceLine, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PurchaseInvoiceLine> AddAsync(PurchaseInvoiceLine purchaseInvoiceLine, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PurchaseInvoiceLine to the collection via POST and returns a <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyPurchaseInvoiceLinesCollectionPage> GetAsync();
+        /// <param name="purchaseInvoiceLine">The PurchaseInvoiceLine to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PurchaseInvoiceLine}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PurchaseInvoiceLine>> AddResponseAsync(PurchaseInvoiceLine purchaseInvoiceLine, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyPurchaseInvoiceLinesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICompanyPurchaseInvoiceLinesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyPurchaseInvoiceLinesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyPurchaseInvoiceLinesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyPurchaseInvoiceLinesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

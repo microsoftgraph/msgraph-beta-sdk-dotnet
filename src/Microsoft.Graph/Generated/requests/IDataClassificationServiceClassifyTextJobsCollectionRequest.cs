@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDataClassificationServiceClassifyTextJobsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified JobResponseBase to the collection via POST.
-        /// </summary>
-        /// <param name="jobResponseBase">The JobResponseBase to add.</param>
-        /// <returns>The created JobResponseBase.</returns>
-        System.Threading.Tasks.Task<JobResponseBase> AddAsync(JobResponseBase jobResponseBase);
-
         /// <summary>
         /// Adds the specified JobResponseBase to the collection via POST.
         /// </summary>
         /// <param name="jobResponseBase">The JobResponseBase to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created JobResponseBase.</returns>
-        System.Threading.Tasks.Task<JobResponseBase> AddAsync(JobResponseBase jobResponseBase, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<JobResponseBase> AddAsync(JobResponseBase jobResponseBase, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified JobResponseBase to the collection via POST and returns a <see cref="GraphResponse{JobResponseBase}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDataClassificationServiceClassifyTextJobsCollectionPage> GetAsync();
+        /// <param name="jobResponseBase">The JobResponseBase to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{JobResponseBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JobResponseBase>> AddResponseAsync(JobResponseBase jobResponseBase, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDataClassificationServiceClassifyTextJobsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDataClassificationServiceClassifyTextJobsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DataClassificationServiceClassifyTextJobsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationServiceClassifyTextJobsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataClassificationServiceClassifyTextJobsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

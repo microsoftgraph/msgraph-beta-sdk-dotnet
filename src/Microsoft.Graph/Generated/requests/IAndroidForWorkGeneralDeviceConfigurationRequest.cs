@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkGeneralDeviceConfigurationToCreate">The AndroidForWorkGeneralDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> CreateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using POST.
+        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> CreateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AndroidForWorkGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
         /// </summary>
         /// <param name="androidForWorkGeneralDeviceConfigurationToCreate">The AndroidForWorkGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidForWorkGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> CreateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidForWorkGeneralDeviceConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> CreateResponseAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidForWorkGeneralDeviceConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AndroidForWorkGeneralDeviceConfiguration.
+        /// Deletes the specified AndroidForWorkGeneralDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidForWorkGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidForWorkGeneralDeviceConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PATCH.
+        /// Gets the specified AndroidForWorkGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidForWorkGeneralDeviceConfigurationToUpdate">The AndroidForWorkGeneralDeviceConfiguration to update.</param>
-        /// <returns>The updated AndroidForWorkGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> UpdateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> UpdateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> UpdateAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkGeneralDeviceConfigurationToUpdate">The AndroidForWorkGeneralDeviceConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> UpdateResponseAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidForWorkGeneralDeviceConfigurationToUpdate">The AndroidForWorkGeneralDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidForWorkGeneralDeviceConfiguration> PutAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkGeneralDeviceConfiguration using PUT and returns a <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkGeneralDeviceConfigurationToUpdate">The AndroidForWorkGeneralDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidForWorkGeneralDeviceConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidForWorkGeneralDeviceConfiguration>> PutResponseAsync(AndroidForWorkGeneralDeviceConfiguration androidForWorkGeneralDeviceConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

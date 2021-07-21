@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AccessPackageResourceScope using POST.
         /// </summary>
         /// <param name="accessPackageResourceScopeToCreate">The AccessPackageResourceScope to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageResourceScope.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceScope> CreateAsync(AccessPackageResourceScope accessPackageResourceScopeToCreate);        /// <summary>
-        /// Creates the specified AccessPackageResourceScope using POST.
+        System.Threading.Tasks.Task<AccessPackageResourceScope> CreateAsync(AccessPackageResourceScope accessPackageResourceScopeToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AccessPackageResourceScope using POST and returns a <see cref="GraphResponse{AccessPackageResourceScope}"/> object.
         /// </summary>
         /// <param name="accessPackageResourceScopeToCreate">The AccessPackageResourceScope to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AccessPackageResourceScope.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceScope> CreateAsync(AccessPackageResourceScope accessPackageResourceScopeToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AccessPackageResourceScope.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceScope>> CreateResponseAsync(AccessPackageResourceScope accessPackageResourceScopeToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AccessPackageResourceScope.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AccessPackageResourceScope.
+        /// Deletes the specified AccessPackageResourceScope and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AccessPackageResourceScope.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceScope> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AccessPackageResourceScope.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageResourceScope.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceScope> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessPackageResourceScope> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AccessPackageResourceScope using PATCH.
+        /// Gets the specified AccessPackageResourceScope and returns a <see cref="GraphResponse{AccessPackageResourceScope}"/> object.
         /// </summary>
-        /// <param name="accessPackageResourceScopeToUpdate">The AccessPackageResourceScope to update.</param>
-        /// <returns>The updated AccessPackageResourceScope.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceScope> UpdateAsync(AccessPackageResourceScope accessPackageResourceScopeToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceScope>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessPackageResourceScope using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackageResourceScope.</returns>
-        System.Threading.Tasks.Task<AccessPackageResourceScope> UpdateAsync(AccessPackageResourceScope accessPackageResourceScopeToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessPackageResourceScope> UpdateAsync(AccessPackageResourceScope accessPackageResourceScopeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AccessPackageResourceScope using PATCH and returns a <see cref="GraphResponse{AccessPackageResourceScope}"/> object.
+        /// </summary>
+        /// <param name="accessPackageResourceScopeToUpdate">The AccessPackageResourceScope to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessPackageResourceScope}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceScope>> UpdateResponseAsync(AccessPackageResourceScope accessPackageResourceScopeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AccessPackageResourceScope using PUT.
+        /// </summary>
+        /// <param name="accessPackageResourceScopeToUpdate">The AccessPackageResourceScope object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AccessPackageResourceScope> PutAsync(AccessPackageResourceScope accessPackageResourceScopeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AccessPackageResourceScope using PUT and returns a <see cref="GraphResponse{AccessPackageResourceScope}"/> object.
+        /// </summary>
+        /// <param name="accessPackageResourceScopeToUpdate">The AccessPackageResourceScope object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AccessPackageResourceScope}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessPackageResourceScope>> PutResponseAsync(AccessPackageResourceScope accessPackageResourceScopeToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

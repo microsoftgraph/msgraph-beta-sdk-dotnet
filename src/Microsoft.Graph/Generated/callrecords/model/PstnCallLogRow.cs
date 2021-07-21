@@ -12,160 +12,151 @@ namespace Microsoft.Graph.CallRecords
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PstnCallLogRow.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<PstnCallLogRow>))]
     public partial class PstnCallLogRow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PstnCallLogRow"/> class.
-        /// </summary>
-        public PstnCallLogRow()
-        {
-            this.ODataType = "microsoft.graph.callRecords.pstnCallLogRow";
-        }
 
         /// <summary>
         /// Gets or sets calleeNumber.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calleeNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calleeNumber")]
         public string CalleeNumber { get; set; }
     
         /// <summary>
         /// Gets or sets callerNumber.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callerNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callerNumber")]
         public string CallerNumber { get; set; }
     
         /// <summary>
         /// Gets or sets callId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callId")]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("callType")]
         public string CallType { get; set; }
     
         /// <summary>
         /// Gets or sets charge.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "charge", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("charge")]
         public Decimal? Charge { get; set; }
     
         /// <summary>
         /// Gets or sets conferenceId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conferenceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conferenceId")]
         public string ConferenceId { get; set; }
     
         /// <summary>
         /// Gets or sets connectionCharge.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionCharge", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectionCharge")]
         public Decimal? ConnectionCharge { get; set; }
     
         /// <summary>
         /// Gets or sets currency.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currency", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currency")]
         public string Currency { get; set; }
     
         /// <summary>
         /// Gets or sets destinationContext.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationContext", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("destinationContext")]
         public string DestinationContext { get; set; }
     
         /// <summary>
         /// Gets or sets destinationName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "destinationName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("destinationName")]
         public string DestinationName { get; set; }
     
         /// <summary>
         /// Gets or sets duration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "duration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("duration")]
         public Int32? Duration { get; set; }
     
         /// <summary>
         /// Gets or sets endDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets inventoryType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inventoryType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inventoryType")]
         public string InventoryType { get; set; }
     
         /// <summary>
         /// Gets or sets licenseCapability.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "licenseCapability", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("licenseCapability")]
         public string LicenseCapability { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets tenantCountryCode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantCountryCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tenantCountryCode")]
         public string TenantCountryCode { get; set; }
     
         /// <summary>
         /// Gets or sets usageCountryCode.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "usageCountryCode", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("usageCountryCode")]
         public string UsageCountryCode { get; set; }
     
         /// <summary>
         /// Gets or sets userDisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userDisplayName")]
         public string UserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

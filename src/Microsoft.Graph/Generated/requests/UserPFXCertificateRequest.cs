@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserPFXCertificate using POST.
         /// </summary>
         /// <param name="userPFXCertificateToCreate">The UserPFXCertificate to create.</param>
-        /// <returns>The created UserPFXCertificate.</returns>
-        public System.Threading.Tasks.Task<UserPFXCertificate> CreateAsync(UserPFXCertificate userPFXCertificateToCreate)
-        {
-            return this.CreateAsync(userPFXCertificateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserPFXCertificate using POST.
-        /// </summary>
-        /// <param name="userPFXCertificateToCreate">The UserPFXCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserPFXCertificate.</returns>
-        public async System.Threading.Tasks.Task<UserPFXCertificate> CreateAsync(UserPFXCertificate userPFXCertificateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserPFXCertificate> CreateAsync(UserPFXCertificate userPFXCertificateToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserPFXCertificate>(userPFXCertificateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserPFXCertificate.
+        /// Creates the specified UserPFXCertificate using POST and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userPFXCertificateToCreate">The UserPFXCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> CreateResponseAsync(UserPFXCertificate userPFXCertificateToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserPFXCertificate>(userPFXCertificateToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserPFXCertificate>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserPFXCertificate.
+        /// Deletes the specified UserPFXCertificate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserPFXCertificate.</returns>
-        public System.Threading.Tasks.Task<UserPFXCertificate> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserPFXCertificate.</returns>
-        public async System.Threading.Tasks.Task<UserPFXCertificate> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserPFXCertificate> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserPFXCertificate>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserPFXCertificate using PATCH.
+        /// Gets the specified UserPFXCertificate and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object.
         /// </summary>
-        /// <param name="userPFXCertificateToUpdate">The UserPFXCertificate to update.</param>
-        /// <returns>The updated UserPFXCertificate.</returns>
-        public System.Threading.Tasks.Task<UserPFXCertificate> UpdateAsync(UserPFXCertificate userPFXCertificateToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(userPFXCertificateToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserPFXCertificate>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserPFXCertificate.</returns>
-        public async System.Threading.Tasks.Task<UserPFXCertificate> UpdateAsync(UserPFXCertificate userPFXCertificateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserPFXCertificate> UpdateAsync(UserPFXCertificate userPFXCertificateToUpdate, CancellationToken cancellationToken = default)
         {
-			if (userPFXCertificateToUpdate.AdditionalData != null)
-			{
-				if (userPFXCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userPFXCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userPFXCertificateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userPFXCertificateToUpdate.AdditionalData != null)
-            {
-                if (userPFXCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userPFXCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userPFXCertificateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserPFXCertificate>(userPFXCertificateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserPFXCertificate using PATCH and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object.
+        /// </summary>
+        /// <param name="userPFXCertificateToUpdate">The UserPFXCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserPFXCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> UpdateResponseAsync(UserPFXCertificate userPFXCertificateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserPFXCertificate>(userPFXCertificateToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserPFXCertificate using PUT.
+        /// </summary>
+        /// <param name="userPFXCertificateToUpdate">The UserPFXCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserPFXCertificate> PutAsync(UserPFXCertificate userPFXCertificateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserPFXCertificate>(userPFXCertificateToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserPFXCertificate using PUT and returns a <see cref="GraphResponse{UserPFXCertificate}"/> object.
+        /// </summary>
+        /// <param name="userPFXCertificateToUpdate">The UserPFXCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserPFXCertificate}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserPFXCertificate>> PutResponseAsync(UserPFXCertificate userPFXCertificateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserPFXCertificate>(userPFXCertificateToUpdate, cancellationToken);
         }
 
         /// <summary>

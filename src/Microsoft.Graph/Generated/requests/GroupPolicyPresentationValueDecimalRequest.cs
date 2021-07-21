@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified GroupPolicyPresentationValueDecimal using POST.
         /// </summary>
         /// <param name="groupPolicyPresentationValueDecimalToCreate">The GroupPolicyPresentationValueDecimal to create.</param>
-        /// <returns>The created GroupPolicyPresentationValueDecimal.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> CreateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate)
-        {
-            return this.CreateAsync(groupPolicyPresentationValueDecimalToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupPolicyPresentationValueDecimal using POST.
-        /// </summary>
-        /// <param name="groupPolicyPresentationValueDecimalToCreate">The GroupPolicyPresentationValueDecimal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyPresentationValueDecimal.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> CreateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> CreateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<GroupPolicyPresentationValueDecimal>(groupPolicyPresentationValueDecimalToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified GroupPolicyPresentationValueDecimal.
+        /// Creates the specified GroupPolicyPresentationValueDecimal using POST and returns a <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="groupPolicyPresentationValueDecimalToCreate">The GroupPolicyPresentationValueDecimal to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> CreateResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationValueDecimal>(groupPolicyPresentationValueDecimalToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<GroupPolicyPresentationValueDecimal>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified GroupPolicyPresentationValueDecimal.
+        /// Deletes the specified GroupPolicyPresentationValueDecimal and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The GroupPolicyPresentationValueDecimal.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The GroupPolicyPresentationValueDecimal.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<GroupPolicyPresentationValueDecimal>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified GroupPolicyPresentationValueDecimal using PATCH.
+        /// Gets the specified GroupPolicyPresentationValueDecimal and returns a <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object.
         /// </summary>
-        /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal to update.</param>
-        /// <returns>The updated GroupPolicyPresentationValueDecimal.</returns>
-        public System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> UpdateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(groupPolicyPresentationValueDecimalToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationValueDecimal>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupPolicyPresentationValueDecimal.</returns>
-        public async System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> UpdateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> UpdateAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken = default)
         {
-			if (groupPolicyPresentationValueDecimalToUpdate.AdditionalData != null)
-			{
-				if (groupPolicyPresentationValueDecimalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupPolicyPresentationValueDecimalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationValueDecimalToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupPolicyPresentationValueDecimalToUpdate.AdditionalData != null)
-            {
-                if (groupPolicyPresentationValueDecimalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupPolicyPresentationValueDecimalToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupPolicyPresentationValueDecimalToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<GroupPolicyPresentationValueDecimal>(groupPolicyPresentationValueDecimalToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationValueDecimal using PATCH and returns a <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> UpdateResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationValueDecimal>(groupPolicyPresentationValueDecimalToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationValueDecimal using PUT.
+        /// </summary>
+        /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<GroupPolicyPresentationValueDecimal> PutAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<GroupPolicyPresentationValueDecimal>(groupPolicyPresentationValueDecimalToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified GroupPolicyPresentationValueDecimal using PUT and returns a <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/> object.
+        /// </summary>
+        /// <param name="groupPolicyPresentationValueDecimalToUpdate">The GroupPolicyPresentationValueDecimal object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{GroupPolicyPresentationValueDecimal}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupPolicyPresentationValueDecimal>> PutResponseAsync(GroupPolicyPresentationValueDecimal groupPolicyPresentationValueDecimalToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<GroupPolicyPresentationValueDecimal>(groupPolicyPresentationValueDecimalToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MacOSExtensionsConfiguration using POST.
         /// </summary>
         /// <param name="macOSExtensionsConfigurationToCreate">The MacOSExtensionsConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSExtensionsConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> CreateAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToCreate);        /// <summary>
-        /// Creates the specified MacOSExtensionsConfiguration using POST.
+        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> CreateAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified MacOSExtensionsConfiguration using POST and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
         /// </summary>
         /// <param name="macOSExtensionsConfigurationToCreate">The MacOSExtensionsConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MacOSExtensionsConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> CreateAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MacOSExtensionsConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> CreateResponseAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MacOSExtensionsConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified MacOSExtensionsConfiguration.
+        /// Deletes the specified MacOSExtensionsConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MacOSExtensionsConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MacOSExtensionsConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MacOSExtensionsConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified MacOSExtensionsConfiguration using PATCH.
+        /// Gets the specified MacOSExtensionsConfiguration and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
         /// </summary>
-        /// <param name="macOSExtensionsConfigurationToUpdate">The MacOSExtensionsConfiguration to update.</param>
-        /// <returns>The updated MacOSExtensionsConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> UpdateAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MacOSExtensionsConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MacOSExtensionsConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> UpdateAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> UpdateAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MacOSExtensionsConfiguration using PATCH and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSExtensionsConfigurationToUpdate">The MacOSExtensionsConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> UpdateResponseAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MacOSExtensionsConfiguration using PUT.
+        /// </summary>
+        /// <param name="macOSExtensionsConfigurationToUpdate">The MacOSExtensionsConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MacOSExtensionsConfiguration> PutAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MacOSExtensionsConfiguration using PUT and returns a <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSExtensionsConfigurationToUpdate">The MacOSExtensionsConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MacOSExtensionsConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSExtensionsConfiguration>> PutResponseAsync(MacOSExtensionsConfiguration macOSExtensionsConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

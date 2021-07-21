@@ -24,47 +24,45 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified ManagementIntent using POST.
         /// </summary>
         /// <param name="managementIntentToCreate">The ManagementIntent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagementIntent.</returns>
-        System.Threading.Tasks.Task<ManagementIntent> CreateAsync(ManagementIntent managementIntentToCreate);        /// <summary>
-        /// Creates the specified ManagementIntent using POST.
+        System.Threading.Tasks.Task<ManagementIntent> CreateAsync(ManagementIntent managementIntentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ManagementIntent using POST and returns a <see cref="GraphResponse{ManagementIntent}"/> object.
         /// </summary>
         /// <param name="managementIntentToCreate">The ManagementIntent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ManagementIntent.</returns>
-        System.Threading.Tasks.Task<ManagementIntent> CreateAsync(ManagementIntent managementIntentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ManagementIntent.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ManagementIntent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementIntent>> CreateResponseAsync(ManagementIntent managementIntentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ManagementIntent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ManagementIntent.
+        /// Deletes the specified ManagementIntent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ManagementIntent.</returns>
-        System.Threading.Tasks.Task<ManagementIntent> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ManagementIntent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagementIntent.</returns>
-        System.Threading.Tasks.Task<ManagementIntent> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagementIntent> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ManagementIntent using PATCH.
+        /// Gets the specified ManagementIntent and returns a <see cref="GraphResponse{ManagementIntent}"/> object.
         /// </summary>
-        /// <param name="managementIntentToUpdate">The ManagementIntent to update.</param>
-        /// <returns>The updated ManagementIntent.</returns>
-        System.Threading.Tasks.Task<ManagementIntent> UpdateAsync(ManagementIntent managementIntentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementIntent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementIntent>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ManagementIntent using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagementIntent.</returns>
-        System.Threading.Tasks.Task<ManagementIntent> UpdateAsync(ManagementIntent managementIntentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ManagementIntent> UpdateAsync(ManagementIntent managementIntentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagementIntent using PATCH and returns a <see cref="GraphResponse{ManagementIntent}"/> object.
+        /// </summary>
+        /// <param name="managementIntentToUpdate">The ManagementIntent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagementIntent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementIntent>> UpdateResponseAsync(ManagementIntent managementIntentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagementIntent using PUT.
+        /// </summary>
+        /// <param name="managementIntentToUpdate">The ManagementIntent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ManagementIntent> PutAsync(ManagementIntent managementIntentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ManagementIntent using PUT and returns a <see cref="GraphResponse{ManagementIntent}"/> object.
+        /// </summary>
+        /// <param name="managementIntentToUpdate">The ManagementIntent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ManagementIntent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagementIntent>> PutResponseAsync(ManagementIntent managementIntentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

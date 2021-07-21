@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified MobileAppPolicySetItem using POST.
         /// </summary>
         /// <param name="mobileAppPolicySetItemToCreate">The MobileAppPolicySetItem to create.</param>
-        /// <returns>The created MobileAppPolicySetItem.</returns>
-        public System.Threading.Tasks.Task<MobileAppPolicySetItem> CreateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToCreate)
-        {
-            return this.CreateAsync(mobileAppPolicySetItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileAppPolicySetItem using POST.
-        /// </summary>
-        /// <param name="mobileAppPolicySetItemToCreate">The MobileAppPolicySetItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppPolicySetItem.</returns>
-        public async System.Threading.Tasks.Task<MobileAppPolicySetItem> CreateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppPolicySetItem> CreateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MobileAppPolicySetItem>(mobileAppPolicySetItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified MobileAppPolicySetItem.
+        /// Creates the specified MobileAppPolicySetItem using POST and returns a <see cref="GraphResponse{MobileAppPolicySetItem}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="mobileAppPolicySetItemToCreate">The MobileAppPolicySetItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppPolicySetItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppPolicySetItem>> CreateResponseAsync(MobileAppPolicySetItem mobileAppPolicySetItemToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MobileAppPolicySetItem>(mobileAppPolicySetItemToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MobileAppPolicySetItem>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified MobileAppPolicySetItem.
+        /// Deletes the specified MobileAppPolicySetItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MobileAppPolicySetItem.</returns>
-        public System.Threading.Tasks.Task<MobileAppPolicySetItem> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileAppPolicySetItem.</returns>
-        public async System.Threading.Tasks.Task<MobileAppPolicySetItem> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppPolicySetItem> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<MobileAppPolicySetItem>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified MobileAppPolicySetItem using PATCH.
+        /// Gets the specified MobileAppPolicySetItem and returns a <see cref="GraphResponse{MobileAppPolicySetItem}"/> object.
         /// </summary>
-        /// <param name="mobileAppPolicySetItemToUpdate">The MobileAppPolicySetItem to update.</param>
-        /// <returns>The updated MobileAppPolicySetItem.</returns>
-        public System.Threading.Tasks.Task<MobileAppPolicySetItem> UpdateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppPolicySetItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppPolicySetItem>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(mobileAppPolicySetItemToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MobileAppPolicySetItem>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileAppPolicySetItem.</returns>
-        public async System.Threading.Tasks.Task<MobileAppPolicySetItem> UpdateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileAppPolicySetItem> UpdateAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken = default)
         {
-			if (mobileAppPolicySetItemToUpdate.AdditionalData != null)
-			{
-				if (mobileAppPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileAppPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppPolicySetItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileAppPolicySetItemToUpdate.AdditionalData != null)
-            {
-                if (mobileAppPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileAppPolicySetItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppPolicySetItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MobileAppPolicySetItem>(mobileAppPolicySetItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MobileAppPolicySetItem using PATCH and returns a <see cref="GraphResponse{MobileAppPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="mobileAppPolicySetItemToUpdate">The MobileAppPolicySetItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileAppPolicySetItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppPolicySetItem>> UpdateResponseAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<MobileAppPolicySetItem>(mobileAppPolicySetItemToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified MobileAppPolicySetItem using PUT.
+        /// </summary>
+        /// <param name="mobileAppPolicySetItemToUpdate">The MobileAppPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MobileAppPolicySetItem> PutAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MobileAppPolicySetItem>(mobileAppPolicySetItemToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MobileAppPolicySetItem using PUT and returns a <see cref="GraphResponse{MobileAppPolicySetItem}"/> object.
+        /// </summary>
+        /// <param name="mobileAppPolicySetItemToUpdate">The MobileAppPolicySetItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MobileAppPolicySetItem}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppPolicySetItem>> PutResponseAsync(MobileAppPolicySetItem mobileAppPolicySetItemToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MobileAppPolicySetItem>(mobileAppPolicySetItemToUpdate, cancellationToken);
         }
 
         /// <summary>

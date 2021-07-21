@@ -12,233 +12,362 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device App Management.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceAppManagement>))]
     public partial class DeviceAppManagement : Entity
     {
     
-		///<summary>
-		/// The DeviceAppManagement constructor
-		///</summary>
-        public DeviceAppManagement()
-        {
-            this.ODataType = "microsoft.graph.deviceAppManagement";
-        }
-	
         /// <summary>
         /// Gets or sets is enabled for microsoft store for business.
         /// Whether the account is enabled for syncing applications from the Microsoft Store for Business.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabledForMicrosoftStoreForBusiness", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabledForMicrosoftStoreForBusiness")]
         public bool? IsEnabledForMicrosoftStoreForBusiness { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft store for business language.
         /// The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -&amp;lt;country/regioncode2&amp;gt;, where  is a lowercase two-letter code derived from ISO 639-1 and &amp;lt;country/regioncode2&amp;gt; is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftStoreForBusinessLanguage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftStoreForBusinessLanguage")]
         public string MicrosoftStoreForBusinessLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft store for business last completed application sync time.
         /// The last time an application sync from the Microsoft Store for Business was completed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftStoreForBusinessLastCompletedApplicationSyncTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftStoreForBusinessLastCompletedApplicationSyncTime")]
         public DateTimeOffset? MicrosoftStoreForBusinessLastCompletedApplicationSyncTime { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft store for business last successful sync date time.
         /// The last time the apps from the Microsoft Store for Business were synced successfully for the account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftStoreForBusinessLastSuccessfulSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftStoreForBusinessLastSuccessfulSyncDateTime")]
         public DateTimeOffset? MicrosoftStoreForBusinessLastSuccessfulSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft store for business portal selection.
         /// The end user portal information is used to sync applications from the Microsoft Store for Business to Intune Company Portal. There are three options to pick from ['Company portal only', 'Company portal and private store', 'Private store only']. Possible values are: none, companyPortal, privateStore.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "microsoftStoreForBusinessPortalSelection", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("microsoftStoreForBusinessPortalSelection")]
         public MicrosoftStoreForBusinessPortalSelectionOptions? MicrosoftStoreForBusinessPortalSelection { get; set; }
     
         /// <summary>
         /// Gets or sets managed ebook categories.
         /// The mobile eBook categories.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBookCategories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedEBookCategories")]
         public IDeviceAppManagementManagedEBookCategoriesCollectionPage ManagedEBookCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedEBookCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedEBookCategories@odata.nextLink")]
+        public string ManagedEBookCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets enterprise code signing certificates.
         /// The Windows Enterprise Code Signing Certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enterpriseCodeSigningCertificates", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enterpriseCodeSigningCertificates")]
         public IDeviceAppManagementEnterpriseCodeSigningCertificatesCollectionPage EnterpriseCodeSigningCertificates { get; set; }
+
+        /// <summary>
+        /// Gets or sets enterpriseCodeSigningCertificatesNextLink.
+        /// </summary>
+        [JsonPropertyName("enterpriseCodeSigningCertificates@odata.nextLink")]
+        public string EnterpriseCodeSigningCertificatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets ios lob app provisioning configurations.
         /// The IOS Lob App Provisioning Configurations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosLobAppProvisioningConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iosLobAppProvisioningConfigurations")]
         public IDeviceAppManagementIosLobAppProvisioningConfigurationsCollectionPage IosLobAppProvisioningConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets iosLobAppProvisioningConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("iosLobAppProvisioningConfigurations@odata.nextLink")]
+        public string IosLobAppProvisioningConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mobile app categories.
         /// The mobile app categories.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppCategories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobileAppCategories")]
         public IDeviceAppManagementMobileAppCategoriesCollectionPage MobileAppCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileAppCategories@odata.nextLink")]
+        public string MobileAppCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mobile app configurations.
         /// The Managed Device Mobile Application Configurations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileAppConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobileAppConfigurations")]
         public IDeviceAppManagementMobileAppConfigurationsCollectionPage MobileAppConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileAppConfigurations@odata.nextLink")]
+        public string MobileAppConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mobile apps.
         /// The mobile apps.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobileApps", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mobileApps")]
         public IDeviceAppManagementMobileAppsCollectionPage MobileApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileApps@odata.nextLink")]
+        public string MobileAppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets symantec code signing certificate.
         /// The WinPhone Symantec Code Signing Certificate.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "symantecCodeSigningCertificate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("symantecCodeSigningCertificate")]
         public SymantecCodeSigningCertificate SymantecCodeSigningCertificate { get; set; }
     
         /// <summary>
         /// Gets or sets managed ebooks.
         /// The Managed eBook.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedEBooks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedEBooks")]
         public IDeviceAppManagementManagedEBooksCollectionPage ManagedEBooks { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedEBooksNextLink.
+        /// </summary>
+        [JsonPropertyName("managedEBooks@odata.nextLink")]
+        public string ManagedEBooksNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets policy sets.
         /// The PolicySet of Policies and Applications
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policySets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policySets")]
         public IDeviceAppManagementPolicySetsCollectionPage PolicySets { get; set; }
+
+        /// <summary>
+        /// Gets or sets policySetsNextLink.
+        /// </summary>
+        [JsonPropertyName("policySets@odata.nextLink")]
+        public string PolicySetsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets side loading keys.
         /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sideLoadingKeys", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sideLoadingKeys")]
         public IDeviceAppManagementSideLoadingKeysCollectionPage SideLoadingKeys { get; set; }
+
+        /// <summary>
+        /// Gets or sets sideLoadingKeysNextLink.
+        /// </summary>
+        [JsonPropertyName("sideLoadingKeys@odata.nextLink")]
+        public string SideLoadingKeysNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets vpp tokens.
         /// List of Vpp tokens for this organization.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vppTokens", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vppTokens")]
         public IDeviceAppManagementVppTokensCollectionPage VppTokens { get; set; }
+
+        /// <summary>
+        /// Gets or sets vppTokensNextLink.
+        /// </summary>
+        [JsonPropertyName("vppTokens@odata.nextLink")]
+        public string VppTokensNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows management app.
         /// Windows management app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsManagementApp", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsManagementApp")]
         public WindowsManagementApp WindowsManagementApp { get; set; }
     
         /// <summary>
         /// Gets or sets android managed app protections.
         /// Android managed app policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "androidManagedAppProtections", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("androidManagedAppProtections")]
         public IDeviceAppManagementAndroidManagedAppProtectionsCollectionPage AndroidManagedAppProtections { get; set; }
+
+        /// <summary>
+        /// Gets or sets androidManagedAppProtectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("androidManagedAppProtections@odata.nextLink")]
+        public string AndroidManagedAppProtectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets default managed app protections.
         /// Default managed app policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultManagedAppProtections", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultManagedAppProtections")]
         public IDeviceAppManagementDefaultManagedAppProtectionsCollectionPage DefaultManagedAppProtections { get; set; }
+
+        /// <summary>
+        /// Gets or sets defaultManagedAppProtectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("defaultManagedAppProtections@odata.nextLink")]
+        public string DefaultManagedAppProtectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets ios managed app protections.
         /// iOS managed app policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "iosManagedAppProtections", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("iosManagedAppProtections")]
         public IDeviceAppManagementIosManagedAppProtectionsCollectionPage IosManagedAppProtections { get; set; }
+
+        /// <summary>
+        /// Gets or sets iosManagedAppProtectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("iosManagedAppProtections@odata.nextLink")]
+        public string IosManagedAppProtectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed app policies.
         /// Managed app policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedAppPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedAppPolicies")]
         public IDeviceAppManagementManagedAppPoliciesCollectionPage ManagedAppPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedAppPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedAppPolicies@odata.nextLink")]
+        public string ManagedAppPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed app registrations.
         /// The managed app registrations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedAppRegistrations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedAppRegistrations")]
         public IDeviceAppManagementManagedAppRegistrationsCollectionPage ManagedAppRegistrations { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedAppRegistrationsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedAppRegistrations@odata.nextLink")]
+        public string ManagedAppRegistrationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed app statuses.
         /// The managed app statuses.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedAppStatuses", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedAppStatuses")]
         public IDeviceAppManagementManagedAppStatusesCollectionPage ManagedAppStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedAppStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedAppStatuses@odata.nextLink")]
+        public string ManagedAppStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets mdm windows information protection policies.
         /// Windows information protection for apps running on devices which are MDM enrolled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mdmWindowsInformationProtectionPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mdmWindowsInformationProtectionPolicies")]
         public IDeviceAppManagementMdmWindowsInformationProtectionPoliciesCollectionPage MdmWindowsInformationProtectionPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets mdmWindowsInformationProtectionPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("mdmWindowsInformationProtectionPolicies@odata.nextLink")]
+        public string MdmWindowsInformationProtectionPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets targeted managed app configurations.
         /// Targeted managed app configurations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "targetedManagedAppConfigurations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("targetedManagedAppConfigurations")]
         public IDeviceAppManagementTargetedManagedAppConfigurationsCollectionPage TargetedManagedAppConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets targetedManagedAppConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("targetedManagedAppConfigurations@odata.nextLink")]
+        public string TargetedManagedAppConfigurationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection device registrations.
         /// Windows information protection device registrations that are not MDM enrolled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionDeviceRegistrations", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsInformationProtectionDeviceRegistrations")]
         public IDeviceAppManagementWindowsInformationProtectionDeviceRegistrationsCollectionPage WindowsInformationProtectionDeviceRegistrations { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsInformationProtectionDeviceRegistrationsNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsInformationProtectionDeviceRegistrations@odata.nextLink")]
+        public string WindowsInformationProtectionDeviceRegistrationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection policies.
         /// Windows information protection for apps running on devices which are not MDM enrolled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsInformationProtectionPolicies")]
         public IDeviceAppManagementWindowsInformationProtectionPoliciesCollectionPage WindowsInformationProtectionPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsInformationProtectionPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsInformationProtectionPolicies@odata.nextLink")]
+        public string WindowsInformationProtectionPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows information protection wipe actions.
         /// Windows information protection wipe actions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsInformationProtectionWipeActions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsInformationProtectionWipeActions")]
         public IDeviceAppManagementWindowsInformationProtectionWipeActionsCollectionPage WindowsInformationProtectionWipeActions { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsInformationProtectionWipeActionsNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsInformationProtectionWipeActions@odata.nextLink")]
+        public string WindowsInformationProtectionWipeActionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device app management tasks.
         /// Device app management tasks.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceAppManagementTasks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceAppManagementTasks")]
         public IDeviceAppManagementDeviceAppManagementTasksCollectionPage DeviceAppManagementTasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceAppManagementTasksNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceAppManagementTasks@odata.nextLink")]
+        public string DeviceAppManagementTasksNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets wdac supplemental policies.
         /// The collection of Windows Defender Application Control Supplemental Policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "wdacSupplementalPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("wdacSupplementalPolicies")]
         public IDeviceAppManagementWdacSupplementalPoliciesCollectionPage WdacSupplementalPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets wdacSupplementalPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("wdacSupplementalPolicies@odata.nextLink")]
+        public string WdacSupplementalPoliciesNextLink { get; set; }
     
     }
 }

@@ -12,76 +12,75 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Service Health Issue.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ServiceHealthIssue>))]
     public partial class ServiceHealthIssue : ServiceAnnouncementBase
     {
     
-		///<summary>
-		/// The ServiceHealthIssue constructor
-		///</summary>
+        ///<summary>
+        /// The ServiceHealthIssue constructor
+        ///</summary>
         public ServiceHealthIssue()
         {
             this.ODataType = "microsoft.graph.serviceHealthIssue";
         }
-	
+
         /// <summary>
         /// Gets or sets classification.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "classification", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("classification")]
         public ServiceHealthClassificationType? Classification { get; set; }
     
         /// <summary>
         /// Gets or sets feature.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "feature", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("feature")]
         public string Feature { get; set; }
     
         /// <summary>
         /// Gets or sets feature group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "featureGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("featureGroup")]
         public string FeatureGroup { get; set; }
     
         /// <summary>
         /// Gets or sets impact description.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "impactDescription", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("impactDescription")]
         public string ImpactDescription { get; set; }
     
         /// <summary>
         /// Gets or sets is resolved.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isResolved", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isResolved")]
         public bool? IsResolved { get; set; }
     
         /// <summary>
         /// Gets or sets origin.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "origin", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("origin")]
         public ServiceHealthOrigin? Origin { get; set; }
     
         /// <summary>
         /// Gets or sets posts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "posts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("posts")]
         public IEnumerable<ServiceHealthIssuePost> Posts { get; set; }
     
         /// <summary>
         /// Gets or sets service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "service", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("service")]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public ServiceHealthStatus? Status { get; set; }
     
     }

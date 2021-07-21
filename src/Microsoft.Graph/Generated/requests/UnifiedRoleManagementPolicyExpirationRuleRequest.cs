@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleManagementPolicyExpirationRule using POST.
         /// </summary>
         /// <param name="unifiedRoleManagementPolicyExpirationRuleToCreate">The UnifiedRoleManagementPolicyExpirationRule to create.</param>
-        /// <returns>The created UnifiedRoleManagementPolicyExpirationRule.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> CreateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToCreate)
-        {
-            return this.CreateAsync(unifiedRoleManagementPolicyExpirationRuleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRoleManagementPolicyExpirationRule using POST.
-        /// </summary>
-        /// <param name="unifiedRoleManagementPolicyExpirationRuleToCreate">The UnifiedRoleManagementPolicyExpirationRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleManagementPolicyExpirationRule.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> CreateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> CreateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UnifiedRoleManagementPolicyExpirationRule>(unifiedRoleManagementPolicyExpirationRuleToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UnifiedRoleManagementPolicyExpirationRule.
+        /// Creates the specified UnifiedRoleManagementPolicyExpirationRule using POST and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="unifiedRoleManagementPolicyExpirationRuleToCreate">The UnifiedRoleManagementPolicyExpirationRule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> CreateResponseAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyExpirationRule>(unifiedRoleManagementPolicyExpirationRuleToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UnifiedRoleManagementPolicyExpirationRule>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UnifiedRoleManagementPolicyExpirationRule.
+        /// Deletes the specified UnifiedRoleManagementPolicyExpirationRule and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UnifiedRoleManagementPolicyExpirationRule.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleManagementPolicyExpirationRule.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UnifiedRoleManagementPolicyExpirationRule>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PATCH.
+        /// Gets the specified UnifiedRoleManagementPolicyExpirationRule and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
         /// </summary>
-        /// <param name="unifiedRoleManagementPolicyExpirationRuleToUpdate">The UnifiedRoleManagementPolicyExpirationRule to update.</param>
-        /// <returns>The updated UnifiedRoleManagementPolicyExpirationRule.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> UpdateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyExpirationRule>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleManagementPolicyExpirationRule.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> UpdateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> UpdateAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken = default)
         {
-			if (unifiedRoleManagementPolicyExpirationRuleToUpdate.AdditionalData != null)
-			{
-				if (unifiedRoleManagementPolicyExpirationRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRoleManagementPolicyExpirationRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleManagementPolicyExpirationRuleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRoleManagementPolicyExpirationRuleToUpdate.AdditionalData != null)
-            {
-                if (unifiedRoleManagementPolicyExpirationRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRoleManagementPolicyExpirationRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleManagementPolicyExpirationRuleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UnifiedRoleManagementPolicyExpirationRule>(unifiedRoleManagementPolicyExpirationRuleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PATCH and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyExpirationRuleToUpdate">The UnifiedRoleManagementPolicyExpirationRule to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> UpdateResponseAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyExpirationRule>(unifiedRoleManagementPolicyExpirationRuleToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PUT.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyExpirationRuleToUpdate">The UnifiedRoleManagementPolicyExpirationRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyExpirationRule> PutAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UnifiedRoleManagementPolicyExpirationRule>(unifiedRoleManagementPolicyExpirationRuleToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyExpirationRule using PUT and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyExpirationRuleToUpdate">The UnifiedRoleManagementPolicyExpirationRule object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UnifiedRoleManagementPolicyExpirationRule}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyExpirationRule>> PutResponseAsync(UnifiedRoleManagementPolicyExpirationRule unifiedRoleManagementPolicyExpirationRuleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyExpirationRule>(unifiedRoleManagementPolicyExpirationRuleToUpdate, cancellationToken);
         }
 
         /// <summary>

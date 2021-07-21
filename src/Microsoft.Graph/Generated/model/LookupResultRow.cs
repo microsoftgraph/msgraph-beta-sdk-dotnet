@@ -12,28 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Lookup Result Row.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class LookupResultRow : Entity
     {
     
-		///<summary>
-		/// The LookupResultRow constructor
-		///</summary>
-        public LookupResultRow()
-        {
-            this.ODataType = "microsoft.graph.lookupResultRow";
-        }
-	
         /// <summary>
         /// Gets or sets row.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "row", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("row")]
         public string Row { get; set; }
     
     }

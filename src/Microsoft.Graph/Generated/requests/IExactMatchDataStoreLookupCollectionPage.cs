@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IExactMatchDataStoreLookupCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<ExactMatchDataStoreLookupCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<ExactMatchDataStoreLookupCollectionPage>))]
     public interface IExactMatchDataStoreLookupCollectionPage : ICollectionPage<string>
     {
         /// <summary>

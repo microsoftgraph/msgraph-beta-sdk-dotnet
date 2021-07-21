@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileAppProvisioningConfigGroupAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppProvisioningConfigGroupAssignment">The MobileAppProvisioningConfigGroupAssignment to add.</param>
-        /// <returns>The created MobileAppProvisioningConfigGroupAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> AddAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignment);
-
         /// <summary>
         /// Adds the specified MobileAppProvisioningConfigGroupAssignment to the collection via POST.
         /// </summary>
         /// <param name="mobileAppProvisioningConfigGroupAssignment">The MobileAppProvisioningConfigGroupAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppProvisioningConfigGroupAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> AddAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppProvisioningConfigGroupAssignment> AddAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignment, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MobileAppProvisioningConfigGroupAssignment to the collection via POST and returns a <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionPage> GetAsync();
+        /// <param name="mobileAppProvisioningConfigGroupAssignment">The MobileAppProvisioningConfigGroupAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppProvisioningConfigGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppProvisioningConfigGroupAssignment>> AddResponseAsync(MobileAppProvisioningConfigGroupAssignment mobileAppProvisioningConfigGroupAssignment, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IIosLobAppProvisioningConfigurationGroupAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{IosLobAppProvisioningConfigurationGroupAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobAppProvisioningConfigurationGroupAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosLobAppProvisioningConfigurationGroupAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

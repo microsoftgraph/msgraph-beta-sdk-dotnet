@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AccessReviewPolicy using POST.
         /// </summary>
         /// <param name="accessReviewPolicyToCreate">The AccessReviewPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessReviewPolicy.</returns>
-        System.Threading.Tasks.Task<AccessReviewPolicy> CreateAsync(AccessReviewPolicy accessReviewPolicyToCreate);        /// <summary>
-        /// Creates the specified AccessReviewPolicy using POST.
+        System.Threading.Tasks.Task<AccessReviewPolicy> CreateAsync(AccessReviewPolicy accessReviewPolicyToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AccessReviewPolicy using POST and returns a <see cref="GraphResponse{AccessReviewPolicy}"/> object.
         /// </summary>
         /// <param name="accessReviewPolicyToCreate">The AccessReviewPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AccessReviewPolicy.</returns>
-        System.Threading.Tasks.Task<AccessReviewPolicy> CreateAsync(AccessReviewPolicy accessReviewPolicyToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AccessReviewPolicy.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AccessReviewPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewPolicy>> CreateResponseAsync(AccessReviewPolicy accessReviewPolicyToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AccessReviewPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AccessReviewPolicy.
+        /// Deletes the specified AccessReviewPolicy and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AccessReviewPolicy.</returns>
-        System.Threading.Tasks.Task<AccessReviewPolicy> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AccessReviewPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessReviewPolicy.</returns>
-        System.Threading.Tasks.Task<AccessReviewPolicy> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessReviewPolicy> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AccessReviewPolicy using PATCH.
+        /// Gets the specified AccessReviewPolicy and returns a <see cref="GraphResponse{AccessReviewPolicy}"/> object.
         /// </summary>
-        /// <param name="accessReviewPolicyToUpdate">The AccessReviewPolicy to update.</param>
-        /// <returns>The updated AccessReviewPolicy.</returns>
-        System.Threading.Tasks.Task<AccessReviewPolicy> UpdateAsync(AccessReviewPolicy accessReviewPolicyToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessReviewPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewPolicy>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AccessReviewPolicy using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessReviewPolicy.</returns>
-        System.Threading.Tasks.Task<AccessReviewPolicy> UpdateAsync(AccessReviewPolicy accessReviewPolicyToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AccessReviewPolicy> UpdateAsync(AccessReviewPolicy accessReviewPolicyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AccessReviewPolicy using PATCH and returns a <see cref="GraphResponse{AccessReviewPolicy}"/> object.
+        /// </summary>
+        /// <param name="accessReviewPolicyToUpdate">The AccessReviewPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessReviewPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewPolicy>> UpdateResponseAsync(AccessReviewPolicy accessReviewPolicyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AccessReviewPolicy using PUT.
+        /// </summary>
+        /// <param name="accessReviewPolicyToUpdate">The AccessReviewPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AccessReviewPolicy> PutAsync(AccessReviewPolicy accessReviewPolicyToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AccessReviewPolicy using PUT and returns a <see cref="GraphResponse{AccessReviewPolicy}"/> object.
+        /// </summary>
+        /// <param name="accessReviewPolicyToUpdate">The AccessReviewPolicy object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AccessReviewPolicy}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewPolicy>> PutResponseAsync(AccessReviewPolicy accessReviewPolicyToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

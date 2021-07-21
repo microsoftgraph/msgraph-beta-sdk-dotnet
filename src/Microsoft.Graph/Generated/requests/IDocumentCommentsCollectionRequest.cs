@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDocumentCommentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DocumentComment to the collection via POST.
-        /// </summary>
-        /// <param name="documentComment">The DocumentComment to add.</param>
-        /// <returns>The created DocumentComment.</returns>
-        System.Threading.Tasks.Task<DocumentComment> AddAsync(DocumentComment documentComment);
-
         /// <summary>
         /// Adds the specified DocumentComment to the collection via POST.
         /// </summary>
         /// <param name="documentComment">The DocumentComment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DocumentComment.</returns>
-        System.Threading.Tasks.Task<DocumentComment> AddAsync(DocumentComment documentComment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DocumentComment> AddAsync(DocumentComment documentComment, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DocumentComment to the collection via POST and returns a <see cref="GraphResponse{DocumentComment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDocumentCommentsCollectionPage> GetAsync();
+        /// <param name="documentComment">The DocumentComment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DocumentComment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DocumentComment>> AddResponseAsync(DocumentComment documentComment, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDocumentCommentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDocumentCommentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DocumentCommentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DocumentCommentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DocumentCommentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,257 +12,457 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Company.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Company : Entity
     {
     
-		///<summary>
-		/// The Company constructor
-		///</summary>
-        public Company()
-        {
-            this.ODataType = "microsoft.graph.company";
-        }
-	
         /// <summary>
         /// Gets or sets business profile id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessProfileId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("businessProfileId")]
         public string BusinessProfileId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets system version.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemVersion")]
         public string SystemVersion { get; set; }
     
         /// <summary>
         /// Gets or sets accounts.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accounts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accounts")]
         public ICompanyAccountsCollectionPage Accounts { get; set; }
+
+        /// <summary>
+        /// Gets or sets accountsNextLink.
+        /// </summary>
+        [JsonPropertyName("accounts@odata.nextLink")]
+        public string AccountsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets aged accounts payable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agedAccountsPayable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agedAccountsPayable")]
         public ICompanyAgedAccountsPayableCollectionPage AgedAccountsPayable { get; set; }
+
+        /// <summary>
+        /// Gets or sets agedAccountsPayableNextLink.
+        /// </summary>
+        [JsonPropertyName("agedAccountsPayable@odata.nextLink")]
+        public string AgedAccountsPayableNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets aged accounts receivable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agedAccountsReceivable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agedAccountsReceivable")]
         public ICompanyAgedAccountsReceivableCollectionPage AgedAccountsReceivable { get; set; }
+
+        /// <summary>
+        /// Gets or sets agedAccountsReceivableNextLink.
+        /// </summary>
+        [JsonPropertyName("agedAccountsReceivable@odata.nextLink")]
+        public string AgedAccountsReceivableNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets company information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyInformation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("companyInformation")]
         public ICompanyCompanyInformationCollectionPage CompanyInformation { get; set; }
+
+        /// <summary>
+        /// Gets or sets companyInformationNextLink.
+        /// </summary>
+        [JsonPropertyName("companyInformation@odata.nextLink")]
+        public string CompanyInformationNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets countries regions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countriesRegions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countriesRegions")]
         public ICompanyCountriesRegionsCollectionPage CountriesRegions { get; set; }
+
+        /// <summary>
+        /// Gets or sets countriesRegionsNextLink.
+        /// </summary>
+        [JsonPropertyName("countriesRegions@odata.nextLink")]
+        public string CountriesRegionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets currencies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currencies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currencies")]
         public ICompanyCurrenciesCollectionPage Currencies { get; set; }
+
+        /// <summary>
+        /// Gets or sets currenciesNextLink.
+        /// </summary>
+        [JsonPropertyName("currencies@odata.nextLink")]
+        public string CurrenciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets customer payment journals.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerPaymentJournals", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customerPaymentJournals")]
         public ICompanyCustomerPaymentJournalsCollectionPage CustomerPaymentJournals { get; set; }
+
+        /// <summary>
+        /// Gets or sets customerPaymentJournalsNextLink.
+        /// </summary>
+        [JsonPropertyName("customerPaymentJournals@odata.nextLink")]
+        public string CustomerPaymentJournalsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets customer payments.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customerPayments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customerPayments")]
         public ICompanyCustomerPaymentsCollectionPage CustomerPayments { get; set; }
+
+        /// <summary>
+        /// Gets or sets customerPaymentsNextLink.
+        /// </summary>
+        [JsonPropertyName("customerPayments@odata.nextLink")]
+        public string CustomerPaymentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets customers.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "customers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("customers")]
         public ICompanyCustomersCollectionPage Customers { get; set; }
+
+        /// <summary>
+        /// Gets or sets customersNextLink.
+        /// </summary>
+        [JsonPropertyName("customers@odata.nextLink")]
+        public string CustomersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets dimensions.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dimensions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dimensions")]
         public ICompanyDimensionsCollectionPage Dimensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets dimensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("dimensions@odata.nextLink")]
+        public string DimensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets dimension values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dimensionValues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dimensionValues")]
         public ICompanyDimensionValuesCollectionPage DimensionValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets dimensionValuesNextLink.
+        /// </summary>
+        [JsonPropertyName("dimensionValues@odata.nextLink")]
+        public string DimensionValuesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets employees.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employees", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("employees")]
         public ICompanyEmployeesCollectionPage Employees { get; set; }
+
+        /// <summary>
+        /// Gets or sets employeesNextLink.
+        /// </summary>
+        [JsonPropertyName("employees@odata.nextLink")]
+        public string EmployeesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets general ledger entries.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "generalLedgerEntries", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("generalLedgerEntries")]
         public ICompanyGeneralLedgerEntriesCollectionPage GeneralLedgerEntries { get; set; }
+
+        /// <summary>
+        /// Gets or sets generalLedgerEntriesNextLink.
+        /// </summary>
+        [JsonPropertyName("generalLedgerEntries@odata.nextLink")]
+        public string GeneralLedgerEntriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets item categories.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "itemCategories", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("itemCategories")]
         public ICompanyItemCategoriesCollectionPage ItemCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("itemCategories@odata.nextLink")]
+        public string ItemCategoriesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets items.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("items")]
         public ICompanyItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets journal lines.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "journalLines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("journalLines")]
         public ICompanyJournalLinesCollectionPage JournalLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets journalLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("journalLines@odata.nextLink")]
+        public string JournalLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets journals.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "journals", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("journals")]
         public ICompanyJournalsCollectionPage Journals { get; set; }
+
+        /// <summary>
+        /// Gets or sets journalsNextLink.
+        /// </summary>
+        [JsonPropertyName("journals@odata.nextLink")]
+        public string JournalsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets payment methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "paymentMethods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("paymentMethods")]
         public ICompanyPaymentMethodsCollectionPage PaymentMethods { get; set; }
+
+        /// <summary>
+        /// Gets or sets paymentMethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("paymentMethods@odata.nextLink")]
+        public string PaymentMethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets payment terms.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "paymentTerms", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("paymentTerms")]
         public ICompanyPaymentTermsCollectionPage PaymentTerms { get; set; }
+
+        /// <summary>
+        /// Gets or sets paymentTermsNextLink.
+        /// </summary>
+        [JsonPropertyName("paymentTerms@odata.nextLink")]
+        public string PaymentTermsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets picture.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "picture", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("picture")]
         public ICompanyPictureCollectionPage Picture { get; set; }
+
+        /// <summary>
+        /// Gets or sets pictureNextLink.
+        /// </summary>
+        [JsonPropertyName("picture@odata.nextLink")]
+        public string PictureNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets purchase invoice lines.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "purchaseInvoiceLines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("purchaseInvoiceLines")]
         public ICompanyPurchaseInvoiceLinesCollectionPage PurchaseInvoiceLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets purchaseInvoiceLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("purchaseInvoiceLines@odata.nextLink")]
+        public string PurchaseInvoiceLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets purchase invoices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "purchaseInvoices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("purchaseInvoices")]
         public ICompanyPurchaseInvoicesCollectionPage PurchaseInvoices { get; set; }
+
+        /// <summary>
+        /// Gets or sets purchaseInvoicesNextLink.
+        /// </summary>
+        [JsonPropertyName("purchaseInvoices@odata.nextLink")]
+        public string PurchaseInvoicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales credit memo lines.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesCreditMemoLines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("salesCreditMemoLines")]
         public ICompanySalesCreditMemoLinesCollectionPage SalesCreditMemoLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesCreditMemoLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesCreditMemoLines@odata.nextLink")]
+        public string SalesCreditMemoLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales credit memos.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesCreditMemos", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("salesCreditMemos")]
         public ICompanySalesCreditMemosCollectionPage SalesCreditMemos { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesCreditMemosNextLink.
+        /// </summary>
+        [JsonPropertyName("salesCreditMemos@odata.nextLink")]
+        public string SalesCreditMemosNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales invoice lines.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesInvoiceLines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("salesInvoiceLines")]
         public ICompanySalesInvoiceLinesCollectionPage SalesInvoiceLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesInvoiceLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesInvoiceLines@odata.nextLink")]
+        public string SalesInvoiceLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales invoices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesInvoices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("salesInvoices")]
         public ICompanySalesInvoicesCollectionPage SalesInvoices { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesInvoicesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesInvoices@odata.nextLink")]
+        public string SalesInvoicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales order lines.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesOrderLines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("salesOrderLines")]
         public ICompanySalesOrderLinesCollectionPage SalesOrderLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesOrderLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesOrderLines@odata.nextLink")]
+        public string SalesOrderLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales orders.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesOrders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("salesOrders")]
         public ICompanySalesOrdersCollectionPage SalesOrders { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesOrdersNextLink.
+        /// </summary>
+        [JsonPropertyName("salesOrders@odata.nextLink")]
+        public string SalesOrdersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales quote lines.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesQuoteLines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("salesQuoteLines")]
         public ICompanySalesQuoteLinesCollectionPage SalesQuoteLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesQuoteLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesQuoteLines@odata.nextLink")]
+        public string SalesQuoteLinesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sales quotes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "salesQuotes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("salesQuotes")]
         public ICompanySalesQuotesCollectionPage SalesQuotes { get; set; }
+
+        /// <summary>
+        /// Gets or sets salesQuotesNextLink.
+        /// </summary>
+        [JsonPropertyName("salesQuotes@odata.nextLink")]
+        public string SalesQuotesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets shipment methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shipmentMethods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("shipmentMethods")]
         public ICompanyShipmentMethodsCollectionPage ShipmentMethods { get; set; }
+
+        /// <summary>
+        /// Gets or sets shipmentMethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("shipmentMethods@odata.nextLink")]
+        public string ShipmentMethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tax areas.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxAreas", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("taxAreas")]
         public ICompanyTaxAreasCollectionPage TaxAreas { get; set; }
+
+        /// <summary>
+        /// Gets or sets taxAreasNextLink.
+        /// </summary>
+        [JsonPropertyName("taxAreas@odata.nextLink")]
+        public string TaxAreasNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tax groups.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taxGroups", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("taxGroups")]
         public ICompanyTaxGroupsCollectionPage TaxGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets taxGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("taxGroups@odata.nextLink")]
+        public string TaxGroupsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets units of measure.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unitsOfMeasure", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unitsOfMeasure")]
         public ICompanyUnitsOfMeasureCollectionPage UnitsOfMeasure { get; set; }
+
+        /// <summary>
+        /// Gets or sets unitsOfMeasureNextLink.
+        /// </summary>
+        [JsonPropertyName("unitsOfMeasure@odata.nextLink")]
+        public string UnitsOfMeasureNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets vendors.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "vendors", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("vendors")]
         public ICompanyVendorsCollectionPage Vendors { get; set; }
+
+        /// <summary>
+        /// Gets or sets vendorsNextLink.
+        /// </summary>
+        [JsonPropertyName("vendors@odata.nextLink")]
+        public string VendorsNextLink { get; set; }
     
     }
 }

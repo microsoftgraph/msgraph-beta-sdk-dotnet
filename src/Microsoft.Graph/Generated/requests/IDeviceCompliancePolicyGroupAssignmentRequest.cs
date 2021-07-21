@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceCompliancePolicyGroupAssignment using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicyGroupAssignmentToCreate">The DeviceCompliancePolicyGroupAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCompliancePolicyGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> CreateAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToCreate);        /// <summary>
-        /// Creates the specified DeviceCompliancePolicyGroupAssignment using POST.
+        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> CreateAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicyGroupAssignment using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object.
         /// </summary>
         /// <param name="deviceCompliancePolicyGroupAssignmentToCreate">The DeviceCompliancePolicyGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceCompliancePolicyGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> CreateAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceCompliancePolicyGroupAssignment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyGroupAssignment>> CreateResponseAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceCompliancePolicyGroupAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceCompliancePolicyGroupAssignment.
+        /// Deletes the specified DeviceCompliancePolicyGroupAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceCompliancePolicyGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceCompliancePolicyGroupAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceCompliancePolicyGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceCompliancePolicyGroupAssignment using PATCH.
+        /// Gets the specified DeviceCompliancePolicyGroupAssignment and returns a <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object.
         /// </summary>
-        /// <param name="deviceCompliancePolicyGroupAssignmentToUpdate">The DeviceCompliancePolicyGroupAssignment to update.</param>
-        /// <returns>The updated DeviceCompliancePolicyGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> UpdateAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceCompliancePolicyGroupAssignment using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceCompliancePolicyGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> UpdateAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> UpdateAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicyGroupAssignment using PATCH and returns a <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyGroupAssignmentToUpdate">The DeviceCompliancePolicyGroupAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyGroupAssignment>> UpdateResponseAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicyGroupAssignment using PUT.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyGroupAssignmentToUpdate">The DeviceCompliancePolicyGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceCompliancePolicyGroupAssignment> PutAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicyGroupAssignment using PUT and returns a <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyGroupAssignmentToUpdate">The DeviceCompliancePolicyGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceCompliancePolicyGroupAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyGroupAssignment>> PutResponseAsync(DeviceCompliancePolicyGroupAssignment deviceCompliancePolicyGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,216 +12,207 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MacOSPrivacyAccessControlItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSPrivacyAccessControlItem>))]
     public partial class MacOSPrivacyAccessControlItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MacOSPrivacyAccessControlItem"/> class.
-        /// </summary>
-        public MacOSPrivacyAccessControlItem()
-        {
-            this.ODataType = "microsoft.graph.macOSPrivacyAccessControlItem";
-        }
 
         /// <summary>
         /// Gets or sets accessibility.
         /// Allow the app or process to control the Mac via the Accessibility subsystem. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessibility", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessibility")]
         public Enablement? Accessibility { get; set; }
     
         /// <summary>
         /// Gets or sets addressBook.
         /// Allow or block access to contact information managed by Contacts. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "addressBook", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("addressBook")]
         public Enablement? AddressBook { get; set; }
     
         /// <summary>
         /// Gets or sets appleEventsAllowedReceivers.
         /// Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appleEventsAllowedReceivers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appleEventsAllowedReceivers")]
         public IEnumerable<MacOSAppleEventReceiver> AppleEventsAllowedReceivers { get; set; }
     
         /// <summary>
         /// Gets or sets blockCamera.
         /// Block access to camera app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockCamera", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockCamera")]
         public bool? BlockCamera { get; set; }
     
         /// <summary>
         /// Gets or sets blockListenEvent.
         /// Block the app or process from listening to events from input devices such as mouse, keyboard, and trackpad.Requires macOS 10.15 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockListenEvent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockListenEvent")]
         public bool? BlockListenEvent { get; set; }
     
         /// <summary>
         /// Gets or sets blockMicrophone.
         /// Block access to microphone.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockMicrophone", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockMicrophone")]
         public bool? BlockMicrophone { get; set; }
     
         /// <summary>
         /// Gets or sets blockScreenCapture.
         /// Block app from capturing contents of system display. Requires macOS 10.15 or later.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "blockScreenCapture", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("blockScreenCapture")]
         public bool? BlockScreenCapture { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
         /// Allow or block access to event information managed by Calendar. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendar", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calendar")]
         public Enablement? Calendar { get; set; }
     
         /// <summary>
         /// Gets or sets codeRequirement.
         /// Enter the code requirement, which can be obtained with the command 'codesign –display -r –' in the Terminal app. Include everything after '=&amp;gt;'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "codeRequirement", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("codeRequirement")]
         public string CodeRequirement { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// The display name of the app, process, or executable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets fileProviderPresence.
         /// Allow the app or process to access files managed by another app’s file provider extension. Requires macOS 10.15 or later. . Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileProviderPresence", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileProviderPresence")]
         public Enablement? FileProviderPresence { get; set; }
     
         /// <summary>
         /// Gets or sets identifier.
         /// The bundle ID or path of the app, process, or executable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identifier")]
         public string Identifier { get; set; }
     
         /// <summary>
         /// Gets or sets identifierType.
         /// A bundle ID is used to identify an app. A path is used to identify a process or executable. Possible values are: bundleID, path.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifierType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identifierType")]
         public MacOSProcessIdentifierType? IdentifierType { get; set; }
     
         /// <summary>
         /// Gets or sets mediaLibrary.
         /// Allow or block access to music and the media library. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mediaLibrary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("mediaLibrary")]
         public Enablement? MediaLibrary { get; set; }
     
         /// <summary>
         /// Gets or sets photos.
         /// Allow or block access to images managed by Photos. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "photos", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("photos")]
         public Enablement? Photos { get; set; }
     
         /// <summary>
         /// Gets or sets postEvent.
         /// Control access to CoreGraphics APIs, which are used to send CGEvents to the system event stream. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "postEvent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("postEvent")]
         public Enablement? PostEvent { get; set; }
     
         /// <summary>
         /// Gets or sets reminders.
         /// Allow or block access to information managed by Reminders. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reminders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reminders")]
         public Enablement? Reminders { get; set; }
     
         /// <summary>
         /// Gets or sets speechRecognition.
         /// Allow or block access to system speech recognition facility. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "speechRecognition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("speechRecognition")]
         public Enablement? SpeechRecognition { get; set; }
     
         /// <summary>
         /// Gets or sets staticCodeValidation.
         /// Statically validates the code requirement. Use this setting if the process invalidates its dynamic code signature.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "staticCodeValidation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("staticCodeValidation")]
         public bool? StaticCodeValidation { get; set; }
     
         /// <summary>
         /// Gets or sets systemPolicyAllFiles.
         /// Control access to all protected files on a device. Files might be in locations such as emails, messages, apps, and administrative settings. Apply this setting with caution. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemPolicyAllFiles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemPolicyAllFiles")]
         public Enablement? SystemPolicyAllFiles { get; set; }
     
         /// <summary>
         /// Gets or sets systemPolicyDesktopFolder.
         /// Allow or block access to Desktop folder. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemPolicyDesktopFolder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemPolicyDesktopFolder")]
         public Enablement? SystemPolicyDesktopFolder { get; set; }
     
         /// <summary>
         /// Gets or sets systemPolicyDocumentsFolder.
         /// Allow or block access to Documents folder. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemPolicyDocumentsFolder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemPolicyDocumentsFolder")]
         public Enablement? SystemPolicyDocumentsFolder { get; set; }
     
         /// <summary>
         /// Gets or sets systemPolicyDownloadsFolder.
         /// Allow or block access to Downloads folder. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemPolicyDownloadsFolder", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemPolicyDownloadsFolder")]
         public Enablement? SystemPolicyDownloadsFolder { get; set; }
     
         /// <summary>
         /// Gets or sets systemPolicyNetworkVolumes.
         /// Allow or block access to network volumes. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemPolicyNetworkVolumes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemPolicyNetworkVolumes")]
         public Enablement? SystemPolicyNetworkVolumes { get; set; }
     
         /// <summary>
         /// Gets or sets systemPolicyRemovableVolumes.
         /// Control access to removable  volumes on the device, such as an external hard drive. Requires macOS 10.15 or later. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemPolicyRemovableVolumes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemPolicyRemovableVolumes")]
         public Enablement? SystemPolicyRemovableVolumes { get; set; }
     
         /// <summary>
         /// Gets or sets systemPolicySystemAdminFiles.
         /// Allow app or process to access files used in system administration. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "systemPolicySystemAdminFiles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("systemPolicySystemAdminFiles")]
         public Enablement? SystemPolicySystemAdminFiles { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified TeamsUserActivityUserCounts using POST.
         /// </summary>
         /// <param name="teamsUserActivityUserCountsToCreate">The TeamsUserActivityUserCounts to create.</param>
-        /// <returns>The created TeamsUserActivityUserCounts.</returns>
-        public System.Threading.Tasks.Task<TeamsUserActivityUserCounts> CreateAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToCreate)
-        {
-            return this.CreateAsync(teamsUserActivityUserCountsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified TeamsUserActivityUserCounts using POST.
-        /// </summary>
-        /// <param name="teamsUserActivityUserCountsToCreate">The TeamsUserActivityUserCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsUserActivityUserCounts.</returns>
-        public async System.Threading.Tasks.Task<TeamsUserActivityUserCounts> CreateAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsUserActivityUserCounts> CreateAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<TeamsUserActivityUserCounts>(teamsUserActivityUserCountsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified TeamsUserActivityUserCounts.
+        /// Creates the specified TeamsUserActivityUserCounts using POST and returns a <see cref="GraphResponse{TeamsUserActivityUserCounts}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="teamsUserActivityUserCountsToCreate">The TeamsUserActivityUserCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsUserActivityUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityUserCounts>> CreateResponseAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TeamsUserActivityUserCounts>(teamsUserActivityUserCountsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<TeamsUserActivityUserCounts>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified TeamsUserActivityUserCounts.
+        /// Deletes the specified TeamsUserActivityUserCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TeamsUserActivityUserCounts.</returns>
-        public System.Threading.Tasks.Task<TeamsUserActivityUserCounts> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamsUserActivityUserCounts.</returns>
-        public async System.Threading.Tasks.Task<TeamsUserActivityUserCounts> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsUserActivityUserCounts> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<TeamsUserActivityUserCounts>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified TeamsUserActivityUserCounts using PATCH.
+        /// Gets the specified TeamsUserActivityUserCounts and returns a <see cref="GraphResponse{TeamsUserActivityUserCounts}"/> object.
         /// </summary>
-        /// <param name="teamsUserActivityUserCountsToUpdate">The TeamsUserActivityUserCounts to update.</param>
-        /// <returns>The updated TeamsUserActivityUserCounts.</returns>
-        public System.Threading.Tasks.Task<TeamsUserActivityUserCounts> UpdateAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsUserActivityUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityUserCounts>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(teamsUserActivityUserCountsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<TeamsUserActivityUserCounts>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamsUserActivityUserCounts.</returns>
-        public async System.Threading.Tasks.Task<TeamsUserActivityUserCounts> UpdateAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<TeamsUserActivityUserCounts> UpdateAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToUpdate, CancellationToken cancellationToken = default)
         {
-			if (teamsUserActivityUserCountsToUpdate.AdditionalData != null)
-			{
-				if (teamsUserActivityUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					teamsUserActivityUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsUserActivityUserCountsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (teamsUserActivityUserCountsToUpdate.AdditionalData != null)
-            {
-                if (teamsUserActivityUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    teamsUserActivityUserCountsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsUserActivityUserCountsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<TeamsUserActivityUserCounts>(teamsUserActivityUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsUserActivityUserCounts using PATCH and returns a <see cref="GraphResponse{TeamsUserActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="teamsUserActivityUserCountsToUpdate">The TeamsUserActivityUserCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsUserActivityUserCounts}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityUserCounts>> UpdateResponseAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<TeamsUserActivityUserCounts>(teamsUserActivityUserCountsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsUserActivityUserCounts using PUT.
+        /// </summary>
+        /// <param name="teamsUserActivityUserCountsToUpdate">The TeamsUserActivityUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<TeamsUserActivityUserCounts> PutAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<TeamsUserActivityUserCounts>(teamsUserActivityUserCountsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsUserActivityUserCounts using PUT and returns a <see cref="GraphResponse{TeamsUserActivityUserCounts}"/> object.
+        /// </summary>
+        /// <param name="teamsUserActivityUserCountsToUpdate">The TeamsUserActivityUserCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{TeamsUserActivityUserCounts}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsUserActivityUserCounts>> PutResponseAsync(TeamsUserActivityUserCounts teamsUserActivityUserCountsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<TeamsUserActivityUserCounts>(teamsUserActivityUserCountsToUpdate, cancellationToken);
         }
 
         /// <summary>

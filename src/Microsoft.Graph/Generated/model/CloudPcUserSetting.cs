@@ -12,59 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Cloud Pc User Setting.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CloudPcUserSetting : Entity
     {
     
-		///<summary>
-		/// The CloudPcUserSetting constructor
-		///</summary>
-        public CloudPcUserSetting()
-        {
-            this.ODataType = "microsoft.graph.cloudPcUserSetting";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time the setting was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The setting name displayed in the user interface.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The last date and time the setting was modified. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets local admin enabled.
+        /// Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localAdminEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("localAdminEnabled")]
         public bool? LocalAdminEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets self service enabled.
+        /// Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "selfServiceEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("selfServiceEnabled")]
         public bool? SelfServiceEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
+        /// Office 365 and security groups in Azure AD can have a set of user settings assigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("assignments")]
         public ICloudPcUserSettingAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
     }
 }

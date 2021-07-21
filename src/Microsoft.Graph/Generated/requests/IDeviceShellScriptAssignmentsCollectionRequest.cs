@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceShellScriptAssignmentsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DeviceManagementScriptAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="deviceManagementScriptAssignment">The DeviceManagementScriptAssignment to add.</param>
-        /// <returns>The created DeviceManagementScriptAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptAssignment> AddAsync(DeviceManagementScriptAssignment deviceManagementScriptAssignment);
-
         /// <summary>
         /// Adds the specified DeviceManagementScriptAssignment to the collection via POST.
         /// </summary>
         /// <param name="deviceManagementScriptAssignment">The DeviceManagementScriptAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementScriptAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptAssignment> AddAsync(DeviceManagementScriptAssignment deviceManagementScriptAssignment, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementScriptAssignment> AddAsync(DeviceManagementScriptAssignment deviceManagementScriptAssignment, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DeviceManagementScriptAssignment to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementScriptAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceShellScriptAssignmentsCollectionPage> GetAsync();
+        /// <param name="deviceManagementScriptAssignment">The DeviceManagementScriptAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptAssignment>> AddResponseAsync(DeviceManagementScriptAssignment deviceManagementScriptAssignment, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceShellScriptAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceShellScriptAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceShellScriptAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScriptAssignmentsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceShellScriptAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

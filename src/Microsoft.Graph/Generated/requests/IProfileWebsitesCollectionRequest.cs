@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IProfileWebsitesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PersonWebsite to the collection via POST.
-        /// </summary>
-        /// <param name="personWebsite">The PersonWebsite to add.</param>
-        /// <returns>The created PersonWebsite.</returns>
-        System.Threading.Tasks.Task<PersonWebsite> AddAsync(PersonWebsite personWebsite);
-
         /// <summary>
         /// Adds the specified PersonWebsite to the collection via POST.
         /// </summary>
         /// <param name="personWebsite">The PersonWebsite to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonWebsite.</returns>
-        System.Threading.Tasks.Task<PersonWebsite> AddAsync(PersonWebsite personWebsite, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PersonWebsite> AddAsync(PersonWebsite personWebsite, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PersonWebsite to the collection via POST and returns a <see cref="GraphResponse{PersonWebsite}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileWebsitesCollectionPage> GetAsync();
+        /// <param name="personWebsite">The PersonWebsite to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonWebsite}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PersonWebsite>> AddResponseAsync(PersonWebsite personWebsite, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileWebsitesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IProfileWebsitesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileWebsitesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileWebsitesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileWebsitesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

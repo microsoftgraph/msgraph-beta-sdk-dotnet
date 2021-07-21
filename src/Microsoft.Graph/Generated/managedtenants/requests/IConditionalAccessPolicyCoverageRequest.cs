@@ -24,47 +24,45 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified ConditionalAccessPolicyCoverage using POST.
         /// </summary>
         /// <param name="conditionalAccessPolicyCoverageToCreate">The ConditionalAccessPolicyCoverage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConditionalAccessPolicyCoverage.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> CreateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToCreate);        /// <summary>
-        /// Creates the specified ConditionalAccessPolicyCoverage using POST.
+        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> CreateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ConditionalAccessPolicyCoverage using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object.
         /// </summary>
         /// <param name="conditionalAccessPolicyCoverageToCreate">The ConditionalAccessPolicyCoverage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ConditionalAccessPolicyCoverage.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> CreateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ConditionalAccessPolicyCoverage.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> CreateResponseAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ConditionalAccessPolicyCoverage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ConditionalAccessPolicyCoverage.
+        /// Deletes the specified ConditionalAccessPolicyCoverage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ConditionalAccessPolicyCoverage.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ConditionalAccessPolicyCoverage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ConditionalAccessPolicyCoverage.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ConditionalAccessPolicyCoverage using PATCH.
+        /// Gets the specified ConditionalAccessPolicyCoverage and returns a <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object.
         /// </summary>
-        /// <param name="conditionalAccessPolicyCoverageToUpdate">The ConditionalAccessPolicyCoverage to update.</param>
-        /// <returns>The updated ConditionalAccessPolicyCoverage.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> UpdateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ConditionalAccessPolicyCoverage using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ConditionalAccessPolicyCoverage.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> UpdateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> UpdateAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessPolicyCoverage using PATCH and returns a <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyCoverageToUpdate">The ConditionalAccessPolicyCoverage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> UpdateResponseAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessPolicyCoverage using PUT.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyCoverageToUpdate">The ConditionalAccessPolicyCoverage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ConditionalAccessPolicyCoverage> PutAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessPolicyCoverage using PUT and returns a <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyCoverageToUpdate">The ConditionalAccessPolicyCoverage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ConditionalAccessPolicyCoverage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicyCoverage>> PutResponseAsync(ConditionalAccessPolicyCoverage conditionalAccessPolicyCoverageToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

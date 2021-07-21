@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ProtectOnlineMeetingAction.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ProtectOnlineMeetingAction>))]
     public partial class ProtectOnlineMeetingAction : LabelActionBase
     {
         /// <summary>
@@ -32,31 +31,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets allowedForwarders.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedForwarders", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedForwarders")]
         public OnlineMeetingForwarders? AllowedForwarders { get; set; }
     
         /// <summary>
         /// Gets or sets allowedPresenters.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedPresenters", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedPresenters")]
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
     
         /// <summary>
         /// Gets or sets isCopyToClipboardEnabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCopyToClipboardEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isCopyToClipboardEnabled")]
         public bool? IsCopyToClipboardEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isLobbyEnabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isLobbyEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isLobbyEnabled")]
         public bool? IsLobbyEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets lobbyBypassSettings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lobbyBypassSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lobbyBypassSettings")]
         public LobbyBypassSettings LobbyBypassSettings { get; set; }
     
     }

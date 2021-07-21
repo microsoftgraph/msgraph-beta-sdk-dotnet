@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Lob App Provisioning Configuration Policy Set Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosLobAppProvisioningConfigurationPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The IosLobAppProvisioningConfigurationPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The IosLobAppProvisioningConfigurationPolicySetItem constructor
+        ///</summary>
         public IosLobAppProvisioningConfigurationPolicySetItem()
         {
             this.ODataType = "microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem";
         }
-	
+
     }
 }
 

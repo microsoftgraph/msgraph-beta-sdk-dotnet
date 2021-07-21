@@ -10,13 +10,12 @@
 
 namespace Microsoft.Graph.WindowsUpdates
 {
-    using System;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum EquivalentContentOption.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.EnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum EquivalentContentOption
     {
     

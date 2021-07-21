@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CryptographySuite.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<CryptographySuite>))]
     public partial class CryptographySuite
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CryptographySuite"/> class.
-        /// </summary>
-        public CryptographySuite()
-        {
-            this.ODataType = "microsoft.graph.cryptographySuite";
-        }
 
         /// <summary>
         /// Gets or sets authenticationTransformConstants.
         /// Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationTransformConstants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationTransformConstants")]
         public AuthenticationTransformConstant? AuthenticationTransformConstants { get; set; }
     
         /// <summary>
         /// Gets or sets cipherTransformConstants.
         /// Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "cipherTransformConstants", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("cipherTransformConstants")]
         public VpnEncryptionAlgorithmType? CipherTransformConstants { get; set; }
     
         /// <summary>
         /// Gets or sets dhGroup.
         /// Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dhGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dhGroup")]
         public DiffieHellmanGroup? DhGroup { get; set; }
     
         /// <summary>
         /// Gets or sets encryptionMethod.
         /// Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryptionMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryptionMethod")]
         public VpnEncryptionAlgorithmType? EncryptionMethod { get; set; }
     
         /// <summary>
         /// Gets or sets integrityCheckMethod.
         /// Integrity Check Method. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "integrityCheckMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("integrityCheckMethod")]
         public VpnIntegrityAlgorithmType? IntegrityCheckMethod { get; set; }
     
         /// <summary>
         /// Gets or sets pfsGroup.
         /// Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pfsGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pfsGroup")]
         public PerfectForwardSecrecyGroup? PfsGroup { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

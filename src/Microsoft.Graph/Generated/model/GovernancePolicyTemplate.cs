@@ -12,40 +12,30 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Governance Policy Template.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GovernancePolicyTemplate : Entity
     {
     
-		///<summary>
-		/// The GovernancePolicyTemplate constructor
-		///</summary>
-        public GovernancePolicyTemplate()
-        {
-            this.ODataType = "microsoft.graph.governancePolicyTemplate";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policy")]
         public GovernancePolicy Policy { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public BusinessFlowSettings Settings { get; set; }
     
     }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementTemplate using POST.
         /// </summary>
         /// <param name="deviceManagementTemplateToCreate">The DeviceManagementTemplate to create.</param>
-        /// <returns>The created DeviceManagementTemplate.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementTemplate> CreateAsync(DeviceManagementTemplate deviceManagementTemplateToCreate)
-        {
-            return this.CreateAsync(deviceManagementTemplateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementTemplate using POST.
-        /// </summary>
-        /// <param name="deviceManagementTemplateToCreate">The DeviceManagementTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementTemplate.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementTemplate> CreateAsync(DeviceManagementTemplate deviceManagementTemplateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementTemplate> CreateAsync(DeviceManagementTemplate deviceManagementTemplateToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementTemplate>(deviceManagementTemplateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagementTemplate.
+        /// Creates the specified DeviceManagementTemplate using POST and returns a <see cref="GraphResponse{DeviceManagementTemplate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementTemplateToCreate">The DeviceManagementTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplate>> CreateResponseAsync(DeviceManagementTemplate deviceManagementTemplateToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementTemplate>(deviceManagementTemplateToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementTemplate>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagementTemplate.
+        /// Deletes the specified DeviceManagementTemplate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementTemplate.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementTemplate> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementTemplate.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementTemplate> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementTemplate> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementTemplate>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagementTemplate using PATCH.
+        /// Gets the specified DeviceManagementTemplate and returns a <see cref="GraphResponse{DeviceManagementTemplate}"/> object.
         /// </summary>
-        /// <param name="deviceManagementTemplateToUpdate">The DeviceManagementTemplate to update.</param>
-        /// <returns>The updated DeviceManagementTemplate.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementTemplate> UpdateAsync(DeviceManagementTemplate deviceManagementTemplateToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplate>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceManagementTemplateToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementTemplate>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementTemplate.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementTemplate> UpdateAsync(DeviceManagementTemplate deviceManagementTemplateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementTemplate> UpdateAsync(DeviceManagementTemplate deviceManagementTemplateToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceManagementTemplateToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementTemplateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementTemplateToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementTemplateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementTemplate>(deviceManagementTemplateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementTemplate using PATCH and returns a <see cref="GraphResponse{DeviceManagementTemplate}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementTemplateToUpdate">The DeviceManagementTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplate>> UpdateResponseAsync(DeviceManagementTemplate deviceManagementTemplateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagementTemplate>(deviceManagementTemplateToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementTemplate using PUT.
+        /// </summary>
+        /// <param name="deviceManagementTemplateToUpdate">The DeviceManagementTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagementTemplate> PutAsync(DeviceManagementTemplate deviceManagementTemplateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagementTemplate>(deviceManagementTemplateToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementTemplate using PUT and returns a <see cref="GraphResponse{DeviceManagementTemplate}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementTemplateToUpdate">The DeviceManagementTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagementTemplate}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTemplate>> PutResponseAsync(DeviceManagementTemplate deviceManagementTemplateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagementTemplate>(deviceManagementTemplateToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementTemplate deviceManagementTemplateToInitialize)
         {
 
-            if (deviceManagementTemplateToInitialize != null && deviceManagementTemplateToInitialize.AdditionalData != null)
+            if (deviceManagementTemplateToInitialize != null)
             {
-
                 if (deviceManagementTemplateToInitialize.Categories != null && deviceManagementTemplateToInitialize.Categories.CurrentPage != null)
                 {
+                    deviceManagementTemplateToInitialize.Categories.InitializeNextPageRequest(this.Client, deviceManagementTemplateToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementTemplateToInitialize.Categories.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementTemplateToInitialize.Categories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementTemplateToInitialize.MigratableTo != null && deviceManagementTemplateToInitialize.MigratableTo.CurrentPage != null)
                 {
+                    deviceManagementTemplateToInitialize.MigratableTo.InitializeNextPageRequest(this.Client, deviceManagementTemplateToInitialize.MigratableToNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementTemplateToInitialize.MigratableTo.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("migratableTo@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementTemplateToInitialize.MigratableTo.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementTemplateToInitialize.Settings != null && deviceManagementTemplateToInitialize.Settings.CurrentPage != null)
                 {
+                    deviceManagementTemplateToInitialize.Settings.InitializeNextPageRequest(this.Client, deviceManagementTemplateToInitialize.SettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementTemplateToInitialize.Settings.AdditionalData = deviceManagementTemplateToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementTemplateToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementTemplateToInitialize.Settings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

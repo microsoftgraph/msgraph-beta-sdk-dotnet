@@ -12,95 +12,151 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Report Root.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ReportRoot : Entity
     {
     
-		///<summary>
-		/// The ReportRoot constructor
-		///</summary>
-        public ReportRoot()
-        {
-            this.ODataType = "microsoft.graph.reportRoot";
-        }
-	
         /// <summary>
         /// Gets or sets application sign in detailed summary.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applicationSignInDetailedSummary", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applicationSignInDetailedSummary")]
         public IReportRootApplicationSignInDetailedSummaryCollectionPage ApplicationSignInDetailedSummary { get; set; }
+
+        /// <summary>
+        /// Gets or sets applicationSignInDetailedSummaryNextLink.
+        /// </summary>
+        [JsonPropertyName("applicationSignInDetailedSummary@odata.nextLink")]
+        public string ApplicationSignInDetailedSummaryNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets authentication methods.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethods", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethods")]
         public AuthenticationMethodsRoot AuthenticationMethods { get; set; }
     
         /// <summary>
         /// Gets or sets credential user registration details.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credentialUserRegistrationDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("credentialUserRegistrationDetails")]
         public IReportRootCredentialUserRegistrationDetailsCollectionPage CredentialUserRegistrationDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets credentialUserRegistrationDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("credentialUserRegistrationDetails@odata.nextLink")]
+        public string CredentialUserRegistrationDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user credential usage details.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userCredentialUsageDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userCredentialUsageDetails")]
         public IReportRootUserCredentialUsageDetailsCollectionPage UserCredentialUsageDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets userCredentialUsageDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("userCredentialUsageDetails@odata.nextLink")]
+        public string UserCredentialUsageDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage by printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dailyPrintUsageByPrinter")]
         public IReportRootDailyPrintUsageByPrinterCollectionPage DailyPrintUsageByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByPrinter@odata.nextLink")]
+        public string DailyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage by user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageByUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dailyPrintUsageByUser")]
         public IReportRootDailyPrintUsageByUserCollectionPage DailyPrintUsageByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByUser@odata.nextLink")]
+        public string DailyPrintUsageByUserNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage summaries by printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageSummariesByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dailyPrintUsageSummariesByPrinter")]
         public IReportRootDailyPrintUsageSummariesByPrinterCollectionPage DailyPrintUsageSummariesByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageSummariesByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageSummariesByPrinter@odata.nextLink")]
+        public string DailyPrintUsageSummariesByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage summaries by user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dailyPrintUsageSummariesByUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dailyPrintUsageSummariesByUser")]
         public IReportRootDailyPrintUsageSummariesByUserCollectionPage DailyPrintUsageSummariesByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageSummariesByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageSummariesByUser@odata.nextLink")]
+        public string DailyPrintUsageSummariesByUserNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage by printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("monthlyPrintUsageByPrinter")]
         public IReportRootMonthlyPrintUsageByPrinterCollectionPage MonthlyPrintUsageByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByPrinter@odata.nextLink")]
+        public string MonthlyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage by user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageByUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("monthlyPrintUsageByUser")]
         public IReportRootMonthlyPrintUsageByUserCollectionPage MonthlyPrintUsageByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByUser@odata.nextLink")]
+        public string MonthlyPrintUsageByUserNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage summaries by printer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageSummariesByPrinter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("monthlyPrintUsageSummariesByPrinter")]
         public IReportRootMonthlyPrintUsageSummariesByPrinterCollectionPage MonthlyPrintUsageSummariesByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageSummariesByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageSummariesByPrinter@odata.nextLink")]
+        public string MonthlyPrintUsageSummariesByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage summaries by user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "monthlyPrintUsageSummariesByUser", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("monthlyPrintUsageSummariesByUser")]
         public IReportRootMonthlyPrintUsageSummariesByUserCollectionPage MonthlyPrintUsageSummariesByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageSummariesByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageSummariesByUser@odata.nextLink")]
+        public string MonthlyPrintUsageSummariesByUserNextLink { get; set; }
     
     }
 }

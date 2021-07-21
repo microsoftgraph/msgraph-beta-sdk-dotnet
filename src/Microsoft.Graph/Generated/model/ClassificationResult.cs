@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ClassificationResult.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ClassificationResult>))]
     public partial class ClassificationResult
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ClassificationResult"/> class.
-        /// </summary>
-        public ClassificationResult()
-        {
-            this.ODataType = "microsoft.graph.classificationResult";
-        }
 
         /// <summary>
         /// Gets or sets confidenceLevel.
         /// The confidence level, 0 to 100, of the result.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "confidenceLevel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("confidenceLevel")]
         public Int32? ConfidenceLevel { get; set; }
     
         /// <summary>
         /// Gets or sets count.
         /// The number of instances of the specific information type in the input.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "count", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("count")]
         public Int32? Count { get; set; }
     
         /// <summary>
         /// Gets or sets sensitiveTypeId.
         /// The GUID of the discovered sensitive information type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitiveTypeId")]
         public Guid? SensitiveTypeId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

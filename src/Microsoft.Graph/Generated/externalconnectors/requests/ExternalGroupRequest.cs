@@ -39,34 +39,28 @@ namespace Microsoft.Graph.ExternalConnectors
         /// Creates the specified ExternalGroup using POST.
         /// </summary>
         /// <param name="externalGroupToCreate">The ExternalGroup to create.</param>
-        /// <returns>The created ExternalGroup.</returns>
-        public System.Threading.Tasks.Task<ExternalGroup> CreateAsync(ExternalGroup externalGroupToCreate)
-        {
-            return this.CreateAsync(externalGroupToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ExternalGroup using POST.
-        /// </summary>
-        /// <param name="externalGroupToCreate">The ExternalGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExternalGroup.</returns>
-        public async System.Threading.Tasks.Task<ExternalGroup> CreateAsync(ExternalGroup externalGroupToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExternalGroup> CreateAsync(ExternalGroup externalGroupToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ExternalGroup>(externalGroupToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ExternalGroup.
+        /// Creates the specified ExternalGroup using POST and returns a <see cref="GraphResponse{ExternalGroup}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="externalGroupToCreate">The ExternalGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> CreateResponseAsync(ExternalGroup externalGroupToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ExternalGroup>(externalGroupToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ExternalGroup>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ExternalGroup.
+        /// Deletes the specified ExternalGroup and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ExternalGroup.</returns>
-        public System.Threading.Tasks.Task<ExternalGroup> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExternalGroup.</returns>
-        public async System.Threading.Tasks.Task<ExternalGroup> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExternalGroup> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ExternalGroup>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ExternalGroup using PATCH.
+        /// Gets the specified ExternalGroup and returns a <see cref="GraphResponse{ExternalGroup}"/> object.
         /// </summary>
-        /// <param name="externalGroupToUpdate">The ExternalGroup to update.</param>
-        /// <returns>The updated ExternalGroup.</returns>
-        public System.Threading.Tasks.Task<ExternalGroup> UpdateAsync(ExternalGroup externalGroupToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExternalGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(externalGroupToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ExternalGroup>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.ExternalConnectors
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExternalGroup.</returns>
-        public async System.Threading.Tasks.Task<ExternalGroup> UpdateAsync(ExternalGroup externalGroupToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExternalGroup> UpdateAsync(ExternalGroup externalGroupToUpdate, CancellationToken cancellationToken = default)
         {
-			if (externalGroupToUpdate.AdditionalData != null)
-			{
-				if (externalGroupToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					externalGroupToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, externalGroupToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (externalGroupToUpdate.AdditionalData != null)
-            {
-                if (externalGroupToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    externalGroupToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, externalGroupToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ExternalGroup>(externalGroupToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ExternalGroup using PATCH and returns a <see cref="GraphResponse{ExternalGroup}"/> object.
+        /// </summary>
+        /// <param name="externalGroupToUpdate">The ExternalGroup to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ExternalGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> UpdateResponseAsync(ExternalGroup externalGroupToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ExternalGroup>(externalGroupToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ExternalGroup using PUT.
+        /// </summary>
+        /// <param name="externalGroupToUpdate">The ExternalGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ExternalGroup> PutAsync(ExternalGroup externalGroupToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ExternalGroup>(externalGroupToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ExternalGroup using PUT and returns a <see cref="GraphResponse{ExternalGroup}"/> object.
+        /// </summary>
+        /// <param name="externalGroupToUpdate">The ExternalGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ExternalGroup}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalGroup>> PutResponseAsync(ExternalGroup externalGroupToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ExternalGroup>(externalGroupToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph.ExternalConnectors
         private void InitializeCollectionProperties(ExternalGroup externalGroupToInitialize)
         {
 
-            if (externalGroupToInitialize != null && externalGroupToInitialize.AdditionalData != null)
+            if (externalGroupToInitialize != null)
             {
-
                 if (externalGroupToInitialize.Members != null && externalGroupToInitialize.Members.CurrentPage != null)
                 {
+                    externalGroupToInitialize.Members.InitializeNextPageRequest(this.Client, externalGroupToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     externalGroupToInitialize.Members.AdditionalData = externalGroupToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    externalGroupToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        externalGroupToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

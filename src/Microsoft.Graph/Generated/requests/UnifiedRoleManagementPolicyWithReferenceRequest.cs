@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified UnifiedRoleManagementPolicy.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleManagementPolicy.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> GetAsync()
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> GetAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<UnifiedRoleManagementPolicy>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified UnifiedRoleManagementPolicy.
+        /// Gets the specified UnifiedRoleManagementPolicy and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The UnifiedRoleManagementPolicy.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicy>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<UnifiedRoleManagementPolicy>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicy>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified UnifiedRoleManagementPolicy using POST.
         /// </summary>
         /// <param name="unifiedRoleManagementPolicyToCreate">The UnifiedRoleManagementPolicy to create.</param>
-        /// <returns>The created UnifiedRoleManagementPolicy.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> CreateAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicyToCreate)
-        {
-            return this.CreateAsync(unifiedRoleManagementPolicyToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRoleManagementPolicy using POST.
-        /// </summary>
-        /// <param name="unifiedRoleManagementPolicyToCreate">The UnifiedRoleManagementPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleManagementPolicy.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> CreateAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicyToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> CreateAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicyToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UnifiedRoleManagementPolicy>(unifiedRoleManagementPolicyToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified UnifiedRoleManagementPolicy using PATCH.
+        /// Creates the specified UnifiedRoleManagementPolicy using POST and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object.
         /// </summary>
-        /// <param name="unifiedRoleManagementPolicyToUpdate">The UnifiedRoleManagementPolicy to update.</param>
-        /// <returns>The updated UnifiedRoleManagementPolicy.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> UpdateAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicyToUpdate)
+        /// <param name="unifiedRoleManagementPolicyToCreate">The UnifiedRoleManagementPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicy>> CreateResponseAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicyToCreate, CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(unifiedRoleManagementPolicyToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicy>(unifiedRoleManagementPolicyToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified UnifiedRoleManagementPolicy using PATCH.
         /// </summary>
         /// <param name="unifiedRoleManagementPolicyToUpdate">The UnifiedRoleManagementPolicy to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleManagementPolicy.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> UpdateAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicyToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> UpdateAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicyToUpdate, CancellationToken cancellationToken = default)
         {
-			if (unifiedRoleManagementPolicyToUpdate.AdditionalData != null)
-			{
-				if (unifiedRoleManagementPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRoleManagementPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleManagementPolicyToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRoleManagementPolicyToUpdate.AdditionalData != null)
-            {
-                if (unifiedRoleManagementPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRoleManagementPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleManagementPolicyToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UnifiedRoleManagementPolicy>(unifiedRoleManagementPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified UnifiedRoleManagementPolicy.
+        /// Updates the specified UnifiedRoleManagementPolicy using PATCH and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="unifiedRoleManagementPolicyToUpdate">The UnifiedRoleManagementPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicy>> UpdateResponseAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicyToUpdate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicy>(unifiedRoleManagementPolicyToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified UnifiedRoleManagementPolicy.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UnifiedRoleManagementPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified UnifiedRoleManagementPolicy and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

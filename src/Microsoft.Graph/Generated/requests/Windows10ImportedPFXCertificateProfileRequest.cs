@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10ImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="windows10ImportedPFXCertificateProfileToCreate">The Windows10ImportedPFXCertificateProfile to create.</param>
-        /// <returns>The created Windows10ImportedPFXCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> CreateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToCreate)
-        {
-            return this.CreateAsync(windows10ImportedPFXCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10ImportedPFXCertificateProfile using POST.
-        /// </summary>
-        /// <param name="windows10ImportedPFXCertificateProfileToCreate">The Windows10ImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10ImportedPFXCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> CreateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> CreateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Windows10ImportedPFXCertificateProfile>(windows10ImportedPFXCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Windows10ImportedPFXCertificateProfile.
+        /// Creates the specified Windows10ImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windows10ImportedPFXCertificateProfileToCreate">The Windows10ImportedPFXCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> CreateResponseAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Windows10ImportedPFXCertificateProfile>(windows10ImportedPFXCertificateProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Windows10ImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Windows10ImportedPFXCertificateProfile.
+        /// Deletes the specified Windows10ImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Windows10ImportedPFXCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10ImportedPFXCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Windows10ImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Windows10ImportedPFXCertificateProfile using PATCH.
+        /// Gets the specified Windows10ImportedPFXCertificateProfile and returns a <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object.
         /// </summary>
-        /// <param name="windows10ImportedPFXCertificateProfileToUpdate">The Windows10ImportedPFXCertificateProfile to update.</param>
-        /// <returns>The updated Windows10ImportedPFXCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> UpdateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windows10ImportedPFXCertificateProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Windows10ImportedPFXCertificateProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10ImportedPFXCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> UpdateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> UpdateAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windows10ImportedPFXCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (windows10ImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10ImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10ImportedPFXCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10ImportedPFXCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (windows10ImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10ImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10ImportedPFXCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Windows10ImportedPFXCertificateProfile>(windows10ImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10ImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windows10ImportedPFXCertificateProfileToUpdate">The Windows10ImportedPFXCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> UpdateResponseAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Windows10ImportedPFXCertificateProfile>(windows10ImportedPFXCertificateProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10ImportedPFXCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="windows10ImportedPFXCertificateProfileToUpdate">The Windows10ImportedPFXCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Windows10ImportedPFXCertificateProfile> PutAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Windows10ImportedPFXCertificateProfile>(windows10ImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10ImportedPFXCertificateProfile using PUT and returns a <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windows10ImportedPFXCertificateProfileToUpdate">The Windows10ImportedPFXCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Windows10ImportedPFXCertificateProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10ImportedPFXCertificateProfile>> PutResponseAsync(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Windows10ImportedPFXCertificateProfile>(windows10ImportedPFXCertificateProfileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Windows10ImportedPFXCertificateProfile windows10ImportedPFXCertificateProfileToInitialize)
         {
 
-            if (windows10ImportedPFXCertificateProfileToInitialize != null && windows10ImportedPFXCertificateProfileToInitialize.AdditionalData != null)
+            if (windows10ImportedPFXCertificateProfileToInitialize != null)
             {
-
                 if (windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = windows10ImportedPFXCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windows10ImportedPFXCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windows10ImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

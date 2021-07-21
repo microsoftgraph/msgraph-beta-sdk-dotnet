@@ -12,65 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Journal.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Journal : Entity
     {
     
-		///<summary>
-		/// The Journal constructor
-		///</summary>
-        public Journal()
-        {
-            this.ODataType = "microsoft.graph.journal";
-        }
-	
         /// <summary>
         /// Gets or sets balancing account id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("balancingAccountId")]
         public Guid? BalancingAccountId { get; set; }
     
         /// <summary>
         /// Gets or sets balancing account number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "balancingAccountNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("balancingAccountNumber")]
         public string BalancingAccountNumber { get; set; }
     
         /// <summary>
         /// Gets or sets code.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "code", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("code")]
         public string Code { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets account.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "account", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("account")]
         public Account Account { get; set; }
     
         /// <summary>
         /// Gets or sets journal lines.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "journalLines", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("journalLines")]
         public IJournalJournalLinesCollectionPage JournalLines { get; set; }
+
+        /// <summary>
+        /// Gets or sets journalLinesNextLink.
+        /// </summary>
+        [JsonPropertyName("journalLines@odata.nextLink")]
+        public string JournalLinesNextLink { get; set; }
     
     }
 }

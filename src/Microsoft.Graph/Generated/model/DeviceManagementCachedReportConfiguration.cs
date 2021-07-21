@@ -12,78 +12,69 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Device Management Cached Report Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementCachedReportConfiguration>))]
     public partial class DeviceManagementCachedReportConfiguration : Entity
     {
     
-		///<summary>
-		/// The DeviceManagementCachedReportConfiguration constructor
-		///</summary>
-        public DeviceManagementCachedReportConfiguration()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementCachedReportConfiguration";
-        }
-	
         /// <summary>
         /// Gets or sets expiration date time.
         /// Time that the cached report expires
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expirationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets filter.
         /// Filters applied on report creation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("filter")]
         public string Filter { get; set; }
     
         /// <summary>
         /// Gets or sets last refresh date time.
         /// Time that the cached report was last refreshed
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRefreshDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRefreshDateTime")]
         public DateTimeOffset? LastRefreshDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
         /// Caller-managed metadata associated with the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("metadata")]
         public string Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets order by.
         /// Ordering of columns in the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("orderBy")]
         public IEnumerable<string> OrderBy { get; set; }
     
         /// <summary>
         /// Gets or sets report name.
         /// Name of the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportName")]
         public string ReportName { get; set; }
     
         /// <summary>
         /// Gets or sets select.
         /// Columns selected from the report
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "select", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("select")]
         public IEnumerable<string> Select { get; set; }
     
         /// <summary>
         /// Gets or sets status.
         /// Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "status", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("status")]
         public DeviceManagementReportStatus? Status { get; set; }
     
     }

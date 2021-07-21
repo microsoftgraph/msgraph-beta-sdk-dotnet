@@ -12,35 +12,25 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Program Control Type.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ProgramControlType : Entity
     {
     
-		///<summary>
-		/// The ProgramControlType constructor
-		///</summary>
-        public ProgramControlType()
-        {
-            this.ODataType = "microsoft.graph.programControlType";
-        }
-	
         /// <summary>
         /// Gets or sets control type group id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "controlTypeGroupId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("controlTypeGroupId")]
         public string ControlTypeGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name of the program control type
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
     }

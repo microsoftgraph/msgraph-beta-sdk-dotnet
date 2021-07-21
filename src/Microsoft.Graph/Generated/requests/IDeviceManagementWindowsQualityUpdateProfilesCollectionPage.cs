@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceManagementWindowsQualityUpdateProfilesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceManagementWindowsQualityUpdateProfilesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceManagementWindowsQualityUpdateProfilesCollectionPage>))]
     public interface IDeviceManagementWindowsQualityUpdateProfilesCollectionPage : ICollectionPage<WindowsQualityUpdateProfile>
     {
         /// <summary>

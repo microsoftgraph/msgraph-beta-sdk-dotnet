@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Trust Framework Key Set.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TrustFrameworkKeySet : Entity
     {
     
-		///<summary>
-		/// The TrustFrameworkKeySet constructor
-		///</summary>
-        public TrustFrameworkKeySet()
-        {
-            this.ODataType = "microsoft.graph.trustFrameworkKeySet";
-        }
-	
         /// <summary>
         /// Gets or sets keys.
         /// A collection of the keys.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "keys", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("keys")]
         public IEnumerable<TrustFrameworkKey> Keys { get; set; }
     
     }

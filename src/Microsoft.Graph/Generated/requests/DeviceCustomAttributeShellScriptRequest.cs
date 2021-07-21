@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceCustomAttributeShellScript using POST.
         /// </summary>
         /// <param name="deviceCustomAttributeShellScriptToCreate">The DeviceCustomAttributeShellScript to create.</param>
-        /// <returns>The created DeviceCustomAttributeShellScript.</returns>
-        public System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> CreateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToCreate)
-        {
-            return this.CreateAsync(deviceCustomAttributeShellScriptToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceCustomAttributeShellScript using POST.
-        /// </summary>
-        /// <param name="deviceCustomAttributeShellScriptToCreate">The DeviceCustomAttributeShellScript to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCustomAttributeShellScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> CreateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> CreateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceCustomAttributeShellScript>(deviceCustomAttributeShellScriptToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceCustomAttributeShellScript.
+        /// Creates the specified DeviceCustomAttributeShellScript using POST and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceCustomAttributeShellScriptToCreate">The DeviceCustomAttributeShellScript to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScript>> CreateResponseAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceCustomAttributeShellScript>(deviceCustomAttributeShellScriptToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceCustomAttributeShellScript>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceCustomAttributeShellScript.
+        /// Deletes the specified DeviceCustomAttributeShellScript and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceCustomAttributeShellScript.</returns>
-        public System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceCustomAttributeShellScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceCustomAttributeShellScript>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceCustomAttributeShellScript using PATCH.
+        /// Gets the specified DeviceCustomAttributeShellScript and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object.
         /// </summary>
-        /// <param name="deviceCustomAttributeShellScriptToUpdate">The DeviceCustomAttributeShellScript to update.</param>
-        /// <returns>The updated DeviceCustomAttributeShellScript.</returns>
-        public System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> UpdateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScript>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceCustomAttributeShellScriptToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceCustomAttributeShellScript>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceCustomAttributeShellScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> UpdateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> UpdateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceCustomAttributeShellScriptToUpdate.AdditionalData != null)
-			{
-				if (deviceCustomAttributeShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceCustomAttributeShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCustomAttributeShellScriptToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceCustomAttributeShellScriptToUpdate.AdditionalData != null)
-            {
-                if (deviceCustomAttributeShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceCustomAttributeShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCustomAttributeShellScriptToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceCustomAttributeShellScript>(deviceCustomAttributeShellScriptToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceCustomAttributeShellScript using PATCH and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceCustomAttributeShellScriptToUpdate">The DeviceCustomAttributeShellScript to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScript>> UpdateResponseAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceCustomAttributeShellScript>(deviceCustomAttributeShellScriptToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceCustomAttributeShellScript using PUT.
+        /// </summary>
+        /// <param name="deviceCustomAttributeShellScriptToUpdate">The DeviceCustomAttributeShellScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> PutAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceCustomAttributeShellScript>(deviceCustomAttributeShellScriptToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceCustomAttributeShellScript using PUT and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceCustomAttributeShellScriptToUpdate">The DeviceCustomAttributeShellScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScript>> PutResponseAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceCustomAttributeShellScript>(deviceCustomAttributeShellScriptToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToInitialize)
         {
 
-            if (deviceCustomAttributeShellScriptToInitialize != null && deviceCustomAttributeShellScriptToInitialize.AdditionalData != null)
+            if (deviceCustomAttributeShellScriptToInitialize != null)
             {
-
                 if (deviceCustomAttributeShellScriptToInitialize.Assignments != null && deviceCustomAttributeShellScriptToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceCustomAttributeShellScriptToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceCustomAttributeShellScriptToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceCustomAttributeShellScriptToInitialize.Assignments.AdditionalData = deviceCustomAttributeShellScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceCustomAttributeShellScriptToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceCustomAttributeShellScriptToInitialize.DeviceRunStates != null && deviceCustomAttributeShellScriptToInitialize.DeviceRunStates.CurrentPage != null)
                 {
+                    deviceCustomAttributeShellScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(this.Client, deviceCustomAttributeShellScriptToInitialize.DeviceRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceCustomAttributeShellScriptToInitialize.DeviceRunStates.AdditionalData = deviceCustomAttributeShellScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceCustomAttributeShellScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceCustomAttributeShellScriptToInitialize.GroupAssignments != null && deviceCustomAttributeShellScriptToInitialize.GroupAssignments.CurrentPage != null)
                 {
+                    deviceCustomAttributeShellScriptToInitialize.GroupAssignments.InitializeNextPageRequest(this.Client, deviceCustomAttributeShellScriptToInitialize.GroupAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceCustomAttributeShellScriptToInitialize.GroupAssignments.AdditionalData = deviceCustomAttributeShellScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceCustomAttributeShellScriptToInitialize.GroupAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceCustomAttributeShellScriptToInitialize.UserRunStates != null && deviceCustomAttributeShellScriptToInitialize.UserRunStates.CurrentPage != null)
                 {
+                    deviceCustomAttributeShellScriptToInitialize.UserRunStates.InitializeNextPageRequest(this.Client, deviceCustomAttributeShellScriptToInitialize.UserRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceCustomAttributeShellScriptToInitialize.UserRunStates.AdditionalData = deviceCustomAttributeShellScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceCustomAttributeShellScriptToInitialize.AdditionalData.TryGetValue("userRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceCustomAttributeShellScriptToInitialize.UserRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

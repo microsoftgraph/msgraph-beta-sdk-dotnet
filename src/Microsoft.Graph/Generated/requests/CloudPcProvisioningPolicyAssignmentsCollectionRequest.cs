@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified CloudPcProvisioningPolicyAssignment to the collection via POST.
-        /// </summary>
-        /// <param name="cloudPcProvisioningPolicyAssignment">The CloudPcProvisioningPolicyAssignment to add.</param>
-        /// <returns>The created CloudPcProvisioningPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<CloudPcProvisioningPolicyAssignment> AddAsync(CloudPcProvisioningPolicyAssignment cloudPcProvisioningPolicyAssignment)
-        {
-            return this.AddAsync(cloudPcProvisioningPolicyAssignment, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified CloudPcProvisioningPolicyAssignment to the collection via POST.
         /// </summary>
         /// <param name="cloudPcProvisioningPolicyAssignment">The CloudPcProvisioningPolicyAssignment to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcProvisioningPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<CloudPcProvisioningPolicyAssignment> AddAsync(CloudPcProvisioningPolicyAssignment cloudPcProvisioningPolicyAssignment, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<CloudPcProvisioningPolicyAssignment> AddAsync(CloudPcProvisioningPolicyAssignment cloudPcProvisioningPolicyAssignment, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<CloudPcProvisioningPolicyAssignment>(cloudPcProvisioningPolicyAssignment, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified CloudPcProvisioningPolicyAssignment to the collection via POST and returns a <see cref="GraphResponse{CloudPcProvisioningPolicyAssignment}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICloudPcProvisioningPolicyAssignmentsCollectionPage> GetAsync()
+        /// <param name="cloudPcProvisioningPolicyAssignment">The CloudPcProvisioningPolicyAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicyAssignment>> AddResponseAsync(CloudPcProvisioningPolicyAssignment cloudPcProvisioningPolicyAssignment, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<CloudPcProvisioningPolicyAssignment>(cloudPcProvisioningPolicyAssignment, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICloudPcProvisioningPolicyAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICloudPcProvisioningPolicyAssignmentsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CloudPcProvisioningPolicyAssignmentsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CloudPcProvisioningPolicyAssignmentsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicyAssignmentsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicyAssignmentsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CloudPcProvisioningPolicyAssignmentsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

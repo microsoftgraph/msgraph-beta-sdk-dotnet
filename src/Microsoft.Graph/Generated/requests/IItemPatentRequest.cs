@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ItemPatent using POST.
         /// </summary>
         /// <param name="itemPatentToCreate">The ItemPatent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemPatent.</returns>
-        System.Threading.Tasks.Task<ItemPatent> CreateAsync(ItemPatent itemPatentToCreate);        /// <summary>
-        /// Creates the specified ItemPatent using POST.
+        System.Threading.Tasks.Task<ItemPatent> CreateAsync(ItemPatent itemPatentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ItemPatent using POST and returns a <see cref="GraphResponse{ItemPatent}"/> object.
         /// </summary>
         /// <param name="itemPatentToCreate">The ItemPatent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ItemPatent.</returns>
-        System.Threading.Tasks.Task<ItemPatent> CreateAsync(ItemPatent itemPatentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ItemPatent.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> CreateResponseAsync(ItemPatent itemPatentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ItemPatent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ItemPatent.
+        /// Deletes the specified ItemPatent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ItemPatent.</returns>
-        System.Threading.Tasks.Task<ItemPatent> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ItemPatent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ItemPatent.</returns>
-        System.Threading.Tasks.Task<ItemPatent> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ItemPatent> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ItemPatent using PATCH.
+        /// Gets the specified ItemPatent and returns a <see cref="GraphResponse{ItemPatent}"/> object.
         /// </summary>
-        /// <param name="itemPatentToUpdate">The ItemPatent to update.</param>
-        /// <returns>The updated ItemPatent.</returns>
-        System.Threading.Tasks.Task<ItemPatent> UpdateAsync(ItemPatent itemPatentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ItemPatent using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ItemPatent.</returns>
-        System.Threading.Tasks.Task<ItemPatent> UpdateAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ItemPatent> UpdateAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ItemPatent using PATCH and returns a <see cref="GraphResponse{ItemPatent}"/> object.
+        /// </summary>
+        /// <param name="itemPatentToUpdate">The ItemPatent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemPatent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> UpdateResponseAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ItemPatent using PUT.
+        /// </summary>
+        /// <param name="itemPatentToUpdate">The ItemPatent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ItemPatent> PutAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ItemPatent using PUT and returns a <see cref="GraphResponse{ItemPatent}"/> object.
+        /// </summary>
+        /// <param name="itemPatentToUpdate">The ItemPatent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ItemPatent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemPatent>> PutResponseAsync(ItemPatent itemPatentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

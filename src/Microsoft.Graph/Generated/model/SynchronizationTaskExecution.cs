@@ -12,132 +12,123 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SynchronizationTaskExecution.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SynchronizationTaskExecution>))]
     public partial class SynchronizationTaskExecution
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SynchronizationTaskExecution"/> class.
-        /// </summary>
-        public SynchronizationTaskExecution()
-        {
-            this.ODataType = "microsoft.graph.synchronizationTaskExecution";
-        }
 
         /// <summary>
         /// Gets or sets activityIdentifier.
         /// Identifier of the job run.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activityIdentifier")]
         public string ActivityIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets countEntitled.
         /// Count of processed entries that were assigned for this application.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countEntitled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countEntitled")]
         public Int64? CountEntitled { get; set; }
     
         /// <summary>
         /// Gets or sets countEntitledForProvisioning.
         /// Count of processed entries that were assigned for provisioning.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countEntitledForProvisioning", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countEntitledForProvisioning")]
         public Int64? CountEntitledForProvisioning { get; set; }
     
         /// <summary>
         /// Gets or sets countEscrowed.
         /// Count of entries that were escrowed (errors).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countEscrowed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countEscrowed")]
         public Int64? CountEscrowed { get; set; }
     
         /// <summary>
         /// Gets or sets countEscrowedRaw.
         /// Count of entries that were escrowed, including system-generated escrows.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countEscrowedRaw", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countEscrowedRaw")]
         public Int64? CountEscrowedRaw { get; set; }
     
         /// <summary>
         /// Gets or sets countExported.
         /// Count of exported entries.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countExported", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countExported")]
         public Int64? CountExported { get; set; }
     
         /// <summary>
         /// Gets or sets countExports.
         /// Count of entries that were expected to be exported.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countExports", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countExports")]
         public Int64? CountExports { get; set; }
     
         /// <summary>
         /// Gets or sets countImported.
         /// Count of imported entries.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countImported", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countImported")]
         public Int64? CountImported { get; set; }
     
         /// <summary>
         /// Gets or sets countImportedDeltas.
         /// Count of imported delta-changes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countImportedDeltas", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countImportedDeltas")]
         public Int64? CountImportedDeltas { get; set; }
     
         /// <summary>
         /// Gets or sets countImportedReferenceDeltas.
         /// Count of imported delta-changes pertaining to reference changes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "countImportedReferenceDeltas", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("countImportedReferenceDeltas")]
         public Int64? CountImportedReferenceDeltas { get; set; }
     
         /// <summary>
         /// Gets or sets error.
         /// If an error was encountered, contains a synchronizationError object with details.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public SynchronizationError Error { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// Code summarizing the result of this run. Possible values are: Succeeded, Failed, EntryLevelErrors.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public SynchronizationTaskExecutionResult? State { get; set; }
     
         /// <summary>
         /// Gets or sets timeBegan.
         /// Time when this job run began. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeBegan", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeBegan")]
         public DateTimeOffset? TimeBegan { get; set; }
     
         /// <summary>
         /// Gets or sets timeEnded.
         /// Time when this job run ended. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeEnded", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeEnded")]
         public DateTimeOffset? TimeEnded { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Feature Update Catalog Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsFeatureUpdateCatalogItem : WindowsUpdateCatalogItem
     {
     
-		///<summary>
-		/// The WindowsFeatureUpdateCatalogItem constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsFeatureUpdateCatalogItem constructor
+        ///</summary>
         public WindowsFeatureUpdateCatalogItem()
         {
             this.ODataType = "microsoft.graph.windowsFeatureUpdateCatalogItem";
         }
-	
+
         /// <summary>
         /// Gets or sets version.
         /// The feature update version
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "version", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
     
     }

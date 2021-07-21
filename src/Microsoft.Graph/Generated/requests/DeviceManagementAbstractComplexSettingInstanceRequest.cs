@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementAbstractComplexSettingInstance using POST.
         /// </summary>
         /// <param name="deviceManagementAbstractComplexSettingInstanceToCreate">The DeviceManagementAbstractComplexSettingInstance to create.</param>
-        /// <returns>The created DeviceManagementAbstractComplexSettingInstance.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> CreateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate)
-        {
-            return this.CreateAsync(deviceManagementAbstractComplexSettingInstanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementAbstractComplexSettingInstance using POST.
-        /// </summary>
-        /// <param name="deviceManagementAbstractComplexSettingInstanceToCreate">The DeviceManagementAbstractComplexSettingInstance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementAbstractComplexSettingInstance.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> CreateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> CreateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementAbstractComplexSettingInstance>(deviceManagementAbstractComplexSettingInstanceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagementAbstractComplexSettingInstance.
+        /// Creates the specified DeviceManagementAbstractComplexSettingInstance using POST and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementAbstractComplexSettingInstanceToCreate">The DeviceManagementAbstractComplexSettingInstance to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> CreateResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementAbstractComplexSettingInstance>(deviceManagementAbstractComplexSettingInstanceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementAbstractComplexSettingInstance>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagementAbstractComplexSettingInstance.
+        /// Deletes the specified DeviceManagementAbstractComplexSettingInstance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementAbstractComplexSettingInstance.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementAbstractComplexSettingInstance.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementAbstractComplexSettingInstance>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PATCH.
+        /// Gets the specified DeviceManagementAbstractComplexSettingInstance and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object.
         /// </summary>
-        /// <param name="deviceManagementAbstractComplexSettingInstanceToUpdate">The DeviceManagementAbstractComplexSettingInstance to update.</param>
-        /// <returns>The updated DeviceManagementAbstractComplexSettingInstance.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> UpdateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementAbstractComplexSettingInstance>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementAbstractComplexSettingInstance.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> UpdateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> UpdateAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceManagementAbstractComplexSettingInstanceToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementAbstractComplexSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementAbstractComplexSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementAbstractComplexSettingInstanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementAbstractComplexSettingInstanceToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementAbstractComplexSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementAbstractComplexSettingInstanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementAbstractComplexSettingInstanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementAbstractComplexSettingInstance>(deviceManagementAbstractComplexSettingInstanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PATCH and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAbstractComplexSettingInstanceToUpdate">The DeviceManagementAbstractComplexSettingInstance to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> UpdateResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagementAbstractComplexSettingInstance>(deviceManagementAbstractComplexSettingInstanceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PUT.
+        /// </summary>
+        /// <param name="deviceManagementAbstractComplexSettingInstanceToUpdate">The DeviceManagementAbstractComplexSettingInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagementAbstractComplexSettingInstance> PutAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagementAbstractComplexSettingInstance>(deviceManagementAbstractComplexSettingInstanceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementAbstractComplexSettingInstance using PUT and returns a <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementAbstractComplexSettingInstanceToUpdate">The DeviceManagementAbstractComplexSettingInstance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagementAbstractComplexSettingInstance}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementAbstractComplexSettingInstance>> PutResponseAsync(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagementAbstractComplexSettingInstance>(deviceManagementAbstractComplexSettingInstanceToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementAbstractComplexSettingInstance deviceManagementAbstractComplexSettingInstanceToInitialize)
         {
 
-            if (deviceManagementAbstractComplexSettingInstanceToInitialize != null && deviceManagementAbstractComplexSettingInstanceToInitialize.AdditionalData != null)
+            if (deviceManagementAbstractComplexSettingInstanceToInitialize != null)
             {
-
                 if (deviceManagementAbstractComplexSettingInstanceToInitialize.Value != null && deviceManagementAbstractComplexSettingInstanceToInitialize.Value.CurrentPage != null)
                 {
+                    deviceManagementAbstractComplexSettingInstanceToInitialize.Value.InitializeNextPageRequest(this.Client, deviceManagementAbstractComplexSettingInstanceToInitialize.ValueNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementAbstractComplexSettingInstanceToInitialize.Value.AdditionalData = deviceManagementAbstractComplexSettingInstanceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementAbstractComplexSettingInstanceToInitialize.AdditionalData.TryGetValue("value@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementAbstractComplexSettingInstanceToInitialize.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

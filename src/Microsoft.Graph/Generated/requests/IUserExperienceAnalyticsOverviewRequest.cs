@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsOverview using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsOverviewToCreate">The UserExperienceAnalyticsOverview to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsOverview.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> CreateAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToCreate);        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsOverview using POST.
+        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> CreateAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsOverview using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsOverview}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsOverviewToCreate">The UserExperienceAnalyticsOverview to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UserExperienceAnalyticsOverview.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> CreateAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsOverview.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsOverview>> CreateResponseAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsOverview.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified UserExperienceAnalyticsOverview.
+        /// Deletes the specified UserExperienceAnalyticsOverview and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsOverview.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsOverview.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsOverview.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified UserExperienceAnalyticsOverview using PATCH.
+        /// Gets the specified UserExperienceAnalyticsOverview and returns a <see cref="GraphResponse{UserExperienceAnalyticsOverview}"/> object.
         /// </summary>
-        /// <param name="userExperienceAnalyticsOverviewToUpdate">The UserExperienceAnalyticsOverview to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsOverview.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> UpdateAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsOverview>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsOverview using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsOverview.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> UpdateAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> UpdateAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsOverview using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsOverview}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsOverviewToUpdate">The UserExperienceAnalyticsOverview to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsOverview>> UpdateResponseAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsOverview using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsOverviewToUpdate">The UserExperienceAnalyticsOverview object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserExperienceAnalyticsOverview> PutAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsOverview using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsOverview}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsOverviewToUpdate">The UserExperienceAnalyticsOverview object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsOverview}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsOverview>> PutResponseAsync(UserExperienceAnalyticsOverview userExperienceAnalyticsOverviewToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

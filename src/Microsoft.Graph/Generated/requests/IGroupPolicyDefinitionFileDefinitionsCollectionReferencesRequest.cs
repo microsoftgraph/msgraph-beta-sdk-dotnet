@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGroupPolicyDefinitionFileDefinitionsCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyDefinition to the collection via POST.
-        /// </summary>
-        /// <param name="groupPolicyDefinition">The GroupPolicyDefinition to add.</param>
-        System.Threading.Tasks.Task AddAsync(GroupPolicyDefinition groupPolicyDefinition);
-
         /// <summary>
         /// Adds the specified GroupPolicyDefinition to the collection via POST.
         /// </summary>
         /// <param name="groupPolicyDefinition">The GroupPolicyDefinition to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(GroupPolicyDefinition groupPolicyDefinition, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(GroupPolicyDefinition groupPolicyDefinition, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified GroupPolicyDefinition to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="groupPolicyDefinition">The GroupPolicyDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(GroupPolicyDefinition groupPolicyDefinition, CancellationToken cancellationToken = default);
+
     }
 }

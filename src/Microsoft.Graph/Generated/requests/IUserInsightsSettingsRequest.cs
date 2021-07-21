@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UserInsightsSettings using POST.
         /// </summary>
         /// <param name="userInsightsSettingsToCreate">The UserInsightsSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserInsightsSettings.</returns>
-        System.Threading.Tasks.Task<UserInsightsSettings> CreateAsync(UserInsightsSettings userInsightsSettingsToCreate);        /// <summary>
-        /// Creates the specified UserInsightsSettings using POST.
+        System.Threading.Tasks.Task<UserInsightsSettings> CreateAsync(UserInsightsSettings userInsightsSettingsToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified UserInsightsSettings using POST and returns a <see cref="GraphResponse{UserInsightsSettings}"/> object.
         /// </summary>
         /// <param name="userInsightsSettingsToCreate">The UserInsightsSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UserInsightsSettings.</returns>
-        System.Threading.Tasks.Task<UserInsightsSettings> CreateAsync(UserInsightsSettings userInsightsSettingsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserInsightsSettings.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UserInsightsSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInsightsSettings>> CreateResponseAsync(UserInsightsSettings userInsightsSettingsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserInsightsSettings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified UserInsightsSettings.
+        /// Deletes the specified UserInsightsSettings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserInsightsSettings.</returns>
-        System.Threading.Tasks.Task<UserInsightsSettings> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserInsightsSettings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserInsightsSettings.</returns>
-        System.Threading.Tasks.Task<UserInsightsSettings> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserInsightsSettings> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified UserInsightsSettings using PATCH.
+        /// Gets the specified UserInsightsSettings and returns a <see cref="GraphResponse{UserInsightsSettings}"/> object.
         /// </summary>
-        /// <param name="userInsightsSettingsToUpdate">The UserInsightsSettings to update.</param>
-        /// <returns>The updated UserInsightsSettings.</returns>
-        System.Threading.Tasks.Task<UserInsightsSettings> UpdateAsync(UserInsightsSettings userInsightsSettingsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserInsightsSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInsightsSettings>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserInsightsSettings using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserInsightsSettings.</returns>
-        System.Threading.Tasks.Task<UserInsightsSettings> UpdateAsync(UserInsightsSettings userInsightsSettingsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserInsightsSettings> UpdateAsync(UserInsightsSettings userInsightsSettingsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserInsightsSettings using PATCH and returns a <see cref="GraphResponse{UserInsightsSettings}"/> object.
+        /// </summary>
+        /// <param name="userInsightsSettingsToUpdate">The UserInsightsSettings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserInsightsSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInsightsSettings>> UpdateResponseAsync(UserInsightsSettings userInsightsSettingsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserInsightsSettings using PUT.
+        /// </summary>
+        /// <param name="userInsightsSettingsToUpdate">The UserInsightsSettings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserInsightsSettings> PutAsync(UserInsightsSettings userInsightsSettingsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserInsightsSettings using PUT and returns a <see cref="GraphResponse{UserInsightsSettings}"/> object.
+        /// </summary>
+        /// <param name="userInsightsSettingsToUpdate">The UserInsightsSettings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserInsightsSettings}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInsightsSettings>> PutResponseAsync(UserInsightsSettings userInsightsSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

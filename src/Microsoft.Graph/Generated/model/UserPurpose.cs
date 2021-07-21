@@ -12,42 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserPurpose.
     /// </summary>
     [Obsolete("The UserPurpose API is deprecated and will stop returning data on April 27, 2021. Please use the UserPurposeV2 API.")]
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UserPurpose>))]
     public partial class UserPurpose
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserPurpose"/> class.
-        /// </summary>
-        public UserPurpose()
-        {
-            this.ODataType = "microsoft.graph.userPurpose";
-        }
 
         /// <summary>
         /// Gets or sets value.
         /// Represents the user's recipient or mailbox type in Exchange Online. Possible values are: unknown, user, linked, shared, room, equipment, and others. See the next section for more information.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public MailboxRecipientType? Value { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

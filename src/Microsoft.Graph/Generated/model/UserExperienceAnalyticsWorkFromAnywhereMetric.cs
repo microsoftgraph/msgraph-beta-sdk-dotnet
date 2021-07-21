@@ -12,30 +12,26 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Work From Anywhere Metric.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsWorkFromAnywhereMetric constructor
-		///</summary>
-        public UserExperienceAnalyticsWorkFromAnywhereMetric()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric";
-        }
-	
         /// <summary>
         /// Gets or sets metric devices.
         /// The work from anywhere metric devices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metricDevices", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("metricDevices")]
         public IUserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionPage MetricDevices { get; set; }
+
+        /// <summary>
+        /// Gets or sets metricDevicesNextLink.
+        /// </summary>
+        [JsonPropertyName("metricDevices@odata.nextLink")]
+        public string MetricDevicesNextLink { get; set; }
     
     }
 }

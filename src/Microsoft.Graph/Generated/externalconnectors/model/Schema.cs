@@ -12,34 +12,24 @@ namespace Microsoft.Graph.ExternalConnectors
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Schema.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class Schema : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The Schema constructor
-		///</summary>
-        public Schema()
-        {
-            this.ODataType = "microsoft.graph.externalConnectors.schema";
-        }
-	
         /// <summary>
         /// Gets or sets base type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "baseType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("baseType")]
         public string BaseType { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "properties", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("properties")]
         public IEnumerable<Property> Properties { get; set; }
     
     }

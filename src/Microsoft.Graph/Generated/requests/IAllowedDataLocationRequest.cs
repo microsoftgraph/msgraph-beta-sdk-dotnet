@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AllowedDataLocation using POST.
         /// </summary>
         /// <param name="allowedDataLocationToCreate">The AllowedDataLocation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AllowedDataLocation.</returns>
-        System.Threading.Tasks.Task<AllowedDataLocation> CreateAsync(AllowedDataLocation allowedDataLocationToCreate);        /// <summary>
-        /// Creates the specified AllowedDataLocation using POST.
+        System.Threading.Tasks.Task<AllowedDataLocation> CreateAsync(AllowedDataLocation allowedDataLocationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AllowedDataLocation using POST and returns a <see cref="GraphResponse{AllowedDataLocation}"/> object.
         /// </summary>
         /// <param name="allowedDataLocationToCreate">The AllowedDataLocation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AllowedDataLocation.</returns>
-        System.Threading.Tasks.Task<AllowedDataLocation> CreateAsync(AllowedDataLocation allowedDataLocationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AllowedDataLocation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> CreateResponseAsync(AllowedDataLocation allowedDataLocationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AllowedDataLocation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AllowedDataLocation.
+        /// Deletes the specified AllowedDataLocation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AllowedDataLocation.</returns>
-        System.Threading.Tasks.Task<AllowedDataLocation> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AllowedDataLocation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AllowedDataLocation.</returns>
-        System.Threading.Tasks.Task<AllowedDataLocation> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AllowedDataLocation> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AllowedDataLocation using PATCH.
+        /// Gets the specified AllowedDataLocation and returns a <see cref="GraphResponse{AllowedDataLocation}"/> object.
         /// </summary>
-        /// <param name="allowedDataLocationToUpdate">The AllowedDataLocation to update.</param>
-        /// <returns>The updated AllowedDataLocation.</returns>
-        System.Threading.Tasks.Task<AllowedDataLocation> UpdateAsync(AllowedDataLocation allowedDataLocationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AllowedDataLocation using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AllowedDataLocation.</returns>
-        System.Threading.Tasks.Task<AllowedDataLocation> UpdateAsync(AllowedDataLocation allowedDataLocationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AllowedDataLocation> UpdateAsync(AllowedDataLocation allowedDataLocationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AllowedDataLocation using PATCH and returns a <see cref="GraphResponse{AllowedDataLocation}"/> object.
+        /// </summary>
+        /// <param name="allowedDataLocationToUpdate">The AllowedDataLocation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AllowedDataLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> UpdateResponseAsync(AllowedDataLocation allowedDataLocationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AllowedDataLocation using PUT.
+        /// </summary>
+        /// <param name="allowedDataLocationToUpdate">The AllowedDataLocation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AllowedDataLocation> PutAsync(AllowedDataLocation allowedDataLocationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AllowedDataLocation using PUT and returns a <see cref="GraphResponse{AllowedDataLocation}"/> object.
+        /// </summary>
+        /// <param name="allowedDataLocationToUpdate">The AllowedDataLocation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AllowedDataLocation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AllowedDataLocation>> PutResponseAsync(AllowedDataLocation allowedDataLocationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

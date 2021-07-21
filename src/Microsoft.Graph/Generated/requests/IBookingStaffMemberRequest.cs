@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified BookingStaffMember using POST.
         /// </summary>
         /// <param name="bookingStaffMemberToCreate">The BookingStaffMember to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> CreateAsync(BookingStaffMember bookingStaffMemberToCreate);        /// <summary>
-        /// Creates the specified BookingStaffMember using POST.
+        System.Threading.Tasks.Task<BookingStaffMember> CreateAsync(BookingStaffMember bookingStaffMemberToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified BookingStaffMember using POST and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
         /// </summary>
         /// <param name="bookingStaffMemberToCreate">The BookingStaffMember to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> CreateAsync(BookingStaffMember bookingStaffMemberToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified BookingStaffMember.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{BookingStaffMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> CreateResponseAsync(BookingStaffMember bookingStaffMemberToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified BookingStaffMember.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified BookingStaffMember.
+        /// Deletes the specified BookingStaffMember and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified BookingStaffMember.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BookingStaffMember> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified BookingStaffMember using PATCH.
+        /// Gets the specified BookingStaffMember and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
         /// </summary>
-        /// <param name="bookingStaffMemberToUpdate">The BookingStaffMember to update.</param>
-        /// <returns>The updated BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> UpdateAsync(BookingStaffMember bookingStaffMemberToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingStaffMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified BookingStaffMember using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingStaffMember.</returns>
-        System.Threading.Tasks.Task<BookingStaffMember> UpdateAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<BookingStaffMember> UpdateAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified BookingStaffMember using PATCH and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
+        /// </summary>
+        /// <param name="bookingStaffMemberToUpdate">The BookingStaffMember to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingStaffMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> UpdateResponseAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified BookingStaffMember using PUT.
+        /// </summary>
+        /// <param name="bookingStaffMemberToUpdate">The BookingStaffMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<BookingStaffMember> PutAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified BookingStaffMember using PUT and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
+        /// </summary>
+        /// <param name="bookingStaffMemberToUpdate">The BookingStaffMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{BookingStaffMember}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> PutResponseAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

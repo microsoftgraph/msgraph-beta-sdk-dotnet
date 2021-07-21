@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified BookingStaffMember using POST.
         /// </summary>
         /// <param name="bookingStaffMemberToCreate">The BookingStaffMember to create.</param>
-        /// <returns>The created BookingStaffMember.</returns>
-        public System.Threading.Tasks.Task<BookingStaffMember> CreateAsync(BookingStaffMember bookingStaffMemberToCreate)
-        {
-            return this.CreateAsync(bookingStaffMemberToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified BookingStaffMember using POST.
-        /// </summary>
-        /// <param name="bookingStaffMemberToCreate">The BookingStaffMember to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingStaffMember.</returns>
-        public async System.Threading.Tasks.Task<BookingStaffMember> CreateAsync(BookingStaffMember bookingStaffMemberToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingStaffMember> CreateAsync(BookingStaffMember bookingStaffMemberToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<BookingStaffMember>(bookingStaffMemberToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified BookingStaffMember.
+        /// Creates the specified BookingStaffMember using POST and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="bookingStaffMemberToCreate">The BookingStaffMember to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingStaffMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> CreateResponseAsync(BookingStaffMember bookingStaffMemberToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<BookingStaffMember>(bookingStaffMemberToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<BookingStaffMember>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified BookingStaffMember.
+        /// Deletes the specified BookingStaffMember and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The BookingStaffMember.</returns>
-        public System.Threading.Tasks.Task<BookingStaffMember> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingStaffMember.</returns>
-        public async System.Threading.Tasks.Task<BookingStaffMember> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingStaffMember> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<BookingStaffMember>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified BookingStaffMember using PATCH.
+        /// Gets the specified BookingStaffMember and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
         /// </summary>
-        /// <param name="bookingStaffMemberToUpdate">The BookingStaffMember to update.</param>
-        /// <returns>The updated BookingStaffMember.</returns>
-        public System.Threading.Tasks.Task<BookingStaffMember> UpdateAsync(BookingStaffMember bookingStaffMemberToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingStaffMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(bookingStaffMemberToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<BookingStaffMember>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingStaffMember.</returns>
-        public async System.Threading.Tasks.Task<BookingStaffMember> UpdateAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingStaffMember> UpdateAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken = default)
         {
-			if (bookingStaffMemberToUpdate.AdditionalData != null)
-			{
-				if (bookingStaffMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					bookingStaffMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingStaffMemberToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (bookingStaffMemberToUpdate.AdditionalData != null)
-            {
-                if (bookingStaffMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    bookingStaffMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingStaffMemberToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<BookingStaffMember>(bookingStaffMemberToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified BookingStaffMember using PATCH and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
+        /// </summary>
+        /// <param name="bookingStaffMemberToUpdate">The BookingStaffMember to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingStaffMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> UpdateResponseAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<BookingStaffMember>(bookingStaffMemberToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified BookingStaffMember using PUT.
+        /// </summary>
+        /// <param name="bookingStaffMemberToUpdate">The BookingStaffMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<BookingStaffMember> PutAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<BookingStaffMember>(bookingStaffMemberToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified BookingStaffMember using PUT and returns a <see cref="GraphResponse{BookingStaffMember}"/> object.
+        /// </summary>
+        /// <param name="bookingStaffMemberToUpdate">The BookingStaffMember object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{BookingStaffMember}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingStaffMember>> PutResponseAsync(BookingStaffMember bookingStaffMemberToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<BookingStaffMember>(bookingStaffMemberToUpdate, cancellationToken);
         }
 
         /// <summary>

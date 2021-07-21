@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsFeatureUpdateCatalogItem using POST.
         /// </summary>
         /// <param name="windowsFeatureUpdateCatalogItemToCreate">The WindowsFeatureUpdateCatalogItem to create.</param>
-        /// <returns>The created WindowsFeatureUpdateCatalogItem.</returns>
-        public System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> CreateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate)
-        {
-            return this.CreateAsync(windowsFeatureUpdateCatalogItemToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsFeatureUpdateCatalogItem using POST.
-        /// </summary>
-        /// <param name="windowsFeatureUpdateCatalogItemToCreate">The WindowsFeatureUpdateCatalogItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsFeatureUpdateCatalogItem.</returns>
-        public async System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> CreateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> CreateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsFeatureUpdateCatalogItem>(windowsFeatureUpdateCatalogItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsFeatureUpdateCatalogItem.
+        /// Creates the specified WindowsFeatureUpdateCatalogItem using POST and returns a <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsFeatureUpdateCatalogItemToCreate">The WindowsFeatureUpdateCatalogItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> CreateResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsFeatureUpdateCatalogItem>(windowsFeatureUpdateCatalogItemToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsFeatureUpdateCatalogItem>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsFeatureUpdateCatalogItem.
+        /// Deletes the specified WindowsFeatureUpdateCatalogItem and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsFeatureUpdateCatalogItem.</returns>
-        public System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsFeatureUpdateCatalogItem.</returns>
-        public async System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsFeatureUpdateCatalogItem>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsFeatureUpdateCatalogItem using PATCH.
+        /// Gets the specified WindowsFeatureUpdateCatalogItem and returns a <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object.
         /// </summary>
-        /// <param name="windowsFeatureUpdateCatalogItemToUpdate">The WindowsFeatureUpdateCatalogItem to update.</param>
-        /// <returns>The updated WindowsFeatureUpdateCatalogItem.</returns>
-        public System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> UpdateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windowsFeatureUpdateCatalogItemToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsFeatureUpdateCatalogItem>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsFeatureUpdateCatalogItem.</returns>
-        public async System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> UpdateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> UpdateAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windowsFeatureUpdateCatalogItemToUpdate.AdditionalData != null)
-			{
-				if (windowsFeatureUpdateCatalogItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsFeatureUpdateCatalogItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsFeatureUpdateCatalogItemToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsFeatureUpdateCatalogItemToUpdate.AdditionalData != null)
-            {
-                if (windowsFeatureUpdateCatalogItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsFeatureUpdateCatalogItemToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsFeatureUpdateCatalogItemToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsFeatureUpdateCatalogItem>(windowsFeatureUpdateCatalogItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateCatalogItem using PATCH and returns a <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateCatalogItemToUpdate">The WindowsFeatureUpdateCatalogItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> UpdateResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsFeatureUpdateCatalogItem>(windowsFeatureUpdateCatalogItemToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateCatalogItem using PUT.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateCatalogItemToUpdate">The WindowsFeatureUpdateCatalogItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsFeatureUpdateCatalogItem> PutAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsFeatureUpdateCatalogItem>(windowsFeatureUpdateCatalogItemToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateCatalogItem using PUT and returns a <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateCatalogItemToUpdate">The WindowsFeatureUpdateCatalogItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsFeatureUpdateCatalogItem}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateCatalogItem>> PutResponseAsync(WindowsFeatureUpdateCatalogItem windowsFeatureUpdateCatalogItemToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsFeatureUpdateCatalogItem>(windowsFeatureUpdateCatalogItemToUpdate, cancellationToken);
         }
 
         /// <summary>

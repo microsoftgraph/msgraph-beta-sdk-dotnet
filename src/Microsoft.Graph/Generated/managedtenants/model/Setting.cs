@@ -12,58 +12,49 @@ namespace Microsoft.Graph.ManagedTenants
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Setting.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter))]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<Setting>))]
     public partial class Setting
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Setting"/> class.
-        /// </summary>
-        public Setting()
-        {
-            this.ODataType = "microsoft.graph.managedTenants.setting";
-        }
 
         /// <summary>
         /// Gets or sets displayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets jsonValue.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jsonValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("jsonValue")]
         public string JsonValue { get; set; }
     
         /// <summary>
         /// Gets or sets overwriteAllowed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "overwriteAllowed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("overwriteAllowed")]
         public bool? OverwriteAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets valueType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "valueType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("valueType")]
         public ManagementParameterValueType? ValueType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

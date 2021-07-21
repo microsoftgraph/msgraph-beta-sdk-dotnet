@@ -12,64 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GroupPrintUsageSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<GroupPrintUsageSummary>))]
     public partial class GroupPrintUsageSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GroupPrintUsageSummary"/> class.
-        /// </summary>
-        public GroupPrintUsageSummary()
-        {
-            this.ODataType = "microsoft.graph.groupPrintUsageSummary";
-        }
 
         /// <summary>
         /// Gets or sets completedJobCount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completedJobCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completedJobCount")]
         public Int32? CompletedJobCount { get; set; }
     
         /// <summary>
         /// Gets or sets group.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "group", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("group")]
         public Identity Group { get; set; }
     
         /// <summary>
         /// Gets or sets groupDisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupDisplayName")]
         public string GroupDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets groupMail.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupMail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupMail")]
         public string GroupMail { get; set; }
     
         /// <summary>
         /// Gets or sets incompleteJobCount.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "incompleteJobCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("incompleteJobCount")]
         public Int32? IncompleteJobCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

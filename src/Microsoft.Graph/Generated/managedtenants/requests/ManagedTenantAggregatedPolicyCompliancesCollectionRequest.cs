@@ -33,72 +33,62 @@ namespace Microsoft.Graph.ManagedTenants
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified AggregatedPolicyCompliance to the collection via POST.
-        /// </summary>
-        /// <param name="aggregatedPolicyCompliance">The AggregatedPolicyCompliance to add.</param>
-        /// <returns>The created AggregatedPolicyCompliance.</returns>
-        public System.Threading.Tasks.Task<AggregatedPolicyCompliance> AddAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance)
-        {
-            return this.AddAsync(aggregatedPolicyCompliance, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified AggregatedPolicyCompliance to the collection via POST.
         /// </summary>
         /// <param name="aggregatedPolicyCompliance">The AggregatedPolicyCompliance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AggregatedPolicyCompliance.</returns>
-        public System.Threading.Tasks.Task<AggregatedPolicyCompliance> AddAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<AggregatedPolicyCompliance> AddAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<AggregatedPolicyCompliance>(aggregatedPolicyCompliance, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified AggregatedPolicyCompliance to the collection via POST and returns a <see cref="GraphResponse{AggregatedPolicyCompliance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IManagedTenantAggregatedPolicyCompliancesCollectionPage> GetAsync()
+        /// <param name="aggregatedPolicyCompliance">The AggregatedPolicyCompliance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AggregatedPolicyCompliance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AggregatedPolicyCompliance>> AddResponseAsync(AggregatedPolicyCompliance aggregatedPolicyCompliance, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AggregatedPolicyCompliance>(aggregatedPolicyCompliance, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedTenantAggregatedPolicyCompliancesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IManagedTenantAggregatedPolicyCompliancesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ManagedTenantAggregatedPolicyCompliancesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedTenantAggregatedPolicyCompliancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedTenantAggregatedPolicyCompliancesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantAggregatedPolicyCompliancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedTenantAggregatedPolicyCompliancesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

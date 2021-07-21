@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate">The UserExperienceAnalyticsDeviceStartupProcessPerformance to create.</param>
-        /// <returns>The created UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> CreateAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate)
-        {
-            return this.CreateAsync(userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate">The UserExperienceAnalyticsDeviceStartupProcessPerformance to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> CreateAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> CreateAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserExperienceAnalyticsDeviceStartupProcessPerformance>(userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsDeviceStartupProcessPerformance.
+        /// Creates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate">The UserExperienceAnalyticsDeviceStartupProcessPerformance to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> CreateResponseAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>(userExperienceAnalyticsDeviceStartupProcessPerformanceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserExperienceAnalyticsDeviceStartupProcessPerformance>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserExperienceAnalyticsDeviceStartupProcessPerformance.
+        /// Deletes the specified UserExperienceAnalyticsDeviceStartupProcessPerformance and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserExperienceAnalyticsDeviceStartupProcessPerformance>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using PATCH.
+        /// Gets the specified UserExperienceAnalyticsDeviceStartupProcessPerformance and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object.
         /// </summary>
-        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate">The UserExperienceAnalyticsDeviceStartupProcessPerformance to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> UpdateAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsDeviceStartupProcessPerformance.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> UpdateAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> UpdateAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, CancellationToken cancellationToken = default)
         {
-			if (userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserExperienceAnalyticsDeviceStartupProcessPerformance>(userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate">The UserExperienceAnalyticsDeviceStartupProcessPerformance to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> UpdateResponseAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>(userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate">The UserExperienceAnalyticsDeviceStartupProcessPerformance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupProcessPerformance> PutAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserExperienceAnalyticsDeviceStartupProcessPerformance>(userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupProcessPerformance using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate">The UserExperienceAnalyticsDeviceStartupProcessPerformance object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupProcessPerformance}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>> PutResponseAsync(UserExperienceAnalyticsDeviceStartupProcessPerformance userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsDeviceStartupProcessPerformance>(userExperienceAnalyticsDeviceStartupProcessPerformanceToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type UserRegistrationFeatureSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<UserRegistrationFeatureSummary>))]
     public partial class UserRegistrationFeatureSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UserRegistrationFeatureSummary"/> class.
-        /// </summary>
-        public UserRegistrationFeatureSummary()
-        {
-            this.ODataType = "microsoft.graph.userRegistrationFeatureSummary";
-        }
 
         /// <summary>
         /// Gets or sets totalUserCount.
         /// Total number of users accounts, excluding those that are blocked
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalUserCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalUserCount")]
         public Int64? TotalUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets userRegistrationFeatureCounts.
         /// Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRegistrationFeatureCounts", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userRegistrationFeatureCounts")]
         public IEnumerable<UserRegistrationFeatureCount> UserRegistrationFeatureCounts { get; set; }
     
         /// <summary>
         /// Gets or sets userRoles.
         /// User role type. Possible values are: all, privilegedAdmin, admin, user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userRoles", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userRoles")]
         public IncludedUserRoles? UserRoles { get; set; }
     
         /// <summary>
         /// Gets or sets userTypes.
         /// User type. Possible values are: all, member, guest.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userTypes")]
         public IncludedUserTypes? UserTypes { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

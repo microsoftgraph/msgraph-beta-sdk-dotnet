@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserMobileAppTroubleshootingEventsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileAppTroubleshootingEvent to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppTroubleshootingEvent">The MobileAppTroubleshootingEvent to add.</param>
-        /// <returns>The created MobileAppTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> AddAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEvent);
-
         /// <summary>
         /// Adds the specified MobileAppTroubleshootingEvent to the collection via POST.
         /// </summary>
         /// <param name="mobileAppTroubleshootingEvent">The MobileAppTroubleshootingEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> AddAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEvent, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppTroubleshootingEvent> AddAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEvent, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MobileAppTroubleshootingEvent to the collection via POST and returns a <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserMobileAppTroubleshootingEventsCollectionPage> GetAsync();
+        /// <param name="mobileAppTroubleshootingEvent">The MobileAppTroubleshootingEvent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppTroubleshootingEvent>> AddResponseAsync(MobileAppTroubleshootingEvent mobileAppTroubleshootingEvent, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserMobileAppTroubleshootingEventsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IUserMobileAppTroubleshootingEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserMobileAppTroubleshootingEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserMobileAppTroubleshootingEventsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserMobileAppTroubleshootingEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

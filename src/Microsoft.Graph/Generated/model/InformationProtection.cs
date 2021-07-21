@@ -12,59 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Information Protection.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class InformationProtection : Entity
     {
     
-		///<summary>
-		/// The InformationProtection constructor
-		///</summary>
-        public InformationProtection()
-        {
-            this.ODataType = "microsoft.graph.informationProtection";
-        }
-	
         /// <summary>
         /// Gets or sets bitlocker.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bitlocker", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bitlocker")]
         public Bitlocker Bitlocker { get; set; }
     
         /// <summary>
         /// Gets or sets data loss prevention policies.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataLossPreventionPolicies", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataLossPreventionPolicies")]
         public IInformationProtectionDataLossPreventionPoliciesCollectionPage DataLossPreventionPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets dataLossPreventionPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("dataLossPreventionPolicies@odata.nextLink")]
+        public string DataLossPreventionPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity labels.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityLabels", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitivityLabels")]
         public IInformationProtectionSensitivityLabelsCollectionPage SensitivityLabels { get; set; }
+
+        /// <summary>
+        /// Gets or sets sensitivityLabelsNextLink.
+        /// </summary>
+        [JsonPropertyName("sensitivityLabels@odata.nextLink")]
+        public string SensitivityLabelsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity policy settings.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitivityPolicySettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitivityPolicySettings")]
         public SensitivityPolicySettings SensitivityPolicySettings { get; set; }
     
         /// <summary>
         /// Gets or sets policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "policy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("policy")]
         public InformationProtectionPolicy Policy { get; set; }
     
         /// <summary>
         /// Gets or sets threat assessment requests.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "threatAssessmentRequests", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("threatAssessmentRequests")]
         public IInformationProtectionThreatAssessmentRequestsCollectionPage ThreatAssessmentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets threatAssessmentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("threatAssessmentRequests@odata.nextLink")]
+        public string ThreatAssessmentRequestsNextLink { get; set; }
     
     }
 }

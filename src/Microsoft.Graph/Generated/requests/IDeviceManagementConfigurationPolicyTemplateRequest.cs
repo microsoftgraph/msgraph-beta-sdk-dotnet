@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementConfigurationPolicyTemplate using POST.
         /// </summary>
         /// <param name="deviceManagementConfigurationPolicyTemplateToCreate">The DeviceManagementConfigurationPolicyTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementConfigurationPolicyTemplate.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> CreateAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementConfigurationPolicyTemplate using POST.
+        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> CreateAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementConfigurationPolicyTemplate using POST and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicyTemplate}"/> object.
         /// </summary>
         /// <param name="deviceManagementConfigurationPolicyTemplateToCreate">The DeviceManagementConfigurationPolicyTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementConfigurationPolicyTemplate.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> CreateAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementConfigurationPolicyTemplate.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPolicyTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicyTemplate>> CreateResponseAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementConfigurationPolicyTemplate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceManagementConfigurationPolicyTemplate.
+        /// Deletes the specified DeviceManagementConfigurationPolicyTemplate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementConfigurationPolicyTemplate.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementConfigurationPolicyTemplate.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementConfigurationPolicyTemplate.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceManagementConfigurationPolicyTemplate using PATCH.
+        /// Gets the specified DeviceManagementConfigurationPolicyTemplate and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicyTemplate}"/> object.
         /// </summary>
-        /// <param name="deviceManagementConfigurationPolicyTemplateToUpdate">The DeviceManagementConfigurationPolicyTemplate to update.</param>
-        /// <returns>The updated DeviceManagementConfigurationPolicyTemplate.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> UpdateAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPolicyTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicyTemplate>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementConfigurationPolicyTemplate using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementConfigurationPolicyTemplate.</returns>
-        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> UpdateAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> UpdateAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationPolicyTemplate using PATCH and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicyTemplate}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationPolicyTemplateToUpdate">The DeviceManagementConfigurationPolicyTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementConfigurationPolicyTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicyTemplate>> UpdateResponseAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationPolicyTemplate using PUT.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationPolicyTemplateToUpdate">The DeviceManagementConfigurationPolicyTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementConfigurationPolicyTemplate> PutAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementConfigurationPolicyTemplate using PUT and returns a <see cref="GraphResponse{DeviceManagementConfigurationPolicyTemplate}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementConfigurationPolicyTemplateToUpdate">The DeviceManagementConfigurationPolicyTemplate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementConfigurationPolicyTemplate}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementConfigurationPolicyTemplate>> PutResponseAsync(DeviceManagementConfigurationPolicyTemplate deviceManagementConfigurationPolicyTemplateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

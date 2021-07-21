@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AgedAccountsReceivable using POST.
         /// </summary>
         /// <param name="agedAccountsReceivableToCreate">The AgedAccountsReceivable to create.</param>
-        /// <returns>The created AgedAccountsReceivable.</returns>
-        public System.Threading.Tasks.Task<AgedAccountsReceivable> CreateAsync(AgedAccountsReceivable agedAccountsReceivableToCreate)
-        {
-            return this.CreateAsync(agedAccountsReceivableToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AgedAccountsReceivable using POST.
-        /// </summary>
-        /// <param name="agedAccountsReceivableToCreate">The AgedAccountsReceivable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AgedAccountsReceivable.</returns>
-        public async System.Threading.Tasks.Task<AgedAccountsReceivable> CreateAsync(AgedAccountsReceivable agedAccountsReceivableToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AgedAccountsReceivable> CreateAsync(AgedAccountsReceivable agedAccountsReceivableToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AgedAccountsReceivable>(agedAccountsReceivableToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AgedAccountsReceivable.
+        /// Creates the specified AgedAccountsReceivable using POST and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="agedAccountsReceivableToCreate">The AgedAccountsReceivable to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> CreateResponseAsync(AgedAccountsReceivable agedAccountsReceivableToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AgedAccountsReceivable>(agedAccountsReceivableToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AgedAccountsReceivable>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AgedAccountsReceivable.
+        /// Deletes the specified AgedAccountsReceivable and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AgedAccountsReceivable.</returns>
-        public System.Threading.Tasks.Task<AgedAccountsReceivable> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AgedAccountsReceivable.</returns>
-        public async System.Threading.Tasks.Task<AgedAccountsReceivable> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AgedAccountsReceivable> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AgedAccountsReceivable>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AgedAccountsReceivable using PATCH.
+        /// Gets the specified AgedAccountsReceivable and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object.
         /// </summary>
-        /// <param name="agedAccountsReceivableToUpdate">The AgedAccountsReceivable to update.</param>
-        /// <returns>The updated AgedAccountsReceivable.</returns>
-        public System.Threading.Tasks.Task<AgedAccountsReceivable> UpdateAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(agedAccountsReceivableToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AgedAccountsReceivable>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AgedAccountsReceivable.</returns>
-        public async System.Threading.Tasks.Task<AgedAccountsReceivable> UpdateAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AgedAccountsReceivable> UpdateAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken = default)
         {
-			if (agedAccountsReceivableToUpdate.AdditionalData != null)
-			{
-				if (agedAccountsReceivableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					agedAccountsReceivableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agedAccountsReceivableToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (agedAccountsReceivableToUpdate.AdditionalData != null)
-            {
-                if (agedAccountsReceivableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    agedAccountsReceivableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, agedAccountsReceivableToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AgedAccountsReceivable>(agedAccountsReceivableToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AgedAccountsReceivable using PATCH and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object.
+        /// </summary>
+        /// <param name="agedAccountsReceivableToUpdate">The AgedAccountsReceivable to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AgedAccountsReceivable}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> UpdateResponseAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AgedAccountsReceivable>(agedAccountsReceivableToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AgedAccountsReceivable using PUT.
+        /// </summary>
+        /// <param name="agedAccountsReceivableToUpdate">The AgedAccountsReceivable object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AgedAccountsReceivable> PutAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AgedAccountsReceivable>(agedAccountsReceivableToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AgedAccountsReceivable using PUT and returns a <see cref="GraphResponse{AgedAccountsReceivable}"/> object.
+        /// </summary>
+        /// <param name="agedAccountsReceivableToUpdate">The AgedAccountsReceivable object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AgedAccountsReceivable}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AgedAccountsReceivable>> PutResponseAsync(AgedAccountsReceivable agedAccountsReceivableToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AgedAccountsReceivable>(agedAccountsReceivableToUpdate, cancellationToken);
         }
 
         /// <summary>

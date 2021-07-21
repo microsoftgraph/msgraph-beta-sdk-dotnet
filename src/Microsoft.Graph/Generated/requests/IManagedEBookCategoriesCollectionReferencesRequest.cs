@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IManagedEBookCategoriesCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ManagedEBookCategory to the collection via POST.
-        /// </summary>
-        /// <param name="managedEBookCategory">The ManagedEBookCategory to add.</param>
-        System.Threading.Tasks.Task AddAsync(ManagedEBookCategory managedEBookCategory);
-
         /// <summary>
         /// Adds the specified ManagedEBookCategory to the collection via POST.
         /// </summary>
         /// <param name="managedEBookCategory">The ManagedEBookCategory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(ManagedEBookCategory managedEBookCategory, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(ManagedEBookCategory managedEBookCategory, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified ManagedEBookCategory to the collection via POST and returns a <see cref="GraphResponse{ManagedEBookCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="managedEBookCategory">The ManagedEBookCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ManagedEBookCategory managedEBookCategory, CancellationToken cancellationToken = default);
+
     }
 }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified CredentialUserRegistrationsSummary using POST.
         /// </summary>
         /// <param name="credentialUserRegistrationsSummaryToCreate">The CredentialUserRegistrationsSummary to create.</param>
-        /// <returns>The created CredentialUserRegistrationsSummary.</returns>
-        public System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> CreateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToCreate)
-        {
-            return this.CreateAsync(credentialUserRegistrationsSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified CredentialUserRegistrationsSummary using POST.
-        /// </summary>
-        /// <param name="credentialUserRegistrationsSummaryToCreate">The CredentialUserRegistrationsSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CredentialUserRegistrationsSummary.</returns>
-        public async System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> CreateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> CreateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<CredentialUserRegistrationsSummary>(credentialUserRegistrationsSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified CredentialUserRegistrationsSummary.
+        /// Creates the specified CredentialUserRegistrationsSummary using POST and returns a <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="credentialUserRegistrationsSummaryToCreate">The CredentialUserRegistrationsSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> CreateResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<CredentialUserRegistrationsSummary>(credentialUserRegistrationsSummaryToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<CredentialUserRegistrationsSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified CredentialUserRegistrationsSummary.
+        /// Deletes the specified CredentialUserRegistrationsSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CredentialUserRegistrationsSummary.</returns>
-        public System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CredentialUserRegistrationsSummary.</returns>
-        public async System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<CredentialUserRegistrationsSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified CredentialUserRegistrationsSummary using PATCH.
+        /// Gets the specified CredentialUserRegistrationsSummary and returns a <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object.
         /// </summary>
-        /// <param name="credentialUserRegistrationsSummaryToUpdate">The CredentialUserRegistrationsSummary to update.</param>
-        /// <returns>The updated CredentialUserRegistrationsSummary.</returns>
-        public System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> UpdateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(credentialUserRegistrationsSummaryToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CredentialUserRegistrationsSummary>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CredentialUserRegistrationsSummary.</returns>
-        public async System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> UpdateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> UpdateAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default)
         {
-			if (credentialUserRegistrationsSummaryToUpdate.AdditionalData != null)
-			{
-				if (credentialUserRegistrationsSummaryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					credentialUserRegistrationsSummaryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, credentialUserRegistrationsSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (credentialUserRegistrationsSummaryToUpdate.AdditionalData != null)
-            {
-                if (credentialUserRegistrationsSummaryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    credentialUserRegistrationsSummaryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, credentialUserRegistrationsSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<CredentialUserRegistrationsSummary>(credentialUserRegistrationsSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CredentialUserRegistrationsSummary using PATCH and returns a <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object.
+        /// </summary>
+        /// <param name="credentialUserRegistrationsSummaryToUpdate">The CredentialUserRegistrationsSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> UpdateResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<CredentialUserRegistrationsSummary>(credentialUserRegistrationsSummaryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified CredentialUserRegistrationsSummary using PUT.
+        /// </summary>
+        /// <param name="credentialUserRegistrationsSummaryToUpdate">The CredentialUserRegistrationsSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<CredentialUserRegistrationsSummary> PutAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<CredentialUserRegistrationsSummary>(credentialUserRegistrationsSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified CredentialUserRegistrationsSummary using PUT and returns a <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/> object.
+        /// </summary>
+        /// <param name="credentialUserRegistrationsSummaryToUpdate">The CredentialUserRegistrationsSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{CredentialUserRegistrationsSummary}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CredentialUserRegistrationsSummary>> PutResponseAsync(CredentialUserRegistrationsSummary credentialUserRegistrationsSummaryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<CredentialUserRegistrationsSummary>(credentialUserRegistrationsSummaryToUpdate, cancellationToken);
         }
 
         /// <summary>

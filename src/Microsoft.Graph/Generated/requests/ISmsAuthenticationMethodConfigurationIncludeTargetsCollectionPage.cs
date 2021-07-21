@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ISmsAuthenticationMethodConfigurationIncludeTargetsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<SmsAuthenticationMethodConfigurationIncludeTargetsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<SmsAuthenticationMethodConfigurationIncludeTargetsCollectionPage>))]
     public interface ISmsAuthenticationMethodConfigurationIncludeTargetsCollectionPage : ICollectionPage<SmsAuthenticationMethodTarget>
     {
         /// <summary>

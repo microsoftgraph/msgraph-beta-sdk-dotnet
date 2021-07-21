@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Vpp App Assigned User License.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosVppAppAssignedUserLicense : IosVppAppAssignedLicense
     {
     
-		///<summary>
-		/// The IosVppAppAssignedUserLicense constructor
-		///</summary>
+        ///<summary>
+        /// The IosVppAppAssignedUserLicense constructor
+        ///</summary>
         public IosVppAppAssignedUserLicense()
         {
             this.ODataType = "microsoft.graph.iosVppAppAssignedUserLicense";
         }
-	
+
     }
 }
 

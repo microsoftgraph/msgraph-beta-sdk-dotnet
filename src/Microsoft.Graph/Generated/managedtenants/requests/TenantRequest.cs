@@ -39,34 +39,28 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified Tenant using POST.
         /// </summary>
         /// <param name="tenantToCreate">The Tenant to create.</param>
-        /// <returns>The created Tenant.</returns>
-        public System.Threading.Tasks.Task<Tenant> CreateAsync(Tenant tenantToCreate)
-        {
-            return this.CreateAsync(tenantToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Tenant using POST.
-        /// </summary>
-        /// <param name="tenantToCreate">The Tenant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Tenant.</returns>
-        public async System.Threading.Tasks.Task<Tenant> CreateAsync(Tenant tenantToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Tenant> CreateAsync(Tenant tenantToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Tenant>(tenantToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Tenant.
+        /// Creates the specified Tenant using POST and returns a <see cref="GraphResponse{Tenant}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="tenantToCreate">The Tenant to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Tenant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Tenant>> CreateResponseAsync(Tenant tenantToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Tenant>(tenantToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Tenant>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Tenant.
+        /// Deletes the specified Tenant and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Tenant.</returns>
-        public System.Threading.Tasks.Task<Tenant> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Tenant.</returns>
-        public async System.Threading.Tasks.Task<Tenant> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Tenant> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Tenant>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Tenant using PATCH.
+        /// Gets the specified Tenant and returns a <see cref="GraphResponse{Tenant}"/> object.
         /// </summary>
-        /// <param name="tenantToUpdate">The Tenant to update.</param>
-        /// <returns>The updated Tenant.</returns>
-        public System.Threading.Tasks.Task<Tenant> UpdateAsync(Tenant tenantToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Tenant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Tenant>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(tenantToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Tenant>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Tenant.</returns>
-        public async System.Threading.Tasks.Task<Tenant> UpdateAsync(Tenant tenantToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Tenant> UpdateAsync(Tenant tenantToUpdate, CancellationToken cancellationToken = default)
         {
-			if (tenantToUpdate.AdditionalData != null)
-			{
-				if (tenantToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					tenantToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tenantToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (tenantToUpdate.AdditionalData != null)
-            {
-                if (tenantToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    tenantToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tenantToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Tenant>(tenantToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Tenant using PATCH and returns a <see cref="GraphResponse{Tenant}"/> object.
+        /// </summary>
+        /// <param name="tenantToUpdate">The Tenant to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Tenant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Tenant>> UpdateResponseAsync(Tenant tenantToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Tenant>(tenantToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Tenant using PUT.
+        /// </summary>
+        /// <param name="tenantToUpdate">The Tenant object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Tenant> PutAsync(Tenant tenantToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Tenant>(tenantToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Tenant using PUT and returns a <see cref="GraphResponse{Tenant}"/> object.
+        /// </summary>
+        /// <param name="tenantToUpdate">The Tenant object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Tenant}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Tenant>> PutResponseAsync(Tenant tenantToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Tenant>(tenantToUpdate, cancellationToken);
         }
 
         /// <summary>

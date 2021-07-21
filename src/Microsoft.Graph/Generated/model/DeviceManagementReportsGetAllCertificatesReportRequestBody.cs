@@ -9,71 +9,69 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementReportsGetAllCertificatesReportRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeviceManagementReportsGetAllCertificatesReportRequestBody
     {
     
         /// <summary>
         /// Gets or sets Name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets Select.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "select", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("select")]
         public IEnumerable<string> Select { get; set; }
     
         /// <summary>
         /// Gets or sets Search.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "search", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("search")]
         public string Search { get; set; }
     
         /// <summary>
         /// Gets or sets GroupBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "groupBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("groupBy")]
         public IEnumerable<string> GroupBy { get; set; }
     
         /// <summary>
         /// Gets or sets OrderBy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "orderBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("orderBy")]
         public IEnumerable<string> OrderBy { get; set; }
     
         /// <summary>
         /// Gets or sets Skip.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skip", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skip")]
         public Int32? Skip { get; set; }
     
         /// <summary>
         /// Gets or sets Top.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "top", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("top")]
         public Int32? Top { get; set; }
     
         /// <summary>
         /// Gets or sets SessionId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sessionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sessionId")]
         public string SessionId { get; set; }
     
         /// <summary>
         /// Gets or sets Filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "filter", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("filter")]
         public string Filter { get; set; }
     
     }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsDeliveryOptimizationConfiguration using POST.
         /// </summary>
         /// <param name="windowsDeliveryOptimizationConfigurationToCreate">The WindowsDeliveryOptimizationConfiguration to create.</param>
-        /// <returns>The created WindowsDeliveryOptimizationConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> CreateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate)
-        {
-            return this.CreateAsync(windowsDeliveryOptimizationConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsDeliveryOptimizationConfiguration using POST.
-        /// </summary>
-        /// <param name="windowsDeliveryOptimizationConfigurationToCreate">The WindowsDeliveryOptimizationConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDeliveryOptimizationConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> CreateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> CreateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsDeliveryOptimizationConfiguration>(windowsDeliveryOptimizationConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsDeliveryOptimizationConfiguration.
+        /// Creates the specified WindowsDeliveryOptimizationConfiguration using POST and returns a <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsDeliveryOptimizationConfigurationToCreate">The WindowsDeliveryOptimizationConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> CreateResponseAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsDeliveryOptimizationConfiguration>(windowsDeliveryOptimizationConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsDeliveryOptimizationConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsDeliveryOptimizationConfiguration.
+        /// Deletes the specified WindowsDeliveryOptimizationConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsDeliveryOptimizationConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsDeliveryOptimizationConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsDeliveryOptimizationConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsDeliveryOptimizationConfiguration using PATCH.
+        /// Gets the specified WindowsDeliveryOptimizationConfiguration and returns a <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object.
         /// </summary>
-        /// <param name="windowsDeliveryOptimizationConfigurationToUpdate">The WindowsDeliveryOptimizationConfiguration to update.</param>
-        /// <returns>The updated WindowsDeliveryOptimizationConfiguration.</returns>
-        public System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> UpdateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsDeliveryOptimizationConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDeliveryOptimizationConfiguration.</returns>
-        public async System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> UpdateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> UpdateAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDeliveryOptimizationConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsDeliveryOptimizationConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDeliveryOptimizationConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsDeliveryOptimizationConfiguration>(windowsDeliveryOptimizationConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsDeliveryOptimizationConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsDeliveryOptimizationConfigurationToUpdate">The WindowsDeliveryOptimizationConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> UpdateResponseAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsDeliveryOptimizationConfiguration>(windowsDeliveryOptimizationConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsDeliveryOptimizationConfiguration using PUT.
+        /// </summary>
+        /// <param name="windowsDeliveryOptimizationConfigurationToUpdate">The WindowsDeliveryOptimizationConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsDeliveryOptimizationConfiguration> PutAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsDeliveryOptimizationConfiguration>(windowsDeliveryOptimizationConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsDeliveryOptimizationConfiguration using PUT and returns a <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsDeliveryOptimizationConfigurationToUpdate">The WindowsDeliveryOptimizationConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsDeliveryOptimizationConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDeliveryOptimizationConfiguration>> PutResponseAsync(WindowsDeliveryOptimizationConfiguration windowsDeliveryOptimizationConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsDeliveryOptimizationConfiguration>(windowsDeliveryOptimizationConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

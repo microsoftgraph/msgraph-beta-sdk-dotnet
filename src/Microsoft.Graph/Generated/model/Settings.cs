@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<Settings>))]
     public partial class Settings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Settings"/> class.
-        /// </summary>
-        public Settings()
-        {
-            this.ODataType = "microsoft.graph.settings";
-        }
 
         /// <summary>
         /// Gets or sets hasGraphMailbox.
         /// Specifies if the user's primary mailbox is hosted in the cloud and is enabled for Microsoft Graph.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasGraphMailbox", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasGraphMailbox")]
         public bool? HasGraphMailbox { get; set; }
     
         /// <summary>
         /// Gets or sets hasLicense.
         /// Specifies if the user has a MyAnalytics license assigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasLicense", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasLicense")]
         public bool? HasLicense { get; set; }
     
         /// <summary>
         /// Gets or sets hasOptedOut.
         /// Specifies if the user opted out of MyAnalytics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hasOptedOut", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hasOptedOut")]
         public bool? HasOptedOut { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

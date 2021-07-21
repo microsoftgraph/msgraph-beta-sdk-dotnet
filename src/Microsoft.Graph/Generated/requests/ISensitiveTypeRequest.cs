@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified SensitiveType using POST.
         /// </summary>
         /// <param name="sensitiveTypeToCreate">The SensitiveType to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SensitiveType.</returns>
-        System.Threading.Tasks.Task<SensitiveType> CreateAsync(SensitiveType sensitiveTypeToCreate);        /// <summary>
-        /// Creates the specified SensitiveType using POST.
+        System.Threading.Tasks.Task<SensitiveType> CreateAsync(SensitiveType sensitiveTypeToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified SensitiveType using POST and returns a <see cref="GraphResponse{SensitiveType}"/> object.
         /// </summary>
         /// <param name="sensitiveTypeToCreate">The SensitiveType to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SensitiveType.</returns>
-        System.Threading.Tasks.Task<SensitiveType> CreateAsync(SensitiveType sensitiveTypeToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SensitiveType.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> CreateResponseAsync(SensitiveType sensitiveTypeToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SensitiveType.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified SensitiveType.
+        /// Deletes the specified SensitiveType and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SensitiveType.</returns>
-        System.Threading.Tasks.Task<SensitiveType> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SensitiveType.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SensitiveType.</returns>
-        System.Threading.Tasks.Task<SensitiveType> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SensitiveType> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified SensitiveType using PATCH.
+        /// Gets the specified SensitiveType and returns a <see cref="GraphResponse{SensitiveType}"/> object.
         /// </summary>
-        /// <param name="sensitiveTypeToUpdate">The SensitiveType to update.</param>
-        /// <returns>The updated SensitiveType.</returns>
-        System.Threading.Tasks.Task<SensitiveType> UpdateAsync(SensitiveType sensitiveTypeToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SensitiveType using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SensitiveType.</returns>
-        System.Threading.Tasks.Task<SensitiveType> UpdateAsync(SensitiveType sensitiveTypeToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SensitiveType> UpdateAsync(SensitiveType sensitiveTypeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SensitiveType using PATCH and returns a <see cref="GraphResponse{SensitiveType}"/> object.
+        /// </summary>
+        /// <param name="sensitiveTypeToUpdate">The SensitiveType to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SensitiveType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> UpdateResponseAsync(SensitiveType sensitiveTypeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SensitiveType using PUT.
+        /// </summary>
+        /// <param name="sensitiveTypeToUpdate">The SensitiveType object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SensitiveType> PutAsync(SensitiveType sensitiveTypeToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SensitiveType using PUT and returns a <see cref="GraphResponse{SensitiveType}"/> object.
+        /// </summary>
+        /// <param name="sensitiveTypeToUpdate">The SensitiveType object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SensitiveType}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SensitiveType>> PutResponseAsync(SensitiveType sensitiveTypeToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ServiceHealth to the collection via POST.
-        /// </summary>
-        /// <param name="serviceHealth">The ServiceHealth to add.</param>
-        /// <returns>The created ServiceHealth.</returns>
-        public System.Threading.Tasks.Task<ServiceHealth> AddAsync(ServiceHealth serviceHealth)
-        {
-            return this.AddAsync(serviceHealth, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ServiceHealth to the collection via POST.
         /// </summary>
         /// <param name="serviceHealth">The ServiceHealth to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServiceHealth.</returns>
-        public System.Threading.Tasks.Task<ServiceHealth> AddAsync(ServiceHealth serviceHealth, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ServiceHealth> AddAsync(ServiceHealth serviceHealth, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ServiceHealth>(serviceHealth, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ServiceHealth to the collection via POST and returns a <see cref="GraphResponse{ServiceHealth}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IServiceAnnouncementHealthOverviewsCollectionPage> GetAsync()
+        /// <param name="serviceHealth">The ServiceHealth to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceHealth}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceHealth>> AddResponseAsync(ServiceHealth serviceHealth, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ServiceHealth>(serviceHealth, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IServiceAnnouncementHealthOverviewsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IServiceAnnouncementHealthOverviewsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ServiceAnnouncementHealthOverviewsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ServiceAnnouncementHealthOverviewsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceAnnouncementHealthOverviewsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementHealthOverviewsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ServiceAnnouncementHealthOverviewsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified DetectedApp.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DetectedApp.</returns>
-        public System.Threading.Tasks.Task<DetectedApp> GetAsync()
+        public async System.Threading.Tasks.Task<DetectedApp> GetAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<DetectedApp>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified DetectedApp.
+        /// Gets the specified DetectedApp and returns a <see cref="GraphResponse{DetectedApp}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The DetectedApp.</returns>
-        public async System.Threading.Tasks.Task<DetectedApp> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DetectedApp>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<DetectedApp>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DetectedApp>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified DetectedApp using POST.
         /// </summary>
         /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
-        /// <returns>The created DetectedApp.</returns>
-        public System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate)
-        {
-            return this.CreateAsync(detectedAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DetectedApp using POST.
-        /// </summary>
-        /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DetectedApp.</returns>
-        public async System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DetectedApp>(detectedAppToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified DetectedApp using PATCH.
+        /// Creates the specified DetectedApp using POST and returns a <see cref="GraphResponse{DetectedApp}"/> object.
         /// </summary>
-        /// <param name="detectedAppToUpdate">The DetectedApp to update.</param>
-        /// <returns>The updated DetectedApp.</returns>
-        public System.Threading.Tasks.Task<DetectedApp> UpdateAsync(DetectedApp detectedAppToUpdate)
+        /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DetectedApp>> CreateResponseAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(detectedAppToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DetectedApp>(detectedAppToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified DetectedApp using PATCH.
         /// </summary>
         /// <param name="detectedAppToUpdate">The DetectedApp to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DetectedApp.</returns>
-        public async System.Threading.Tasks.Task<DetectedApp> UpdateAsync(DetectedApp detectedAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DetectedApp> UpdateAsync(DetectedApp detectedAppToUpdate, CancellationToken cancellationToken = default)
         {
-			if (detectedAppToUpdate.AdditionalData != null)
-			{
-				if (detectedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					detectedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, detectedAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (detectedAppToUpdate.AdditionalData != null)
-            {
-                if (detectedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    detectedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, detectedAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DetectedApp>(detectedAppToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified DetectedApp.
+        /// Updates the specified DetectedApp using PATCH and returns a <see cref="GraphResponse{DetectedApp}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="detectedAppToUpdate">The DetectedApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DetectedApp>> UpdateResponseAsync(DetectedApp detectedAppToUpdate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DetectedApp>(detectedAppToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified DetectedApp.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DetectedApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified DetectedApp and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

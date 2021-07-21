@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Note using POST.
         /// </summary>
         /// <param name="noteToCreate">The Note to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Note.</returns>
-        System.Threading.Tasks.Task<Note> CreateAsync(Note noteToCreate);        /// <summary>
-        /// Creates the specified Note using POST.
+        System.Threading.Tasks.Task<Note> CreateAsync(Note noteToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Note using POST and returns a <see cref="GraphResponse{Note}"/> object.
         /// </summary>
         /// <param name="noteToCreate">The Note to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Note.</returns>
-        System.Threading.Tasks.Task<Note> CreateAsync(Note noteToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Note.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> CreateResponseAsync(Note noteToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Note.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Note.
+        /// Deletes the specified Note and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Note.</returns>
-        System.Threading.Tasks.Task<Note> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Note.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Note.</returns>
-        System.Threading.Tasks.Task<Note> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Note> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Note using PATCH.
+        /// Gets the specified Note and returns a <see cref="GraphResponse{Note}"/> object.
         /// </summary>
-        /// <param name="noteToUpdate">The Note to update.</param>
-        /// <returns>The updated Note.</returns>
-        System.Threading.Tasks.Task<Note> UpdateAsync(Note noteToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Note using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Note.</returns>
-        System.Threading.Tasks.Task<Note> UpdateAsync(Note noteToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Note> UpdateAsync(Note noteToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Note using PATCH and returns a <see cref="GraphResponse{Note}"/> object.
+        /// </summary>
+        /// <param name="noteToUpdate">The Note to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Note}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> UpdateResponseAsync(Note noteToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Note using PUT.
+        /// </summary>
+        /// <param name="noteToUpdate">The Note object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Note> PutAsync(Note noteToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Note using PUT and returns a <see cref="GraphResponse{Note}"/> object.
+        /// </summary>
+        /// <param name="noteToUpdate">The Note object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Note}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Note>> PutResponseAsync(Note noteToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

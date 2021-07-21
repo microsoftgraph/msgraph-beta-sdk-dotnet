@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IosTrustedRootCertificate using POST.
         /// </summary>
         /// <param name="iosTrustedRootCertificateToCreate">The IosTrustedRootCertificate to create.</param>
-        /// <returns>The created IosTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<IosTrustedRootCertificate> CreateAsync(IosTrustedRootCertificate iosTrustedRootCertificateToCreate)
-        {
-            return this.CreateAsync(iosTrustedRootCertificateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosTrustedRootCertificate using POST.
-        /// </summary>
-        /// <param name="iosTrustedRootCertificateToCreate">The IosTrustedRootCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<IosTrustedRootCertificate> CreateAsync(IosTrustedRootCertificate iosTrustedRootCertificateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosTrustedRootCertificate> CreateAsync(IosTrustedRootCertificate iosTrustedRootCertificateToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IosTrustedRootCertificate>(iosTrustedRootCertificateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IosTrustedRootCertificate.
+        /// Creates the specified IosTrustedRootCertificate using POST and returns a <see cref="GraphResponse{IosTrustedRootCertificate}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="iosTrustedRootCertificateToCreate">The IosTrustedRootCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosTrustedRootCertificate>> CreateResponseAsync(IosTrustedRootCertificate iosTrustedRootCertificateToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IosTrustedRootCertificate>(iosTrustedRootCertificateToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IosTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IosTrustedRootCertificate.
+        /// Deletes the specified IosTrustedRootCertificate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<IosTrustedRootCertificate> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<IosTrustedRootCertificate> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosTrustedRootCertificate> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IosTrustedRootCertificate>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IosTrustedRootCertificate using PATCH.
+        /// Gets the specified IosTrustedRootCertificate and returns a <see cref="GraphResponse{IosTrustedRootCertificate}"/> object.
         /// </summary>
-        /// <param name="iosTrustedRootCertificateToUpdate">The IosTrustedRootCertificate to update.</param>
-        /// <returns>The updated IosTrustedRootCertificate.</returns>
-        public System.Threading.Tasks.Task<IosTrustedRootCertificate> UpdateAsync(IosTrustedRootCertificate iosTrustedRootCertificateToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosTrustedRootCertificate>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(iosTrustedRootCertificateToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosTrustedRootCertificate>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosTrustedRootCertificate.</returns>
-        public async System.Threading.Tasks.Task<IosTrustedRootCertificate> UpdateAsync(IosTrustedRootCertificate iosTrustedRootCertificateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosTrustedRootCertificate> UpdateAsync(IosTrustedRootCertificate iosTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default)
         {
-			if (iosTrustedRootCertificateToUpdate.AdditionalData != null)
-			{
-				if (iosTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosTrustedRootCertificateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosTrustedRootCertificateToUpdate.AdditionalData != null)
-            {
-                if (iosTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosTrustedRootCertificateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosTrustedRootCertificateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IosTrustedRootCertificate>(iosTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosTrustedRootCertificate using PATCH and returns a <see cref="GraphResponse{IosTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="iosTrustedRootCertificateToUpdate">The IosTrustedRootCertificate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosTrustedRootCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosTrustedRootCertificate>> UpdateResponseAsync(IosTrustedRootCertificate iosTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IosTrustedRootCertificate>(iosTrustedRootCertificateToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IosTrustedRootCertificate using PUT.
+        /// </summary>
+        /// <param name="iosTrustedRootCertificateToUpdate">The IosTrustedRootCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosTrustedRootCertificate> PutAsync(IosTrustedRootCertificate iosTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosTrustedRootCertificate>(iosTrustedRootCertificateToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosTrustedRootCertificate using PUT and returns a <see cref="GraphResponse{IosTrustedRootCertificate}"/> object.
+        /// </summary>
+        /// <param name="iosTrustedRootCertificateToUpdate">The IosTrustedRootCertificate object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosTrustedRootCertificate}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosTrustedRootCertificate>> PutResponseAsync(IosTrustedRootCertificate iosTrustedRootCertificateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosTrustedRootCertificate>(iosTrustedRootCertificateToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -12,43 +12,33 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Review Policy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessReviewPolicy : Entity
     {
     
-		///<summary>
-		/// The AccessReviewPolicy constructor
-		///</summary>
-        public AccessReviewPolicy()
-        {
-            this.ODataType = "microsoft.graph.accessReviewPolicy";
-        }
-	
         /// <summary>
         /// Gets or sets description.
         /// Description for this policy. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Display name for this policy. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is group owner management enabled.
         /// If true, group owners can create and manage access reviews on groups they own.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isGroupOwnerManagementEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isGroupOwnerManagementEnabled")]
         public bool? IsGroupOwnerManagementEnabled { get; set; }
     
     }

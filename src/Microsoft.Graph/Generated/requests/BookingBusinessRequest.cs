@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified BookingBusiness using POST.
         /// </summary>
         /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
-        /// <returns>The created BookingBusiness.</returns>
-        public System.Threading.Tasks.Task<BookingBusiness> CreateAsync(BookingBusiness bookingBusinessToCreate)
-        {
-            return this.CreateAsync(bookingBusinessToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified BookingBusiness using POST.
-        /// </summary>
-        /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BookingBusiness.</returns>
-        public async System.Threading.Tasks.Task<BookingBusiness> CreateAsync(BookingBusiness bookingBusinessToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingBusiness> CreateAsync(BookingBusiness bookingBusinessToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<BookingBusiness>(bookingBusinessToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified BookingBusiness.
+        /// Creates the specified BookingBusiness using POST and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="bookingBusinessToCreate">The BookingBusiness to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> CreateResponseAsync(BookingBusiness bookingBusinessToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<BookingBusiness>(bookingBusinessToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<BookingBusiness>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified BookingBusiness.
+        /// Deletes the specified BookingBusiness and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The BookingBusiness.</returns>
-        public System.Threading.Tasks.Task<BookingBusiness> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The BookingBusiness.</returns>
-        public async System.Threading.Tasks.Task<BookingBusiness> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingBusiness> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<BookingBusiness>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified BookingBusiness using PATCH.
+        /// Gets the specified BookingBusiness and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
         /// </summary>
-        /// <param name="bookingBusinessToUpdate">The BookingBusiness to update.</param>
-        /// <returns>The updated BookingBusiness.</returns>
-        public System.Threading.Tasks.Task<BookingBusiness> UpdateAsync(BookingBusiness bookingBusinessToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(bookingBusinessToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<BookingBusiness>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated BookingBusiness.</returns>
-        public async System.Threading.Tasks.Task<BookingBusiness> UpdateAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<BookingBusiness> UpdateAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken = default)
         {
-			if (bookingBusinessToUpdate.AdditionalData != null)
-			{
-				if (bookingBusinessToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					bookingBusinessToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingBusinessToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (bookingBusinessToUpdate.AdditionalData != null)
-            {
-                if (bookingBusinessToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    bookingBusinessToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, bookingBusinessToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<BookingBusiness>(bookingBusinessToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified BookingBusiness using PATCH and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <param name="bookingBusinessToUpdate">The BookingBusiness to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{BookingBusiness}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> UpdateResponseAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<BookingBusiness>(bookingBusinessToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified BookingBusiness using PUT.
+        /// </summary>
+        /// <param name="bookingBusinessToUpdate">The BookingBusiness object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<BookingBusiness> PutAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<BookingBusiness>(bookingBusinessToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified BookingBusiness using PUT and returns a <see cref="GraphResponse{BookingBusiness}"/> object.
+        /// </summary>
+        /// <param name="bookingBusinessToUpdate">The BookingBusiness object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{BookingBusiness}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BookingBusiness>> PutResponseAsync(BookingBusiness bookingBusinessToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<BookingBusiness>(bookingBusinessToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,87 +244,37 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(BookingBusiness bookingBusinessToInitialize)
         {
 
-            if (bookingBusinessToInitialize != null && bookingBusinessToInitialize.AdditionalData != null)
+            if (bookingBusinessToInitialize != null)
             {
-
                 if (bookingBusinessToInitialize.Appointments != null && bookingBusinessToInitialize.Appointments.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.Appointments.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.AppointmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Appointments.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("appointments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.Appointments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (bookingBusinessToInitialize.CalendarView != null && bookingBusinessToInitialize.CalendarView.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.CalendarView.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.CalendarViewNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.CalendarView.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("calendarView@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.CalendarView.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (bookingBusinessToInitialize.Customers != null && bookingBusinessToInitialize.Customers.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.Customers.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.CustomersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Customers.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("customers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.Customers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (bookingBusinessToInitialize.Services != null && bookingBusinessToInitialize.Services.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.Services.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.ServicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Services.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("services@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.Services.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (bookingBusinessToInitialize.StaffMembers != null && bookingBusinessToInitialize.StaffMembers.CurrentPage != null)
                 {
+                    bookingBusinessToInitialize.StaffMembers.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.StaffMembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.StaffMembers.AdditionalData = bookingBusinessToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    bookingBusinessToInitialize.AdditionalData.TryGetValue("staffMembers@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        bookingBusinessToInitialize.StaffMembers.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

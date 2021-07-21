@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified RbacApplicationMultiple using POST.
         /// </summary>
         /// <param name="rbacApplicationMultipleToCreate">The RbacApplicationMultiple to create.</param>
-        /// <returns>The created RbacApplicationMultiple.</returns>
-        public System.Threading.Tasks.Task<RbacApplicationMultiple> CreateAsync(RbacApplicationMultiple rbacApplicationMultipleToCreate)
-        {
-            return this.CreateAsync(rbacApplicationMultipleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RbacApplicationMultiple using POST.
-        /// </summary>
-        /// <param name="rbacApplicationMultipleToCreate">The RbacApplicationMultiple to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RbacApplicationMultiple.</returns>
-        public async System.Threading.Tasks.Task<RbacApplicationMultiple> CreateAsync(RbacApplicationMultiple rbacApplicationMultipleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RbacApplicationMultiple> CreateAsync(RbacApplicationMultiple rbacApplicationMultipleToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<RbacApplicationMultiple>(rbacApplicationMultipleToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified RbacApplicationMultiple.
+        /// Creates the specified RbacApplicationMultiple using POST and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="rbacApplicationMultipleToCreate">The RbacApplicationMultiple to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> CreateResponseAsync(RbacApplicationMultiple rbacApplicationMultipleToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<RbacApplicationMultiple>(rbacApplicationMultipleToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<RbacApplicationMultiple>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified RbacApplicationMultiple.
+        /// Deletes the specified RbacApplicationMultiple and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The RbacApplicationMultiple.</returns>
-        public System.Threading.Tasks.Task<RbacApplicationMultiple> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RbacApplicationMultiple.</returns>
-        public async System.Threading.Tasks.Task<RbacApplicationMultiple> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RbacApplicationMultiple> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<RbacApplicationMultiple>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified RbacApplicationMultiple using PATCH.
+        /// Gets the specified RbacApplicationMultiple and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
         /// </summary>
-        /// <param name="rbacApplicationMultipleToUpdate">The RbacApplicationMultiple to update.</param>
-        /// <returns>The updated RbacApplicationMultiple.</returns>
-        public System.Threading.Tasks.Task<RbacApplicationMultiple> UpdateAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(rbacApplicationMultipleToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<RbacApplicationMultiple>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RbacApplicationMultiple.</returns>
-        public async System.Threading.Tasks.Task<RbacApplicationMultiple> UpdateAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RbacApplicationMultiple> UpdateAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate, CancellationToken cancellationToken = default)
         {
-			if (rbacApplicationMultipleToUpdate.AdditionalData != null)
-			{
-				if (rbacApplicationMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					rbacApplicationMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationMultipleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (rbacApplicationMultipleToUpdate.AdditionalData != null)
-            {
-                if (rbacApplicationMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    rbacApplicationMultipleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationMultipleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<RbacApplicationMultiple>(rbacApplicationMultipleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RbacApplicationMultiple using PATCH and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
+        /// </summary>
+        /// <param name="rbacApplicationMultipleToUpdate">The RbacApplicationMultiple to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationMultiple}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> UpdateResponseAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<RbacApplicationMultiple>(rbacApplicationMultipleToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified RbacApplicationMultiple using PUT.
+        /// </summary>
+        /// <param name="rbacApplicationMultipleToUpdate">The RbacApplicationMultiple object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<RbacApplicationMultiple> PutAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<RbacApplicationMultiple>(rbacApplicationMultipleToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RbacApplicationMultiple using PUT and returns a <see cref="GraphResponse{RbacApplicationMultiple}"/> object.
+        /// </summary>
+        /// <param name="rbacApplicationMultipleToUpdate">The RbacApplicationMultiple object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{RbacApplicationMultiple}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationMultiple>> PutResponseAsync(RbacApplicationMultiple rbacApplicationMultipleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<RbacApplicationMultiple>(rbacApplicationMultipleToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RbacApplicationMultiple rbacApplicationMultipleToInitialize)
         {
 
-            if (rbacApplicationMultipleToInitialize != null && rbacApplicationMultipleToInitialize.AdditionalData != null)
+            if (rbacApplicationMultipleToInitialize != null)
             {
-
                 if (rbacApplicationMultipleToInitialize.ResourceNamespaces != null && rbacApplicationMultipleToInitialize.ResourceNamespaces.CurrentPage != null)
                 {
+                    rbacApplicationMultipleToInitialize.ResourceNamespaces.InitializeNextPageRequest(this.Client, rbacApplicationMultipleToInitialize.ResourceNamespacesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationMultipleToInitialize.ResourceNamespaces.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("resourceNamespaces@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationMultipleToInitialize.ResourceNamespaces.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationMultipleToInitialize.RoleAssignments != null && rbacApplicationMultipleToInitialize.RoleAssignments.CurrentPage != null)
                 {
+                    rbacApplicationMultipleToInitialize.RoleAssignments.InitializeNextPageRequest(this.Client, rbacApplicationMultipleToInitialize.RoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationMultipleToInitialize.RoleAssignments.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationMultipleToInitialize.RoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationMultipleToInitialize.RoleDefinitions != null && rbacApplicationMultipleToInitialize.RoleDefinitions.CurrentPage != null)
                 {
+                    rbacApplicationMultipleToInitialize.RoleDefinitions.InitializeNextPageRequest(this.Client, rbacApplicationMultipleToInitialize.RoleDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationMultipleToInitialize.RoleDefinitions.AdditionalData = rbacApplicationMultipleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationMultipleToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationMultipleToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

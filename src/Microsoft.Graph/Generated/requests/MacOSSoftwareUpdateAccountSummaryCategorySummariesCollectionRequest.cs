@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified MacOSSoftwareUpdateCategorySummary to the collection via POST.
-        /// </summary>
-        /// <param name="macOSSoftwareUpdateCategorySummary">The MacOSSoftwareUpdateCategorySummary to add.</param>
-        /// <returns>The created MacOSSoftwareUpdateCategorySummary.</returns>
-        public System.Threading.Tasks.Task<MacOSSoftwareUpdateCategorySummary> AddAsync(MacOSSoftwareUpdateCategorySummary macOSSoftwareUpdateCategorySummary)
-        {
-            return this.AddAsync(macOSSoftwareUpdateCategorySummary, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified MacOSSoftwareUpdateCategorySummary to the collection via POST.
         /// </summary>
         /// <param name="macOSSoftwareUpdateCategorySummary">The MacOSSoftwareUpdateCategorySummary to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSSoftwareUpdateCategorySummary.</returns>
-        public System.Threading.Tasks.Task<MacOSSoftwareUpdateCategorySummary> AddAsync(MacOSSoftwareUpdateCategorySummary macOSSoftwareUpdateCategorySummary, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<MacOSSoftwareUpdateCategorySummary> AddAsync(MacOSSoftwareUpdateCategorySummary macOSSoftwareUpdateCategorySummary, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<MacOSSoftwareUpdateCategorySummary>(macOSSoftwareUpdateCategorySummary, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MacOSSoftwareUpdateCategorySummary to the collection via POST and returns a <see cref="GraphResponse{MacOSSoftwareUpdateCategorySummary}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IMacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionPage> GetAsync()
+        /// <param name="macOSSoftwareUpdateCategorySummary">The MacOSSoftwareUpdateCategorySummary to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateCategorySummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateCategorySummary>> AddResponseAsync(MacOSSoftwareUpdateCategorySummary macOSSoftwareUpdateCategorySummary, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateCategorySummary>(macOSSoftwareUpdateCategorySummary, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IMacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IMacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<MacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MacOSSoftwareUpdateAccountSummaryCategorySummariesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

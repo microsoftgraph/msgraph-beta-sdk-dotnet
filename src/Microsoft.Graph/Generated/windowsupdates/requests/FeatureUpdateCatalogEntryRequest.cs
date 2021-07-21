@@ -39,34 +39,28 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Creates the specified FeatureUpdateCatalogEntry using POST.
         /// </summary>
         /// <param name="featureUpdateCatalogEntryToCreate">The FeatureUpdateCatalogEntry to create.</param>
-        /// <returns>The created FeatureUpdateCatalogEntry.</returns>
-        public System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> CreateAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToCreate)
-        {
-            return this.CreateAsync(featureUpdateCatalogEntryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified FeatureUpdateCatalogEntry using POST.
-        /// </summary>
-        /// <param name="featureUpdateCatalogEntryToCreate">The FeatureUpdateCatalogEntry to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FeatureUpdateCatalogEntry.</returns>
-        public async System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> CreateAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> CreateAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<FeatureUpdateCatalogEntry>(featureUpdateCatalogEntryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified FeatureUpdateCatalogEntry.
+        /// Creates the specified FeatureUpdateCatalogEntry using POST and returns a <see cref="GraphResponse{FeatureUpdateCatalogEntry}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="featureUpdateCatalogEntryToCreate">The FeatureUpdateCatalogEntry to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FeatureUpdateCatalogEntry}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FeatureUpdateCatalogEntry>> CreateResponseAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<FeatureUpdateCatalogEntry>(featureUpdateCatalogEntryToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<FeatureUpdateCatalogEntry>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified FeatureUpdateCatalogEntry.
+        /// Deletes the specified FeatureUpdateCatalogEntry and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The FeatureUpdateCatalogEntry.</returns>
-        public System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The FeatureUpdateCatalogEntry.</returns>
-        public async System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<FeatureUpdateCatalogEntry>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified FeatureUpdateCatalogEntry using PATCH.
+        /// Gets the specified FeatureUpdateCatalogEntry and returns a <see cref="GraphResponse{FeatureUpdateCatalogEntry}"/> object.
         /// </summary>
-        /// <param name="featureUpdateCatalogEntryToUpdate">The FeatureUpdateCatalogEntry to update.</param>
-        /// <returns>The updated FeatureUpdateCatalogEntry.</returns>
-        public System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> UpdateAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FeatureUpdateCatalogEntry}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FeatureUpdateCatalogEntry>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(featureUpdateCatalogEntryToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<FeatureUpdateCatalogEntry>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated FeatureUpdateCatalogEntry.</returns>
-        public async System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> UpdateAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> UpdateAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default)
         {
-			if (featureUpdateCatalogEntryToUpdate.AdditionalData != null)
-			{
-				if (featureUpdateCatalogEntryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					featureUpdateCatalogEntryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, featureUpdateCatalogEntryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (featureUpdateCatalogEntryToUpdate.AdditionalData != null)
-            {
-                if (featureUpdateCatalogEntryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    featureUpdateCatalogEntryToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, featureUpdateCatalogEntryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<FeatureUpdateCatalogEntry>(featureUpdateCatalogEntryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified FeatureUpdateCatalogEntry using PATCH and returns a <see cref="GraphResponse{FeatureUpdateCatalogEntry}"/> object.
+        /// </summary>
+        /// <param name="featureUpdateCatalogEntryToUpdate">The FeatureUpdateCatalogEntry to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{FeatureUpdateCatalogEntry}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FeatureUpdateCatalogEntry>> UpdateResponseAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<FeatureUpdateCatalogEntry>(featureUpdateCatalogEntryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified FeatureUpdateCatalogEntry using PUT.
+        /// </summary>
+        /// <param name="featureUpdateCatalogEntryToUpdate">The FeatureUpdateCatalogEntry object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<FeatureUpdateCatalogEntry> PutAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<FeatureUpdateCatalogEntry>(featureUpdateCatalogEntryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified FeatureUpdateCatalogEntry using PUT and returns a <see cref="GraphResponse{FeatureUpdateCatalogEntry}"/> object.
+        /// </summary>
+        /// <param name="featureUpdateCatalogEntryToUpdate">The FeatureUpdateCatalogEntry object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{FeatureUpdateCatalogEntry}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FeatureUpdateCatalogEntry>> PutResponseAsync(FeatureUpdateCatalogEntry featureUpdateCatalogEntryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<FeatureUpdateCatalogEntry>(featureUpdateCatalogEntryToUpdate, cancellationToken);
         }
 
         /// <summary>

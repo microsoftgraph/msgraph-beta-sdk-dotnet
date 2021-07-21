@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IRbacApplicationRoleEligibilityScheduleRequestsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<RbacApplicationRoleEligibilityScheduleRequestsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<RbacApplicationRoleEligibilityScheduleRequestsCollectionPage>))]
     public interface IRbacApplicationRoleEligibilityScheduleRequestsCollectionPage : ICollectionPage<UnifiedRoleEligibilityScheduleRequestObject>
     {
         /// <summary>

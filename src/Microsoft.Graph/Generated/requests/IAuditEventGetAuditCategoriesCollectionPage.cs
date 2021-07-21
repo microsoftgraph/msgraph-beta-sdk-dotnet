@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IAuditEventGetAuditCategoriesCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<AuditEventGetAuditCategoriesCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<AuditEventGetAuditCategoriesCollectionPage>))]
     public interface IAuditEventGetAuditCategoriesCollectionPage : ICollectionPage<string>
     {
         /// <summary>

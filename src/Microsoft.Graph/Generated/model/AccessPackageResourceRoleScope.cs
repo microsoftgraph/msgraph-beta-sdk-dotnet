@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Package Resource Role Scope.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessPackageResourceRoleScope : Entity
     {
     
-		///<summary>
-		/// The AccessPackageResourceRoleScope constructor
-		///</summary>
-        public AccessPackageResourceRoleScope()
-        {
-            this.ODataType = "microsoft.graph.accessPackageResourceRoleScope";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public string CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets modified by.
         /// Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modifiedBy")]
         public string ModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets modified date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modifiedDateTime")]
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource role.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceRole", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResourceRole")]
         public AccessPackageResourceRole AccessPackageResourceRole { get; set; }
     
         /// <summary>
         /// Gets or sets access package resource scope.
         /// Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResourceScope", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResourceScope")]
         public AccessPackageResourceScope AccessPackageResourceScope { get; set; }
     
     }

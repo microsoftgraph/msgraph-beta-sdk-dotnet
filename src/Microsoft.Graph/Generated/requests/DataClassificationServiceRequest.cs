@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DataClassificationService using POST.
         /// </summary>
         /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
-        /// <returns>The created DataClassificationService.</returns>
-        public System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate)
-        {
-            return this.CreateAsync(dataClassificationServiceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DataClassificationService using POST.
-        /// </summary>
-        /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataClassificationService.</returns>
-        public async System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataClassificationService> CreateAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DataClassificationService>(dataClassificationServiceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DataClassificationService.
+        /// Creates the specified DataClassificationService using POST and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="dataClassificationServiceToCreate">The DataClassificationService to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> CreateResponseAsync(DataClassificationService dataClassificationServiceToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DataClassificationService>(dataClassificationServiceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DataClassificationService>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DataClassificationService.
+        /// Deletes the specified DataClassificationService and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DataClassificationService.</returns>
-        public System.Threading.Tasks.Task<DataClassificationService> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DataClassificationService.</returns>
-        public async System.Threading.Tasks.Task<DataClassificationService> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataClassificationService> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DataClassificationService>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DataClassificationService using PATCH.
+        /// Gets the specified DataClassificationService and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
         /// </summary>
-        /// <param name="dataClassificationServiceToUpdate">The DataClassificationService to update.</param>
-        /// <returns>The updated DataClassificationService.</returns>
-        public System.Threading.Tasks.Task<DataClassificationService> UpdateAsync(DataClassificationService dataClassificationServiceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(dataClassificationServiceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DataClassificationService>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DataClassificationService.</returns>
-        public async System.Threading.Tasks.Task<DataClassificationService> UpdateAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DataClassificationService> UpdateAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken = default)
         {
-			if (dataClassificationServiceToUpdate.AdditionalData != null)
-			{
-				if (dataClassificationServiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					dataClassificationServiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataClassificationServiceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (dataClassificationServiceToUpdate.AdditionalData != null)
-            {
-                if (dataClassificationServiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    dataClassificationServiceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, dataClassificationServiceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DataClassificationService>(dataClassificationServiceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DataClassificationService using PATCH and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
+        /// </summary>
+        /// <param name="dataClassificationServiceToUpdate">The DataClassificationService to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DataClassificationService}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> UpdateResponseAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DataClassificationService>(dataClassificationServiceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DataClassificationService using PUT.
+        /// </summary>
+        /// <param name="dataClassificationServiceToUpdate">The DataClassificationService object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DataClassificationService> PutAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DataClassificationService>(dataClassificationServiceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DataClassificationService using PUT and returns a <see cref="GraphResponse{DataClassificationService}"/> object.
+        /// </summary>
+        /// <param name="dataClassificationServiceToUpdate">The DataClassificationService object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DataClassificationService}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataClassificationService>> PutResponseAsync(DataClassificationService dataClassificationServiceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DataClassificationService>(dataClassificationServiceToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,183 +244,73 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DataClassificationService dataClassificationServiceToInitialize)
         {
 
-            if (dataClassificationServiceToInitialize != null && dataClassificationServiceToInitialize.AdditionalData != null)
+            if (dataClassificationServiceToInitialize != null)
             {
-
                 if (dataClassificationServiceToInitialize.ExactMatchDataStores != null && dataClassificationServiceToInitialize.ExactMatchDataStores.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ExactMatchDataStores.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ExactMatchDataStoresNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ExactMatchDataStores.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchDataStores@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.ExactMatchDataStores.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ClassifyFile != null && dataClassificationServiceToInitialize.ClassifyFile.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyFileNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ClassifyFile.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFile@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ClassifyFileJobs != null && dataClassificationServiceToInitialize.ClassifyFileJobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ClassifyFileJobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyFileJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ClassifyFileJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyFileJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.ClassifyFileJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ClassifyText != null && dataClassificationServiceToInitialize.ClassifyText.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyTextNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ClassifyText.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyText@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ClassifyTextJobs != null && dataClassificationServiceToInitialize.ClassifyTextJobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ClassifyTextJobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyTextJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ClassifyTextJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("classifyTextJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.ClassifyTextJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs != null && dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateDlpPoliciesJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.EvaluateDlpPoliciesJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.EvaluateLabelJobs != null && dataClassificationServiceToInitialize.EvaluateLabelJobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.EvaluateLabelJobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.EvaluateLabelJobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.EvaluateLabelJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("evaluateLabelJobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.EvaluateLabelJobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.Jobs != null && dataClassificationServiceToInitialize.Jobs.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.JobsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.Jobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("jobs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.Jobs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.SensitiveTypes != null && dataClassificationServiceToInitialize.SensitiveTypes.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.SensitiveTypes.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.SensitiveTypesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.SensitiveTypes.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitiveTypes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.SensitiveTypes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.SensitivityLabels != null && dataClassificationServiceToInitialize.SensitivityLabels.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.SensitivityLabels.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.SensitivityLabelsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.SensitivityLabels.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("sensitivityLabels@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.SensitivityLabels.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (dataClassificationServiceToInitialize.ExactMatchUploadAgents != null && dataClassificationServiceToInitialize.ExactMatchUploadAgents.CurrentPage != null)
                 {
+                    dataClassificationServiceToInitialize.ExactMatchUploadAgents.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ExactMatchUploadAgentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ExactMatchUploadAgents.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    dataClassificationServiceToInitialize.AdditionalData.TryGetValue("exactMatchUploadAgents@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        dataClassificationServiceToInitialize.ExactMatchUploadAgents.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

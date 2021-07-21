@@ -39,34 +39,28 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Creates the specified DeploymentAudience using POST.
         /// </summary>
         /// <param name="deploymentAudienceToCreate">The DeploymentAudience to create.</param>
-        /// <returns>The created DeploymentAudience.</returns>
-        public System.Threading.Tasks.Task<DeploymentAudience> CreateAsync(DeploymentAudience deploymentAudienceToCreate)
-        {
-            return this.CreateAsync(deploymentAudienceToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeploymentAudience using POST.
-        /// </summary>
-        /// <param name="deploymentAudienceToCreate">The DeploymentAudience to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeploymentAudience.</returns>
-        public async System.Threading.Tasks.Task<DeploymentAudience> CreateAsync(DeploymentAudience deploymentAudienceToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeploymentAudience> CreateAsync(DeploymentAudience deploymentAudienceToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeploymentAudience>(deploymentAudienceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeploymentAudience.
+        /// Creates the specified DeploymentAudience using POST and returns a <see cref="GraphResponse{DeploymentAudience}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deploymentAudienceToCreate">The DeploymentAudience to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeploymentAudience}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeploymentAudience>> CreateResponseAsync(DeploymentAudience deploymentAudienceToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeploymentAudience>(deploymentAudienceToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeploymentAudience>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeploymentAudience.
+        /// Deletes the specified DeploymentAudience and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeploymentAudience.</returns>
-        public System.Threading.Tasks.Task<DeploymentAudience> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeploymentAudience.</returns>
-        public async System.Threading.Tasks.Task<DeploymentAudience> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeploymentAudience> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeploymentAudience>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeploymentAudience using PATCH.
+        /// Gets the specified DeploymentAudience and returns a <see cref="GraphResponse{DeploymentAudience}"/> object.
         /// </summary>
-        /// <param name="deploymentAudienceToUpdate">The DeploymentAudience to update.</param>
-        /// <returns>The updated DeploymentAudience.</returns>
-        public System.Threading.Tasks.Task<DeploymentAudience> UpdateAsync(DeploymentAudience deploymentAudienceToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeploymentAudience}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeploymentAudience>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deploymentAudienceToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeploymentAudience>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeploymentAudience.</returns>
-        public async System.Threading.Tasks.Task<DeploymentAudience> UpdateAsync(DeploymentAudience deploymentAudienceToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeploymentAudience> UpdateAsync(DeploymentAudience deploymentAudienceToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deploymentAudienceToUpdate.AdditionalData != null)
-			{
-				if (deploymentAudienceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					deploymentAudienceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deploymentAudienceToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deploymentAudienceToUpdate.AdditionalData != null)
-            {
-                if (deploymentAudienceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deploymentAudienceToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deploymentAudienceToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeploymentAudience>(deploymentAudienceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeploymentAudience using PATCH and returns a <see cref="GraphResponse{DeploymentAudience}"/> object.
+        /// </summary>
+        /// <param name="deploymentAudienceToUpdate">The DeploymentAudience to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeploymentAudience}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeploymentAudience>> UpdateResponseAsync(DeploymentAudience deploymentAudienceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeploymentAudience>(deploymentAudienceToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeploymentAudience using PUT.
+        /// </summary>
+        /// <param name="deploymentAudienceToUpdate">The DeploymentAudience object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeploymentAudience> PutAsync(DeploymentAudience deploymentAudienceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeploymentAudience>(deploymentAudienceToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeploymentAudience using PUT and returns a <see cref="GraphResponse{DeploymentAudience}"/> object.
+        /// </summary>
+        /// <param name="deploymentAudienceToUpdate">The DeploymentAudience object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeploymentAudience}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeploymentAudience>> PutResponseAsync(DeploymentAudience deploymentAudienceToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeploymentAudience>(deploymentAudienceToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph.WindowsUpdates
         private void InitializeCollectionProperties(DeploymentAudience deploymentAudienceToInitialize)
         {
 
-            if (deploymentAudienceToInitialize != null && deploymentAudienceToInitialize.AdditionalData != null)
+            if (deploymentAudienceToInitialize != null)
             {
-
                 if (deploymentAudienceToInitialize.Exclusions != null && deploymentAudienceToInitialize.Exclusions.CurrentPage != null)
                 {
+                    deploymentAudienceToInitialize.Exclusions.InitializeNextPageRequest(this.Client, deploymentAudienceToInitialize.ExclusionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deploymentAudienceToInitialize.Exclusions.AdditionalData = deploymentAudienceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deploymentAudienceToInitialize.AdditionalData.TryGetValue("exclusions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deploymentAudienceToInitialize.Exclusions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deploymentAudienceToInitialize.Members != null && deploymentAudienceToInitialize.Members.CurrentPage != null)
                 {
+                    deploymentAudienceToInitialize.Members.InitializeNextPageRequest(this.Client, deploymentAudienceToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deploymentAudienceToInitialize.Members.AdditionalData = deploymentAudienceToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deploymentAudienceToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deploymentAudienceToInitialize.Members.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

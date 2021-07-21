@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ServiceAnnouncementBase using POST.
         /// </summary>
         /// <param name="serviceAnnouncementBaseToCreate">The ServiceAnnouncementBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServiceAnnouncementBase.</returns>
-        System.Threading.Tasks.Task<ServiceAnnouncementBase> CreateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToCreate);        /// <summary>
-        /// Creates the specified ServiceAnnouncementBase using POST.
+        System.Threading.Tasks.Task<ServiceAnnouncementBase> CreateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ServiceAnnouncementBase using POST and returns a <see cref="GraphResponse{ServiceAnnouncementBase}"/> object.
         /// </summary>
         /// <param name="serviceAnnouncementBaseToCreate">The ServiceAnnouncementBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ServiceAnnouncementBase.</returns>
-        System.Threading.Tasks.Task<ServiceAnnouncementBase> CreateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ServiceAnnouncementBase.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ServiceAnnouncementBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementBase>> CreateResponseAsync(ServiceAnnouncementBase serviceAnnouncementBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ServiceAnnouncementBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ServiceAnnouncementBase.
+        /// Deletes the specified ServiceAnnouncementBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ServiceAnnouncementBase.</returns>
-        System.Threading.Tasks.Task<ServiceAnnouncementBase> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ServiceAnnouncementBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ServiceAnnouncementBase.</returns>
-        System.Threading.Tasks.Task<ServiceAnnouncementBase> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ServiceAnnouncementBase> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ServiceAnnouncementBase using PATCH.
+        /// Gets the specified ServiceAnnouncementBase and returns a <see cref="GraphResponse{ServiceAnnouncementBase}"/> object.
         /// </summary>
-        /// <param name="serviceAnnouncementBaseToUpdate">The ServiceAnnouncementBase to update.</param>
-        /// <returns>The updated ServiceAnnouncementBase.</returns>
-        System.Threading.Tasks.Task<ServiceAnnouncementBase> UpdateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServiceAnnouncementBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ServiceAnnouncementBase using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ServiceAnnouncementBase.</returns>
-        System.Threading.Tasks.Task<ServiceAnnouncementBase> UpdateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ServiceAnnouncementBase> UpdateAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ServiceAnnouncementBase using PATCH and returns a <see cref="GraphResponse{ServiceAnnouncementBase}"/> object.
+        /// </summary>
+        /// <param name="serviceAnnouncementBaseToUpdate">The ServiceAnnouncementBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ServiceAnnouncementBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementBase>> UpdateResponseAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ServiceAnnouncementBase using PUT.
+        /// </summary>
+        /// <param name="serviceAnnouncementBaseToUpdate">The ServiceAnnouncementBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ServiceAnnouncementBase> PutAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ServiceAnnouncementBase using PUT and returns a <see cref="GraphResponse{ServiceAnnouncementBase}"/> object.
+        /// </summary>
+        /// <param name="serviceAnnouncementBaseToUpdate">The ServiceAnnouncementBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ServiceAnnouncementBase}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServiceAnnouncementBase>> PutResponseAsync(ServiceAnnouncementBase serviceAnnouncementBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

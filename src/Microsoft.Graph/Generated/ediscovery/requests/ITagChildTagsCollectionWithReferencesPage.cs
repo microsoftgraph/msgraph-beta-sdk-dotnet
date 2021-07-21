@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.Ediscovery
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface ITagChildTagsCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<TagChildTagsCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<TagChildTagsCollectionWithReferencesPage>))]
     public interface ITagChildTagsCollectionWithReferencesPage : Microsoft.Graph.ICollectionPage<Tag>
     {
         /// <summary>

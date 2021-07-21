@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ManagedDeviceSummarizedAppState.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ManagedDeviceSummarizedAppState>))]
     public partial class ManagedDeviceSummarizedAppState
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ManagedDeviceSummarizedAppState"/> class.
-        /// </summary>
-        public ManagedDeviceSummarizedAppState()
-        {
-            this.ODataType = "microsoft.graph.managedDeviceSummarizedAppState";
-        }
 
         /// <summary>
         /// Gets or sets deviceId.
         /// DeviceId of device represented by this object
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets summarizedAppState.
         /// runState for the object. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summarizedAppState", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("summarizedAppState")]
         public RunState? SummarizedAppState { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

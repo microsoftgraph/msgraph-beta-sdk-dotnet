@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified IosImportedPFXCertificateProfile using POST.
         /// </summary>
         /// <param name="iosImportedPFXCertificateProfileToCreate">The IosImportedPFXCertificateProfile to create.</param>
-        /// <returns>The created IosImportedPFXCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> CreateAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToCreate)
-        {
-            return this.CreateAsync(iosImportedPFXCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified IosImportedPFXCertificateProfile using POST.
-        /// </summary>
-        /// <param name="iosImportedPFXCertificateProfileToCreate">The IosImportedPFXCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosImportedPFXCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> CreateAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> CreateAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<IosImportedPFXCertificateProfile>(iosImportedPFXCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified IosImportedPFXCertificateProfile.
+        /// Creates the specified IosImportedPFXCertificateProfile using POST and returns a <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="iosImportedPFXCertificateProfileToCreate">The IosImportedPFXCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosImportedPFXCertificateProfile>> CreateResponseAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<IosImportedPFXCertificateProfile>(iosImportedPFXCertificateProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<IosImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified IosImportedPFXCertificateProfile.
+        /// Deletes the specified IosImportedPFXCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosImportedPFXCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosImportedPFXCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<IosImportedPFXCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified IosImportedPFXCertificateProfile using PATCH.
+        /// Gets the specified IosImportedPFXCertificateProfile and returns a <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object.
         /// </summary>
-        /// <param name="iosImportedPFXCertificateProfileToUpdate">The IosImportedPFXCertificateProfile to update.</param>
-        /// <returns>The updated IosImportedPFXCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> UpdateAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosImportedPFXCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(iosImportedPFXCertificateProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<IosImportedPFXCertificateProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosImportedPFXCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> UpdateAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> UpdateAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
-			if (iosImportedPFXCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (iosImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					iosImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosImportedPFXCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (iosImportedPFXCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (iosImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    iosImportedPFXCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosImportedPFXCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<IosImportedPFXCertificateProfile>(iosImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosImportedPFXCertificateProfile using PATCH and returns a <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosImportedPFXCertificateProfileToUpdate">The IosImportedPFXCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosImportedPFXCertificateProfile>> UpdateResponseAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<IosImportedPFXCertificateProfile>(iosImportedPFXCertificateProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified IosImportedPFXCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="iosImportedPFXCertificateProfileToUpdate">The IosImportedPFXCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<IosImportedPFXCertificateProfile> PutAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<IosImportedPFXCertificateProfile>(iosImportedPFXCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified IosImportedPFXCertificateProfile using PUT and returns a <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosImportedPFXCertificateProfileToUpdate">The IosImportedPFXCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{IosImportedPFXCertificateProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosImportedPFXCertificateProfile>> PutResponseAsync(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<IosImportedPFXCertificateProfile>(iosImportedPFXCertificateProfileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IosImportedPFXCertificateProfile iosImportedPFXCertificateProfileToInitialize)
         {
 
-            if (iosImportedPFXCertificateProfileToInitialize != null && iosImportedPFXCertificateProfileToInitialize.AdditionalData != null)
+            if (iosImportedPFXCertificateProfileToInitialize != null)
             {
-
                 if (iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = iosImportedPFXCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    iosImportedPFXCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        iosImportedPFXCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

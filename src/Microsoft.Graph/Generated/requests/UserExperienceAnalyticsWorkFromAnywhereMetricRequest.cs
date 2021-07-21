@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsWorkFromAnywhereMetric using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsWorkFromAnywhereMetricToCreate">The UserExperienceAnalyticsWorkFromAnywhereMetric to create.</param>
-        /// <returns>The created UserExperienceAnalyticsWorkFromAnywhereMetric.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> CreateAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToCreate)
-        {
-            return this.CreateAsync(userExperienceAnalyticsWorkFromAnywhereMetricToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsWorkFromAnywhereMetric using POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsWorkFromAnywhereMetricToCreate">The UserExperienceAnalyticsWorkFromAnywhereMetric to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsWorkFromAnywhereMetric.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> CreateAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> CreateAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetric>(userExperienceAnalyticsWorkFromAnywhereMetricToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsWorkFromAnywhereMetric.
+        /// Creates the specified UserExperienceAnalyticsWorkFromAnywhereMetric using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetric}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userExperienceAnalyticsWorkFromAnywhereMetricToCreate">The UserExperienceAnalyticsWorkFromAnywhereMetric to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetric}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetric>> CreateResponseAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetric>(userExperienceAnalyticsWorkFromAnywhereMetricToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetric>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserExperienceAnalyticsWorkFromAnywhereMetric.
+        /// Deletes the specified UserExperienceAnalyticsWorkFromAnywhereMetric and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsWorkFromAnywhereMetric.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsWorkFromAnywhereMetric.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetric>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserExperienceAnalyticsWorkFromAnywhereMetric using PATCH.
+        /// Gets the specified UserExperienceAnalyticsWorkFromAnywhereMetric and returns a <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetric}"/> object.
         /// </summary>
-        /// <param name="userExperienceAnalyticsWorkFromAnywhereMetricToUpdate">The UserExperienceAnalyticsWorkFromAnywhereMetric to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsWorkFromAnywhereMetric.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> UpdateAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetric}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetric>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetric>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsWorkFromAnywhereMetric.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> UpdateAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> UpdateAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, CancellationToken cancellationToken = default)
         {
-			if (userExperienceAnalyticsWorkFromAnywhereMetricToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsWorkFromAnywhereMetricToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsWorkFromAnywhereMetricToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsWorkFromAnywhereMetricToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsWorkFromAnywhereMetricToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsWorkFromAnywhereMetricToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsWorkFromAnywhereMetricToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsWorkFromAnywhereMetricToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetric>(userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsWorkFromAnywhereMetric using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetric}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsWorkFromAnywhereMetricToUpdate">The UserExperienceAnalyticsWorkFromAnywhereMetric to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetric}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetric>> UpdateResponseAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetric>(userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsWorkFromAnywhereMetric using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsWorkFromAnywhereMetricToUpdate">The UserExperienceAnalyticsWorkFromAnywhereMetric object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsWorkFromAnywhereMetric> PutAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetric>(userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsWorkFromAnywhereMetric using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetric}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsWorkFromAnywhereMetricToUpdate">The UserExperienceAnalyticsWorkFromAnywhereMetric object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserExperienceAnalyticsWorkFromAnywhereMetric}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetric>> PutResponseAsync(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsWorkFromAnywhereMetric>(userExperienceAnalyticsWorkFromAnywhereMetricToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(UserExperienceAnalyticsWorkFromAnywhereMetric userExperienceAnalyticsWorkFromAnywhereMetricToInitialize)
         {
 
-            if (userExperienceAnalyticsWorkFromAnywhereMetricToInitialize != null && userExperienceAnalyticsWorkFromAnywhereMetricToInitialize.AdditionalData != null)
+            if (userExperienceAnalyticsWorkFromAnywhereMetricToInitialize != null)
             {
-
                 if (userExperienceAnalyticsWorkFromAnywhereMetricToInitialize.MetricDevices != null && userExperienceAnalyticsWorkFromAnywhereMetricToInitialize.MetricDevices.CurrentPage != null)
                 {
+                    userExperienceAnalyticsWorkFromAnywhereMetricToInitialize.MetricDevices.InitializeNextPageRequest(this.Client, userExperienceAnalyticsWorkFromAnywhereMetricToInitialize.MetricDevicesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     userExperienceAnalyticsWorkFromAnywhereMetricToInitialize.MetricDevices.AdditionalData = userExperienceAnalyticsWorkFromAnywhereMetricToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    userExperienceAnalyticsWorkFromAnywhereMetricToInitialize.AdditionalData.TryGetValue("metricDevices@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        userExperienceAnalyticsWorkFromAnywhereMetricToInitialize.MetricDevices.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

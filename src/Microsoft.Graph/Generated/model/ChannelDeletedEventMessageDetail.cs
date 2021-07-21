@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ChannelDeletedEventMessageDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class ChannelDeletedEventMessageDetail : EventMessageDetail
     {
         /// <summary>
@@ -32,19 +30,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets channelDisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channelDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("channelDisplayName")]
         public string ChannelDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets channelId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channelId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("channelId")]
         public string ChannelId { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
     }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkPkcsCertificateProfile using POST.
         /// </summary>
         /// <param name="androidForWorkPkcsCertificateProfileToCreate">The AndroidForWorkPkcsCertificateProfile to create.</param>
-        /// <returns>The created AndroidForWorkPkcsCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> CreateAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToCreate)
-        {
-            return this.CreateAsync(androidForWorkPkcsCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidForWorkPkcsCertificateProfile using POST.
-        /// </summary>
-        /// <param name="androidForWorkPkcsCertificateProfileToCreate">The AndroidForWorkPkcsCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkPkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> CreateAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> CreateAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidForWorkPkcsCertificateProfile>(androidForWorkPkcsCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidForWorkPkcsCertificateProfile.
+        /// Creates the specified AndroidForWorkPkcsCertificateProfile using POST and returns a <see cref="GraphResponse{AndroidForWorkPkcsCertificateProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidForWorkPkcsCertificateProfileToCreate">The AndroidForWorkPkcsCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkPkcsCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkPkcsCertificateProfile>> CreateResponseAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkPkcsCertificateProfile>(androidForWorkPkcsCertificateProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidForWorkPkcsCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidForWorkPkcsCertificateProfile.
+        /// Deletes the specified AndroidForWorkPkcsCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidForWorkPkcsCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkPkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidForWorkPkcsCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidForWorkPkcsCertificateProfile using PATCH.
+        /// Gets the specified AndroidForWorkPkcsCertificateProfile and returns a <see cref="GraphResponse{AndroidForWorkPkcsCertificateProfile}"/> object.
         /// </summary>
-        /// <param name="androidForWorkPkcsCertificateProfileToUpdate">The AndroidForWorkPkcsCertificateProfile to update.</param>
-        /// <returns>The updated AndroidForWorkPkcsCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> UpdateAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkPkcsCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkPkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(androidForWorkPkcsCertificateProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkPkcsCertificateProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkPkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> UpdateAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> UpdateAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
-			if (androidForWorkPkcsCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (androidForWorkPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidForWorkPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkPkcsCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidForWorkPkcsCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (androidForWorkPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidForWorkPkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkPkcsCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidForWorkPkcsCertificateProfile>(androidForWorkPkcsCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkPkcsCertificateProfile using PATCH and returns a <see cref="GraphResponse{AndroidForWorkPkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkPkcsCertificateProfileToUpdate">The AndroidForWorkPkcsCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkPkcsCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkPkcsCertificateProfile>> UpdateResponseAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkPkcsCertificateProfile>(androidForWorkPkcsCertificateProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkPkcsCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="androidForWorkPkcsCertificateProfileToUpdate">The AndroidForWorkPkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidForWorkPkcsCertificateProfile> PutAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidForWorkPkcsCertificateProfile>(androidForWorkPkcsCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkPkcsCertificateProfile using PUT and returns a <see cref="GraphResponse{AndroidForWorkPkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkPkcsCertificateProfileToUpdate">The AndroidForWorkPkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidForWorkPkcsCertificateProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkPkcsCertificateProfile>> PutResponseAsync(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkPkcsCertificateProfile>(androidForWorkPkcsCertificateProfileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AndroidForWorkPkcsCertificateProfile androidForWorkPkcsCertificateProfileToInitialize)
         {
 
-            if (androidForWorkPkcsCertificateProfileToInitialize != null && androidForWorkPkcsCertificateProfileToInitialize.AdditionalData != null)
+            if (androidForWorkPkcsCertificateProfileToInitialize != null)
             {
-
                 if (androidForWorkPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && androidForWorkPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    androidForWorkPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, androidForWorkPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     androidForWorkPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = androidForWorkPkcsCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    androidForWorkPkcsCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        androidForWorkPkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

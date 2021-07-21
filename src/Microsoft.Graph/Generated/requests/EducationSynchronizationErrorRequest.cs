@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified EducationSynchronizationError using POST.
         /// </summary>
         /// <param name="educationSynchronizationErrorToCreate">The EducationSynchronizationError to create.</param>
-        /// <returns>The created EducationSynchronizationError.</returns>
-        public System.Threading.Tasks.Task<EducationSynchronizationError> CreateAsync(EducationSynchronizationError educationSynchronizationErrorToCreate)
-        {
-            return this.CreateAsync(educationSynchronizationErrorToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EducationSynchronizationError using POST.
-        /// </summary>
-        /// <param name="educationSynchronizationErrorToCreate">The EducationSynchronizationError to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSynchronizationError.</returns>
-        public async System.Threading.Tasks.Task<EducationSynchronizationError> CreateAsync(EducationSynchronizationError educationSynchronizationErrorToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationSynchronizationError> CreateAsync(EducationSynchronizationError educationSynchronizationErrorToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EducationSynchronizationError>(educationSynchronizationErrorToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EducationSynchronizationError.
+        /// Creates the specified EducationSynchronizationError using POST and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="educationSynchronizationErrorToCreate">The EducationSynchronizationError to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> CreateResponseAsync(EducationSynchronizationError educationSynchronizationErrorToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EducationSynchronizationError>(educationSynchronizationErrorToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EducationSynchronizationError>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EducationSynchronizationError.
+        /// Deletes the specified EducationSynchronizationError and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EducationSynchronizationError.</returns>
-        public System.Threading.Tasks.Task<EducationSynchronizationError> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EducationSynchronizationError.</returns>
-        public async System.Threading.Tasks.Task<EducationSynchronizationError> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationSynchronizationError> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EducationSynchronizationError>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EducationSynchronizationError using PATCH.
+        /// Gets the specified EducationSynchronizationError and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
         /// </summary>
-        /// <param name="educationSynchronizationErrorToUpdate">The EducationSynchronizationError to update.</param>
-        /// <returns>The updated EducationSynchronizationError.</returns>
-        public System.Threading.Tasks.Task<EducationSynchronizationError> UpdateAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(educationSynchronizationErrorToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EducationSynchronizationError>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EducationSynchronizationError.</returns>
-        public async System.Threading.Tasks.Task<EducationSynchronizationError> UpdateAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EducationSynchronizationError> UpdateAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken = default)
         {
-			if (educationSynchronizationErrorToUpdate.AdditionalData != null)
-			{
-				if (educationSynchronizationErrorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					educationSynchronizationErrorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationSynchronizationErrorToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (educationSynchronizationErrorToUpdate.AdditionalData != null)
-            {
-                if (educationSynchronizationErrorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    educationSynchronizationErrorToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationSynchronizationErrorToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EducationSynchronizationError>(educationSynchronizationErrorToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationSynchronizationError using PATCH and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
+        /// </summary>
+        /// <param name="educationSynchronizationErrorToUpdate">The EducationSynchronizationError to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationSynchronizationError}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> UpdateResponseAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EducationSynchronizationError>(educationSynchronizationErrorToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EducationSynchronizationError using PUT.
+        /// </summary>
+        /// <param name="educationSynchronizationErrorToUpdate">The EducationSynchronizationError object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EducationSynchronizationError> PutAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EducationSynchronizationError>(educationSynchronizationErrorToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EducationSynchronizationError using PUT and returns a <see cref="GraphResponse{EducationSynchronizationError}"/> object.
+        /// </summary>
+        /// <param name="educationSynchronizationErrorToUpdate">The EducationSynchronizationError object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EducationSynchronizationError}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationSynchronizationError>> PutResponseAsync(EducationSynchronizationError educationSynchronizationErrorToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EducationSynchronizationError>(educationSynchronizationErrorToUpdate, cancellationToken);
         }
 
         /// <summary>

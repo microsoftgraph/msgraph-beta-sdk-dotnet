@@ -12,24 +12,22 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Ios Expedited Checkin Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosExpeditedCheckinConfiguration : AppleExpeditedCheckinConfigurationBase
     {
     
-		///<summary>
-		/// The IosExpeditedCheckinConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The IosExpeditedCheckinConfiguration constructor
+        ///</summary>
         public IosExpeditedCheckinConfiguration()
         {
             this.ODataType = "microsoft.graph.iosExpeditedCheckinConfiguration";
         }
-	
+
     }
 }
 

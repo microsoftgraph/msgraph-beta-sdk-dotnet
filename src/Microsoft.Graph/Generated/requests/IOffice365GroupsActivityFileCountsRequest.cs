@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Office365GroupsActivityFileCounts using POST.
         /// </summary>
         /// <param name="office365GroupsActivityFileCountsToCreate">The Office365GroupsActivityFileCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Office365GroupsActivityFileCounts.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> CreateAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToCreate);        /// <summary>
-        /// Creates the specified Office365GroupsActivityFileCounts using POST.
+        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> CreateAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Office365GroupsActivityFileCounts using POST and returns a <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> object.
         /// </summary>
         /// <param name="office365GroupsActivityFileCountsToCreate">The Office365GroupsActivityFileCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Office365GroupsActivityFileCounts.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> CreateAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Office365GroupsActivityFileCounts.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityFileCounts>> CreateResponseAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Office365GroupsActivityFileCounts.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Office365GroupsActivityFileCounts.
+        /// Deletes the specified Office365GroupsActivityFileCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Office365GroupsActivityFileCounts.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Office365GroupsActivityFileCounts.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365GroupsActivityFileCounts.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Office365GroupsActivityFileCounts using PATCH.
+        /// Gets the specified Office365GroupsActivityFileCounts and returns a <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> object.
         /// </summary>
-        /// <param name="office365GroupsActivityFileCountsToUpdate">The Office365GroupsActivityFileCounts to update.</param>
-        /// <returns>The updated Office365GroupsActivityFileCounts.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> UpdateAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityFileCounts>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Office365GroupsActivityFileCounts using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365GroupsActivityFileCounts.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> UpdateAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> UpdateAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Office365GroupsActivityFileCounts using PATCH and returns a <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> object.
+        /// </summary>
+        /// <param name="office365GroupsActivityFileCountsToUpdate">The Office365GroupsActivityFileCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityFileCounts>> UpdateResponseAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Office365GroupsActivityFileCounts using PUT.
+        /// </summary>
+        /// <param name="office365GroupsActivityFileCountsToUpdate">The Office365GroupsActivityFileCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Office365GroupsActivityFileCounts> PutAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Office365GroupsActivityFileCounts using PUT and returns a <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> object.
+        /// </summary>
+        /// <param name="office365GroupsActivityFileCountsToUpdate">The Office365GroupsActivityFileCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Office365GroupsActivityFileCounts}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityFileCounts>> PutResponseAsync(Office365GroupsActivityFileCounts office365GroupsActivityFileCountsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

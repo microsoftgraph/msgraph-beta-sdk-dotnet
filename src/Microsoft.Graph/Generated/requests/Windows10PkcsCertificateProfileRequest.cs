@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10PkcsCertificateProfile using POST.
         /// </summary>
         /// <param name="windows10PkcsCertificateProfileToCreate">The Windows10PkcsCertificateProfile to create.</param>
-        /// <returns>The created Windows10PkcsCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> CreateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToCreate)
-        {
-            return this.CreateAsync(windows10PkcsCertificateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10PkcsCertificateProfile using POST.
-        /// </summary>
-        /// <param name="windows10PkcsCertificateProfileToCreate">The Windows10PkcsCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10PkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> CreateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> CreateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Windows10PkcsCertificateProfile>(windows10PkcsCertificateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Windows10PkcsCertificateProfile.
+        /// Creates the specified Windows10PkcsCertificateProfile using POST and returns a <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windows10PkcsCertificateProfileToCreate">The Windows10PkcsCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> CreateResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Windows10PkcsCertificateProfile>(windows10PkcsCertificateProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Windows10PkcsCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Windows10PkcsCertificateProfile.
+        /// Deletes the specified Windows10PkcsCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Windows10PkcsCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10PkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Windows10PkcsCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Windows10PkcsCertificateProfile using PATCH.
+        /// Gets the specified Windows10PkcsCertificateProfile and returns a <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object.
         /// </summary>
-        /// <param name="windows10PkcsCertificateProfileToUpdate">The Windows10PkcsCertificateProfile to update.</param>
-        /// <returns>The updated Windows10PkcsCertificateProfile.</returns>
-        public System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> UpdateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windows10PkcsCertificateProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Windows10PkcsCertificateProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10PkcsCertificateProfile.</returns>
-        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> UpdateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> UpdateAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windows10PkcsCertificateProfileToUpdate.AdditionalData != null)
-			{
-				if (windows10PkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10PkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10PkcsCertificateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10PkcsCertificateProfileToUpdate.AdditionalData != null)
-            {
-                if (windows10PkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10PkcsCertificateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10PkcsCertificateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Windows10PkcsCertificateProfile>(windows10PkcsCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10PkcsCertificateProfile using PATCH and returns a <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windows10PkcsCertificateProfileToUpdate">The Windows10PkcsCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> UpdateResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Windows10PkcsCertificateProfile>(windows10PkcsCertificateProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10PkcsCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="windows10PkcsCertificateProfileToUpdate">The Windows10PkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Windows10PkcsCertificateProfile> PutAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Windows10PkcsCertificateProfile>(windows10PkcsCertificateProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10PkcsCertificateProfile using PUT and returns a <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="windows10PkcsCertificateProfileToUpdate">The Windows10PkcsCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Windows10PkcsCertificateProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10PkcsCertificateProfile>> PutResponseAsync(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Windows10PkcsCertificateProfile>(windows10PkcsCertificateProfileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Windows10PkcsCertificateProfile windows10PkcsCertificateProfileToInitialize)
         {
 
-            if (windows10PkcsCertificateProfileToInitialize != null && windows10PkcsCertificateProfileToInitialize.AdditionalData != null)
+            if (windows10PkcsCertificateProfileToInitialize != null)
             {
-
                 if (windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates != null && windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.CurrentPage != null)
                 {
+                    windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(this.Client, windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.AdditionalData = windows10PkcsCertificateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windows10PkcsCertificateProfileToInitialize.AdditionalData.TryGetValue("managedDeviceCertificateStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windows10PkcsCertificateProfileToInitialize.ManagedDeviceCertificateStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsFeatureUpdateProfileAssignment using POST.
         /// </summary>
         /// <param name="windowsFeatureUpdateProfileAssignmentToCreate">The WindowsFeatureUpdateProfileAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> CreateAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToCreate);        /// <summary>
-        /// Creates the specified WindowsFeatureUpdateProfileAssignment using POST.
+        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> CreateAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WindowsFeatureUpdateProfileAssignment using POST and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
         /// </summary>
         /// <param name="windowsFeatureUpdateProfileAssignmentToCreate">The WindowsFeatureUpdateProfileAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> CreateAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsFeatureUpdateProfileAssignment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> CreateResponseAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsFeatureUpdateProfileAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WindowsFeatureUpdateProfileAssignment.
+        /// Deletes the specified WindowsFeatureUpdateProfileAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsFeatureUpdateProfileAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WindowsFeatureUpdateProfileAssignment using PATCH.
+        /// Gets the specified WindowsFeatureUpdateProfileAssignment and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
         /// </summary>
-        /// <param name="windowsFeatureUpdateProfileAssignmentToUpdate">The WindowsFeatureUpdateProfileAssignment to update.</param>
-        /// <returns>The updated WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> UpdateAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsFeatureUpdateProfileAssignment using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsFeatureUpdateProfileAssignment.</returns>
-        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> UpdateAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> UpdateAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateProfileAssignment using PATCH and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateProfileAssignmentToUpdate">The WindowsFeatureUpdateProfileAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> UpdateResponseAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateProfileAssignment using PUT.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateProfileAssignmentToUpdate">The WindowsFeatureUpdateProfileAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsFeatureUpdateProfileAssignment> PutAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsFeatureUpdateProfileAssignment using PUT and returns a <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> object.
+        /// </summary>
+        /// <param name="windowsFeatureUpdateProfileAssignmentToUpdate">The WindowsFeatureUpdateProfileAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsFeatureUpdateProfileAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsFeatureUpdateProfileAssignment>> PutResponseAsync(WindowsFeatureUpdateProfileAssignment windowsFeatureUpdateProfileAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

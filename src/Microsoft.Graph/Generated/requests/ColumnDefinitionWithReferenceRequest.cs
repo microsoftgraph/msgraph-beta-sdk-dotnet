@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ColumnDefinition.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ColumnDefinition.</returns>
-        public System.Threading.Tasks.Task<ColumnDefinition> GetAsync()
+        public async System.Threading.Tasks.Task<ColumnDefinition> GetAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<ColumnDefinition>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified ColumnDefinition.
+        /// Gets the specified ColumnDefinition and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The ColumnDefinition.</returns>
-        public async System.Threading.Tasks.Task<ColumnDefinition> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<ColumnDefinition>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ColumnDefinition>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified ColumnDefinition using POST.
         /// </summary>
         /// <param name="columnDefinitionToCreate">The ColumnDefinition to create.</param>
-        /// <returns>The created ColumnDefinition.</returns>
-        public System.Threading.Tasks.Task<ColumnDefinition> CreateAsync(ColumnDefinition columnDefinitionToCreate)
-        {
-            return this.CreateAsync(columnDefinitionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ColumnDefinition using POST.
-        /// </summary>
-        /// <param name="columnDefinitionToCreate">The ColumnDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ColumnDefinition.</returns>
-        public async System.Threading.Tasks.Task<ColumnDefinition> CreateAsync(ColumnDefinition columnDefinitionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ColumnDefinition> CreateAsync(ColumnDefinition columnDefinitionToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ColumnDefinition>(columnDefinitionToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified ColumnDefinition using PATCH.
+        /// Creates the specified ColumnDefinition using POST and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
         /// </summary>
-        /// <param name="columnDefinitionToUpdate">The ColumnDefinition to update.</param>
-        /// <returns>The updated ColumnDefinition.</returns>
-        public System.Threading.Tasks.Task<ColumnDefinition> UpdateAsync(ColumnDefinition columnDefinitionToUpdate)
+        /// <param name="columnDefinitionToCreate">The ColumnDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> CreateResponseAsync(ColumnDefinition columnDefinitionToCreate, CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(columnDefinitionToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ColumnDefinition>(columnDefinitionToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified ColumnDefinition using PATCH.
         /// </summary>
         /// <param name="columnDefinitionToUpdate">The ColumnDefinition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ColumnDefinition.</returns>
-        public async System.Threading.Tasks.Task<ColumnDefinition> UpdateAsync(ColumnDefinition columnDefinitionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ColumnDefinition> UpdateAsync(ColumnDefinition columnDefinitionToUpdate, CancellationToken cancellationToken = default)
         {
-			if (columnDefinitionToUpdate.AdditionalData != null)
-			{
-				if (columnDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					columnDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, columnDefinitionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (columnDefinitionToUpdate.AdditionalData != null)
-            {
-                if (columnDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    columnDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, columnDefinitionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ColumnDefinition>(columnDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified ColumnDefinition.
+        /// Updates the specified ColumnDefinition using PATCH and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="columnDefinitionToUpdate">The ColumnDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> UpdateResponseAsync(ColumnDefinition columnDefinitionToUpdate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ColumnDefinition>(columnDefinitionToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified ColumnDefinition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ColumnDefinition>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified ColumnDefinition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

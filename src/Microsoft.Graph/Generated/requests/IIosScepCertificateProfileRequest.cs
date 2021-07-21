@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified IosScepCertificateProfile using POST.
         /// </summary>
         /// <param name="iosScepCertificateProfileToCreate">The IosScepCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosScepCertificateProfile> CreateAsync(IosScepCertificateProfile iosScepCertificateProfileToCreate);        /// <summary>
-        /// Creates the specified IosScepCertificateProfile using POST.
+        System.Threading.Tasks.Task<IosScepCertificateProfile> CreateAsync(IosScepCertificateProfile iosScepCertificateProfileToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified IosScepCertificateProfile using POST and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
         /// </summary>
         /// <param name="iosScepCertificateProfileToCreate">The IosScepCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created IosScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosScepCertificateProfile> CreateAsync(IosScepCertificateProfile iosScepCertificateProfileToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified IosScepCertificateProfile.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{IosScepCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> CreateResponseAsync(IosScepCertificateProfile iosScepCertificateProfileToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified IosScepCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified IosScepCertificateProfile.
+        /// Deletes the specified IosScepCertificateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The IosScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosScepCertificateProfile> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified IosScepCertificateProfile.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The IosScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosScepCertificateProfile> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IosScepCertificateProfile> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified IosScepCertificateProfile using PATCH.
+        /// Gets the specified IosScepCertificateProfile and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
         /// </summary>
-        /// <param name="iosScepCertificateProfileToUpdate">The IosScepCertificateProfile to update.</param>
-        /// <returns>The updated IosScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosScepCertificateProfile> UpdateAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosScepCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified IosScepCertificateProfile using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated IosScepCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosScepCertificateProfile> UpdateAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IosScepCertificateProfile> UpdateAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IosScepCertificateProfile using PATCH and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosScepCertificateProfileToUpdate">The IosScepCertificateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosScepCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> UpdateResponseAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IosScepCertificateProfile using PUT.
+        /// </summary>
+        /// <param name="iosScepCertificateProfileToUpdate">The IosScepCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<IosScepCertificateProfile> PutAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified IosScepCertificateProfile using PUT and returns a <see cref="GraphResponse{IosScepCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosScepCertificateProfileToUpdate">The IosScepCertificateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{IosScepCertificateProfile}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosScepCertificateProfile>> PutResponseAsync(IosScepCertificateProfile iosScepCertificateProfileToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

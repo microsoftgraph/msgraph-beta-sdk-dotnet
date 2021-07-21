@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified TeamworkTag using POST.
         /// </summary>
         /// <param name="teamworkTagToCreate">The TeamworkTag to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamworkTag.</returns>
-        System.Threading.Tasks.Task<TeamworkTag> CreateAsync(TeamworkTag teamworkTagToCreate);        /// <summary>
-        /// Creates the specified TeamworkTag using POST.
+        System.Threading.Tasks.Task<TeamworkTag> CreateAsync(TeamworkTag teamworkTagToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified TeamworkTag using POST and returns a <see cref="GraphResponse{TeamworkTag}"/> object.
         /// </summary>
         /// <param name="teamworkTagToCreate">The TeamworkTag to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TeamworkTag.</returns>
-        System.Threading.Tasks.Task<TeamworkTag> CreateAsync(TeamworkTag teamworkTagToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TeamworkTag.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> CreateResponseAsync(TeamworkTag teamworkTagToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TeamworkTag.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified TeamworkTag.
+        /// Deletes the specified TeamworkTag and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TeamworkTag.</returns>
-        System.Threading.Tasks.Task<TeamworkTag> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TeamworkTag.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TeamworkTag.</returns>
-        System.Threading.Tasks.Task<TeamworkTag> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TeamworkTag> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified TeamworkTag using PATCH.
+        /// Gets the specified TeamworkTag and returns a <see cref="GraphResponse{TeamworkTag}"/> object.
         /// </summary>
-        /// <param name="teamworkTagToUpdate">The TeamworkTag to update.</param>
-        /// <returns>The updated TeamworkTag.</returns>
-        System.Threading.Tasks.Task<TeamworkTag> UpdateAsync(TeamworkTag teamworkTagToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TeamworkTag using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TeamworkTag.</returns>
-        System.Threading.Tasks.Task<TeamworkTag> UpdateAsync(TeamworkTag teamworkTagToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TeamworkTag> UpdateAsync(TeamworkTag teamworkTagToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TeamworkTag using PATCH and returns a <see cref="GraphResponse{TeamworkTag}"/> object.
+        /// </summary>
+        /// <param name="teamworkTagToUpdate">The TeamworkTag to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamworkTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> UpdateResponseAsync(TeamworkTag teamworkTagToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TeamworkTag using PUT.
+        /// </summary>
+        /// <param name="teamworkTagToUpdate">The TeamworkTag object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TeamworkTag> PutAsync(TeamworkTag teamworkTagToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TeamworkTag using PUT and returns a <see cref="GraphResponse{TeamworkTag}"/> object.
+        /// </summary>
+        /// <param name="teamworkTagToUpdate">The TeamworkTag object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TeamworkTag}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamworkTag>> PutResponseAsync(TeamworkTag teamworkTagToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

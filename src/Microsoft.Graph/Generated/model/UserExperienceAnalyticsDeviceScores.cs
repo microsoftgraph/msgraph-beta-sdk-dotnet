@@ -12,64 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Device Scores.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsDeviceScores : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsDeviceScores constructor
-		///</summary>
-        public UserExperienceAnalyticsDeviceScores()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsDeviceScores";
-        }
-	
         /// <summary>
         /// Gets or sets app reliability score.
         /// The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appReliabilityScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appReliabilityScore")]
         public double? AppReliabilityScore { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
         /// The user experience analytics device name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets endpoint analytics score.
         /// The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointAnalyticsScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endpointAnalyticsScore")]
         public double? EndpointAnalyticsScore { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
         /// The user experience analytics device manufacturer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
         /// The user experience analytics device model.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets startup performance score.
         /// The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupPerformanceScore", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startupPerformanceScore")]
         public double? StartupPerformanceScore { get; set; }
     
     }

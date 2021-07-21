@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified SitePage using POST.
         /// </summary>
         /// <param name="sitePageToCreate">The SitePage to create.</param>
-        /// <returns>The created SitePage.</returns>
-        public System.Threading.Tasks.Task<SitePage> CreateAsync(SitePage sitePageToCreate)
-        {
-            return this.CreateAsync(sitePageToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified SitePage using POST.
-        /// </summary>
-        /// <param name="sitePageToCreate">The SitePage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SitePage.</returns>
-        public async System.Threading.Tasks.Task<SitePage> CreateAsync(SitePage sitePageToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SitePage> CreateAsync(SitePage sitePageToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<SitePage>(sitePageToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified SitePage.
+        /// Creates the specified SitePage using POST and returns a <see cref="GraphResponse{SitePage}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="sitePageToCreate">The SitePage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SitePage>> CreateResponseAsync(SitePage sitePageToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SitePage>(sitePageToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<SitePage>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified SitePage.
+        /// Deletes the specified SitePage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SitePage.</returns>
-        public System.Threading.Tasks.Task<SitePage> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SitePage.</returns>
-        public async System.Threading.Tasks.Task<SitePage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SitePage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<SitePage>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified SitePage using PATCH.
+        /// Gets the specified SitePage and returns a <see cref="GraphResponse{SitePage}"/> object.
         /// </summary>
-        /// <param name="sitePageToUpdate">The SitePage to update.</param>
-        /// <returns>The updated SitePage.</returns>
-        public System.Threading.Tasks.Task<SitePage> UpdateAsync(SitePage sitePageToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SitePage>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(sitePageToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SitePage>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SitePage.</returns>
-        public async System.Threading.Tasks.Task<SitePage> UpdateAsync(SitePage sitePageToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<SitePage> UpdateAsync(SitePage sitePageToUpdate, CancellationToken cancellationToken = default)
         {
-			if (sitePageToUpdate.AdditionalData != null)
-			{
-				if (sitePageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					sitePageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sitePageToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (sitePageToUpdate.AdditionalData != null)
-            {
-                if (sitePageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    sitePageToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, sitePageToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<SitePage>(sitePageToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SitePage using PATCH and returns a <see cref="GraphResponse{SitePage}"/> object.
+        /// </summary>
+        /// <param name="sitePageToUpdate">The SitePage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SitePage>> UpdateResponseAsync(SitePage sitePageToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<SitePage>(sitePageToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified SitePage using PUT.
+        /// </summary>
+        /// <param name="sitePageToUpdate">The SitePage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<SitePage> PutAsync(SitePage sitePageToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<SitePage>(sitePageToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified SitePage using PUT and returns a <see cref="GraphResponse{SitePage}"/> object.
+        /// </summary>
+        /// <param name="sitePageToUpdate">The SitePage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{SitePage}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SitePage>> PutResponseAsync(SitePage sitePageToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<SitePage>(sitePageToUpdate, cancellationToken);
         }
 
         /// <summary>

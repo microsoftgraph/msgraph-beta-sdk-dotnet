@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified SmsAuthenticationMethodTarget using POST.
         /// </summary>
         /// <param name="smsAuthenticationMethodTargetToCreate">The SmsAuthenticationMethodTarget to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SmsAuthenticationMethodTarget.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> CreateAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToCreate);        /// <summary>
-        /// Creates the specified SmsAuthenticationMethodTarget using POST.
+        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> CreateAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified SmsAuthenticationMethodTarget using POST and returns a <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> object.
         /// </summary>
         /// <param name="smsAuthenticationMethodTargetToCreate">The SmsAuthenticationMethodTarget to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SmsAuthenticationMethodTarget.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> CreateAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SmsAuthenticationMethodTarget.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodTarget>> CreateResponseAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SmsAuthenticationMethodTarget.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified SmsAuthenticationMethodTarget.
+        /// Deletes the specified SmsAuthenticationMethodTarget and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SmsAuthenticationMethodTarget.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SmsAuthenticationMethodTarget.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SmsAuthenticationMethodTarget.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified SmsAuthenticationMethodTarget using PATCH.
+        /// Gets the specified SmsAuthenticationMethodTarget and returns a <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> object.
         /// </summary>
-        /// <param name="smsAuthenticationMethodTargetToUpdate">The SmsAuthenticationMethodTarget to update.</param>
-        /// <returns>The updated SmsAuthenticationMethodTarget.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> UpdateAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodTarget>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SmsAuthenticationMethodTarget using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SmsAuthenticationMethodTarget.</returns>
-        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> UpdateAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> UpdateAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SmsAuthenticationMethodTarget using PATCH and returns a <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> object.
+        /// </summary>
+        /// <param name="smsAuthenticationMethodTargetToUpdate">The SmsAuthenticationMethodTarget to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodTarget>> UpdateResponseAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SmsAuthenticationMethodTarget using PUT.
+        /// </summary>
+        /// <param name="smsAuthenticationMethodTargetToUpdate">The SmsAuthenticationMethodTarget object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SmsAuthenticationMethodTarget> PutAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SmsAuthenticationMethodTarget using PUT and returns a <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> object.
+        /// </summary>
+        /// <param name="smsAuthenticationMethodTargetToUpdate">The SmsAuthenticationMethodTarget object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SmsAuthenticationMethodTarget}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SmsAuthenticationMethodTarget>> PutResponseAsync(SmsAuthenticationMethodTarget smsAuthenticationMethodTargetToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

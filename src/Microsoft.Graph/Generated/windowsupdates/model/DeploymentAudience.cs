@@ -12,37 +12,39 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Deployment Audience.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeploymentAudience : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The DeploymentAudience constructor
-		///</summary>
-        public DeploymentAudience()
-        {
-            this.ODataType = "microsoft.graph.windowsUpdates.deploymentAudience";
-        }
-	
         /// <summary>
         /// Gets or sets exclusions.
         /// Specifies the assets to exclude from the audience.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exclusions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("exclusions")]
         public IDeploymentAudienceExclusionsCollectionPage Exclusions { get; set; }
+
+        /// <summary>
+        /// Gets or sets exclusionsNextLink.
+        /// </summary>
+        [JsonPropertyName("exclusions@odata.nextLink")]
+        public string ExclusionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets members.
         /// Specifies the assets to include in the audience.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "members", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("members")]
         public IDeploymentAudienceMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
     }
 }

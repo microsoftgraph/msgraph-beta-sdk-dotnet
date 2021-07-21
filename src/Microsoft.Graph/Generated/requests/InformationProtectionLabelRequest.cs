@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified InformationProtectionLabel using POST.
         /// </summary>
         /// <param name="informationProtectionLabelToCreate">The InformationProtectionLabel to create.</param>
-        /// <returns>The created InformationProtectionLabel.</returns>
-        public System.Threading.Tasks.Task<InformationProtectionLabel> CreateAsync(InformationProtectionLabel informationProtectionLabelToCreate)
-        {
-            return this.CreateAsync(informationProtectionLabelToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified InformationProtectionLabel using POST.
-        /// </summary>
-        /// <param name="informationProtectionLabelToCreate">The InformationProtectionLabel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InformationProtectionLabel.</returns>
-        public async System.Threading.Tasks.Task<InformationProtectionLabel> CreateAsync(InformationProtectionLabel informationProtectionLabelToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<InformationProtectionLabel> CreateAsync(InformationProtectionLabel informationProtectionLabelToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<InformationProtectionLabel>(informationProtectionLabelToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified InformationProtectionLabel.
+        /// Creates the specified InformationProtectionLabel using POST and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="informationProtectionLabelToCreate">The InformationProtectionLabel to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> CreateResponseAsync(InformationProtectionLabel informationProtectionLabelToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<InformationProtectionLabel>(informationProtectionLabelToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<InformationProtectionLabel>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified InformationProtectionLabel.
+        /// Deletes the specified InformationProtectionLabel and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The InformationProtectionLabel.</returns>
-        public System.Threading.Tasks.Task<InformationProtectionLabel> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The InformationProtectionLabel.</returns>
-        public async System.Threading.Tasks.Task<InformationProtectionLabel> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<InformationProtectionLabel> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<InformationProtectionLabel>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified InformationProtectionLabel using PATCH.
+        /// Gets the specified InformationProtectionLabel and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
         /// </summary>
-        /// <param name="informationProtectionLabelToUpdate">The InformationProtectionLabel to update.</param>
-        /// <returns>The updated InformationProtectionLabel.</returns>
-        public System.Threading.Tasks.Task<InformationProtectionLabel> UpdateAsync(InformationProtectionLabel informationProtectionLabelToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(informationProtectionLabelToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<InformationProtectionLabel>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated InformationProtectionLabel.</returns>
-        public async System.Threading.Tasks.Task<InformationProtectionLabel> UpdateAsync(InformationProtectionLabel informationProtectionLabelToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<InformationProtectionLabel> UpdateAsync(InformationProtectionLabel informationProtectionLabelToUpdate, CancellationToken cancellationToken = default)
         {
-			if (informationProtectionLabelToUpdate.AdditionalData != null)
-			{
-				if (informationProtectionLabelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					informationProtectionLabelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, informationProtectionLabelToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (informationProtectionLabelToUpdate.AdditionalData != null)
-            {
-                if (informationProtectionLabelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    informationProtectionLabelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, informationProtectionLabelToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<InformationProtectionLabel>(informationProtectionLabelToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified InformationProtectionLabel using PATCH and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
+        /// </summary>
+        /// <param name="informationProtectionLabelToUpdate">The InformationProtectionLabel to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{InformationProtectionLabel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> UpdateResponseAsync(InformationProtectionLabel informationProtectionLabelToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<InformationProtectionLabel>(informationProtectionLabelToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified InformationProtectionLabel using PUT.
+        /// </summary>
+        /// <param name="informationProtectionLabelToUpdate">The InformationProtectionLabel object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<InformationProtectionLabel> PutAsync(InformationProtectionLabel informationProtectionLabelToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<InformationProtectionLabel>(informationProtectionLabelToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified InformationProtectionLabel using PUT and returns a <see cref="GraphResponse{InformationProtectionLabel}"/> object.
+        /// </summary>
+        /// <param name="informationProtectionLabelToUpdate">The InformationProtectionLabel object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{InformationProtectionLabel}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InformationProtectionLabel>> PutResponseAsync(InformationProtectionLabel informationProtectionLabelToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<InformationProtectionLabel>(informationProtectionLabelToUpdate, cancellationToken);
         }
 
         /// <summary>

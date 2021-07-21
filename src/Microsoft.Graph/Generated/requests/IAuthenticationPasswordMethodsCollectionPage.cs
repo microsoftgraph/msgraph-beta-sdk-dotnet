@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IAuthenticationPasswordMethodsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<AuthenticationPasswordMethodsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<AuthenticationPasswordMethodsCollectionPage>))]
     public interface IAuthenticationPasswordMethodsCollectionPage : ICollectionPage<PasswordAuthenticationMethod>
     {
         /// <summary>

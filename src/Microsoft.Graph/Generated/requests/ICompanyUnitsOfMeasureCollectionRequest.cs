@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanyUnitsOfMeasureCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UnitOfMeasure to the collection via POST.
-        /// </summary>
-        /// <param name="unitOfMeasure">The UnitOfMeasure to add.</param>
-        /// <returns>The created UnitOfMeasure.</returns>
-        System.Threading.Tasks.Task<UnitOfMeasure> AddAsync(UnitOfMeasure unitOfMeasure);
-
         /// <summary>
         /// Adds the specified UnitOfMeasure to the collection via POST.
         /// </summary>
         /// <param name="unitOfMeasure">The UnitOfMeasure to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnitOfMeasure.</returns>
-        System.Threading.Tasks.Task<UnitOfMeasure> AddAsync(UnitOfMeasure unitOfMeasure, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnitOfMeasure> AddAsync(UnitOfMeasure unitOfMeasure, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UnitOfMeasure to the collection via POST and returns a <see cref="GraphResponse{UnitOfMeasure}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyUnitsOfMeasureCollectionPage> GetAsync();
+        /// <param name="unitOfMeasure">The UnitOfMeasure to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnitOfMeasure}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnitOfMeasure>> AddResponseAsync(UnitOfMeasure unitOfMeasure, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyUnitsOfMeasureCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICompanyUnitsOfMeasureCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyUnitsOfMeasureCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyUnitsOfMeasureCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyUnitsOfMeasureCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

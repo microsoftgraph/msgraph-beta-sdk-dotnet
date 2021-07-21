@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserAccountInformation using POST.
         /// </summary>
         /// <param name="userAccountInformationToCreate">The UserAccountInformation to create.</param>
-        /// <returns>The created UserAccountInformation.</returns>
-        public System.Threading.Tasks.Task<UserAccountInformation> CreateAsync(UserAccountInformation userAccountInformationToCreate)
-        {
-            return this.CreateAsync(userAccountInformationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserAccountInformation using POST.
-        /// </summary>
-        /// <param name="userAccountInformationToCreate">The UserAccountInformation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserAccountInformation.</returns>
-        public async System.Threading.Tasks.Task<UserAccountInformation> CreateAsync(UserAccountInformation userAccountInformationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserAccountInformation> CreateAsync(UserAccountInformation userAccountInformationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserAccountInformation>(userAccountInformationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserAccountInformation.
+        /// Creates the specified UserAccountInformation using POST and returns a <see cref="GraphResponse{UserAccountInformation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userAccountInformationToCreate">The UserAccountInformation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserAccountInformation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> CreateResponseAsync(UserAccountInformation userAccountInformationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserAccountInformation>(userAccountInformationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserAccountInformation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserAccountInformation.
+        /// Deletes the specified UserAccountInformation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserAccountInformation.</returns>
-        public System.Threading.Tasks.Task<UserAccountInformation> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserAccountInformation.</returns>
-        public async System.Threading.Tasks.Task<UserAccountInformation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserAccountInformation> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserAccountInformation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserAccountInformation using PATCH.
+        /// Gets the specified UserAccountInformation and returns a <see cref="GraphResponse{UserAccountInformation}"/> object.
         /// </summary>
-        /// <param name="userAccountInformationToUpdate">The UserAccountInformation to update.</param>
-        /// <returns>The updated UserAccountInformation.</returns>
-        public System.Threading.Tasks.Task<UserAccountInformation> UpdateAsync(UserAccountInformation userAccountInformationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserAccountInformation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(userAccountInformationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserAccountInformation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserAccountInformation.</returns>
-        public async System.Threading.Tasks.Task<UserAccountInformation> UpdateAsync(UserAccountInformation userAccountInformationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserAccountInformation> UpdateAsync(UserAccountInformation userAccountInformationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (userAccountInformationToUpdate.AdditionalData != null)
-			{
-				if (userAccountInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userAccountInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userAccountInformationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userAccountInformationToUpdate.AdditionalData != null)
-            {
-                if (userAccountInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userAccountInformationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userAccountInformationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserAccountInformation>(userAccountInformationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserAccountInformation using PATCH and returns a <see cref="GraphResponse{UserAccountInformation}"/> object.
+        /// </summary>
+        /// <param name="userAccountInformationToUpdate">The UserAccountInformation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserAccountInformation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> UpdateResponseAsync(UserAccountInformation userAccountInformationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserAccountInformation>(userAccountInformationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserAccountInformation using PUT.
+        /// </summary>
+        /// <param name="userAccountInformationToUpdate">The UserAccountInformation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserAccountInformation> PutAsync(UserAccountInformation userAccountInformationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserAccountInformation>(userAccountInformationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserAccountInformation using PUT and returns a <see cref="GraphResponse{UserAccountInformation}"/> object.
+        /// </summary>
+        /// <param name="userAccountInformationToUpdate">The UserAccountInformation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserAccountInformation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserAccountInformation>> PutResponseAsync(UserAccountInformation userAccountInformationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserAccountInformation>(userAccountInformationToUpdate, cancellationToken);
         }
 
         /// <summary>

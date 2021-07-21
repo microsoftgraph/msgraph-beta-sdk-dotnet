@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified RbacApplication using POST.
         /// </summary>
         /// <param name="rbacApplicationToCreate">The RbacApplication to create.</param>
-        /// <returns>The created RbacApplication.</returns>
-        public System.Threading.Tasks.Task<RbacApplication> CreateAsync(RbacApplication rbacApplicationToCreate)
-        {
-            return this.CreateAsync(rbacApplicationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified RbacApplication using POST.
-        /// </summary>
-        /// <param name="rbacApplicationToCreate">The RbacApplication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RbacApplication.</returns>
-        public async System.Threading.Tasks.Task<RbacApplication> CreateAsync(RbacApplication rbacApplicationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RbacApplication> CreateAsync(RbacApplication rbacApplicationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<RbacApplication>(rbacApplicationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified RbacApplication.
+        /// Creates the specified RbacApplication using POST and returns a <see cref="GraphResponse{RbacApplication}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="rbacApplicationToCreate">The RbacApplication to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplication>> CreateResponseAsync(RbacApplication rbacApplicationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<RbacApplication>(rbacApplicationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<RbacApplication>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified RbacApplication.
+        /// Deletes the specified RbacApplication and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The RbacApplication.</returns>
-        public System.Threading.Tasks.Task<RbacApplication> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The RbacApplication.</returns>
-        public async System.Threading.Tasks.Task<RbacApplication> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RbacApplication> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<RbacApplication>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified RbacApplication using PATCH.
+        /// Gets the specified RbacApplication and returns a <see cref="GraphResponse{RbacApplication}"/> object.
         /// </summary>
-        /// <param name="rbacApplicationToUpdate">The RbacApplication to update.</param>
-        /// <returns>The updated RbacApplication.</returns>
-        public System.Threading.Tasks.Task<RbacApplication> UpdateAsync(RbacApplication rbacApplicationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplication>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(rbacApplicationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<RbacApplication>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated RbacApplication.</returns>
-        public async System.Threading.Tasks.Task<RbacApplication> UpdateAsync(RbacApplication rbacApplicationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<RbacApplication> UpdateAsync(RbacApplication rbacApplicationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (rbacApplicationToUpdate.AdditionalData != null)
-			{
-				if (rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (rbacApplicationToUpdate.AdditionalData != null)
-            {
-                if (rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    rbacApplicationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, rbacApplicationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<RbacApplication>(rbacApplicationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RbacApplication using PATCH and returns a <see cref="GraphResponse{RbacApplication}"/> object.
+        /// </summary>
+        /// <param name="rbacApplicationToUpdate">The RbacApplication to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{RbacApplication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplication>> UpdateResponseAsync(RbacApplication rbacApplicationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<RbacApplication>(rbacApplicationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified RbacApplication using PUT.
+        /// </summary>
+        /// <param name="rbacApplicationToUpdate">The RbacApplication object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<RbacApplication> PutAsync(RbacApplication rbacApplicationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<RbacApplication>(rbacApplicationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified RbacApplication using PUT and returns a <see cref="GraphResponse{RbacApplication}"/> object.
+        /// </summary>
+        /// <param name="rbacApplicationToUpdate">The RbacApplication object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{RbacApplication}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplication>> PutResponseAsync(RbacApplication rbacApplicationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<RbacApplication>(rbacApplicationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,167 +244,67 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RbacApplication rbacApplicationToInitialize)
         {
 
-            if (rbacApplicationToInitialize != null && rbacApplicationToInitialize.AdditionalData != null)
+            if (rbacApplicationToInitialize != null)
             {
-
                 if (rbacApplicationToInitialize.ResourceNamespaces != null && rbacApplicationToInitialize.ResourceNamespaces.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.ResourceNamespaces.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.ResourceNamespacesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.ResourceNamespaces.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("resourceNamespaces@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.ResourceNamespaces.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignments != null && rbacApplicationToInitialize.RoleAssignments.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignments.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignments.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleDefinitions != null && rbacApplicationToInitialize.RoleDefinitions.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleDefinitions.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleDefinitions.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignmentApprovals != null && rbacApplicationToInitialize.RoleAssignmentApprovals.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignmentApprovals.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentApprovalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignmentApprovals.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentApprovals@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleAssignmentApprovals.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignmentScheduleInstances != null && rbacApplicationToInitialize.RoleAssignmentScheduleInstances.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignmentScheduleInstances.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentScheduleInstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignmentScheduleInstances.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentScheduleInstances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleAssignmentScheduleInstances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignmentScheduleRequests != null && rbacApplicationToInitialize.RoleAssignmentScheduleRequests.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignmentScheduleRequests.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentScheduleRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignmentScheduleRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentScheduleRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleAssignmentScheduleRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleAssignmentSchedules != null && rbacApplicationToInitialize.RoleAssignmentSchedules.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignmentSchedules.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentSchedulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignmentSchedules.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignmentSchedules@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleAssignmentSchedules.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleEligibilityScheduleInstances != null && rbacApplicationToInitialize.RoleEligibilityScheduleInstances.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleEligibilityScheduleInstances.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleEligibilityScheduleInstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleEligibilityScheduleInstances.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityScheduleInstances@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleEligibilityScheduleInstances.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleEligibilityScheduleRequests != null && rbacApplicationToInitialize.RoleEligibilityScheduleRequests.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleEligibilityScheduleRequests.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleEligibilityScheduleRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleEligibilityScheduleRequests.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilityScheduleRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleEligibilityScheduleRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleEligibilitySchedules != null && rbacApplicationToInitialize.RoleEligibilitySchedules.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleEligibilitySchedules.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleEligibilitySchedulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleEligibilitySchedules.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    rbacApplicationToInitialize.AdditionalData.TryGetValue("roleEligibilitySchedules@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        rbacApplicationToInitialize.RoleEligibilitySchedules.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

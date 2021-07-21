@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using POST.
         /// </summary>
         /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to create.</param>
-        /// <returns>The created AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> CreateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate)
-        {
-            return this.CreateAsync(androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using POST.
-        /// </summary>
-        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> CreateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> CreateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>(androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.
+        /// Creates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using POST and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> CreateResponseAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>(androidDeviceComplianceLocalActionLockDeviceWithPasscodeToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.
+        /// Deletes the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using PATCH.
+        /// Gets the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
         /// </summary>
-        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to update.</param>
-        /// <returns>The updated AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> UpdateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceComplianceLocalActionLockDeviceWithPasscode.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> UpdateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> UpdateAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, CancellationToken cancellationToken = default)
         {
-			if (androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>(androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using PATCH and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> UpdateResponseAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>(androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using PUT.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode> PutAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>(androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceComplianceLocalActionLockDeviceWithPasscode using PUT and returns a <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate">The AndroidDeviceComplianceLocalActionLockDeviceWithPasscode object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidDeviceComplianceLocalActionLockDeviceWithPasscode}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>> PutResponseAsync(AndroidDeviceComplianceLocalActionLockDeviceWithPasscode androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceComplianceLocalActionLockDeviceWithPasscode>(androidDeviceComplianceLocalActionLockDeviceWithPasscodeToUpdate, cancellationToken);
         }
 
         /// <summary>

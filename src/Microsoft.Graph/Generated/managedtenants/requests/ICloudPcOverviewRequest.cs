@@ -24,47 +24,45 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified CloudPcOverview using POST.
         /// </summary>
         /// <param name="cloudPcOverviewToCreate">The CloudPcOverview to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcOverview.</returns>
-        System.Threading.Tasks.Task<CloudPcOverview> CreateAsync(CloudPcOverview cloudPcOverviewToCreate);        /// <summary>
-        /// Creates the specified CloudPcOverview using POST.
+        System.Threading.Tasks.Task<CloudPcOverview> CreateAsync(CloudPcOverview cloudPcOverviewToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified CloudPcOverview using POST and returns a <see cref="GraphResponse{CloudPcOverview}"/> object.
         /// </summary>
         /// <param name="cloudPcOverviewToCreate">The CloudPcOverview to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created CloudPcOverview.</returns>
-        System.Threading.Tasks.Task<CloudPcOverview> CreateAsync(CloudPcOverview cloudPcOverviewToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CloudPcOverview.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{CloudPcOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcOverview>> CreateResponseAsync(CloudPcOverview cloudPcOverviewToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CloudPcOverview.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified CloudPcOverview.
+        /// Deletes the specified CloudPcOverview and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CloudPcOverview.</returns>
-        System.Threading.Tasks.Task<CloudPcOverview> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CloudPcOverview.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudPcOverview.</returns>
-        System.Threading.Tasks.Task<CloudPcOverview> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcOverview> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified CloudPcOverview using PATCH.
+        /// Gets the specified CloudPcOverview and returns a <see cref="GraphResponse{CloudPcOverview}"/> object.
         /// </summary>
-        /// <param name="cloudPcOverviewToUpdate">The CloudPcOverview to update.</param>
-        /// <returns>The updated CloudPcOverview.</returns>
-        System.Threading.Tasks.Task<CloudPcOverview> UpdateAsync(CloudPcOverview cloudPcOverviewToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcOverview>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcOverview using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudPcOverview.</returns>
-        System.Threading.Tasks.Task<CloudPcOverview> UpdateAsync(CloudPcOverview cloudPcOverviewToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcOverview> UpdateAsync(CloudPcOverview cloudPcOverviewToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CloudPcOverview using PATCH and returns a <see cref="GraphResponse{CloudPcOverview}"/> object.
+        /// </summary>
+        /// <param name="cloudPcOverviewToUpdate">The CloudPcOverview to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CloudPcOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcOverview>> UpdateResponseAsync(CloudPcOverview cloudPcOverviewToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CloudPcOverview using PUT.
+        /// </summary>
+        /// <param name="cloudPcOverviewToUpdate">The CloudPcOverview object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CloudPcOverview> PutAsync(CloudPcOverview cloudPcOverviewToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CloudPcOverview using PUT and returns a <see cref="GraphResponse{CloudPcOverview}"/> object.
+        /// </summary>
+        /// <param name="cloudPcOverviewToUpdate">The CloudPcOverview object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CloudPcOverview}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcOverview>> PutResponseAsync(CloudPcOverview cloudPcOverviewToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

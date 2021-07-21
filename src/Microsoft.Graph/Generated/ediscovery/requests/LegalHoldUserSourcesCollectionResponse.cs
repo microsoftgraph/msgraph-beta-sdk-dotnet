@@ -9,25 +9,29 @@
 namespace Microsoft.Graph.Ediscovery
 {
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type LegalHoldUserSourcesCollectionResponse.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public class LegalHoldUserSourcesCollectionResponse
     {
         /// <summary>
         /// Gets or sets the <see cref="ILegalHoldUserSourcesCollectionPage"/> value.
         /// </summary>
-		[JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName ="value", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("value")]
         public ILegalHoldUserSourcesCollectionPage Value { get; set; }
+
+        /// <summary>
+        /// Gets or sets the nextLink string value.
+        /// </summary>
+        [JsonPropertyName("@odata.nextLink")]
+        public string NextLink { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     }
 }

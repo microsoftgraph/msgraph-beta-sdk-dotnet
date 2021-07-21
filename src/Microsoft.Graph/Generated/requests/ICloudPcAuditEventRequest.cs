@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified CloudPcAuditEvent using POST.
         /// </summary>
         /// <param name="cloudPcAuditEventToCreate">The CloudPcAuditEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcAuditEvent.</returns>
-        System.Threading.Tasks.Task<CloudPcAuditEvent> CreateAsync(CloudPcAuditEvent cloudPcAuditEventToCreate);        /// <summary>
-        /// Creates the specified CloudPcAuditEvent using POST.
+        System.Threading.Tasks.Task<CloudPcAuditEvent> CreateAsync(CloudPcAuditEvent cloudPcAuditEventToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified CloudPcAuditEvent using POST and returns a <see cref="GraphResponse{CloudPcAuditEvent}"/> object.
         /// </summary>
         /// <param name="cloudPcAuditEventToCreate">The CloudPcAuditEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created CloudPcAuditEvent.</returns>
-        System.Threading.Tasks.Task<CloudPcAuditEvent> CreateAsync(CloudPcAuditEvent cloudPcAuditEventToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CloudPcAuditEvent.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{CloudPcAuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcAuditEvent>> CreateResponseAsync(CloudPcAuditEvent cloudPcAuditEventToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CloudPcAuditEvent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified CloudPcAuditEvent.
+        /// Deletes the specified CloudPcAuditEvent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CloudPcAuditEvent.</returns>
-        System.Threading.Tasks.Task<CloudPcAuditEvent> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CloudPcAuditEvent.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudPcAuditEvent.</returns>
-        System.Threading.Tasks.Task<CloudPcAuditEvent> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcAuditEvent> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified CloudPcAuditEvent using PATCH.
+        /// Gets the specified CloudPcAuditEvent and returns a <see cref="GraphResponse{CloudPcAuditEvent}"/> object.
         /// </summary>
-        /// <param name="cloudPcAuditEventToUpdate">The CloudPcAuditEvent to update.</param>
-        /// <returns>The updated CloudPcAuditEvent.</returns>
-        System.Threading.Tasks.Task<CloudPcAuditEvent> UpdateAsync(CloudPcAuditEvent cloudPcAuditEventToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcAuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcAuditEvent>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcAuditEvent using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudPcAuditEvent.</returns>
-        System.Threading.Tasks.Task<CloudPcAuditEvent> UpdateAsync(CloudPcAuditEvent cloudPcAuditEventToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcAuditEvent> UpdateAsync(CloudPcAuditEvent cloudPcAuditEventToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CloudPcAuditEvent using PATCH and returns a <see cref="GraphResponse{CloudPcAuditEvent}"/> object.
+        /// </summary>
+        /// <param name="cloudPcAuditEventToUpdate">The CloudPcAuditEvent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CloudPcAuditEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcAuditEvent>> UpdateResponseAsync(CloudPcAuditEvent cloudPcAuditEventToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CloudPcAuditEvent using PUT.
+        /// </summary>
+        /// <param name="cloudPcAuditEventToUpdate">The CloudPcAuditEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CloudPcAuditEvent> PutAsync(CloudPcAuditEvent cloudPcAuditEventToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CloudPcAuditEvent using PUT and returns a <see cref="GraphResponse{CloudPcAuditEvent}"/> object.
+        /// </summary>
+        /// <param name="cloudPcAuditEventToUpdate">The CloudPcAuditEvent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CloudPcAuditEvent}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcAuditEvent>> PutResponseAsync(CloudPcAuditEvent cloudPcAuditEventToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

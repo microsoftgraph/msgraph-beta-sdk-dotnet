@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified EntitlementManagement using POST.
         /// </summary>
         /// <param name="entitlementManagementToCreate">The EntitlementManagement to create.</param>
-        /// <returns>The created EntitlementManagement.</returns>
-        public System.Threading.Tasks.Task<EntitlementManagement> CreateAsync(EntitlementManagement entitlementManagementToCreate)
-        {
-            return this.CreateAsync(entitlementManagementToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EntitlementManagement using POST.
-        /// </summary>
-        /// <param name="entitlementManagementToCreate">The EntitlementManagement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EntitlementManagement.</returns>
-        public async System.Threading.Tasks.Task<EntitlementManagement> CreateAsync(EntitlementManagement entitlementManagementToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EntitlementManagement> CreateAsync(EntitlementManagement entitlementManagementToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EntitlementManagement>(entitlementManagementToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EntitlementManagement.
+        /// Creates the specified EntitlementManagement using POST and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="entitlementManagementToCreate">The EntitlementManagement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> CreateResponseAsync(EntitlementManagement entitlementManagementToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EntitlementManagement>(entitlementManagementToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EntitlementManagement>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EntitlementManagement.
+        /// Deletes the specified EntitlementManagement and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EntitlementManagement.</returns>
-        public System.Threading.Tasks.Task<EntitlementManagement> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EntitlementManagement.</returns>
-        public async System.Threading.Tasks.Task<EntitlementManagement> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EntitlementManagement> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EntitlementManagement>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EntitlementManagement using PATCH.
+        /// Gets the specified EntitlementManagement and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
         /// </summary>
-        /// <param name="entitlementManagementToUpdate">The EntitlementManagement to update.</param>
-        /// <returns>The updated EntitlementManagement.</returns>
-        public System.Threading.Tasks.Task<EntitlementManagement> UpdateAsync(EntitlementManagement entitlementManagementToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(entitlementManagementToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EntitlementManagement>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EntitlementManagement.</returns>
-        public async System.Threading.Tasks.Task<EntitlementManagement> UpdateAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EntitlementManagement> UpdateAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken = default)
         {
-			if (entitlementManagementToUpdate.AdditionalData != null)
-			{
-				if (entitlementManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					entitlementManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, entitlementManagementToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (entitlementManagementToUpdate.AdditionalData != null)
-            {
-                if (entitlementManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    entitlementManagementToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, entitlementManagementToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EntitlementManagement>(entitlementManagementToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EntitlementManagement using PATCH and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToUpdate">The EntitlementManagement to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EntitlementManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> UpdateResponseAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EntitlementManagement>(entitlementManagementToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EntitlementManagement using PUT.
+        /// </summary>
+        /// <param name="entitlementManagementToUpdate">The EntitlementManagement object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EntitlementManagement> PutAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EntitlementManagement>(entitlementManagementToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EntitlementManagement using PUT and returns a <see cref="GraphResponse{EntitlementManagement}"/> object.
+        /// </summary>
+        /// <param name="entitlementManagementToUpdate">The EntitlementManagement object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EntitlementManagement}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EntitlementManagement>> PutResponseAsync(EntitlementManagement entitlementManagementToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EntitlementManagement>(entitlementManagementToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,199 +244,79 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EntitlementManagement entitlementManagementToInitialize)
         {
 
-            if (entitlementManagementToInitialize != null && entitlementManagementToInitialize.AdditionalData != null)
+            if (entitlementManagementToInitialize != null)
             {
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentApprovals != null && entitlementManagementToInitialize.AccessPackageAssignmentApprovals.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentApprovalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentApprovals.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentApprovals@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignmentApprovals.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentPolicies != null && entitlementManagementToInitialize.AccessPackageAssignmentPolicies.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentPolicies.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentPolicies.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignmentPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentRequests != null && entitlementManagementToInitialize.AccessPackageAssignmentRequests.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentRequests.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles != null && entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentResourceRolesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignmentResourceRoles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignmentResourceRoles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageAssignments != null && entitlementManagementToInitialize.AccessPackageAssignments.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageAssignments.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageAssignments.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageCatalogs != null && entitlementManagementToInitialize.AccessPackageCatalogs.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageCatalogs.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageCatalogsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageCatalogs.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageCatalogs@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageCatalogs.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResourceEnvironments != null && entitlementManagementToInitialize.AccessPackageResourceEnvironments.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResourceEnvironments.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourceEnvironmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResourceEnvironments.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceEnvironments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageResourceEnvironments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResourceRequests != null && entitlementManagementToInitialize.AccessPackageResourceRequests.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResourceRequests.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourceRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResourceRequests.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageResourceRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResourceRoleScopes != null && entitlementManagementToInitialize.AccessPackageResourceRoleScopes.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourceRoleScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResourceRoleScopes.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResourceRoleScopes@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageResourceRoleScopes.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackageResources != null && entitlementManagementToInitialize.AccessPackageResources.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackageResources.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackageResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackageResources.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackageResources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackageResources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.AccessPackages != null && entitlementManagementToInitialize.AccessPackages.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.AccessPackages.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.AccessPackagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.AccessPackages.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("accessPackages@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.AccessPackages.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (entitlementManagementToInitialize.ConnectedOrganizations != null && entitlementManagementToInitialize.ConnectedOrganizations.CurrentPage != null)
                 {
+                    entitlementManagementToInitialize.ConnectedOrganizations.InitializeNextPageRequest(this.Client, entitlementManagementToInitialize.ConnectedOrganizationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     entitlementManagementToInitialize.ConnectedOrganizations.AdditionalData = entitlementManagementToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    entitlementManagementToInitialize.AdditionalData.TryGetValue("connectedOrganizations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        entitlementManagementToInitialize.ConnectedOrganizations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

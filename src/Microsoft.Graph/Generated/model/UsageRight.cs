@@ -12,43 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Usage Right.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<UsageRight>))]
     public partial class UsageRight : Entity
     {
     
-		///<summary>
-		/// The UsageRight constructor
-		///</summary>
-        public UsageRight()
-        {
-            this.ODataType = "microsoft.graph.usageRight";
-        }
-	
         /// <summary>
         /// Gets or sets catalog id.
         /// Product id corresponding to the usage right.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "catalogId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("catalogId")]
         public string CatalogId { get; set; }
     
         /// <summary>
         /// Gets or sets service identifier.
         /// Identifier of the service corresponding to the usage right.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serviceIdentifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serviceIdentifier")]
         public string ServiceIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// The state of the usage right. Possible values are: active, inactive, warning, suspended.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public UsageRightState? State { get; set; }
     
     }

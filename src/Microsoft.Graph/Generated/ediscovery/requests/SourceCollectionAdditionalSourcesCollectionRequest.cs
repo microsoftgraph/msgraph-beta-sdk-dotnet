@@ -33,73 +33,62 @@ namespace Microsoft.Graph.Ediscovery
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified DataSource to the collection via POST.
-        /// </summary>
-        /// <param name="dataSource">The DataSource to add.</param>
-        /// <returns>The created DataSource.</returns>
-        public System.Threading.Tasks.Task<DataSource> AddAsync(DataSource dataSource)
-        {
-            return this.AddAsync(dataSource, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified DataSource to the collection via POST.
         /// </summary>
         /// <param name="dataSource">The DataSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataSource.</returns>
-        public System.Threading.Tasks.Task<DataSource> AddAsync(DataSource dataSource, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<DataSource> AddAsync(DataSource dataSource, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
-            dataSource.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(dataSource.GetType().FullName));
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<DataSource>(dataSource, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DataSource to the collection via POST and returns a <see cref="GraphResponse{DataSource}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ISourceCollectionAdditionalSourcesCollectionPage> GetAsync()
+        /// <param name="dataSource">The DataSource to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataSource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataSource>> AddResponseAsync(DataSource dataSource, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DataSource>(dataSource, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ISourceCollectionAdditionalSourcesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ISourceCollectionAdditionalSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<SourceCollectionAdditionalSourcesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SourceCollectionAdditionalSourcesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SourceCollectionAdditionalSourcesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SourceCollectionAdditionalSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<SourceCollectionAdditionalSourcesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -12,58 +12,49 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ExactMatchClassificationRequest.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ExactMatchClassificationRequestObject>))]
     public partial class ExactMatchClassificationRequestObject
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExactMatchClassificationRequestObject"/> class.
-        /// </summary>
-        public ExactMatchClassificationRequestObject()
-        {
-            this.ODataType = "microsoft.graph.exactMatchClassificationRequest";
-        }
 
         /// <summary>
         /// Gets or sets contentClassifications.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentClassifications", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentClassifications")]
         public IEnumerable<ContentClassification> ContentClassifications { get; set; }
     
         /// <summary>
         /// Gets or sets sensitiveTypeIds.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sensitiveTypeIds", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sensitiveTypeIds")]
         public IEnumerable<string> SensitiveTypeIds { get; set; }
     
         /// <summary>
         /// Gets or sets text.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
     
         /// <summary>
         /// Gets or sets timeoutInMs.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "timeoutInMs", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("timeoutInMs")]
         public Int32? TimeoutInMs { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

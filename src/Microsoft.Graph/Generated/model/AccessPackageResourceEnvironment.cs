@@ -12,100 +12,96 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Access Package Resource Environment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AccessPackageResourceEnvironment : Entity
     {
     
-		///<summary>
-		/// The AccessPackageResourceEnvironment constructor
-		///</summary>
-        public AccessPackageResourceEnvironment()
-        {
-            this.ODataType = "microsoft.graph.accessPackageResourceEnvironment";
-        }
-	
         /// <summary>
         /// Gets or sets connection info.
         /// Connection information of an environment used to connect to a resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "connectionInfo", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("connectionInfo")]
         public ConnectionInfo ConnectionInfo { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
         /// The display name of the user that created this object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdBy")]
         public string CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The description of this accessPackageResourceEnvironment object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The display name of this object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is default environment.
         /// Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultEnvironment", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDefaultEnvironment")]
         public bool? IsDefaultEnvironment { get; set; }
     
         /// <summary>
         /// Gets or sets modified by.
         /// The display name of the entity that last modified this object.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modifiedBy")]
         public string ModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets modified date time.
         /// The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modifiedDateTime")]
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets origin id.
         /// The unique identifier of this environment in the origin system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originId")]
         public string OriginId { get; set; }
     
         /// <summary>
         /// Gets or sets origin system.
         /// The type of the resource in the origin system such as SharePointOnline. Supports $filter.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "originSystem", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("originSystem")]
         public string OriginSystem { get; set; }
     
         /// <summary>
         /// Gets or sets access package resources.
         /// Read-only. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessPackageResources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("accessPackageResources")]
         public IAccessPackageResourceEnvironmentAccessPackageResourcesCollectionWithReferencesPage AccessPackageResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageResources@odata.nextLink")]
+        public string AccessPackageResourcesNextLink { get; set; }
     
     }
 }

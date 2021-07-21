@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type MobileAppTroubleshootingHistoryItem.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppTroubleshootingHistoryItem>))]
     public partial class MobileAppTroubleshootingHistoryItem
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MobileAppTroubleshootingHistoryItem"/> class.
-        /// </summary>
-        public MobileAppTroubleshootingHistoryItem()
-        {
-            this.ODataType = "microsoft.graph.mobileAppTroubleshootingHistoryItem";
-        }
 
         /// <summary>
         /// Gets or sets occurrenceDateTime.
         /// Time when the history item occurred.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "occurrenceDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("occurrenceDateTime")]
         public DateTimeOffset? OccurrenceDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets troubleshootingErrorDetails.
         /// Object containing detailed information about the error and its remediation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "troubleshootingErrorDetails", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("troubleshootingErrorDetails")]
         public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

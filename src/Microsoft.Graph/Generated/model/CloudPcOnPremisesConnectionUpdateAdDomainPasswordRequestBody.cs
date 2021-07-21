@@ -9,23 +9,21 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CloudPcOnPremisesConnectionUpdateAdDomainPasswordRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CloudPcOnPremisesConnectionUpdateAdDomainPasswordRequestBody
     {
     
         /// <summary>
         /// Gets or sets AdDomainPassword.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adDomainPassword", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("adDomainPassword")]
         public string AdDomainPassword { get; set; }
     
     }

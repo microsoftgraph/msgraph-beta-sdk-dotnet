@@ -24,47 +24,45 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified EstimateStatisticsOperation using POST.
         /// </summary>
         /// <param name="estimateStatisticsOperationToCreate">The EstimateStatisticsOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EstimateStatisticsOperation.</returns>
-        System.Threading.Tasks.Task<EstimateStatisticsOperation> CreateAsync(EstimateStatisticsOperation estimateStatisticsOperationToCreate);        /// <summary>
-        /// Creates the specified EstimateStatisticsOperation using POST.
+        System.Threading.Tasks.Task<EstimateStatisticsOperation> CreateAsync(EstimateStatisticsOperation estimateStatisticsOperationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified EstimateStatisticsOperation using POST and returns a <see cref="GraphResponse{EstimateStatisticsOperation}"/> object.
         /// </summary>
         /// <param name="estimateStatisticsOperationToCreate">The EstimateStatisticsOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created EstimateStatisticsOperation.</returns>
-        System.Threading.Tasks.Task<EstimateStatisticsOperation> CreateAsync(EstimateStatisticsOperation estimateStatisticsOperationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified EstimateStatisticsOperation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{EstimateStatisticsOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EstimateStatisticsOperation>> CreateResponseAsync(EstimateStatisticsOperation estimateStatisticsOperationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified EstimateStatisticsOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified EstimateStatisticsOperation.
+        /// Deletes the specified EstimateStatisticsOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EstimateStatisticsOperation.</returns>
-        System.Threading.Tasks.Task<EstimateStatisticsOperation> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified EstimateStatisticsOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EstimateStatisticsOperation.</returns>
-        System.Threading.Tasks.Task<EstimateStatisticsOperation> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EstimateStatisticsOperation> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified EstimateStatisticsOperation using PATCH.
+        /// Gets the specified EstimateStatisticsOperation and returns a <see cref="GraphResponse{EstimateStatisticsOperation}"/> object.
         /// </summary>
-        /// <param name="estimateStatisticsOperationToUpdate">The EstimateStatisticsOperation to update.</param>
-        /// <returns>The updated EstimateStatisticsOperation.</returns>
-        System.Threading.Tasks.Task<EstimateStatisticsOperation> UpdateAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EstimateStatisticsOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EstimateStatisticsOperation>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified EstimateStatisticsOperation using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EstimateStatisticsOperation.</returns>
-        System.Threading.Tasks.Task<EstimateStatisticsOperation> UpdateAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<EstimateStatisticsOperation> UpdateAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EstimateStatisticsOperation using PATCH and returns a <see cref="GraphResponse{EstimateStatisticsOperation}"/> object.
+        /// </summary>
+        /// <param name="estimateStatisticsOperationToUpdate">The EstimateStatisticsOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EstimateStatisticsOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EstimateStatisticsOperation>> UpdateResponseAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EstimateStatisticsOperation using PUT.
+        /// </summary>
+        /// <param name="estimateStatisticsOperationToUpdate">The EstimateStatisticsOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<EstimateStatisticsOperation> PutAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified EstimateStatisticsOperation using PUT and returns a <see cref="GraphResponse{EstimateStatisticsOperation}"/> object.
+        /// </summary>
+        /// <param name="estimateStatisticsOperationToUpdate">The EstimateStatisticsOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{EstimateStatisticsOperation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EstimateStatisticsOperation>> PutResponseAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

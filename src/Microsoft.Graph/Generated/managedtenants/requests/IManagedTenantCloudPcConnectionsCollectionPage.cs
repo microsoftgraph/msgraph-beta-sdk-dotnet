@@ -10,13 +10,12 @@
 namespace Microsoft.Graph.ManagedTenants
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IManagedTenantCloudPcConnectionsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.InterfaceConverter<ManagedTenantCloudPcConnectionsCollectionPage>))]
+    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<ManagedTenantCloudPcConnectionsCollectionPage>))]
     public interface IManagedTenantCloudPcConnectionsCollectionPage : Microsoft.Graph.ICollectionPage<CloudPcConnection>
     {
         /// <summary>

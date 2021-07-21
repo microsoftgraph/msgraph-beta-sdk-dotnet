@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to create.</param>
-        /// <returns>The created UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> CreateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate)
-        {
-            return this.CreateAsync(userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> CreateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> CreateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails.
+        /// Creates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> CreateResponseAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(userExperienceAnalyticsAppHealthDevicePerformanceDetailsToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails.
+        /// Deletes the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using PATCH.
+        /// Gets the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
         /// </summary>
-        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
-        public System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> UpdateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsAppHealthDevicePerformanceDetails.</returns>
-        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> UpdateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> UpdateAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, CancellationToken cancellationToken = default)
         {
-			if (userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate.AdditionalData != null)
-			{
-				if (userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate.AdditionalData != null)
-            {
-                if (userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> UpdateResponseAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UserExperienceAnalyticsAppHealthDevicePerformanceDetails> PutAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsAppHealthDevicePerformanceDetails using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate">The UserExperienceAnalyticsAppHealthDevicePerformanceDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UserExperienceAnalyticsAppHealthDevicePerformanceDetails}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>> PutResponseAsync(UserExperienceAnalyticsAppHealthDevicePerformanceDetails userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(userExperienceAnalyticsAppHealthDevicePerformanceDetailsToUpdate, cancellationToken);
         }
 
         /// <summary>

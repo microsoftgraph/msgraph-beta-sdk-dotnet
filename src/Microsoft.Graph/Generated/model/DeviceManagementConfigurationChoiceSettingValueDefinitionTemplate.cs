@@ -12,41 +12,32 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate>))]
     public partial class DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate"/> class.
-        /// </summary>
-        public DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate()
-        {
-            this.ODataType = "microsoft.graph.deviceManagementConfigurationChoiceSettingValueDefinitionTemplate";
-        }
 
         /// <summary>
         /// Gets or sets allowedOptions.
         /// Choice Setting Allowed Options
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedOptions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedOptions")]
         public IEnumerable<DeviceManagementConfigurationOptionDefinitionTemplate> AllowedOptions { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

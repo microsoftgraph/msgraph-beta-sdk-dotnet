@@ -12,104 +12,95 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type VpnTrafficRule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<VpnTrafficRule>))]
     public partial class VpnTrafficRule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VpnTrafficRule"/> class.
-        /// </summary>
-        public VpnTrafficRule()
-        {
-            this.ODataType = "microsoft.graph.vpnTrafficRule";
-        }
 
         /// <summary>
         /// Gets or sets appId.
         /// App identifier, if this traffic rule is triggered by an app.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appId")]
         public string AppId { get; set; }
     
         /// <summary>
         /// Gets or sets appType.
         /// App type, if this traffic rule is triggered by an app. Possible values are: none, desktop, universal.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appType")]
         public VpnTrafficRuleAppType? AppType { get; set; }
     
         /// <summary>
         /// Gets or sets claims.
         /// Claims associated with this traffic rule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claims", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("claims")]
         public string Claims { get; set; }
     
         /// <summary>
         /// Gets or sets localAddressRanges.
         /// Local address range. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localAddressRanges", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("localAddressRanges")]
         public IEnumerable<IPv4Range> LocalAddressRanges { get; set; }
     
         /// <summary>
         /// Gets or sets localPortRanges.
         /// Local port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "localPortRanges", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("localPortRanges")]
         public IEnumerable<NumberRange> LocalPortRanges { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// Name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets protocols.
         /// Protocols (0-255). Valid values 0 to 255
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "protocols", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("protocols")]
         public Int32? Protocols { get; set; }
     
         /// <summary>
         /// Gets or sets remoteAddressRanges.
         /// Remote address range. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remoteAddressRanges", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remoteAddressRanges")]
         public IEnumerable<IPv4Range> RemoteAddressRanges { get; set; }
     
         /// <summary>
         /// Gets or sets remotePortRanges.
         /// Remote port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remotePortRanges", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remotePortRanges")]
         public IEnumerable<NumberRange> RemotePortRanges { get; set; }
     
         /// <summary>
         /// Gets or sets routingPolicyType.
         /// When app triggered, indicates whether to enable split tunneling along this route. Possible values are: none, splitTunnel, forceTunnel.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "routingPolicyType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("routingPolicyType")]
         public VpnTrafficRuleRoutingPolicyType? RoutingPolicyType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

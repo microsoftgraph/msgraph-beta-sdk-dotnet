@@ -12,36 +12,35 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mobile App Policy Set Item.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MobileAppPolicySetItem>))]
     public partial class MobileAppPolicySetItem : PolicySetItem
     {
     
-		///<summary>
-		/// The MobileAppPolicySetItem constructor
-		///</summary>
+        ///<summary>
+        /// The MobileAppPolicySetItem constructor
+        ///</summary>
         public MobileAppPolicySetItem()
         {
             this.ODataType = "microsoft.graph.mobileAppPolicySetItem";
         }
-	
+
         /// <summary>
         /// Gets or sets intent.
         /// Install intent of the MobileAppPolicySetItem. Possible values are: available, required, uninstall, availableWithoutEnrollment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "intent", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("intent")]
         public InstallIntent? Intent { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
         /// Settings of the MobileAppPolicySetItem.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "settings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("settings")]
         public MobileAppAssignmentSettings Settings { get; set; }
     
     }

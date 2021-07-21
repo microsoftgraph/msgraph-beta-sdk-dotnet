@@ -12,36 +12,34 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Role Management Policy Authentication Context Rule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UnifiedRoleManagementPolicyAuthenticationContextRule : UnifiedRoleManagementPolicyRule
     {
     
-		///<summary>
-		/// The UnifiedRoleManagementPolicyAuthenticationContextRule constructor
-		///</summary>
+        ///<summary>
+        /// The UnifiedRoleManagementPolicyAuthenticationContextRule constructor
+        ///</summary>
         public UnifiedRoleManagementPolicyAuthenticationContextRule()
         {
             this.ODataType = "microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule";
         }
-	
+
         /// <summary>
         /// Gets or sets claim value.
         /// Value of the authentication context claim.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("claimValue")]
         public string ClaimValue { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
         /// Indicates if the setting is enabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEnabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
     }

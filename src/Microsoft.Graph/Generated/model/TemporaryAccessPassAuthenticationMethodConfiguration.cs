@@ -12,59 +12,63 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Temporary Access Pass Authentication Method Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TemporaryAccessPassAuthenticationMethodConfiguration : AuthenticationMethodConfiguration
     {
     
-		///<summary>
-		/// The TemporaryAccessPassAuthenticationMethodConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The TemporaryAccessPassAuthenticationMethodConfiguration constructor
+        ///</summary>
         public TemporaryAccessPassAuthenticationMethodConfiguration()
         {
             this.ODataType = "microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets default length.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLength", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultLength")]
         public Int32? DefaultLength { get; set; }
     
         /// <summary>
         /// Gets or sets default lifetime in minutes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultLifetimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultLifetimeInMinutes")]
         public Int32? DefaultLifetimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets is usable once.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isUsableOnce", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isUsableOnce")]
         public bool? IsUsableOnce { get; set; }
     
         /// <summary>
         /// Gets or sets maximum lifetime in minutes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumLifetimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumLifetimeInMinutes")]
         public Int32? MaximumLifetimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets minimum lifetime in minutes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "minimumLifetimeInMinutes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("minimumLifetimeInMinutes")]
         public Int32? MinimumLifetimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets include targets.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeTargets", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeTargets")]
         public ITemporaryAccessPassAuthenticationMethodConfigurationIncludeTargetsCollectionPage IncludeTargets { get; set; }
+
+        /// <summary>
+        /// Gets or sets includeTargetsNextLink.
+        /// </summary>
+        [JsonPropertyName("includeTargets@odata.nextLink")]
+        public string IncludeTargetsNextLink { get; set; }
     
     }
 }

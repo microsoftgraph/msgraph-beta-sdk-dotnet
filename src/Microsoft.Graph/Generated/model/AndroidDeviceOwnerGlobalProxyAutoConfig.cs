@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidDeviceOwnerGlobalProxyAutoConfig.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidDeviceOwnerGlobalProxyAutoConfig : AndroidDeviceOwnerGlobalProxy
     {
         /// <summary>
@@ -33,7 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets proxyAutoConfigURL.
         /// The proxy auto-config URL
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAutoConfigURL", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyAutoConfigURL")]
         public string ProxyAutoConfigURL { get; set; }
     
     }

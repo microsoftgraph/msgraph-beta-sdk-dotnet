@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementReusablePolicySetting using POST.
         /// </summary>
         /// <param name="deviceManagementReusablePolicySettingToCreate">The DeviceManagementReusablePolicySetting to create.</param>
-        /// <returns>The created DeviceManagementReusablePolicySetting.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> CreateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToCreate)
-        {
-            return this.CreateAsync(deviceManagementReusablePolicySettingToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementReusablePolicySetting using POST.
-        /// </summary>
-        /// <param name="deviceManagementReusablePolicySettingToCreate">The DeviceManagementReusablePolicySetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementReusablePolicySetting.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> CreateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> CreateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementReusablePolicySetting>(deviceManagementReusablePolicySettingToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagementReusablePolicySetting.
+        /// Creates the specified DeviceManagementReusablePolicySetting using POST and returns a <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementReusablePolicySettingToCreate">The DeviceManagementReusablePolicySetting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReusablePolicySetting>> CreateResponseAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReusablePolicySetting>(deviceManagementReusablePolicySettingToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementReusablePolicySetting>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagementReusablePolicySetting.
+        /// Deletes the specified DeviceManagementReusablePolicySetting and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementReusablePolicySetting.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementReusablePolicySetting.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementReusablePolicySetting>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagementReusablePolicySetting using PATCH.
+        /// Gets the specified DeviceManagementReusablePolicySetting and returns a <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object.
         /// </summary>
-        /// <param name="deviceManagementReusablePolicySettingToUpdate">The DeviceManagementReusablePolicySetting to update.</param>
-        /// <returns>The updated DeviceManagementReusablePolicySetting.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> UpdateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReusablePolicySetting>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceManagementReusablePolicySettingToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReusablePolicySetting>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementReusablePolicySetting.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> UpdateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> UpdateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceManagementReusablePolicySettingToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementReusablePolicySettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementReusablePolicySettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementReusablePolicySettingToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementReusablePolicySettingToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementReusablePolicySettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementReusablePolicySettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementReusablePolicySettingToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementReusablePolicySetting>(deviceManagementReusablePolicySettingToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReusablePolicySetting using PATCH and returns a <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReusablePolicySettingToUpdate">The DeviceManagementReusablePolicySetting to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReusablePolicySetting>> UpdateResponseAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReusablePolicySetting>(deviceManagementReusablePolicySettingToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReusablePolicySetting using PUT.
+        /// </summary>
+        /// <param name="deviceManagementReusablePolicySettingToUpdate">The DeviceManagementReusablePolicySetting object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> PutAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagementReusablePolicySetting>(deviceManagementReusablePolicySettingToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReusablePolicySetting using PUT and returns a <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReusablePolicySettingToUpdate">The DeviceManagementReusablePolicySetting object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementReusablePolicySetting>> PutResponseAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagementReusablePolicySetting>(deviceManagementReusablePolicySettingToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToInitialize)
         {
 
-            if (deviceManagementReusablePolicySettingToInitialize != null && deviceManagementReusablePolicySettingToInitialize.AdditionalData != null)
+            if (deviceManagementReusablePolicySettingToInitialize != null)
             {
-
                 if (deviceManagementReusablePolicySettingToInitialize.ReferencingConfigurationPolicies != null && deviceManagementReusablePolicySettingToInitialize.ReferencingConfigurationPolicies.CurrentPage != null)
                 {
+                    deviceManagementReusablePolicySettingToInitialize.ReferencingConfigurationPolicies.InitializeNextPageRequest(this.Client, deviceManagementReusablePolicySettingToInitialize.ReferencingConfigurationPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReusablePolicySettingToInitialize.ReferencingConfigurationPolicies.AdditionalData = deviceManagementReusablePolicySettingToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementReusablePolicySettingToInitialize.AdditionalData.TryGetValue("referencingConfigurationPolicies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementReusablePolicySettingToInitialize.ReferencingConfigurationPolicies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

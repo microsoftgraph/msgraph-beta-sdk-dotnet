@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified YammerDeviceUsageUserDetail using POST.
         /// </summary>
         /// <param name="yammerDeviceUsageUserDetailToCreate">The YammerDeviceUsageUserDetail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created YammerDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> CreateAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToCreate);        /// <summary>
-        /// Creates the specified YammerDeviceUsageUserDetail using POST.
+        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> CreateAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified YammerDeviceUsageUserDetail using POST and returns a <see cref="GraphResponse{YammerDeviceUsageUserDetail}"/> object.
         /// </summary>
         /// <param name="yammerDeviceUsageUserDetailToCreate">The YammerDeviceUsageUserDetail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created YammerDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> CreateAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified YammerDeviceUsageUserDetail.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserDetail>> CreateResponseAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified YammerDeviceUsageUserDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified YammerDeviceUsageUserDetail.
+        /// Deletes the specified YammerDeviceUsageUserDetail and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The YammerDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified YammerDeviceUsageUserDetail.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The YammerDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified YammerDeviceUsageUserDetail using PATCH.
+        /// Gets the specified YammerDeviceUsageUserDetail and returns a <see cref="GraphResponse{YammerDeviceUsageUserDetail}"/> object.
         /// </summary>
-        /// <param name="yammerDeviceUsageUserDetailToUpdate">The YammerDeviceUsageUserDetail to update.</param>
-        /// <returns>The updated YammerDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> UpdateAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserDetail>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified YammerDeviceUsageUserDetail using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated YammerDeviceUsageUserDetail.</returns>
-        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> UpdateAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> UpdateAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified YammerDeviceUsageUserDetail using PATCH and returns a <see cref="GraphResponse{YammerDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="yammerDeviceUsageUserDetailToUpdate">The YammerDeviceUsageUserDetail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{YammerDeviceUsageUserDetail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserDetail>> UpdateResponseAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified YammerDeviceUsageUserDetail using PUT.
+        /// </summary>
+        /// <param name="yammerDeviceUsageUserDetailToUpdate">The YammerDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<YammerDeviceUsageUserDetail> PutAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified YammerDeviceUsageUserDetail using PUT and returns a <see cref="GraphResponse{YammerDeviceUsageUserDetail}"/> object.
+        /// </summary>
+        /// <param name="yammerDeviceUsageUserDetailToUpdate">The YammerDeviceUsageUserDetail object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{YammerDeviceUsageUserDetail}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<YammerDeviceUsageUserDetail>> PutResponseAsync(YammerDeviceUsageUserDetail yammerDeviceUsageUserDetailToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

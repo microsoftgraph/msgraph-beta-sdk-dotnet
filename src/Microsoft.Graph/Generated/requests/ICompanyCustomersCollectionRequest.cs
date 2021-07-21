@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICompanyCustomersCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Customer to the collection via POST.
-        /// </summary>
-        /// <param name="customer">The Customer to add.</param>
-        /// <returns>The created Customer.</returns>
-        System.Threading.Tasks.Task<Customer> AddAsync(Customer customer);
-
         /// <summary>
         /// Adds the specified Customer to the collection via POST.
         /// </summary>
         /// <param name="customer">The Customer to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Customer.</returns>
-        System.Threading.Tasks.Task<Customer> AddAsync(Customer customer, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Customer> AddAsync(Customer customer, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Customer to the collection via POST and returns a <see cref="GraphResponse{Customer}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyCustomersCollectionPage> GetAsync();
+        /// <param name="customer">The Customer to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Customer}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Customer>> AddResponseAsync(Customer customer, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICompanyCustomersCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICompanyCustomersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyCustomersCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyCustomersCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CompanyCustomersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

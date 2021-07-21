@@ -20,33 +20,36 @@ namespace Microsoft.Graph.WindowsUpdates
     /// </summary>
     public partial interface IDeploymentAudienceExclusionsCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UpdatableAsset to the collection via POST.
-        /// </summary>
-        /// <param name="updatableAsset">The UpdatableAsset to add.</param>
-        /// <returns>The created UpdatableAsset.</returns>
-        System.Threading.Tasks.Task<UpdatableAsset> AddAsync(UpdatableAsset updatableAsset);
-
         /// <summary>
         /// Adds the specified UpdatableAsset to the collection via POST.
         /// </summary>
         /// <param name="updatableAsset">The UpdatableAsset to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UpdatableAsset.</returns>
-        System.Threading.Tasks.Task<UpdatableAsset> AddAsync(UpdatableAsset updatableAsset, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UpdatableAsset> AddAsync(UpdatableAsset updatableAsset, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UpdatableAsset to the collection via POST and returns a <see cref="GraphResponse{UpdatableAsset}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeploymentAudienceExclusionsCollectionPage> GetAsync();
+        /// <param name="updatableAsset">The UpdatableAsset to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UpdatableAsset}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UpdatableAsset>> AddResponseAsync(UpdatableAsset updatableAsset, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeploymentAudienceExclusionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeploymentAudienceExclusionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeploymentAudienceExclusionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeploymentAudienceExclusionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeploymentAudienceExclusionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

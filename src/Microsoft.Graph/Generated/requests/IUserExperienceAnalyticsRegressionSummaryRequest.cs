@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsRegressionSummary using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsRegressionSummaryToCreate">The UserExperienceAnalyticsRegressionSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsRegressionSummary.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> CreateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToCreate);        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsRegressionSummary using POST.
+        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> CreateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsRegressionSummary using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsRegressionSummaryToCreate">The UserExperienceAnalyticsRegressionSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UserExperienceAnalyticsRegressionSummary.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> CreateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsRegressionSummary.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> CreateResponseAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsRegressionSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified UserExperienceAnalyticsRegressionSummary.
+        /// Deletes the specified UserExperienceAnalyticsRegressionSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsRegressionSummary.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsRegressionSummary.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsRegressionSummary.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified UserExperienceAnalyticsRegressionSummary using PATCH.
+        /// Gets the specified UserExperienceAnalyticsRegressionSummary and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
         /// </summary>
-        /// <param name="userExperienceAnalyticsRegressionSummaryToUpdate">The UserExperienceAnalyticsRegressionSummary to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsRegressionSummary.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> UpdateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsRegressionSummary using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsRegressionSummary.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> UpdateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> UpdateAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsRegressionSummary using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsRegressionSummaryToUpdate">The UserExperienceAnalyticsRegressionSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> UpdateResponseAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsRegressionSummary using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsRegressionSummaryToUpdate">The UserExperienceAnalyticsRegressionSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserExperienceAnalyticsRegressionSummary> PutAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsRegressionSummary using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsRegressionSummaryToUpdate">The UserExperienceAnalyticsRegressionSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsRegressionSummary}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsRegressionSummary>> PutResponseAsync(UserExperienceAnalyticsRegressionSummary userExperienceAnalyticsRegressionSummaryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

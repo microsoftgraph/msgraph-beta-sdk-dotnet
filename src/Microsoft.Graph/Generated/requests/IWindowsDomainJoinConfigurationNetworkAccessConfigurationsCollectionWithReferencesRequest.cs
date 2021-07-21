@@ -20,18 +20,20 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesRequest : IBaseRequest
     {
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IWindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDomainJoinConfigurationNetworkAccessConfigurationsCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

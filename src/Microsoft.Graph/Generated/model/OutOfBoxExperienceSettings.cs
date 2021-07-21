@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type OutOfBoxExperienceSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<OutOfBoxExperienceSettings>))]
     public partial class OutOfBoxExperienceSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OutOfBoxExperienceSettings"/> class.
-        /// </summary>
-        public OutOfBoxExperienceSettings()
-        {
-            this.ODataType = "microsoft.graph.outOfBoxExperienceSettings";
-        }
 
         /// <summary>
         /// Gets or sets deviceUsageType.
         /// AAD join authentication type. Possible values are: singleUser, shared.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceUsageType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceUsageType")]
         public WindowsDeviceUsageType? DeviceUsageType { get; set; }
     
         /// <summary>
         /// Gets or sets hideEscapeLink.
         /// If set to true, then the user can't start over with different account, on company sign-in
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideEscapeLink", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hideEscapeLink")]
         public bool? HideEscapeLink { get; set; }
     
         /// <summary>
         /// Gets or sets hideEULA.
         /// Show or hide EULA to user
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hideEULA", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hideEULA")]
         public bool? HideEULA { get; set; }
     
         /// <summary>
         /// Gets or sets hidePrivacySettings.
         /// Show or hide privacy settings to user
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hidePrivacySettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hidePrivacySettings")]
         public bool? HidePrivacySettings { get; set; }
     
         /// <summary>
         /// Gets or sets skipKeyboardSelectionPage.
         /// If set, then skip the keyboard selection page if Language and Region are set
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "skipKeyboardSelectionPage", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("skipKeyboardSelectionPage")]
         public bool? SkipKeyboardSelectionPage { get; set; }
     
         /// <summary>
         /// Gets or sets userType.
         /// Type of user. Possible values are: administrator, standard.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userType")]
         public WindowsUserType? UserType { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

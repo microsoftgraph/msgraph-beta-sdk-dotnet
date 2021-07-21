@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AssignmentFilterEvaluationStatusDetails using POST.
         /// </summary>
         /// <param name="assignmentFilterEvaluationStatusDetailsToCreate">The AssignmentFilterEvaluationStatusDetails to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AssignmentFilterEvaluationStatusDetails.</returns>
-        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> CreateAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToCreate);        /// <summary>
-        /// Creates the specified AssignmentFilterEvaluationStatusDetails using POST.
+        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> CreateAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AssignmentFilterEvaluationStatusDetails using POST and returns a <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object.
         /// </summary>
         /// <param name="assignmentFilterEvaluationStatusDetailsToCreate">The AssignmentFilterEvaluationStatusDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AssignmentFilterEvaluationStatusDetails.</returns>
-        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> CreateAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AssignmentFilterEvaluationStatusDetails.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> CreateResponseAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AssignmentFilterEvaluationStatusDetails.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AssignmentFilterEvaluationStatusDetails.
+        /// Deletes the specified AssignmentFilterEvaluationStatusDetails and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AssignmentFilterEvaluationStatusDetails.</returns>
-        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AssignmentFilterEvaluationStatusDetails.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AssignmentFilterEvaluationStatusDetails.</returns>
-        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AssignmentFilterEvaluationStatusDetails using PATCH.
+        /// Gets the specified AssignmentFilterEvaluationStatusDetails and returns a <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object.
         /// </summary>
-        /// <param name="assignmentFilterEvaluationStatusDetailsToUpdate">The AssignmentFilterEvaluationStatusDetails to update.</param>
-        /// <returns>The updated AssignmentFilterEvaluationStatusDetails.</returns>
-        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> UpdateAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AssignmentFilterEvaluationStatusDetails using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AssignmentFilterEvaluationStatusDetails.</returns>
-        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> UpdateAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> UpdateAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AssignmentFilterEvaluationStatusDetails using PATCH and returns a <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object.
+        /// </summary>
+        /// <param name="assignmentFilterEvaluationStatusDetailsToUpdate">The AssignmentFilterEvaluationStatusDetails to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> UpdateResponseAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AssignmentFilterEvaluationStatusDetails using PUT.
+        /// </summary>
+        /// <param name="assignmentFilterEvaluationStatusDetailsToUpdate">The AssignmentFilterEvaluationStatusDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AssignmentFilterEvaluationStatusDetails> PutAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AssignmentFilterEvaluationStatusDetails using PUT and returns a <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> object.
+        /// </summary>
+        /// <param name="assignmentFilterEvaluationStatusDetailsToUpdate">The AssignmentFilterEvaluationStatusDetails object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AssignmentFilterEvaluationStatusDetails}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AssignmentFilterEvaluationStatusDetails>> PutResponseAsync(AssignmentFilterEvaluationStatusDetails assignmentFilterEvaluationStatusDetailsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -10,13 +10,12 @@
 
 namespace Microsoft.Graph.TermStore
 {
-    using System;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum RelationType.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.EnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum RelationType
     {
     

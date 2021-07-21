@@ -12,19 +12,18 @@ namespace Microsoft.Graph.WindowsUpdates
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Updatable Asset.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<UpdatableAsset>))]
     public partial class UpdatableAsset : Microsoft.Graph.Entity
     {
     
-		///<summary>
-		/// The internal UpdatableAsset constructor
-		///</summary>
+        ///<summary>
+        /// The internal UpdatableAsset constructor
+        ///</summary>
         protected internal UpdatableAsset()
         {
             // Don't allow initialization of abstract entity types

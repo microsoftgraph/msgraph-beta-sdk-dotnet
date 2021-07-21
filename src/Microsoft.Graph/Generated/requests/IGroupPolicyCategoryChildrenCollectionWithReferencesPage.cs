@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IGroupPolicyCategoryChildrenCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<GroupPolicyCategoryChildrenCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<GroupPolicyCategoryChildrenCollectionWithReferencesPage>))]
     public interface IGroupPolicyCategoryChildrenCollectionWithReferencesPage : ICollectionPage<GroupPolicyCategory>
     {
         /// <summary>

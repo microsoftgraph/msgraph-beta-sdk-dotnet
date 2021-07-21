@@ -23,57 +23,64 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the specified SourceCollection.
         /// </summary>
-        /// <returns>The SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> GetAsync();
-
-        /// <summary>
-        /// Gets the specified SourceCollection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SourceCollection> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the specified SourceCollection and returns a <see cref="GraphResponse{SourceCollection}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SourceCollection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SourceCollection>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified SourceCollection using POST.
         /// </summary>
         /// <param name="sourceCollectionToCreate">The SourceCollection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> CreateAsync(SourceCollection sourceCollectionToCreate);        /// <summary>
-        /// Creates the specified SourceCollection using POST.
+        System.Threading.Tasks.Task<SourceCollection> CreateAsync(SourceCollection sourceCollectionToCreate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Creates the specified SourceCollection using POST and returns a <see cref="GraphResponse{SourceCollection}"/> object.
         /// </summary>
         /// <param name="sourceCollectionToCreate">The SourceCollection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> CreateAsync(SourceCollection sourceCollectionToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{SourceCollection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SourceCollection>> CreateResponseAsync(SourceCollection sourceCollectionToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
-        /// Updates the specified SourceCollection using PATCH.
-        /// </summary>
-        /// <param name="sourceCollectionToUpdate">The SourceCollection to update.</param>
-        /// <returns>The updated SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> UpdateAsync(SourceCollection sourceCollectionToUpdate);
-
-        /// <summary>
         /// Updates the specified SourceCollection using PATCH.
         /// </summary>
         /// <param name="sourceCollectionToUpdate">The SourceCollection to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SourceCollection.</returns>
-        System.Threading.Tasks.Task<SourceCollection> UpdateAsync(SourceCollection sourceCollectionToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SourceCollection> UpdateAsync(SourceCollection sourceCollectionToUpdate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Updates the specified SourceCollection using PATCH and returns a <see cref="GraphResponse{SourceCollection}"/> object.
+        /// </summary>
+        /// <param name="sourceCollectionToUpdate">The SourceCollection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SourceCollection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SourceCollection>> UpdateResponseAsync(SourceCollection sourceCollectionToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified SourceCollection.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified SourceCollection.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Deletes the specified SourceCollection and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

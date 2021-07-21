@@ -12,41 +12,32 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamDiscoverySettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<TeamDiscoverySettings>))]
     public partial class TeamDiscoverySettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TeamDiscoverySettings"/> class.
-        /// </summary>
-        public TeamDiscoverySettings()
-        {
-            this.ODataType = "microsoft.graph.teamDiscoverySettings";
-        }
 
         /// <summary>
         /// Gets or sets showInTeamsSearchAndSuggestions.
         /// If set to true, the team is visible via search and suggestions from the Teams client.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "showInTeamsSearchAndSuggestions", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("showInTeamsSearchAndSuggestions")]
         public bool? ShowInTeamsSearchAndSuggestions { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

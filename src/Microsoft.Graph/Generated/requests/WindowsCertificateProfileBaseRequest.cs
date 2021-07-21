@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsCertificateProfileBase using POST.
         /// </summary>
         /// <param name="windowsCertificateProfileBaseToCreate">The WindowsCertificateProfileBase to create.</param>
-        /// <returns>The created WindowsCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<WindowsCertificateProfileBase> CreateAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToCreate)
-        {
-            return this.CreateAsync(windowsCertificateProfileBaseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsCertificateProfileBase using POST.
-        /// </summary>
-        /// <param name="windowsCertificateProfileBaseToCreate">The WindowsCertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<WindowsCertificateProfileBase> CreateAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsCertificateProfileBase> CreateAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsCertificateProfileBase>(windowsCertificateProfileBaseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsCertificateProfileBase.
+        /// Creates the specified WindowsCertificateProfileBase using POST and returns a <see cref="GraphResponse{WindowsCertificateProfileBase}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsCertificateProfileBaseToCreate">The WindowsCertificateProfileBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsCertificateProfileBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsCertificateProfileBase>> CreateResponseAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsCertificateProfileBase>(windowsCertificateProfileBaseToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsCertificateProfileBase>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsCertificateProfileBase.
+        /// Deletes the specified WindowsCertificateProfileBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<WindowsCertificateProfileBase> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<WindowsCertificateProfileBase> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsCertificateProfileBase> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsCertificateProfileBase>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsCertificateProfileBase using PATCH.
+        /// Gets the specified WindowsCertificateProfileBase and returns a <see cref="GraphResponse{WindowsCertificateProfileBase}"/> object.
         /// </summary>
-        /// <param name="windowsCertificateProfileBaseToUpdate">The WindowsCertificateProfileBase to update.</param>
-        /// <returns>The updated WindowsCertificateProfileBase.</returns>
-        public System.Threading.Tasks.Task<WindowsCertificateProfileBase> UpdateAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsCertificateProfileBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsCertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windowsCertificateProfileBaseToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsCertificateProfileBase>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsCertificateProfileBase.</returns>
-        public async System.Threading.Tasks.Task<WindowsCertificateProfileBase> UpdateAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsCertificateProfileBase> UpdateAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windowsCertificateProfileBaseToUpdate.AdditionalData != null)
-			{
-				if (windowsCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsCertificateProfileBaseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsCertificateProfileBaseToUpdate.AdditionalData != null)
-            {
-                if (windowsCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsCertificateProfileBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsCertificateProfileBaseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsCertificateProfileBase>(windowsCertificateProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsCertificateProfileBase using PATCH and returns a <see cref="GraphResponse{WindowsCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="windowsCertificateProfileBaseToUpdate">The WindowsCertificateProfileBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsCertificateProfileBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsCertificateProfileBase>> UpdateResponseAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsCertificateProfileBase>(windowsCertificateProfileBaseToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsCertificateProfileBase using PUT.
+        /// </summary>
+        /// <param name="windowsCertificateProfileBaseToUpdate">The WindowsCertificateProfileBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsCertificateProfileBase> PutAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsCertificateProfileBase>(windowsCertificateProfileBaseToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsCertificateProfileBase using PUT and returns a <see cref="GraphResponse{WindowsCertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="windowsCertificateProfileBaseToUpdate">The WindowsCertificateProfileBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsCertificateProfileBase}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsCertificateProfileBase>> PutResponseAsync(WindowsCertificateProfileBase windowsCertificateProfileBaseToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsCertificateProfileBase>(windowsCertificateProfileBaseToUpdate, cancellationToken);
         }
 
         /// <summary>

@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AndroidDeviceOwnerKioskModeApp.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class AndroidDeviceOwnerKioskModeApp : AndroidDeviceOwnerKioskModeFolderItem
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets className.
         /// Class name of application
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "className", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("className")]
         public string ClassName { get; set; }
     
         /// <summary>
         /// Gets or sets package.
         /// Package name of application
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "package", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("package")]
         public string Package { get; set; }
     
     }

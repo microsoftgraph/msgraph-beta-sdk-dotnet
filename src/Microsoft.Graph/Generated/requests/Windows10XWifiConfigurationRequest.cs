@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Windows10XWifiConfiguration using POST.
         /// </summary>
         /// <param name="windows10XWifiConfigurationToCreate">The Windows10XWifiConfiguration to create.</param>
-        /// <returns>The created Windows10XWifiConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows10XWifiConfiguration> CreateAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToCreate)
-        {
-            return this.CreateAsync(windows10XWifiConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Windows10XWifiConfiguration using POST.
-        /// </summary>
-        /// <param name="windows10XWifiConfigurationToCreate">The Windows10XWifiConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10XWifiConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows10XWifiConfiguration> CreateAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10XWifiConfiguration> CreateAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Windows10XWifiConfiguration>(windows10XWifiConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Windows10XWifiConfiguration.
+        /// Creates the specified Windows10XWifiConfiguration using POST and returns a <see cref="GraphResponse{Windows10XWifiConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windows10XWifiConfigurationToCreate">The Windows10XWifiConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10XWifiConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XWifiConfiguration>> CreateResponseAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Windows10XWifiConfiguration>(windows10XWifiConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Windows10XWifiConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Windows10XWifiConfiguration.
+        /// Deletes the specified Windows10XWifiConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Windows10XWifiConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows10XWifiConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Windows10XWifiConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows10XWifiConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10XWifiConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Windows10XWifiConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Windows10XWifiConfiguration using PATCH.
+        /// Gets the specified Windows10XWifiConfiguration and returns a <see cref="GraphResponse{Windows10XWifiConfiguration}"/> object.
         /// </summary>
-        /// <param name="windows10XWifiConfigurationToUpdate">The Windows10XWifiConfiguration to update.</param>
-        /// <returns>The updated Windows10XWifiConfiguration.</returns>
-        public System.Threading.Tasks.Task<Windows10XWifiConfiguration> UpdateAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10XWifiConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XWifiConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windows10XWifiConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Windows10XWifiConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Windows10XWifiConfiguration.</returns>
-        public async System.Threading.Tasks.Task<Windows10XWifiConfiguration> UpdateAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Windows10XWifiConfiguration> UpdateAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windows10XWifiConfigurationToUpdate.AdditionalData != null)
-			{
-				if (windows10XWifiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windows10XWifiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XWifiConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windows10XWifiConfigurationToUpdate.AdditionalData != null)
-            {
-                if (windows10XWifiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windows10XWifiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10XWifiConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Windows10XWifiConfiguration>(windows10XWifiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10XWifiConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10XWifiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10XWifiConfigurationToUpdate">The Windows10XWifiConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10XWifiConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XWifiConfiguration>> UpdateResponseAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Windows10XWifiConfiguration>(windows10XWifiConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10XWifiConfiguration using PUT.
+        /// </summary>
+        /// <param name="windows10XWifiConfigurationToUpdate">The Windows10XWifiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Windows10XWifiConfiguration> PutAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Windows10XWifiConfiguration>(windows10XWifiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10XWifiConfiguration using PUT and returns a <see cref="GraphResponse{Windows10XWifiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10XWifiConfigurationToUpdate">The Windows10XWifiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Windows10XWifiConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10XWifiConfiguration>> PutResponseAsync(Windows10XWifiConfiguration windows10XWifiConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Windows10XWifiConfiguration>(windows10XWifiConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

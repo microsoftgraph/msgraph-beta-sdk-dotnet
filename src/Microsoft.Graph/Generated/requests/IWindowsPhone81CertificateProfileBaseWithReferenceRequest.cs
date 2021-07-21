@@ -23,57 +23,64 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified WindowsPhone81CertificateProfileBase.
         /// </summary>
-        /// <returns>The WindowsPhone81CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> GetAsync();
-
-        /// <summary>
-        /// Gets the specified WindowsPhone81CertificateProfileBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsPhone81CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the specified WindowsPhone81CertificateProfileBase and returns a <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CertificateProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Creates the specified WindowsPhone81CertificateProfileBase using POST.
         /// </summary>
         /// <param name="windowsPhone81CertificateProfileBaseToCreate">The WindowsPhone81CertificateProfileBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPhone81CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> CreateAsync(WindowsPhone81CertificateProfileBase windowsPhone81CertificateProfileBaseToCreate);        /// <summary>
-        /// Creates the specified WindowsPhone81CertificateProfileBase using POST.
+        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> CreateAsync(WindowsPhone81CertificateProfileBase windowsPhone81CertificateProfileBaseToCreate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Creates the specified WindowsPhone81CertificateProfileBase using POST and returns a <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object.
         /// </summary>
         /// <param name="windowsPhone81CertificateProfileBaseToCreate">The WindowsPhone81CertificateProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsPhone81CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> CreateAsync(WindowsPhone81CertificateProfileBase windowsPhone81CertificateProfileBaseToCreate, CancellationToken cancellationToken);
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CertificateProfileBase>> CreateResponseAsync(WindowsPhone81CertificateProfileBase windowsPhone81CertificateProfileBaseToCreate, CancellationToken cancellationToken = default);
 
 		/// <summary>
-        /// Updates the specified WindowsPhone81CertificateProfileBase using PATCH.
-        /// </summary>
-        /// <param name="windowsPhone81CertificateProfileBaseToUpdate">The WindowsPhone81CertificateProfileBase to update.</param>
-        /// <returns>The updated WindowsPhone81CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> UpdateAsync(WindowsPhone81CertificateProfileBase windowsPhone81CertificateProfileBaseToUpdate);
-
-        /// <summary>
         /// Updates the specified WindowsPhone81CertificateProfileBase using PATCH.
         /// </summary>
         /// <param name="windowsPhone81CertificateProfileBaseToUpdate">The WindowsPhone81CertificateProfileBase to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsPhone81CertificateProfileBase.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> UpdateAsync(WindowsPhone81CertificateProfileBase windowsPhone81CertificateProfileBaseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsPhone81CertificateProfileBase> UpdateAsync(WindowsPhone81CertificateProfileBase windowsPhone81CertificateProfileBaseToUpdate, CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Updates the specified WindowsPhone81CertificateProfileBase using PATCH and returns a <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81CertificateProfileBaseToUpdate">The WindowsPhone81CertificateProfileBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CertificateProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CertificateProfileBase>> UpdateResponseAsync(WindowsPhone81CertificateProfileBase windowsPhone81CertificateProfileBaseToUpdate, CancellationToken cancellationToken = default);
 
 		/// <summary>
         /// Deletes the specified WindowsPhone81CertificateProfileBase.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
-
-        /// <summary>
-        /// Deletes the specified WindowsPhone81CertificateProfileBase.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
+
+		/// <summary>
+        /// Deletes the specified WindowsPhone81CertificateProfileBase and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -12,85 +12,84 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Android Work Profile Enterprise Wi Fi Configuration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidWorkProfileEnterpriseWiFiConfiguration>))]
     public partial class AndroidWorkProfileEnterpriseWiFiConfiguration : AndroidWorkProfileWiFiConfiguration
     {
     
-		///<summary>
-		/// The AndroidWorkProfileEnterpriseWiFiConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidWorkProfileEnterpriseWiFiConfiguration constructor
+        ///</summary>
         public AndroidWorkProfileEnterpriseWiFiConfiguration()
         {
             this.ODataType = "microsoft.graph.androidWorkProfileEnterpriseWiFiConfiguration";
         }
-	
+
         /// <summary>
         /// Gets or sets authentication method.
         /// Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationMethod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("authenticationMethod")]
         public WiFiAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets eap type.
         /// Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, eapTtls, peap.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "eapType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("eapType")]
         public AndroidEapType? EapType { get; set; }
     
         /// <summary>
         /// Gets or sets inner authentication protocol for eap ttls.
         /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerAuthenticationProtocolForEapTtls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("innerAuthenticationProtocolForEapTtls")]
         public NonEapAuthenticationMethodForEapTtlsType? InnerAuthenticationProtocolForEapTtls { get; set; }
     
         /// <summary>
         /// Gets or sets inner authentication protocol for peap.
         /// Non-EAP Method for Authentication (Inner Identity) when EAP Type is PEAP and Authenticationmethod is Username and Password. Possible values are: none, microsoftChapVersionTwo.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "innerAuthenticationProtocolForPeap", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("innerAuthenticationProtocolForPeap")]
         public NonEapAuthenticationMethodForPeap? InnerAuthenticationProtocolForPeap { get; set; }
     
         /// <summary>
         /// Gets or sets outer identity privacy temporary value.
         /// Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS or PEAP. The String provided here is used to mask the username of individual users when they attempt to connect to Wi-Fi network.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "outerIdentityPrivacyTemporaryValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("outerIdentityPrivacyTemporaryValue")]
         public string OuterIdentityPrivacyTemporaryValue { get; set; }
     
         /// <summary>
         /// Gets or sets proxy automatic configuration url.
         /// URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxyAutomaticConfigurationUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxyAutomaticConfigurationUrl")]
         public string ProxyAutomaticConfigurationUrl { get; set; }
     
         /// <summary>
         /// Gets or sets proxy settings.
         /// Proxy Type for this Wi-Fi connection. Possible values are: none, manual, automatic.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "proxySettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("proxySettings")]
         public WiFiProxySetting? ProxySettings { get; set; }
     
         /// <summary>
         /// Gets or sets identity certificate for client authentication.
         /// Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identityCertificateForClientAuthentication", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identityCertificateForClientAuthentication")]
         public AndroidWorkProfileCertificateProfileBase IdentityCertificateForClientAuthentication { get; set; }
     
         /// <summary>
         /// Gets or sets root certificate for server validation.
         /// Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootCertificateForServerValidation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rootCertificateForServerValidation")]
         public AndroidWorkProfileTrustedRootCertificate RootCertificateForServerValidation { get; set; }
     
     }

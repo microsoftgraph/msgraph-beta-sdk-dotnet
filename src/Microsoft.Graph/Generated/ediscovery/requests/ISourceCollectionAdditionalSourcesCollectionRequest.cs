@@ -20,33 +20,36 @@ namespace Microsoft.Graph.Ediscovery
     /// </summary>
     public partial interface ISourceCollectionAdditionalSourcesCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified DataSource to the collection via POST.
-        /// </summary>
-        /// <param name="dataSource">The DataSource to add.</param>
-        /// <returns>The created DataSource.</returns>
-        System.Threading.Tasks.Task<DataSource> AddAsync(DataSource dataSource);
-
         /// <summary>
         /// Adds the specified DataSource to the collection via POST.
         /// </summary>
         /// <param name="dataSource">The DataSource to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataSource.</returns>
-        System.Threading.Tasks.Task<DataSource> AddAsync(DataSource dataSource, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DataSource> AddAsync(DataSource dataSource, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified DataSource to the collection via POST and returns a <see cref="GraphResponse{DataSource}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISourceCollectionAdditionalSourcesCollectionPage> GetAsync();
+        /// <param name="dataSource">The DataSource to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataSource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataSource>> AddResponseAsync(DataSource dataSource, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ISourceCollectionAdditionalSourcesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ISourceCollectionAdditionalSourcesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{SourceCollectionAdditionalSourcesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SourceCollectionAdditionalSourcesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SourceCollectionAdditionalSourcesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

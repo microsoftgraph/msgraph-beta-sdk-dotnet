@@ -19,18 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserJoinedTeamsCollectionReferencesRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Team to the collection via POST.
-        /// </summary>
-        /// <param name="team">The Team to add.</param>
-        System.Threading.Tasks.Task AddAsync(Team team);
-
         /// <summary>
         /// Adds the specified Team to the collection via POST.
         /// </summary>
         /// <param name="team">The Team to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(Team team, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task AddAsync(Team team, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified Team to the collection via POST and returns a <see cref="GraphResponse{Team}"/> object of the request.
+        /// </summary>
+        /// <param name="team">The Team to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Team team, CancellationToken cancellationToken = default);
+
     }
 }

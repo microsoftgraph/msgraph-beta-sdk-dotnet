@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IOutlookTaskCompleteCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<OutlookTaskCompleteCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<OutlookTaskCompleteCollectionPage>))]
     public interface IOutlookTaskCompleteCollectionPage : ICollectionPage<OutlookTask>
     {
         /// <summary>

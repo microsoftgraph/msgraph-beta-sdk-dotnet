@@ -12,62 +12,53 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ContentInfo.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ContentInfo>))]
     public partial class ContentInfo
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ContentInfo"/> class.
-        /// </summary>
-        public ContentInfo()
-        {
-            this.ODataType = "microsoft.graph.contentInfo";
-        }
 
         /// <summary>
         /// Gets or sets format.
         /// Possible values are: default, email.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "format", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("format")]
         public ContentFormat? Format { get; set; }
     
         /// <summary>
         /// Gets or sets identifier.
         /// Identifier used for Azure Information Protection Analytics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "identifier", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("identifier")]
         public string Identifier { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
         /// Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "metadata", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("metadata")]
         public IEnumerable<KeyValuePair> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// Possible values are: rest, motion, use.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public ContentState? State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

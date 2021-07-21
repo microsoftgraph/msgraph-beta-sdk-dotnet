@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IRbacApplicationMultipleRoleAssignmentsCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<RbacApplicationMultipleRoleAssignmentsCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<RbacApplicationMultipleRoleAssignmentsCollectionPage>))]
     public interface IRbacApplicationMultipleRoleAssignmentsCollectionPage : ICollectionPage<UnifiedRoleAssignmentMultiple>
     {
         /// <summary>

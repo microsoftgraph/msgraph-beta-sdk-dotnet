@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified UnifiedRoleManagementPolicyAssignment using POST.
         /// </summary>
         /// <param name="unifiedRoleManagementPolicyAssignmentToCreate">The UnifiedRoleManagementPolicyAssignment to create.</param>
-        /// <returns>The created UnifiedRoleManagementPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> CreateAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToCreate)
-        {
-            return this.CreateAsync(unifiedRoleManagementPolicyAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified UnifiedRoleManagementPolicyAssignment using POST.
-        /// </summary>
-        /// <param name="unifiedRoleManagementPolicyAssignmentToCreate">The UnifiedRoleManagementPolicyAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleManagementPolicyAssignment.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> CreateAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> CreateAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<UnifiedRoleManagementPolicyAssignment>(unifiedRoleManagementPolicyAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified UnifiedRoleManagementPolicyAssignment.
+        /// Creates the specified UnifiedRoleManagementPolicyAssignment using POST and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="unifiedRoleManagementPolicyAssignmentToCreate">The UnifiedRoleManagementPolicyAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyAssignment>> CreateResponseAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyAssignment>(unifiedRoleManagementPolicyAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<UnifiedRoleManagementPolicyAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified UnifiedRoleManagementPolicyAssignment.
+        /// Deletes the specified UnifiedRoleManagementPolicyAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UnifiedRoleManagementPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UnifiedRoleManagementPolicyAssignment.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<UnifiedRoleManagementPolicyAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified UnifiedRoleManagementPolicyAssignment using PATCH.
+        /// Gets the specified UnifiedRoleManagementPolicyAssignment and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyAssignment}"/> object.
         /// </summary>
-        /// <param name="unifiedRoleManagementPolicyAssignmentToUpdate">The UnifiedRoleManagementPolicyAssignment to update.</param>
-        /// <returns>The updated UnifiedRoleManagementPolicyAssignment.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> UpdateAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyAssignment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(unifiedRoleManagementPolicyAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UnifiedRoleManagementPolicyAssignment.</returns>
-        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> UpdateAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> UpdateAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (unifiedRoleManagementPolicyAssignmentToUpdate.AdditionalData != null)
-			{
-				if (unifiedRoleManagementPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					unifiedRoleManagementPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleManagementPolicyAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (unifiedRoleManagementPolicyAssignmentToUpdate.AdditionalData != null)
-            {
-                if (unifiedRoleManagementPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    unifiedRoleManagementPolicyAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, unifiedRoleManagementPolicyAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<UnifiedRoleManagementPolicyAssignment>(unifiedRoleManagementPolicyAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyAssignment using PATCH and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyAssignmentToUpdate">The UnifiedRoleManagementPolicyAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyAssignment>> UpdateResponseAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyAssignment>(unifiedRoleManagementPolicyAssignmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyAssignment using PUT.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyAssignmentToUpdate">The UnifiedRoleManagementPolicyAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<UnifiedRoleManagementPolicyAssignment> PutAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<UnifiedRoleManagementPolicyAssignment>(unifiedRoleManagementPolicyAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified UnifiedRoleManagementPolicyAssignment using PUT and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="unifiedRoleManagementPolicyAssignmentToUpdate">The UnifiedRoleManagementPolicyAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{UnifiedRoleManagementPolicyAssignment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicyAssignment>> PutResponseAsync(UnifiedRoleManagementPolicyAssignment unifiedRoleManagementPolicyAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleManagementPolicyAssignment>(unifiedRoleManagementPolicyAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

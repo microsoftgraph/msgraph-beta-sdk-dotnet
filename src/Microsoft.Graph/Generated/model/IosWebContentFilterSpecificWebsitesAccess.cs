@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosWebContentFilterSpecificWebsitesAccess.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class IosWebContentFilterSpecificWebsitesAccess : IosWebContentFilterBase
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets specificWebsitesOnly.
         /// URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "specificWebsitesOnly", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("specificWebsitesOnly")]
         public IEnumerable<IosBookmark> SpecificWebsitesOnly { get; set; }
     
         /// <summary>
         /// Gets or sets websiteList.
         /// URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "websiteList", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("websiteList")]
         public IEnumerable<IosBookmark> WebsiteList { get; set; }
     
     }

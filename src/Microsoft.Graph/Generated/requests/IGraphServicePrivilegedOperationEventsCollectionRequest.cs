@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGraphServicePrivilegedOperationEventsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified PrivilegedOperationEvent to the collection via POST.
-        /// </summary>
-        /// <param name="privilegedOperationEvent">The PrivilegedOperationEvent to add.</param>
-        /// <returns>The created PrivilegedOperationEvent.</returns>
-        System.Threading.Tasks.Task<PrivilegedOperationEvent> AddAsync(PrivilegedOperationEvent privilegedOperationEvent);
-
         /// <summary>
         /// Adds the specified PrivilegedOperationEvent to the collection via POST.
         /// </summary>
         /// <param name="privilegedOperationEvent">The PrivilegedOperationEvent to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PrivilegedOperationEvent.</returns>
-        System.Threading.Tasks.Task<PrivilegedOperationEvent> AddAsync(PrivilegedOperationEvent privilegedOperationEvent, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PrivilegedOperationEvent> AddAsync(PrivilegedOperationEvent privilegedOperationEvent, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified PrivilegedOperationEvent to the collection via POST and returns a <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServicePrivilegedOperationEventsCollectionPage> GetAsync();
+        /// <param name="privilegedOperationEvent">The PrivilegedOperationEvent to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PrivilegedOperationEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PrivilegedOperationEvent>> AddResponseAsync(PrivilegedOperationEvent privilegedOperationEvent, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGraphServicePrivilegedOperationEventsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGraphServicePrivilegedOperationEventsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServicePrivilegedOperationEventsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GraphServicePrivilegedOperationEventsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GraphServicePrivilegedOperationEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

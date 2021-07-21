@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UnsupportedGroupPolicyExtension to the collection via POST.
-        /// </summary>
-        /// <param name="unsupportedGroupPolicyExtension">The UnsupportedGroupPolicyExtension to add.</param>
-        /// <returns>The created UnsupportedGroupPolicyExtension.</returns>
-        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> AddAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension);
-
         /// <summary>
         /// Adds the specified UnsupportedGroupPolicyExtension to the collection via POST.
         /// </summary>
         /// <param name="unsupportedGroupPolicyExtension">The UnsupportedGroupPolicyExtension to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnsupportedGroupPolicyExtension.</returns>
-        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> AddAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnsupportedGroupPolicyExtension> AddAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UnsupportedGroupPolicyExtension to the collection via POST and returns a <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionPage> GetAsync();
+        /// <param name="unsupportedGroupPolicyExtension">The UnsupportedGroupPolicyExtension to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnsupportedGroupPolicyExtension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnsupportedGroupPolicyExtension>> AddResponseAsync(UnsupportedGroupPolicyExtension unsupportedGroupPolicyExtension, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

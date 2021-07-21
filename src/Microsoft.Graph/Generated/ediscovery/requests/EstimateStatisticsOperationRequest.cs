@@ -39,34 +39,28 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified EstimateStatisticsOperation using POST.
         /// </summary>
         /// <param name="estimateStatisticsOperationToCreate">The EstimateStatisticsOperation to create.</param>
-        /// <returns>The created EstimateStatisticsOperation.</returns>
-        public System.Threading.Tasks.Task<EstimateStatisticsOperation> CreateAsync(EstimateStatisticsOperation estimateStatisticsOperationToCreate)
-        {
-            return this.CreateAsync(estimateStatisticsOperationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EstimateStatisticsOperation using POST.
-        /// </summary>
-        /// <param name="estimateStatisticsOperationToCreate">The EstimateStatisticsOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EstimateStatisticsOperation.</returns>
-        public async System.Threading.Tasks.Task<EstimateStatisticsOperation> CreateAsync(EstimateStatisticsOperation estimateStatisticsOperationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EstimateStatisticsOperation> CreateAsync(EstimateStatisticsOperation estimateStatisticsOperationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EstimateStatisticsOperation>(estimateStatisticsOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EstimateStatisticsOperation.
+        /// Creates the specified EstimateStatisticsOperation using POST and returns a <see cref="GraphResponse{EstimateStatisticsOperation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="estimateStatisticsOperationToCreate">The EstimateStatisticsOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EstimateStatisticsOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EstimateStatisticsOperation>> CreateResponseAsync(EstimateStatisticsOperation estimateStatisticsOperationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EstimateStatisticsOperation>(estimateStatisticsOperationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EstimateStatisticsOperation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EstimateStatisticsOperation.
+        /// Deletes the specified EstimateStatisticsOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EstimateStatisticsOperation.</returns>
-        public System.Threading.Tasks.Task<EstimateStatisticsOperation> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EstimateStatisticsOperation.</returns>
-        public async System.Threading.Tasks.Task<EstimateStatisticsOperation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EstimateStatisticsOperation> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EstimateStatisticsOperation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EstimateStatisticsOperation using PATCH.
+        /// Gets the specified EstimateStatisticsOperation and returns a <see cref="GraphResponse{EstimateStatisticsOperation}"/> object.
         /// </summary>
-        /// <param name="estimateStatisticsOperationToUpdate">The EstimateStatisticsOperation to update.</param>
-        /// <returns>The updated EstimateStatisticsOperation.</returns>
-        public System.Threading.Tasks.Task<EstimateStatisticsOperation> UpdateAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EstimateStatisticsOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EstimateStatisticsOperation>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(estimateStatisticsOperationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EstimateStatisticsOperation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EstimateStatisticsOperation.</returns>
-        public async System.Threading.Tasks.Task<EstimateStatisticsOperation> UpdateAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EstimateStatisticsOperation> UpdateAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (estimateStatisticsOperationToUpdate.AdditionalData != null)
-			{
-				if (estimateStatisticsOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					estimateStatisticsOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, estimateStatisticsOperationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (estimateStatisticsOperationToUpdate.AdditionalData != null)
-            {
-                if (estimateStatisticsOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    estimateStatisticsOperationToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, estimateStatisticsOperationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EstimateStatisticsOperation>(estimateStatisticsOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EstimateStatisticsOperation using PATCH and returns a <see cref="GraphResponse{EstimateStatisticsOperation}"/> object.
+        /// </summary>
+        /// <param name="estimateStatisticsOperationToUpdate">The EstimateStatisticsOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EstimateStatisticsOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EstimateStatisticsOperation>> UpdateResponseAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EstimateStatisticsOperation>(estimateStatisticsOperationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EstimateStatisticsOperation using PUT.
+        /// </summary>
+        /// <param name="estimateStatisticsOperationToUpdate">The EstimateStatisticsOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EstimateStatisticsOperation> PutAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EstimateStatisticsOperation>(estimateStatisticsOperationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EstimateStatisticsOperation using PUT and returns a <see cref="GraphResponse{EstimateStatisticsOperation}"/> object.
+        /// </summary>
+        /// <param name="estimateStatisticsOperationToUpdate">The EstimateStatisticsOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EstimateStatisticsOperation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EstimateStatisticsOperation>> PutResponseAsync(EstimateStatisticsOperation estimateStatisticsOperationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EstimateStatisticsOperation>(estimateStatisticsOperationToUpdate, cancellationToken);
         }
 
         /// <summary>

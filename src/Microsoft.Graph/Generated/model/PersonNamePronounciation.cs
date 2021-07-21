@@ -12,64 +12,55 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type PersonNamePronounciation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<PersonNamePronounciation>))]
     public partial class PersonNamePronounciation
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersonNamePronounciation"/> class.
-        /// </summary>
-        public PersonNamePronounciation()
-        {
-            this.ODataType = "microsoft.graph.personNamePronounciation";
-        }
 
         /// <summary>
         /// Gets or sets displayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets first.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "first", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("first")]
         public string First { get; set; }
     
         /// <summary>
         /// Gets or sets last.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "last", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("last")]
         public string Last { get; set; }
     
         /// <summary>
         /// Gets or sets maiden.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maiden", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maiden")]
         public string Maiden { get; set; }
     
         /// <summary>
         /// Gets or sets middle.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "middle", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("middle")]
         public string Middle { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

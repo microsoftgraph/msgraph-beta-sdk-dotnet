@@ -12,54 +12,45 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ItemActivityTimeSet.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ItemActivityTimeSet>))]
     public partial class ItemActivityTimeSet
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ItemActivityTimeSet"/> class.
-        /// </summary>
-        public ItemActivityTimeSet()
-        {
-            this.ODataType = "microsoft.graph.itemActivityTimeSet";
-        }
 
         /// <summary>
         /// Gets or sets lastRecordedDateTime.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastRecordedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastRecordedDateTime")]
         public DateTimeOffset? LastRecordedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets observedDateTime.
         /// When the activity was observed to take place.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "observedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("observedDateTime")]
         public DateTimeOffset? ObservedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets recordedDateTime.
         /// When the observation was recorded on the service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "recordedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("recordedDateTime")]
         public DateTimeOffset? RecordedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

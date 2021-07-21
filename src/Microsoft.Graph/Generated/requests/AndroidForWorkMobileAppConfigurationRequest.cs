@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidForWorkMobileAppConfiguration using POST.
         /// </summary>
         /// <param name="androidForWorkMobileAppConfigurationToCreate">The AndroidForWorkMobileAppConfiguration to create.</param>
-        /// <returns>The created AndroidForWorkMobileAppConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> CreateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToCreate)
-        {
-            return this.CreateAsync(androidForWorkMobileAppConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidForWorkMobileAppConfiguration using POST.
-        /// </summary>
-        /// <param name="androidForWorkMobileAppConfigurationToCreate">The AndroidForWorkMobileAppConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidForWorkMobileAppConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> CreateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> CreateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidForWorkMobileAppConfiguration>(androidForWorkMobileAppConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidForWorkMobileAppConfiguration.
+        /// Creates the specified AndroidForWorkMobileAppConfiguration using POST and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidForWorkMobileAppConfigurationToCreate">The AndroidForWorkMobileAppConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> CreateResponseAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkMobileAppConfiguration>(androidForWorkMobileAppConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidForWorkMobileAppConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidForWorkMobileAppConfiguration.
+        /// Deletes the specified AndroidForWorkMobileAppConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidForWorkMobileAppConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidForWorkMobileAppConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidForWorkMobileAppConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidForWorkMobileAppConfiguration using PATCH.
+        /// Gets the specified AndroidForWorkMobileAppConfiguration and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidForWorkMobileAppConfigurationToUpdate">The AndroidForWorkMobileAppConfiguration to update.</param>
-        /// <returns>The updated AndroidForWorkMobileAppConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> UpdateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(androidForWorkMobileAppConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkMobileAppConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidForWorkMobileAppConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> UpdateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> UpdateAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (androidForWorkMobileAppConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidForWorkMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidForWorkMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkMobileAppConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidForWorkMobileAppConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidForWorkMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidForWorkMobileAppConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidForWorkMobileAppConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidForWorkMobileAppConfiguration>(androidForWorkMobileAppConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkMobileAppConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkMobileAppConfigurationToUpdate">The AndroidForWorkMobileAppConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> UpdateResponseAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkMobileAppConfiguration>(androidForWorkMobileAppConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkMobileAppConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidForWorkMobileAppConfigurationToUpdate">The AndroidForWorkMobileAppConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidForWorkMobileAppConfiguration> PutAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidForWorkMobileAppConfiguration>(androidForWorkMobileAppConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidForWorkMobileAppConfiguration using PUT and returns a <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidForWorkMobileAppConfigurationToUpdate">The AndroidForWorkMobileAppConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidForWorkMobileAppConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidForWorkMobileAppConfiguration>> PutResponseAsync(AndroidForWorkMobileAppConfiguration androidForWorkMobileAppConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidForWorkMobileAppConfiguration>(androidForWorkMobileAppConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

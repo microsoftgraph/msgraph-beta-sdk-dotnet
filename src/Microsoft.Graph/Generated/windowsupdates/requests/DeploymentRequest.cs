@@ -39,34 +39,28 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Creates the specified Deployment using POST.
         /// </summary>
         /// <param name="deploymentToCreate">The Deployment to create.</param>
-        /// <returns>The created Deployment.</returns>
-        public System.Threading.Tasks.Task<Deployment> CreateAsync(Deployment deploymentToCreate)
-        {
-            return this.CreateAsync(deploymentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Deployment using POST.
-        /// </summary>
-        /// <param name="deploymentToCreate">The Deployment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Deployment.</returns>
-        public async System.Threading.Tasks.Task<Deployment> CreateAsync(Deployment deploymentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Deployment> CreateAsync(Deployment deploymentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Deployment>(deploymentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Deployment.
+        /// Creates the specified Deployment using POST and returns a <see cref="GraphResponse{Deployment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deploymentToCreate">The Deployment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Deployment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Deployment>> CreateResponseAsync(Deployment deploymentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Deployment>(deploymentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Deployment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Deployment.
+        /// Deletes the specified Deployment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Deployment.</returns>
-        public System.Threading.Tasks.Task<Deployment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Deployment.</returns>
-        public async System.Threading.Tasks.Task<Deployment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Deployment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Deployment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Deployment using PATCH.
+        /// Gets the specified Deployment and returns a <see cref="GraphResponse{Deployment}"/> object.
         /// </summary>
-        /// <param name="deploymentToUpdate">The Deployment to update.</param>
-        /// <returns>The updated Deployment.</returns>
-        public System.Threading.Tasks.Task<Deployment> UpdateAsync(Deployment deploymentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Deployment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Deployment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deploymentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Deployment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Deployment.</returns>
-        public async System.Threading.Tasks.Task<Deployment> UpdateAsync(Deployment deploymentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Deployment> UpdateAsync(Deployment deploymentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deploymentToUpdate.AdditionalData != null)
-			{
-				if (deploymentToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					deploymentToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deploymentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deploymentToUpdate.AdditionalData != null)
-            {
-                if (deploymentToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deploymentToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deploymentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Deployment>(deploymentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Deployment using PATCH and returns a <see cref="GraphResponse{Deployment}"/> object.
+        /// </summary>
+        /// <param name="deploymentToUpdate">The Deployment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Deployment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Deployment>> UpdateResponseAsync(Deployment deploymentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Deployment>(deploymentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Deployment using PUT.
+        /// </summary>
+        /// <param name="deploymentToUpdate">The Deployment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Deployment> PutAsync(Deployment deploymentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Deployment>(deploymentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Deployment using PUT and returns a <see cref="GraphResponse{Deployment}"/> object.
+        /// </summary>
+        /// <param name="deploymentToUpdate">The Deployment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Deployment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Deployment>> PutResponseAsync(Deployment deploymentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Deployment>(deploymentToUpdate, cancellationToken);
         }
 
         /// <summary>

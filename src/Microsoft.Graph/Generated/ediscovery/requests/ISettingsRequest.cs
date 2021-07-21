@@ -24,47 +24,45 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified Settings using POST.
         /// </summary>
         /// <param name="settingsToCreate">The Settings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Settings.</returns>
-        System.Threading.Tasks.Task<Settings> CreateAsync(Settings settingsToCreate);        /// <summary>
-        /// Creates the specified Settings using POST.
+        System.Threading.Tasks.Task<Settings> CreateAsync(Settings settingsToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Settings using POST and returns a <see cref="GraphResponse{Settings}"/> object.
         /// </summary>
         /// <param name="settingsToCreate">The Settings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Settings.</returns>
-        System.Threading.Tasks.Task<Settings> CreateAsync(Settings settingsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Settings.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Settings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Settings>> CreateResponseAsync(Settings settingsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Settings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Settings.
+        /// Deletes the specified Settings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Settings.</returns>
-        System.Threading.Tasks.Task<Settings> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Settings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Settings.</returns>
-        System.Threading.Tasks.Task<Settings> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Settings> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Settings using PATCH.
+        /// Gets the specified Settings and returns a <see cref="GraphResponse{Settings}"/> object.
         /// </summary>
-        /// <param name="settingsToUpdate">The Settings to update.</param>
-        /// <returns>The updated Settings.</returns>
-        System.Threading.Tasks.Task<Settings> UpdateAsync(Settings settingsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Settings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Settings>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Settings using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Settings.</returns>
-        System.Threading.Tasks.Task<Settings> UpdateAsync(Settings settingsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Settings> UpdateAsync(Settings settingsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Settings using PATCH and returns a <see cref="GraphResponse{Settings}"/> object.
+        /// </summary>
+        /// <param name="settingsToUpdate">The Settings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Settings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Settings>> UpdateResponseAsync(Settings settingsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Settings using PUT.
+        /// </summary>
+        /// <param name="settingsToUpdate">The Settings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Settings> PutAsync(Settings settingsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Settings using PUT and returns a <see cref="GraphResponse{Settings}"/> object.
+        /// </summary>
+        /// <param name="settingsToUpdate">The Settings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Settings}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Settings>> PutResponseAsync(Settings settingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

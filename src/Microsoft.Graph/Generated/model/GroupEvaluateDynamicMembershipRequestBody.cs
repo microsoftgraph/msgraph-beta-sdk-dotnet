@@ -9,29 +9,27 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type GroupEvaluateDynamicMembershipRequestBody.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GroupEvaluateDynamicMembershipRequestBody
     {
     
         /// <summary>
         /// Gets or sets MemberId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "memberId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("memberId")]
         public string MemberId { get; set; }
     
         /// <summary>
         /// Gets or sets MembershipRule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipRule", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("membershipRule")]
         public string MembershipRule { get; set; }
     
     }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified SkypeForBusinessOrganizerActivityCounts using POST.
         /// </summary>
         /// <param name="skypeForBusinessOrganizerActivityCountsToCreate">The SkypeForBusinessOrganizerActivityCounts to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SkypeForBusinessOrganizerActivityCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> CreateAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToCreate);        /// <summary>
-        /// Creates the specified SkypeForBusinessOrganizerActivityCounts using POST.
+        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> CreateAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified SkypeForBusinessOrganizerActivityCounts using POST and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityCounts}"/> object.
         /// </summary>
         /// <param name="skypeForBusinessOrganizerActivityCountsToCreate">The SkypeForBusinessOrganizerActivityCounts to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SkypeForBusinessOrganizerActivityCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> CreateAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SkypeForBusinessOrganizerActivityCounts.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessOrganizerActivityCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityCounts>> CreateResponseAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SkypeForBusinessOrganizerActivityCounts.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified SkypeForBusinessOrganizerActivityCounts.
+        /// Deletes the specified SkypeForBusinessOrganizerActivityCounts and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SkypeForBusinessOrganizerActivityCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SkypeForBusinessOrganizerActivityCounts.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SkypeForBusinessOrganizerActivityCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified SkypeForBusinessOrganizerActivityCounts using PATCH.
+        /// Gets the specified SkypeForBusinessOrganizerActivityCounts and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityCounts}"/> object.
         /// </summary>
-        /// <param name="skypeForBusinessOrganizerActivityCountsToUpdate">The SkypeForBusinessOrganizerActivityCounts to update.</param>
-        /// <returns>The updated SkypeForBusinessOrganizerActivityCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> UpdateAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessOrganizerActivityCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityCounts>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SkypeForBusinessOrganizerActivityCounts using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SkypeForBusinessOrganizerActivityCounts.</returns>
-        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> UpdateAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> UpdateAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessOrganizerActivityCounts using PATCH and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessOrganizerActivityCountsToUpdate">The SkypeForBusinessOrganizerActivityCounts to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SkypeForBusinessOrganizerActivityCounts}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityCounts>> UpdateResponseAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessOrganizerActivityCounts using PUT.
+        /// </summary>
+        /// <param name="skypeForBusinessOrganizerActivityCountsToUpdate">The SkypeForBusinessOrganizerActivityCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SkypeForBusinessOrganizerActivityCounts> PutAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SkypeForBusinessOrganizerActivityCounts using PUT and returns a <see cref="GraphResponse{SkypeForBusinessOrganizerActivityCounts}"/> object.
+        /// </summary>
+        /// <param name="skypeForBusinessOrganizerActivityCountsToUpdate">The SkypeForBusinessOrganizerActivityCounts object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SkypeForBusinessOrganizerActivityCounts}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SkypeForBusinessOrganizerActivityCounts>> PutResponseAsync(SkypeForBusinessOrganizerActivityCounts skypeForBusinessOrganizerActivityCountsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

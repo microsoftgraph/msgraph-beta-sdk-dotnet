@@ -12,97 +12,88 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type ComanagedDevicesSummary.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<ComanagedDevicesSummary>))]
     public partial class ComanagedDevicesSummary
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ComanagedDevicesSummary"/> class.
-        /// </summary>
-        public ComanagedDevicesSummary()
-        {
-            this.ODataType = "microsoft.graph.comanagedDevicesSummary";
-        }
 
         /// <summary>
         /// Gets or sets compliancePolicyCount.
         /// Number of devices with CompliancePolicy swung-over. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "compliancePolicyCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("compliancePolicyCount")]
         public Int32? CompliancePolicyCount { get; set; }
     
         /// <summary>
         /// Gets or sets configurationSettingsCount.
         /// Number of devices with ConfigurationSettings swung-over. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationSettingsCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationSettingsCount")]
         public Int32? ConfigurationSettingsCount { get; set; }
     
         /// <summary>
         /// Gets or sets endpointProtectionCount.
         /// Number of devices with EndpointProtection swung-over. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "endpointProtectionCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("endpointProtectionCount")]
         public Int32? EndpointProtectionCount { get; set; }
     
         /// <summary>
         /// Gets or sets inventoryCount.
         /// Number of devices with Inventory swung-over. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inventoryCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("inventoryCount")]
         public Int32? InventoryCount { get; set; }
     
         /// <summary>
         /// Gets or sets modernAppsCount.
         /// Number of devices with ModernApps swung-over. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "modernAppsCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("modernAppsCount")]
         public Int32? ModernAppsCount { get; set; }
     
         /// <summary>
         /// Gets or sets officeAppsCount.
         /// Number of devices with OfficeApps swung-over. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeAppsCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("officeAppsCount")]
         public Int32? OfficeAppsCount { get; set; }
     
         /// <summary>
         /// Gets or sets resourceAccessCount.
         /// Number of devices with ResourceAccess swung-over. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceAccessCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceAccessCount")]
         public Int32? ResourceAccessCount { get; set; }
     
         /// <summary>
         /// Gets or sets totalComanagedCount.
         /// Number of Co-Managed Devices. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalComanagedCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalComanagedCount")]
         public Int32? TotalComanagedCount { get; set; }
     
         /// <summary>
         /// Gets or sets windowsUpdateForBusinessCount.
         /// Number of devices with WindowsUpdateForBusiness swung-over. This property is read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsUpdateForBusinessCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("windowsUpdateForBusinessCount")]
         public Int32? WindowsUpdateForBusinessCount { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

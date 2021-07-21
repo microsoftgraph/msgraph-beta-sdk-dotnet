@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Unified Role Management Policy Rule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<UnifiedRoleManagementPolicyRule>))]
     public partial class UnifiedRoleManagementPolicyRule : Entity
     {
     
-		///<summary>
-		/// The internal UnifiedRoleManagementPolicyRule constructor
-		///</summary>
+        ///<summary>
+        /// The internal UnifiedRoleManagementPolicyRule constructor
+        ///</summary>
         protected internal UnifiedRoleManagementPolicyRule()
         {
             // Don't allow initialization of abstract entity types
@@ -34,7 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets target.
         /// The target for the policy rule.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public UnifiedRoleManagementPolicyRuleTarget Target { get; set; }
     
     }

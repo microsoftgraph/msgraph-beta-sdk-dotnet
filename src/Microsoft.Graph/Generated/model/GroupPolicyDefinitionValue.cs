@@ -12,65 +12,62 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Group Policy Definition Value.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<GroupPolicyDefinitionValue>))]
     public partial class GroupPolicyDefinitionValue : Entity
     {
     
-		///<summary>
-		/// The GroupPolicyDefinitionValue constructor
-		///</summary>
-        public GroupPolicyDefinitionValue()
-        {
-            this.ODataType = "microsoft.graph.groupPolicyDefinitionValue";
-        }
-	
         /// <summary>
         /// Gets or sets configuration type.
         /// Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "configurationType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("configurationType")]
         public GroupPolicyConfigurationType? ConfigurationType { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time the object was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets enabled.
         /// Enables or disables the associated group policy definition.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enabled", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the entity was last modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets definition.
         /// The associated group policy definition with the value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "definition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("definition")]
         public GroupPolicyDefinition Definition { get; set; }
     
         /// <summary>
         /// Gets or sets presentation values.
         /// The associated group policy presentation values with the definition value.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "presentationValues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("presentationValues")]
         public IGroupPolicyDefinitionValuePresentationValuesCollectionPage PresentationValues { get; set; }
+
+        /// <summary>
+        /// Gets or sets presentationValuesNextLink.
+        /// </summary>
+        [JsonPropertyName("presentationValues@odata.nextLink")]
+        public string PresentationValuesNextLink { get; set; }
     
     }
 }

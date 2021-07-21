@@ -12,56 +12,54 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Person Responsibility.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PersonResponsibility : ItemFacet
     {
     
-		///<summary>
-		/// The PersonResponsibility constructor
-		///</summary>
+        ///<summary>
+        /// The PersonResponsibility constructor
+        ///</summary>
         public PersonResponsibility()
         {
             this.ODataType = "microsoft.graph.personResponsibility";
         }
-	
+
         /// <summary>
         /// Gets or sets collaboration tags.
         /// Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "collaborationTags", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("collaborationTags")]
         public IEnumerable<string> CollaborationTags { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// Description of the responsibility.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Contains a friendly name for the responsibility.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnail url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnailUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("thumbnailUrl")]
         public string ThumbnailUrl { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
         /// Contains a link to a web page or resource about the responsibility.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
     }

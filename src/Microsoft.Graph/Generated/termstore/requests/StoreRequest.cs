@@ -39,34 +39,28 @@ namespace Microsoft.Graph.TermStore
         /// Creates the specified Store using POST.
         /// </summary>
         /// <param name="storeToCreate">The Store to create.</param>
-        /// <returns>The created Store.</returns>
-        public System.Threading.Tasks.Task<Store> CreateAsync(Store storeToCreate)
-        {
-            return this.CreateAsync(storeToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Store using POST.
-        /// </summary>
-        /// <param name="storeToCreate">The Store to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Store.</returns>
-        public async System.Threading.Tasks.Task<Store> CreateAsync(Store storeToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Store> CreateAsync(Store storeToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Store>(storeToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Store.
+        /// Creates the specified Store using POST and returns a <see cref="GraphResponse{Store}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="storeToCreate">The Store to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Store}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Store>> CreateResponseAsync(Store storeToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Store>(storeToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Store>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Store.
+        /// Deletes the specified Store and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Store.</returns>
-        public System.Threading.Tasks.Task<Store> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.TermStore
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Store.</returns>
-        public async System.Threading.Tasks.Task<Store> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Store> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Store>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Store using PATCH.
+        /// Gets the specified Store and returns a <see cref="GraphResponse{Store}"/> object.
         /// </summary>
-        /// <param name="storeToUpdate">The Store to update.</param>
-        /// <returns>The updated Store.</returns>
-        public System.Threading.Tasks.Task<Store> UpdateAsync(Store storeToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Store}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Store>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(storeToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Store>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.TermStore
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Store.</returns>
-        public async System.Threading.Tasks.Task<Store> UpdateAsync(Store storeToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Store> UpdateAsync(Store storeToUpdate, CancellationToken cancellationToken = default)
         {
-			if (storeToUpdate.AdditionalData != null)
-			{
-				if (storeToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					storeToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, storeToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (storeToUpdate.AdditionalData != null)
-            {
-                if (storeToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    storeToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, storeToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Store>(storeToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Store using PATCH and returns a <see cref="GraphResponse{Store}"/> object.
+        /// </summary>
+        /// <param name="storeToUpdate">The Store to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Store}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Store>> UpdateResponseAsync(Store storeToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Store>(storeToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Store using PUT.
+        /// </summary>
+        /// <param name="storeToUpdate">The Store object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Store> PutAsync(Store storeToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Store>(storeToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Store using PUT and returns a <see cref="GraphResponse{Store}"/> object.
+        /// </summary>
+        /// <param name="storeToUpdate">The Store object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Store}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Store>> PutResponseAsync(Store storeToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Store>(storeToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph.TermStore
         private void InitializeCollectionProperties(Store storeToInitialize)
         {
 
-            if (storeToInitialize != null && storeToInitialize.AdditionalData != null)
+            if (storeToInitialize != null)
             {
-
                 if (storeToInitialize.Groups != null && storeToInitialize.Groups.CurrentPage != null)
                 {
+                    storeToInitialize.Groups.InitializeNextPageRequest(this.Client, storeToInitialize.GroupsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     storeToInitialize.Groups.AdditionalData = storeToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    storeToInitialize.AdditionalData.TryGetValue("groups@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        storeToInitialize.Groups.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (storeToInitialize.Sets != null && storeToInitialize.Sets.CurrentPage != null)
                 {
+                    storeToInitialize.Sets.InitializeNextPageRequest(this.Client, storeToInitialize.SetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     storeToInitialize.Sets.AdditionalData = storeToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    storeToInitialize.AdditionalData.TryGetValue("sets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        storeToInitialize.Sets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

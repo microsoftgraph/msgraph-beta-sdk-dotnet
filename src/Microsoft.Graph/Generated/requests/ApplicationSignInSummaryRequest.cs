@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ApplicationSignInSummary using POST.
         /// </summary>
         /// <param name="applicationSignInSummaryToCreate">The ApplicationSignInSummary to create.</param>
-        /// <returns>The created ApplicationSignInSummary.</returns>
-        public System.Threading.Tasks.Task<ApplicationSignInSummary> CreateAsync(ApplicationSignInSummary applicationSignInSummaryToCreate)
-        {
-            return this.CreateAsync(applicationSignInSummaryToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ApplicationSignInSummary using POST.
-        /// </summary>
-        /// <param name="applicationSignInSummaryToCreate">The ApplicationSignInSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApplicationSignInSummary.</returns>
-        public async System.Threading.Tasks.Task<ApplicationSignInSummary> CreateAsync(ApplicationSignInSummary applicationSignInSummaryToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApplicationSignInSummary> CreateAsync(ApplicationSignInSummary applicationSignInSummaryToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ApplicationSignInSummary>(applicationSignInSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ApplicationSignInSummary.
+        /// Creates the specified ApplicationSignInSummary using POST and returns a <see cref="GraphResponse{ApplicationSignInSummary}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="applicationSignInSummaryToCreate">The ApplicationSignInSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApplicationSignInSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplicationSignInSummary>> CreateResponseAsync(ApplicationSignInSummary applicationSignInSummaryToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ApplicationSignInSummary>(applicationSignInSummaryToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ApplicationSignInSummary>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ApplicationSignInSummary.
+        /// Deletes the specified ApplicationSignInSummary and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ApplicationSignInSummary.</returns>
-        public System.Threading.Tasks.Task<ApplicationSignInSummary> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ApplicationSignInSummary.</returns>
-        public async System.Threading.Tasks.Task<ApplicationSignInSummary> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApplicationSignInSummary> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ApplicationSignInSummary>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ApplicationSignInSummary using PATCH.
+        /// Gets the specified ApplicationSignInSummary and returns a <see cref="GraphResponse{ApplicationSignInSummary}"/> object.
         /// </summary>
-        /// <param name="applicationSignInSummaryToUpdate">The ApplicationSignInSummary to update.</param>
-        /// <returns>The updated ApplicationSignInSummary.</returns>
-        public System.Threading.Tasks.Task<ApplicationSignInSummary> UpdateAsync(ApplicationSignInSummary applicationSignInSummaryToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApplicationSignInSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplicationSignInSummary>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(applicationSignInSummaryToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ApplicationSignInSummary>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ApplicationSignInSummary.</returns>
-        public async System.Threading.Tasks.Task<ApplicationSignInSummary> UpdateAsync(ApplicationSignInSummary applicationSignInSummaryToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ApplicationSignInSummary> UpdateAsync(ApplicationSignInSummary applicationSignInSummaryToUpdate, CancellationToken cancellationToken = default)
         {
-			if (applicationSignInSummaryToUpdate.AdditionalData != null)
-			{
-				if (applicationSignInSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					applicationSignInSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, applicationSignInSummaryToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (applicationSignInSummaryToUpdate.AdditionalData != null)
-            {
-                if (applicationSignInSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    applicationSignInSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, applicationSignInSummaryToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ApplicationSignInSummary>(applicationSignInSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ApplicationSignInSummary using PATCH and returns a <see cref="GraphResponse{ApplicationSignInSummary}"/> object.
+        /// </summary>
+        /// <param name="applicationSignInSummaryToUpdate">The ApplicationSignInSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ApplicationSignInSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplicationSignInSummary>> UpdateResponseAsync(ApplicationSignInSummary applicationSignInSummaryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ApplicationSignInSummary>(applicationSignInSummaryToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ApplicationSignInSummary using PUT.
+        /// </summary>
+        /// <param name="applicationSignInSummaryToUpdate">The ApplicationSignInSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ApplicationSignInSummary> PutAsync(ApplicationSignInSummary applicationSignInSummaryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ApplicationSignInSummary>(applicationSignInSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ApplicationSignInSummary using PUT and returns a <see cref="GraphResponse{ApplicationSignInSummary}"/> object.
+        /// </summary>
+        /// <param name="applicationSignInSummaryToUpdate">The ApplicationSignInSummary object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ApplicationSignInSummary}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplicationSignInSummary>> PutResponseAsync(ApplicationSignInSummary applicationSignInSummaryToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ApplicationSignInSummary>(applicationSignInSummaryToUpdate, cancellationToken);
         }
 
         /// <summary>

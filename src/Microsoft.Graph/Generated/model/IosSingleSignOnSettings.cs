@@ -12,69 +12,60 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type IosSingleSignOnSettings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IosSingleSignOnSettings>))]
     public partial class IosSingleSignOnSettings
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IosSingleSignOnSettings"/> class.
-        /// </summary>
-        public IosSingleSignOnSettings()
-        {
-            this.ODataType = "microsoft.graph.iosSingleSignOnSettings";
-        }
 
         /// <summary>
         /// Gets or sets allowedAppsList.
         /// List of app identifiers that are allowed to use this login. If this field is omitted, the login applies to all applications on the device. This collection can contain a maximum of 500 elements.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedAppsList", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedAppsList")]
         public IEnumerable<AppListItem> AllowedAppsList { get; set; }
     
         /// <summary>
         /// Gets or sets allowedUrls.
         /// List of HTTP URLs that must be matched in order to use this login. With iOS 9.0 or later, a wildcard characters may be used.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedUrls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("allowedUrls")]
         public IEnumerable<string> AllowedUrls { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// The display name of login settings shown on the receiving device.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets kerberosPrincipalName.
         /// A Kerberos principal name. If not provided, the user is prompted for one during profile installation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kerberosPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kerberosPrincipalName")]
         public string KerberosPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets kerberosRealm.
         /// A Kerberos realm name. Case sensitive.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "kerberosRealm", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("kerberosRealm")]
         public string KerberosRealm { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IPolicyRootRoleManagementPoliciesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleManagementPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleManagementPolicy">The UnifiedRoleManagementPolicy to add.</param>
-        /// <returns>The created UnifiedRoleManagementPolicy.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> AddAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy);
-
         /// <summary>
         /// Adds the specified UnifiedRoleManagementPolicy to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleManagementPolicy">The UnifiedRoleManagementPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleManagementPolicy.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> AddAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleManagementPolicy> AddAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UnifiedRoleManagementPolicy to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootRoleManagementPoliciesCollectionPage> GetAsync();
+        /// <param name="unifiedRoleManagementPolicy">The UnifiedRoleManagementPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleManagementPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleManagementPolicy>> AddResponseAsync(UnifiedRoleManagementPolicy unifiedRoleManagementPolicy, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IPolicyRootRoleManagementPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IPolicyRootRoleManagementPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PolicyRootRoleManagementPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRootRoleManagementPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRootRoleManagementPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

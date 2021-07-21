@@ -34,33 +34,26 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the GET request.
         /// </summary>
-        public System.Threading.Tasks.Task<UserRegistrationMethodSummary> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Issues the GET request.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<UserRegistrationMethodSummary> GetAsync(
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             return this.SendAsync<UserRegistrationMethodSummary>(null, cancellationToken);
         }
 
-
         /// <summary>
-        /// Issues the PATCH request.
+        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="userregistrationmethodsummary">The UserRegistrationMethodSummary object set with the properties to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<UserRegistrationMethodSummary> PatchAsync(UserRegistrationMethodSummary userregistrationmethodsummary)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserRegistrationMethodSummary>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.PatchAsync(userregistrationmethodsummary, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<UserRegistrationMethodSummary>(null, cancellationToken);
         }
+
 
         /// <summary>
         /// Issues the PATCH request.
@@ -69,20 +62,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<UserRegistrationMethodSummary> PatchAsync(UserRegistrationMethodSummary userregistrationmethodsummary,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
-            this.Method = "PATCH";
+            this.Method = HttpMethods.PATCH;
             return this.SendAsync<UserRegistrationMethodSummary>(userregistrationmethodsummary, cancellationToken);
         }
 
         /// <summary>
-        /// Issues the PUT request.
+        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <param name="userregistrationmethodsummary">The UserRegistrationMethodSummary object to update.</param>
-        /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<UserRegistrationMethodSummary> PutAsync(UserRegistrationMethodSummary userregistrationmethodsummary)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="userregistrationmethodsummary">The UserRegistrationMethodSummary object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserRegistrationMethodSummary>> PatchResponseAsync(UserRegistrationMethodSummary userregistrationmethodsummary, CancellationToken cancellationToken = default)
         {
-            return this.PutAsync(userregistrationmethodsummary, CancellationToken.None);
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<UserRegistrationMethodSummary>(userregistrationmethodsummary, cancellationToken);
         }
 
         /// <summary>
@@ -92,10 +87,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<UserRegistrationMethodSummary> PutAsync(UserRegistrationMethodSummary userregistrationmethodsummary,
-            CancellationToken cancellationToken)
+            CancellationToken cancellationToken = default)
         {
-            this.Method = "PUT";
+            this.Method = HttpMethods.PUT;
             return this.SendAsync<UserRegistrationMethodSummary>(userregistrationmethodsummary, cancellationToken);
+        }
+
+        /// <summary>
+        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="userregistrationmethodsummary">The UserRegistrationMethodSummary object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserRegistrationMethodSummary>> PutResponseAsync(UserRegistrationMethodSummary userregistrationmethodsummary, CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<UserRegistrationMethodSummary>(userregistrationmethodsummary, cancellationToken);
         }
 
         /// <summary>

@@ -12,24 +12,14 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Payload Response.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class PayloadResponse : Entity
     {
     
-		///<summary>
-		/// The PayloadResponse constructor
-		///</summary>
-        public PayloadResponse()
-        {
-            this.ODataType = "microsoft.graph.payloadResponse";
-        }
-	
     }
 }
 

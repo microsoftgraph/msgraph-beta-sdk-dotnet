@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to the collection via POST.
-        /// </summary>
-        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to add.</param>
-        /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.</returns>
-        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> AddAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus);
-
         /// <summary>
         /// Adds the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to the collection via POST.
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.</returns>
-        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> AddAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> AddAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to the collection via POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage> GetAsync();
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>> AddResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IWindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeviceStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

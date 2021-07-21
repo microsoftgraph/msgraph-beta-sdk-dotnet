@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUserMobileAppIntentAndStatesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileAppIntentAndState to the collection via POST.
-        /// </summary>
-        /// <param name="mobileAppIntentAndState">The MobileAppIntentAndState to add.</param>
-        /// <returns>The created MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> AddAsync(MobileAppIntentAndState mobileAppIntentAndState);
-
         /// <summary>
         /// Adds the specified MobileAppIntentAndState to the collection via POST.
         /// </summary>
         /// <param name="mobileAppIntentAndState">The MobileAppIntentAndState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppIntentAndState.</returns>
-        System.Threading.Tasks.Task<MobileAppIntentAndState> AddAsync(MobileAppIntentAndState mobileAppIntentAndState, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileAppIntentAndState> AddAsync(MobileAppIntentAndState mobileAppIntentAndState, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MobileAppIntentAndState to the collection via POST and returns a <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserMobileAppIntentAndStatesCollectionPage> GetAsync();
+        /// <param name="mobileAppIntentAndState">The MobileAppIntentAndState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppIntentAndState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppIntentAndState>> AddResponseAsync(MobileAppIntentAndState mobileAppIntentAndState, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUserMobileAppIntentAndStatesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IUserMobileAppIntentAndStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UserMobileAppIntentAndStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserMobileAppIntentAndStatesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserMobileAppIntentAndStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

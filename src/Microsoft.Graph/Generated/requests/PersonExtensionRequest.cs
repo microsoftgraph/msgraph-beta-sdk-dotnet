@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PersonExtension using POST.
         /// </summary>
         /// <param name="personExtensionToCreate">The PersonExtension to create.</param>
-        /// <returns>The created PersonExtension.</returns>
-        public System.Threading.Tasks.Task<PersonExtension> CreateAsync(PersonExtension personExtensionToCreate)
-        {
-            return this.CreateAsync(personExtensionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PersonExtension using POST.
-        /// </summary>
-        /// <param name="personExtensionToCreate">The PersonExtension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PersonExtension.</returns>
-        public async System.Threading.Tasks.Task<PersonExtension> CreateAsync(PersonExtension personExtensionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PersonExtension> CreateAsync(PersonExtension personExtensionToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PersonExtension>(personExtensionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PersonExtension.
+        /// Creates the specified PersonExtension using POST and returns a <see cref="GraphResponse{PersonExtension}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="personExtensionToCreate">The PersonExtension to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PersonExtension>> CreateResponseAsync(PersonExtension personExtensionToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PersonExtension>(personExtensionToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PersonExtension>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PersonExtension.
+        /// Deletes the specified PersonExtension and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PersonExtension.</returns>
-        public System.Threading.Tasks.Task<PersonExtension> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PersonExtension.</returns>
-        public async System.Threading.Tasks.Task<PersonExtension> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PersonExtension> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PersonExtension>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PersonExtension using PATCH.
+        /// Gets the specified PersonExtension and returns a <see cref="GraphResponse{PersonExtension}"/> object.
         /// </summary>
-        /// <param name="personExtensionToUpdate">The PersonExtension to update.</param>
-        /// <returns>The updated PersonExtension.</returns>
-        public System.Threading.Tasks.Task<PersonExtension> UpdateAsync(PersonExtension personExtensionToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PersonExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PersonExtension>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(personExtensionToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PersonExtension>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PersonExtension.</returns>
-        public async System.Threading.Tasks.Task<PersonExtension> UpdateAsync(PersonExtension personExtensionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PersonExtension> UpdateAsync(PersonExtension personExtensionToUpdate, CancellationToken cancellationToken = default)
         {
-			if (personExtensionToUpdate.AdditionalData != null)
-			{
-				if (personExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					personExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personExtensionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (personExtensionToUpdate.AdditionalData != null)
-            {
-                if (personExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    personExtensionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, personExtensionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PersonExtension>(personExtensionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PersonExtension using PATCH and returns a <see cref="GraphResponse{PersonExtension}"/> object.
+        /// </summary>
+        /// <param name="personExtensionToUpdate">The PersonExtension to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PersonExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PersonExtension>> UpdateResponseAsync(PersonExtension personExtensionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PersonExtension>(personExtensionToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PersonExtension using PUT.
+        /// </summary>
+        /// <param name="personExtensionToUpdate">The PersonExtension object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PersonExtension> PutAsync(PersonExtension personExtensionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PersonExtension>(personExtensionToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PersonExtension using PUT and returns a <see cref="GraphResponse{PersonExtension}"/> object.
+        /// </summary>
+        /// <param name="personExtensionToUpdate">The PersonExtension object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PersonExtension}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PersonExtension>> PutResponseAsync(PersonExtension personExtensionToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PersonExtension>(personExtensionToUpdate, cancellationToken);
         }
 
         /// <summary>

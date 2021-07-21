@@ -12,47 +12,49 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Identity Protection Root.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<IdentityProtectionRoot>))]
     public partial class IdentityProtectionRoot
     {
     
-		///<summary>
-		/// The IdentityProtectionRoot constructor
-		///</summary>
-        public IdentityProtectionRoot()
-        {
-            this.ODataType = "microsoft.graph.identityProtectionRoot";
-        }
-	
         /// <summary>
         /// Gets or sets risk detections.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskDetections", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("riskDetections")]
         public IIdentityProtectionRootRiskDetectionsCollectionPage RiskDetections { get; set; }
+
+        /// <summary>
+        /// Gets or sets riskDetectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("riskDetections@odata.nextLink")]
+        public string RiskDetectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets risky users.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "riskyUsers", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("riskyUsers")]
         public IIdentityProtectionRootRiskyUsersCollectionPage RiskyUsers { get; set; }
+
+        /// <summary>
+        /// Gets or sets riskyUsersNextLink.
+        /// </summary>
+        [JsonPropertyName("riskyUsers@odata.nextLink")]
+        public string RiskyUsersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
 
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true, WriteData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
     
     }

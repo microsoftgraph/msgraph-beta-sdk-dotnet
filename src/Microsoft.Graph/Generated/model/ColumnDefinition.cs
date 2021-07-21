@@ -12,239 +12,230 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Column Definition.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ColumnDefinition>))]
     public partial class ColumnDefinition : Entity
     {
     
-		///<summary>
-		/// The ColumnDefinition constructor
-		///</summary>
-        public ColumnDefinition()
-        {
-            this.ODataType = "microsoft.graph.columnDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets boolean.
         /// This column stores boolean values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "boolean", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("boolean")]
         public BooleanColumn Boolean { get; set; }
     
         /// <summary>
         /// Gets or sets calculated.
         /// This column's data is calculated based on other columns.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calculated", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("calculated")]
         public CalculatedColumn Calculated { get; set; }
     
         /// <summary>
         /// Gets or sets choice.
         /// This column stores data from a list of choices.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "choice", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("choice")]
         public ChoiceColumn Choice { get; set; }
     
         /// <summary>
         /// Gets or sets column group.
         /// For site columns, the name of the group this column belongs to. Helps organize related columns.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columnGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("columnGroup")]
         public string ColumnGroup { get; set; }
     
         /// <summary>
         /// Gets or sets content approval status.
         /// This column stores content approval status.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentApprovalStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentApprovalStatus")]
         public ContentApprovalStatusColumn ContentApprovalStatus { get; set; }
     
         /// <summary>
         /// Gets or sets currency.
         /// This column stores currency values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "currency", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("currency")]
         public CurrencyColumn Currency { get; set; }
     
         /// <summary>
         /// Gets or sets date time.
         /// This column stores DateTime values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dateTime")]
         public DateTimeColumn DateTime { get; set; }
     
         /// <summary>
         /// Gets or sets default value.
         /// The default value for this column.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "defaultValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("defaultValue")]
         public DefaultColumnValue DefaultValue { get; set; }
     
         /// <summary>
         /// Gets or sets description.
         /// The user-facing description of the column.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The user-facing name of the column.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enforce unique values.
         /// If true, no two list items may have the same value for this column.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforceUniqueValues", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enforceUniqueValues")]
         public bool? EnforceUniqueValues { get; set; }
     
         /// <summary>
         /// Gets or sets geolocation.
         /// This column stores a geolocation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geolocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("geolocation")]
         public GeolocationColumn Geolocation { get; set; }
     
         /// <summary>
         /// Gets or sets hidden.
         /// Specifies whether the column is displayed in the user interface.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hidden", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hidden")]
         public bool? Hidden { get; set; }
     
         /// <summary>
         /// Gets or sets hyperlink or picture.
         /// This column stores hyperlink or picture values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hyperlinkOrPicture", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("hyperlinkOrPicture")]
         public HyperlinkOrPictureColumn HyperlinkOrPicture { get; set; }
     
         /// <summary>
         /// Gets or sets indexed.
         /// Specifies whether the column values can used for sorting and searching.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "indexed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("indexed")]
         public bool? Indexed { get; set; }
     
         /// <summary>
         /// Gets or sets is deletable.
         /// Indicates whether this column can be deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeletable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDeletable")]
         public bool? IsDeletable { get; set; }
     
         /// <summary>
         /// Gets or sets is reorderable.
         /// Indicates whether values in the column can be reordered. Read-only.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isReorderable", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isReorderable")]
         public bool? IsReorderable { get; set; }
     
         /// <summary>
         /// Gets or sets is sealed.
         /// Specifies whether column can be changed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isSealed", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isSealed")]
         public bool? IsSealed { get; set; }
     
         /// <summary>
         /// Gets or sets lookup.
         /// This column's data is looked up from another source in the site.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lookup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lookup")]
         public LookupColumn Lookup { get; set; }
     
         /// <summary>
         /// Gets or sets name.
         /// The API-facing name of the column as it appears in the [fields][] on a [listItem][]. For the user-facing name, see displayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "name", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets number.
         /// This column stores number values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "number", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("number")]
         public NumberColumn Number { get; set; }
     
         /// <summary>
         /// Gets or sets person or group.
         /// This column stores Person or Group values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "personOrGroup", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("personOrGroup")]
         public PersonOrGroupColumn PersonOrGroup { get; set; }
     
         /// <summary>
         /// Gets or sets propagate changes.
         /// If 'True' changes to this column will be propagated to lists that implement the column.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "propagateChanges", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("propagateChanges")]
         public bool? PropagateChanges { get; set; }
     
         /// <summary>
         /// Gets or sets read only.
         /// Specifies whether the column values can be modified.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "readOnly", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("readOnly")]
         public bool? ReadOnly { get; set; }
     
         /// <summary>
         /// Gets or sets required.
         /// Specifies whether the column value is not optional.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "required", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("required")]
         public bool? Required { get; set; }
     
         /// <summary>
         /// Gets or sets term.
         /// This column stores taxonomy terms.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "term", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("term")]
         public TermColumn Term { get; set; }
     
         /// <summary>
         /// Gets or sets text.
         /// This column stores text values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "text", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("text")]
         public TextColumn Text { get; set; }
     
         /// <summary>
         /// Gets or sets thumbnail.
         /// This column stores thumbnail values.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnail", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("thumbnail")]
         public ThumbnailColumn Thumbnail { get; set; }
     
         /// <summary>
         /// Gets or sets type.
         /// For site columns, the type of column. Read-only
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("type")]
         public ColumnTypes? Type { get; set; }
     
         /// <summary>
         /// Gets or sets validation.
         /// This column stores validation formula and message for the column.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "validation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("validation")]
         public ColumnValidation Validation { get; set; }
     
         /// <summary>
         /// Gets or sets source column.
         /// The source column for content type column.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "sourceColumn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("sourceColumn")]
         public ColumnDefinition SourceColumn { get; set; }
     
     }

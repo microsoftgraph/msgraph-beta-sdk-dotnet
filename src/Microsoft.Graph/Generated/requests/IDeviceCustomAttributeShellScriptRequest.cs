@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceCustomAttributeShellScript using POST.
         /// </summary>
         /// <param name="deviceCustomAttributeShellScriptToCreate">The DeviceCustomAttributeShellScript to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCustomAttributeShellScript.</returns>
-        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> CreateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToCreate);        /// <summary>
-        /// Creates the specified DeviceCustomAttributeShellScript using POST.
+        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> CreateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceCustomAttributeShellScript using POST and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object.
         /// </summary>
         /// <param name="deviceCustomAttributeShellScriptToCreate">The DeviceCustomAttributeShellScript to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceCustomAttributeShellScript.</returns>
-        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> CreateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceCustomAttributeShellScript.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScript>> CreateResponseAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceCustomAttributeShellScript.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceCustomAttributeShellScript.
+        /// Deletes the specified DeviceCustomAttributeShellScript and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceCustomAttributeShellScript.</returns>
-        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceCustomAttributeShellScript.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceCustomAttributeShellScript.</returns>
-        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceCustomAttributeShellScript using PATCH.
+        /// Gets the specified DeviceCustomAttributeShellScript and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object.
         /// </summary>
-        /// <param name="deviceCustomAttributeShellScriptToUpdate">The DeviceCustomAttributeShellScript to update.</param>
-        /// <returns>The updated DeviceCustomAttributeShellScript.</returns>
-        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> UpdateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScript>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceCustomAttributeShellScript using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceCustomAttributeShellScript.</returns>
-        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> UpdateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> UpdateAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceCustomAttributeShellScript using PATCH and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceCustomAttributeShellScriptToUpdate">The DeviceCustomAttributeShellScript to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScript>> UpdateResponseAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceCustomAttributeShellScript using PUT.
+        /// </summary>
+        /// <param name="deviceCustomAttributeShellScriptToUpdate">The DeviceCustomAttributeShellScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceCustomAttributeShellScript> PutAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceCustomAttributeShellScript using PUT and returns a <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceCustomAttributeShellScriptToUpdate">The DeviceCustomAttributeShellScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceCustomAttributeShellScript}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCustomAttributeShellScript>> PutResponseAsync(DeviceCustomAttributeShellScript deviceCustomAttributeShellScriptToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

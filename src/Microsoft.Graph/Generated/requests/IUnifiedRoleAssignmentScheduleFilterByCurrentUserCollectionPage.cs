@@ -9,12 +9,12 @@
 
 namespace Microsoft.Graph
 {
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IUnifiedRoleAssignmentScheduleFilterByCurrentUserCollectionPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<UnifiedRoleAssignmentScheduleFilterByCurrentUserCollectionPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<UnifiedRoleAssignmentScheduleFilterByCurrentUserCollectionPage>))]
     public interface IUnifiedRoleAssignmentScheduleFilterByCurrentUserCollectionPage : ICollectionPage<UnifiedRoleAssignmentSchedule>
     {
         /// <summary>

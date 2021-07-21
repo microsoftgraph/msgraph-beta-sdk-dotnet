@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IVirtualEndpointProvisioningPoliciesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified CloudPcProvisioningPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="cloudPcProvisioningPolicy">The CloudPcProvisioningPolicy to add.</param>
-        /// <returns>The created CloudPcProvisioningPolicy.</returns>
-        System.Threading.Tasks.Task<CloudPcProvisioningPolicy> AddAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicy);
-
         /// <summary>
         /// Adds the specified CloudPcProvisioningPolicy to the collection via POST.
         /// </summary>
         /// <param name="cloudPcProvisioningPolicy">The CloudPcProvisioningPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcProvisioningPolicy.</returns>
-        System.Threading.Tasks.Task<CloudPcProvisioningPolicy> AddAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicy, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcProvisioningPolicy> AddAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicy, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified CloudPcProvisioningPolicy to the collection via POST and returns a <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IVirtualEndpointProvisioningPoliciesCollectionPage> GetAsync();
+        /// <param name="cloudPcProvisioningPolicy">The CloudPcProvisioningPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcProvisioningPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcProvisioningPolicy>> AddResponseAsync(CloudPcProvisioningPolicy cloudPcProvisioningPolicy, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IVirtualEndpointProvisioningPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IVirtualEndpointProvisioningPoliciesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{VirtualEndpointProvisioningPoliciesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VirtualEndpointProvisioningPoliciesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VirtualEndpointProvisioningPoliciesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

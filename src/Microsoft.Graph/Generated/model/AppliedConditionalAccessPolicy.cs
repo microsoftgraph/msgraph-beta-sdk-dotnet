@@ -12,95 +12,86 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AppliedConditionalAccessPolicy.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AppliedConditionalAccessPolicy>))]
     public partial class AppliedConditionalAccessPolicy
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AppliedConditionalAccessPolicy"/> class.
-        /// </summary>
-        public AppliedConditionalAccessPolicy()
-        {
-            this.ODataType = "microsoft.graph.appliedConditionalAccessPolicy";
-        }
 
         /// <summary>
         /// Gets or sets conditionsNotSatisfied.
         /// Refers to the conditional access policy conditions that are not satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsNotSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conditionsNotSatisfied")]
         public ConditionalAccessConditions? ConditionsNotSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets conditionsSatisfied.
         /// Refers to the conditional access policy conditions that are satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "conditionsSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("conditionsSatisfied")]
         public ConditionalAccessConditions? ConditionsSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enforcedGrantControls.
         /// Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcedGrantControls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enforcedGrantControls")]
         public IEnumerable<string> EnforcedGrantControls { get; set; }
     
         /// <summary>
         /// Gets or sets enforcedSessionControls.
         /// Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enforcedSessionControls", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enforcedSessionControls")]
         public IEnumerable<string> EnforcedSessionControls { get; set; }
     
         /// <summary>
         /// Gets or sets excludeRulesSatisfied.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "excludeRulesSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("excludeRulesSatisfied")]
         public IEnumerable<ConditionalAccessRuleSatisfied> ExcludeRulesSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets id.
         /// Identifier of the conditional access policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets includeRulesSatisfied.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "includeRulesSatisfied", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("includeRulesSatisfied")]
         public IEnumerable<ConditionalAccessRuleSatisfied> IncludeRulesSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets result.
         /// Indicates the result of the CA policy that was triggered. Possible values are: success, failure, notApplied (Policy isn't applied because policy conditions were not met),notEnabled (This is due to the policy in disabled state), unknown, unknownFutureValue, reportOnlySuccess, reportOnlyFailure, reportOnlyNotApplied, reportOnlyInterrupted
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "result", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("result")]
         public AppliedConditionalAccessPolicyResult? Result { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

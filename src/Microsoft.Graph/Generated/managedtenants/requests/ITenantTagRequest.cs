@@ -24,47 +24,45 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified TenantTag using POST.
         /// </summary>
         /// <param name="tenantTagToCreate">The TenantTag to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TenantTag.</returns>
-        System.Threading.Tasks.Task<TenantTag> CreateAsync(TenantTag tenantTagToCreate);        /// <summary>
-        /// Creates the specified TenantTag using POST.
+        System.Threading.Tasks.Task<TenantTag> CreateAsync(TenantTag tenantTagToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified TenantTag using POST and returns a <see cref="GraphResponse{TenantTag}"/> object.
         /// </summary>
         /// <param name="tenantTagToCreate">The TenantTag to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TenantTag.</returns>
-        System.Threading.Tasks.Task<TenantTag> CreateAsync(TenantTag tenantTagToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TenantTag.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TenantTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TenantTag>> CreateResponseAsync(TenantTag tenantTagToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TenantTag.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified TenantTag.
+        /// Deletes the specified TenantTag and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TenantTag.</returns>
-        System.Threading.Tasks.Task<TenantTag> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TenantTag.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TenantTag.</returns>
-        System.Threading.Tasks.Task<TenantTag> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TenantTag> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified TenantTag using PATCH.
+        /// Gets the specified TenantTag and returns a <see cref="GraphResponse{TenantTag}"/> object.
         /// </summary>
-        /// <param name="tenantTagToUpdate">The TenantTag to update.</param>
-        /// <returns>The updated TenantTag.</returns>
-        System.Threading.Tasks.Task<TenantTag> UpdateAsync(TenantTag tenantTagToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TenantTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TenantTag>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantTag using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TenantTag.</returns>
-        System.Threading.Tasks.Task<TenantTag> UpdateAsync(TenantTag tenantTagToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TenantTag> UpdateAsync(TenantTag tenantTagToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TenantTag using PATCH and returns a <see cref="GraphResponse{TenantTag}"/> object.
+        /// </summary>
+        /// <param name="tenantTagToUpdate">The TenantTag to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TenantTag}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TenantTag>> UpdateResponseAsync(TenantTag tenantTagToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TenantTag using PUT.
+        /// </summary>
+        /// <param name="tenantTagToUpdate">The TenantTag object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TenantTag> PutAsync(TenantTag tenantTagToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TenantTag using PUT and returns a <see cref="GraphResponse{TenantTag}"/> object.
+        /// </summary>
+        /// <param name="tenantTagToUpdate">The TenantTag object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TenantTag}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TenantTag>> PutResponseAsync(TenantTag tenantTagToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

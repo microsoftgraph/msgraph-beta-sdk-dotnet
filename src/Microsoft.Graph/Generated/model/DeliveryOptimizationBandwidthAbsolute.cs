@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type DeliveryOptimizationBandwidthAbsolute.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class DeliveryOptimizationBandwidthAbsolute : DeliveryOptimizationBandwidth
     {
         /// <summary>
@@ -33,14 +31,14 @@ namespace Microsoft.Graph
         /// Gets or sets maximumDownloadBandwidthInKilobytesPerSecond.
         /// The value 0 (zero) means that Delivery Optimization dynamically adjusts to use the available bandwidth for downloads. Valid values 0 to 4294967295
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumDownloadBandwidthInKilobytesPerSecond", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumDownloadBandwidthInKilobytesPerSecond")]
         public Int64? MaximumDownloadBandwidthInKilobytesPerSecond { get; set; }
     
         /// <summary>
         /// Gets or sets maximumUploadBandwidthInKilobytesPerSecond.
         /// The default value is 0, which permits unlimited possible bandwidth (optimized for minimal usage of upload bandwidth). Valid values 0 to 4000000
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "maximumUploadBandwidthInKilobytesPerSecond", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("maximumUploadBandwidthInKilobytesPerSecond")]
         public Int64? MaximumUploadBandwidthInKilobytesPerSecond { get; set; }
     
     }

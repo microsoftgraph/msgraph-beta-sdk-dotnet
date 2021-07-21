@@ -12,29 +12,27 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Email Authentication Method.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class EmailAuthenticationMethod : AuthenticationMethod
     {
     
-		///<summary>
-		/// The EmailAuthenticationMethod constructor
-		///</summary>
+        ///<summary>
+        /// The EmailAuthenticationMethod constructor
+        ///</summary>
         public EmailAuthenticationMethod()
         {
             this.ODataType = "microsoft.graph.emailAuthenticationMethod";
         }
-	
+
         /// <summary>
         /// Gets or sets email address.
         /// The email address registered to this user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "emailAddress", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }
     
     }

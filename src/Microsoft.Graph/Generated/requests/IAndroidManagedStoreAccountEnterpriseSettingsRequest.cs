@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidManagedStoreAccountEnterpriseSettings using POST.
         /// </summary>
         /// <param name="androidManagedStoreAccountEnterpriseSettingsToCreate">The AndroidManagedStoreAccountEnterpriseSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidManagedStoreAccountEnterpriseSettings.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> CreateAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToCreate);        /// <summary>
-        /// Creates the specified AndroidManagedStoreAccountEnterpriseSettings using POST.
+        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> CreateAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AndroidManagedStoreAccountEnterpriseSettings using POST and returns a <see cref="GraphResponse{AndroidManagedStoreAccountEnterpriseSettings}"/> object.
         /// </summary>
         /// <param name="androidManagedStoreAccountEnterpriseSettingsToCreate">The AndroidManagedStoreAccountEnterpriseSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidManagedStoreAccountEnterpriseSettings.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> CreateAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidManagedStoreAccountEnterpriseSettings.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAccountEnterpriseSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAccountEnterpriseSettings>> CreateResponseAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidManagedStoreAccountEnterpriseSettings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AndroidManagedStoreAccountEnterpriseSettings.
+        /// Deletes the specified AndroidManagedStoreAccountEnterpriseSettings and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidManagedStoreAccountEnterpriseSettings.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidManagedStoreAccountEnterpriseSettings.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidManagedStoreAccountEnterpriseSettings.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AndroidManagedStoreAccountEnterpriseSettings using PATCH.
+        /// Gets the specified AndroidManagedStoreAccountEnterpriseSettings and returns a <see cref="GraphResponse{AndroidManagedStoreAccountEnterpriseSettings}"/> object.
         /// </summary>
-        /// <param name="androidManagedStoreAccountEnterpriseSettingsToUpdate">The AndroidManagedStoreAccountEnterpriseSettings to update.</param>
-        /// <returns>The updated AndroidManagedStoreAccountEnterpriseSettings.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> UpdateAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAccountEnterpriseSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAccountEnterpriseSettings>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidManagedStoreAccountEnterpriseSettings using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidManagedStoreAccountEnterpriseSettings.</returns>
-        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> UpdateAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> UpdateAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidManagedStoreAccountEnterpriseSettings using PATCH and returns a <see cref="GraphResponse{AndroidManagedStoreAccountEnterpriseSettings}"/> object.
+        /// </summary>
+        /// <param name="androidManagedStoreAccountEnterpriseSettingsToUpdate">The AndroidManagedStoreAccountEnterpriseSettings to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedStoreAccountEnterpriseSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAccountEnterpriseSettings>> UpdateResponseAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidManagedStoreAccountEnterpriseSettings using PUT.
+        /// </summary>
+        /// <param name="androidManagedStoreAccountEnterpriseSettingsToUpdate">The AndroidManagedStoreAccountEnterpriseSettings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidManagedStoreAccountEnterpriseSettings> PutAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidManagedStoreAccountEnterpriseSettings using PUT and returns a <see cref="GraphResponse{AndroidManagedStoreAccountEnterpriseSettings}"/> object.
+        /// </summary>
+        /// <param name="androidManagedStoreAccountEnterpriseSettingsToUpdate">The AndroidManagedStoreAccountEnterpriseSettings object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidManagedStoreAccountEnterpriseSettings}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedStoreAccountEnterpriseSettings>> PutResponseAsync(AndroidManagedStoreAccountEnterpriseSettings androidManagedStoreAccountEnterpriseSettingsToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

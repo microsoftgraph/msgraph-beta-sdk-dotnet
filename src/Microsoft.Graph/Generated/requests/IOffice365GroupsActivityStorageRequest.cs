@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Office365GroupsActivityStorage using POST.
         /// </summary>
         /// <param name="office365GroupsActivityStorageToCreate">The Office365GroupsActivityStorage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Office365GroupsActivityStorage.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityStorage> CreateAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToCreate);        /// <summary>
-        /// Creates the specified Office365GroupsActivityStorage using POST.
+        System.Threading.Tasks.Task<Office365GroupsActivityStorage> CreateAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Office365GroupsActivityStorage using POST and returns a <see cref="GraphResponse{Office365GroupsActivityStorage}"/> object.
         /// </summary>
         /// <param name="office365GroupsActivityStorageToCreate">The Office365GroupsActivityStorage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Office365GroupsActivityStorage.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityStorage> CreateAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Office365GroupsActivityStorage.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Office365GroupsActivityStorage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityStorage>> CreateResponseAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Office365GroupsActivityStorage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Office365GroupsActivityStorage.
+        /// Deletes the specified Office365GroupsActivityStorage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Office365GroupsActivityStorage.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityStorage> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Office365GroupsActivityStorage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Office365GroupsActivityStorage.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityStorage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Office365GroupsActivityStorage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Office365GroupsActivityStorage using PATCH.
+        /// Gets the specified Office365GroupsActivityStorage and returns a <see cref="GraphResponse{Office365GroupsActivityStorage}"/> object.
         /// </summary>
-        /// <param name="office365GroupsActivityStorageToUpdate">The Office365GroupsActivityStorage to update.</param>
-        /// <returns>The updated Office365GroupsActivityStorage.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityStorage> UpdateAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Office365GroupsActivityStorage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityStorage>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Office365GroupsActivityStorage using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Office365GroupsActivityStorage.</returns>
-        System.Threading.Tasks.Task<Office365GroupsActivityStorage> UpdateAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Office365GroupsActivityStorage> UpdateAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Office365GroupsActivityStorage using PATCH and returns a <see cref="GraphResponse{Office365GroupsActivityStorage}"/> object.
+        /// </summary>
+        /// <param name="office365GroupsActivityStorageToUpdate">The Office365GroupsActivityStorage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Office365GroupsActivityStorage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityStorage>> UpdateResponseAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Office365GroupsActivityStorage using PUT.
+        /// </summary>
+        /// <param name="office365GroupsActivityStorageToUpdate">The Office365GroupsActivityStorage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Office365GroupsActivityStorage> PutAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Office365GroupsActivityStorage using PUT and returns a <see cref="GraphResponse{Office365GroupsActivityStorage}"/> object.
+        /// </summary>
+        /// <param name="office365GroupsActivityStorageToUpdate">The Office365GroupsActivityStorage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Office365GroupsActivityStorage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Office365GroupsActivityStorage>> PutResponseAsync(Office365GroupsActivityStorage office365GroupsActivityStorageToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

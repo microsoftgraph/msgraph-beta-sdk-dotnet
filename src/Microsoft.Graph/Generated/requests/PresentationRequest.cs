@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified Presentation using POST.
         /// </summary>
         /// <param name="presentationToCreate">The Presentation to create.</param>
-        /// <returns>The created Presentation.</returns>
-        public System.Threading.Tasks.Task<Presentation> CreateAsync(Presentation presentationToCreate)
-        {
-            return this.CreateAsync(presentationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Presentation using POST.
-        /// </summary>
-        /// <param name="presentationToCreate">The Presentation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Presentation.</returns>
-        public async System.Threading.Tasks.Task<Presentation> CreateAsync(Presentation presentationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Presentation> CreateAsync(Presentation presentationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Presentation>(presentationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Presentation.
+        /// Creates the specified Presentation using POST and returns a <see cref="GraphResponse{Presentation}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="presentationToCreate">The Presentation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Presentation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Presentation>> CreateResponseAsync(Presentation presentationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Presentation>(presentationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Presentation>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Presentation.
+        /// Deletes the specified Presentation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Presentation.</returns>
-        public System.Threading.Tasks.Task<Presentation> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Presentation.</returns>
-        public async System.Threading.Tasks.Task<Presentation> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Presentation> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Presentation>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Presentation using PATCH.
+        /// Gets the specified Presentation and returns a <see cref="GraphResponse{Presentation}"/> object.
         /// </summary>
-        /// <param name="presentationToUpdate">The Presentation to update.</param>
-        /// <returns>The updated Presentation.</returns>
-        public System.Threading.Tasks.Task<Presentation> UpdateAsync(Presentation presentationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Presentation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Presentation>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(presentationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Presentation>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Presentation.</returns>
-        public async System.Threading.Tasks.Task<Presentation> UpdateAsync(Presentation presentationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Presentation> UpdateAsync(Presentation presentationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (presentationToUpdate.AdditionalData != null)
-			{
-				if (presentationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					presentationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, presentationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (presentationToUpdate.AdditionalData != null)
-            {
-                if (presentationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    presentationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, presentationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Presentation>(presentationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Presentation using PATCH and returns a <see cref="GraphResponse{Presentation}"/> object.
+        /// </summary>
+        /// <param name="presentationToUpdate">The Presentation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Presentation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Presentation>> UpdateResponseAsync(Presentation presentationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Presentation>(presentationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Presentation using PUT.
+        /// </summary>
+        /// <param name="presentationToUpdate">The Presentation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Presentation> PutAsync(Presentation presentationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Presentation>(presentationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Presentation using PUT and returns a <see cref="GraphResponse{Presentation}"/> object.
+        /// </summary>
+        /// <param name="presentationToUpdate">The Presentation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Presentation}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Presentation>> PutResponseAsync(Presentation presentationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Presentation>(presentationToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Presentation presentationToInitialize)
         {
 
-            if (presentationToInitialize != null && presentationToInitialize.AdditionalData != null)
+            if (presentationToInitialize != null)
             {
-
                 if (presentationToInitialize.Comments != null && presentationToInitialize.Comments.CurrentPage != null)
                 {
+                    presentationToInitialize.Comments.InitializeNextPageRequest(this.Client, presentationToInitialize.CommentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     presentationToInitialize.Comments.AdditionalData = presentationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    presentationToInitialize.AdditionalData.TryGetValue("comments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        presentationToInitialize.Comments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

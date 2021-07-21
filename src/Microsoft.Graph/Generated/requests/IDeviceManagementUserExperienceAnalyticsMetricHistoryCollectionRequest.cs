@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserExperienceAnalyticsMetricHistory to the collection via POST.
-        /// </summary>
-        /// <param name="userExperienceAnalyticsMetricHistory">The UserExperienceAnalyticsMetricHistory to add.</param>
-        /// <returns>The created UserExperienceAnalyticsMetricHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> AddAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistory);
-
         /// <summary>
         /// Adds the specified UserExperienceAnalyticsMetricHistory to the collection via POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsMetricHistory">The UserExperienceAnalyticsMetricHistory to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsMetricHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> AddAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistory, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsMetricHistory> AddAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistory, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UserExperienceAnalyticsMetricHistory to the collection via POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage> GetAsync();
+        /// <param name="userExperienceAnalyticsMetricHistory">The UserExperienceAnalyticsMetricHistory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsMetricHistory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsMetricHistory>> AddResponseAsync(UserExperienceAnalyticsMetricHistory userExperienceAnalyticsMetricHistory, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementUserExperienceAnalyticsMetricHistoryCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

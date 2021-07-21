@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsOfficeClientSecurityConfiguration using POST.
         /// </summary>
         /// <param name="windowsOfficeClientSecurityConfigurationToCreate">The WindowsOfficeClientSecurityConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsOfficeClientSecurityConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> CreateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate);        /// <summary>
-        /// Creates the specified WindowsOfficeClientSecurityConfiguration using POST.
+        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> CreateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WindowsOfficeClientSecurityConfiguration using POST and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
         /// </summary>
         /// <param name="windowsOfficeClientSecurityConfigurationToCreate">The WindowsOfficeClientSecurityConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsOfficeClientSecurityConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> CreateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsOfficeClientSecurityConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> CreateResponseAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsOfficeClientSecurityConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WindowsOfficeClientSecurityConfiguration.
+        /// Deletes the specified WindowsOfficeClientSecurityConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsOfficeClientSecurityConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsOfficeClientSecurityConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsOfficeClientSecurityConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WindowsOfficeClientSecurityConfiguration using PATCH.
+        /// Gets the specified WindowsOfficeClientSecurityConfiguration and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
         /// </summary>
-        /// <param name="windowsOfficeClientSecurityConfigurationToUpdate">The WindowsOfficeClientSecurityConfiguration to update.</param>
-        /// <returns>The updated WindowsOfficeClientSecurityConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> UpdateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsOfficeClientSecurityConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsOfficeClientSecurityConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> UpdateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> UpdateAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsOfficeClientSecurityConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsOfficeClientSecurityConfigurationToUpdate">The WindowsOfficeClientSecurityConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> UpdateResponseAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsOfficeClientSecurityConfiguration using PUT.
+        /// </summary>
+        /// <param name="windowsOfficeClientSecurityConfigurationToUpdate">The WindowsOfficeClientSecurityConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsOfficeClientSecurityConfiguration> PutAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsOfficeClientSecurityConfiguration using PUT and returns a <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsOfficeClientSecurityConfigurationToUpdate">The WindowsOfficeClientSecurityConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsOfficeClientSecurityConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsOfficeClientSecurityConfiguration>> PutResponseAsync(WindowsOfficeClientSecurityConfiguration windowsOfficeClientSecurityConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified MobileContainedApp using POST.
         /// </summary>
         /// <param name="mobileContainedAppToCreate">The MobileContainedApp to create.</param>
-        /// <returns>The created MobileContainedApp.</returns>
-        public System.Threading.Tasks.Task<MobileContainedApp> CreateAsync(MobileContainedApp mobileContainedAppToCreate)
-        {
-            return this.CreateAsync(mobileContainedAppToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified MobileContainedApp using POST.
-        /// </summary>
-        /// <param name="mobileContainedAppToCreate">The MobileContainedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileContainedApp.</returns>
-        public async System.Threading.Tasks.Task<MobileContainedApp> CreateAsync(MobileContainedApp mobileContainedAppToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileContainedApp> CreateAsync(MobileContainedApp mobileContainedAppToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<MobileContainedApp>(mobileContainedAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified MobileContainedApp.
+        /// Creates the specified MobileContainedApp using POST and returns a <see cref="GraphResponse{MobileContainedApp}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="mobileContainedAppToCreate">The MobileContainedApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileContainedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> CreateResponseAsync(MobileContainedApp mobileContainedAppToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<MobileContainedApp>(mobileContainedAppToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<MobileContainedApp>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified MobileContainedApp.
+        /// Deletes the specified MobileContainedApp and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MobileContainedApp.</returns>
-        public System.Threading.Tasks.Task<MobileContainedApp> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MobileContainedApp.</returns>
-        public async System.Threading.Tasks.Task<MobileContainedApp> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileContainedApp> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<MobileContainedApp>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified MobileContainedApp using PATCH.
+        /// Gets the specified MobileContainedApp and returns a <see cref="GraphResponse{MobileContainedApp}"/> object.
         /// </summary>
-        /// <param name="mobileContainedAppToUpdate">The MobileContainedApp to update.</param>
-        /// <returns>The updated MobileContainedApp.</returns>
-        public System.Threading.Tasks.Task<MobileContainedApp> UpdateAsync(MobileContainedApp mobileContainedAppToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileContainedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(mobileContainedAppToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<MobileContainedApp>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MobileContainedApp.</returns>
-        public async System.Threading.Tasks.Task<MobileContainedApp> UpdateAsync(MobileContainedApp mobileContainedAppToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<MobileContainedApp> UpdateAsync(MobileContainedApp mobileContainedAppToUpdate, CancellationToken cancellationToken = default)
         {
-			if (mobileContainedAppToUpdate.AdditionalData != null)
-			{
-				if (mobileContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					mobileContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileContainedAppToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (mobileContainedAppToUpdate.AdditionalData != null)
-            {
-                if (mobileContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    mobileContainedAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileContainedAppToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<MobileContainedApp>(mobileContainedAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MobileContainedApp using PATCH and returns a <see cref="GraphResponse{MobileContainedApp}"/> object.
+        /// </summary>
+        /// <param name="mobileContainedAppToUpdate">The MobileContainedApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileContainedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> UpdateResponseAsync(MobileContainedApp mobileContainedAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<MobileContainedApp>(mobileContainedAppToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified MobileContainedApp using PUT.
+        /// </summary>
+        /// <param name="mobileContainedAppToUpdate">The MobileContainedApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<MobileContainedApp> PutAsync(MobileContainedApp mobileContainedAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<MobileContainedApp>(mobileContainedAppToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified MobileContainedApp using PUT and returns a <see cref="GraphResponse{MobileContainedApp}"/> object.
+        /// </summary>
+        /// <param name="mobileContainedAppToUpdate">The MobileContainedApp object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{MobileContainedApp}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> PutResponseAsync(MobileContainedApp mobileContainedAppToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<MobileContainedApp>(mobileContainedAppToUpdate, cancellationToken);
         }
 
         /// <summary>

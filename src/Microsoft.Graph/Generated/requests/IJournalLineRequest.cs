@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified JournalLine using POST.
         /// </summary>
         /// <param name="journalLineToCreate">The JournalLine to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> CreateAsync(JournalLine journalLineToCreate);        /// <summary>
-        /// Creates the specified JournalLine using POST.
+        System.Threading.Tasks.Task<JournalLine> CreateAsync(JournalLine journalLineToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified JournalLine using POST and returns a <see cref="GraphResponse{JournalLine}"/> object.
         /// </summary>
         /// <param name="journalLineToCreate">The JournalLine to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> CreateAsync(JournalLine journalLineToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified JournalLine.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JournalLine>> CreateResponseAsync(JournalLine journalLineToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified JournalLine.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified JournalLine.
+        /// Deletes the specified JournalLine and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified JournalLine.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<JournalLine> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified JournalLine using PATCH.
+        /// Gets the specified JournalLine and returns a <see cref="GraphResponse{JournalLine}"/> object.
         /// </summary>
-        /// <param name="journalLineToUpdate">The JournalLine to update.</param>
-        /// <returns>The updated JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> UpdateAsync(JournalLine journalLineToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JournalLine>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified JournalLine using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated JournalLine.</returns>
-        System.Threading.Tasks.Task<JournalLine> UpdateAsync(JournalLine journalLineToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<JournalLine> UpdateAsync(JournalLine journalLineToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified JournalLine using PATCH and returns a <see cref="GraphResponse{JournalLine}"/> object.
+        /// </summary>
+        /// <param name="journalLineToUpdate">The JournalLine to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{JournalLine}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JournalLine>> UpdateResponseAsync(JournalLine journalLineToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified JournalLine using PUT.
+        /// </summary>
+        /// <param name="journalLineToUpdate">The JournalLine object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<JournalLine> PutAsync(JournalLine journalLineToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified JournalLine using PUT and returns a <see cref="GraphResponse{JournalLine}"/> object.
+        /// </summary>
+        /// <param name="journalLineToUpdate">The JournalLine object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{JournalLine}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<JournalLine>> PutResponseAsync(JournalLine journalLineToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

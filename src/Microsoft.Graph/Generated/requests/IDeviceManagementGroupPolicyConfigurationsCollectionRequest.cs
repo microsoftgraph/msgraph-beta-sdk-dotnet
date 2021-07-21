@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IDeviceManagementGroupPolicyConfigurationsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified GroupPolicyConfiguration to the collection via POST.
-        /// </summary>
-        /// <param name="groupPolicyConfiguration">The GroupPolicyConfiguration to add.</param>
-        /// <returns>The created GroupPolicyConfiguration.</returns>
-        System.Threading.Tasks.Task<GroupPolicyConfiguration> AddAsync(GroupPolicyConfiguration groupPolicyConfiguration);
-
         /// <summary>
         /// Adds the specified GroupPolicyConfiguration to the collection via POST.
         /// </summary>
         /// <param name="groupPolicyConfiguration">The GroupPolicyConfiguration to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupPolicyConfiguration.</returns>
-        System.Threading.Tasks.Task<GroupPolicyConfiguration> AddAsync(GroupPolicyConfiguration groupPolicyConfiguration, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GroupPolicyConfiguration> AddAsync(GroupPolicyConfiguration groupPolicyConfiguration, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified GroupPolicyConfiguration to the collection via POST and returns a <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementGroupPolicyConfigurationsCollectionPage> GetAsync();
+        /// <param name="groupPolicyConfiguration">The GroupPolicyConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupPolicyConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupPolicyConfiguration>> AddResponseAsync(GroupPolicyConfiguration groupPolicyConfiguration, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IDeviceManagementGroupPolicyConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IDeviceManagementGroupPolicyConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{DeviceManagementGroupPolicyConfigurationsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementGroupPolicyConfigurationsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementGroupPolicyConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

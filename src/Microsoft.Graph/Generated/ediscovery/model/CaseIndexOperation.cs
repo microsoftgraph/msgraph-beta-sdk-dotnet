@@ -12,24 +12,22 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Case Index Operation.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class CaseIndexOperation : CaseOperation
     {
     
-		///<summary>
-		/// The CaseIndexOperation constructor
-		///</summary>
+        ///<summary>
+        /// The CaseIndexOperation constructor
+        ///</summary>
         public CaseIndexOperation()
         {
             this.ODataType = "microsoft.graph.ediscovery.caseIndexOperation";
         }
-	
+
     }
 }
 

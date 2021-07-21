@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementIntent using POST.
         /// </summary>
         /// <param name="deviceManagementIntentToCreate">The DeviceManagementIntent to create.</param>
-        /// <returns>The created DeviceManagementIntent.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntent> CreateAsync(DeviceManagementIntent deviceManagementIntentToCreate)
-        {
-            return this.CreateAsync(deviceManagementIntentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceManagementIntent using POST.
-        /// </summary>
-        /// <param name="deviceManagementIntentToCreate">The DeviceManagementIntent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementIntent.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntent> CreateAsync(DeviceManagementIntent deviceManagementIntentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntent> CreateAsync(DeviceManagementIntent deviceManagementIntentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceManagementIntent>(deviceManagementIntentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceManagementIntent.
+        /// Creates the specified DeviceManagementIntent using POST and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceManagementIntentToCreate">The DeviceManagementIntent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> CreateResponseAsync(DeviceManagementIntent deviceManagementIntentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntent>(deviceManagementIntentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceManagementIntent>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceManagementIntent.
+        /// Deletes the specified DeviceManagementIntent and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementIntent.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntent> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementIntent.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntent> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntent> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceManagementIntent>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceManagementIntent using PATCH.
+        /// Gets the specified DeviceManagementIntent and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
         /// </summary>
-        /// <param name="deviceManagementIntentToUpdate">The DeviceManagementIntent to update.</param>
-        /// <returns>The updated DeviceManagementIntent.</returns>
-        public System.Threading.Tasks.Task<DeviceManagementIntent> UpdateAsync(DeviceManagementIntent deviceManagementIntentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceManagementIntentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntent>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementIntent.</returns>
-        public async System.Threading.Tasks.Task<DeviceManagementIntent> UpdateAsync(DeviceManagementIntent deviceManagementIntentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceManagementIntent> UpdateAsync(DeviceManagementIntent deviceManagementIntentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceManagementIntentToUpdate.AdditionalData != null)
-			{
-				if (deviceManagementIntentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceManagementIntentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceManagementIntentToUpdate.AdditionalData != null)
-            {
-                if (deviceManagementIntentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceManagementIntentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementIntentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceManagementIntent>(deviceManagementIntentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntent using PATCH and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentToUpdate">The DeviceManagementIntent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementIntent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> UpdateResponseAsync(DeviceManagementIntent deviceManagementIntentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntent>(deviceManagementIntentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntent using PUT.
+        /// </summary>
+        /// <param name="deviceManagementIntentToUpdate">The DeviceManagementIntent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceManagementIntent> PutAsync(DeviceManagementIntent deviceManagementIntentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceManagementIntent>(deviceManagementIntentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementIntent using PUT and returns a <see cref="GraphResponse{DeviceManagementIntent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementIntentToUpdate">The DeviceManagementIntent object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceManagementIntent}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementIntent>> PutResponseAsync(DeviceManagementIntent deviceManagementIntentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceManagementIntent>(deviceManagementIntentToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,103 +244,43 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceManagementIntent deviceManagementIntentToInitialize)
         {
 
-            if (deviceManagementIntentToInitialize != null && deviceManagementIntentToInitialize.AdditionalData != null)
+            if (deviceManagementIntentToInitialize != null)
             {
-
                 if (deviceManagementIntentToInitialize.Assignments != null && deviceManagementIntentToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceManagementIntentToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceManagementIntentToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementIntentToInitialize.Assignments.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementIntentToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementIntentToInitialize.Categories != null && deviceManagementIntentToInitialize.Categories.CurrentPage != null)
                 {
+                    deviceManagementIntentToInitialize.Categories.InitializeNextPageRequest(this.Client, deviceManagementIntentToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementIntentToInitialize.Categories.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("categories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementIntentToInitialize.Categories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementIntentToInitialize.DeviceSettingStateSummaries != null && deviceManagementIntentToInitialize.DeviceSettingStateSummaries.CurrentPage != null)
                 {
+                    deviceManagementIntentToInitialize.DeviceSettingStateSummaries.InitializeNextPageRequest(this.Client, deviceManagementIntentToInitialize.DeviceSettingStateSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementIntentToInitialize.DeviceSettingStateSummaries.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("deviceSettingStateSummaries@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementIntentToInitialize.DeviceSettingStateSummaries.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementIntentToInitialize.DeviceStates != null && deviceManagementIntentToInitialize.DeviceStates.CurrentPage != null)
                 {
+                    deviceManagementIntentToInitialize.DeviceStates.InitializeNextPageRequest(this.Client, deviceManagementIntentToInitialize.DeviceStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementIntentToInitialize.DeviceStates.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementIntentToInitialize.DeviceStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementIntentToInitialize.Settings != null && deviceManagementIntentToInitialize.Settings.CurrentPage != null)
                 {
+                    deviceManagementIntentToInitialize.Settings.InitializeNextPageRequest(this.Client, deviceManagementIntentToInitialize.SettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementIntentToInitialize.Settings.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("settings@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementIntentToInitialize.Settings.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceManagementIntentToInitialize.UserStates != null && deviceManagementIntentToInitialize.UserStates.CurrentPage != null)
                 {
+                    deviceManagementIntentToInitialize.UserStates.InitializeNextPageRequest(this.Client, deviceManagementIntentToInitialize.UserStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementIntentToInitialize.UserStates.AdditionalData = deviceManagementIntentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceManagementIntentToInitialize.AdditionalData.TryGetValue("userStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceManagementIntentToInitialize.UserStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DepOnboardingSetting using POST.
         /// </summary>
         /// <param name="depOnboardingSettingToCreate">The DepOnboardingSetting to create.</param>
-        /// <returns>The created DepOnboardingSetting.</returns>
-        public System.Threading.Tasks.Task<DepOnboardingSetting> CreateAsync(DepOnboardingSetting depOnboardingSettingToCreate)
-        {
-            return this.CreateAsync(depOnboardingSettingToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DepOnboardingSetting using POST.
-        /// </summary>
-        /// <param name="depOnboardingSettingToCreate">The DepOnboardingSetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DepOnboardingSetting.</returns>
-        public async System.Threading.Tasks.Task<DepOnboardingSetting> CreateAsync(DepOnboardingSetting depOnboardingSettingToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DepOnboardingSetting> CreateAsync(DepOnboardingSetting depOnboardingSettingToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DepOnboardingSetting>(depOnboardingSettingToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DepOnboardingSetting.
+        /// Creates the specified DepOnboardingSetting using POST and returns a <see cref="GraphResponse{DepOnboardingSetting}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="depOnboardingSettingToCreate">The DepOnboardingSetting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DepOnboardingSetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> CreateResponseAsync(DepOnboardingSetting depOnboardingSettingToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DepOnboardingSetting>(depOnboardingSettingToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DepOnboardingSetting>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DepOnboardingSetting.
+        /// Deletes the specified DepOnboardingSetting and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DepOnboardingSetting.</returns>
-        public System.Threading.Tasks.Task<DepOnboardingSetting> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DepOnboardingSetting.</returns>
-        public async System.Threading.Tasks.Task<DepOnboardingSetting> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DepOnboardingSetting> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DepOnboardingSetting>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DepOnboardingSetting using PATCH.
+        /// Gets the specified DepOnboardingSetting and returns a <see cref="GraphResponse{DepOnboardingSetting}"/> object.
         /// </summary>
-        /// <param name="depOnboardingSettingToUpdate">The DepOnboardingSetting to update.</param>
-        /// <returns>The updated DepOnboardingSetting.</returns>
-        public System.Threading.Tasks.Task<DepOnboardingSetting> UpdateAsync(DepOnboardingSetting depOnboardingSettingToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DepOnboardingSetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(depOnboardingSettingToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DepOnboardingSetting>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DepOnboardingSetting.</returns>
-        public async System.Threading.Tasks.Task<DepOnboardingSetting> UpdateAsync(DepOnboardingSetting depOnboardingSettingToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DepOnboardingSetting> UpdateAsync(DepOnboardingSetting depOnboardingSettingToUpdate, CancellationToken cancellationToken = default)
         {
-			if (depOnboardingSettingToUpdate.AdditionalData != null)
-			{
-				if (depOnboardingSettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					depOnboardingSettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, depOnboardingSettingToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (depOnboardingSettingToUpdate.AdditionalData != null)
-            {
-                if (depOnboardingSettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    depOnboardingSettingToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, depOnboardingSettingToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DepOnboardingSetting>(depOnboardingSettingToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DepOnboardingSetting using PATCH and returns a <see cref="GraphResponse{DepOnboardingSetting}"/> object.
+        /// </summary>
+        /// <param name="depOnboardingSettingToUpdate">The DepOnboardingSetting to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DepOnboardingSetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> UpdateResponseAsync(DepOnboardingSetting depOnboardingSettingToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DepOnboardingSetting>(depOnboardingSettingToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DepOnboardingSetting using PUT.
+        /// </summary>
+        /// <param name="depOnboardingSettingToUpdate">The DepOnboardingSetting object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DepOnboardingSetting> PutAsync(DepOnboardingSetting depOnboardingSettingToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DepOnboardingSetting>(depOnboardingSettingToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DepOnboardingSetting using PUT and returns a <see cref="GraphResponse{DepOnboardingSetting}"/> object.
+        /// </summary>
+        /// <param name="depOnboardingSettingToUpdate">The DepOnboardingSetting object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DepOnboardingSetting}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DepOnboardingSetting>> PutResponseAsync(DepOnboardingSetting depOnboardingSettingToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DepOnboardingSetting>(depOnboardingSettingToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DepOnboardingSetting depOnboardingSettingToInitialize)
         {
 
-            if (depOnboardingSettingToInitialize != null && depOnboardingSettingToInitialize.AdditionalData != null)
+            if (depOnboardingSettingToInitialize != null)
             {
-
                 if (depOnboardingSettingToInitialize.EnrollmentProfiles != null && depOnboardingSettingToInitialize.EnrollmentProfiles.CurrentPage != null)
                 {
+                    depOnboardingSettingToInitialize.EnrollmentProfiles.InitializeNextPageRequest(this.Client, depOnboardingSettingToInitialize.EnrollmentProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     depOnboardingSettingToInitialize.EnrollmentProfiles.AdditionalData = depOnboardingSettingToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    depOnboardingSettingToInitialize.AdditionalData.TryGetValue("enrollmentProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        depOnboardingSettingToInitialize.EnrollmentProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities != null && depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.CurrentPage != null)
                 {
+                    depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.InitializeNextPageRequest(this.Client, depOnboardingSettingToInitialize.ImportedAppleDeviceIdentitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.AdditionalData = depOnboardingSettingToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    depOnboardingSettingToInitialize.AdditionalData.TryGetValue("importedAppleDeviceIdentities@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        depOnboardingSettingToInitialize.ImportedAppleDeviceIdentities.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

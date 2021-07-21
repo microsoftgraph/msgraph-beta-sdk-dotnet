@@ -24,47 +24,45 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified Ediscoveryroot using POST.
         /// </summary>
         /// <param name="ediscoveryrootToCreate">The Ediscoveryroot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Ediscoveryroot.</returns>
-        System.Threading.Tasks.Task<Ediscoveryroot> CreateAsync(Ediscoveryroot ediscoveryrootToCreate);        /// <summary>
-        /// Creates the specified Ediscoveryroot using POST.
+        System.Threading.Tasks.Task<Ediscoveryroot> CreateAsync(Ediscoveryroot ediscoveryrootToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Ediscoveryroot using POST and returns a <see cref="GraphResponse{Ediscoveryroot}"/> object.
         /// </summary>
         /// <param name="ediscoveryrootToCreate">The Ediscoveryroot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Ediscoveryroot.</returns>
-        System.Threading.Tasks.Task<Ediscoveryroot> CreateAsync(Ediscoveryroot ediscoveryrootToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Ediscoveryroot.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Ediscoveryroot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Ediscoveryroot>> CreateResponseAsync(Ediscoveryroot ediscoveryrootToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Ediscoveryroot.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Ediscoveryroot.
+        /// Deletes the specified Ediscoveryroot and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Ediscoveryroot.</returns>
-        System.Threading.Tasks.Task<Ediscoveryroot> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Ediscoveryroot.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Ediscoveryroot.</returns>
-        System.Threading.Tasks.Task<Ediscoveryroot> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Ediscoveryroot> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Ediscoveryroot using PATCH.
+        /// Gets the specified Ediscoveryroot and returns a <see cref="GraphResponse{Ediscoveryroot}"/> object.
         /// </summary>
-        /// <param name="ediscoveryrootToUpdate">The Ediscoveryroot to update.</param>
-        /// <returns>The updated Ediscoveryroot.</returns>
-        System.Threading.Tasks.Task<Ediscoveryroot> UpdateAsync(Ediscoveryroot ediscoveryrootToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Ediscoveryroot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Ediscoveryroot>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Ediscoveryroot using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Ediscoveryroot.</returns>
-        System.Threading.Tasks.Task<Ediscoveryroot> UpdateAsync(Ediscoveryroot ediscoveryrootToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Ediscoveryroot> UpdateAsync(Ediscoveryroot ediscoveryrootToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Ediscoveryroot using PATCH and returns a <see cref="GraphResponse{Ediscoveryroot}"/> object.
+        /// </summary>
+        /// <param name="ediscoveryrootToUpdate">The Ediscoveryroot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Ediscoveryroot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Ediscoveryroot>> UpdateResponseAsync(Ediscoveryroot ediscoveryrootToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Ediscoveryroot using PUT.
+        /// </summary>
+        /// <param name="ediscoveryrootToUpdate">The Ediscoveryroot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Ediscoveryroot> PutAsync(Ediscoveryroot ediscoveryrootToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Ediscoveryroot using PUT and returns a <see cref="GraphResponse{Ediscoveryroot}"/> object.
+        /// </summary>
+        /// <param name="ediscoveryrootToUpdate">The Ediscoveryroot object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Ediscoveryroot}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Ediscoveryroot>> PutResponseAsync(Ediscoveryroot ediscoveryrootToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

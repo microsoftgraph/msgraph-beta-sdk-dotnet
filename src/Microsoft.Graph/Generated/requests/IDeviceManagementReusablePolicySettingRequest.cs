@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementReusablePolicySetting using POST.
         /// </summary>
         /// <param name="deviceManagementReusablePolicySettingToCreate">The DeviceManagementReusablePolicySetting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementReusablePolicySetting.</returns>
-        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> CreateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementReusablePolicySetting using POST.
+        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> CreateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementReusablePolicySetting using POST and returns a <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object.
         /// </summary>
         /// <param name="deviceManagementReusablePolicySettingToCreate">The DeviceManagementReusablePolicySetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementReusablePolicySetting.</returns>
-        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> CreateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementReusablePolicySetting.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReusablePolicySetting>> CreateResponseAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementReusablePolicySetting.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceManagementReusablePolicySetting.
+        /// Deletes the specified DeviceManagementReusablePolicySetting and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementReusablePolicySetting.</returns>
-        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementReusablePolicySetting.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementReusablePolicySetting.</returns>
-        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceManagementReusablePolicySetting using PATCH.
+        /// Gets the specified DeviceManagementReusablePolicySetting and returns a <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object.
         /// </summary>
-        /// <param name="deviceManagementReusablePolicySettingToUpdate">The DeviceManagementReusablePolicySetting to update.</param>
-        /// <returns>The updated DeviceManagementReusablePolicySetting.</returns>
-        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> UpdateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReusablePolicySetting>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementReusablePolicySetting using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementReusablePolicySetting.</returns>
-        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> UpdateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> UpdateAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReusablePolicySetting using PATCH and returns a <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReusablePolicySettingToUpdate">The DeviceManagementReusablePolicySetting to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReusablePolicySetting>> UpdateResponseAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReusablePolicySetting using PUT.
+        /// </summary>
+        /// <param name="deviceManagementReusablePolicySettingToUpdate">The DeviceManagementReusablePolicySetting object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementReusablePolicySetting> PutAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementReusablePolicySetting using PUT and returns a <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementReusablePolicySettingToUpdate">The DeviceManagementReusablePolicySetting object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementReusablePolicySetting}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementReusablePolicySetting>> PutResponseAsync(DeviceManagementReusablePolicySetting deviceManagementReusablePolicySettingToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

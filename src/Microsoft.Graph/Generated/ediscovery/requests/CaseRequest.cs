@@ -39,34 +39,28 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified Case using POST.
         /// </summary>
         /// <param name="caseToCreate">The Case to create.</param>
-        /// <returns>The created Case.</returns>
-        public System.Threading.Tasks.Task<Case> CreateAsync(Case caseToCreate)
-        {
-            return this.CreateAsync(caseToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified Case using POST.
-        /// </summary>
-        /// <param name="caseToCreate">The Case to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Case.</returns>
-        public async System.Threading.Tasks.Task<Case> CreateAsync(Case caseToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Case> CreateAsync(Case caseToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<Case>(caseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Case.
+        /// Creates the specified Case using POST and returns a <see cref="GraphResponse{Case}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="caseToCreate">The Case to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Case>> CreateResponseAsync(Case caseToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<Case>(caseToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<Case>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Case.
+        /// Deletes the specified Case and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Case.</returns>
-        public System.Threading.Tasks.Task<Case> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Case.</returns>
-        public async System.Threading.Tasks.Task<Case> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Case> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<Case>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Case using PATCH.
+        /// Gets the specified Case and returns a <see cref="GraphResponse{Case}"/> object.
         /// </summary>
-        /// <param name="caseToUpdate">The Case to update.</param>
-        /// <returns>The updated Case.</returns>
-        public System.Threading.Tasks.Task<Case> UpdateAsync(Case caseToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Case>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(caseToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<Case>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Case.</returns>
-        public async System.Threading.Tasks.Task<Case> UpdateAsync(Case caseToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<Case> UpdateAsync(Case caseToUpdate, CancellationToken cancellationToken = default)
         {
-			if (caseToUpdate.AdditionalData != null)
-			{
-				if (caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-					caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new Microsoft.Graph.ClientException(
-						new Microsoft.Graph.Error
-						{
-							Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, caseToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (caseToUpdate.AdditionalData != null)
-            {
-                if (caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.ResponseHeaders) ||
-                    caseToUpdate.AdditionalData.ContainsKey(Microsoft.Graph.Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new Microsoft.Graph.ClientException(
-                        new Microsoft.Graph.Error
-                        {
-                            Code = Microsoft.Graph.GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(Microsoft.Graph.GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, caseToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<Case>(caseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Case using PATCH and returns a <see cref="GraphResponse{Case}"/> object.
+        /// </summary>
+        /// <param name="caseToUpdate">The Case to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Case}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Case>> UpdateResponseAsync(Case caseToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<Case>(caseToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified Case using PUT.
+        /// </summary>
+        /// <param name="caseToUpdate">The Case object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<Case> PutAsync(Case caseToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<Case>(caseToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified Case using PUT and returns a <see cref="GraphResponse{Case}"/> object.
+        /// </summary>
+        /// <param name="caseToUpdate">The Case object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{Case}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Case>> PutResponseAsync(Case caseToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<Case>(caseToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,119 +244,49 @@ namespace Microsoft.Graph.Ediscovery
         private void InitializeCollectionProperties(Case caseToInitialize)
         {
 
-            if (caseToInitialize != null && caseToInitialize.AdditionalData != null)
+            if (caseToInitialize != null)
             {
-
                 if (caseToInitialize.Custodians != null && caseToInitialize.Custodians.CurrentPage != null)
                 {
+                    caseToInitialize.Custodians.InitializeNextPageRequest(this.Client, caseToInitialize.CustodiansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.Custodians.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("custodians@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.Custodians.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.LegalHolds != null && caseToInitialize.LegalHolds.CurrentPage != null)
                 {
+                    caseToInitialize.LegalHolds.InitializeNextPageRequest(this.Client, caseToInitialize.LegalHoldsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.LegalHolds.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("legalHolds@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.LegalHolds.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.NoncustodialDataSources != null && caseToInitialize.NoncustodialDataSources.CurrentPage != null)
                 {
+                    caseToInitialize.NoncustodialDataSources.InitializeNextPageRequest(this.Client, caseToInitialize.NoncustodialDataSourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.NoncustodialDataSources.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("noncustodialDataSources@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.NoncustodialDataSources.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.Operations != null && caseToInitialize.Operations.CurrentPage != null)
                 {
+                    caseToInitialize.Operations.InitializeNextPageRequest(this.Client, caseToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.Operations.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("operations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.Operations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.ReviewSets != null && caseToInitialize.ReviewSets.CurrentPage != null)
                 {
+                    caseToInitialize.ReviewSets.InitializeNextPageRequest(this.Client, caseToInitialize.ReviewSetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.ReviewSets.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("reviewSets@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.ReviewSets.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.SourceCollections != null && caseToInitialize.SourceCollections.CurrentPage != null)
                 {
+                    caseToInitialize.SourceCollections.InitializeNextPageRequest(this.Client, caseToInitialize.SourceCollectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.SourceCollections.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("sourceCollections@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.SourceCollections.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (caseToInitialize.Tags != null && caseToInitialize.Tags.CurrentPage != null)
                 {
+                    caseToInitialize.Tags.InitializeNextPageRequest(this.Client, caseToInitialize.TagsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     caseToInitialize.Tags.AdditionalData = caseToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    caseToInitialize.AdditionalData.TryGetValue("tags@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        caseToInitialize.Tags.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -20,33 +20,36 @@ namespace Microsoft.Graph.Ediscovery
     /// </summary>
     public partial interface ICaseLegalHoldsCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified LegalHold to the collection via POST.
-        /// </summary>
-        /// <param name="legalHold">The LegalHold to add.</param>
-        /// <returns>The created LegalHold.</returns>
-        System.Threading.Tasks.Task<LegalHold> AddAsync(LegalHold legalHold);
-
         /// <summary>
         /// Adds the specified LegalHold to the collection via POST.
         /// </summary>
         /// <param name="legalHold">The LegalHold to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LegalHold.</returns>
-        System.Threading.Tasks.Task<LegalHold> AddAsync(LegalHold legalHold, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<LegalHold> AddAsync(LegalHold legalHold, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified LegalHold to the collection via POST and returns a <see cref="GraphResponse{LegalHold}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICaseLegalHoldsCollectionPage> GetAsync();
+        /// <param name="legalHold">The LegalHold to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LegalHold}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LegalHold>> AddResponseAsync(LegalHold legalHold, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICaseLegalHoldsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICaseLegalHoldsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CaseLegalHoldsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CaseLegalHoldsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CaseLegalHoldsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

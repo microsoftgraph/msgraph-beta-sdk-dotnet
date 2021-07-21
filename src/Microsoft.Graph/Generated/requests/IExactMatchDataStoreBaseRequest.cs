@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified ExactMatchDataStoreBase using POST.
         /// </summary>
         /// <param name="exactMatchDataStoreBaseToCreate">The ExactMatchDataStoreBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchDataStoreBase.</returns>
-        System.Threading.Tasks.Task<ExactMatchDataStoreBase> CreateAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToCreate);        /// <summary>
-        /// Creates the specified ExactMatchDataStoreBase using POST.
+        System.Threading.Tasks.Task<ExactMatchDataStoreBase> CreateAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified ExactMatchDataStoreBase using POST and returns a <see cref="GraphResponse{ExactMatchDataStoreBase}"/> object.
         /// </summary>
         /// <param name="exactMatchDataStoreBaseToCreate">The ExactMatchDataStoreBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ExactMatchDataStoreBase.</returns>
-        System.Threading.Tasks.Task<ExactMatchDataStoreBase> CreateAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified ExactMatchDataStoreBase.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStoreBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStoreBase>> CreateResponseAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified ExactMatchDataStoreBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified ExactMatchDataStoreBase.
+        /// Deletes the specified ExactMatchDataStoreBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ExactMatchDataStoreBase.</returns>
-        System.Threading.Tasks.Task<ExactMatchDataStoreBase> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified ExactMatchDataStoreBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExactMatchDataStoreBase.</returns>
-        System.Threading.Tasks.Task<ExactMatchDataStoreBase> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ExactMatchDataStoreBase> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified ExactMatchDataStoreBase using PATCH.
+        /// Gets the specified ExactMatchDataStoreBase and returns a <see cref="GraphResponse{ExactMatchDataStoreBase}"/> object.
         /// </summary>
-        /// <param name="exactMatchDataStoreBaseToUpdate">The ExactMatchDataStoreBase to update.</param>
-        /// <returns>The updated ExactMatchDataStoreBase.</returns>
-        System.Threading.Tasks.Task<ExactMatchDataStoreBase> UpdateAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStoreBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStoreBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified ExactMatchDataStoreBase using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExactMatchDataStoreBase.</returns>
-        System.Threading.Tasks.Task<ExactMatchDataStoreBase> UpdateAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ExactMatchDataStoreBase> UpdateAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ExactMatchDataStoreBase using PATCH and returns a <see cref="GraphResponse{ExactMatchDataStoreBase}"/> object.
+        /// </summary>
+        /// <param name="exactMatchDataStoreBaseToUpdate">The ExactMatchDataStoreBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStoreBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStoreBase>> UpdateResponseAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ExactMatchDataStoreBase using PUT.
+        /// </summary>
+        /// <param name="exactMatchDataStoreBaseToUpdate">The ExactMatchDataStoreBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<ExactMatchDataStoreBase> PutAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified ExactMatchDataStoreBase using PUT and returns a <see cref="GraphResponse{ExactMatchDataStoreBase}"/> object.
+        /// </summary>
+        /// <param name="exactMatchDataStoreBaseToUpdate">The ExactMatchDataStoreBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{ExactMatchDataStoreBase}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStoreBase>> PutResponseAsync(ExactMatchDataStoreBase exactMatchDataStoreBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

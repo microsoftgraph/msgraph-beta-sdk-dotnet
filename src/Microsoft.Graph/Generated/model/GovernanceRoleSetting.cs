@@ -12,99 +12,89 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Governance Role Setting.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class GovernanceRoleSetting : Entity
     {
     
-		///<summary>
-		/// The GovernanceRoleSetting constructor
-		///</summary>
-        public GovernanceRoleSetting()
-        {
-            this.ODataType = "microsoft.graph.governanceRoleSetting";
-        }
-	
         /// <summary>
         /// Gets or sets admin eligible settings.
         /// The rule settings that are evaluated when an administrator tries to add an eligible role assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminEligibleSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("adminEligibleSettings")]
         public IEnumerable<GovernanceRuleSetting> AdminEligibleSettings { get; set; }
     
         /// <summary>
         /// Gets or sets admin member settings.
         /// The rule settings that are evaluated when an administrator tries to add a direct member role assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "adminMemberSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("adminMemberSettings")]
         public IEnumerable<GovernanceRuleSetting> AdminMemberSettings { get; set; }
     
         /// <summary>
         /// Gets or sets is default.
         /// Read-only. Indicate if the roleSetting is a default roleSetting
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDefault")]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets last updated by.
         /// Read-only. The display name of the administrator who last updated the roleSetting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdatedBy")]
         public string LastUpdatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last updated date time.
         /// Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets resource id.
         /// Required. The id of the resource that the role setting is associated with.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourceId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
         /// Required. The id of the role definition that the role setting is associated with.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinitionId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets user eligible settings.
         /// The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userEligibleSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userEligibleSettings")]
         public IEnumerable<GovernanceRuleSetting> UserEligibleSettings { get; set; }
     
         /// <summary>
         /// Gets or sets user member settings.
         /// The rule settings that are evaluated when a user tries to activate his role assignment.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userMemberSettings", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("userMemberSettings")]
         public IEnumerable<GovernanceRuleSetting> UserMemberSettings { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
         /// Read-only. The associated resource for this role setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resource")]
         public GovernanceResource Resource { get; set; }
     
         /// <summary>
         /// Gets or sets role definition.
         /// Read-only. The role definition that is enforced with this role setting.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "roleDefinition", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("roleDefinition")]
         public GovernanceRoleDefinition RoleDefinition { get; set; }
     
     }

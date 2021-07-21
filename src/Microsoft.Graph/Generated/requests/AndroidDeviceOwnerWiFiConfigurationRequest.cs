@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceOwnerWiFiConfiguration using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerWiFiConfigurationToCreate">The AndroidDeviceOwnerWiFiConfiguration to create.</param>
-        /// <returns>The created AndroidDeviceOwnerWiFiConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> CreateAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToCreate)
-        {
-            return this.CreateAsync(androidDeviceOwnerWiFiConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerWiFiConfiguration using POST.
-        /// </summary>
-        /// <param name="androidDeviceOwnerWiFiConfigurationToCreate">The AndroidDeviceOwnerWiFiConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerWiFiConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> CreateAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> CreateAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidDeviceOwnerWiFiConfiguration>(androidDeviceOwnerWiFiConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerWiFiConfiguration.
+        /// Creates the specified AndroidDeviceOwnerWiFiConfiguration using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidDeviceOwnerWiFiConfigurationToCreate">The AndroidDeviceOwnerWiFiConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerWiFiConfiguration>> CreateResponseAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerWiFiConfiguration>(androidDeviceOwnerWiFiConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidDeviceOwnerWiFiConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidDeviceOwnerWiFiConfiguration.
+        /// Deletes the specified AndroidDeviceOwnerWiFiConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerWiFiConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerWiFiConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidDeviceOwnerWiFiConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidDeviceOwnerWiFiConfiguration using PATCH.
+        /// Gets the specified AndroidDeviceOwnerWiFiConfiguration and returns a <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidDeviceOwnerWiFiConfigurationToUpdate">The AndroidDeviceOwnerWiFiConfiguration to update.</param>
-        /// <returns>The updated AndroidDeviceOwnerWiFiConfiguration.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> UpdateAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(androidDeviceOwnerWiFiConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerWiFiConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerWiFiConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> UpdateAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> UpdateAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (androidDeviceOwnerWiFiConfigurationToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceOwnerWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceOwnerWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerWiFiConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceOwnerWiFiConfigurationToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceOwnerWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceOwnerWiFiConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerWiFiConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidDeviceOwnerWiFiConfiguration>(androidDeviceOwnerWiFiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerWiFiConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerWiFiConfigurationToUpdate">The AndroidDeviceOwnerWiFiConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerWiFiConfiguration>> UpdateResponseAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerWiFiConfiguration>(androidDeviceOwnerWiFiConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerWiFiConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidDeviceOwnerWiFiConfigurationToUpdate">The AndroidDeviceOwnerWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerWiFiConfiguration> PutAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidDeviceOwnerWiFiConfiguration>(androidDeviceOwnerWiFiConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerWiFiConfiguration using PUT and returns a <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerWiFiConfigurationToUpdate">The AndroidDeviceOwnerWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidDeviceOwnerWiFiConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerWiFiConfiguration>> PutResponseAsync(AndroidDeviceOwnerWiFiConfiguration androidDeviceOwnerWiFiConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerWiFiConfiguration>(androidDeviceOwnerWiFiConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

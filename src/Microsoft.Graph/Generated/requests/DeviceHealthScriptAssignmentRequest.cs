@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceHealthScriptAssignment using POST.
         /// </summary>
         /// <param name="deviceHealthScriptAssignmentToCreate">The DeviceHealthScriptAssignment to create.</param>
-        /// <returns>The created DeviceHealthScriptAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceHealthScriptAssignment> CreateAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToCreate)
-        {
-            return this.CreateAsync(deviceHealthScriptAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceHealthScriptAssignment using POST.
-        /// </summary>
-        /// <param name="deviceHealthScriptAssignmentToCreate">The DeviceHealthScriptAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceHealthScriptAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceHealthScriptAssignment> CreateAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceHealthScriptAssignment> CreateAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceHealthScriptAssignment>(deviceHealthScriptAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceHealthScriptAssignment.
+        /// Creates the specified DeviceHealthScriptAssignment using POST and returns a <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceHealthScriptAssignmentToCreate">The DeviceHealthScriptAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptAssignment>> CreateResponseAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceHealthScriptAssignment>(deviceHealthScriptAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceHealthScriptAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceHealthScriptAssignment.
+        /// Deletes the specified DeviceHealthScriptAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceHealthScriptAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceHealthScriptAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceHealthScriptAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceHealthScriptAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceHealthScriptAssignment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceHealthScriptAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceHealthScriptAssignment using PATCH.
+        /// Gets the specified DeviceHealthScriptAssignment and returns a <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object.
         /// </summary>
-        /// <param name="deviceHealthScriptAssignmentToUpdate">The DeviceHealthScriptAssignment to update.</param>
-        /// <returns>The updated DeviceHealthScriptAssignment.</returns>
-        public System.Threading.Tasks.Task<DeviceHealthScriptAssignment> UpdateAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptAssignment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceHealthScriptAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceHealthScriptAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceHealthScriptAssignment.</returns>
-        public async System.Threading.Tasks.Task<DeviceHealthScriptAssignment> UpdateAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceHealthScriptAssignment> UpdateAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceHealthScriptAssignmentToUpdate.AdditionalData != null)
-			{
-				if (deviceHealthScriptAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceHealthScriptAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceHealthScriptAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceHealthScriptAssignmentToUpdate.AdditionalData != null)
-            {
-                if (deviceHealthScriptAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceHealthScriptAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceHealthScriptAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceHealthScriptAssignment>(deviceHealthScriptAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceHealthScriptAssignment using PATCH and returns a <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceHealthScriptAssignmentToUpdate">The DeviceHealthScriptAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptAssignment>> UpdateResponseAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceHealthScriptAssignment>(deviceHealthScriptAssignmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceHealthScriptAssignment using PUT.
+        /// </summary>
+        /// <param name="deviceHealthScriptAssignmentToUpdate">The DeviceHealthScriptAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceHealthScriptAssignment> PutAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceHealthScriptAssignment>(deviceHealthScriptAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceHealthScriptAssignment using PUT and returns a <see cref="GraphResponse{DeviceHealthScriptAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceHealthScriptAssignmentToUpdate">The DeviceHealthScriptAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceHealthScriptAssignment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScriptAssignment>> PutResponseAsync(DeviceHealthScriptAssignment deviceHealthScriptAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceHealthScriptAssignment>(deviceHealthScriptAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

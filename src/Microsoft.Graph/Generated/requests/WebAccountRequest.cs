@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WebAccount using POST.
         /// </summary>
         /// <param name="webAccountToCreate">The WebAccount to create.</param>
-        /// <returns>The created WebAccount.</returns>
-        public System.Threading.Tasks.Task<WebAccount> CreateAsync(WebAccount webAccountToCreate)
-        {
-            return this.CreateAsync(webAccountToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WebAccount using POST.
-        /// </summary>
-        /// <param name="webAccountToCreate">The WebAccount to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WebAccount.</returns>
-        public async System.Threading.Tasks.Task<WebAccount> CreateAsync(WebAccount webAccountToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WebAccount> CreateAsync(WebAccount webAccountToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WebAccount>(webAccountToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WebAccount.
+        /// Creates the specified WebAccount using POST and returns a <see cref="GraphResponse{WebAccount}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="webAccountToCreate">The WebAccount to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WebAccount}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WebAccount>> CreateResponseAsync(WebAccount webAccountToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WebAccount>(webAccountToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WebAccount>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WebAccount.
+        /// Deletes the specified WebAccount and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WebAccount.</returns>
-        public System.Threading.Tasks.Task<WebAccount> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WebAccount.</returns>
-        public async System.Threading.Tasks.Task<WebAccount> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WebAccount> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WebAccount>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WebAccount using PATCH.
+        /// Gets the specified WebAccount and returns a <see cref="GraphResponse{WebAccount}"/> object.
         /// </summary>
-        /// <param name="webAccountToUpdate">The WebAccount to update.</param>
-        /// <returns>The updated WebAccount.</returns>
-        public System.Threading.Tasks.Task<WebAccount> UpdateAsync(WebAccount webAccountToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WebAccount}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WebAccount>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(webAccountToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WebAccount>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WebAccount.</returns>
-        public async System.Threading.Tasks.Task<WebAccount> UpdateAsync(WebAccount webAccountToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WebAccount> UpdateAsync(WebAccount webAccountToUpdate, CancellationToken cancellationToken = default)
         {
-			if (webAccountToUpdate.AdditionalData != null)
-			{
-				if (webAccountToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					webAccountToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, webAccountToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (webAccountToUpdate.AdditionalData != null)
-            {
-                if (webAccountToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    webAccountToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, webAccountToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WebAccount>(webAccountToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WebAccount using PATCH and returns a <see cref="GraphResponse{WebAccount}"/> object.
+        /// </summary>
+        /// <param name="webAccountToUpdate">The WebAccount to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WebAccount}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WebAccount>> UpdateResponseAsync(WebAccount webAccountToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WebAccount>(webAccountToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WebAccount using PUT.
+        /// </summary>
+        /// <param name="webAccountToUpdate">The WebAccount object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WebAccount> PutAsync(WebAccount webAccountToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WebAccount>(webAccountToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WebAccount using PUT and returns a <see cref="GraphResponse{WebAccount}"/> object.
+        /// </summary>
+        /// <param name="webAccountToUpdate">The WebAccount object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WebAccount}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WebAccount>> PutResponseAsync(WebAccount webAccountToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WebAccount>(webAccountToUpdate, cancellationToken);
         }
 
         /// <summary>

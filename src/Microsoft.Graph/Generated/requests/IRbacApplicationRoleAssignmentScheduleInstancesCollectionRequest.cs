@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IRbacApplicationRoleAssignmentScheduleInstancesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleAssignmentScheduleInstance to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleAssignmentScheduleInstance">The UnifiedRoleAssignmentScheduleInstance to add.</param>
-        /// <returns>The created UnifiedRoleAssignmentScheduleInstance.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> AddAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstance);
-
         /// <summary>
         /// Adds the specified UnifiedRoleAssignmentScheduleInstance to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleAssignmentScheduleInstance">The UnifiedRoleAssignmentScheduleInstance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleAssignmentScheduleInstance.</returns>
-        System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> AddAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstance, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UnifiedRoleAssignmentScheduleInstance> AddAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstance, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UnifiedRoleAssignmentScheduleInstance to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentScheduleInstancesCollectionPage> GetAsync();
+        /// <param name="unifiedRoleAssignmentScheduleInstance">The UnifiedRoleAssignmentScheduleInstance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentScheduleInstance}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentScheduleInstance>> AddResponseAsync(UnifiedRoleAssignmentScheduleInstance unifiedRoleAssignmentScheduleInstance, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentScheduleInstancesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IRbacApplicationRoleAssignmentScheduleInstancesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleAssignmentScheduleInstancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationRoleAssignmentScheduleInstancesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleAssignmentScheduleInstancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

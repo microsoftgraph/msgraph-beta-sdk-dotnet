@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified VpnConfiguration using POST.
         /// </summary>
         /// <param name="vpnConfigurationToCreate">The VpnConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VpnConfiguration.</returns>
-        System.Threading.Tasks.Task<VpnConfiguration> CreateAsync(VpnConfiguration vpnConfigurationToCreate);        /// <summary>
-        /// Creates the specified VpnConfiguration using POST.
+        System.Threading.Tasks.Task<VpnConfiguration> CreateAsync(VpnConfiguration vpnConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified VpnConfiguration using POST and returns a <see cref="GraphResponse{VpnConfiguration}"/> object.
         /// </summary>
         /// <param name="vpnConfigurationToCreate">The VpnConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created VpnConfiguration.</returns>
-        System.Threading.Tasks.Task<VpnConfiguration> CreateAsync(VpnConfiguration vpnConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified VpnConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{VpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> CreateResponseAsync(VpnConfiguration vpnConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified VpnConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified VpnConfiguration.
+        /// Deletes the specified VpnConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The VpnConfiguration.</returns>
-        System.Threading.Tasks.Task<VpnConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified VpnConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The VpnConfiguration.</returns>
-        System.Threading.Tasks.Task<VpnConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<VpnConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified VpnConfiguration using PATCH.
+        /// Gets the specified VpnConfiguration and returns a <see cref="GraphResponse{VpnConfiguration}"/> object.
         /// </summary>
-        /// <param name="vpnConfigurationToUpdate">The VpnConfiguration to update.</param>
-        /// <returns>The updated VpnConfiguration.</returns>
-        System.Threading.Tasks.Task<VpnConfiguration> UpdateAsync(VpnConfiguration vpnConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified VpnConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated VpnConfiguration.</returns>
-        System.Threading.Tasks.Task<VpnConfiguration> UpdateAsync(VpnConfiguration vpnConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<VpnConfiguration> UpdateAsync(VpnConfiguration vpnConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified VpnConfiguration using PATCH and returns a <see cref="GraphResponse{VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="vpnConfigurationToUpdate">The VpnConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{VpnConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> UpdateResponseAsync(VpnConfiguration vpnConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified VpnConfiguration using PUT.
+        /// </summary>
+        /// <param name="vpnConfigurationToUpdate">The VpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<VpnConfiguration> PutAsync(VpnConfiguration vpnConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified VpnConfiguration using PUT and returns a <see cref="GraphResponse{VpnConfiguration}"/> object.
+        /// </summary>
+        /// <param name="vpnConfigurationToUpdate">The VpnConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{VpnConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VpnConfiguration>> PutResponseAsync(VpnConfiguration vpnConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

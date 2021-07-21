@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified ExactMatchDataStore using POST.
         /// </summary>
         /// <param name="exactMatchDataStoreToCreate">The ExactMatchDataStore to create.</param>
-        /// <returns>The created ExactMatchDataStore.</returns>
-        public System.Threading.Tasks.Task<ExactMatchDataStore> CreateAsync(ExactMatchDataStore exactMatchDataStoreToCreate)
-        {
-            return this.CreateAsync(exactMatchDataStoreToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ExactMatchDataStore using POST.
-        /// </summary>
-        /// <param name="exactMatchDataStoreToCreate">The ExactMatchDataStore to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExactMatchDataStore.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchDataStore> CreateAsync(ExactMatchDataStore exactMatchDataStoreToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchDataStore> CreateAsync(ExactMatchDataStore exactMatchDataStoreToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ExactMatchDataStore>(exactMatchDataStoreToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified ExactMatchDataStore.
+        /// Creates the specified ExactMatchDataStore using POST and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="exactMatchDataStoreToCreate">The ExactMatchDataStore to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> CreateResponseAsync(ExactMatchDataStore exactMatchDataStoreToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ExactMatchDataStore>(exactMatchDataStoreToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ExactMatchDataStore>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified ExactMatchDataStore.
+        /// Deletes the specified ExactMatchDataStore and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The ExactMatchDataStore.</returns>
-        public System.Threading.Tasks.Task<ExactMatchDataStore> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ExactMatchDataStore.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchDataStore> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchDataStore> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<ExactMatchDataStore>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified ExactMatchDataStore using PATCH.
+        /// Gets the specified ExactMatchDataStore and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object.
         /// </summary>
-        /// <param name="exactMatchDataStoreToUpdate">The ExactMatchDataStore to update.</param>
-        /// <returns>The updated ExactMatchDataStore.</returns>
-        public System.Threading.Tasks.Task<ExactMatchDataStore> UpdateAsync(ExactMatchDataStore exactMatchDataStoreToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(exactMatchDataStoreToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ExactMatchDataStore>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ExactMatchDataStore.</returns>
-        public async System.Threading.Tasks.Task<ExactMatchDataStore> UpdateAsync(ExactMatchDataStore exactMatchDataStoreToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ExactMatchDataStore> UpdateAsync(ExactMatchDataStore exactMatchDataStoreToUpdate, CancellationToken cancellationToken = default)
         {
-			if (exactMatchDataStoreToUpdate.AdditionalData != null)
-			{
-				if (exactMatchDataStoreToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					exactMatchDataStoreToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchDataStoreToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (exactMatchDataStoreToUpdate.AdditionalData != null)
-            {
-                if (exactMatchDataStoreToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    exactMatchDataStoreToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, exactMatchDataStoreToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ExactMatchDataStore>(exactMatchDataStoreToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ExactMatchDataStore using PATCH and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object.
+        /// </summary>
+        /// <param name="exactMatchDataStoreToUpdate">The ExactMatchDataStore to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ExactMatchDataStore}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> UpdateResponseAsync(ExactMatchDataStore exactMatchDataStoreToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ExactMatchDataStore>(exactMatchDataStoreToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified ExactMatchDataStore using PUT.
+        /// </summary>
+        /// <param name="exactMatchDataStoreToUpdate">The ExactMatchDataStore object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<ExactMatchDataStore> PutAsync(ExactMatchDataStore exactMatchDataStoreToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<ExactMatchDataStore>(exactMatchDataStoreToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified ExactMatchDataStore using PUT and returns a <see cref="GraphResponse{ExactMatchDataStore}"/> object.
+        /// </summary>
+        /// <param name="exactMatchDataStoreToUpdate">The ExactMatchDataStore object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{ExactMatchDataStore}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExactMatchDataStore>> PutResponseAsync(ExactMatchDataStore exactMatchDataStoreToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<ExactMatchDataStore>(exactMatchDataStoreToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ExactMatchDataStore exactMatchDataStoreToInitialize)
         {
 
-            if (exactMatchDataStoreToInitialize != null && exactMatchDataStoreToInitialize.AdditionalData != null)
+            if (exactMatchDataStoreToInitialize != null)
             {
-
                 if (exactMatchDataStoreToInitialize.Sessions != null && exactMatchDataStoreToInitialize.Sessions.CurrentPage != null)
                 {
+                    exactMatchDataStoreToInitialize.Sessions.InitializeNextPageRequest(this.Client, exactMatchDataStoreToInitialize.SessionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     exactMatchDataStoreToInitialize.Sessions.AdditionalData = exactMatchDataStoreToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    exactMatchDataStoreToInitialize.AdditionalData.TryGetValue("sessions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        exactMatchDataStoreToInitialize.Sessions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

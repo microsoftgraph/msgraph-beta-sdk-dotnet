@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileNineWorkEasConfigurationToCreate">The AndroidWorkProfileNineWorkEasConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> CreateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using POST.
+        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> CreateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileNineWorkEasConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
         /// </summary>
         /// <param name="androidWorkProfileNineWorkEasConfigurationToCreate">The AndroidWorkProfileNineWorkEasConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> CreateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidWorkProfileNineWorkEasConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> CreateResponseAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidWorkProfileNineWorkEasConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AndroidWorkProfileNineWorkEasConfiguration.
+        /// Deletes the specified AndroidWorkProfileNineWorkEasConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidWorkProfileNineWorkEasConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PATCH.
+        /// Gets the specified AndroidWorkProfileNineWorkEasConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidWorkProfileNineWorkEasConfigurationToUpdate">The AndroidWorkProfileNineWorkEasConfiguration to update.</param>
-        /// <returns>The updated AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> UpdateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileNineWorkEasConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> UpdateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> UpdateAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileNineWorkEasConfigurationToUpdate">The AndroidWorkProfileNineWorkEasConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> UpdateResponseAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidWorkProfileNineWorkEasConfigurationToUpdate">The AndroidWorkProfileNineWorkEasConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidWorkProfileNineWorkEasConfiguration> PutAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileNineWorkEasConfiguration using PUT and returns a <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileNineWorkEasConfigurationToUpdate">The AndroidWorkProfileNineWorkEasConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidWorkProfileNineWorkEasConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileNineWorkEasConfiguration>> PutResponseAsync(AndroidWorkProfileNineWorkEasConfiguration androidWorkProfileNineWorkEasConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

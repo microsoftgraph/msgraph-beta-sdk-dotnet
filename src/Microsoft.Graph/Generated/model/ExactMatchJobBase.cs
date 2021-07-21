@@ -12,19 +12,18 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Exact Match Job Base.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ExactMatchJobBase>))]
     public partial class ExactMatchJobBase : Entity
     {
     
-		///<summary>
-		/// The internal ExactMatchJobBase constructor
-		///</summary>
+        ///<summary>
+        /// The internal ExactMatchJobBase constructor
+        ///</summary>
         protected internal ExactMatchJobBase()
         {
             // Don't allow initialization of abstract entity types
@@ -33,31 +32,31 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets completion date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "completionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("completionDateTime")]
         public DateTimeOffset? CompletionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets creation date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("creationDateTime")]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets error.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "error", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("error")]
         public ClassificationError Error { get; set; }
     
         /// <summary>
         /// Gets or sets last updated date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastUpdatedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
     }

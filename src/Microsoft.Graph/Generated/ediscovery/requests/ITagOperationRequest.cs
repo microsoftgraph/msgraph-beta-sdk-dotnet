@@ -24,47 +24,45 @@ namespace Microsoft.Graph.Ediscovery
         /// Creates the specified TagOperation using POST.
         /// </summary>
         /// <param name="tagOperationToCreate">The TagOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TagOperation.</returns>
-        System.Threading.Tasks.Task<TagOperation> CreateAsync(TagOperation tagOperationToCreate);        /// <summary>
-        /// Creates the specified TagOperation using POST.
+        System.Threading.Tasks.Task<TagOperation> CreateAsync(TagOperation tagOperationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified TagOperation using POST and returns a <see cref="GraphResponse{TagOperation}"/> object.
         /// </summary>
         /// <param name="tagOperationToCreate">The TagOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TagOperation.</returns>
-        System.Threading.Tasks.Task<TagOperation> CreateAsync(TagOperation tagOperationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TagOperation.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TagOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TagOperation>> CreateResponseAsync(TagOperation tagOperationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TagOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified TagOperation.
+        /// Deletes the specified TagOperation and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TagOperation.</returns>
-        System.Threading.Tasks.Task<TagOperation> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TagOperation.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TagOperation.</returns>
-        System.Threading.Tasks.Task<TagOperation> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TagOperation> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified TagOperation using PATCH.
+        /// Gets the specified TagOperation and returns a <see cref="GraphResponse{TagOperation}"/> object.
         /// </summary>
-        /// <param name="tagOperationToUpdate">The TagOperation to update.</param>
-        /// <returns>The updated TagOperation.</returns>
-        System.Threading.Tasks.Task<TagOperation> UpdateAsync(TagOperation tagOperationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TagOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TagOperation>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TagOperation using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TagOperation.</returns>
-        System.Threading.Tasks.Task<TagOperation> UpdateAsync(TagOperation tagOperationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TagOperation> UpdateAsync(TagOperation tagOperationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TagOperation using PATCH and returns a <see cref="GraphResponse{TagOperation}"/> object.
+        /// </summary>
+        /// <param name="tagOperationToUpdate">The TagOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TagOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TagOperation>> UpdateResponseAsync(TagOperation tagOperationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TagOperation using PUT.
+        /// </summary>
+        /// <param name="tagOperationToUpdate">The TagOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TagOperation> PutAsync(TagOperation tagOperationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TagOperation using PUT and returns a <see cref="GraphResponse{TagOperation}"/> object.
+        /// </summary>
+        /// <param name="tagOperationToUpdate">The TagOperation object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TagOperation}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TagOperation>> PutResponseAsync(TagOperation tagOperationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

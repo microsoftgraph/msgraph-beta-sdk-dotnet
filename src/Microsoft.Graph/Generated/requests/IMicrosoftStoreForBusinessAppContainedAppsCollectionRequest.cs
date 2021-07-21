@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMicrosoftStoreForBusinessAppContainedAppsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified MobileContainedApp to the collection via POST.
-        /// </summary>
-        /// <param name="mobileContainedApp">The MobileContainedApp to add.</param>
-        /// <returns>The created MobileContainedApp.</returns>
-        System.Threading.Tasks.Task<MobileContainedApp> AddAsync(MobileContainedApp mobileContainedApp);
-
         /// <summary>
         /// Adds the specified MobileContainedApp to the collection via POST.
         /// </summary>
         /// <param name="mobileContainedApp">The MobileContainedApp to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileContainedApp.</returns>
-        System.Threading.Tasks.Task<MobileContainedApp> AddAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MobileContainedApp> AddAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified MobileContainedApp to the collection via POST and returns a <see cref="GraphResponse{MobileContainedApp}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMicrosoftStoreForBusinessAppContainedAppsCollectionPage> GetAsync();
+        /// <param name="mobileContainedApp">The MobileContainedApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileContainedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileContainedApp>> AddResponseAsync(MobileContainedApp mobileContainedApp, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMicrosoftStoreForBusinessAppContainedAppsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IMicrosoftStoreForBusinessAppContainedAppsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessAppContainedAppsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessAppContainedAppsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessAppContainedAppsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

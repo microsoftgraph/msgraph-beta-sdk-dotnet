@@ -12,50 +12,41 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Chrome OSOnboarding Settings.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ChromeOSOnboardingSettings>))]
     public partial class ChromeOSOnboardingSettings : Entity
     {
     
-		///<summary>
-		/// The ChromeOSOnboardingSettings constructor
-		///</summary>
-        public ChromeOSOnboardingSettings()
-        {
-            this.ODataType = "microsoft.graph.chromeOSOnboardingSettings";
-        }
-	
         /// <summary>
         /// Gets or sets last directory sync date time.
         /// The ChromebookTenant's LastDirectorySyncDateTime
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastDirectorySyncDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastDirectorySyncDateTime")]
         public DateTimeOffset? LastDirectorySyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
         /// The ChromebookTenant's LastModifiedDateTime
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastModifiedDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboarding status.
         /// The ChromebookTenant's OnboardingStatus. Possible values are: unknown, inprogress, onboarded, failed.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onboardingStatus", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("onboardingStatus")]
         public OnboardingStatus? OnboardingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets owner user principal name.
         /// The ChromebookTenant's OwnerUserPrincipalName
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerUserPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerUserPrincipalName")]
         public string OwnerUserPrincipalName { get; set; }
     
     }

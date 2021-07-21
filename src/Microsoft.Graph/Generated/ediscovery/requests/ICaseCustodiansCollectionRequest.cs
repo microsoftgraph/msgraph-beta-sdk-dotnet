@@ -20,33 +20,36 @@ namespace Microsoft.Graph.Ediscovery
     /// </summary>
     public partial interface ICaseCustodiansCollectionRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified Custodian to the collection via POST.
-        /// </summary>
-        /// <param name="custodian">The Custodian to add.</param>
-        /// <returns>The created Custodian.</returns>
-        System.Threading.Tasks.Task<Custodian> AddAsync(Custodian custodian);
-
         /// <summary>
         /// Adds the specified Custodian to the collection via POST.
         /// </summary>
         /// <param name="custodian">The Custodian to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Custodian.</returns>
-        System.Threading.Tasks.Task<Custodian> AddAsync(Custodian custodian, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Custodian> AddAsync(Custodian custodian, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified Custodian to the collection via POST and returns a <see cref="GraphResponse{Custodian}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICaseCustodiansCollectionPage> GetAsync();
+        /// <param name="custodian">The Custodian to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Custodian}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Custodian>> AddResponseAsync(Custodian custodian, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<ICaseCustodiansCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ICaseCustodiansCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CaseCustodiansCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CaseCustodiansCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CaseCustodiansCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

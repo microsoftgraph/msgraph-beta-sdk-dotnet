@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified SiteUsageStorage using POST.
         /// </summary>
         /// <param name="siteUsageStorageToCreate">The SiteUsageStorage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SiteUsageStorage.</returns>
-        System.Threading.Tasks.Task<SiteUsageStorage> CreateAsync(SiteUsageStorage siteUsageStorageToCreate);        /// <summary>
-        /// Creates the specified SiteUsageStorage using POST.
+        System.Threading.Tasks.Task<SiteUsageStorage> CreateAsync(SiteUsageStorage siteUsageStorageToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified SiteUsageStorage using POST and returns a <see cref="GraphResponse{SiteUsageStorage}"/> object.
         /// </summary>
         /// <param name="siteUsageStorageToCreate">The SiteUsageStorage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SiteUsageStorage.</returns>
-        System.Threading.Tasks.Task<SiteUsageStorage> CreateAsync(SiteUsageStorage siteUsageStorageToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified SiteUsageStorage.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{SiteUsageStorage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SiteUsageStorage>> CreateResponseAsync(SiteUsageStorage siteUsageStorageToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified SiteUsageStorage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified SiteUsageStorage.
+        /// Deletes the specified SiteUsageStorage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The SiteUsageStorage.</returns>
-        System.Threading.Tasks.Task<SiteUsageStorage> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified SiteUsageStorage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The SiteUsageStorage.</returns>
-        System.Threading.Tasks.Task<SiteUsageStorage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SiteUsageStorage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified SiteUsageStorage using PATCH.
+        /// Gets the specified SiteUsageStorage and returns a <see cref="GraphResponse{SiteUsageStorage}"/> object.
         /// </summary>
-        /// <param name="siteUsageStorageToUpdate">The SiteUsageStorage to update.</param>
-        /// <returns>The updated SiteUsageStorage.</returns>
-        System.Threading.Tasks.Task<SiteUsageStorage> UpdateAsync(SiteUsageStorage siteUsageStorageToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SiteUsageStorage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SiteUsageStorage>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified SiteUsageStorage using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated SiteUsageStorage.</returns>
-        System.Threading.Tasks.Task<SiteUsageStorage> UpdateAsync(SiteUsageStorage siteUsageStorageToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<SiteUsageStorage> UpdateAsync(SiteUsageStorage siteUsageStorageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SiteUsageStorage using PATCH and returns a <see cref="GraphResponse{SiteUsageStorage}"/> object.
+        /// </summary>
+        /// <param name="siteUsageStorageToUpdate">The SiteUsageStorage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SiteUsageStorage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SiteUsageStorage>> UpdateResponseAsync(SiteUsageStorage siteUsageStorageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SiteUsageStorage using PUT.
+        /// </summary>
+        /// <param name="siteUsageStorageToUpdate">The SiteUsageStorage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<SiteUsageStorage> PutAsync(SiteUsageStorage siteUsageStorageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified SiteUsageStorage using PUT and returns a <see cref="GraphResponse{SiteUsageStorage}"/> object.
+        /// </summary>
+        /// <param name="siteUsageStorageToUpdate">The SiteUsageStorage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{SiteUsageStorage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SiteUsageStorage>> PutResponseAsync(SiteUsageStorage siteUsageStorageToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

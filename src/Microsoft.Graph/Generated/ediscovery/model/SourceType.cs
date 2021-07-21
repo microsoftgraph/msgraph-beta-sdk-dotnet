@@ -10,13 +10,12 @@
 
 namespace Microsoft.Graph.Ediscovery
 {
-    using System;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum SourceType.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.EnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
 	[System.Flags]
     public enum SourceType
     {

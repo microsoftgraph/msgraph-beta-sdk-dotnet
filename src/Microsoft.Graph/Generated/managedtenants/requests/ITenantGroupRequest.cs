@@ -24,47 +24,45 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified TenantGroup using POST.
         /// </summary>
         /// <param name="tenantGroupToCreate">The TenantGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TenantGroup.</returns>
-        System.Threading.Tasks.Task<TenantGroup> CreateAsync(TenantGroup tenantGroupToCreate);        /// <summary>
-        /// Creates the specified TenantGroup using POST.
+        System.Threading.Tasks.Task<TenantGroup> CreateAsync(TenantGroup tenantGroupToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified TenantGroup using POST and returns a <see cref="GraphResponse{TenantGroup}"/> object.
         /// </summary>
         /// <param name="tenantGroupToCreate">The TenantGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TenantGroup.</returns>
-        System.Threading.Tasks.Task<TenantGroup> CreateAsync(TenantGroup tenantGroupToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TenantGroup.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TenantGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TenantGroup>> CreateResponseAsync(TenantGroup tenantGroupToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TenantGroup.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified TenantGroup.
+        /// Deletes the specified TenantGroup and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TenantGroup.</returns>
-        System.Threading.Tasks.Task<TenantGroup> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TenantGroup.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TenantGroup.</returns>
-        System.Threading.Tasks.Task<TenantGroup> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TenantGroup> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified TenantGroup using PATCH.
+        /// Gets the specified TenantGroup and returns a <see cref="GraphResponse{TenantGroup}"/> object.
         /// </summary>
-        /// <param name="tenantGroupToUpdate">The TenantGroup to update.</param>
-        /// <returns>The updated TenantGroup.</returns>
-        System.Threading.Tasks.Task<TenantGroup> UpdateAsync(TenantGroup tenantGroupToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TenantGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TenantGroup>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TenantGroup using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TenantGroup.</returns>
-        System.Threading.Tasks.Task<TenantGroup> UpdateAsync(TenantGroup tenantGroupToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TenantGroup> UpdateAsync(TenantGroup tenantGroupToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TenantGroup using PATCH and returns a <see cref="GraphResponse{TenantGroup}"/> object.
+        /// </summary>
+        /// <param name="tenantGroupToUpdate">The TenantGroup to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TenantGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TenantGroup>> UpdateResponseAsync(TenantGroup tenantGroupToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TenantGroup using PUT.
+        /// </summary>
+        /// <param name="tenantGroupToUpdate">The TenantGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TenantGroup> PutAsync(TenantGroup tenantGroupToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TenantGroup using PUT and returns a <see cref="GraphResponse{TenantGroup}"/> object.
+        /// </summary>
+        /// <param name="tenantGroupToUpdate">The TenantGroup object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TenantGroup}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TenantGroup>> PutResponseAsync(TenantGroup tenantGroupToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

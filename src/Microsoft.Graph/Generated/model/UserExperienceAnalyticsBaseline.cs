@@ -12,85 +12,75 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Baseline.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsBaseline : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsBaseline constructor
-		///</summary>
-        public UserExperienceAnalyticsBaseline()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsBaseline";
-        }
-	
         /// <summary>
         /// Gets or sets created date time.
         /// The date the custom baseline was created.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// The name of the user experience analytics baseline.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
         /// Signifies if the current baseline is the commercial median baseline or a custom baseline.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isBuiltIn", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }
     
         /// <summary>
         /// Gets or sets app health metrics.
         /// The user experience analytics app health metrics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appHealthMetrics", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("appHealthMetrics")]
         public UserExperienceAnalyticsCategory AppHealthMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets best practices metrics.
         /// The user experience analytics best practices metrics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "bestPracticesMetrics", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("bestPracticesMetrics")]
         public UserExperienceAnalyticsCategory BestPracticesMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets device boot performance metrics.
         /// The user experience analytics device boot performance metrics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceBootPerformanceMetrics", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceBootPerformanceMetrics")]
         public UserExperienceAnalyticsCategory DeviceBootPerformanceMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets reboot analytics metrics.
         /// The user experience analytics reboot analytics metrics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rebootAnalyticsMetrics", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rebootAnalyticsMetrics")]
         public UserExperienceAnalyticsCategory RebootAnalyticsMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets resource performance metrics.
         /// The user experience analytics resource performance metrics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "resourcePerformanceMetrics", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("resourcePerformanceMetrics")]
         public UserExperienceAnalyticsCategory ResourcePerformanceMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets work from anywhere metrics.
         /// The user experience analytics work from anywhere metrics.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workFromAnywhereMetrics", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("workFromAnywhereMetrics")]
         public UserExperienceAnalyticsCategory WorkFromAnywhereMetrics { get; set; }
     
     }

@@ -12,29 +12,28 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Mac OSMicrosoft Edge App.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSMicrosoftEdgeApp>))]
     public partial class MacOSMicrosoftEdgeApp : MobileApp
     {
     
-		///<summary>
-		/// The MacOSMicrosoftEdgeApp constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSMicrosoftEdgeApp constructor
+        ///</summary>
         public MacOSMicrosoftEdgeApp()
         {
             this.ODataType = "microsoft.graph.macOSMicrosoftEdgeApp";
         }
-	
+
         /// <summary>
         /// Gets or sets channel.
         /// The channel to install on target devices. Possible values are: dev, beta, stable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channel", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("channel")]
         public MicrosoftEdgeChannel? Channel { get; set; }
     
     }

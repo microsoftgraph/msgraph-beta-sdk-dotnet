@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified ManagementCondition.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The ManagementCondition.</returns>
-        public System.Threading.Tasks.Task<ManagementCondition> GetAsync()
+        public async System.Threading.Tasks.Task<ManagementCondition> GetAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<ManagementCondition>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified ManagementCondition.
+        /// Gets the specified ManagementCondition and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The ManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<ManagementCondition> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<ManagementCondition>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagementCondition>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified ManagementCondition using POST.
         /// </summary>
         /// <param name="managementConditionToCreate">The ManagementCondition to create.</param>
-        /// <returns>The created ManagementCondition.</returns>
-        public System.Threading.Tasks.Task<ManagementCondition> CreateAsync(ManagementCondition managementConditionToCreate)
-        {
-            return this.CreateAsync(managementConditionToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified ManagementCondition using POST.
-        /// </summary>
-        /// <param name="managementConditionToCreate">The ManagementCondition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<ManagementCondition> CreateAsync(ManagementCondition managementConditionToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagementCondition> CreateAsync(ManagementCondition managementConditionToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<ManagementCondition>(managementConditionToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified ManagementCondition using PATCH.
+        /// Creates the specified ManagementCondition using POST and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
         /// </summary>
-        /// <param name="managementConditionToUpdate">The ManagementCondition to update.</param>
-        /// <returns>The updated ManagementCondition.</returns>
-        public System.Threading.Tasks.Task<ManagementCondition> UpdateAsync(ManagementCondition managementConditionToUpdate)
+        /// <param name="managementConditionToCreate">The ManagementCondition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> CreateResponseAsync(ManagementCondition managementConditionToCreate, CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(managementConditionToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ManagementCondition>(managementConditionToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified ManagementCondition using PATCH.
         /// </summary>
         /// <param name="managementConditionToUpdate">The ManagementCondition to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated ManagementCondition.</returns>
-        public async System.Threading.Tasks.Task<ManagementCondition> UpdateAsync(ManagementCondition managementConditionToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ManagementCondition> UpdateAsync(ManagementCondition managementConditionToUpdate, CancellationToken cancellationToken = default)
         {
-			if (managementConditionToUpdate.AdditionalData != null)
-			{
-				if (managementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					managementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managementConditionToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (managementConditionToUpdate.AdditionalData != null)
-            {
-                if (managementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    managementConditionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managementConditionToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<ManagementCondition>(managementConditionToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified ManagementCondition.
+        /// Updates the specified ManagementCondition using PATCH and returns a <see cref="GraphResponse{ManagementCondition}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="managementConditionToUpdate">The ManagementCondition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagementCondition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagementCondition>> UpdateResponseAsync(ManagementCondition managementConditionToUpdate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<ManagementCondition>(managementConditionToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified ManagementCondition.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<ManagementCondition>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified ManagementCondition and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

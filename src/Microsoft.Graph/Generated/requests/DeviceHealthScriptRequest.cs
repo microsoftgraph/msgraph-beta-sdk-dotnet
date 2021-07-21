@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceHealthScript using POST.
         /// </summary>
         /// <param name="deviceHealthScriptToCreate">The DeviceHealthScript to create.</param>
-        /// <returns>The created DeviceHealthScript.</returns>
-        public System.Threading.Tasks.Task<DeviceHealthScript> CreateAsync(DeviceHealthScript deviceHealthScriptToCreate)
-        {
-            return this.CreateAsync(deviceHealthScriptToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceHealthScript using POST.
-        /// </summary>
-        /// <param name="deviceHealthScriptToCreate">The DeviceHealthScript to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceHealthScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceHealthScript> CreateAsync(DeviceHealthScript deviceHealthScriptToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceHealthScript> CreateAsync(DeviceHealthScript deviceHealthScriptToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceHealthScript>(deviceHealthScriptToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceHealthScript.
+        /// Creates the specified DeviceHealthScript using POST and returns a <see cref="GraphResponse{DeviceHealthScript}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceHealthScriptToCreate">The DeviceHealthScript to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScript>> CreateResponseAsync(DeviceHealthScript deviceHealthScriptToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceHealthScript>(deviceHealthScriptToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceHealthScript>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceHealthScript.
+        /// Deletes the specified DeviceHealthScript and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceHealthScript.</returns>
-        public System.Threading.Tasks.Task<DeviceHealthScript> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceHealthScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceHealthScript> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceHealthScript> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceHealthScript>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceHealthScript using PATCH.
+        /// Gets the specified DeviceHealthScript and returns a <see cref="GraphResponse{DeviceHealthScript}"/> object.
         /// </summary>
-        /// <param name="deviceHealthScriptToUpdate">The DeviceHealthScript to update.</param>
-        /// <returns>The updated DeviceHealthScript.</returns>
-        public System.Threading.Tasks.Task<DeviceHealthScript> UpdateAsync(DeviceHealthScript deviceHealthScriptToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScript>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceHealthScriptToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceHealthScript>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceHealthScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceHealthScript> UpdateAsync(DeviceHealthScript deviceHealthScriptToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceHealthScript> UpdateAsync(DeviceHealthScript deviceHealthScriptToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceHealthScriptToUpdate.AdditionalData != null)
-			{
-				if (deviceHealthScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceHealthScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceHealthScriptToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceHealthScriptToUpdate.AdditionalData != null)
-            {
-                if (deviceHealthScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceHealthScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceHealthScriptToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceHealthScript>(deviceHealthScriptToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceHealthScript using PATCH and returns a <see cref="GraphResponse{DeviceHealthScript}"/> object.
+        /// </summary>
+        /// <param name="deviceHealthScriptToUpdate">The DeviceHealthScript to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceHealthScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScript>> UpdateResponseAsync(DeviceHealthScript deviceHealthScriptToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceHealthScript>(deviceHealthScriptToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceHealthScript using PUT.
+        /// </summary>
+        /// <param name="deviceHealthScriptToUpdate">The DeviceHealthScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceHealthScript> PutAsync(DeviceHealthScript deviceHealthScriptToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceHealthScript>(deviceHealthScriptToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceHealthScript using PUT and returns a <see cref="GraphResponse{DeviceHealthScript}"/> object.
+        /// </summary>
+        /// <param name="deviceHealthScriptToUpdate">The DeviceHealthScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceHealthScript}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceHealthScript>> PutResponseAsync(DeviceHealthScript deviceHealthScriptToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceHealthScript>(deviceHealthScriptToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceHealthScript deviceHealthScriptToInitialize)
         {
 
-            if (deviceHealthScriptToInitialize != null && deviceHealthScriptToInitialize.AdditionalData != null)
+            if (deviceHealthScriptToInitialize != null)
             {
-
                 if (deviceHealthScriptToInitialize.Assignments != null && deviceHealthScriptToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceHealthScriptToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceHealthScriptToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceHealthScriptToInitialize.Assignments.AdditionalData = deviceHealthScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceHealthScriptToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceHealthScriptToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceHealthScriptToInitialize.DeviceRunStates != null && deviceHealthScriptToInitialize.DeviceRunStates.CurrentPage != null)
                 {
+                    deviceHealthScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(this.Client, deviceHealthScriptToInitialize.DeviceRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceHealthScriptToInitialize.DeviceRunStates.AdditionalData = deviceHealthScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceHealthScriptToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceHealthScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

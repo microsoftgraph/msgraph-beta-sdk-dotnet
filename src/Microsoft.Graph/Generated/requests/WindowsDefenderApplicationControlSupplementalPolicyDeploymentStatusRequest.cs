@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus using POST.
         /// </summary>
         /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to create.</param>
-        /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.</returns>
-        public System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate)
-        {
-            return this.CreateAsync(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus using POST.
-        /// </summary>
-        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.</returns>
-        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> CreateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.
+        /// Creates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus using POST and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>> CreateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.
+        /// Deletes the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.</returns>
-        public System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.</returns>
-        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus using PATCH.
+        /// Gets the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/> object.
         /// </summary>
-        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to update.</param>
-        /// <returns>The updated WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.</returns>
-        public System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> UpdateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.</returns>
-        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> UpdateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> UpdateAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate.AdditionalData != null)
-			{
-				if (windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate.AdditionalData != null)
-            {
-                if (windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus using PATCH and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>> UpdateResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus using PUT.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> PutAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus using PUT and returns a <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate">The WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>> PutResponseAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(windowsDefenderApplicationControlSupplementalPolicyDeploymentStatusToUpdate, cancellationToken);
         }
 
         /// <summary>

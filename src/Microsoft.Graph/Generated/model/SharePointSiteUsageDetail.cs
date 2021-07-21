@@ -12,160 +12,150 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Share Point Site Usage Detail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class SharePointSiteUsageDetail : Entity
     {
     
-		///<summary>
-		/// The SharePointSiteUsageDetail constructor
-		///</summary>
-        public SharePointSiteUsageDetail()
-        {
-            this.ODataType = "microsoft.graph.sharePointSiteUsageDetail";
-        }
-	
         /// <summary>
         /// Gets or sets active file count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activeFileCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("activeFileCount")]
         public Int64? ActiveFileCount { get; set; }
     
         /// <summary>
         /// Gets or sets anonymous link count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "anonymousLinkCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("anonymousLinkCount")]
         public Int64? AnonymousLinkCount { get; set; }
     
         /// <summary>
         /// Gets or sets company link count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "companyLinkCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("companyLinkCount")]
         public Int64? CompanyLinkCount { get; set; }
     
         /// <summary>
         /// Gets or sets external sharing.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSharing", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("externalSharing")]
         public bool? ExternalSharing { get; set; }
     
         /// <summary>
         /// Gets or sets file count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fileCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fileCount")]
         public Int64? FileCount { get; set; }
     
         /// <summary>
         /// Gets or sets geolocation.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "geolocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("geolocation")]
         public string Geolocation { get; set; }
     
         /// <summary>
         /// Gets or sets is deleted.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDeleted", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDeleted")]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets last activity date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastActivityDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("lastActivityDate")]
         public Date LastActivityDate { get; set; }
     
         /// <summary>
         /// Gets or sets owner display name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerDisplayName")]
         public string OwnerDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets owner principal name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ownerPrincipalName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("ownerPrincipalName")]
         public string OwnerPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets page view count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pageViewCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pageViewCount")]
         public Int64? PageViewCount { get; set; }
     
         /// <summary>
         /// Gets or sets report period.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportPeriod", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportPeriod")]
         public string ReportPeriod { get; set; }
     
         /// <summary>
         /// Gets or sets report refresh date.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "reportRefreshDate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("reportRefreshDate")]
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
         /// Gets or sets root web template.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rootWebTemplate", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("rootWebTemplate")]
         public string RootWebTemplate { get; set; }
     
         /// <summary>
         /// Gets or sets secure link for guest count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureLinkForGuestCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("secureLinkForGuestCount")]
         public Int64? SecureLinkForGuestCount { get; set; }
     
         /// <summary>
         /// Gets or sets secure link for member count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "secureLinkForMemberCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("secureLinkForMemberCount")]
         public Int64? SecureLinkForMemberCount { get; set; }
     
         /// <summary>
         /// Gets or sets site id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("siteId")]
         public Guid? SiteId { get; set; }
     
         /// <summary>
         /// Gets or sets site sensitivity label id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteSensitivityLabelId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("siteSensitivityLabelId")]
         public string SiteSensitivityLabelId { get; set; }
     
         /// <summary>
         /// Gets or sets site url.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "siteUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("siteUrl")]
         public string SiteUrl { get; set; }
     
         /// <summary>
         /// Gets or sets storage allocated in bytes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageAllocatedInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storageAllocatedInBytes")]
         public Int64? StorageAllocatedInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets storage used in bytes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "storageUsedInBytes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("storageUsedInBytes")]
         public Int64? StorageUsedInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets unmanaged device policy.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "unmanagedDevicePolicy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("unmanagedDevicePolicy")]
         public string UnmanagedDevicePolicy { get; set; }
     
         /// <summary>
         /// Gets or sets visited page count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visitedPageCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("visitedPageCount")]
         public Int64? VisitedPageCount { get; set; }
     
     }

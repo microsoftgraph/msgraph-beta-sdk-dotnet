@@ -24,47 +24,45 @@ namespace Microsoft.Graph.ManagedTenants
         /// Creates the specified CloudPcDevice using POST.
         /// </summary>
         /// <param name="cloudPcDeviceToCreate">The CloudPcDevice to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CloudPcDevice.</returns>
-        System.Threading.Tasks.Task<CloudPcDevice> CreateAsync(CloudPcDevice cloudPcDeviceToCreate);        /// <summary>
-        /// Creates the specified CloudPcDevice using POST.
+        System.Threading.Tasks.Task<CloudPcDevice> CreateAsync(CloudPcDevice cloudPcDeviceToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified CloudPcDevice using POST and returns a <see cref="GraphResponse{CloudPcDevice}"/> object.
         /// </summary>
         /// <param name="cloudPcDeviceToCreate">The CloudPcDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created CloudPcDevice.</returns>
-        System.Threading.Tasks.Task<CloudPcDevice> CreateAsync(CloudPcDevice cloudPcDeviceToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified CloudPcDevice.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{CloudPcDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDevice>> CreateResponseAsync(CloudPcDevice cloudPcDeviceToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified CloudPcDevice.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified CloudPcDevice.
+        /// Deletes the specified CloudPcDevice and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The CloudPcDevice.</returns>
-        System.Threading.Tasks.Task<CloudPcDevice> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified CloudPcDevice.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The CloudPcDevice.</returns>
-        System.Threading.Tasks.Task<CloudPcDevice> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcDevice> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified CloudPcDevice using PATCH.
+        /// Gets the specified CloudPcDevice and returns a <see cref="GraphResponse{CloudPcDevice}"/> object.
         /// </summary>
-        /// <param name="cloudPcDeviceToUpdate">The CloudPcDevice to update.</param>
-        /// <returns>The updated CloudPcDevice.</returns>
-        System.Threading.Tasks.Task<CloudPcDevice> UpdateAsync(CloudPcDevice cloudPcDeviceToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CloudPcDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDevice>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified CloudPcDevice using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated CloudPcDevice.</returns>
-        System.Threading.Tasks.Task<CloudPcDevice> UpdateAsync(CloudPcDevice cloudPcDeviceToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<CloudPcDevice> UpdateAsync(CloudPcDevice cloudPcDeviceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CloudPcDevice using PATCH and returns a <see cref="GraphResponse{CloudPcDevice}"/> object.
+        /// </summary>
+        /// <param name="cloudPcDeviceToUpdate">The CloudPcDevice to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CloudPcDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDevice>> UpdateResponseAsync(CloudPcDevice cloudPcDeviceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CloudPcDevice using PUT.
+        /// </summary>
+        /// <param name="cloudPcDeviceToUpdate">The CloudPcDevice object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<CloudPcDevice> PutAsync(CloudPcDevice cloudPcDeviceToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified CloudPcDevice using PUT and returns a <see cref="GraphResponse{CloudPcDevice}"/> object.
+        /// </summary>
+        /// <param name="cloudPcDeviceToUpdate">The CloudPcDevice object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{CloudPcDevice}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CloudPcDevice>> PutResponseAsync(CloudPcDevice cloudPcDeviceToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

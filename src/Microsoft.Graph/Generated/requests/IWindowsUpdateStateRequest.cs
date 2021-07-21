@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsUpdateState using POST.
         /// </summary>
         /// <param name="windowsUpdateStateToCreate">The WindowsUpdateState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUpdateState.</returns>
-        System.Threading.Tasks.Task<WindowsUpdateState> CreateAsync(WindowsUpdateState windowsUpdateStateToCreate);        /// <summary>
-        /// Creates the specified WindowsUpdateState using POST.
+        System.Threading.Tasks.Task<WindowsUpdateState> CreateAsync(WindowsUpdateState windowsUpdateStateToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified WindowsUpdateState using POST and returns a <see cref="GraphResponse{WindowsUpdateState}"/> object.
         /// </summary>
         /// <param name="windowsUpdateStateToCreate">The WindowsUpdateState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created WindowsUpdateState.</returns>
-        System.Threading.Tasks.Task<WindowsUpdateState> CreateAsync(WindowsUpdateState windowsUpdateStateToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified WindowsUpdateState.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateState>> CreateResponseAsync(WindowsUpdateState windowsUpdateStateToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified WindowsUpdateState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified WindowsUpdateState.
+        /// Deletes the specified WindowsUpdateState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsUpdateState.</returns>
-        System.Threading.Tasks.Task<WindowsUpdateState> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified WindowsUpdateState.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsUpdateState.</returns>
-        System.Threading.Tasks.Task<WindowsUpdateState> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsUpdateState> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified WindowsUpdateState using PATCH.
+        /// Gets the specified WindowsUpdateState and returns a <see cref="GraphResponse{WindowsUpdateState}"/> object.
         /// </summary>
-        /// <param name="windowsUpdateStateToUpdate">The WindowsUpdateState to update.</param>
-        /// <returns>The updated WindowsUpdateState.</returns>
-        System.Threading.Tasks.Task<WindowsUpdateState> UpdateAsync(WindowsUpdateState windowsUpdateStateToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateState>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified WindowsUpdateState using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsUpdateState.</returns>
-        System.Threading.Tasks.Task<WindowsUpdateState> UpdateAsync(WindowsUpdateState windowsUpdateStateToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<WindowsUpdateState> UpdateAsync(WindowsUpdateState windowsUpdateStateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsUpdateState using PATCH and returns a <see cref="GraphResponse{WindowsUpdateState}"/> object.
+        /// </summary>
+        /// <param name="windowsUpdateStateToUpdate">The WindowsUpdateState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateState>> UpdateResponseAsync(WindowsUpdateState windowsUpdateStateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsUpdateState using PUT.
+        /// </summary>
+        /// <param name="windowsUpdateStateToUpdate">The WindowsUpdateState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<WindowsUpdateState> PutAsync(WindowsUpdateState windowsUpdateStateToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified WindowsUpdateState using PUT and returns a <see cref="GraphResponse{WindowsUpdateState}"/> object.
+        /// </summary>
+        /// <param name="windowsUpdateStateToUpdate">The WindowsUpdateState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{WindowsUpdateState}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateState>> PutResponseAsync(WindowsUpdateState windowsUpdateStateToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

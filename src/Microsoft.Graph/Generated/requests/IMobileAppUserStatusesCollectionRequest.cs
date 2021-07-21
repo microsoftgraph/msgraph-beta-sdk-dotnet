@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IMobileAppUserStatusesCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified UserAppInstallStatus to the collection via POST.
-        /// </summary>
-        /// <param name="userAppInstallStatus">The UserAppInstallStatus to add.</param>
-        /// <returns>The created UserAppInstallStatus.</returns>
-        System.Threading.Tasks.Task<UserAppInstallStatus> AddAsync(UserAppInstallStatus userAppInstallStatus);
-
         /// <summary>
         /// Adds the specified UserAppInstallStatus to the collection via POST.
         /// </summary>
         /// <param name="userAppInstallStatus">The UserAppInstallStatus to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserAppInstallStatus.</returns>
-        System.Threading.Tasks.Task<UserAppInstallStatus> AddAsync(UserAppInstallStatus userAppInstallStatus, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserAppInstallStatus> AddAsync(UserAppInstallStatus userAppInstallStatus, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UserAppInstallStatus to the collection via POST and returns a <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMobileAppUserStatusesCollectionPage> GetAsync();
+        /// <param name="userAppInstallStatus">The UserAppInstallStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserAppInstallStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserAppInstallStatus>> AddResponseAsync(UserAppInstallStatus userAppInstallStatus, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IMobileAppUserStatusesCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IMobileAppUserStatusesCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{MobileAppUserStatusesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppUserStatusesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppUserStatusesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

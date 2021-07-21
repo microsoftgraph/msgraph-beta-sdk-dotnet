@@ -12,85 +12,75 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Not Autopilot Ready Device.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsNotAutopilotReadyDevice constructor
-		///</summary>
-        public UserExperienceAnalyticsNotAutopilotReadyDevice()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice";
-        }
-	
         /// <summary>
         /// Gets or sets auto pilot profile assigned.
         /// The intune device's autopilotProfileAssigned.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoPilotProfileAssigned", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autoPilotProfileAssigned")]
         public bool? AutoPilotProfileAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets auto pilot registered.
         /// The intune device's autopilotRegistered.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "autoPilotRegistered", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("autoPilotRegistered")]
         public bool? AutoPilotRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets azure ad join type.
         /// The intune device's azure Ad joinType.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureAdJoinType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureAdJoinType")]
         public string AzureAdJoinType { get; set; }
     
         /// <summary>
         /// Gets or sets azure ad registered.
         /// The intune device's azureAdRegistered.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "azureAdRegistered", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("azureAdRegistered")]
         public bool? AzureAdRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
         /// The intune device's name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets managed by.
         /// The intune device's managed by.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedBy", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("managedBy")]
         public string ManagedBy { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
         /// The intune device's manufacturer.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manufacturer", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
         /// The intune device's model.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "model", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets serial number.
         /// The intune device's serial number.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "serialNumber", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("serialNumber")]
         public string SerialNumber { get; set; }
     
     }

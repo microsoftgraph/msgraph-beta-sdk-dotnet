@@ -20,33 +20,36 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IProfileEmailsCollectionRequest : IBaseRequest
     {
-        
-        /// <summary>
-        /// Adds the specified ItemEmail to the collection via POST.
-        /// </summary>
-        /// <param name="itemEmail">The ItemEmail to add.</param>
-        /// <returns>The created ItemEmail.</returns>
-        System.Threading.Tasks.Task<ItemEmail> AddAsync(ItemEmail itemEmail);
-
         /// <summary>
         /// Adds the specified ItemEmail to the collection via POST.
         /// </summary>
         /// <param name="itemEmail">The ItemEmail to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemEmail.</returns>
-        System.Threading.Tasks.Task<ItemEmail> AddAsync(ItemEmail itemEmail, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<ItemEmail> AddAsync(ItemEmail itemEmail, CancellationToken cancellationToken = default);
+
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ItemEmail to the collection via POST and returns a <see cref="GraphResponse{ItemEmail}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileEmailsCollectionPage> GetAsync();
+        /// <param name="itemEmail">The ItemEmail to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemEmail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemEmail>> AddResponseAsync(ItemEmail itemEmail, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IProfileEmailsCollectionPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IProfileEmailsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ProfileEmailsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfileEmailsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfileEmailsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

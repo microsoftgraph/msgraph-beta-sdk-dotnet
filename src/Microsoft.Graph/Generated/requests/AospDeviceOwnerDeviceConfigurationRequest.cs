@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AospDeviceOwnerDeviceConfiguration using POST.
         /// </summary>
         /// <param name="aospDeviceOwnerDeviceConfigurationToCreate">The AospDeviceOwnerDeviceConfiguration to create.</param>
-        /// <returns>The created AospDeviceOwnerDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> CreateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToCreate)
-        {
-            return this.CreateAsync(aospDeviceOwnerDeviceConfigurationToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AospDeviceOwnerDeviceConfiguration using POST.
-        /// </summary>
-        /// <param name="aospDeviceOwnerDeviceConfigurationToCreate">The AospDeviceOwnerDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AospDeviceOwnerDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> CreateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> CreateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AospDeviceOwnerDeviceConfiguration>(aospDeviceOwnerDeviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AospDeviceOwnerDeviceConfiguration.
+        /// Creates the specified AospDeviceOwnerDeviceConfiguration using POST and returns a <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="aospDeviceOwnerDeviceConfigurationToCreate">The AospDeviceOwnerDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerDeviceConfiguration>> CreateResponseAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AospDeviceOwnerDeviceConfiguration>(aospDeviceOwnerDeviceConfigurationToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AospDeviceOwnerDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AospDeviceOwnerDeviceConfiguration.
+        /// Deletes the specified AospDeviceOwnerDeviceConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AospDeviceOwnerDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AospDeviceOwnerDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AospDeviceOwnerDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AospDeviceOwnerDeviceConfiguration using PATCH.
+        /// Gets the specified AospDeviceOwnerDeviceConfiguration and returns a <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object.
         /// </summary>
-        /// <param name="aospDeviceOwnerDeviceConfigurationToUpdate">The AospDeviceOwnerDeviceConfiguration to update.</param>
-        /// <returns>The updated AospDeviceOwnerDeviceConfiguration.</returns>
-        public System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> UpdateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AospDeviceOwnerDeviceConfiguration>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AospDeviceOwnerDeviceConfiguration.</returns>
-        public async System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> UpdateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> UpdateAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken = default)
         {
-			if (aospDeviceOwnerDeviceConfigurationToUpdate.AdditionalData != null)
-			{
-				if (aospDeviceOwnerDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					aospDeviceOwnerDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, aospDeviceOwnerDeviceConfigurationToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (aospDeviceOwnerDeviceConfigurationToUpdate.AdditionalData != null)
-            {
-                if (aospDeviceOwnerDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    aospDeviceOwnerDeviceConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, aospDeviceOwnerDeviceConfigurationToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AospDeviceOwnerDeviceConfiguration>(aospDeviceOwnerDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AospDeviceOwnerDeviceConfiguration using PATCH and returns a <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="aospDeviceOwnerDeviceConfigurationToUpdate">The AospDeviceOwnerDeviceConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerDeviceConfiguration>> UpdateResponseAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AospDeviceOwnerDeviceConfiguration>(aospDeviceOwnerDeviceConfigurationToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AospDeviceOwnerDeviceConfiguration using PUT.
+        /// </summary>
+        /// <param name="aospDeviceOwnerDeviceConfigurationToUpdate">The AospDeviceOwnerDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AospDeviceOwnerDeviceConfiguration> PutAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AospDeviceOwnerDeviceConfiguration>(aospDeviceOwnerDeviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AospDeviceOwnerDeviceConfiguration using PUT and returns a <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="aospDeviceOwnerDeviceConfigurationToUpdate">The AospDeviceOwnerDeviceConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AospDeviceOwnerDeviceConfiguration}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AospDeviceOwnerDeviceConfiguration>> PutResponseAsync(AospDeviceOwnerDeviceConfiguration aospDeviceOwnerDeviceConfigurationToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AospDeviceOwnerDeviceConfiguration>(aospDeviceOwnerDeviceConfigurationToUpdate, cancellationToken);
         }
 
         /// <summary>

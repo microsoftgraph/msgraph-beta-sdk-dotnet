@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AccessPackageAssignmentResourceRole using POST.
         /// </summary>
         /// <param name="accessPackageAssignmentResourceRoleToCreate">The AccessPackageAssignmentResourceRole to create.</param>
-        /// <returns>The created AccessPackageAssignmentResourceRole.</returns>
-        public System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> CreateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate)
-        {
-            return this.CreateAsync(accessPackageAssignmentResourceRoleToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AccessPackageAssignmentResourceRole using POST.
-        /// </summary>
-        /// <param name="accessPackageAssignmentResourceRoleToCreate">The AccessPackageAssignmentResourceRole to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageAssignmentResourceRole.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> CreateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> CreateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRoleToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AccessPackageAssignmentResourceRole.
+        /// Creates the specified AccessPackageAssignmentResourceRole using POST and returns a <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="accessPackageAssignmentResourceRoleToCreate">The AccessPackageAssignmentResourceRole to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> CreateResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRoleToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AccessPackageAssignmentResourceRole>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AccessPackageAssignmentResourceRole.
+        /// Deletes the specified AccessPackageAssignmentResourceRole and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AccessPackageAssignmentResourceRole.</returns>
-        public System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageAssignmentResourceRole.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AccessPackageAssignmentResourceRole>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AccessPackageAssignmentResourceRole using PATCH.
+        /// Gets the specified AccessPackageAssignmentResourceRole and returns a <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object.
         /// </summary>
-        /// <param name="accessPackageAssignmentResourceRoleToUpdate">The AccessPackageAssignmentResourceRole to update.</param>
-        /// <returns>The updated AccessPackageAssignmentResourceRole.</returns>
-        public System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> UpdateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(accessPackageAssignmentResourceRoleToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AccessPackageAssignmentResourceRole>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackageAssignmentResourceRole.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> UpdateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> UpdateAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken = default)
         {
-			if (accessPackageAssignmentResourceRoleToUpdate.AdditionalData != null)
-			{
-				if (accessPackageAssignmentResourceRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					accessPackageAssignmentResourceRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageAssignmentResourceRoleToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (accessPackageAssignmentResourceRoleToUpdate.AdditionalData != null)
-            {
-                if (accessPackageAssignmentResourceRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    accessPackageAssignmentResourceRoleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageAssignmentResourceRoleToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRoleToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AccessPackageAssignmentResourceRole using PATCH and returns a <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object.
+        /// </summary>
+        /// <param name="accessPackageAssignmentResourceRoleToUpdate">The AccessPackageAssignmentResourceRole to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> UpdateResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRoleToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AccessPackageAssignmentResourceRole using PUT.
+        /// </summary>
+        /// <param name="accessPackageAssignmentResourceRoleToUpdate">The AccessPackageAssignmentResourceRole object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AccessPackageAssignmentResourceRole> PutAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRoleToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AccessPackageAssignmentResourceRole using PUT and returns a <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/> object.
+        /// </summary>
+        /// <param name="accessPackageAssignmentResourceRoleToUpdate">The AccessPackageAssignmentResourceRole object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AccessPackageAssignmentResourceRole}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageAssignmentResourceRole>> PutResponseAsync(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AccessPackageAssignmentResourceRole>(accessPackageAssignmentResourceRoleToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageAssignmentResourceRole accessPackageAssignmentResourceRoleToInitialize)
         {
 
-            if (accessPackageAssignmentResourceRoleToInitialize != null && accessPackageAssignmentResourceRoleToInitialize.AdditionalData != null)
+            if (accessPackageAssignmentResourceRoleToInitialize != null)
             {
-
                 if (accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments != null && accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments.CurrentPage != null)
                 {
+                    accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments.InitializeNextPageRequest(this.Client, accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments.AdditionalData = accessPackageAssignmentResourceRoleToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    accessPackageAssignmentResourceRoleToInitialize.AdditionalData.TryGetValue("accessPackageAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        accessPackageAssignmentResourceRoleToInitialize.AccessPackageAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

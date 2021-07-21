@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified PolicySetAssignment using POST.
         /// </summary>
         /// <param name="policySetAssignmentToCreate">The PolicySetAssignment to create.</param>
-        /// <returns>The created PolicySetAssignment.</returns>
-        public System.Threading.Tasks.Task<PolicySetAssignment> CreateAsync(PolicySetAssignment policySetAssignmentToCreate)
-        {
-            return this.CreateAsync(policySetAssignmentToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified PolicySetAssignment using POST.
-        /// </summary>
-        /// <param name="policySetAssignmentToCreate">The PolicySetAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicySetAssignment.</returns>
-        public async System.Threading.Tasks.Task<PolicySetAssignment> CreateAsync(PolicySetAssignment policySetAssignmentToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PolicySetAssignment> CreateAsync(PolicySetAssignment policySetAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<PolicySetAssignment>(policySetAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified PolicySetAssignment.
+        /// Creates the specified PolicySetAssignment using POST and returns a <see cref="GraphResponse{PolicySetAssignment}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="policySetAssignmentToCreate">The PolicySetAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> CreateResponseAsync(PolicySetAssignment policySetAssignmentToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<PolicySetAssignment>(policySetAssignmentToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<PolicySetAssignment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified PolicySetAssignment.
+        /// Deletes the specified PolicySetAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PolicySetAssignment.</returns>
-        public System.Threading.Tasks.Task<PolicySetAssignment> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PolicySetAssignment.</returns>
-        public async System.Threading.Tasks.Task<PolicySetAssignment> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PolicySetAssignment> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<PolicySetAssignment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified PolicySetAssignment using PATCH.
+        /// Gets the specified PolicySetAssignment and returns a <see cref="GraphResponse{PolicySetAssignment}"/> object.
         /// </summary>
-        /// <param name="policySetAssignmentToUpdate">The PolicySetAssignment to update.</param>
-        /// <returns>The updated PolicySetAssignment.</returns>
-        public System.Threading.Tasks.Task<PolicySetAssignment> UpdateAsync(PolicySetAssignment policySetAssignmentToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(policySetAssignmentToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<PolicySetAssignment>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PolicySetAssignment.</returns>
-        public async System.Threading.Tasks.Task<PolicySetAssignment> UpdateAsync(PolicySetAssignment policySetAssignmentToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<PolicySetAssignment> UpdateAsync(PolicySetAssignment policySetAssignmentToUpdate, CancellationToken cancellationToken = default)
         {
-			if (policySetAssignmentToUpdate.AdditionalData != null)
-			{
-				if (policySetAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					policySetAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policySetAssignmentToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (policySetAssignmentToUpdate.AdditionalData != null)
-            {
-                if (policySetAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    policySetAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policySetAssignmentToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<PolicySetAssignment>(policySetAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PolicySetAssignment using PATCH and returns a <see cref="GraphResponse{PolicySetAssignment}"/> object.
+        /// </summary>
+        /// <param name="policySetAssignmentToUpdate">The PolicySetAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PolicySetAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> UpdateResponseAsync(PolicySetAssignment policySetAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<PolicySetAssignment>(policySetAssignmentToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified PolicySetAssignment using PUT.
+        /// </summary>
+        /// <param name="policySetAssignmentToUpdate">The PolicySetAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<PolicySetAssignment> PutAsync(PolicySetAssignment policySetAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<PolicySetAssignment>(policySetAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified PolicySetAssignment using PUT and returns a <see cref="GraphResponse{PolicySetAssignment}"/> object.
+        /// </summary>
+        /// <param name="policySetAssignmentToUpdate">The PolicySetAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{PolicySetAssignment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicySetAssignment>> PutResponseAsync(PolicySetAssignment policySetAssignmentToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<PolicySetAssignment>(policySetAssignmentToUpdate, cancellationToken);
         }
 
         /// <summary>

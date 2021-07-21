@@ -38,117 +38,102 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the specified AccessPackageCatalog.
         /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AccessPackageCatalog.</returns>
-        public System.Threading.Tasks.Task<AccessPackageCatalog> GetAsync()
+        public async System.Threading.Tasks.Task<AccessPackageCatalog> GetAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            var retrievedEntity = await this.SendAsync<AccessPackageCatalog>(null, cancellationToken).ConfigureAwait(false);
+            return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified AccessPackageCatalog.
+        /// Gets the specified AccessPackageCatalog and returns a <see cref="GraphResponse{AccessPackageCatalog}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The AccessPackageCatalog.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageCatalog> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The <see cref="GraphResponse{AccessPackageCatalog}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalog>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<AccessPackageCatalog>(null, cancellationToken).ConfigureAwait(false);
-            return retrievedEntity;
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AccessPackageCatalog>(null, cancellationToken);
         }
 
 		/// <summary>
         /// Creates the specified AccessPackageCatalog using POST.
         /// </summary>
         /// <param name="accessPackageCatalogToCreate">The AccessPackageCatalog to create.</param>
-        /// <returns>The created AccessPackageCatalog.</returns>
-        public System.Threading.Tasks.Task<AccessPackageCatalog> CreateAsync(AccessPackageCatalog accessPackageCatalogToCreate)
-        {
-            return this.CreateAsync(accessPackageCatalogToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AccessPackageCatalog using POST.
-        /// </summary>
-        /// <param name="accessPackageCatalogToCreate">The AccessPackageCatalog to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AccessPackageCatalog.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageCatalog> CreateAsync(AccessPackageCatalog accessPackageCatalogToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageCatalog> CreateAsync(AccessPackageCatalog accessPackageCatalogToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AccessPackageCatalog>(accessPackageCatalogToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
         }
 
 		/// <summary>
-        /// Updates the specified AccessPackageCatalog using PATCH.
+        /// Creates the specified AccessPackageCatalog using POST and returns a <see cref="GraphResponse{AccessPackageCatalog}"/> object.
         /// </summary>
-        /// <param name="accessPackageCatalogToUpdate">The AccessPackageCatalog to update.</param>
-        /// <returns>The updated AccessPackageCatalog.</returns>
-        public System.Threading.Tasks.Task<AccessPackageCatalog> UpdateAsync(AccessPackageCatalog accessPackageCatalogToUpdate)
+        /// <param name="accessPackageCatalogToCreate">The AccessPackageCatalog to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AccessPackageCatalog}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalog>> CreateResponseAsync(AccessPackageCatalog accessPackageCatalogToCreate, CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(accessPackageCatalogToUpdate, CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AccessPackageCatalog>(accessPackageCatalogToCreate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Updates the specified AccessPackageCatalog using PATCH.
         /// </summary>
         /// <param name="accessPackageCatalogToUpdate">The AccessPackageCatalog to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AccessPackageCatalog.</returns>
-        public async System.Threading.Tasks.Task<AccessPackageCatalog> UpdateAsync(AccessPackageCatalog accessPackageCatalogToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AccessPackageCatalog> UpdateAsync(AccessPackageCatalog accessPackageCatalogToUpdate, CancellationToken cancellationToken = default)
         {
-			if (accessPackageCatalogToUpdate.AdditionalData != null)
-			{
-				if (accessPackageCatalogToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					accessPackageCatalogToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageCatalogToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (accessPackageCatalogToUpdate.AdditionalData != null)
-            {
-                if (accessPackageCatalogToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    accessPackageCatalogToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, accessPackageCatalogToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AccessPackageCatalog>(accessPackageCatalogToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
         }
 
 		/// <summary>
-        /// Deletes the specified AccessPackageCatalog.
+        /// Updates the specified AccessPackageCatalog using PATCH and returns a <see cref="GraphResponse{AccessPackageCatalog}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="accessPackageCatalogToUpdate">The AccessPackageCatalog to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AccessPackageCatalog}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AccessPackageCatalog>> UpdateResponseAsync(AccessPackageCatalog accessPackageCatalogToUpdate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AccessPackageCatalog>(accessPackageCatalogToUpdate, cancellationToken);
         }
 
-        /// <summary>
+		/// <summary>
         /// Deletes the specified AccessPackageCatalog.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AccessPackageCatalog>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
+        /// Deletes the specified AccessPackageCatalog and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>

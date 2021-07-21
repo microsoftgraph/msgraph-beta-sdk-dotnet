@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified MailboxUsageStorage using POST.
         /// </summary>
         /// <param name="mailboxUsageStorageToCreate">The MailboxUsageStorage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailboxUsageStorage.</returns>
-        System.Threading.Tasks.Task<MailboxUsageStorage> CreateAsync(MailboxUsageStorage mailboxUsageStorageToCreate);        /// <summary>
-        /// Creates the specified MailboxUsageStorage using POST.
+        System.Threading.Tasks.Task<MailboxUsageStorage> CreateAsync(MailboxUsageStorage mailboxUsageStorageToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified MailboxUsageStorage using POST and returns a <see cref="GraphResponse{MailboxUsageStorage}"/> object.
         /// </summary>
         /// <param name="mailboxUsageStorageToCreate">The MailboxUsageStorage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created MailboxUsageStorage.</returns>
-        System.Threading.Tasks.Task<MailboxUsageStorage> CreateAsync(MailboxUsageStorage mailboxUsageStorageToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MailboxUsageStorage.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{MailboxUsageStorage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> CreateResponseAsync(MailboxUsageStorage mailboxUsageStorageToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified MailboxUsageStorage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified MailboxUsageStorage.
+        /// Deletes the specified MailboxUsageStorage and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The MailboxUsageStorage.</returns>
-        System.Threading.Tasks.Task<MailboxUsageStorage> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified MailboxUsageStorage.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The MailboxUsageStorage.</returns>
-        System.Threading.Tasks.Task<MailboxUsageStorage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MailboxUsageStorage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified MailboxUsageStorage using PATCH.
+        /// Gets the specified MailboxUsageStorage and returns a <see cref="GraphResponse{MailboxUsageStorage}"/> object.
         /// </summary>
-        /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage to update.</param>
-        /// <returns>The updated MailboxUsageStorage.</returns>
-        System.Threading.Tasks.Task<MailboxUsageStorage> UpdateAsync(MailboxUsageStorage mailboxUsageStorageToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageStorage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified MailboxUsageStorage using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MailboxUsageStorage.</returns>
-        System.Threading.Tasks.Task<MailboxUsageStorage> UpdateAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<MailboxUsageStorage> UpdateAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MailboxUsageStorage using PATCH and returns a <see cref="GraphResponse{MailboxUsageStorage}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MailboxUsageStorage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> UpdateResponseAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MailboxUsageStorage using PUT.
+        /// </summary>
+        /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<MailboxUsageStorage> PutAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified MailboxUsageStorage using PUT and returns a <see cref="GraphResponse{MailboxUsageStorage}"/> object.
+        /// </summary>
+        /// <param name="mailboxUsageStorageToUpdate">The MailboxUsageStorage object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{MailboxUsageStorage}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailboxUsageStorage>> PutResponseAsync(MailboxUsageStorage mailboxUsageStorageToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

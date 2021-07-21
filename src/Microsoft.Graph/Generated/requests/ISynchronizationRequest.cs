@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified Synchronization using POST.
         /// </summary>
         /// <param name="synchronizationToCreate">The Synchronization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Synchronization.</returns>
-        System.Threading.Tasks.Task<Synchronization> CreateAsync(Synchronization synchronizationToCreate);        /// <summary>
-        /// Creates the specified Synchronization using POST.
+        System.Threading.Tasks.Task<Synchronization> CreateAsync(Synchronization synchronizationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified Synchronization using POST and returns a <see cref="GraphResponse{Synchronization}"/> object.
         /// </summary>
         /// <param name="synchronizationToCreate">The Synchronization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Synchronization.</returns>
-        System.Threading.Tasks.Task<Synchronization> CreateAsync(Synchronization synchronizationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified Synchronization.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{Synchronization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Synchronization>> CreateResponseAsync(Synchronization synchronizationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified Synchronization.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Synchronization.
+        /// Deletes the specified Synchronization and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The Synchronization.</returns>
-        System.Threading.Tasks.Task<Synchronization> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified Synchronization.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The Synchronization.</returns>
-        System.Threading.Tasks.Task<Synchronization> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Synchronization> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Synchronization using PATCH.
+        /// Gets the specified Synchronization and returns a <see cref="GraphResponse{Synchronization}"/> object.
         /// </summary>
-        /// <param name="synchronizationToUpdate">The Synchronization to update.</param>
-        /// <returns>The updated Synchronization.</returns>
-        System.Threading.Tasks.Task<Synchronization> UpdateAsync(Synchronization synchronizationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Synchronization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Synchronization>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified Synchronization using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated Synchronization.</returns>
-        System.Threading.Tasks.Task<Synchronization> UpdateAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<Synchronization> UpdateAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Synchronization using PATCH and returns a <see cref="GraphResponse{Synchronization}"/> object.
+        /// </summary>
+        /// <param name="synchronizationToUpdate">The Synchronization to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Synchronization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Synchronization>> UpdateResponseAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Synchronization using PUT.
+        /// </summary>
+        /// <param name="synchronizationToUpdate">The Synchronization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<Synchronization> PutAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified Synchronization using PUT and returns a <see cref="GraphResponse{Synchronization}"/> object.
+        /// </summary>
+        /// <param name="synchronizationToUpdate">The Synchronization object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{Synchronization}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Synchronization>> PutResponseAsync(Synchronization synchronizationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

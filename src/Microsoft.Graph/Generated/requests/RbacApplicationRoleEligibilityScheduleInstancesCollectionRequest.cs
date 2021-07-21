@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST.
-        /// </summary>
-        /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
-        /// <returns>The created UnifiedRoleEligibilityScheduleInstance.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> AddAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance)
-        {
-            return this.AddAsync(unifiedRoleEligibilityScheduleInstance, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST.
         /// </summary>
         /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnifiedRoleEligibilityScheduleInstance.</returns>
-        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> AddAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<UnifiedRoleEligibilityScheduleInstance> AddAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<UnifiedRoleEligibilityScheduleInstance>(unifiedRoleEligibilityScheduleInstance, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified UnifiedRoleEligibilityScheduleInstance to the collection via POST and returns a <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage> GetAsync()
+        /// <param name="unifiedRoleEligibilityScheduleInstance">The UnifiedRoleEligibilityScheduleInstance to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleEligibilityScheduleInstance}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnifiedRoleEligibilityScheduleInstance>> AddResponseAsync(UnifiedRoleEligibilityScheduleInstance unifiedRoleEligibilityScheduleInstance, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<UnifiedRoleEligibilityScheduleInstance>(unifiedRoleEligibilityScheduleInstance, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IRbacApplicationRoleEligibilityScheduleInstancesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<RbacApplicationRoleEligibilityScheduleInstancesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

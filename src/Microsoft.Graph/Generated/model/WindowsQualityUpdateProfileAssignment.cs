@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Windows Quality Update Profile Assignment.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WindowsQualityUpdateProfileAssignment : Entity
     {
     
-		///<summary>
-		/// The WindowsQualityUpdateProfileAssignment constructor
-		///</summary>
-        public WindowsQualityUpdateProfileAssignment()
-        {
-            this.ODataType = "microsoft.graph.windowsQualityUpdateProfileAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The assignment target that the feature update profile is assigned to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "target", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
     
     }

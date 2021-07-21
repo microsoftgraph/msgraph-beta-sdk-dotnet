@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceShellScript using POST.
         /// </summary>
         /// <param name="deviceShellScriptToCreate">The DeviceShellScript to create.</param>
-        /// <returns>The created DeviceShellScript.</returns>
-        public System.Threading.Tasks.Task<DeviceShellScript> CreateAsync(DeviceShellScript deviceShellScriptToCreate)
-        {
-            return this.CreateAsync(deviceShellScriptToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceShellScript using POST.
-        /// </summary>
-        /// <param name="deviceShellScriptToCreate">The DeviceShellScript to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceShellScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceShellScript> CreateAsync(DeviceShellScript deviceShellScriptToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceShellScript> CreateAsync(DeviceShellScript deviceShellScriptToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceShellScript>(deviceShellScriptToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceShellScript.
+        /// Creates the specified DeviceShellScript using POST and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceShellScriptToCreate">The DeviceShellScript to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> CreateResponseAsync(DeviceShellScript deviceShellScriptToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceShellScript>(deviceShellScriptToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceShellScript>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceShellScript.
+        /// Deletes the specified DeviceShellScript and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceShellScript.</returns>
-        public System.Threading.Tasks.Task<DeviceShellScript> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceShellScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceShellScript> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceShellScript> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceShellScript>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceShellScript using PATCH.
+        /// Gets the specified DeviceShellScript and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
         /// </summary>
-        /// <param name="deviceShellScriptToUpdate">The DeviceShellScript to update.</param>
-        /// <returns>The updated DeviceShellScript.</returns>
-        public System.Threading.Tasks.Task<DeviceShellScript> UpdateAsync(DeviceShellScript deviceShellScriptToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceShellScriptToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceShellScript>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceShellScript.</returns>
-        public async System.Threading.Tasks.Task<DeviceShellScript> UpdateAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceShellScript> UpdateAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceShellScriptToUpdate.AdditionalData != null)
-			{
-				if (deviceShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceShellScriptToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceShellScriptToUpdate.AdditionalData != null)
-            {
-                if (deviceShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceShellScriptToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceShellScriptToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceShellScript>(deviceShellScriptToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceShellScript using PATCH and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceShellScriptToUpdate">The DeviceShellScript to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceShellScript}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> UpdateResponseAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceShellScript>(deviceShellScriptToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceShellScript using PUT.
+        /// </summary>
+        /// <param name="deviceShellScriptToUpdate">The DeviceShellScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceShellScript> PutAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceShellScript>(deviceShellScriptToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceShellScript using PUT and returns a <see cref="GraphResponse{DeviceShellScript}"/> object.
+        /// </summary>
+        /// <param name="deviceShellScriptToUpdate">The DeviceShellScript object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceShellScript}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceShellScript>> PutResponseAsync(DeviceShellScript deviceShellScriptToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceShellScript>(deviceShellScriptToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(DeviceShellScript deviceShellScriptToInitialize)
         {
 
-            if (deviceShellScriptToInitialize != null && deviceShellScriptToInitialize.AdditionalData != null)
+            if (deviceShellScriptToInitialize != null)
             {
-
                 if (deviceShellScriptToInitialize.Assignments != null && deviceShellScriptToInitialize.Assignments.CurrentPage != null)
                 {
+                    deviceShellScriptToInitialize.Assignments.InitializeNextPageRequest(this.Client, deviceShellScriptToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceShellScriptToInitialize.Assignments.AdditionalData = deviceShellScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceShellScriptToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceShellScriptToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceShellScriptToInitialize.DeviceRunStates != null && deviceShellScriptToInitialize.DeviceRunStates.CurrentPage != null)
                 {
+                    deviceShellScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(this.Client, deviceShellScriptToInitialize.DeviceRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceShellScriptToInitialize.DeviceRunStates.AdditionalData = deviceShellScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceShellScriptToInitialize.AdditionalData.TryGetValue("deviceRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceShellScriptToInitialize.DeviceRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceShellScriptToInitialize.GroupAssignments != null && deviceShellScriptToInitialize.GroupAssignments.CurrentPage != null)
                 {
+                    deviceShellScriptToInitialize.GroupAssignments.InitializeNextPageRequest(this.Client, deviceShellScriptToInitialize.GroupAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceShellScriptToInitialize.GroupAssignments.AdditionalData = deviceShellScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceShellScriptToInitialize.AdditionalData.TryGetValue("groupAssignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceShellScriptToInitialize.GroupAssignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (deviceShellScriptToInitialize.UserRunStates != null && deviceShellScriptToInitialize.UserRunStates.CurrentPage != null)
                 {
+                    deviceShellScriptToInitialize.UserRunStates.InitializeNextPageRequest(this.Client, deviceShellScriptToInitialize.UserRunStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     deviceShellScriptToInitialize.UserRunStates.AdditionalData = deviceShellScriptToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    deviceShellScriptToInitialize.AdditionalData.TryGetValue("userRunStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        deviceShellScriptToInitialize.UserRunStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

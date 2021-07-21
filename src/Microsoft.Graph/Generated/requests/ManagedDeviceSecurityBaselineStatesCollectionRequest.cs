@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified SecurityBaselineState to the collection via POST.
-        /// </summary>
-        /// <param name="securityBaselineState">The SecurityBaselineState to add.</param>
-        /// <returns>The created SecurityBaselineState.</returns>
-        public System.Threading.Tasks.Task<SecurityBaselineState> AddAsync(SecurityBaselineState securityBaselineState)
-        {
-            return this.AddAsync(securityBaselineState, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified SecurityBaselineState to the collection via POST.
         /// </summary>
         /// <param name="securityBaselineState">The SecurityBaselineState to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecurityBaselineState.</returns>
-        public System.Threading.Tasks.Task<SecurityBaselineState> AddAsync(SecurityBaselineState securityBaselineState, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<SecurityBaselineState> AddAsync(SecurityBaselineState securityBaselineState, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<SecurityBaselineState>(securityBaselineState, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified SecurityBaselineState to the collection via POST and returns a <see cref="GraphResponse{SecurityBaselineState}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IManagedDeviceSecurityBaselineStatesCollectionPage> GetAsync()
+        /// <param name="securityBaselineState">The SecurityBaselineState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecurityBaselineState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecurityBaselineState>> AddResponseAsync(SecurityBaselineState securityBaselineState, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<SecurityBaselineState>(securityBaselineState, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedDeviceSecurityBaselineStatesCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IManagedDeviceSecurityBaselineStatesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ManagedDeviceSecurityBaselineStatesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedDeviceSecurityBaselineStatesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceSecurityBaselineStatesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceSecurityBaselineStatesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ManagedDeviceSecurityBaselineStatesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

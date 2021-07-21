@@ -12,29 +12,19 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type User Experience Analytics Score History.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class UserExperienceAnalyticsScoreHistory : Entity
     {
     
-		///<summary>
-		/// The UserExperienceAnalyticsScoreHistory constructor
-		///</summary>
-        public UserExperienceAnalyticsScoreHistory()
-        {
-            this.ODataType = "microsoft.graph.userExperienceAnalyticsScoreHistory";
-        }
-	
         /// <summary>
         /// Gets or sets startup date time.
         /// The user experience analytics device startup date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "startupDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("startupDateTime")]
         public DateTimeOffset? StartupDateTime { get; set; }
     
     }

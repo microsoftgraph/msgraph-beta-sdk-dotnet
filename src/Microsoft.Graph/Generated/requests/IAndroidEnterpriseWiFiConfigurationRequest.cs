@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidEnterpriseWiFiConfiguration using POST.
         /// </summary>
         /// <param name="androidEnterpriseWiFiConfigurationToCreate">The AndroidEnterpriseWiFiConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> CreateAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToCreate);        /// <summary>
-        /// Creates the specified AndroidEnterpriseWiFiConfiguration using POST.
+        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> CreateAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AndroidEnterpriseWiFiConfiguration using POST and returns a <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object.
         /// </summary>
         /// <param name="androidEnterpriseWiFiConfigurationToCreate">The AndroidEnterpriseWiFiConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> CreateAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidEnterpriseWiFiConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEnterpriseWiFiConfiguration>> CreateResponseAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidEnterpriseWiFiConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AndroidEnterpriseWiFiConfiguration.
+        /// Deletes the specified AndroidEnterpriseWiFiConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidEnterpriseWiFiConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AndroidEnterpriseWiFiConfiguration using PATCH.
+        /// Gets the specified AndroidEnterpriseWiFiConfiguration and returns a <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object.
         /// </summary>
-        /// <param name="androidEnterpriseWiFiConfigurationToUpdate">The AndroidEnterpriseWiFiConfiguration to update.</param>
-        /// <returns>The updated AndroidEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> UpdateAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEnterpriseWiFiConfiguration>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidEnterpriseWiFiConfiguration using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidEnterpriseWiFiConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> UpdateAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> UpdateAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidEnterpriseWiFiConfiguration using PATCH and returns a <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidEnterpriseWiFiConfigurationToUpdate">The AndroidEnterpriseWiFiConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEnterpriseWiFiConfiguration>> UpdateResponseAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidEnterpriseWiFiConfiguration using PUT.
+        /// </summary>
+        /// <param name="androidEnterpriseWiFiConfigurationToUpdate">The AndroidEnterpriseWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidEnterpriseWiFiConfiguration> PutAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidEnterpriseWiFiConfiguration using PUT and returns a <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidEnterpriseWiFiConfigurationToUpdate">The AndroidEnterpriseWiFiConfiguration object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidEnterpriseWiFiConfiguration}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidEnterpriseWiFiConfiguration>> PutResponseAsync(AndroidEnterpriseWiFiConfiguration androidEnterpriseWiFiConfigurationToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

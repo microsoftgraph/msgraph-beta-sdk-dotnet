@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceManagementScriptGroupAssignment using POST.
         /// </summary>
         /// <param name="deviceManagementScriptGroupAssignmentToCreate">The DeviceManagementScriptGroupAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementScriptGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> CreateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate);        /// <summary>
-        /// Creates the specified DeviceManagementScriptGroupAssignment using POST.
+        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> CreateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementScriptGroupAssignment using POST and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
         /// </summary>
         /// <param name="deviceManagementScriptGroupAssignmentToCreate">The DeviceManagementScriptGroupAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created DeviceManagementScriptGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> CreateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified DeviceManagementScriptGroupAssignment.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> CreateResponseAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified DeviceManagementScriptGroupAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified DeviceManagementScriptGroupAssignment.
+        /// Deletes the specified DeviceManagementScriptGroupAssignment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceManagementScriptGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified DeviceManagementScriptGroupAssignment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceManagementScriptGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified DeviceManagementScriptGroupAssignment using PATCH.
+        /// Gets the specified DeviceManagementScriptGroupAssignment and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
         /// </summary>
-        /// <param name="deviceManagementScriptGroupAssignmentToUpdate">The DeviceManagementScriptGroupAssignment to update.</param>
-        /// <returns>The updated DeviceManagementScriptGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> UpdateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified DeviceManagementScriptGroupAssignment using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceManagementScriptGroupAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> UpdateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> UpdateAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementScriptGroupAssignment using PATCH and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptGroupAssignmentToUpdate">The DeviceManagementScriptGroupAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> UpdateResponseAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementScriptGroupAssignment using PUT.
+        /// </summary>
+        /// <param name="deviceManagementScriptGroupAssignmentToUpdate">The DeviceManagementScriptGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<DeviceManagementScriptGroupAssignment> PutAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified DeviceManagementScriptGroupAssignment using PUT and returns a <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementScriptGroupAssignmentToUpdate">The DeviceManagementScriptGroupAssignment object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{DeviceManagementScriptGroupAssignment}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementScriptGroupAssignment>> PutResponseAsync(DeviceManagementScriptGroupAssignment deviceManagementScriptGroupAssignmentToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

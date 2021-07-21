@@ -12,76 +12,67 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type CompanyDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<CompanyDetail>))]
     public partial class CompanyDetail
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CompanyDetail"/> class.
-        /// </summary>
-        public CompanyDetail()
-        {
-            this.ODataType = "microsoft.graph.companyDetail";
-        }
 
         /// <summary>
         /// Gets or sets address.
         /// Address of the company.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "address", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("address")]
         public PhysicalAddress Address { get; set; }
     
         /// <summary>
         /// Gets or sets department.
         /// Department Name within a company.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "department", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("department")]
         public string Department { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
         /// Company name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets officeLocation.
         /// Office Location of the person referred to.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("officeLocation")]
         public string OfficeLocation { get; set; }
     
         /// <summary>
         /// Gets or sets pronunciation.
         /// Pronunciation guide for the company name.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "pronunciation", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("pronunciation")]
         public string Pronunciation { get; set; }
     
         /// <summary>
         /// Gets or sets webUrl.
         /// Link to the company home page.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webUrl", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

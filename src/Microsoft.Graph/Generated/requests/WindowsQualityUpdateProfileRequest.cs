@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified WindowsQualityUpdateProfile using POST.
         /// </summary>
         /// <param name="windowsQualityUpdateProfileToCreate">The WindowsQualityUpdateProfile to create.</param>
-        /// <returns>The created WindowsQualityUpdateProfile.</returns>
-        public System.Threading.Tasks.Task<WindowsQualityUpdateProfile> CreateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToCreate)
-        {
-            return this.CreateAsync(windowsQualityUpdateProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified WindowsQualityUpdateProfile using POST.
-        /// </summary>
-        /// <param name="windowsQualityUpdateProfileToCreate">The WindowsQualityUpdateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsQualityUpdateProfile.</returns>
-        public async System.Threading.Tasks.Task<WindowsQualityUpdateProfile> CreateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsQualityUpdateProfile> CreateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<WindowsQualityUpdateProfile>(windowsQualityUpdateProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified WindowsQualityUpdateProfile.
+        /// Creates the specified WindowsQualityUpdateProfile using POST and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="windowsQualityUpdateProfileToCreate">The WindowsQualityUpdateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> CreateResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<WindowsQualityUpdateProfile>(windowsQualityUpdateProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<WindowsQualityUpdateProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified WindowsQualityUpdateProfile.
+        /// Deletes the specified WindowsQualityUpdateProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The WindowsQualityUpdateProfile.</returns>
-        public System.Threading.Tasks.Task<WindowsQualityUpdateProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The WindowsQualityUpdateProfile.</returns>
-        public async System.Threading.Tasks.Task<WindowsQualityUpdateProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsQualityUpdateProfile> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<WindowsQualityUpdateProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified WindowsQualityUpdateProfile using PATCH.
+        /// Gets the specified WindowsQualityUpdateProfile and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object.
         /// </summary>
-        /// <param name="windowsQualityUpdateProfileToUpdate">The WindowsQualityUpdateProfile to update.</param>
-        /// <returns>The updated WindowsQualityUpdateProfile.</returns>
-        public System.Threading.Tasks.Task<WindowsQualityUpdateProfile> UpdateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(windowsQualityUpdateProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<WindowsQualityUpdateProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated WindowsQualityUpdateProfile.</returns>
-        public async System.Threading.Tasks.Task<WindowsQualityUpdateProfile> UpdateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<WindowsQualityUpdateProfile> UpdateAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken = default)
         {
-			if (windowsQualityUpdateProfileToUpdate.AdditionalData != null)
-			{
-				if (windowsQualityUpdateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					windowsQualityUpdateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsQualityUpdateProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (windowsQualityUpdateProfileToUpdate.AdditionalData != null)
-            {
-                if (windowsQualityUpdateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    windowsQualityUpdateProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsQualityUpdateProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<WindowsQualityUpdateProfile>(windowsQualityUpdateProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateProfile using PATCH and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsQualityUpdateProfileToUpdate">The WindowsQualityUpdateProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> UpdateResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<WindowsQualityUpdateProfile>(windowsQualityUpdateProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateProfile using PUT.
+        /// </summary>
+        /// <param name="windowsQualityUpdateProfileToUpdate">The WindowsQualityUpdateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<WindowsQualityUpdateProfile> PutAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<WindowsQualityUpdateProfile>(windowsQualityUpdateProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsQualityUpdateProfile using PUT and returns a <see cref="GraphResponse{WindowsQualityUpdateProfile}"/> object.
+        /// </summary>
+        /// <param name="windowsQualityUpdateProfileToUpdate">The WindowsQualityUpdateProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{WindowsQualityUpdateProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsQualityUpdateProfile>> PutResponseAsync(WindowsQualityUpdateProfile windowsQualityUpdateProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<WindowsQualityUpdateProfile>(windowsQualityUpdateProfileToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsQualityUpdateProfile windowsQualityUpdateProfileToInitialize)
         {
 
-            if (windowsQualityUpdateProfileToInitialize != null && windowsQualityUpdateProfileToInitialize.AdditionalData != null)
+            if (windowsQualityUpdateProfileToInitialize != null)
             {
-
                 if (windowsQualityUpdateProfileToInitialize.Assignments != null && windowsQualityUpdateProfileToInitialize.Assignments.CurrentPage != null)
                 {
+                    windowsQualityUpdateProfileToInitialize.Assignments.InitializeNextPageRequest(this.Client, windowsQualityUpdateProfileToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     windowsQualityUpdateProfileToInitialize.Assignments.AdditionalData = windowsQualityUpdateProfileToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    windowsQualityUpdateProfileToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        windowsQualityUpdateProfileToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

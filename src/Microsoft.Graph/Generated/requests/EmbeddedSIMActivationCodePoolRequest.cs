@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified EmbeddedSIMActivationCodePool using POST.
         /// </summary>
         /// <param name="embeddedSIMActivationCodePoolToCreate">The EmbeddedSIMActivationCodePool to create.</param>
-        /// <returns>The created EmbeddedSIMActivationCodePool.</returns>
-        public System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> CreateAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToCreate)
-        {
-            return this.CreateAsync(embeddedSIMActivationCodePoolToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified EmbeddedSIMActivationCodePool using POST.
-        /// </summary>
-        /// <param name="embeddedSIMActivationCodePoolToCreate">The EmbeddedSIMActivationCodePool to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EmbeddedSIMActivationCodePool.</returns>
-        public async System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> CreateAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> CreateAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<EmbeddedSIMActivationCodePool>(embeddedSIMActivationCodePoolToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified EmbeddedSIMActivationCodePool.
+        /// Creates the specified EmbeddedSIMActivationCodePool using POST and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePool}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="embeddedSIMActivationCodePoolToCreate">The EmbeddedSIMActivationCodePool to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePool}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePool>> CreateResponseAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<EmbeddedSIMActivationCodePool>(embeddedSIMActivationCodePoolToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<EmbeddedSIMActivationCodePool>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified EmbeddedSIMActivationCodePool.
+        /// Deletes the specified EmbeddedSIMActivationCodePool and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The EmbeddedSIMActivationCodePool.</returns>
-        public System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The EmbeddedSIMActivationCodePool.</returns>
-        public async System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<EmbeddedSIMActivationCodePool>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified EmbeddedSIMActivationCodePool using PATCH.
+        /// Gets the specified EmbeddedSIMActivationCodePool and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePool}"/> object.
         /// </summary>
-        /// <param name="embeddedSIMActivationCodePoolToUpdate">The EmbeddedSIMActivationCodePool to update.</param>
-        /// <returns>The updated EmbeddedSIMActivationCodePool.</returns>
-        public System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> UpdateAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePool}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePool>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(embeddedSIMActivationCodePoolToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<EmbeddedSIMActivationCodePool>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated EmbeddedSIMActivationCodePool.</returns>
-        public async System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> UpdateAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> UpdateAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToUpdate, CancellationToken cancellationToken = default)
         {
-			if (embeddedSIMActivationCodePoolToUpdate.AdditionalData != null)
-			{
-				if (embeddedSIMActivationCodePoolToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					embeddedSIMActivationCodePoolToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, embeddedSIMActivationCodePoolToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (embeddedSIMActivationCodePoolToUpdate.AdditionalData != null)
-            {
-                if (embeddedSIMActivationCodePoolToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    embeddedSIMActivationCodePoolToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, embeddedSIMActivationCodePoolToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<EmbeddedSIMActivationCodePool>(embeddedSIMActivationCodePoolToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EmbeddedSIMActivationCodePool using PATCH and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePool}"/> object.
+        /// </summary>
+        /// <param name="embeddedSIMActivationCodePoolToUpdate">The EmbeddedSIMActivationCodePool to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EmbeddedSIMActivationCodePool}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePool>> UpdateResponseAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<EmbeddedSIMActivationCodePool>(embeddedSIMActivationCodePoolToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified EmbeddedSIMActivationCodePool using PUT.
+        /// </summary>
+        /// <param name="embeddedSIMActivationCodePoolToUpdate">The EmbeddedSIMActivationCodePool object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<EmbeddedSIMActivationCodePool> PutAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<EmbeddedSIMActivationCodePool>(embeddedSIMActivationCodePoolToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified EmbeddedSIMActivationCodePool using PUT and returns a <see cref="GraphResponse{EmbeddedSIMActivationCodePool}"/> object.
+        /// </summary>
+        /// <param name="embeddedSIMActivationCodePoolToUpdate">The EmbeddedSIMActivationCodePool object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{EmbeddedSIMActivationCodePool}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmbeddedSIMActivationCodePool>> PutResponseAsync(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<EmbeddedSIMActivationCodePool>(embeddedSIMActivationCodePoolToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -231,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EmbeddedSIMActivationCodePool embeddedSIMActivationCodePoolToInitialize)
         {
 
-            if (embeddedSIMActivationCodePoolToInitialize != null && embeddedSIMActivationCodePoolToInitialize.AdditionalData != null)
+            if (embeddedSIMActivationCodePoolToInitialize != null)
             {
-
                 if (embeddedSIMActivationCodePoolToInitialize.Assignments != null && embeddedSIMActivationCodePoolToInitialize.Assignments.CurrentPage != null)
                 {
+                    embeddedSIMActivationCodePoolToInitialize.Assignments.InitializeNextPageRequest(this.Client, embeddedSIMActivationCodePoolToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     embeddedSIMActivationCodePoolToInitialize.Assignments.AdditionalData = embeddedSIMActivationCodePoolToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        embeddedSIMActivationCodePoolToInitialize.Assignments.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (embeddedSIMActivationCodePoolToInitialize.DeviceStates != null && embeddedSIMActivationCodePoolToInitialize.DeviceStates.CurrentPage != null)
                 {
+                    embeddedSIMActivationCodePoolToInitialize.DeviceStates.InitializeNextPageRequest(this.Client, embeddedSIMActivationCodePoolToInitialize.DeviceStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     embeddedSIMActivationCodePoolToInitialize.DeviceStates.AdditionalData = embeddedSIMActivationCodePoolToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    embeddedSIMActivationCodePoolToInitialize.AdditionalData.TryGetValue("deviceStates@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        embeddedSIMActivationCodePoolToInitialize.DeviceStates.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

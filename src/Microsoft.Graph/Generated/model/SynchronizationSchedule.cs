@@ -12,55 +12,46 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SynchronizationSchedule.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SynchronizationSchedule>))]
     public partial class SynchronizationSchedule
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SynchronizationSchedule"/> class.
-        /// </summary>
-        public SynchronizationSchedule()
-        {
-            this.ODataType = "microsoft.graph.synchronizationSchedule";
-        }
 
         /// <summary>
         /// Gets or sets expiration.
         /// Date and time when this job will expire. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "expiration", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("expiration")]
         public DateTimeOffset? Expiration { get; set; }
     
         /// <summary>
         /// Gets or sets interval.
         /// The interval between synchronization iterations.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "interval", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("interval")]
         public Duration Interval { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// Possible values are: Active, Disabled.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public SynchronizationScheduleState? State { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified UserExperienceAnalyticsDeviceStartupHistory using POST.
         /// </summary>
         /// <param name="userExperienceAnalyticsDeviceStartupHistoryToCreate">The UserExperienceAnalyticsDeviceStartupHistory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserExperienceAnalyticsDeviceStartupHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> CreateAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToCreate);        /// <summary>
-        /// Creates the specified UserExperienceAnalyticsDeviceStartupHistory using POST.
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> CreateAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified UserExperienceAnalyticsDeviceStartupHistory using POST and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object.
         /// </summary>
         /// <param name="userExperienceAnalyticsDeviceStartupHistoryToCreate">The UserExperienceAnalyticsDeviceStartupHistory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created UserExperienceAnalyticsDeviceStartupHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> CreateAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified UserExperienceAnalyticsDeviceStartupHistory.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupHistory>> CreateResponseAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified UserExperienceAnalyticsDeviceStartupHistory.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified UserExperienceAnalyticsDeviceStartupHistory.
+        /// Deletes the specified UserExperienceAnalyticsDeviceStartupHistory and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The UserExperienceAnalyticsDeviceStartupHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified UserExperienceAnalyticsDeviceStartupHistory.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The UserExperienceAnalyticsDeviceStartupHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified UserExperienceAnalyticsDeviceStartupHistory using PATCH.
+        /// Gets the specified UserExperienceAnalyticsDeviceStartupHistory and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object.
         /// </summary>
-        /// <param name="userExperienceAnalyticsDeviceStartupHistoryToUpdate">The UserExperienceAnalyticsDeviceStartupHistory to update.</param>
-        /// <returns>The updated UserExperienceAnalyticsDeviceStartupHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> UpdateAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupHistory>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified UserExperienceAnalyticsDeviceStartupHistory using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated UserExperienceAnalyticsDeviceStartupHistory.</returns>
-        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> UpdateAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> UpdateAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupHistory using PATCH and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupHistoryToUpdate">The UserExperienceAnalyticsDeviceStartupHistory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupHistory>> UpdateResponseAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupHistory using PUT.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupHistoryToUpdate">The UserExperienceAnalyticsDeviceStartupHistory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<UserExperienceAnalyticsDeviceStartupHistory> PutAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified UserExperienceAnalyticsDeviceStartupHistory using PUT and returns a <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> object.
+        /// </summary>
+        /// <param name="userExperienceAnalyticsDeviceStartupHistoryToUpdate">The UserExperienceAnalyticsDeviceStartupHistory object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{UserExperienceAnalyticsDeviceStartupHistory}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserExperienceAnalyticsDeviceStartupHistory>> PutResponseAsync(UserExperienceAnalyticsDeviceStartupHistory userExperienceAnalyticsDeviceStartupHistoryToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

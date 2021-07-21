@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified TaxGroup to the collection via POST.
-        /// </summary>
-        /// <param name="taxGroup">The TaxGroup to add.</param>
-        /// <returns>The created TaxGroup.</returns>
-        public System.Threading.Tasks.Task<TaxGroup> AddAsync(TaxGroup taxGroup)
-        {
-            return this.AddAsync(taxGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified TaxGroup to the collection via POST.
         /// </summary>
         /// <param name="taxGroup">The TaxGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TaxGroup.</returns>
-        public System.Threading.Tasks.Task<TaxGroup> AddAsync(TaxGroup taxGroup, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<TaxGroup> AddAsync(TaxGroup taxGroup, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<TaxGroup>(taxGroup, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified TaxGroup to the collection via POST and returns a <see cref="GraphResponse{TaxGroup}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<ICompanyTaxGroupsCollectionPage> GetAsync()
+        /// <param name="taxGroup">The TaxGroup to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TaxGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TaxGroup>> AddResponseAsync(TaxGroup taxGroup, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<TaxGroup>(taxGroup, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<ICompanyTaxGroupsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ICompanyTaxGroupsCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<CompanyTaxGroupsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CompanyTaxGroupsCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CompanyTaxGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<CompanyTaxGroupsCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

@@ -12,58 +12,61 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type On Premises Agent Group.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<OnPremisesAgentGroup>))]
     public partial class OnPremisesAgentGroup : Entity
     {
     
-		///<summary>
-		/// The OnPremisesAgentGroup constructor
-		///</summary>
-        public OnPremisesAgentGroup()
-        {
-            this.ODataType = "microsoft.graph.onPremisesAgentGroup";
-        }
-	
         /// <summary>
         /// Gets or sets display name.
         /// Display name of the onPremisesAgentGroup.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is default.
         /// Indicates if the onPremisesAgentGroup is the default agent group. Only a single agent group can be the default onPremisesAgentGroup and is set by the system.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefault", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isDefault")]
         public bool? IsDefault { get; set; }
     
         /// <summary>
         /// Gets or sets publishing type.
         /// Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishingType", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishingType")]
         public OnPremisesPublishingType? PublishingType { get; set; }
     
         /// <summary>
         /// Gets or sets agents.
         /// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "agents", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("agents")]
         public IOnPremisesAgentGroupAgentsCollectionPage Agents { get; set; }
+
+        /// <summary>
+        /// Gets or sets agentsNextLink.
+        /// </summary>
+        [JsonPropertyName("agents@odata.nextLink")]
+        public string AgentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets published resources.
         /// List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "publishedResources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("publishedResources")]
         public IOnPremisesAgentGroupPublishedResourcesCollectionPage PublishedResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets publishedResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("publishedResources@odata.nextLink")]
+        public string PublishedResourcesNextLink { get; set; }
     
     }
 }

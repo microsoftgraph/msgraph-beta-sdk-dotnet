@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidDeviceOwnerEnrollmentProfile using POST.
         /// </summary>
         /// <param name="androidDeviceOwnerEnrollmentProfileToCreate">The AndroidDeviceOwnerEnrollmentProfile to create.</param>
-        /// <returns>The created AndroidDeviceOwnerEnrollmentProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> CreateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate)
-        {
-            return this.CreateAsync(androidDeviceOwnerEnrollmentProfileToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified AndroidDeviceOwnerEnrollmentProfile using POST.
-        /// </summary>
-        /// <param name="androidDeviceOwnerEnrollmentProfileToCreate">The AndroidDeviceOwnerEnrollmentProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidDeviceOwnerEnrollmentProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> CreateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> CreateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(androidDeviceOwnerEnrollmentProfileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified AndroidDeviceOwnerEnrollmentProfile.
+        /// Creates the specified AndroidDeviceOwnerEnrollmentProfile using POST and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="androidDeviceOwnerEnrollmentProfileToCreate">The AndroidDeviceOwnerEnrollmentProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> CreateResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerEnrollmentProfile>(androidDeviceOwnerEnrollmentProfileToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified AndroidDeviceOwnerEnrollmentProfile.
+        /// Deletes the specified AndroidDeviceOwnerEnrollmentProfile and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidDeviceOwnerEnrollmentProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidDeviceOwnerEnrollmentProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified AndroidDeviceOwnerEnrollmentProfile using PATCH.
+        /// Gets the specified AndroidDeviceOwnerEnrollmentProfile and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
         /// </summary>
-        /// <param name="androidDeviceOwnerEnrollmentProfileToUpdate">The AndroidDeviceOwnerEnrollmentProfile to update.</param>
-        /// <returns>The updated AndroidDeviceOwnerEnrollmentProfile.</returns>
-        public System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> UpdateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerEnrollmentProfile>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidDeviceOwnerEnrollmentProfile.</returns>
-        public async System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> UpdateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> UpdateAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken = default)
         {
-			if (androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData != null)
-			{
-				if (androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerEnrollmentProfileToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData != null)
-            {
-                if (androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    androidDeviceOwnerEnrollmentProfileToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, androidDeviceOwnerEnrollmentProfileToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(androidDeviceOwnerEnrollmentProfileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerEnrollmentProfile using PATCH and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerEnrollmentProfileToUpdate">The AndroidDeviceOwnerEnrollmentProfile to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> UpdateResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerEnrollmentProfile>(androidDeviceOwnerEnrollmentProfileToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerEnrollmentProfile using PUT.
+        /// </summary>
+        /// <param name="androidDeviceOwnerEnrollmentProfileToUpdate">The AndroidDeviceOwnerEnrollmentProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<AndroidDeviceOwnerEnrollmentProfile> PutAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(androidDeviceOwnerEnrollmentProfileToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified AndroidDeviceOwnerEnrollmentProfile using PUT and returns a <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/> object.
+        /// </summary>
+        /// <param name="androidDeviceOwnerEnrollmentProfileToUpdate">The AndroidDeviceOwnerEnrollmentProfile object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{AndroidDeviceOwnerEnrollmentProfile}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidDeviceOwnerEnrollmentProfile>> PutResponseAsync(AndroidDeviceOwnerEnrollmentProfile androidDeviceOwnerEnrollmentProfileToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<AndroidDeviceOwnerEnrollmentProfile>(androidDeviceOwnerEnrollmentProfileToUpdate, cancellationToken);
         }
 
         /// <summary>

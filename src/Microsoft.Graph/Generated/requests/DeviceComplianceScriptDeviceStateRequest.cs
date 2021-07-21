@@ -39,34 +39,28 @@ namespace Microsoft.Graph
         /// Creates the specified DeviceComplianceScriptDeviceState using POST.
         /// </summary>
         /// <param name="deviceComplianceScriptDeviceStateToCreate">The DeviceComplianceScriptDeviceState to create.</param>
-        /// <returns>The created DeviceComplianceScriptDeviceState.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> CreateAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToCreate)
-        {
-            return this.CreateAsync(deviceComplianceScriptDeviceStateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified DeviceComplianceScriptDeviceState using POST.
-        /// </summary>
-        /// <param name="deviceComplianceScriptDeviceStateToCreate">The DeviceComplianceScriptDeviceState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceScriptDeviceState.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> CreateAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> CreateAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToCreate, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             var newEntity = await this.SendAsync<DeviceComplianceScriptDeviceState>(deviceComplianceScriptDeviceStateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified DeviceComplianceScriptDeviceState.
+        /// Creates the specified DeviceComplianceScriptDeviceState using POST and returns a <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
+        /// <param name="deviceComplianceScriptDeviceStateToCreate">The DeviceComplianceScriptDeviceState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceState>> CreateResponseAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToCreate, CancellationToken cancellationToken = default)
         {
-            return this.DeleteAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScriptDeviceState>(deviceComplianceScriptDeviceStateToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -74,19 +68,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "DELETE";
+            this.Method = HttpMethods.DELETE;
             await this.SendAsync<DeviceComplianceScriptDeviceState>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified DeviceComplianceScriptDeviceState.
+        /// Deletes the specified DeviceComplianceScriptDeviceState and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The DeviceComplianceScriptDeviceState.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> GetAsync()
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.Method = HttpMethods.DELETE;
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
         /// <summary>
@@ -94,22 +90,23 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The DeviceComplianceScriptDeviceState.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var retrievedEntity = await this.SendAsync<DeviceComplianceScriptDeviceState>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified DeviceComplianceScriptDeviceState using PATCH.
+        /// Gets the specified DeviceComplianceScriptDeviceState and returns a <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object.
         /// </summary>
-        /// <param name="deviceComplianceScriptDeviceStateToUpdate">The DeviceComplianceScriptDeviceState to update.</param>
-        /// <returns>The updated DeviceComplianceScriptDeviceState.</returns>
-        public System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> UpdateAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToUpdate)
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceState>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
-            return this.UpdateAsync(deviceComplianceScriptDeviceStateToUpdate, CancellationToken.None);
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScriptDeviceState>(null, cancellationToken);
         }
 
         /// <summary>
@@ -119,39 +116,55 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated DeviceComplianceScriptDeviceState.</returns>
-        public async System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> UpdateAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> UpdateAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToUpdate, CancellationToken cancellationToken = default)
         {
-			if (deviceComplianceScriptDeviceStateToUpdate.AdditionalData != null)
-			{
-				if (deviceComplianceScriptDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					deviceComplianceScriptDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScriptDeviceStateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (deviceComplianceScriptDeviceStateToUpdate.AdditionalData != null)
-            {
-                if (deviceComplianceScriptDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    deviceComplianceScriptDeviceStateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceComplianceScriptDeviceStateToUpdate.GetType().Name)
-                        });
-                }
-            }
-            this.ContentType = "application/json";
-            this.Method = "PATCH";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
             var updatedEntity = await this.SendAsync<DeviceComplianceScriptDeviceState>(deviceComplianceScriptDeviceStateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScriptDeviceState using PATCH and returns a <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScriptDeviceStateToUpdate">The DeviceComplianceScriptDeviceState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceState>> UpdateResponseAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PATCH;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScriptDeviceState>(deviceComplianceScriptDeviceStateToUpdate, cancellationToken);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScriptDeviceState using PUT.
+        /// </summary>
+        /// <param name="deviceComplianceScriptDeviceStateToUpdate">The DeviceComplianceScriptDeviceState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public async System.Threading.Tasks.Task<DeviceComplianceScriptDeviceState> PutAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            var updatedEntity = await this.SendAsync<DeviceComplianceScriptDeviceState>(deviceComplianceScriptDeviceStateToUpdate, cancellationToken).ConfigureAwait(false);
+            this.InitializeCollectionProperties(updatedEntity);
+            return updatedEntity;
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceComplianceScriptDeviceState using PUT and returns a <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScriptDeviceStateToUpdate">The DeviceComplianceScriptDeviceState object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await of <see cref="GraphResponse{DeviceComplianceScriptDeviceState}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScriptDeviceState>> PutResponseAsync(DeviceComplianceScriptDeviceState deviceComplianceScriptDeviceStateToUpdate, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.PUT;
+            return this.SendAsyncWithGraphResponse<DeviceComplianceScriptDeviceState>(deviceComplianceScriptDeviceStateToUpdate, cancellationToken);
         }
 
         /// <summary>

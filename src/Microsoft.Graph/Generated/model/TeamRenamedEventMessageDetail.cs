@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type TeamRenamedEventMessageDetail.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class TeamRenamedEventMessageDetail : EventMessageDetail
     {
         /// <summary>
@@ -32,19 +30,19 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets initiator.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "initiator", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets teamDisplayName.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamDisplayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamDisplayName")]
         public string TeamDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets teamId.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("teamId")]
         public string TeamId { get; set; }
     
     }

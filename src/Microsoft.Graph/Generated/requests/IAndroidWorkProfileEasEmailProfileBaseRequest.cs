@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified AndroidWorkProfileEasEmailProfileBase using POST.
         /// </summary>
         /// <param name="androidWorkProfileEasEmailProfileBaseToCreate">The AndroidWorkProfileEasEmailProfileBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileEasEmailProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> CreateAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToCreate);        /// <summary>
-        /// Creates the specified AndroidWorkProfileEasEmailProfileBase using POST.
+        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> CreateAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileEasEmailProfileBase using POST and returns a <see cref="GraphResponse{AndroidWorkProfileEasEmailProfileBase}"/> object.
         /// </summary>
         /// <param name="androidWorkProfileEasEmailProfileBaseToCreate">The AndroidWorkProfileEasEmailProfileBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created AndroidWorkProfileEasEmailProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> CreateAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified AndroidWorkProfileEasEmailProfileBase.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileEasEmailProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileEasEmailProfileBase>> CreateResponseAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified AndroidWorkProfileEasEmailProfileBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified AndroidWorkProfileEasEmailProfileBase.
+        /// Deletes the specified AndroidWorkProfileEasEmailProfileBase and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The AndroidWorkProfileEasEmailProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified AndroidWorkProfileEasEmailProfileBase.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The AndroidWorkProfileEasEmailProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified AndroidWorkProfileEasEmailProfileBase using PATCH.
+        /// Gets the specified AndroidWorkProfileEasEmailProfileBase and returns a <see cref="GraphResponse{AndroidWorkProfileEasEmailProfileBase}"/> object.
         /// </summary>
-        /// <param name="androidWorkProfileEasEmailProfileBaseToUpdate">The AndroidWorkProfileEasEmailProfileBase to update.</param>
-        /// <returns>The updated AndroidWorkProfileEasEmailProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> UpdateAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileEasEmailProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileEasEmailProfileBase>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified AndroidWorkProfileEasEmailProfileBase using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated AndroidWorkProfileEasEmailProfileBase.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> UpdateAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> UpdateAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileEasEmailProfileBase using PATCH and returns a <see cref="GraphResponse{AndroidWorkProfileEasEmailProfileBase}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileEasEmailProfileBaseToUpdate">The AndroidWorkProfileEasEmailProfileBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileEasEmailProfileBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileEasEmailProfileBase>> UpdateResponseAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileEasEmailProfileBase using PUT.
+        /// </summary>
+        /// <param name="androidWorkProfileEasEmailProfileBaseToUpdate">The AndroidWorkProfileEasEmailProfileBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<AndroidWorkProfileEasEmailProfileBase> PutAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified AndroidWorkProfileEasEmailProfileBase using PUT and returns a <see cref="GraphResponse{AndroidWorkProfileEasEmailProfileBase}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileEasEmailProfileBaseToUpdate">The AndroidWorkProfileEasEmailProfileBase object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{AndroidWorkProfileEasEmailProfileBase}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileEasEmailProfileBase>> PutResponseAsync(AndroidWorkProfileEasEmailProfileBase androidWorkProfileEasEmailProfileBaseToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

@@ -20,18 +20,20 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesRequest : IBaseRequest
     {
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage> GetAsync();
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<IUnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesPage> GetAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{UnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnifiedRoleAssignmentMultipleDirectoryScopesCollectionWithReferencesResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

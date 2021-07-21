@@ -33,72 +33,62 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ConnectorGroup to the collection via POST.
-        /// </summary>
-        /// <param name="connectorGroup">The ConnectorGroup to add.</param>
-        /// <returns>The created ConnectorGroup.</returns>
-        public System.Threading.Tasks.Task<ConnectorGroup> AddAsync(ConnectorGroup connectorGroup)
-        {
-            return this.AddAsync(connectorGroup, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ConnectorGroup to the collection via POST.
         /// </summary>
         /// <param name="connectorGroup">The ConnectorGroup to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConnectorGroup.</returns>
-        public System.Threading.Tasks.Task<ConnectorGroup> AddAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<ConnectorGroup> AddAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken = default)
         {
-            this.ContentType = "application/json";
-            this.Method = "POST";
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<ConnectorGroup>(connectorGroup, cancellationToken);
         }
 
         /// <summary>
-        /// Gets the collection page.
+        /// Adds the specified ConnectorGroup to the collection via POST and returns a <see cref="GraphResponse{ConnectorGroup}"/> object of the request.
         /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IConnectorMemberOfCollectionPage> GetAsync()
+        /// <param name="connectorGroup">The ConnectorGroup to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectorGroup>> AddResponseAsync(ConnectorGroup connectorGroup, CancellationToken cancellationToken = default)
         {
-            return this.GetAsync(CancellationToken.None);
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+            return this.SendAsyncWithGraphResponse<ConnectorGroup>(connectorGroup, cancellationToken);
         }
+
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IConnectorMemberOfCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IConnectorMemberOfCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = "GET";
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ConnectorMemberOfCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response != null && response.Value != null && response.Value.CurrentPage != null)
+            if (response?.Value?.CurrentPage != null)
             {
-                if (response.AdditionalData != null)
-                {
-                    object nextPageLink;
-                    response.AdditionalData.TryGetValue("@odata.nextLink", out nextPageLink);
-
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        response.Value.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    response.Value.AdditionalData = response.AdditionalData;
-                }
-
+                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
+                // Copy the additional data collection to the page itself so that information is not lost
+                response.Value.AdditionalData = response.AdditionalData;
                 return response.Value;
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{ConnectorMemberOfCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConnectorMemberOfCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConnectorMemberOfCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        {
+            this.Method = HttpMethods.GET;
+            return this.SendAsyncWithGraphResponse<ConnectorMemberOfCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>

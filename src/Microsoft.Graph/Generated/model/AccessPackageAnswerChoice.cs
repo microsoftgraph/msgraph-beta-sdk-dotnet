@@ -12,48 +12,39 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type AccessPackageAnswerChoice.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<AccessPackageAnswerChoice>))]
     public partial class AccessPackageAnswerChoice
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessPackageAnswerChoice"/> class.
-        /// </summary>
-        public AccessPackageAnswerChoice()
-        {
-            this.ODataType = "microsoft.graph.accessPackageAnswerChoice";
-        }
 
         /// <summary>
         /// Gets or sets actualValue.
         /// The actual value of the selected choice. This is typically a string value which is understandable by applications. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "actualValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("actualValue")]
         public string ActualValue { get; set; }
     
         /// <summary>
         /// Gets or sets displayValue.
         /// The localized display values shown to the requestor and approvers. Required.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayValue", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayValue")]
         public AccessPackageLocalizedContent DisplayValue { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }

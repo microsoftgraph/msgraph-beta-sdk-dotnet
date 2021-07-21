@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified TemporaryAccessPassAuthenticationMethod using POST.
         /// </summary>
         /// <param name="temporaryAccessPassAuthenticationMethodToCreate">The TemporaryAccessPassAuthenticationMethod to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TemporaryAccessPassAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> CreateAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToCreate);        /// <summary>
-        /// Creates the specified TemporaryAccessPassAuthenticationMethod using POST.
+        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> CreateAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified TemporaryAccessPassAuthenticationMethod using POST and returns a <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> object.
         /// </summary>
         /// <param name="temporaryAccessPassAuthenticationMethodToCreate">The TemporaryAccessPassAuthenticationMethod to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created TemporaryAccessPassAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> CreateAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified TemporaryAccessPassAuthenticationMethod.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethod>> CreateResponseAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified TemporaryAccessPassAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified TemporaryAccessPassAuthenticationMethod.
+        /// Deletes the specified TemporaryAccessPassAuthenticationMethod and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The TemporaryAccessPassAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified TemporaryAccessPassAuthenticationMethod.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The TemporaryAccessPassAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified TemporaryAccessPassAuthenticationMethod using PATCH.
+        /// Gets the specified TemporaryAccessPassAuthenticationMethod and returns a <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> object.
         /// </summary>
-        /// <param name="temporaryAccessPassAuthenticationMethodToUpdate">The TemporaryAccessPassAuthenticationMethod to update.</param>
-        /// <returns>The updated TemporaryAccessPassAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> UpdateAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified TemporaryAccessPassAuthenticationMethod using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated TemporaryAccessPassAuthenticationMethod.</returns>
-        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> UpdateAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> UpdateAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TemporaryAccessPassAuthenticationMethod using PATCH and returns a <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="temporaryAccessPassAuthenticationMethodToUpdate">The TemporaryAccessPassAuthenticationMethod to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethod>> UpdateResponseAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TemporaryAccessPassAuthenticationMethod using PUT.
+        /// </summary>
+        /// <param name="temporaryAccessPassAuthenticationMethodToUpdate">The TemporaryAccessPassAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<TemporaryAccessPassAuthenticationMethod> PutAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TemporaryAccessPassAuthenticationMethod using PUT and returns a <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="temporaryAccessPassAuthenticationMethodToUpdate">The TemporaryAccessPassAuthenticationMethod object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{TemporaryAccessPassAuthenticationMethod}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TemporaryAccessPassAuthenticationMethod>> PutResponseAsync(TemporaryAccessPassAuthenticationMethod temporaryAccessPassAuthenticationMethodToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

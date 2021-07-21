@@ -24,47 +24,45 @@ namespace Microsoft.Graph
         /// Creates the specified PlannerDelta using POST.
         /// </summary>
         /// <param name="plannerDeltaToCreate">The PlannerDelta to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerDelta.</returns>
-        System.Threading.Tasks.Task<PlannerDelta> CreateAsync(PlannerDelta plannerDeltaToCreate);        /// <summary>
-        /// Creates the specified PlannerDelta using POST.
+        System.Threading.Tasks.Task<PlannerDelta> CreateAsync(PlannerDelta plannerDeltaToCreate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Creates the specified PlannerDelta using POST and returns a <see cref="GraphResponse{PlannerDelta}"/> object.
         /// </summary>
         /// <param name="plannerDeltaToCreate">The PlannerDelta to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created PlannerDelta.</returns>
-        System.Threading.Tasks.Task<PlannerDelta> CreateAsync(PlannerDelta plannerDeltaToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified PlannerDelta.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        /// <returns>The <see cref="GraphResponse{PlannerDelta}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerDelta>> CreateResponseAsync(PlannerDelta plannerDeltaToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the specified PlannerDelta.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified PlannerDelta.
+        /// Deletes the specified PlannerDelta and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The PlannerDelta.</returns>
-        System.Threading.Tasks.Task<PlannerDelta> GetAsync();
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the specified PlannerDelta.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The PlannerDelta.</returns>
-        System.Threading.Tasks.Task<PlannerDelta> GetAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PlannerDelta> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified PlannerDelta using PATCH.
+        /// Gets the specified PlannerDelta and returns a <see cref="GraphResponse{PlannerDelta}"/> object.
         /// </summary>
-        /// <param name="plannerDeltaToUpdate">The PlannerDelta to update.</param>
-        /// <returns>The updated PlannerDelta.</returns>
-        System.Threading.Tasks.Task<PlannerDelta> UpdateAsync(PlannerDelta plannerDeltaToUpdate);
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerDelta}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerDelta>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Updates the specified PlannerDelta using PATCH.
@@ -73,7 +71,32 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated PlannerDelta.</returns>
-        System.Threading.Tasks.Task<PlannerDelta> UpdateAsync(PlannerDelta plannerDeltaToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<PlannerDelta> UpdateAsync(PlannerDelta plannerDeltaToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PlannerDelta using PATCH and returns a <see cref="GraphResponse{PlannerDelta}"/> object.
+        /// </summary>
+        /// <param name="plannerDeltaToUpdate">The PlannerDelta to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerDelta}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerDelta>> UpdateResponseAsync(PlannerDelta plannerDeltaToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PlannerDelta using PUT.
+        /// </summary>
+        /// <param name="plannerDeltaToUpdate">The PlannerDelta object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        System.Threading.Tasks.Task<PlannerDelta> PutAsync(PlannerDelta plannerDeltaToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified PlannerDelta using PUT and returns a <see cref="GraphResponse{PlannerDelta}"/> object.
+        /// </summary>
+        /// <param name="plannerDeltaToUpdate">The PlannerDelta object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse{PlannerDelta}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerDelta>> PutResponseAsync(PlannerDelta plannerDeltaToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.

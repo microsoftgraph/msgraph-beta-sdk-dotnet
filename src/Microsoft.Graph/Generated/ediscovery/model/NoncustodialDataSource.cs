@@ -12,36 +12,34 @@ namespace Microsoft.Graph.Ediscovery
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Noncustodial Data Source.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class NoncustodialDataSource : DataSourceContainer
     {
     
-		///<summary>
-		/// The NoncustodialDataSource constructor
-		///</summary>
+        ///<summary>
+        /// The NoncustodialDataSource constructor
+        ///</summary>
         public NoncustodialDataSource()
         {
             this.ODataType = "microsoft.graph.ediscovery.noncustodialDataSource";
         }
-	
+
         /// <summary>
         /// Gets or sets apply hold to source.
         /// Indicates if hold is applied to non-custodial data source (such as mailbox or site).
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "applyHoldToSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("applyHoldToSource")]
         public bool? ApplyHoldToSource { get; set; }
     
         /// <summary>
         /// Gets or sets data source.
         /// User source or SharePoint site data source as non-custodial data source.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataSource", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataSource")]
         public DataSource DataSource { get; set; }
     
     }

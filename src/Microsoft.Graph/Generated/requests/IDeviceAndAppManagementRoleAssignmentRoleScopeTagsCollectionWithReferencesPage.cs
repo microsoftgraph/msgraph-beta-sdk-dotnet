@@ -10,13 +10,12 @@
 namespace Microsoft.Graph
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The interface IDeviceAndAppManagementRoleAssignmentRoleScopeTagsCollectionWithReferencesPage.
     /// </summary>
-    [JsonConverter(typeof(InterfaceConverter<DeviceAndAppManagementRoleAssignmentRoleScopeTagsCollectionWithReferencesPage>))]
+    [InterfaceConverter(typeof(InterfaceConverter<DeviceAndAppManagementRoleAssignmentRoleScopeTagsCollectionWithReferencesPage>))]
     public interface IDeviceAndAppManagementRoleAssignmentRoleScopeTagsCollectionWithReferencesPage : ICollectionPage<RoleScopeTag>
     {
         /// <summary>

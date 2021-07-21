@@ -12,70 +12,69 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Exact Match Session Base.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    [JsonConverter(typeof(DerivedTypeConverter<ExactMatchSessionBase>))]
     public partial class ExactMatchSessionBase : ExactMatchJobBase
     {
     
-		///<summary>
-		/// The ExactMatchSessionBase constructor
-		///</summary>
+        ///<summary>
+        /// The ExactMatchSessionBase constructor
+        ///</summary>
         public ExactMatchSessionBase()
         {
             this.ODataType = "microsoft.graph.exactMatchSessionBase";
         }
-	
+
         /// <summary>
         /// Gets or sets data store id.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "dataStoreId", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("dataStoreId")]
         public string DataStoreId { get; set; }
     
         /// <summary>
         /// Gets or sets processing completion date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "processingCompletionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("processingCompletionDateTime")]
         public DateTimeOffset? ProcessingCompletionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets remaining block count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remainingBlockCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remainingBlockCount")]
         public Int32? RemainingBlockCount { get; set; }
     
         /// <summary>
         /// Gets or sets remaining job count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "remainingJobCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("remainingJobCount")]
         public Int32? RemainingJobCount { get; set; }
     
         /// <summary>
         /// Gets or sets state.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("state")]
         public string State { get; set; }
     
         /// <summary>
         /// Gets or sets total block count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalBlockCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalBlockCount")]
         public Int32? TotalBlockCount { get; set; }
     
         /// <summary>
         /// Gets or sets total job count.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "totalJobCount", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("totalJobCount")]
         public Int32? TotalJobCount { get; set; }
     
         /// <summary>
         /// Gets or sets upload completion date time.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "uploadCompletionDateTime", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("uploadCompletionDateTime")]
         public DateTimeOffset? UploadCompletionDateTime { get; set; }
     
     }
