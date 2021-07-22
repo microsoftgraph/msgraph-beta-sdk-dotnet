@@ -10,6 +10,7 @@
 
 namespace Microsoft.Graph.WindowsUpdates
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>

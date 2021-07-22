@@ -116,6 +116,45 @@ namespace Microsoft.Graph
         [JsonPropertyName("accessPackageResourceRoleScopes@odata.nextLink")]
         public string AccessPackageResourceRoleScopesNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets access packages incompatible with.
+        /// The access packages that are incompatible with this package. Read-only.
+        /// </summary>
+        [JsonPropertyName("accessPackagesIncompatibleWith")]
+        public IAccessPackageAccessPackagesIncompatibleWithCollectionWithReferencesPage AccessPackagesIncompatibleWith { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackagesIncompatibleWithNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackagesIncompatibleWith@odata.nextLink")]
+        public string AccessPackagesIncompatibleWithNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incompatible access packages.
+        /// The  access packages whose assigned users are ineligible to be assigned this access package.
+        /// </summary>
+        [JsonPropertyName("incompatibleAccessPackages")]
+        public IAccessPackageIncompatibleAccessPackagesCollectionWithReferencesPage IncompatibleAccessPackages { get; set; }
+
+        /// <summary>
+        /// Gets or sets incompatibleAccessPackagesNextLink.
+        /// </summary>
+        [JsonPropertyName("incompatibleAccessPackages@odata.nextLink")]
+        public string IncompatibleAccessPackagesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incompatible groups.
+        /// The groups whose members are ineligible to be assigned this access package.
+        /// </summary>
+        [JsonPropertyName("incompatibleGroups")]
+        public IAccessPackageIncompatibleGroupsCollectionPage IncompatibleGroups { get; set; }
+
+        /// <summary>
+        /// Gets or sets incompatibleGroupsNextLink.
+        /// </summary>
+        [JsonPropertyName("incompatibleGroups@odata.nextLink")]
+        public string IncompatibleGroupsNextLink { get; set; }
+    
     }
 }
 

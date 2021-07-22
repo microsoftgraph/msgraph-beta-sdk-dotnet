@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resultTemplates.
+        /// A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
         /// </summary>
         [JsonPropertyName("resultTemplates")]
         public ResultTemplateDictionary ResultTemplates { get; set; }

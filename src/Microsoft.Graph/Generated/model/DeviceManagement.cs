@@ -1584,6 +1584,13 @@ namespace Microsoft.Graph
         public string RemoteAssistancePartnersNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets remote assistance settings.
+        /// The remote assistance settings singleton
+        /// </summary>
+        [JsonPropertyName("remoteAssistanceSettings")]
+        public RemoteAssistanceSettings RemoteAssistanceSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets reports.
         /// Reports singleton
         /// </summary>

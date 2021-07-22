@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets participant.
+        /// Identity of the call participant.
         /// </summary>
         [JsonPropertyName("participant")]
         public IdentitySet Participant { get; set; }

@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder ActivityBasedTimeoutPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootAppManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootAppManagementPoliciesCollectionRequestBuilder AppManagementPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for AuthorizationPolicy.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootAuthorizationPolicyCollectionRequestBuilder"/>.</returns>
@@ -66,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPolicyRootClaimsMappingPoliciesCollectionRequestBuilder"/>.</returns>
         IPolicyRootClaimsMappingPoliciesCollectionRequestBuilder ClaimsMappingPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for DefaultAppManagementPolicy.
+        /// </summary>
+        /// <returns>The <see cref="ITenantAppManagementPolicyRequestBuilder"/>.</returns>
+        ITenantAppManagementPolicyRequestBuilder DefaultAppManagementPolicy { get; }
 
         /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
@@ -126,6 +138,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder"/>.</returns>
         IIdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy { get; }
+
+        /// <summary>
+        /// Gets the request builder for MobileAppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootMobileAppManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootMobileAppManagementPoliciesCollectionRequestBuilder MobileAppManagementPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for MobileDeviceManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder MobileDeviceManagementPolicies { get; }
 
         /// <summary>
         /// Gets the request builder for RoleManagementPolicies.

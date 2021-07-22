@@ -23,12 +23,14 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets error.
+        /// If status is failed, provides more information about the error that caused the failure.
         /// </summary>
         [JsonPropertyName("error")]
         public Microsoft.Graph.PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed.
         /// </summary>
         [JsonPropertyName("status")]
         public ConnectionOperationStatus? Status { get; set; }

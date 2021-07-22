@@ -22,66 +22,77 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets is deleted.
+        /// A flag indicating whether the account has been deleted. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("isDeleted")]
         public bool? IsDeleted { get; set; }
     
         /// <summary>
         /// Gets or sets last refreshed date time.
+        /// Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("lastRefreshedDateTime")]
         public DateTimeOffset? LastRefreshedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets risk detail.
+        /// The risk details for the account flagged for risk. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("riskDetail")]
         public string RiskDetail { get; set; }
     
         /// <summary>
         /// Gets or sets risk last updated date time.
+        /// The date and time when the risk information was last updated. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("riskLastUpdatedDateTime")]
         public DateTimeOffset? RiskLastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets risk level.
+        /// The level of risk that was detected. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("riskLevel")]
         public string RiskLevel { get; set; }
     
         /// <summary>
         /// Gets or sets risk state.
+        /// The state of risk that was detected. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("riskState")]
         public string RiskState { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
+        /// The display name for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets user display name.
+        /// The display name for the account where risk was detected. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("userDisplayName")]
         public string UserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
+        /// The identifier for the user account where risk was detected. Required. Read-only.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
+        /// The user principal name (UPN) for the account where risk was detected. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

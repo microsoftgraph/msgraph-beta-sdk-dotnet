@@ -10,6 +10,7 @@
 
 namespace Microsoft.Graph.TermStore
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>

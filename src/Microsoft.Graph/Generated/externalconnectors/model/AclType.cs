@@ -10,6 +10,7 @@
 
 namespace Microsoft.Graph.ExternalConnectors
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
@@ -40,9 +41,14 @@ namespace Microsoft.Graph.ExternalConnectors
         EveryoneExceptGuests = 4,
 	
         /// <summary>
+        /// External Group
+        /// </summary>
+        ExternalGroup = 5,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 5,
+        UnknownFutureValue = 6,
 	
     }
 }

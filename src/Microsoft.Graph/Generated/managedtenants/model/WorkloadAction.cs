@@ -23,36 +23,42 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets actionId.
+        /// The unique identifier for the workload action. Required. Read-only.
         /// </summary>
         [JsonPropertyName("actionId")]
         public string ActionId { get; set; }
     
         /// <summary>
         /// Gets or sets category.
+        /// The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("category")]
         public WorkloadActionCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description for the workload action. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the workload action. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets service.
+        /// The service associated with workload action. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("service")]
         public string Service { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
+        /// The collection of settings associated with the workload action. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("settings")]
         public IEnumerable<Setting> Settings { get; set; }

@@ -23,12 +23,15 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets identity source.
+        /// The identity source that the member belongs to. Possible values are: azureActiveDirectory, external.
         /// </summary>
+        [Obsolete("The property named 'IdentitySource' will be deprecated in September 2021, please see the updated aclType usage.")]
         [JsonPropertyName("identitySource")]
         public IdentitySourceType? IdentitySource { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The type of member added to the external group. Possible values are: user or group when the identitySource is azureActiveDirectory and just group when the identitySource is external.
         /// </summary>
         [JsonPropertyName("type")]
         public ExternalGroupMemberType? Type { get; set; }

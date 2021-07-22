@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets application.
+        /// Enumeration value that indicates the source application where the file was created.
         /// </summary>
         [JsonPropertyName("application")]
         public DriveItemSourceApplication? Application { get; set; }
     
         /// <summary>
         /// Gets or sets externalId.
+        /// The external identifier for the drive item from the source.
         /// </summary>
         [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }

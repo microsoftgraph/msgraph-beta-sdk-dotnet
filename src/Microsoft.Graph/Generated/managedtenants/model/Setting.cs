@@ -23,24 +23,28 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the setting. Required. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets jsonValue.
+        /// The value for the setting serialized as string of JSON. Required. Read-only.
         /// </summary>
         [JsonPropertyName("jsonValue")]
         public string JsonValue { get; set; }
     
         /// <summary>
         /// Gets or sets overwriteAllowed.
+        /// A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.
         /// </summary>
         [JsonPropertyName("overwriteAllowed")]
         public bool? OverwriteAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets valueType.
+        /// The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
         /// </summary>
         [JsonPropertyName("valueType")]
         public ManagementParameterValueType? ValueType { get; set; }

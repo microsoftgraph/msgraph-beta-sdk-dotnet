@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The resource entity display name.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets modifiedProperties.
+        /// A list of modified properties.
         /// </summary>
         [JsonPropertyName("modifiedProperties")]
         public IEnumerable<CloudPcAuditProperty> ModifiedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets resourceId.
+        /// The ID of the audit resource.
         /// </summary>
         [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The type of the audit resource.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

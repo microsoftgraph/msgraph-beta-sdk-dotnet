@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets origin id.
-        /// The unique identifier of the resource role in the origin system.
+        /// The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
         /// </summary>
         [JsonPropertyName("originId")]
         public string OriginId { get; set; }

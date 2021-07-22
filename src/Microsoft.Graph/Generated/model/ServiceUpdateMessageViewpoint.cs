@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isArchived.
+        /// Indicates whether the user archived the message.
         /// </summary>
         [JsonPropertyName("isArchived")]
         public bool? IsArchived { get; set; }
     
         /// <summary>
         /// Gets or sets isFavorited.
+        /// Indicates whether the user marked the message as favorite.
         /// </summary>
         [JsonPropertyName("isFavorited")]
         public bool? IsFavorited { get; set; }
     
         /// <summary>
         /// Gets or sets isRead.
+        /// Indicates whether the user read the message.
         /// </summary>
         [JsonPropertyName("isRead")]
         public bool? IsRead { get; set; }

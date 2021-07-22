@@ -31,30 +31,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets details.
+        /// Additional details about service event. This property doesn't support filters.
         /// </summary>
         [JsonPropertyName("details")]
         public IEnumerable<KeyValuePair> Details { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
+        /// The end time of the service event.
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The last modified time of the service event.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
+        /// The start time of the service event.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets title.
+        /// The title of the service event.
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; set; }

@@ -746,6 +746,12 @@ namespace Microsoft.Graph
         IDeviceManagementRemoteAssistancePartnersCollectionRequestBuilder RemoteAssistancePartners { get; }
 
         /// <summary>
+        /// Gets the request builder for RemoteAssistanceSettings.
+        /// </summary>
+        /// <returns>The <see cref="IRemoteAssistanceSettingsRequestBuilder"/>.</returns>
+        IRemoteAssistanceSettingsRequestBuilder RemoteAssistanceSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for Reports.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>

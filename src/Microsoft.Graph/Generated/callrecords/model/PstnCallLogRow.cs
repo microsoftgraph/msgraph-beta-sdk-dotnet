@@ -22,6 +22,12 @@ namespace Microsoft.Graph.CallRecords
     {
 
         /// <summary>
+        /// Gets or sets callDurationSource.
+        /// </summary>
+        [JsonPropertyName("callDurationSource")]
+        public PstnCallDurationSource? CallDurationSource { get; set; }
+    
+        /// <summary>
         /// Gets or sets calleeNumber.
         /// </summary>
         [JsonPropertyName("calleeNumber")]
@@ -110,6 +116,12 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonPropertyName("licenseCapability")]
         public string LicenseCapability { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operator.
+        /// </summary>
+        [JsonPropertyName("operator")]
+        public string Operator { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.

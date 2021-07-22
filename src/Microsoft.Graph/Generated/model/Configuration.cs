@@ -29,7 +29,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authorizedApps.
-        /// A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
         /// </summary>
         [Obsolete("The property name 'authorizedApps' is being renamed to 'authorizedAppIds'. Please use the new property name, as 'authorizedApps' will be deprecated in Aug 2021.")]
         [JsonPropertyName("authorizedApps")]

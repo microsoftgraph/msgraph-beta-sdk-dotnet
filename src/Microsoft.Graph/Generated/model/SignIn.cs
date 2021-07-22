@@ -84,6 +84,12 @@ namespace Microsoft.Graph
         public IEnumerable<AuthenticationRequirementPolicy> AuthenticationRequirementPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets autonomous system number.
+        /// </summary>
+        [JsonPropertyName("autonomousSystemNumber")]
+        public Int32? AutonomousSystemNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets client app used.
         /// The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
         /// </summary>
@@ -110,6 +116,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cross tenant access type.
+        /// </summary>
+        [JsonPropertyName("crossTenantAccessType")]
+        public SignInAccessType? CrossTenantAccessType { get; set; }
     
         /// <summary>
         /// Gets or sets device detail.
@@ -151,6 +163,12 @@ namespace Microsoft.Graph
         public bool? IsInteractive { get; set; }
     
         /// <summary>
+        /// Gets or sets is tenant restricted.
+        /// </summary>
+        [JsonPropertyName("isTenantRestricted")]
+        public bool? IsTenantRestricted { get; set; }
+    
+        /// <summary>
         /// Gets or sets location.
         /// The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
         /// </summary>
@@ -176,6 +194,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("originalRequestId")]
         public string OriginalRequestId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets private link details.
+        /// </summary>
+        [JsonPropertyName("privateLinkDetails")]
+        public PrivateLinkDetails PrivateLinkDetails { get; set; }
     
         /// <summary>
         /// Gets or sets processing time in milliseconds.
@@ -245,6 +269,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("riskState")]
         public RiskState? RiskState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service principal credential key id.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalCredentialKeyId")]
+        public string ServicePrincipalCredentialKeyId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service principal credential thumbprint.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalCredentialThumbprint")]
+        public string ServicePrincipalCredentialThumbprint { get; set; }
     
         /// <summary>
         /// Gets or sets service principal id.

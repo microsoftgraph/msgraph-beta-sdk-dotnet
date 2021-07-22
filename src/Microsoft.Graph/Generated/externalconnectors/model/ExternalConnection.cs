@@ -23,24 +23,28 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets configuration.
+        /// Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
         /// </summary>
         [JsonPropertyName("configuration")]
         public Configuration Configuration { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// Description of the connection displayed in the Microsoft 365 admin center. Optional.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.
         /// </summary>
         [JsonPropertyName("state")]
         public ConnectionState? State { get; set; }
@@ -59,6 +63,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets items.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("items")]
         public IExternalConnectionItemsCollectionPage Items { get; set; }
@@ -71,6 +76,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets operations.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("operations")]
         public IExternalConnectionOperationsCollectionPage Operations { get; set; }
@@ -83,6 +89,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets schema.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("schema")]
         public Schema Schema { get; set; }

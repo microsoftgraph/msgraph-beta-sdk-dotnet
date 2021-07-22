@@ -10,6 +10,7 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
@@ -123,6 +124,16 @@ namespace Microsoft.Graph
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 20,
+	
+        /// <summary>
+        /// Device Filter Include Rule Not Matched
+        /// </summary>
+        DeviceFilterIncludeRuleNotMatched = 21,
+	
+        /// <summary>
+        /// All Device States
+        /// </summary>
+        AllDeviceStates = 22,
 	
     }
 }

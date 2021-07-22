@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isTranscriptionShown.
+        /// If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.
         /// </summary>
         [JsonPropertyName("isTranscriptionShown")]
         public bool? IsTranscriptionShown { get; set; }
     
         /// <summary>
         /// Gets or sets mediaSource.
+        /// Information about the source of media. Read-only.
         /// </summary>
         [JsonPropertyName("mediaSource")]
         public MediaSource MediaSource { get; set; }

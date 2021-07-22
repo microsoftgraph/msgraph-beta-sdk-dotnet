@@ -22,48 +22,56 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets created by user id.
+        /// The identifier for the account that created the tenant tag. Required. Read-only.
         /// </summary>
         [JsonPropertyName("createdByUserId")]
         public string CreatedByUserId { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time when the tenant tag was created. Required. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets deleted date time.
+        /// The date and time when the tenant tag was deleted. Required. Read-only.
         /// </summary>
         [JsonPropertyName("deletedDateTime")]
         public DateTimeOffset? DeletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description for the tenant tag. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name for the tenant tag. Required. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last action by user id.
+        /// The identifier for the account that lasted on the tenant tag. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("lastActionByUserId")]
         public string LastActionByUserId { get; set; }
     
         /// <summary>
         /// Gets or sets last action date time.
+        /// The date and time the last action was performed against the tenant tag. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("lastActionDateTime")]
         public DateTimeOffset? LastActionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets tenants.
+        /// The collection of managed tenants associated with the tenant tag. Optional.
         /// </summary>
         [JsonPropertyName("tenants")]
         public IEnumerable<TenantInfo> Tenants { get; set; }

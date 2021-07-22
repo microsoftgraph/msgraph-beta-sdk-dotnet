@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IApplicationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder AppManagementPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
@@ -85,6 +91,19 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IApplicationLogoRequestBuilder"/>.</returns>
         IApplicationLogoRequestBuilder Logo { get; }
     
+        /// <summary>
+        /// Gets the request builder for ApplicationSetVerifiedPublisher.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationSetVerifiedPublisherRequestBuilder"/>.</returns>
+        IApplicationSetVerifiedPublisherRequestBuilder SetVerifiedPublisher(
+            string verifiedPublisherId);
+
+        /// <summary>
+        /// Gets the request builder for ApplicationUnsetVerifiedPublisher.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationUnsetVerifiedPublisherRequestBuilder"/>.</returns>
+        IApplicationUnsetVerifiedPublisherRequestBuilder UnsetVerifiedPublisher();
+
         /// <summary>
         /// Gets the request builder for ApplicationAddKey.
         /// </summary>
