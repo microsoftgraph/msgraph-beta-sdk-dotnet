@@ -22,30 +22,35 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets all tenants included.
+        /// A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.
         /// </summary>
         [JsonPropertyName("allTenantsIncluded")]
         public bool? AllTenantsIncluded { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name for the tenant group. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets management actions.
+        /// The collection of management action associated with the tenant group. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("managementActions")]
         public IEnumerable<ManagementActionInfo> ManagementActions { get; set; }
     
         /// <summary>
         /// Gets or sets management intents.
+        /// The collection of management intents associated with the tenant group. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("managementIntents")]
         public IEnumerable<ManagementIntentInfo> ManagementIntents { get; set; }
     
         /// <summary>
         /// Gets or sets tenant ids.
+        /// The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("tenantIds")]
         public IEnumerable<string> TenantIds { get; set; }

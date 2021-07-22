@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets teamId.
+        /// The team's identifier.
         /// </summary>
         [JsonPropertyName("teamId")]
         public string TeamId { get; set; }

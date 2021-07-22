@@ -44,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resultTemplateId.
+        /// ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.
         /// </summary>
         [JsonPropertyName("resultTemplateId")]
         public string ResultTemplateId { get; set; }

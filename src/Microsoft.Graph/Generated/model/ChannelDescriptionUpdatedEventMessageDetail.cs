@@ -29,18 +29,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets channelDescription.
+        /// The updated description of the channel.
         /// </summary>
         [JsonPropertyName("channelDescription")]
         public string ChannelDescription { get; set; }
     
         /// <summary>
         /// Gets or sets channelId.
+        /// Unique identifier of the channel.
         /// </summary>
         [JsonPropertyName("channelId")]
         public string ChannelId { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }

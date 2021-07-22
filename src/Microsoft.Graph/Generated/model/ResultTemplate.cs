@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets body.
+        /// JSON schema of the result template.
         /// </summary>
         [JsonPropertyName("body")]
         public System.Text.Json.JsonDocument Body { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// Name of the result template.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

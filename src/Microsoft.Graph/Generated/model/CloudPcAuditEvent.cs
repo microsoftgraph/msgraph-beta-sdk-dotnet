@@ -23,66 +23,77 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activity.
+        /// Friendly name of the activity. Optional.
         /// </summary>
         [JsonPropertyName("activity")]
         public string Activity { get; set; }
     
         /// <summary>
         /// Gets or sets activity date time.
+        /// The date time in UTC when the activity was performed. Read-only.
         /// </summary>
         [JsonPropertyName("activityDateTime")]
         public DateTimeOffset? ActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets activity operation type.
+        /// The HTTP operation type of the activity. Possible values include create, delete, patch and other. Read-only.
         /// </summary>
         [JsonPropertyName("activityOperationType")]
         public CloudPcAuditActivityOperationType? ActivityOperationType { get; set; }
     
         /// <summary>
         /// Gets or sets activity result.
+        /// The result of the activity. Read-only.
         /// </summary>
         [JsonPropertyName("activityResult")]
         public CloudPcAuditActivityResult? ActivityResult { get; set; }
     
         /// <summary>
         /// Gets or sets activity type.
+        /// The type of activity that was performed. Read-only.
         /// </summary>
         [JsonPropertyName("activityType")]
         public string ActivityType { get; set; }
     
         /// <summary>
         /// Gets or sets actor.
+        /// Azure AD user and application associated with the audit event. Read-only.
         /// </summary>
         [JsonPropertyName("actor")]
         public CloudPcAuditActor Actor { get; set; }
     
         /// <summary>
         /// Gets or sets category.
+        /// Audit category. Read-only.
         /// </summary>
         [JsonPropertyName("category")]
         public CloudPcAuditCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets component name.
+        /// Component name. Read-only.
         /// </summary>
         [JsonPropertyName("componentName")]
         public string ComponentName { get; set; }
     
         /// <summary>
         /// Gets or sets correlation id.
+        /// The client request identifier, used to correlate activity within the system. Read-only.
         /// </summary>
         [JsonPropertyName("correlationId")]
         public string CorrelationId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Event display name. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets resources.
+        /// List of cloudPcAuditResource objects. Read-only.
         /// </summary>
         [JsonPropertyName("resources")]
         public IEnumerable<CloudPcAuditResource> Resources { get; set; }

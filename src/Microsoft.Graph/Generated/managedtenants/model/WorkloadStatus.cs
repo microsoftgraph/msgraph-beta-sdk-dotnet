@@ -23,24 +23,28 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the workload. Required. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets offboardedDateTime.
+        /// The date and time the workload was offboarded. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("offboardedDateTime")]
         public DateTimeOffset? OffboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardedDateTime.
+        /// The date and time the workload was onboarded. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("onboardedDateTime")]
         public DateTimeOffset? OnboardedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets onboardingStatus.
+        /// The onboarding status for the workload. Possible values are: notOnboarded, onboarded, unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("onboardingStatus")]
         public WorkloadOnboardingStatus? OnboardingStatus { get; set; }

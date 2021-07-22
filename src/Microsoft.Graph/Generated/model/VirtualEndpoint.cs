@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets audit events.
+        /// Cloud PC audit event.
         /// </summary>
         [JsonPropertyName("auditEvents")]
         public IVirtualEndpointAuditEventsCollectionPage AuditEvents { get; set; }

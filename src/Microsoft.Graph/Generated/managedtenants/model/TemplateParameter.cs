@@ -23,30 +23,35 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets description.
+        /// The description for the template parameter. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the template parameter. Required. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets jsonAllowedValues.
+        /// The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("jsonAllowedValues")]
         public string JsonAllowedValues { get; set; }
     
         /// <summary>
         /// Gets or sets jsonDefaultValue.
+        /// The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.
         /// </summary>
         [JsonPropertyName("jsonDefaultValue")]
         public string JsonDefaultValue { get; set; }
     
         /// <summary>
         /// Gets or sets valueType.
+        /// The data type for the template parameter.. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
         /// </summary>
         [JsonPropertyName("valueType")]
         public ManagementParameterValueType? ValueType { get; set; }

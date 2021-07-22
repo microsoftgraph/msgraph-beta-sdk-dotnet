@@ -115,6 +115,21 @@ namespace Microsoft.Graph
         ResourceAvailabilityCheckAzurePolicyViolation = 502,
 	
         /// <summary>
+        /// Resource Availability Check Subscription Not Found
+        /// </summary>
+        ResourceAvailabilityCheckSubscriptionNotFound = 503,
+	
+        /// <summary>
+        /// Resource Availability Check Subscription Transferred
+        /// </summary>
+        ResourceAvailabilityCheckSubscriptionTransferred = 504,
+	
+        /// <summary>
+        /// Resource Availability Check General Subscription Error
+        /// </summary>
+        ResourceAvailabilityCheckGeneralSubscriptionError = 505,
+	
+        /// <summary>
         /// Resource Availability Check Unsupported VNet Region
         /// </summary>
         ResourceAvailabilityCheckUnsupportedVNetRegion = 506,
@@ -140,6 +155,11 @@ namespace Microsoft.Graph
         PermissionCheckNoVNetContributorRole = 602,
 	
         /// <summary>
+        /// Permission Check No Resource Group Network Contributor Role
+        /// </summary>
+        PermissionCheckNoResourceGroupNetworkContributorRole = 603,
+	
+        /// <summary>
         /// Permission Check Unknown Error
         /// </summary>
         PermissionCheckUnknownError = 699,
@@ -158,6 +178,11 @@ namespace Microsoft.Graph
         /// Internal Server Error VMDeployment Timeout
         /// </summary>
         InternalServerErrorVMDeploymentTimeout = 902,
+	
+        /// <summary>
+        /// Internal Server Error Unable To Run Dsc Script
+        /// </summary>
+        InternalServerErrorUnableToRunDscScript = 903,
 	
         /// <summary>
         /// Internal Server Unknown Error

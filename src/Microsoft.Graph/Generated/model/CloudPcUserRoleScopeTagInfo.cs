@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// Scope tag display name.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets roleScopeTagId.
+        /// Scope tag ID.
         /// </summary>
         [JsonPropertyName("roleScopeTagId")]
         public string RoleScopeTagId { get; set; }

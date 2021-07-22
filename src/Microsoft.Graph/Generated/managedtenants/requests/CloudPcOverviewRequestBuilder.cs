@@ -16,7 +16,7 @@ namespace Microsoft.Graph.ManagedTenants
     /// <summary>
     /// The type CloudPcOverviewRequestBuilder.
     /// </summary>
-    public partial class CloudPcOverviewRequestBuilder : Microsoft.Graph.BaseRequestBuilder, ICloudPcOverviewRequestBuilder
+    public partial class CloudPcOverviewRequestBuilder : Microsoft.Graph.EntityRequestBuilder, ICloudPcOverviewRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public ICloudPcOverviewRequest Request()
+        public new ICloudPcOverviewRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public ICloudPcOverviewRequest Request(IEnumerable<Microsoft.Graph.Option> options)
+        public new ICloudPcOverviewRequest Request(IEnumerable<Microsoft.Graph.Option> options)
         {
             return new CloudPcOverviewRequest(this.RequestUrl, this.Client, options);
         }

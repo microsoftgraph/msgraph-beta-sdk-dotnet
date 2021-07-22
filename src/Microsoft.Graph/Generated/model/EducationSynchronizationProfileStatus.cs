@@ -23,20 +23,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last activity date time.
+        /// Represents the time when most recent changes were observed in profile.
         /// </summary>
         [JsonPropertyName("lastActivityDateTime")]
         public DateTimeOffset? LastActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last synchronization date time.
-        /// Represents the time when most recent changes have been observed in the directory.
+        /// Represents the time of the most recent successful  synchronization.
         /// </summary>
         [JsonPropertyName("lastSynchronizationDateTime")]
         public DateTimeOffset? LastSynchronizationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of a sync. Possible values are: paused, inProgress, success, error, quarantined, validationError.
+        /// The status of a sync. Possible values are: paused, inProgress, success, error, quarantined, validationError, extracting, validating.
         /// </summary>
         [JsonPropertyName("status")]
         public EducationSynchronizationStatus? Status { get; set; }

@@ -23,14 +23,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets base type.
-        /// Must be set to microsoft.graph.externalItem. Required.
         /// </summary>
         [JsonPropertyName("baseType")]
         public string BaseType { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
-        /// The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.
         /// </summary>
         [JsonPropertyName("properties")]
         public IEnumerable<Property> Properties { get; set; }

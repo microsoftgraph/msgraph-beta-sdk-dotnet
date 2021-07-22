@@ -22,24 +22,28 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets contacts.
+        /// The collection of contacts for the managed tenant. Optional.
         /// </summary>
         [JsonPropertyName("contacts")]
         public IEnumerable<TenantContactInformation> Contacts { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name for the managed tenant. Required. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
     
         /// <summary>
         /// Gets or sets website.
+        /// The website for the managed tenant. Required.
         /// </summary>
         [JsonPropertyName("website")]
         public string Website { get; set; }

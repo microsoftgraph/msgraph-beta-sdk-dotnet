@@ -22,24 +22,28 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets conditional access policy state.
+        /// The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.
         /// </summary>
         [JsonPropertyName("conditionalAccessPolicyState")]
         public string ConditionalAccessPolicyState { get; set; }
     
         /// <summary>
         /// Gets or sets latest policy modified date time.
+        /// The date and time the conditional access policy was last modified. Required. Read-only.
         /// </summary>
         [JsonPropertyName("latestPolicyModifiedDateTime")]
         public DateTimeOffset? LatestPolicyModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets requires device compliance.
+        /// A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.
         /// </summary>
         [JsonPropertyName("requiresDeviceCompliance")]
         public bool? RequiresDeviceCompliance { get; set; }
     
         /// <summary>
         /// Gets or sets tenant display name.
+        /// The display name for the managed tenant. Required. Read-only.
         /// </summary>
         [JsonPropertyName("tenantDisplayName")]
         public string TenantDisplayName { get; set; }

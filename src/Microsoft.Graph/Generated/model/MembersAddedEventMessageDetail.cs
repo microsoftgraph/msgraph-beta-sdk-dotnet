@@ -29,15 +29,17 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets members.
+        /// List of members added.
         /// </summary>
         [JsonPropertyName("members")]
-        public IEnumerable<Identity> Members { get; set; }
+        public IEnumerable<TeamworkUserIdentity> Members { get; set; }
     
     }
 }

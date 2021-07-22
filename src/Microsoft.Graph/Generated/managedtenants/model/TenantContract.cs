@@ -23,18 +23,21 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets contractType.
+        /// The type of relationship that exists between the managing entity and tenant. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("contractType")]
         public Int32? ContractType { get; set; }
     
         /// <summary>
         /// Gets or sets defaultDomainName.
+        /// The default domain name for the tenant. Required. Read-only.
         /// </summary>
         [JsonPropertyName("defaultDomainName")]
         public string DefaultDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The display name for the tenant. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

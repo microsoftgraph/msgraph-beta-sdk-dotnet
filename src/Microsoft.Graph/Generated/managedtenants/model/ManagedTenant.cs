@@ -22,6 +22,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets aggregated policy compliances.
+        /// Aggregate view of device compliance policies across managed tenants.
         /// </summary>
         [JsonPropertyName("aggregatedPolicyCompliances")]
         public IManagedTenantAggregatedPolicyCompliancesCollectionPage AggregatedPolicyCompliances { get; set; }
@@ -34,6 +35,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets cloud pc connections.
+        /// The collection of cloud PC connections across managed tenants.
         /// </summary>
         [JsonPropertyName("cloudPcConnections")]
         public IManagedTenantCloudPcConnectionsCollectionPage CloudPcConnections { get; set; }
@@ -46,6 +48,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets cloud pc devices.
+        /// The collection of cloud PC devices across managed tenants.
         /// </summary>
         [JsonPropertyName("cloudPcDevices")]
         public IManagedTenantCloudPcDevicesCollectionPage CloudPcDevices { get; set; }
@@ -58,6 +61,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets cloud pcs overview.
+        /// Overview of cloud PC information across managed tenants.
         /// </summary>
         [JsonPropertyName("cloudPcsOverview")]
         public IManagedTenantCloudPcsOverviewCollectionPage CloudPcsOverview { get; set; }
@@ -70,6 +74,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets conditional access policy coverages.
+        /// Aggregate view of conditional access policy coverage across managed tenants.
         /// </summary>
         [JsonPropertyName("conditionalAccessPolicyCoverages")]
         public IManagedTenantConditionalAccessPolicyCoveragesCollectionPage ConditionalAccessPolicyCoverages { get; set; }
@@ -82,6 +87,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets credential user registrations summaries.
+        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
         /// </summary>
         [JsonPropertyName("credentialUserRegistrationsSummaries")]
         public IManagedTenantCredentialUserRegistrationsSummariesCollectionPage CredentialUserRegistrationsSummaries { get; set; }
@@ -94,6 +100,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets device compliance policy setting state summaries.
+        /// Summary information for device compliance policy setting states across managed tenants.
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicySettingStateSummaries")]
         public IManagedTenantDeviceCompliancePolicySettingStateSummariesCollectionPage DeviceCompliancePolicySettingStateSummaries { get; set; }
@@ -106,6 +113,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets managed device compliances.
+        /// The collection of compliance for managed devices across managed tenants.
         /// </summary>
         [JsonPropertyName("managedDeviceCompliances")]
         public IManagedTenantManagedDeviceCompliancesCollectionPage ManagedDeviceCompliances { get; set; }
@@ -118,6 +126,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets managed device compliance trends.
+        /// Trend insights for device compliance across managed tenants.
         /// </summary>
         [JsonPropertyName("managedDeviceComplianceTrends")]
         public IManagedTenantManagedDeviceComplianceTrendsCollectionPage ManagedDeviceComplianceTrends { get; set; }
@@ -130,6 +139,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets management actions.
+        /// The collection of baseline management actions across managed tenants.
         /// </summary>
         [JsonPropertyName("managementActions")]
         public IManagedTenantManagementActionsCollectionPage ManagementActions { get; set; }
@@ -142,6 +152,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets management action tenant deployment statuses.
+        /// The tenant level status of management actions across managed tenants.
         /// </summary>
         [JsonPropertyName("managementActionTenantDeploymentStatuses")]
         public IManagedTenantManagementActionTenantDeploymentStatusesCollectionPage ManagementActionTenantDeploymentStatuses { get; set; }
@@ -154,6 +165,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets management intents.
+        /// The collection of baseline management intents across managed tenants.
         /// </summary>
         [JsonPropertyName("managementIntents")]
         public IManagedTenantManagementIntentsCollectionPage ManagementIntents { get; set; }
@@ -166,6 +178,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets management templates.
+        /// The collection of baseline management templates across managed tenants.
         /// </summary>
         [JsonPropertyName("managementTemplates")]
         public IManagedTenantManagementTemplatesCollectionPage ManagementTemplates { get; set; }
@@ -178,6 +191,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets risky users.
+        /// The collection of users flagged for risk across managed tenants.
         /// </summary>
         [JsonPropertyName("riskyUsers")]
         public IManagedTenantRiskyUsersCollectionPage RiskyUsers { get; set; }
@@ -190,6 +204,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets tenant groups.
+        /// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
         /// </summary>
         [JsonPropertyName("tenantGroups")]
         public IManagedTenantTenantGroupsCollectionPage TenantGroups { get; set; }
@@ -202,6 +217,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets tenants.
+        /// The collection of tenants associated with the managing entity.
         /// </summary>
         [JsonPropertyName("tenants")]
         public IManagedTenantTenantsCollectionPage Tenants { get; set; }
@@ -214,6 +230,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets tenants customized information.
+        /// The collection of tenant level customized information across managed tenants.
         /// </summary>
         [JsonPropertyName("tenantsCustomizedInformation")]
         public IManagedTenantTenantsCustomizedInformationCollectionPage TenantsCustomizedInformation { get; set; }
@@ -226,6 +243,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets tenants detailed information.
+        /// The collection tenant level detailed information across managed tenants.
         /// </summary>
         [JsonPropertyName("tenantsDetailedInformation")]
         public IManagedTenantTenantsDetailedInformationCollectionPage TenantsDetailedInformation { get; set; }
@@ -238,6 +256,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets tenant tags.
+        /// The collection of tenant tags across managed tenants.
         /// </summary>
         [JsonPropertyName("tenantTags")]
         public IManagedTenantTenantTagsCollectionPage TenantTags { get; set; }
@@ -250,6 +269,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets windows device malware states.
+        /// The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
         /// </summary>
         [JsonPropertyName("windowsDeviceMalwareStates")]
         public IManagedTenantWindowsDeviceMalwareStatesCollectionPage WindowsDeviceMalwareStates { get; set; }
@@ -262,6 +282,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets windows protection states.
+        /// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
         /// </summary>
         [JsonPropertyName("windowsProtectionStates")]
         public IManagedTenantWindowsProtectionStatesCollectionPage WindowsProtectionStates { get; set; }

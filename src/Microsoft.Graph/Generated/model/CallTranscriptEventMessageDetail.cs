@@ -29,18 +29,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets callId.
+        /// Unique identifier of the call.
         /// </summary>
         [JsonPropertyName("callId")]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callTranscriptICalUid.
+        /// Unique identifier for a call transcript.
         /// </summary>
         [JsonPropertyName("callTranscriptICalUid")]
         public string CallTranscriptICalUid { get; set; }
     
         /// <summary>
         /// Gets or sets meetingOrganizer.
+        /// The organizer of the meeting.
         /// </summary>
         [JsonPropertyName("meetingOrganizer")]
         public IdentitySet MeetingOrganizer { get; set; }

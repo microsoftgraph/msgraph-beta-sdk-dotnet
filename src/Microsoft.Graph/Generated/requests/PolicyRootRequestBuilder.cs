@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootAppManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootAppManagementPoliciesCollectionRequestBuilder AppManagementPolicies
+        {
+            get
+            {
+                return new PolicyRootAppManagementPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AuthorizationPolicy.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootAuthorizationPolicyCollectionRequestBuilder"/>.</returns>
@@ -119,6 +131,18 @@ namespace Microsoft.Graph
             get
             {
                 return new PolicyRootClaimsMappingPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("claimsMappingPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DefaultAppManagementPolicy.
+        /// </summary>
+        /// <returns>The <see cref="ITenantAppManagementPolicyRequestBuilder"/>.</returns>
+        public ITenantAppManagementPolicyRequestBuilder DefaultAppManagementPolicy
+        {
+            get
+            {
+                return new TenantAppManagementPolicyRequestBuilder(this.AppendSegmentToRequestUrl("defaultAppManagementPolicy"), this.Client);
             }
         }
 
@@ -239,6 +263,30 @@ namespace Microsoft.Graph
             get
             {
                 return new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder(this.AppendSegmentToRequestUrl("identitySecurityDefaultsEnforcementPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MobileAppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootMobileAppManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootMobileAppManagementPoliciesCollectionRequestBuilder MobileAppManagementPolicies
+        {
+            get
+            {
+                return new PolicyRootMobileAppManagementPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileAppManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for MobileDeviceManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder MobileDeviceManagementPolicies
+        {
+            get
+            {
+                return new PolicyRootMobileDeviceManagementPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileDeviceManagementPolicies"), this.Client);
             }
         }
 

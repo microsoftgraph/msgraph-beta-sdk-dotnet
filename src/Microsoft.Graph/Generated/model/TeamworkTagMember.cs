@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The member's display name.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

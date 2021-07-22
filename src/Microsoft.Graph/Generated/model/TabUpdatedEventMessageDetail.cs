@@ -29,12 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets tabId.
+        /// Unique identifier of the tab.
         /// </summary>
         [JsonPropertyName("tabId")]
         public string TabId { get; set; }

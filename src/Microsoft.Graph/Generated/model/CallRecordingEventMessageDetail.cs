@@ -30,42 +30,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets callId.
+        /// Unique identifier of the call.
         /// </summary>
         [JsonPropertyName("callId")]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingDisplayName.
+        /// Display name for the call recording.
         /// </summary>
         [JsonPropertyName("callRecordingDisplayName")]
         public string CallRecordingDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingDuration.
+        /// Duration of the call recording.
         /// </summary>
         [JsonPropertyName("callRecordingDuration")]
         public Duration CallRecordingDuration { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingStatus.
+        /// Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("callRecordingStatus")]
         public CallRecordingStatus? CallRecordingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets callRecordingUrl.
+        /// Call recording URL.
         /// </summary>
         [JsonPropertyName("callRecordingUrl")]
         public string CallRecordingUrl { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets meetingOrganizer.
+        /// Organizer of the meeting.
         /// </summary>
         [JsonPropertyName("meetingOrganizer")]
         public IdentitySet MeetingOrganizer { get; set; }

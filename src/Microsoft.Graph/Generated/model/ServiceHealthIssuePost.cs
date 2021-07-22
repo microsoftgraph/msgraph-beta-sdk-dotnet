@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets createdDateTime.
+        /// The published time of the post.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The content of the service issue post.
         /// </summary>
         [JsonPropertyName("description")]
         public ItemBody Description { get; set; }
     
         /// <summary>
         /// Gets or sets postType.
+        /// The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("postType")]
         public PostType? PostType { get; set; }

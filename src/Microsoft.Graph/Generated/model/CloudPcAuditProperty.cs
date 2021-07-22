@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// Display name.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets newValue.
+        /// New value.
         /// </summary>
         [JsonPropertyName("newValue")]
         public string NewValue { get; set; }
     
         /// <summary>
         /// Gets or sets oldValue.
+        /// Old value.
         /// </summary>
         [JsonPropertyName("oldValue")]
         public string OldValue { get; set; }
