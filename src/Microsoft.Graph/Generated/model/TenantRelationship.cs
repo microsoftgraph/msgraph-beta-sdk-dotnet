@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed tenants.
+        /// The operations available to interact with the multi-tenant management platform.
         /// </summary>
         [JsonPropertyName("managedTenants")]
         public Microsoft.Graph.ManagedTenants.ManagedTenant ManagedTenants { get; set; }

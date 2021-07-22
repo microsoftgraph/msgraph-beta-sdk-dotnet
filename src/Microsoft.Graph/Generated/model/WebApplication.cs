@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> RedirectUris { get; set; }
     
         /// <summary>
+        /// Gets or sets redirectUriSettings.
+        /// </summary>
+        [JsonPropertyName("redirectUriSettings")]
+        public IEnumerable<RedirectUriSettings> RedirectUriSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

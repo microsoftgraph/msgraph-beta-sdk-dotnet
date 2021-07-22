@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentCategory.
+        /// Enumeration value that indicates the media content category.
         /// </summary>
         [JsonPropertyName("contentCategory")]
         public MediaSourceContentCategory? ContentCategory { get; set; }

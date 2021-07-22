@@ -22,18 +22,21 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets statuses.
+        /// The collection of deployment status for each instance of a management action. Optional.
         /// </summary>
         [JsonPropertyName("statuses")]
         public IEnumerable<ManagementActionDeploymentStatus> Statuses { get; set; }
     
         /// <summary>
         /// Gets or sets tenant group id.
+        /// The identifier for the tenant group that is associated with the management action. Required. Read-only.
         /// </summary>
         [JsonPropertyName("tenantGroupId")]
         public string TenantGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

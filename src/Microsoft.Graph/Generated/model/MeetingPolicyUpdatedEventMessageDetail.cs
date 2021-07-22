@@ -29,18 +29,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets meetingChatEnabled.
+        /// Represents whether the meeting chat is enabled or not.
         /// </summary>
         [JsonPropertyName("meetingChatEnabled")]
         public bool? MeetingChatEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets meetingChatId.
+        /// Unique identifier of the meeting chat.
         /// </summary>
         [JsonPropertyName("meetingChatId")]
         public string MeetingChatId { get; set; }

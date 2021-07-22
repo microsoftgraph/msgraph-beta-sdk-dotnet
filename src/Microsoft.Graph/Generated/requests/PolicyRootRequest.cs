@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.ActivityBasedTimeoutPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
                 }
+                if (policyRootToInitialize.AppManagementPolicies != null && policyRootToInitialize.AppManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.AppManagementPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.AppManagementPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    policyRootToInitialize.AppManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+                }
                 if (policyRootToInitialize.AuthorizationPolicy != null && policyRootToInitialize.AuthorizationPolicy.CurrentPage != null)
                 {
                     policyRootToInitialize.AuthorizationPolicy.InitializeNextPageRequest(this.Client, policyRootToInitialize.AuthorizationPolicyNextLink);
@@ -299,6 +305,18 @@ namespace Microsoft.Graph
                     policyRootToInitialize.ConditionalAccessPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ConditionalAccessPoliciesNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.ConditionalAccessPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+                }
+                if (policyRootToInitialize.MobileAppManagementPolicies != null && policyRootToInitialize.MobileAppManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.MobileAppManagementPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.MobileAppManagementPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    policyRootToInitialize.MobileAppManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+                }
+                if (policyRootToInitialize.MobileDeviceManagementPolicies != null && policyRootToInitialize.MobileDeviceManagementPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.MobileDeviceManagementPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.MobileDeviceManagementPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    policyRootToInitialize.MobileDeviceManagementPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
                 }
                 if (policyRootToInitialize.RoleManagementPolicies != null && policyRootToInitialize.RoleManagementPolicies.CurrentPage != null)
                 {

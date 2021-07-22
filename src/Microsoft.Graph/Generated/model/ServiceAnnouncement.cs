@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets health overviews.
+        /// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// </summary>
         [JsonPropertyName("healthOverviews")]
         public IServiceAnnouncementHealthOverviewsCollectionPage HealthOverviews { get; set; }
@@ -34,6 +35,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets issues.
+        /// A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// </summary>
         [JsonPropertyName("issues")]
         public IServiceAnnouncementIssuesCollectionPage Issues { get; set; }
@@ -46,6 +48,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets messages.
+        /// A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
         /// </summary>
         [JsonPropertyName("messages")]
         public IServiceAnnouncementMessagesCollectionPage Messages { get; set; }

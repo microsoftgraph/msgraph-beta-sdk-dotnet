@@ -142,7 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is sealed.
-        /// Specifies whether column can be changed.
+        /// Specifies whether the column can be changed.
         /// </summary>
         [JsonPropertyName("isSealed")]
         public bool? IsSealed { get; set; }
@@ -177,7 +177,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets propagate changes.
-        /// If 'True' changes to this column will be propagated to lists that implement the column.
+        /// If true, changes to this column will be propagated to lists that implement the column.
         /// </summary>
         [JsonPropertyName("propagateChanges")]
         public bool? PropagateChanges { get; set; }
@@ -191,7 +191,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets required.
-        /// Specifies whether the column value is not optional.
+        /// Specifies whether the column value isn't optional.
         /// </summary>
         [JsonPropertyName("required")]
         public bool? Required { get; set; }
@@ -219,7 +219,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// For site columns, the type of column. Read-only
+        /// For site columns, the type of column. Read-only.
         /// </summary>
         [JsonPropertyName("type")]
         public ColumnTypes? Type { get; set; }

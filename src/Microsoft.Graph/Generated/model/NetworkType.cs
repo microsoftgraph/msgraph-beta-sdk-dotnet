@@ -40,14 +40,14 @@ namespace Microsoft.Graph
         Trusted = 3,
 	
         /// <summary>
-        /// Unknown Future Value
-        /// </summary>
-        UnknownFutureValue = 5,
-	
-        /// <summary>
         /// Trusted Named Location
         /// </summary>
         TrustedNamedLocation = 4,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 5,
 	
     }
 }

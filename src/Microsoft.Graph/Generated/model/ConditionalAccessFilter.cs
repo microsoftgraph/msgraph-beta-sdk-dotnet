@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets mode.
+        /// Mode to use for the filter. Possible values are include or exclude.
         /// </summary>
         [JsonPropertyName("mode")]
         public FilterMode? Mode { get; set; }
     
         /// <summary>
         /// Gets or sets rule.
+        /// Rule syntax is similar to that used for membership rules for groups in Azure AD. For details, see rules with multiple expressions
         /// </summary>
         [JsonPropertyName("rule")]
         public string Rule { get; set; }

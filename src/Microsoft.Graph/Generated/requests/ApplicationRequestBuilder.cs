@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AppManagementPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder AppManagementPolicies
+        {
+            get
+            {
+                return new ApplicationAppManagementPoliciesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("appManagementPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CreatedOnBehalfOf.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>
@@ -158,6 +170,30 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for ApplicationSetVerifiedPublisher.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationSetVerifiedPublisherRequestBuilder"/>.</returns>
+        public IApplicationSetVerifiedPublisherRequestBuilder SetVerifiedPublisher(
+            string verifiedPublisherId)
+        {
+            return new ApplicationSetVerifiedPublisherRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setVerifiedPublisher"),
+                this.Client,
+                verifiedPublisherId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ApplicationUnsetVerifiedPublisher.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationUnsetVerifiedPublisherRequestBuilder"/>.</returns>
+        public IApplicationUnsetVerifiedPublisherRequestBuilder UnsetVerifiedPublisher()
+        {
+            return new ApplicationUnsetVerifiedPublisherRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unsetVerifiedPublisher"),
+                this.Client);
+        }
+
         /// <summary>
         /// Gets the request builder for ApplicationAddKey.
         /// </summary>

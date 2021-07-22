@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets chatId.
+        /// The chat's identifier.
         /// </summary>
         [JsonPropertyName("chatId")]
         public string ChatId { get; set; }

@@ -52,6 +52,18 @@ namespace Microsoft.Graph
         public string ActivityBasedTimeoutPoliciesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets app management policies.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies")]
+        public IPolicyRootAppManagementPoliciesCollectionPage AppManagementPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets appManagementPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies@odata.nextLink")]
+        public string AppManagementPoliciesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets authorization policy.
         /// </summary>
         [JsonPropertyName("authorizationPolicy")]
@@ -74,6 +86,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("claimsMappingPolicies@odata.nextLink")]
         public string ClaimsMappingPoliciesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets default app management policy.
+        /// </summary>
+        [JsonPropertyName("defaultAppManagementPolicy")]
+        public TenantAppManagementPolicy DefaultAppManagementPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
@@ -170,6 +188,30 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("identitySecurityDefaultsEnforcementPolicy")]
         public IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mobile app management policies.
+        /// </summary>
+        [JsonPropertyName("mobileAppManagementPolicies")]
+        public IPolicyRootMobileAppManagementPoliciesCollectionPage MobileAppManagementPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileAppManagementPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileAppManagementPolicies@odata.nextLink")]
+        public string MobileAppManagementPoliciesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets mobile device management policies.
+        /// </summary>
+        [JsonPropertyName("mobileDeviceManagementPolicies")]
+        public IPolicyRootMobileDeviceManagementPoliciesCollectionPage MobileDeviceManagementPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets mobileDeviceManagementPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("mobileDeviceManagementPolicies@odata.nextLink")]
+        public string MobileDeviceManagementPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role management policies.

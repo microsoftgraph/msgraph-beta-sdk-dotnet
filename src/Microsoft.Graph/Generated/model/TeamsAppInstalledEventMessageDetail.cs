@@ -29,18 +29,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
     
         /// <summary>
         /// Gets or sets teamsAppDisplayName.
+        /// Display name of the teamsApp.
         /// </summary>
         [JsonPropertyName("teamsAppDisplayName")]
         public string TeamsAppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets teamsAppId.
+        /// Unique identifier of the teamsApp.
         /// </summary>
         [JsonPropertyName("teamsAppId")]
         public string TeamsAppId { get; set; }

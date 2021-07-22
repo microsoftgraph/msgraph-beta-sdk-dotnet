@@ -23,6 +23,7 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets authorizedAppIds.
+        /// A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
         /// </summary>
         [JsonPropertyName("authorizedAppIds")]
         public IEnumerable<string> AuthorizedAppIds { get; set; }

@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets account enabled.
-        /// true if the service principal account is enabled; otherwise, false.
+        /// true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, NOT, in).
         /// </summary>
         [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alternative names.
-        /// Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities.
+        /// Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, NOT, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("alternativeNames")]
         public IEnumerable<string> AlternativeNames { get; set; }
@@ -79,21 +79,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets application template id.
-        /// Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only.
+        /// Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
         /// </summary>
         [JsonPropertyName("applicationTemplateId")]
         public string ApplicationTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets app owner organization id.
-        /// Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.
+        /// Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
         /// </summary>
         [JsonPropertyName("appOwnerOrganizationId")]
         public Guid? AppOwnerOrganizationId { get; set; }
     
         /// <summary>
         /// Gets or sets app role assignment required.
-        /// Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable.
+        /// Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
         /// </summary>
         [JsonPropertyName("appRoleAssignmentRequired")]
         public bool? AppRoleAssignmentRequired { get; set; }
@@ -107,21 +107,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters.
+        /// Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets disabled by microsoft status.
-        /// Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).
+        /// Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
         /// </summary>
         [JsonPropertyName("disabledByMicrosoftStatus")]
         public string DisabledByMicrosoftStatus { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the service principal.
+        /// The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -142,14 +142,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets info.
-        /// Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps.
+        /// Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le).
         /// </summary>
         [JsonPropertyName("info")]
         public InformationalUrl Info { get; set; }
     
         /// <summary>
         /// Gets or sets key credentials.
-        /// The collection of key credentials associated with the service principal. Not nullable.
+        /// The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, NOT, ge, le).
         /// </summary>
         [JsonPropertyName("keyCredentials")]
         public IEnumerable<KeyCredential> KeyCredentials { get; set; }
@@ -246,7 +246,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service principal names.
-        /// Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.
+        /// Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, NOT, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("servicePrincipalNames")]
         public IEnumerable<string> ServicePrincipalNames { get; set; }
@@ -267,7 +267,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tags.
-        /// Custom strings that can be used to categorize and identify the service principal. Not nullable.
+        /// Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
@@ -280,8 +280,20 @@ namespace Microsoft.Graph
         public Guid? TokenEncryptionKeyId { get; set; }
     
         /// <summary>
+        /// Gets or sets app management policies.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies")]
+        public IServicePrincipalAppManagementPoliciesCollectionWithReferencesPage AppManagementPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets appManagementPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("appManagementPolicies@odata.nextLink")]
+        public string AppManagementPoliciesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets app role assigned to.
-        /// App role assignments for this app or service, granted to users, groups, and other service principals.
+        /// App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
         /// </summary>
         [JsonPropertyName("appRoleAssignedTo")]
         public IServicePrincipalAppRoleAssignedToCollectionPage AppRoleAssignedTo { get; set; }
@@ -294,7 +306,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app role assignments.
-        /// App role assignment for another app or service, granted to this service principal.
+        /// App role assignment for another app or service, granted to this service principal. Supports $expand.
         /// </summary>
         [JsonPropertyName("appRoleAssignments")]
         public IServicePrincipalAppRoleAssignmentsCollectionPage AppRoleAssignments { get; set; }
@@ -307,7 +319,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets claims mapping policies.
-        /// The claimsMappingPolicies assigned to this service principal.
+        /// The claimsMappingPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         [JsonPropertyName("claimsMappingPolicies")]
         public IServicePrincipalClaimsMappingPoliciesCollectionWithReferencesPage ClaimsMappingPolicies { get; set; }
@@ -333,7 +345,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets delegated permission classifications.
-        /// The permission classifications for delegated permissions exposed by the app that this service principal represents.
+        /// The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
         /// </summary>
         [JsonPropertyName("delegatedPermissionClassifications")]
         public IServicePrincipalDelegatedPermissionClassificationsCollectionPage DelegatedPermissionClassifications { get; set; }
@@ -359,7 +371,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
-        /// The homeRealmDiscoveryPolicies assigned to this service principal.
+        /// The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
         /// </summary>
         [JsonPropertyName("homeRealmDiscoveryPolicies")]
         public IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesPage HomeRealmDiscoveryPolicies { get; set; }
@@ -384,7 +396,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member of.
-        /// Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.
+        /// Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IServicePrincipalMemberOfCollectionWithReferencesPage MemberOf { get; set; }
@@ -410,7 +422,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owned objects.
-        /// Directory objects that are owned by this service principal. Read-only. Nullable.
+        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("ownedObjects")]
         public IServicePrincipalOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
@@ -423,7 +435,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
+        /// Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("owners")]
         public IServicePrincipalOwnersCollectionWithReferencesPage Owners { get; set; }
@@ -436,7 +448,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token issuance policies.
-        /// The tokenIssuancePolicies assigned to this service principal.
+        /// The tokenIssuancePolicies assigned to this service principal. Supports $expand.
         /// </summary>
         [JsonPropertyName("tokenIssuancePolicies")]
         public IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesPage TokenIssuancePolicies { get; set; }
@@ -449,7 +461,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token lifetime policies.
-        /// The tokenLifetimePolicies assigned to this service principal.
+        /// The tokenLifetimePolicies assigned to this service principal. Supports $expand.
         /// </summary>
         [JsonPropertyName("tokenLifetimePolicies")]
         public IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }

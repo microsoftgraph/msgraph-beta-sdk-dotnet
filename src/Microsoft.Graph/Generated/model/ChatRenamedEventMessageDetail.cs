@@ -29,18 +29,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets chatDisplayName.
+        /// The updated name of the chat.
         /// </summary>
         [JsonPropertyName("chatDisplayName")]
         public string ChatDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets chatId.
+        /// Unique identifier of the chat.
         /// </summary>
         [JsonPropertyName("chatId")]
         public string ChatId { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }

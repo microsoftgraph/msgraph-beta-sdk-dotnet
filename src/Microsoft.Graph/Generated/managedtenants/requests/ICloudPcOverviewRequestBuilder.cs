@@ -16,20 +16,20 @@ namespace Microsoft.Graph.ManagedTenants
     /// <summary>
     /// The interface ICloudPcOverviewRequestBuilder.
     /// </summary>
-    public partial interface ICloudPcOverviewRequestBuilder : Microsoft.Graph.IBaseRequestBuilder
+    public partial interface ICloudPcOverviewRequestBuilder : Microsoft.Graph.IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        ICloudPcOverviewRequest Request();
+        new ICloudPcOverviewRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        ICloudPcOverviewRequest Request(IEnumerable<Microsoft.Graph.Option> options);
+        new ICloudPcOverviewRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
     }
 }

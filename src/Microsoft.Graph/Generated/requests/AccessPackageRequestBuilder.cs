@@ -85,8 +85,53 @@ namespace Microsoft.Graph
                 return new AccessPackageAccessPackageResourceRoleScopesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageResourceRoleScopes"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackagesIncompatibleWith.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAccessPackagesIncompatibleWithCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IAccessPackageAccessPackagesIncompatibleWithCollectionWithReferencesRequestBuilder AccessPackagesIncompatibleWith
+        {
+            get
+            {
+                return new AccessPackageAccessPackagesIncompatibleWithCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("accessPackagesIncompatibleWith"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for IncompatibleAccessPackages.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageIncompatibleAccessPackagesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IAccessPackageIncompatibleAccessPackagesCollectionWithReferencesRequestBuilder IncompatibleAccessPackages
+        {
+            get
+            {
+                return new AccessPackageIncompatibleAccessPackagesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("incompatibleAccessPackages"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for IncompatibleGroups.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageIncompatibleGroupsCollectionRequestBuilder"/>.</returns>
+        public IAccessPackageIncompatibleGroupsCollectionRequestBuilder IncompatibleGroups
+        {
+            get
+            {
+                return new AccessPackageIncompatibleGroupsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("incompatibleGroups"), this.Client);
+            }
+        }
     
-        
+        /// <summary>
+        /// Gets the request builder for AccessPackageGetApplicablePolicyRequirements.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageGetApplicablePolicyRequirementsRequestBuilder"/>.</returns>
+        public IAccessPackageGetApplicablePolicyRequirementsRequestBuilder GetApplicablePolicyRequirements()
+        {
+            return new AccessPackageGetApplicablePolicyRequirementsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getApplicablePolicyRequirements"),
+                this.Client);
+        }
     
     }
 }

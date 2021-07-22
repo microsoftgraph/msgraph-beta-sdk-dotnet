@@ -51,7 +51,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identity providers.
-        /// The identity providers included in the user flow.
         /// </summary>
         [JsonPropertyName("identityProviders")]
         public IB2cIdentityUserFlowIdentityProvidersCollectionWithReferencesPage IdentityProviders { get; set; }

@@ -28,6 +28,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connected organization id.
+        /// The identifier of the connected organization of the subject.
         /// </summary>
         [JsonPropertyName("connectedOrganizationId")]
         public string ConnectedOrganizationId { get; set; }
@@ -48,7 +49,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets object id.
-        /// The object ID of the subject.
+        /// The object identifier of the subject. null if the subject is not yet a user in the tenant.
         /// </summary>
         [JsonPropertyName("objectId")]
         public string ObjectId { get; set; }
@@ -75,6 +76,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connected organization.
+        /// The connected organization of the subject. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("connectedOrganization")]
         public ConnectedOrganization ConnectedOrganization { get; set; }

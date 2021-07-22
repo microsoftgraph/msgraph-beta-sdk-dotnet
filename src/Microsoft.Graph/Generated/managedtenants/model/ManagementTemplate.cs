@@ -23,30 +23,35 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets category.
+        /// The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.
         /// </summary>
         [JsonPropertyName("category")]
         public ManagementCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description for the management template. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name for the management template. Required. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets parameters.
+        /// The collection of parameters used by the management template. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("parameters")]
         public IEnumerable<TemplateParameter> Parameters { get; set; }
     
         /// <summary>
         /// Gets or sets workload actions.
+        /// The collection of workload actions associated with the management template. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("workloadActions")]
         public IEnumerable<WorkloadAction> WorkloadActions { get; set; }

@@ -10,11 +10,13 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum IdentitySourceType.
     /// </summary>
+    [Obsolete("The property named 'IdentitySource' will be deprecated in September 2021, please see the updated aclType usage.")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum IdentitySourceType
     {

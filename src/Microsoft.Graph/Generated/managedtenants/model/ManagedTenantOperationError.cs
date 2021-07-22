@@ -23,12 +23,14 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets error.
+        /// The error message for the exception.
         /// </summary>
         [JsonPropertyName("error")]
         public string Error { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
+        /// The Azure Active Directory tenant identifier for the managed tenant.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

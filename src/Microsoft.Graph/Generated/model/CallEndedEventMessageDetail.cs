@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CallEndedEventMessageDetail.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<CallEndedEventMessageDetail>))]
     public partial class CallEndedEventMessageDetail : EventMessageDetail
     {
         /// <summary>
@@ -29,24 +30,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets callDuration.
+        /// Duration of the call.
         /// </summary>
         [JsonPropertyName("callDuration")]
         public Duration CallDuration { get; set; }
     
         /// <summary>
+        /// Gets or sets callEventType.
+        /// Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("callEventType")]
+        public TeamworkCallEventType? CallEventType { get; set; }
+    
+        /// <summary>
         /// Gets or sets callId.
+        /// Unique identifier of the call.
         /// </summary>
         [JsonPropertyName("callId")]
         public string CallId { get; set; }
     
         /// <summary>
         /// Gets or sets callParticipants.
+        /// List of call participants.
         /// </summary>
         [JsonPropertyName("callParticipants")]
         public IEnumerable<CallParticipantInfo> CallParticipants { get; set; }
     
         /// <summary>
         /// Gets or sets initiator.
+        /// Initiator of the event.
         /// </summary>
         [JsonPropertyName("initiator")]
         public IdentitySet Initiator { get; set; }
