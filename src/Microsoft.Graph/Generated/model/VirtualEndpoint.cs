@@ -48,7 +48,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device images.
-        /// The image resource on cloud PC.
+        /// The image resource on Cloud PC.
         /// </summary>
         [JsonPropertyName("deviceImages")]
         public IVirtualEndpointDeviceImagesCollectionPage DeviceImages { get; set; }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises connections.
-        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
+        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
         /// </summary>
         [JsonPropertyName("onPremisesConnections")]
         public IVirtualEndpointOnPremisesConnectionsCollectionPage OnPremisesConnections { get; set; }

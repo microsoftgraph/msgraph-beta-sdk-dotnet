@@ -44,21 +44,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets image id.
-        /// The ID of the OS image you want to provision on cloud PCs. The format for a gallery type image is: {publisher_offer_sku}.
+        /// The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}.
         /// </summary>
         [JsonPropertyName("imageId")]
         public string ImageId { get; set; }
     
         /// <summary>
         /// Gets or sets image type.
-        /// The type of OS image (custom or gallery) you want to provision on cloud PCs. Possible values are: gallery, custom.
+        /// The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.
         /// </summary>
         [JsonPropertyName("imageType")]
         public CloudPcProvisioningPolicyImageType? ImageType { get; set; }
     
         /// <summary>
         /// Gets or sets on premises connection id.
-        /// The ID of the cloudPcOnPremisesConnection. To ensure that cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the cloud PC service.
+        /// The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
         /// </summary>
         [JsonPropertyName("onPremisesConnectionId")]
         public string OnPremisesConnectionId { get; set; }
