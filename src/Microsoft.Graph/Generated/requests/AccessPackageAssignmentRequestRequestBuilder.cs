@@ -96,6 +96,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.cancel"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentRequestReprocess.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentRequestReprocessRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentRequestReprocessRequestBuilder Reprocess()
+        {
+            return new AccessPackageAssignmentRequestReprocessRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reprocess"),
+                this.Client);
+        }
     
     }
 }

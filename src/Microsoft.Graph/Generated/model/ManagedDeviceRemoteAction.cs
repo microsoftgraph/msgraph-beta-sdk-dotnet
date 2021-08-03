@@ -69,5 +69,25 @@ namespace Microsoft.Graph
         /// </summary>
         SyncDevice = 9,
 	
+        /// <summary>
+        /// Deprovision
+        /// </summary>
+        Deprovision = 10,
+	
+        /// <summary>
+        /// Disable
+        /// </summary>
+        Disable = 11,
+	
+        /// <summary>
+        /// Reenable
+        /// </summary>
+        Reenable = 12,
+	
+        /// <summary>
+        /// Move Device To Organizational Unit
+        /// </summary>
+        MoveDeviceToOrganizationalUnit = 13,
+	
     }
 }

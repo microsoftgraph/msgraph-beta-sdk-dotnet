@@ -416,6 +416,18 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionRequestBuilder"/>.</returns>
@@ -552,6 +564,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder"/>.</returns>
         IDeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder UserExperienceAnalyticsScoreHistory { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric { get; }
 
         /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsWorkFromAnywhereMetrics.

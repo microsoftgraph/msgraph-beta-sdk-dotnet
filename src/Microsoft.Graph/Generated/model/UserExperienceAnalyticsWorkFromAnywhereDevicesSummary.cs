@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public UserExperienceAnalyticsAutopilotDevicesSummary AutopilotDevicesSummary { get; set; }
     
         /// <summary>
+        /// Gets or sets cloudIdentityDevicesSummary.
+        /// The user experience analytics work from anywhere Cloud Identity devices summary.
+        /// </summary>
+        [JsonPropertyName("cloudIdentityDevicesSummary")]
+        public UserExperienceAnalyticsCloudIdentityDevicesSummary CloudIdentityDevicesSummary { get; set; }
+    
+        /// <summary>
         /// Gets or sets cloudManagementDevicesSummary.
         /// The user experience work from anywhere Cloud management devices summary.
         /// </summary>

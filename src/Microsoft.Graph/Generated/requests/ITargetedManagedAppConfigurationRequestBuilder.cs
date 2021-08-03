@@ -61,7 +61,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITargetedManagedAppConfigurationTargetAppsRequestBuilder"/>.</returns>
         ITargetedManagedAppConfigurationTargetAppsRequestBuilder TargetApps(
-            IEnumerable<ManagedMobileApp> apps = null);
+            IEnumerable<ManagedMobileApp> apps = null,
+            TargetedManagedAppGroupType? appGroupType = null);
     
     }
 }

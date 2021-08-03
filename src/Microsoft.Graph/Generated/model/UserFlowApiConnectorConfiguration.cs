@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         public IdentityApiConnector PostFederationSignup { get; set; }
     
         /// <summary>
+        /// Gets or sets preTokenIssuance.
+        /// </summary>
+        [JsonPropertyName("preTokenIssuance")]
+        public IdentityApiConnector PreTokenIssuance { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

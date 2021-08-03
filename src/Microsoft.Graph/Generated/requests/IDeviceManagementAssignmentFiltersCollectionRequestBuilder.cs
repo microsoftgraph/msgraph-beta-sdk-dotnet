@@ -51,6 +51,13 @@ namespace Microsoft.Graph
             DeviceAndAppManagementAssignmentFilter deviceAndAppManagementAssignmentFilter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceAndAppManagementAssignmentFilterGetPlatformSupportedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterGetPlatformSupportedPropertiesRequestBuilder"/>.</returns>
+        IDeviceAndAppManagementAssignmentFilterGetPlatformSupportedPropertiesRequestBuilder GetPlatformSupportedProperties(
+            DevicePlatformType platform);
+
+        /// <summary>
         /// Gets the request builder for DeviceAndAppManagementAssignmentFilterGetState.
         /// </summary>
         /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterGetStateRequestBuilder"/>.</returns>

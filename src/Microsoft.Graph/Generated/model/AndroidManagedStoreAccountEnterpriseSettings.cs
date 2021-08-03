@@ -78,6 +78,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets managed google play initial scope tag ids.
+        /// Initial scope tags for MGP apps
+        /// </summary>
+        [JsonPropertyName("managedGooglePlayInitialScopeTagIds")]
+        public IEnumerable<string> ManagedGooglePlayInitialScopeTagIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets owner organization name.
         /// Organization name used when onboarding Android Enterprise
         /// </summary>

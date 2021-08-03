@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets passwordCredentials.
+        /// Collection of password restrictions settings to be applied to an application or service principal
         /// </summary>
         [JsonPropertyName("passwordCredentials")]
         public IEnumerable<PasswordCredentialConfiguration> PasswordCredentials { get; set; }

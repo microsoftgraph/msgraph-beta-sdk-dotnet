@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets caller.
+        /// The caller for the policy rule target. Allowed values are: None, Admin, EndUser.
         /// </summary>
         [JsonPropertyName("caller")]
         public string Caller { get; set; }
     
         /// <summary>
         /// Gets or sets enforcedSettings.
+        /// The list of settings which are enforced and cannot be overridden by child scopes. Use All for all settings.
         /// </summary>
         [JsonPropertyName("enforcedSettings")]
         public IEnumerable<string> EnforcedSettings { get; set; }
     
         /// <summary>
         /// Gets or sets inheritableSettings.
+        /// The list of settings which can be inherited by child scopes. Use All for all settings.
         /// </summary>
         [JsonPropertyName("inheritableSettings")]
         public IEnumerable<string> InheritableSettings { get; set; }
     
         /// <summary>
         /// Gets or sets level.
+        /// The level for the policy rule target. Allowed values are: Eligibility, Assignment.
         /// </summary>
         [JsonPropertyName("level")]
         public string Level { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
+        /// The operations for policy rule target. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
         /// </summary>
         [JsonPropertyName("operations")]
         public IEnumerable<string> Operations { get; set; }

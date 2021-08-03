@@ -22,56 +22,56 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets cc recipients.
-        /// The Cc: recipients for the thread.
+        /// The Cc: recipients for the thread. Returned only on $select.
         /// </summary>
         [JsonPropertyName("ccRecipients")]
         public IEnumerable<Recipient> CcRecipients { get; set; }
     
         /// <summary>
         /// Gets or sets has attachments.
-        /// Indicates whether any of the posts within this thread has at least one attachment.
+        /// Indicates whether any of the posts within this thread has at least one attachment. Returned by default.
         /// </summary>
         [JsonPropertyName("hasAttachments")]
         public bool? HasAttachments { get; set; }
     
         /// <summary>
         /// Gets or sets is locked.
-        /// Indicates if the thread is locked.
+        /// Indicates if the thread is locked. Returned by default.
         /// </summary>
         [JsonPropertyName("isLocked")]
         public bool? IsLocked { get; set; }
     
         /// <summary>
         /// Gets or sets last delivered date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default.
         /// </summary>
         [JsonPropertyName("lastDeliveredDateTime")]
         public DateTimeOffset? LastDeliveredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets preview.
-        /// A short summary from the body of the latest post in this conversation.
+        /// A short summary from the body of the latest post in this conversation. Returned by default.
         /// </summary>
         [JsonPropertyName("preview")]
         public string Preview { get; set; }
     
         /// <summary>
         /// Gets or sets topic.
-        /// The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
+        /// The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.
         /// </summary>
         [JsonPropertyName("topic")]
         public string Topic { get; set; }
     
         /// <summary>
         /// Gets or sets to recipients.
-        /// The To: recipients for the thread.
+        /// The To: recipients for the thread. Returned only on $select.
         /// </summary>
         [JsonPropertyName("toRecipients")]
         public IEnumerable<Recipient> ToRecipients { get; set; }
     
         /// <summary>
         /// Gets or sets unique senders.
-        /// All the users that sent a message to this thread.
+        /// All the users that sent a message to this thread. Returned by default.
         /// </summary>
         [JsonPropertyName("uniqueSenders")]
         public IEnumerable<string> UniqueSenders { get; set; }

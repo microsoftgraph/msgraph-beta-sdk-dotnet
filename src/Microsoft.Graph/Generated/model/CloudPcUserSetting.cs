@@ -43,14 +43,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local admin enabled.
-        /// Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the cloud PC device.
+        /// Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.
         /// </summary>
         [JsonPropertyName("localAdminEnabled")]
         public bool? LocalAdminEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets self service enabled.
-        /// Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the cloud PC through the end user portal.
+        /// Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
         /// </summary>
         [JsonPropertyName("selfServiceEnabled")]
         public bool? SelfServiceEnabled { get; set; }

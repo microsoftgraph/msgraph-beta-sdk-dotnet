@@ -59,5 +59,10 @@ namespace Microsoft.Graph
         /// </summary>
         Aes192Gcm = 7,
 	
+        /// <summary>
+        /// Cha Cha20Poly1305
+        /// </summary>
+        ChaCha20Poly1305 = 8,
+	
     }
 }

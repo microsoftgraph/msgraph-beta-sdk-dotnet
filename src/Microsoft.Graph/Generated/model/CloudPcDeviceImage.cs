@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the image on cloud PC. Possible values are: pending, ready, failed.
+        /// The status of the image on Cloud PC. Possible values are: pending, ready, failed.
         /// </summary>
         [JsonPropertyName("status")]
         public CloudPcDeviceImageStatus? Status { get; set; }

@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="apps">A apps parameter for the OData method call.</param>
+        /// <param name="appGroupType">A appGroupType parameter for the OData method call.</param>
         public TargetedManagedAppConfigurationTargetAppsRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            IEnumerable<ManagedMobileApp> apps)
+            IEnumerable<ManagedMobileApp> apps,
+            TargetedManagedAppGroupType? appGroupType)
             : base(requestUrl, client)
         {
             this.SetParameter("apps", apps, true);
+            this.SetParameter("appGroupType", appGroupType, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("apps"))
             {
                 request.RequestBody.Apps = this.GetParameter<IEnumerable<ManagedMobileApp>>("apps");
+            }
+
+            if (this.HasParameter("appGroupType"))
+            {
+                request.RequestBody.AppGroupType = this.GetParameter<TargetedManagedAppGroupType?>("appGroupType");
             }
 
             return request;

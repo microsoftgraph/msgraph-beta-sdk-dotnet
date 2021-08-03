@@ -90,6 +90,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets user flows.
         /// </summary>
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs.")]
         [JsonPropertyName("userFlows")]
         public IIdentityContainerUserFlowsCollectionPage UserFlows { get; set; }
 

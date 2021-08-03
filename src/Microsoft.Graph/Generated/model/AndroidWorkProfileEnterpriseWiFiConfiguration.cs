@@ -79,6 +79,13 @@ namespace Microsoft.Graph
         public WiFiProxySetting? ProxySettings { get; set; }
     
         /// <summary>
+        /// Gets or sets trusted server certificate names.
+        /// Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
+        /// </summary>
+        [JsonPropertyName("trustedServerCertificateNames")]
+        public IEnumerable<string> TrustedServerCertificateNames { get; set; }
+    
+        /// <summary>
         /// Gets or sets identity certificate for client authentication.
         /// Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication). This is the certificate presented by client to the Wi-Fi endpoint. The authentication server sitting behind the Wi-Fi endpoint must accept this certificate to successfully establish a Wi-Fi connection.
         /// </summary>

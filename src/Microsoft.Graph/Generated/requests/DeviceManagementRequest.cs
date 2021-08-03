@@ -558,6 +558,18 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionNextLink);

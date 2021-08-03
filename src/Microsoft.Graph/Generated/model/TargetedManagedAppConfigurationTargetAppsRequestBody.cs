@@ -26,5 +26,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("apps")]
         public IEnumerable<ManagedMobileApp> Apps { get; set; }
     
+        /// <summary>
+        /// Gets or sets AppGroupType.
+        /// </summary>
+        [JsonPropertyName("appGroupType")]
+        public TargetedManagedAppGroupType? AppGroupType { get; set; }
+    
     }
 }

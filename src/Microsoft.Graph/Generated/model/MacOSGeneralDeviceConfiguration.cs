@@ -30,32 +30,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets adding game center friends blocked.
+        /// Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
+        /// </summary>
+        [JsonPropertyName("addingGameCenterFriendsBlocked")]
+        public bool? AddingGameCenterFriendsBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets air drop blocked.
         /// Indicates whether or not to allow AirDrop.
         /// </summary>
         [JsonPropertyName("airDropBlocked")]
         public bool? AirDropBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets air print blocked.
-        /// Indicates whether or not AirPrint is blocked (macOS 10.12 and later).
-        /// </summary>
-        [JsonPropertyName("airPrintBlocked")]
-        public bool? AirPrintBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets air print blocki beacon discovery.
-        /// Indicates whether or not iBeacon discovery of AirPrint printers is blocked. This prevents spurious AirPrint Bluetooth beacons from phishing for network traffic (macOS 10.3 and later).
-        /// </summary>
-        [JsonPropertyName("airPrintBlockiBeaconDiscovery")]
-        public bool? AirPrintBlockiBeaconDiscovery { get; set; }
-    
-        /// <summary>
-        /// Gets or sets air print force trusted tls.
-        /// Indicates if trusted certificates are required for TLS printing communication (macOS 10.13 and later).
-        /// </summary>
-        [JsonPropertyName("airPrintForceTrustedTLS")]
-        public bool? AirPrintForceTrustedTLS { get; set; }
     
         /// <summary>
         /// Gets or sets apple watch block auto unlock.
@@ -140,6 +126,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("emailInDomainSuffixes")]
         public IEnumerable<string> EmailInDomainSuffixes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets game center blocked.
+        /// Yes disables Game Center, and the Game Center icon is removed from the Home screen. Available for devices running macOS versions 10.13 and later.
+        /// </summary>
+        [JsonPropertyName("gameCenterBlocked")]
+        public bool? GameCenterBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets i cloud block activity continuation.
@@ -231,6 +224,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("keychainBlockCloudSync")]
         public bool? KeychainBlockCloudSync { get; set; }
+    
+        /// <summary>
+        /// Gets or sets multiplayer gaming blocked.
+        /// Yes prevents multiplayer gaming when using Game Center. Available for devices running macOS versions 10.13 and later.
+        /// </summary>
+        [JsonPropertyName("multiplayerGamingBlocked")]
+        public bool? MultiplayerGamingBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets password block air drop sharing.
@@ -385,6 +385,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("updateDelayPolicy")]
         public MacOSSoftwareUpdateDelayPolicy? UpdateDelayPolicy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wallpaper modification blocked.
+        /// Yes prevents the wallpaper from being changed. Available for devices running macOS versions 10.13 and later.
+        /// </summary>
+        [JsonPropertyName("wallpaperModificationBlocked")]
+        public bool? WallpaperModificationBlocked { get; set; }
     
     }
 }

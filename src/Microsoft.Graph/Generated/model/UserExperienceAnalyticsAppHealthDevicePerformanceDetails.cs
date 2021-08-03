@@ -28,6 +28,20 @@ namespace Microsoft.Graph
         public string AppDisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets app publisher.
+        /// The publisher of the application.
+        /// </summary>
+        [JsonPropertyName("appPublisher")]
+        public string AppPublisher { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app version.
+        /// The version of the application.
+        /// </summary>
+        [JsonPropertyName("appVersion")]
+        public string AppVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets device display name.
         /// The name of the device.
         /// </summary>

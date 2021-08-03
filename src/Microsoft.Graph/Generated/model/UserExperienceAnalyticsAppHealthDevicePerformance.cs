@@ -90,6 +90,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("meanTimeToFailureInMinutes")]
         public Int32? MeanTimeToFailureInMinutes { get; set; }
     
+        /// <summary>
+        /// Gets or sets processed date time.
+        /// The date and time when the statistics were last computed.
+        /// </summary>
+        [JsonPropertyName("processedDateTime")]
+        public DateTimeOffset? ProcessedDateTime { get; set; }
+    
     }
 }
 

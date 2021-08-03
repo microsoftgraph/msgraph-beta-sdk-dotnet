@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         public string PrincipalId { get; set; }
     
         /// <summary>
+        /// Gets or sets principal organization id.
+        /// </summary>
+        [JsonPropertyName("principalOrganizationId")]
+        public string PrincipalOrganizationId { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource scope.
         /// The scope at which the unifiedRoleAssignment applies. This is / for service-wide. DO NOT USE. This property will be deprecated soon.
         /// </summary>

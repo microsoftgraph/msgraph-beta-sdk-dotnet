@@ -149,12 +149,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Users.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceUsersCollectionRequestBuilder"/>.</returns>
-        public IManagedDeviceUsersCollectionRequestBuilder Users
+        /// <returns>The <see cref="IManagedDeviceUsersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IManagedDeviceUsersCollectionWithReferencesRequestBuilder Users
         {
             get
             {
-                return new ManagedDeviceUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("users"), this.Client);
+                return new ManagedDeviceUsersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("users"), this.Client);
             }
         }
 
@@ -273,6 +273,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceDeprovision.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeprovisionRequestBuilder"/>.</returns>
+        public IManagedDeviceDeprovisionRequestBuilder Deprovision(
+            string deprovisionReason)
+        {
+            return new ManagedDeviceDeprovisionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.deprovision"),
+                this.Client,
+                deprovisionReason);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceDisable.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDisableRequestBuilder"/>.</returns>
+        public IManagedDeviceDisableRequestBuilder Disable()
+        {
+            return new ManagedDeviceDisableRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.disable"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceDisableLostMode.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDisableLostModeRequestBuilder"/>.</returns>
@@ -352,6 +376,17 @@ namespace Microsoft.Graph
         {
             return new ManagedDeviceRecoverPasscodeRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.recoverPasscode"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceReenable.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceReenableRequestBuilder"/>.</returns>
+        public IManagedDeviceReenableRequestBuilder Reenable()
+        {
+            return new ManagedDeviceReenableRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reenable"),
                 this.Client);
         }
 

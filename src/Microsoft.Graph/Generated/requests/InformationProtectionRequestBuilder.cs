@@ -151,6 +151,36 @@ namespace Microsoft.Graph
                 buffer,
                 labelId);
         }
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionSignDigest.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionSignDigestRequestBuilder"/>.</returns>
+        public IInformationProtectionSignDigestRequestBuilder SignDigest(
+            byte[] digest)
+        {
+            return new InformationProtectionSignDigestRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.signDigest"),
+                this.Client,
+                digest);
+        }
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionVerifySignature.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionVerifySignatureRequestBuilder"/>.</returns>
+        public IInformationProtectionVerifySignatureRequestBuilder VerifySignature(
+            byte[] digest,
+            byte[] signature,
+            string signingKeyId)
+        {
+            return new InformationProtectionVerifySignatureRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.verifySignature"),
+                this.Client,
+                digest,
+                signature,
+                signingKeyId);
+        }
     
     }
 }

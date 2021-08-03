@@ -1304,6 +1304,13 @@ namespace Microsoft.Graph
         public bool? WiFiConnectOnlyToConfiguredNetworks { get; set; }
     
         /// <summary>
+        /// Gets or sets wi fi connect to allowed networks only forced.
+        /// Require devices to use Wi-Fi networks set up via configuration profiles. Available for devices running iOS and iPadOS versions 14.5 and later.
+        /// </summary>
+        [JsonPropertyName("wiFiConnectToAllowedNetworksOnlyForced")]
+        public bool? WiFiConnectToAllowedNetworksOnlyForced { get; set; }
+    
+        /// <summary>
         /// Gets or sets wifi power on forced.
         /// Indicates whether or not Wi-Fi remains on, even when device is in airplane mode. Available for devices running iOS and iPadOS, versions 13.0 and later.
         /// </summary>

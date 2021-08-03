@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Work From Anywhere Device.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsWorkFromAnywhereDevice>))]
     public partial class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity
     {
     
@@ -56,6 +57,13 @@ namespace Microsoft.Graph
         public bool? AzureAdRegistered { get; set; }
     
         /// <summary>
+        /// Gets or sets compliance policy set to intune.
+        /// The user experience work from anywhere device's compliancePolicySetToIntune.
+        /// </summary>
+        [JsonPropertyName("compliancePolicySetToIntune")]
+        public bool? CompliancePolicySetToIntune { get; set; }
+    
+        /// <summary>
         /// Gets or sets device name.
         /// The work from anywhere device's name.
         /// </summary>
@@ -84,6 +92,13 @@ namespace Microsoft.Graph
         public string Model { get; set; }
     
         /// <summary>
+        /// Gets or sets os check failed.
+        /// The user experience work from anywhere device, Is OS check failed for device to upgrade to the latest version of windows.
+        /// </summary>
+        [JsonPropertyName("osCheckFailed")]
+        public bool? OsCheckFailed { get; set; }
+    
+        /// <summary>
         /// Gets or sets os description.
         /// The user experience work from anywhere device's OS Description.
         /// </summary>
@@ -98,6 +113,13 @@ namespace Microsoft.Graph
         public string OsVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets other workloads set to intune.
+        /// The user experience work from anywhere device's otherWorkloadsSetToIntune.
+        /// </summary>
+        [JsonPropertyName("otherWorkloadsSetToIntune")]
+        public bool? OtherWorkloadsSetToIntune { get; set; }
+    
+        /// <summary>
         /// Gets or sets ownership.
         /// The user experience work from anywhere device's ownership.
         /// </summary>
@@ -105,11 +127,81 @@ namespace Microsoft.Graph
         public string Ownership { get; set; }
     
         /// <summary>
+        /// Gets or sets processor64bit check failed.
+        /// The user experience work from anywhere device, Is processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows.
+        /// </summary>
+        [JsonPropertyName("processor64BitCheckFailed")]
+        public bool? Processor64BitCheckFailed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets processor core count check failed.
+        /// The user experience work from anywhere device, Is processor hardware core count check failed for device to upgrade to the latest version of windows.
+        /// </summary>
+        [JsonPropertyName("processorCoreCountCheckFailed")]
+        public bool? ProcessorCoreCountCheckFailed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets processor family check failed.
+        /// The user experience work from anywhere device, Is processor hardware family check failed for device to upgrade to the latest version of windows.
+        /// </summary>
+        [JsonPropertyName("processorFamilyCheckFailed")]
+        public bool? ProcessorFamilyCheckFailed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets processor speed check failed.
+        /// The user experience work from anywhere device, Is processor hardware speed check failed for device to upgrade to the latest version of windows.
+        /// </summary>
+        [JsonPropertyName("processorSpeedCheckFailed")]
+        public bool? ProcessorSpeedCheckFailed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ram check failed.
+        /// Is the user experience analytics work from anywhere device RAM hardware check failed for device to upgrade to the latest version of windows
+        /// </summary>
+        [JsonPropertyName("ramCheckFailed")]
+        public bool? RamCheckFailed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets secure boot check failed.
+        /// The user experience work from anywhere device, Is secure boot hardware check failed for device to upgrade to the latest version of windows.
+        /// </summary>
+        [JsonPropertyName("secureBootCheckFailed")]
+        public bool? SecureBootCheckFailed { get; set; }
+    
+        /// <summary>
         /// Gets or sets serial number.
         /// The user experience work from anywhere device's serial number.
         /// </summary>
         [JsonPropertyName("serialNumber")]
         public string SerialNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets storage check failed.
+        /// The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.
+        /// </summary>
+        [JsonPropertyName("storageCheckFailed")]
+        public bool? StorageCheckFailed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenant attached.
+        /// The user experience work from anywhere device's tenantAttached.
+        /// </summary>
+        [JsonPropertyName("tenantAttached")]
+        public bool? TenantAttached { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tpm check failed.
+        /// The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.
+        /// </summary>
+        [JsonPropertyName("tpmCheckFailed")]
+        public bool? TpmCheckFailed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets upgrade eligibility.
+        /// The user experience work from anywhere windows upgrade eligibility status of device.
+        /// </summary>
+        [JsonPropertyName("upgradeEligibility")]
+        public OperatingSystemUpgradeEligibility? UpgradeEligibility { get; set; }
     
     }
 }

@@ -190,6 +190,21 @@ namespace Microsoft.Graph
         ApplicationTemplateIdentifier = 64,
 	
         /// <summary>
+        /// Oauth2Token Exchange Uri
+        /// </summary>
+        Oauth2TokenExchangeUri = 65,
+	
+        /// <summary>
+        /// Oauth2Authorization Uri
+        /// </summary>
+        Oauth2AuthorizationUri = 66,
+	
+        /// <summary>
+        /// Authentication Type
+        /// </summary>
+        AuthenticationType = 67,
+	
+        /// <summary>
         /// Server
         /// </summary>
         Server = 70,
@@ -223,6 +238,11 @@ namespace Microsoft.Graph
         /// Test References
         /// </summary>
         TestReferences = 207,
+	
+        /// <summary>
+        /// Connection String
+        /// </summary>
+        ConnectionString = 250,
 	
     }
 }

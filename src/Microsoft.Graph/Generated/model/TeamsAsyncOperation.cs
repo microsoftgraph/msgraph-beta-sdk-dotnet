@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operation type.
-        /// Denotes which type of operation is being described.
+        /// Denotes the type of operation being described.
         /// </summary>
         [JsonPropertyName("operationType")]
         public TeamsAsyncOperationType? OperationType { get; set; }

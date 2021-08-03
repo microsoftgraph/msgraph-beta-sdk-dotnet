@@ -79,6 +79,13 @@ namespace Microsoft.Graph
         public string PreSharedKey { get; set; }
     
         /// <summary>
+        /// Gets or sets trusted server certificate names.
+        /// Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
+        /// </summary>
+        [JsonPropertyName("trustedServerCertificateNames")]
+        public IEnumerable<string> TrustedServerCertificateNames { get; set; }
+    
+        /// <summary>
         /// Gets or sets username format string.
         /// Username format string used to build the username to connect to wifi
         /// </summary>

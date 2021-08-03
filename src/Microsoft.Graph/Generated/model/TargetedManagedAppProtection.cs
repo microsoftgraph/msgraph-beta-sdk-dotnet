@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets app group type.
+        /// Public Apps selection: group or individual
+        /// </summary>
+        [JsonPropertyName("appGroupType")]
+        public TargetedManagedAppGroupType? AppGroupType { get; set; }
+    
+        /// <summary>
         /// Gets or sets is assigned.
         /// Indicates if the policy is deployed to any inclusion groups or not.
         /// </summary>

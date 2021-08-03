@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Mac OSCustom Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MacOSCustomConfiguration>))]
     public partial class MacOSCustomConfiguration : DeviceConfiguration
     {
     
@@ -28,6 +29,13 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.macOSCustomConfiguration";
         }
 
+        /// <summary>
+        /// Gets or sets deployment channel.
+        /// Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel.
+        /// </summary>
+        [JsonPropertyName("deploymentChannel")]
+        public AppleDeploymentChannel? DeploymentChannel { get; set; }
+    
         /// <summary>
         /// Gets or sets payload.
         /// Payload. (UTF8 encoded byte array)

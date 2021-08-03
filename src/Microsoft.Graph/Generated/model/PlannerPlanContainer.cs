@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, roster, unknownFutureValue.
+        /// The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster.
         /// </summary>
         [JsonPropertyName("type")]
         public PlannerContainerType? Type { get; set; }

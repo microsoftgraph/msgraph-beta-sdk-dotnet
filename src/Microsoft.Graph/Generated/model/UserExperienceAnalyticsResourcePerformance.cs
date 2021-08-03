@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets average spike time score.
+        /// AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100
+        /// </summary>
+        [JsonPropertyName("averageSpikeTimeScore")]
+        public Int32? AverageSpikeTimeScore { get; set; }
+    
+        /// <summary>
         /// Gets or sets cpu spike time percentage.
         /// CPU spike time in percentage. Valid values 0 to 100
         /// </summary>
