@@ -21,20 +21,10 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- [Breaking change] Update Microsoft.Graph.Core to v2.0.0
-- [Breaking change] Replace Newtosoft.Json with System.Text.Json
-- Add request builder methods for GraphResponse
-- [Breaking change] Removed IGraphServiceClient interface
-- Added GraphServiceClient constructor that accepts TokenCredential instance
-- [Breaking change] Bump minimun .NetFramework version to 4.6.2 from 4.6.1
-- Add source link to the nuget package.
-- Uses snupkg as symbol file.
-- Fix setting of odata.type in constructor to only types derived from abstract types, or types derived from types referenced in properties or odata actions
-- Make properties of GraphServiceClient virtual to support mocking frameworks
-- Add support fo decryption of rich notifications content
+- Latest metadata updates from 3rd August 2021 snapshot  
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>4.6.0</VersionPrefix>
+    <VersionPrefix>4.7.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->
