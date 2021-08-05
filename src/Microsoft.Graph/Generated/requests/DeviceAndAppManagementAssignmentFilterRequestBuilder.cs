@@ -50,7 +50,16 @@ namespace Microsoft.Graph
             return new DeviceAndAppManagementAssignmentFilterRequest(this.RequestUrl, this.Client, options);
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for DeviceAndAppManagementAssignmentFilterGetSupportedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterGetSupportedPropertiesRequestBuilder"/>.</returns>
+        public IDeviceAndAppManagementAssignmentFilterGetSupportedPropertiesRequestBuilder GetSupportedProperties()
+        {
+            return new DeviceAndAppManagementAssignmentFilterGetSupportedPropertiesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSupportedProperties"),
+                this.Client);
+        }
     
     }
 }

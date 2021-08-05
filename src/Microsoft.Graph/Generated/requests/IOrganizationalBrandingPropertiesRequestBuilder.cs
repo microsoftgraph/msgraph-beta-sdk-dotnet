@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IOrganizationalBrandingPropertiesBannerLogoRequestBuilder BannerLogo { get; }
 
         /// <summary>
+        /// Gets the request builder for Favicon.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationalBrandingPropertiesFaviconRequestBuilder"/>.</returns>
+        IOrganizationalBrandingPropertiesFaviconRequestBuilder Favicon { get; }
+
+        /// <summary>
         /// Gets the request builder for SquareLogo.
         /// </summary>
         /// <returns>The <see cref="IOrganizationalBrandingPropertiesSquareLogoRequestBuilder"/>.</returns>

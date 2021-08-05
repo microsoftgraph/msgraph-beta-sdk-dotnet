@@ -23,24 +23,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication methods policy.
+        /// The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
         /// </summary>
         [JsonPropertyName("authenticationMethodsPolicy")]
         public AuthenticationMethodsPolicy AuthenticationMethodsPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets authentication flows policy.
+        /// The policy configuration of the self-service sign-up experience of external users.
         /// </summary>
         [JsonPropertyName("authenticationFlowsPolicy")]
         public AuthenticationFlowsPolicy AuthenticationFlowsPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets b2c authentication methods policy.
+        /// The Azure AD B2C policies that define how end users register via local accounts.
         /// </summary>
         [JsonPropertyName("b2cAuthenticationMethodsPolicy")]
         public B2cAuthenticationMethodsPolicy B2cAuthenticationMethodsPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets activity based timeout policies.
+        /// The policy that controls the idle time out for web sessions for applications.
         /// </summary>
         [JsonPropertyName("activityBasedTimeoutPolicies")]
         public IPolicyRootActivityBasedTimeoutPoliciesCollectionPage ActivityBasedTimeoutPolicies { get; set; }
@@ -65,6 +69,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authorization policy.
+        /// The policy that controls Azure AD authorization settings.
         /// </summary>
         [JsonPropertyName("authorizationPolicy")]
         public IPolicyRootAuthorizationPolicyCollectionPage AuthorizationPolicy { get; set; }
@@ -77,6 +82,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets claims mapping policies.
+        /// The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
         /// </summary>
         [JsonPropertyName("claimsMappingPolicies")]
         public IPolicyRootClaimsMappingPoliciesCollectionPage ClaimsMappingPolicies { get; set; }
@@ -95,6 +101,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets home realm discovery policies.
+        /// The policy to control Azure AD authentication behavior for federated users.
         /// </summary>
         [JsonPropertyName("homeRealmDiscoveryPolicies")]
         public IPolicyRootHomeRealmDiscoveryPoliciesCollectionPage HomeRealmDiscoveryPolicies { get; set; }
@@ -107,6 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission grant policies.
+        /// The policy that specifies the conditions under which consent can be granted.
         /// </summary>
         [JsonPropertyName("permissionGrantPolicies")]
         public IPolicyRootPermissionGrantPoliciesCollectionPage PermissionGrantPolicies { get; set; }
@@ -119,6 +127,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token issuance policies.
+        /// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
         /// </summary>
         [JsonPropertyName("tokenIssuancePolicies")]
         public IPolicyRootTokenIssuancePoliciesCollectionPage TokenIssuancePolicies { get; set; }
@@ -131,6 +140,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token lifetime policies.
+        /// The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
         /// </summary>
         [JsonPropertyName("tokenLifetimePolicies")]
         public IPolicyRootTokenLifetimePoliciesCollectionPage TokenLifetimePolicies { get; set; }
@@ -143,6 +153,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets feature rollout policies.
+        /// The feature rollout policy associated with a directory object.
         /// </summary>
         [JsonPropertyName("featureRolloutPolicies")]
         public IPolicyRootFeatureRolloutPoliciesCollectionPage FeatureRolloutPolicies { get; set; }
@@ -155,12 +166,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access review policy.
+        /// The policy that contains directory-level access review settings.
         /// </summary>
         [JsonPropertyName("accessReviewPolicy")]
         public AccessReviewPolicy AccessReviewPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets admin consent request policy.
+        /// The policy by which consent requests are created and managed for the entire tenant.
         /// </summary>
         [JsonPropertyName("adminConsentRequestPolicy")]
         public AdminConsentRequestPolicy AdminConsentRequestPolicy { get; set; }
@@ -173,6 +186,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets conditional access policies.
+        /// The custom rules that define an access scenario.
         /// </summary>
         [JsonPropertyName("conditionalAccessPolicies")]
         public IPolicyRootConditionalAccessPoliciesCollectionPage ConditionalAccessPolicies { get; set; }
@@ -185,12 +199,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identity security defaults enforcement policy.
+        /// The policy that represents the security defaults that protect against common attacks.
         /// </summary>
         [JsonPropertyName("identitySecurityDefaultsEnforcementPolicy")]
         public IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets mobile app management policies.
+        /// The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
         /// </summary>
         [JsonPropertyName("mobileAppManagementPolicies")]
         public IPolicyRootMobileAppManagementPoliciesCollectionPage MobileAppManagementPolicies { get; set; }
@@ -215,6 +231,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role management policies.
+        /// Represents the role management policies.
         /// </summary>
         [JsonPropertyName("roleManagementPolicies")]
         public IPolicyRootRoleManagementPoliciesCollectionPage RoleManagementPolicies { get; set; }
@@ -227,6 +244,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role management policy assignments.
+        /// Represents the role management policy assignments.
         /// </summary>
         [JsonPropertyName("roleManagementPolicyAssignments")]
         public IPolicyRootRoleManagementPolicyAssignmentsCollectionPage RoleManagementPolicyAssignments { get; set; }

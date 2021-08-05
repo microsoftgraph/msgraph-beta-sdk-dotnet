@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allow all apps access.
+        /// AllowAllAppsAccess setting
+        /// </summary>
+        [JsonPropertyName("allowAllAppsAccess")]
+        public bool? AllowAllAppsAccess { get; set; }
+    
+        /// <summary>
         /// Gets or sets certificate store.
         /// Target store certificate. Possible values are: user, machine.
         /// </summary>

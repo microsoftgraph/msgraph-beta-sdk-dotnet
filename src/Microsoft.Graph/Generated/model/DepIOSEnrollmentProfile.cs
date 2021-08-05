@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         public bool? AwaitDeviceConfiguredConfirmation { get; set; }
     
         /// <summary>
+        /// Gets or sets carrier activation url.
+        /// Carrier URL for activating device eSIM.
+        /// </summary>
+        [JsonPropertyName("carrierActivationUrl")]
+        public string CarrierActivationUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets company portal vpp token id.
         /// If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. 'enableAuthenticationViaCompanyPortal' must be set in order for this property to be set.
         /// </summary>
@@ -77,6 +84,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("expressLanguageScreenDisabled")]
         public bool? ExpressLanguageScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets force temporary session.
+        /// Indicates if temporary sessions is enabled
+        /// </summary>
+        [JsonPropertyName("forceTemporarySession")]
+        public bool? ForceTemporarySession { get; set; }
     
         /// <summary>
         /// Gets or sets home button screen disabled.
@@ -121,6 +135,13 @@ namespace Microsoft.Graph
         public bool? PassCodeDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets passcode lock grace period in seconds.
+        /// Indicates timeout before locked screen requires the user to enter the device passocde to unlock it
+        /// </summary>
+        [JsonPropertyName("passcodeLockGracePeriodInSeconds")]
+        public Int32? PasscodeLockGracePeriodInSeconds { get; set; }
+    
+        /// <summary>
         /// Gets or sets preferred language screen disabled.
         /// Indicates if Preferred language screen is disabled
         /// </summary>
@@ -163,11 +184,25 @@ namespace Microsoft.Graph
         public bool? SoftwareUpdateScreenDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets temporary session timeout in seconds.
+        /// Indicates timeout of temporary session
+        /// </summary>
+        [JsonPropertyName("temporarySessionTimeoutInSeconds")]
+        public Int32? TemporarySessionTimeoutInSeconds { get; set; }
+    
+        /// <summary>
         /// Gets or sets update complete screen disabled.
         /// Indicates if Weclome screen is disabled
         /// </summary>
         [JsonPropertyName("updateCompleteScreenDisabled")]
         public bool? UpdateCompleteScreenDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user session timeout in seconds.
+        /// Indicates timeout of temporary session
+        /// </summary>
+        [JsonPropertyName("userSessionTimeoutInSeconds")]
+        public Int32? UserSessionTimeoutInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets watch migration screen disabled.

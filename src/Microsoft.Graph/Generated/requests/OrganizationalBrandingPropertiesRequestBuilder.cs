@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Favicon.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationalBrandingPropertiesFaviconRequestBuilder"/>.</returns>
+        public IOrganizationalBrandingPropertiesFaviconRequestBuilder Favicon
+        {
+            get
+            {
+                return new OrganizationalBrandingPropertiesFaviconRequestBuilder(this.AppendSegmentToRequestUrl("favicon"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SquareLogo.
         /// </summary>
         /// <returns>The <see cref="IOrganizationalBrandingPropertiesSquareLogoRequestBuilder"/>.</returns>

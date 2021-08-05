@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Device Scores.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsDeviceScores>))]
     public partial class UserExperienceAnalyticsDeviceScores : Entity
     {
     
@@ -40,6 +41,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("endpointAnalyticsScore")]
         public double? EndpointAnalyticsScore { get; set; }
+    
+        /// <summary>
+        /// Gets or sets health status.
+        /// The health state of the user experience analytics device.
+        /// </summary>
+        [JsonPropertyName("healthStatus")]
+        public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.

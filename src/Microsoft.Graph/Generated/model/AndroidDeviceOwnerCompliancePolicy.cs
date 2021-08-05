@@ -156,6 +156,13 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
+        /// Gets or sets security require intune app integrity.
+        /// If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.
+        /// </summary>
+        [JsonPropertyName("securityRequireIntuneAppIntegrity")]
+        public bool? SecurityRequireIntuneAppIntegrity { get; set; }
+    
+        /// <summary>
         /// Gets or sets security require safety net attestation basic integrity.
         /// Require the device to pass the SafetyNet basic integrity check.
         /// </summary>

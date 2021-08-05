@@ -87,6 +87,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceAndAppManagementAssignmentFilterGetPlatformSupportedProperties.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterGetPlatformSupportedPropertiesRequestBuilder"/>.</returns>
+        public IDeviceAndAppManagementAssignmentFilterGetPlatformSupportedPropertiesRequestBuilder GetPlatformSupportedProperties(
+            DevicePlatformType platform)
+        {
+            return new DeviceAndAppManagementAssignmentFilterGetPlatformSupportedPropertiesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getPlatformSupportedProperties"),
+                this.Client,
+                platform);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceAndAppManagementAssignmentFilterGetState.
         /// </summary>
         /// <returns>The <see cref="IDeviceAndAppManagementAssignmentFilterGetStateRequestBuilder"/>.</returns>

@@ -30,18 +30,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets application restrictions.
+        /// Restrictions that apply as default to all application objects in the tenant.
         /// </summary>
         [JsonPropertyName("applicationRestrictions")]
         public AppManagementConfiguration ApplicationRestrictions { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
+        /// Denotes whether the policy is enabled. Default value is false.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets service principal restrictions.
+        /// Restrictions that apply as default to all service principal objects in the tenant.
         /// </summary>
         [JsonPropertyName("servicePrincipalRestrictions")]
         public AppManagementConfiguration ServicePrincipalRestrictions { get; set; }

@@ -77,6 +77,13 @@ namespace Microsoft.Graph
         public string DeviceName { get; set; }
     
         /// <summary>
+        /// Gets or sets manufacturer.
+        /// The user experience analytics manufacturer.
+        /// </summary>
+        [JsonPropertyName("manufacturer")]
+        public string Manufacturer { get; set; }
+    
+        /// <summary>
         /// Gets or sets model.
         /// The user experience analytics device model.
         /// </summary>
@@ -89,6 +96,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("remoteSignInTime")]
         public double? RemoteSignInTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user principal name.
+        /// The user experience analytics userPrincipalName.
+        /// </summary>
+        [JsonPropertyName("userPrincipalName")]
+        public string UserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets virtual network.

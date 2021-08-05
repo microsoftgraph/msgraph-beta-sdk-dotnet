@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (accessReviewInstanceToInitialize != null)
             {
+                if (accessReviewInstanceToInitialize.ContactedReviewers != null && accessReviewInstanceToInitialize.ContactedReviewers.CurrentPage != null)
+                {
+                    accessReviewInstanceToInitialize.ContactedReviewers.InitializeNextPageRequest(this.Client, accessReviewInstanceToInitialize.ContactedReviewersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    accessReviewInstanceToInitialize.ContactedReviewers.AdditionalData = accessReviewInstanceToInitialize.AdditionalData;
+                }
                 if (accessReviewInstanceToInitialize.Decisions != null && accessReviewInstanceToInitialize.Decisions.CurrentPage != null)
                 {
                     accessReviewInstanceToInitialize.Decisions.InitializeNextPageRequest(this.Client, accessReviewInstanceToInitialize.DecisionsNextLink);

@@ -210,6 +210,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? EnrolledDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets enrollment profile name.
+        /// Name of the enrollment profile assigned to the device. Default value is empty string, indicating no enrollment profile was assgined. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("enrollmentProfileName")]
+        public string EnrollmentProfileName { get; set; }
+    
+        /// <summary>
         /// Gets or sets ethernet mac address.
         /// Ethernet MAC. This property is read-only.
         /// </summary>
@@ -669,7 +676,7 @@ namespace Microsoft.Graph
         /// The primary users associated with the managed device.
         /// </summary>
         [JsonPropertyName("users")]
-        public IManagedDeviceUsersCollectionPage Users { get; set; }
+        public IManagedDeviceUsersCollectionWithReferencesPage Users { get; set; }
 
         /// <summary>
         /// Gets or sets usersNextLink.

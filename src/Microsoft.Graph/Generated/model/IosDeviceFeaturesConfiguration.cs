@@ -51,6 +51,20 @@ namespace Microsoft.Graph
         public IEnumerable<IosHomeScreenItem> HomeScreenDockIcons { get; set; }
     
         /// <summary>
+        /// Gets or sets home screen grid height.
+        /// Gets or sets the number of rows to render when configuring iOS home screen layout settings. If this value is configured, homeScreenGridWidth must be configured as well.
+        /// </summary>
+        [JsonPropertyName("homeScreenGridHeight")]
+        public Int32? HomeScreenGridHeight { get; set; }
+    
+        /// <summary>
+        /// Gets or sets home screen grid width.
+        /// Gets or sets the number of columns to render when configuring iOS home screen layout settings. If this value is configured, homeScreenGridHeight must be configured as well.
+        /// </summary>
+        [JsonPropertyName("homeScreenGridWidth")]
+        public Int32? HomeScreenGridWidth { get; set; }
+    
+        /// <summary>
         /// Gets or sets home screen pages.
         /// A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
         /// </summary>

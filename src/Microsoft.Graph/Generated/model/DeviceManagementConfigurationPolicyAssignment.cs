@@ -17,8 +17,23 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Management Configuration Policy Assignment.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceManagementConfigurationPolicyAssignment>))]
     public partial class DeviceManagementConfigurationPolicyAssignment : Entity
     {
+    
+        /// <summary>
+        /// Gets or sets source.
+        /// The assignment source for the device compliance policy, direct or parcel/policySet.
+        /// </summary>
+        [JsonPropertyName("source")]
+        public DeviceAndAppManagementAssignmentSource? Source { get; set; }
+    
+        /// <summary>
+        /// Gets or sets source id.
+        /// The identifier of the source of the assignment.
+        /// </summary>
+        [JsonPropertyName("sourceId")]
+        public string SourceId { get; set; }
     
         /// <summary>
         /// Gets or sets target.

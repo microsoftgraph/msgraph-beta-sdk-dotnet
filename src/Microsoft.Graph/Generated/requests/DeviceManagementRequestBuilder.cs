@@ -819,6 +819,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdCollectionRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionCollectionRequestBuilder"/>.</returns>
@@ -1091,6 +1115,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementUserExperienceAnalyticsScoreHistoryCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsScoreHistory"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+        {
+            get
+            {
+                return new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetricRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric"), this.Client);
             }
         }
 

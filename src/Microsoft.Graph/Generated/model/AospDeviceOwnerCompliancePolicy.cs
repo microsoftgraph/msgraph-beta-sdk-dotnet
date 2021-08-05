@@ -79,6 +79,13 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType { get; set; }
     
         /// <summary>
+        /// Gets or sets security block jailbroken devices.
+        /// Devices must not be jailbroken or rooted.
+        /// </summary>
+        [JsonPropertyName("securityBlockJailbrokenDevices")]
+        public bool? SecurityBlockJailbrokenDevices { get; set; }
+    
+        /// <summary>
         /// Gets or sets storage require encryption.
         /// Require encryption on Android devices.
         /// </summary>

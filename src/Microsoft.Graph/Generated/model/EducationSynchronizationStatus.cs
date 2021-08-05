@@ -54,5 +54,15 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 6,
 	
+        /// <summary>
+        /// Extracting
+        /// </summary>
+        Extracting = 7,
+	
+        /// <summary>
+        /// Validating
+        /// </summary>
+        Validating = 8,
+	
     }
 }

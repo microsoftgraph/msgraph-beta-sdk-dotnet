@@ -893,6 +893,32 @@ namespace Microsoft.Graph
         public string UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics app health application performance by app version details.
+        /// User experience analytics appHealth Application Performance by App Version details
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails")]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails@odata.nextLink")]
+        public string UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics app health application performance by app version device id.
+        /// User experience analytics appHealth Application Performance by App Version Device Id
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId")]
+        public IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdCollectionPage UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId@odata.nextLink")]
+        public string UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics app health application performance by osversion.
         /// User experience analytics appHealth Application Performance by OS Version
         /// </summary>
@@ -1172,6 +1198,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsScoreHistory@odata.nextLink")]
         public string UserExperienceAnalyticsScoreHistoryNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics work from anywhere hardware readiness metric.
+        /// User experience analytics work from anywhere hardware readiness metrics.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric")]
+        public UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics work from anywhere metrics.

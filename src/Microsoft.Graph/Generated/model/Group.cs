@@ -211,6 +211,12 @@ namespace Microsoft.Graph
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets organization id.
+        /// </summary>
+        [JsonPropertyName("organizationId")]
+        public string OrganizationId { get; set; }
+    
+        /// <summary>
         /// Gets or sets preferred data location.
         /// The preferred data location for the group. For more information, see  OneDrive Online Multi-Geo. Returned by default.
         /// </summary>

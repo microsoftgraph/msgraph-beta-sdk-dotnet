@@ -464,6 +464,33 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetEnrollmentConfigurationPoliciesByDevice.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder GetEnrollmentConfigurationPoliciesByDevice(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getEnrollmentConfigurationPoliciesByDevice"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetActiveMalwareReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetActiveMalwareReportRequestBuilder"/>.</returns>

@@ -97,5 +97,20 @@ namespace Microsoft.Graph
                 notificationBody,
                 deviceName);
         }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceMoveDevicesToOU.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceMoveDevicesToOURequestBuilder"/>.</returns>
+        public IManagedDeviceMoveDevicesToOURequestBuilder MoveDevicesToOU(
+            IEnumerable<Guid> deviceIds,
+            string organizationalUnitPath = null)
+        {
+            return new ManagedDeviceMoveDevicesToOURequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.moveDevicesToOU"),
+                this.Client,
+                deviceIds,
+                organizationalUnitPath);
+        }
     }
 }

@@ -147,6 +147,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("restartCount")]
         public Int32? RestartCount { get; set; }
     
+        /// <summary>
+        /// Gets or sets startup performance score.
+        /// The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("startupPerformanceScore")]
+        public double? StartupPerformanceScore { get; set; }
+    
     }
 }
 

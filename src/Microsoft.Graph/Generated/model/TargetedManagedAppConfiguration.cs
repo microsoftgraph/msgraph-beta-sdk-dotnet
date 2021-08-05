@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Targeted Managed App Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<TargetedManagedAppConfiguration>))]
     public partial class TargetedManagedAppConfiguration : ManagedAppConfiguration
     {
     
@@ -28,6 +29,13 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.targetedManagedAppConfiguration";
         }
 
+        /// <summary>
+        /// Gets or sets app group type.
+        /// Public Apps selection: group or individual
+        /// </summary>
+        [JsonPropertyName("appGroupType")]
+        public TargetedManagedAppGroupType? AppGroupType { get; set; }
+    
         /// <summary>
         /// Gets or sets deployed app count.
         /// Count of apps to which the current policy is deployed.

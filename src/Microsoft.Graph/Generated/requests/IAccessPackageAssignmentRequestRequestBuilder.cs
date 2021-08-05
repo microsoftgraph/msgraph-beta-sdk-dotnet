@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessPackageAssignmentRequestCancelRequestBuilder"/>.</returns>
         IAccessPackageAssignmentRequestCancelRequestBuilder Cancel();
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentRequestReprocess.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentRequestReprocessRequestBuilder"/>.</returns>
+        IAccessPackageAssignmentRequestReprocessRequestBuilder Reprocess();
     
     }
 }

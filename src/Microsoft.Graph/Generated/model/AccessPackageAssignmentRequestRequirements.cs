@@ -22,28 +22,34 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets allowCustomAssignmentSchedule.
-        /// </summary>
-        [JsonPropertyName("allowCustomAssignmentSchedule")]
-        public bool? AllowCustomAssignmentSchedule { get; set; }
-    
-        /// <summary>
         /// Gets or sets existingAnswers.
         /// </summary>
         [JsonPropertyName("existingAnswers")]
         public IEnumerable<AccessPackageAnswer> ExistingAnswers { get; set; }
     
         /// <summary>
-        /// Gets or sets isApprovalRequiredForAdd.
+        /// Gets or sets isApprovalRequired.
         /// </summary>
-        [JsonPropertyName("isApprovalRequiredForAdd")]
-        public bool? IsApprovalRequiredForAdd { get; set; }
+        [JsonPropertyName("isApprovalRequired")]
+        public bool? IsApprovalRequired { get; set; }
     
         /// <summary>
-        /// Gets or sets isApprovalRequiredForUpdate.
+        /// Gets or sets isApprovalRequiredForExtension.
         /// </summary>
-        [JsonPropertyName("isApprovalRequiredForUpdate")]
-        public bool? IsApprovalRequiredForUpdate { get; set; }
+        [JsonPropertyName("isApprovalRequiredForExtension")]
+        public bool? IsApprovalRequiredForExtension { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isCustomAssignmentScheduleAllowed.
+        /// </summary>
+        [JsonPropertyName("isCustomAssignmentScheduleAllowed")]
+        public bool? IsCustomAssignmentScheduleAllowed { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isRequestorJustificationRequired.
+        /// </summary>
+        [JsonPropertyName("isRequestorJustificationRequired")]
+        public bool? IsRequestorJustificationRequired { get; set; }
     
         /// <summary>
         /// Gets or sets policyDescription.

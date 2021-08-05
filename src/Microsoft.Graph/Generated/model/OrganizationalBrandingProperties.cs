@@ -44,11 +44,107 @@ namespace Microsoft.Graph
         public Stream BackgroundImage { get; set; }
     
         /// <summary>
+        /// Gets or sets background image relative url.
+        /// </summary>
+        [JsonPropertyName("backgroundImageRelativeUrl")]
+        public string BackgroundImageRelativeUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets banner logo.
         /// A banner version of your company logo which appears appears on the sign-in page. .png or .jpg no larger than 36x245px. We recommend using a transparent image with no padding around the logo.
         /// </summary>
         [JsonPropertyName("bannerLogo")]
         public Stream BannerLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets banner logo relative url.
+        /// </summary>
+        [JsonPropertyName("bannerLogoRelativeUrl")]
+        public string BannerLogoRelativeUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cdn list.
+        /// </summary>
+        [JsonPropertyName("cdnList")]
+        public IEnumerable<string> CdnList { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom account reset credentials url.
+        /// </summary>
+        [JsonPropertyName("customAccountResetCredentialsUrl")]
+        public string CustomAccountResetCredentialsUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom cannot access your account text.
+        /// </summary>
+        [JsonPropertyName("customCannotAccessYourAccountText")]
+        public string CustomCannotAccessYourAccountText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom cannot access your account url.
+        /// </summary>
+        [JsonPropertyName("customCannotAccessYourAccountUrl")]
+        public string CustomCannotAccessYourAccountUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom forgot my password text.
+        /// </summary>
+        [JsonPropertyName("customForgotMyPasswordText")]
+        public string CustomForgotMyPasswordText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom privacy and cookies text.
+        /// </summary>
+        [JsonPropertyName("customPrivacyAndCookiesText")]
+        public string CustomPrivacyAndCookiesText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom privacy and cookies url.
+        /// </summary>
+        [JsonPropertyName("customPrivacyAndCookiesUrl")]
+        public string CustomPrivacyAndCookiesUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom reset it now text.
+        /// </summary>
+        [JsonPropertyName("customResetItNowText")]
+        public string CustomResetItNowText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom terms of use text.
+        /// </summary>
+        [JsonPropertyName("customTermsOfUseText")]
+        public string CustomTermsOfUseText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom terms of use url.
+        /// </summary>
+        [JsonPropertyName("customTermsOfUseUrl")]
+        public string CustomTermsOfUseUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets favicon.
+        /// </summary>
+        [JsonPropertyName("favicon")]
+        public Stream Favicon { get; set; }
+    
+        /// <summary>
+        /// Gets or sets favicon relative url.
+        /// </summary>
+        [JsonPropertyName("faviconRelativeUrl")]
+        public string FaviconRelativeUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets header background color.
+        /// </summary>
+        [JsonPropertyName("headerBackgroundColor")]
+        public string HeaderBackgroundColor { get; set; }
+    
+        /// <summary>
+        /// Gets or sets login page text visibility settings.
+        /// </summary>
+        [JsonPropertyName("loginPageTextVisibilitySettings")]
+        public LoginPageTextVisibilitySettings LoginPageTextVisibilitySettings { get; set; }
     
         /// <summary>
         /// Gets or sets sign in page text.
@@ -63,6 +159,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("squareLogo")]
         public Stream SquareLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets square logo relative url.
+        /// </summary>
+        [JsonPropertyName("squareLogoRelativeUrl")]
+        public string SquareLogoRelativeUrl { get; set; }
     
         /// <summary>
         /// Gets or sets username hint text.

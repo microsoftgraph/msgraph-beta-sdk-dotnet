@@ -43,6 +43,14 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITargetedManagedAppProtectionAssignRequestBuilder"/>.</returns>
         ITargetedManagedAppProtectionAssignRequestBuilder Assign(
             IEnumerable<TargetedManagedAppPolicyAssignment> assignments = null);
+
+        /// <summary>
+        /// Gets the request builder for TargetedManagedAppProtectionTargetApps.
+        /// </summary>
+        /// <returns>The <see cref="ITargetedManagedAppProtectionTargetAppsRequestBuilder"/>.</returns>
+        ITargetedManagedAppProtectionTargetAppsRequestBuilder TargetApps(
+            IEnumerable<ManagedMobileApp> apps = null,
+            TargetedManagedAppGroupType? appGroupType = null);
     
     }
 }

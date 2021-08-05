@@ -61,6 +61,18 @@ namespace Microsoft.Graph
         public string Status { get; set; }
     
         /// <summary>
+        /// Gets or sets contacted reviewers.
+        /// </summary>
+        [JsonPropertyName("contactedReviewers")]
+        public IAccessReviewInstanceContactedReviewersCollectionPage ContactedReviewers { get; set; }
+
+        /// <summary>
+        /// Gets or sets contactedReviewersNextLink.
+        /// </summary>
+        [JsonPropertyName("contactedReviewers@odata.nextLink")]
+        public string ContactedReviewersNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets decisions.
         /// Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>

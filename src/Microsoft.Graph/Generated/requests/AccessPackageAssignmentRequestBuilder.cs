@@ -110,7 +110,16 @@ namespace Microsoft.Graph
             }
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentReprocess.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentReprocessRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentReprocessRequestBuilder Reprocess()
+        {
+            return new AccessPackageAssignmentReprocessRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reprocess"),
+                this.Client);
+        }
     
     }
 }

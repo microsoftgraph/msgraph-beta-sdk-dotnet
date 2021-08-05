@@ -74,6 +74,21 @@ namespace Microsoft.Graph
                 this.Client,
                 assignments);
         }
+
+        /// <summary>
+        /// Gets the request builder for TargetedManagedAppProtectionTargetApps.
+        /// </summary>
+        /// <returns>The <see cref="ITargetedManagedAppProtectionTargetAppsRequestBuilder"/>.</returns>
+        public ITargetedManagedAppProtectionTargetAppsRequestBuilder TargetApps(
+            IEnumerable<ManagedMobileApp> apps = null,
+            TargetedManagedAppGroupType? appGroupType = null)
+        {
+            return new TargetedManagedAppProtectionTargetAppsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.targetApps"),
+                this.Client,
+                apps,
+                appGroupType);
+        }
     
     }
 }

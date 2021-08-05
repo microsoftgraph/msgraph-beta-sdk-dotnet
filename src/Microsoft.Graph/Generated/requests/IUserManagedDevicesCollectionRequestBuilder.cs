@@ -55,5 +55,13 @@ namespace Microsoft.Graph
             string notificationTitle = null,
             string notificationBody = null,
             string deviceName = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceMoveDevicesToOU.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceMoveDevicesToOURequestBuilder"/>.</returns>
+        IManagedDeviceMoveDevicesToOURequestBuilder MoveDevicesToOU(
+            IEnumerable<Guid> deviceIds,
+            string organizationalUnitPath = null);
     }
 }

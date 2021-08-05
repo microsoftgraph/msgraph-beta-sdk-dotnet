@@ -82,6 +82,22 @@ namespace Microsoft.Graph
         IInformationProtectionEncryptBufferRequestBuilder EncryptBuffer(
             byte[] buffer,
             Guid labelId);
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionSignDigest.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionSignDigestRequestBuilder"/>.</returns>
+        IInformationProtectionSignDigestRequestBuilder SignDigest(
+            byte[] digest);
+
+        /// <summary>
+        /// Gets the request builder for InformationProtectionVerifySignature.
+        /// </summary>
+        /// <returns>The <see cref="IInformationProtectionVerifySignatureRequestBuilder"/>.</returns>
+        IInformationProtectionVerifySignatureRequestBuilder VerifySignature(
+            byte[] digest,
+            byte[] signature,
+            string signingKeyId);
     
     }
 }

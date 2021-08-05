@@ -239,6 +239,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app management policies.
+        /// The appManagementPolicy applied to this application.
         /// </summary>
         [JsonPropertyName("appManagementPolicies")]
         public IApplicationAppManagementPoliciesCollectionWithReferencesPage AppManagementPolicies { get; set; }

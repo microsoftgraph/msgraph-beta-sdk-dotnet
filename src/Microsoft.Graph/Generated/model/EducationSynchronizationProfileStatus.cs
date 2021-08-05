@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets error count.
+        /// Number of errors during synchronization.
+        /// </summary>
+        [JsonPropertyName("errorCount")]
+        public Int64? ErrorCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets last activity date time.
         /// Represents the time when most recent changes were observed in profile.
         /// </summary>
@@ -37,10 +44,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of a sync. Possible values are: paused, inProgress, success, error, quarantined, validationError, extracting, validating.
+        /// The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
         /// </summary>
         [JsonPropertyName("status")]
         public EducationSynchronizationStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status message.
+        /// Status message for the current profile's synchronization stage.
+        /// </summary>
+        [JsonPropertyName("statusMessage")]
+        public string StatusMessage { get; set; }
     
     }
 }

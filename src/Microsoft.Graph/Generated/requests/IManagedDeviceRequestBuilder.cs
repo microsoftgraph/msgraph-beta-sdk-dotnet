@@ -82,8 +82,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Users.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceUsersCollectionRequestBuilder"/>.</returns>
-        IManagedDeviceUsersCollectionRequestBuilder Users { get; }
+        /// <returns>The <see cref="IManagedDeviceUsersCollectionWithReferencesRequestBuilder"/>.</returns>
+        IManagedDeviceUsersCollectionWithReferencesRequestBuilder Users { get; }
 
         /// <summary>
         /// Gets the request builder for WindowsProtectionState.
@@ -147,6 +147,19 @@ namespace Microsoft.Graph
             string userPrincipalName = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceDeprovision.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDeprovisionRequestBuilder"/>.</returns>
+        IManagedDeviceDeprovisionRequestBuilder Deprovision(
+            string deprovisionReason);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceDisable.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDisableRequestBuilder"/>.</returns>
+        IManagedDeviceDisableRequestBuilder Disable();
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceDisableLostMode.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceDisableLostModeRequestBuilder"/>.</returns>
@@ -190,6 +203,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceRecoverPasscodeRequestBuilder"/>.</returns>
         IManagedDeviceRecoverPasscodeRequestBuilder RecoverPasscode();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceReenable.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceReenableRequestBuilder"/>.</returns>
+        IManagedDeviceReenableRequestBuilder Reenable();
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceRemoteLock.
