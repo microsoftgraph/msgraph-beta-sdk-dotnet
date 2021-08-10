@@ -80,7 +80,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets view point.
-        /// Represents user view points data of the service message.
+        /// Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
         /// </summary>
         [JsonPropertyName("viewPoint")]
         public ServiceUpdateMessageViewpoint ViewPoint { get; set; }

@@ -100,6 +100,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets management service app id.
+        /// AzureAD management app ID used during client device-based enrollment discovery
+        /// </summary>
+        [JsonPropertyName("managementServiceAppId")]
+        public string ManagementServiceAppId { get; set; }
+    
+        /// <summary>
         /// Gets or sets out of box experience settings.
         /// Out of box experience setting
         /// </summary>

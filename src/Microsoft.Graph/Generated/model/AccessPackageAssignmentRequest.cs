@@ -63,7 +63,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request state.
-        /// One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, Submitted or Scheduled. Read-only.
+        /// One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.
         /// </summary>
         [JsonPropertyName("requestState")]
         public string RequestState { get; set; }

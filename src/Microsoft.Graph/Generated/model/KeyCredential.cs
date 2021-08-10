@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets endDateTime.
-        /// The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
@@ -51,28 +51,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets keyId.
-        /// The unique identifier (GUID) for the key.
+        /// The unique identifier for the key.
         /// </summary>
         [JsonPropertyName("keyId")]
         public Guid? KeyId { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
-        /// The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of key credential; for example, 'Symmetric'.
+        /// The type of key credential; for example, Symmetric.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets usage.
-        /// A string that describes the purpose for which the key can be used; for example, 'Verify'.
+        /// A string that describes the purpose for which the key can be used; for example, Verify.
         /// </summary>
         [JsonPropertyName("usage")]
         public string Usage { get; set; }

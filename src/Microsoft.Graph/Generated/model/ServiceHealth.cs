@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service.
-        /// The service name.
+        /// The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
         /// </summary>
         [JsonPropertyName("service")]
         public string Service { get; set; }

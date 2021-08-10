@@ -57,6 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app management policies.
+        /// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
         /// </summary>
         [JsonPropertyName("appManagementPolicies")]
         public IPolicyRootAppManagementPoliciesCollectionPage AppManagementPolicies { get; set; }
@@ -95,6 +96,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets default app management policy.
+        /// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
         /// </summary>
         [JsonPropertyName("defaultAppManagementPolicy")]
         public TenantAppManagementPolicy DefaultAppManagementPolicy { get; set; }
