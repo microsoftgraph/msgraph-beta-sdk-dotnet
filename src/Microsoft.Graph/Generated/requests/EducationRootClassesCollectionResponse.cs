@@ -14,7 +14,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationRootClassesCollectionResponse.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<EducationRootClassesCollectionResponse>))]
     public class EducationRootClassesCollectionResponse
     {
         /// <summary>
@@ -27,6 +26,7 @@ namespace Microsoft.Graph
         /// Gets or sets the nextLink string value.
         /// </summary>
         [JsonPropertyName("@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NextLink { get; set; }
 
         /// <summary>

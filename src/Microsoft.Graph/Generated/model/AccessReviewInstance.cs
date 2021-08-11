@@ -70,6 +70,7 @@ namespace Microsoft.Graph
         /// Gets or sets contactedReviewersNextLink.
         /// </summary>
         [JsonPropertyName("contactedReviewers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ContactedReviewersNextLink { get; set; }
     
         /// <summary>
@@ -83,6 +84,7 @@ namespace Microsoft.Graph
         /// Gets or sets decisionsNextLink.
         /// </summary>
         [JsonPropertyName("decisions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DecisionsNextLink { get; set; }
     
         /// <summary>

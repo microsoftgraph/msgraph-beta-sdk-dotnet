@@ -67,6 +67,7 @@ namespace Microsoft.Graph
         /// Gets or sets appliesToNextLink.
         /// </summary>
         [JsonPropertyName("appliesTo@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AppliesToNextLink { get; set; }
     
     }

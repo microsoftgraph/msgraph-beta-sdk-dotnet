@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets the nextLink string value.
         /// </summary>
         [JsonPropertyName("@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NextLink { get; set; }
 
         /// <summary>

@@ -81,6 +81,7 @@ namespace Microsoft.Graph
         /// Gets or sets managementConditionsNextLink.
         /// </summary>
         [JsonPropertyName("managementConditions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagementConditionsNextLink { get; set; }
     
     }

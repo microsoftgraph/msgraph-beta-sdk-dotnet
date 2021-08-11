@@ -31,6 +31,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Gets or sets entriesNextLink.
         /// </summary>
         [JsonPropertyName("entries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string EntriesNextLink { get; set; }
     
     }

@@ -79,6 +79,7 @@ namespace Microsoft.Graph
         /// Gets or sets appScopesNextLink.
         /// </summary>
         [JsonPropertyName("appScopes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AppScopesNextLink { get; set; }
     
         /// <summary>
@@ -92,6 +93,7 @@ namespace Microsoft.Graph
         /// Gets or sets directoryScopesNextLink.
         /// </summary>
         [JsonPropertyName("directoryScopes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DirectoryScopesNextLink { get; set; }
     
         /// <summary>
@@ -105,6 +107,7 @@ namespace Microsoft.Graph
         /// Gets or sets principalsNextLink.
         /// </summary>
         [JsonPropertyName("principals@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PrincipalsNextLink { get; set; }
     
         /// <summary>

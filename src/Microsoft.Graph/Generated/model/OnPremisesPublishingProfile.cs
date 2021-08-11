@@ -45,6 +45,7 @@ namespace Microsoft.Graph
         /// Gets or sets agentGroupsNextLink.
         /// </summary>
         [JsonPropertyName("agentGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AgentGroupsNextLink { get; set; }
     
         /// <summary>
@@ -58,6 +59,7 @@ namespace Microsoft.Graph
         /// Gets or sets agentsNextLink.
         /// </summary>
         [JsonPropertyName("agents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AgentsNextLink { get; set; }
     
         /// <summary>
@@ -71,6 +73,7 @@ namespace Microsoft.Graph
         /// Gets or sets connectorGroupsNextLink.
         /// </summary>
         [JsonPropertyName("connectorGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConnectorGroupsNextLink { get; set; }
     
         /// <summary>
@@ -84,6 +87,7 @@ namespace Microsoft.Graph
         /// Gets or sets connectorsNextLink.
         /// </summary>
         [JsonPropertyName("connectors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConnectorsNextLink { get; set; }
     
         /// <summary>
@@ -97,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets publishedResourcesNextLink.
         /// </summary>
         [JsonPropertyName("publishedResources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PublishedResourcesNextLink { get; set; }
     
     }

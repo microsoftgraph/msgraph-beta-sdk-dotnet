@@ -82,6 +82,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupPolicyOperationsNextLink.
         /// </summary>
         [JsonPropertyName("groupPolicyOperations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupPolicyOperationsNextLink { get; set; }
     
     }

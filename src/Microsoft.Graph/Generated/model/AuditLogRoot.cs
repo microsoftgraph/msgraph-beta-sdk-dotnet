@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets directoryAuditsNextLink.
         /// </summary>
         [JsonPropertyName("directoryAudits@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DirectoryAuditsNextLink { get; set; }
     
         /// <summary>
@@ -43,6 +44,7 @@ namespace Microsoft.Graph
         /// Gets or sets directoryProvisioningNextLink.
         /// </summary>
         [JsonPropertyName("directoryProvisioning@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DirectoryProvisioningNextLink { get; set; }
     
         /// <summary>
@@ -55,6 +57,7 @@ namespace Microsoft.Graph
         /// Gets or sets provisioningNextLink.
         /// </summary>
         [JsonPropertyName("provisioning@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ProvisioningNextLink { get; set; }
     
         /// <summary>
@@ -67,6 +70,7 @@ namespace Microsoft.Graph
         /// Gets or sets restrictedSignInsNextLink.
         /// </summary>
         [JsonPropertyName("restrictedSignIns@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RestrictedSignInsNextLink { get; set; }
     
         /// <summary>
@@ -80,6 +84,7 @@ namespace Microsoft.Graph
         /// Gets or sets signInsNextLink.
         /// </summary>
         [JsonPropertyName("signIns@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SignInsNextLink { get; set; }
     
     }

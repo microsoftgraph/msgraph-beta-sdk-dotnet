@@ -137,6 +137,7 @@ namespace Microsoft.Graph
         /// Gets or sets directReportsNextLink.
         /// </summary>
         [JsonPropertyName("directReports@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DirectReportsNextLink { get; set; }
     
         /// <summary>
@@ -157,6 +158,7 @@ namespace Microsoft.Graph
         /// Gets or sets memberOfNextLink.
         /// </summary>
         [JsonPropertyName("memberOf@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MemberOfNextLink { get; set; }
     
         /// <summary>
@@ -169,6 +171,7 @@ namespace Microsoft.Graph
         /// Gets or sets transitiveMemberOfNextLink.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TransitiveMemberOfNextLink { get; set; }
     
         /// <summary>
@@ -182,6 +185,7 @@ namespace Microsoft.Graph
         /// Gets or sets transitiveReportsNextLink.
         /// </summary>
         [JsonPropertyName("transitiveReports@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TransitiveReportsNextLink { get; set; }
     
     }

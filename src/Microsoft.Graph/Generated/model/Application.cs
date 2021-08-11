@@ -248,6 +248,7 @@ namespace Microsoft.Graph
         /// Gets or sets appManagementPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("appManagementPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AppManagementPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -268,6 +269,7 @@ namespace Microsoft.Graph
         /// Gets or sets extensionPropertiesNextLink.
         /// </summary>
         [JsonPropertyName("extensionProperties@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExtensionPropertiesNextLink { get; set; }
     
         /// <summary>
@@ -280,6 +282,7 @@ namespace Microsoft.Graph
         /// Gets or sets homeRealmDiscoveryPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("homeRealmDiscoveryPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string HomeRealmDiscoveryPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -293,6 +296,7 @@ namespace Microsoft.Graph
         /// Gets or sets ownersNextLink.
         /// </summary>
         [JsonPropertyName("owners@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OwnersNextLink { get; set; }
     
         /// <summary>
@@ -305,6 +309,7 @@ namespace Microsoft.Graph
         /// Gets or sets tokenIssuancePoliciesNextLink.
         /// </summary>
         [JsonPropertyName("tokenIssuancePolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TokenIssuancePoliciesNextLink { get; set; }
     
         /// <summary>
@@ -318,6 +323,7 @@ namespace Microsoft.Graph
         /// Gets or sets tokenLifetimePoliciesNextLink.
         /// </summary>
         [JsonPropertyName("tokenLifetimePolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TokenLifetimePoliciesNextLink { get; set; }
     
         /// <summary>

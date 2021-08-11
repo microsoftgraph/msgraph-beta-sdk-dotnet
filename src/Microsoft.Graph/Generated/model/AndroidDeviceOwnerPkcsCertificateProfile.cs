@@ -96,6 +96,7 @@ namespace Microsoft.Graph
         /// Gets or sets managedDeviceCertificateStatesNextLink.
         /// </summary>
         [JsonPropertyName("managedDeviceCertificateStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagedDeviceCertificateStatesNextLink { get; set; }
     
     }

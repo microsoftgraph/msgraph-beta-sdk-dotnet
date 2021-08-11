@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets manufacturerRegressionNextLink.
         /// </summary>
         [JsonPropertyName("manufacturerRegression@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManufacturerRegressionNextLink { get; set; }
     
         /// <summary>
@@ -44,6 +45,7 @@ namespace Microsoft.Graph
         /// Gets or sets modelRegressionNextLink.
         /// </summary>
         [JsonPropertyName("modelRegression@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ModelRegressionNextLink { get; set; }
     
         /// <summary>
@@ -57,6 +59,7 @@ namespace Microsoft.Graph
         /// Gets or sets operatingSystemRegressionNextLink.
         /// </summary>
         [JsonPropertyName("operatingSystemRegression@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OperatingSystemRegressionNextLink { get; set; }
     
     }

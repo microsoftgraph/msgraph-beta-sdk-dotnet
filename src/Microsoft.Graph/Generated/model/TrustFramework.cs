@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets keySetsNextLink.
         /// </summary>
         [JsonPropertyName("keySets@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string KeySetsNextLink { get; set; }
     
         /// <summary>
@@ -43,6 +44,7 @@ namespace Microsoft.Graph
         /// Gets or sets policiesNextLink.
         /// </summary>
         [JsonPropertyName("policies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PoliciesNextLink { get; set; }
     
         /// <summary>

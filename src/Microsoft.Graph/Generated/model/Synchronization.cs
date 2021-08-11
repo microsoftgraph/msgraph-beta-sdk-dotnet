@@ -36,6 +36,7 @@ namespace Microsoft.Graph
         /// Gets or sets jobsNextLink.
         /// </summary>
         [JsonPropertyName("jobs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string JobsNextLink { get; set; }
     
         /// <summary>
@@ -48,6 +49,7 @@ namespace Microsoft.Graph
         /// Gets or sets templatesNextLink.
         /// </summary>
         [JsonPropertyName("templates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TemplatesNextLink { get; set; }
     
     }

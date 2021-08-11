@@ -30,6 +30,7 @@ namespace Microsoft.Graph
         /// Gets or sets resourceNamespacesNextLink.
         /// </summary>
         [JsonPropertyName("resourceNamespaces@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ResourceNamespacesNextLink { get; set; }
     
         /// <summary>
@@ -42,6 +43,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleAssignmentsNextLink.
         /// </summary>
         [JsonPropertyName("roleAssignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleAssignmentsNextLink { get; set; }
     
         /// <summary>
@@ -54,6 +56,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleDefinitionsNextLink.
         /// </summary>
         [JsonPropertyName("roleDefinitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleDefinitionsNextLink { get; set; }
     
         /// <summary>
@@ -66,6 +69,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleAssignmentApprovalsNextLink.
         /// </summary>
         [JsonPropertyName("roleAssignmentApprovals@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleAssignmentApprovalsNextLink { get; set; }
     
         /// <summary>
@@ -78,6 +82,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleAssignmentScheduleInstancesNextLink.
         /// </summary>
         [JsonPropertyName("roleAssignmentScheduleInstances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleAssignmentScheduleInstancesNextLink { get; set; }
     
         /// <summary>
@@ -90,6 +95,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleAssignmentScheduleRequestsNextLink.
         /// </summary>
         [JsonPropertyName("roleAssignmentScheduleRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleAssignmentScheduleRequestsNextLink { get; set; }
     
         /// <summary>
@@ -102,6 +108,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleAssignmentSchedulesNextLink.
         /// </summary>
         [JsonPropertyName("roleAssignmentSchedules@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleAssignmentSchedulesNextLink { get; set; }
     
         /// <summary>
@@ -114,6 +121,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleEligibilityScheduleInstancesNextLink.
         /// </summary>
         [JsonPropertyName("roleEligibilityScheduleInstances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleEligibilityScheduleInstancesNextLink { get; set; }
     
         /// <summary>
@@ -126,6 +134,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleEligibilityScheduleRequestsNextLink.
         /// </summary>
         [JsonPropertyName("roleEligibilityScheduleRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleEligibilityScheduleRequestsNextLink { get; set; }
     
         /// <summary>
@@ -138,6 +147,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleEligibilitySchedulesNextLink.
         /// </summary>
         [JsonPropertyName("roleEligibilitySchedules@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleEligibilitySchedulesNextLink { get; set; }
     
     }

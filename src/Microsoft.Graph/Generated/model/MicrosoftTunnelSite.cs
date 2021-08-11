@@ -101,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets microsoftTunnelServersNextLink.
         /// </summary>
         [JsonPropertyName("microsoftTunnelServers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MicrosoftTunnelServersNextLink { get; set; }
     
     }

@@ -116,6 +116,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupPolicySettingMappingsNextLink.
         /// </summary>
         [JsonPropertyName("groupPolicySettingMappings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupPolicySettingMappingsNextLink { get; set; }
     
         /// <summary>
@@ -129,6 +130,7 @@ namespace Microsoft.Graph
         /// Gets or sets unsupportedGroupPolicyExtensionsNextLink.
         /// </summary>
         [JsonPropertyName("unsupportedGroupPolicyExtensions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UnsupportedGroupPolicyExtensionsNextLink { get; set; }
     
     }

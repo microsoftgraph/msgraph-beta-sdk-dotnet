@@ -36,6 +36,7 @@ namespace Microsoft.Graph
         /// Gets or sets dataLossPreventionPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("dataLossPreventionPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DataLossPreventionPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -48,6 +49,7 @@ namespace Microsoft.Graph
         /// Gets or sets sensitivityLabelsNextLink.
         /// </summary>
         [JsonPropertyName("sensitivityLabels@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SensitivityLabelsNextLink { get; set; }
     
         /// <summary>
@@ -72,6 +74,7 @@ namespace Microsoft.Graph
         /// Gets or sets threatAssessmentRequestsNextLink.
         /// </summary>
         [JsonPropertyName("threatAssessmentRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ThreatAssessmentRequestsNextLink { get; set; }
     
     }

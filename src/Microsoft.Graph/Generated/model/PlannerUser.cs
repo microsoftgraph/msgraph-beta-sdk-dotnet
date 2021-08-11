@@ -52,6 +52,7 @@ namespace Microsoft.Graph
         /// Gets or sets allNextLink.
         /// </summary>
         [JsonPropertyName("all@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AllNextLink { get; set; }
     
         /// <summary>
@@ -65,6 +66,7 @@ namespace Microsoft.Graph
         /// Gets or sets favoritePlansNextLink.
         /// </summary>
         [JsonPropertyName("favoritePlans@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string FavoritePlansNextLink { get; set; }
     
         /// <summary>
@@ -78,6 +80,7 @@ namespace Microsoft.Graph
         /// Gets or sets plansNextLink.
         /// </summary>
         [JsonPropertyName("plans@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PlansNextLink { get; set; }
     
         /// <summary>
@@ -91,6 +94,7 @@ namespace Microsoft.Graph
         /// Gets or sets recentPlansNextLink.
         /// </summary>
         [JsonPropertyName("recentPlans@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RecentPlansNextLink { get; set; }
     
         /// <summary>
@@ -104,6 +108,7 @@ namespace Microsoft.Graph
         /// Gets or sets rosterPlansNextLink.
         /// </summary>
         [JsonPropertyName("rosterPlans@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RosterPlansNextLink { get; set; }
     
         /// <summary>
@@ -117,6 +122,7 @@ namespace Microsoft.Graph
         /// Gets or sets tasksNextLink.
         /// </summary>
         [JsonPropertyName("tasks@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TasksNextLink { get; set; }
     
     }

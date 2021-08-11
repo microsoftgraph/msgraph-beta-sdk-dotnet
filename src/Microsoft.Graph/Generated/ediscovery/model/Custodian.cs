@@ -60,6 +60,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets siteSourcesNextLink.
         /// </summary>
         [JsonPropertyName("siteSources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SiteSourcesNextLink { get; set; }
     
         /// <summary>
@@ -73,6 +74,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets unifiedGroupSourcesNextLink.
         /// </summary>
         [JsonPropertyName("unifiedGroupSources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UnifiedGroupSourcesNextLink { get; set; }
     
         /// <summary>
@@ -86,6 +88,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets userSourcesNextLink.
         /// </summary>
         [JsonPropertyName("userSources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserSourcesNextLink { get; set; }
     
     }

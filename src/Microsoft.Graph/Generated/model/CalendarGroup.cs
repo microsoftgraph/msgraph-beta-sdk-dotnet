@@ -52,6 +52,7 @@ namespace Microsoft.Graph
         /// Gets or sets calendarsNextLink.
         /// </summary>
         [JsonPropertyName("calendars@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CalendarsNextLink { get; set; }
     
     }

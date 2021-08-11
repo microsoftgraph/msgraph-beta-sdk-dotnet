@@ -30,6 +30,7 @@ namespace Microsoft.Graph
         /// Gets or sets applicationSignInDetailedSummaryNextLink.
         /// </summary>
         [JsonPropertyName("applicationSignInDetailedSummary@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ApplicationSignInDetailedSummaryNextLink { get; set; }
     
         /// <summary>
@@ -48,6 +49,7 @@ namespace Microsoft.Graph
         /// Gets or sets credentialUserRegistrationDetailsNextLink.
         /// </summary>
         [JsonPropertyName("credentialUserRegistrationDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CredentialUserRegistrationDetailsNextLink { get; set; }
     
         /// <summary>
@@ -60,6 +62,7 @@ namespace Microsoft.Graph
         /// Gets or sets userCredentialUsageDetailsNextLink.
         /// </summary>
         [JsonPropertyName("userCredentialUsageDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserCredentialUsageDetailsNextLink { get; set; }
     
         /// <summary>
@@ -72,6 +75,7 @@ namespace Microsoft.Graph
         /// Gets or sets dailyPrintUsageByPrinterNextLink.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageByPrinter@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DailyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
@@ -84,6 +88,7 @@ namespace Microsoft.Graph
         /// Gets or sets dailyPrintUsageByUserNextLink.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageByUser@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DailyPrintUsageByUserNextLink { get; set; }
     
         /// <summary>
@@ -96,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets dailyPrintUsageSummariesByPrinterNextLink.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageSummariesByPrinter@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DailyPrintUsageSummariesByPrinterNextLink { get; set; }
     
         /// <summary>
@@ -108,6 +114,7 @@ namespace Microsoft.Graph
         /// Gets or sets dailyPrintUsageSummariesByUserNextLink.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageSummariesByUser@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DailyPrintUsageSummariesByUserNextLink { get; set; }
     
         /// <summary>
@@ -120,6 +127,7 @@ namespace Microsoft.Graph
         /// Gets or sets monthlyPrintUsageByPrinterNextLink.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageByPrinter@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MonthlyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
@@ -132,6 +140,7 @@ namespace Microsoft.Graph
         /// Gets or sets monthlyPrintUsageByUserNextLink.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageByUser@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MonthlyPrintUsageByUserNextLink { get; set; }
     
         /// <summary>
@@ -144,6 +153,7 @@ namespace Microsoft.Graph
         /// Gets or sets monthlyPrintUsageSummariesByPrinterNextLink.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageSummariesByPrinter@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MonthlyPrintUsageSummariesByPrinterNextLink { get; set; }
     
         /// <summary>
@@ -156,6 +166,7 @@ namespace Microsoft.Graph
         /// Gets or sets monthlyPrintUsageSummariesByUserNextLink.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageSummariesByUser@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MonthlyPrintUsageSummariesByUserNextLink { get; set; }
     
     }

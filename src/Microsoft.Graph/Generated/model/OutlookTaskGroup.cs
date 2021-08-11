@@ -59,6 +59,7 @@ namespace Microsoft.Graph
         /// Gets or sets taskFoldersNextLink.
         /// </summary>
         [JsonPropertyName("taskFolders@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TaskFoldersNextLink { get; set; }
     
     }

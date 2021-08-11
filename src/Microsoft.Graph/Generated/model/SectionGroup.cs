@@ -67,6 +67,7 @@ namespace Microsoft.Graph
         /// Gets or sets sectionGroupsNextLink.
         /// </summary>
         [JsonPropertyName("sectionGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SectionGroupsNextLink { get; set; }
     
         /// <summary>
@@ -80,6 +81,7 @@ namespace Microsoft.Graph
         /// Gets or sets sectionsNextLink.
         /// </summary>
         [JsonPropertyName("sections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SectionsNextLink { get; set; }
     
     }

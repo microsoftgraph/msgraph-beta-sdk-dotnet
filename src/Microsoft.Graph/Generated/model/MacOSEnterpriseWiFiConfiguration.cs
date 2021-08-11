@@ -96,6 +96,7 @@ namespace Microsoft.Graph
         /// Gets or sets rootCertificatesForServerValidationNextLink.
         /// </summary>
         [JsonPropertyName("rootCertificatesForServerValidation@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RootCertificatesForServerValidationNextLink { get; set; }
     
     }

@@ -81,6 +81,7 @@ namespace Microsoft.Graph
         /// Gets or sets includedGroupsNextLink.
         /// </summary>
         [JsonPropertyName("includedGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IncludedGroupsNextLink { get; set; }
     
     }

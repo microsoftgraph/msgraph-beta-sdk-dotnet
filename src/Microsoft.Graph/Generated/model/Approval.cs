@@ -30,6 +30,7 @@ namespace Microsoft.Graph
         /// Gets or sets stepsNextLink.
         /// </summary>
         [JsonPropertyName("steps@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string StepsNextLink { get; set; }
     
     }

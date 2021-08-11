@@ -82,6 +82,7 @@ namespace Microsoft.Graph
         /// Gets or sets managedDevicesNextLink.
         /// </summary>
         [JsonPropertyName("managedDevices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagedDevicesNextLink { get; set; }
     
     }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Gets or sets exclusionsNextLink.
         /// </summary>
         [JsonPropertyName("exclusions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExclusionsNextLink { get; set; }
     
         /// <summary>
@@ -44,6 +45,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Gets or sets membersNextLink.
         /// </summary>
         [JsonPropertyName("members@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MembersNextLink { get; set; }
     
     }

@@ -87,6 +87,7 @@ namespace Microsoft.Graph
         /// Gets or sets advancedThreatProtectionOnboardingDeviceSettingStatesNextLink.
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionOnboardingDeviceSettingStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AdvancedThreatProtectionOnboardingDeviceSettingStatesNextLink { get; set; }
     
     }

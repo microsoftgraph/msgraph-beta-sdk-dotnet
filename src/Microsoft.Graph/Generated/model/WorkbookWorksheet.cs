@@ -52,6 +52,7 @@ namespace Microsoft.Graph
         /// Gets or sets chartsNextLink.
         /// </summary>
         [JsonPropertyName("charts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ChartsNextLink { get; set; }
     
         /// <summary>
@@ -65,6 +66,7 @@ namespace Microsoft.Graph
         /// Gets or sets namesNextLink.
         /// </summary>
         [JsonPropertyName("names@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NamesNextLink { get; set; }
     
         /// <summary>
@@ -78,6 +80,7 @@ namespace Microsoft.Graph
         /// Gets or sets pivotTablesNextLink.
         /// </summary>
         [JsonPropertyName("pivotTables@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PivotTablesNextLink { get; set; }
     
         /// <summary>
@@ -98,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets tablesNextLink.
         /// </summary>
         [JsonPropertyName("tables@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TablesNextLink { get; set; }
     
     }

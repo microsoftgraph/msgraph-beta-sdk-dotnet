@@ -73,6 +73,7 @@ namespace Microsoft.Graph
         /// Gets or sets assignmentsNextLink.
         /// </summary>
         [JsonPropertyName("assignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AssignmentsNextLink { get; set; }
     
         /// <summary>
@@ -86,6 +87,7 @@ namespace Microsoft.Graph
         /// Gets or sets categoriesNextLink.
         /// </summary>
         [JsonPropertyName("categories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CategoriesNextLink { get; set; }
     
         /// <summary>
@@ -99,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceSettingStateSummariesNextLink.
         /// </summary>
         [JsonPropertyName("deviceSettingStateSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceSettingStateSummariesNextLink { get; set; }
     
         /// <summary>
@@ -112,6 +115,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceStatesNextLink.
         /// </summary>
         [JsonPropertyName("deviceStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceStatesNextLink { get; set; }
     
         /// <summary>
@@ -132,6 +136,7 @@ namespace Microsoft.Graph
         /// Gets or sets settingsNextLink.
         /// </summary>
         [JsonPropertyName("settings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SettingsNextLink { get; set; }
     
         /// <summary>
@@ -145,6 +150,7 @@ namespace Microsoft.Graph
         /// Gets or sets userStatesNextLink.
         /// </summary>
         [JsonPropertyName("userStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserStatesNextLink { get; set; }
     
         /// <summary>

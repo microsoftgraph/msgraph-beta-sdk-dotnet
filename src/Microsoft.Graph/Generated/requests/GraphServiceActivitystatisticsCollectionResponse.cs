@@ -14,7 +14,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GraphServiceActivitystatisticsCollectionResponse.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<GraphServiceActivitystatisticsCollectionResponse>))]
     public class GraphServiceActivitystatisticsCollectionResponse
     {
         /// <summary>
@@ -27,6 +26,7 @@ namespace Microsoft.Graph
         /// Gets or sets the nextLink string value.
         /// </summary>
         [JsonPropertyName("@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NextLink { get; set; }
 
         /// <summary>

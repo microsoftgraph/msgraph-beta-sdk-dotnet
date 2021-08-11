@@ -95,6 +95,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets custodiansNextLink.
         /// </summary>
         [JsonPropertyName("custodians@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CustodiansNextLink { get; set; }
     
         /// <summary>
@@ -108,6 +109,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets legalHoldsNextLink.
         /// </summary>
         [JsonPropertyName("legalHolds@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string LegalHoldsNextLink { get; set; }
     
         /// <summary>
@@ -121,6 +123,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets noncustodialDataSourcesNextLink.
         /// </summary>
         [JsonPropertyName("noncustodialDataSources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NoncustodialDataSourcesNextLink { get; set; }
     
         /// <summary>
@@ -134,6 +137,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets operationsNextLink.
         /// </summary>
         [JsonPropertyName("operations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OperationsNextLink { get; set; }
     
         /// <summary>
@@ -147,6 +151,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets reviewSetsNextLink.
         /// </summary>
         [JsonPropertyName("reviewSets@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ReviewSetsNextLink { get; set; }
     
         /// <summary>
@@ -166,6 +171,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets sourceCollectionsNextLink.
         /// </summary>
         [JsonPropertyName("sourceCollections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SourceCollectionsNextLink { get; set; }
     
         /// <summary>
@@ -179,6 +185,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets tagsNextLink.
         /// </summary>
         [JsonPropertyName("tags@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TagsNextLink { get; set; }
     
     }

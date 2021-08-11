@@ -103,6 +103,7 @@ namespace Microsoft.Graph
         /// Gets or sets sublabelsNextLink.
         /// </summary>
         [JsonPropertyName("sublabels@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SublabelsNextLink { get; set; }
     
     }

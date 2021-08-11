@@ -30,6 +30,7 @@ namespace Microsoft.Graph
         /// Gets or sets workforceIntegrationsNextLink.
         /// </summary>
         [JsonPropertyName("workforceIntegrations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WorkforceIntegrationsNextLink { get; set; }
     
     }

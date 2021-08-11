@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets recoveryKeysNextLink.
         /// </summary>
         [JsonPropertyName("recoveryKeys@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RecoveryKeysNextLink { get; set; }
     
     }

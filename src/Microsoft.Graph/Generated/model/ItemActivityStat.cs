@@ -94,6 +94,7 @@ namespace Microsoft.Graph
         /// Gets or sets activitiesNextLink.
         /// </summary>
         [JsonPropertyName("activities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ActivitiesNextLink { get; set; }
     
     }

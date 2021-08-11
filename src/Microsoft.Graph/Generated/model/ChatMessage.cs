@@ -179,6 +179,7 @@ namespace Microsoft.Graph
         /// Gets or sets hostedContentsNextLink.
         /// </summary>
         [JsonPropertyName("hostedContents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string HostedContentsNextLink { get; set; }
     
         /// <summary>
@@ -192,6 +193,7 @@ namespace Microsoft.Graph
         /// Gets or sets repliesNextLink.
         /// </summary>
         [JsonPropertyName("replies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RepliesNextLink { get; set; }
     
     }

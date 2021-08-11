@@ -36,6 +36,7 @@ namespace Microsoft.Graph
         /// Gets or sets commentsNextLink.
         /// </summary>
         [JsonPropertyName("comments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CommentsNextLink { get; set; }
     
         /// <summary>
@@ -55,6 +56,7 @@ namespace Microsoft.Graph
         /// Gets or sets namesNextLink.
         /// </summary>
         [JsonPropertyName("names@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NamesNextLink { get; set; }
     
         /// <summary>
@@ -68,6 +70,7 @@ namespace Microsoft.Graph
         /// Gets or sets operationsNextLink.
         /// </summary>
         [JsonPropertyName("operations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OperationsNextLink { get; set; }
     
         /// <summary>
@@ -81,6 +84,7 @@ namespace Microsoft.Graph
         /// Gets or sets tablesNextLink.
         /// </summary>
         [JsonPropertyName("tables@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TablesNextLink { get; set; }
     
         /// <summary>
@@ -94,6 +98,7 @@ namespace Microsoft.Graph
         /// Gets or sets worksheetsNextLink.
         /// </summary>
         [JsonPropertyName("worksheets@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WorksheetsNextLink { get; set; }
     
     }

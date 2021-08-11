@@ -2014,6 +2014,7 @@ namespace Microsoft.Graph
         /// Gets or sets privacyAccessControlsNextLink.
         /// </summary>
         [JsonPropertyName("privacyAccessControls@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PrivacyAccessControlsNextLink { get; set; }
     
     }

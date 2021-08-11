@@ -136,6 +136,7 @@ namespace Microsoft.Graph
         /// Gets or sets baseTypesNextLink.
         /// </summary>
         [JsonPropertyName("baseTypes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string BaseTypesNextLink { get; set; }
     
         /// <summary>
@@ -149,6 +150,7 @@ namespace Microsoft.Graph
         /// Gets or sets columnLinksNextLink.
         /// </summary>
         [JsonPropertyName("columnLinks@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ColumnLinksNextLink { get; set; }
     
         /// <summary>
@@ -162,6 +164,7 @@ namespace Microsoft.Graph
         /// Gets or sets columnPositionsNextLink.
         /// </summary>
         [JsonPropertyName("columnPositions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ColumnPositionsNextLink { get; set; }
     
         /// <summary>
@@ -175,6 +178,7 @@ namespace Microsoft.Graph
         /// Gets or sets columnsNextLink.
         /// </summary>
         [JsonPropertyName("columns@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ColumnsNextLink { get; set; }
     
     }

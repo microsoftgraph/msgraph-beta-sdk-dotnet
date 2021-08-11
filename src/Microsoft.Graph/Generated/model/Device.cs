@@ -276,6 +276,7 @@ namespace Microsoft.Graph
         /// Gets or sets usageRightsNextLink.
         /// </summary>
         [JsonPropertyName("usageRights@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UsageRightsNextLink { get; set; }
     
         /// <summary>
@@ -289,6 +290,7 @@ namespace Microsoft.Graph
         /// Gets or sets memberOfNextLink.
         /// </summary>
         [JsonPropertyName("memberOf@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MemberOfNextLink { get; set; }
     
         /// <summary>
@@ -302,6 +304,7 @@ namespace Microsoft.Graph
         /// Gets or sets registeredOwnersNextLink.
         /// </summary>
         [JsonPropertyName("registeredOwners@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RegisteredOwnersNextLink { get; set; }
     
         /// <summary>
@@ -315,6 +318,7 @@ namespace Microsoft.Graph
         /// Gets or sets registeredUsersNextLink.
         /// </summary>
         [JsonPropertyName("registeredUsers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RegisteredUsersNextLink { get; set; }
     
         /// <summary>
@@ -328,6 +332,7 @@ namespace Microsoft.Graph
         /// Gets or sets transitiveMemberOfNextLink.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TransitiveMemberOfNextLink { get; set; }
     
         /// <summary>
@@ -341,6 +346,7 @@ namespace Microsoft.Graph
         /// Gets or sets extensionsNextLink.
         /// </summary>
         [JsonPropertyName("extensions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExtensionsNextLink { get; set; }
     
         /// <summary>
@@ -354,6 +360,7 @@ namespace Microsoft.Graph
         /// Gets or sets commandsNextLink.
         /// </summary>
         [JsonPropertyName("commands@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CommandsNextLink { get; set; }
     
     }

@@ -135,6 +135,7 @@ namespace Microsoft.Graph
         /// Gets or sets attachmentsNextLink.
         /// </summary>
         [JsonPropertyName("attachments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AttachmentsNextLink { get; set; }
     
         /// <summary>
@@ -148,6 +149,7 @@ namespace Microsoft.Graph
         /// Gets or sets multiValueExtendedPropertiesNextLink.
         /// </summary>
         [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
@@ -161,6 +163,7 @@ namespace Microsoft.Graph
         /// Gets or sets singleValueExtendedPropertiesNextLink.
         /// </summary>
         [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }

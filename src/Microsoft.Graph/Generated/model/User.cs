@@ -561,6 +561,7 @@ namespace Microsoft.Graph
         /// Gets or sets usageRightsNextLink.
         /// </summary>
         [JsonPropertyName("usageRights@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UsageRightsNextLink { get; set; }
     
         /// <summary>
@@ -580,6 +581,7 @@ namespace Microsoft.Graph
         /// Gets or sets appRoleAssignmentsNextLink.
         /// </summary>
         [JsonPropertyName("appRoleAssignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AppRoleAssignmentsNextLink { get; set; }
     
         /// <summary>
@@ -593,6 +595,7 @@ namespace Microsoft.Graph
         /// Gets or sets createdObjectsNextLink.
         /// </summary>
         [JsonPropertyName("createdObjects@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CreatedObjectsNextLink { get; set; }
     
         /// <summary>
@@ -606,6 +609,7 @@ namespace Microsoft.Graph
         /// Gets or sets directReportsNextLink.
         /// </summary>
         [JsonPropertyName("directReports@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DirectReportsNextLink { get; set; }
     
         /// <summary>
@@ -619,6 +623,7 @@ namespace Microsoft.Graph
         /// Gets or sets licenseDetailsNextLink.
         /// </summary>
         [JsonPropertyName("licenseDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string LicenseDetailsNextLink { get; set; }
     
         /// <summary>
@@ -639,6 +644,7 @@ namespace Microsoft.Graph
         /// Gets or sets memberOfNextLink.
         /// </summary>
         [JsonPropertyName("memberOf@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MemberOfNextLink { get; set; }
     
         /// <summary>
@@ -651,6 +657,7 @@ namespace Microsoft.Graph
         /// Gets or sets oauth2PermissionGrantsNextLink.
         /// </summary>
         [JsonPropertyName("oauth2PermissionGrants@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string Oauth2PermissionGrantsNextLink { get; set; }
     
         /// <summary>
@@ -664,6 +671,7 @@ namespace Microsoft.Graph
         /// Gets or sets ownedDevicesNextLink.
         /// </summary>
         [JsonPropertyName("ownedDevices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OwnedDevicesNextLink { get; set; }
     
         /// <summary>
@@ -677,6 +685,7 @@ namespace Microsoft.Graph
         /// Gets or sets ownedObjectsNextLink.
         /// </summary>
         [JsonPropertyName("ownedObjects@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OwnedObjectsNextLink { get; set; }
     
         /// <summary>
@@ -690,6 +699,7 @@ namespace Microsoft.Graph
         /// Gets or sets registeredDevicesNextLink.
         /// </summary>
         [JsonPropertyName("registeredDevices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RegisteredDevicesNextLink { get; set; }
     
         /// <summary>
@@ -703,6 +713,7 @@ namespace Microsoft.Graph
         /// Gets or sets scopedRoleMemberOfNextLink.
         /// </summary>
         [JsonPropertyName("scopedRoleMemberOf@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ScopedRoleMemberOfNextLink { get; set; }
     
         /// <summary>
@@ -715,6 +726,7 @@ namespace Microsoft.Graph
         /// Gets or sets transitiveMemberOfNextLink.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TransitiveMemberOfNextLink { get; set; }
     
         /// <summary>
@@ -728,6 +740,7 @@ namespace Microsoft.Graph
         /// Gets or sets transitiveReportsNextLink.
         /// </summary>
         [JsonPropertyName("transitiveReports@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TransitiveReportsNextLink { get; set; }
     
         /// <summary>
@@ -748,6 +761,7 @@ namespace Microsoft.Graph
         /// Gets or sets calendarGroupsNextLink.
         /// </summary>
         [JsonPropertyName("calendarGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CalendarGroupsNextLink { get; set; }
     
         /// <summary>
@@ -761,6 +775,7 @@ namespace Microsoft.Graph
         /// Gets or sets calendarsNextLink.
         /// </summary>
         [JsonPropertyName("calendars@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CalendarsNextLink { get; set; }
     
         /// <summary>
@@ -774,6 +789,7 @@ namespace Microsoft.Graph
         /// Gets or sets calendarViewNextLink.
         /// </summary>
         [JsonPropertyName("calendarView@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CalendarViewNextLink { get; set; }
     
         /// <summary>
@@ -787,6 +803,7 @@ namespace Microsoft.Graph
         /// Gets or sets contactFoldersNextLink.
         /// </summary>
         [JsonPropertyName("contactFolders@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ContactFoldersNextLink { get; set; }
     
         /// <summary>
@@ -800,6 +817,7 @@ namespace Microsoft.Graph
         /// Gets or sets contactsNextLink.
         /// </summary>
         [JsonPropertyName("contacts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ContactsNextLink { get; set; }
     
         /// <summary>
@@ -813,6 +831,7 @@ namespace Microsoft.Graph
         /// Gets or sets eventsNextLink.
         /// </summary>
         [JsonPropertyName("events@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string EventsNextLink { get; set; }
     
         /// <summary>
@@ -833,6 +852,7 @@ namespace Microsoft.Graph
         /// Gets or sets joinedGroupsNextLink.
         /// </summary>
         [JsonPropertyName("joinedGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string JoinedGroupsNextLink { get; set; }
     
         /// <summary>
@@ -846,6 +866,7 @@ namespace Microsoft.Graph
         /// Gets or sets mailFoldersNextLink.
         /// </summary>
         [JsonPropertyName("mailFolders@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MailFoldersNextLink { get; set; }
     
         /// <summary>
@@ -859,6 +880,7 @@ namespace Microsoft.Graph
         /// Gets or sets messagesNextLink.
         /// </summary>
         [JsonPropertyName("messages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MessagesNextLink { get; set; }
     
         /// <summary>
@@ -879,6 +901,7 @@ namespace Microsoft.Graph
         /// Gets or sets peopleNextLink.
         /// </summary>
         [JsonPropertyName("people@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PeopleNextLink { get; set; }
     
         /// <summary>
@@ -899,6 +922,7 @@ namespace Microsoft.Graph
         /// Gets or sets drivesNextLink.
         /// </summary>
         [JsonPropertyName("drives@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DrivesNextLink { get; set; }
     
         /// <summary>
@@ -911,6 +935,7 @@ namespace Microsoft.Graph
         /// Gets or sets followedSitesNextLink.
         /// </summary>
         [JsonPropertyName("followedSites@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string FollowedSitesNextLink { get; set; }
     
         /// <summary>
@@ -924,6 +949,7 @@ namespace Microsoft.Graph
         /// Gets or sets extensionsNextLink.
         /// </summary>
         [JsonPropertyName("extensions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExtensionsNextLink { get; set; }
     
         /// <summary>
@@ -936,6 +962,7 @@ namespace Microsoft.Graph
         /// Gets or sets appConsentRequestsForApprovalNextLink.
         /// </summary>
         [JsonPropertyName("appConsentRequestsForApproval@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AppConsentRequestsForApprovalNextLink { get; set; }
     
         /// <summary>
@@ -948,6 +975,7 @@ namespace Microsoft.Graph
         /// Gets or sets approvalsNextLink.
         /// </summary>
         [JsonPropertyName("approvals@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ApprovalsNextLink { get; set; }
     
         /// <summary>
@@ -961,6 +989,7 @@ namespace Microsoft.Graph
         /// Gets or sets pendingAccessReviewInstancesNextLink.
         /// </summary>
         [JsonPropertyName("pendingAccessReviewInstances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PendingAccessReviewInstancesNextLink { get; set; }
     
         /// <summary>
@@ -974,6 +1003,7 @@ namespace Microsoft.Graph
         /// Gets or sets agreementAcceptancesNextLink.
         /// </summary>
         [JsonPropertyName("agreementAcceptances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AgreementAcceptancesNextLink { get; set; }
     
         /// <summary>
@@ -987,6 +1017,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceEnrollmentConfigurationsNextLink.
         /// </summary>
         [JsonPropertyName("deviceEnrollmentConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceEnrollmentConfigurationsNextLink { get; set; }
     
         /// <summary>
@@ -1000,6 +1031,7 @@ namespace Microsoft.Graph
         /// Gets or sets managedDevicesNextLink.
         /// </summary>
         [JsonPropertyName("managedDevices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagedDevicesNextLink { get; set; }
     
         /// <summary>
@@ -1013,6 +1045,7 @@ namespace Microsoft.Graph
         /// Gets or sets managedAppRegistrationsNextLink.
         /// </summary>
         [JsonPropertyName("managedAppRegistrations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagedAppRegistrationsNextLink { get; set; }
     
         /// <summary>
@@ -1026,6 +1059,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsInformationProtectionDeviceRegistrationsNextLink.
         /// </summary>
         [JsonPropertyName("windowsInformationProtectionDeviceRegistrations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsInformationProtectionDeviceRegistrationsNextLink { get; set; }
     
         /// <summary>
@@ -1039,6 +1073,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceManagementTroubleshootingEventsNextLink.
         /// </summary>
         [JsonPropertyName("deviceManagementTroubleshootingEvents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceManagementTroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
@@ -1052,6 +1087,7 @@ namespace Microsoft.Graph
         /// Gets or sets mobileAppIntentAndStatesNextLink.
         /// </summary>
         [JsonPropertyName("mobileAppIntentAndStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MobileAppIntentAndStatesNextLink { get; set; }
     
         /// <summary>
@@ -1065,6 +1101,7 @@ namespace Microsoft.Graph
         /// Gets or sets mobileAppTroubleshootingEventsNextLink.
         /// </summary>
         [JsonPropertyName("mobileAppTroubleshootingEvents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MobileAppTroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
@@ -1077,6 +1114,7 @@ namespace Microsoft.Graph
         /// Gets or sets notificationsNextLink.
         /// </summary>
         [JsonPropertyName("notifications@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NotificationsNextLink { get; set; }
     
         /// <summary>
@@ -1125,6 +1163,7 @@ namespace Microsoft.Graph
         /// Gets or sets photosNextLink.
         /// </summary>
         [JsonPropertyName("photos@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PhotosNextLink { get; set; }
     
         /// <summary>
@@ -1145,6 +1184,7 @@ namespace Microsoft.Graph
         /// Gets or sets activitiesNextLink.
         /// </summary>
         [JsonPropertyName("activities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ActivitiesNextLink { get; set; }
     
         /// <summary>
@@ -1157,6 +1197,7 @@ namespace Microsoft.Graph
         /// Gets or sets devicesNextLink.
         /// </summary>
         [JsonPropertyName("devices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DevicesNextLink { get; set; }
     
         /// <summary>
@@ -1169,6 +1210,7 @@ namespace Microsoft.Graph
         /// Gets or sets onlineMeetingsNextLink.
         /// </summary>
         [JsonPropertyName("onlineMeetings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OnlineMeetingsNextLink { get; set; }
     
         /// <summary>
@@ -1193,6 +1235,7 @@ namespace Microsoft.Graph
         /// Gets or sets chatsNextLink.
         /// </summary>
         [JsonPropertyName("chats@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ChatsNextLink { get; set; }
     
         /// <summary>
@@ -1206,6 +1249,7 @@ namespace Microsoft.Graph
         /// Gets or sets joinedTeamsNextLink.
         /// </summary>
         [JsonPropertyName("joinedTeams@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string JoinedTeamsNextLink { get; set; }
     
         /// <summary>

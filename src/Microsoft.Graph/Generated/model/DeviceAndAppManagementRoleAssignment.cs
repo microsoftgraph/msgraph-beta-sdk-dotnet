@@ -46,6 +46,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleScopeTagsNextLink.
         /// </summary>
         [JsonPropertyName("roleScopeTags@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleScopeTagsNextLink { get; set; }
     
     }

@@ -30,6 +30,7 @@ namespace Microsoft.Graph
         /// Gets or sets exactMatchDataStoresNextLink.
         /// </summary>
         [JsonPropertyName("exactMatchDataStores@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExactMatchDataStoresNextLink { get; set; }
     
         /// <summary>
@@ -42,6 +43,7 @@ namespace Microsoft.Graph
         /// Gets or sets classifyFileNextLink.
         /// </summary>
         [JsonPropertyName("classifyFile@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ClassifyFileNextLink { get; set; }
     
         /// <summary>
@@ -54,6 +56,7 @@ namespace Microsoft.Graph
         /// Gets or sets classifyFileJobsNextLink.
         /// </summary>
         [JsonPropertyName("classifyFileJobs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ClassifyFileJobsNextLink { get; set; }
     
         /// <summary>
@@ -66,6 +69,7 @@ namespace Microsoft.Graph
         /// Gets or sets classifyTextNextLink.
         /// </summary>
         [JsonPropertyName("classifyText@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ClassifyTextNextLink { get; set; }
     
         /// <summary>
@@ -78,6 +82,7 @@ namespace Microsoft.Graph
         /// Gets or sets classifyTextJobsNextLink.
         /// </summary>
         [JsonPropertyName("classifyTextJobs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ClassifyTextJobsNextLink { get; set; }
     
         /// <summary>
@@ -90,6 +95,7 @@ namespace Microsoft.Graph
         /// Gets or sets evaluateDlpPoliciesJobsNextLink.
         /// </summary>
         [JsonPropertyName("evaluateDlpPoliciesJobs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string EvaluateDlpPoliciesJobsNextLink { get; set; }
     
         /// <summary>
@@ -102,6 +108,7 @@ namespace Microsoft.Graph
         /// Gets or sets evaluateLabelJobsNextLink.
         /// </summary>
         [JsonPropertyName("evaluateLabelJobs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string EvaluateLabelJobsNextLink { get; set; }
     
         /// <summary>
@@ -114,6 +121,7 @@ namespace Microsoft.Graph
         /// Gets or sets jobsNextLink.
         /// </summary>
         [JsonPropertyName("jobs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string JobsNextLink { get; set; }
     
         /// <summary>
@@ -126,6 +134,7 @@ namespace Microsoft.Graph
         /// Gets or sets sensitiveTypesNextLink.
         /// </summary>
         [JsonPropertyName("sensitiveTypes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SensitiveTypesNextLink { get; set; }
     
         /// <summary>
@@ -138,6 +147,7 @@ namespace Microsoft.Graph
         /// Gets or sets sensitivityLabelsNextLink.
         /// </summary>
         [JsonPropertyName("sensitivityLabels@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SensitivityLabelsNextLink { get; set; }
     
         /// <summary>
@@ -150,6 +160,7 @@ namespace Microsoft.Graph
         /// Gets or sets exactMatchUploadAgentsNextLink.
         /// </summary>
         [JsonPropertyName("exactMatchUploadAgents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExactMatchUploadAgentsNextLink { get; set; }
     
     }

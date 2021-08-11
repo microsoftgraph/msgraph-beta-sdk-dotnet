@@ -87,6 +87,7 @@ namespace Microsoft.Graph
         /// Gets or sets externalSponsorsNextLink.
         /// </summary>
         [JsonPropertyName("externalSponsors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExternalSponsorsNextLink { get; set; }
     
         /// <summary>
@@ -100,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets internalSponsorsNextLink.
         /// </summary>
         [JsonPropertyName("internalSponsors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string InternalSponsorsNextLink { get; set; }
     
     }

@@ -94,6 +94,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageAssignmentPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageAssignmentPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -114,6 +115,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageResourceRoleScopesNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRoleScopes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageResourceRoleScopesNextLink { get; set; }
     
         /// <summary>
@@ -127,6 +129,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackagesIncompatibleWithNextLink.
         /// </summary>
         [JsonPropertyName("accessPackagesIncompatibleWith@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackagesIncompatibleWithNextLink { get; set; }
     
         /// <summary>
@@ -140,6 +143,7 @@ namespace Microsoft.Graph
         /// Gets or sets incompatibleAccessPackagesNextLink.
         /// </summary>
         [JsonPropertyName("incompatibleAccessPackages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IncompatibleAccessPackagesNextLink { get; set; }
     
         /// <summary>
@@ -153,6 +157,7 @@ namespace Microsoft.Graph
         /// Gets or sets incompatibleGroupsNextLink.
         /// </summary>
         [JsonPropertyName("incompatibleGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IncompatibleGroupsNextLink { get; set; }
     
     }

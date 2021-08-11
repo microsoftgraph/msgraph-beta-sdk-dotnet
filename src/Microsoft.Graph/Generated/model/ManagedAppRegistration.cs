@@ -152,6 +152,7 @@ namespace Microsoft.Graph
         /// Gets or sets appliedPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("appliedPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AppliedPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -165,6 +166,7 @@ namespace Microsoft.Graph
         /// Gets or sets intendedPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("intendedPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IntendedPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -178,6 +180,7 @@ namespace Microsoft.Graph
         /// Gets or sets operationsNextLink.
         /// </summary>
         [JsonPropertyName("operations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OperationsNextLink { get; set; }
     
     }

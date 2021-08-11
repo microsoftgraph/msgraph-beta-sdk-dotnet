@@ -88,6 +88,7 @@ namespace Microsoft.Graph
         /// Gets or sets updateStateSummariesNextLink.
         /// </summary>
         [JsonPropertyName("updateStateSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UpdateStateSummariesNextLink { get; set; }
     
     }

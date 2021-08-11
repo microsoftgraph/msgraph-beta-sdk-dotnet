@@ -38,6 +38,7 @@ namespace Microsoft.Graph
         /// Gets or sets resourcesNextLink.
         /// </summary>
         [JsonPropertyName("resources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ResourcesNextLink { get; set; }
     
         /// <summary>
@@ -51,6 +52,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleAssignmentRequestsNextLink.
         /// </summary>
         [JsonPropertyName("roleAssignmentRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleAssignmentRequestsNextLink { get; set; }
     
         /// <summary>
@@ -64,6 +66,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleAssignmentsNextLink.
         /// </summary>
         [JsonPropertyName("roleAssignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleAssignmentsNextLink { get; set; }
     
         /// <summary>
@@ -77,6 +80,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleDefinitionsNextLink.
         /// </summary>
         [JsonPropertyName("roleDefinitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleDefinitionsNextLink { get; set; }
     
         /// <summary>
@@ -90,6 +94,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleSettingsNextLink.
         /// </summary>
         [JsonPropertyName("roleSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleSettingsNextLink { get; set; }
     
     }

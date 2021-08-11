@@ -31,6 +31,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets aggregatedPolicyCompliancesNextLink.
         /// </summary>
         [JsonPropertyName("aggregatedPolicyCompliances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AggregatedPolicyCompliancesNextLink { get; set; }
     
         /// <summary>
@@ -44,6 +45,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets cloudPcConnectionsNextLink.
         /// </summary>
         [JsonPropertyName("cloudPcConnections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CloudPcConnectionsNextLink { get; set; }
     
         /// <summary>
@@ -57,6 +59,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets cloudPcDevicesNextLink.
         /// </summary>
         [JsonPropertyName("cloudPcDevices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CloudPcDevicesNextLink { get; set; }
     
         /// <summary>
@@ -70,6 +73,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets cloudPcsOverviewNextLink.
         /// </summary>
         [JsonPropertyName("cloudPcsOverview@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CloudPcsOverviewNextLink { get; set; }
     
         /// <summary>
@@ -83,6 +87,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets conditionalAccessPolicyCoveragesNextLink.
         /// </summary>
         [JsonPropertyName("conditionalAccessPolicyCoverages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConditionalAccessPolicyCoveragesNextLink { get; set; }
     
         /// <summary>
@@ -96,6 +101,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets credentialUserRegistrationsSummariesNextLink.
         /// </summary>
         [JsonPropertyName("credentialUserRegistrationsSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CredentialUserRegistrationsSummariesNextLink { get; set; }
     
         /// <summary>
@@ -109,6 +115,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets deviceCompliancePolicySettingStateSummariesNextLink.
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicySettingStateSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceCompliancePolicySettingStateSummariesNextLink { get; set; }
     
         /// <summary>
@@ -122,6 +129,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets managedDeviceCompliancesNextLink.
         /// </summary>
         [JsonPropertyName("managedDeviceCompliances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagedDeviceCompliancesNextLink { get; set; }
     
         /// <summary>
@@ -135,6 +143,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets managedDeviceComplianceTrendsNextLink.
         /// </summary>
         [JsonPropertyName("managedDeviceComplianceTrends@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagedDeviceComplianceTrendsNextLink { get; set; }
     
         /// <summary>
@@ -148,6 +157,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets managementActionsNextLink.
         /// </summary>
         [JsonPropertyName("managementActions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagementActionsNextLink { get; set; }
     
         /// <summary>
@@ -161,6 +171,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets managementActionTenantDeploymentStatusesNextLink.
         /// </summary>
         [JsonPropertyName("managementActionTenantDeploymentStatuses@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagementActionTenantDeploymentStatusesNextLink { get; set; }
     
         /// <summary>
@@ -174,6 +185,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets managementIntentsNextLink.
         /// </summary>
         [JsonPropertyName("managementIntents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagementIntentsNextLink { get; set; }
     
         /// <summary>
@@ -187,6 +199,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets managementTemplatesNextLink.
         /// </summary>
         [JsonPropertyName("managementTemplates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagementTemplatesNextLink { get; set; }
     
         /// <summary>
@@ -200,6 +213,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets riskyUsersNextLink.
         /// </summary>
         [JsonPropertyName("riskyUsers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RiskyUsersNextLink { get; set; }
     
         /// <summary>
@@ -213,6 +227,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets tenantGroupsNextLink.
         /// </summary>
         [JsonPropertyName("tenantGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TenantGroupsNextLink { get; set; }
     
         /// <summary>
@@ -226,6 +241,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets tenantsNextLink.
         /// </summary>
         [JsonPropertyName("tenants@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TenantsNextLink { get; set; }
     
         /// <summary>
@@ -239,6 +255,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets tenantsCustomizedInformationNextLink.
         /// </summary>
         [JsonPropertyName("tenantsCustomizedInformation@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TenantsCustomizedInformationNextLink { get; set; }
     
         /// <summary>
@@ -252,6 +269,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets tenantsDetailedInformationNextLink.
         /// </summary>
         [JsonPropertyName("tenantsDetailedInformation@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TenantsDetailedInformationNextLink { get; set; }
     
         /// <summary>
@@ -265,6 +283,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets tenantTagsNextLink.
         /// </summary>
         [JsonPropertyName("tenantTags@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TenantTagsNextLink { get; set; }
     
         /// <summary>
@@ -278,6 +297,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets windowsDeviceMalwareStatesNextLink.
         /// </summary>
         [JsonPropertyName("windowsDeviceMalwareStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsDeviceMalwareStatesNextLink { get; set; }
     
         /// <summary>
@@ -291,6 +311,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets windowsProtectionStatesNextLink.
         /// </summary>
         [JsonPropertyName("windowsProtectionStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsProtectionStatesNextLink { get; set; }
     
     }

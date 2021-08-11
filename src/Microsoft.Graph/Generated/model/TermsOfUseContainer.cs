@@ -30,6 +30,7 @@ namespace Microsoft.Graph
         /// Gets or sets agreementAcceptancesNextLink.
         /// </summary>
         [JsonPropertyName("agreementAcceptances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AgreementAcceptancesNextLink { get; set; }
     
         /// <summary>
@@ -42,6 +43,7 @@ namespace Microsoft.Graph
         /// Gets or sets agreementsNextLink.
         /// </summary>
         [JsonPropertyName("agreements@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AgreementsNextLink { get; set; }
     
     }

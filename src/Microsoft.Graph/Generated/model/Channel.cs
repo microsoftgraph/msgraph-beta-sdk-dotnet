@@ -95,6 +95,7 @@ namespace Microsoft.Graph
         /// Gets or sets membersNextLink.
         /// </summary>
         [JsonPropertyName("members@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MembersNextLink { get; set; }
     
         /// <summary>
@@ -108,6 +109,7 @@ namespace Microsoft.Graph
         /// Gets or sets messagesNextLink.
         /// </summary>
         [JsonPropertyName("messages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MessagesNextLink { get; set; }
     
         /// <summary>
@@ -121,6 +123,7 @@ namespace Microsoft.Graph
         /// Gets or sets tabsNextLink.
         /// </summary>
         [JsonPropertyName("tabs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TabsNextLink { get; set; }
     
     }

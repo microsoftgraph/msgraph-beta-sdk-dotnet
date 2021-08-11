@@ -67,6 +67,7 @@ namespace Microsoft.Graph
         /// Gets or sets networkAccessConfigurationsNextLink.
         /// </summary>
         [JsonPropertyName("networkAccessConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NetworkAccessConfigurationsNextLink { get; set; }
     
     }

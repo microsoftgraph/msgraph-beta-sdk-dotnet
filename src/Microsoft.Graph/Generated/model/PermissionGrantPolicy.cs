@@ -39,6 +39,7 @@ namespace Microsoft.Graph
         /// Gets or sets excludesNextLink.
         /// </summary>
         [JsonPropertyName("excludes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExcludesNextLink { get; set; }
     
         /// <summary>
@@ -52,6 +53,7 @@ namespace Microsoft.Graph
         /// Gets or sets includesNextLink.
         /// </summary>
         [JsonPropertyName("includes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IncludesNextLink { get; set; }
     
     }

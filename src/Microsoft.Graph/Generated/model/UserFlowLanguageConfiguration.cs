@@ -45,6 +45,7 @@ namespace Microsoft.Graph
         /// Gets or sets defaultPagesNextLink.
         /// </summary>
         [JsonPropertyName("defaultPages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DefaultPagesNextLink { get; set; }
     
         /// <summary>
@@ -58,6 +59,7 @@ namespace Microsoft.Graph
         /// Gets or sets overridesPagesNextLink.
         /// </summary>
         [JsonPropertyName("overridesPages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OverridesPagesNextLink { get; set; }
     
     }

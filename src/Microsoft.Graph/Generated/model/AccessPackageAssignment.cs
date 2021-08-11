@@ -107,6 +107,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageAssignmentRequestsNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageAssignmentRequestsNextLink { get; set; }
     
         /// <summary>
@@ -120,6 +121,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageAssignmentResourceRolesNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentResourceRoles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageAssignmentResourceRolesNextLink { get; set; }
     
         /// <summary>

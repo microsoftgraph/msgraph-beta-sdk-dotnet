@@ -39,6 +39,7 @@ namespace Microsoft.Graph
         /// Gets or sets settingsNextLink.
         /// </summary>
         [JsonPropertyName("settings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SettingsNextLink { get; set; }
     
     }

@@ -60,6 +60,7 @@ namespace Microsoft.Graph
         /// Gets or sets applicationsNextLink.
         /// </summary>
         [JsonPropertyName("applications@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ApplicationsNextLink { get; set; }
     
         /// <summary>
@@ -73,6 +74,7 @@ namespace Microsoft.Graph
         /// Gets or sets membersNextLink.
         /// </summary>
         [JsonPropertyName("members@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MembersNextLink { get; set; }
     
     }

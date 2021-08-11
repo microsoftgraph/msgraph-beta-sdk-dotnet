@@ -234,6 +234,7 @@ namespace Microsoft.Graph
         /// Gets or sets salesOrderLinesNextLink.
         /// </summary>
         [JsonPropertyName("salesOrderLines@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SalesOrderLinesNextLink { get; set; }
     
     }

@@ -101,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageResourcesNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageResources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageResourcesNextLink { get; set; }
     
     }

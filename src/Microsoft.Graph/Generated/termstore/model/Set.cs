@@ -59,6 +59,7 @@ namespace Microsoft.Graph.TermStore
         /// Gets or sets childrenNextLink.
         /// </summary>
         [JsonPropertyName("children@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ChildrenNextLink { get; set; }
     
         /// <summary>
@@ -79,6 +80,7 @@ namespace Microsoft.Graph.TermStore
         /// Gets or sets relationsNextLink.
         /// </summary>
         [JsonPropertyName("relations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RelationsNextLink { get; set; }
     
         /// <summary>
@@ -92,6 +94,7 @@ namespace Microsoft.Graph.TermStore
         /// Gets or sets termsNextLink.
         /// </summary>
         [JsonPropertyName("terms@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TermsNextLink { get; set; }
     
     }

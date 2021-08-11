@@ -52,6 +52,7 @@ namespace Microsoft.Graph
         /// Gets or sets childrenNextLink.
         /// </summary>
         [JsonPropertyName("children@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ChildrenNextLink { get; set; }
     
         /// <summary>
@@ -72,6 +73,7 @@ namespace Microsoft.Graph
         /// Gets or sets definitionsNextLink.
         /// </summary>
         [JsonPropertyName("definitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DefinitionsNextLink { get; set; }
     
         /// <summary>

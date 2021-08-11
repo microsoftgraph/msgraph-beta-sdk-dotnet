@@ -14,7 +14,6 @@ namespace Microsoft.Graph.ExternalConnectors
     /// <summary>
     /// The type ExternalConnectionsCollectionResponse.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ExternalConnectionsCollectionResponse>))]
     public class ExternalConnectionsCollectionResponse
     {
         /// <summary>
@@ -27,6 +26,7 @@ namespace Microsoft.Graph.ExternalConnectors
         /// Gets or sets the nextLink string value.
         /// </summary>
         [JsonPropertyName("@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NextLink { get; set; }
 
         /// <summary>

@@ -30,6 +30,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageAssignmentApprovalsNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentApprovals@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageAssignmentApprovalsNextLink { get; set; }
     
         /// <summary>
@@ -42,6 +43,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageAssignmentPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageAssignmentPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -54,6 +56,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageAssignmentRequestsNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageAssignmentRequestsNextLink { get; set; }
     
         /// <summary>
@@ -66,6 +69,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageAssignmentResourceRolesNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentResourceRoles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageAssignmentResourceRolesNextLink { get; set; }
     
         /// <summary>
@@ -78,6 +82,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageAssignmentsNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageAssignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageAssignmentsNextLink { get; set; }
     
         /// <summary>
@@ -90,6 +95,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageCatalogsNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageCatalogs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageCatalogsNextLink { get; set; }
     
         /// <summary>
@@ -102,6 +108,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageResourceEnvironmentsNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageResourceEnvironments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageResourceEnvironmentsNextLink { get; set; }
     
         /// <summary>
@@ -114,6 +121,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageResourceRequestsNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageResourceRequestsNextLink { get; set; }
     
         /// <summary>
@@ -126,6 +134,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageResourceRoleScopesNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRoleScopes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageResourceRoleScopesNextLink { get; set; }
     
         /// <summary>
@@ -138,6 +147,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackageResourcesNextLink.
         /// </summary>
         [JsonPropertyName("accessPackageResources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackageResourcesNextLink { get; set; }
     
         /// <summary>
@@ -150,6 +160,7 @@ namespace Microsoft.Graph
         /// Gets or sets accessPackagesNextLink.
         /// </summary>
         [JsonPropertyName("accessPackages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackagesNextLink { get; set; }
     
         /// <summary>
@@ -162,6 +173,7 @@ namespace Microsoft.Graph
         /// Gets or sets connectedOrganizationsNextLink.
         /// </summary>
         [JsonPropertyName("connectedOrganizations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConnectedOrganizationsNextLink { get; set; }
     
         /// <summary>

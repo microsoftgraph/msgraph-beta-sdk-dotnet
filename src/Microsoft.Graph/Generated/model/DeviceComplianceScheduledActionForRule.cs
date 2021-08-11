@@ -38,6 +38,7 @@ namespace Microsoft.Graph
         /// Gets or sets scheduledActionConfigurationsNextLink.
         /// </summary>
         [JsonPropertyName("scheduledActionConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ScheduledActionConfigurationsNextLink { get; set; }
     
     }
