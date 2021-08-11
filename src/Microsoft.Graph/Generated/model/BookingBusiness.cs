@@ -109,6 +109,7 @@ namespace Microsoft.Graph
         /// Gets or sets appointmentsNextLink.
         /// </summary>
         [JsonPropertyName("appointments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AppointmentsNextLink { get; set; }
     
         /// <summary>
@@ -122,6 +123,7 @@ namespace Microsoft.Graph
         /// Gets or sets calendarViewNextLink.
         /// </summary>
         [JsonPropertyName("calendarView@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CalendarViewNextLink { get; set; }
     
         /// <summary>
@@ -135,6 +137,7 @@ namespace Microsoft.Graph
         /// Gets or sets customersNextLink.
         /// </summary>
         [JsonPropertyName("customers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CustomersNextLink { get; set; }
     
         /// <summary>
@@ -148,6 +151,7 @@ namespace Microsoft.Graph
         /// Gets or sets servicesNextLink.
         /// </summary>
         [JsonPropertyName("services@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ServicesNextLink { get; set; }
     
         /// <summary>
@@ -161,6 +165,7 @@ namespace Microsoft.Graph
         /// Gets or sets staffMembersNextLink.
         /// </summary>
         [JsonPropertyName("staffMembers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string StaffMembersNextLink { get; set; }
     
     }

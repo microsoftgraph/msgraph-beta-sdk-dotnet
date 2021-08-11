@@ -102,6 +102,7 @@ namespace Microsoft.Graph
         /// Gets or sets presentationsNextLink.
         /// </summary>
         [JsonPropertyName("presentations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PresentationsNextLink { get; set; }
     
     }

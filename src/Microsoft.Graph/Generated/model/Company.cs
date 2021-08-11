@@ -54,6 +54,7 @@ namespace Microsoft.Graph
         /// Gets or sets accountsNextLink.
         /// </summary>
         [JsonPropertyName("accounts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AccountsNextLink { get; set; }
     
         /// <summary>
@@ -66,6 +67,7 @@ namespace Microsoft.Graph
         /// Gets or sets agedAccountsPayableNextLink.
         /// </summary>
         [JsonPropertyName("agedAccountsPayable@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AgedAccountsPayableNextLink { get; set; }
     
         /// <summary>
@@ -78,6 +80,7 @@ namespace Microsoft.Graph
         /// Gets or sets agedAccountsReceivableNextLink.
         /// </summary>
         [JsonPropertyName("agedAccountsReceivable@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AgedAccountsReceivableNextLink { get; set; }
     
         /// <summary>
@@ -90,6 +93,7 @@ namespace Microsoft.Graph
         /// Gets or sets companyInformationNextLink.
         /// </summary>
         [JsonPropertyName("companyInformation@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CompanyInformationNextLink { get; set; }
     
         /// <summary>
@@ -102,6 +106,7 @@ namespace Microsoft.Graph
         /// Gets or sets countriesRegionsNextLink.
         /// </summary>
         [JsonPropertyName("countriesRegions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CountriesRegionsNextLink { get; set; }
     
         /// <summary>
@@ -114,6 +119,7 @@ namespace Microsoft.Graph
         /// Gets or sets currenciesNextLink.
         /// </summary>
         [JsonPropertyName("currencies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CurrenciesNextLink { get; set; }
     
         /// <summary>
@@ -126,6 +132,7 @@ namespace Microsoft.Graph
         /// Gets or sets customerPaymentJournalsNextLink.
         /// </summary>
         [JsonPropertyName("customerPaymentJournals@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CustomerPaymentJournalsNextLink { get; set; }
     
         /// <summary>
@@ -138,6 +145,7 @@ namespace Microsoft.Graph
         /// Gets or sets customerPaymentsNextLink.
         /// </summary>
         [JsonPropertyName("customerPayments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CustomerPaymentsNextLink { get; set; }
     
         /// <summary>
@@ -150,6 +158,7 @@ namespace Microsoft.Graph
         /// Gets or sets customersNextLink.
         /// </summary>
         [JsonPropertyName("customers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CustomersNextLink { get; set; }
     
         /// <summary>
@@ -162,6 +171,7 @@ namespace Microsoft.Graph
         /// Gets or sets dimensionsNextLink.
         /// </summary>
         [JsonPropertyName("dimensions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DimensionsNextLink { get; set; }
     
         /// <summary>
@@ -174,6 +184,7 @@ namespace Microsoft.Graph
         /// Gets or sets dimensionValuesNextLink.
         /// </summary>
         [JsonPropertyName("dimensionValues@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DimensionValuesNextLink { get; set; }
     
         /// <summary>
@@ -186,6 +197,7 @@ namespace Microsoft.Graph
         /// Gets or sets employeesNextLink.
         /// </summary>
         [JsonPropertyName("employees@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string EmployeesNextLink { get; set; }
     
         /// <summary>
@@ -198,6 +210,7 @@ namespace Microsoft.Graph
         /// Gets or sets generalLedgerEntriesNextLink.
         /// </summary>
         [JsonPropertyName("generalLedgerEntries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GeneralLedgerEntriesNextLink { get; set; }
     
         /// <summary>
@@ -210,6 +223,7 @@ namespace Microsoft.Graph
         /// Gets or sets itemCategoriesNextLink.
         /// </summary>
         [JsonPropertyName("itemCategories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ItemCategoriesNextLink { get; set; }
     
         /// <summary>
@@ -222,6 +236,7 @@ namespace Microsoft.Graph
         /// Gets or sets itemsNextLink.
         /// </summary>
         [JsonPropertyName("items@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ItemsNextLink { get; set; }
     
         /// <summary>
@@ -234,6 +249,7 @@ namespace Microsoft.Graph
         /// Gets or sets journalLinesNextLink.
         /// </summary>
         [JsonPropertyName("journalLines@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string JournalLinesNextLink { get; set; }
     
         /// <summary>
@@ -246,6 +262,7 @@ namespace Microsoft.Graph
         /// Gets or sets journalsNextLink.
         /// </summary>
         [JsonPropertyName("journals@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string JournalsNextLink { get; set; }
     
         /// <summary>
@@ -258,6 +275,7 @@ namespace Microsoft.Graph
         /// Gets or sets paymentMethodsNextLink.
         /// </summary>
         [JsonPropertyName("paymentMethods@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PaymentMethodsNextLink { get; set; }
     
         /// <summary>
@@ -270,6 +288,7 @@ namespace Microsoft.Graph
         /// Gets or sets paymentTermsNextLink.
         /// </summary>
         [JsonPropertyName("paymentTerms@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PaymentTermsNextLink { get; set; }
     
         /// <summary>
@@ -282,6 +301,7 @@ namespace Microsoft.Graph
         /// Gets or sets pictureNextLink.
         /// </summary>
         [JsonPropertyName("picture@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PictureNextLink { get; set; }
     
         /// <summary>
@@ -294,6 +314,7 @@ namespace Microsoft.Graph
         /// Gets or sets purchaseInvoiceLinesNextLink.
         /// </summary>
         [JsonPropertyName("purchaseInvoiceLines@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PurchaseInvoiceLinesNextLink { get; set; }
     
         /// <summary>
@@ -306,6 +327,7 @@ namespace Microsoft.Graph
         /// Gets or sets purchaseInvoicesNextLink.
         /// </summary>
         [JsonPropertyName("purchaseInvoices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PurchaseInvoicesNextLink { get; set; }
     
         /// <summary>
@@ -318,6 +340,7 @@ namespace Microsoft.Graph
         /// Gets or sets salesCreditMemoLinesNextLink.
         /// </summary>
         [JsonPropertyName("salesCreditMemoLines@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SalesCreditMemoLinesNextLink { get; set; }
     
         /// <summary>
@@ -330,6 +353,7 @@ namespace Microsoft.Graph
         /// Gets or sets salesCreditMemosNextLink.
         /// </summary>
         [JsonPropertyName("salesCreditMemos@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SalesCreditMemosNextLink { get; set; }
     
         /// <summary>
@@ -342,6 +366,7 @@ namespace Microsoft.Graph
         /// Gets or sets salesInvoiceLinesNextLink.
         /// </summary>
         [JsonPropertyName("salesInvoiceLines@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SalesInvoiceLinesNextLink { get; set; }
     
         /// <summary>
@@ -354,6 +379,7 @@ namespace Microsoft.Graph
         /// Gets or sets salesInvoicesNextLink.
         /// </summary>
         [JsonPropertyName("salesInvoices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SalesInvoicesNextLink { get; set; }
     
         /// <summary>
@@ -366,6 +392,7 @@ namespace Microsoft.Graph
         /// Gets or sets salesOrderLinesNextLink.
         /// </summary>
         [JsonPropertyName("salesOrderLines@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SalesOrderLinesNextLink { get; set; }
     
         /// <summary>
@@ -378,6 +405,7 @@ namespace Microsoft.Graph
         /// Gets or sets salesOrdersNextLink.
         /// </summary>
         [JsonPropertyName("salesOrders@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SalesOrdersNextLink { get; set; }
     
         /// <summary>
@@ -390,6 +418,7 @@ namespace Microsoft.Graph
         /// Gets or sets salesQuoteLinesNextLink.
         /// </summary>
         [JsonPropertyName("salesQuoteLines@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SalesQuoteLinesNextLink { get; set; }
     
         /// <summary>
@@ -402,6 +431,7 @@ namespace Microsoft.Graph
         /// Gets or sets salesQuotesNextLink.
         /// </summary>
         [JsonPropertyName("salesQuotes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SalesQuotesNextLink { get; set; }
     
         /// <summary>
@@ -414,6 +444,7 @@ namespace Microsoft.Graph
         /// Gets or sets shipmentMethodsNextLink.
         /// </summary>
         [JsonPropertyName("shipmentMethods@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ShipmentMethodsNextLink { get; set; }
     
         /// <summary>
@@ -426,6 +457,7 @@ namespace Microsoft.Graph
         /// Gets or sets taxAreasNextLink.
         /// </summary>
         [JsonPropertyName("taxAreas@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TaxAreasNextLink { get; set; }
     
         /// <summary>
@@ -438,6 +470,7 @@ namespace Microsoft.Graph
         /// Gets or sets taxGroupsNextLink.
         /// </summary>
         [JsonPropertyName("taxGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TaxGroupsNextLink { get; set; }
     
         /// <summary>
@@ -450,6 +483,7 @@ namespace Microsoft.Graph
         /// Gets or sets unitsOfMeasureNextLink.
         /// </summary>
         [JsonPropertyName("unitsOfMeasure@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UnitsOfMeasureNextLink { get; set; }
     
         /// <summary>
@@ -462,6 +496,7 @@ namespace Microsoft.Graph
         /// Gets or sets vendorsNextLink.
         /// </summary>
         [JsonPropertyName("vendors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string VendorsNextLink { get; set; }
     
     }

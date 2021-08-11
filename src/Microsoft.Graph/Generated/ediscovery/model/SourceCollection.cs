@@ -88,6 +88,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets additionalSourcesNextLink.
         /// </summary>
         [JsonPropertyName("additionalSources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AdditionalSourcesNextLink { get; set; }
     
         /// <summary>
@@ -108,6 +109,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets custodianSourcesNextLink.
         /// </summary>
         [JsonPropertyName("custodianSources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CustodianSourcesNextLink { get; set; }
     
         /// <summary>
@@ -128,6 +130,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets noncustodialSourcesNextLink.
         /// </summary>
         [JsonPropertyName("noncustodialSources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NoncustodialSourcesNextLink { get; set; }
     
     }

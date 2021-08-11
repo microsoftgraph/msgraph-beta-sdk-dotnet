@@ -117,6 +117,7 @@ namespace Microsoft.Graph
         /// Gets or sets assignedLicensesNextLink.
         /// </summary>
         [JsonPropertyName("assignedLicenses@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AssignedLicensesNextLink { get; set; }
     
     }

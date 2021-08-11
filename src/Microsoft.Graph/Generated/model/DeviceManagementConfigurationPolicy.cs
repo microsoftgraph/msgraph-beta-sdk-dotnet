@@ -109,6 +109,7 @@ namespace Microsoft.Graph
         /// Gets or sets assignmentsNextLink.
         /// </summary>
         [JsonPropertyName("assignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AssignmentsNextLink { get; set; }
     
         /// <summary>
@@ -122,6 +123,7 @@ namespace Microsoft.Graph
         /// Gets or sets settingsNextLink.
         /// </summary>
         [JsonPropertyName("settings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SettingsNextLink { get; set; }
     
     }

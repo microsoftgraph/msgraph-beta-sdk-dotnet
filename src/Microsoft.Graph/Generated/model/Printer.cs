@@ -73,6 +73,7 @@ namespace Microsoft.Graph
         /// Gets or sets connectorsNextLink.
         /// </summary>
         [JsonPropertyName("connectors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConnectorsNextLink { get; set; }
     
         /// <summary>
@@ -92,6 +93,7 @@ namespace Microsoft.Graph
         /// Gets or sets sharesNextLink.
         /// </summary>
         [JsonPropertyName("shares@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SharesNextLink { get; set; }
     
         /// <summary>
@@ -105,6 +107,7 @@ namespace Microsoft.Graph
         /// Gets or sets taskTriggersNextLink.
         /// </summary>
         [JsonPropertyName("taskTriggers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TaskTriggersNextLink { get; set; }
     
     }

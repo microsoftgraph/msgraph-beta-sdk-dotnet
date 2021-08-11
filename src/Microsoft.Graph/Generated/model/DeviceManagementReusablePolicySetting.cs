@@ -87,6 +87,7 @@ namespace Microsoft.Graph
         /// Gets or sets referencingConfigurationPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("referencingConfigurationPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ReferencingConfigurationPoliciesNextLink { get; set; }
     
     }

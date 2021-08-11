@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets teamsAppsNextLink.
         /// </summary>
         [JsonPropertyName("teamsApps@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TeamsAppsNextLink { get; set; }
     
         /// <summary>

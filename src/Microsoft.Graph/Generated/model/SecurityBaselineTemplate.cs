@@ -39,6 +39,7 @@ namespace Microsoft.Graph
         /// Gets or sets categoryDeviceStateSummariesNextLink.
         /// </summary>
         [JsonPropertyName("categoryDeviceStateSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CategoryDeviceStateSummariesNextLink { get; set; }
     
         /// <summary>
@@ -52,6 +53,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceStatesNextLink.
         /// </summary>
         [JsonPropertyName("deviceStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceStatesNextLink { get; set; }
     
         /// <summary>

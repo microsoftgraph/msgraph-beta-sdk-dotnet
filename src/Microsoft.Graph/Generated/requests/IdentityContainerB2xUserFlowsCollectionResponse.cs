@@ -14,7 +14,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IdentityContainerB2xUserFlowsCollectionResponse.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<IdentityContainerB2xUserFlowsCollectionResponse>))]
     public class IdentityContainerB2xUserFlowsCollectionResponse
     {
         /// <summary>
@@ -27,6 +26,7 @@ namespace Microsoft.Graph
         /// Gets or sets the nextLink string value.
         /// </summary>
         [JsonPropertyName("@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NextLink { get; set; }
 
         /// <summary>

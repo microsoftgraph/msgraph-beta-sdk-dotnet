@@ -214,6 +214,7 @@ namespace Microsoft.Graph
         /// Gets or sets policyStatusDetailsNextLink.
         /// </summary>
         [JsonPropertyName("policyStatusDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PolicyStatusDetailsNextLink { get; set; }
     
     }

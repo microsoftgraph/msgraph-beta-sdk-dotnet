@@ -30,6 +30,7 @@ namespace Microsoft.Graph
         /// Gets or sets definitionsNextLink.
         /// </summary>
         [JsonPropertyName("definitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DefinitionsNextLink { get; set; }
     
         /// <summary>
@@ -42,6 +43,7 @@ namespace Microsoft.Graph
         /// Gets or sets historyDefinitionsNextLink.
         /// </summary>
         [JsonPropertyName("historyDefinitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string HistoryDefinitionsNextLink { get; set; }
     
         /// <summary>

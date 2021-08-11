@@ -38,6 +38,7 @@ namespace Microsoft.Graph
         /// Gets or sets metricValuesNextLink.
         /// </summary>
         [JsonPropertyName("metricValues@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MetricValuesNextLink { get; set; }
     
     }

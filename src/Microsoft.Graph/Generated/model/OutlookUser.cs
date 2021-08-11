@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets masterCategoriesNextLink.
         /// </summary>
         [JsonPropertyName("masterCategories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MasterCategoriesNextLink { get; set; }
     
         /// <summary>
@@ -43,6 +44,7 @@ namespace Microsoft.Graph
         /// Gets or sets taskFoldersNextLink.
         /// </summary>
         [JsonPropertyName("taskFolders@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TaskFoldersNextLink { get; set; }
     
         /// <summary>
@@ -55,6 +57,7 @@ namespace Microsoft.Graph
         /// Gets or sets taskGroupsNextLink.
         /// </summary>
         [JsonPropertyName("taskGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TaskGroupsNextLink { get; set; }
     
         /// <summary>
@@ -67,6 +70,7 @@ namespace Microsoft.Graph
         /// Gets or sets tasksNextLink.
         /// </summary>
         [JsonPropertyName("tasks@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TasksNextLink { get; set; }
     
     }

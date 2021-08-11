@@ -100,6 +100,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets management service app id.
+        /// AzureAD management app ID used during client device-based enrollment discovery
+        /// </summary>
+        [JsonPropertyName("managementServiceAppId")]
+        public string ManagementServiceAppId { get; set; }
+    
+        /// <summary>
         /// Gets or sets out of box experience settings.
         /// Out of box experience setting
         /// </summary>
@@ -124,6 +131,7 @@ namespace Microsoft.Graph
         /// Gets or sets assignedDevicesNextLink.
         /// </summary>
         [JsonPropertyName("assignedDevices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AssignedDevicesNextLink { get; set; }
     
         /// <summary>
@@ -137,6 +145,7 @@ namespace Microsoft.Graph
         /// Gets or sets assignmentsNextLink.
         /// </summary>
         [JsonPropertyName("assignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AssignmentsNextLink { get; set; }
     
     }

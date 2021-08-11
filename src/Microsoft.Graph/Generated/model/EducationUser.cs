@@ -255,6 +255,7 @@ namespace Microsoft.Graph
         /// Gets or sets assignmentsNextLink.
         /// </summary>
         [JsonPropertyName("assignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AssignmentsNextLink { get; set; }
     
         /// <summary>
@@ -267,6 +268,7 @@ namespace Microsoft.Graph
         /// Gets or sets rubricsNextLink.
         /// </summary>
         [JsonPropertyName("rubrics@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RubricsNextLink { get; set; }
     
         /// <summary>
@@ -280,6 +282,7 @@ namespace Microsoft.Graph
         /// Gets or sets classesNextLink.
         /// </summary>
         [JsonPropertyName("classes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ClassesNextLink { get; set; }
     
         /// <summary>
@@ -293,6 +296,7 @@ namespace Microsoft.Graph
         /// Gets or sets schoolsNextLink.
         /// </summary>
         [JsonPropertyName("schools@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SchoolsNextLink { get; set; }
     
         /// <summary>
@@ -306,6 +310,7 @@ namespace Microsoft.Graph
         /// Gets or sets taughtClassesNextLink.
         /// </summary>
         [JsonPropertyName("taughtClasses@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TaughtClassesNextLink { get; set; }
     
         /// <summary>

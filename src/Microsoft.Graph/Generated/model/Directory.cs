@@ -30,6 +30,7 @@ namespace Microsoft.Graph
         /// Gets or sets administrativeUnitsNextLink.
         /// </summary>
         [JsonPropertyName("administrativeUnits@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AdministrativeUnitsNextLink { get; set; }
     
         /// <summary>
@@ -43,6 +44,7 @@ namespace Microsoft.Graph
         /// Gets or sets deletedItemsNextLink.
         /// </summary>
         [JsonPropertyName("deletedItems@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeletedItemsNextLink { get; set; }
     
         /// <summary>
@@ -55,6 +57,7 @@ namespace Microsoft.Graph
         /// Gets or sets sharedEmailDomainsNextLink.
         /// </summary>
         [JsonPropertyName("sharedEmailDomains@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SharedEmailDomainsNextLink { get; set; }
     
         /// <summary>
@@ -69,6 +72,7 @@ namespace Microsoft.Graph
         /// Gets or sets featureRolloutPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("featureRolloutPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string FeatureRolloutPoliciesNextLink { get; set; }
     
     }

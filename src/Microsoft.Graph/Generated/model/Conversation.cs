@@ -66,6 +66,7 @@ namespace Microsoft.Graph
         /// Gets or sets threadsNextLink.
         /// </summary>
         [JsonPropertyName("threads@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ThreadsNextLink { get; set; }
     
     }

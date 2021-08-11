@@ -53,6 +53,7 @@ namespace Microsoft.Graph
         /// Gets or sets agentGroupsNextLink.
         /// </summary>
         [JsonPropertyName("agentGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AgentGroupsNextLink { get; set; }
     
     }

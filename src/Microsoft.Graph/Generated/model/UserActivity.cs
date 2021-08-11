@@ -123,6 +123,7 @@ namespace Microsoft.Graph
         /// Gets or sets historyItemsNextLink.
         /// </summary>
         [JsonPropertyName("historyItems@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string HistoryItemsNextLink { get; set; }
     
     }

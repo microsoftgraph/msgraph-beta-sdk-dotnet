@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets queriesNextLink.
         /// </summary>
         [JsonPropertyName("queries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string QueriesNextLink { get; set; }
     
     }

@@ -38,6 +38,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Gets or sets deploymentsNextLink.
         /// </summary>
         [JsonPropertyName("deployments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeploymentsNextLink { get; set; }
     
         /// <summary>
@@ -51,6 +52,7 @@ namespace Microsoft.Graph.WindowsUpdates
         /// Gets or sets updatableAssetsNextLink.
         /// </summary>
         [JsonPropertyName("updatableAssets@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UpdatableAssetsNextLink { get; set; }
     
     }

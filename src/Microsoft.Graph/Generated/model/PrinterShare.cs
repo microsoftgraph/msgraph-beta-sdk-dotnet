@@ -53,6 +53,7 @@ namespace Microsoft.Graph
         /// Gets or sets allowedGroupsNextLink.
         /// </summary>
         [JsonPropertyName("allowedGroups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AllowedGroupsNextLink { get; set; }
     
         /// <summary>
@@ -66,6 +67,7 @@ namespace Microsoft.Graph
         /// Gets or sets allowedUsersNextLink.
         /// </summary>
         [JsonPropertyName("allowedUsers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AllowedUsersNextLink { get; set; }
     
         /// <summary>

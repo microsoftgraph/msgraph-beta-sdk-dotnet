@@ -67,6 +67,7 @@ namespace Microsoft.Graph
         /// Gets or sets appLogCollectionRequestsNextLink.
         /// </summary>
         [JsonPropertyName("appLogCollectionRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AppLogCollectionRequestsNextLink { get; set; }
     
     }

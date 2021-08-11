@@ -44,6 +44,7 @@ namespace Microsoft.Graph
         /// Gets or sets matchingRowsNextLink.
         /// </summary>
         [JsonPropertyName("matchingRows@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MatchingRowsNextLink { get; set; }
     
     }

@@ -66,6 +66,7 @@ namespace Microsoft.Graph
         /// Gets or sets bordersNextLink.
         /// </summary>
         [JsonPropertyName("borders@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string BordersNextLink { get; set; }
     
         /// <summary>

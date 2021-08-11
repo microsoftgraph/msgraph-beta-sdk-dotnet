@@ -47,6 +47,7 @@ namespace Microsoft.Graph
         /// Gets or sets includeTargetsNextLink.
         /// </summary>
         [JsonPropertyName("includeTargets@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IncludeTargetsNextLink { get; set; }
     
     }

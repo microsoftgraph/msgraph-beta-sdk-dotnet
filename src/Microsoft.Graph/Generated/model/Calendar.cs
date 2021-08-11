@@ -144,6 +144,7 @@ namespace Microsoft.Graph
         /// Gets or sets calendarPermissionsNextLink.
         /// </summary>
         [JsonPropertyName("calendarPermissions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CalendarPermissionsNextLink { get; set; }
     
         /// <summary>
@@ -157,6 +158,7 @@ namespace Microsoft.Graph
         /// Gets or sets calendarViewNextLink.
         /// </summary>
         [JsonPropertyName("calendarView@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CalendarViewNextLink { get; set; }
     
         /// <summary>
@@ -170,6 +172,7 @@ namespace Microsoft.Graph
         /// Gets or sets eventsNextLink.
         /// </summary>
         [JsonPropertyName("events@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string EventsNextLink { get; set; }
     
         /// <summary>
@@ -183,6 +186,7 @@ namespace Microsoft.Graph
         /// Gets or sets multiValueExtendedPropertiesNextLink.
         /// </summary>
         [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
@@ -196,6 +200,7 @@ namespace Microsoft.Graph
         /// Gets or sets singleValueExtendedPropertiesNextLink.
         /// </summary>
         [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }

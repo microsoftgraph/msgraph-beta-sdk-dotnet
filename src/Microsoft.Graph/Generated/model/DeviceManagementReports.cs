@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets cachedReportConfigurationsNextLink.
         /// </summary>
         [JsonPropertyName("cachedReportConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CachedReportConfigurationsNextLink { get; set; }
     
         /// <summary>
@@ -44,6 +45,7 @@ namespace Microsoft.Graph
         /// Gets or sets exportJobsNextLink.
         /// </summary>
         [JsonPropertyName("exportJobs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExportJobsNextLink { get; set; }
     
         /// <summary>
@@ -57,6 +59,7 @@ namespace Microsoft.Graph
         /// Gets or sets reportSchedulesNextLink.
         /// </summary>
         [JsonPropertyName("reportSchedules@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ReportSchedulesNextLink { get; set; }
     
     }

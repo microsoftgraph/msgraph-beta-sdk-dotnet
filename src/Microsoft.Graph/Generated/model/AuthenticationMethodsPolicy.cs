@@ -72,6 +72,7 @@ namespace Microsoft.Graph
         /// Gets or sets authenticationMethodConfigurationsNextLink.
         /// </summary>
         [JsonPropertyName("authenticationMethodConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AuthenticationMethodConfigurationsNextLink { get; set; }
     
     }

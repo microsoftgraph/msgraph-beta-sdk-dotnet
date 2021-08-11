@@ -57,6 +57,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupsNextLink.
         /// </summary>
         [JsonPropertyName("groups@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupsNextLink { get; set; }
     
         /// <summary>
@@ -70,6 +71,7 @@ namespace Microsoft.Graph
         /// Gets or sets itemsNextLink.
         /// </summary>
         [JsonPropertyName("items@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ItemsNextLink { get; set; }
     
         /// <summary>
@@ -83,6 +85,7 @@ namespace Microsoft.Graph
         /// Gets or sets operationsNextLink.
         /// </summary>
         [JsonPropertyName("operations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OperationsNextLink { get; set; }
     
         /// <summary>

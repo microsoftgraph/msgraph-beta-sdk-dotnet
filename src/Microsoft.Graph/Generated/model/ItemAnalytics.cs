@@ -36,6 +36,7 @@ namespace Microsoft.Graph
         /// Gets or sets itemActivityStatsNextLink.
         /// </summary>
         [JsonPropertyName("itemActivityStats@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ItemActivityStatsNextLink { get; set; }
     
         /// <summary>

@@ -130,6 +130,7 @@ namespace Microsoft.Graph
         /// Gets or sets enrollmentProfilesNextLink.
         /// </summary>
         [JsonPropertyName("enrollmentProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string EnrollmentProfilesNextLink { get; set; }
     
         /// <summary>
@@ -143,6 +144,7 @@ namespace Microsoft.Graph
         /// Gets or sets importedAppleDeviceIdentitiesNextLink.
         /// </summary>
         [JsonPropertyName("importedAppleDeviceIdentities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ImportedAppleDeviceIdentitiesNextLink { get; set; }
     
     }

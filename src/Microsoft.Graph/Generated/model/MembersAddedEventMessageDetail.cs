@@ -41,5 +41,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("members")]
         public IEnumerable<TeamworkUserIdentity> Members { get; set; }
     
+        /// <summary>
+        /// Gets or sets visibleHistoryStartDateTime.
+        /// </summary>
+        [JsonPropertyName("visibleHistoryStartDateTime")]
+        public DateTimeOffset? VisibleHistoryStartDateTime { get; set; }
+    
     }
 }

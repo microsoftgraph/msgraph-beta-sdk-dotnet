@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Chat Message Info.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<ChatMessageInfo>))]
     public partial class ChatMessageInfo : Entity
     {
     
@@ -35,6 +36,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets event detail.
+        /// </summary>
+        [JsonPropertyName("eventDetail")]
+        public EventMessageDetail EventDetail { get; set; }
+    
+        /// <summary>
         /// Gets or sets from.
         /// Information about the sender of the message.
         /// </summary>
@@ -47,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("isDeleted")]
         public bool? IsDeleted { get; set; }
+    
+        /// <summary>
+        /// Gets or sets message type.
+        /// </summary>
+        [JsonPropertyName("messageType")]
+        public ChatMessageType? MessageType { get; set; }
     
     }
 }

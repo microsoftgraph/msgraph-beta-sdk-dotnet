@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets riskDetectionsNextLink.
         /// </summary>
         [JsonPropertyName("riskDetections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RiskDetectionsNextLink { get; set; }
     
         /// <summary>
@@ -43,6 +44,7 @@ namespace Microsoft.Graph
         /// Gets or sets riskyUsersNextLink.
         /// </summary>
         [JsonPropertyName("riskyUsers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RiskyUsersNextLink { get; set; }
     
         /// <summary>

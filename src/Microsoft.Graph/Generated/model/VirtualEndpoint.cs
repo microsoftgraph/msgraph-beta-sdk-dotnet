@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets auditEventsNextLink.
         /// </summary>
         [JsonPropertyName("auditEvents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AuditEventsNextLink { get; set; }
     
         /// <summary>
@@ -44,6 +45,7 @@ namespace Microsoft.Graph
         /// Gets or sets cloudPCsNextLink.
         /// </summary>
         [JsonPropertyName("cloudPCs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CloudPCsNextLink { get; set; }
     
         /// <summary>
@@ -57,6 +59,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceImagesNextLink.
         /// </summary>
         [JsonPropertyName("deviceImages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceImagesNextLink { get; set; }
     
         /// <summary>
@@ -70,6 +73,7 @@ namespace Microsoft.Graph
         /// Gets or sets onPremisesConnectionsNextLink.
         /// </summary>
         [JsonPropertyName("onPremisesConnections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OnPremisesConnectionsNextLink { get; set; }
     
         /// <summary>
@@ -83,6 +87,7 @@ namespace Microsoft.Graph
         /// Gets or sets provisioningPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("provisioningPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ProvisioningPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -96,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets userSettingsNextLink.
         /// </summary>
         [JsonPropertyName("userSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserSettingsNextLink { get; set; }
     
     }

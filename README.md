@@ -68,20 +68,16 @@ Please see [msgraph-sdk-dotnet](https://github.com/microsoftgraph/msgraph-sdk-do
 
 ## Notes
 
-Install NewtonSoft.Json first if you want to use a version greater than NewtonSoft.Json 6.0.1. For example, you'll need to install NewtonSoft.Json 9.0.1 first if you want to use this library while targeting .Net Core with standard1.0.
+### Upgrading to v4
 
-Install System.Runtime.InteropServices.RuntimeInformation before you install Microsoft.Graph >=1.3 if you are having an issue updating the package for a Xamarin solution. You may need to updated references to Microsoft.NETCore.UniversalWindowsPlatform to >=5.2.2 as well.
-
-### Upgrading to v2.x.x-preview
-
-Between 0.x.x-preview and 2.x.x-preview there were some major breaking changes:
+Between 0.x and 4.x there were some major breaking changes:
 
  * .NET Standard minimum version bumped from `netStandard1.3` to `netstandard2.0`
- * .NET Framework minimum version bumped from `net45` to `net461`
+ * .NET Framework minimum version bumped from `net45` to `net462`
  * Replacing Newtosoft.Json with System.Text.Json
  * Upgrading Microsoft.Graph.Core dependency to version 2.0.0
 
-View the upgrade guide [here](docs/upgrade-to-v2.md).
+View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/dev/docs/upgrade-to-v4.md)..
 
 ## Issues
 

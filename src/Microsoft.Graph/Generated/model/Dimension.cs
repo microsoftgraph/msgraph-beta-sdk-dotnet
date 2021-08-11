@@ -48,6 +48,7 @@ namespace Microsoft.Graph
         /// Gets or sets dimensionValuesNextLink.
         /// </summary>
         [JsonPropertyName("dimensionValues@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DimensionValuesNextLink { get; set; }
     
     }

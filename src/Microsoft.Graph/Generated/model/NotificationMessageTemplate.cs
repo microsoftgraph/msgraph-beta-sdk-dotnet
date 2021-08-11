@@ -67,6 +67,7 @@ namespace Microsoft.Graph
         /// Gets or sets localizedNotificationMessagesNextLink.
         /// </summary>
         [JsonPropertyName("localizedNotificationMessages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string LocalizedNotificationMessagesNextLink { get; set; }
     
     }

@@ -144,6 +144,7 @@ namespace Microsoft.Graph
         /// Gets or sets androidDeviceOwnerEnrollmentProfilesNextLink.
         /// </summary>
         [JsonPropertyName("androidDeviceOwnerEnrollmentProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AndroidDeviceOwnerEnrollmentProfilesNextLink { get; set; }
     
         /// <summary>
@@ -163,6 +164,7 @@ namespace Microsoft.Graph
         /// Gets or sets androidForWorkAppConfigurationSchemasNextLink.
         /// </summary>
         [JsonPropertyName("androidForWorkAppConfigurationSchemas@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AndroidForWorkAppConfigurationSchemasNextLink { get; set; }
     
         /// <summary>
@@ -176,6 +178,7 @@ namespace Microsoft.Graph
         /// Gets or sets androidForWorkEnrollmentProfilesNextLink.
         /// </summary>
         [JsonPropertyName("androidForWorkEnrollmentProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AndroidForWorkEnrollmentProfilesNextLink { get; set; }
     
         /// <summary>
@@ -203,6 +206,7 @@ namespace Microsoft.Graph
         /// Gets or sets androidManagedStoreAppConfigurationSchemasNextLink.
         /// </summary>
         [JsonPropertyName("androidManagedStoreAppConfigurationSchemas@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AndroidManagedStoreAppConfigurationSchemasNextLink { get; set; }
     
         /// <summary>
@@ -216,6 +220,7 @@ namespace Microsoft.Graph
         /// Gets or sets auditEventsNextLink.
         /// </summary>
         [JsonPropertyName("auditEvents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AuditEventsNextLink { get; set; }
     
         /// <summary>
@@ -229,6 +234,7 @@ namespace Microsoft.Graph
         /// Gets or sets assignmentFiltersNextLink.
         /// </summary>
         [JsonPropertyName("assignmentFilters@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AssignmentFiltersNextLink { get; set; }
     
         /// <summary>
@@ -242,6 +248,7 @@ namespace Microsoft.Graph
         /// Gets or sets chromeOSOnboardingSettingsNextLink.
         /// </summary>
         [JsonPropertyName("chromeOSOnboardingSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ChromeOSOnboardingSettingsNextLink { get; set; }
     
         /// <summary>
@@ -255,6 +262,7 @@ namespace Microsoft.Graph
         /// Gets or sets termsAndConditionsNextLink.
         /// </summary>
         [JsonPropertyName("termsAndConditions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TermsAndConditionsNextLink { get; set; }
     
         /// <summary>
@@ -275,6 +283,7 @@ namespace Microsoft.Graph
         /// Gets or sets cartToClassAssociationsNextLink.
         /// </summary>
         [JsonPropertyName("cartToClassAssociations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CartToClassAssociationsNextLink { get; set; }
     
         /// <summary>
@@ -288,6 +297,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceCompliancePoliciesNextLink.
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceCompliancePoliciesNextLink { get; set; }
     
         /// <summary>
@@ -308,6 +318,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceCompliancePolicySettingStateSummariesNextLink.
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicySettingStateSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceCompliancePolicySettingStateSummariesNextLink { get; set; }
     
         /// <summary>
@@ -321,6 +332,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceConfigurationConflictSummaryNextLink.
         /// </summary>
         [JsonPropertyName("deviceConfigurationConflictSummary@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceConfigurationConflictSummaryNextLink { get; set; }
     
         /// <summary>
@@ -341,6 +353,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceConfigurationRestrictedAppsViolationsNextLink.
         /// </summary>
         [JsonPropertyName("deviceConfigurationRestrictedAppsViolations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceConfigurationRestrictedAppsViolationsNextLink { get; set; }
     
         /// <summary>
@@ -354,6 +367,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceConfigurationsNextLink.
         /// </summary>
         [JsonPropertyName("deviceConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceConfigurationsNextLink { get; set; }
     
         /// <summary>
@@ -367,6 +381,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceConfigurationsAllManagedDeviceCertificateStatesNextLink.
         /// </summary>
         [JsonPropertyName("deviceConfigurationsAllManagedDeviceCertificateStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceConfigurationsAllManagedDeviceCertificateStatesNextLink { get; set; }
     
         /// <summary>
@@ -387,6 +402,7 @@ namespace Microsoft.Graph
         /// Gets or sets iosUpdateStatusesNextLink.
         /// </summary>
         [JsonPropertyName("iosUpdateStatuses@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IosUpdateStatusesNextLink { get; set; }
     
         /// <summary>
@@ -400,6 +416,7 @@ namespace Microsoft.Graph
         /// Gets or sets macOSSoftwareUpdateAccountSummariesNextLink.
         /// </summary>
         [JsonPropertyName("macOSSoftwareUpdateAccountSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MacOSSoftwareUpdateAccountSummariesNextLink { get; set; }
     
         /// <summary>
@@ -413,6 +430,7 @@ namespace Microsoft.Graph
         /// Gets or sets managedDeviceEncryptionStatesNextLink.
         /// </summary>
         [JsonPropertyName("managedDeviceEncryptionStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagedDeviceEncryptionStatesNextLink { get; set; }
     
         /// <summary>
@@ -426,6 +444,7 @@ namespace Microsoft.Graph
         /// Gets or sets ndesConnectorsNextLink.
         /// </summary>
         [JsonPropertyName("ndesConnectors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NdesConnectorsNextLink { get; set; }
     
         /// <summary>
@@ -446,6 +465,7 @@ namespace Microsoft.Graph
         /// Gets or sets configurationCategoriesNextLink.
         /// </summary>
         [JsonPropertyName("configurationCategories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConfigurationCategoriesNextLink { get; set; }
     
         /// <summary>
@@ -459,6 +479,7 @@ namespace Microsoft.Graph
         /// Gets or sets configurationPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("configurationPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConfigurationPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -472,6 +493,7 @@ namespace Microsoft.Graph
         /// Gets or sets configurationPolicyTemplatesNextLink.
         /// </summary>
         [JsonPropertyName("configurationPolicyTemplates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConfigurationPolicyTemplatesNextLink { get; set; }
     
         /// <summary>
@@ -485,6 +507,7 @@ namespace Microsoft.Graph
         /// Gets or sets configurationSettingsNextLink.
         /// </summary>
         [JsonPropertyName("configurationSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConfigurationSettingsNextLink { get; set; }
     
         /// <summary>
@@ -498,6 +521,7 @@ namespace Microsoft.Graph
         /// Gets or sets reusablePolicySettingsNextLink.
         /// </summary>
         [JsonPropertyName("reusablePolicySettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ReusablePolicySettingsNextLink { get; set; }
     
         /// <summary>
@@ -511,6 +535,7 @@ namespace Microsoft.Graph
         /// Gets or sets reusableSettingsNextLink.
         /// </summary>
         [JsonPropertyName("reusableSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ReusableSettingsNextLink { get; set; }
     
         /// <summary>
@@ -524,6 +549,7 @@ namespace Microsoft.Graph
         /// Gets or sets templateSettingsNextLink.
         /// </summary>
         [JsonPropertyName("templateSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TemplateSettingsNextLink { get; set; }
     
         /// <summary>
@@ -537,6 +563,7 @@ namespace Microsoft.Graph
         /// Gets or sets complianceManagementPartnersNextLink.
         /// </summary>
         [JsonPropertyName("complianceManagementPartners@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ComplianceManagementPartnersNextLink { get; set; }
     
         /// <summary>
@@ -557,6 +584,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceCategoriesNextLink.
         /// </summary>
         [JsonPropertyName("deviceCategories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceCategoriesNextLink { get; set; }
     
         /// <summary>
@@ -570,6 +598,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceEnrollmentConfigurationsNextLink.
         /// </summary>
         [JsonPropertyName("deviceEnrollmentConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceEnrollmentConfigurationsNextLink { get; set; }
     
         /// <summary>
@@ -583,6 +612,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceManagementPartnersNextLink.
         /// </summary>
         [JsonPropertyName("deviceManagementPartners@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceManagementPartnersNextLink { get; set; }
     
         /// <summary>
@@ -596,6 +626,7 @@ namespace Microsoft.Graph
         /// Gets or sets exchangeConnectorsNextLink.
         /// </summary>
         [JsonPropertyName("exchangeConnectors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExchangeConnectorsNextLink { get; set; }
     
         /// <summary>
@@ -609,6 +640,7 @@ namespace Microsoft.Graph
         /// Gets or sets exchangeOnPremisesPoliciesNextLink.
         /// </summary>
         [JsonPropertyName("exchangeOnPremisesPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExchangeOnPremisesPoliciesNextLink { get; set; }
     
         /// <summary>
@@ -629,6 +661,7 @@ namespace Microsoft.Graph
         /// Gets or sets mobileThreatDefenseConnectorsNextLink.
         /// </summary>
         [JsonPropertyName("mobileThreatDefenseConnectors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MobileThreatDefenseConnectorsNextLink { get; set; }
     
         /// <summary>
@@ -642,6 +675,7 @@ namespace Microsoft.Graph
         /// Gets or sets categoriesNextLink.
         /// </summary>
         [JsonPropertyName("categories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CategoriesNextLink { get; set; }
     
         /// <summary>
@@ -655,6 +689,7 @@ namespace Microsoft.Graph
         /// Gets or sets intentsNextLink.
         /// </summary>
         [JsonPropertyName("intents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IntentsNextLink { get; set; }
     
         /// <summary>
@@ -668,6 +703,7 @@ namespace Microsoft.Graph
         /// Gets or sets settingDefinitionsNextLink.
         /// </summary>
         [JsonPropertyName("settingDefinitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SettingDefinitionsNextLink { get; set; }
     
         /// <summary>
@@ -681,6 +717,7 @@ namespace Microsoft.Graph
         /// Gets or sets templatesNextLink.
         /// </summary>
         [JsonPropertyName("templates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TemplatesNextLink { get; set; }
     
         /// <summary>
@@ -701,6 +738,7 @@ namespace Microsoft.Graph
         /// Gets or sets cloudPCConnectivityIssuesNextLink.
         /// </summary>
         [JsonPropertyName("cloudPCConnectivityIssues@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CloudPCConnectivityIssuesNextLink { get; set; }
     
         /// <summary>
@@ -714,6 +752,7 @@ namespace Microsoft.Graph
         /// Gets or sets comanagedDevicesNextLink.
         /// </summary>
         [JsonPropertyName("comanagedDevices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ComanagedDevicesNextLink { get; set; }
     
         /// <summary>
@@ -727,6 +766,7 @@ namespace Microsoft.Graph
         /// Gets or sets comanagementEligibleDevicesNextLink.
         /// </summary>
         [JsonPropertyName("comanagementEligibleDevices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ComanagementEligibleDevicesNextLink { get; set; }
     
         /// <summary>
@@ -740,6 +780,7 @@ namespace Microsoft.Graph
         /// Gets or sets dataSharingConsentsNextLink.
         /// </summary>
         [JsonPropertyName("dataSharingConsents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DataSharingConsentsNextLink { get; set; }
     
         /// <summary>
@@ -753,6 +794,7 @@ namespace Microsoft.Graph
         /// Gets or sets detectedAppsNextLink.
         /// </summary>
         [JsonPropertyName("detectedApps@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DetectedAppsNextLink { get; set; }
     
         /// <summary>
@@ -766,6 +808,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceComplianceScriptsNextLink.
         /// </summary>
         [JsonPropertyName("deviceComplianceScripts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceComplianceScriptsNextLink { get; set; }
     
         /// <summary>
@@ -779,6 +822,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceCustomAttributeShellScriptsNextLink.
         /// </summary>
         [JsonPropertyName("deviceCustomAttributeShellScripts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceCustomAttributeShellScriptsNextLink { get; set; }
     
         /// <summary>
@@ -792,6 +836,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceHealthScriptsNextLink.
         /// </summary>
         [JsonPropertyName("deviceHealthScripts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceHealthScriptsNextLink { get; set; }
     
         /// <summary>
@@ -805,6 +850,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceManagementScriptsNextLink.
         /// </summary>
         [JsonPropertyName("deviceManagementScripts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceManagementScriptsNextLink { get; set; }
     
         /// <summary>
@@ -818,6 +864,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceShellScriptsNextLink.
         /// </summary>
         [JsonPropertyName("deviceShellScripts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceShellScriptsNextLink { get; set; }
     
         /// <summary>
@@ -838,6 +885,7 @@ namespace Microsoft.Graph
         /// Gets or sets managedDevicesNextLink.
         /// </summary>
         [JsonPropertyName("managedDevices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagedDevicesNextLink { get; set; }
     
         /// <summary>
@@ -851,6 +899,7 @@ namespace Microsoft.Graph
         /// Gets or sets mobileAppTroubleshootingEventsNextLink.
         /// </summary>
         [JsonPropertyName("mobileAppTroubleshootingEvents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MobileAppTroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
@@ -864,6 +913,7 @@ namespace Microsoft.Graph
         /// Gets or sets remoteActionAuditsNextLink.
         /// </summary>
         [JsonPropertyName("remoteActionAudits@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RemoteActionAuditsNextLink { get; set; }
     
         /// <summary>
@@ -877,6 +927,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAppHealthApplicationPerformanceNextLink { get; set; }
     
         /// <summary>
@@ -890,6 +941,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionNextLink { get; set; }
     
         /// <summary>
@@ -903,6 +955,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetailsNextLink { get; set; }
     
         /// <summary>
@@ -916,6 +969,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceIdNextLink { get; set; }
     
         /// <summary>
@@ -929,6 +983,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionNextLink { get; set; }
     
         /// <summary>
@@ -942,6 +997,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsAppHealthDeviceModelPerformanceNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthDeviceModelPerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAppHealthDeviceModelPerformanceNextLink { get; set; }
     
         /// <summary>
@@ -955,6 +1011,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsAppHealthDevicePerformanceNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthDevicePerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAppHealthDevicePerformanceNextLink { get; set; }
     
         /// <summary>
@@ -968,6 +1025,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsAppHealthDevicePerformanceDetailsNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthDevicePerformanceDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAppHealthDevicePerformanceDetailsNextLink { get; set; }
     
         /// <summary>
@@ -981,6 +1039,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsAppHealthOSVersionPerformanceNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsAppHealthOSVersionPerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAppHealthOSVersionPerformanceNextLink { get; set; }
     
         /// <summary>
@@ -1001,6 +1060,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsBaselinesNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsBaselines@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsBaselinesNextLink { get; set; }
     
         /// <summary>
@@ -1014,6 +1074,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsCategoriesNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsCategories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsCategoriesNextLink { get; set; }
     
         /// <summary>
@@ -1027,6 +1088,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsDeviceMetricHistoryNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDeviceMetricHistory@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsDeviceMetricHistoryNextLink { get; set; }
     
         /// <summary>
@@ -1040,6 +1102,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsDevicePerformanceNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDevicePerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsDevicePerformanceNextLink { get; set; }
     
         /// <summary>
@@ -1053,6 +1116,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsDeviceScoresNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDeviceScores@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsDeviceScoresNextLink { get; set; }
     
         /// <summary>
@@ -1066,6 +1130,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsDeviceStartupHistoryNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDeviceStartupHistory@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsDeviceStartupHistoryNextLink { get; set; }
     
         /// <summary>
@@ -1079,6 +1144,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsDeviceStartupProcessesNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDeviceStartupProcesses@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsDeviceStartupProcessesNextLink { get; set; }
     
         /// <summary>
@@ -1092,6 +1158,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsDeviceStartupProcessPerformanceNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDeviceStartupProcessPerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsDeviceStartupProcessPerformanceNextLink { get; set; }
     
         /// <summary>
@@ -1105,6 +1172,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsDevicesWithoutCloudIdentityNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsDevicesWithoutCloudIdentity@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsDevicesWithoutCloudIdentityNextLink { get; set; }
     
         /// <summary>
@@ -1118,6 +1186,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsImpactingProcessNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsImpactingProcess@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsImpactingProcessNextLink { get; set; }
     
         /// <summary>
@@ -1131,6 +1200,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsMetricHistoryNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsMetricHistory@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsMetricHistoryNextLink { get; set; }
     
         /// <summary>
@@ -1144,6 +1214,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsNotAutopilotReadyDeviceNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsNotAutopilotReadyDevice@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsNotAutopilotReadyDeviceNextLink { get; set; }
     
         /// <summary>
@@ -1171,6 +1242,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsRemoteConnectionNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsRemoteConnection@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsRemoteConnectionNextLink { get; set; }
     
         /// <summary>
@@ -1184,6 +1256,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsResourcePerformanceNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsResourcePerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsResourcePerformanceNextLink { get; set; }
     
         /// <summary>
@@ -1197,6 +1270,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsScoreHistoryNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsScoreHistory@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsScoreHistoryNextLink { get; set; }
     
         /// <summary>
@@ -1217,6 +1291,7 @@ namespace Microsoft.Graph
         /// Gets or sets userExperienceAnalyticsWorkFromAnywhereMetricsNextLink.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsWorkFromAnywhereMetrics@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsWorkFromAnywhereMetricsNextLink { get; set; }
     
         /// <summary>
@@ -1230,6 +1305,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsMalwareInformationNextLink.
         /// </summary>
         [JsonPropertyName("windowsMalwareInformation@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsMalwareInformationNextLink { get; set; }
     
         /// <summary>
@@ -1243,6 +1319,7 @@ namespace Microsoft.Graph
         /// Gets or sets derivedCredentialsNextLink.
         /// </summary>
         [JsonPropertyName("derivedCredentials@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DerivedCredentialsNextLink { get; set; }
     
         /// <summary>
@@ -1256,6 +1333,7 @@ namespace Microsoft.Graph
         /// Gets or sets resourceAccessProfilesNextLink.
         /// </summary>
         [JsonPropertyName("resourceAccessProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ResourceAccessProfilesNextLink { get; set; }
     
         /// <summary>
@@ -1269,6 +1347,7 @@ namespace Microsoft.Graph
         /// Gets or sets appleUserInitiatedEnrollmentProfilesNextLink.
         /// </summary>
         [JsonPropertyName("appleUserInitiatedEnrollmentProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AppleUserInitiatedEnrollmentProfilesNextLink { get; set; }
     
         /// <summary>
@@ -1282,6 +1361,7 @@ namespace Microsoft.Graph
         /// Gets or sets depOnboardingSettingsNextLink.
         /// </summary>
         [JsonPropertyName("depOnboardingSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DepOnboardingSettingsNextLink { get; set; }
     
         /// <summary>
@@ -1295,6 +1375,7 @@ namespace Microsoft.Graph
         /// Gets or sets importedDeviceIdentitiesNextLink.
         /// </summary>
         [JsonPropertyName("importedDeviceIdentities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ImportedDeviceIdentitiesNextLink { get; set; }
     
         /// <summary>
@@ -1308,6 +1389,7 @@ namespace Microsoft.Graph
         /// Gets or sets importedWindowsAutopilotDeviceIdentitiesNextLink.
         /// </summary>
         [JsonPropertyName("importedWindowsAutopilotDeviceIdentities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ImportedWindowsAutopilotDeviceIdentitiesNextLink { get; set; }
     
         /// <summary>
@@ -1321,6 +1403,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsAutopilotDeploymentProfilesNextLink.
         /// </summary>
         [JsonPropertyName("windowsAutopilotDeploymentProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsAutopilotDeploymentProfilesNextLink { get; set; }
     
         /// <summary>
@@ -1334,6 +1417,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsAutopilotDeviceIdentitiesNextLink.
         /// </summary>
         [JsonPropertyName("windowsAutopilotDeviceIdentities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsAutopilotDeviceIdentitiesNextLink { get; set; }
     
         /// <summary>
@@ -1354,6 +1438,7 @@ namespace Microsoft.Graph
         /// Gets or sets managementConditionsNextLink.
         /// </summary>
         [JsonPropertyName("managementConditions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagementConditionsNextLink { get; set; }
     
         /// <summary>
@@ -1367,6 +1452,7 @@ namespace Microsoft.Graph
         /// Gets or sets managementConditionStatementsNextLink.
         /// </summary>
         [JsonPropertyName("managementConditionStatements@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagementConditionStatementsNextLink { get; set; }
     
         /// <summary>
@@ -1380,6 +1466,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupPolicyMigrationReportsNextLink.
         /// </summary>
         [JsonPropertyName("groupPolicyMigrationReports@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupPolicyMigrationReportsNextLink { get; set; }
     
         /// <summary>
@@ -1393,6 +1480,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupPolicyObjectFilesNextLink.
         /// </summary>
         [JsonPropertyName("groupPolicyObjectFiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupPolicyObjectFilesNextLink { get; set; }
     
         /// <summary>
@@ -1406,6 +1494,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupPolicyCategoriesNextLink.
         /// </summary>
         [JsonPropertyName("groupPolicyCategories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupPolicyCategoriesNextLink { get; set; }
     
         /// <summary>
@@ -1419,6 +1508,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupPolicyConfigurationsNextLink.
         /// </summary>
         [JsonPropertyName("groupPolicyConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupPolicyConfigurationsNextLink { get; set; }
     
         /// <summary>
@@ -1432,6 +1522,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupPolicyDefinitionFilesNextLink.
         /// </summary>
         [JsonPropertyName("groupPolicyDefinitionFiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupPolicyDefinitionFilesNextLink { get; set; }
     
         /// <summary>
@@ -1445,6 +1536,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupPolicyDefinitionsNextLink.
         /// </summary>
         [JsonPropertyName("groupPolicyDefinitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupPolicyDefinitionsNextLink { get; set; }
     
         /// <summary>
@@ -1458,6 +1550,7 @@ namespace Microsoft.Graph
         /// Gets or sets groupPolicyUploadedDefinitionFilesNextLink.
         /// </summary>
         [JsonPropertyName("groupPolicyUploadedDefinitionFiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string GroupPolicyUploadedDefinitionFilesNextLink { get; set; }
     
         /// <summary>
@@ -1471,6 +1564,7 @@ namespace Microsoft.Graph
         /// Gets or sets microsoftTunnelConfigurationsNextLink.
         /// </summary>
         [JsonPropertyName("microsoftTunnelConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MicrosoftTunnelConfigurationsNextLink { get; set; }
     
         /// <summary>
@@ -1484,6 +1578,7 @@ namespace Microsoft.Graph
         /// Gets or sets microsoftTunnelHealthThresholdsNextLink.
         /// </summary>
         [JsonPropertyName("microsoftTunnelHealthThresholds@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MicrosoftTunnelHealthThresholdsNextLink { get; set; }
     
         /// <summary>
@@ -1497,6 +1592,7 @@ namespace Microsoft.Graph
         /// Gets or sets microsoftTunnelServerLogCollectionResponsesNextLink.
         /// </summary>
         [JsonPropertyName("microsoftTunnelServerLogCollectionResponses@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MicrosoftTunnelServerLogCollectionResponsesNextLink { get; set; }
     
         /// <summary>
@@ -1510,6 +1606,7 @@ namespace Microsoft.Graph
         /// Gets or sets microsoftTunnelSitesNextLink.
         /// </summary>
         [JsonPropertyName("microsoftTunnelSites@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MicrosoftTunnelSitesNextLink { get; set; }
     
         /// <summary>
@@ -1523,6 +1620,7 @@ namespace Microsoft.Graph
         /// Gets or sets notificationMessageTemplatesNextLink.
         /// </summary>
         [JsonPropertyName("notificationMessageTemplates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string NotificationMessageTemplatesNextLink { get; set; }
     
         /// <summary>
@@ -1536,6 +1634,7 @@ namespace Microsoft.Graph
         /// Gets or sets domainJoinConnectorsNextLink.
         /// </summary>
         [JsonPropertyName("domainJoinConnectors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DomainJoinConnectorsNextLink { get; set; }
     
         /// <summary>
@@ -1549,6 +1648,7 @@ namespace Microsoft.Graph
         /// Gets or sets configManagerCollectionsNextLink.
         /// </summary>
         [JsonPropertyName("configManagerCollections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ConfigManagerCollectionsNextLink { get; set; }
     
         /// <summary>
@@ -1562,6 +1662,7 @@ namespace Microsoft.Graph
         /// Gets or sets resourceOperationsNextLink.
         /// </summary>
         [JsonPropertyName("resourceOperations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ResourceOperationsNextLink { get; set; }
     
         /// <summary>
@@ -1575,6 +1676,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleAssignmentsNextLink.
         /// </summary>
         [JsonPropertyName("roleAssignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleAssignmentsNextLink { get; set; }
     
         /// <summary>
@@ -1588,6 +1690,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleDefinitionsNextLink.
         /// </summary>
         [JsonPropertyName("roleDefinitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleDefinitionsNextLink { get; set; }
     
         /// <summary>
@@ -1601,6 +1704,7 @@ namespace Microsoft.Graph
         /// Gets or sets roleScopeTagsNextLink.
         /// </summary>
         [JsonPropertyName("roleScopeTags@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RoleScopeTagsNextLink { get; set; }
     
         /// <summary>
@@ -1614,6 +1718,7 @@ namespace Microsoft.Graph
         /// Gets or sets remoteAssistancePartnersNextLink.
         /// </summary>
         [JsonPropertyName("remoteAssistancePartners@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RemoteAssistancePartnersNextLink { get; set; }
     
         /// <summary>
@@ -1641,6 +1746,7 @@ namespace Microsoft.Graph
         /// Gets or sets embeddedSIMActivationCodePoolsNextLink.
         /// </summary>
         [JsonPropertyName("embeddedSIMActivationCodePools@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string EmbeddedSIMActivationCodePoolsNextLink { get; set; }
     
         /// <summary>
@@ -1654,6 +1760,7 @@ namespace Microsoft.Graph
         /// Gets or sets telecomExpenseManagementPartnersNextLink.
         /// </summary>
         [JsonPropertyName("telecomExpenseManagementPartners@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TelecomExpenseManagementPartnersNextLink { get; set; }
     
         /// <summary>
@@ -1667,6 +1774,7 @@ namespace Microsoft.Graph
         /// Gets or sets autopilotEventsNextLink.
         /// </summary>
         [JsonPropertyName("autopilotEvents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AutopilotEventsNextLink { get; set; }
     
         /// <summary>
@@ -1680,6 +1788,7 @@ namespace Microsoft.Graph
         /// Gets or sets troubleshootingEventsNextLink.
         /// </summary>
         [JsonPropertyName("troubleshootingEvents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
@@ -1693,6 +1802,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsFeatureUpdateProfilesNextLink.
         /// </summary>
         [JsonPropertyName("windowsFeatureUpdateProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsFeatureUpdateProfilesNextLink { get; set; }
     
         /// <summary>
@@ -1706,6 +1816,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsQualityUpdateProfilesNextLink.
         /// </summary>
         [JsonPropertyName("windowsQualityUpdateProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsQualityUpdateProfilesNextLink { get; set; }
     
         /// <summary>
@@ -1719,6 +1830,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsUpdateCatalogItemsNextLink.
         /// </summary>
         [JsonPropertyName("windowsUpdateCatalogItems@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsUpdateCatalogItemsNextLink { get; set; }
     
         /// <summary>
@@ -1732,6 +1844,7 @@ namespace Microsoft.Graph
         /// Gets or sets intuneBrandingProfilesNextLink.
         /// </summary>
         [JsonPropertyName("intuneBrandingProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IntuneBrandingProfilesNextLink { get; set; }
     
         /// <summary>
@@ -1745,6 +1858,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsInformationProtectionAppLearningSummariesNextLink.
         /// </summary>
         [JsonPropertyName("windowsInformationProtectionAppLearningSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsInformationProtectionAppLearningSummariesNextLink { get; set; }
     
         /// <summary>
@@ -1758,6 +1872,7 @@ namespace Microsoft.Graph
         /// Gets or sets windowsInformationProtectionNetworkLearningSummariesNextLink.
         /// </summary>
         [JsonPropertyName("windowsInformationProtectionNetworkLearningSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsInformationProtectionNetworkLearningSummariesNextLink { get; set; }
     
         /// <summary>
@@ -1771,6 +1886,7 @@ namespace Microsoft.Graph
         /// Gets or sets userPfxCertificatesNextLink.
         /// </summary>
         [JsonPropertyName("userPfxCertificates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserPfxCertificatesNextLink { get; set; }
     
     }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets healthOverviewsNextLink.
         /// </summary>
         [JsonPropertyName("healthOverviews@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string HealthOverviewsNextLink { get; set; }
     
         /// <summary>
@@ -44,6 +45,7 @@ namespace Microsoft.Graph
         /// Gets or sets issuesNextLink.
         /// </summary>
         [JsonPropertyName("issues@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IssuesNextLink { get; set; }
     
         /// <summary>
@@ -57,6 +59,7 @@ namespace Microsoft.Graph
         /// Gets or sets messagesNextLink.
         /// </summary>
         [JsonPropertyName("messages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MessagesNextLink { get; set; }
     
     }

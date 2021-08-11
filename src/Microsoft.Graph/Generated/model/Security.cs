@@ -37,6 +37,7 @@ namespace Microsoft.Graph
         /// Gets or sets alertsNextLink.
         /// </summary>
         [JsonPropertyName("alerts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AlertsNextLink { get; set; }
     
         /// <summary>
@@ -49,6 +50,7 @@ namespace Microsoft.Graph
         /// Gets or sets cloudAppSecurityProfilesNextLink.
         /// </summary>
         [JsonPropertyName("cloudAppSecurityProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CloudAppSecurityProfilesNextLink { get; set; }
     
         /// <summary>
@@ -61,6 +63,7 @@ namespace Microsoft.Graph
         /// Gets or sets domainSecurityProfilesNextLink.
         /// </summary>
         [JsonPropertyName("domainSecurityProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DomainSecurityProfilesNextLink { get; set; }
     
         /// <summary>
@@ -73,6 +76,7 @@ namespace Microsoft.Graph
         /// Gets or sets fileSecurityProfilesNextLink.
         /// </summary>
         [JsonPropertyName("fileSecurityProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string FileSecurityProfilesNextLink { get; set; }
     
         /// <summary>
@@ -85,6 +89,7 @@ namespace Microsoft.Graph
         /// Gets or sets hostSecurityProfilesNextLink.
         /// </summary>
         [JsonPropertyName("hostSecurityProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string HostSecurityProfilesNextLink { get; set; }
     
         /// <summary>
@@ -97,6 +102,7 @@ namespace Microsoft.Graph
         /// Gets or sets ipSecurityProfilesNextLink.
         /// </summary>
         [JsonPropertyName("ipSecurityProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string IpSecurityProfilesNextLink { get; set; }
     
         /// <summary>
@@ -109,6 +115,7 @@ namespace Microsoft.Graph
         /// Gets or sets providerTenantSettingsNextLink.
         /// </summary>
         [JsonPropertyName("providerTenantSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ProviderTenantSettingsNextLink { get; set; }
     
         /// <summary>
@@ -121,6 +128,7 @@ namespace Microsoft.Graph
         /// Gets or sets secureScoreControlProfilesNextLink.
         /// </summary>
         [JsonPropertyName("secureScoreControlProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SecureScoreControlProfilesNextLink { get; set; }
     
         /// <summary>
@@ -133,6 +141,7 @@ namespace Microsoft.Graph
         /// Gets or sets secureScoresNextLink.
         /// </summary>
         [JsonPropertyName("secureScores@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SecureScoresNextLink { get; set; }
     
         /// <summary>
@@ -145,6 +154,7 @@ namespace Microsoft.Graph
         /// Gets or sets securityActionsNextLink.
         /// </summary>
         [JsonPropertyName("securityActions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SecurityActionsNextLink { get; set; }
     
         /// <summary>
@@ -157,6 +167,7 @@ namespace Microsoft.Graph
         /// Gets or sets tiIndicatorsNextLink.
         /// </summary>
         [JsonPropertyName("tiIndicators@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string TiIndicatorsNextLink { get; set; }
     
         /// <summary>
@@ -169,6 +180,7 @@ namespace Microsoft.Graph
         /// Gets or sets userSecurityProfilesNextLink.
         /// </summary>
         [JsonPropertyName("userSecurityProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UserSecurityProfilesNextLink { get; set; }
     
     }

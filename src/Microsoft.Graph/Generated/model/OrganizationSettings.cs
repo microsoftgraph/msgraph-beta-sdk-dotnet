@@ -38,6 +38,7 @@ namespace Microsoft.Graph
         /// Gets or sets profileCardPropertiesNextLink.
         /// </summary>
         [JsonPropertyName("profileCardProperties@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ProfileCardPropertiesNextLink { get; set; }
     
     }

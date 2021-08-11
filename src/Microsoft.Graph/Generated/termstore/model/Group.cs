@@ -67,6 +67,7 @@ namespace Microsoft.Graph.TermStore
         /// Gets or sets setsNextLink.
         /// </summary>
         [JsonPropertyName("sets@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SetsNextLink { get; set; }
     
     }

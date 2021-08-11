@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets installedAppsNextLink.
         /// </summary>
         [JsonPropertyName("installedApps@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string InstalledAppsNextLink { get; set; }
     
     }

@@ -101,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets categorySummariesNextLink.
         /// </summary>
         [JsonPropertyName("categorySummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CategorySummariesNextLink { get; set; }
     
     }

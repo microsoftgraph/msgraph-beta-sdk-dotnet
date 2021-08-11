@@ -39,6 +39,7 @@ namespace Microsoft.Graph
         /// Gets or sets recommendedSettingsNextLink.
         /// </summary>
         [JsonPropertyName("recommendedSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RecommendedSettingsNextLink { get; set; }
     
     }

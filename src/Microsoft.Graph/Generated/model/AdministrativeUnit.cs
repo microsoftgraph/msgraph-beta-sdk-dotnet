@@ -60,6 +60,7 @@ namespace Microsoft.Graph
         /// Gets or sets membersNextLink.
         /// </summary>
         [JsonPropertyName("members@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MembersNextLink { get; set; }
     
         /// <summary>
@@ -73,6 +74,7 @@ namespace Microsoft.Graph
         /// Gets or sets scopedRoleMembersNextLink.
         /// </summary>
         [JsonPropertyName("scopedRoleMembers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ScopedRoleMembersNextLink { get; set; }
     
         /// <summary>
@@ -86,6 +88,7 @@ namespace Microsoft.Graph
         /// Gets or sets extensionsNextLink.
         /// </summary>
         [JsonPropertyName("extensions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExtensionsNextLink { get; set; }
     
     }

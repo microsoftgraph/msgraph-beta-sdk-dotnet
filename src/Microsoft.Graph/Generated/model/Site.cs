@@ -80,6 +80,7 @@ namespace Microsoft.Graph
         /// Gets or sets columnsNextLink.
         /// </summary>
         [JsonPropertyName("columns@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ColumnsNextLink { get; set; }
     
         /// <summary>
@@ -93,6 +94,7 @@ namespace Microsoft.Graph
         /// Gets or sets contentTypesNextLink.
         /// </summary>
         [JsonPropertyName("contentTypes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ContentTypesNextLink { get; set; }
     
         /// <summary>
@@ -113,6 +115,7 @@ namespace Microsoft.Graph
         /// Gets or sets drivesNextLink.
         /// </summary>
         [JsonPropertyName("drives@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DrivesNextLink { get; set; }
     
         /// <summary>
@@ -126,6 +129,7 @@ namespace Microsoft.Graph
         /// Gets or sets externalColumnsNextLink.
         /// </summary>
         [JsonPropertyName("externalColumns@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ExternalColumnsNextLink { get; set; }
     
         /// <summary>
@@ -139,6 +143,7 @@ namespace Microsoft.Graph
         /// Gets or sets itemsNextLink.
         /// </summary>
         [JsonPropertyName("items@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ItemsNextLink { get; set; }
     
         /// <summary>
@@ -152,6 +157,7 @@ namespace Microsoft.Graph
         /// Gets or sets listsNextLink.
         /// </summary>
         [JsonPropertyName("lists@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ListsNextLink { get; set; }
     
         /// <summary>
@@ -165,6 +171,7 @@ namespace Microsoft.Graph
         /// Gets or sets pagesNextLink.
         /// </summary>
         [JsonPropertyName("pages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PagesNextLink { get; set; }
     
         /// <summary>
@@ -178,6 +185,7 @@ namespace Microsoft.Graph
         /// Gets or sets permissionsNextLink.
         /// </summary>
         [JsonPropertyName("permissions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PermissionsNextLink { get; set; }
     
         /// <summary>
@@ -191,6 +199,7 @@ namespace Microsoft.Graph
         /// Gets or sets sitesNextLink.
         /// </summary>
         [JsonPropertyName("sites@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SitesNextLink { get; set; }
     
         /// <summary>

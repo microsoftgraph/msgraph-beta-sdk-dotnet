@@ -172,6 +172,7 @@ namespace Microsoft.Graph
         /// Gets or sets detectedMalwareStateNextLink.
         /// </summary>
         [JsonPropertyName("detectedMalwareState@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DetectedMalwareStateNextLink { get; set; }
     
     }

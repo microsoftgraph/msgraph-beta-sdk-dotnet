@@ -30,6 +30,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets casesNextLink.
         /// </summary>
         [JsonPropertyName("cases@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string CasesNextLink { get; set; }
     
     }

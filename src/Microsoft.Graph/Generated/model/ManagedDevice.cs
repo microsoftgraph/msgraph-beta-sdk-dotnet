@@ -584,6 +584,7 @@ namespace Microsoft.Graph
         /// Gets or sets assignmentFilterEvaluationStatusDetailsNextLink.
         /// </summary>
         [JsonPropertyName("assignmentFilterEvaluationStatusDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string AssignmentFilterEvaluationStatusDetailsNextLink { get; set; }
     
         /// <summary>
@@ -597,6 +598,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceCompliancePolicyStatesNextLink.
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicyStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceCompliancePolicyStatesNextLink { get; set; }
     
         /// <summary>
@@ -610,6 +612,7 @@ namespace Microsoft.Graph
         /// Gets or sets deviceConfigurationStatesNextLink.
         /// </summary>
         [JsonPropertyName("deviceConfigurationStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceConfigurationStatesNextLink { get; set; }
     
         /// <summary>
@@ -623,6 +626,7 @@ namespace Microsoft.Graph
         /// Gets or sets managedDeviceMobileAppConfigurationStatesNextLink.
         /// </summary>
         [JsonPropertyName("managedDeviceMobileAppConfigurationStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ManagedDeviceMobileAppConfigurationStatesNextLink { get; set; }
     
         /// <summary>
@@ -636,6 +640,7 @@ namespace Microsoft.Graph
         /// Gets or sets securityBaselineStatesNextLink.
         /// </summary>
         [JsonPropertyName("securityBaselineStates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string SecurityBaselineStatesNextLink { get; set; }
     
         /// <summary>
@@ -649,6 +654,7 @@ namespace Microsoft.Graph
         /// Gets or sets detectedAppsNextLink.
         /// </summary>
         [JsonPropertyName("detectedApps@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DetectedAppsNextLink { get; set; }
     
         /// <summary>
@@ -669,6 +675,7 @@ namespace Microsoft.Graph
         /// Gets or sets logCollectionRequestsNextLink.
         /// </summary>
         [JsonPropertyName("logCollectionRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string LogCollectionRequestsNextLink { get; set; }
     
         /// <summary>
@@ -682,6 +689,7 @@ namespace Microsoft.Graph
         /// Gets or sets usersNextLink.
         /// </summary>
         [JsonPropertyName("users@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string UsersNextLink { get; set; }
     
         /// <summary>

@@ -101,6 +101,7 @@ namespace Microsoft.Graph
         /// Gets or sets decisionsNextLink.
         /// </summary>
         [JsonPropertyName("decisions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string DecisionsNextLink { get; set; }
     
         /// <summary>
@@ -114,6 +115,7 @@ namespace Microsoft.Graph
         /// Gets or sets instancesNextLink.
         /// </summary>
         [JsonPropertyName("instances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string InstancesNextLink { get; set; }
     
         /// <summary>
@@ -127,6 +129,7 @@ namespace Microsoft.Graph
         /// Gets or sets myDecisionsNextLink.
         /// </summary>
         [JsonPropertyName("myDecisions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string MyDecisionsNextLink { get; set; }
     
         /// <summary>
@@ -140,6 +143,7 @@ namespace Microsoft.Graph
         /// Gets or sets reviewersNextLink.
         /// </summary>
         [JsonPropertyName("reviewers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ReviewersNextLink { get; set; }
     
     }

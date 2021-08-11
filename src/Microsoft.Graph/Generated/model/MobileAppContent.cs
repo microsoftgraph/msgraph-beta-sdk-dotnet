@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets containedAppsNextLink.
         /// </summary>
         [JsonPropertyName("containedApps@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string ContainedAppsNextLink { get; set; }
     
         /// <summary>
@@ -44,6 +45,7 @@ namespace Microsoft.Graph
         /// Gets or sets filesNextLink.
         /// </summary>
         [JsonPropertyName("files@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string FilesNextLink { get; set; }
     
     }

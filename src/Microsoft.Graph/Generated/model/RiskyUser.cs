@@ -88,6 +88,7 @@ namespace Microsoft.Graph
         /// Gets or sets historyNextLink.
         /// </summary>
         [JsonPropertyName("history@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string HistoryNextLink { get; set; }
     
     }

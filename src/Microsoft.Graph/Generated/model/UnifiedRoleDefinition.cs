@@ -87,6 +87,7 @@ namespace Microsoft.Graph
         /// Gets or sets inheritsPermissionsFromNextLink.
         /// </summary>
         [JsonPropertyName("inheritsPermissionsFrom@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string InheritsPermissionsFromNextLink { get; set; }
     
     }

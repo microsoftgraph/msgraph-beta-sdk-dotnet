@@ -36,6 +36,7 @@ namespace Microsoft.Graph
         /// Gets or sets businessFlowsNextLink.
         /// </summary>
         [JsonPropertyName("businessFlows@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string BusinessFlowsNextLink { get; set; }
     
         /// <summary>
@@ -48,6 +49,7 @@ namespace Microsoft.Graph
         /// Gets or sets businessFlowsWithRequestsAwaitingMyDecisionNextLink.
         /// </summary>
         [JsonPropertyName("businessFlowsWithRequestsAwaitingMyDecision@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string BusinessFlowsWithRequestsAwaitingMyDecisionNextLink { get; set; }
     
         /// <summary>
@@ -60,6 +62,7 @@ namespace Microsoft.Graph
         /// Gets or sets policyTemplatesNextLink.
         /// </summary>
         [JsonPropertyName("policyTemplates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string PolicyTemplatesNextLink { get; set; }
     
     }

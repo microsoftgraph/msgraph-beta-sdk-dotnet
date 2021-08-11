@@ -80,6 +80,7 @@ namespace Microsoft.Graph
         /// Gets or sets effectiveRulesNextLink.
         /// </summary>
         [JsonPropertyName("effectiveRules@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string EffectiveRulesNextLink { get; set; }
     
         /// <summary>
@@ -93,6 +94,7 @@ namespace Microsoft.Graph
         /// Gets or sets rulesNextLink.
         /// </summary>
         [JsonPropertyName("rules@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string RulesNextLink { get; set; }
     
     }

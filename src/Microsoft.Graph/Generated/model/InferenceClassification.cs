@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets overridesNextLink.
         /// </summary>
         [JsonPropertyName("overrides@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
         public string OverridesNextLink { get; set; }
     
     }
