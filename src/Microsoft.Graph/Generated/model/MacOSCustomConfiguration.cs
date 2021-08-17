@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets deployment channel.
-        /// Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel.
+        /// Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel. Possible values are: deviceChannel, userChannel.
         /// </summary>
         [JsonPropertyName("deploymentChannel")]
         public AppleDeploymentChannel? DeploymentChannel { get; set; }

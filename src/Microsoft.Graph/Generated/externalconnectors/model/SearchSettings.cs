@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.ExternalConnectors
 {
     using System;
     using System.Collections.Generic;
@@ -15,23 +15,17 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type OfficeUserCheckinSummary.
+    /// The type SearchSettings.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<OfficeUserCheckinSummary>))]
-    public partial class OfficeUserCheckinSummary
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<SearchSettings>))]
+    public partial class SearchSettings
     {
 
         /// <summary>
-        /// Gets or sets failedUserCount.
+        /// Gets or sets searchResultTemplates.
         /// </summary>
-        [JsonPropertyName("failedUserCount")]
-        public Int32? FailedUserCount { get; set; }
-    
-        /// <summary>
-        /// Gets or sets succeededUserCount.
-        /// </summary>
-        [JsonPropertyName("succeededUserCount")]
-        public Int32? SucceededUserCount { get; set; }
+        [JsonPropertyName("searchResultTemplates")]
+        public IEnumerable<DisplayTemplate> SearchResultTemplates { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -29,12 +29,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fallback reviewers.
+        /// This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
         /// </summary>
         [JsonPropertyName("fallbackReviewers")]
         public IEnumerable<AccessReviewReviewerScope> FallbackReviewers { get; set; }
     
         /// <summary>
         /// Gets or sets reviewers.
+        /// This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.
         /// </summary>
         [JsonPropertyName("reviewers")]
         public IEnumerable<AccessReviewReviewerScope> Reviewers { get; set; }
@@ -62,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets contacted reviewers.
+        /// Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
         /// </summary>
         [JsonPropertyName("contactedReviewers")]
         public IAccessReviewInstanceContactedReviewersCollectionPage ContactedReviewers { get; set; }

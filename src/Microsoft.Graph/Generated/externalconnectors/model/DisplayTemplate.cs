@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.ExternalConnectors
 {
     using System;
     using System.Collections.Generic;
@@ -15,23 +15,35 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type OfficeUserCheckinSummary.
+    /// The type DisplayTemplate.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<OfficeUserCheckinSummary>))]
-    public partial class OfficeUserCheckinSummary
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<DisplayTemplate>))]
+    public partial class DisplayTemplate
     {
 
         /// <summary>
-        /// Gets or sets failedUserCount.
+        /// Gets or sets id.
         /// </summary>
-        [JsonPropertyName("failedUserCount")]
-        public Int32? FailedUserCount { get; set; }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
     
         /// <summary>
-        /// Gets or sets succeededUserCount.
+        /// Gets or sets layout.
         /// </summary>
-        [JsonPropertyName("succeededUserCount")]
-        public Int32? SucceededUserCount { get; set; }
+        [JsonPropertyName("layout")]
+        public System.Text.Json.JsonDocument Layout { get; set; }
+    
+        /// <summary>
+        /// Gets or sets priority.
+        /// </summary>
+        [JsonPropertyName("priority")]
+        public Int32? Priority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rules.
+        /// </summary>
+        [JsonPropertyName("rules")]
+        public IEnumerable<PropertyRule> Rules { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

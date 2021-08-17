@@ -23,14 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow sessions to unenrolled devices.
-        ///  Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
+        /// Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.
         /// </summary>
         [JsonPropertyName("allowSessionsToUnenrolledDevices")]
         public bool? AllowSessionsToUnenrolledDevices { get; set; }
     
         /// <summary>
         /// Gets or sets remote assistance state.
-        /// The current state of remote assistance for the account. Possible values are: notConfigured, disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a notConfigured state. Returned by default.
+        /// The current state of remote assistance for the account. Possible values are: notConfigured, disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a notConfigured state. Returned by default. Possible values are: notConfigured, disabled, enabled.
         /// </summary>
         [JsonPropertyName("remoteAssistanceState")]
         public RemoteAssistanceState? RemoteAssistanceState { get; set; }

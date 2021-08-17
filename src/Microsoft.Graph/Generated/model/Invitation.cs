@@ -70,7 +70,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets send invitation message.
-        /// Indicates whether an email should be sent to the user being invited or not. The default is false.
+        /// Indicates whether an email should be sent to the user being invited. The default is false.
         /// </summary>
         [JsonPropertyName("sendInvitationMessage")]
         public bool? SendInvitationMessage { get; set; }

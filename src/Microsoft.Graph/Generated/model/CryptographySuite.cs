@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets cipherTransformConstants.
-        /// Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm.
+        /// Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
         /// </summary>
         [JsonPropertyName("cipherTransformConstants")]
         public VpnEncryptionAlgorithmType? CipherTransformConstants { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets encryptionMethod.
-        /// Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm.
+        /// Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
         /// </summary>
         [JsonPropertyName("encryptionMethod")]
         public VpnEncryptionAlgorithmType? EncryptionMethod { get; set; }

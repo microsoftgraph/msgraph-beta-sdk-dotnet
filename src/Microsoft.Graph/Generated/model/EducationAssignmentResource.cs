@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets distribute for student work.
-        /// Indicates whether this resource should be copied to each student submission for modification and submission.
+        /// Indicates whether this resource should be copied to each student submission for modification and submission. Required
         /// </summary>
         [JsonPropertyName("distributeForStudentWork")]
         public bool? DistributeForStudentWork { get; set; }

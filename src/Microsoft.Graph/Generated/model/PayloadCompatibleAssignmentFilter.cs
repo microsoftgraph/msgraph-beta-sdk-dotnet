@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets payload type.
-        /// PayloadType of the Assignment Filter.
+        /// PayloadType of the Assignment Filter. Possible values are: notSet, enrollmentRestrictions.
         /// </summary>
         [JsonPropertyName("payloadType")]
         public AssignmentFilterPayloadType? PayloadType { get; set; }

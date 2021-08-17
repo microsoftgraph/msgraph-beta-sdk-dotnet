@@ -57,11 +57,32 @@ namespace Microsoft.Graph
         public Guid? GroupPolicyCategoryId { get; set; }
     
         /// <summary>
+        /// Gets or sets has related definitions.
+        /// Signifies whether or not there are related definitions to this definition
+        /// </summary>
+        [JsonPropertyName("hasRelatedDefinitions")]
+        public bool? HasRelatedDefinitions { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// The date and time the entity was last modified.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets min device csp version.
+        /// Minimum required CSP version for device configuration in this definition
+        /// </summary>
+        [JsonPropertyName("minDeviceCspVersion")]
+        public string MinDeviceCspVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets min user csp version.
+        /// Minimum required CSP version for user configuration in this definition
+        /// </summary>
+        [JsonPropertyName("minUserCspVersion")]
+        public string MinUserCspVersion { get; set; }
     
         /// <summary>
         /// Gets or sets policy type.
@@ -78,6 +99,13 @@ namespace Microsoft.Graph
         public string SupportedOn { get; set; }
     
         /// <summary>
+        /// Gets or sets version.
+        /// Setting definition version
+        /// </summary>
+        [JsonPropertyName("version")]
+        public string Version { get; set; }
+    
+        /// <summary>
         /// Gets or sets category.
         /// The group policy category associated with the definition.
         /// </summary>
@@ -92,6 +120,13 @@ namespace Microsoft.Graph
         public GroupPolicyDefinitionFile DefinitionFile { get; set; }
     
         /// <summary>
+        /// Gets or sets next version definition.
+        /// Definition of the next version of this definition
+        /// </summary>
+        [JsonPropertyName("nextVersionDefinition")]
+        public GroupPolicyDefinition NextVersionDefinition { get; set; }
+    
+        /// <summary>
         /// Gets or sets presentations.
         /// The group policy presentations associated with the definition.
         /// </summary>
@@ -104,6 +139,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("presentations@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string PresentationsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets previous version definition.
+        /// Definition of the previous version of this definition
+        /// </summary>
+        [JsonPropertyName("previousVersionDefinition")]
+        public GroupPolicyDefinition PreviousVersionDefinition { get; set; }
     
     }
 }

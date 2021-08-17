@@ -198,7 +198,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets upgrade eligibility.
-        /// The user experience work from anywhere windows upgrade eligibility status of device.
+        /// The user experience work from anywhere windows upgrade eligibility status of device. Possible values are: upgraded, unknown, notCapable, capable.
         /// </summary>
         [JsonPropertyName("upgradeEligibility")]
         public OperatingSystemUpgradeEligibility? UpgradeEligibility { get; set; }
