@@ -31,7 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app group type.
-        /// Public Apps selection: group or individual
+        /// Public Apps selection: group or individual. Possible values are: selectedPublicApps, allCoreMicrosoftApps, allMicrosoftApps, allApps.
         /// </summary>
         [JsonPropertyName("appGroupType")]
         public TargetedManagedAppGroupType? AppGroupType { get; set; }

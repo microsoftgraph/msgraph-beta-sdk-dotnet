@@ -44,10 +44,22 @@ namespace Microsoft.Graph
         IGroupPolicyDefinitionFileWithReferenceRequestBuilder DefinitionFile { get; }
 
         /// <summary>
+        /// Gets the request builder for NextVersionDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyDefinitionRequestBuilder"/>.</returns>
+        IGroupPolicyDefinitionRequestBuilder NextVersionDefinition { get; }
+
+        /// <summary>
         /// Gets the request builder for Presentations.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyDefinitionPresentationsCollectionRequestBuilder"/>.</returns>
         IGroupPolicyDefinitionPresentationsCollectionRequestBuilder Presentations { get; }
+
+        /// <summary>
+        /// Gets the request builder for PreviousVersionDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyDefinitionRequestBuilder"/>.</returns>
+        IGroupPolicyDefinitionRequestBuilder PreviousVersionDefinition { get; }
     
     }
 }

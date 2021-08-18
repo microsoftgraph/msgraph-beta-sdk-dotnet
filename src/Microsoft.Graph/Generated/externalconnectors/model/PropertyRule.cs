@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.ExternalConnectors
 {
     using System;
     using System.Collections.Generic;
@@ -15,23 +15,35 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type OfficeUserCheckinSummary.
+    /// The type PropertyRule.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<OfficeUserCheckinSummary>))]
-    public partial class OfficeUserCheckinSummary
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<PropertyRule>))]
+    public partial class PropertyRule
     {
 
         /// <summary>
-        /// Gets or sets failedUserCount.
+        /// Gets or sets operation.
         /// </summary>
-        [JsonPropertyName("failedUserCount")]
-        public Int32? FailedUserCount { get; set; }
+        [JsonPropertyName("operation")]
+        public RuleOperation? Operation { get; set; }
     
         /// <summary>
-        /// Gets or sets succeededUserCount.
+        /// Gets or sets property.
         /// </summary>
-        [JsonPropertyName("succeededUserCount")]
-        public Int32? SucceededUserCount { get; set; }
+        [JsonPropertyName("property")]
+        public string Property { get; set; }
+    
+        /// <summary>
+        /// Gets or sets values.
+        /// </summary>
+        [JsonPropertyName("values")]
+        public IEnumerable<string> Values { get; set; }
+    
+        /// <summary>
+        /// Gets or sets valuesJoinedBy.
+        /// </summary>
+        [JsonPropertyName("valuesJoinedBy")]
+        public Microsoft.Graph.BinaryOperator? ValuesJoinedBy { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

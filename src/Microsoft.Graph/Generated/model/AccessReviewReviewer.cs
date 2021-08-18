@@ -22,18 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date when the reviewer was added for the access review.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Name of reviewer.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
+        /// User principal name of the user.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

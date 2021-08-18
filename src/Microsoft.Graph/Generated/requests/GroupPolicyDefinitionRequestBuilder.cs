@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for NextVersionDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyDefinitionRequestBuilder"/>.</returns>
+        public IGroupPolicyDefinitionRequestBuilder NextVersionDefinition
+        {
+            get
+            {
+                return new GroupPolicyDefinitionRequestBuilder(this.AppendSegmentToRequestUrl("nextVersionDefinition"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Presentations.
         /// </summary>
         /// <returns>The <see cref="IGroupPolicyDefinitionPresentationsCollectionRequestBuilder"/>.</returns>
@@ -83,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new GroupPolicyDefinitionPresentationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("presentations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PreviousVersionDefinition.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyDefinitionRequestBuilder"/>.</returns>
+        public IGroupPolicyDefinitionRequestBuilder PreviousVersionDefinition
+        {
+            get
+            {
+                return new GroupPolicyDefinitionRequestBuilder(this.AppendSegmentToRequestUrl("previousVersionDefinition"), this.Client);
             }
         }
     

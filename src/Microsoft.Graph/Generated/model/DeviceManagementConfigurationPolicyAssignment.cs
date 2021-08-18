@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets source.
-        /// The assignment source for the device compliance policy, direct or parcel/policySet.
+        /// The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.
         /// </summary>
         [JsonPropertyName("source")]
         public DeviceAndAppManagementAssignmentSource? Source { get; set; }

@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets securityEncryptionAlgorithm.
-        /// Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm.
+        /// Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
         /// </summary>
         [JsonPropertyName("securityEncryptionAlgorithm")]
         public VpnEncryptionAlgorithmType? SecurityEncryptionAlgorithm { get; set; }

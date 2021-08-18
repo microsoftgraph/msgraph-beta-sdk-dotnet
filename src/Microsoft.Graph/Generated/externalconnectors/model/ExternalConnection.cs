@@ -29,6 +29,12 @@ namespace Microsoft.Graph.ExternalConnectors
         public Configuration Configuration { get; set; }
     
         /// <summary>
+        /// Gets or sets connector id.
+        /// </summary>
+        [JsonPropertyName("connectorId")]
+        public string ConnectorId { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// Description of the connection displayed in the Microsoft 365 admin center. Optional.
         /// </summary>
@@ -41,6 +47,12 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
+    
+        /// <summary>
+        /// Gets or sets search settings.
+        /// </summary>
+        [JsonPropertyName("searchSettings")]
+        public SearchSettings SearchSettings { get; set; }
     
         /// <summary>
         /// Gets or sets state.
