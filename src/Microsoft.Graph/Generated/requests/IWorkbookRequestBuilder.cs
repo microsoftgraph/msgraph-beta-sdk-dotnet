@@ -98,6 +98,13 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWorkbookSessionInfoResourceRequestBuilder"/>.</returns>
         IWorkbookSessionInfoResourceRequestBuilder SessionInfoResource(
             string key);
+
+        /// <summary>
+        /// Gets the request builder for WorkbookTableRowOperationResult.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableRowOperationResultRequestBuilder"/>.</returns>
+        IWorkbookTableRowOperationResultRequestBuilder TableRowOperationResult(
+            string key);
     
     }
 }

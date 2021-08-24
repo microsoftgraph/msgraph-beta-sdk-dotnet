@@ -15,7 +15,7 @@ namespace Microsoft.Graph
     /// The interface IMicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(InterfaceConverter<MicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage>))]
-    public interface IMicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage : ICollectionPage<KeyValuePair>
+    public interface IMicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage : ICollectionPage<MetricTimeSeriesDataPoint>
     {
         /// <summary>
         /// Gets the next page <see cref="IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequest"/> instance.

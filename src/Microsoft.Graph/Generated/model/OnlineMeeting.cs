@@ -190,6 +190,13 @@ namespace Microsoft.Graph
         public MeetingParticipants Participants { get; set; }
     
         /// <summary>
+        /// Gets or sets record automatically.
+        /// Indicates whether to record the meeting automatically.
+        /// </summary>
+        [JsonPropertyName("recordAutomatically")]
+        public bool? RecordAutomatically { get; set; }
+    
+        /// <summary>
         /// Gets or sets recording.
         /// The content stream of the recording of a live event. Read-only.
         /// </summary>

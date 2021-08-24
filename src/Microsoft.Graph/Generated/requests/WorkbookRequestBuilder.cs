@@ -181,6 +181,19 @@ namespace Microsoft.Graph
                 this.Client,
                 key);
         }
+
+        /// <summary>
+        /// Gets the request builder for WorkbookTableRowOperationResult.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookTableRowOperationResultRequestBuilder"/>.</returns>
+        public IWorkbookTableRowOperationResultRequestBuilder TableRowOperationResult(
+            string key)
+        {
+            return new WorkbookTableRowOperationResultRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.tableRowOperationResult"),
+                this.Client,
+                key);
+        }
     
     }
 }

@@ -91,20 +91,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package.
-        /// The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.
+        /// The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
         /// </summary>
         [JsonPropertyName("accessPackage")]
         public AccessPackage AccessPackage { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment.
+        /// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
         /// </summary>
         [JsonPropertyName("accessPackageAssignment")]
         public AccessPackageAssignment AccessPackageAssignment { get; set; }
     
         /// <summary>
         /// Gets or sets requestor.
-        /// The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable.
+        /// The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("requestor")]
         public AccessPackageSubject Requestor { get; set; }

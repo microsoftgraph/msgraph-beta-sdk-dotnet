@@ -12,7 +12,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage.
     /// </summary>
-    public partial class MicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage : CollectionPage<KeyValuePair>, IMicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage
+    public partial class MicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage : CollectionPage<MetricTimeSeriesDataPoint>, IMicrosoftTunnelServerGetHealthMetricTimeSeriesCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequest"/> instance.

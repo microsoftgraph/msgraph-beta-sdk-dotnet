@@ -27,16 +27,16 @@ namespace Microsoft.Graph
         public string MetricName { get; set; }
     
         /// <summary>
-        /// Gets or sets StartTime.
+        /// Gets or sets StartDateTime.
         /// </summary>
-        [JsonPropertyName("startTime")]
-        public DateTimeOffset StartTime { get; set; }
+        [JsonPropertyName("startDateTime")]
+        public DateTimeOffset StartDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets EndTime.
+        /// Gets or sets EndDateTime.
         /// </summary>
-        [JsonPropertyName("endTime")]
-        public DateTimeOffset EndTime { get; set; }
+        [JsonPropertyName("endDateTime")]
+        public DateTimeOffset EndDateTime { get; set; }
     
     }
 }
