@@ -898,6 +898,24 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IReportRootGetTenantSecureScoresRequestBuilder"/>.</returns>
         IReportRootGetTenantSecureScoresRequestBuilder GetTenantSecureScores(
             Int32 period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAttackSimulationRepeatOffenders.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAttackSimulationRepeatOffendersRequestBuilder"/>.</returns>
+        IReportRootGetAttackSimulationRepeatOffendersRequestBuilder GetAttackSimulationRepeatOffenders();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAttackSimulationSimulationUserCoverage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAttackSimulationSimulationUserCoverageRequestBuilder"/>.</returns>
+        IReportRootGetAttackSimulationSimulationUserCoverageRequestBuilder GetAttackSimulationSimulationUserCoverage();
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAttackSimulationTrainingUserCoverage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAttackSimulationTrainingUserCoverageRequestBuilder"/>.</returns>
+        IReportRootGetAttackSimulationTrainingUserCoverageRequestBuilder GetAttackSimulationTrainingUserCoverage();
     
     }
 }

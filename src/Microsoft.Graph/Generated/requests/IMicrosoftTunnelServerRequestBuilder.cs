@@ -51,8 +51,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder"/>.</returns>
         IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder GetHealthMetricTimeSeries(
-            DateTimeOffset startTime,
-            DateTimeOffset endTime,
+            DateTimeOffset startDateTime,
+            DateTimeOffset endDateTime,
             string metricName = null);
     
     }

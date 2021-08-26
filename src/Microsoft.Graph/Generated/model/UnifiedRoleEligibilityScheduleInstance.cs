@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets end date time.
-        /// Time that the roleEligibilityScheduleInstance will expire
+        /// Time that the roleEligibilityScheduleInstance will expire.
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
@@ -36,14 +36,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role eligibility schedule id.
-        /// ID of the parent roleEligibilitySchedule for this instance
+        /// Identifier of the parent roleEligibilitySchedule for this instance.
         /// </summary>
         [JsonPropertyName("roleEligibilityScheduleId")]
         public string RoleEligibilityScheduleId { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
-        /// Time that the roleEligibilityScheduleInstance will start
+        /// Time that the roleEligibilityScheduleInstance will start.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }

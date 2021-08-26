@@ -35,6 +35,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets internal network probe url.
+        /// The MicrosoftTunnelSite's Internal Network Access Probe URL
+        /// </summary>
+        [JsonPropertyName("internalNetworkProbeUrl")]
+        public string InternalNetworkProbeUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets public address.
         /// The MicrosoftTunnelSite's public domain name or IP address
         /// </summary>

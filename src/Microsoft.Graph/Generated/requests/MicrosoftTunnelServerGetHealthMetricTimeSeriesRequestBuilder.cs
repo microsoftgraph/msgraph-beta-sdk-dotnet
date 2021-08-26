@@ -23,19 +23,19 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="startTime">A startTime parameter for the OData method call.</param>
-        /// <param name="endTime">A endTime parameter for the OData method call.</param>
+        /// <param name="startDateTime">A startDateTime parameter for the OData method call.</param>
+        /// <param name="endDateTime">A endDateTime parameter for the OData method call.</param>
         /// <param name="metricName">A metricName parameter for the OData method call.</param>
         public MicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            DateTimeOffset startTime,
-            DateTimeOffset endTime,
+            DateTimeOffset startDateTime,
+            DateTimeOffset endDateTime,
             string metricName)
             : base(requestUrl, client)
         {
-            this.SetParameter("startTime", startTime, false);
-            this.SetParameter("endTime", endTime, false);
+            this.SetParameter("startDateTime", startDateTime, false);
+            this.SetParameter("endDateTime", endDateTime, false);
             this.SetParameter("metricName", metricName, true);
         }
 
@@ -49,14 +49,14 @@ namespace Microsoft.Graph
         {
             var request = new MicrosoftTunnelServerGetHealthMetricTimeSeriesRequest(functionUrl, this.Client, options);
 
-            if (this.HasParameter("startTime"))
+            if (this.HasParameter("startDateTime"))
             {
-                request.RequestBody.StartTime = this.GetParameter<DateTimeOffset>("startTime");
+                request.RequestBody.StartDateTime = this.GetParameter<DateTimeOffset>("startDateTime");
             }
 
-            if (this.HasParameter("endTime"))
+            if (this.HasParameter("endDateTime"))
             {
-                request.RequestBody.EndTime = this.GetParameter<DateTimeOffset>("endTime");
+                request.RequestBody.EndDateTime = this.GetParameter<DateTimeOffset>("endDateTime");
             }
 
             if (this.HasParameter("metricName"))

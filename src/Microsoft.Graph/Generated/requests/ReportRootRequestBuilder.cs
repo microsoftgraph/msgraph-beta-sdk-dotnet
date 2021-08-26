@@ -1672,6 +1672,39 @@ namespace Microsoft.Graph
                 this.Client,
                 period);
         }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAttackSimulationRepeatOffenders.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAttackSimulationRepeatOffendersRequestBuilder"/>.</returns>
+        public IReportRootGetAttackSimulationRepeatOffendersRequestBuilder GetAttackSimulationRepeatOffenders()
+        {
+            return new ReportRootGetAttackSimulationRepeatOffendersRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAttackSimulationRepeatOffenders"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAttackSimulationSimulationUserCoverage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAttackSimulationSimulationUserCoverageRequestBuilder"/>.</returns>
+        public IReportRootGetAttackSimulationSimulationUserCoverageRequestBuilder GetAttackSimulationSimulationUserCoverage()
+        {
+            return new ReportRootGetAttackSimulationSimulationUserCoverageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAttackSimulationSimulationUserCoverage"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetAttackSimulationTrainingUserCoverage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetAttackSimulationTrainingUserCoverageRequestBuilder"/>.</returns>
+        public IReportRootGetAttackSimulationTrainingUserCoverageRequestBuilder GetAttackSimulationTrainingUserCoverage()
+        {
+            return new ReportRootGetAttackSimulationTrainingUserCoverageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAttackSimulationTrainingUserCoverage"),
+                this.Client);
+        }
     
     }
 }

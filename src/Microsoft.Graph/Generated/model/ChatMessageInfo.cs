@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets event detail.
+        /// Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
         /// </summary>
         [JsonPropertyName("eventDetail")]
         public EventMessageDetail EventDetail { get; set; }
@@ -57,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets message type.
+        /// The type of chat message. The possible values are: message, unknownFutureValue, systemEventMessage.
         /// </summary>
         [JsonPropertyName("messageType")]
         public ChatMessageType? MessageType { get; set; }

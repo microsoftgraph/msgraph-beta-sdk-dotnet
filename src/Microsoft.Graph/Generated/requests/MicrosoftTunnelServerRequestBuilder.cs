@@ -83,15 +83,15 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder"/>.</returns>
         public IMicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder GetHealthMetricTimeSeries(
-            DateTimeOffset startTime,
-            DateTimeOffset endTime,
+            DateTimeOffset startDateTime,
+            DateTimeOffset endDateTime,
             string metricName = null)
         {
             return new MicrosoftTunnelServerGetHealthMetricTimeSeriesRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getHealthMetricTimeSeries"),
                 this.Client,
-                startTime,
-                endTime,
+                startDateTime,
+                endDateTime,
                 metricName);
         }
     

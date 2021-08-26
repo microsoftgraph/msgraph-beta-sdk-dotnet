@@ -22,21 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets action.
-        /// Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators assign users/groups to roles;UserAdd: Users activate eligible assignments; AdminUpdate: Administrators change existing role assignmentsAdminRemove: Administrators remove users/groups from roles;UserRemove: Users deactivate active assignments;UserExtend: Users request to extend their expiring assignments;AdminExtend: Administrators extend expiring assignments.UserRenew: Users request to renew their expired assignments;AdminRenew: Administrators extend expiring assignments.
+        /// Represents the type of the operation on the role assignment. The possible values are: AdminAssign: For administrators to assign roles to users or groups.AdminRemove: For administrators to remove users or groups from roles. AdminUpdate: For administrators to change existing role assignments.AdminExtend: For administrators to extend expiring assignments.AdminRenew: For administrators to renew expired assignments.SelfActivate: For users to activate their assignments.SelfDeactivate: For users to deactivate their active assignments.SelfExtend: For users to request to extend their expiring assignments.SelfRenew: For users to request to renew their expired assignments.
         /// </summary>
         [JsonPropertyName("action")]
         public string Action { get; set; }
     
         /// <summary>
         /// Gets or sets app scope id.
-        /// Id of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
+        /// Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
         /// </summary>
         [JsonPropertyName("appScopeId")]
         public string AppScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets directory scope id.
-        /// Id of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+        /// Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
         /// </summary>
         [JsonPropertyName("directoryScopeId")]
         public string DirectoryScopeId { get; set; }
@@ -57,14 +57,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal id.
-        /// Objectid of the principal to which the assignment is being granted to.
+        /// Identifier of the principal to which the assignment is being granted to.
         /// </summary>
         [JsonPropertyName("principalId")]
         public string PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
-        /// ID of the unifiedRoleDefinition the assignment is for. Read only.
+        /// Identifier of the unifiedRoleDefinition the assignment is for. Read only.
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target schedule id.
-        /// ID of the schedule object attached to the assignment.
+        /// Identifier of the schedule object attached to the assignment.
         /// </summary>
         [JsonPropertyName("targetScheduleId")]
         public string TargetScheduleId { get; set; }
@@ -127,6 +127,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target schedule.
+        /// Property indicating the schedule for an eligible role assignment.
         /// </summary>
         [JsonPropertyName("targetSchedule")]
         public UnifiedRoleAssignmentSchedule TargetSchedule { get; set; }

@@ -27,6 +27,12 @@ namespace Microsoft.Graph
         public IEnumerable<SecurityProviderStatus> ProviderStatus { get; set; }
     
         /// <summary>
+        /// Gets or sets attack simulation.
+        /// </summary>
+        [JsonPropertyName("attackSimulation")]
+        public AttackSimulationRoot AttackSimulation { get; set; }
+    
+        /// <summary>
         /// Gets or sets alerts.
         /// Read-only. Nullable.
         /// </summary>

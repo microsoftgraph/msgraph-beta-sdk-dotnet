@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public CloudAppSecuritySessionControl CloudAppSecurity { get; set; }
     
         /// <summary>
+        /// Gets or sets disableResilienceDefaults.
+        /// </summary>
+        [JsonPropertyName("disableResilienceDefaults")]
+        public bool? DisableResilienceDefaults { get; set; }
+    
+        /// <summary>
         /// Gets or sets persistentBrowser.
         /// Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
         /// </summary>

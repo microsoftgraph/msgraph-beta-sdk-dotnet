@@ -28,6 +28,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets errors.
+        /// Collection of errors in an access review instance lifecycle. Read-only.
+        /// </summary>
+        [JsonPropertyName("errors")]
+        public IEnumerable<AccessReviewError> Errors { get; set; }
+    
+        /// <summary>
         /// Gets or sets fallback reviewers.
         /// This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
         /// </summary>
