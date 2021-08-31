@@ -1047,6 +1047,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsModelScores.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsModelScoresCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsModelScoresCollectionRequestBuilder UserExperienceAnalyticsModelScores
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsModelScoresCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsModelScores"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsNotAutopilotReadyDevice.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionRequestBuilder"/>.</returns>
@@ -1371,6 +1383,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Reports.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsRequestBuilder Reports
+        {
+            get
+            {
+                return new DeviceManagementReportsRequestBuilder(this.AppendSegmentToRequestUrl("reports"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for MicrosoftTunnelConfigurations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder"/>.</returns>
@@ -1527,18 +1551,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Reports.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsRequestBuilder Reports
-        {
-            get
-            {
-                return new DeviceManagementReportsRequestBuilder(this.AppendSegmentToRequestUrl("reports"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for EmbeddedSIMActivationCodePools.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementEmbeddedSIMActivationCodePoolsCollectionRequestBuilder"/>.</returns>
@@ -1583,6 +1595,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementTroubleshootingEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("troubleshootingEvents"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsDriverUpdateProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsDriverUpdateProfilesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementWindowsDriverUpdateProfilesCollectionRequestBuilder WindowsDriverUpdateProfiles
+        {
+            get
+            {
+                return new DeviceManagementWindowsDriverUpdateProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsDriverUpdateProfiles"), this.Client);
             }
         }
 

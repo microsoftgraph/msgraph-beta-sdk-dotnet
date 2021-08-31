@@ -282,6 +282,69 @@ namespace Microsoft.Graph
         public IEnumerable<AndroidDeviceOwnerKioskModeManagedFolder> KioskModeManagedFolders { get; set; }
     
         /// <summary>
+        /// Gets or sets kiosk mode managed home screen auto signout.
+        /// Whether or not to automatically sign-out of MHS and Shared device mode applications after inactive for Managed Home Screen.
+        /// </summary>
+        [JsonPropertyName("kioskModeManagedHomeScreenAutoSignout")]
+        public bool? KioskModeManagedHomeScreenAutoSignout { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed home screen inactive sign out delay in seconds.
+        /// Number of seconds to give user notice before automatically signing them out for Managed Home Screen. Valid values 1 to 9999999
+        /// </summary>
+        [JsonPropertyName("kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds")]
+        public Int32? KioskModeManagedHomeScreenInactiveSignOutDelayInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed home screen inactive sign out notice in seconds.
+        /// Number of seconds device is inactive before automatically signing user out for Managed Home Screen. Valid values 1 to 9999999
+        /// </summary>
+        [JsonPropertyName("kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds")]
+        public Int32? KioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed home screen pin complexity.
+        /// Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.
+        /// </summary>
+        [JsonPropertyName("kioskModeManagedHomeScreenPinComplexity")]
+        public KioskModeManagedHomeScreenPinComplexity? KioskModeManagedHomeScreenPinComplexity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed home screen pin required.
+        /// Whether or not require user to set a PIN for sign-in session for Managed Home Screen.
+        /// </summary>
+        [JsonPropertyName("kioskModeManagedHomeScreenPinRequired")]
+        public bool? KioskModeManagedHomeScreenPinRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed home screen pin required to resume.
+        /// Whether or not required user to enter session PIN if screensaver has appeared for Managed Home Screen.
+        /// </summary>
+        [JsonPropertyName("kioskModeManagedHomeScreenPinRequiredToResume")]
+        public bool? KioskModeManagedHomeScreenPinRequiredToResume { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed home screen sign in background.
+        /// Custom URL background for sign-in screen for Managed Home Screen.
+        /// </summary>
+        [JsonPropertyName("kioskModeManagedHomeScreenSignInBackground")]
+        public string KioskModeManagedHomeScreenSignInBackground { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed home screen sign in branding logo.
+        /// Custom URL branding logo for sign-in screen and session pin page for Managed Home Screen.
+        /// </summary>
+        [JsonPropertyName("kioskModeManagedHomeScreenSignInBrandingLogo")]
+        public string KioskModeManagedHomeScreenSignInBrandingLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kiosk mode managed home screen sign in enabled.
+        /// Whether or not show sign-in screen for Managed Home Screen.
+        /// </summary>
+        [JsonPropertyName("kioskModeManagedHomeScreenSignInEnabled")]
+        public bool? KioskModeManagedHomeScreenSignInEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets kiosk mode managed settings entry disabled.
         /// Whether or not to display the Managed Settings entry point on the managed home screen in Kiosk Mode.
         /// </summary>

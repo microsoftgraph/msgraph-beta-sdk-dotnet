@@ -22,21 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets has attachments.
-        /// Indicates whether any of the posts within this Conversation has at least one attachment.
+        /// Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
         /// </summary>
         [JsonPropertyName("hasAttachments")]
         public bool? HasAttachments { get; set; }
     
         /// <summary>
         /// Gets or sets last delivered date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, le, ge).
         /// </summary>
         [JsonPropertyName("lastDeliveredDateTime")]
         public DateTimeOffset? LastDeliveredDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets preview.
-        /// A short summary from the body of the latest post in this converstaion.
+        /// A short summary from the body of the latest post in this conversation.
         /// </summary>
         [JsonPropertyName("preview")]
         public string Preview { get; set; }

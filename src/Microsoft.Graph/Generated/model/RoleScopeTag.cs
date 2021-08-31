@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is built in.
-        /// Description of the Role Scope Tag.
+        /// Description of the Role Scope Tag. This property is read-only.
         /// </summary>
         [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }

@@ -32,6 +32,24 @@ namespace Microsoft.Graph
         new ISearchEntityRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Acronyms.
+        /// </summary>
+        /// <returns>The <see cref="ISearchEntityAcronymsCollectionRequestBuilder"/>.</returns>
+        ISearchEntityAcronymsCollectionRequestBuilder Acronyms { get; }
+
+        /// <summary>
+        /// Gets the request builder for Bookmarks.
+        /// </summary>
+        /// <returns>The <see cref="ISearchEntityBookmarksCollectionRequestBuilder"/>.</returns>
+        ISearchEntityBookmarksCollectionRequestBuilder Bookmarks { get; }
+
+        /// <summary>
+        /// Gets the request builder for Qnas.
+        /// </summary>
+        /// <returns>The <see cref="ISearchEntityQnasCollectionRequestBuilder"/>.</returns>
+        ISearchEntityQnasCollectionRequestBuilder Qnas { get; }
+    
+        /// <summary>
         /// Gets the request builder for SearchEntityQuery.
         /// </summary>
         /// <returns>The <see cref="ISearchEntityQueryRequestBuilder"/>.</returns>

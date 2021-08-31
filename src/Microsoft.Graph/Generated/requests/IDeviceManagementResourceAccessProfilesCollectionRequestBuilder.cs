@@ -36,6 +36,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementResourceAccessProfileBaseRequestBuilder"/>.</returns>
         IDeviceManagementResourceAccessProfileBaseRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceManagementResourceAccessProfileBaseQueryByPlatformType.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementResourceAccessProfileBaseQueryByPlatformTypeRequestBuilder"/>.</returns>
+        IDeviceManagementResourceAccessProfileBaseQueryByPlatformTypeRequestBuilder QueryByPlatformType(
+            PolicyPlatformType platformType);
     }
 }

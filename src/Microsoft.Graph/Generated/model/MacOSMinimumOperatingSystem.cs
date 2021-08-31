@@ -92,6 +92,13 @@ namespace Microsoft.Graph
         public bool? V11_0 { get; set; }
     
         /// <summary>
+        /// Gets or sets v12_0.
+        /// Mac OS 12.0 or later.
+        /// </summary>
+        [JsonPropertyName("v12_0")]
+        public bool? V12_0 { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets client id.
-        /// The client ID for the application obtained when registering the application with the identity provider. Required.
+        /// The client identifier for the application obtained when registering the application with the identity provider. Required.
         /// </summary>
         [JsonPropertyName("clientId")]
         public string ClientId { get; set; }

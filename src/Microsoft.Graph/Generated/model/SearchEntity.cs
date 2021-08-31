@@ -20,6 +20,45 @@ namespace Microsoft.Graph
     public partial class SearchEntity : Entity
     {
     
+        /// <summary>
+        /// Gets or sets acronyms.
+        /// </summary>
+        [JsonPropertyName("acronyms")]
+        public ISearchEntityAcronymsCollectionPage Acronyms { get; set; }
+
+        /// <summary>
+        /// Gets or sets acronymsNextLink.
+        /// </summary>
+        [JsonPropertyName("acronyms@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AcronymsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets bookmarks.
+        /// </summary>
+        [JsonPropertyName("bookmarks")]
+        public ISearchEntityBookmarksCollectionPage Bookmarks { get; set; }
+
+        /// <summary>
+        /// Gets or sets bookmarksNextLink.
+        /// </summary>
+        [JsonPropertyName("bookmarks@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string BookmarksNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets qnas.
+        /// </summary>
+        [JsonPropertyName("qnas")]
+        public ISearchEntityQnasCollectionPage Qnas { get; set; }
+
+        /// <summary>
+        /// Gets or sets qnasNextLink.
+        /// </summary>
+        [JsonPropertyName("qnas@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string QnasNextLink { get; set; }
+    
     }
 }
 

@@ -36,14 +36,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enabled for scope validation.
-        /// Determines whether the Permission is validated for Scopes defined per Role Assignment.
+        /// Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
         /// </summary>
         [JsonPropertyName("enabledForScopeValidation")]
         public bool? EnabledForScopeValidation { get; set; }
     
         /// <summary>
         /// Gets or sets resource.
-        /// Resource category to which this Operation belongs.
+        /// Resource category to which this Operation belongs. This property is read-only.
         /// </summary>
         [JsonPropertyName("resource")]
         public string Resource { get; set; }

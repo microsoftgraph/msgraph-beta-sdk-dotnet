@@ -810,28 +810,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceBookmarks request builder.
-        /// </summary>
-        public virtual IGraphServiceBookmarksCollectionRequestBuilder Bookmarks
-        {
-            get
-            {
-                return new GraphServiceBookmarksCollectionRequestBuilder(this.BaseUrl + "/bookmarks", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceQnas request builder.
-        /// </summary>
-        public virtual IGraphServiceQnasCollectionRequestBuilder Qnas
-        {
-            get
-            {
-                return new GraphServiceQnasCollectionRequestBuilder(this.BaseUrl + "/qnas", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceSubscriptions request builder.
         /// </summary>
         public virtual IGraphServiceSubscriptionsCollectionRequestBuilder Subscriptions

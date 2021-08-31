@@ -84,7 +84,10 @@ namespace Microsoft.Graph
             IEnumerable<string> deviceIds = null,
             string notificationTitle = null,
             string notificationBody = null,
-            string deviceName = null)
+            string deviceName = null,
+            string carrierUrl = null,
+            string deprovisionReason = null,
+            string organizationalUnitPath = null)
         {
             return new ManagedDeviceExecuteActionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.executeAction"),
@@ -95,7 +98,10 @@ namespace Microsoft.Graph
                 deviceIds,
                 notificationTitle,
                 notificationBody,
-                deviceName);
+                deviceName,
+                carrierUrl,
+                deprovisionReason,
+                organizationalUnitPath);
         }
 
         /// <summary>

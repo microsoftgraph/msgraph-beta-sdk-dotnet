@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public Int32? DevicesWithoutAutopilotProfileAssigned { get; set; }
     
         /// <summary>
+        /// Gets or sets totalWindows10DevicesWithoutTenantAttached.
+        /// The count of windows 10 devices that are Intune and Comanaged.
+        /// </summary>
+        [JsonPropertyName("totalWindows10DevicesWithoutTenantAttached")]
+        public Int32? TotalWindows10DevicesWithoutTenantAttached { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

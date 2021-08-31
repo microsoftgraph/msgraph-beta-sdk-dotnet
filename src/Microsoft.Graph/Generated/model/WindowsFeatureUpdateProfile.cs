@@ -90,20 +90,6 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string AssignmentsNextLink { get; set; }
     
-        /// <summary>
-        /// Gets or sets device update states.
-        /// The list of device states this profile targeted to
-        /// </summary>
-        [JsonPropertyName("deviceUpdateStates")]
-        public IWindowsFeatureUpdateProfileDeviceUpdateStatesCollectionPage DeviceUpdateStates { get; set; }
-
-        /// <summary>
-        /// Gets or sets deviceUpdateStatesNextLink.
-        /// </summary>
-        [JsonPropertyName("deviceUpdateStates@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string DeviceUpdateStatesNextLink { get; set; }
-    
     }
 }
 

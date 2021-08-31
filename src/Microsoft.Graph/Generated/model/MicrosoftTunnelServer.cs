@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets agent image digest.
-        /// The digest of the current agent image running on this server 
+        /// The digest of the current agent image running on this server
         /// </summary>
         [JsonPropertyName("agentImageDigest")]
         public string AgentImageDigest { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets server image digest.
-        /// The digest of the current server image running on this server 
+        /// The digest of the current server image running on this server
         /// </summary>
         [JsonPropertyName("serverImageDigest")]
         public string ServerImageDigest { get; set; }

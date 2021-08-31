@@ -45,5 +45,10 @@ namespace Microsoft.Graph
         /// </summary>
         MicrosoftSense = 128,
 	
+        /// <summary>
+        /// Exchange Online
+        /// </summary>
+        ExchangeOnline = 256,
+	
     }
 }

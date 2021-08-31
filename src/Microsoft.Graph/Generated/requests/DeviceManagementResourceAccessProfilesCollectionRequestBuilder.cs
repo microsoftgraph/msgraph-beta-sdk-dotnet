@@ -60,6 +60,17 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceManagementResourceAccessProfileBaseQueryByPlatformType.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementResourceAccessProfileBaseQueryByPlatformTypeRequestBuilder"/>.</returns>
+        public IDeviceManagementResourceAccessProfileBaseQueryByPlatformTypeRequestBuilder QueryByPlatformType(
+            PolicyPlatformType platformType)
+        {
+            return new DeviceManagementResourceAccessProfileBaseQueryByPlatformTypeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.queryByPlatformType"),
+                this.Client,
+                platformType);
+        }
     }
 }

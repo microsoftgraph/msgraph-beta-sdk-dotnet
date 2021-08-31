@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets administrative units.
+        /// Conceptual container for user and group directory objects.
         /// </summary>
         [JsonPropertyName("administrativeUnits")]
         public IDirectoryAdministrativeUnitsCollectionPage AdministrativeUnits { get; set; }

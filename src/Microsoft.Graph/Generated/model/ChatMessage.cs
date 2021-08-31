@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attachments.
-        /// Attached files. Attachments are currently read-only – sending attachments is not supported.
+        /// References to attached objects like files, tabs, meetings etc.
         /// </summary>
         [JsonPropertyName("attachments")]
         public IEnumerable<ChatMessageAttachment> Attachments { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets from.
-        /// Read only. Details of the sender of the chat message.
+        /// Details of the sender of the chat message. Can only be set during migration.
         /// </summary>
         [JsonPropertyName("from")]
         public ChatMessageFromIdentitySet From { get; set; }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mentions.
-        /// List of entities mentioned in the chat message. Currently supports user, bot, team, channel.
+        /// List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
         /// </summary>
         [JsonPropertyName("mentions")]
         public IEnumerable<ChatMessageMention> Mentions { get; set; }

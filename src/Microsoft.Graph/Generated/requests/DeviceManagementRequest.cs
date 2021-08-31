@@ -666,6 +666,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsMetricHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsModelScores != null && deviceManagementToInitialize.UserExperienceAnalyticsModelScores.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsModelScores.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsModelScoresNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsModelScores.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDevice != null && deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDevice.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDevice.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsNotAutopilotReadyDeviceNextLink);
@@ -899,6 +905,12 @@ namespace Microsoft.Graph
                     deviceManagementToInitialize.TroubleshootingEvents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TroubleshootingEventsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.TroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.WindowsDriverUpdateProfiles != null && deviceManagementToInitialize.WindowsDriverUpdateProfiles.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.WindowsDriverUpdateProfiles.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsDriverUpdateProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.WindowsDriverUpdateProfiles.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.WindowsFeatureUpdateProfiles != null && deviceManagementToInitialize.WindowsFeatureUpdateProfiles.CurrentPage != null)
                 {
