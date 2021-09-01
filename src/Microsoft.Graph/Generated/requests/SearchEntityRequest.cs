@@ -244,6 +244,30 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SearchEntity searchEntityToInitialize)
         {
 
+            if (searchEntityToInitialize != null)
+            {
+                if (searchEntityToInitialize.Acronyms != null && searchEntityToInitialize.Acronyms.CurrentPage != null)
+                {
+                    searchEntityToInitialize.Acronyms.InitializeNextPageRequest(this.Client, searchEntityToInitialize.AcronymsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    searchEntityToInitialize.Acronyms.AdditionalData = searchEntityToInitialize.AdditionalData;
+                }
+                if (searchEntityToInitialize.Bookmarks != null && searchEntityToInitialize.Bookmarks.CurrentPage != null)
+                {
+                    searchEntityToInitialize.Bookmarks.InitializeNextPageRequest(this.Client, searchEntityToInitialize.BookmarksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    searchEntityToInitialize.Bookmarks.AdditionalData = searchEntityToInitialize.AdditionalData;
+                }
+                if (searchEntityToInitialize.Qnas != null && searchEntityToInitialize.Qnas.CurrentPage != null)
+                {
+                    searchEntityToInitialize.Qnas.InitializeNextPageRequest(this.Client, searchEntityToInitialize.QnasNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    searchEntityToInitialize.Qnas.AdditionalData = searchEntityToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

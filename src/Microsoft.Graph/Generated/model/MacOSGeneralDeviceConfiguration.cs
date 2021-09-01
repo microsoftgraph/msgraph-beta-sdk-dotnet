@@ -128,6 +128,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> EmailInDomainSuffixes { get; set; }
     
         /// <summary>
+        /// Gets or sets erase content and settings blocked.
+        /// TRUE disables the reset option on supervised devices. FALSE enables the reset option on supervised devices. Available for devices running macOS versions 12.0 and later.
+        /// </summary>
+        [JsonPropertyName("eraseContentAndSettingsBlocked")]
+        public bool? EraseContentAndSettingsBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets game center blocked.
         /// Yes disables Game Center, and the Game Center icon is removed from the Home screen. Available for devices running macOS versions 10.13 and later.
         /// </summary>
@@ -227,7 +234,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets multiplayer gaming blocked.
-        /// Yes prevents multiplayer gaming when using Game Center. Available for devices running macOS versions 10.13 and later.
+        /// TRUE prevents multiplayer gaming when using Game Center. FALSE allows multiplayer gaming when using Game Center. Available for devices running macOS versions 10.13 and later.
         /// </summary>
         [JsonPropertyName("multiplayerGamingBlocked")]
         public bool? MultiplayerGamingBlocked { get; set; }
@@ -366,6 +373,27 @@ namespace Microsoft.Graph
         public bool? ScreenCaptureBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets software update major osdeferred install delay in days.
+        /// Specify the number of days (1-90) to delay visibility of major OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
+        /// </summary>
+        [JsonPropertyName("softwareUpdateMajorOSDeferredInstallDelayInDays")]
+        public Int32? SoftwareUpdateMajorOSDeferredInstallDelayInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets software update minor osdeferred install delay in days.
+        /// Specify the number of days (1-90) to delay visibility of minor OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
+        /// </summary>
+        [JsonPropertyName("softwareUpdateMinorOSDeferredInstallDelayInDays")]
+        public Int32? SoftwareUpdateMinorOSDeferredInstallDelayInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets software update non osdeferred install delay in days.
+        /// Specify the number of days (1-90) to delay visibility of non-OS software updates. Available for devices running macOS versions 11.3 and later. Valid values 0 to 90
+        /// </summary>
+        [JsonPropertyName("softwareUpdateNonOSDeferredInstallDelayInDays")]
+        public Int32? SoftwareUpdateNonOSDeferredInstallDelayInDays { get; set; }
+    
+        /// <summary>
         /// Gets or sets software updates enforced delay in days.
         /// Sets how many days a software update will be delyed for a supervised device. Valid values 0 to 90
         /// </summary>
@@ -381,14 +409,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets update delay policy.
-        /// Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility.
+        /// Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.
         /// </summary>
         [JsonPropertyName("updateDelayPolicy")]
         public MacOSSoftwareUpdateDelayPolicy? UpdateDelayPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets wallpaper modification blocked.
-        /// Yes prevents the wallpaper from being changed. Available for devices running macOS versions 10.13 and later.
+        /// TRUE prevents the wallpaper from being changed. FALSE allows the wallpaper to be changed. Available for devices running macOS versions 10.13 and later.
         /// </summary>
         [JsonPropertyName("wallpaperModificationBlocked")]
         public bool? WallpaperModificationBlocked { get; set; }

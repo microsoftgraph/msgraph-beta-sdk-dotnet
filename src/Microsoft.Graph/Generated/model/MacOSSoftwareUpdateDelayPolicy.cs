@@ -35,5 +35,15 @@ namespace Microsoft.Graph
         /// </summary>
         DelayAppUpdateVisibility = 2,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
+	
+        /// <summary>
+        /// Delay Major Os Update Visibility
+        /// </summary>
+        DelayMajorOsUpdateVisibility = 8,
+	
     }
 }

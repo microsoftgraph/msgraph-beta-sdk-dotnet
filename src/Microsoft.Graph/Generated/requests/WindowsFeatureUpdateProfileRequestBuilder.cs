@@ -61,18 +61,6 @@ namespace Microsoft.Graph
                 return new WindowsFeatureUpdateProfileAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for DeviceUpdateStates.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsFeatureUpdateProfileDeviceUpdateStatesCollectionRequestBuilder"/>.</returns>
-        public IWindowsFeatureUpdateProfileDeviceUpdateStatesCollectionRequestBuilder DeviceUpdateStates
-        {
-            get
-            {
-                return new WindowsFeatureUpdateProfileDeviceUpdateStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceUpdateStates"), this.Client);
-            }
-        }
     
         /// <summary>
         /// Gets the request builder for WindowsFeatureUpdateProfileAssign.

@@ -100,6 +100,13 @@ namespace Microsoft.Graph
         public Int32? BlockAfterCompanyPortalUpdateDeferralInDays { get; set; }
     
         /// <summary>
+        /// Gets or sets connect to vpn on launch.
+        /// Whether the app should connect to the configured VPN on launch.
+        /// </summary>
+        [JsonPropertyName("connectToVpnOnLaunch")]
+        public bool? ConnectToVpnOnLaunch { get; set; }
+    
+        /// <summary>
         /// Gets or sets custom browser display name.
         /// Friendly name of the preferred custom browser to open weblink on Android.
         /// </summary>

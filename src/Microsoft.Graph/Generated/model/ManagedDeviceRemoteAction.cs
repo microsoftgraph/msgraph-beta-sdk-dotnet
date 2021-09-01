@@ -89,5 +89,15 @@ namespace Microsoft.Graph
         /// </summary>
         MoveDeviceToOrganizationalUnit = 13,
 	
+        /// <summary>
+        /// Activate Device Esim
+        /// </summary>
+        ActivateDeviceEsim = 14,
+	
+        /// <summary>
+        /// Collect Diagnostics
+        /// </summary>
+        CollectDiagnostics = 15,
+	
     }
 }

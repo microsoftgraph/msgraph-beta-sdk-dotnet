@@ -530,6 +530,12 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsMetricHistoryCollectionRequestBuilder UserExperienceAnalyticsMetricHistory { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsModelScores.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsModelScoresCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsModelScoresCollectionRequestBuilder UserExperienceAnalyticsModelScores { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsNotAutopilotReadyDevice.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsNotAutopilotReadyDeviceCollectionRequestBuilder"/>.</returns>
@@ -692,6 +698,12 @@ namespace Microsoft.Graph
         IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionRequestBuilder GroupPolicyUploadedDefinitionFiles { get; }
 
         /// <summary>
+        /// Gets the request builder for Reports.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>
+        IDeviceManagementReportsRequestBuilder Reports { get; }
+
+        /// <summary>
         /// Gets the request builder for MicrosoftTunnelConfigurations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder"/>.</returns>
@@ -770,12 +782,6 @@ namespace Microsoft.Graph
         IRemoteAssistanceSettingsRequestBuilder RemoteAssistanceSettings { get; }
 
         /// <summary>
-        /// Gets the request builder for Reports.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>
-        IDeviceManagementReportsRequestBuilder Reports { get; }
-
-        /// <summary>
         /// Gets the request builder for EmbeddedSIMActivationCodePools.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementEmbeddedSIMActivationCodePoolsCollectionRequestBuilder"/>.</returns>
@@ -798,6 +804,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementTroubleshootingEventsCollectionRequestBuilder TroubleshootingEvents { get; }
+
+        /// <summary>
+        /// Gets the request builder for WindowsDriverUpdateProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsDriverUpdateProfilesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementWindowsDriverUpdateProfilesCollectionRequestBuilder WindowsDriverUpdateProfiles { get; }
 
         /// <summary>
         /// Gets the request builder for WindowsFeatureUpdateProfiles.

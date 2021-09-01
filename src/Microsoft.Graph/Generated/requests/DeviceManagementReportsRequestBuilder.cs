@@ -290,6 +290,93 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCompliancePoliciesReportForDevice.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCompliancePoliciesReportForDeviceRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetCompliancePoliciesReportForDeviceRequestBuilder GetCompliancePoliciesReportForDevice(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetCompliancePoliciesReportForDeviceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCompliancePoliciesReportForDevice"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCompliancePolicyDevicesReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCompliancePolicyDevicesReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetCompliancePolicyDevicesReportRequestBuilder GetCompliancePolicyDevicesReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetCompliancePolicyDevicesReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCompliancePolicyDevicesReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetCompliancePolicyDeviceSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetCompliancePolicyDeviceSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetCompliancePolicyDeviceSummaryReportRequestBuilder GetCompliancePolicyDeviceSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetCompliancePolicyDeviceSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCompliancePolicyDeviceSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetConfigurationPoliciesReportForDevice.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPoliciesReportForDeviceRequestBuilder"/>.</returns>
@@ -781,6 +868,122 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReportRequestBuilder GetRemoteAssistanceMonitorActiveSessionsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRemoteAssistanceMonitorActiveSessionsReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReportRequestBuilder GetRemoteAssistanceMonitorAvgSessionTimeReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRemoteAssistanceMonitorAvgSessionTimeReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReportRequestBuilder GetRemoteAssistanceMonitorTotalSessionsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRemoteAssistanceMonitorTotalSessionsReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceSessionsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceSessionsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetRemoteAssistanceSessionsReportRequestBuilder GetRemoteAssistanceSessionsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetRemoteAssistanceSessionsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRemoteAssistanceSessionsReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetCachedReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetCachedReportRequestBuilder"/>.</returns>
@@ -967,6 +1170,35 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetConfigurationSettingNonComplianceReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getConfigurationSettingNonComplianceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceManagementIntentPerSettingContributingProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder GetDeviceManagementIntentPerSettingContributingProfiles(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDeviceManagementIntentPerSettingContributingProfiles"),
                 this.Client,
                 name,
                 select,

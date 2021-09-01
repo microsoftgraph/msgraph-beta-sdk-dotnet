@@ -252,12 +252,6 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     windowsFeatureUpdateProfileToInitialize.Assignments.AdditionalData = windowsFeatureUpdateProfileToInitialize.AdditionalData;
                 }
-                if (windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates != null && windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.CurrentPage != null)
-                {
-                    windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.InitializeNextPageRequest(this.Client, windowsFeatureUpdateProfileToInitialize.DeviceUpdateStatesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    windowsFeatureUpdateProfileToInitialize.DeviceUpdateStates.AdditionalData = windowsFeatureUpdateProfileToInitialize.AdditionalData;
-                }
 
             }
 

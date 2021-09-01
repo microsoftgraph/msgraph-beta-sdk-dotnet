@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets roleAssignmentIds.
-        /// Role Assignment IDs for the specifc Role Assignments assigned to a user.
+        /// Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.
         /// </summary>
         [JsonPropertyName("roleAssignmentIds")]
         public IEnumerable<string> RoleAssignmentIds { get; set; }
     
         /// <summary>
         /// Gets or sets roleDefinitionIds.
-        /// Role Definition IDs for the specifc Role Definitions assigned to a user.
+        /// Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.
         /// </summary>
         [JsonPropertyName("roleDefinitionIds")]
         public IEnumerable<string> RoleDefinitionIds { get; set; }

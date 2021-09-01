@@ -54,7 +54,10 @@ namespace Microsoft.Graph
             IEnumerable<string> deviceIds = null,
             string notificationTitle = null,
             string notificationBody = null,
-            string deviceName = null);
+            string deviceName = null,
+            string carrierUrl = null,
+            string deprovisionReason = null,
+            string organizationalUnitPath = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceMoveDevicesToOU.

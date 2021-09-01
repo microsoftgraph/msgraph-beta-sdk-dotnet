@@ -898,6 +898,13 @@ namespace Microsoft.Graph
         public bool? LockScreenBlockTodayView { get; set; }
     
         /// <summary>
+        /// Gets or sets managed pasteboard required.
+        /// Open-in management controls how people share data between unmanaged and managed apps. Setting this to true enforces copy/paste restrictions based on how you configured Block viewing corporate documents in unmanaged apps  and  Block viewing non-corporate documents in corporate apps.
+        /// </summary>
+        [JsonPropertyName("managedPasteboardRequired")]
+        public bool? ManagedPasteboardRequired { get; set; }
+    
+        /// <summary>
         /// Gets or sets media content rating apps.
         /// Media content rating settings for Apps. Possible values are: allAllowed, allBlocked, agesAbove4, agesAbove9, agesAbove12, agesAbove17.
         /// </summary>
@@ -1001,6 +1008,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("onDeviceOnlyDictationForced")]
         public bool? OnDeviceOnlyDictationForced { get; set; }
+    
+        /// <summary>
+        /// Gets or sets on device only translation forced.
+        /// When set to TRUE, the setting disables connections to Siri servers so that users can’t use Siri to translate text. When set to FALSE, the setting allows connections to to Siri servers to users can use Siri to translate text. Available for devices running iOS and iPadOS versions 15.0 and later.
+        /// </summary>
+        [JsonPropertyName("onDeviceOnlyTranslationForced")]
+        public bool? OnDeviceOnlyTranslationForced { get; set; }
     
         /// <summary>
         /// Gets or sets passcode block fingerprint modification.

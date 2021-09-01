@@ -36,12 +36,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWindowsFeatureUpdateProfileAssignmentsCollectionRequestBuilder"/>.</returns>
         IWindowsFeatureUpdateProfileAssignmentsCollectionRequestBuilder Assignments { get; }
-
-        /// <summary>
-        /// Gets the request builder for DeviceUpdateStates.
-        /// </summary>
-        /// <returns>The <see cref="IWindowsFeatureUpdateProfileDeviceUpdateStatesCollectionRequestBuilder"/>.</returns>
-        IWindowsFeatureUpdateProfileDeviceUpdateStatesCollectionRequestBuilder DeviceUpdateStates { get; }
     
         /// <summary>
         /// Gets the request builder for WindowsFeatureUpdateProfileAssign.

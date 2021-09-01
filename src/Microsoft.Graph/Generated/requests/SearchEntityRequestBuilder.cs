@@ -51,6 +51,42 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Acronyms.
+        /// </summary>
+        /// <returns>The <see cref="ISearchEntityAcronymsCollectionRequestBuilder"/>.</returns>
+        public ISearchEntityAcronymsCollectionRequestBuilder Acronyms
+        {
+            get
+            {
+                return new SearchEntityAcronymsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("acronyms"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Bookmarks.
+        /// </summary>
+        /// <returns>The <see cref="ISearchEntityBookmarksCollectionRequestBuilder"/>.</returns>
+        public ISearchEntityBookmarksCollectionRequestBuilder Bookmarks
+        {
+            get
+            {
+                return new SearchEntityBookmarksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("bookmarks"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Qnas.
+        /// </summary>
+        /// <returns>The <see cref="ISearchEntityQnasCollectionRequestBuilder"/>.</returns>
+        public ISearchEntityQnasCollectionRequestBuilder Qnas
+        {
+            get
+            {
+                return new SearchEntityQnasCollectionRequestBuilder(this.AppendSegmentToRequestUrl("qnas"), this.Client);
+            }
+        }
+    
+        /// <summary>
         /// Gets the request builder for SearchEntityQuery.
         /// </summary>
         /// <returns>The <see cref="ISearchEntityQueryRequestBuilder"/>.</returns>

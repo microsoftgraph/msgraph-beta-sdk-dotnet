@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ICloudPCRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for CloudPCEndGracePeriod.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCEndGracePeriodRequestBuilder"/>.</returns>
+        ICloudPCEndGracePeriodRequestBuilder EndGracePeriod();
+
+        /// <summary>
         /// Gets the request builder for CloudPCReprovision.
         /// </summary>
         /// <returns>The <see cref="ICloudPCReprovisionRequestBuilder"/>.</returns>

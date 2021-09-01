@@ -43,6 +43,18 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets online meeting info.
+        /// </summary>
+        [JsonPropertyName("onlineMeetingInfo")]
+        public TeamworkOnlineMeetingInfo OnlineMeetingInfo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tenant id.
+        /// </summary>
+        [JsonPropertyName("tenantId")]
+        public string TenantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets topic.
         /// (Optional) Subject or topic for the chat. Only available for group chats.
         /// </summary>

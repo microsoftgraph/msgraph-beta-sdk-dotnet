@@ -1204,6 +1204,20 @@ namespace Microsoft.Graph
         public string UserExperienceAnalyticsMetricHistoryNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics model scores.
+        /// User experience analytics model scores
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsModelScores")]
+        public IDeviceManagementUserExperienceAnalyticsModelScoresCollectionPage UserExperienceAnalyticsModelScores { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsModelScoresNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsModelScores@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsModelScoresNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics not autopilot ready device.
         /// User experience analytics devices not Windows Autopilot ready.
         /// </summary>
@@ -1554,6 +1568,13 @@ namespace Microsoft.Graph
         public string GroupPolicyUploadedDefinitionFilesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets reports.
+        /// Reports singleton
+        /// </summary>
+        [JsonPropertyName("reports")]
+        public DeviceManagementReports Reports { get; set; }
+    
+        /// <summary>
         /// Gets or sets microsoft tunnel configurations.
         /// Collection of MicrosoftTunnelConfiguration settings associated with account.
         /// </summary>
@@ -1729,13 +1750,6 @@ namespace Microsoft.Graph
         public RemoteAssistanceSettings RemoteAssistanceSettings { get; set; }
     
         /// <summary>
-        /// Gets or sets reports.
-        /// Reports singleton
-        /// </summary>
-        [JsonPropertyName("reports")]
-        public DeviceManagementReports Reports { get; set; }
-    
-        /// <summary>
         /// Gets or sets embedded simactivation code pools.
         /// The embedded SIM activation code pools created by this account.
         /// </summary>
@@ -1790,6 +1804,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("troubleshootingEvents@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string TroubleshootingEventsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows driver update profiles.
+        /// A collection of windows driver update profiles
+        /// </summary>
+        [JsonPropertyName("windowsDriverUpdateProfiles")]
+        public IDeviceManagementWindowsDriverUpdateProfilesCollectionPage WindowsDriverUpdateProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsDriverUpdateProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsDriverUpdateProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string WindowsDriverUpdateProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows feature update profiles.

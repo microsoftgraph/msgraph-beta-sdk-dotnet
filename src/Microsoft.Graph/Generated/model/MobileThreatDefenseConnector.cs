@@ -92,6 +92,13 @@ namespace Microsoft.Graph
         public bool? MacEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets microsoft defender for endpoint attach enabled.
+        /// When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.
+        /// </summary>
+        [JsonPropertyName("microsoftDefenderForEndpointAttachEnabled")]
+        public bool? MicrosoftDefenderForEndpointAttachEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets partner state.
         /// Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
         /// </summary>

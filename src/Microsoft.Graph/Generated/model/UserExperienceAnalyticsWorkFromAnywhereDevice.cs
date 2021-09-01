@@ -57,6 +57,27 @@ namespace Microsoft.Graph
         public bool? AzureAdRegistered { get; set; }
     
         /// <summary>
+        /// Gets or sets cloud identity score.
+        /// The user experience work from anywhere per device cloud identity score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("cloudIdentityScore")]
+        public double? CloudIdentityScore { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cloud management score.
+        /// The user experience work from anywhere per device cloud management score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("cloudManagementScore")]
+        public double? CloudManagementScore { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cloud provisioning score.
+        /// The user experience work from anywhere per device cloud provisioning score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("cloudProvisioningScore")]
+        public double? CloudProvisioningScore { get; set; }
+    
+        /// <summary>
         /// Gets or sets compliance policy set to intune.
         /// The user experience work from anywhere device's compliancePolicySetToIntune.
         /// </summary>
@@ -69,6 +90,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets health status.
+        /// The user experience work from anywhere per device health status. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+        /// </summary>
+        [JsonPropertyName("healthStatus")]
+        public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
     
         /// <summary>
         /// Gets or sets managed by.
@@ -202,6 +230,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("upgradeEligibility")]
         public OperatingSystemUpgradeEligibility? UpgradeEligibility { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows score.
+        /// The user experience work from anywhere per device windows score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("windowsScore")]
+        public double? WindowsScore { get; set; }
     
     }
 }

@@ -127,6 +127,13 @@ namespace Microsoft.Graph
         public string Model { get; set; }
     
         /// <summary>
+        /// Gets or sets model startup performance score.
+        /// The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("modelStartupPerformanceScore")]
+        public double? ModelStartupPerformanceScore { get; set; }
+    
+        /// <summary>
         /// Gets or sets operating system version.
         /// The user experience analytics device Operating System version.
         /// </summary>

@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target.
-        /// The assignment target that the feature update profile is assigned to.
+        /// The assignment target that the quality update profile is assigned to.
         /// </summary>
         [JsonPropertyName("target")]
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

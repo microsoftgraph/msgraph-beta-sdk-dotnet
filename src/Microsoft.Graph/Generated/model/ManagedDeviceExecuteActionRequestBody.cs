@@ -62,5 +62,23 @@ namespace Microsoft.Graph
         [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
+        /// <summary>
+        /// Gets or sets CarrierUrl.
+        /// </summary>
+        [JsonPropertyName("carrierUrl")]
+        public string CarrierUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets DeprovisionReason.
+        /// </summary>
+        [JsonPropertyName("deprovisionReason")]
+        public string DeprovisionReason { get; set; }
+    
+        /// <summary>
+        /// Gets or sets OrganizationalUnitPath.
+        /// </summary>
+        [JsonPropertyName("organizationalUnitPath")]
+        public string OrganizationalUnitPath { get; set; }
+    
     }
 }

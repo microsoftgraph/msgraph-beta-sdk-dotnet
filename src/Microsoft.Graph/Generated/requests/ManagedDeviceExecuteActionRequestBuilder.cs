@@ -30,6 +30,9 @@ namespace Microsoft.Graph
         /// <param name="notificationTitle">A notificationTitle parameter for the OData method call.</param>
         /// <param name="notificationBody">A notificationBody parameter for the OData method call.</param>
         /// <param name="deviceName">A deviceName parameter for the OData method call.</param>
+        /// <param name="carrierUrl">A carrierUrl parameter for the OData method call.</param>
+        /// <param name="deprovisionReason">A deprovisionReason parameter for the OData method call.</param>
+        /// <param name="organizationalUnitPath">A organizationalUnitPath parameter for the OData method call.</param>
         public ManagedDeviceExecuteActionRequestBuilder(
             string requestUrl,
             IBaseClient client,
@@ -39,7 +42,10 @@ namespace Microsoft.Graph
             IEnumerable<string> deviceIds,
             string notificationTitle,
             string notificationBody,
-            string deviceName)
+            string deviceName,
+            string carrierUrl,
+            string deprovisionReason,
+            string organizationalUnitPath)
             : base(requestUrl, client)
         {
             this.SetParameter("actionName", actionName, false);
@@ -49,6 +55,9 @@ namespace Microsoft.Graph
             this.SetParameter("notificationTitle", notificationTitle, true);
             this.SetParameter("notificationBody", notificationBody, true);
             this.SetParameter("deviceName", deviceName, true);
+            this.SetParameter("carrierUrl", carrierUrl, true);
+            this.SetParameter("deprovisionReason", deprovisionReason, true);
+            this.SetParameter("organizationalUnitPath", organizationalUnitPath, true);
         }
 
         /// <summary>
@@ -94,6 +103,21 @@ namespace Microsoft.Graph
             if (this.HasParameter("deviceName"))
             {
                 request.RequestBody.DeviceName = this.GetParameter<string>("deviceName");
+            }
+
+            if (this.HasParameter("carrierUrl"))
+            {
+                request.RequestBody.CarrierUrl = this.GetParameter<string>("carrierUrl");
+            }
+
+            if (this.HasParameter("deprovisionReason"))
+            {
+                request.RequestBody.DeprovisionReason = this.GetParameter<string>("deprovisionReason");
+            }
+
+            if (this.HasParameter("organizationalUnitPath"))
+            {
+                request.RequestBody.OrganizationalUnitPath = this.GetParameter<string>("organizationalUnitPath");
             }
 
             return request;

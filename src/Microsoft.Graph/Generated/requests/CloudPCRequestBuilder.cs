@@ -51,6 +51,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for CloudPCEndGracePeriod.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCEndGracePeriodRequestBuilder"/>.</returns>
+        public ICloudPCEndGracePeriodRequestBuilder EndGracePeriod()
+        {
+            return new CloudPCEndGracePeriodRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.endGracePeriod"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCReprovision.
         /// </summary>
         /// <returns>The <see cref="ICloudPCReprovisionRequestBuilder"/>.</returns>

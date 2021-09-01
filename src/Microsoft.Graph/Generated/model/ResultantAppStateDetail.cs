@@ -70,6 +70,11 @@ namespace Microsoft.Graph
         PowerShellScriptRequirementNotMet = -1013,
 	
         /// <summary>
+        /// Superseding Apps Not Applicable
+        /// </summary>
+        SupersedingAppsNotApplicable = -1016,
+	
+        /// <summary>
         /// No Additional Details
         /// </summary>
         NoAdditionalDetails = 0,
@@ -95,6 +100,21 @@ namespace Microsoft.Graph
         DependencyWithAutoInstallDisabled = 4,
 	
         /// <summary>
+        /// Superseded App Uninstall Failed
+        /// </summary>
+        SupersededAppUninstallFailed = 5,
+	
+        /// <summary>
+        /// Superseded App Uninstall Pending Reboot
+        /// </summary>
+        SupersededAppUninstallPendingReboot = 6,
+	
+        /// <summary>
+        /// Removing Superseded Apps
+        /// </summary>
+        RemovingSupersededApps = 7,
+	
+        /// <summary>
         /// Ios App Store Update Failed To Install
         /// </summary>
         IosAppStoreUpdateFailedToInstall = 1000,
@@ -108,6 +128,21 @@ namespace Microsoft.Graph
         /// User Rejected Update
         /// </summary>
         UserRejectedUpdate = 1002,
+	
+        /// <summary>
+        /// Uninstall Pending Reboot
+        /// </summary>
+        UninstallPendingReboot = 1003,
+	
+        /// <summary>
+        /// Superseding Apps Detected
+        /// </summary>
+        SupersedingAppsDetected = 1004,
+	
+        /// <summary>
+        /// Superseded Apps Detected
+        /// </summary>
+        SupersededAppsDetected = 1005,
 	
         /// <summary>
         /// See Install Error Code
@@ -133,6 +168,16 @@ namespace Microsoft.Graph
         /// User Is Not Logged Into App Store
         /// </summary>
         UserIsNotLoggedIntoAppStore = 3003,
+	
+        /// <summary>
+        /// Untargeted Superseding Apps Detected
+        /// </summary>
+        UntargetedSupersedingAppsDetected = 3004,
+	
+        /// <summary>
+        /// App Removed By Supersedence
+        /// </summary>
+        AppRemovedBySupersedence = 3005,
 	
         /// <summary>
         /// See Uninstall Error Code
