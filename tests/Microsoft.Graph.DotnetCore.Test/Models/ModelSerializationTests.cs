@@ -37,6 +37,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             Assert.NotNull(user);
             Assert.Equal(userId, user.Id);
             Assert.Equal(givenName, user.GivenName);
+            Assert.Null(user.GetEtag());
         }
 
         [Fact]
@@ -197,5 +198,22 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
 
         }
 
+        [Fact]
+        public void TestEtagHelper()
+        {
+            var userId = "userId";
+            var testEtag = "testEtag";
+
+            var stringToDeserialize = string.Format(
+                "{{\"id\":\"{0}\", \"@odata.type\":\"microsoft.graph.user\", \"@odata.etag\":\"{1}\"}}",
+                userId,
+                testEtag);
+
+            var user = this.serializer.DeserializeObject<Entity>(stringToDeserialize) as User;
+
+            Assert.NotNull(user);
+            Assert.Equal(userId, user.Id);
+            Assert.Equal(testEtag, user.GetEtag());
+        }
     }
 }

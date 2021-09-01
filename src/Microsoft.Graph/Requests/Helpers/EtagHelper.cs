@@ -5,6 +5,7 @@
 namespace Microsoft.Graph
 {
     using System;
+    using System.Text.Json;
 
     /// <summary>
     /// Helper class to extract @odata.etag property and to specify If-Match headers for requests.
@@ -28,8 +29,12 @@ namespace Microsoft.Graph
                 throw new ArgumentNullException(nameof(entity));
             }
 
-            entity.AdditionalData.TryGetValue(ODataEtagPropertyName, out object etag);
-            return etag as string;
+            if (entity.AdditionalData == null)
+            {
+                return default;
+            }
+
+            return entity.AdditionalData.TryGetValue(ODataEtagPropertyName, out object etag) ? ((JsonElement)etag).GetString() : default;
         }
     }
 }
