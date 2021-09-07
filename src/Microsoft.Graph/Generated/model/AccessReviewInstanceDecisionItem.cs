@@ -71,7 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal link.
-        /// Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
+        /// A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
         /// </summary>
         [JsonPropertyName("principalLink")]
         public string PrincipalLink { get; set; }

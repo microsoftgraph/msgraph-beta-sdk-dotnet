@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (securityToInitialize != null)
             {
+                if (securityToInitialize.Incidents != null && securityToInitialize.Incidents.CurrentPage != null)
+                {
+                    securityToInitialize.Incidents.InitializeNextPageRequest(this.Client, securityToInitialize.IncidentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    securityToInitialize.Incidents.AdditionalData = securityToInitialize.AdditionalData;
+                }
                 if (securityToInitialize.Alerts != null && securityToInitialize.Alerts.CurrentPage != null)
                 {
                     securityToInitialize.Alerts.InitializeNextPageRequest(this.Client, securityToInitialize.AlertsNextLink);

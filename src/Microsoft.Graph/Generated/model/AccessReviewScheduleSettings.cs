@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets defaultDecision.
-        /// Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
+        /// Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
         /// </summary>
         [JsonPropertyName("defaultDecision")]
         public string DefaultDecision { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recommendationsEnabled.
-        /// Indicates whether decision recommendations are enabled/disabled.
+        /// Indicates whether decision recommendations are enabled or disabled.
         /// </summary>
         [JsonPropertyName("recommendationsEnabled")]
         public bool? RecommendationsEnabled { get; set; }

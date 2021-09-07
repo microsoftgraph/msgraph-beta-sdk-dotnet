@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ISecurityRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Incidents.
+        /// </summary>
+        /// <returns>The <see cref="ISecurityIncidentsCollectionRequestBuilder"/>.</returns>
+        ISecurityIncidentsCollectionRequestBuilder Incidents { get; }
+
+        /// <summary>
         /// Gets the request builder for AttackSimulation.
         /// </summary>
         /// <returns>The <see cref="IAttackSimulationRootRequestBuilder"/>.</returns>

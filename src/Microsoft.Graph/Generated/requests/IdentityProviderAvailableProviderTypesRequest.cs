@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type IdentityProviderAvailableProviderTypesRequest.
     /// </summary>
+    [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.")]
     public partial class IdentityProviderAvailableProviderTypesRequest : BaseRequest, IIdentityProviderAvailableProviderTypesRequest
     {
         /// <summary>

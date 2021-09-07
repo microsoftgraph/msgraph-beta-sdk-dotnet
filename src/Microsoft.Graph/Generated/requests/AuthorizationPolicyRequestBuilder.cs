@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new AuthorizationPolicyRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for DefaultUserRoleOverrides.
+        /// </summary>
+        /// <returns>The <see cref="IAuthorizationPolicyDefaultUserRoleOverridesCollectionRequestBuilder"/>.</returns>
+        public IAuthorizationPolicyDefaultUserRoleOverridesCollectionRequestBuilder DefaultUserRoleOverrides
+        {
+            get
+            {
+                return new AuthorizationPolicyDefaultUserRoleOverridesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("defaultUserRoleOverrides"), this.Client);
+            }
+        }
+    
     }
 }

@@ -84,6 +84,22 @@ namespace Microsoft.Graph
             ItemBody previewText = null,
             IEnumerable<KeyValuePair> templateParameters = null,
             TeamworkNotificationRecipient recipient = null);
+
+        /// <summary>
+        /// Gets the request builder for ChatHideForUser.
+        /// </summary>
+        /// <returns>The <see cref="IChatHideForUserRequestBuilder"/>.</returns>
+        IChatHideForUserRequestBuilder HideForUser(
+            TeamworkUserIdentity user = null,
+            string tenantId = null);
+
+        /// <summary>
+        /// Gets the request builder for ChatUnhideForUser.
+        /// </summary>
+        /// <returns>The <see cref="IChatUnhideForUserRequestBuilder"/>.</returns>
+        IChatUnhideForUserRequestBuilder UnhideForUser(
+            TeamworkUserIdentity user = null,
+            string tenantId = null);
     
     }
 }

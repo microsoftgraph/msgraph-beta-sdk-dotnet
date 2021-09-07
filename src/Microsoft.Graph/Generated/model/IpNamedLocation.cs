@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ip ranges.
-        /// List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596.
+        /// List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
         /// </summary>
         [JsonPropertyName("ipRanges")]
         public IEnumerable<IpRange> IpRanges { get; set; }
     
         /// <summary>
         /// Gets or sets is trusted.
-        /// True if this location is explicitly trusted.
+        /// true if this location is explicitly trusted. Optional. Default value is false.
         /// </summary>
         [JsonPropertyName("isTrusted")]
         public bool? IsTrusted { get; set; }

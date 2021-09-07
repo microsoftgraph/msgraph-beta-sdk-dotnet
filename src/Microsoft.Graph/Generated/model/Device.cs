@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets account enabled.
-        /// true if the account is enabled; otherwise, false. Default is true. Supports $filter (eq, ne, NOT, in).
+        /// true if the account is enabled; otherwise, false. Required. Default is true. Supports $filter (eq, ne, NOT, in).
         /// </summary>
         [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device id.
-        /// Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, NOT, startsWith).
+        /// Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, NOT, startsWith).
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operating system version.
-        /// Operating system version of the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
+        /// The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("operatingSystemVersion")]
         public string OperatingSystemVersion { get; set; }
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets trust type.
-        /// Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
+        /// Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
         /// </summary>
         [JsonPropertyName("trustType")]
         public string TrustType { get; set; }
@@ -323,7 +323,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive member of.
-        /// Groups that this device is a member of. This operation is transitive. Supports $expand.
+        /// Groups that the device is a member of. This operation is transitive. Supports $expand.
         /// </summary>
         [JsonPropertyName("transitiveMemberOf")]
         public IDeviceTransitiveMemberOfCollectionWithReferencesPage TransitiveMemberOf { get; set; }

@@ -32,27 +32,28 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Issues the GET request.
+        /// Issues the POST request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<EducationAssignment> GetAsync(
+        public System.Threading.Tasks.Task<EducationAssignment> PostAsync(
             CancellationToken cancellationToken = default)
         {
-            this.Method = HttpMethods.GET;
+            this.Method = HttpMethods.POST;
             return this.SendAsync<EducationAssignment>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
+        /// Issues the POST request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<EducationAssignment>> GetResponseAsync(CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<GraphResponse<EducationAssignment>> PostResponseAsync(CancellationToken cancellationToken = default)
         {
-            this.Method = HttpMethods.GET;
+            this.Method = HttpMethods.POST;
             return this.SendAsyncWithGraphResponse<EducationAssignment>(null, cancellationToken);
         }
+
 
 
         /// <summary>

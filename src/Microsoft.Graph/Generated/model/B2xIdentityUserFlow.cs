@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets api connector configuration.
-        /// Configuration for enabling an API connector for use as part of the self-service sign up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
+        /// Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
         /// </summary>
         [JsonPropertyName("apiConnectorConfiguration")]
         public UserFlowApiConnectorConfiguration ApiConnectorConfiguration { get; set; }
@@ -39,6 +39,7 @@ namespace Microsoft.Graph
         /// Gets or sets identity providers.
         /// The identity providers included in the user flow.
         /// </summary>
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.")]
         [JsonPropertyName("identityProviders")]
         public IB2xIdentityUserFlowIdentityProvidersCollectionWithReferencesPage IdentityProviders { get; set; }
 
@@ -51,7 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets languages.
-        /// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign up user flow. You cannot create custom languages in self-service sign up user flows.
+        /// The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
         /// </summary>
         [JsonPropertyName("languages")]
         public IB2xIdentityUserFlowLanguagesCollectionPage Languages { get; set; }

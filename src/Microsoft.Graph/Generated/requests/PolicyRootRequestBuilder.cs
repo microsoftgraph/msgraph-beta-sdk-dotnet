@@ -171,6 +171,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ServicePrincipalCreationPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootServicePrincipalCreationPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootServicePrincipalCreationPoliciesCollectionRequestBuilder ServicePrincipalCreationPolicies
+        {
+            get
+            {
+                return new PolicyRootServicePrincipalCreationPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("servicePrincipalCreationPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootTokenIssuancePoliciesCollectionRequestBuilder"/>.</returns>

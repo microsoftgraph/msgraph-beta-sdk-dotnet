@@ -174,6 +174,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceIdentityProviders request builder.
         /// </summary>
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.")]
         public virtual IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders
         {
             get

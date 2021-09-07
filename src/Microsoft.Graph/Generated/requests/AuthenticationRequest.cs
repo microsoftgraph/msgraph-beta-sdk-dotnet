@@ -294,6 +294,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.PhoneMethods.AdditionalData = authenticationToInitialize.AdditionalData;
                 }
+                if (authenticationToInitialize.SoftwareOathMethods != null && authenticationToInitialize.SoftwareOathMethods.CurrentPage != null)
+                {
+                    authenticationToInitialize.SoftwareOathMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.SoftwareOathMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    authenticationToInitialize.SoftwareOathMethods.AdditionalData = authenticationToInitialize.AdditionalData;
+                }
                 if (authenticationToInitialize.TemporaryAccessPassMethods != null && authenticationToInitialize.TemporaryAccessPassMethods.CurrentPage != null)
                 {
                     authenticationToInitialize.TemporaryAccessPassMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.TemporaryAccessPassMethodsNextLink);

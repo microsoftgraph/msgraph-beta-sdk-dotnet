@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IAuthorizationPolicyRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for DefaultUserRoleOverrides.
+        /// </summary>
+        /// <returns>The <see cref="IAuthorizationPolicyDefaultUserRoleOverridesCollectionRequestBuilder"/>.</returns>
+        IAuthorizationPolicyDefaultUserRoleOverridesCollectionRequestBuilder DefaultUserRoleOverrides { get; }
+    
     }
 }

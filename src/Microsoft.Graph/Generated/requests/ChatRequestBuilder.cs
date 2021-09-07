@@ -156,6 +156,36 @@ namespace Microsoft.Graph
                 templateParameters,
                 recipient);
         }
+
+        /// <summary>
+        /// Gets the request builder for ChatHideForUser.
+        /// </summary>
+        /// <returns>The <see cref="IChatHideForUserRequestBuilder"/>.</returns>
+        public IChatHideForUserRequestBuilder HideForUser(
+            TeamworkUserIdentity user = null,
+            string tenantId = null)
+        {
+            return new ChatHideForUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.hideForUser"),
+                this.Client,
+                user,
+                tenantId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ChatUnhideForUser.
+        /// </summary>
+        /// <returns>The <see cref="IChatUnhideForUserRequestBuilder"/>.</returns>
+        public IChatUnhideForUserRequestBuilder UnhideForUser(
+            TeamworkUserIdentity user = null,
+            string tenantId = null)
+        {
+            return new ChatUnhideForUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unhideForUser"),
+                this.Client,
+                user,
+                tenantId);
+        }
     
     }
 }

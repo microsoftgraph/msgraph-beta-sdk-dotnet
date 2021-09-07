@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets calendarEventId.
+        /// The identifier of the calendar event associated with the meeting.
         /// </summary>
         [JsonPropertyName("calendarEventId")]
         public string CalendarEventId { get; set; }
     
         /// <summary>
         /// Gets or sets joinWebUrl.
+        /// The URL which can be clicked on to join or uniquely identify the meeting.
         /// </summary>
         [JsonPropertyName("joinWebUrl")]
         public string JoinWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets organizer.
+        /// The organizer of the meeting.
         /// </summary>
         [JsonPropertyName("organizer")]
         public TeamworkUserIdentity Organizer { get; set; }

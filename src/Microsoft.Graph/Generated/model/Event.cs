@@ -295,7 +295,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attachments.
-        /// The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
+        /// The collection of fileAttachment and itemAttachment attachments for the event. Navigation property. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("attachments")]
         public IEventAttachmentsCollectionPage Attachments { get; set; }
@@ -329,7 +329,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extensions.
-        /// The collection of open extensions defined for the event. Nullable.
+        /// The collection of open extensions defined for the event. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("extensions")]
         public IEventExtensionsCollectionPage Extensions { get; set; }
@@ -343,7 +343,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets instances.
-        /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+        /// The instances of the event. Navigation property. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("instances")]
         public IEventInstancesCollectionPage Instances { get; set; }

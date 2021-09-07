@@ -32,14 +32,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authentication mode.
-        /// Determines which types of notifications can be used for sign-in. The possible values are: deviceBasedPush (passwordless only), push, and any.
+        /// Determines which types of notifications can be used for sign-in. Possible values are: any, deviceBasedPush (passwordless only), push.
         /// </summary>
         [JsonPropertyName("authenticationMode")]
         public MicrosoftAuthenticatorAuthenticationMode? AuthenticationMode { get; set; }
     
         /// <summary>
         /// Gets or sets feature settings.
-        /// Determines what additional settings should be applied to Microsoft Authenticator. The possible values are: requireNumberMatching (Requires number matching for MFA notifications. Value is ignored for phone sign-in notifications). Nullable.
+        /// Determines what additional settings should be applied to Microsoft Authenticator. Possible values are: null, requireNumberMatching (Requires number matching for MFA notifications. Value is ignored for phone sign-in notifications).
         /// </summary>
         [JsonPropertyName("featureSettings")]
         public AuthenticatorAppFeatureSettings? FeatureSettings { get; set; }

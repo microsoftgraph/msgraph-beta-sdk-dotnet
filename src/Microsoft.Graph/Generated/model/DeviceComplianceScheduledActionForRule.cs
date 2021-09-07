@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets rule name.
-        /// Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
+        /// Name of the rule which this scheduled action applies to.
         /// </summary>
         [JsonPropertyName("ruleName")]
         public string RuleName { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled action configurations.
-        /// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+        /// The list of scheduled action configurations for this compliance policy.
         /// </summary>
         [JsonPropertyName("scheduledActionConfigurations")]
         public IDeviceComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionPage ScheduledActionConfigurations { get; set; }

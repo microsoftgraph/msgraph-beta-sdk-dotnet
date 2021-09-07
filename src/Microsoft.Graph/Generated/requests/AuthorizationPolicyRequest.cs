@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AuthorizationPolicy authorizationPolicyToInitialize)
         {
 
+            if (authorizationPolicyToInitialize != null)
+            {
+                if (authorizationPolicyToInitialize.DefaultUserRoleOverrides != null && authorizationPolicyToInitialize.DefaultUserRoleOverrides.CurrentPage != null)
+                {
+                    authorizationPolicyToInitialize.DefaultUserRoleOverrides.InitializeNextPageRequest(this.Client, authorizationPolicyToInitialize.DefaultUserRoleOverridesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    authorizationPolicyToInitialize.DefaultUserRoleOverrides.AdditionalData = authorizationPolicyToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }
