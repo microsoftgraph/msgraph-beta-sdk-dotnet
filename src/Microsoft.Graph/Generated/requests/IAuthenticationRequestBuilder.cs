@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         IAuthenticationPhoneMethodsCollectionRequestBuilder PhoneMethods { get; }
 
         /// <summary>
+        /// Gets the request builder for SoftwareOathMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationSoftwareOathMethodsCollectionRequestBuilder"/>.</returns>
+        IAuthenticationSoftwareOathMethodsCollectionRequestBuilder SoftwareOathMethods { get; }
+
+        /// <summary>
         /// Gets the request builder for TemporaryAccessPassMethods.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder"/>.</returns>

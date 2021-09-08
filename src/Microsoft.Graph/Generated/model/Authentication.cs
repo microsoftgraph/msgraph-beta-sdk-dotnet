@@ -126,6 +126,19 @@ namespace Microsoft.Graph
         public string PhoneMethodsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets software oath methods.
+        /// </summary>
+        [JsonPropertyName("softwareOathMethods")]
+        public IAuthenticationSoftwareOathMethodsCollectionPage SoftwareOathMethods { get; set; }
+
+        /// <summary>
+        /// Gets or sets softwareOathMethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("softwareOathMethods@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SoftwareOathMethodsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets temporary access pass methods.
         /// </summary>
         [JsonPropertyName("temporaryAccessPassMethods")]

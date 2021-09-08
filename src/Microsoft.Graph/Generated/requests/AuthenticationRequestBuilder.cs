@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SoftwareOathMethods.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationSoftwareOathMethodsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationSoftwareOathMethodsCollectionRequestBuilder SoftwareOathMethods
+        {
+            get
+            {
+                return new AuthenticationSoftwareOathMethodsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("softwareOathMethods"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TemporaryAccessPassMethods.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationTemporaryAccessPassMethodsCollectionRequestBuilder"/>.</returns>

@@ -21,20 +21,21 @@ namespace Microsoft.Graph
     public partial interface IEducationAssignmentSetUpResourcesFolderRequest : IBaseRequest
     {
 
+
         /// <summary>
-        /// Issues the GET request.
+        /// Issues the POST request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<EducationAssignment> GetAsync(
+        System.Threading.Tasks.Task<EducationAssignment> PostAsync(
             CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
+        /// Issues the POST request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<EducationAssignment>> GetResponseAsync(CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GraphResponse<EducationAssignment>> PostResponseAsync(CancellationToken cancellationToken = default);
 
 
 

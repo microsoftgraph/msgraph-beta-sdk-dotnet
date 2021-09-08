@@ -201,7 +201,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for Items.
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can't be enumerated.
         /// </summary>
         /// <returns>The <see cref="IBaseItemRequestBuilder"/>.</returns>
         public IBaseItemRequestBuilder Items
@@ -273,7 +273,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for TermStore.
-        /// The termStore under this site.
+        /// The default termStore under this site.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.TermStore.IStoreRequestBuilder"/>.</returns>
         public Microsoft.Graph.TermStore.IStoreRequestBuilder TermStore

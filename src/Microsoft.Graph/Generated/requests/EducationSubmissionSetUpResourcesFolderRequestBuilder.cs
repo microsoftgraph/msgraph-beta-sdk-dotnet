@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EducationSubmissionSetUpResourcesFolderRequestBuilder.
     /// </summary>
-    public partial class EducationSubmissionSetUpResourcesFolderRequestBuilder : BaseFunctionMethodRequestBuilder<IEducationSubmissionSetUpResourcesFolderRequest>, IEducationSubmissionSetUpResourcesFolderRequestBuilder
+    public partial class EducationSubmissionSetUpResourcesFolderRequestBuilder : BaseActionMethodRequestBuilder<IEducationSubmissionSetUpResourcesFolderRequest>, IEducationSubmissionSetUpResourcesFolderRequestBuilder
     {
         /// <summary>
         /// Constructs a new <see cref="EducationSubmissionSetUpResourcesFolderRequestBuilder"/>.
@@ -28,7 +28,6 @@ namespace Microsoft.Graph
             IBaseClient client)
             : base(requestUrl, client)
         {
-            this.SetFunctionParameters();
         }
 
         /// <summary>

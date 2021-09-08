@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Open Id Connect Provider.
     /// </summary>
+    [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.")]
     [JsonConverter(typeof(DerivedTypeConverter<OpenIdConnectProvider>))]
     public partial class OpenIdConnectProvider : IdentityProvider
     {

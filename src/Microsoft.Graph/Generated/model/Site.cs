@@ -134,7 +134,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets items.
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can't be enumerated.
         /// </summary>
         [JsonPropertyName("items")]
         public ISiteItemsCollectionPage Items { get; set; }
@@ -204,7 +204,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term store.
-        /// The termStore under this site.
+        /// The default termStore under this site.
         /// </summary>
         [JsonPropertyName("termStore")]
         public Microsoft.Graph.TermStore.Store TermStore { get; set; }

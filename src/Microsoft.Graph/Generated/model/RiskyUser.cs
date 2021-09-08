@@ -37,21 +37,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risk detail.
-        /// The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
+        /// Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("riskDetail")]
         public RiskDetail? RiskDetail { get; set; }
     
         /// <summary>
         /// Gets or sets risk last updated date time.
-        /// The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z
+        /// The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("riskLastUpdatedDateTime")]
         public DateTimeOffset? RiskLastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets risk level.
-        /// Level of the detected risky user. The possible values are low, medium, high, hidden, none, unknownFutureValue.
+        /// Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("riskLevel")]
         public RiskLevel? RiskLevel { get; set; }

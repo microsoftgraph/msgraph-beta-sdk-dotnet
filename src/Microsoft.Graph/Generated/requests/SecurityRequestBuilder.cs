@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Incidents.
+        /// </summary>
+        /// <returns>The <see cref="ISecurityIncidentsCollectionRequestBuilder"/>.</returns>
+        public ISecurityIncidentsCollectionRequestBuilder Incidents
+        {
+            get
+            {
+                return new SecurityIncidentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("incidents"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AttackSimulation.
         /// </summary>
         /// <returns>The <see cref="IAttackSimulationRootRequestBuilder"/>.</returns>

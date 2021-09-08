@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app owner organization id.
-        /// Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).
+        /// Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
         /// </summary>
         [JsonPropertyName("appOwnerOrganizationId")]
         public Guid? AppOwnerOrganizationId { get; set; }
@@ -184,7 +184,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password credentials.
-        /// The collection of password credentials associated with the service principal. Not nullable.
+        /// The collection of password credentials associated with the application. Not nullable.
         /// </summary>
         [JsonPropertyName("passwordCredentials")]
         public IEnumerable<PasswordCredential> PasswordCredentials { get; set; }
@@ -253,7 +253,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service principal type.
-        /// Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+        /// Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
         /// </summary>
         [JsonPropertyName("servicePrincipalType")]
         public string ServicePrincipalType { get; set; }
@@ -295,7 +295,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app role assigned to.
-        /// App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+        /// App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
         /// </summary>
         [JsonPropertyName("appRoleAssignedTo")]
         public IServicePrincipalAppRoleAssignedToCollectionPage AppRoleAssignedTo { get; set; }
@@ -462,7 +462,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token issuance policies.
-        /// The tokenIssuancePolicies assigned to this service principal. Supports $expand.
+        /// The tokenIssuancePolicies assigned to this service principal.
         /// </summary>
         [JsonPropertyName("tokenIssuancePolicies")]
         public IServicePrincipalTokenIssuancePoliciesCollectionWithReferencesPage TokenIssuancePolicies { get; set; }
@@ -476,7 +476,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token lifetime policies.
-        /// The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+        /// The tokenLifetimePolicies assigned to this service principal.
         /// </summary>
         [JsonPropertyName("tokenLifetimePolicies")]
         public IServicePrincipalTokenLifetimePoliciesCollectionWithReferencesPage TokenLifetimePolicies { get; set; }

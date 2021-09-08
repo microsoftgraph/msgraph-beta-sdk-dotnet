@@ -134,6 +134,19 @@ namespace Microsoft.Graph
         public string PermissionGrantPoliciesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets service principal creation policies.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalCreationPolicies")]
+        public IPolicyRootServicePrincipalCreationPoliciesCollectionPage ServicePrincipalCreationPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets servicePrincipalCreationPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalCreationPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ServicePrincipalCreationPoliciesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets token issuance policies.
         /// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
         /// </summary>

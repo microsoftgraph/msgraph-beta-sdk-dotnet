@@ -44,12 +44,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets online meeting info.
+        /// Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
         /// </summary>
         [JsonPropertyName("onlineMeetingInfo")]
         public TeamworkOnlineMeetingInfo OnlineMeetingInfo { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The identifier of the tenant in which the chat was created. Read-only.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

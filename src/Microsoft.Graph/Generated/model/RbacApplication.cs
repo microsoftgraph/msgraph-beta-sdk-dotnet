@@ -35,6 +35,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role assignments.
+        /// Resource to grant access to users or groups.
         /// </summary>
         [JsonPropertyName("roleAssignments")]
         public IRbacApplicationRoleAssignmentsCollectionPage RoleAssignments { get; set; }
@@ -48,6 +49,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role definitions.
+        /// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
         /// </summary>
         [JsonPropertyName("roleDefinitions")]
         public IRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }

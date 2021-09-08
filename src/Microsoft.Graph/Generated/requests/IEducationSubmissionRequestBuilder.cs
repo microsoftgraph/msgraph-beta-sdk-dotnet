@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IEducationSubmissionSubmittedResourcesCollectionRequestBuilder SubmittedResources { get; }
     
         /// <summary>
+        /// Gets the request builder for EducationSubmissionSetUpResourcesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSubmissionSetUpResourcesFolderRequestBuilder"/>.</returns>
+        IEducationSubmissionSetUpResourcesFolderRequestBuilder SetUpResourcesFolder();
+
+        /// <summary>
         /// Gets the request builder for EducationSubmissionReturn.
         /// </summary>
         /// <returns>The <see cref="IEducationSubmissionReturnRequestBuilder"/>.</returns>
@@ -66,12 +72,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEducationSubmissionUnsubmitRequestBuilder"/>.</returns>
         IEducationSubmissionUnsubmitRequestBuilder Unsubmit();
-
-        /// <summary>
-        /// Gets the request builder for EducationSubmissionSetUpResourcesFolder.
-        /// </summary>
-        /// <returns>The <see cref="IEducationSubmissionSetUpResourcesFolderRequestBuilder"/>.</returns>
-        IEducationSubmissionSetUpResourcesFolderRequestBuilder SetUpResourcesFolder();
     
     }
 }

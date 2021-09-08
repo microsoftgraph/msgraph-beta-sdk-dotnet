@@ -282,6 +282,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.PermissionGrantPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
                 }
+                if (policyRootToInitialize.ServicePrincipalCreationPolicies != null && policyRootToInitialize.ServicePrincipalCreationPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.ServicePrincipalCreationPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ServicePrincipalCreationPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    policyRootToInitialize.ServicePrincipalCreationPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+                }
                 if (policyRootToInitialize.TokenIssuancePolicies != null && policyRootToInitialize.TokenIssuancePolicies.CurrentPage != null)
                 {
                     policyRootToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.TokenIssuancePoliciesNextLink);

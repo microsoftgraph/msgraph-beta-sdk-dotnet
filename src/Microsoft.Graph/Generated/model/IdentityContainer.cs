@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets conditional access.
+        /// the entry point for the Conditional Access (CA) object model.
         /// </summary>
         [JsonPropertyName("conditionalAccess")]
         public ConditionalAccessRoot ConditionalAccess { get; set; }
@@ -57,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets b2x user flows.
-        /// Represents entry point for B2X and self-service sign-up identity userflows.
+        /// Represents entry point for B2X/self-service sign-up identity userflows.
         /// </summary>
         [JsonPropertyName("b2xUserFlows")]
         public IIdentityContainerB2xUserFlowsCollectionPage B2xUserFlows { get; set; }

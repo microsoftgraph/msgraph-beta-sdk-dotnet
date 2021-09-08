@@ -78,7 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets share id.
-        /// A unique token that can be used to access this shared item via the [shares API][]. Read-only.
+        /// A unique token that can be used to access this shared item via the **shares** API. Read-only.
         /// </summary>
         [JsonPropertyName("shareId")]
         public string ShareId { get; set; }

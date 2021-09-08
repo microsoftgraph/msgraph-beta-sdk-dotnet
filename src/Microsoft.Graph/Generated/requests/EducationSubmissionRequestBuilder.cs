@@ -87,6 +87,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for EducationSubmissionSetUpResourcesFolder.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSubmissionSetUpResourcesFolderRequestBuilder"/>.</returns>
+        public IEducationSubmissionSetUpResourcesFolderRequestBuilder SetUpResourcesFolder()
+        {
+            return new EducationSubmissionSetUpResourcesFolderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setUpResourcesFolder"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for EducationSubmissionReturn.
         /// </summary>
         /// <returns>The <see cref="IEducationSubmissionReturnRequestBuilder"/>.</returns>
@@ -116,17 +127,6 @@ namespace Microsoft.Graph
         {
             return new EducationSubmissionUnsubmitRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.unsubmit"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for EducationSubmissionSetUpResourcesFolder.
-        /// </summary>
-        /// <returns>The <see cref="IEducationSubmissionSetUpResourcesFolderRequestBuilder"/>.</returns>
-        public IEducationSubmissionSetUpResourcesFolderRequestBuilder SetUpResourcesFolder()
-        {
-            return new EducationSubmissionSetUpResourcesFolderRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.setUpResourcesFolder"),
                 this.Client);
         }
     

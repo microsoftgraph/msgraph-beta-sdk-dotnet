@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mentions.
-        /// List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.
+        /// List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
         /// </summary>
         [JsonPropertyName("mentions")]
         public IEnumerable<ChatMessageMention> Mentions { get; set; }

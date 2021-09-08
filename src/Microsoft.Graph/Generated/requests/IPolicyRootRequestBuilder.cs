@@ -92,6 +92,12 @@ namespace Microsoft.Graph
         IPolicyRootPermissionGrantPoliciesCollectionRequestBuilder PermissionGrantPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for ServicePrincipalCreationPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootServicePrincipalCreationPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootServicePrincipalCreationPoliciesCollectionRequestBuilder ServicePrincipalCreationPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for TokenIssuancePolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootTokenIssuancePoliciesCollectionRequestBuilder"/>.</returns>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets cidrAddress.
-        /// IPv4 address in CIDR notation
+        /// IPv4 address in CIDR notation. Not nullable.
         /// </summary>
         [JsonPropertyName("cidrAddress")]
         public string CidrAddress { get; set; }
