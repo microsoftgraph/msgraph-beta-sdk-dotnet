@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         IVirtualEndpointProvisioningPoliciesCollectionRequestBuilder ProvisioningPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for SupportedRegions.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointSupportedRegionsCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointSupportedRegionsCollectionRequestBuilder SupportedRegions { get; }
+
+        /// <summary>
         /// Gets the request builder for UserSettings.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointUserSettingsCollectionRequestBuilder"/>.</returns>

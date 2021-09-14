@@ -15,24 +15,16 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type Meeting Attendance Report.
+    /// The type Cloud Pc Supported Region.
     /// </summary>
-    public partial class MeetingAttendanceReport : Entity
+    public partial class CloudPcSupportedRegion : Entity
     {
     
         /// <summary>
-        /// Gets or sets attendance records.
-        /// The list of attendance records.
+        /// Gets or sets display name.
         /// </summary>
-        [JsonPropertyName("attendanceRecords")]
-        public IEnumerable<AttendanceRecord> AttendanceRecords { get; set; }
-    
-        /// <summary>
-        /// Gets or sets total participant count.
-        /// Total number of participants.
-        /// </summary>
-        [JsonPropertyName("totalParticipantCount")]
-        public Int32? TotalParticipantCount { get; set; }
+        [JsonPropertyName("displayName")]
+        public string DisplayName { get; set; }
     
     }
 }

@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type DirectoryRequest.
+    /// The type ExternalDomainNameRequest.
     /// </summary>
-    public partial class DirectoryRequest : BaseRequest, IDirectoryRequest
+    public partial class ExternalDomainNameRequest : BaseRequest, IExternalDomainNameRequest
     {
         /// <summary>
-        /// Constructs a new DirectoryRequest.
+        /// Constructs a new ExternalDomainNameRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public DirectoryRequest(
+        public ExternalDomainNameRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,46 +36,46 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified Directory using POST.
+        /// Creates the specified ExternalDomainName using POST.
         /// </summary>
-        /// <param name="directoryToCreate">The Directory to create.</param>
+        /// <param name="externalDomainNameToCreate">The ExternalDomainName to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Directory.</returns>
-        public async System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created ExternalDomainName.</returns>
+        public async System.Threading.Tasks.Task<ExternalDomainName> CreateAsync(ExternalDomainName externalDomainNameToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<Directory>(directoryToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<ExternalDomainName>(externalDomainNameToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified Directory using POST and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// Creates the specified ExternalDomainName using POST and returns a <see cref="GraphResponse{ExternalDomainName}"/> object.
         /// </summary>
-        /// <param name="directoryToCreate">The Directory to create.</param>
+        /// <param name="externalDomainNameToCreate">The ExternalDomainName to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Directory>> CreateResponseAsync(Directory directoryToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{ExternalDomainName}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalDomainName>> CreateResponseAsync(ExternalDomainName externalDomainNameToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<Directory>(directoryToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<ExternalDomainName>(externalDomainNameToCreate, cancellationToken);
         }
 
         /// <summary>
-        /// Deletes the specified Directory.
+        /// Deletes the specified ExternalDomainName.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<Directory>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<ExternalDomainName>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Deletes the specified Directory and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified ExternalDomainName and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the specified Directory.
+        /// Gets the specified ExternalDomainName.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The Directory.</returns>
-        public async System.Threading.Tasks.Task<Directory> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The ExternalDomainName.</returns>
+        public async System.Threading.Tasks.Task<ExternalDomainName> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<Directory>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<ExternalDomainName>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified Directory and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// Gets the specified ExternalDomainName and returns a <see cref="GraphResponse{ExternalDomainName}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Directory>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{ExternalDomainName}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalDomainName>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<Directory>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<ExternalDomainName>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified Directory using PATCH.
+        /// Updates the specified ExternalDomainName using PATCH.
         /// </summary>
-        /// <param name="directoryToUpdate">The Directory to update.</param>
+        /// <param name="externalDomainNameToUpdate">The ExternalDomainName to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated Directory.</returns>
-        public async System.Threading.Tasks.Task<Directory> UpdateAsync(Directory directoryToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The updated ExternalDomainName.</returns>
+        public async System.Threading.Tasks.Task<ExternalDomainName> UpdateAsync(ExternalDomainName externalDomainNameToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<Directory>(directoryToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<ExternalDomainName>(externalDomainNameToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Directory using PATCH and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// Updates the specified ExternalDomainName using PATCH and returns a <see cref="GraphResponse{ExternalDomainName}"/> object.
         /// </summary>
-        /// <param name="directoryToUpdate">The Directory to update.</param>
+        /// <param name="externalDomainNameToUpdate">The ExternalDomainName to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Directory>> UpdateResponseAsync(Directory directoryToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{ExternalDomainName}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalDomainName>> UpdateResponseAsync(ExternalDomainName externalDomainNameToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<Directory>(directoryToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<ExternalDomainName>(externalDomainNameToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified Directory using PUT.
+        /// Updates the specified ExternalDomainName using PUT.
         /// </summary>
-        /// <param name="directoryToUpdate">The Directory object to update.</param>
+        /// <param name="externalDomainNameToUpdate">The ExternalDomainName object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<Directory> PutAsync(Directory directoryToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ExternalDomainName> PutAsync(ExternalDomainName externalDomainNameToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<Directory>(directoryToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<ExternalDomainName>(externalDomainNameToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Directory using PUT and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// Updates the specified ExternalDomainName using PUT and returns a <see cref="GraphResponse{ExternalDomainName}"/> object.
         /// </summary>
-        /// <param name="directoryToUpdate">The Directory object to update.</param>
+        /// <param name="externalDomainNameToUpdate">The ExternalDomainName object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{Directory}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Directory>> PutResponseAsync(Directory directoryToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{ExternalDomainName}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ExternalDomainName>> PutResponseAsync(ExternalDomainName externalDomainNameToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<Directory>(directoryToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<ExternalDomainName>(externalDomainNameToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryRequest Expand(string value)
+        public IExternalDomainNameRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryRequest Expand(Expression<Func<Directory, object>> expandExpression)
+        public IExternalDomainNameRequest Expand(Expression<Func<ExternalDomainName, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryRequest Select(string value)
+        public IExternalDomainNameRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IDirectoryRequest Select(Expression<Func<Directory, object>> selectExpression)
+        public IExternalDomainNameRequest Select(Expression<Func<ExternalDomainName, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -240,45 +240,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="directoryToInitialize">The <see cref="Directory"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(Directory directoryToInitialize)
+        /// <param name="externalDomainNameToInitialize">The <see cref="ExternalDomainName"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(ExternalDomainName externalDomainNameToInitialize)
         {
-
-            if (directoryToInitialize != null)
-            {
-                if (directoryToInitialize.AdministrativeUnits != null && directoryToInitialize.AdministrativeUnits.CurrentPage != null)
-                {
-                    directoryToInitialize.AdministrativeUnits.InitializeNextPageRequest(this.Client, directoryToInitialize.AdministrativeUnitsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    directoryToInitialize.AdministrativeUnits.AdditionalData = directoryToInitialize.AdditionalData;
-                }
-                if (directoryToInitialize.DeletedItems != null && directoryToInitialize.DeletedItems.CurrentPage != null)
-                {
-                    directoryToInitialize.DeletedItems.InitializeNextPageRequest(this.Client, directoryToInitialize.DeletedItemsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    directoryToInitialize.DeletedItems.AdditionalData = directoryToInitialize.AdditionalData;
-                }
-                if (directoryToInitialize.FederationConfigurations != null && directoryToInitialize.FederationConfigurations.CurrentPage != null)
-                {
-                    directoryToInitialize.FederationConfigurations.InitializeNextPageRequest(this.Client, directoryToInitialize.FederationConfigurationsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    directoryToInitialize.FederationConfigurations.AdditionalData = directoryToInitialize.AdditionalData;
-                }
-                if (directoryToInitialize.SharedEmailDomains != null && directoryToInitialize.SharedEmailDomains.CurrentPage != null)
-                {
-                    directoryToInitialize.SharedEmailDomains.InitializeNextPageRequest(this.Client, directoryToInitialize.SharedEmailDomainsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    directoryToInitialize.SharedEmailDomains.AdditionalData = directoryToInitialize.AdditionalData;
-                }
-                if (directoryToInitialize.FeatureRolloutPolicies != null && directoryToInitialize.FeatureRolloutPolicies.CurrentPage != null)
-                {
-                    directoryToInitialize.FeatureRolloutPolicies.InitializeNextPageRequest(this.Client, directoryToInitialize.FeatureRolloutPoliciesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    directoryToInitialize.FeatureRolloutPolicies.AdditionalData = directoryToInitialize.AdditionalData;
-                }
-
-            }
-
 
         }
     }

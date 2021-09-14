@@ -111,6 +111,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SupportedRegions.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointSupportedRegionsCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointSupportedRegionsCollectionRequestBuilder SupportedRegions
+        {
+            get
+            {
+                return new VirtualEndpointSupportedRegionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("supportedRegions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserSettings.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointUserSettingsCollectionRequestBuilder"/>.</returns>
