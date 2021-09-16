@@ -49,6 +49,20 @@ namespace Microsoft.Graph
         public string DeletedItemsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets federation configurations.
+        /// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+        /// </summary>
+        [JsonPropertyName("federationConfigurations")]
+        public IDirectoryFederationConfigurationsCollectionPage FederationConfigurations { get; set; }
+
+        /// <summary>
+        /// Gets or sets federationConfigurationsNextLink.
+        /// </summary>
+        [JsonPropertyName("federationConfigurations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string FederationConfigurationsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets shared email domains.
         /// </summary>
         [JsonPropertyName("sharedEmailDomains")]

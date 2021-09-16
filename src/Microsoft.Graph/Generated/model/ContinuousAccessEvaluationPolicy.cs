@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public bool? IsEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets migrate.
+        /// </summary>
+        [JsonPropertyName("migrate")]
+        public bool? Migrate { get; set; }
+    
+        /// <summary>
         /// Gets or sets users.
         /// The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty.
         /// </summary>

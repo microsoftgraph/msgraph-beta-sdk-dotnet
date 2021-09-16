@@ -91,6 +91,19 @@ namespace Microsoft.Graph
         public string ProvisioningPoliciesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets supported regions.
+        /// </summary>
+        [JsonPropertyName("supportedRegions")]
+        public IVirtualEndpointSupportedRegionsCollectionPage SupportedRegions { get; set; }
+
+        /// <summary>
+        /// Gets or sets supportedRegionsNextLink.
+        /// </summary>
+        [JsonPropertyName("supportedRegions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SupportedRegionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets user settings.
         /// Cloud PC user settings.
         /// </summary>

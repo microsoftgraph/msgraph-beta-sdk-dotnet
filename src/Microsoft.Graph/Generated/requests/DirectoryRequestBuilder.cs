@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for FederationConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryFederationConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IDirectoryFederationConfigurationsCollectionRequestBuilder FederationConfigurations
+        {
+            get
+            {
+                return new DirectoryFederationConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("federationConfigurations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SharedEmailDomains.
         /// </summary>
         /// <returns>The <see cref="IDirectorySharedEmailDomainsCollectionRequestBuilder"/>.</returns>

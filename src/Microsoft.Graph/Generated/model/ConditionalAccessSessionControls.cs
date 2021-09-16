@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets disableResilienceDefaults.
+        /// Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
         /// </summary>
         [JsonPropertyName("disableResilienceDefaults")]
         public bool? DisableResilienceDefaults { get; set; }
