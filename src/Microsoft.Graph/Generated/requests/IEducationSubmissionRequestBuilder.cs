@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IEducationSubmissionSetUpResourcesFolderRequestBuilder SetUpResourcesFolder();
 
         /// <summary>
+        /// Gets the request builder for EducationSubmissionReassign.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSubmissionReassignRequestBuilder"/>.</returns>
+        IEducationSubmissionReassignRequestBuilder Reassign();
+
+        /// <summary>
         /// Gets the request builder for EducationSubmissionReturn.
         /// </summary>
         /// <returns>The <see cref="IEducationSubmissionReturnRequestBuilder"/>.</returns>

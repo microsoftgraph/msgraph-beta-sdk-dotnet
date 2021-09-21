@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 4,
 	
+        /// <summary>
+        /// Reassigned
+        /// </summary>
+        Reassigned = 5,
+	
     }
 }
