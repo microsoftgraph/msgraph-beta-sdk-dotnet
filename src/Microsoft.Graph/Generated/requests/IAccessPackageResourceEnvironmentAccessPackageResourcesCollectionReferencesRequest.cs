@@ -19,7 +19,19 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IAccessPackageResourceEnvironmentAccessPackageResourcesCollectionReferencesRequest : IBaseRequest
     {
-        
-        
+        /// <summary>
+        /// Adds the specified ReferenceRequestBody to the collection via POST.
+        /// </summary>
+        /// <param name="accessPackageResourceReference">The ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task AddAsync(ReferenceRequestBody accessPackageResourceReference, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified ReferenceRequestBody to the collection via POST and returns a <see cref="GraphResponse{ReferenceRequestBody}"/> object of the request.
+        /// </summary>
+        /// <param name="accessPackageResourceReference">The ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ReferenceRequestBody accessPackageResourceReference, CancellationToken cancellationToken = default);
+
     }
 }
