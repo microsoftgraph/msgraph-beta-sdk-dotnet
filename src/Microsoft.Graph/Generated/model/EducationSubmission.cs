@@ -22,6 +22,18 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets reassigned by.
+        /// </summary>
+        [JsonPropertyName("reassignedBy")]
+        public IdentitySet ReassignedBy { get; set; }
+    
+        /// <summary>
+        /// Gets or sets reassigned date time.
+        /// </summary>
+        [JsonPropertyName("reassignedDateTime")]
+        public DateTimeOffset? ReassignedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets recipient.
         /// Who this submission is assigned to.
         /// </summary>

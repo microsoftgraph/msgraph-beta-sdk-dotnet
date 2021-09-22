@@ -98,6 +98,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for EducationSubmissionReassign.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSubmissionReassignRequestBuilder"/>.</returns>
+        public IEducationSubmissionReassignRequestBuilder Reassign()
+        {
+            return new EducationSubmissionReassignRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reassign"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for EducationSubmissionReturn.
         /// </summary>
         /// <returns>The <see cref="IEducationSubmissionReturnRequestBuilder"/>.</returns>

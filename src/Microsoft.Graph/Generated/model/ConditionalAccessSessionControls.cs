@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public CloudAppSecuritySessionControl CloudAppSecurity { get; set; }
     
         /// <summary>
+        /// Gets or sets continuousAccessEvaluation.
+        /// </summary>
+        [JsonPropertyName("continuousAccessEvaluation")]
+        public ContinuousAccessEvaluationSessionControl ContinuousAccessEvaluation { get; set; }
+    
+        /// <summary>
         /// Gets or sets disableResilienceDefaults.
         /// Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
         /// </summary>

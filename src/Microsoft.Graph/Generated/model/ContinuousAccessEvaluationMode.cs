@@ -13,36 +13,26 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum EducationAddToCalendarOptions.
+    /// The enum ContinuousAccessEvaluationMode.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum EducationAddToCalendarOptions
+    public enum ContinuousAccessEvaluationMode
     {
     
         /// <summary>
-        /// None
+        /// Strict Enforcement
         /// </summary>
-        None = 0,
+        StrictEnforcement = 0,
 	
         /// <summary>
-        /// Students And Publisher
+        /// Disabled
         /// </summary>
-        StudentsAndPublisher = 1,
-	
-        /// <summary>
-        /// Students And Team Owners
-        /// </summary>
-        StudentsAndTeamOwners = 2,
+        Disabled = 1,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 3,
-	
-        /// <summary>
-        /// Students Only
-        /// </summary>
-        StudentsOnly = 4,
+        UnknownFutureValue = 2,
 	
     }
 }
