@@ -19,7 +19,19 @@ namespace Microsoft.Graph.Ediscovery
     /// </summary>
     public partial interface ISourceCollectionCustodianSourcesCollectionReferencesRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        
+        /// <summary>
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST.
+        /// </summary>
+        /// <param name="dataSourceReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task AddAsync(Microsoft.Graph.ReferenceRequestBody dataSourceReference, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.ReferenceRequestBody}"/> object of the request.
+        /// </summary>
+        /// <param name="dataSourceReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Microsoft.Graph.ReferenceRequestBody dataSourceReference, CancellationToken cancellationToken = default);
+
     }
 }
