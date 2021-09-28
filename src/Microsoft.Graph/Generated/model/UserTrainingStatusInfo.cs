@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignedDateTime.
+        /// Date and time of assignment of the training to the user.
         /// </summary>
         [JsonPropertyName("assignedDateTime")]
         public DateTimeOffset? AssignedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets completionDateTime.
+        /// Date and time of completion of the training by the user.
         /// </summary>
         [JsonPropertyName("completionDateTime")]
         public DateTimeOffset? CompletionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// Display name of the assigned training.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets trainingStatus.
+        /// Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("trainingStatus")]
         public TrainingStatus? TrainingStatus { get; set; }

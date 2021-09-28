@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets actionWebUrl.
+        /// Web URL to the recommended action.
         /// </summary>
         [JsonPropertyName("actionWebUrl")]
         public string ActionWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets potentialScoreImpact.
+        /// Potential improvement in security score of the tenant from the recommended action.
         /// </summary>
         [JsonPropertyName("potentialScoreImpact")]
         public double? PotentialScoreImpact { get; set; }
     
         /// <summary>
         /// Gets or sets title.
+        /// Title of the recommended action.
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; set; }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets simulations.
+        /// Represent attack simulation and training campaign of a tenant.
         /// </summary>
         [JsonPropertyName("simulations")]
         public IAttackSimulationRootSimulationsCollectionPage Simulations { get; set; }

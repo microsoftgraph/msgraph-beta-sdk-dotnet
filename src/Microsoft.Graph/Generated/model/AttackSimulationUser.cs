@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// Display name of the user.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets email.
+        /// Email address of the user.
         /// </summary>
         [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets userId.
+        /// This is the id property value of the user resource that represents the user in the Azure AD tenant.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

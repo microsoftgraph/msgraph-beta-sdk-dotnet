@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         IComplianceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for SubjectRightsRequests.
+        /// </summary>
+        /// <returns>The <see cref="IComplianceSubjectRightsRequestsCollectionRequestBuilder"/>.</returns>
+        IComplianceSubjectRightsRequestsCollectionRequestBuilder SubjectRightsRequests { get; }
+
+        /// <summary>
         /// Gets the request builder for Ediscovery.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.Ediscovery.IEdiscoveryrootRequestBuilder"/>.</returns>

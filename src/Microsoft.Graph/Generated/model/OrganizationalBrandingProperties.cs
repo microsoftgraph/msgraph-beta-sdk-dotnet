@@ -31,39 +31,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets background color.
-        /// Color that will appear in place of the background image in low-bandwidth connections. The primary color of your banner logo or your organization color is recommended to be used here. Specify this in hexadecimal (for example, white is #FFFFFF).
+        /// Color that will appear in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.
         /// </summary>
         [JsonPropertyName("backgroundColor")]
         public string BackgroundColor { get; set; }
     
         /// <summary>
         /// Gets or sets background image.
-        /// Image that appears as the background of the sign in page. .png or .jpg not larger than 1920x1080 and smaller than 300kb. A smaller image will reduce bandwidth requirements and make page loads more performant.
+        /// Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
         /// </summary>
         [JsonPropertyName("backgroundImage")]
         public Stream BackgroundImage { get; set; }
     
         /// <summary>
         /// Gets or sets background image relative url.
+        /// A relative URL for the backgroundImage property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
         /// </summary>
         [JsonPropertyName("backgroundImageRelativeUrl")]
         public string BackgroundImageRelativeUrl { get; set; }
     
         /// <summary>
         /// Gets or sets banner logo.
-        /// A banner version of your company logo which appears appears on the sign-in page. .png or .jpg no larger than 36x245px. We recommend using a transparent image with no padding around the logo.
+        /// A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
         /// </summary>
         [JsonPropertyName("bannerLogo")]
         public Stream BannerLogo { get; set; }
     
         /// <summary>
         /// Gets or sets banner logo relative url.
+        /// A relative url for the bannerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
         /// </summary>
         [JsonPropertyName("bannerLogoRelativeUrl")]
         public string BannerLogoRelativeUrl { get; set; }
     
         /// <summary>
         /// Gets or sets cdn list.
+        /// A list of base URLs for all available CDN providers that are serving the assets of the current resource. Several CDN providers are used at the same time for high availability of read requests. Read-only.
         /// </summary>
         [JsonPropertyName("cdnList")]
         public IEnumerable<string> CdnList { get; set; }
@@ -155,20 +158,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets square logo.
-        /// Square version of your company logo. This appears in Windows 10 out-of-box (OOBE) experiences and when Windows Autopilot is enabled for deployment. .png or .jpg no larger than 240x240px and no more than 10kb in size. We recommend using a transparent image with no padding around the logo.
+        /// A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
         /// </summary>
         [JsonPropertyName("squareLogo")]
         public Stream SquareLogo { get; set; }
     
         /// <summary>
         /// Gets or sets square logo relative url.
+        /// A relative url for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
         /// </summary>
         [JsonPropertyName("squareLogoRelativeUrl")]
         public string SquareLogoRelativeUrl { get; set; }
     
         /// <summary>
         /// Gets or sets username hint text.
-        /// String that shows as the hint in the username textbox on the sign in screen. This text must be Unicode, without links or code, and can't exceed 64 characters.
+        /// String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.
         /// </summary>
         [JsonPropertyName("usernameHintText")]
         public string UsernameHintText { get; set; }

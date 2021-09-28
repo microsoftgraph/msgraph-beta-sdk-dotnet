@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignedUserCount.
+        /// Number of users who were assigned the training in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("assignedUserCount")]
         public Int32? AssignedUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets completedUserCount.
+        /// Number of users who completed the training in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("completedUserCount")]
         public Int32? CompletedUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// Display name of the training in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

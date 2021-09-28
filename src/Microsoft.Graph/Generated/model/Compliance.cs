@@ -22,6 +22,19 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets subject rights requests.
+        /// </summary>
+        [JsonPropertyName("subjectRightsRequests")]
+        public IComplianceSubjectRightsRequestsCollectionPage SubjectRightsRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets subjectRightsRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("subjectRightsRequests@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SubjectRightsRequestsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets ediscovery.
         /// </summary>
         [JsonPropertyName("ediscovery")]

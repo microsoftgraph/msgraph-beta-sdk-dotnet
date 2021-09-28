@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets browser.
+        /// Browser of the user from where the training event was generated.
         /// </summary>
         [JsonPropertyName("browser")]
         public string Browser { get; set; }
     
         /// <summary>
         /// Gets or sets contentDateTime.
+        /// Date and time of the training content playback by the user.
         /// </summary>
         [JsonPropertyName("contentDateTime")]
         public DateTimeOffset? ContentDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets ipAddress.
+        /// IP address of the user for the training event.
         /// </summary>
         [JsonPropertyName("ipAddress")]
         public string IpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets osPlatformDeviceDetails.
+        /// The operating system, platform, and device details of the user for the training event.
         /// </summary>
         [JsonPropertyName("osPlatformDeviceDetails")]
         public string OsPlatformDeviceDetails { get; set; }
     
         /// <summary>
         /// Gets or sets potentialScoreImpact.
+        /// Potential improvement in security posture of the tenant after completion of the training by the user.
         /// </summary>
         [JsonPropertyName("potentialScoreImpact")]
         public double? PotentialScoreImpact { get; set; }

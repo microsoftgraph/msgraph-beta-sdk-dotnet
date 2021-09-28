@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// Display name of the training.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets latestTrainingStatus.
+        /// Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, notCompleted, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("latestTrainingStatus")]
         public TrainingStatus? LatestTrainingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets trainingAssignedProperties.
+        /// Event details of the training when it was assigned to the user.
         /// </summary>
         [JsonPropertyName("trainingAssignedProperties")]
         public UserTrainingContentEventInfo TrainingAssignedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets trainingCompletedProperties.
+        /// Event details of the training when it was completed by the user.
         /// </summary>
         [JsonPropertyName("trainingCompletedProperties")]
         public UserTrainingContentEventInfo TrainingCompletedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets trainingUpdatedProperties.
+        /// Event details of the training when it was updated/in-progress by the user.
         /// </summary>
         [JsonPropertyName("trainingUpdatedProperties")]
         public UserTrainingContentEventInfo TrainingUpdatedProperties { get; set; }

@@ -41,6 +41,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attack simulation.
+        /// Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
         /// </summary>
         [JsonPropertyName("attackSimulation")]
         public AttackSimulationRoot AttackSimulation { get; set; }

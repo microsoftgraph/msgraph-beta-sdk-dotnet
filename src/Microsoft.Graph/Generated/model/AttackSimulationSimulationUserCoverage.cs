@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attackSimulationUser.
+        /// User in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("attackSimulationUser")]
         public AttackSimulationUser AttackSimulationUser { get; set; }
     
         /// <summary>
         /// Gets or sets clickCount.
+        /// Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
         /// </summary>
         [JsonPropertyName("clickCount")]
         public Int32? ClickCount { get; set; }
     
         /// <summary>
         /// Gets or sets compromisedCount.
+        /// Number of compromising actions by the user in attack simulation and training campaigns.
         /// </summary>
         [JsonPropertyName("compromisedCount")]
         public Int32? CompromisedCount { get; set; }
     
         /// <summary>
         /// Gets or sets latestSimulationDateTime.
+        /// Date and time of latest attack simulation and training campaign that the user was included in.
         /// </summary>
         [JsonPropertyName("latestSimulationDateTime")]
         public DateTimeOffset? LatestSimulationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets simulationCount.
+        /// Number of attack simulation and training campaigns that the user was included in.
         /// </summary>
         [JsonPropertyName("simulationCount")]
         public Int32? SimulationCount { get; set; }

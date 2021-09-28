@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets browser.
+        /// Browser information from where the simulation event was initiated by a user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("browser")]
         public string Browser { get; set; }
     
         /// <summary>
         /// Gets or sets eventDateTime.
+        /// Date and time of the simulation event by a user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("eventDateTime")]
         public DateTimeOffset? EventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets eventName.
+        /// Name of the simulation event by a user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("eventName")]
         public string EventName { get; set; }
     
         /// <summary>
         /// Gets or sets ipAddress.
+        /// IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("ipAddress")]
         public string IpAddress { get; set; }
     
         /// <summary>
         /// Gets or sets osPlatformDeviceDetails.
+        /// The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("osPlatformDeviceDetails")]
         public string OsPlatformDeviceDetails { get; set; }
