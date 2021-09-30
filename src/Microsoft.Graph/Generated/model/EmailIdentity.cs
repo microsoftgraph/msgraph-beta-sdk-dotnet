@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets email.
+        /// Email address of the user.
         /// </summary>
         [JsonPropertyName("email")]
         public string Email { get; set; }

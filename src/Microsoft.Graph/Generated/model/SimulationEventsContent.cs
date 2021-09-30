@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets compromisedRate.
+        /// Actual percentage of users who fell for the simulated attack in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("compromisedRate")]
         public double? CompromisedRate { get; set; }
     
         /// <summary>
         /// Gets or sets events.
+        /// List of simulation events in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("events")]
         public IEnumerable<SimulationEvent> Events { get; set; }

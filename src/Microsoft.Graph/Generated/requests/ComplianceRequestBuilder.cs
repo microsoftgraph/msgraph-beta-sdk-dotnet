@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for SubjectRightsRequests.
+        /// </summary>
+        /// <returns>The <see cref="IComplianceSubjectRightsRequestsCollectionRequestBuilder"/>.</returns>
+        public IComplianceSubjectRightsRequestsCollectionRequestBuilder SubjectRightsRequests
+        {
+            get
+            {
+                return new ComplianceSubjectRightsRequestsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("subjectRightsRequests"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Ediscovery.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.Ediscovery.IEdiscoveryrootRequestBuilder"/>.</returns>

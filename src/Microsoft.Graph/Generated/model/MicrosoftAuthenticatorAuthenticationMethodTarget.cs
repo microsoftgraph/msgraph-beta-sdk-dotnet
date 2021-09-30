@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Authenticator Authentication Method Target.
     /// </summary>
-    [Obsolete("")]
     [JsonConverter(typeof(DerivedTypeConverter<MicrosoftAuthenticatorAuthenticationMethodTarget>))]
     public partial class MicrosoftAuthenticatorAuthenticationMethodTarget : AuthenticationMethodTarget
     {
@@ -38,11 +37,22 @@ namespace Microsoft.Graph
         public MicrosoftAuthenticatorAuthenticationMode? AuthenticationMode { get; set; }
     
         /// <summary>
-        /// Gets or sets feature settings.
-        /// Determines what additional settings should be applied to Microsoft Authenticator. Possible values are: null, requireNumberMatching (Requires number matching for MFA notifications. Value is ignored for phone sign-in notifications).
+        /// Gets or sets display app information required state.
         /// </summary>
-        [JsonPropertyName("featureSettings")]
-        public AuthenticatorAppFeatureSettings? FeatureSettings { get; set; }
+        [JsonPropertyName("displayAppInformationRequiredState")]
+        public AdvancedConfigState? DisplayAppInformationRequiredState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets display location information required state.
+        /// </summary>
+        [JsonPropertyName("displayLocationInformationRequiredState")]
+        public AdvancedConfigState? DisplayLocationInformationRequiredState { get; set; }
+    
+        /// <summary>
+        /// Gets or sets number matching required state.
+        /// </summary>
+        [JsonPropertyName("numberMatchingRequiredState")]
+        public AdvancedConfigState? NumberMatchingRequiredState { get; set; }
     
     }
 }

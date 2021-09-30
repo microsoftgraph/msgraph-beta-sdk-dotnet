@@ -23,54 +23,63 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignedTrainingsCount.
+        /// Number of trainings assigned to a user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("assignedTrainingsCount")]
         public Int32? AssignedTrainingsCount { get; set; }
     
         /// <summary>
         /// Gets or sets completedTrainingsCount.
+        /// Number of trainings completed by a user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("completedTrainingsCount")]
         public Int32? CompletedTrainingsCount { get; set; }
     
         /// <summary>
         /// Gets or sets compromisedDateTime.
+        /// Date and time of the compromising online action by a user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("compromisedDateTime")]
         public DateTimeOffset? CompromisedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets inProgressTrainingsCount.
+        /// Number of trainings in progress by a user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("inProgressTrainingsCount")]
         public Int32? InProgressTrainingsCount { get; set; }
     
         /// <summary>
         /// Gets or sets isCompromised.
+        /// Flag representing if user was compromised in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("isCompromised")]
         public bool? IsCompromised { get; set; }
     
         /// <summary>
         /// Gets or sets reportedPhishDateTime.
+        /// Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("reportedPhishDateTime")]
         public DateTimeOffset? ReportedPhishDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets simulationEvents.
+        /// List of simulation events of a user in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("simulationEvents")]
         public IEnumerable<UserSimulationEventInfo> SimulationEvents { get; set; }
     
         /// <summary>
         /// Gets or sets simulationUser.
+        /// User in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("simulationUser")]
         public AttackSimulationUser SimulationUser { get; set; }
     
         /// <summary>
         /// Gets or sets trainingEvents.
+        /// List of training events of a user in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("trainingEvents")]
         public IEnumerable<UserTrainingEventInfo> TrainingEvents { get; set; }

@@ -23,132 +23,154 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attack technique.
+        /// The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.
         /// </summary>
         [JsonPropertyName("attackTechnique")]
         public SimulationAttackTechnique? AttackTechnique { get; set; }
     
         /// <summary>
         /// Gets or sets attack type.
+        /// Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("attackType")]
         public SimulationAttackType? AttackType { get; set; }
     
         /// <summary>
         /// Gets or sets cleanup artifacts.
+        /// Flag representing if artifacts were cleaned up in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("cleanupArtifacts")]
         public bool? CleanupArtifacts { get; set; }
     
         /// <summary>
         /// Gets or sets completion date time.
+        /// Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
         /// </summary>
         [JsonPropertyName("completionDateTime")]
         public DateTimeOffset? CompletionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// Identity of the user who created the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public EmailIdentity CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// Date and time of creation of the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// Description of the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Display name of the attack simulation and training campaign. Supports $filter and $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets enable region timezone delivery.
+        /// Flag representing whether to enable or disable timezone-aware delivery of phishing payload in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("enableRegionTimezoneDelivery")]
         public bool? EnableRegionTimezoneDelivery { get; set; }
     
         /// <summary>
         /// Gets or sets include all account targets.
+        /// Flag representing inclusion of all the users of a tenant in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("includeAllAccountTargets")]
         public bool? IncludeAllAccountTargets { get; set; }
     
         /// <summary>
         /// Gets or sets is automated.
+        /// Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
         /// </summary>
         [JsonPropertyName("isAutomated")]
         public bool? IsAutomated { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// Identity of the user who most recently modified the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public EmailIdentity LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// Date and time of the most recent modification of the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets launch date time.
+        /// Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
         /// </summary>
         [JsonPropertyName("launchDateTime")]
         public DateTimeOffset? LaunchDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets mode.
+        /// Mode of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: real, preview, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("mode")]
         public SimulationMode? Mode { get; set; }
     
         /// <summary>
         /// Gets or sets payload delivery platform.
+        /// Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("payloadDeliveryPlatform")]
         public PayloadDeliveryPlatform? PayloadDeliveryPlatform { get; set; }
     
         /// <summary>
         /// Gets or sets payload source.
+        /// Source of phishing payload in the attack simulation and training campaign. Possible values are: unknown, global, tenant, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("payloadSource")]
         public PayloadSource? PayloadSource { get; set; }
     
         /// <summary>
         /// Gets or sets report.
+        /// Report of the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("report")]
         public SimulationReport Report { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, inProgress, scheduled, completed, partiallyCompleted, failed, cancelled, excluded, deleted, included, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public SimulationStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets training assignment preference.
+        /// Preference of the tenant admin to assign training to users in the attack simulation and training campaign. Possible values are: unknown, auto, manual, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("trainingAssignmentPreference")]
         public TrainingAssignmentPreference? TrainingAssignmentPreference { get; set; }
     
         /// <summary>
         /// Gets or sets training content preference.
+        /// Preference of the tenant admin for the source of training content to assign to users in the attack simulation and training campaign. Possible values are: unknown, microsoft, custom, noTraining, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("trainingContentPreference")]
         public TrainingContentPreference? TrainingContentPreference { get; set; }
     
         /// <summary>
         /// Gets or sets training due date time.
+        /// Date and time before which the trainings need to be completed by users in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("trainingDueDateTime")]
         public DateTimeOffset? TrainingDueDateTime { get; set; }

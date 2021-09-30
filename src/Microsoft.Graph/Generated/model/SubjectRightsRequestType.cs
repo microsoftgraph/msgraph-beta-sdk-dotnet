@@ -13,17 +13,36 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum AuthenticatorAppFeatureSettings.
+    /// The enum SubjectRightsRequestType.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-	[System.Flags]
-    public enum AuthenticatorAppFeatureSettings
+    public enum SubjectRightsRequestType
     {
     
         /// <summary>
-        /// Require Number Matching
+        /// Export
         /// </summary>
-        RequireNumberMatching = 1,
+        Export = 0,
+	
+        /// <summary>
+        /// Delete
+        /// </summary>
+        Delete = 1,
+	
+        /// <summary>
+        /// Access
+        /// </summary>
+        Access = 2,
+	
+        /// <summary>
+        /// Tag For Action
+        /// </summary>
+        TagForAction = 3,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
 	
     }
 }

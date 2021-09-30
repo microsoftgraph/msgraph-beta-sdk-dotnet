@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets overview.
+        /// Overview of an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("overview")]
         public SimulationReportOverview Overview { get; set; }
     
         /// <summary>
         /// Gets or sets simulationUsers.
+        /// Represents users of a tenant and their online actions in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("simulationUsers")]
         public IEnumerable<UserSimulationDetails> SimulationUsers { get; set; }

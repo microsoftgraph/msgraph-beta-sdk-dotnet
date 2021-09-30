@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Compliance complianceToInitialize)
         {
 
+            if (complianceToInitialize != null)
+            {
+                if (complianceToInitialize.SubjectRightsRequests != null && complianceToInitialize.SubjectRightsRequests.CurrentPage != null)
+                {
+                    complianceToInitialize.SubjectRightsRequests.InitializeNextPageRequest(this.Client, complianceToInitialize.SubjectRightsRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    complianceToInitialize.SubjectRightsRequests.AdditionalData = complianceToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

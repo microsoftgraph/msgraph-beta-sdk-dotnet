@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets recommendedActions.
+        /// List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
         /// </summary>
         [JsonPropertyName("recommendedActions")]
         public IEnumerable<RecommendedAction> RecommendedActions { get; set; }
     
         /// <summary>
         /// Gets or sets resolvedTargetsCount.
+        /// Number of valid users in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("resolvedTargetsCount")]
         public Int32? ResolvedTargetsCount { get; set; }
     
         /// <summary>
         /// Gets or sets simulationEventsContent.
+        /// Summary of simulation events in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("simulationEventsContent")]
         public SimulationEventsContent SimulationEventsContent { get; set; }
     
         /// <summary>
         /// Gets or sets trainingEventsContent.
+        /// Summary of assigned trainings in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("trainingEventsContent")]
         public TrainingEventsContent TrainingEventsContent { get; set; }

@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attackSimulationUser.
+        /// User in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("attackSimulationUser")]
         public AttackSimulationUser AttackSimulationUser { get; set; }
     
         /// <summary>
         /// Gets or sets repeatOffenceCount.
+        /// Number of repeat offences of the user in attack simulation and training campaigns.
         /// </summary>
         [JsonPropertyName("repeatOffenceCount")]
         public Int32? RepeatOffenceCount { get; set; }

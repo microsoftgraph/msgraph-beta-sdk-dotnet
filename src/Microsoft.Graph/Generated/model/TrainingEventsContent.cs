@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignedTrainingsInfos.
+        /// List of assigned trainings and their information in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("assignedTrainingsInfos")]
         public IEnumerable<AssignedTrainingInfo> AssignedTrainingsInfos { get; set; }
     
         /// <summary>
         /// Gets or sets trainingsAssignedUserCount.
+        /// Number of users who were assigned trainings in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("trainingsAssignedUserCount")]
         public Int32? TrainingsAssignedUserCount { get; set; }
