@@ -20,6 +20,18 @@ namespace Microsoft.Graph
     public partial class BookingCustomer : BookingPerson
     {
     
+        /// <summary>
+        /// Gets or sets addresses.
+        /// </summary>
+        [JsonPropertyName("addresses")]
+        public IEnumerable<PhysicalAddress> Addresses { get; set; }
+    
+        /// <summary>
+        /// Gets or sets phones.
+        /// </summary>
+        [JsonPropertyName("phones")]
+        public IEnumerable<Phone> Phones { get; set; }
+    
     }
 }
 

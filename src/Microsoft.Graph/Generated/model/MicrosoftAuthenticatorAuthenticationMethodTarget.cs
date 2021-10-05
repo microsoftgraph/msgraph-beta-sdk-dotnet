@@ -38,18 +38,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display app information required state.
+        /// Determines whether the app the user is signing into should be shown to the user in the body of the notification. Possible values are: enabled, disabled, default.
         /// </summary>
         [JsonPropertyName("displayAppInformationRequiredState")]
         public AdvancedConfigState? DisplayAppInformationRequiredState { get; set; }
     
         /// <summary>
         /// Gets or sets display location information required state.
+        /// Determines whether the location of the sign-in should be shown to the user in the body of the notification. Possible values are: enabled, disabled, default.
         /// </summary>
         [JsonPropertyName("displayLocationInformationRequiredState")]
         public AdvancedConfigState? DisplayLocationInformationRequiredState { get; set; }
     
         /// <summary>
         /// Gets or sets number matching required state.
+        /// Requires number matching for MFA notifications. Value is ignored for phone sign-in notifications. Possible values are: enabled, disabled, default.
         /// </summary>
         [JsonPropertyName("numberMatchingRequiredState")]
         public AdvancedConfigState? NumberMatchingRequiredState { get; set; }

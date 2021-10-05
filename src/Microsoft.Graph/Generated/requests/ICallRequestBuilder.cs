@@ -157,7 +157,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICallTransferRequestBuilder"/>.</returns>
         ICallTransferRequestBuilder Transfer(
-            InvitationParticipantInfo transferTarget);
+            InvitationParticipantInfo transferTarget,
+            ParticipantInfo transferee = null);
 
         /// <summary>
         /// Gets the request builder for CallUnmute.

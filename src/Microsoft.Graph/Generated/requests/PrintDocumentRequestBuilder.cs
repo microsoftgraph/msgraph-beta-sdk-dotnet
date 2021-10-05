@@ -74,17 +74,6 @@ namespace Microsoft.Graph
                 this.Client,
                 properties);
         }
-
-        /// <summary>
-        /// Gets the request builder for PrintDocumentUploadData.
-        /// </summary>
-        /// <returns>The <see cref="IPrintDocumentUploadDataRequestBuilder"/>.</returns>
-        public IPrintDocumentUploadDataRequestBuilder UploadData()
-        {
-            return new PrintDocumentUploadDataRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.uploadData"),
-                this.Client);
-        }
     
     }
 }

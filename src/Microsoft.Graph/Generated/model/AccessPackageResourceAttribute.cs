@@ -46,6 +46,18 @@ namespace Microsoft.Graph
         public string Id { get; set; }
     
         /// <summary>
+        /// Gets or sets isEditable.
+        /// </summary>
+        [JsonPropertyName("isEditable")]
+        public bool? IsEditable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isPersistedOnAssignmentRemoval.
+        /// </summary>
+        [JsonPropertyName("isPersistedOnAssignmentRemoval")]
+        public bool? IsPersistedOnAssignmentRemoval { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

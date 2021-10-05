@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public BookingStaffRole? Role { get; set; }
     
         /// <summary>
+        /// Gets or sets time zone.
+        /// </summary>
+        [JsonPropertyName("timeZone")]
+        public string TimeZone { get; set; }
+    
+        /// <summary>
         /// Gets or sets use business hours.
         /// True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
         /// </summary>

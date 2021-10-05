@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets end.
-        /// The time of the day that work starts. For example, 08:00:00.0000000.
+        /// The time of the day when work stops. For example, 17:00:00.0000000.
         /// </summary>
         [JsonPropertyName("end")]
         public TimeOfDay End { get; set; }
     
         /// <summary>
         /// Gets or sets start.
-        /// The time of the day that work stops. For example, 17:00:00.0000000.
+        /// The time of the day when work starts. For example, 08:00:00.0000000.
         /// </summary>
         [JsonPropertyName("start")]
         public TimeOfDay Start { get; set; }

@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets index.
+        /// Identifies the specific URI within the redirectURIs collection in SAML SSO flows. Defaults to null. The index is unique across all the redirectUris for the application.
         /// </summary>
         [JsonPropertyName("index")]
         public Int32? Index { get; set; }
     
         /// <summary>
         /// Gets or sets uri.
+        /// Specifies the URI that tokens are sent to.
         /// </summary>
         [JsonPropertyName("uri")]
         public string Uri { get; set; }

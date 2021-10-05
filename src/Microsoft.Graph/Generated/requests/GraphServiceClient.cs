@@ -448,6 +448,39 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceMessageEvents request builder.
+        /// </summary>
+        public virtual IGraphServiceMessageEventsCollectionRequestBuilder MessageEvents
+        {
+            get
+            {
+                return new GraphServiceMessageEventsCollectionRequestBuilder(this.BaseUrl + "/messageEvents", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceMessageRecipients request builder.
+        /// </summary>
+        public virtual IGraphServiceMessageRecipientsCollectionRequestBuilder MessageRecipients
+        {
+            get
+            {
+                return new GraphServiceMessageRecipientsCollectionRequestBuilder(this.BaseUrl + "/messageRecipients", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceMessageTraces request builder.
+        /// </summary>
+        public virtual IGraphServiceMessageTracesCollectionRequestBuilder MessageTraces
+        {
+            get
+            {
+                return new GraphServiceMessageTracesCollectionRequestBuilder(this.BaseUrl + "/messageTraces", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceSchemaExtensions request builder.
         /// </summary>
         public virtual IGraphServiceSchemaExtensionsCollectionRequestBuilder SchemaExtensions

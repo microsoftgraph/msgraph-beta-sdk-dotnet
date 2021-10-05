@@ -70,6 +70,12 @@ namespace Microsoft.Graph
         public string CustomerPhone { get; set; }
     
         /// <summary>
+        /// Gets or sets customer time zone.
+        /// </summary>
+        [JsonPropertyName("customerTimeZone")]
+        public string CustomerTimeZone { get; set; }
+    
+        /// <summary>
         /// Gets or sets duration.
         /// The length of the appointment, denoted in ISO8601 format.
         /// </summary>
@@ -123,6 +129,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("isLocationOnline")]
         public bool? IsLocationOnline { get; set; }
+    
+        /// <summary>
+        /// Gets or sets join web url.
+        /// </summary>
+        [JsonPropertyName("joinWebUrl")]
+        public string JoinWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets online meeting url.
@@ -206,6 +218,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("serviceNotes")]
         public string ServiceNotes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sms notifications enabled.
+        /// </summary>
+        [JsonPropertyName("smsNotificationsEnabled")]
+        public bool? SmsNotificationsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets staff member ids.

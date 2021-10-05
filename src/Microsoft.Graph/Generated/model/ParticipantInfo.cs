@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         public string LanguageId { get; set; }
     
         /// <summary>
+        /// Gets or sets participantId.
+        /// </summary>
+        [JsonPropertyName("participantId")]
+        public string ParticipantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets platformId.
         /// The client platform ID of the participant. Read-only.
         /// </summary>

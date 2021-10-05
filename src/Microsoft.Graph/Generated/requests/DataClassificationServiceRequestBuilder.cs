@@ -63,18 +63,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ClassifyFile.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyFileCollectionRequestBuilder"/>.</returns>
-        public IDataClassificationServiceClassifyFileCollectionRequestBuilder ClassifyFile
-        {
-            get
-            {
-                return new DataClassificationServiceClassifyFileCollectionRequestBuilder(this.AppendSegmentToRequestUrl("classifyFile"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ClassifyFileJobs.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceClassifyFileJobsCollectionRequestBuilder"/>.</returns>
@@ -83,18 +71,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DataClassificationServiceClassifyFileJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("classifyFileJobs"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for ClassifyText.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyTextCollectionRequestBuilder"/>.</returns>
-        public IDataClassificationServiceClassifyTextCollectionRequestBuilder ClassifyText
-        {
-            get
-            {
-                return new DataClassificationServiceClassifyTextCollectionRequestBuilder(this.AppendSegmentToRequestUrl("classifyText"), this.Client);
             }
         }
 
@@ -182,6 +158,42 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for DataClassificationServiceClassifyFile.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyFileRequestBuilder"/>.</returns>
+        public IDataClassificationServiceClassifyFileRequestBuilder ClassifyFile(
+            Stream file = null,
+            IEnumerable<string> sensitiveTypeIds = null)
+        {
+            return new DataClassificationServiceClassifyFileRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.classifyFile"),
+                this.Client,
+                file,
+                sensitiveTypeIds);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DataClassificationServiceClassifyText.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyTextRequestBuilder"/>.</returns>
+        public IDataClassificationServiceClassifyTextRequestBuilder ClassifyText(
+            string text = null,
+            string fileExtension = null,
+            IEnumerable<string> sensitiveTypeIds = null,
+            SensitiveTypeScope? scopesToRun = null,
+            MlClassificationMatchTolerance? matchTolerancesToInclude = null)
+        {
+            return new DataClassificationServiceClassifyTextRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.classifyText"),
+                this.Client,
+                text,
+                fileExtension,
+                sensitiveTypeIds,
+                scopesToRun,
+                matchTolerancesToInclude);
+        }
+
         /// <summary>
         /// Gets the request builder for DataClassificationServiceClassifyExactMatches.
         /// </summary>

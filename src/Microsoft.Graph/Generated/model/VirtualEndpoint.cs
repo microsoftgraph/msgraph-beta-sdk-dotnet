@@ -92,6 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supported regions.
+        /// Cloud PC supported regions.
         /// </summary>
         [JsonPropertyName("supportedRegions")]
         public IVirtualEndpointSupportedRegionsCollectionPage SupportedRegions { get; set; }

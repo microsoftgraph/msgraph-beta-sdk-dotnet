@@ -252,23 +252,11 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ExactMatchDataStores.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
                 }
-                if (dataClassificationServiceToInitialize.ClassifyFile != null && dataClassificationServiceToInitialize.ClassifyFile.CurrentPage != null)
-                {
-                    dataClassificationServiceToInitialize.ClassifyFile.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyFileNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    dataClassificationServiceToInitialize.ClassifyFile.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-                }
                 if (dataClassificationServiceToInitialize.ClassifyFileJobs != null && dataClassificationServiceToInitialize.ClassifyFileJobs.CurrentPage != null)
                 {
                     dataClassificationServiceToInitialize.ClassifyFileJobs.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyFileJobsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     dataClassificationServiceToInitialize.ClassifyFileJobs.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
-                }
-                if (dataClassificationServiceToInitialize.ClassifyText != null && dataClassificationServiceToInitialize.ClassifyText.CurrentPage != null)
-                {
-                    dataClassificationServiceToInitialize.ClassifyText.InitializeNextPageRequest(this.Client, dataClassificationServiceToInitialize.ClassifyTextNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    dataClassificationServiceToInitialize.ClassifyText.AdditionalData = dataClassificationServiceToInitialize.AdditionalData;
                 }
                 if (dataClassificationServiceToInitialize.ClassifyTextJobs != null && dataClassificationServiceToInitialize.ClassifyTextJobs.CurrentPage != null)
                 {
