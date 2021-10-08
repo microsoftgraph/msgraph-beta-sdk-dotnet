@@ -38,22 +38,10 @@ namespace Microsoft.Graph
         IDataClassificationServiceExactMatchDataStoresCollectionRequestBuilder ExactMatchDataStores { get; }
 
         /// <summary>
-        /// Gets the request builder for ClassifyFile.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyFileCollectionRequestBuilder"/>.</returns>
-        IDataClassificationServiceClassifyFileCollectionRequestBuilder ClassifyFile { get; }
-
-        /// <summary>
         /// Gets the request builder for ClassifyFileJobs.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceClassifyFileJobsCollectionRequestBuilder"/>.</returns>
         IDataClassificationServiceClassifyFileJobsCollectionRequestBuilder ClassifyFileJobs { get; }
-
-        /// <summary>
-        /// Gets the request builder for ClassifyText.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyTextCollectionRequestBuilder"/>.</returns>
-        IDataClassificationServiceClassifyTextCollectionRequestBuilder ClassifyText { get; }
 
         /// <summary>
         /// Gets the request builder for ClassifyTextJobs.
@@ -97,6 +85,25 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDataClassificationServiceExactMatchUploadAgentsCollectionRequestBuilder"/>.</returns>
         IDataClassificationServiceExactMatchUploadAgentsCollectionRequestBuilder ExactMatchUploadAgents { get; }
     
+        /// <summary>
+        /// Gets the request builder for DataClassificationServiceClassifyFile.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyFileRequestBuilder"/>.</returns>
+        IDataClassificationServiceClassifyFileRequestBuilder ClassifyFile(
+            Stream file = null,
+            IEnumerable<string> sensitiveTypeIds = null);
+
+        /// <summary>
+        /// Gets the request builder for DataClassificationServiceClassifyText.
+        /// </summary>
+        /// <returns>The <see cref="IDataClassificationServiceClassifyTextRequestBuilder"/>.</returns>
+        IDataClassificationServiceClassifyTextRequestBuilder ClassifyText(
+            string text = null,
+            string fileExtension = null,
+            IEnumerable<string> sensitiveTypeIds = null,
+            SensitiveTypeScope? scopesToRun = null,
+            MlClassificationMatchTolerance? matchTolerancesToInclude = null);
+
         /// <summary>
         /// Gets the request builder for DataClassificationServiceClassifyExactMatches.
         /// </summary>

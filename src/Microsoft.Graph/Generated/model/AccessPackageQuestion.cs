@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public string Id { get; set; }
     
         /// <summary>
+        /// Gets or sets isAnswerEditable.
+        /// </summary>
+        [JsonPropertyName("isAnswerEditable")]
+        public bool? IsAnswerEditable { get; set; }
+    
+        /// <summary>
         /// Gets or sets isRequired.
         /// Whether the requestor is required to supply an answer or not.
         /// </summary>

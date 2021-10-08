@@ -57,6 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets redirectUriSettings.
+        /// Specifies the index of the URLs where user tokens are sent for sign-in. This is only valid for applications using SAML.
         /// </summary>
         [JsonPropertyName("redirectUriSettings")]
         public IEnumerable<RedirectUriSettings> RedirectUriSettings { get; set; }

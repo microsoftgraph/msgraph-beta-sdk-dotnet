@@ -34,19 +34,6 @@ namespace Microsoft.Graph
         public string ExactMatchDataStoresNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets classify file.
-        /// </summary>
-        [JsonPropertyName("classifyFile")]
-        public IDataClassificationServiceClassifyFileCollectionPage ClassifyFile { get; set; }
-
-        /// <summary>
-        /// Gets or sets classifyFileNextLink.
-        /// </summary>
-        [JsonPropertyName("classifyFile@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string ClassifyFileNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets classify file jobs.
         /// </summary>
         [JsonPropertyName("classifyFileJobs")]
@@ -58,19 +45,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("classifyFileJobs@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string ClassifyFileJobsNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets classify text.
-        /// </summary>
-        [JsonPropertyName("classifyText")]
-        public IDataClassificationServiceClassifyTextCollectionPage ClassifyText { get; set; }
-
-        /// <summary>
-        /// Gets or sets classifyTextNextLink.
-        /// </summary>
-        [JsonPropertyName("classifyText@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string ClassifyTextNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets classify text jobs.

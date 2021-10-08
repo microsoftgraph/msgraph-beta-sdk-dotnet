@@ -43,12 +43,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IPrintDocumentCreateUploadSessionRequestBuilder"/>.</returns>
         IPrintDocumentCreateUploadSessionRequestBuilder CreateUploadSession(
             PrintDocumentUploadProperties properties);
-
-        /// <summary>
-        /// Gets the request builder for PrintDocumentUploadData.
-        /// </summary>
-        /// <returns>The <see cref="IPrintDocumentUploadDataRequestBuilder"/>.</returns>
-        IPrintDocumentUploadDataRequestBuilder UploadData();
     
     }
 }

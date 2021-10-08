@@ -119,11 +119,24 @@ namespace Microsoft.Graph
         public BookingSchedulingPolicy SchedulingPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets sms notifications enabled.
+        /// </summary>
+        [JsonPropertyName("smsNotificationsEnabled")]
+        public bool? SmsNotificationsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets staff member ids.
         /// Represents those staff members who provide this service.
         /// </summary>
         [JsonPropertyName("staffMemberIds")]
         public IEnumerable<string> StaffMemberIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets web url.
+        /// The URL of the booking service.
+        /// </summary>
+        [JsonPropertyName("webUrl")]
+        public string WebUrl { get; set; }
     
     }
 }

@@ -22,11 +22,29 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets accessReviewTimeoutBehavior.
+        /// </summary>
+        [JsonPropertyName("accessReviewTimeoutBehavior")]
+        public AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior { get; set; }
+    
+        /// <summary>
         /// Gets or sets durationInDays.
         /// The number of days to allow input from reviewers.
         /// </summary>
         [JsonPropertyName("durationInDays")]
         public Int32? DurationInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isAccessRecommendationEnabled.
+        /// </summary>
+        [JsonPropertyName("isAccessRecommendationEnabled")]
+        public bool? IsAccessRecommendationEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets isApprovalJustificationRequired.
+        /// </summary>
+        [JsonPropertyName("isApprovalJustificationRequired")]
+        public bool? IsApprovalJustificationRequired { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
