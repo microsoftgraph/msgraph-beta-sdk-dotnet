@@ -948,6 +948,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.WindowsInformationProtectionNetworkLearningSummaries.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.CertificateConnectorDetails != null && deviceManagementToInitialize.CertificateConnectorDetails.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.CertificateConnectorDetails.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.CertificateConnectorDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.CertificateConnectorDetails.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.UserPfxCertificates != null && deviceManagementToInitialize.UserPfxCertificates.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserPfxCertificates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserPfxCertificatesNextLink);

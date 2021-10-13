@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserGetManagedDevicesWithFailedOrPendingAppsRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class UserGetManagedDevicesWithFailedOrPendingAppsRequest : BaseRequest, IUserGetManagedDevicesWithFailedOrPendingAppsRequest
     {
         /// <summary>

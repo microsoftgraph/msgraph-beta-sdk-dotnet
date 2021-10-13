@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets fileUrl.
+        /// Location of the file on shared point folder. Required
         /// </summary>
         [JsonPropertyName("fileUrl")]
         public string FileUrl { get; set; }

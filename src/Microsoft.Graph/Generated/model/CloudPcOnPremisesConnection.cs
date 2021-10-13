@@ -106,6 +106,12 @@ namespace Microsoft.Graph
         public string SubscriptionName { get; set; }
     
         /// <summary>
+        /// Gets or sets type.
+        /// </summary>
+        [JsonPropertyName("type")]
+        public CloudPcOnPremisesConnectionType? Type { get; set; }
+    
+        /// <summary>
         /// Gets or sets virtual network id.
         /// The ID of the target virtual network. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}'.
         /// </summary>

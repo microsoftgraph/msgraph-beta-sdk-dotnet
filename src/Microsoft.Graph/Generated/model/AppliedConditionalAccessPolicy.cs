@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets authenticationStrength.
+        /// </summary>
+        [JsonPropertyName("authenticationStrength")]
+        public AuthenticationStrength AuthenticationStrength { get; set; }
+    
+        /// <summary>
         /// Gets or sets conditionsNotSatisfied.
         /// Refers to the conditional access policy conditions that are not satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
         /// </summary>

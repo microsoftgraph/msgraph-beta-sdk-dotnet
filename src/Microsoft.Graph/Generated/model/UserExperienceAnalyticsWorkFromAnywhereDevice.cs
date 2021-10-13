@@ -85,6 +85,13 @@ namespace Microsoft.Graph
         public bool? CompliancePolicySetToIntune { get; set; }
     
         /// <summary>
+        /// Gets or sets device id.
+        /// The user experience work from anywhere device Id.
+        /// </summary>
+        [JsonPropertyName("deviceId")]
+        public string DeviceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets device name.
         /// The work from anywhere device's name.
         /// </summary>
@@ -97,6 +104,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("healthStatus")]
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is cloud managed gateway enabled.
+        /// The user experience work from anywhere device's Cloud Management Gateway for Configuration Manager is enabled.
+        /// </summary>
+        [JsonPropertyName("isCloudManagedGatewayEnabled")]
+        public bool? IsCloudManagedGatewayEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets managed by.
@@ -237,6 +251,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("windowsScore")]
         public double? WindowsScore { get; set; }
+    
+        /// <summary>
+        /// Gets or sets work from anywhere score.
+        /// The user experience work from anywhere per device overall score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("workFromAnywhereScore")]
+        public double? WorkFromAnywhereScore { get; set; }
     
     }
 }

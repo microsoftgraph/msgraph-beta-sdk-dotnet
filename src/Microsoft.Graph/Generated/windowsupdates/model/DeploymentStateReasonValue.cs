@@ -44,5 +44,10 @@ namespace Microsoft.Graph.WindowsUpdates
         /// </summary>
         UnknownFutureValue = 5,
 	
+        /// <summary>
+        /// Faulted By Content Outdated
+        /// </summary>
+        FaultedByContentOutdated = 6,
+	
     }
 }

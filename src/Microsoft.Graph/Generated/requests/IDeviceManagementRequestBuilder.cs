@@ -698,12 +698,6 @@ namespace Microsoft.Graph
         IDeviceManagementGroupPolicyUploadedDefinitionFilesCollectionRequestBuilder GroupPolicyUploadedDefinitionFiles { get; }
 
         /// <summary>
-        /// Gets the request builder for Reports.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>
-        IDeviceManagementReportsRequestBuilder Reports { get; }
-
-        /// <summary>
         /// Gets the request builder for MicrosoftTunnelConfigurations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder"/>.</returns>
@@ -782,6 +776,12 @@ namespace Microsoft.Graph
         IRemoteAssistanceSettingsRequestBuilder RemoteAssistanceSettings { get; }
 
         /// <summary>
+        /// Gets the request builder for Reports.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>
+        IDeviceManagementReportsRequestBuilder Reports { get; }
+
+        /// <summary>
         /// Gets the request builder for EmbeddedSIMActivationCodePools.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementEmbeddedSIMActivationCodePoolsCollectionRequestBuilder"/>.</returns>
@@ -846,6 +846,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionRequestBuilder WindowsInformationProtectionNetworkLearningSummaries { get; }
+
+        /// <summary>
+        /// Gets the request builder for CertificateConnectorDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementCertificateConnectorDetailsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementCertificateConnectorDetailsCollectionRequestBuilder CertificateConnectorDetails { get; }
 
         /// <summary>
         /// Gets the request builder for UserPfxCertificates.

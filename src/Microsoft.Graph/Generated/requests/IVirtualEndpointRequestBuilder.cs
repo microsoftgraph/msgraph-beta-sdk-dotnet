@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IVirtualEndpointDeviceImagesCollectionRequestBuilder DeviceImages { get; }
 
         /// <summary>
+        /// Gets the request builder for GalleryImages.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointGalleryImagesCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointGalleryImagesCollectionRequestBuilder GalleryImages { get; }
+
+        /// <summary>
         /// Gets the request builder for OnPremisesConnections.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointOnPremisesConnectionsCollectionRequestBuilder"/>.</returns>
@@ -60,6 +66,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointProvisioningPoliciesCollectionRequestBuilder"/>.</returns>
         IVirtualEndpointProvisioningPoliciesCollectionRequestBuilder ProvisioningPolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for ServicePlans.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointServicePlansCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointServicePlansCollectionRequestBuilder ServicePlans { get; }
 
         /// <summary>
         /// Gets the request builder for SupportedRegions.

@@ -63,6 +63,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> CredentialBundleIdAccessControlList { get; set; }
     
         /// <summary>
+        /// Gets or sets credentialsCacheMonitored.
+        /// When set to True, the credential is requested on the next matching Kerberos challenge or network state change. When the credential is expired or missing, a new credential is created. Available for devices running macOS versions 12 and later.
+        /// </summary>
+        [JsonPropertyName("credentialsCacheMonitored")]
+        public bool? CredentialsCacheMonitored { get; set; }
+    
+        /// <summary>
         /// Gets or sets domainRealms.
         /// Gets or sets a list of realms for custom domain-realm mapping. Realms are case sensitive.
         /// </summary>
@@ -82,6 +89,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("isDefaultRealm")]
         public bool? IsDefaultRealm { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kerberosAppsInBundleIdACLIncluded.
+        /// When set to True, the Kerberos extension allows any apps entered with the app bundle ID, managed apps, and standard Kerberos utilities, such as TicketViewer and klist, to access and use the credential. Available for devices running macOS versions 12 and later.
+        /// </summary>
+        [JsonPropertyName("kerberosAppsInBundleIdACLIncluded")]
+        public bool? KerberosAppsInBundleIdACLIncluded { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managedAppsInBundleIdACLIncluded.
+        /// When set to True, the Kerberos extension allows managed apps, and any apps entered with the app bundle ID to access the credential. When set to False, the Kerberos extension allows all apps to access the credential. Available for devices running iOS and iPadOS versions 14 and later.
+        /// </summary>
+        [JsonPropertyName("managedAppsInBundleIdACLIncluded")]
+        public bool? ManagedAppsInBundleIdACLIncluded { get; set; }
+    
+        /// <summary>
+        /// Gets or sets modeCredentialUsed.
+        /// Select how other processes use the Kerberos Extension credential.
+        /// </summary>
+        [JsonPropertyName("modeCredentialUsed")]
+        public string ModeCredentialUsed { get; set; }
     
         /// <summary>
         /// Gets or sets passwordBlockModification.
@@ -168,11 +196,46 @@ namespace Microsoft.Graph
         public bool? RequireUserPresence { get; set; }
     
         /// <summary>
+        /// Gets or sets signInHelpText.
+        /// Text displayed to the user at the Kerberos sign in window. Available for devices running iOS and iPadOS versions 14 and later.
+        /// </summary>
+        [JsonPropertyName("signInHelpText")]
+        public string SignInHelpText { get; set; }
+    
+        /// <summary>
+        /// Gets or sets singleSignOnExtensionPreferredKDCs.
+        /// Add creates an ordered list of preferred Key Distribution Centers (KDCs) to use for Kerberos traffic. This list is used when the servers are not discoverable using DNS. When the servers are discoverable, the list is used for both connectivity checks, and used first for Kerberos traffic. If the servers don’t respond, then the device uses DNS discovery. Delete removes an existing list, and devices use DNS discovery. Available for devices running macOS versions 12 and later.
+        /// </summary>
+        [JsonPropertyName("singleSignOnExtensionPreferredKDCs")]
+        public IEnumerable<string> SingleSignOnExtensionPreferredKDCs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tlsForLDAPRequired.
+        /// When set to True, LDAP connections are required to use Transport Layer Security (TLS). Available for devices running macOS versions 11 and later.
+        /// </summary>
+        [JsonPropertyName("tlsForLDAPRequired")]
+        public bool? TlsForLDAPRequired { get; set; }
+    
+        /// <summary>
+        /// Gets or sets usernameLableCustom.
+        /// This label replaces the user name shown in the Kerberos extension. You can enter a name to match the name of your company or organization. Available for devices running macOS versions 11 and later.
+        /// </summary>
+        [JsonPropertyName("usernameLableCustom")]
+        public string UsernameLableCustom { get; set; }
+    
+        /// <summary>
         /// Gets or sets userPrincipalName.
         /// Gets or sets the principle user name to use for this profile. The realm name does not need to be included.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userSetupDelayed.
+        /// When set to True, the user isn’t prompted to set up the Kerberos extension until the extension is enabled by the admin, or a Kerberos challenge is received. Available for devices running macOS versions 11 and later.
+        /// </summary>
+        [JsonPropertyName("userSetupDelayed")]
+        public bool? UserSetupDelayed { get; set; }
     
     }
 }

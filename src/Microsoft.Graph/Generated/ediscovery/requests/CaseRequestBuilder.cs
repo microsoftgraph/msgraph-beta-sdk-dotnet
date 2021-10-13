@@ -113,12 +113,12 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the request builder for Settings.
         /// </summary>
-        /// <returns>The <see cref="ISettingsRequestBuilder"/>.</returns>
-        public ISettingsRequestBuilder Settings
+        /// <returns>The <see cref="ICaseSettingsRequestBuilder"/>.</returns>
+        public ICaseSettingsRequestBuilder Settings
         {
             get
             {
-                return new SettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+                return new CaseSettingsRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
             }
         }
 

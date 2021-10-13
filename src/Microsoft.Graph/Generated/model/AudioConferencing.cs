@@ -37,7 +37,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tollFreeNumber.
-        /// The toll-free number that connects to the Audio Conference Provider.
         /// </summary>
         [JsonPropertyName("tollFreeNumber")]
         public string TollFreeNumber { get; set; }
@@ -51,7 +50,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tollNumber.
-        /// The toll number that connects to the Audio Conference Provider.
         /// </summary>
         [JsonPropertyName("tollNumber")]
         public string TollNumber { get; set; }

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserIdentity.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserIdentity>))]
     public partial class UserIdentity : Identity
     {
         /// <summary>

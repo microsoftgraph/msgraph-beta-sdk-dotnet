@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserDeltaRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class UserDeltaRequest : BaseRequest, IUserDeltaRequest
     {
         /// <summary>

@@ -290,6 +290,51 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceConfigurationPolicySettingsSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder GetDeviceConfigurationPolicySettingsSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetQuietTimePolicyUsersReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetQuietTimePolicyUsersReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetQuietTimePolicyUsersReportRequestBuilder GetQuietTimePolicyUsersReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetQuietTimePolicyUserSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetQuietTimePolicyUserSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetQuietTimePolicyUserSummaryReportRequestBuilder GetQuietTimePolicyUserSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetEnrollmentConfigurationPoliciesByDevice.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder"/>.</returns>
@@ -443,51 +488,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetConfigManagerDevicePolicyStatusReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetConfigManagerDevicePolicyStatusReportRequestBuilder GetConfigManagerDevicePolicyStatusReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReportRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReportRequestBuilder GetRemoteAssistanceMonitorActiveSessionsReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReportRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReportRequestBuilder GetRemoteAssistanceMonitorAvgSessionTimeReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReportRequestBuilder"/>.</returns>
-        IDeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReportRequestBuilder GetRemoteAssistanceMonitorTotalSessionsReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,

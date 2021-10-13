@@ -1383,18 +1383,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for Reports.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsRequestBuilder Reports
-        {
-            get
-            {
-                return new DeviceManagementReportsRequestBuilder(this.AppendSegmentToRequestUrl("reports"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for MicrosoftTunnelConfigurations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementMicrosoftTunnelConfigurationsCollectionRequestBuilder"/>.</returns>
@@ -1551,6 +1539,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Reports.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsRequestBuilder Reports
+        {
+            get
+            {
+                return new DeviceManagementReportsRequestBuilder(this.AppendSegmentToRequestUrl("reports"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for EmbeddedSIMActivationCodePools.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementEmbeddedSIMActivationCodePoolsCollectionRequestBuilder"/>.</returns>
@@ -1679,6 +1679,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementWindowsInformationProtectionNetworkLearningSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsInformationProtectionNetworkLearningSummaries"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CertificateConnectorDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementCertificateConnectorDetailsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementCertificateConnectorDetailsCollectionRequestBuilder CertificateConnectorDetails
+        {
+            get
+            {
+                return new DeviceManagementCertificateConnectorDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("certificateConnectorDetails"), this.Client);
             }
         }
 

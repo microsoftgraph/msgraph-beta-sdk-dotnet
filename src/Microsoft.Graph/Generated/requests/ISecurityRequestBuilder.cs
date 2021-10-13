@@ -115,5 +115,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ISecurityUserSecurityProfilesCollectionRequestBuilder"/>.</returns>
         ISecurityUserSecurityProfilesCollectionRequestBuilder UserSecurityProfiles { get; }
     
+        /// <summary>
+        /// Gets the request builder for SecurityRunHuntingQuery.
+        /// </summary>
+        /// <returns>The <see cref="ISecurityRunHuntingQueryRequestBuilder"/>.</returns>
+        ISecurityRunHuntingQueryRequestBuilder RunHuntingQuery(
+            string query = null);
+    
     }
 }

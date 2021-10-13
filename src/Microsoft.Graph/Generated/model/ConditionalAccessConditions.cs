@@ -90,5 +90,15 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 4096,
 	
+        /// <summary>
+        /// Service Principals
+        /// </summary>
+        ServicePrincipals = 8192,
+	
+        /// <summary>
+        /// Service Principal Risk
+        /// </summary>
+        ServicePrincipalRisk = 16384,
+	
     }
 }

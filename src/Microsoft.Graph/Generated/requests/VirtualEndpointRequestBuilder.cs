@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for GalleryImages.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointGalleryImagesCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointGalleryImagesCollectionRequestBuilder GalleryImages
+        {
+            get
+            {
+                return new VirtualEndpointGalleryImagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("galleryImages"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for OnPremisesConnections.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointOnPremisesConnectionsCollectionRequestBuilder"/>.</returns>
@@ -107,6 +119,18 @@ namespace Microsoft.Graph
             get
             {
                 return new VirtualEndpointProvisioningPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("provisioningPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ServicePlans.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointServicePlansCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointServicePlansCollectionRequestBuilder ServicePlans
+        {
+            get
+            {
+                return new VirtualEndpointServicePlansCollectionRequestBuilder(this.AppendSegmentToRequestUrl("servicePlans"), this.Client);
             }
         }
 

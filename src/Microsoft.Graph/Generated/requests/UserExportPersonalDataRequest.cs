@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserExportPersonalDataRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class UserExportPersonalDataRequest : BaseRequest, IUserExportPersonalDataRequest
     {
         /// <summary>

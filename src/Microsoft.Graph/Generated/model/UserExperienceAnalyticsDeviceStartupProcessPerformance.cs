@@ -35,6 +35,13 @@ namespace Microsoft.Graph
         public Int32? MedianImpactInMs { get; set; }
     
         /// <summary>
+        /// Gets or sets median impact in ms2.
+        /// User experience analytics device startup process median impact in milliseconds.
+        /// </summary>
+        [JsonPropertyName("medianImpactInMs2")]
+        public Int64? MedianImpactInMs2 { get; set; }
+    
+        /// <summary>
         /// Gets or sets process name.
         /// User experience analytics device startup process name.
         /// </summary>
@@ -61,6 +68,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("totalImpactInMs")]
         public Int32? TotalImpactInMs { get; set; }
+    
+        /// <summary>
+        /// Gets or sets total impact in ms2.
+        /// User experience analytics device startup process total impact in milliseconds.
+        /// </summary>
+        [JsonPropertyName("totalImpactInMs2")]
+        public Int64? TotalImpactInMs2 { get; set; }
     
     }
 }

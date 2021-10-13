@@ -33,7 +33,7 @@ namespace Microsoft.Graph
         /// If the resource initiating the activity is a user, this property Indicates all the user related information like userId, Name, UserPrinicpalName.
         /// </summary>
         [JsonPropertyName("user")]
-        public UserIdentity User { get; set; }
+        public AuditUserIdentity User { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -23,25 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accessReviewTimeoutBehavior.
+        /// The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("accessReviewTimeoutBehavior")]
         public AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets durationInDays.
-        /// The number of days to allow input from reviewers.
+        /// The number of days within which reviewers should provide input.
         /// </summary>
         [JsonPropertyName("durationInDays")]
         public Int32? DurationInDays { get; set; }
     
         /// <summary>
         /// Gets or sets isAccessRecommendationEnabled.
+        /// Specifies whether to display recommendations to the reviewer. The default value is true
         /// </summary>
         [JsonPropertyName("isAccessRecommendationEnabled")]
         public bool? IsAccessRecommendationEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isApprovalJustificationRequired.
+        /// Specifies whether the reviewer must provide justification for the approval. The default value is true.
         /// </summary>
         [JsonPropertyName("isApprovalJustificationRequired")]
         public bool? IsApprovalJustificationRequired { get; set; }

@@ -94,6 +94,23 @@ namespace Microsoft.Graph
             string tenantId = null);
 
         /// <summary>
+        /// Gets the request builder for ChatMarkChatReadForUser.
+        /// </summary>
+        /// <returns>The <see cref="IChatMarkChatReadForUserRequestBuilder"/>.</returns>
+        IChatMarkChatReadForUserRequestBuilder MarkChatReadForUser(
+            TeamworkUserIdentity user = null,
+            string tenantId = null);
+
+        /// <summary>
+        /// Gets the request builder for ChatMarkChatUnreadForUser.
+        /// </summary>
+        /// <returns>The <see cref="IChatMarkChatUnreadForUserRequestBuilder"/>.</returns>
+        IChatMarkChatUnreadForUserRequestBuilder MarkChatUnreadForUser(
+            TeamworkUserIdentity user = null,
+            string tenantId = null,
+            DateTimeOffset? lastMessageReadDateTime = null);
+
+        /// <summary>
         /// Gets the request builder for ChatUnhideForUser.
         /// </summary>
         /// <returns>The <see cref="IChatUnhideForUserRequestBuilder"/>.</returns>

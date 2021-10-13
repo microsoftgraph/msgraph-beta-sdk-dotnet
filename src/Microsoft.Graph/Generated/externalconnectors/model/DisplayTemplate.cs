@@ -23,24 +23,28 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets id.
+        /// The text identifier for the display template; for example, contosoTickets.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets layout.
+        /// The definition of the content's appearance, represented by an Adaptive Card, which is a JSON-serialized card object model.
         /// </summary>
         [JsonPropertyName("layout")]
         public System.Text.Json.JsonDocument Layout { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
+        /// Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
         /// </summary>
         [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets rules.
+        /// Specifies additional rules for selecting this display template based on the item schema. Optional.
         /// </summary>
         [JsonPropertyName("rules")]
         public IEnumerable<PropertyRule> Rules { get; set; }

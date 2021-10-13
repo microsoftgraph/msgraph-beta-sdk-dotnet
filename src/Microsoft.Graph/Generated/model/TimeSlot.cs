@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets end.
-        /// The date, time, and time zone that a period begins.
+        /// The date, time, and time zone that a period ends.
         /// </summary>
         [JsonPropertyName("end")]
         public DateTimeTimeZone End { get; set; }
     
         /// <summary>
         /// Gets or sets start.
-        /// The date, time, and time zone that a period ends.
+        /// The date, time, and time zone that a period begins.
         /// </summary>
         [JsonPropertyName("start")]
         public DateTimeTimeZone Start { get; set; }

@@ -50,5 +50,15 @@ namespace Microsoft.Graph
         /// </summary>
         ExchangeOnline = 256,
 	
+        /// <summary>
+        /// Linux Mdm
+        /// </summary>
+        LinuxMdm = 1024,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 1073741824,
+	
     }
 }

@@ -80,9 +80,9 @@ namespace Microsoft.Graph
         Microsoft365ManagedMdm = 258,
 	
         /// <summary>
-        /// Windows Management Cloud Api
+        /// Ms Sense
         /// </summary>
-        WindowsManagementCloudApi = 512,
+        MsSense = 1024,
 	
         /// <summary>
         /// Intune Aosp

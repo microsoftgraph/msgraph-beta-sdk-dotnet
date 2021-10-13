@@ -551,6 +551,93 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceConfigurationPolicySettingsSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder GetDeviceConfigurationPolicySettingsSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDeviceConfigurationPolicySettingsSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDeviceConfigurationPolicySettingsSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetQuietTimePolicyUsersReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetQuietTimePolicyUsersReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetQuietTimePolicyUsersReportRequestBuilder GetQuietTimePolicyUsersReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetQuietTimePolicyUsersReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getQuietTimePolicyUsersReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetQuietTimePolicyUserSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetQuietTimePolicyUserSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetQuietTimePolicyUserSummaryReportRequestBuilder GetQuietTimePolicyUserSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetQuietTimePolicyUserSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getQuietTimePolicyUserSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetEnrollmentConfigurationPoliciesByDevice.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetEnrollmentConfigurationPoliciesByDeviceRequestBuilder"/>.</returns>
@@ -855,93 +942,6 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetConfigManagerDevicePolicyStatusReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getConfigManagerDevicePolicyStatusReport"),
-                this.Client,
-                name,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top,
-                sessionId,
-                filter);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReportRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReportRequestBuilder GetRemoteAssistanceMonitorActiveSessionsReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null)
-        {
-            return new DeviceManagementReportsGetRemoteAssistanceMonitorActiveSessionsReportRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getRemoteAssistanceMonitorActiveSessionsReport"),
-                this.Client,
-                name,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top,
-                sessionId,
-                filter);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReportRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReportRequestBuilder GetRemoteAssistanceMonitorAvgSessionTimeReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null)
-        {
-            return new DeviceManagementReportsGetRemoteAssistanceMonitorAvgSessionTimeReportRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getRemoteAssistanceMonitorAvgSessionTimeReport"),
-                this.Client,
-                name,
-                select,
-                search,
-                groupBy,
-                orderBy,
-                skip,
-                top,
-                sessionId,
-                filter);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReport.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReportRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReportRequestBuilder GetRemoteAssistanceMonitorTotalSessionsReport(
-            string name = null,
-            IEnumerable<string> select = null,
-            string search = null,
-            IEnumerable<string> groupBy = null,
-            IEnumerable<string> orderBy = null,
-            Int32? skip = null,
-            Int32? top = null,
-            string sessionId = null,
-            string filter = null)
-        {
-            return new DeviceManagementReportsGetRemoteAssistanceMonitorTotalSessionsReportRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getRemoteAssistanceMonitorTotalSessionsReport"),
                 this.Client,
                 name,
                 select,

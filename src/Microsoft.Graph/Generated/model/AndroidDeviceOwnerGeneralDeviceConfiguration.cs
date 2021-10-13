@@ -681,6 +681,13 @@ namespace Microsoft.Graph
         public bool? SecurityAllowDebuggingFeatures { get; set; }
     
         /// <summary>
+        /// Gets or sets security developer settings enabled.
+        /// Indicates whether or not the user is allowed to access developer settings like developer options and safe boot on the device.
+        /// </summary>
+        [JsonPropertyName("securityDeveloperSettingsEnabled")]
+        public bool? SecurityDeveloperSettingsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets security require verify apps.
         /// Indicates whether or not verify apps is required.
         /// </summary>

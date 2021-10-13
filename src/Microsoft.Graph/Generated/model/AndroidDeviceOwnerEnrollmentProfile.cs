@@ -71,6 +71,13 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerEnrollmentTokenType? EnrollmentTokenType { get; set; }
     
         /// <summary>
+        /// Gets or sets enrollment token usage count.
+        /// Total number of AOSP devices that have enrolled using the current token.
+        /// </summary>
+        [JsonPropertyName("enrollmentTokenUsageCount")]
+        public Int32? EnrollmentTokenUsageCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// Date time the enrollment profile was last modified.
         /// </summary>
@@ -118,6 +125,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tokenValue")]
         public string TokenValue { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifi hidden.
+        /// Boolean that indicates if hidden wifi networks are enabled
+        /// </summary>
+        [JsonPropertyName("wifiHidden")]
+        public bool? WifiHidden { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifi password.
+        /// String that contains the wi-fi login password
+        /// </summary>
+        [JsonPropertyName("wifiPassword")]
+        public string WifiPassword { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifi security type.
+        /// String that contains the wi-fi security type
+        /// </summary>
+        [JsonPropertyName("wifiSecurityType")]
+        public AospWifiSecurityType? WifiSecurityType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wifi ssid.
+        /// String that contains the wi-fi login ssid
+        /// </summary>
+        [JsonPropertyName("wifiSsid")]
+        public string WifiSsid { get; set; }
     
     }
 }

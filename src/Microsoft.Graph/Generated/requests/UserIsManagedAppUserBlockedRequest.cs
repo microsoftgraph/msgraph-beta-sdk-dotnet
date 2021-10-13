@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserIsManagedAppUserBlockedRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class UserIsManagedAppUserBlockedRequest : BaseRequest, IUserIsManagedAppUserBlockedRequest
     {
         /// <summary>

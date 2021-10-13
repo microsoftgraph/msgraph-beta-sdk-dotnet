@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets domain join configuration.
+        /// </summary>
+        [JsonPropertyName("domainJoinConfiguration")]
+        public CloudPcDomainJoinConfiguration DomainJoinConfiguration { get; set; }
+    
+        /// <summary>
         /// Gets or sets image display name.
         /// The display name for the OS image you’re provisioning.
         /// </summary>
@@ -55,6 +61,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("imageType")]
         public CloudPcProvisioningPolicyImageType? ImageType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft managed desktop.
+        /// </summary>
+        [JsonPropertyName("microsoftManagedDesktop")]
+        public MicrosoftManagedDesktop MicrosoftManagedDesktop { get; set; }
     
         /// <summary>
         /// Gets or sets on premises connection id.

@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserGetManagedAppPoliciesRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class UserGetManagedAppPoliciesRequest : BaseRequest, IUserGetManagedAppPoliciesRequest
     {
         /// <summary>

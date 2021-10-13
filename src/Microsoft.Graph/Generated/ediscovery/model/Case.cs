@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Ediscovery
         /// Gets or sets settings.
         /// </summary>
         [JsonPropertyName("settings")]
-        public Settings Settings { get; set; }
+        public CaseSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets source collections.
