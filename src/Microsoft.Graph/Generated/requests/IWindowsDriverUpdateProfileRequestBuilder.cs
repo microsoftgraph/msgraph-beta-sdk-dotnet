@@ -43,5 +43,21 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IWindowsDriverUpdateProfileDriverInventoriesCollectionRequestBuilder"/>.</returns>
         IWindowsDriverUpdateProfileDriverInventoriesCollectionRequestBuilder DriverInventories { get; }
     
+        /// <summary>
+        /// Gets the request builder for WindowsDriverUpdateProfileAssign.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsDriverUpdateProfileAssignRequestBuilder"/>.</returns>
+        IWindowsDriverUpdateProfileAssignRequestBuilder Assign(
+            IEnumerable<WindowsDriverUpdateProfileAssignment> assignments = null);
+
+        /// <summary>
+        /// Gets the request builder for WindowsDriverUpdateProfileExecuteAction.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsDriverUpdateProfileExecuteActionRequestBuilder"/>.</returns>
+        IWindowsDriverUpdateProfileExecuteActionRequestBuilder ExecuteAction(
+            DriverApprovalAction actionName,
+            IEnumerable<string> driverIds = null,
+            DateTimeOffset? deploymentDate = null);
+    
     }
 }

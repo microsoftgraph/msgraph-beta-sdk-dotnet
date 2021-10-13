@@ -74,5 +74,35 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for WindowsDriverUpdateProfileAssign.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsDriverUpdateProfileAssignRequestBuilder"/>.</returns>
+        public IWindowsDriverUpdateProfileAssignRequestBuilder Assign(
+            IEnumerable<WindowsDriverUpdateProfileAssignment> assignments = null)
+        {
+            return new WindowsDriverUpdateProfileAssignRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assign"),
+                this.Client,
+                assignments);
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsDriverUpdateProfileExecuteAction.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsDriverUpdateProfileExecuteActionRequestBuilder"/>.</returns>
+        public IWindowsDriverUpdateProfileExecuteActionRequestBuilder ExecuteAction(
+            DriverApprovalAction actionName,
+            IEnumerable<string> driverIds = null,
+            DateTimeOffset? deploymentDate = null)
+        {
+            return new WindowsDriverUpdateProfileExecuteActionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.executeAction"),
+                this.Client,
+                actionName,
+                driverIds,
+                deploymentDate);
+        }
+    
     }
 }

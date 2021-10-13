@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserExportDeviceAndAppManagementDataRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class UserExportDeviceAndAppManagementDataRequest : BaseRequest, IUserExportDeviceAndAppManagementDataRequest
     {
         /// <summary>

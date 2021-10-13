@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserGetManagedAppDiagnosticStatusesRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class UserGetManagedAppDiagnosticStatusesRequest : BaseRequest, IUserGetManagedAppDiagnosticStatusesRequest
     {
         /// <summary>

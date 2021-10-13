@@ -51,6 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets participantId.
+        /// The participant ID of the participant. Read-only.
         /// </summary>
         [JsonPropertyName("participantId")]
         public string ParticipantId { get; set; }

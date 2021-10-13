@@ -1568,13 +1568,6 @@ namespace Microsoft.Graph
         public string GroupPolicyUploadedDefinitionFilesNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets reports.
-        /// Reports singleton
-        /// </summary>
-        [JsonPropertyName("reports")]
-        public DeviceManagementReports Reports { get; set; }
-    
-        /// <summary>
         /// Gets or sets microsoft tunnel configurations.
         /// Collection of MicrosoftTunnelConfiguration settings associated with account.
         /// </summary>
@@ -1750,6 +1743,13 @@ namespace Microsoft.Graph
         public RemoteAssistanceSettings RemoteAssistanceSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets reports.
+        /// Reports singleton
+        /// </summary>
+        [JsonPropertyName("reports")]
+        public DeviceManagementReports Reports { get; set; }
+    
+        /// <summary>
         /// Gets or sets embedded simactivation code pools.
         /// The embedded SIM activation code pools created by this account.
         /// </summary>
@@ -1902,6 +1902,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("windowsInformationProtectionNetworkLearningSummaries@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string WindowsInformationProtectionNetworkLearningSummariesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets certificate connector details.
+        /// Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
+        /// </summary>
+        [JsonPropertyName("certificateConnectorDetails")]
+        public IDeviceManagementCertificateConnectorDetailsCollectionPage CertificateConnectorDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets certificateConnectorDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("certificateConnectorDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CertificateConnectorDetailsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user pfx certificates.

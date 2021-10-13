@@ -173,6 +173,38 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ChatMarkChatReadForUser.
+        /// </summary>
+        /// <returns>The <see cref="IChatMarkChatReadForUserRequestBuilder"/>.</returns>
+        public IChatMarkChatReadForUserRequestBuilder MarkChatReadForUser(
+            TeamworkUserIdentity user = null,
+            string tenantId = null)
+        {
+            return new ChatMarkChatReadForUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.markChatReadForUser"),
+                this.Client,
+                user,
+                tenantId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ChatMarkChatUnreadForUser.
+        /// </summary>
+        /// <returns>The <see cref="IChatMarkChatUnreadForUserRequestBuilder"/>.</returns>
+        public IChatMarkChatUnreadForUserRequestBuilder MarkChatUnreadForUser(
+            TeamworkUserIdentity user = null,
+            string tenantId = null,
+            DateTimeOffset? lastMessageReadDateTime = null)
+        {
+            return new ChatMarkChatUnreadForUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.markChatUnreadForUser"),
+                this.Client,
+                user,
+                tenantId,
+                lastMessageReadDateTime);
+        }
+
+        /// <summary>
         /// Gets the request builder for ChatUnhideForUser.
         /// </summary>
         /// <returns>The <see cref="IChatUnhideForUserRequestBuilder"/>.</returns>

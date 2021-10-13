@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Ediscovery
         /// <summary>
         /// Gets the request builder for Settings.
         /// </summary>
-        /// <returns>The <see cref="ISettingsRequestBuilder"/>.</returns>
-        ISettingsRequestBuilder Settings { get; }
+        /// <returns>The <see cref="ICaseSettingsRequestBuilder"/>.</returns>
+        ICaseSettingsRequestBuilder Settings { get; }
 
         /// <summary>
         /// Gets the request builder for SourceCollections.

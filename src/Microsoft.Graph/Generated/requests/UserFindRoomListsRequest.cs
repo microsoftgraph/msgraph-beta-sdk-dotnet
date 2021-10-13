@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserFindRoomListsRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class UserFindRoomListsRequest : BaseRequest, IUserFindRoomListsRequest
     {
         /// <summary>

@@ -23,24 +23,28 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets operation.
+        /// Specifies the operations to be performed during evaluation of a single propertyRule, where property and a string from the values collection are the respective operands. Possible values are: null, equals, notEquals, contains, notContains, lessThan, greaterThan, startsWith, unknownFutureValue. Required.
         /// </summary>
         [JsonPropertyName("operation")]
         public RuleOperation? Operation { get; set; }
     
         /// <summary>
         /// Gets or sets property.
+        /// The property from the externalItem schema. Required.
         /// </summary>
         [JsonPropertyName("property")]
         public string Property { get; set; }
     
         /// <summary>
         /// Gets or sets values.
+        /// A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
         /// </summary>
         [JsonPropertyName("values")]
         public IEnumerable<string> Values { get; set; }
     
         /// <summary>
         /// Gets or sets valuesJoinedBy.
+        /// The join operator for evaluating multiple propertyRules. For example, if and is specified, then all propertyRules must be true for the propertyRule to be true. Possible values are: or, and. Required.
         /// </summary>
         [JsonPropertyName("valuesJoinedBy")]
         public Microsoft.Graph.BinaryOperator? ValuesJoinedBy { get; set; }

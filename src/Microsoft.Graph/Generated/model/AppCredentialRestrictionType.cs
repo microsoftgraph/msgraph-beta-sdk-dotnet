@@ -30,9 +30,19 @@ namespace Microsoft.Graph
         PasswordLifetime = 1,
 	
         /// <summary>
+        /// Symmetric Key Addition
+        /// </summary>
+        SymmetricKeyAddition = 2,
+	
+        /// <summary>
+        /// Symmetric Key Lifetime
+        /// </summary>
+        SymmetricKeyLifetime = 3,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 2,
+        UnknownFutureValue = 99,
 	
     }
 }

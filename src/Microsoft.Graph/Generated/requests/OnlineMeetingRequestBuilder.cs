@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new MeetingAttendanceReportRequestBuilder(this.AppendSegmentToRequestUrl("meetingAttendanceReport"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Registration.
+        /// </summary>
+        /// <returns>The <see cref="IMeetingRegistrationRequestBuilder"/>.</returns>
+        public IMeetingRegistrationRequestBuilder Registration
+        {
+            get
+            {
+                return new MeetingRegistrationRequestBuilder(this.AppendSegmentToRequestUrl("registration"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for AlternativeRecording.

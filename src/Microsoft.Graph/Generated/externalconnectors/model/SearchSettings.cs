@@ -23,6 +23,7 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets searchResultTemplates.
+        /// Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.
         /// </summary>
         [JsonPropertyName("searchResultTemplates")]
         public IEnumerable<DisplayTemplate> SearchResultTemplates { get; set; }

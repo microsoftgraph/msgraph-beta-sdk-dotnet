@@ -218,5 +218,18 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for SecurityRunHuntingQuery.
+        /// </summary>
+        /// <returns>The <see cref="ISecurityRunHuntingQueryRequestBuilder"/>.</returns>
+        public ISecurityRunHuntingQueryRequestBuilder RunHuntingQuery(
+            string query = null)
+        {
+            return new SecurityRunHuntingQueryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.runHuntingQuery"),
+                this.Client,
+                query);
+        }
+    
     }
 }

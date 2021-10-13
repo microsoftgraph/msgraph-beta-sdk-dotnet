@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets connected apps enabled.
+        /// Setting to specify whether to allow ConnectedApps experience for this app.
+        /// </summary>
+        [JsonPropertyName("connectedAppsEnabled")]
+        public bool? ConnectedAppsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets package id.
         /// Android For Work app configuration package id.
         /// </summary>

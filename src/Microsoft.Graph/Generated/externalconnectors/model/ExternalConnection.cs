@@ -30,6 +30,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets connector id.
+        /// The Teams App ID. Optional.
         /// </summary>
         [JsonPropertyName("connectorId")]
         public string ConnectorId { get; set; }
@@ -50,6 +51,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets search settings.
+        /// The settings configuring the search experience for content in this connection, such as the display templates for search results.
         /// </summary>
         [JsonPropertyName("searchSettings")]
         public SearchSettings SearchSettings { get; set; }
@@ -63,6 +65,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets groups.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("groups")]
         public IExternalConnectionGroupsCollectionPage Groups { get; set; }

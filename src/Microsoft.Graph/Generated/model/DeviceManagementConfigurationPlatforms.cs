@@ -26,6 +26,16 @@ namespace Microsoft.Graph
         None = 0,
 	
         /// <summary>
+        /// Android
+        /// </summary>
+        Android = 1,
+	
+        /// <summary>
+        /// IOS
+        /// </summary>
+        IOS = 4,
+	
+        /// <summary>
         /// Mac OS
         /// </summary>
         MacOS = 8,

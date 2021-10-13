@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.DeviceImages.AdditionalData = virtualEndpointToInitialize.AdditionalData;
                 }
+                if (virtualEndpointToInitialize.GalleryImages != null && virtualEndpointToInitialize.GalleryImages.CurrentPage != null)
+                {
+                    virtualEndpointToInitialize.GalleryImages.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.GalleryImagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    virtualEndpointToInitialize.GalleryImages.AdditionalData = virtualEndpointToInitialize.AdditionalData;
+                }
                 if (virtualEndpointToInitialize.OnPremisesConnections != null && virtualEndpointToInitialize.OnPremisesConnections.CurrentPage != null)
                 {
                     virtualEndpointToInitialize.OnPremisesConnections.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.OnPremisesConnectionsNextLink);
@@ -275,6 +281,12 @@ namespace Microsoft.Graph
                     virtualEndpointToInitialize.ProvisioningPolicies.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.ProvisioningPoliciesNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.ProvisioningPolicies.AdditionalData = virtualEndpointToInitialize.AdditionalData;
+                }
+                if (virtualEndpointToInitialize.ServicePlans != null && virtualEndpointToInitialize.ServicePlans.CurrentPage != null)
+                {
+                    virtualEndpointToInitialize.ServicePlans.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.ServicePlansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    virtualEndpointToInitialize.ServicePlans.AdditionalData = virtualEndpointToInitialize.AdditionalData;
                 }
                 if (virtualEndpointToInitialize.SupportedRegions != null && virtualEndpointToInitialize.SupportedRegions.CurrentPage != null)
                 {

@@ -317,6 +317,7 @@ namespace Microsoft.Graph
         /// Gets or sets user.
         /// The directory user corresponding to this user.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("user")]
         public User User { get; set; }
     

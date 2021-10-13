@@ -22,13 +22,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets alternate sign in name.
-        /// The alternate sign-in identity whenever you use phone number to sign-in. Supports $filter (eq and startsWith operators only).
-        /// </summary>
-        [JsonPropertyName("alternateSignInName")]
-        public string AlternateSignInName { get; set; }
-    
-        /// <summary>
         /// Gets or sets app display name.
         /// App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
         /// </summary>
@@ -69,6 +62,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("authenticationProcessingDetails")]
         public IEnumerable<KeyValue> AuthenticationProcessingDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authentication protocol.
+        /// </summary>
+        [JsonPropertyName("authenticationProtocol")]
+        public ProtocolType? AuthenticationProtocol { get; set; }
     
         /// <summary>
         /// Gets or sets authentication requirement.
@@ -141,6 +140,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("homeTenantId")]
         public string HomeTenantId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets home tenant name.
+        /// </summary>
+        [JsonPropertyName("homeTenantName")]
+        public string HomeTenantName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets incoming token type.
+        /// </summary>
+        [JsonPropertyName("incomingTokenType")]
+        public IncomingTokenType? IncomingTokenType { get; set; }
     
         /// <summary>
         /// Gets or sets ip address.
@@ -236,13 +247,6 @@ namespace Microsoft.Graph
         public RiskDetail? RiskDetail { get; set; }
     
         /// <summary>
-        /// Gets or sets risk event types.
-        /// Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
-        /// </summary>
-        [JsonPropertyName("riskEventTypes")]
-        public IEnumerable<RiskEventType> RiskEventTypes { get; set; }
-    
-        /// <summary>
         /// Gets or sets risk event types_v2.
         /// The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
         /// </summary>
@@ -334,6 +338,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tokenIssuerType")]
         public TokenIssuerType? TokenIssuerType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unique token identifier.
+        /// </summary>
+        [JsonPropertyName("uniqueTokenIdentifier")]
+        public string UniqueTokenIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets user agent.

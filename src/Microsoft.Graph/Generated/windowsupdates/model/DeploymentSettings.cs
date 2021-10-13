@@ -36,6 +36,12 @@ namespace Microsoft.Graph.WindowsUpdates
         public RolloutSettings Rollout { get; set; }
     
         /// <summary>
+        /// Gets or sets safeguard.
+        /// </summary>
+        [JsonPropertyName("safeguard")]
+        public SafeguardSettings Safeguard { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

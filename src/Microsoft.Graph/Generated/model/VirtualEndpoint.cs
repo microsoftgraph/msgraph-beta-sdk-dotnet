@@ -63,6 +63,19 @@ namespace Microsoft.Graph
         public string DeviceImagesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets gallery images.
+        /// </summary>
+        [JsonPropertyName("galleryImages")]
+        public IVirtualEndpointGalleryImagesCollectionPage GalleryImages { get; set; }
+
+        /// <summary>
+        /// Gets or sets galleryImagesNextLink.
+        /// </summary>
+        [JsonPropertyName("galleryImages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string GalleryImagesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises connections.
         /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
         /// </summary>
@@ -89,6 +102,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("provisioningPolicies@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string ProvisioningPoliciesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service plans.
+        /// </summary>
+        [JsonPropertyName("servicePlans")]
+        public IVirtualEndpointServicePlansCollectionPage ServicePlans { get; set; }
+
+        /// <summary>
+        /// Gets or sets servicePlansNextLink.
+        /// </summary>
+        [JsonPropertyName("servicePlans@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ServicePlansNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets supported regions.

@@ -84,6 +84,13 @@ namespace Microsoft.Graph
         public bool? IsDefaultRealm { get; set; }
     
         /// <summary>
+        /// Gets or sets managedAppsInBundleIdACLIncluded.
+        /// When set to True, the Kerberos extension allows managed apps, and any apps entered with the app bundle ID to access the credential. When set to False, the Kerberos extension allows all apps to access the credential. Available for devices running iOS and iPadOS versions 14 and later.
+        /// </summary>
+        [JsonPropertyName("managedAppsInBundleIdACLIncluded")]
+        public bool? ManagedAppsInBundleIdACLIncluded { get; set; }
+    
+        /// <summary>
         /// Gets or sets passwordBlockModification.
         /// Enables or disables password changes.
         /// </summary>
@@ -166,6 +173,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("requireUserPresence")]
         public bool? RequireUserPresence { get; set; }
+    
+        /// <summary>
+        /// Gets or sets signInHelpText.
+        /// Text displayed to the user at the Kerberos sign in window. Available for devices running iOS and iPadOS versions 14 and later.
+        /// </summary>
+        [JsonPropertyName("signInHelpText")]
+        public string SignInHelpText { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.

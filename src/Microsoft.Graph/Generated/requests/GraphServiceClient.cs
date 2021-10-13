@@ -73,6 +73,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceWorkbooks request builder.
+        /// </summary>
+        public virtual IGraphServiceWorkbooksCollectionRequestBuilder Workbooks
+        {
+            get
+            {
+                return new GraphServiceWorkbooksCollectionRequestBuilder(this.BaseUrl + "/workbooks", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceInvitations request builder.
         /// </summary>
         public virtual IGraphServiceInvitationsCollectionRequestBuilder Invitations
@@ -86,6 +97,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceUsers request builder.
         /// </summary>
+        [Obsolete("")]
         public virtual IGraphServiceUsersCollectionRequestBuilder Users
         {
             get
@@ -954,6 +966,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServicePrivacy request builder.
+        /// </summary>
+        public virtual IPrivacyRequestBuilder Privacy
+        {
+            get
+            {
+                return new PrivacyRequestBuilder(this.BaseUrl + "/privacy", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceCompliance request builder.
         /// </summary>
         public virtual IComplianceRequestBuilder Compliance
@@ -1033,6 +1056,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
+        [Obsolete("")]
         public virtual IUserRequestBuilder Me
         {
             get

@@ -95,6 +95,21 @@ namespace Microsoft.Graph
         AzureAdDeviceSyncCheckLongSyncCircle = 401,
 	
         /// <summary>
+        /// Azure Ad Device Sync Check Connect Disabled
+        /// </summary>
+        AzureAdDeviceSyncCheckConnectDisabled = 402,
+	
+        /// <summary>
+        /// Azure Ad Device Sync Check Duration Exceeded
+        /// </summary>
+        AzureAdDeviceSyncCheckDurationExceeded = 403,
+	
+        /// <summary>
+        /// Azure Ad Device Sync Check Transient Service Error
+        /// </summary>
+        AzureAdDeviceSyncCheckTransientServiceError = 498,
+	
+        /// <summary>
         /// Azure Ad Device Sync Check Unknown Error
         /// </summary>
         AzureAdDeviceSyncCheckUnknownError = 499,
@@ -135,6 +150,11 @@ namespace Microsoft.Graph
         ResourceAvailabilityCheckUnsupportedVNetRegion = 506,
 	
         /// <summary>
+        /// Resource Availability Check Transient Service Error
+        /// </summary>
+        ResourceAvailabilityCheckTransientServiceError = 598,
+	
+        /// <summary>
         /// Resource Availability Check Unknown Error
         /// </summary>
         ResourceAvailabilityCheckUnknownError = 599,
@@ -158,6 +178,11 @@ namespace Microsoft.Graph
         /// Permission Check No Resource Group Network Contributor Role
         /// </summary>
         PermissionCheckNoResourceGroupNetworkContributorRole = 603,
+	
+        /// <summary>
+        /// Permission Check Transient Service Error
+        /// </summary>
+        PermissionCheckTransientServiceError = 698,
 	
         /// <summary>
         /// Permission Check Unknown Error

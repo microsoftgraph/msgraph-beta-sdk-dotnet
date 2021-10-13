@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User.
     /// </summary>
+    [Obsolete("")]
     public partial class User : DirectoryObject
     {
     
@@ -225,7 +226,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last password change date time.
-        /// The time when this Azure AD user last changed their password. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
+        /// The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
         /// </summary>
         [JsonPropertyName("lastPasswordChangeDateTime")]
         public DateTimeOffset? LastPasswordChangeDateTime { get; set; }
@@ -456,7 +457,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user type.
-        /// A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in).
+        /// A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
         /// </summary>
         [JsonPropertyName("userType")]
         public string UserType { get; set; }

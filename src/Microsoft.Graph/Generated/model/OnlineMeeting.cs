@@ -230,6 +230,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("meetingAttendanceReport")]
         public MeetingAttendanceReport MeetingAttendanceReport { get; set; }
     
+        /// <summary>
+        /// Gets or sets registration.
+        /// </summary>
+        [JsonPropertyName("registration")]
+        public MeetingRegistration Registration { get; set; }
+    
     }
 }
 

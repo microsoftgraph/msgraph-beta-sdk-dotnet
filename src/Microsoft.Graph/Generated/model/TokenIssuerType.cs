@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 2,
 	
+        /// <summary>
+        /// Azure ADBackup Auth
+        /// </summary>
+        AzureADBackupAuth = 3,
+	
     }
 }

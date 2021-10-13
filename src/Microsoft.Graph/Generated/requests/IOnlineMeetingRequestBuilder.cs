@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMeetingAttendanceReportRequestBuilder"/>.</returns>
         IMeetingAttendanceReportRequestBuilder MeetingAttendanceReport { get; }
+
+        /// <summary>
+        /// Gets the request builder for Registration.
+        /// </summary>
+        /// <returns>The <see cref="IMeetingRegistrationRequestBuilder"/>.</returns>
+        IMeetingRegistrationRequestBuilder Registration { get; }
     
         /// <summary>
         /// Gets the request builder for AlternativeRecording.

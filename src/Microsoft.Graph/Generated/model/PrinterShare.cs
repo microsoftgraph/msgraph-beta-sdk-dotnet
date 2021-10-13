@@ -60,6 +60,7 @@ namespace Microsoft.Graph
         /// Gets or sets allowed users.
         /// The users who have access to print using the printer.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("allowedUsers")]
         public IPrinterShareAllowedUsersCollectionWithReferencesPage AllowedUsers { get; set; }
 
