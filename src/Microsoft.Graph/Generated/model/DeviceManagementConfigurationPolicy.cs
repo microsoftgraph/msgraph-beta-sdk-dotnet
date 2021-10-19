@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platforms.
-        /// Platforms for this policy. Possible values are: none, macOS, windows10X, windows10.
+        /// Platforms for this policy. Possible values are: none, android, iOS, macOS, windows10X, windows10.
         /// </summary>
         [JsonPropertyName("platforms")]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline.
+        /// Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }

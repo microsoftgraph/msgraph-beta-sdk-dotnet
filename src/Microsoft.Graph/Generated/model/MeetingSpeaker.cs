@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets bio.
+        /// Bio of the speaker.
         /// </summary>
         [JsonPropertyName("bio")]
         public string Bio { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// Display name of the speaker.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

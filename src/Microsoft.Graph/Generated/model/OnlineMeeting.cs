@@ -226,12 +226,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets meeting attendance report.
+        /// The attendance report of an online meeting. Read-only.
         /// </summary>
         [JsonPropertyName("meetingAttendanceReport")]
         public MeetingAttendanceReport MeetingAttendanceReport { get; set; }
     
         /// <summary>
         /// Gets or sets registration.
+        /// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
         /// </summary>
         [JsonPropertyName("registration")]
         public MeetingRegistration Registration { get; set; }

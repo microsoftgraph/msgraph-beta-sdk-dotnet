@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets mode.
+        /// Specifies continuous access evaluation settings. The possible values are: strictEnforcement, disabled, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("mode")]
         public ContinuousAccessEvaluationMode? Mode { get; set; }

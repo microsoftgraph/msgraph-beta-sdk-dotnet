@@ -23,42 +23,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets excludedItemCount.
+        /// Count of items that are excluded from the request.
         /// </summary>
         [JsonPropertyName("excludedItemCount")]
         public Int64? ExcludedItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets insightCounts.
+        /// Count of items per insight.
         /// </summary>
         [JsonPropertyName("insightCounts")]
         public IEnumerable<KeyValuePair> InsightCounts { get; set; }
     
         /// <summary>
         /// Gets or sets itemCount.
+        /// Count of items found.
         /// </summary>
         [JsonPropertyName("itemCount")]
         public Int64? ItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets itemNeedReview.
+        /// Count of item that need review.
         /// </summary>
         [JsonPropertyName("itemNeedReview")]
         public Int64? ItemNeedReview { get; set; }
     
         /// <summary>
         /// Gets or sets productItemCounts.
+        /// Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
         /// </summary>
         [JsonPropertyName("productItemCounts")]
         public IEnumerable<KeyValuePair> ProductItemCounts { get; set; }
     
         /// <summary>
         /// Gets or sets signedOffItemCount.
+        /// Count of items signed off by the administrator.
         /// </summary>
         [JsonPropertyName("signedOffItemCount")]
         public Int64? SignedOffItemCount { get; set; }
     
         /// <summary>
         /// Gets or sets totalItemSize.
+        /// Total item size in bytes.
         /// </summary>
         [JsonPropertyName("totalItemSize")]
         public Int64? TotalItemSize { get; set; }

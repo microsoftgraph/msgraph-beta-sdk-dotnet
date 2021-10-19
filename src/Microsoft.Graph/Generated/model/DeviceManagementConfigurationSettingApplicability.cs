@@ -37,14 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platform.
-        /// Platform setting can be applied on. Possible values are: none, macOS, windows10X, windows10.
+        /// Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10.
         /// </summary>
         [JsonPropertyName("platform")]
         public DeviceManagementConfigurationPlatforms? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline.
+        /// Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }

@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets continuousAccessEvaluation.
+        /// Session control for continuous access evaluation settings.
         /// </summary>
         [JsonPropertyName("continuousAccessEvaluation")]
         public ContinuousAccessEvaluationSessionControl ContinuousAccessEvaluation { get; set; }
