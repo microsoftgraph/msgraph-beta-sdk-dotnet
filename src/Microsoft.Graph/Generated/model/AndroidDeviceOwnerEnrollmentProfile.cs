@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrollment mode.
-        /// The enrollment mode of devices that use this enrollment profile. Possible values are: corporateOwnedDedicatedDevice, corporateOwnedFullyManaged, corporateOwnedWorkProfile.
+        /// The enrollment mode of devices that use this enrollment profile. Possible values are: corporateOwnedDedicatedDevice, corporateOwnedFullyManaged, corporateOwnedWorkProfile, corporateOwnedAOSPUserlessDevice, corporateOwnedAOSPUserAssociatedDevice.
         /// </summary>
         [JsonPropertyName("enrollmentMode")]
         public AndroidDeviceOwnerEnrollmentMode? EnrollmentMode { get; set; }
@@ -142,7 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets wifi security type.
-        /// String that contains the wi-fi security type
+        /// String that contains the wi-fi security type. Possible values are: none, wpa, wep.
         /// </summary>
         [JsonPropertyName("wifiSecurityType")]
         public AospWifiSecurityType? WifiSecurityType { get; set; }

@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets error.
+        /// Describes the error, if any, for the current stage.
         /// </summary>
         [JsonPropertyName("error")]
         public PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets stage.
+        /// The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("stage")]
         public SubjectRightsRequestStage? Stage { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public SubjectRightsRequestStageStatus? Status { get; set; }

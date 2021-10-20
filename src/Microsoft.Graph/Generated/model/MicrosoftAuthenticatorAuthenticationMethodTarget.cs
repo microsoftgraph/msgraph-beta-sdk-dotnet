@@ -38,14 +38,13 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display app information required state.
-        /// Determines whether the app the user is signing into should be shown to the user in the body of the notification. Possible values are: enabled, disabled, default.
+        /// Determines whether the user is shown additional context in their Authenticator app notification. In the body of the Authenticator notification, the user will be shown the app they are signing into along with the location that the authentication request originated from. Possible values are: enabled, disabled, default.
         /// </summary>
         [JsonPropertyName("displayAppInformationRequiredState")]
         public AdvancedConfigState? DisplayAppInformationRequiredState { get; set; }
     
         /// <summary>
         /// Gets or sets display location information required state.
-        /// Determines whether the location of the sign-in should be shown to the user in the body of the notification. Possible values are: enabled, disabled, default.
         /// </summary>
         [JsonPropertyName("displayLocationInformationRequiredState")]
         public AdvancedConfigState? DisplayLocationInformationRequiredState { get; set; }

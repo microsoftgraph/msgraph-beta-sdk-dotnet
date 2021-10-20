@@ -23,108 +23,126 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assigned to.
+        /// Identity that the request is assigned to.
         /// </summary>
         [JsonPropertyName("assignedTo")]
         public Identity AssignedTo { get; set; }
     
         /// <summary>
         /// Gets or sets closed date time.
+        /// The date and time when the request was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("closedDateTime")]
         public DateTimeOffset? ClosedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// Identity information for the entity that created the request.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time when the request was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets data subject.
+        /// Information about the data subject.
         /// </summary>
         [JsonPropertyName("dataSubject")]
         public DataSubject DataSubject { get; set; }
     
         /// <summary>
         /// Gets or sets data subject type.
+        /// The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("dataSubjectType")]
         public DataSubjectType? DataSubjectType { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// Description for the request.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The name of the request.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets history.
+        /// Collection of history change events.
         /// </summary>
         [JsonPropertyName("history")]
         public IEnumerable<SubjectRightsRequestHistory> History { get; set; }
     
         /// <summary>
         /// Gets or sets insight.
+        /// Insight about the request.
         /// </summary>
         [JsonPropertyName("insight")]
         public SubjectRightsRequestDetail Insight { get; set; }
     
         /// <summary>
         /// Gets or sets internal due date time.
+        /// The date and time when the request is internally due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("internalDueDateTime")]
         public DateTimeOffset? InternalDueDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// Identity information for the entity that last modified the request.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date and time when the request was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets regulations.
+        /// List of regulations that this request will fulfill.
         /// </summary>
         [JsonPropertyName("regulations")]
         public IEnumerable<string> Regulations { get; set; }
     
         /// <summary>
         /// Gets or sets stages.
+        /// Information about the different stages for the request.
         /// </summary>
         [JsonPropertyName("stages")]
         public IEnumerable<SubjectRightsRequestStageDetail> Stages { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the request.. Possible values are: active, closed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public SubjectRightsRequestStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("type")]
         public SubjectRightsRequestType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets notes.
+        /// List of notes associcated with the request.
         /// </summary>
         [JsonPropertyName("notes")]
         public ISubjectRightsRequestNotesCollectionPage Notes { get; set; }
@@ -138,6 +156,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets team.
+        /// Information about the Microsoft Teams team that was created for the request.
         /// </summary>
         [JsonPropertyName("team")]
         public Team Team { get; set; }

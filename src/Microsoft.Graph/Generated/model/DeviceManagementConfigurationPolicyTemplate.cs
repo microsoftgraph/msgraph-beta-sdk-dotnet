@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platforms.
-        /// Platforms for this template. Possible values are: none, macOS, windows10X, windows10.
+        /// Platforms for this template. Possible values are: none, android, iOS, macOS, windows10X, windows10.
         /// </summary>
         [JsonPropertyName("platforms")]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
@@ -79,14 +79,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline.
+        /// Technologies for this template. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
     
         /// <summary>
         /// Gets or sets template family.
-        /// TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl.
+        /// TemplateFamily for this template. Possible values are: none, endpointSecurityAntivirus, endpointSecurityDiskEncryption, endpointSecurityFirewall, endpointSecurityEndpointDetectionAndResponse, endpointSecurityAttackSurfaceReduction, endpointSecurityAccountProtection, endpointSecurityApplicationControl, baseline.
         /// </summary>
         [JsonPropertyName("templateFamily")]
         public DeviceManagementConfigurationTemplateFamily? TemplateFamily { get; set; }
