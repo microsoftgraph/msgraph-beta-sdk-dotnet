@@ -455,6 +455,48 @@ namespace Microsoft.Graph
         public SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary { get; set; }
     
         /// <summary>
+        /// Gets or sets compliance categories.
+        /// List of all compliance categories
+        /// </summary>
+        [JsonPropertyName("complianceCategories")]
+        public IDeviceManagementComplianceCategoriesCollectionPage ComplianceCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets complianceCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("complianceCategories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ComplianceCategoriesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets compliance policies.
+        /// List of all compliance policies
+        /// </summary>
+        [JsonPropertyName("compliancePolicies")]
+        public IDeviceManagementCompliancePoliciesCollectionPage CompliancePolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets compliancePoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("compliancePolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CompliancePoliciesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets compliance settings.
+        /// List of all ComplianceSettings
+        /// </summary>
+        [JsonPropertyName("complianceSettings")]
+        public IDeviceManagementComplianceSettingsCollectionPage ComplianceSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets complianceSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("complianceSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ComplianceSettingsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets configuration categories.
         /// List of all Configuration Categories
         /// </summary>
@@ -1062,6 +1104,104 @@ namespace Microsoft.Graph
         [JsonPropertyName("userExperienceAnalyticsBaselines@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsBaselinesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics battery health app impact.
+        /// User Experience Analytics Battery Health App Impact
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthAppImpact")]
+        public IDeviceManagementUserExperienceAnalyticsBatteryHealthAppImpactCollectionPage UserExperienceAnalyticsBatteryHealthAppImpact { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsBatteryHealthAppImpactNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthAppImpact@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsBatteryHealthAppImpactNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics battery health capacity details.
+        /// User Experience Analytics Battery Health Capacity Details
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthCapacityDetails")]
+        public UserExperienceAnalyticsBatteryHealthCapacityDetails UserExperienceAnalyticsBatteryHealthCapacityDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics battery health device app impact.
+        /// User Experience Analytics Battery Health Device App Impact
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthDeviceAppImpact")]
+        public IDeviceManagementUserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionPage UserExperienceAnalyticsBatteryHealthDeviceAppImpact { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsBatteryHealthDeviceAppImpactNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthDeviceAppImpact@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsBatteryHealthDeviceAppImpactNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics battery health device performance.
+        /// User Experience Analytics Battery Health Device Performance
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthDevicePerformance")]
+        public IDeviceManagementUserExperienceAnalyticsBatteryHealthDevicePerformanceCollectionPage UserExperienceAnalyticsBatteryHealthDevicePerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsBatteryHealthDevicePerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthDevicePerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsBatteryHealthDevicePerformanceNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics battery health device runtime history.
+        /// User Experience Analytics Battery Health Device Runtime History
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory")]
+        public IDeviceManagementUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionPage UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics battery health model performance.
+        /// User Experience Analytics Battery Health Model Performance
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthModelPerformance")]
+        public IDeviceManagementUserExperienceAnalyticsBatteryHealthModelPerformanceCollectionPage UserExperienceAnalyticsBatteryHealthModelPerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsBatteryHealthModelPerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthModelPerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsBatteryHealthModelPerformanceNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics battery health os performance.
+        /// User Experience Analytics Battery Health Os Performance
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthOsPerformance")]
+        public IDeviceManagementUserExperienceAnalyticsBatteryHealthOsPerformanceCollectionPage UserExperienceAnalyticsBatteryHealthOsPerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsBatteryHealthOsPerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthOsPerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsBatteryHealthOsPerformanceNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics battery health runtime details.
+        /// User Experience Analytics Battery Health Runtime Details
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsBatteryHealthRuntimeDetails")]
+        public UserExperienceAnalyticsBatteryHealthRuntimeDetails UserExperienceAnalyticsBatteryHealthRuntimeDetails { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics categories.

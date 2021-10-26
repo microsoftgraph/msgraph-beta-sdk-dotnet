@@ -22,18 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets author.
+        /// Identity information about the note's author.
         /// </summary>
         [JsonPropertyName("author")]
         public Identity Author { get; set; }
     
         /// <summary>
         /// Gets or sets content.
+        /// The content of the note.
         /// </summary>
         [JsonPropertyName("content")]
         public ItemBody Content { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }

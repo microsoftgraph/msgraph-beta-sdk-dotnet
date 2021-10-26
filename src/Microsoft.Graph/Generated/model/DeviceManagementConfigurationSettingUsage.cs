@@ -30,5 +30,10 @@ namespace Microsoft.Graph
         /// </summary>
         Configuration = 1,
 	
+        /// <summary>
+        /// Compliance
+        /// </summary>
+        Compliance = 2,
+	
     }
 }

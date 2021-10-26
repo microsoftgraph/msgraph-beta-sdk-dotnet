@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets changedBy.
+        /// Identity of the user who changed the  subject rights request.
         /// </summary>
         [JsonPropertyName("changedBy")]
         public IdentitySet ChangedBy { get; set; }
     
         /// <summary>
         /// Gets or sets eventDateTime.
+        /// Data and time when the entity was changed.
         /// </summary>
         [JsonPropertyName("eventDateTime")]
         public DateTimeOffset? EventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets stage.
+        /// The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("stage")]
         public SubjectRightsRequestStage? Stage { get; set; }
     
         /// <summary>
         /// Gets or sets stageStatus.
+        /// The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("stageStatus")]
         public SubjectRightsRequestStageStatus? StageStatus { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Type of history.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

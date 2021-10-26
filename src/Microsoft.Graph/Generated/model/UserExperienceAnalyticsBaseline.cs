@@ -49,6 +49,13 @@ namespace Microsoft.Graph
         public UserExperienceAnalyticsCategory AppHealthMetrics { get; set; }
     
         /// <summary>
+        /// Gets or sets battery health metrics.
+        /// The user experience analytics battery health metrics.
+        /// </summary>
+        [JsonPropertyName("batteryHealthMetrics")]
+        public UserExperienceAnalyticsCategory BatteryHealthMetrics { get; set; }
+    
+        /// <summary>
         /// Gets or sets best practices metrics.
         /// The user experience analytics best practices metrics.
         /// </summary>

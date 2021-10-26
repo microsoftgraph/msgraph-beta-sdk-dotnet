@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets chat type.
-        /// Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
+        /// Specifies the type of chat. Possible values are: group, oneOnOne, meeting, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("chatType")]
         public ChatType? ChatType { get; set; }

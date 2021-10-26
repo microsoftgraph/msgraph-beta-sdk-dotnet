@@ -23,13 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets keyCredentials.
+        /// Collection of keyCredential restrictions settings to be applied to an application or service principal.
         /// </summary>
         [JsonPropertyName("keyCredentials")]
         public IEnumerable<KeyCredentialConfiguration> KeyCredentials { get; set; }
     
         /// <summary>
         /// Gets or sets passwordCredentials.
-        /// Collection of password restrictions settings to be applied to an application or service principal
+        /// Collection of password restrictions settings to be applied to an application or service principal.
         /// </summary>
         [JsonPropertyName("passwordCredentials")]
         public IEnumerable<PasswordCredentialConfiguration> PasswordCredentials { get; set; }

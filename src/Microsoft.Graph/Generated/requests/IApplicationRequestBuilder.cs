@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IApplicationExtensionPropertiesCollectionRequestBuilder ExtensionProperties { get; }
 
         /// <summary>
+        /// Gets the request builder for FederatedIdentityCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationFederatedIdentityCredentialsCollectionRequestBuilder"/>.</returns>
+        IApplicationFederatedIdentityCredentialsCollectionRequestBuilder FederatedIdentityCredentials { get; }
+
+        /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
         /// <returns>The <see cref="IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>

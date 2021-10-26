@@ -34,5 +34,20 @@ namespace Microsoft.Graph
         /// </summary>
         HoloLens = 2,
 	
+        /// <summary>
+        /// Surface Hub2S
+        /// </summary>
+        SurfaceHub2S = 3,
+	
+        /// <summary>
+        /// Virtual Machine
+        /// </summary>
+        VirtualMachine = 4,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 99,
+	
     }
 }

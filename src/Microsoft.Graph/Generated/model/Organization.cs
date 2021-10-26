@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets country letter code.
-        /// Country/region abbreviation for the organization.
+        /// Country or region abbreviation for the organization in ISO 3166-2 format.
         /// </summary>
         [JsonPropertyName("countryLetterCode")]
         public string CountryLetterCode { get; set; }

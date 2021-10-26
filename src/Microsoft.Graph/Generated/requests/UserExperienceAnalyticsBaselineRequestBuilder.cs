@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for BatteryHealthMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        public IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder BatteryHealthMetrics
+        {
+            get
+            {
+                return new UserExperienceAnalyticsCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("batteryHealthMetrics"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for BestPracticesMetrics.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>

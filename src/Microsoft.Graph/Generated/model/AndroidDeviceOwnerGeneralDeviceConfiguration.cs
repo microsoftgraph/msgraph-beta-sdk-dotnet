@@ -290,14 +290,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets kiosk mode managed home screen inactive sign out delay in seconds.
-        /// Number of seconds to give user notice before automatically signing them out for Managed Home Screen. Valid values 1 to 9999999
+        /// Number of seconds to give user notice before automatically signing them out for Managed Home Screen. Valid values 0 to 9999999
         /// </summary>
         [JsonPropertyName("kioskModeManagedHomeScreenInactiveSignOutDelayInSeconds")]
         public Int32? KioskModeManagedHomeScreenInactiveSignOutDelayInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets kiosk mode managed home screen inactive sign out notice in seconds.
-        /// Number of seconds device is inactive before automatically signing user out for Managed Home Screen. Valid values 1 to 9999999
+        /// Number of seconds device is inactive before automatically signing user out for Managed Home Screen. Valid values 0 to 9999999
         /// </summary>
         [JsonPropertyName("kioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds")]
         public Int32? KioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds { get; set; }

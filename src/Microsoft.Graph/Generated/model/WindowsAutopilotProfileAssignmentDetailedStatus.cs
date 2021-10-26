@@ -44,5 +44,15 @@ namespace Microsoft.Graph
         /// </summary>
         WindowsPcProfileNotSupported = 4,
 	
+        /// <summary>
+        /// Surface Hub2SProfile Not Supported
+        /// </summary>
+        SurfaceHub2SProfileNotSupported = 5,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 99,
+	
     }
 }

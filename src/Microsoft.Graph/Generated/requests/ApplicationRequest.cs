@@ -258,6 +258,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     applicationToInitialize.ExtensionProperties.AdditionalData = applicationToInitialize.AdditionalData;
                 }
+                if (applicationToInitialize.FederatedIdentityCredentials != null && applicationToInitialize.FederatedIdentityCredentials.CurrentPage != null)
+                {
+                    applicationToInitialize.FederatedIdentityCredentials.InitializeNextPageRequest(this.Client, applicationToInitialize.FederatedIdentityCredentialsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    applicationToInitialize.FederatedIdentityCredentials.AdditionalData = applicationToInitialize.AdditionalData;
+                }
                 if (applicationToInitialize.HomeRealmDiscoveryPolicies != null && applicationToInitialize.HomeRealmDiscoveryPolicies.CurrentPage != null)
                 {
                     applicationToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(this.Client, applicationToInitialize.HomeRealmDiscoveryPoliciesNextLink);

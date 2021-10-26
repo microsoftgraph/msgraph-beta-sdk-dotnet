@@ -74,5 +74,15 @@ namespace Microsoft.Graph
         /// </summary>
         CiscoAnyConnect = 10,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 11,
+	
+        /// <summary>
+        /// Microsoft Tunnel
+        /// </summary>
+        MicrosoftTunnel = 12,
+	
     }
 }

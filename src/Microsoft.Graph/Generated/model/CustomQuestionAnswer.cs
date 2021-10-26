@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
+        /// Display name of the custom registration question. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets questionId.
+        /// ID the custom registration question. Read-only.
         /// </summary>
         [JsonPropertyName("questionId")]
         public string QuestionId { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// Answer to the custom registration question.
         /// </summary>
         [JsonPropertyName("value")]
         public string Value { get; set; }

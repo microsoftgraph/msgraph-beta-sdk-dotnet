@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         IUserRequestBuilder this[string id] { get; }
 
         /// <summary>
+        /// Gets the request builder for UserValidatePassword.
+        /// </summary>
+        /// <returns>The <see cref="IUserValidatePasswordRequestBuilder"/>.</returns>
+        IUserValidatePasswordRequestBuilder ValidatePassword(
+            string password);
+
+        /// <summary>
         /// Gets the request builder for UserDelta.
         /// </summary>
         /// <returns>The <see cref="IUserDeltaRequestBuilder"/>.</returns>

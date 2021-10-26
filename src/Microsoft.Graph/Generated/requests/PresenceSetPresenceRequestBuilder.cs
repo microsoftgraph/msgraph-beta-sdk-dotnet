@@ -23,22 +23,22 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        /// <param name="sessionId">A sessionId parameter for the OData method call.</param>
         /// <param name="availability">A availability parameter for the OData method call.</param>
         /// <param name="activity">A activity parameter for the OData method call.</param>
+        /// <param name="sessionId">A sessionId parameter for the OData method call.</param>
         /// <param name="expirationDuration">A expirationDuration parameter for the OData method call.</param>
         public PresenceSetPresenceRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            string sessionId,
             string availability,
             string activity,
+            string sessionId,
             Duration expirationDuration)
             : base(requestUrl, client)
         {
-            this.SetParameter("sessionId", sessionId, false);
             this.SetParameter("availability", availability, false);
             this.SetParameter("activity", activity, false);
+            this.SetParameter("sessionId", sessionId, true);
             this.SetParameter("expirationDuration", expirationDuration, true);
         }
 
@@ -52,11 +52,6 @@ namespace Microsoft.Graph
         {
             var request = new PresenceSetPresenceRequest(functionUrl, this.Client, options);
 
-            if (this.HasParameter("sessionId"))
-            {
-                request.RequestBody.SessionId = this.GetParameter<string>("sessionId");
-            }
-
             if (this.HasParameter("availability"))
             {
                 request.RequestBody.Availability = this.GetParameter<string>("availability");
@@ -65,6 +60,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("activity"))
             {
                 request.RequestBody.Activity = this.GetParameter<string>("activity");
+            }
+
+            if (this.HasParameter("sessionId"))
+            {
+                request.RequestBody.SessionId = this.GetParameter<string>("sessionId");
             }
 
             if (this.HasParameter("expirationDuration"))

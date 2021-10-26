@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets category description.
+        /// Description of the category header
+        /// </summary>
+        [JsonPropertyName("categoryDescription")]
+        public string CategoryDescription { get; set; }
+    
+        /// <summary>
         /// Gets or sets child category ids.
         /// List of child ids of the category.
         /// </summary>
@@ -65,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platforms.
-        /// Platforms types, which settings in the category have. Possible values are: none, macOS, windows10X, windows10.
+        /// Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10.
         /// </summary>
         [JsonPropertyName("platforms")]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
@@ -79,14 +86,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets setting usage.
-        /// Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration.
+        /// Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
         /// </summary>
         [JsonPropertyName("settingUsage")]
         public DeviceManagementConfigurationSettingUsage? SettingUsage { get; set; }
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline.
+        /// Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }

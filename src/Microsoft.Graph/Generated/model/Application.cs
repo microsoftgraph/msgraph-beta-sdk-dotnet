@@ -274,6 +274,20 @@ namespace Microsoft.Graph
         public string ExtensionPropertiesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets federated identity credentials.
+        /// Federated identities for applications. This object can only be retrieved on a single GET request (GET /applications/{id}/federatedIdentityCredentials).
+        /// </summary>
+        [JsonPropertyName("federatedIdentityCredentials")]
+        public IApplicationFederatedIdentityCredentialsCollectionPage FederatedIdentityCredentials { get; set; }
+
+        /// <summary>
+        /// Gets or sets federatedIdentityCredentialsNextLink.
+        /// </summary>
+        [JsonPropertyName("federatedIdentityCredentials@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string FederatedIdentityCredentialsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets home realm discovery policies.
         /// </summary>
         [JsonPropertyName("homeRealmDiscoveryPolicies")]

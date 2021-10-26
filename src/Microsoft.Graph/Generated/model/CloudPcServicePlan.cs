@@ -23,36 +23,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The name for the service plan. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets ram in gb.
+        /// The size of the RAM in GB. Read-only.
         /// </summary>
         [JsonPropertyName("ramInGB")]
         public Int32? RamInGB { get; set; }
     
         /// <summary>
         /// Gets or sets storage in gb.
+        /// The size of the OS Disk in GB. Read-only.
         /// </summary>
         [JsonPropertyName("storageInGB")]
         public Int32? StorageInGB { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("type")]
         public CloudPcServicePlanType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets user profile in gb.
+        /// The size of the user profile disk in GB. Read-only.
         /// </summary>
         [JsonPropertyName("userProfileInGB")]
         public Int32? UserProfileInGB { get; set; }
     
         /// <summary>
         /// Gets or sets v cpu count.
+        /// The number of vCPUs. Read-only.
         /// </summary>
         [JsonPropertyName("vCpuCount")]
         public Int32? VCpuCount { get; set; }

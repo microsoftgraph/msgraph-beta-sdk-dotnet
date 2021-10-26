@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service announcement.
+        /// A container for service communications resources. Read-only.
         /// </summary>
         [JsonPropertyName("serviceAnnouncement")]
         public ServiceAnnouncement ServiceAnnouncement { get; set; }
     
         /// <summary>
         /// Gets or sets windows.
+        /// A container for all Windows Update for Business deployment service functionality. Read-only.
         /// </summary>
         [JsonPropertyName("windows")]
         public Microsoft.Graph.WindowsUpdates.Windows Windows { get; set; }

@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets setting definitions.
-        /// List of related Setting Definitions
+        /// List of related Setting Definitions. This property is read-only.
         /// </summary>
         [JsonPropertyName("settingDefinitions")]
         public IDeviceManagementConfigurationSettingSettingDefinitionsCollectionWithReferencesPage SettingDefinitions { get; set; }

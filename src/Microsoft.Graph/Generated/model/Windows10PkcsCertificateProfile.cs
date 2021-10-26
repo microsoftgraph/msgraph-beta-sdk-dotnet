@@ -87,7 +87,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed device certificate states.
-        /// Certificate state for devices
+        /// Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
         /// </summary>
         [JsonPropertyName("managedDeviceCertificateStates")]
         public IWindows10PkcsCertificateProfileManagedDeviceCertificateStatesCollectionPage ManagedDeviceCertificateStates { get; set; }

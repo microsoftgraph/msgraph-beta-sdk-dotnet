@@ -23,24 +23,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets answer input type.
+        /// Answer input type of the custom registration question.
         /// </summary>
         [JsonPropertyName("answerInputType")]
         public AnswerInputType? AnswerInputType { get; set; }
     
         /// <summary>
         /// Gets or sets answer options.
+        /// Answer options when answerInputType is radioButton.
         /// </summary>
         [JsonPropertyName("answerOptions")]
         public IEnumerable<string> AnswerOptions { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Display name of the custom registration question.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is required.
+        /// Indicates whether the question is required. Default value is false.
         /// </summary>
         [JsonPropertyName("isRequired")]
         public bool? IsRequired { get; set; }
