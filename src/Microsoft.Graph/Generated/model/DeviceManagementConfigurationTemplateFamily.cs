@@ -59,5 +59,10 @@ namespace Microsoft.Graph
         /// </summary>
         EndpointSecurityApplicationControl = 16,
 	
+        /// <summary>
+        /// Baseline
+        /// </summary>
+        Baseline = 20,
+	
     }
 }

@@ -213,7 +213,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets root certificates for server validation.
-        /// Specify root certificate for server validation.
+        /// Specify root certificate for server validation. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonPropertyName("rootCertificatesForServerValidation")]
         public IWindowsWifiEnterpriseEAPConfigurationRootCertificatesForServerValidationCollectionPage RootCertificatesForServerValidation { get; set; }

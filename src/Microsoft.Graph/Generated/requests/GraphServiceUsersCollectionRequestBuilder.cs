@@ -61,6 +61,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserValidatePassword.
+        /// </summary>
+        /// <returns>The <see cref="IUserValidatePasswordRequestBuilder"/>.</returns>
+        public IUserValidatePasswordRequestBuilder ValidatePassword(
+            string password)
+        {
+            return new UserValidatePasswordRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.validatePassword"),
+                this.Client,
+                password);
+        }
+
+        /// <summary>
         /// Gets the request builder for UserDelta.
         /// </summary>
         /// <returns>The <see cref="IUserDeltaRequestBuilder"/>.</returns>

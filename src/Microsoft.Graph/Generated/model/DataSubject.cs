@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets email.
+        /// Email of the data subject.
         /// </summary>
         [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets firstName.
+        /// First name of the data subject.
         /// </summary>
         [JsonPropertyName("firstName")]
         public string FirstName { get; set; }
     
         /// <summary>
         /// Gets or sets lastName.
+        /// Last Name of the data subject.
         /// </summary>
         [JsonPropertyName("lastName")]
         public string LastName { get; set; }
     
         /// <summary>
         /// Gets or sets residency.
+        /// The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.
         /// </summary>
         [JsonPropertyName("residency")]
         public string Residency { get; set; }

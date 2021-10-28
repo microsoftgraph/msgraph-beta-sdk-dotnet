@@ -142,6 +142,13 @@ namespace Microsoft.Graph
         public bool? FingerprintBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets grace period to block apps during off clock hours.
+        /// A grace period before blocking app access during off clock hours.
+        /// </summary>
+        [JsonPropertyName("gracePeriodToBlockAppsDuringOffClockHours")]
+        public Duration GracePeriodToBlockAppsDuringOffClockHours { get; set; }
+    
+        /// <summary>
         /// Gets or sets managed browser.
         /// Indicates in which managed browser(s) that internet links should be opened. When this property is configured, ManagedBrowserToOpenLinksRequired should be true. Possible values are: notConfigured, microsoftEdge.
         /// </summary>

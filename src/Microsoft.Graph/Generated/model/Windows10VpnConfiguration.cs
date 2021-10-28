@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connection type.
-        /// Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, automatic, ikEv2, l2tp, pptp, citrix, paloAltoGlobalProtect, ciscoAnyConnect.
+        /// Connection type. Possible values are: pulseSecure, f5EdgeClient, dellSonicWallMobileConnect, checkPointCapsuleVpn, automatic, ikEv2, l2tp, pptp, citrix, paloAltoGlobalProtect, ciscoAnyConnect, unknownFutureValue, microsoftTunnel.
         /// </summary>
         [JsonPropertyName("connectionType")]
         public Windows10VpnConnectionType? ConnectionType { get; set; }
@@ -119,6 +119,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("enableSplitTunneling")]
         public bool? EnableSplitTunneling { get; set; }
+    
+        /// <summary>
+        /// Gets or sets microsoft tunnel site id.
+        /// ID of the Microsoft Tunnel site associated with the VPN profile.
+        /// </summary>
+        [JsonPropertyName("microsoftTunnelSiteId")]
+        public string MicrosoftTunnelSiteId { get; set; }
     
         /// <summary>
         /// Gets or sets only associated apps can use connection.

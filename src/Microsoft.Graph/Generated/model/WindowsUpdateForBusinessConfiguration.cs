@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allow windows11upgrade.
+        /// Allow eligible Windows 10 devices to upgrade to the latest version of Windows 11.
+        /// </summary>
+        [JsonPropertyName("allowWindows11Upgrade")]
+        public bool? AllowWindows11Upgrade { get; set; }
+    
+        /// <summary>
         /// Gets or sets automatic update mode.
         /// Automatic update mode. Possible values are: userDefined, notifyDownload, autoInstallAtMaintenanceTime, autoInstallAndRebootAtMaintenanceTime, autoInstallAndRebootAtScheduledTime, autoInstallAndRebootWithoutEndUserControl.
         /// </summary>
@@ -276,7 +283,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device update states.
-        /// Windows update for business configuration device states.
+        /// Windows update for business configuration device states. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonPropertyName("deviceUpdateStates")]
         public IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionPage DeviceUpdateStates { get; set; }

@@ -101,7 +101,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets root certificates for server validation.
-        /// Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa.
+        /// Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. If you provide this value you do not need to provide trustedServerCertificateNames, and vice versa. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonPropertyName("rootCertificatesForServerValidation")]
         public IIosEnterpriseWiFiConfigurationRootCertificatesForServerValidationCollectionPage RootCertificatesForServerValidation { get; set; }

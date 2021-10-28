@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TenantRelationshipRequestBuilder.
     /// </summary>
-    public partial class TenantRelationshipRequestBuilder : BaseRequestBuilder, ITenantRelationshipRequestBuilder
+    public partial class TenantRelationshipRequestBuilder : EntityRequestBuilder, ITenantRelationshipRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public ITenantRelationshipRequest Request()
+        public new ITenantRelationshipRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public ITenantRelationshipRequest Request(IEnumerable<Option> options)
+        public new ITenantRelationshipRequest Request(IEnumerable<Option> options)
         {
             return new TenantRelationshipRequest(this.RequestUrl, this.Client, options);
         }

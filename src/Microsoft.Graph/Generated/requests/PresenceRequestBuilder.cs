@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPresenceClearPresenceRequestBuilder"/>.</returns>
         public IPresenceClearPresenceRequestBuilder ClearPresence(
-            string sessionId)
+            string sessionId = null)
         {
             return new PresenceClearPresenceRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.clearPresence"),
@@ -68,17 +68,17 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPresenceSetPresenceRequestBuilder"/>.</returns>
         public IPresenceSetPresenceRequestBuilder SetPresence(
-            string sessionId,
             string availability,
             string activity,
+            string sessionId = null,
             Duration expirationDuration = null)
         {
             return new PresenceSetPresenceRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.setPresence"),
                 this.Client,
-                sessionId,
                 availability,
                 activity,
+                sessionId,
                 expirationDuration);
         }
     

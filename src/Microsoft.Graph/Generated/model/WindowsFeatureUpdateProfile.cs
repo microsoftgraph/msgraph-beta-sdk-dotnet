@@ -77,6 +77,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
+        /// Gets or sets rollout settings.
+        /// The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.
+        /// </summary>
+        [JsonPropertyName("rolloutSettings")]
+        public WindowsUpdateRolloutSettings RolloutSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignments.
         /// The list of group assignments of the profile.
         /// </summary>

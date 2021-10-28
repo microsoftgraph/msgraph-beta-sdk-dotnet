@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder AppHealthMetrics { get; }
 
         /// <summary>
+        /// Gets the request builder for BatteryHealthMetrics.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder BatteryHealthMetrics { get; }
+
+        /// <summary>
         /// Gets the request builder for BestPracticesMetrics.
         /// </summary>
         /// <returns>The <see cref="IUserExperienceAnalyticsCategoryWithReferenceRequestBuilder"/>.</returns>

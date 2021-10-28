@@ -26,6 +26,7 @@ namespace Microsoft.Graph
         /// <param name="actionName">A actionName parameter for the OData method call.</param>
         /// <param name="keepEnrollmentData">A keepEnrollmentData parameter for the OData method call.</param>
         /// <param name="keepUserData">A keepUserData parameter for the OData method call.</param>
+        /// <param name="persistEsimDataPlan">A persistEsimDataPlan parameter for the OData method call.</param>
         /// <param name="deviceIds">A deviceIds parameter for the OData method call.</param>
         /// <param name="notificationTitle">A notificationTitle parameter for the OData method call.</param>
         /// <param name="notificationBody">A notificationBody parameter for the OData method call.</param>
@@ -39,6 +40,7 @@ namespace Microsoft.Graph
             ManagedDeviceRemoteAction actionName,
             bool? keepEnrollmentData,
             bool? keepUserData,
+            bool? persistEsimDataPlan,
             IEnumerable<string> deviceIds,
             string notificationTitle,
             string notificationBody,
@@ -51,6 +53,7 @@ namespace Microsoft.Graph
             this.SetParameter("actionName", actionName, false);
             this.SetParameter("keepEnrollmentData", keepEnrollmentData, true);
             this.SetParameter("keepUserData", keepUserData, true);
+            this.SetParameter("persistEsimDataPlan", persistEsimDataPlan, true);
             this.SetParameter("deviceIds", deviceIds, true);
             this.SetParameter("notificationTitle", notificationTitle, true);
             this.SetParameter("notificationBody", notificationBody, true);
@@ -83,6 +86,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("keepUserData"))
             {
                 request.RequestBody.KeepUserData = this.GetParameter<bool?>("keepUserData");
+            }
+
+            if (this.HasParameter("persistEsimDataPlan"))
+            {
+                request.RequestBody.PersistEsimDataPlan = this.GetParameter<bool?>("persistEsimDataPlan");
             }
 
             if (this.HasParameter("deviceIds"))

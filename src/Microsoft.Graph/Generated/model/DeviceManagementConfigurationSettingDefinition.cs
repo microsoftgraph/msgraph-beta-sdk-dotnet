@@ -121,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets setting usage.
-        /// Setting type, for example, configuration and compliance. Possible values are: none, configuration.
+        /// Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
         /// </summary>
         [JsonPropertyName("settingUsage")]
         public DeviceManagementConfigurationSettingUsage? SettingUsage { get; set; }

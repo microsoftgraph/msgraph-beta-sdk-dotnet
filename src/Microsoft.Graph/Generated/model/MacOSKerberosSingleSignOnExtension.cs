@@ -182,6 +182,13 @@ namespace Microsoft.Graph
         public string PasswordRequirementsDescription { get; set; }
     
         /// <summary>
+        /// Gets or sets preferredKDCs.
+        /// Add creates an ordered list of preferred Key Distribution Centers (KDCs) to use for Kerberos traffic. This list is used when the servers are not discoverable using DNS. When the servers are discoverable, the list is used for both connectivity checks, and used first for Kerberos traffic. If the servers don’t respond, then the device uses DNS discovery. Delete removes an existing list, and devices use DNS discovery. Available for devices running macOS versions 12 and later.
+        /// </summary>
+        [JsonPropertyName("preferredKDCs")]
+        public IEnumerable<string> PreferredKDCs { get; set; }
+    
+        /// <summary>
         /// Gets or sets realm.
         /// Gets or sets the case-sensitive realm name for this profile.
         /// </summary>
@@ -204,7 +211,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets singleSignOnExtensionPreferredKDCs.
-        /// Add creates an ordered list of preferred Key Distribution Centers (KDCs) to use for Kerberos traffic. This list is used when the servers are not discoverable using DNS. When the servers are discoverable, the list is used for both connectivity checks, and used first for Kerberos traffic. If the servers don’t respond, then the device uses DNS discovery. Delete removes an existing list, and devices use DNS discovery. Available for devices running macOS versions 12 and later.
+        /// Soon to be deprecated.
         /// </summary>
         [JsonPropertyName("singleSignOnExtensionPreferredKDCs")]
         public IEnumerable<string> SingleSignOnExtensionPreferredKDCs { get; set; }
@@ -217,8 +224,15 @@ namespace Microsoft.Graph
         public bool? TlsForLDAPRequired { get; set; }
     
         /// <summary>
-        /// Gets or sets usernameLableCustom.
+        /// Gets or sets usernameLabelCustom.
         /// This label replaces the user name shown in the Kerberos extension. You can enter a name to match the name of your company or organization. Available for devices running macOS versions 11 and later.
+        /// </summary>
+        [JsonPropertyName("usernameLabelCustom")]
+        public string UsernameLabelCustom { get; set; }
+    
+        /// <summary>
+        /// Gets or sets usernameLableCustom.
+        /// Soon to be deprecated.
         /// </summary>
         [JsonPropertyName("usernameLableCustom")]
         public string UsernameLableCustom { get; set; }

@@ -360,6 +360,24 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.NdesConnectors.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.ComplianceCategories != null && deviceManagementToInitialize.ComplianceCategories.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ComplianceCategories.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ComplianceCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.ComplianceCategories.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.CompliancePolicies != null && deviceManagementToInitialize.CompliancePolicies.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.CompliancePolicies.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.CompliancePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.CompliancePolicies.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.ComplianceSettings != null && deviceManagementToInitialize.ComplianceSettings.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ComplianceSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ComplianceSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.ComplianceSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.ConfigurationCategories != null && deviceManagementToInitialize.ConfigurationCategories.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ConfigurationCategories.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ConfigurationCategoriesNextLink);
@@ -605,6 +623,42 @@ namespace Microsoft.Graph
                     deviceManagementToInitialize.UserExperienceAnalyticsBaselines.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsBaselinesNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsBaselines.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthAppImpact != null && deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthAppImpact.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthAppImpact.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthAppImpactNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthAppImpact.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceAppImpact != null && deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceAppImpactNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDevicePerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDevicePerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDevicePerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDevicePerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDevicePerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory != null && deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthModelPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthModelPerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthModelPerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthModelPerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthModelPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthOsPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthOsPerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthOsPerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthOsPerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsBatteryHealthOsPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.UserExperienceAnalyticsCategories != null && deviceManagementToInitialize.UserExperienceAnalyticsCategories.CurrentPage != null)
                 {

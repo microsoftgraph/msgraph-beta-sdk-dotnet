@@ -911,6 +911,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceIdentityGovernance request builder.
+        /// </summary>
+        public virtual IIdentityGovernanceRequestBuilder IdentityGovernance
+        {
+            get
+            {
+                return new IdentityGovernanceRequestBuilder(this.BaseUrl + "/identityGovernance", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceAuditLogs request builder.
         /// </summary>
         public virtual IAuditLogRootRequestBuilder AuditLogs
@@ -1077,6 +1088,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceTenantRelationships request builder.
+        /// </summary>
+        public virtual ITenantRelationshipRequestBuilder TenantRelationships
+        {
+            get
+            {
+                return new TenantRelationshipRequestBuilder(this.BaseUrl + "/tenantRelationships", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceEducation request builder.
         /// </summary>
         public virtual IEducationRootRequestBuilder Education
@@ -1121,17 +1143,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceIdentityGovernance request builder.
-        /// </summary>
-        public virtual IIdentityGovernanceRequestBuilder IdentityGovernance
-        {
-            get
-            {
-                return new IdentityGovernanceRequestBuilder(this.BaseUrl + "/identityGovernance", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceIdentityProtection request builder.
         /// </summary>
         public virtual IIdentityProtectionRootRequestBuilder IdentityProtection
@@ -1172,17 +1183,6 @@ namespace Microsoft.Graph
             get
             {
                 return new SearchEntityRequestBuilder(this.BaseUrl + "/search", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceTenantRelationships request builder.
-        /// </summary>
-        public virtual ITenantRelationshipRequestBuilder TenantRelationships
-        {
-            get
-            {
-                return new TenantRelationshipRequestBuilder(this.BaseUrl + "/tenantRelationships", this);
             }
         }
     

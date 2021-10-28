@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom subject alternative names.
-        /// Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: http://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.
+        /// Custom Subject Alternative Name Settings. The OnPremisesUserPrincipalName variable is support as well as others documented here: https://go.microsoft.com/fwlink/?LinkId=2027630. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonPropertyName("customSubjectAlternativeNames")]
         public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
@@ -87,7 +87,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed device certificate states.
-        /// Certificate state for devices
+        /// Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
         /// </summary>
         [JsonPropertyName("managedDeviceCertificateStates")]
         public IIosScepCertificateProfileManagedDeviceCertificateStatesCollectionPage ManagedDeviceCertificateStates { get; set; }

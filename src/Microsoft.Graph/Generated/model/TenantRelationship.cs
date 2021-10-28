@@ -17,8 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Tenant Relationship.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<TenantRelationship>))]
-    public partial class TenantRelationship
+    public partial class TenantRelationship : Entity
     {
     
         /// <summary>
@@ -27,18 +26,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedTenants")]
         public Microsoft.Graph.ManagedTenants.ManagedTenant ManagedTenants { get; set; }
-    
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonPropertyName("@odata.type")]
-        public string ODataType { get; set; }
-
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

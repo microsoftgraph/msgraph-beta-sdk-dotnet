@@ -2005,7 +2005,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets privacy access controls.
-        /// Indicates a list of applications with their access control levels over privacy data categories, and/or the default access levels per category.
+        /// Indicates a list of applications with their access control levels over privacy data categories, and/or the default access levels per category. This collection can contain a maximum of 500 elements.
         /// </summary>
         [JsonPropertyName("privacyAccessControls")]
         public IWindows10GeneralConfigurationPrivacyAccessControlsCollectionPage PrivacyAccessControls { get; set; }

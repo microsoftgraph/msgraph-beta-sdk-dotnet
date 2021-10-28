@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidManagedStoreAppAssignmentSettings.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidManagedStoreAppAssignmentSettings>))]
     public partial class AndroidManagedStoreAppAssignmentSettings : MobileAppAssignmentSettings
     {
         /// <summary>
@@ -33,6 +34,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("androidManagedStoreAppTrackIds")]
         public IEnumerable<string> AndroidManagedStoreAppTrackIds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets autoUpdateMode.
+        /// The prioritization of automatic updates for this app assignment. Possible values are: default, postponed, priority, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("autoUpdateMode")]
+        public AndroidManagedStoreAutoUpdateMode? AutoUpdateMode { get; set; }
     
     }
 }

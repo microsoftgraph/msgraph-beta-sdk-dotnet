@@ -78,7 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets referencing configuration policies.
-        /// configuration policies referencing the current reusable setting
+        /// configuration policies referencing the current reusable setting. This property is read-only.
         /// </summary>
         [JsonPropertyName("referencingConfigurationPolicies")]
         public IDeviceManagementReusablePolicySettingReferencingConfigurationPoliciesCollectionPage ReferencingConfigurationPolicies { get; set; }

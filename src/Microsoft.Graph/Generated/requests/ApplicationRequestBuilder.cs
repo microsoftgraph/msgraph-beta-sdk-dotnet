@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for FederatedIdentityCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IApplicationFederatedIdentityCredentialsCollectionRequestBuilder"/>.</returns>
+        public IApplicationFederatedIdentityCredentialsCollectionRequestBuilder FederatedIdentityCredentials
+        {
+            get
+            {
+                return new ApplicationFederatedIdentityCredentialsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("federatedIdentityCredentials"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
         /// <returns>The <see cref="IApplicationHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>

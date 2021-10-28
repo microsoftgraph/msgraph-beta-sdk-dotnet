@@ -23,54 +23,63 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed registrant.
+        /// Specifies who can register for the meeting.
         /// </summary>
         [JsonPropertyName("allowedRegistrant")]
         public MeetingAudience? AllowedRegistrant { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The description of the meeting.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets end date time.
+        /// The meeting end time in UTC.
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets registration page view count.
+        /// The number of times the registration page has been visited. Read-only.
         /// </summary>
         [JsonPropertyName("registrationPageViewCount")]
         public Int32? RegistrationPageViewCount { get; set; }
     
         /// <summary>
         /// Gets or sets registration page web url.
+        /// The URL of the registration page. Read-only.
         /// </summary>
         [JsonPropertyName("registrationPageWebUrl")]
         public string RegistrationPageWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets speakers.
+        /// The meeting speaker's information.
         /// </summary>
         [JsonPropertyName("speakers")]
         public IEnumerable<MeetingSpeaker> Speakers { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
+        /// The meeting start time in UTC.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
+        /// The subject of the meeting.
         /// </summary>
         [JsonPropertyName("subject")]
         public string Subject { get; set; }
     
         /// <summary>
         /// Gets or sets custom questions.
+        /// Custom registration questions.
         /// </summary>
         [JsonPropertyName("customQuestions")]
         public IMeetingRegistrationCustomQuestionsCollectionPage CustomQuestions { get; set; }
@@ -84,6 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets registrants.
+        /// Registrants of the online meeting.
         /// </summary>
         [JsonPropertyName("registrants")]
         public IMeetingRegistrationRegistrantsCollectionPage Registrants { get; set; }

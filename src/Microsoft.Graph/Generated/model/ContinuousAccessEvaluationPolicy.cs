@@ -36,27 +36,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets groups.
-        /// The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty.
+        /// The collection of group identifiers in scope for evaluation. All groups are in scope when the collection is empty. Read-only.
         /// </summary>
         [JsonPropertyName("groups")]
         public IEnumerable<string> Groups { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
-        /// true to indicate whether continuous access evaluation should be performed; otherwise false.
+        /// true to indicate whether continuous access evaluation should be performed; otherwise false. Read-only.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets migrate.
+        /// true to indicate that the continuous access evaluation policy settings should be or has been migrated to the conditional access policy.
         /// </summary>
         [JsonPropertyName("migrate")]
         public bool? Migrate { get; set; }
     
         /// <summary>
         /// Gets or sets users.
-        /// The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty.
+        /// The collection of user identifiers in scope for evaluation. All users are in scope when the collection is empty. Read-only.
         /// </summary>
         [JsonPropertyName("users")]
         public IEnumerable<string> Users { get; set; }

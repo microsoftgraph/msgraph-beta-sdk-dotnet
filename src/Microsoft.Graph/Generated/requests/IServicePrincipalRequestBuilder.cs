@@ -74,6 +74,12 @@ namespace Microsoft.Graph
         IServicePrincipalEndpointsCollectionRequestBuilder Endpoints { get; }
 
         /// <summary>
+        /// Gets the request builder for FederatedIdentityCredentials.
+        /// </summary>
+        /// <returns>The <see cref="IServicePrincipalFederatedIdentityCredentialsCollectionRequestBuilder"/>.</returns>
+        IServicePrincipalFederatedIdentityCredentialsCollectionRequestBuilder FederatedIdentityCredentials { get; }
+
+        /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
         /// <returns>The <see cref="IServicePrincipalHomeRealmDiscoveryPoliciesCollectionWithReferencesRequestBuilder"/>.</returns>

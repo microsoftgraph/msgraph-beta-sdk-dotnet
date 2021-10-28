@@ -30,7 +30,7 @@ namespace Microsoft.Graph
             string sessionId)
             : base(requestUrl, client)
         {
-            this.SetParameter("sessionId", sessionId, false);
+            this.SetParameter("sessionId", sessionId, true);
         }
 
         /// <summary>

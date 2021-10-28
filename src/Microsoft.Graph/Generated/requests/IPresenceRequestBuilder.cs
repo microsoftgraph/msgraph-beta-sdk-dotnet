@@ -36,16 +36,16 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPresenceClearPresenceRequestBuilder"/>.</returns>
         IPresenceClearPresenceRequestBuilder ClearPresence(
-            string sessionId);
+            string sessionId = null);
 
         /// <summary>
         /// Gets the request builder for PresenceSetPresence.
         /// </summary>
         /// <returns>The <see cref="IPresenceSetPresenceRequestBuilder"/>.</returns>
         IPresenceSetPresenceRequestBuilder SetPresence(
-            string sessionId,
             string availability,
             string activity,
+            string sessionId = null,
             Duration expirationDuration = null);
     
     }

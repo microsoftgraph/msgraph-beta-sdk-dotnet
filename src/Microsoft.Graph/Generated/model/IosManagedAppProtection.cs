@@ -86,6 +86,13 @@ namespace Microsoft.Graph
         public IEnumerable<KeyValuePair> ExemptedAppProtocols { get; set; }
     
         /// <summary>
+        /// Gets or sets exempted universal links.
+        /// A list of custom urls that are allowed to invocate an unmanaged app
+        /// </summary>
+        [JsonPropertyName("exemptedUniversalLinks")]
+        public IEnumerable<string> ExemptedUniversalLinks { get; set; }
+    
+        /// <summary>
         /// Gets or sets face id blocked.
         /// Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
         /// </summary>
@@ -98,6 +105,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("filterOpenInToOnlyManagedApps")]
         public bool? FilterOpenInToOnlyManagedApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed universal links.
+        /// A list of custom urls that are allowed to invocate a managed app
+        /// </summary>
+        [JsonPropertyName("managedUniversalLinks")]
+        public IEnumerable<string> ManagedUniversalLinks { get; set; }
     
         /// <summary>
         /// Gets or sets minimum required sdk version.

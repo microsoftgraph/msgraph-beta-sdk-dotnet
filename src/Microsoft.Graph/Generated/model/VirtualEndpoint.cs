@@ -105,6 +105,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service plans.
+        /// Cloud PC service plans.
         /// </summary>
         [JsonPropertyName("servicePlans")]
         public IVirtualEndpointServicePlansCollectionPage ServicePlans { get; set; }

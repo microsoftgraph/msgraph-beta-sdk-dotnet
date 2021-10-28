@@ -121,6 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extension attributes.
+        /// Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Azure AD. Supports $filter (eq, NOT, startsWith).
         /// </summary>
         [JsonPropertyName("extensionAttributes")]
         public OnPremisesExtensionAttributes ExtensionAttributes { get; set; }

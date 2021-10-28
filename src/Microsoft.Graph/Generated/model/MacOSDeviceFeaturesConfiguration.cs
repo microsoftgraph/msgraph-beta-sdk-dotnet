@@ -101,7 +101,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets console access disabled.
-        /// Whether the Other user will disregard use of the `&amp;gt;console&amp;gt; special user name.
+        /// Whether the Other user will disregard use of the console special user name.
         /// </summary>
         [JsonPropertyName("consoleAccessDisabled")]
         public bool? ConsoleAccessDisabled { get; set; }

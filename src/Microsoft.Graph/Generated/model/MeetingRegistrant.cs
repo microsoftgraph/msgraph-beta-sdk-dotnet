@@ -23,42 +23,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom question answers.
+        /// The registrant's answer to custom questions.
         /// </summary>
         [JsonPropertyName("customQuestionAnswers")]
         public IEnumerable<CustomQuestionAnswer> CustomQuestionAnswers { get; set; }
     
         /// <summary>
         /// Gets or sets email.
+        /// The email address of the registrant.
         /// </summary>
         [JsonPropertyName("email")]
         public string Email { get; set; }
     
         /// <summary>
         /// Gets or sets first name.
+        /// The first name of the registrant.
         /// </summary>
         [JsonPropertyName("firstName")]
         public string FirstName { get; set; }
     
         /// <summary>
         /// Gets or sets join web url.
+        /// A unique web URL for the registrant to join the meeting. Read-only.
         /// </summary>
         [JsonPropertyName("joinWebUrl")]
         public string JoinWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets last name.
+        /// The last name of the registrant.
         /// </summary>
         [JsonPropertyName("lastName")]
         public string LastName { get; set; }
     
         /// <summary>
         /// Gets or sets registration date time.
+        /// Time in UTC when the registrant registers for the meeting. Read-only.
         /// </summary>
         [JsonPropertyName("registrationDateTime")]
         public DateTimeOffset? RegistrationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The registration status of the registrant. Read-only.
         /// </summary>
         [JsonPropertyName("status")]
         public MeetingRegistrantStatus? Status { get; set; }

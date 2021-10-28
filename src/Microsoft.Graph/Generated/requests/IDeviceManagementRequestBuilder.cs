@@ -194,6 +194,24 @@ namespace Microsoft.Graph
         ISoftwareUpdateStatusSummaryWithReferenceRequestBuilder SoftwareUpdateStatusSummary { get; }
 
         /// <summary>
+        /// Gets the request builder for ComplianceCategories.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComplianceCategoriesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementComplianceCategoriesCollectionRequestBuilder ComplianceCategories { get; }
+
+        /// <summary>
+        /// Gets the request builder for CompliancePolicies.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementCompliancePoliciesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementCompliancePoliciesCollectionRequestBuilder CompliancePolicies { get; }
+
+        /// <summary>
+        /// Gets the request builder for ComplianceSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementComplianceSettingsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementComplianceSettingsCollectionRequestBuilder ComplianceSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for ConfigurationCategories.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementConfigurationCategoriesCollectionRequestBuilder"/>.</returns>
@@ -468,6 +486,54 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsBaselinesCollectionRequestBuilder"/>.</returns>
         IDeviceManagementUserExperienceAnalyticsBaselinesCollectionRequestBuilder UserExperienceAnalyticsBaselines { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsBatteryHealthAppImpact.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsBatteryHealthAppImpactCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsBatteryHealthAppImpactCollectionRequestBuilder UserExperienceAnalyticsBatteryHealthAppImpact { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsBatteryHealthCapacityDetails.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsBatteryHealthCapacityDetailsRequestBuilder UserExperienceAnalyticsBatteryHealthCapacityDetails { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsBatteryHealthDeviceAppImpact.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsBatteryHealthDeviceAppImpactCollectionRequestBuilder UserExperienceAnalyticsBatteryHealthDeviceAppImpact { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsBatteryHealthDevicePerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsBatteryHealthDevicePerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsBatteryHealthDevicePerformanceCollectionRequestBuilder UserExperienceAnalyticsBatteryHealthDevicePerformance { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsBatteryHealthDeviceRuntimeHistoryCollectionRequestBuilder UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsBatteryHealthModelPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsBatteryHealthModelPerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsBatteryHealthModelPerformanceCollectionRequestBuilder UserExperienceAnalyticsBatteryHealthModelPerformance { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsBatteryHealthOsPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsBatteryHealthOsPerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsBatteryHealthOsPerformanceCollectionRequestBuilder UserExperienceAnalyticsBatteryHealthOsPerformance { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsBatteryHealthRuntimeDetails.
+        /// </summary>
+        /// <returns>The <see cref="IUserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder"/>.</returns>
+        IUserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder UserExperienceAnalyticsBatteryHealthRuntimeDetails { get; }
 
         /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsCategories.
@@ -867,6 +933,13 @@ namespace Microsoft.Graph
             string notificationTitle = null,
             string notificationBody = null,
             IEnumerable<string> groupsToNotify = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementEvaluateAssignmentFilter.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementEvaluateAssignmentFilterRequestBuilder"/>.</returns>
+        IDeviceManagementEvaluateAssignmentFilterRequestBuilder EvaluateAssignmentFilter(
+            AssignmentFilterEvaluateRequestObject data = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementGetAssignmentFiltersStatusDetails.

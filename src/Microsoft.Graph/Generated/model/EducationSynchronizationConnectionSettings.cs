@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets clientId.
+        /// Client ID used to connect to the provider.
         /// </summary>
         [JsonPropertyName("clientId")]
         public string ClientId { get; set; }
     
         /// <summary>
         /// Gets or sets clientSecret.
+        /// Client secret to authenticate the connection to the provider.
         /// </summary>
         [JsonPropertyName("clientSecret")]
         public string ClientSecret { get; set; }
