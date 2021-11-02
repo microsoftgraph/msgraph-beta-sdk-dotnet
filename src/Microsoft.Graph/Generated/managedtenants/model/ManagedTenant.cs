@@ -203,20 +203,6 @@ namespace Microsoft.Graph.ManagedTenants
         public string ManagementTemplatesNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets risky users.
-        /// The collection of users flagged for risk across managed tenants.
-        /// </summary>
-        [JsonPropertyName("riskyUsers")]
-        public IManagedTenantRiskyUsersCollectionPage RiskyUsers { get; set; }
-
-        /// <summary>
-        /// Gets or sets riskyUsersNextLink.
-        /// </summary>
-        [JsonPropertyName("riskyUsers@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string RiskyUsersNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets tenant groups.
         /// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
         /// </summary>

@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserGetEffectiveDeviceEnrollmentConfigurationsRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserGetEffectiveDeviceEnrollmentConfigurationsRequest : BaseRequest, IUserGetEffectiveDeviceEnrollmentConfigurationsRequest
     {
         /// <summary>

@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserTranslateExchangeIdsRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserTranslateExchangeIdsRequest : BaseRequest, IUserTranslateExchangeIdsRequest
     {
         /// <summary>

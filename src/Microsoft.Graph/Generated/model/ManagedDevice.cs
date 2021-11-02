@@ -682,7 +682,6 @@ namespace Microsoft.Graph
         /// Gets or sets users.
         /// The primary users associated with the managed device.
         /// </summary>
-        [Obsolete("")]
         [JsonPropertyName("users")]
         public IManagedDeviceUsersCollectionWithReferencesPage Users { get; set; }
 

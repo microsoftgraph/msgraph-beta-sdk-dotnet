@@ -44,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets time zone.
+        /// The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
         /// </summary>
         [JsonPropertyName("timeZone")]
         public string TimeZone { get; set; }

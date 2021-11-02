@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserFindMeetingTimesRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserFindMeetingTimesRequest : BaseRequest, IUserFindMeetingTimesRequest
     {
         /// <summary>

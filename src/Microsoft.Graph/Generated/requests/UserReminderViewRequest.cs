@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserReminderViewRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserReminderViewRequest : BaseRequest, IUserReminderViewRequest
     {
         /// <summary>

@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets message.
+        /// The string containing the reason for why the rule passed or not. Read-only. Not nullable.
         /// </summary>
         [JsonPropertyName("message")]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets ruleName.
+        /// The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
         /// </summary>
         [JsonPropertyName("ruleName")]
         public string RuleName { get; set; }
     
         /// <summary>
         /// Gets or sets validationPassed.
+        /// Whether the password passed or failed the validation rule. Read-only. Not nullable.
         /// </summary>
         [JsonPropertyName("validationPassed")]
         public bool? ValidationPassed { get; set; }

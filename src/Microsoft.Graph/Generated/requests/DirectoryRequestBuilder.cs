@@ -63,6 +63,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AttributeSets.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryAttributeSetsCollectionRequestBuilder"/>.</returns>
+        public IDirectoryAttributeSetsCollectionRequestBuilder AttributeSets
+        {
+            get
+            {
+                return new DirectoryAttributeSetsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attributeSets"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CustomSecurityAttributeDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryCustomSecurityAttributeDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IDirectoryCustomSecurityAttributeDefinitionsCollectionRequestBuilder CustomSecurityAttributeDefinitions
+        {
+            get
+            {
+                return new DirectoryCustomSecurityAttributeDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customSecurityAttributeDefinitions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeletedItems.
         /// </summary>
         /// <returns>The <see cref="IDirectoryDeletedItemsCollectionRequestBuilder"/>.</returns>

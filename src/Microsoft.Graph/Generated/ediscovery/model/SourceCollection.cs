@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets content query.
-        /// The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery.  You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date&amp;gt;=06/01/2016 AND Date&amp;lt;=07/01/2016
+        /// The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date&amp;gt;=06/01/2016 AND Date&amp;lt;=07/01/2016.
         /// </summary>
         [JsonPropertyName("contentQuery")]
         public string ContentQuery { get; set; }
@@ -44,21 +44,21 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets data source scopes.
-        /// When specified, the collection will span across a service for an entire workload. Possible values are: none,allTenantMailboxes,allTenantSites,allCaseCustodians,allCaseNoncustodialDataSources.
+        /// When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
         /// </summary>
         [JsonPropertyName("dataSourceScopes")]
         public DataSourceScopes? DataSourceScopes { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// The description of the sourceCollection
+        /// The description of the sourceCollection.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the sourceCollection
+        /// The display name of the sourceCollection.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

@@ -7,28 +7,28 @@
 
 // Template Source: EntityCollectionPage.cs.tt
 
-namespace Microsoft.Graph.ManagedTenants
+namespace Microsoft.Graph
 {
     using System;
 
     /// <summary>
-    /// The type ManagedTenantRiskyUsersCollectionPage.
+    /// The type DirectoryCustomSecurityAttributeDefinitionsCollectionPage.
     /// </summary>
-    public partial class ManagedTenantRiskyUsersCollectionPage : Microsoft.Graph.CollectionPage<RiskyUser>, IManagedTenantRiskyUsersCollectionPage
+    public partial class DirectoryCustomSecurityAttributeDefinitionsCollectionPage : CollectionPage<CustomSecurityAttributeDefinition>, IDirectoryCustomSecurityAttributeDefinitionsCollectionPage
     {
         /// <summary>
-        /// Gets the next page <see cref="IManagedTenantRiskyUsersCollectionRequest"/> instance.
+        /// Gets the next page <see cref="IDirectoryCustomSecurityAttributeDefinitionsCollectionRequest"/> instance.
         /// </summary>
-        public IManagedTenantRiskyUsersCollectionRequest NextPageRequest { get; private set; }
+        public IDirectoryCustomSecurityAttributeDefinitionsCollectionRequest NextPageRequest { get; private set; }
 
         /// <summary>
         /// Initializes the NextPageRequest property.
         /// </summary>
-        public void InitializeNextPageRequest(Microsoft.Graph.IBaseClient client, string nextPageLinkString)
+        public void InitializeNextPageRequest(IBaseClient client, string nextPageLinkString)
         {
             if (!string.IsNullOrEmpty(nextPageLinkString))
             {
-                this.NextPageRequest = new ManagedTenantRiskyUsersCollectionRequest(
+                this.NextPageRequest = new DirectoryCustomSecurityAttributeDefinitionsCollectionRequest(
                     nextPageLinkString,
                     client,
                     null);

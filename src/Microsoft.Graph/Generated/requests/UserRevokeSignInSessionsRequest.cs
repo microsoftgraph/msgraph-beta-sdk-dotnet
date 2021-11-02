@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserRevokeSignInSessionsRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserRevokeSignInSessionsRequest : BaseRequest, IUserRevokeSignInSessionsRequest
     {
         /// <summary>

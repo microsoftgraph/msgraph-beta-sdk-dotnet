@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User.
     /// </summary>
-    [Obsolete("")]
     public partial class User : DirectoryObject
     {
     
@@ -112,6 +111,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("creationType")]
         public string CreationType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom security attributes.
+        /// </summary>
+        [JsonPropertyName("customSecurityAttributes")]
+        public CustomSecurityAttributeValue CustomSecurityAttributes { get; set; }
     
         /// <summary>
         /// Gets or sets department.

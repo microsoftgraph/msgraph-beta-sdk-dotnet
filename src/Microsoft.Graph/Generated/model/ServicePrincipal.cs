@@ -106,6 +106,12 @@ namespace Microsoft.Graph
         public IEnumerable<AppRole> AppRoles { get; set; }
     
         /// <summary>
+        /// Gets or sets custom security attributes.
+        /// </summary>
+        [JsonPropertyName("customSecurityAttributes")]
+        public CustomSecurityAttributeValue CustomSecurityAttributes { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
         /// </summary>

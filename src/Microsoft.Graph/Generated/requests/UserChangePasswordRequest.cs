@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserChangePasswordRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserChangePasswordRequest : BaseRequest, IUserChangePasswordRequest
     {
         /// <summary>

@@ -252,6 +252,18 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     directoryToInitialize.AdministrativeUnits.AdditionalData = directoryToInitialize.AdditionalData;
                 }
+                if (directoryToInitialize.AttributeSets != null && directoryToInitialize.AttributeSets.CurrentPage != null)
+                {
+                    directoryToInitialize.AttributeSets.InitializeNextPageRequest(this.Client, directoryToInitialize.AttributeSetsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    directoryToInitialize.AttributeSets.AdditionalData = directoryToInitialize.AdditionalData;
+                }
+                if (directoryToInitialize.CustomSecurityAttributeDefinitions != null && directoryToInitialize.CustomSecurityAttributeDefinitions.CurrentPage != null)
+                {
+                    directoryToInitialize.CustomSecurityAttributeDefinitions.InitializeNextPageRequest(this.Client, directoryToInitialize.CustomSecurityAttributeDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    directoryToInitialize.CustomSecurityAttributeDefinitions.AdditionalData = directoryToInitialize.AdditionalData;
+                }
                 if (directoryToInitialize.DeletedItems != null && directoryToInitialize.DeletedItems.CurrentPage != null)
                 {
                     directoryToInitialize.DeletedItems.InitializeNextPageRequest(this.Client, directoryToInitialize.DeletedItemsNextLink);

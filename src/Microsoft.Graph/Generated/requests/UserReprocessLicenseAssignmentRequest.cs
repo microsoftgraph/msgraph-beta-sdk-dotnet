@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserReprocessLicenseAssignmentRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserReprocessLicenseAssignmentRequest : BaseRequest, IUserReprocessLicenseAssignmentRequest
     {
         /// <summary>

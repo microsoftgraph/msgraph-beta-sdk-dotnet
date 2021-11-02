@@ -7,7 +7,7 @@
 
 // Template Source: EntityRequest.cs.tt
 
-namespace Microsoft.Graph.ManagedTenants
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
@@ -17,65 +17,65 @@ namespace Microsoft.Graph.ManagedTenants
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type RiskyUserRequest.
+    /// The type AllowedValueRequest.
     /// </summary>
-    public partial class RiskyUserRequest : Microsoft.Graph.BaseRequest, IRiskyUserRequest
+    public partial class AllowedValueRequest : BaseRequest, IAllowedValueRequest
     {
         /// <summary>
-        /// Constructs a new RiskyUserRequest.
+        /// Constructs a new AllowedValueRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
-        /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
+        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public RiskyUserRequest(
+        public AllowedValueRequest(
             string requestUrl,
-            Microsoft.Graph.IBaseClient client,
-            IEnumerable<Microsoft.Graph.Option> options)
+            IBaseClient client,
+            IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
         }
 
         /// <summary>
-        /// Creates the specified RiskyUser using POST.
+        /// Creates the specified AllowedValue using POST.
         /// </summary>
-        /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
+        /// <param name="allowedValueToCreate">The AllowedValue to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created RiskyUser.</returns>
-        public async System.Threading.Tasks.Task<RiskyUser> CreateAsync(RiskyUser riskyUserToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created AllowedValue.</returns>
+        public async System.Threading.Tasks.Task<AllowedValue> CreateAsync(AllowedValue allowedValueToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<RiskyUser>(riskyUserToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<AllowedValue>(allowedValueToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified RiskyUser using POST and returns a <see cref="GraphResponse{RiskyUser}"/> object.
+        /// Creates the specified AllowedValue using POST and returns a <see cref="GraphResponse{AllowedValue}"/> object.
         /// </summary>
-        /// <param name="riskyUserToCreate">The RiskyUser to create.</param>
+        /// <param name="allowedValueToCreate">The AllowedValue to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> CreateResponseAsync(RiskyUser riskyUserToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{AllowedValue}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AllowedValue>> CreateResponseAsync(AllowedValue allowedValueToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<RiskyUser>(riskyUserToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AllowedValue>(allowedValueToCreate, cancellationToken);
         }
 
         /// <summary>
-        /// Deletes the specified RiskyUser.
+        /// Deletes the specified AllowedValue.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<RiskyUser>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<AllowedValue>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Deletes the specified RiskyUser and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified AllowedValue and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
-        /// Gets the specified RiskyUser.
+        /// Gets the specified AllowedValue.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The RiskyUser.</returns>
-        public async System.Threading.Tasks.Task<RiskyUser> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The AllowedValue.</returns>
+        public async System.Threading.Tasks.Task<AllowedValue> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<RiskyUser>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<AllowedValue>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified RiskyUser and returns a <see cref="GraphResponse{RiskyUser}"/> object.
+        /// Gets the specified AllowedValue and returns a <see cref="GraphResponse{AllowedValue}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{AllowedValue}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AllowedValue>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<RiskyUser>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AllowedValue>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified RiskyUser using PATCH.
+        /// Updates the specified AllowedValue using PATCH.
         /// </summary>
-        /// <param name="riskyUserToUpdate">The RiskyUser to update.</param>
+        /// <param name="allowedValueToUpdate">The AllowedValue to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated RiskyUser.</returns>
-        public async System.Threading.Tasks.Task<RiskyUser> UpdateAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default)
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The updated AllowedValue.</returns>
+        public async System.Threading.Tasks.Task<AllowedValue> UpdateAsync(AllowedValue allowedValueToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<RiskyUser>(riskyUserToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<AllowedValue>(allowedValueToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified RiskyUser using PATCH and returns a <see cref="GraphResponse{RiskyUser}"/> object.
+        /// Updates the specified AllowedValue using PATCH and returns a <see cref="GraphResponse{AllowedValue}"/> object.
         /// </summary>
-        /// <param name="riskyUserToUpdate">The RiskyUser to update.</param>
+        /// <param name="allowedValueToUpdate">The AllowedValue to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <exception cref="Microsoft.Graph.ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> UpdateResponseAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default)
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AllowedValue}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AllowedValue>> UpdateResponseAsync(AllowedValue allowedValueToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<RiskyUser>(riskyUserToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AllowedValue>(allowedValueToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified RiskyUser using PUT.
+        /// Updates the specified AllowedValue using PUT.
         /// </summary>
-        /// <param name="riskyUserToUpdate">The RiskyUser object to update.</param>
+        /// <param name="allowedValueToUpdate">The AllowedValue object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<RiskyUser> PutAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<AllowedValue> PutAsync(AllowedValue allowedValueToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<RiskyUser>(riskyUserToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<AllowedValue>(allowedValueToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified RiskyUser using PUT and returns a <see cref="GraphResponse{RiskyUser}"/> object.
+        /// Updates the specified AllowedValue using PUT and returns a <see cref="GraphResponse{AllowedValue}"/> object.
         /// </summary>
-        /// <param name="riskyUserToUpdate">The RiskyUser object to update.</param>
+        /// <param name="allowedValueToUpdate">The AllowedValue object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{RiskyUser}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> PutResponseAsync(RiskyUser riskyUserToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{AllowedValue}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AllowedValue>> PutResponseAsync(AllowedValue allowedValueToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<RiskyUser>(riskyUserToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AllowedValue>(allowedValueToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -172,9 +172,9 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IRiskyUserRequest Expand(string value)
+        public IAllowedValueRequest Expand(string value)
         {
-            this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$expand", value));
+            this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
         }
 
@@ -183,21 +183,21 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IRiskyUserRequest Expand(Expression<Func<RiskyUser, object>> expandExpression)
+        public IAllowedValueRequest Expand(Expression<Func<AllowedValue, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
                 throw new ArgumentNullException(nameof(expandExpression));
             }
             string error;
-            string value = Microsoft.Graph.ExpressionExtractHelper.ExtractMembers(expandExpression, out error);
+            string value = ExpressionExtractHelper.ExtractMembers(expandExpression, out error);
             if (value == null)
             {
                 throw new ArgumentException(error, nameof(expandExpression));
             }
             else
             {
-                this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$expand", value));
+                this.QueryOptions.Add(new QueryOption("$expand", value));
             }
             return this;
         }
@@ -207,9 +207,9 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IRiskyUserRequest Select(string value)
+        public IAllowedValueRequest Select(string value)
         {
-            this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$select", value));
+            this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
         }
 
@@ -218,21 +218,21 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IRiskyUserRequest Select(Expression<Func<RiskyUser, object>> selectExpression)
+        public IAllowedValueRequest Select(Expression<Func<AllowedValue, object>> selectExpression)
         {
             if (selectExpression == null)
             {
                 throw new ArgumentNullException(nameof(selectExpression));
             }
             string error;
-            string value = Microsoft.Graph.ExpressionExtractHelper.ExtractMembers(selectExpression, out error);
+            string value = ExpressionExtractHelper.ExtractMembers(selectExpression, out error);
             if (value == null)
             {
                 throw new ArgumentException(error, nameof(selectExpression));
             }
             else
             {
-                this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$select", value));
+                this.QueryOptions.Add(new QueryOption("$select", value));
             }
             return this;
         }
@@ -240,8 +240,8 @@ namespace Microsoft.Graph.ManagedTenants
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="riskyUserToInitialize">The <see cref="RiskyUser"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(RiskyUser riskyUserToInitialize)
+        /// <param name="allowedValueToInitialize">The <see cref="AllowedValue"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(AllowedValue allowedValueToInitialize)
         {
 
         }

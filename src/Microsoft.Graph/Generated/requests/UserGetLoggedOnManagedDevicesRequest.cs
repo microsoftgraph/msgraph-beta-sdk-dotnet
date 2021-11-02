@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserGetLoggedOnManagedDevicesRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserGetLoggedOnManagedDevicesRequest : BaseRequest, IUserGetLoggedOnManagedDevicesRequest
     {
         /// <summary>

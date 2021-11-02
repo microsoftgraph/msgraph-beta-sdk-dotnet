@@ -71,6 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets customer time zone.
+        /// The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
         /// </summary>
         [JsonPropertyName("customerTimeZone")]
         public string CustomerTimeZone { get; set; }
@@ -126,12 +127,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is location online.
+        /// True indicates that the appointment will be held online. Default value is false.
         /// </summary>
         [JsonPropertyName("isLocationOnline")]
         public bool? IsLocationOnline { get; set; }
     
         /// <summary>
         /// Gets or sets join web url.
+        /// The URL of the online meeting for the appointment.
         /// </summary>
         [JsonPropertyName("joinWebUrl")]
         public string JoinWebUrl { get; set; }
@@ -221,6 +224,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sms notifications enabled.
+        /// True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
         /// </summary>
         [JsonPropertyName("smsNotificationsEnabled")]
         public bool? SmsNotificationsEnabled { get; set; }

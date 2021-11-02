@@ -43,6 +43,13 @@ namespace Microsoft.Graph
         public string Error { get; set; }
     
         /// <summary>
+        /// Gets or sets lastUpdatedDateTime.
+        /// The timestamp when the state of the license assignment was last updated.
+        /// </summary>
+        [JsonPropertyName("lastUpdatedDateTime")]
+        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets skuId.
         /// The unique identifier for the SKU. Read-Only.
         /// </summary>

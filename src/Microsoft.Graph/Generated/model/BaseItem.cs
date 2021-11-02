@@ -96,7 +96,6 @@ namespace Microsoft.Graph
         /// Gets or sets created by user.
         /// Identity of the user who created the item. Read-only.
         /// </summary>
-        [Obsolete("")]
         [JsonPropertyName("createdByUser")]
         public User CreatedByUser { get; set; }
     
@@ -104,7 +103,6 @@ namespace Microsoft.Graph
         /// Gets or sets last modified by user.
         /// Identity of the user who last modified the item. Read-only.
         /// </summary>
-        [Obsolete("")]
         [JsonPropertyName("lastModifiedByUser")]
         public User LastModifiedByUser { get; set; }
     

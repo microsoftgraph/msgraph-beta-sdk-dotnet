@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserUnblockManagedAppsRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserUnblockManagedAppsRequest : BaseRequest, IUserUnblockManagedAppsRequest
     {
         /// <summary>

@@ -97,6 +97,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("targetResources")]
         public IEnumerable<TargetResource> TargetResources { get; set; }
     
+        /// <summary>
+        /// Gets or sets user agent.
+        /// </summary>
+        [JsonPropertyName("userAgent")]
+        public string UserAgent { get; set; }
+    
     }
 }
 

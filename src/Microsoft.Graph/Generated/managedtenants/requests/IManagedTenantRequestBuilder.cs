@@ -110,12 +110,6 @@ namespace Microsoft.Graph.ManagedTenants
         IManagedTenantManagementTemplatesCollectionRequestBuilder ManagementTemplates { get; }
 
         /// <summary>
-        /// Gets the request builder for RiskyUsers.
-        /// </summary>
-        /// <returns>The <see cref="IManagedTenantRiskyUsersCollectionRequestBuilder"/>.</returns>
-        IManagedTenantRiskyUsersCollectionRequestBuilder RiskyUsers { get; }
-
-        /// <summary>
         /// Gets the request builder for TenantGroups.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantTenantGroupsCollectionRequestBuilder"/>.</returns>
