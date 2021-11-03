@@ -22,12 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets addresses.
+        /// Addresses associated with the customer, including home, business and other addresses.
         /// </summary>
         [JsonPropertyName("addresses")]
         public IEnumerable<PhysicalAddress> Addresses { get; set; }
     
         /// <summary>
         /// Gets or sets phones.
+        /// Phone numbers associated with the customer, including home, business and mobile numbers.
         /// </summary>
         [JsonPropertyName("phones")]
         public IEnumerable<Phone> Phones { get; set; }

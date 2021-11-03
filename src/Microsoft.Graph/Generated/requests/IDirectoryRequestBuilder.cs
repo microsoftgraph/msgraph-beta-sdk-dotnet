@@ -38,6 +38,18 @@ namespace Microsoft.Graph
         IDirectoryAdministrativeUnitsCollectionRequestBuilder AdministrativeUnits { get; }
 
         /// <summary>
+        /// Gets the request builder for AttributeSets.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryAttributeSetsCollectionRequestBuilder"/>.</returns>
+        IDirectoryAttributeSetsCollectionRequestBuilder AttributeSets { get; }
+
+        /// <summary>
+        /// Gets the request builder for CustomSecurityAttributeDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryCustomSecurityAttributeDefinitionsCollectionRequestBuilder"/>.</returns>
+        IDirectoryCustomSecurityAttributeDefinitionsCollectionRequestBuilder CustomSecurityAttributeDefinitions { get; }
+
+        /// <summary>
         /// Gets the request builder for DeletedItems.
         /// </summary>
         /// <returns>The <see cref="IDirectoryDeletedItemsCollectionRequestBuilder"/>.</returns>

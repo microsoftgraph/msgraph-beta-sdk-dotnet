@@ -7,25 +7,25 @@
 
 // Template Source: IEntityCollectionPage.cs.tt
 
-namespace Microsoft.Graph.ManagedTenants
+namespace Microsoft.Graph
 {
     using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The interface IManagedTenantRiskyUsersCollectionPage.
+    /// The interface IDirectoryAttributeSetsCollectionPage.
     /// </summary>
-    [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<ManagedTenantRiskyUsersCollectionPage>))]
-    public interface IManagedTenantRiskyUsersCollectionPage : Microsoft.Graph.ICollectionPage<RiskyUser>
+    [InterfaceConverter(typeof(InterfaceConverter<DirectoryAttributeSetsCollectionPage>))]
+    public interface IDirectoryAttributeSetsCollectionPage : ICollectionPage<AttributeSet>
     {
         /// <summary>
-        /// Gets the next page <see cref="IManagedTenantRiskyUsersCollectionRequest"/> instance.
+        /// Gets the next page <see cref="IDirectoryAttributeSetsCollectionRequest"/> instance.
         /// </summary>
-        IManagedTenantRiskyUsersCollectionRequest NextPageRequest { get; }
+        IDirectoryAttributeSetsCollectionRequest NextPageRequest { get; }
 
         /// <summary>
         /// Initializes the NextPageRequest property.
         /// </summary>
-        void InitializeNextPageRequest(Microsoft.Graph.IBaseClient client, string nextPageLinkString);
+        void InitializeNextPageRequest(IBaseClient client, string nextPageLinkString);
     }
 }

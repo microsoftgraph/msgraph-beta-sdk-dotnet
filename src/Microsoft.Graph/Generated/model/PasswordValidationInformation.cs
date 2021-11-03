@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isValid.
+        /// Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
         /// </summary>
         [JsonPropertyName("isValid")]
         public bool? IsValid { get; set; }
     
         /// <summary>
         /// Gets or sets validationResults.
+        /// The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
         /// </summary>
         [JsonPropertyName("validationResults")]
         public IEnumerable<ValidationResult> ValidationResults { get; set; }

@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserInvalidateAllRefreshTokensRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserInvalidateAllRefreshTokensRequest : BaseRequest, IUserInvalidateAllRefreshTokensRequest
     {
         /// <summary>

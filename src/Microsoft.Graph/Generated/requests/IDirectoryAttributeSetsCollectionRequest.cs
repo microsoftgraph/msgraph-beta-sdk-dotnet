@@ -7,7 +7,7 @@
 
 // Template Source: IEntityCollectionRequest.cs.tt
 
-namespace Microsoft.Graph.ManagedTenants
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
@@ -16,25 +16,25 @@ namespace Microsoft.Graph.ManagedTenants
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The interface IManagedTenantRiskyUsersCollectionRequest.
+    /// The interface IDirectoryAttributeSetsCollectionRequest.
     /// </summary>
-    public partial interface IManagedTenantRiskyUsersCollectionRequest : Microsoft.Graph.IBaseRequest
+    public partial interface IDirectoryAttributeSetsCollectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Adds the specified RiskyUser to the collection via POST.
+        /// Adds the specified AttributeSet to the collection via POST.
         /// </summary>
-        /// <param name="riskyUser">The RiskyUser to add.</param>
+        /// <param name="attributeSet">The AttributeSet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created RiskyUser.</returns>
-        System.Threading.Tasks.Task<RiskyUser> AddAsync(RiskyUser riskyUser, CancellationToken cancellationToken = default);
+        /// <returns>The created AttributeSet.</returns>
+        System.Threading.Tasks.Task<AttributeSet> AddAsync(AttributeSet attributeSet, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Adds the specified RiskyUser to the collection via POST and returns a <see cref="GraphResponse{RiskyUser}"/> object of the request.
+        /// Adds the specified AttributeSet to the collection via POST and returns a <see cref="GraphResponse{AttributeSet}"/> object of the request.
         /// </summary>
-        /// <param name="riskyUser">The RiskyUser to add.</param>
+        /// <param name="attributeSet">The AttributeSet to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<RiskyUser>> AddResponseAsync(RiskyUser riskyUser, CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{AttributeSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AttributeSet>> AddResponseAsync(AttributeSet attributeSet, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -42,69 +42,69 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        System.Threading.Tasks.Task<IManagedTenantRiskyUsersCollectionPage> GetAsync(CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<IDirectoryAttributeSetsCollectionPage> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedTenantRiskyUsersCollectionResponse}"/> object.
+        /// Gets the collection page and returns a <see cref="GraphResponse{DirectoryAttributeSetsCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedTenantRiskyUsersCollectionResponse}"/> object.</returns>
-        System.Threading.Tasks.Task<GraphResponse<ManagedTenantRiskyUsersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{DirectoryAttributeSetsCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryAttributeSetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        IManagedTenantRiskyUsersCollectionRequest Expand(string value);
+        IDirectoryAttributeSetsCollectionRequest Expand(string value);
 
         /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        IManagedTenantRiskyUsersCollectionRequest Expand(Expression<Func<RiskyUser, object>> expandExpression);
+        IDirectoryAttributeSetsCollectionRequest Expand(Expression<Func<AttributeSet, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        IManagedTenantRiskyUsersCollectionRequest Select(string value);
+        IDirectoryAttributeSetsCollectionRequest Select(string value);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        IManagedTenantRiskyUsersCollectionRequest Select(Expression<Func<RiskyUser, object>> selectExpression);
+        IDirectoryAttributeSetsCollectionRequest Select(Expression<Func<AttributeSet, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.
         /// </summary>
         /// <param name="value">The top value.</param>
         /// <returns>The request object to send.</returns>
-        IManagedTenantRiskyUsersCollectionRequest Top(int value);
+        IDirectoryAttributeSetsCollectionRequest Top(int value);
 
         /// <summary>
         /// Adds the specified filter value to the request.
         /// </summary>
         /// <param name="value">The filter value.</param>
         /// <returns>The request object to send.</returns>
-        IManagedTenantRiskyUsersCollectionRequest Filter(string value);
+        IDirectoryAttributeSetsCollectionRequest Filter(string value);
 
         /// <summary>
         /// Adds the specified skip value to the request.
         /// </summary>
         /// <param name="value">The skip value.</param>
         /// <returns>The request object to send.</returns>
-        IManagedTenantRiskyUsersCollectionRequest Skip(int value);
+        IDirectoryAttributeSetsCollectionRequest Skip(int value);
 
         /// <summary>
         /// Adds the specified orderby value to the request.
         /// </summary>
         /// <param name="value">The orderby value.</param>
         /// <returns>The request object to send.</returns>
-        IManagedTenantRiskyUsersCollectionRequest OrderBy(string value);
+        IDirectoryAttributeSetsCollectionRequest OrderBy(string value);
     }
 }

@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserValidatePasswordRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserValidatePasswordRequest : BaseRequest, IUserValidatePasswordRequest
     {
         /// <summary>

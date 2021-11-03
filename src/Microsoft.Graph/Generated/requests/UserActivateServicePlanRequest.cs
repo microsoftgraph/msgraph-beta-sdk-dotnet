@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserActivateServicePlanRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserActivateServicePlanRequest : BaseRequest, IUserActivateServicePlanRequest
     {
         /// <summary>

@@ -7,26 +7,26 @@
 
 // Template Source: EntityRequestBuilder.cs.tt
 
-namespace Microsoft.Graph.ManagedTenants
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
 
     /// <summary>
-    /// The type RiskyUserRequestBuilder.
+    /// The type AllowedValueRequestBuilder.
     /// </summary>
-    public partial class RiskyUserRequestBuilder : Microsoft.Graph.EntityRequestBuilder, IRiskyUserRequestBuilder
+    public partial class AllowedValueRequestBuilder : EntityRequestBuilder, IAllowedValueRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new RiskyUserRequestBuilder.
+        /// Constructs a new AllowedValueRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
-        /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
-        public RiskyUserRequestBuilder(
+        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        public AllowedValueRequestBuilder(
             string requestUrl,
-            Microsoft.Graph.IBaseClient client)
+            IBaseClient client)
             : base(requestUrl, client)
         {
         }
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IRiskyUserRequest Request()
+        public new IAllowedValueRequest Request()
         {
             return this.Request(null);
         }
@@ -45,9 +45,9 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IRiskyUserRequest Request(IEnumerable<Microsoft.Graph.Option> options)
+        public new IAllowedValueRequest Request(IEnumerable<Option> options)
         {
-            return new RiskyUserRequest(this.RequestUrl, this.Client, options);
+            return new AllowedValueRequest(this.RequestUrl, this.Client, options);
         }
     
     }

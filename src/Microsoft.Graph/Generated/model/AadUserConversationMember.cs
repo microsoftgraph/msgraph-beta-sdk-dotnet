@@ -52,7 +52,6 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets user.
         /// </summary>
-        [Obsolete("")]
         [JsonPropertyName("user")]
         public User User { get; set; }
     

@@ -35,6 +35,32 @@ namespace Microsoft.Graph
         public string AdministrativeUnitsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets attribute sets.
+        /// </summary>
+        [JsonPropertyName("attributeSets")]
+        public IDirectoryAttributeSetsCollectionPage AttributeSets { get; set; }
+
+        /// <summary>
+        /// Gets or sets attributeSetsNextLink.
+        /// </summary>
+        [JsonPropertyName("attributeSets@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AttributeSetsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom security attribute definitions.
+        /// </summary>
+        [JsonPropertyName("customSecurityAttributeDefinitions")]
+        public IDirectoryCustomSecurityAttributeDefinitionsCollectionPage CustomSecurityAttributeDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets customSecurityAttributeDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("customSecurityAttributeDefinitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CustomSecurityAttributeDefinitionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets deleted items.
         /// Recently deleted items. Read-only. Nullable.
         /// </summary>

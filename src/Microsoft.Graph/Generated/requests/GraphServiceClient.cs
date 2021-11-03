@@ -97,7 +97,6 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceUsers request builder.
         /// </summary>
-        [Obsolete("")]
         public virtual IGraphServiceUsersCollectionRequestBuilder Users
         {
             get
@@ -1067,7 +1066,6 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
-        [Obsolete("")]
         public virtual IUserRequestBuilder Me
         {
             get

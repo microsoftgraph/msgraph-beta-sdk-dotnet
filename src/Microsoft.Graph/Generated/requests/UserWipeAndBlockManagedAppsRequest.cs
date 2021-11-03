@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserWipeAndBlockManagedAppsRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserWipeAndBlockManagedAppsRequest : BaseRequest, IUserWipeAndBlockManagedAppsRequest
     {
         /// <summary>

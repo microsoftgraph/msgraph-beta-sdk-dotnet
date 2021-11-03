@@ -7,7 +7,7 @@
 
 // Template Source: EntityCollectionRequest.cs.tt
 
-namespace Microsoft.Graph.ManagedTenants
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
@@ -16,47 +16,47 @@ namespace Microsoft.Graph.ManagedTenants
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type ManagedTenantRiskyUsersCollectionRequest.
+    /// The type CustomSecurityAttributeDefinitionAllowedValuesCollectionRequest.
     /// </summary>
-    public partial class ManagedTenantRiskyUsersCollectionRequest : Microsoft.Graph.BaseRequest, IManagedTenantRiskyUsersCollectionRequest
+    public partial class CustomSecurityAttributeDefinitionAllowedValuesCollectionRequest : BaseRequest, ICustomSecurityAttributeDefinitionAllowedValuesCollectionRequest
     {
         /// <summary>
-        /// Constructs a new ManagedTenantRiskyUsersCollectionRequest.
+        /// Constructs a new CustomSecurityAttributeDefinitionAllowedValuesCollectionRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
-        /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
+        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public ManagedTenantRiskyUsersCollectionRequest(
+        public CustomSecurityAttributeDefinitionAllowedValuesCollectionRequest(
             string requestUrl,
-            Microsoft.Graph.IBaseClient client,
-            IEnumerable<Microsoft.Graph.Option> options)
+            IBaseClient client,
+            IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
         }
         /// <summary>
-        /// Adds the specified RiskyUser to the collection via POST.
+        /// Adds the specified AllowedValue to the collection via POST.
         /// </summary>
-        /// <param name="riskyUser">The RiskyUser to add.</param>
+        /// <param name="allowedValue">The AllowedValue to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created RiskyUser.</returns>
-        public System.Threading.Tasks.Task<RiskyUser> AddAsync(RiskyUser riskyUser, CancellationToken cancellationToken = default)
+        /// <returns>The created AllowedValue.</returns>
+        public System.Threading.Tasks.Task<AllowedValue> AddAsync(AllowedValue allowedValue, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsync<RiskyUser>(riskyUser, cancellationToken);
+            return this.SendAsync<AllowedValue>(allowedValue, cancellationToken);
         }
 
         /// <summary>
-        /// Adds the specified RiskyUser to the collection via POST and returns a <see cref="GraphResponse{RiskyUser}"/> object of the request.
+        /// Adds the specified AllowedValue to the collection via POST and returns a <see cref="GraphResponse{AllowedValue}"/> object of the request.
         /// </summary>
-        /// <param name="riskyUser">The RiskyUser to add.</param>
+        /// <param name="allowedValue">The AllowedValue to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{RiskyUser}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RiskyUser>> AddResponseAsync(RiskyUser riskyUser, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{AllowedValue}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AllowedValue>> AddResponseAsync(AllowedValue allowedValue, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<RiskyUser>(riskyUser, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AllowedValue>(allowedValue, cancellationToken);
         }
 
 
@@ -65,10 +65,10 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IManagedTenantRiskyUsersCollectionPage> GetAsync(CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ICustomSecurityAttributeDefinitionAllowedValuesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var response = await this.SendAsync<ManagedTenantRiskyUsersCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
+            var response = await this.SendAsync<CustomSecurityAttributeDefinitionAllowedValuesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response?.Value?.CurrentPage != null)
             {
                 response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
@@ -81,14 +81,14 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{ManagedTenantRiskyUsersCollectionResponse}"/> object.
+        /// Gets the collection page and returns a <see cref="GraphResponse{CustomSecurityAttributeDefinitionAllowedValuesCollectionResponse}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{ManagedTenantRiskyUsersCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ManagedTenantRiskyUsersCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{CustomSecurityAttributeDefinitionAllowedValuesCollectionResponse}"/> object.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CustomSecurityAttributeDefinitionAllowedValuesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<ManagedTenantRiskyUsersCollectionResponse>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<CustomSecurityAttributeDefinitionAllowedValuesCollectionResponse>(null, cancellationToken);
         }
 
         /// <summary>
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IManagedTenantRiskyUsersCollectionRequest Expand(string value)
+        public ICustomSecurityAttributeDefinitionAllowedValuesCollectionRequest Expand(string value)
         {
-            this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$expand", value));
+            this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
         }
 
@@ -107,21 +107,21 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IManagedTenantRiskyUsersCollectionRequest Expand(Expression<Func<RiskyUser, object>> expandExpression)
+        public ICustomSecurityAttributeDefinitionAllowedValuesCollectionRequest Expand(Expression<Func<AllowedValue, object>> expandExpression)
         {
             if (expandExpression == null)
             {
                 throw new ArgumentNullException(nameof(expandExpression));
             }
             string error;
-            string value = Microsoft.Graph.ExpressionExtractHelper.ExtractMembers(expandExpression, out error);
+            string value = ExpressionExtractHelper.ExtractMembers(expandExpression, out error);
             if (value == null)
             {
                 throw new ArgumentException(error, nameof(expandExpression));
             }
             else
             {
-                this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$expand", value));
+                this.QueryOptions.Add(new QueryOption("$expand", value));
             }
             return this;
         }
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IManagedTenantRiskyUsersCollectionRequest Select(string value)
+        public ICustomSecurityAttributeDefinitionAllowedValuesCollectionRequest Select(string value)
         {
-            this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$select", value));
+            this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
         }
 
@@ -142,21 +142,21 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IManagedTenantRiskyUsersCollectionRequest Select(Expression<Func<RiskyUser, object>> selectExpression)
+        public ICustomSecurityAttributeDefinitionAllowedValuesCollectionRequest Select(Expression<Func<AllowedValue, object>> selectExpression)
         {
             if (selectExpression == null)
             {
                 throw new ArgumentNullException(nameof(selectExpression));
             }
             string error;
-            string value = Microsoft.Graph.ExpressionExtractHelper.ExtractMembers(selectExpression, out error);
+            string value = ExpressionExtractHelper.ExtractMembers(selectExpression, out error);
             if (value == null)
             {
                 throw new ArgumentException(error, nameof(selectExpression));
             }
             else
             {
-                this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$select", value));
+                this.QueryOptions.Add(new QueryOption("$select", value));
             }
             return this;
         }
@@ -166,9 +166,9 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="value">The top value.</param>
         /// <returns>The request object to send.</returns>
-        public IManagedTenantRiskyUsersCollectionRequest Top(int value)
+        public ICustomSecurityAttributeDefinitionAllowedValuesCollectionRequest Top(int value)
         {
-            this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$top", value.ToString()));
+            this.QueryOptions.Add(new QueryOption("$top", value.ToString()));
             return this;
         }
 
@@ -177,9 +177,9 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="value">The filter value.</param>
         /// <returns>The request object to send.</returns>
-        public IManagedTenantRiskyUsersCollectionRequest Filter(string value)
+        public ICustomSecurityAttributeDefinitionAllowedValuesCollectionRequest Filter(string value)
         {
-            this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$filter", value));
+            this.QueryOptions.Add(new QueryOption("$filter", value));
             return this;
         }
 
@@ -188,9 +188,9 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="value">The skip value.</param>
         /// <returns>The request object to send.</returns>
-        public IManagedTenantRiskyUsersCollectionRequest Skip(int value)
+        public ICustomSecurityAttributeDefinitionAllowedValuesCollectionRequest Skip(int value)
         {
-            this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$skip", value.ToString()));
+            this.QueryOptions.Add(new QueryOption("$skip", value.ToString()));
             return this;
         }
 
@@ -199,9 +199,9 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="value">The orderby value.</param>
         /// <returns>The request object to send.</returns>
-        public IManagedTenantRiskyUsersCollectionRequest OrderBy(string value)
+        public ICustomSecurityAttributeDefinitionAllowedValuesCollectionRequest OrderBy(string value)
         {
-            this.QueryOptions.Add(new Microsoft.Graph.QueryOption("$orderby", value));
+            this.QueryOptions.Add(new QueryOption("$orderby", value));
             return this;
         }
     }

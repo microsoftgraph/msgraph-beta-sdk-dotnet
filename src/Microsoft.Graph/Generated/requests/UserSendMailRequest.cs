@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserSendMailRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserSendMailRequest : BaseRequest, IUserSendMailRequest
     {
         /// <summary>

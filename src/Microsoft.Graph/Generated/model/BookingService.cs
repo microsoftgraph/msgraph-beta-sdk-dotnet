@@ -86,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is location online.
+        /// True indicates that the appointments for the service will be held online. Default value is false.
         /// </summary>
         [JsonPropertyName("isLocationOnline")]
         public bool? IsLocationOnline { get; set; }
@@ -120,6 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sms notifications enabled.
+        /// True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
         /// </summary>
         [JsonPropertyName("smsNotificationsEnabled")]
         public bool? SmsNotificationsEnabled { get; set; }
@@ -133,7 +135,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets web url.
-        /// The URL of the booking service.
+        /// The URL a customer uses to access the service.
         /// </summary>
         [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }

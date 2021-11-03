@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserRemoveAllDevicesFromManagementRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserRemoveAllDevicesFromManagementRequest : BaseRequest, IUserRemoveAllDevicesFromManagementRequest
     {
         /// <summary>

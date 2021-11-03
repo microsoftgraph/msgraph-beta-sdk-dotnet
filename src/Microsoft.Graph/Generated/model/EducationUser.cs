@@ -247,7 +247,6 @@ namespace Microsoft.Graph
         /// Gets or sets assignments.
         /// List of assignments for the user. Nullable.
         /// </summary>
-        [Obsolete("The me/assignments endpoint is being deprecated and will stop returning data on April 30, 2022.")]
         [JsonPropertyName("assignments")]
         public IEducationUserAssignmentsCollectionPage Assignments { get; set; }
 
@@ -317,7 +316,6 @@ namespace Microsoft.Graph
         /// Gets or sets user.
         /// The directory user corresponding to this user.
         /// </summary>
-        [Obsolete("")]
         [JsonPropertyName("user")]
         public User User { get; set; }
     

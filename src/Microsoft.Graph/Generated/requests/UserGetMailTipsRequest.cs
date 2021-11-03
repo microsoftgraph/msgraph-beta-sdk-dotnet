@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserGetMailTipsRequest.
     /// </summary>
-    [Obsolete("")]
     public partial class UserGetMailTipsRequest : BaseRequest, IUserGetMailTipsRequest
     {
         /// <summary>

@@ -207,18 +207,6 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
-        /// Gets the request builder for RiskyUsers.
-        /// </summary>
-        /// <returns>The <see cref="IManagedTenantRiskyUsersCollectionRequestBuilder"/>.</returns>
-        public IManagedTenantRiskyUsersCollectionRequestBuilder RiskyUsers
-        {
-            get
-            {
-                return new ManagedTenantRiskyUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("riskyUsers"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for TenantGroups.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantTenantGroupsCollectionRequestBuilder"/>.</returns>
