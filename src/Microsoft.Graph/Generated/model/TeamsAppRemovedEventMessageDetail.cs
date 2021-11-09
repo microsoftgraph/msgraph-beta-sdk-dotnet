@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teamsAppDisplayName.
-        /// Display name of the teamApp.
+        /// Display name of the teamsApp.
         /// </summary>
         [JsonPropertyName("teamsAppDisplayName")]
         public string TeamsAppDisplayName { get; set; }

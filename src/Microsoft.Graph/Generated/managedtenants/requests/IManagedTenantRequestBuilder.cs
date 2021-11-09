@@ -104,10 +104,28 @@ namespace Microsoft.Graph.ManagedTenants
         IManagedTenantManagementIntentsCollectionRequestBuilder ManagementIntents { get; }
 
         /// <summary>
+        /// Gets the request builder for ManagementTemplateCollections.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateCollectionsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagementTemplateCollectionsCollectionRequestBuilder ManagementTemplateCollections { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagementTemplates.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantManagementTemplatesCollectionRequestBuilder"/>.</returns>
         IManagedTenantManagementTemplatesCollectionRequestBuilder ManagementTemplates { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateSteps.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateStepsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagementTemplateStepsCollectionRequestBuilder ManagementTemplateSteps { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateStepVersions.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateStepVersionsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagementTemplateStepVersionsCollectionRequestBuilder ManagementTemplateStepVersions { get; }
 
         /// <summary>
         /// Gets the request builder for TenantGroups.

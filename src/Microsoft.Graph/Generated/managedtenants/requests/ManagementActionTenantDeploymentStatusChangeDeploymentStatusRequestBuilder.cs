@@ -23,6 +23,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
+        /// <param name="managementTemplateVersion">A managementTemplateVersion parameter for the OData method call.</param>
         /// <param name="tenantGroupId">A tenantGroupId parameter for the OData method call.</param>
         /// <param name="tenantId">A tenantId parameter for the OData method call.</param>
         /// <param name="managementActionId">A managementActionId parameter for the OData method call.</param>
@@ -31,6 +32,7 @@ namespace Microsoft.Graph.ManagedTenants
         public ManagementActionTenantDeploymentStatusChangeDeploymentStatusRequestBuilder(
             string requestUrl,
             Microsoft.Graph.IBaseClient client,
+            Int32 managementTemplateVersion,
             string tenantGroupId,
             string tenantId,
             string managementActionId,
@@ -38,6 +40,7 @@ namespace Microsoft.Graph.ManagedTenants
             string status)
             : base(requestUrl, client)
         {
+            this.SetParameter("managementTemplateVersion", managementTemplateVersion, false);
             this.SetParameter("tenantGroupId", tenantGroupId, true);
             this.SetParameter("tenantId", tenantId, true);
             this.SetParameter("managementActionId", managementActionId, true);
@@ -54,6 +57,11 @@ namespace Microsoft.Graph.ManagedTenants
         protected override IManagementActionTenantDeploymentStatusChangeDeploymentStatusRequest CreateRequest(string functionUrl, IEnumerable<Microsoft.Graph.Option> options)
         {
             var request = new ManagementActionTenantDeploymentStatusChangeDeploymentStatusRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("managementTemplateVersion"))
+            {
+                request.RequestBody.ManagementTemplateVersion = this.GetParameter<Int32>("managementTemplateVersion");
+            }
 
             if (this.HasParameter("tenantGroupId"))
             {

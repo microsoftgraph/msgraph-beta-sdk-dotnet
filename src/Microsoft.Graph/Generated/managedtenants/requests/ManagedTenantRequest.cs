@@ -318,11 +318,29 @@ namespace Microsoft.Graph.ManagedTenants
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagementIntents.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
+                if (managedTenantToInitialize.ManagementTemplateCollections != null && managedTenantToInitialize.ManagementTemplateCollections.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementTemplateCollections.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplateCollectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagementTemplateCollections.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
                 if (managedTenantToInitialize.ManagementTemplates != null && managedTenantToInitialize.ManagementTemplates.CurrentPage != null)
                 {
                     managedTenantToInitialize.ManagementTemplates.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplatesNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagementTemplates.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagementTemplateSteps != null && managedTenantToInitialize.ManagementTemplateSteps.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementTemplateSteps.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplateStepsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagementTemplateSteps.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagementTemplateStepVersions != null && managedTenantToInitialize.ManagementTemplateStepVersions.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementTemplateStepVersions.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplateStepVersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagementTemplateStepVersions.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
                 if (managedTenantToInitialize.TenantGroups != null && managedTenantToInitialize.TenantGroups.CurrentPage != null)
                 {

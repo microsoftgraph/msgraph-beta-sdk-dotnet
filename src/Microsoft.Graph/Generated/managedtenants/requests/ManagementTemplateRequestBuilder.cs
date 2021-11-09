@@ -50,5 +50,29 @@ namespace Microsoft.Graph.ManagedTenants
             return new ManagementTemplateRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateCollections.
+        /// </summary>
+        /// <returns>The <see cref="IManagementTemplateManagementTemplateCollectionsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IManagementTemplateManagementTemplateCollectionsCollectionWithReferencesRequestBuilder ManagementTemplateCollections
+        {
+            get
+            {
+                return new ManagementTemplateManagementTemplateCollectionsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplateCollections"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateSteps.
+        /// </summary>
+        /// <returns>The <see cref="IManagementTemplateManagementTemplateStepsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IManagementTemplateManagementTemplateStepsCollectionWithReferencesRequestBuilder ManagementTemplateSteps
+        {
+            get
+            {
+                return new ManagementTemplateManagementTemplateStepsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplateSteps"), this.Client);
+            }
+        }
+    
     }
 }

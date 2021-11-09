@@ -57,14 +57,20 @@ namespace Microsoft.Graph.ManagedTenants
         public IManagementActionApplyRequestBuilder Apply(
             string tenantId = null,
             string tenantGroupId = null,
-            string managementTemplateId = null)
+            string managementTemplateId = null,
+            bool? includeAllUsers = null,
+            IEnumerable<string> includeGroups = null,
+            IEnumerable<string> excludeGroups = null)
         {
             return new ManagementActionApplyRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.managedTenants.apply"),
                 this.Client,
                 tenantId,
                 tenantGroupId,
-                managementTemplateId);
+                managementTemplateId,
+                includeAllUsers,
+                includeGroups,
+                excludeGroups);
         }
     
     }

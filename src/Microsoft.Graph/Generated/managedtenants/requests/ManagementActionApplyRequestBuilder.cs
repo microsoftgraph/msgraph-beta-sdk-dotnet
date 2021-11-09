@@ -26,17 +26,26 @@ namespace Microsoft.Graph.ManagedTenants
         /// <param name="tenantId">A tenantId parameter for the OData method call.</param>
         /// <param name="tenantGroupId">A tenantGroupId parameter for the OData method call.</param>
         /// <param name="managementTemplateId">A managementTemplateId parameter for the OData method call.</param>
+        /// <param name="includeAllUsers">A includeAllUsers parameter for the OData method call.</param>
+        /// <param name="includeGroups">A includeGroups parameter for the OData method call.</param>
+        /// <param name="excludeGroups">A excludeGroups parameter for the OData method call.</param>
         public ManagementActionApplyRequestBuilder(
             string requestUrl,
             Microsoft.Graph.IBaseClient client,
             string tenantId,
             string tenantGroupId,
-            string managementTemplateId)
+            string managementTemplateId,
+            bool? includeAllUsers,
+            IEnumerable<string> includeGroups,
+            IEnumerable<string> excludeGroups)
             : base(requestUrl, client)
         {
             this.SetParameter("tenantId", tenantId, true);
             this.SetParameter("tenantGroupId", tenantGroupId, true);
             this.SetParameter("managementTemplateId", managementTemplateId, true);
+            this.SetParameter("includeAllUsers", includeAllUsers, true);
+            this.SetParameter("includeGroups", includeGroups, true);
+            this.SetParameter("excludeGroups", excludeGroups, true);
         }
 
         /// <summary>
@@ -62,6 +71,21 @@ namespace Microsoft.Graph.ManagedTenants
             if (this.HasParameter("managementTemplateId"))
             {
                 request.RequestBody.ManagementTemplateId = this.GetParameter<string>("managementTemplateId");
+            }
+
+            if (this.HasParameter("includeAllUsers"))
+            {
+                request.RequestBody.IncludeAllUsers = this.GetParameter<bool?>("includeAllUsers");
+            }
+
+            if (this.HasParameter("includeGroups"))
+            {
+                request.RequestBody.IncludeGroups = this.GetParameter<IEnumerable<string>>("includeGroups");
+            }
+
+            if (this.HasParameter("excludeGroups"))
+            {
+                request.RequestBody.ExcludeGroups = this.GetParameter<IEnumerable<string>>("excludeGroups");
             }
 
             return request;

@@ -43,6 +43,12 @@ namespace Microsoft.Graph.ManagedTenants
         public bool? OverwriteAllowed { get; set; }
     
         /// <summary>
+        /// Gets or sets settingId.
+        /// </summary>
+        [JsonPropertyName("settingId")]
+        public string SettingId { get; set; }
+    
+        /// <summary>
         /// Gets or sets valueType.
         /// The data type for the setting. Possible values are: string, integer, boolean, guid, stringCollection, integerCollection, booleanCollection, guidCollection, unknownFutureValue. Required. Read-only.
         /// </summary>

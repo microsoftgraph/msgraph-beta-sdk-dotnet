@@ -71,6 +71,12 @@ namespace Microsoft.Graph.ManagedTenants
         public TenantOnboardingStatus? OnboardingStatus { get; set; }
     
         /// <summary>
+        /// Gets or sets tenantOnboardingEligibilityReason.
+        /// </summary>
+        [JsonPropertyName("tenantOnboardingEligibilityReason")]
+        public TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason { get; set; }
+    
+        /// <summary>
         /// Gets or sets workloadStatuses.
         /// The collection of workload statues for the managed tenant. Optional. Read-only.
         /// </summary>

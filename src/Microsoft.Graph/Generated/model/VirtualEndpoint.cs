@@ -64,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets gallery images.
+        /// The gallery image resource on Cloud PC.
         /// </summary>
         [JsonPropertyName("galleryImages")]
         public IVirtualEndpointGalleryImagesCollectionPage GalleryImages { get; set; }

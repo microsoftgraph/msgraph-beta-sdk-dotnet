@@ -23,6 +23,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets category.
+        /// Specifies the category of safeguards. The possible values are: likelyIssues.
         /// </summary>
         [JsonPropertyName("category")]
         public SafeguardCategory? Category { get; set; }

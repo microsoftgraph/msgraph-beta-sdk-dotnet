@@ -65,6 +65,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <returns>The <see cref="IManagementActionTenantDeploymentStatusChangeDeploymentStatusRequestBuilder"/>.</returns>
         public IManagementActionTenantDeploymentStatusChangeDeploymentStatusRequestBuilder ChangeDeploymentStatus(
+            Int32 managementTemplateVersion,
             string tenantGroupId = null,
             string tenantId = null,
             string managementActionId = null,
@@ -74,6 +75,7 @@ namespace Microsoft.Graph.ManagedTenants
             return new ManagementActionTenantDeploymentStatusChangeDeploymentStatusRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.managedTenants.changeDeploymentStatus"),
                 this.Client,
+                managementTemplateVersion,
                 tenantGroupId,
                 tenantId,
                 managementActionId,

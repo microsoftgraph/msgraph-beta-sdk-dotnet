@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessReviewInstanceDecisionItem accessReviewInstanceDecisionItemToInitialize)
         {
 
+            if (accessReviewInstanceDecisionItemToInitialize != null)
+            {
+                if (accessReviewInstanceDecisionItemToInitialize.Insights != null && accessReviewInstanceDecisionItemToInitialize.Insights.CurrentPage != null)
+                {
+                    accessReviewInstanceDecisionItemToInitialize.Insights.InitializeNextPageRequest(this.Client, accessReviewInstanceDecisionItemToInitialize.InsightsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    accessReviewInstanceDecisionItemToInitialize.Insights.AdditionalData = accessReviewInstanceDecisionItemToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

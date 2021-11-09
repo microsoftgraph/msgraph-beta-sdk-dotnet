@@ -20,9 +20,9 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Notstarted
+        /// Not Started
         /// </summary>
-        Notstarted = 0,
+        NotStarted = 0,
 	
         /// <summary>
         /// Running
@@ -38,6 +38,11 @@ namespace Microsoft.Graph
         /// Failed
         /// </summary>
         Failed = 3,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
 	
     }
 }

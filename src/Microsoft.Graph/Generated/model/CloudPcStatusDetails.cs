@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets additionalInformation.
-        /// Any additional information about the cloud PC status.
+        /// Any additional information about the Cloud PC status.
         /// </summary>
         [JsonPropertyName("additionalInformation")]
         public IEnumerable<KeyValuePair> AdditionalInformation { get; set; }
     
         /// <summary>
         /// Gets or sets code.
-        /// The code associated with the cloud PC status.
+        /// The code associated with the Cloud PC status.
         /// </summary>
         [JsonPropertyName("code")]
         public string Code { get; set; }

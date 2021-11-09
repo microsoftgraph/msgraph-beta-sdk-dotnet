@@ -36,6 +36,12 @@ namespace Microsoft.Graph.ManagedTenants
         public string ManagementTemplateId { get; set; }
     
         /// <summary>
+        /// Gets or sets managementTemplateVersion.
+        /// </summary>
+        [JsonPropertyName("managementTemplateVersion")]
+        public Int32? ManagementTemplateVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// The status of the management action. Possible values are: toAddress, completed, error, timeOut, inProgress, planned, resolvedBy3rdParty, resolvedThroughAlternateMitigation, riskAccepted, unknownFutureValue. Required.
         /// </summary>

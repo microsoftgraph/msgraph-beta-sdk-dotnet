@@ -41,6 +41,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <returns>The <see cref="IManagementActionTenantDeploymentStatusChangeDeploymentStatusRequestBuilder"/>.</returns>
         IManagementActionTenantDeploymentStatusChangeDeploymentStatusRequestBuilder ChangeDeploymentStatus(
+            Int32 managementTemplateVersion,
             string tenantGroupId = null,
             string tenantId = null,
             string managementActionId = null,

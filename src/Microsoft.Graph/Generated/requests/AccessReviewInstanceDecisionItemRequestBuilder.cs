@@ -50,6 +50,18 @@ namespace Microsoft.Graph
             return new AccessReviewInstanceDecisionItemRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Insights.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceDecisionItemInsightsCollectionRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceDecisionItemInsightsCollectionRequestBuilder Insights
+        {
+            get
+            {
+                return new AccessReviewInstanceDecisionItemInsightsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("insights"), this.Client);
+            }
+        }
+    
         
     
     }

@@ -189,6 +189,19 @@ namespace Microsoft.Graph.ManagedTenants
         public string ManagementIntentsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets management template collections.
+        /// </summary>
+        [JsonPropertyName("managementTemplateCollections")]
+        public IManagedTenantManagementTemplateCollectionsCollectionPage ManagementTemplateCollections { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementTemplateCollectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementTemplateCollections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagementTemplateCollectionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets management templates.
         /// The collection of baseline management templates across managed tenants.
         /// </summary>
@@ -201,6 +214,32 @@ namespace Microsoft.Graph.ManagedTenants
         [JsonPropertyName("managementTemplates@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string ManagementTemplatesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management template steps.
+        /// </summary>
+        [JsonPropertyName("managementTemplateSteps")]
+        public IManagedTenantManagementTemplateStepsCollectionPage ManagementTemplateSteps { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementTemplateStepsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementTemplateSteps@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagementTemplateStepsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management template step versions.
+        /// </summary>
+        [JsonPropertyName("managementTemplateStepVersions")]
+        public IManagedTenantManagementTemplateStepVersionsCollectionPage ManagementTemplateStepVersions { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementTemplateStepVersionsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementTemplateStepVersions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagementTemplateStepVersionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets tenant groups.

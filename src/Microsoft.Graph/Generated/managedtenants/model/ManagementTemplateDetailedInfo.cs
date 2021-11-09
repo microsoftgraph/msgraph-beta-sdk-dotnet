@@ -43,6 +43,12 @@ namespace Microsoft.Graph.ManagedTenants
         public string ManagementTemplateId { get; set; }
     
         /// <summary>
+        /// Gets or sets version.
+        /// </summary>
+        [JsonPropertyName("version")]
+        public Int32? Version { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]
