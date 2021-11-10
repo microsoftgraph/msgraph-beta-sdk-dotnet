@@ -35,9 +35,14 @@ namespace Microsoft.Graph.ManagedTenants
         Identity = 2,
 	
         /// <summary>
+        /// Data
+        /// </summary>
+        Data = 3,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 3,
+        UnknownFutureValue = 4,
 	
     }
 }

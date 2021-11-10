@@ -23,6 +23,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets disabledSafeguardProfiles.
+        /// List of safeguards to ignore per device.
         /// </summary>
         [JsonPropertyName("disabledSafeguardProfiles")]
         public IEnumerable<SafeguardProfile> DisabledSafeguardProfiles { get; set; }

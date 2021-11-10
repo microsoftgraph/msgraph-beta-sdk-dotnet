@@ -195,6 +195,18 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
+        /// Gets the request builder for ManagementTemplateCollections.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateCollectionsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagementTemplateCollectionsCollectionRequestBuilder ManagementTemplateCollections
+        {
+            get
+            {
+                return new ManagedTenantManagementTemplateCollectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplateCollections"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagementTemplates.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantManagementTemplatesCollectionRequestBuilder"/>.</returns>
@@ -203,6 +215,30 @@ namespace Microsoft.Graph.ManagedTenants
             get
             {
                 return new ManagedTenantManagementTemplatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateSteps.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateStepsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagementTemplateStepsCollectionRequestBuilder ManagementTemplateSteps
+        {
+            get
+            {
+                return new ManagedTenantManagementTemplateStepsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplateSteps"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateStepVersions.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateStepVersionsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagementTemplateStepVersionsCollectionRequestBuilder ManagementTemplateStepVersions
+        {
+            get
+            {
+                return new ManagedTenantManagementTemplateStepVersionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplateStepVersions"), this.Client);
             }
         }
 

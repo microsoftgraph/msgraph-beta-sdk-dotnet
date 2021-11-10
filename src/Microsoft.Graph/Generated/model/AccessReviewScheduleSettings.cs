@@ -71,6 +71,12 @@ namespace Microsoft.Graph
         public bool? MailNotificationsEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets recommendationInsightSettings.
+        /// </summary>
+        [JsonPropertyName("recommendationInsightSettings")]
+        public IEnumerable<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets recommendationLookBackDuration.
         /// Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
         /// </summary>

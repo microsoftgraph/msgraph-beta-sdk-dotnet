@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets domain join configuration.
+        /// Specifies how Cloud PCs will join Azure Active Directory.
         /// </summary>
         [JsonPropertyName("domainJoinConfiguration")]
         public CloudPcDomainJoinConfiguration DomainJoinConfiguration { get; set; }

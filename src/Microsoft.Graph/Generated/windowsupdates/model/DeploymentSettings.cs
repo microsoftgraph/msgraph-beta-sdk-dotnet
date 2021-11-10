@@ -37,6 +37,7 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets safeguard.
+        /// Settings governing safeguard holds on offering content.
         /// </summary>
         [JsonPropertyName("safeguard")]
         public SafeguardSettings Safeguard { get; set; }

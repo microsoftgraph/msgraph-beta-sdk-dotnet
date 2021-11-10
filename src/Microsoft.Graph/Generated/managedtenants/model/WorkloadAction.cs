@@ -50,6 +50,12 @@ namespace Microsoft.Graph.ManagedTenants
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets licenses.
+        /// </summary>
+        [JsonPropertyName("licenses")]
+        public IEnumerable<string> Licenses { get; set; }
+    
+        /// <summary>
         /// Gets or sets service.
         /// The service associated with workload action. Optional. Read-only.
         /// </summary>

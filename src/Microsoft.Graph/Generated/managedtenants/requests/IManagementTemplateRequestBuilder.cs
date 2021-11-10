@@ -31,5 +31,17 @@ namespace Microsoft.Graph.ManagedTenants
         /// <returns>The built request.</returns>
         new IManagementTemplateRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateCollections.
+        /// </summary>
+        /// <returns>The <see cref="IManagementTemplateManagementTemplateCollectionsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IManagementTemplateManagementTemplateCollectionsCollectionWithReferencesRequestBuilder ManagementTemplateCollections { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateSteps.
+        /// </summary>
+        /// <returns>The <see cref="IManagementTemplateManagementTemplateStepsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IManagementTemplateManagementTemplateStepsCollectionWithReferencesRequestBuilder ManagementTemplateSteps { get; }
+    
     }
 }

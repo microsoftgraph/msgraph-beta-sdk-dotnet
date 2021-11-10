@@ -50,11 +50,43 @@ namespace Microsoft.Graph.ManagedTenants
         public IEnumerable<TemplateParameter> Parameters { get; set; }
     
         /// <summary>
+        /// Gets or sets version.
+        /// </summary>
+        [JsonPropertyName("version")]
+        public Int32? Version { get; set; }
+    
+        /// <summary>
         /// Gets or sets workload actions.
         /// The collection of workload actions associated with the management template. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("workloadActions")]
         public IEnumerable<WorkloadAction> WorkloadActions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management template collections.
+        /// </summary>
+        [JsonPropertyName("managementTemplateCollections")]
+        public IManagementTemplateManagementTemplateCollectionsCollectionWithReferencesPage ManagementTemplateCollections { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementTemplateCollectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementTemplateCollections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagementTemplateCollectionsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management template steps.
+        /// </summary>
+        [JsonPropertyName("managementTemplateSteps")]
+        public IManagementTemplateManagementTemplateStepsCollectionWithReferencesPage ManagementTemplateSteps { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementTemplateStepsNextLink.
+        /// </summary>
+        [JsonPropertyName("managementTemplateSteps@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagementTemplateStepsNextLink { get; set; }
     
     }
 }

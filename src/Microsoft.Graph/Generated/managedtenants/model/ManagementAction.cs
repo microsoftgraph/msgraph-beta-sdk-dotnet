@@ -50,6 +50,12 @@ namespace Microsoft.Graph.ManagedTenants
         public string ReferenceTemplateId { get; set; }
     
         /// <summary>
+        /// Gets or sets reference template version.
+        /// </summary>
+        [JsonPropertyName("referenceTemplateVersion")]
+        public Int32? ReferenceTemplateVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets workload actions.
         /// The collection of workload actions associated with the management action. Required. Read-only.
         /// </summary>

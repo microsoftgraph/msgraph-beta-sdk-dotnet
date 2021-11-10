@@ -38,7 +38,10 @@ namespace Microsoft.Graph.ManagedTenants
         IManagementActionApplyRequestBuilder Apply(
             string tenantId = null,
             string tenantGroupId = null,
-            string managementTemplateId = null);
+            string managementTemplateId = null,
+            bool? includeAllUsers = null,
+            IEnumerable<string> includeGroups = null,
+            IEnumerable<string> excludeGroups = null);
     
     }
 }

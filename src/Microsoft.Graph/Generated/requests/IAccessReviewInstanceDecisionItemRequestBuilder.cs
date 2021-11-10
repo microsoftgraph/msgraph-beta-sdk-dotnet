@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IAccessReviewInstanceDecisionItemRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Insights.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceDecisionItemInsightsCollectionRequestBuilder"/>.</returns>
+        IAccessReviewInstanceDecisionItemInsightsCollectionRequestBuilder Insights { get; }
+    
         
     
     }

@@ -52,14 +52,14 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets export options.
-        /// The options provided for the export. See reviewSet: export for more details. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+        /// The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
         /// </summary>
         [JsonPropertyName("exportOptions")]
         public ExportOptions? ExportOptions { get; set; }
     
         /// <summary>
         /// Gets or sets export structure.
-        /// The options provided that specify the structure of the export. See reviewSet: export for more details. Possible values are: none, directory, pst.
+        /// The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.
         /// </summary>
         [JsonPropertyName("exportStructure")]
         public ExportFileStructure? ExportStructure { get; set; }

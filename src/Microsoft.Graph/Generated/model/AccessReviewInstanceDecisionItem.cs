@@ -118,6 +118,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("target")]
         public AccessReviewInstanceDecisionItemTarget Target { get; set; }
     
+        /// <summary>
+        /// Gets or sets insights.
+        /// </summary>
+        [JsonPropertyName("insights")]
+        public IAccessReviewInstanceDecisionItemInsightsCollectionPage Insights { get; set; }
+
+        /// <summary>
+        /// Gets or sets insightsNextLink.
+        /// </summary>
+        [JsonPropertyName("insights@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string InsightsNextLink { get; set; }
+    
     }
 }
 

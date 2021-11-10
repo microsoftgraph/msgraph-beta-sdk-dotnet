@@ -44,5 +44,15 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 4,
 	
+        /// <summary>
+        /// Invited
+        /// </summary>
+        Invited = 5,
+	
+        /// <summary>
+        /// Organization Excluding Guests
+        /// </summary>
+        OrganizationExcludingGuests = 6,
+	
     }
 }

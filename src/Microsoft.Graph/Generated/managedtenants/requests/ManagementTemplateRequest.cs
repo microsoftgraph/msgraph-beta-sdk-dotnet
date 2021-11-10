@@ -244,6 +244,24 @@ namespace Microsoft.Graph.ManagedTenants
         private void InitializeCollectionProperties(ManagementTemplate managementTemplateToInitialize)
         {
 
+            if (managementTemplateToInitialize != null)
+            {
+                if (managementTemplateToInitialize.ManagementTemplateCollections != null && managementTemplateToInitialize.ManagementTemplateCollections.CurrentPage != null)
+                {
+                    managementTemplateToInitialize.ManagementTemplateCollections.InitializeNextPageRequest(this.Client, managementTemplateToInitialize.ManagementTemplateCollectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managementTemplateToInitialize.ManagementTemplateCollections.AdditionalData = managementTemplateToInitialize.AdditionalData;
+                }
+                if (managementTemplateToInitialize.ManagementTemplateSteps != null && managementTemplateToInitialize.ManagementTemplateSteps.CurrentPage != null)
+                {
+                    managementTemplateToInitialize.ManagementTemplateSteps.InitializeNextPageRequest(this.Client, managementTemplateToInitialize.ManagementTemplateStepsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managementTemplateToInitialize.ManagementTemplateSteps.AdditionalData = managementTemplateToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

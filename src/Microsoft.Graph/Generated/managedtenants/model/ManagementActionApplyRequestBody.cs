@@ -38,5 +38,23 @@ namespace Microsoft.Graph.ManagedTenants
         [JsonPropertyName("managementTemplateId")]
         public string ManagementTemplateId { get; set; }
     
+        /// <summary>
+        /// Gets or sets IncludeAllUsers.
+        /// </summary>
+        [JsonPropertyName("includeAllUsers")]
+        public bool? IncludeAllUsers { get; set; }
+    
+        /// <summary>
+        /// Gets or sets IncludeGroups.
+        /// </summary>
+        [JsonPropertyName("includeGroups")]
+        public IEnumerable<string> IncludeGroups { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ExcludeGroups.
+        /// </summary>
+        [JsonPropertyName("excludeGroups")]
+        public IEnumerable<string> ExcludeGroups { get; set; }
+    
     }
 }
