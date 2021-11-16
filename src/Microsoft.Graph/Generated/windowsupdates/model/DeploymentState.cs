@@ -30,14 +30,14 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets requestedValue.
-        /// Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused.
+        /// Specifies the requested state of the deployment. Supports a subset of the values for requestedDeploymentStateValue. Possible values are: none, paused, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("requestedValue")]
         public RequestedDeploymentStateValue? RequestedValue { get; set; }
     
         /// <summary>
         /// Gets or sets value.
-        /// Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused. Read-only.
+        /// Specifies the state of the deployment. Supports a subset of the values for deploymentStateValue. Possible values are: scheduled, offering, paused, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("value")]
         public DeploymentStateValue? Value { get; set; }

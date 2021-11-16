@@ -89,6 +89,32 @@ namespace Microsoft.Graph
         public string FederationConfigurationsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets inbound shared user profiles.
+        /// </summary>
+        [JsonPropertyName("inboundSharedUserProfiles")]
+        public IDirectoryInboundSharedUserProfilesCollectionPage InboundSharedUserProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets inboundSharedUserProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("inboundSharedUserProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string InboundSharedUserProfilesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets outbound shared user profiles.
+        /// </summary>
+        [JsonPropertyName("outboundSharedUserProfiles")]
+        public IDirectoryOutboundSharedUserProfilesCollectionPage OutboundSharedUserProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets outboundSharedUserProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("outboundSharedUserProfiles@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string OutboundSharedUserProfilesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets shared email domains.
         /// </summary>
         [JsonPropertyName("sharedEmailDomains")]

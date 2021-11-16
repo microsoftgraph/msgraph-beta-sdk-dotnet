@@ -39,5 +39,15 @@ namespace Microsoft.Graph
         /// </summary>
         SourceImageInvalid = 3,
 	
+        /// <summary>
+        /// Source Image Not Generalized
+        /// </summary>
+        SourceImageNotGeneralized = 4,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 999,
+	
     }
 }

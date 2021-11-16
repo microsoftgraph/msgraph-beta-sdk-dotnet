@@ -30,7 +30,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets reason.
-        /// The reason why the registration encountered an error. Possible values are: invalidGlobalDeviceId, invalidAzureADDeviceId, missingTrustType, invalidAzureADJoin.
+        /// The reason why the registration encountered an error. Possible values are: invalidGlobalDeviceId, invalidAzureADDeviceId, missingTrustType, invalidAzureADJoin, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("reason")]
         public AzureADDeviceRegistrationErrorReason? Reason { get; set; }

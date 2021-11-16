@@ -276,6 +276,18 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     directoryToInitialize.FederationConfigurations.AdditionalData = directoryToInitialize.AdditionalData;
                 }
+                if (directoryToInitialize.InboundSharedUserProfiles != null && directoryToInitialize.InboundSharedUserProfiles.CurrentPage != null)
+                {
+                    directoryToInitialize.InboundSharedUserProfiles.InitializeNextPageRequest(this.Client, directoryToInitialize.InboundSharedUserProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    directoryToInitialize.InboundSharedUserProfiles.AdditionalData = directoryToInitialize.AdditionalData;
+                }
+                if (directoryToInitialize.OutboundSharedUserProfiles != null && directoryToInitialize.OutboundSharedUserProfiles.CurrentPage != null)
+                {
+                    directoryToInitialize.OutboundSharedUserProfiles.InitializeNextPageRequest(this.Client, directoryToInitialize.OutboundSharedUserProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    directoryToInitialize.OutboundSharedUserProfiles.AdditionalData = directoryToInitialize.AdditionalData;
+                }
                 if (directoryToInitialize.SharedEmailDomains != null && directoryToInitialize.SharedEmailDomains.CurrentPage != null)
                 {
                     directoryToInitialize.SharedEmailDomains.InitializeNextPageRequest(this.Client, directoryToInitialize.SharedEmailDomainsNextLink);

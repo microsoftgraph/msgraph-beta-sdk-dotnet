@@ -23,7 +23,7 @@ namespace Microsoft.Graph.WindowsUpdates
 
         /// <summary>
         /// Gets or sets value.
-        /// Specifies a reason for the deployment state. Possible values are: scheduledByOfferWindow, offeringByRequest, pausedByRequest, pausedByMonitoring. Read-only.
+        /// Specifies a reason for the deployment state. Possible values are: scheduledByOfferWindow, offeringByRequest, pausedByRequest, pausedByMonitoring. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: faultedByContentOutdated. Read-only.
         /// </summary>
         [JsonPropertyName("value")]
         public DeploymentStateReasonValue? Value { get; set; }

@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets aad device id.
+        /// </summary>
+        [JsonPropertyName("aadDeviceId")]
+        public string AadDeviceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The Cloud PC display name.
         /// </summary>
@@ -43,11 +49,23 @@ namespace Microsoft.Graph
         public string ImageDisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets last login result.
+        /// </summary>
+        [JsonPropertyName("lastLoginResult")]
+        public CloudPcLoginResult LastLoginResult { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// The Cloud PC's last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last remote action result.
+        /// </summary>
+        [JsonPropertyName("lastRemoteActionResult")]
+        public CloudPcRemoteActionResult LastRemoteActionResult { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
@@ -97,6 +115,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("servicePlanName")]
         public string ServicePlanName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service plan type.
+        /// </summary>
+        [JsonPropertyName("servicePlanType")]
+        public CloudPcServicePlanType? ServicePlanType { get; set; }
     
         /// <summary>
         /// Gets or sets status.

@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for ScheduledActionConfigurations.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionWithReferencesRequestBuilder ScheduledActionConfigurations { get; }
+        /// <returns>The <see cref="IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder ScheduledActionConfigurations { get; }
     
     }
 }

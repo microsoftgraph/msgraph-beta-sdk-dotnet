@@ -34,8 +34,8 @@ namespace Microsoft.Graph.ManagedTenants
         /// <summary>
         /// Gets the request builder for Deployments.
         /// </summary>
-        /// <returns>The <see cref="IManagementTemplateStepVersionDeploymentsCollectionWithReferencesRequestBuilder"/>.</returns>
-        IManagementTemplateStepVersionDeploymentsCollectionWithReferencesRequestBuilder Deployments { get; }
+        /// <returns>The <see cref="IManagementTemplateStepVersionDeploymentsCollectionRequestBuilder"/>.</returns>
+        IManagementTemplateStepVersionDeploymentsCollectionRequestBuilder Deployments { get; }
 
         /// <summary>
         /// Gets the request builder for TemplateStep.

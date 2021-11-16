@@ -39,6 +39,12 @@ namespace Microsoft.Graph
             string sessionId = null);
 
         /// <summary>
+        /// Gets the request builder for PresenceClearUserPreferredPresence.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceClearUserPreferredPresenceRequestBuilder"/>.</returns>
+        IPresenceClearUserPreferredPresenceRequestBuilder ClearUserPreferredPresence();
+
+        /// <summary>
         /// Gets the request builder for PresenceSetPresence.
         /// </summary>
         /// <returns>The <see cref="IPresenceSetPresenceRequestBuilder"/>.</returns>
@@ -46,6 +52,15 @@ namespace Microsoft.Graph
             string availability,
             string activity,
             string sessionId = null,
+            Duration expirationDuration = null);
+
+        /// <summary>
+        /// Gets the request builder for PresenceSetUserPreferredPresence.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceSetUserPreferredPresenceRequestBuilder"/>.</returns>
+        IPresenceSetUserPreferredPresenceRequestBuilder SetUserPreferredPresence(
+            string availability = null,
+            string activity = null,
             Duration expirationDuration = null);
     
     }

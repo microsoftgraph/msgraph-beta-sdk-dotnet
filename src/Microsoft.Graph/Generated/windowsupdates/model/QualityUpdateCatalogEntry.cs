@@ -38,7 +38,7 @@ namespace Microsoft.Graph.WindowsUpdates
     
         /// <summary>
         /// Gets or sets quality update classification.
-        /// The classification on the quality update. Supports a subset of the values for qualityUpdateClassification. Possible values are: all, security, nonSecurity. Read-only.
+        /// The classification on the quality update. Possible values are: all, security, nonSecurity, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("qualityUpdateClassification")]
         public QualityUpdateClassification? QualityUpdateClassification { get; set; }

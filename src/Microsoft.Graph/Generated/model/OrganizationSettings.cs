@@ -25,7 +25,13 @@ namespace Microsoft.Graph
         /// Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.
         /// </summary>
         [JsonPropertyName("itemInsights")]
-        public ItemInsightsSettings ItemInsights { get; set; }
+        public InsightsSettings ItemInsights { get; set; }
+    
+        /// <summary>
+        /// Gets or sets people insights.
+        /// </summary>
+        [JsonPropertyName("peopleInsights")]
+        public InsightsSettings PeopleInsights { get; set; }
     
         /// <summary>
         /// Gets or sets profile card properties.

@@ -38,10 +38,29 @@ namespace Microsoft.Graph
         ICloudPCEndGracePeriodRequestBuilder EndGracePeriod();
 
         /// <summary>
+        /// Gets the request builder for CloudPCReboot.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCRebootRequestBuilder"/>.</returns>
+        ICloudPCRebootRequestBuilder Reboot();
+
+        /// <summary>
+        /// Gets the request builder for CloudPCRename.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCRenameRequestBuilder"/>.</returns>
+        ICloudPCRenameRequestBuilder Rename(
+            string displayName = null);
+
+        /// <summary>
         /// Gets the request builder for CloudPCReprovision.
         /// </summary>
         /// <returns>The <see cref="ICloudPCReprovisionRequestBuilder"/>.</returns>
         ICloudPCReprovisionRequestBuilder Reprovision();
+
+        /// <summary>
+        /// Gets the request builder for CloudPCTroubleshoot.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCTroubleshootRequestBuilder"/>.</returns>
+        ICloudPCTroubleshootRequestBuilder Troubleshoot();
     
     }
 }

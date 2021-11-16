@@ -32,7 +32,7 @@ namespace Microsoft.Graph
         /// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
         /// </summary>
         [JsonPropertyName("scheduledActionConfigurations")]
-        public IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionWithReferencesPage ScheduledActionConfigurations { get; set; }
+        public IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionPage ScheduledActionConfigurations { get; set; }
 
         /// <summary>
         /// Gets or sets scheduledActionConfigurationsNextLink.

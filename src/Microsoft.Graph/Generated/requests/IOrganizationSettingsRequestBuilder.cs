@@ -34,8 +34,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for ItemInsights.
         /// </summary>
-        /// <returns>The <see cref="IItemInsightsSettingsRequestBuilder"/>.</returns>
-        IItemInsightsSettingsRequestBuilder ItemInsights { get; }
+        /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>
+        IInsightsSettingsRequestBuilder ItemInsights { get; }
+
+        /// <summary>
+        /// Gets the request builder for PeopleInsights.
+        /// </summary>
+        /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>
+        IInsightsSettingsRequestBuilder PeopleInsights { get; }
 
         /// <summary>
         /// Gets the request builder for ProfileCardProperties.

@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets expiration date.
+        /// </summary>
+        [JsonPropertyName("expirationDate")]
+        public Date ExpirationDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
         /// </summary>
@@ -48,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("osBuildNumber")]
         public string OsBuildNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets os status.
+        /// </summary>
+        [JsonPropertyName("osStatus")]
+        public CloudPcDeviceImageOsStatus? OsStatus { get; set; }
     
         /// <summary>
         /// Gets or sets source image resource id.
