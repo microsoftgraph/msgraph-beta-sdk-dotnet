@@ -111,6 +111,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for InboundSharedUserProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryInboundSharedUserProfilesCollectionRequestBuilder"/>.</returns>
+        public IDirectoryInboundSharedUserProfilesCollectionRequestBuilder InboundSharedUserProfiles
+        {
+            get
+            {
+                return new DirectoryInboundSharedUserProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("inboundSharedUserProfiles"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for OutboundSharedUserProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryOutboundSharedUserProfilesCollectionRequestBuilder"/>.</returns>
+        public IDirectoryOutboundSharedUserProfilesCollectionRequestBuilder OutboundSharedUserProfiles
+        {
+            get
+            {
+                return new DirectoryOutboundSharedUserProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("outboundSharedUserProfiles"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SharedEmailDomains.
         /// </summary>
         /// <returns>The <see cref="IDirectorySharedEmailDomainsCollectionRequestBuilder"/>.</returns>

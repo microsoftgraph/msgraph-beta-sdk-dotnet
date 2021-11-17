@@ -53,12 +53,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for ItemInsights.
         /// </summary>
-        /// <returns>The <see cref="IItemInsightsSettingsRequestBuilder"/>.</returns>
-        public IItemInsightsSettingsRequestBuilder ItemInsights
+        /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>
+        public IInsightsSettingsRequestBuilder ItemInsights
         {
             get
             {
-                return new ItemInsightsSettingsRequestBuilder(this.AppendSegmentToRequestUrl("itemInsights"), this.Client);
+                return new InsightsSettingsRequestBuilder(this.AppendSegmentToRequestUrl("itemInsights"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PeopleInsights.
+        /// </summary>
+        /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>
+        public IInsightsSettingsRequestBuilder PeopleInsights
+        {
+            get
+            {
+                return new InsightsSettingsRequestBuilder(this.AppendSegmentToRequestUrl("peopleInsights"), this.Client);
             }
         }
 

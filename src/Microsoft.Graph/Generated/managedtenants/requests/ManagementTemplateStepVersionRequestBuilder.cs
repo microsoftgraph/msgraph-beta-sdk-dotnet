@@ -53,12 +53,12 @@ namespace Microsoft.Graph.ManagedTenants
         /// <summary>
         /// Gets the request builder for Deployments.
         /// </summary>
-        /// <returns>The <see cref="IManagementTemplateStepVersionDeploymentsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IManagementTemplateStepVersionDeploymentsCollectionWithReferencesRequestBuilder Deployments
+        /// <returns>The <see cref="IManagementTemplateStepVersionDeploymentsCollectionRequestBuilder"/>.</returns>
+        public IManagementTemplateStepVersionDeploymentsCollectionRequestBuilder Deployments
         {
             get
             {
-                return new ManagementTemplateStepVersionDeploymentsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("deployments"), this.Client);
+                return new ManagementTemplateStepVersionDeploymentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deployments"), this.Client);
             }
         }
 

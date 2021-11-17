@@ -62,6 +62,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CloudPCReboot.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCRebootRequestBuilder"/>.</returns>
+        public ICloudPCRebootRequestBuilder Reboot()
+        {
+            return new CloudPCRebootRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reboot"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCRename.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCRenameRequestBuilder"/>.</returns>
+        public ICloudPCRenameRequestBuilder Rename(
+            string displayName = null)
+        {
+            return new CloudPCRenameRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.rename"),
+                this.Client,
+                displayName);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCReprovision.
         /// </summary>
         /// <returns>The <see cref="ICloudPCReprovisionRequestBuilder"/>.</returns>
@@ -69,6 +93,17 @@ namespace Microsoft.Graph
         {
             return new CloudPCReprovisionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.reprovision"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCTroubleshoot.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCTroubleshootRequestBuilder"/>.</returns>
+        public ICloudPCTroubleshootRequestBuilder Troubleshoot()
+        {
+            return new CloudPCTroubleshootRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.troubleshoot"),
                 this.Client);
         }
     

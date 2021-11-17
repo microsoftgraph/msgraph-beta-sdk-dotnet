@@ -42,7 +42,7 @@ namespace Microsoft.Graph.ManagedTenants
         /// Gets or sets deployments.
         /// </summary>
         [JsonPropertyName("deployments")]
-        public IManagementTemplateStepVersionDeploymentsCollectionWithReferencesPage Deployments { get; set; }
+        public IManagementTemplateStepVersionDeploymentsCollectionPage Deployments { get; set; }
 
         /// <summary>
         /// Gets or sets deploymentsNextLink.

@@ -60,6 +60,21 @@ namespace Microsoft.Graph
         AdJoinCheckAccessDenied = 205,
 	
         /// <summary>
+        /// Ad Join Check Credentials Expired
+        /// </summary>
+        AdJoinCheckCredentialsExpired = 206,
+	
+        /// <summary>
+        /// Ad Join Check Account Locked Or Disabled
+        /// </summary>
+        AdJoinCheckAccountLockedOrDisabled = 207,
+	
+        /// <summary>
+        /// Ad Join Check Account Quota Exceeded
+        /// </summary>
+        AdJoinCheckAccountQuotaExceeded = 208,
+	
+        /// <summary>
         /// Ad Join Check Unknown Error
         /// </summary>
         AdJoinCheckUnknownError = 299,
@@ -150,6 +165,51 @@ namespace Microsoft.Graph
         ResourceAvailabilityCheckUnsupportedVNetRegion = 506,
 	
         /// <summary>
+        /// Resource Availability Check Resource Group Invalid
+        /// </summary>
+        ResourceAvailabilityCheckResourceGroupInvalid = 507,
+	
+        /// <summary>
+        /// Resource Availability Check VNet Invalid
+        /// </summary>
+        ResourceAvailabilityCheckVNetInvalid = 508,
+	
+        /// <summary>
+        /// Resource Availability Check Subnet Invalid
+        /// </summary>
+        ResourceAvailabilityCheckSubnetInvalid = 509,
+	
+        /// <summary>
+        /// Resource Availability Check Resource Group Being Deleted
+        /// </summary>
+        ResourceAvailabilityCheckResourceGroupBeingDeleted = 510,
+	
+        /// <summary>
+        /// Resource Availability Check VNet Being Moved
+        /// </summary>
+        ResourceAvailabilityCheckVNetBeingMoved = 511,
+	
+        /// <summary>
+        /// Resource Availability Check Subnet Delegation Failed
+        /// </summary>
+        ResourceAvailabilityCheckSubnetDelegationFailed = 512,
+	
+        /// <summary>
+        /// Resource Availability Check Subnet With External Resources
+        /// </summary>
+        ResourceAvailabilityCheckSubnetWithExternalResources = 513,
+	
+        /// <summary>
+        /// Resource Availability Check Resource Group Locked For Readonly
+        /// </summary>
+        ResourceAvailabilityCheckResourceGroupLockedForReadonly = 514,
+	
+        /// <summary>
+        /// Resource Availability Check Resource Group Locked For Delete
+        /// </summary>
+        ResourceAvailabilityCheckResourceGroupLockedForDelete = 515,
+	
+        /// <summary>
         /// Resource Availability Check Transient Service Error
         /// </summary>
         ResourceAvailabilityCheckTransientServiceError = 598,
@@ -213,6 +273,11 @@ namespace Microsoft.Graph
         /// Internal Server Unknown Error
         /// </summary>
         InternalServerUnknownError = 999,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 9999,
 	
     }
 }

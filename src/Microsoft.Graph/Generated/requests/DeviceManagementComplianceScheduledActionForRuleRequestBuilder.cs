@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for ScheduledActionConfigurations.
         /// </summary>
-        /// <returns>The <see cref="IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionWithReferencesRequestBuilder ScheduledActionConfigurations
+        /// <returns>The <see cref="IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder ScheduledActionConfigurations
         {
             get
             {
-                return new DeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("scheduledActionConfigurations"), this.Client);
+                return new DeviceManagementComplianceScheduledActionForRuleScheduledActionConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("scheduledActionConfigurations"), this.Client);
             }
         }
     

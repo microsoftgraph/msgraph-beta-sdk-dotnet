@@ -64,6 +64,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PresenceClearUserPreferredPresence.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceClearUserPreferredPresenceRequestBuilder"/>.</returns>
+        public IPresenceClearUserPreferredPresenceRequestBuilder ClearUserPreferredPresence()
+        {
+            return new PresenceClearUserPreferredPresenceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.clearUserPreferredPresence"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for PresenceSetPresence.
         /// </summary>
         /// <returns>The <see cref="IPresenceSetPresenceRequestBuilder"/>.</returns>
@@ -79,6 +90,23 @@ namespace Microsoft.Graph
                 availability,
                 activity,
                 sessionId,
+                expirationDuration);
+        }
+
+        /// <summary>
+        /// Gets the request builder for PresenceSetUserPreferredPresence.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceSetUserPreferredPresenceRequestBuilder"/>.</returns>
+        public IPresenceSetUserPreferredPresenceRequestBuilder SetUserPreferredPresence(
+            string availability = null,
+            string activity = null,
+            Duration expirationDuration = null)
+        {
+            return new PresenceSetUserPreferredPresenceRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setUserPreferredPresence"),
+                this.Client,
+                availability,
+                activity,
                 expirationDuration);
         }
     

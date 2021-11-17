@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets certified client applications only.
+        /// </summary>
+        [JsonPropertyName("certifiedClientApplicationsOnly")]
+        public bool? CertifiedClientApplicationsOnly { get; set; }
+    
+        /// <summary>
         /// Gets or sets client application ids.
         /// A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
         /// </summary>

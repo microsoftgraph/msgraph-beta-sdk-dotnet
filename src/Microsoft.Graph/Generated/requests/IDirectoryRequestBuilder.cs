@@ -62,6 +62,18 @@ namespace Microsoft.Graph
         IDirectoryFederationConfigurationsCollectionRequestBuilder FederationConfigurations { get; }
 
         /// <summary>
+        /// Gets the request builder for InboundSharedUserProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryInboundSharedUserProfilesCollectionRequestBuilder"/>.</returns>
+        IDirectoryInboundSharedUserProfilesCollectionRequestBuilder InboundSharedUserProfiles { get; }
+
+        /// <summary>
+        /// Gets the request builder for OutboundSharedUserProfiles.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryOutboundSharedUserProfilesCollectionRequestBuilder"/>.</returns>
+        IDirectoryOutboundSharedUserProfilesCollectionRequestBuilder OutboundSharedUserProfiles { get; }
+
+        /// <summary>
         /// Gets the request builder for SharedEmailDomains.
         /// </summary>
         /// <returns>The <see cref="IDirectorySharedEmailDomainsCollectionRequestBuilder"/>.</returns>
