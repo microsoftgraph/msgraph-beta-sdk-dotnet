@@ -37,91 +37,91 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets company name.
-        /// Name of the company that this organizational contact belong to. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
+        /// Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("companyName")]
         public string CompanyName { get; set; }
     
         /// <summary>
         /// Gets or sets department.
-        /// The name for the department in which the contact works. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
+        /// The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("department")]
         public string Department { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+        /// Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets given name.
-        /// First name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
+        /// First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("givenName")]
         public string GivenName { get; set; }
     
         /// <summary>
         /// Gets or sets job title.
-        /// Job title for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
+        /// Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
+        /// The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("mail")]
         public string Mail { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).
+        /// Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, NOT, ge, le, in).
+        /// Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).
         /// </summary>
         [JsonPropertyName("onPremisesLastSyncDateTime")]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets on premises provisioning errors.
-        /// List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, NOT).
+        /// List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).
         /// </summary>
         [JsonPropertyName("onPremisesProvisioningErrors")]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
-        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, NOT, in, and eq on null values).
+        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).
         /// </summary>
         [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets phones.
-        /// List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, NOT, in).
+        /// List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).
         /// </summary>
         [JsonPropertyName("phones")]
         public IEnumerable<Phone> Phones { get; set; }
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, NOT, ge, le, startsWith).
+        /// For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("proxyAddresses")]
         public IEnumerable<string> ProxyAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
-        /// Last name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values)
+        /// Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
         /// </summary>
         [JsonPropertyName("surname")]
         public string Surname { get; set; }

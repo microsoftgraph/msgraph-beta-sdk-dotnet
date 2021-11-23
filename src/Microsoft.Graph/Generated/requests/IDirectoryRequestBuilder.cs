@@ -32,6 +32,18 @@ namespace Microsoft.Graph
         new IDirectoryRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for ImpactedResources.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryImpactedResourcesCollectionRequestBuilder"/>.</returns>
+        IDirectoryImpactedResourcesCollectionRequestBuilder ImpactedResources { get; }
+
+        /// <summary>
+        /// Gets the request builder for Recommendations.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryRecommendationsCollectionRequestBuilder"/>.</returns>
+        IDirectoryRecommendationsCollectionRequestBuilder Recommendations { get; }
+
+        /// <summary>
         /// Gets the request builder for AdministrativeUnits.
         /// </summary>
         /// <returns>The <see cref="IDirectoryAdministrativeUnitsCollectionRequestBuilder"/>.</returns>

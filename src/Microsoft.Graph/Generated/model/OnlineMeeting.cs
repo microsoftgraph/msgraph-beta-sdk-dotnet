@@ -225,8 +225,21 @@ namespace Microsoft.Graph
         public string VideoTeleconferenceId { get; set; }
     
         /// <summary>
+        /// Gets or sets attendance reports.
+        /// The attendance reports of an online meeting. Read-only.
+        /// </summary>
+        [JsonPropertyName("attendanceReports")]
+        public IOnlineMeetingAttendanceReportsCollectionPage AttendanceReports { get; set; }
+
+        /// <summary>
+        /// Gets or sets attendanceReportsNextLink.
+        /// </summary>
+        [JsonPropertyName("attendanceReports@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AttendanceReportsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets meeting attendance report.
-        /// The attendance report of an online meeting. Read-only.
         /// </summary>
         [JsonPropertyName("meetingAttendanceReport")]
         public MeetingAttendanceReport MeetingAttendanceReport { get; set; }

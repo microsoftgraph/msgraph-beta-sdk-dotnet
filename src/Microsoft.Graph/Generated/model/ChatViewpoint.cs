@@ -23,13 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isHidden.
+        /// Indicates whether the chat is hidden for the current user.
         /// </summary>
         [JsonPropertyName("isHidden")]
         public bool? IsHidden { get; set; }
     
         /// <summary>
         /// Gets or sets lastMessageReadDateTime.
-        /// Represents the dateTime up until which the calling user has read chatMessages in a specific chat.
+        /// Represents the dateTime up until which the current user has read chatMessages in a specific chat.
         /// </summary>
         [JsonPropertyName("lastMessageReadDateTime")]
         public DateTimeOffset? LastMessageReadDateTime { get; set; }

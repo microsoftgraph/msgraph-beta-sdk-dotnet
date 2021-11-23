@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IMeetingAttendanceReportRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for AttendanceRecords.
+        /// </summary>
+        /// <returns>The <see cref="IMeetingAttendanceReportAttendanceRecordsCollectionRequestBuilder"/>.</returns>
+        IMeetingAttendanceReportAttendanceRecordsCollectionRequestBuilder AttendanceRecords { get; }
+    
     }
 }

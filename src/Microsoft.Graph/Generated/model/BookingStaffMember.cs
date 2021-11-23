@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role.
-        /// The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest. Required.
+        /// The role of the staff member in the business. Possible values are: guest, administrator, viewer, externalGuest, scheduler, and member. Required.
         /// </summary>
         [JsonPropertyName("role")]
         public BookingStaffRole? Role { get; set; }

@@ -51,6 +51,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ImpactedResources.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryImpactedResourcesCollectionRequestBuilder"/>.</returns>
+        public IDirectoryImpactedResourcesCollectionRequestBuilder ImpactedResources
+        {
+            get
+            {
+                return new DirectoryImpactedResourcesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("impactedResources"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Recommendations.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryRecommendationsCollectionRequestBuilder"/>.</returns>
+        public IDirectoryRecommendationsCollectionRequestBuilder Recommendations
+        {
+            get
+            {
+                return new DirectoryRecommendationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("recommendations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AdministrativeUnits.
         /// </summary>
         /// <returns>The <see cref="IDirectoryAdministrativeUnitsCollectionRequestBuilder"/>.</returns>

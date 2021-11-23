@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IOnlineMeetingRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AttendanceReports.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingAttendanceReportsCollectionRequestBuilder"/>.</returns>
+        IOnlineMeetingAttendanceReportsCollectionRequestBuilder AttendanceReports { get; }
+
+        /// <summary>
         /// Gets the request builder for MeetingAttendanceReport.
         /// </summary>
         /// <returns>The <see cref="IMeetingAttendanceReportRequestBuilder"/>.</returns>

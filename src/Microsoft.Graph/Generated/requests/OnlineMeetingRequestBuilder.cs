@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AttendanceReports.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingAttendanceReportsCollectionRequestBuilder"/>.</returns>
+        public IOnlineMeetingAttendanceReportsCollectionRequestBuilder AttendanceReports
+        {
+            get
+            {
+                return new OnlineMeetingAttendanceReportsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attendanceReports"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for MeetingAttendanceReport.
         /// </summary>
         /// <returns>The <see cref="IMeetingAttendanceReportRequestBuilder"/>.</returns>
