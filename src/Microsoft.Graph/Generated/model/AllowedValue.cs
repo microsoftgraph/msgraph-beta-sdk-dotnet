@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is active.
+        /// Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.
         /// </summary>
         [JsonPropertyName("isActive")]
         public bool? IsActive { get; set; }

@@ -21,6 +21,32 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets impacted resources.
+        /// </summary>
+        [JsonPropertyName("impactedResources")]
+        public IDirectoryImpactedResourcesCollectionPage ImpactedResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets impactedResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("impactedResources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ImpactedResourcesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recommendations.
+        /// </summary>
+        [JsonPropertyName("recommendations")]
+        public IDirectoryRecommendationsCollectionPage Recommendations { get; set; }
+
+        /// <summary>
+        /// Gets or sets recommendationsNextLink.
+        /// </summary>
+        [JsonPropertyName("recommendations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string RecommendationsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets administrative units.
         /// Conceptual container for user and group directory objects.
         /// </summary>
@@ -36,6 +62,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attribute sets.
+        /// Group of related custom security attribute definitions.
         /// </summary>
         [JsonPropertyName("attributeSets")]
         public IDirectoryAttributeSetsCollectionPage AttributeSets { get; set; }
@@ -49,6 +76,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom security attribute definitions.
+        /// Schema of a custom security attributes (key-value pairs).
         /// </summary>
         [JsonPropertyName("customSecurityAttributeDefinitions")]
         public IDirectoryCustomSecurityAttributeDefinitionsCollectionPage CustomSecurityAttributeDefinitions { get; set; }

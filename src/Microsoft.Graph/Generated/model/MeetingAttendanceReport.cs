@@ -21,18 +21,39 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets attendance records.
-        /// The list of attendance records.
+        /// Gets or sets meeting end date time.
+        /// UTC time when the meeting ended. Read-only.
         /// </summary>
-        [JsonPropertyName("attendanceRecords")]
-        public IEnumerable<AttendanceRecord> AttendanceRecords { get; set; }
+        [JsonPropertyName("meetingEndDateTime")]
+        public DateTimeOffset? MeetingEndDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets meeting start date time.
+        /// UTC time when the meeting started. Read-only.
+        /// </summary>
+        [JsonPropertyName("meetingStartDateTime")]
+        public DateTimeOffset? MeetingStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets total participant count.
-        /// Total number of participants.
+        /// Total number of participants. Read-only.
         /// </summary>
         [JsonPropertyName("totalParticipantCount")]
         public Int32? TotalParticipantCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets attendance records.
+        /// List of attendance records of an attendance report. Read-only.
+        /// </summary>
+        [JsonPropertyName("attendanceRecords")]
+        public IMeetingAttendanceReportAttendanceRecordsCollectionPage AttendanceRecords { get; set; }
+
+        /// <summary>
+        /// Gets or sets attendanceRecordsNextLink.
+        /// </summary>
+        [JsonPropertyName("attendanceRecords@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AttendanceRecordsNextLink { get; set; }
     
     }
 }

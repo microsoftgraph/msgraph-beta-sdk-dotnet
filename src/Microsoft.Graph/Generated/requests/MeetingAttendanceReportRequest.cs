@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MeetingAttendanceReport meetingAttendanceReportToInitialize)
         {
 
+            if (meetingAttendanceReportToInitialize != null)
+            {
+                if (meetingAttendanceReportToInitialize.AttendanceRecords != null && meetingAttendanceReportToInitialize.AttendanceRecords.CurrentPage != null)
+                {
+                    meetingAttendanceReportToInitialize.AttendanceRecords.InitializeNextPageRequest(this.Client, meetingAttendanceReportToInitialize.AttendanceRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    meetingAttendanceReportToInitialize.AttendanceRecords.AdditionalData = meetingAttendanceReportToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

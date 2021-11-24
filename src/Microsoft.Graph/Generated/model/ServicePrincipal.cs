@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets account enabled.
-        /// true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, NOT, in).
+        /// true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).
         /// </summary>
         [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alternative names.
-        /// Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, NOT, ge, le, startsWith).
+        /// Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("alternativeNames")]
         public IEnumerable<string> AlternativeNames { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app id.
-        /// The unique identifier for the associated application (its appId property).
+        /// The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }
@@ -107,27 +107,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom security attributes.
+        /// An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith).
         /// </summary>
         [JsonPropertyName("customSecurityAttributes")]
         public CustomSecurityAttributeValue CustomSecurityAttributes { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.
+        /// Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets disabled by microsoft status.
-        /// Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).
+        /// Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
         /// </summary>
         [JsonPropertyName("disabledByMicrosoftStatus")]
         public string DisabledByMicrosoftStatus { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+        /// The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -148,14 +149,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets info.
-        /// Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, NOT, ge, le, and eq on null values).
+        /// Basic profile information of the acquired application such as app's marketing, support, terms of service and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more info, see How to: Add Terms of service and privacy statement for registered Azure AD apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).
         /// </summary>
         [JsonPropertyName("info")]
         public InformationalUrl Info { get; set; }
     
         /// <summary>
         /// Gets or sets key credentials.
-        /// The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, NOT, ge, le).
+        /// The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
         /// </summary>
         [JsonPropertyName("keyCredentials")]
         public IEnumerable<KeyCredential> KeyCredentials { get; set; }
@@ -252,7 +253,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service principal names.
-        /// Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, NOT, ge, le, startsWith).
+        /// Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("servicePrincipalNames")]
         public IEnumerable<string> ServicePrincipalNames { get; set; }
@@ -273,7 +274,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tags.
-        /// Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).
+        /// Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }

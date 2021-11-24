@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OnlineMeeting onlineMeetingToInitialize)
         {
 
+            if (onlineMeetingToInitialize != null)
+            {
+                if (onlineMeetingToInitialize.AttendanceReports != null && onlineMeetingToInitialize.AttendanceReports.CurrentPage != null)
+                {
+                    onlineMeetingToInitialize.AttendanceReports.InitializeNextPageRequest(this.Client, onlineMeetingToInitialize.AttendanceReportsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    onlineMeetingToInitialize.AttendanceReports.AdditionalData = onlineMeetingToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

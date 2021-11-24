@@ -61,19 +61,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RiskyUserConfirmCompromised.
-        /// </summary>
-        /// <returns>The <see cref="IRiskyUserConfirmCompromisedRequestBuilder"/>.</returns>
-        public IRiskyUserConfirmCompromisedRequestBuilder ConfirmCompromised(
-            IEnumerable<string> userIds = null)
-        {
-            return new RiskyUserConfirmCompromisedRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.confirmCompromised"),
-                this.Client,
-                userIds);
-        }
-
-        /// <summary>
         /// Gets the request builder for RiskyUserDismiss.
         /// </summary>
         /// <returns>The <see cref="IRiskyUserDismissRequestBuilder"/>.</returns>
@@ -82,6 +69,19 @@ namespace Microsoft.Graph
         {
             return new RiskyUserDismissRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.dismiss"),
+                this.Client,
+                userIds);
+        }
+
+        /// <summary>
+        /// Gets the request builder for RiskyUserConfirmCompromised.
+        /// </summary>
+        /// <returns>The <see cref="IRiskyUserConfirmCompromisedRequestBuilder"/>.</returns>
+        public IRiskyUserConfirmCompromisedRequestBuilder ConfirmCompromised(
+            IEnumerable<string> userIds = null)
+        {
+            return new RiskyUserConfirmCompromisedRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.confirmCompromised"),
                 this.Client,
                 userIds);
         }

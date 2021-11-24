@@ -246,6 +246,18 @@ namespace Microsoft.Graph
 
             if (directoryToInitialize != null)
             {
+                if (directoryToInitialize.ImpactedResources != null && directoryToInitialize.ImpactedResources.CurrentPage != null)
+                {
+                    directoryToInitialize.ImpactedResources.InitializeNextPageRequest(this.Client, directoryToInitialize.ImpactedResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    directoryToInitialize.ImpactedResources.AdditionalData = directoryToInitialize.AdditionalData;
+                }
+                if (directoryToInitialize.Recommendations != null && directoryToInitialize.Recommendations.CurrentPage != null)
+                {
+                    directoryToInitialize.Recommendations.InitializeNextPageRequest(this.Client, directoryToInitialize.RecommendationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    directoryToInitialize.Recommendations.AdditionalData = directoryToInitialize.AdditionalData;
+                }
                 if (directoryToInitialize.AdministrativeUnits != null && directoryToInitialize.AdministrativeUnits.CurrentPage != null)
                 {
                     directoryToInitialize.AdministrativeUnits.InitializeNextPageRequest(this.Client, directoryToInitialize.AdministrativeUnitsNextLink);

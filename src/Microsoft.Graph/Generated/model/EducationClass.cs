@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets course.
-        /// Course information for the class
+        /// Course information for the class.
         /// </summary>
         [JsonPropertyName("course")]
         public EducationCourse Course { get; set; }
