@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scopes.
-        /// Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. See accessreviewqueryscope. Required.
+        /// Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
         /// </summary>
         [JsonPropertyName("scopes")]
         public IEnumerable<AccessReviewScope> Scopes { get; set; }

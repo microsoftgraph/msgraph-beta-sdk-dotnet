@@ -77,14 +77,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request type.
-        /// One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+        /// The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd, unknownFutureValue. A request from the user themselves would have requestType of UserAdd or UserRemove. This property cannot be changed once set.
         /// </summary>
         [JsonPropertyName("requestType")]
         public string RequestType { get; set; }
     
         /// <summary>
         /// Gets or sets schedule.
-        /// The range of dates that access is to be assigned to the requestor. Read-only.
+        /// The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
         /// </summary>
         [JsonPropertyName("schedule")]
         public RequestSchedule Schedule { get; set; }

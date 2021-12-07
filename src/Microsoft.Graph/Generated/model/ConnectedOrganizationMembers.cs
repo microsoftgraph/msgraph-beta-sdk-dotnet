@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// The name of the connected organization. Read only.
+        /// The name of the connected organization.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
