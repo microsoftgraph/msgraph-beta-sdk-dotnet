@@ -46,7 +46,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         }
 
         [Fact(Skip = "No CI set up for functional tests")]
-        public async Task ActivitiesCreateActivityAndGetBack()
+        public async System.Threading.Tasks.Task ActivitiesCreateActivityAndGetBack()
         {
             try
             {
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         }
 
         [Fact(Skip = "No CI set up for functional tests")]
-        public async Task ActivitiesCreateHistoryAndGetBack()
+        public async System.Threading.Tasks.Task ActivitiesCreateHistoryAndGetBack()
         {
             try
             {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
 
         [Fact(Skip = "No CI set up for functional tests")]
-        public async Task ActivitiesGetRecentActivities()
+        public async System.Threading.Tasks.Task ActivitiesGetRecentActivities()
         {
             try
             {
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         }
 
         [Fact(Skip = "No CI set up for functional tests")]
-        public async Task ActivitiesDeleteActivityAndGetBack()
+        public async System.Threading.Tasks.Task ActivitiesDeleteActivityAndGetBack()
         {
             try
             {
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         }
 
         [Fact(Skip = "No CI set up for functional tests")]
-        public async Task ActivitiesDeleteHistoryAndGetBack()
+        public async System.Threading.Tasks.Task ActivitiesDeleteHistoryAndGetBack()
         {
             try
             {
