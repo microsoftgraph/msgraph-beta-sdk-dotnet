@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async Task<UploadSession> DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<UploadSession> DeleteAsync(CancellationToken cancellationToken)
         {
             this.Method = HttpMethods.DELETE;
             return await this.SendAsync<UploadSession>(null, cancellationToken).ConfigureAwait(false);

@@ -110,7 +110,7 @@ namespace Microsoft.Graph
         /// Delete the session.
         /// </summary>
         /// <returns>Once returned task is complete, the session has been deleted.</returns>
-        public async Task<UploadSession> DeleteSession()
+        public async System.Threading.Tasks.Task<UploadSession> DeleteSession()
         {
             var request = new UploadSessionRequest(this.Session, this.client, null);
             return await request.DeleteAsync().ConfigureAwait(false);
@@ -122,7 +122,7 @@ namespace Microsoft.Graph
         /// <param name="maxTries">Number of times to retry entire session before giving up.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
         /// <returns>Item information returned by server.</returns>
-        public async Task<DriveItem> UploadAsync(int maxTries = 3, IEnumerable<Option> options = null)
+        public async System.Threading.Tasks.Task<DriveItem> UploadAsync(int maxTries = 3, IEnumerable<Option> options = null)
         {
             var uploadTries = 0;
             var readBuffer = new byte[this.maxChunkSize];
