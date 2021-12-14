@@ -4,7 +4,6 @@
 
 using System.Net.Http;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Microsoft.Graph.DotnetCore.Core.Test.Mocks
 {
@@ -17,19 +16,19 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Mocks
 
         private bool _response1Sent = false;
 
-        protected async override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        protected async override System.Threading.Tasks.Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             if (!_response1Sent)
             {
                 _response1Sent = true;
                 _response1.RequestMessage = request;
-                return await Task.FromResult(_response1);
+                return await System.Threading.Tasks.Task.FromResult(_response1);
             }
             else
             {
                 _response1Sent = false;
                 _response2.RequestMessage = request;
-                return await Task.FromResult(_response2);
+                return await System.Threading.Tasks.Task.FromResult(_response2);
             }
         }
 
