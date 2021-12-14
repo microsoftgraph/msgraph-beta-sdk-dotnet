@@ -4,7 +4,6 @@
 
 using Moq;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace Microsoft.Graph.DotnetCore.Core.Test.Mocks
 {
@@ -17,7 +16,7 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Mocks
 
             this.Setup(
                 provider => provider.SendAsync(It.IsAny<HttpRequestMessage>()))
-                .Returns(Task.FromResult(httpResponseMessage));
+                .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
 
             this.SetupGet(provider => provider.Serializer).Returns(serializer);
         }

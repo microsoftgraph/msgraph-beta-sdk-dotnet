@@ -5,7 +5,6 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Microsoft.Graph.DotnetCore.Core.Test.Mocks
 {
@@ -23,17 +22,17 @@ namespace Microsoft.Graph.DotnetCore.Core.Test.Mocks
             this.responseMessages.Add(requestUrl, responseMessage);
         }
 
-        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        protected override System.Threading.Tasks.Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             HttpResponseMessage responseMessage;
 
             if (this.responseMessages.TryGetValue(request.RequestUri.ToString(), out responseMessage))
             {
                 responseMessage.RequestMessage = request;
-                return Task.FromResult(responseMessage);
+                return System.Threading.Tasks.Task.FromResult(responseMessage);
             }
 
-            return Task.FromResult<HttpResponseMessage>(null);
+            return System.Threading.Tasks.Task.FromResult<HttpResponseMessage>(null);
         }
     }
 }
