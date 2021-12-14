@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceDecisionItemInsightsCollectionRequestBuilder"/>.</returns>
         IAccessReviewInstanceDecisionItemInsightsCollectionRequestBuilder Insights { get; }
+
+        /// <summary>
+        /// Gets the request builder for Instance.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceRequestBuilder"/>.</returns>
+        IAccessReviewInstanceRequestBuilder Instance { get; }
     
         
     

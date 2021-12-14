@@ -65,6 +65,13 @@ namespace Microsoft.Graph
         public bool? AppsRecommendSkippingFirstUseHints { get; set; }
     
         /// <summary>
+        /// Gets or sets azure ad shared device data clear apps.
+        /// A list of managed apps that will have their data cleared during a global sign-out in AAD shared device mode. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonPropertyName("azureAdSharedDeviceDataClearApps")]
+        public IEnumerable<AppListItem> AzureAdSharedDeviceDataClearApps { get; set; }
+    
+        /// <summary>
         /// Gets or sets bluetooth block configuration.
         /// Indicates whether or not to block a user from configuring bluetooth.
         /// </summary>
@@ -98,6 +105,27 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("certificateCredentialConfigurationDisabled")]
         public bool? CertificateCredentialConfigurationDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cross profile policies allow copy paste.
+        /// Indicates whether or not text copied from one profile (personal or work) can be pasted in the other.
+        /// </summary>
+        [JsonPropertyName("crossProfilePoliciesAllowCopyPaste")]
+        public bool? CrossProfilePoliciesAllowCopyPaste { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cross profile policies allow data sharing.
+        /// Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
+        /// </summary>
+        [JsonPropertyName("crossProfilePoliciesAllowDataSharing")]
+        public AndroidDeviceOwnerCrossProfileDataSharing? CrossProfilePoliciesAllowDataSharing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cross profile policies show work contacts in personal profile.
+        /// Indicates whether or not contacts stored in work profile are shown in personal profile contact searches/incoming calls.
+        /// </summary>
+        [JsonPropertyName("crossProfilePoliciesShowWorkContactsInPersonalProfile")]
+        public bool? CrossProfilePoliciesShowWorkContactsInPersonalProfile { get; set; }
     
         /// <summary>
         /// Gets or sets data roaming blocked.
@@ -646,6 +674,20 @@ namespace Microsoft.Graph
         public bool? PersonalProfileCameraBlocked { get; set; }
     
         /// <summary>
+        /// Gets or sets personal profile personal applications.
+        /// Policy applied to applications in the personal profile. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonPropertyName("personalProfilePersonalApplications")]
+        public IEnumerable<AppListItem> PersonalProfilePersonalApplications { get; set; }
+    
+        /// <summary>
+        /// Gets or sets personal profile play store mode.
+        /// Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.
+        /// </summary>
+        [JsonPropertyName("personalProfilePlayStoreMode")]
+        public PersonalProfilePersonalPlayStoreMode? PersonalProfilePlayStoreMode { get; set; }
+    
+        /// <summary>
         /// Gets or sets personal profile screen capture blocked.
         /// Indicates whether to disable the capability to take screenshots on the personal profile.
         /// </summary>
@@ -660,25 +702,11 @@ namespace Microsoft.Graph
         public AndroidDeviceOwnerPlayStoreMode? PlayStoreMode { get; set; }
     
         /// <summary>
-        /// Gets or sets safe boot blocked.
-        /// Indicates whether or not rebooting the device into safe boot is disabled.
-        /// </summary>
-        [JsonPropertyName("safeBootBlocked")]
-        public bool? SafeBootBlocked { get; set; }
-    
-        /// <summary>
         /// Gets or sets screen capture blocked.
         /// Indicates whether or not to disable the capability to take screenshots.
         /// </summary>
         [JsonPropertyName("screenCaptureBlocked")]
         public bool? ScreenCaptureBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets security allow debugging features.
-        /// Indicates whether or not to block the user from enabling debugging features on the device.
-        /// </summary>
-        [JsonPropertyName("securityAllowDebuggingFeatures")]
-        public bool? SecurityAllowDebuggingFeatures { get; set; }
     
         /// <summary>
         /// Gets or sets security developer settings enabled.

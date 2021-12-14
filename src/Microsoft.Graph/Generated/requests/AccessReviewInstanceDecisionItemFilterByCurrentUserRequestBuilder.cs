@@ -46,5 +46,64 @@ namespace Microsoft.Graph
 
             return request;
         }
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder.
+        /// </summary>
+        /// <param name="on">A on parameter for the OData method call.</param>
+        /// <returns>The <see cref="IAccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessReviewInstanceDecisionItemFilterByCurrentUserOptions on)
+        {
+            return new AccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.filterByCurrentUser"),
+                this.Client,
+                on);
+        }
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder.
+        /// </summary>
+        /// <param name="decision">A decision parameter for the OData method call.</param>
+        /// <param name="justification">A justification parameter for the OData method call.</param>
+        /// <param name="principalId">A principalId parameter for the OData method call.</param>
+        /// <param name="resourceId">A resourceId parameter for the OData method call.</param>
+        /// <returns>The <see cref="IAccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder RecordAllDecisions(
+            string decision,
+            string justification,
+            string principalId,
+            string resourceId)
+        {
+            return new AccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.recordAllDecisions"),
+                this.Client,
+                decision,
+                justification,
+                principalId,
+                resourceId);
+        }
+        /// <summary>
+        /// Gets the request builder for Insights.
+        /// 
+        /// </summary>
+        /// <returns>The <see cref="IGovernanceInsightRequestBuilder"/>.</returns>
+        public IGovernanceInsightRequestBuilder Insights
+        {
+            get
+            {
+                return new GovernanceInsightRequestBuilder(this.AppendSegmentToRequestUrl("insights"), this.Client);
+            }
+        }
+        /// <summary>
+        /// Gets the request builder for Instance.
+        /// There is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceRequestBuilder Instance
+        {
+            get
+            {
+                return new AccessReviewInstanceRequestBuilder(this.AppendSegmentToRequestUrl("instance"), this.Client);
+            }
+        }
     }
 }

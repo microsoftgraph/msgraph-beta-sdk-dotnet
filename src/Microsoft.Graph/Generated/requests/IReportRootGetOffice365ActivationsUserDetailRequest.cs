@@ -25,94 +25,20 @@ namespace Microsoft.Graph
         /// Issues the GET request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserDetailCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Stream> GetAsync(
+            CancellationToken cancellationToken = default,
+            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead);
 
         /// <summary>
         /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetOffice365ActivationsUserDetailCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default);
 
 
-        /// <summary>
-        /// Issues the PATCH request.
-        /// </summary>
-        /// <param name="office365activationsuserdetail">The Office365ActivationsUserDetail object set with the properties to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserDetailCollectionPage> PatchAsync(Office365ActivationsUserDetail office365activationsuserdetail,
-            CancellationToken cancellationToken = default);
 
-        /// <summary>
-        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="office365activationsuserdetail">The Office365ActivationsUserDetail object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetOffice365ActivationsUserDetailCollectionResponse>> PatchResponseAsync(Office365ActivationsUserDetail office365activationsuserdetail, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Issues the PUT request.
-        /// </summary>
-        /// <param name="office365activationsuserdetail">The Office365ActivationsUserDetail object to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserDetailCollectionPage> PutAsync(Office365ActivationsUserDetail office365activationsuserdetail,
-            CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="office365activationsuserdetail">The Office365ActivationsUserDetail object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetOffice365ActivationsUserDetailCollectionResponse>> PutResponseAsync(Office365ActivationsUserDetail office365activationsuserdetail, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Adds the specified expand value to the request.
-        /// </summary>
-        /// <param name="value">The expand value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetOffice365ActivationsUserDetailRequest Expand(string value);
-
-        /// <summary>
-        /// Adds the specified select value to the request.
-        /// </summary>
-        /// <param name="value">The select value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetOffice365ActivationsUserDetailRequest Select(string value);
-
-        /// <summary>
-        /// Adds the specified top value to the request.
-        /// </summary>
-        /// <param name="value">The top value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetOffice365ActivationsUserDetailRequest Top(int value);
-
-        /// <summary>
-        /// Adds the specified filter value to the request.
-        /// </summary>
-        /// <param name="value">The filter value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetOffice365ActivationsUserDetailRequest Filter(string value);
-
-        /// <summary>
-        /// Adds the specified skip value to the request.
-        /// </summary>
-        /// <param name="value">The skip value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetOffice365ActivationsUserDetailRequest Skip(int value);
-
-        /// <summary>
-        /// Adds the specified orderby value to the request.
-        /// </summary>
-        /// <param name="value">The orderby value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetOffice365ActivationsUserDetailRequest OrderBy(string value);
     }
 }

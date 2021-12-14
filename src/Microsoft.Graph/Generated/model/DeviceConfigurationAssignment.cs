@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets intent.
-        /// The admin intent to apply or remove the profile. This property is read-only. Possible values are: apply, remove.
+        /// The admin intent to apply or remove the profile. Possible values are: apply, remove.
         /// </summary>
         [JsonPropertyName("intent")]
         public DeviceConfigAssignmentIntent? Intent { get; set; }

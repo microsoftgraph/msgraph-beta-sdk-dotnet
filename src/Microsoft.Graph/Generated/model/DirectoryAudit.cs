@@ -99,6 +99,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user agent.
+        /// Type of user agent used by a user in the activity.
         /// </summary>
         [JsonPropertyName("userAgent")]
         public string UserAgent { get; set; }

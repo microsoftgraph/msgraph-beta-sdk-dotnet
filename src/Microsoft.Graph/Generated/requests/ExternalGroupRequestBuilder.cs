@@ -50,17 +50,5 @@ namespace Microsoft.Graph
             return new ExternalGroupRequest(this.RequestUrl, this.Client, options);
         }
     
-        /// <summary>
-        /// Gets the request builder for Members.
-        /// </summary>
-        /// <returns>The <see cref="IExternalGroupMembersCollectionRequestBuilder"/>.</returns>
-        public IExternalGroupMembersCollectionRequestBuilder Members
-        {
-            get
-            {
-                return new ExternalGroupMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
-            }
-        }
-    
     }
 }

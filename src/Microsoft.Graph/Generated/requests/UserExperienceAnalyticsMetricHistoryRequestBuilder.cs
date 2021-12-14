@@ -50,17 +50,5 @@ namespace Microsoft.Graph
             return new UserExperienceAnalyticsMetricHistoryRequest(this.RequestUrl, this.Client, options);
         }
     
-        /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsMetric.
-        /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsMetricWithReferenceRequestBuilder"/>.</returns>
-        public IUserExperienceAnalyticsMetricWithReferenceRequestBuilder UserExperienceAnalyticsMetric
-        {
-            get
-            {
-                return new UserExperienceAnalyticsMetricWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsMetric"), this.Client);
-            }
-        }
-    
     }
 }

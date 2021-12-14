@@ -25,6 +25,11 @@ namespace Microsoft.Graph
         DnsCheckFqdnNotFound = 100,
 	
         /// <summary>
+        /// Dns Check Name With Invalid Character
+        /// </summary>
+        DnsCheckNameWithInvalidCharacter = 101,
+	
+        /// <summary>
         /// Dns Check Unknown Error
         /// </summary>
         DnsCheckUnknownError = 199,
@@ -118,6 +123,11 @@ namespace Microsoft.Graph
         /// Azure Ad Device Sync Check Duration Exceeded
         /// </summary>
         AzureAdDeviceSyncCheckDurationExceeded = 403,
+	
+        /// <summary>
+        /// Azure Ad Device Sync Check Scp Not Configured
+        /// </summary>
+        AzureAdDeviceSyncCheckScpNotConfigured = 404,
 	
         /// <summary>
         /// Azure Ad Device Sync Check Transient Service Error

@@ -131,6 +131,13 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string InsightsNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets instance.
+        /// There is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+        /// </summary>
+        [JsonPropertyName("instance")]
+        public AccessReviewInstance Instance { get; set; }
+    
     }
 }
 

@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public bool? AllowPartnerToCollectIOSApplicationMetadata { get; set; }
     
         /// <summary>
+        /// Gets or sets allow partner to collect iospersonal application metadata.
+        /// For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about personally installed applications from Intune
+        /// </summary>
+        [JsonPropertyName("allowPartnerToCollectIOSPersonalApplicationMetadata")]
+        public bool? AllowPartnerToCollectIOSPersonalApplicationMetadata { get; set; }
+    
+        /// <summary>
         /// Gets or sets android device blocked on missing partner data.
         /// For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
         /// </summary>

@@ -51,6 +51,19 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for CloudPCChangeUserAccountType.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCChangeUserAccountTypeRequestBuilder"/>.</returns>
+        public ICloudPCChangeUserAccountTypeRequestBuilder ChangeUserAccountType(
+            CloudPcUserAccountType? userAccountType = null)
+        {
+            return new CloudPCChangeUserAccountTypeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.changeUserAccountType"),
+                this.Client,
+                userAccountType);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCEndGracePeriod.
         /// </summary>
         /// <returns>The <see cref="ICloudPCEndGracePeriodRequestBuilder"/>.</returns>
@@ -89,11 +102,15 @@ namespace Microsoft.Graph
         /// Gets the request builder for CloudPCReprovision.
         /// </summary>
         /// <returns>The <see cref="ICloudPCReprovisionRequestBuilder"/>.</returns>
-        public ICloudPCReprovisionRequestBuilder Reprovision()
+        public ICloudPCReprovisionRequestBuilder Reprovision(
+            CloudPcUserAccountType? userAccountType = null,
+            CloudPcOperatingSystem? osVersion = null)
         {
             return new CloudPCReprovisionRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.reprovision"),
-                this.Client);
+                this.Client,
+                userAccountType,
+                osVersion);
         }
 
         /// <summary>

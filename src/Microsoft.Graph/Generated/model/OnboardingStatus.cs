@@ -39,5 +39,15 @@ namespace Microsoft.Graph
         /// </summary>
         Failed = 3,
 	
+        /// <summary>
+        /// Offboarding
+        /// </summary>
+        Offboarding = 4,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 99,
+	
     }
 }

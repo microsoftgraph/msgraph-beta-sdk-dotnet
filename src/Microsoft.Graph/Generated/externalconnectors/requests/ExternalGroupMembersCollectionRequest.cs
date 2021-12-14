@@ -34,29 +34,29 @@ namespace Microsoft.Graph.ExternalConnectors
         {
         }
         /// <summary>
-        /// Adds the specified ExternalGroupMember to the collection via POST.
+        /// Adds the specified Identity to the collection via POST.
         /// </summary>
-        /// <param name="externalGroupMember">The ExternalGroupMember to add.</param>
+        /// <param name="identity">The Identity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created ExternalGroupMember.</returns>
-        public System.Threading.Tasks.Task<ExternalGroupMember> AddAsync(ExternalGroupMember externalGroupMember, CancellationToken cancellationToken = default)
+        /// <returns>The created Identity.</returns>
+        public System.Threading.Tasks.Task<Identity> AddAsync(Identity identity, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsync<ExternalGroupMember>(externalGroupMember, cancellationToken);
+            return this.SendAsync<Identity>(identity, cancellationToken);
         }
 
         /// <summary>
-        /// Adds the specified ExternalGroupMember to the collection via POST and returns a <see cref="GraphResponse{ExternalGroupMember}"/> object of the request.
+        /// Adds the specified Identity to the collection via POST and returns a <see cref="GraphResponse{Identity}"/> object of the request.
         /// </summary>
-        /// <param name="externalGroupMember">The ExternalGroupMember to add.</param>
+        /// <param name="identity">The Identity to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{ExternalGroupMember}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ExternalGroupMember>> AddResponseAsync(ExternalGroupMember externalGroupMember, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{Identity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Identity>> AddResponseAsync(Identity identity, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<ExternalGroupMember>(externalGroupMember, cancellationToken);
+            return this.SendAsyncWithGraphResponse<Identity>(identity, cancellationToken);
         }
 
 
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IExternalGroupMembersCollectionRequest Expand(Expression<Func<ExternalGroupMember, object>> expandExpression)
+        public IExternalGroupMembersCollectionRequest Expand(Expression<Func<Identity, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IExternalGroupMembersCollectionRequest Select(Expression<Func<ExternalGroupMember, object>> selectExpression)
+        public IExternalGroupMembersCollectionRequest Select(Expression<Func<Identity, object>> selectExpression)
         {
             if (selectExpression == null)
             {

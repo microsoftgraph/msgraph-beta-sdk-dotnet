@@ -91,7 +91,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentCreateCopyRequestBuilder"/>.</returns>
         IDeviceManagementIntentCreateCopyRequestBuilder CreateCopy(
-            string displayName = null);
+            string displayName = null,
+            string description = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementIntentMigrateToTemplate.

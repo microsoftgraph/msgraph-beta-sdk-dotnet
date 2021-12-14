@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public IEnumerable<AppRole> AppRoles { get; set; }
     
         /// <summary>
+        /// Gets or sets certification.
+        /// Specifies the certification status of the application.
+        /// </summary>
+        [JsonPropertyName("certification")]
+        public Certification Certification { get; set; }
+    
+        /// <summary>
         /// Gets or sets created date time.
         /// The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
         /// </summary>
@@ -65,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
+        /// Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

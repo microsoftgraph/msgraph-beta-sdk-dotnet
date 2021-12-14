@@ -60,6 +60,11 @@ namespace Microsoft.Graph
         Resizing = 7,
 	
         /// <summary>
+        /// Pending Provision
+        /// </summary>
+        PendingProvision = 9,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 999,

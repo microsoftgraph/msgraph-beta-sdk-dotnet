@@ -164,6 +164,18 @@ namespace Microsoft.Graph
         IDeviceConfigurationUserStateSummaryRequestBuilder DeviceConfigurationUserStateSummaries { get; }
 
         /// <summary>
+        /// Gets the request builder for HardwareConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementHardwareConfigurationsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementHardwareConfigurationsCollectionRequestBuilder HardwareConfigurations { get; }
+
+        /// <summary>
+        /// Gets the request builder for HardwarePasswordInfo.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementHardwarePasswordInfoCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementHardwarePasswordInfoCollectionRequestBuilder HardwarePasswordInfo { get; }
+
+        /// <summary>
         /// Gets the request builder for IosUpdateStatuses.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIosUpdateStatusesCollectionRequestBuilder"/>.</returns>

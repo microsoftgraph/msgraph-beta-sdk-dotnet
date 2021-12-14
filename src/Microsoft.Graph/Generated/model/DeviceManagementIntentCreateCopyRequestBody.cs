@@ -26,5 +26,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
+        /// <summary>
+        /// Gets or sets Description.
+        /// </summary>
+        [JsonPropertyName("description")]
+        public string Description { get; set; }
+    
     }
 }

@@ -24,16 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="ownerUserPrincipalName">A ownerUserPrincipalName parameter for the OData method call.</param>
-        /// <param name="serviceAccountCredentials">A serviceAccountCredentials parameter for the OData method call.</param>
+        /// <param name="ownerAccessToken">A ownerAccessToken parameter for the OData method call.</param>
         public ChromeOSOnboardingSettingsConnectRequestBuilder(
             string requestUrl,
             IBaseClient client,
             string ownerUserPrincipalName,
-            string serviceAccountCredentials)
+            string ownerAccessToken)
             : base(requestUrl, client)
         {
             this.SetParameter("ownerUserPrincipalName", ownerUserPrincipalName, true);
-            this.SetParameter("serviceAccountCredentials", serviceAccountCredentials, true);
+            this.SetParameter("ownerAccessToken", ownerAccessToken, true);
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace Microsoft.Graph
                 request.RequestBody.OwnerUserPrincipalName = this.GetParameter<string>("ownerUserPrincipalName");
             }
 
-            if (this.HasParameter("serviceAccountCredentials"))
+            if (this.HasParameter("ownerAccessToken"))
             {
-                request.RequestBody.ServiceAccountCredentials = this.GetParameter<string>("serviceAccountCredentials");
+                request.RequestBody.OwnerAccessToken = this.GetParameter<string>("ownerAccessToken");
             }
 
             return request;

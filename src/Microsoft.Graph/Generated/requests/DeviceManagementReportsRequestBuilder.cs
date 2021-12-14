@@ -73,18 +73,6 @@ namespace Microsoft.Graph
                 return new DeviceManagementReportsExportJobsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("exportJobs"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for ReportSchedules.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsReportSchedulesCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementReportsReportSchedulesCollectionRequestBuilder ReportSchedules
-        {
-            get
-            {
-                return new DeviceManagementReportsReportSchedulesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("reportSchedules"), this.Client);
-            }
-        }
     
         /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetAppsInstallSummaryReport.

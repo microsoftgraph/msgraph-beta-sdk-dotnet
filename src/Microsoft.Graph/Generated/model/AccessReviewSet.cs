@@ -21,6 +21,19 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets decisions.
+        /// </summary>
+        [JsonPropertyName("decisions")]
+        public IAccessReviewSetDecisionsCollectionPage Decisions { get; set; }
+
+        /// <summary>
+        /// Gets or sets decisionsNextLink.
+        /// </summary>
+        [JsonPropertyName("decisions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DecisionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets definitions.
         /// </summary>
         [JsonPropertyName("definitions")]

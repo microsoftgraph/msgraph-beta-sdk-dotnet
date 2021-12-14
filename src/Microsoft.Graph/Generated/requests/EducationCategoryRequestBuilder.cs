@@ -50,5 +50,7 @@ namespace Microsoft.Graph
             return new EducationCategoryRequest(this.RequestUrl, this.Client, options);
         }
     
+        
+    
     }
 }

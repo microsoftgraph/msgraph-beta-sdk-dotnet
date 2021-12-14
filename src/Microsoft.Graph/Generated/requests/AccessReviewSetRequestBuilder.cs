@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Decisions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewSetDecisionsCollectionRequestBuilder"/>.</returns>
+        public IAccessReviewSetDecisionsCollectionRequestBuilder Decisions
+        {
+            get
+            {
+                return new AccessReviewSetDecisionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("decisions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Definitions.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewSetDefinitionsCollectionRequestBuilder"/>.</returns>

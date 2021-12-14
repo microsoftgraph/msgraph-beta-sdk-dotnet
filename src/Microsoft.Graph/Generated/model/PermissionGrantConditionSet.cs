@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets certified client applications only.
+        /// Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.
         /// </summary>
         [JsonPropertyName("certifiedClientApplicationsOnly")]
         public bool? CertifiedClientApplicationsOnly { get; set; }

@@ -315,6 +315,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for HardwareConfigurations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementHardwareConfigurationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementHardwareConfigurationsCollectionRequestBuilder HardwareConfigurations
+        {
+            get
+            {
+                return new DeviceManagementHardwareConfigurationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("hardwareConfigurations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for HardwarePasswordInfo.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementHardwarePasswordInfoCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementHardwarePasswordInfoCollectionRequestBuilder HardwarePasswordInfo
+        {
+            get
+            {
+                return new DeviceManagementHardwarePasswordInfoCollectionRequestBuilder(this.AppendSegmentToRequestUrl("hardwarePasswordInfo"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for IosUpdateStatuses.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIosUpdateStatusesCollectionRequestBuilder"/>.</returns>

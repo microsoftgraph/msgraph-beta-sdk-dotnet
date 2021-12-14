@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (accessReviewSetToInitialize != null)
             {
+                if (accessReviewSetToInitialize.Decisions != null && accessReviewSetToInitialize.Decisions.CurrentPage != null)
+                {
+                    accessReviewSetToInitialize.Decisions.InitializeNextPageRequest(this.Client, accessReviewSetToInitialize.DecisionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    accessReviewSetToInitialize.Decisions.AdditionalData = accessReviewSetToInitialize.AdditionalData;
+                }
                 if (accessReviewSetToInitialize.Definitions != null && accessReviewSetToInitialize.Definitions.CurrentPage != null)
                 {
                     accessReviewSetToInitialize.Definitions.InitializeNextPageRequest(this.Client, accessReviewSetToInitialize.DefinitionsNextLink);

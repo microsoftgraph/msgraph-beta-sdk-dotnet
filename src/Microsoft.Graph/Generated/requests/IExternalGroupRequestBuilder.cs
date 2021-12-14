@@ -31,11 +31,5 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IExternalGroupRequest Request(IEnumerable<Option> options);
     
-        /// <summary>
-        /// Gets the request builder for Members.
-        /// </summary>
-        /// <returns>The <see cref="IExternalGroupMembersCollectionRequestBuilder"/>.</returns>
-        IExternalGroupMembersCollectionRequestBuilder Members { get; }
-    
     }
 }

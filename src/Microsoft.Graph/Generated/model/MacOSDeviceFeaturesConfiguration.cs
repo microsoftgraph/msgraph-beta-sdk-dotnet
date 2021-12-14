@@ -174,7 +174,7 @@ namespace Microsoft.Graph
         /// The maximum number of bytes of disk space that will be used for the content cache. A value of 0 (default) indicates unlimited disk space.
         /// </summary>
         [JsonPropertyName("contentCachingMaxSizeBytes")]
-        public Int32? ContentCachingMaxSizeBytes { get; set; }
+        public Int64? ContentCachingMaxSizeBytes { get; set; }
     
         /// <summary>
         /// Gets or sets content caching parents.

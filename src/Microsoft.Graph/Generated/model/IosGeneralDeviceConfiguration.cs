@@ -597,6 +597,13 @@ namespace Microsoft.Graph
         public bool? ICloudBlockSharedPhotoStream { get; set; }
     
         /// <summary>
+        /// Gets or sets i cloud private relay blocked.
+        /// iCloud private relay is an iCloud+ service that prevents networks and servers from monitoring a person's activity across the internet. By blocking iCloud private relay, Apple will not encrypt the traffic leaving the device. Available for devices running iOS 15 and later.
+        /// </summary>
+        [JsonPropertyName("iCloudPrivateRelayBlocked")]
+        public bool? ICloudPrivateRelayBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets i cloud require encrypted backup.
         /// Indicates whether or not to require backups to iCloud be encrypted.
         /// </summary>

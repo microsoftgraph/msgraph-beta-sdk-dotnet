@@ -48,15 +48,15 @@ namespace Microsoft.Graph.ExternalConnectors
         }
 
         /// <summary>
-        /// Gets an <see cref="IExternalGroupMemberRequestBuilder"/> for the specified ExternalGroupExternalGroupMember.
+        /// Gets an <see cref="IIdentityRequestBuilder"/> for the specified ExternalGroupIdentity.
         /// </summary>
-        /// <param name="id">The ID for the ExternalGroupExternalGroupMember.</param>
-        /// <returns>The <see cref="IExternalGroupMemberRequestBuilder"/>.</returns>
-        public IExternalGroupMemberRequestBuilder this[string id]
+        /// <param name="id">The ID for the ExternalGroupIdentity.</param>
+        /// <returns>The <see cref="IIdentityRequestBuilder"/>.</returns>
+        public IIdentityRequestBuilder this[string id]
         {
             get
             {
-                return new ExternalGroupMemberRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new IdentityRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

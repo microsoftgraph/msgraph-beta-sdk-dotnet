@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IAccessReviewSetRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Decisions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewSetDecisionsCollectionRequestBuilder"/>.</returns>
+        IAccessReviewSetDecisionsCollectionRequestBuilder Decisions { get; }
+
+        /// <summary>
         /// Gets the request builder for Definitions.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewSetDefinitionsCollectionRequestBuilder"/>.</returns>

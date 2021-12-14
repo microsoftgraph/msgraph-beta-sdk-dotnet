@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets hideBotAfterEscalation.
+        /// </summary>
+        [JsonPropertyName("hideBotAfterEscalation")]
+        public bool? HideBotAfterEscalation { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

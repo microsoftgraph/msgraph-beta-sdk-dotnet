@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics App Health Device Model Performance.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsAppHealthDeviceModelPerformance>))]
     public partial class UserExperienceAnalyticsAppHealthDeviceModelPerformance : Entity
     {
     
@@ -40,6 +41,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceModel")]
         public string DeviceModel { get; set; }
+    
+        /// <summary>
+        /// Gets or sets health status.
+        /// The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+        /// </summary>
+        [JsonPropertyName("healthStatus")]
+        public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
     
         /// <summary>
         /// Gets or sets mean time to failure in minutes.

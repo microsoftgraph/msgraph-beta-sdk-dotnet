@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets profile.
+        /// The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
         /// </summary>
         [JsonPropertyName("profile")]
         public string Profile { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("type")]
         public MicrosoftManagedDesktopType? Type { get; set; }

@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ad domain name.
-        /// The fully qualified domain name (FQDN) of the Active Directory domain you want to join.
+        /// The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
         /// </summary>
         [JsonPropertyName("adDomainName")]
         public string AdDomainName { get; set; }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ad domain username.
-        /// The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com.
+        /// The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.
         /// </summary>
         [JsonPropertyName("adDomainUsername")]
         public string AdDomainUsername { get; set; }
@@ -107,6 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
+        /// Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("type")]
         public CloudPcOnPremisesConnectionType? Type { get; set; }

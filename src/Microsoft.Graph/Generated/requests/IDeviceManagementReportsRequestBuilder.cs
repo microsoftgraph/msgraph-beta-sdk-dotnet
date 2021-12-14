@@ -42,12 +42,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsExportJobsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementReportsExportJobsCollectionRequestBuilder ExportJobs { get; }
-
-        /// <summary>
-        /// Gets the request builder for ReportSchedules.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementReportsReportSchedulesCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementReportsReportSchedulesCollectionRequestBuilder ReportSchedules { get; }
     
         /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetAppsInstallSummaryReport.

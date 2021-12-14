@@ -735,6 +735,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Tasks.
+        /// </summary>
+        /// <returns>The <see cref="ITasksRequestBuilder"/>.</returns>
+        public ITasksRequestBuilder Tasks
+        {
+            get
+            {
+                return new TasksRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Chats.
         /// </summary>
         /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>

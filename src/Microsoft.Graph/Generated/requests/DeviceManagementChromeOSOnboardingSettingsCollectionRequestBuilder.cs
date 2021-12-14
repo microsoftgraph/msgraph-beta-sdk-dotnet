@@ -66,13 +66,24 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IChromeOSOnboardingSettingsConnectRequestBuilder"/>.</returns>
         public IChromeOSOnboardingSettingsConnectRequestBuilder Connect(
             string ownerUserPrincipalName = null,
-            string serviceAccountCredentials = null)
+            string ownerAccessToken = null)
         {
             return new ChromeOSOnboardingSettingsConnectRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.connect"),
                 this.Client,
                 ownerUserPrincipalName,
-                serviceAccountCredentials);
+                ownerAccessToken);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ChromeOSOnboardingSettingsDisconnect.
+        /// </summary>
+        /// <returns>The <see cref="IChromeOSOnboardingSettingsDisconnectRequestBuilder"/>.</returns>
+        public IChromeOSOnboardingSettingsDisconnectRequestBuilder Disconnect()
+        {
+            return new ChromeOSOnboardingSettingsDisconnectRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.disconnect"),
+                this.Client);
         }
     }
 }

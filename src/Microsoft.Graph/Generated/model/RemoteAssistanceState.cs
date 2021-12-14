@@ -20,11 +20,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Not Configured
-        /// </summary>
-        NotConfigured = 0,
-	
-        /// <summary>
         /// Disabled
         /// </summary>
         Disabled = 1,

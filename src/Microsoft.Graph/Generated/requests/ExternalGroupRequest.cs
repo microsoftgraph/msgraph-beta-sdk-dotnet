@@ -244,18 +244,6 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ExternalGroup externalGroupToInitialize)
         {
 
-            if (externalGroupToInitialize != null)
-            {
-                if (externalGroupToInitialize.Members != null && externalGroupToInitialize.Members.CurrentPage != null)
-                {
-                    externalGroupToInitialize.Members.InitializeNextPageRequest(this.Client, externalGroupToInitialize.MembersNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    externalGroupToInitialize.Members.AdditionalData = externalGroupToInitialize.AdditionalData;
-                }
-
-            }
-
-
         }
     }
 }

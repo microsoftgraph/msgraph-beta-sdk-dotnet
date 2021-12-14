@@ -14,7 +14,7 @@ namespace Microsoft.Graph.ExternalConnectors
     /// <summary>
     /// The type ExternalGroupMembersCollectionPage.
     /// </summary>
-    public partial class ExternalGroupMembersCollectionPage : Microsoft.Graph.CollectionPage<ExternalGroupMember>, IExternalGroupMembersCollectionPage
+    public partial class ExternalGroupMembersCollectionPage : Microsoft.Graph.CollectionPage<Identity>, IExternalGroupMembersCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="IExternalGroupMembersCollectionRequest"/> instance.

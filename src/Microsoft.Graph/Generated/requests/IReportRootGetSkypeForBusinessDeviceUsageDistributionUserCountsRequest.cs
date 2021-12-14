@@ -25,94 +25,20 @@ namespace Microsoft.Graph
         /// Issues the GET request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Stream> GetAsync(
+            CancellationToken cancellationToken = default,
+            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead);
 
         /// <summary>
         /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default);
 
 
-        /// <summary>
-        /// Issues the PATCH request.
-        /// </summary>
-        /// <param name="skypeforbusinessdeviceusagedistributionusercounts">The SkypeForBusinessDeviceUsageDistributionUserCounts object set with the properties to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsCollectionPage> PatchAsync(SkypeForBusinessDeviceUsageDistributionUserCounts skypeforbusinessdeviceusagedistributionusercounts,
-            CancellationToken cancellationToken = default);
 
-        /// <summary>
-        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="skypeforbusinessdeviceusagedistributionusercounts">The SkypeForBusinessDeviceUsageDistributionUserCounts object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsCollectionResponse>> PatchResponseAsync(SkypeForBusinessDeviceUsageDistributionUserCounts skypeforbusinessdeviceusagedistributionusercounts, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Issues the PUT request.
-        /// </summary>
-        /// <param name="skypeforbusinessdeviceusagedistributionusercounts">The SkypeForBusinessDeviceUsageDistributionUserCounts object to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsCollectionPage> PutAsync(SkypeForBusinessDeviceUsageDistributionUserCounts skypeforbusinessdeviceusagedistributionusercounts,
-            CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="skypeforbusinessdeviceusagedistributionusercounts">The SkypeForBusinessDeviceUsageDistributionUserCounts object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsCollectionResponse>> PutResponseAsync(SkypeForBusinessDeviceUsageDistributionUserCounts skypeforbusinessdeviceusagedistributionusercounts, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Adds the specified expand value to the request.
-        /// </summary>
-        /// <param name="value">The expand value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsRequest Expand(string value);
-
-        /// <summary>
-        /// Adds the specified select value to the request.
-        /// </summary>
-        /// <param name="value">The select value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsRequest Select(string value);
-
-        /// <summary>
-        /// Adds the specified top value to the request.
-        /// </summary>
-        /// <param name="value">The top value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsRequest Top(int value);
-
-        /// <summary>
-        /// Adds the specified filter value to the request.
-        /// </summary>
-        /// <param name="value">The filter value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsRequest Filter(string value);
-
-        /// <summary>
-        /// Adds the specified skip value to the request.
-        /// </summary>
-        /// <param name="value">The skip value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsRequest Skip(int value);
-
-        /// <summary>
-        /// Adds the specified orderby value to the request.
-        /// </summary>
-        /// <param name="value">The orderby value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessDeviceUsageDistributionUserCountsRequest OrderBy(string value);
     }
 }

@@ -694,7 +694,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets windows protection state.
-        /// The device protection status.
+        /// The device protection status. This property is read-only.
         /// </summary>
         [JsonPropertyName("windowsProtectionState")]
         public WindowsProtectionState WindowsProtectionState { get; set; }

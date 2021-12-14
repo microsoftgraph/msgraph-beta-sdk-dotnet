@@ -25,94 +25,20 @@ namespace Microsoft.Graph
         /// Issues the GET request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsageSiteCountsCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Stream> GetAsync(
+            CancellationToken cancellationToken = default,
+            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead);
 
         /// <summary>
         /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default);
 
 
-        /// <summary>
-        /// Issues the PATCH request.
-        /// </summary>
-        /// <param name="sharepointsiteusagesitecounts">The SharePointSiteUsageSiteCounts object set with the properties to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsageSiteCountsCollectionPage> PatchAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts,
-            CancellationToken cancellationToken = default);
 
-        /// <summary>
-        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="sharepointsiteusagesitecounts">The SharePointSiteUsageSiteCounts object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>> PatchResponseAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Issues the PUT request.
-        /// </summary>
-        /// <param name="sharepointsiteusagesitecounts">The SharePointSiteUsageSiteCounts object to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSharePointSiteUsageSiteCountsCollectionPage> PutAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts,
-            CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="sharepointsiteusagesitecounts">The SharePointSiteUsageSiteCounts object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetSharePointSiteUsageSiteCountsCollectionResponse>> PutResponseAsync(SharePointSiteUsageSiteCounts sharepointsiteusagesitecounts, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Adds the specified expand value to the request.
-        /// </summary>
-        /// <param name="value">The expand value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSharePointSiteUsageSiteCountsRequest Expand(string value);
-
-        /// <summary>
-        /// Adds the specified select value to the request.
-        /// </summary>
-        /// <param name="value">The select value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSharePointSiteUsageSiteCountsRequest Select(string value);
-
-        /// <summary>
-        /// Adds the specified top value to the request.
-        /// </summary>
-        /// <param name="value">The top value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSharePointSiteUsageSiteCountsRequest Top(int value);
-
-        /// <summary>
-        /// Adds the specified filter value to the request.
-        /// </summary>
-        /// <param name="value">The filter value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSharePointSiteUsageSiteCountsRequest Filter(string value);
-
-        /// <summary>
-        /// Adds the specified skip value to the request.
-        /// </summary>
-        /// <param name="value">The skip value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSharePointSiteUsageSiteCountsRequest Skip(int value);
-
-        /// <summary>
-        /// Adds the specified orderby value to the request.
-        /// </summary>
-        /// <param name="value">The orderby value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSharePointSiteUsageSiteCountsRequest OrderBy(string value);
     }
 }

@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         IVirtualEndpointOnPremisesConnectionsCollectionRequestBuilder OnPremisesConnections { get; }
 
         /// <summary>
+        /// Gets the request builder for OrganizationSettings.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcOrganizationSettingsRequestBuilder"/>.</returns>
+        ICloudPcOrganizationSettingsRequestBuilder OrganizationSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for ProvisioningPolicies.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointProvisioningPoliciesCollectionRequestBuilder"/>.</returns>

@@ -23,11 +23,17 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="userAccountType">A userAccountType parameter for the OData method call.</param>
+        /// <param name="osVersion">A osVersion parameter for the OData method call.</param>
         public CloudPCReprovisionRequestBuilder(
             string requestUrl,
-            IBaseClient client)
+            IBaseClient client,
+            CloudPcUserAccountType? userAccountType,
+            CloudPcOperatingSystem? osVersion)
             : base(requestUrl, client)
         {
+            this.SetParameter("userAccountType", userAccountType, true);
+            this.SetParameter("osVersion", osVersion, true);
         }
 
         /// <summary>
@@ -39,6 +45,16 @@ namespace Microsoft.Graph
         protected override ICloudPCReprovisionRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
             var request = new CloudPCReprovisionRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("userAccountType"))
+            {
+                request.RequestBody.UserAccountType = this.GetParameter<CloudPcUserAccountType?>("userAccountType");
+            }
+
+            if (this.HasParameter("osVersion"))
+            {
+                request.RequestBody.OsVersion = this.GetParameter<CloudPcOperatingSystem?>("osVersion");
+            }
 
             return request;
         }

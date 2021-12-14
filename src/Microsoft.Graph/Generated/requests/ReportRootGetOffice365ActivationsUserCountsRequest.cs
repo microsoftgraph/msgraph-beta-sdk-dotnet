@@ -35,21 +35,14 @@ namespace Microsoft.Graph
         /// Issues the GET request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserCountsCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<Stream> GetAsync(
+            CancellationToken cancellationToken = default,
+            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead)
         {
             this.Method = HttpMethods.GET;
-            var response = await this.SendAsync<ReportRootGetOffice365ActivationsUserCountsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
-            if (response?.Value?.CurrentPage != null)
-            {
-                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
-                // Copy the additional data collection to the page itself so that information is not lost
-                response.Value.AdditionalData = response.AdditionalData;
-                return response.Value;
-            }
-
-            return null;
+            return this.SendStreamRequestAsync(null, cancellationToken, httpCompletionOption);
         }
 
         /// <summary>
@@ -57,145 +50,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetOffice365ActivationsUserCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<ReportRootGetOffice365ActivationsUserCountsCollectionResponse>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse(null, cancellationToken);
         }
 
-
-        /// <summary>
-        /// Issues the PATCH request.
-        /// </summary>
-        /// <param name="office365activationsusercounts">The Office365ActivationsUserCounts object set with the properties to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserCountsCollectionPage> PatchAsync(Office365ActivationsUserCounts office365activationsusercounts,
-            CancellationToken cancellationToken = default)
-        {
-            this.Method = HttpMethods.PATCH;
-            var response = await this.SendAsync<ReportRootGetOffice365ActivationsUserCountsCollectionResponse>(office365activationsusercounts, cancellationToken).ConfigureAwait(false);
-            if (response?.Value?.CurrentPage != null)
-            {
-                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
-                // Copy the additional data collection to the page itself so that information is not lost
-                response.Value.AdditionalData = response.AdditionalData;
-                return response.Value;
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="office365activationsusercounts">The Office365ActivationsUserCounts object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetOffice365ActivationsUserCountsCollectionResponse>> PatchResponseAsync(Office365ActivationsUserCounts office365activationsusercounts, CancellationToken cancellationToken = default)
-        {
-            this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<ReportRootGetOffice365ActivationsUserCountsCollectionResponse>(office365activationsusercounts, cancellationToken);
-        }
-
-        /// <summary>
-        /// Issues the PUT request.
-        /// </summary>
-        /// <param name="office365activationsusercounts">The Office365ActivationsUserCounts object to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        public async System.Threading.Tasks.Task<IReportRootGetOffice365ActivationsUserCountsCollectionPage> PutAsync(Office365ActivationsUserCounts office365activationsusercounts,
-            CancellationToken cancellationToken = default)
-        {
-            this.Method = HttpMethods.PUT;
-            var response = await this.SendAsync<ReportRootGetOffice365ActivationsUserCountsCollectionResponse>(office365activationsusercounts, cancellationToken).ConfigureAwait(false);
-            if (response?.Value?.CurrentPage != null)
-            {
-                response.Value.InitializeNextPageRequest(this.Client, response.NextLink);
-                // Copy the additional data collection to the page itself so that information is not lost
-                response.Value.AdditionalData = response.AdditionalData;
-                return response.Value;
-            }
-
-            return null;
-        }
-
-        /// <summary>
-        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="office365activationsusercounts">The Office365ActivationsUserCounts object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ReportRootGetOffice365ActivationsUserCountsCollectionResponse>> PutResponseAsync(Office365ActivationsUserCounts office365activationsusercounts, CancellationToken cancellationToken = default)
-        {
-            this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<ReportRootGetOffice365ActivationsUserCountsCollectionResponse>(office365activationsusercounts, cancellationToken);
-        }
-
-        /// <summary>
-        /// Adds the specified expand value to the request.
-        /// </summary>
-        /// <param name="value">The expand value.</param>
-        /// <returns>The request object to send.</returns>
-        public IReportRootGetOffice365ActivationsUserCountsRequest Expand(string value)
-        {
-            this.QueryOptions.Add(new QueryOption("$expand", value));
-            return this;
-        }
-
-        /// <summary>
-        /// Adds the specified select value to the request.
-        /// </summary>
-        /// <param name="value">The select value.</param>
-        /// <returns>The request object to send.</returns>
-        public IReportRootGetOffice365ActivationsUserCountsRequest Select(string value)
-        {
-            this.QueryOptions.Add(new QueryOption("$select", value));
-            return this;
-        }
-
-        /// <summary>
-        /// Adds the specified top value to the request.
-        /// </summary>
-        /// <param name="value">The top value.</param>
-        /// <returns>The request object to send.</returns>
-        public IReportRootGetOffice365ActivationsUserCountsRequest Top(int value)
-        {
-            this.QueryOptions.Add(new QueryOption("$top", value.ToString()));
-            return this;
-        }
-
-        /// <summary>
-        /// Adds the specified filter value to the request.
-        /// </summary>
-        /// <param name="value">The filter value.</param>
-        /// <returns>The request object to send.</returns>
-        public IReportRootGetOffice365ActivationsUserCountsRequest Filter(string value)
-        {
-            this.QueryOptions.Add(new QueryOption("$filter", value));
-            return this;
-        }
-
-        /// <summary>
-        /// Adds the specified skip value to the request.
-        /// </summary>
-        /// <param name="value">The skip value.</param>
-        /// <returns>The request object to send.</returns>
-        public IReportRootGetOffice365ActivationsUserCountsRequest Skip(int value)
-        {
-            this.QueryOptions.Add(new QueryOption("$skip", value.ToString()));
-            return this;
-        }
-
-        /// <summary>
-        /// Adds the specified orderby value to the request.
-        /// </summary>
-        /// <param name="value">The orderby value.</param>
-        /// <returns>The request object to send.</returns>
-        public IReportRootGetOffice365ActivationsUserCountsRequest OrderBy(string value)
-        {
-            this.QueryOptions.Add(new QueryOption("$orderby", value));
-            return this;
-        }
     }
 }
