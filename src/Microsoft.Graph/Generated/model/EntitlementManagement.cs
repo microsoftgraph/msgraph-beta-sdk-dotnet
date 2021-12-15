@@ -152,6 +152,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access packages.
+        /// Access packages.
         /// </summary>
         [JsonPropertyName("accessPackages")]
         public IEntitlementManagementAccessPackagesCollectionPage AccessPackages { get; set; }
@@ -165,6 +166,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connected organizations.
+        /// Connected organizations.
         /// </summary>
         [JsonPropertyName("connectedOrganizations")]
         public IEntitlementManagementConnectedOrganizationsCollectionPage ConnectedOrganizations { get; set; }
@@ -178,6 +180,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
+        /// Entitlement management settings.
         /// </summary>
         [JsonPropertyName("settings")]
         public EntitlementManagementSettings Settings { get; set; }

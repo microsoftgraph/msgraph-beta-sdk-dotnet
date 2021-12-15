@@ -32,6 +32,13 @@ namespace Microsoft.Graph
         new ICloudPCRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for CloudPCChangeUserAccountType.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCChangeUserAccountTypeRequestBuilder"/>.</returns>
+        ICloudPCChangeUserAccountTypeRequestBuilder ChangeUserAccountType(
+            CloudPcUserAccountType? userAccountType = null);
+
+        /// <summary>
         /// Gets the request builder for CloudPCEndGracePeriod.
         /// </summary>
         /// <returns>The <see cref="ICloudPCEndGracePeriodRequestBuilder"/>.</returns>
@@ -54,7 +61,9 @@ namespace Microsoft.Graph
         /// Gets the request builder for CloudPCReprovision.
         /// </summary>
         /// <returns>The <see cref="ICloudPCReprovisionRequestBuilder"/>.</returns>
-        ICloudPCReprovisionRequestBuilder Reprovision();
+        ICloudPCReprovisionRequestBuilder Reprovision(
+            CloudPcUserAccountType? userAccountType = null,
+            CloudPcOperatingSystem? osVersion = null);
 
         /// <summary>
         /// Gets the request builder for CloudPCTroubleshoot.

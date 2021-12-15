@@ -30,11 +30,11 @@ namespace Microsoft.Graph.ExternalConnectors
         IExternalGroupMembersCollectionRequest Request(IEnumerable<Microsoft.Graph.Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IExternalGroupMemberRequestBuilder"/> for the specified ExternalGroupMember.
+        /// Gets an <see cref="IIdentityRequestBuilder"/> for the specified Identity.
         /// </summary>
-        /// <param name="id">The ID for the ExternalGroupMember.</param>
-        /// <returns>The <see cref="IExternalGroupMemberRequestBuilder"/>.</returns>
-        IExternalGroupMemberRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the Identity.</param>
+        /// <returns>The <see cref="IIdentityRequestBuilder"/>.</returns>
+        IIdentityRequestBuilder this[string id] { get; }
 
         
     }

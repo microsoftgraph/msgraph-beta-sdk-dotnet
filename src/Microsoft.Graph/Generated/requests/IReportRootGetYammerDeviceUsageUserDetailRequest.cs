@@ -25,94 +25,20 @@ namespace Microsoft.Graph
         /// Issues the GET request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserDetailCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Stream> GetAsync(
+            CancellationToken cancellationToken = default,
+            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead);
 
         /// <summary>
         /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerDeviceUsageUserDetailCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default);
 
 
-        /// <summary>
-        /// Issues the PATCH request.
-        /// </summary>
-        /// <param name="yammerdeviceusageuserdetail">The YammerDeviceUsageUserDetail object set with the properties to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserDetailCollectionPage> PatchAsync(YammerDeviceUsageUserDetail yammerdeviceusageuserdetail,
-            CancellationToken cancellationToken = default);
 
-        /// <summary>
-        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="yammerdeviceusageuserdetail">The YammerDeviceUsageUserDetail object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerDeviceUsageUserDetailCollectionResponse>> PatchResponseAsync(YammerDeviceUsageUserDetail yammerdeviceusageuserdetail, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Issues the PUT request.
-        /// </summary>
-        /// <param name="yammerdeviceusageuserdetail">The YammerDeviceUsageUserDetail object to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetYammerDeviceUsageUserDetailCollectionPage> PutAsync(YammerDeviceUsageUserDetail yammerdeviceusageuserdetail,
-            CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="yammerdeviceusageuserdetail">The YammerDeviceUsageUserDetail object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetYammerDeviceUsageUserDetailCollectionResponse>> PutResponseAsync(YammerDeviceUsageUserDetail yammerdeviceusageuserdetail, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Adds the specified expand value to the request.
-        /// </summary>
-        /// <param name="value">The expand value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetYammerDeviceUsageUserDetailRequest Expand(string value);
-
-        /// <summary>
-        /// Adds the specified select value to the request.
-        /// </summary>
-        /// <param name="value">The select value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetYammerDeviceUsageUserDetailRequest Select(string value);
-
-        /// <summary>
-        /// Adds the specified top value to the request.
-        /// </summary>
-        /// <param name="value">The top value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetYammerDeviceUsageUserDetailRequest Top(int value);
-
-        /// <summary>
-        /// Adds the specified filter value to the request.
-        /// </summary>
-        /// <param name="value">The filter value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetYammerDeviceUsageUserDetailRequest Filter(string value);
-
-        /// <summary>
-        /// Adds the specified skip value to the request.
-        /// </summary>
-        /// <param name="value">The skip value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetYammerDeviceUsageUserDetailRequest Skip(int value);
-
-        /// <summary>
-        /// Adds the specified orderby value to the request.
-        /// </summary>
-        /// <param name="value">The orderby value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetYammerDeviceUsageUserDetailRequest OrderBy(string value);
     }
 }

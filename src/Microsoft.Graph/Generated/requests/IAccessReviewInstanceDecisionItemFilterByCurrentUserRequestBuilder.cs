@@ -24,5 +24,37 @@ namespace Microsoft.Graph
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
         IAccessReviewInstanceDecisionItemFilterByCurrentUserRequest Request(IEnumerable<Option> options = null);
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder.
+        /// </summary>
+        /// <param name="on">A on parameter for the OData method call.</param>
+        /// <returns>The <see cref="IAccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder"/>.</returns>
+        IAccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder FilterByCurrentUser(
+            AccessReviewInstanceDecisionItemFilterByCurrentUserOptions on);
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder.
+        /// </summary>
+        /// <param name="decision">A decision parameter for the OData method call.</param>
+        /// <param name="justification">A justification parameter for the OData method call.</param>
+        /// <param name="principalId">A principalId parameter for the OData method call.</param>
+        /// <param name="resourceId">A resourceId parameter for the OData method call.</param>
+        /// <returns>The <see cref="IAccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder"/>.</returns>
+        IAccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder RecordAllDecisions(
+            string decision,
+            string justification,
+            string principalId,
+            string resourceId);
+        /// <summary>
+        /// Gets the request builder for Insights.
+        /// 
+        /// </summary>
+        /// <returns>The <see cref="IGovernanceInsightRequestBuilder"/>.</returns>
+        IGovernanceInsightRequestBuilder Insights  { get; }
+        /// <summary>
+        /// Gets the request builder for Instance.
+        /// There is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceRequestBuilder"/>.</returns>
+        IAccessReviewInstanceRequestBuilder Instance  { get; }
     }
 }

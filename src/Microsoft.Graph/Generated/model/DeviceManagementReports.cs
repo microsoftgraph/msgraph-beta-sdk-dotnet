@@ -48,20 +48,6 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string ExportJobsNextLink { get; set; }
     
-        /// <summary>
-        /// Gets or sets report schedules.
-        /// Entity representing a schedule for which reports are delivered
-        /// </summary>
-        [JsonPropertyName("reportSchedules")]
-        public IDeviceManagementReportsReportSchedulesCollectionPage ReportSchedules { get; set; }
-
-        /// <summary>
-        /// Gets or sets reportSchedulesNextLink.
-        /// </summary>
-        [JsonPropertyName("reportSchedules@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string ReportSchedulesNextLink { get; set; }
-    
     }
 }
 

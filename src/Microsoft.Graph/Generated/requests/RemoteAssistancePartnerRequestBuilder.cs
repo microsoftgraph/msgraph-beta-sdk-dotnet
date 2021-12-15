@@ -51,17 +51,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for RemoteAssistancePartnerBeginOnboarding.
-        /// </summary>
-        /// <returns>The <see cref="IRemoteAssistancePartnerBeginOnboardingRequestBuilder"/>.</returns>
-        public IRemoteAssistancePartnerBeginOnboardingRequestBuilder BeginOnboarding()
-        {
-            return new RemoteAssistancePartnerBeginOnboardingRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.beginOnboarding"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for RemoteAssistancePartnerDisconnect.
         /// </summary>
         /// <returns>The <see cref="IRemoteAssistancePartnerDisconnectRequestBuilder"/>.</returns>
@@ -69,6 +58,17 @@ namespace Microsoft.Graph
         {
             return new RemoteAssistancePartnerDisconnectRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.disconnect"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for RemoteAssistancePartnerBeginOnboarding.
+        /// </summary>
+        /// <returns>The <see cref="IRemoteAssistancePartnerBeginOnboardingRequestBuilder"/>.</returns>
+        public IRemoteAssistancePartnerBeginOnboardingRequestBuilder BeginOnboarding()
+        {
+            return new RemoteAssistancePartnerBeginOnboardingRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.beginOnboarding"),
                 this.Client);
         }
     

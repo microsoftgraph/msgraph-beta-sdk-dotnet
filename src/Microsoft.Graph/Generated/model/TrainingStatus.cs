@@ -45,14 +45,9 @@ namespace Microsoft.Graph
         Overdue = 4,
 	
         /// <summary>
-        /// Not Completed
-        /// </summary>
-        NotCompleted = 5,
-	
-        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 6,
+        UnknownFutureValue = 5,
 	
     }
 }

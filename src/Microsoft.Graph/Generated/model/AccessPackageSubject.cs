@@ -56,6 +56,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises security identifier.
+        /// A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
         /// </summary>
         [JsonPropertyName("onPremisesSecurityIdentifier")]
         public string OnPremisesSecurityIdentifier { get; set; }

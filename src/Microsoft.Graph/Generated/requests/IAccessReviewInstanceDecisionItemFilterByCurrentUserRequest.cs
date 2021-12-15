@@ -37,6 +37,41 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItemFilterByCurrentUserCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
 
+        /// <summary>
+        /// Issues the PATCH request.
+        /// </summary>
+        /// <param name="accessreviewinstancedecisionitem">The AccessReviewInstanceDecisionItem object set with the properties to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await for async call.</returns>
+        System.Threading.Tasks.Task<IAccessReviewInstanceDecisionItemFilterByCurrentUserCollectionPage> PatchAsync(AccessReviewInstanceDecisionItem accessreviewinstancedecisionitem,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="accessreviewinstancedecisionitem">The AccessReviewInstanceDecisionItem object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItemFilterByCurrentUserCollectionResponse>> PatchResponseAsync(AccessReviewInstanceDecisionItem accessreviewinstancedecisionitem, CancellationToken cancellationToken = default);
+
+
+        /// <summary>
+        /// Issues the PUT request.
+        /// </summary>
+        /// <param name="accessreviewinstancedecisionitem">The AccessReviewInstanceDecisionItem object to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await for async call.</returns>
+        System.Threading.Tasks.Task<IAccessReviewInstanceDecisionItemFilterByCurrentUserCollectionPage> PutAsync(AccessReviewInstanceDecisionItem accessreviewinstancedecisionitem,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="accessreviewinstancedecisionitem">The AccessReviewInstanceDecisionItem object set with the properties to update.</param>
+        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewInstanceDecisionItemFilterByCurrentUserCollectionResponse>> PutResponseAsync(AccessReviewInstanceDecisionItem accessreviewinstancedecisionitem, CancellationToken cancellationToken = default);
+
 
         /// <summary>
         /// Adds the specified expand value to the request.

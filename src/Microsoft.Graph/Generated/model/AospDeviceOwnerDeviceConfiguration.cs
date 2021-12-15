@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets apps allow install from unknown sources.
-        /// Indicates whether or not the user is allowed to enable to unknown sources setting.
+        /// Gets or sets apps block install from unknown sources.
+        /// Indicates whether or not the user is allowed to enable unknown sources setting. When set to true, user is not allowed to enable unknown sources settings.
         /// </summary>
-        [JsonPropertyName("appsAllowInstallFromUnknownSources")]
-        public bool? AppsAllowInstallFromUnknownSources { get; set; }
+        [JsonPropertyName("appsBlockInstallFromUnknownSources")]
+        public bool? AppsBlockInstallFromUnknownSources { get; set; }
     
         /// <summary>
         /// Gets or sets backup blocked.
@@ -126,13 +126,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("securityAllowDebuggingFeatures")]
         public bool? SecurityAllowDebuggingFeatures { get; set; }
-    
-        /// <summary>
-        /// Gets or sets storage allow usb.
-        /// Indicates whether or not to block USB storage.
-        /// </summary>
-        [JsonPropertyName("storageAllowUsb")]
-        public bool? StorageAllowUsb { get; set; }
     
         /// <summary>
         /// Gets or sets storage block external media.

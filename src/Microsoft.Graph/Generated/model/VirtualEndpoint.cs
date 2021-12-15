@@ -91,6 +91,12 @@ namespace Microsoft.Graph
         public string OnPremisesConnectionsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets organization settings.
+        /// </summary>
+        [JsonPropertyName("organizationSettings")]
+        public CloudPcOrganizationSettings OrganizationSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets provisioning policies.
         /// Cloud PC provisioning policy.
         /// </summary>

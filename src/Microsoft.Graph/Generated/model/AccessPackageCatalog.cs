@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets catalog type.
-        /// One of UserManaged or ServiceDefault.
+        /// Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("catalogType")]
         public string CatalogType { get; set; }

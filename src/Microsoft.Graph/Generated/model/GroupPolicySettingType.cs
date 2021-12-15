@@ -54,5 +54,110 @@ namespace Microsoft.Graph
         /// </summary>
         WindowsFirewallSettings = 6,
 	
+        /// <summary>
+        /// App Locker Rule Collection
+        /// </summary>
+        AppLockerRuleCollection = 7,
+	
+        /// <summary>
+        /// Data Sources Settings
+        /// </summary>
+        DataSourcesSettings = 8,
+	
+        /// <summary>
+        /// Devices Settings
+        /// </summary>
+        DevicesSettings = 9,
+	
+        /// <summary>
+        /// Drive Map Settings
+        /// </summary>
+        DriveMapSettings = 10,
+	
+        /// <summary>
+        /// Environment Variables
+        /// </summary>
+        EnvironmentVariables = 11,
+	
+        /// <summary>
+        /// Files Settings
+        /// </summary>
+        FilesSettings = 12,
+	
+        /// <summary>
+        /// Folder Options
+        /// </summary>
+        FolderOptions = 13,
+	
+        /// <summary>
+        /// Folders
+        /// </summary>
+        Folders = 14,
+	
+        /// <summary>
+        /// Ini Files
+        /// </summary>
+        IniFiles = 15,
+	
+        /// <summary>
+        /// Internet Options
+        /// </summary>
+        InternetOptions = 16,
+	
+        /// <summary>
+        /// Local Users And Groups
+        /// </summary>
+        LocalUsersAndGroups = 17,
+	
+        /// <summary>
+        /// Network Options
+        /// </summary>
+        NetworkOptions = 18,
+	
+        /// <summary>
+        /// Network Shares
+        /// </summary>
+        NetworkShares = 19,
+	
+        /// <summary>
+        /// Nt Services
+        /// </summary>
+        NtServices = 20,
+	
+        /// <summary>
+        /// Power Options
+        /// </summary>
+        PowerOptions = 21,
+	
+        /// <summary>
+        /// Printers
+        /// </summary>
+        Printers = 22,
+	
+        /// <summary>
+        /// Regional Options Settings
+        /// </summary>
+        RegionalOptionsSettings = 23,
+	
+        /// <summary>
+        /// Registry Settings
+        /// </summary>
+        RegistrySettings = 24,
+	
+        /// <summary>
+        /// Scheduled Tasks
+        /// </summary>
+        ScheduledTasks = 25,
+	
+        /// <summary>
+        /// Shortcut Settings
+        /// </summary>
+        ShortcutSettings = 26,
+	
+        /// <summary>
+        /// Start Menu Settings
+        /// </summary>
+        StartMenuSettings = 27,
+	
     }
 }

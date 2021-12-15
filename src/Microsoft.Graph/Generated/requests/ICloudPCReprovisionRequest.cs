@@ -20,6 +20,10 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ICloudPCReprovisionRequest : IBaseRequest
     {
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        CloudPCReprovisionRequestBody RequestBody { get; }
 
 
         /// <summary>

@@ -31,11 +31,5 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IUserExperienceAnalyticsMetricHistoryRequest Request(IEnumerable<Option> options);
     
-        /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsMetric.
-        /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsMetricWithReferenceRequestBuilder"/>.</returns>
-        IUserExperienceAnalyticsMetricWithReferenceRequestBuilder UserExperienceAnalyticsMetric { get; }
-    
     }
 }

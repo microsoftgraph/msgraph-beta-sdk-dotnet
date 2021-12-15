@@ -61,6 +61,25 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AccessReviewInstanceDecisionItemRecordAllDecisions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder RecordAllDecisions(
+            string decision = null,
+            string justification = null,
+            string principalId = null,
+            string resourceId = null)
+        {
+            return new AccessReviewInstanceDecisionItemRecordAllDecisionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.recordAllDecisions"),
+                this.Client,
+                decision,
+                justification,
+                principalId,
+                resourceId);
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessReviewInstanceDecisionItemFilterByCurrentUser.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceDecisionItemFilterByCurrentUserRequestBuilder"/>.</returns>

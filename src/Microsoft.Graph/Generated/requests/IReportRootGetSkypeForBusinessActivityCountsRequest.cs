@@ -25,94 +25,20 @@ namespace Microsoft.Graph
         /// Issues the GET request.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="httpCompletionOption">The <see cref="HttpCompletionOption"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessActivityCountsCollectionPage> GetAsync(
-            CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<Stream> GetAsync(
+            CancellationToken cancellationToken = default,
+            HttpCompletionOption httpCompletionOption = HttpCompletionOption.ResponseContentRead);
 
         /// <summary>
         /// Issues the GET request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessActivityCountsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GraphResponse> GetResponseAsync(CancellationToken cancellationToken = default);
 
 
-        /// <summary>
-        /// Issues the PATCH request.
-        /// </summary>
-        /// <param name="skypeforbusinessactivitycounts">The SkypeForBusinessActivityCounts object set with the properties to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessActivityCountsCollectionPage> PatchAsync(SkypeForBusinessActivityCounts skypeforbusinessactivitycounts,
-            CancellationToken cancellationToken = default);
 
-        /// <summary>
-        /// Issues the PATCH request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="skypeforbusinessactivitycounts">The SkypeForBusinessActivityCounts object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessActivityCountsCollectionResponse>> PatchResponseAsync(SkypeForBusinessActivityCounts skypeforbusinessactivitycounts, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Issues the PUT request.
-        /// </summary>
-        /// <param name="skypeforbusinessactivitycounts">The SkypeForBusinessActivityCounts object to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<IReportRootGetSkypeForBusinessActivityCountsCollectionPage> PutAsync(SkypeForBusinessActivityCounts skypeforbusinessactivitycounts,
-            CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <param name="skypeforbusinessactivitycounts">The SkypeForBusinessActivityCounts object set with the properties to update.</param>
-        /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<ReportRootGetSkypeForBusinessActivityCountsCollectionResponse>> PutResponseAsync(SkypeForBusinessActivityCounts skypeforbusinessactivitycounts, CancellationToken cancellationToken = default);
-
-
-        /// <summary>
-        /// Adds the specified expand value to the request.
-        /// </summary>
-        /// <param name="value">The expand value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessActivityCountsRequest Expand(string value);
-
-        /// <summary>
-        /// Adds the specified select value to the request.
-        /// </summary>
-        /// <param name="value">The select value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessActivityCountsRequest Select(string value);
-
-        /// <summary>
-        /// Adds the specified top value to the request.
-        /// </summary>
-        /// <param name="value">The top value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessActivityCountsRequest Top(int value);
-
-        /// <summary>
-        /// Adds the specified filter value to the request.
-        /// </summary>
-        /// <param name="value">The filter value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessActivityCountsRequest Filter(string value);
-
-        /// <summary>
-        /// Adds the specified skip value to the request.
-        /// </summary>
-        /// <param name="value">The skip value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessActivityCountsRequest Skip(int value);
-
-        /// <summary>
-        /// Adds the specified orderby value to the request.
-        /// </summary>
-        /// <param name="value">The orderby value.</param>
-        /// <returns>The request object to send.</returns>
-        IReportRootGetSkypeForBusinessActivityCountsRequest OrderBy(string value);
     }
 }

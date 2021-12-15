@@ -32,16 +32,16 @@ namespace Microsoft.Graph
         new IRemoteAssistancePartnerRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for RemoteAssistancePartnerBeginOnboarding.
-        /// </summary>
-        /// <returns>The <see cref="IRemoteAssistancePartnerBeginOnboardingRequestBuilder"/>.</returns>
-        IRemoteAssistancePartnerBeginOnboardingRequestBuilder BeginOnboarding();
-
-        /// <summary>
         /// Gets the request builder for RemoteAssistancePartnerDisconnect.
         /// </summary>
         /// <returns>The <see cref="IRemoteAssistancePartnerDisconnectRequestBuilder"/>.</returns>
         IRemoteAssistancePartnerDisconnectRequestBuilder Disconnect();
+
+        /// <summary>
+        /// Gets the request builder for RemoteAssistancePartnerBeginOnboarding.
+        /// </summary>
+        /// <returns>The <see cref="IRemoteAssistancePartnerBeginOnboardingRequestBuilder"/>.</returns>
+        IRemoteAssistancePartnerBeginOnboardingRequestBuilder BeginOnboarding();
     
     }
 }

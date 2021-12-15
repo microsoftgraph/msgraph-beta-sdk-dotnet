@@ -27,10 +27,10 @@ namespace Microsoft.Graph
         public string OwnerUserPrincipalName { get; set; }
     
         /// <summary>
-        /// Gets or sets ServiceAccountCredentials.
+        /// Gets or sets OwnerAccessToken.
         /// </summary>
-        [JsonPropertyName("serviceAccountCredentials")]
-        public string ServiceAccountCredentials { get; set; }
+        [JsonPropertyName("ownerAccessToken")]
+        public string OwnerAccessToken { get; set; }
     
     }
 }

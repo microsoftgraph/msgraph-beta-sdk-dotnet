@@ -72,6 +72,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets tenantOnboardingEligibilityReason.
+        /// Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("tenantOnboardingEligibilityReason")]
         public TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason { get; set; }

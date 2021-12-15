@@ -16,7 +16,7 @@ namespace Microsoft.Graph.ExternalConnectors
     /// The interface IExternalGroupMembersCollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(Microsoft.Graph.InterfaceConverter<ExternalGroupMembersCollectionPage>))]
-    public interface IExternalGroupMembersCollectionPage : Microsoft.Graph.ICollectionPage<ExternalGroupMember>
+    public interface IExternalGroupMembersCollectionPage : Microsoft.Graph.ICollectionPage<Identity>
     {
         /// <summary>
         /// Gets the next page <see cref="IExternalGroupMembersCollectionRequest"/> instance.

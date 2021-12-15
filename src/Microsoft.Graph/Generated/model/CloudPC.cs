@@ -23,20 +23,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets aad device id.
+        /// The Azure Active Directory (Azure AD) device ID of the Cloud PC.
         /// </summary>
         [JsonPropertyName("aadDeviceId")]
         public string AadDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The Cloud PC display name.
+        /// The display name of the Cloud PC.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets grace period end date time.
-        /// The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        /// The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("gracePeriodEndDateTime")]
         public DateTimeOffset? GracePeriodEndDateTime { get; set; }
@@ -50,81 +51,90 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last login result.
+        /// The last login result of the Cloud PC. For example, { 'time': '2014-01-01T00:00:00Z'}.
         /// </summary>
         [JsonPropertyName("lastLoginResult")]
         public CloudPcLoginResult LastLoginResult { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// The Cloud PC's last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        /// The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last remote action result.
+        /// The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Rename, Reboot, Reprovision, and Troubleshoot.
         /// </summary>
         [JsonPropertyName("lastRemoteActionResult")]
         public CloudPcRemoteActionResult LastRemoteActionResult { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
-        /// The Cloud PC’s Intune device ID.
+        /// The Intune device ID of the Cloud PC.
         /// </summary>
         [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets managed device name.
-        /// The Cloud PC’s Intune device name.
+        /// The Intune device name of the Cloud PC.
         /// </summary>
         [JsonPropertyName("managedDeviceName")]
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets on premises connection name.
-        /// The on-premises connection that is applied during provisioning of Cloud PCs.
+        /// The on-premises connection that is applied during the provisioning of Cloud PCs.
         /// </summary>
         [JsonPropertyName("onPremisesConnectionName")]
         public string OnPremisesConnectionName { get; set; }
     
         /// <summary>
+        /// Gets or sets os version.
+        /// </summary>
+        [JsonPropertyName("osVersion")]
+        public CloudPcOperatingSystem? OsVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets provisioning policy id.
-        /// The Cloud PC's provisioning policy ID.
+        /// The provisioning policy ID of the Cloud PC.
         /// </summary>
         [JsonPropertyName("provisioningPolicyId")]
         public string ProvisioningPolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning policy name.
-        /// The provisioning policy that is applied during provisioning of Cloud PCs.
+        /// The provisioning policy that is applied during the provisioning of Cloud PCs.
         /// </summary>
         [JsonPropertyName("provisioningPolicyName")]
         public string ProvisioningPolicyName { get; set; }
     
         /// <summary>
         /// Gets or sets service plan id.
-        /// The Cloud PC's service plan ID.
+        /// The service plan ID of the Cloud PC.
         /// </summary>
         [JsonPropertyName("servicePlanId")]
         public string ServicePlanId { get; set; }
     
         /// <summary>
         /// Gets or sets service plan name.
-        /// The Cloud PC's service plan name.
+        /// The service plan name of the Cloud PC.
         /// </summary>
         [JsonPropertyName("servicePlanName")]
         public string ServicePlanName { get; set; }
     
         /// <summary>
         /// Gets or sets service plan type.
+        /// The service plan type of the Cloud PC.
         /// </summary>
         [JsonPropertyName("servicePlanType")]
         public CloudPcServicePlanType? ServicePlanType { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// Status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
+        /// The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
         /// </summary>
         [JsonPropertyName("status")]
         public CloudPcStatus? Status { get; set; }
@@ -135,6 +145,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("statusDetails")]
         public CloudPcStatusDetails StatusDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user account type.
+        /// </summary>
+        [JsonPropertyName("userAccountType")]
+        public CloudPcUserAccountType? UserAccountType { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.

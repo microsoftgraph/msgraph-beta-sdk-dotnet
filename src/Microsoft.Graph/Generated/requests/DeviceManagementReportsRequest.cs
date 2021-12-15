@@ -258,12 +258,6 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementReportsToInitialize.ExportJobs.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
                 }
-                if (deviceManagementReportsToInitialize.ReportSchedules != null && deviceManagementReportsToInitialize.ReportSchedules.CurrentPage != null)
-                {
-                    deviceManagementReportsToInitialize.ReportSchedules.InitializeNextPageRequest(this.Client, deviceManagementReportsToInitialize.ReportSchedulesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    deviceManagementReportsToInitialize.ReportSchedules.AdditionalData = deviceManagementReportsToInitialize.AdditionalData;
-                }
 
             }
 

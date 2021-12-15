@@ -33,20 +33,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
-        /// <summary>
-        /// Gets or sets members.
-        /// </summary>
-        [Obsolete("The OData type annotation for this entity is being deprecated by Aug 2021. Please strip the @odata.type annotations for this specific entity from your request payloads before the deprecation date.")]
-        [JsonPropertyName("members")]
-        public IExternalGroupMembersCollectionPage Members { get; set; }
-
-        /// <summary>
-        /// Gets or sets membersNextLink.
-        /// </summary>
-        [JsonPropertyName("members@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string MembersNextLink { get; set; }
-    
     }
 }
 

@@ -164,12 +164,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementIntentCreateCopyRequestBuilder"/>.</returns>
         public IDeviceManagementIntentCreateCopyRequestBuilder CreateCopy(
-            string displayName = null)
+            string displayName = null,
+            string description = null)
         {
             return new DeviceManagementIntentCreateCopyRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createCopy"),
                 this.Client,
-                displayName);
+                displayName,
+                description);
         }
 
         /// <summary>

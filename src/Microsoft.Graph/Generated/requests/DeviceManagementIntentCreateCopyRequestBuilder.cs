@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="displayName">A displayName parameter for the OData method call.</param>
+        /// <param name="description">A description parameter for the OData method call.</param>
         public DeviceManagementIntentCreateCopyRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            string displayName)
+            string displayName,
+            string description)
             : base(requestUrl, client)
         {
             this.SetParameter("displayName", displayName, true);
+            this.SetParameter("description", description, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("displayName"))
             {
                 request.RequestBody.DisplayName = this.GetParameter<string>("displayName");
+            }
+
+            if (this.HasParameter("description"))
+            {
+                request.RequestBody.Description = this.GetParameter<string>("description");
             }
 
             return request;

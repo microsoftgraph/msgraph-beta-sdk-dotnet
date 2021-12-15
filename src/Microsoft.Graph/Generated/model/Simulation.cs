@@ -120,13 +120,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? LaunchDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets mode.
-        /// Mode of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: real, preview, unknownFutureValue.
-        /// </summary>
-        [JsonPropertyName("mode")]
-        public SimulationMode? Mode { get; set; }
-    
-        /// <summary>
         /// Gets or sets payload delivery platform.
         /// Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
         /// </summary>

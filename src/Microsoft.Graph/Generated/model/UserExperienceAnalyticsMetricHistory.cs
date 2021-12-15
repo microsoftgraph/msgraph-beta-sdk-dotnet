@@ -41,13 +41,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("metricType")]
         public string MetricType { get; set; }
     
-        /// <summary>
-        /// Gets or sets user experience analytics metric.
-        /// User experience analytics metric.
-        /// </summary>
-        [JsonPropertyName("userExperienceAnalyticsMetric")]
-        public UserExperienceAnalyticsMetric UserExperienceAnalyticsMetric { get; set; }
-    
     }
 }
 

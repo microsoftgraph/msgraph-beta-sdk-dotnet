@@ -211,6 +211,13 @@ namespace Microsoft.Graph
         public string SubscriberCarrier { get; set; }
     
         /// <summary>
+        /// Gets or sets systemManagementBIOSVersion.
+        /// BIOS version as reported by SMBIOS
+        /// </summary>
+        [JsonPropertyName("systemManagementBIOSVersion")]
+        public string SystemManagementBIOSVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets totalStorageSpace.
         /// Total storage space of the device.
         /// </summary>
@@ -218,11 +225,25 @@ namespace Microsoft.Graph
         public Int64? TotalStorageSpace { get; set; }
     
         /// <summary>
+        /// Gets or sets tpmManufacturer.
+        /// The identifying information that uniquely names the TPM manufacturer
+        /// </summary>
+        [JsonPropertyName("tpmManufacturer")]
+        public string TpmManufacturer { get; set; }
+    
+        /// <summary>
         /// Gets or sets tpmSpecificationVersion.
         /// String that specifies the specification version.
         /// </summary>
         [JsonPropertyName("tpmSpecificationVersion")]
         public string TpmSpecificationVersion { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tpmVersion.
+        /// The version of the TPM, as specified by the manufacturer
+        /// </summary>
+        [JsonPropertyName("tpmVersion")]
+        public string TpmVersion { get; set; }
     
         /// <summary>
         /// Gets or sets wifiMac.

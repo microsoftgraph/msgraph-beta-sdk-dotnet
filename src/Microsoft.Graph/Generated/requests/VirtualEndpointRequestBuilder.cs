@@ -111,6 +111,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for OrganizationSettings.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcOrganizationSettingsRequestBuilder"/>.</returns>
+        public ICloudPcOrganizationSettingsRequestBuilder OrganizationSettings
+        {
+            get
+            {
+                return new CloudPcOrganizationSettingsRequestBuilder(this.AppendSegmentToRequestUrl("organizationSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ProvisioningPolicies.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointProvisioningPoliciesCollectionRequestBuilder"/>.</returns>

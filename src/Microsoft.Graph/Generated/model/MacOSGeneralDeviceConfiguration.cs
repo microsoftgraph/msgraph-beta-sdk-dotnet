@@ -205,6 +205,13 @@ namespace Microsoft.Graph
         public bool? ICloudBlockReminders { get; set; }
     
         /// <summary>
+        /// Gets or sets i cloud private relay blocked.
+        /// iCloud private relay is an iCloud+ service that prevents networks and servers from monitoring a person's activity across the internet. By blocking iCloud private relay, Apple will not encrypt the traffic leaving the device. Available for devices running macOS 12 and later.
+        /// </summary>
+        [JsonPropertyName("iCloudPrivateRelayBlocked")]
+        public bool? ICloudPrivateRelayBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets i tunes block file sharing.
         /// Indicates whether or not to block files from being transferred using iTunes.
         /// </summary>
@@ -406,6 +413,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("spotlightBlockInternetResults")]
         public bool? SpotlightBlockInternetResults { get; set; }
+    
+        /// <summary>
+        /// Gets or sets touch id timeout in hours.
+        /// Maximum hours after which the user must enter their password to unlock the device instead of using Touch ID. Available for devices running macOS 12 and later. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonPropertyName("touchIdTimeoutInHours")]
+        public Int32? TouchIdTimeoutInHours { get; set; }
     
         /// <summary>
         /// Gets or sets update delay policy.

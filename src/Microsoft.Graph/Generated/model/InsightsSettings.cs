@@ -22,12 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets disabled for group.
+        /// The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
         /// </summary>
         [JsonPropertyName("disabledForGroup")]
         public string DisabledForGroup { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled in organization.
+        /// true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
         /// </summary>
         [JsonPropertyName("isEnabledInOrganization")]
         public bool? IsEnabledInOrganization { get; set; }

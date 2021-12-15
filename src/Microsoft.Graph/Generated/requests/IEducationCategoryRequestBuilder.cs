@@ -31,5 +31,7 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IEducationCategoryRequest Request(IEnumerable<Option> options);
     
+        
+    
     }
 }

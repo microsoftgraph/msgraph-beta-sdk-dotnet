@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets business phones.
-        /// The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and not).
+        /// The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("businessPhones")]
         public IEnumerable<string> BusinessPhones { get; set; }
@@ -295,7 +295,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises extension attributes.
-        /// Contains extensionAttributes 1-15 for the user. Note that the individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties may be set during creation or update. These extension attributes are also known as Exchange custom attributes 1-15. Returned only on $select. Supports $filter (eq, not, ge, le, in, and eq on null values).
+        /// Contains extensionAttributes1-15 for the user. The individual extension attributes are neither selectable nor filterable. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. These extension attributes are also known as Exchange custom attributes 1-15.
         /// </summary>
         [JsonPropertyName("onPremisesExtensionAttributes")]
         public OnPremisesExtensionAttributes OnPremisesExtensionAttributes { get; set; }
@@ -1231,6 +1231,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("authentication")]
         public Authentication Authentication { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tasks.
+        /// </summary>
+        [JsonPropertyName("tasks")]
+        public Tasks Tasks { get; set; }
     
         /// <summary>
         /// Gets or sets chats.
