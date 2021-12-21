@@ -71,6 +71,13 @@ namespace Microsoft.Graph
         public string TimeZone { get; set; }
     
         /// <summary>
+        /// Gets or sets userPurpose.
+        /// The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
+        /// </summary>
+        [JsonPropertyName("userPurpose")]
+        public UserPurpose? UserPurpose { get; set; }
+    
+        /// <summary>
         /// Gets or sets userPurposeV2.
         /// </summary>
         [JsonPropertyName("userPurposeV2")]

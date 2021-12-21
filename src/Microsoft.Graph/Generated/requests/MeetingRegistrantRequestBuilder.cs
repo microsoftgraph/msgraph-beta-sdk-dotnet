@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MeetingRegistrantRequestBuilder.
     /// </summary>
-    public partial class MeetingRegistrantRequestBuilder : EntityRequestBuilder, IMeetingRegistrantRequestBuilder
+    public partial class MeetingRegistrantRequestBuilder : MeetingRegistrantBaseRequestBuilder, IMeetingRegistrantRequestBuilder
     {
 
         /// <summary>

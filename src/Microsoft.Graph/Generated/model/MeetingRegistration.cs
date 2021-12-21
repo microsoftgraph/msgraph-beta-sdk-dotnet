@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Meeting Registration.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<MeetingRegistration>))]
-    public partial class MeetingRegistration : Entity
+    public partial class MeetingRegistration : MeetingRegistrationBase
     {
     
-        /// <summary>
-        /// Gets or sets allowed registrant.
-        /// Specifies who can register for the meeting.
-        /// </summary>
-        [JsonPropertyName("allowedRegistrant")]
-        public MeetingAudience? AllowedRegistrant { get; set; }
-    
+        ///<summary>
+        /// The MeetingRegistration constructor
+        ///</summary>
+        public MeetingRegistration()
+        {
+            this.ODataType = "microsoft.graph.meetingRegistration";
+        }
+
         /// <summary>
         /// Gets or sets description.
         /// The description of the meeting.
@@ -90,20 +90,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("customQuestions@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string CustomQuestionsNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets registrants.
-        /// Registrants of the online meeting.
-        /// </summary>
-        [JsonPropertyName("registrants")]
-        public IMeetingRegistrationRegistrantsCollectionPage Registrants { get; set; }
-
-        /// <summary>
-        /// Gets or sets registrantsNextLink.
-        /// </summary>
-        [JsonPropertyName("registrants@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string RegistrantsNextLink { get; set; }
     
     }
 }

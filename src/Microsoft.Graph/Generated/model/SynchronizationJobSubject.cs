@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets links.
+        /// </summary>
+        [JsonPropertyName("links")]
+        public SynchronizationLinkedObjects Links { get; set; }
+    
+        /// <summary>
         /// Gets or sets objectId.
         /// The identifier of an object to which a synchronizationJob  is to be applied.
         /// </summary>

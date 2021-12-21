@@ -31,9 +31,17 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets additional information.
+        /// Additional information that is sent to the customer when an appointment is confirmed.
         /// </summary>
         [JsonPropertyName("additionalInformation")]
         public string AdditionalInformation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom questions.
+        /// Contains the set of custom questions associated with a particular service.
+        /// </summary>
+        [JsonPropertyName("customQuestions")]
+        public IEnumerable<BookingQuestionAssignment> CustomQuestions { get; set; }
     
         /// <summary>
         /// Gets or sets default duration.
@@ -58,7 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets default price type.
-        /// The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
+        /// The default way the service is charged. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("defaultPriceType")]
         public BookingPriceType? DefaultPriceType { get; set; }
@@ -90,6 +98,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("isLocationOnline")]
         public bool? IsLocationOnline { get; set; }
+    
+        /// <summary>
+        /// Gets or sets maximum attendees count.
+        /// The maximum number of customers allowed in a service.
+        /// </summary>
+        [JsonPropertyName("maximumAttendeesCount")]
+        public Int32? MaximumAttendeesCount { get; set; }
     
         /// <summary>
         /// Gets or sets notes.

@@ -32,6 +32,7 @@ namespace Microsoft.Graph
         /// <param name="top">A top parameter for the OData method call.</param>
         /// <param name="sessionId">A sessionId parameter for the OData method call.</param>
         /// <param name="filter">A filter parameter for the OData method call.</param>
+        /// <param name="skipToken">A skipToken parameter for the OData method call.</param>
         public DeviceManagementReportsGetQuietTimePolicyUsersReportRequestBuilder(
             string requestUrl,
             IBaseClient client,
@@ -43,7 +44,8 @@ namespace Microsoft.Graph
             Int32? skip,
             Int32? top,
             string sessionId,
-            string filter)
+            string filter,
+            string skipToken)
             : base(requestUrl, client)
         {
             this.SetParameter("name", name, true);
@@ -55,6 +57,7 @@ namespace Microsoft.Graph
             this.SetParameter("top", top, true);
             this.SetParameter("sessionId", sessionId, true);
             this.SetParameter("filter", filter, true);
+            this.SetParameter("skipToken", skipToken, true);
         }
 
         /// <summary>
@@ -110,6 +113,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("filter"))
             {
                 request.RequestBody.Filter = this.GetParameter<string>("filter");
+            }
+
+            if (this.HasParameter("skipToken"))
+            {
+                request.RequestBody.SkipToken = this.GetParameter<string>("skipToken");
             }
 
             return request;

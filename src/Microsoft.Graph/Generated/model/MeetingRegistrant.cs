@@ -18,9 +18,17 @@ namespace Microsoft.Graph
     /// The type Meeting Registrant.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<MeetingRegistrant>))]
-    public partial class MeetingRegistrant : Entity
+    public partial class MeetingRegistrant : MeetingRegistrantBase
     {
     
+        ///<summary>
+        /// The MeetingRegistrant constructor
+        ///</summary>
+        public MeetingRegistrant()
+        {
+            this.ODataType = "microsoft.graph.meetingRegistrant";
+        }
+
         /// <summary>
         /// Gets or sets custom question answers.
         /// The registrant's answer to custom questions.
@@ -41,13 +49,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("firstName")]
         public string FirstName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets join web url.
-        /// A unique web URL for the registrant to join the meeting. Read-only.
-        /// </summary>
-        [JsonPropertyName("joinWebUrl")]
-        public string JoinWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets last name.

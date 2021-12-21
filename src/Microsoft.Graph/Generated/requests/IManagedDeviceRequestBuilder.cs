@@ -190,7 +190,8 @@ namespace Microsoft.Graph
         /// Gets the request builder for ManagedDevicePlayLostModeSound.
         /// </summary>
         /// <returns>The <see cref="IManagedDevicePlayLostModeSoundRequestBuilder"/>.</returns>
-        IManagedDevicePlayLostModeSoundRequestBuilder PlayLostModeSound();
+        IManagedDevicePlayLostModeSoundRequestBuilder PlayLostModeSound(
+            string durationInMinutes = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceRebootNow.

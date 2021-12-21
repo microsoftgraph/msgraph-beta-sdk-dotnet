@@ -31,6 +31,18 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IServiceUpdateMessageRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Attachments.
+        /// </summary>
+        /// <returns>The <see cref="IServiceUpdateMessageAttachmentsCollectionRequestBuilder"/>.</returns>
+        IServiceUpdateMessageAttachmentsCollectionRequestBuilder Attachments { get; }
+    
+        /// <summary>
+        /// Gets the request builder for AttachmentsArchive.
+        /// </summary>
+        /// <returns>The <see cref="IServiceUpdateMessageAttachmentsArchiveRequestBuilder"/>.</returns>
+        IServiceUpdateMessageAttachmentsArchiveRequestBuilder AttachmentsArchive { get; }
+    
         
     
     }

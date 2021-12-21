@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         IListItemsCollectionRequestBuilder Items { get; }
 
         /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IListOperationsCollectionRequestBuilder"/>.</returns>
+        IListOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
         /// Gets the request builder for Subscriptions.
         /// </summary>
         /// <returns>The <see cref="IListSubscriptionsCollectionRequestBuilder"/>.</returns>

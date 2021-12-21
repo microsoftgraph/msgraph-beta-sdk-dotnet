@@ -609,7 +609,8 @@ namespace Microsoft.Graph
             Int32? skip = null,
             Int32? top = null,
             string sessionId = null,
-            string filter = null)
+            string filter = null,
+            string skipToken = null)
         {
             return new DeviceManagementReportsGetQuietTimePolicyUsersReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getQuietTimePolicyUsersReport"),
@@ -622,7 +623,8 @@ namespace Microsoft.Graph
                 skip,
                 top,
                 sessionId,
-                filter);
+                filter,
+                skipToken);
         }
 
         /// <summary>

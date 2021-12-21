@@ -245,7 +245,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignments.
-        /// List of assignments for the user. Nullable.
+        /// Assignments belonging to the user.
         /// </summary>
         [JsonPropertyName("assignments")]
         public IEducationUserAssignmentsCollectionPage Assignments { get; set; }

@@ -252,12 +252,6 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     meetingRegistrationToInitialize.CustomQuestions.AdditionalData = meetingRegistrationToInitialize.AdditionalData;
                 }
-                if (meetingRegistrationToInitialize.Registrants != null && meetingRegistrationToInitialize.Registrants.CurrentPage != null)
-                {
-                    meetingRegistrationToInitialize.Registrants.InitializeNextPageRequest(this.Client, meetingRegistrationToInitialize.RegistrantsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    meetingRegistrationToInitialize.Registrants.AdditionalData = meetingRegistrationToInitialize.AdditionalData;
-                }
 
             }
 

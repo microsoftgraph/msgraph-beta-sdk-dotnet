@@ -50,6 +50,12 @@ namespace Microsoft.Graph.ExternalConnectors
         IExternalConnectionOperationsCollectionRequestBuilder Operations { get; }
 
         /// <summary>
+        /// Gets the request builder for Quota.
+        /// </summary>
+        /// <returns>The <see cref="IConnectionQuotaWithReferenceRequestBuilder"/>.</returns>
+        IConnectionQuotaWithReferenceRequestBuilder Quota { get; }
+
+        /// <summary>
         /// Gets the request builder for Schema.
         /// </summary>
         /// <returns>The <see cref="ISchemaRequestBuilder"/>.</returns>

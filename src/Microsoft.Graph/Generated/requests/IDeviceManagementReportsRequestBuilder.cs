@@ -326,7 +326,8 @@ namespace Microsoft.Graph
             Int32? skip = null,
             Int32? top = null,
             string sessionId = null,
-            string filter = null);
+            string filter = null,
+            string skipToken = null);
 
         /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetQuietTimePolicyUserSummaryReport.

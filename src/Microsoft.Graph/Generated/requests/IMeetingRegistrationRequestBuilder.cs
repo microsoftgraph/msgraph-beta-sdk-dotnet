@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMeetingRegistrationRequestBuilder.
     /// </summary>
-    public partial interface IMeetingRegistrationRequestBuilder : IEntityRequestBuilder
+    public partial interface IMeetingRegistrationRequestBuilder : IMeetingRegistrationBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
@@ -36,12 +36,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMeetingRegistrationCustomQuestionsCollectionRequestBuilder"/>.</returns>
         IMeetingRegistrationCustomQuestionsCollectionRequestBuilder CustomQuestions { get; }
-
-        /// <summary>
-        /// Gets the request builder for Registrants.
-        /// </summary>
-        /// <returns>The <see cref="IMeetingRegistrationRegistrantsCollectionRequestBuilder"/>.</returns>
-        IMeetingRegistrationRegistrantsCollectionRequestBuilder Registrants { get; }
     
     }
 }

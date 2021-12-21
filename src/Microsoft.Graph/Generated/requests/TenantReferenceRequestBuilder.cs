@@ -50,5 +50,16 @@ namespace Microsoft.Graph
             return new TenantReferenceRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for TenantReferenceRemovePersonalData.
+        /// </summary>
+        /// <returns>The <see cref="ITenantReferenceRemovePersonalDataRequestBuilder"/>.</returns>
+        public ITenantReferenceRemovePersonalDataRequestBuilder RemovePersonalData()
+        {
+            return new TenantReferenceRemovePersonalDataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.removePersonalData"),
+                this.Client);
+        }
+    
     }
 }

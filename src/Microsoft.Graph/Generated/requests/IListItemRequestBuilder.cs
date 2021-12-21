@@ -70,7 +70,8 @@ namespace Microsoft.Graph
             string scope = null,
             DateTimeOffset? expirationDateTime = null,
             string password = null,
-            IEnumerable<DriveRecipient> recipients = null);
+            IEnumerable<DriveRecipient> recipients = null,
+            bool? retainInheritedPermissions = null);
 
         /// <summary>
         /// Gets the request builder for ListItemGetActivitiesByInterval.

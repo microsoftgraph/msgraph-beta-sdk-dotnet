@@ -20,6 +20,10 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface IManagedDevicePlayLostModeSoundRequest : IBaseRequest
     {
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        ManagedDevicePlayLostModeSoundRequestBody RequestBody { get; }
 
 
         /// <summary>

@@ -205,6 +205,13 @@ namespace Microsoft.Graph
         public bool? ICloudBlockReminders { get; set; }
     
         /// <summary>
+        /// Gets or sets i cloud desktop and documents blocked.
+        /// When TRUE the synchronization of cloud desktop and documents is blocked. When FALSE, synchronization of the cloud desktop and documents are allowed. Available for devices running macOS 10.12.4 and later.
+        /// </summary>
+        [JsonPropertyName("iCloudDesktopAndDocumentsBlocked")]
+        public bool? ICloudDesktopAndDocumentsBlocked { get; set; }
+    
+        /// <summary>
         /// Gets or sets i cloud private relay blocked.
         /// iCloud private relay is an iCloud+ service that prevents networks and servers from monitoring a person's activity across the internet. By blocking iCloud private relay, Apple will not encrypt the traffic leaving the device. Available for devices running macOS 12 and later.
         /// </summary>

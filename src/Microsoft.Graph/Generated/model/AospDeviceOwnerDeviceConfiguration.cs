@@ -37,25 +37,11 @@ namespace Microsoft.Graph
         public bool? AppsBlockInstallFromUnknownSources { get; set; }
     
         /// <summary>
-        /// Gets or sets backup blocked.
-        /// Indicates whether or not to block backup service.
-        /// </summary>
-        [JsonPropertyName("backupBlocked")]
-        public bool? BackupBlocked { get; set; }
-    
-        /// <summary>
         /// Gets or sets bluetooth block configuration.
         /// Indicates whether or not to block a user from configuring bluetooth.
         /// </summary>
         [JsonPropertyName("bluetoothBlockConfiguration")]
         public bool? BluetoothBlockConfiguration { get; set; }
-    
-        /// <summary>
-        /// Gets or sets bluetooth block contact sharing.
-        /// Indicates whether or not to block a user from sharing contacts via bluetooth.
-        /// </summary>
-        [JsonPropertyName("bluetoothBlockContactSharing")]
-        public bool? BluetoothBlockContactSharing { get; set; }
     
         /// <summary>
         /// Gets or sets bluetooth blocked.
@@ -70,13 +56,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("cameraBlocked")]
         public bool? CameraBlocked { get; set; }
-    
-        /// <summary>
-        /// Gets or sets cellular block wi fi tethering.
-        /// Indicates whether or not to block Wi-Fi tethering.
-        /// </summary>
-        [JsonPropertyName("cellularBlockWiFiTethering")]
-        public bool? CellularBlockWiFiTethering { get; set; }
     
         /// <summary>
         /// Gets or sets factory reset blocked.

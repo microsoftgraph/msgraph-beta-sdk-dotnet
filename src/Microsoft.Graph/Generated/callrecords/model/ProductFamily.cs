@@ -44,5 +44,10 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         UnknownFutureValue = 4,
 	
+        /// <summary>
+        /// Azure Communication Services
+        /// </summary>
+        AzureCommunicationServices = 5,
+	
     }
 }

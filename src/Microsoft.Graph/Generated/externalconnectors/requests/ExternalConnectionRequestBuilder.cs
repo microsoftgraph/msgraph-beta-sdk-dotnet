@@ -87,6 +87,18 @@ namespace Microsoft.Graph.ExternalConnectors
         }
 
         /// <summary>
+        /// Gets the request builder for Quota.
+        /// </summary>
+        /// <returns>The <see cref="IConnectionQuotaWithReferenceRequestBuilder"/>.</returns>
+        public IConnectionQuotaWithReferenceRequestBuilder Quota
+        {
+            get
+            {
+                return new ConnectionQuotaWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("quota"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Schema.
         /// </summary>
         /// <returns>The <see cref="ISchemaRequestBuilder"/>.</returns>

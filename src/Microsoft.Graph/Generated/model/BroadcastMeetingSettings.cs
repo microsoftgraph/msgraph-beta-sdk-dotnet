@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public BroadcastMeetingAudience? AllowedAudience { get; set; }
     
         /// <summary>
+        /// Gets or sets captions.
+        /// Caption settings of a Teams live event.
+        /// </summary>
+        [JsonPropertyName("captions")]
+        public BroadcastMeetingCaptionSettings Captions { get; set; }
+    
+        /// <summary>
         /// Gets or sets isAttendeeReportEnabled.
         /// Indicates whether attendee report is enabled for this Teams live event. Default value is false.
         /// </summary>

@@ -43,6 +43,12 @@ namespace Microsoft.Graph.ExternalConnectors
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets ingested items count.
+        /// </summary>
+        [JsonPropertyName("ingestedItemsCount")]
+        public Int64? IngestedItemsCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets name.
         /// The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
         /// </summary>
@@ -104,6 +110,12 @@ namespace Microsoft.Graph.ExternalConnectors
         [JsonPropertyName("operations@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string OperationsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets quota.
+        /// </summary>
+        [JsonPropertyName("quota")]
+        public ConnectionQuota Quota { get; set; }
     
         /// <summary>
         /// Gets or sets schema.

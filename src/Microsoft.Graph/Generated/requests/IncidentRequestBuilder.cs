@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new IncidentRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Alerts.
+        /// </summary>
+        /// <returns>The <see cref="IIncidentAlertsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IIncidentAlertsCollectionWithReferencesRequestBuilder Alerts
+        {
+            get
+            {
+                return new IncidentAlertsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("alerts"), this.Client);
+            }
+        }
+    
     }
 }

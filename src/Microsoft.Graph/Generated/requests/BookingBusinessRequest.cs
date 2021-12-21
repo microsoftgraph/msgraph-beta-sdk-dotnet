@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     bookingBusinessToInitialize.Customers.AdditionalData = bookingBusinessToInitialize.AdditionalData;
                 }
+                if (bookingBusinessToInitialize.CustomQuestions != null && bookingBusinessToInitialize.CustomQuestions.CurrentPage != null)
+                {
+                    bookingBusinessToInitialize.CustomQuestions.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.CustomQuestionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    bookingBusinessToInitialize.CustomQuestions.AdditionalData = bookingBusinessToInitialize.AdditionalData;
+                }
                 if (bookingBusinessToInitialize.Services != null && bookingBusinessToInitialize.Services.CurrentPage != null)
                 {
                     bookingBusinessToInitialize.Services.InitializeNextPageRequest(this.Client, bookingBusinessToInitialize.ServicesNextLink);

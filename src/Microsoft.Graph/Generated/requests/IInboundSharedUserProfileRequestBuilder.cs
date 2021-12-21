@@ -31,5 +31,18 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IInboundSharedUserProfileRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for InboundSharedUserProfileExportPersonalData.
+        /// </summary>
+        /// <returns>The <see cref="IInboundSharedUserProfileExportPersonalDataRequestBuilder"/>.</returns>
+        IInboundSharedUserProfileExportPersonalDataRequestBuilder ExportPersonalData(
+            string storageLocation = null);
+
+        /// <summary>
+        /// Gets the request builder for InboundSharedUserProfileRemovePersonalData.
+        /// </summary>
+        /// <returns>The <see cref="IInboundSharedUserProfileRemovePersonalDataRequestBuilder"/>.</returns>
+        IInboundSharedUserProfileRemovePersonalDataRequestBuilder RemovePersonalData();
+    
     }
 }

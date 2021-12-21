@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new ITenantReferenceRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for TenantReferenceRemovePersonalData.
+        /// </summary>
+        /// <returns>The <see cref="ITenantReferenceRemovePersonalDataRequestBuilder"/>.</returns>
+        ITenantReferenceRemovePersonalDataRequestBuilder RemovePersonalData();
+    
     }
 }

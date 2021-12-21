@@ -161,6 +161,19 @@ namespace Microsoft.Graph
         public string ListsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets operations.
+        /// </summary>
+        [JsonPropertyName("operations")]
+        public ISiteOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string OperationsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets pages.
         /// The collection of pages in the SitePages list in this site.
         /// </summary>

@@ -23,11 +23,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="durationInMinutes">A durationInMinutes parameter for the OData method call.</param>
         public ManagedDevicePlayLostModeSoundRequestBuilder(
             string requestUrl,
-            IBaseClient client)
+            IBaseClient client,
+            string durationInMinutes)
             : base(requestUrl, client)
         {
+            this.SetParameter("durationInMinutes", durationInMinutes, true);
         }
 
         /// <summary>
@@ -39,6 +42,11 @@ namespace Microsoft.Graph
         protected override IManagedDevicePlayLostModeSoundRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
             var request = new ManagedDevicePlayLostModeSoundRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("durationInMinutes"))
+            {
+                request.RequestBody.DurationInMinutes = this.GetParameter<string>("durationInMinutes");
+            }
 
             return request;
         }

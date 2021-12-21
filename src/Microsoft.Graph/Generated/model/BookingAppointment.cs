@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets additional information.
+        /// Additional information that is sent to the customer when an appointment is confirmed.
         /// </summary>
         [JsonPropertyName("additionalInformation")]
         public string AdditionalInformation { get; set; }
@@ -70,6 +71,13 @@ namespace Microsoft.Graph
         public string CustomerPhone { get; set; }
     
         /// <summary>
+        /// Gets or sets customers.
+        /// It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+        /// </summary>
+        [JsonPropertyName("customers")]
+        public IEnumerable<BookingCustomerInformationBase> Customers { get; set; }
+    
+        /// <summary>
         /// Gets or sets customer time zone.
         /// The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
         /// </summary>
@@ -89,6 +97,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("end")]
         public DateTimeTimeZone End { get; set; }
+    
+        /// <summary>
+        /// Gets or sets filled attendees count.
+        /// The current number of customers in the appointment
+        /// </summary>
+        [JsonPropertyName("filledAttendeesCount")]
+        public Int32? FilledAttendeesCount { get; set; }
     
         /// <summary>
         /// Gets or sets invoice amount.
@@ -127,7 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is location online.
-        /// True indicates that the appointment will be held online. Default value is false.
+        /// If true, indicates that the appointment will be held online. Default value is false.
         /// </summary>
         [JsonPropertyName("isLocationOnline")]
         public bool? IsLocationOnline { get; set; }
@@ -140,6 +155,13 @@ namespace Microsoft.Graph
         public string JoinWebUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets maximum attendees count.
+        /// The maximum number of customers allowed in an appointment.
+        /// </summary>
+        [JsonPropertyName("maximumAttendeesCount")]
+        public Int32? MaximumAttendeesCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets online meeting url.
         /// </summary>
         [JsonPropertyName("onlineMeetingUrl")]
@@ -147,7 +169,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets opt out of customer email.
-        /// True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+        /// If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
         /// </summary>
         [JsonPropertyName("optOutOfCustomerEmail")]
         public bool? OptOutOfCustomerEmail { get; set; }
@@ -175,7 +197,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets price type.
-        /// A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet.
+        /// A setting to provide flexibility for the pricing structure of services. Possible values are: undefined, fixedPrice, startingAt, hourly, free, priceVaries, callUs, notSet, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("priceType")]
         public BookingPriceType? PriceType { get; set; }
@@ -189,7 +211,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets self service appointment id.
-        /// An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+        /// An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
         /// </summary>
         [JsonPropertyName("selfServiceAppointmentId")]
         public string SelfServiceAppointmentId { get; set; }
@@ -224,7 +246,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sms notifications enabled.
-        /// True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+        /// If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
         /// </summary>
         [JsonPropertyName("smsNotificationsEnabled")]
         public bool? SmsNotificationsEnabled { get; set; }

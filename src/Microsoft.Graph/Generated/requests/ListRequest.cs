@@ -270,6 +270,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     listToInitialize.Items.AdditionalData = listToInitialize.AdditionalData;
                 }
+                if (listToInitialize.Operations != null && listToInitialize.Operations.CurrentPage != null)
+                {
+                    listToInitialize.Operations.InitializeNextPageRequest(this.Client, listToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    listToInitialize.Operations.AdditionalData = listToInitialize.AdditionalData;
+                }
                 if (listToInitialize.Subscriptions != null && listToInitialize.Subscriptions.CurrentPage != null)
                 {
                     listToInitialize.Subscriptions.InitializeNextPageRequest(this.Client, listToInitialize.SubscriptionsNextLink);

@@ -123,6 +123,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
         IOnenoteRequestBuilder Onenote  { get; }
         /// <summary>
+        /// Gets the request builder for Operations.
+        /// 
+        /// </summary>
+        /// <returns>The <see cref="IRichLongRunningOperationRequestBuilder"/>.</returns>
+        IRichLongRunningOperationRequestBuilder Operations  { get; }
+        /// <summary>
         /// Gets the request builder for Pages.
         /// The collection of pages in the SitePages list in this site.
         /// </summary>

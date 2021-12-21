@@ -392,34 +392,6 @@ namespace Microsoft.Graph
         public DeviceConfigurationUserStateSummary DeviceConfigurationUserStateSummaries { get; set; }
     
         /// <summary>
-        /// Gets or sets hardware configurations.
-        /// The hardware configurations for this account.
-        /// </summary>
-        [JsonPropertyName("hardwareConfigurations")]
-        public IDeviceManagementHardwareConfigurationsCollectionPage HardwareConfigurations { get; set; }
-
-        /// <summary>
-        /// Gets or sets hardwareConfigurationsNextLink.
-        /// </summary>
-        [JsonPropertyName("hardwareConfigurations@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string HardwareConfigurationsNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets hardware password info.
-        /// The hardware password info for this account.
-        /// </summary>
-        [JsonPropertyName("hardwarePasswordInfo")]
-        public IDeviceManagementHardwarePasswordInfoCollectionPage HardwarePasswordInfo { get; set; }
-
-        /// <summary>
-        /// Gets or sets hardwarePasswordInfoNextLink.
-        /// </summary>
-        [JsonPropertyName("hardwarePasswordInfo@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string HardwarePasswordInfoNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets ios update statuses.
         /// The IOS software update installation statuses for this account.
         /// </summary>

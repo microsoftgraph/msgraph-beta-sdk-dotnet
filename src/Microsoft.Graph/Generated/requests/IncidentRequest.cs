@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Incident incidentToInitialize)
         {
 
+            if (incidentToInitialize != null)
+            {
+                if (incidentToInitialize.Alerts != null && incidentToInitialize.Alerts.CurrentPage != null)
+                {
+                    incidentToInitialize.Alerts.InitializeNextPageRequest(this.Client, incidentToInitialize.AlertsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    incidentToInitialize.Alerts.AdditionalData = incidentToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

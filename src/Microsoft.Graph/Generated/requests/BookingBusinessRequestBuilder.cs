@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CustomQuestions.
+        /// </summary>
+        /// <returns>The <see cref="IBookingBusinessCustomQuestionsCollectionRequestBuilder"/>.</returns>
+        public IBookingBusinessCustomQuestionsCollectionRequestBuilder CustomQuestions
+        {
+            get
+            {
+                return new BookingBusinessCustomQuestionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customQuestions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Services.
         /// </summary>
         /// <returns>The <see cref="IBookingBusinessServicesCollectionRequestBuilder"/>.</returns>

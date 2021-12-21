@@ -58,6 +58,12 @@ namespace Microsoft.Graph
             DriverApprovalAction actionName,
             IEnumerable<string> driverIds = null,
             DateTimeOffset? deploymentDate = null);
+
+        /// <summary>
+        /// Gets the request builder for WindowsDriverUpdateProfileSyncInventory.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsDriverUpdateProfileSyncInventoryRequestBuilder"/>.</returns>
+        IWindowsDriverUpdateProfileSyncInventoryRequestBuilder SyncInventory();
     
     }
 }

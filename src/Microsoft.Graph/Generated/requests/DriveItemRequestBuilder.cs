@@ -249,7 +249,8 @@ namespace Microsoft.Graph
             DateTimeOffset? expirationDateTime = null,
             string password = null,
             string message = null,
-            IEnumerable<DriveRecipient> recipients = null)
+            IEnumerable<DriveRecipient> recipients = null,
+            bool? retainInheritedPermissions = null)
         {
             return new DriveItemCreateLinkRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createLink"),
@@ -259,7 +260,8 @@ namespace Microsoft.Graph
                 expirationDateTime,
                 password,
                 message,
-                recipients);
+                recipients,
+                retainInheritedPermissions);
         }
 
         /// <summary>
@@ -283,6 +285,7 @@ namespace Microsoft.Graph
             IEnumerable<string> roles = null,
             bool? sendInvitation = null,
             string message = null,
+            bool? retainInheritedPermissions = null,
             string expirationDateTime = null,
             string password = null)
         {
@@ -294,6 +297,7 @@ namespace Microsoft.Graph
                 roles,
                 sendInvitation,
                 message,
+                retainInheritedPermissions,
                 expirationDateTime,
                 password);
         }
