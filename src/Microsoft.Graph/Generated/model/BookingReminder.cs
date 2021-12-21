@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recipients.
-        /// The persons who shouold receive the reminder. Possible values are: allAttendees, staff, customer.
+        /// The persons who should receive the reminder. Possible values are: allAttendees, staff, customer, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("recipients")]
         public BookingReminderRecipients? Recipients { get; set; }

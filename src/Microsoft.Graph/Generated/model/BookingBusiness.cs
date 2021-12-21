@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets address.
-        /// The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.
+        /// The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
         /// </summary>
         [JsonPropertyName("address")]
         public PhysicalAddress Address { get; set; }
@@ -139,6 +139,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("customers@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string CustomersNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom questions.
+        /// All the custom questions of this business. Read-only. Nullable.
+        /// </summary>
+        [JsonPropertyName("customQuestions")]
+        public IBookingBusinessCustomQuestionsCollectionPage CustomQuestions { get; set; }
+
+        /// <summary>
+        /// Gets or sets customQuestionsNextLink.
+        /// </summary>
+        [JsonPropertyName("customQuestions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CustomQuestionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets services.

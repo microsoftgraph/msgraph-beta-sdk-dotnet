@@ -111,6 +111,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IListOperationsCollectionRequestBuilder"/>.</returns>
+        public IListOperationsCollectionRequestBuilder Operations
+        {
+            get
+            {
+                return new ListOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Subscriptions.
         /// </summary>
         /// <returns>The <see cref="IListSubscriptionsCollectionRequestBuilder"/>.</returns>

@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ISecurityRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Alerts_v2.
+        /// </summary>
+        /// <returns>The <see cref="ISecurityAlerts_v2CollectionRequestBuilder"/>.</returns>
+        ISecurityAlerts_v2CollectionRequestBuilder Alerts_v2 { get; }
+
+        /// <summary>
         /// Gets the request builder for Incidents.
         /// </summary>
         /// <returns>The <see cref="ISecurityIncidentsCollectionRequestBuilder"/>.</returns>

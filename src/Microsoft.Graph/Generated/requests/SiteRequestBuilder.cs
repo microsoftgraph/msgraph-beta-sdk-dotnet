@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="ISiteOperationsCollectionRequestBuilder"/>.</returns>
+        public ISiteOperationsCollectionRequestBuilder Operations
+        {
+            get
+            {
+                return new SiteOperationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Pages.
         /// </summary>
         /// <returns>The <see cref="ISitePagesCollectionRequestBuilder"/>.</returns>

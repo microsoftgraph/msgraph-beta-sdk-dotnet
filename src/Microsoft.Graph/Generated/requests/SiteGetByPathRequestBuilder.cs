@@ -236,6 +236,18 @@ namespace Microsoft.Graph
             }
         }
         /// <summary>
+        /// Gets the request builder for Operations.
+        /// 
+        /// </summary>
+        /// <returns>The <see cref="IRichLongRunningOperationRequestBuilder"/>.</returns>
+        public IRichLongRunningOperationRequestBuilder Operations
+        {
+            get
+            {
+                return new RichLongRunningOperationRequestBuilder(this.AppendSegmentToRequestUrl("operations"), this.Client);
+            }
+        }
+        /// <summary>
         /// Gets the request builder for Pages.
         /// The collection of pages in the SitePages list in this site.
         /// </summary>

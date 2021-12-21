@@ -758,6 +758,13 @@ namespace Microsoft.Graph
         public bool? StorageBlockUsbFileTransfer { get; set; }
     
         /// <summary>
+        /// Gets or sets system update freeze periods.
+        /// Indicates the annually repeating time periods during which system updates are postponed. This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonPropertyName("systemUpdateFreezePeriods")]
+        public IEnumerable<AndroidDeviceOwnerSystemUpdateFreezePeriod> SystemUpdateFreezePeriods { get; set; }
+    
+        /// <summary>
         /// Gets or sets system update install type.
         /// The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
         /// </summary>

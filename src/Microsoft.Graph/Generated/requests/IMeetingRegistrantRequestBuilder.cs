@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IMeetingRegistrantRequestBuilder.
     /// </summary>
-    public partial interface IMeetingRegistrantRequestBuilder : IEntityRequestBuilder
+    public partial interface IMeetingRegistrantRequestBuilder : IMeetingRegistrantBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.

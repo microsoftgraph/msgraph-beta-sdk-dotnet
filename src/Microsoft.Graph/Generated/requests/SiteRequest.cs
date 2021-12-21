@@ -282,6 +282,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     siteToInitialize.Lists.AdditionalData = siteToInitialize.AdditionalData;
                 }
+                if (siteToInitialize.Operations != null && siteToInitialize.Operations.CurrentPage != null)
+                {
+                    siteToInitialize.Operations.InitializeNextPageRequest(this.Client, siteToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    siteToInitialize.Operations.AdditionalData = siteToInitialize.AdditionalData;
+                }
                 if (siteToInitialize.Pages != null && siteToInitialize.Pages.CurrentPage != null)
                 {
                     siteToInitialize.Pages.InitializeNextPageRequest(this.Client, siteToInitialize.PagesNextLink);

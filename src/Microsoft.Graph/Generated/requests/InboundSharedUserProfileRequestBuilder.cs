@@ -50,5 +50,29 @@ namespace Microsoft.Graph
             return new InboundSharedUserProfileRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for InboundSharedUserProfileExportPersonalData.
+        /// </summary>
+        /// <returns>The <see cref="IInboundSharedUserProfileExportPersonalDataRequestBuilder"/>.</returns>
+        public IInboundSharedUserProfileExportPersonalDataRequestBuilder ExportPersonalData(
+            string storageLocation = null)
+        {
+            return new InboundSharedUserProfileExportPersonalDataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.exportPersonalData"),
+                this.Client,
+                storageLocation);
+        }
+
+        /// <summary>
+        /// Gets the request builder for InboundSharedUserProfileRemovePersonalData.
+        /// </summary>
+        /// <returns>The <see cref="IInboundSharedUserProfileRemovePersonalDataRequestBuilder"/>.</returns>
+        public IInboundSharedUserProfileRemovePersonalDataRequestBuilder RemovePersonalData()
+        {
+            return new InboundSharedUserProfileRemovePersonalDataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.removePersonalData"),
+                this.Client);
+        }
+    
     }
 }

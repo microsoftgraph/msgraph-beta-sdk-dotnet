@@ -336,18 +336,6 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.DeviceConfigurationsAllManagedDeviceCertificateStates.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
-                if (deviceManagementToInitialize.HardwareConfigurations != null && deviceManagementToInitialize.HardwareConfigurations.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.HardwareConfigurations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.HardwareConfigurationsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    deviceManagementToInitialize.HardwareConfigurations.AdditionalData = deviceManagementToInitialize.AdditionalData;
-                }
-                if (deviceManagementToInitialize.HardwarePasswordInfo != null && deviceManagementToInitialize.HardwarePasswordInfo.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.HardwarePasswordInfo.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.HardwarePasswordInfoNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    deviceManagementToInitialize.HardwarePasswordInfo.AdditionalData = deviceManagementToInitialize.AdditionalData;
-                }
                 if (deviceManagementToInitialize.IosUpdateStatuses != null && deviceManagementToInitialize.IosUpdateStatuses.CurrentPage != null)
                 {
                     deviceManagementToInitialize.IosUpdateStatuses.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.IosUpdateStatusesNextLink);

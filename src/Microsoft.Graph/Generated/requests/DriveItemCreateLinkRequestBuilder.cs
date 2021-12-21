@@ -29,6 +29,7 @@ namespace Microsoft.Graph
         /// <param name="password">A password parameter for the OData method call.</param>
         /// <param name="message">A message parameter for the OData method call.</param>
         /// <param name="recipients">A recipients parameter for the OData method call.</param>
+        /// <param name="retainInheritedPermissions">A retainInheritedPermissions parameter for the OData method call.</param>
         public DriveItemCreateLinkRequestBuilder(
             string requestUrl,
             IBaseClient client,
@@ -37,7 +38,8 @@ namespace Microsoft.Graph
             DateTimeOffset? expirationDateTime,
             string password,
             string message,
-            IEnumerable<DriveRecipient> recipients)
+            IEnumerable<DriveRecipient> recipients,
+            bool? retainInheritedPermissions)
             : base(requestUrl, client)
         {
             this.SetParameter("type", type, true);
@@ -46,6 +48,7 @@ namespace Microsoft.Graph
             this.SetParameter("password", password, true);
             this.SetParameter("message", message, true);
             this.SetParameter("recipients", recipients, true);
+            this.SetParameter("retainInheritedPermissions", retainInheritedPermissions, true);
         }
 
         /// <summary>
@@ -86,6 +89,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("recipients"))
             {
                 request.RequestBody.Recipients = this.GetParameter<IEnumerable<DriveRecipient>>("recipients");
+            }
+
+            if (this.HasParameter("retainInheritedPermissions"))
+            {
+                request.RequestBody.RetainInheritedPermissions = this.GetParameter<bool?>("retainInheritedPermissions");
             }
 
             return request;

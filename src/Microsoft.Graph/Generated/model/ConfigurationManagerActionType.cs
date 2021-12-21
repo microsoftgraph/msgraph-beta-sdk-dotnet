@@ -39,5 +39,20 @@ namespace Microsoft.Graph
         /// </summary>
         AppEvaluation = 3,
 	
+        /// <summary>
+        /// Quick Scan
+        /// </summary>
+        QuickScan = 5,
+	
+        /// <summary>
+        /// Full Scan
+        /// </summary>
+        FullScan = 6,
+	
+        /// <summary>
+        /// Windows Defender Update Signatures
+        /// </summary>
+        WindowsDefenderUpdateSignatures = 7,
+	
     }
 }

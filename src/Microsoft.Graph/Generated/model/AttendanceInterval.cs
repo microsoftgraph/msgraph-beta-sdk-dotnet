@@ -30,14 +30,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets joinDateTime.
-        /// Time attendee joined in UTC.
+        /// The time the attendee joined in UTC.
         /// </summary>
         [JsonPropertyName("joinDateTime")]
         public DateTimeOffset? JoinDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets leaveDateTime.
-        /// Time attendee left in UTC.
+        /// The time the attendee left in UTC.
         /// </summary>
         [JsonPropertyName("leaveDateTime")]
         public DateTimeOffset? LeaveDateTime { get; set; }

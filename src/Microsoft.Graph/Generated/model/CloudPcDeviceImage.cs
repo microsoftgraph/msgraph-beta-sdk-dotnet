@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date.
+        /// The date the image became unavailable.
         /// </summary>
         [JsonPropertyName("expirationDate")]
         public Date ExpirationDate { get; set; }
@@ -57,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets os status.
+        /// The OS status of this image. Possible values are: supported, supportedWithWarning, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("osStatus")]
         public CloudPcDeviceImageOsStatus? OsStatus { get; set; }

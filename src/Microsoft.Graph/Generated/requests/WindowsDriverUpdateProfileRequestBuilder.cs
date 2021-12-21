@@ -103,6 +103,17 @@ namespace Microsoft.Graph
                 driverIds,
                 deploymentDate);
         }
+
+        /// <summary>
+        /// Gets the request builder for WindowsDriverUpdateProfileSyncInventory.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsDriverUpdateProfileSyncInventoryRequestBuilder"/>.</returns>
+        public IWindowsDriverUpdateProfileSyncInventoryRequestBuilder SyncInventory()
+        {
+            return new WindowsDriverUpdateProfileSyncInventoryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.syncInventory"),
+                this.Client);
+        }
     
     }
 }

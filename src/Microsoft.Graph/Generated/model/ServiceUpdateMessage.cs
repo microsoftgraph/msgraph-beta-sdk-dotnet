@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? ActionRequiredByDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets attachments archive.
+        /// </summary>
+        [JsonPropertyName("attachmentsArchive")]
+        public Stream AttachmentsArchive { get; set; }
+    
+        /// <summary>
         /// Gets or sets body.
         /// The content type and content of the service message body.
         /// </summary>
@@ -49,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("category")]
         public ServiceUpdateCategory? Category { get; set; }
+    
+        /// <summary>
+        /// Gets or sets has attachments.
+        /// </summary>
+        [JsonPropertyName("hasAttachments")]
+        public bool? HasAttachments { get; set; }
     
         /// <summary>
         /// Gets or sets is major change.
@@ -84,6 +96,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("viewPoint")]
         public ServiceUpdateMessageViewpoint ViewPoint { get; set; }
+    
+        /// <summary>
+        /// Gets or sets attachments.
+        /// </summary>
+        [JsonPropertyName("attachments")]
+        public IServiceUpdateMessageAttachmentsCollectionPage Attachments { get; set; }
+
+        /// <summary>
+        /// Gets or sets attachmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("attachments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AttachmentsNextLink { get; set; }
     
     }
 }

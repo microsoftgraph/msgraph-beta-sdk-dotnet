@@ -120,6 +120,19 @@ namespace Microsoft.Graph
         public string ItemsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets operations.
+        /// </summary>
+        [JsonPropertyName("operations")]
+        public IListOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string OperationsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets subscriptions.
         /// The set of subscriptions on the list.
         /// </summary>

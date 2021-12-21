@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IIncidentRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Alerts.
+        /// </summary>
+        /// <returns>The <see cref="IIncidentAlertsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IIncidentAlertsCollectionWithReferencesRequestBuilder Alerts { get; }
+    
     }
 }

@@ -74,5 +74,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("filter")]
         public string Filter { get; set; }
     
+        /// <summary>
+        /// Gets or sets SkipToken.
+        /// </summary>
+        [JsonPropertyName("skipToken")]
+        public string SkipToken { get; set; }
+    
     }
 }

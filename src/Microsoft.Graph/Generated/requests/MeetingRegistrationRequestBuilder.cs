@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type MeetingRegistrationRequestBuilder.
     /// </summary>
-    public partial class MeetingRegistrationRequestBuilder : EntityRequestBuilder, IMeetingRegistrationRequestBuilder
+    public partial class MeetingRegistrationRequestBuilder : MeetingRegistrationBaseRequestBuilder, IMeetingRegistrationRequestBuilder
     {
 
         /// <summary>
@@ -59,18 +59,6 @@ namespace Microsoft.Graph
             get
             {
                 return new MeetingRegistrationCustomQuestionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customQuestions"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Registrants.
-        /// </summary>
-        /// <returns>The <see cref="IMeetingRegistrationRegistrantsCollectionRequestBuilder"/>.</returns>
-        public IMeetingRegistrationRegistrantsCollectionRequestBuilder Registrants
-        {
-            get
-            {
-                return new MeetingRegistrationRegistrantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("registrants"), this.Client);
             }
         }
     

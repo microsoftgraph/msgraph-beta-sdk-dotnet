@@ -22,28 +22,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attendance intervals.
-        /// List of time periods between joining and leaving.
+        /// List of time periods between joining and leaving a meeting.
         /// </summary>
         [JsonPropertyName("attendanceIntervals")]
         public IEnumerable<AttendanceInterval> AttendanceIntervals { get; set; }
     
         /// <summary>
         /// Gets or sets email address.
-        /// Email address.
+        /// Email address of the user associated with this atttendance record.
         /// </summary>
         [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets identity.
-        /// Identifier, such as display name.
+        /// Identity of the user associated with this atttendance record.
         /// </summary>
         [JsonPropertyName("identity")]
         public Identity Identity { get; set; }
     
         /// <summary>
         /// Gets or sets role.
-        /// Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.
+        /// Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
         /// </summary>
         [JsonPropertyName("role")]
         public string Role { get; set; }

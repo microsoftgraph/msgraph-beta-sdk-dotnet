@@ -72,5 +72,29 @@ namespace Microsoft.Graph
                 this.Client,
                 contentType);
         }
+
+        /// <summary>
+        /// Gets the request builder for ContentTypeAddCopyFromContentTypeHub.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeAddCopyFromContentTypeHubRequestBuilder"/>.</returns>
+        public IContentTypeAddCopyFromContentTypeHubRequestBuilder AddCopyFromContentTypeHub(
+            string contentTypeId)
+        {
+            return new ContentTypeAddCopyFromContentTypeHubRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.addCopyFromContentTypeHub"),
+                this.Client,
+                contentTypeId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ContentTypeGetCompatibleHubContentTypes.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeGetCompatibleHubContentTypesRequestBuilder"/>.</returns>
+        public IContentTypeGetCompatibleHubContentTypesRequestBuilder GetCompatibleHubContentTypes()
+        {
+            return new ContentTypeGetCompatibleHubContentTypesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCompatibleHubContentTypes"),
+                this.Client);
+        }
     }
 }

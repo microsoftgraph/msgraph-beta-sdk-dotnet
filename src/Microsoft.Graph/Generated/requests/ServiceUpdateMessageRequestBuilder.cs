@@ -50,6 +50,30 @@ namespace Microsoft.Graph
             return new ServiceUpdateMessageRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Attachments.
+        /// </summary>
+        /// <returns>The <see cref="IServiceUpdateMessageAttachmentsCollectionRequestBuilder"/>.</returns>
+        public IServiceUpdateMessageAttachmentsCollectionRequestBuilder Attachments
+        {
+            get
+            {
+                return new ServiceUpdateMessageAttachmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("attachments"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for AttachmentsArchive.
+        /// </summary>
+        /// <returns>The <see cref="IServiceUpdateMessageAttachmentsArchiveRequestBuilder"/>.</returns>
+        public IServiceUpdateMessageAttachmentsArchiveRequestBuilder AttachmentsArchive
+        {
+            get
+            {
+                return new ServiceUpdateMessageAttachmentsArchiveRequestBuilder(this.AppendSegmentToRequestUrl("attachmentsArchive"), this.Client);
+            }
+        }
+    
         
     
     }

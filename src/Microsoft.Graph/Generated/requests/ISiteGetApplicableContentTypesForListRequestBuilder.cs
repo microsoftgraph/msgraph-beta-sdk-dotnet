@@ -32,6 +32,13 @@ namespace Microsoft.Graph
         IContentTypeAddCopyRequestBuilder AddCopy(
             string contentType);
         /// <summary>
+        /// Gets the request builder for ContentTypeAddCopyFromContentTypeHubRequestBuilder.
+        /// </summary>
+        /// <param name="contentTypeId">A contentTypeId parameter for the OData method call.</param>
+        /// <returns>The <see cref="IContentTypeAddCopyFromContentTypeHubRequestBuilder"/>.</returns>
+        IContentTypeAddCopyFromContentTypeHubRequestBuilder AddCopyFromContentTypeHub(
+            string contentTypeId);
+        /// <summary>
         /// Gets the request builder for ContentTypeAssociateWithHubSitesRequestBuilder.
         /// </summary>
         /// <param name="hubSiteUrls">A hubSiteUrls parameter for the OData method call.</param>
@@ -49,6 +56,11 @@ namespace Microsoft.Graph
         IContentTypeCopyToDefaultContentLocationRequestBuilder CopyToDefaultContentLocation(
             ItemReference sourceFile,
             string destinationFileName);
+        /// <summary>
+        /// Gets the request builder for ContentTypeGetCompatibleHubContentTypesRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeGetCompatibleHubContentTypesRequestBuilder"/>.</returns>
+        IContentTypeGetCompatibleHubContentTypesRequestBuilder GetCompatibleHubContentTypes();
         /// <summary>
         /// Gets the request builder for ContentTypeIsPublishedRequestBuilder.
         /// </summary>

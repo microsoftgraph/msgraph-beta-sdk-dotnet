@@ -60,6 +60,19 @@ namespace Microsoft.Graph
                 contentType);
         }
         /// <summary>
+        /// Gets the request builder for ContentTypeAddCopyFromContentTypeHubRequestBuilder.
+        /// </summary>
+        /// <param name="contentTypeId">A contentTypeId parameter for the OData method call.</param>
+        /// <returns>The <see cref="IContentTypeAddCopyFromContentTypeHubRequestBuilder"/>.</returns>
+        public IContentTypeAddCopyFromContentTypeHubRequestBuilder AddCopyFromContentTypeHub(
+            string contentTypeId)
+        {
+            return new ContentTypeAddCopyFromContentTypeHubRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.addCopyFromContentTypeHub"),
+                this.Client,
+                contentTypeId);
+        }
+        /// <summary>
         /// Gets the request builder for ContentTypeAssociateWithHubSitesRequestBuilder.
         /// </summary>
         /// <param name="hubSiteUrls">A hubSiteUrls parameter for the OData method call.</param>
@@ -90,6 +103,16 @@ namespace Microsoft.Graph
                 this.Client,
                 sourceFile,
                 destinationFileName);
+        }
+        /// <summary>
+        /// Gets the request builder for ContentTypeGetCompatibleHubContentTypesRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeGetCompatibleHubContentTypesRequestBuilder"/>.</returns>
+        public IContentTypeGetCompatibleHubContentTypesRequestBuilder GetCompatibleHubContentTypes()
+        {
+            return new ContentTypeGetCompatibleHubContentTypesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCompatibleHubContentTypes"),
+                this.Client);
         }
         /// <summary>
         /// Gets the request builder for ContentTypeIsPublishedRequestBuilder.

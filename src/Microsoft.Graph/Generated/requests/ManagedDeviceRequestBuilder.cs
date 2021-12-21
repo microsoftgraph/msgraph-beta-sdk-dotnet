@@ -350,11 +350,13 @@ namespace Microsoft.Graph
         /// Gets the request builder for ManagedDevicePlayLostModeSound.
         /// </summary>
         /// <returns>The <see cref="IManagedDevicePlayLostModeSoundRequestBuilder"/>.</returns>
-        public IManagedDevicePlayLostModeSoundRequestBuilder PlayLostModeSound()
+        public IManagedDevicePlayLostModeSoundRequestBuilder PlayLostModeSound(
+            string durationInMinutes = null)
         {
             return new ManagedDevicePlayLostModeSoundRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.playLostModeSound"),
-                this.Client);
+                this.Client,
+                durationInMinutes);
         }
 
         /// <summary>

@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IBookingBusinessCustomersCollectionRequestBuilder Customers { get; }
 
         /// <summary>
+        /// Gets the request builder for CustomQuestions.
+        /// </summary>
+        /// <returns>The <see cref="IBookingBusinessCustomQuestionsCollectionRequestBuilder"/>.</returns>
+        IBookingBusinessCustomQuestionsCollectionRequestBuilder CustomQuestions { get; }
+
+        /// <summary>
         /// Gets the request builder for Services.
         /// </summary>
         /// <returns>The <see cref="IBookingBusinessServicesCollectionRequestBuilder"/>.</returns>

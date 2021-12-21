@@ -42,5 +42,18 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IContentTypeAddCopyRequestBuilder"/>.</returns>
         IContentTypeAddCopyRequestBuilder AddCopy(
             string contentType);
+
+        /// <summary>
+        /// Gets the request builder for ContentTypeAddCopyFromContentTypeHub.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeAddCopyFromContentTypeHubRequestBuilder"/>.</returns>
+        IContentTypeAddCopyFromContentTypeHubRequestBuilder AddCopyFromContentTypeHub(
+            string contentTypeId);
+
+        /// <summary>
+        /// Gets the request builder for ContentTypeGetCompatibleHubContentTypes.
+        /// </summary>
+        /// <returns>The <see cref="IContentTypeGetCompatibleHubContentTypesRequestBuilder"/>.</returns>
+        IContentTypeGetCompatibleHubContentTypesRequestBuilder GetCompatibleHubContentTypes();
     }
 }

@@ -31,13 +31,13 @@ namespace Microsoft.Graph
         /// Gets or sets classification.
         /// </summary>
         [JsonPropertyName("classification")]
-        public M365AlertClassification? Classification { get; set; }
+        public AlertClassification_v2? Classification { get; set; }
     
         /// <summary>
         /// Gets or sets comments.
         /// </summary>
         [JsonPropertyName("comments")]
-        public IEnumerable<M365AlertComment> Comments { get; set; }
+        public IEnumerable<AlertComment_v2> Comments { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
@@ -49,7 +49,7 @@ namespace Microsoft.Graph
         /// Gets or sets determination.
         /// </summary>
         [JsonPropertyName("determination")]
-        public M365AlertDetermination? Determination { get; set; }
+        public AlertDetermination_v2? Determination { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
         /// Gets or sets severity.
         /// </summary>
         [JsonPropertyName("severity")]
-        public M365AlertSeverity? Severity { get; set; }
+        public AlertSeverity_v2? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets status.
@@ -92,6 +92,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
+    
+        /// <summary>
+        /// Gets or sets alerts.
+        /// </summary>
+        [JsonPropertyName("alerts")]
+        public IIncidentAlertsCollectionWithReferencesPage Alerts { get; set; }
+
+        /// <summary>
+        /// Gets or sets alertsNextLink.
+        /// </summary>
+        [JsonPropertyName("alerts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AlertsNextLink { get; set; }
     
     }
 }

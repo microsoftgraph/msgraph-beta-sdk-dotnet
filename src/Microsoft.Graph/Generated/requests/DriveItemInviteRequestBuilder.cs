@@ -28,6 +28,7 @@ namespace Microsoft.Graph
         /// <param name="roles">A roles parameter for the OData method call.</param>
         /// <param name="sendInvitation">A sendInvitation parameter for the OData method call.</param>
         /// <param name="message">A message parameter for the OData method call.</param>
+        /// <param name="retainInheritedPermissions">A retainInheritedPermissions parameter for the OData method call.</param>
         /// <param name="expirationDateTime">A expirationDateTime parameter for the OData method call.</param>
         /// <param name="password">A password parameter for the OData method call.</param>
         public DriveItemInviteRequestBuilder(
@@ -38,6 +39,7 @@ namespace Microsoft.Graph
             IEnumerable<string> roles,
             bool? sendInvitation,
             string message,
+            bool? retainInheritedPermissions,
             string expirationDateTime,
             string password)
             : base(requestUrl, client)
@@ -47,6 +49,7 @@ namespace Microsoft.Graph
             this.SetParameter("roles", roles, true);
             this.SetParameter("sendInvitation", sendInvitation, true);
             this.SetParameter("message", message, true);
+            this.SetParameter("retainInheritedPermissions", retainInheritedPermissions, true);
             this.SetParameter("expirationDateTime", expirationDateTime, true);
             this.SetParameter("password", password, true);
         }
@@ -84,6 +87,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("message"))
             {
                 request.RequestBody.Message = this.GetParameter<string>("message");
+            }
+
+            if (this.HasParameter("retainInheritedPermissions"))
+            {
+                request.RequestBody.RetainInheritedPermissions = this.GetParameter<bool?>("retainInheritedPermissions");
             }
 
             if (this.HasParameter("expirationDateTime"))

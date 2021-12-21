@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ServiceUpdateMessage serviceUpdateMessageToInitialize)
         {
 
+            if (serviceUpdateMessageToInitialize != null)
+            {
+                if (serviceUpdateMessageToInitialize.Attachments != null && serviceUpdateMessageToInitialize.Attachments.CurrentPage != null)
+                {
+                    serviceUpdateMessageToInitialize.Attachments.InitializeNextPageRequest(this.Client, serviceUpdateMessageToInitialize.AttachmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    serviceUpdateMessageToInitialize.Attachments.AdditionalData = serviceUpdateMessageToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

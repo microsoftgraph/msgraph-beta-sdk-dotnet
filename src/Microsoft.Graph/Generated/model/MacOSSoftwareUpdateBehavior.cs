@@ -29,5 +29,25 @@ namespace Microsoft.Graph
         /// </summary>
         Default = 1,
 	
+        /// <summary>
+        /// Download Only
+        /// </summary>
+        DownloadOnly = 2,
+	
+        /// <summary>
+        /// Install ASAP
+        /// </summary>
+        InstallASAP = 3,
+	
+        /// <summary>
+        /// Notify Only
+        /// </summary>
+        NotifyOnly = 4,
+	
+        /// <summary>
+        /// Install Later
+        /// </summary>
+        InstallLater = 5,
+	
     }
 }
