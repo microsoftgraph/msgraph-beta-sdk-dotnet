@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets policyId.
+        /// The unique identifier for the Private Link policy.
         /// </summary>
         [JsonPropertyName("policyId")]
         public string PolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets policyName.
+        /// The name of the Private Link policy in Azure AD.
         /// </summary>
         [JsonPropertyName("policyName")]
         public string PolicyName { get; set; }
     
         /// <summary>
         /// Gets or sets policyTenantId.
+        /// The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
         /// </summary>
         [JsonPropertyName("policyTenantId")]
         public string PolicyTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets resourceId.
+        /// The Azure Resource Manager (ARM) path for the Private Link policy resource.
         /// </summary>
         [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }

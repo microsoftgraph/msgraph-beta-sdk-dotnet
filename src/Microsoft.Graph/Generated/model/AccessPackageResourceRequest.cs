@@ -84,7 +84,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets requestor.
-        /// Read-only. Nullable.
+        /// Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("requestor")]
         public AccessPackageSubject Requestor { get; set; }

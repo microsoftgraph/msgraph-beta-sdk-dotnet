@@ -121,7 +121,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risk type.
-        /// List of risk event types.Note: This property is deprecated. Use riskEventType instead.
         /// </summary>
         [JsonPropertyName("riskType")]
         public RiskEventType? RiskType { get; set; }

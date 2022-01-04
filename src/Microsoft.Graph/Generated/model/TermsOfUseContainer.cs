@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets agreement acceptances.
+        /// Represents the current status of a user's response to a company's customizable terms of use agreement.
         /// </summary>
         [JsonPropertyName("agreementAcceptances")]
         public ITermsOfUseContainerAgreementAcceptancesCollectionPage AgreementAcceptances { get; set; }
@@ -35,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets agreements.
+        /// Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
         /// </summary>
         [JsonPropertyName("agreements")]
         public ITermsOfUseContainerAgreementsCollectionPage Agreements { get; set; }

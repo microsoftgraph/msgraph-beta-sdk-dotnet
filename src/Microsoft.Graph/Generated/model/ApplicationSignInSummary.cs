@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app display name.
-        /// Name of the application that the user signed in to.
+        /// Name of the application that the user signed into.
         /// </summary>
         [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }

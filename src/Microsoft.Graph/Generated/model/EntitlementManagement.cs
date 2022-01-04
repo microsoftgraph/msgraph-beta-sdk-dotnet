@@ -35,6 +35,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package assignment policies.
+        /// Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentPolicies")]
         public IEntitlementManagementAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }
@@ -48,6 +49,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package assignment requests.
+        /// Represents access package assignment requests created by or on behalf of a user.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentRequests")]
         public IEntitlementManagementAccessPackageAssignmentRequestsCollectionPage AccessPackageAssignmentRequests { get; set; }
@@ -61,6 +63,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package assignment resource roles.
+        /// Represents the resource-specific role which a subject has been assigned through an access package assignment.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentResourceRoles")]
         public IEntitlementManagementAccessPackageAssignmentResourceRolesCollectionPage AccessPackageAssignmentResourceRoles { get; set; }
@@ -74,6 +77,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package assignments.
+        /// Represents the grant of an access package to a subject (user or group).
         /// </summary>
         [JsonPropertyName("accessPackageAssignments")]
         public IEntitlementManagementAccessPackageAssignmentsCollectionPage AccessPackageAssignments { get; set; }
@@ -87,6 +91,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package catalogs.
+        /// Represents a group of access packages.
         /// </summary>
         [JsonPropertyName("accessPackageCatalogs")]
         public IEntitlementManagementAccessPackageCatalogsCollectionPage AccessPackageCatalogs { get; set; }
@@ -100,6 +105,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource environments.
+        /// A reference to the geolocation environment in which a resource is located.
         /// </summary>
         [JsonPropertyName("accessPackageResourceEnvironments")]
         public IEntitlementManagementAccessPackageResourceEnvironmentsCollectionPage AccessPackageResourceEnvironments { get; set; }
@@ -113,6 +119,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource requests.
+        /// Represents a request to add or remove a resource to or from a catalog respectively.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRequests")]
         public IEntitlementManagementAccessPackageResourceRequestsCollectionPage AccessPackageResourceRequests { get; set; }
@@ -126,6 +133,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource role scopes.
+        /// A reference to both a scope within a resource, and a role in that resource for that scope.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRoleScopes")]
         public IEntitlementManagementAccessPackageResourceRoleScopesCollectionPage AccessPackageResourceRoleScopes { get; set; }
@@ -139,6 +147,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resources.
+        /// A reference to a resource associated with an access package catalog.
         /// </summary>
         [JsonPropertyName("accessPackageResources")]
         public IEntitlementManagementAccessPackageResourcesCollectionPage AccessPackageResources { get; set; }
@@ -152,7 +161,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access packages.
-        /// Access packages.
+        /// Represents access package objects.
         /// </summary>
         [JsonPropertyName("accessPackages")]
         public IEntitlementManagementAccessPackagesCollectionPage AccessPackages { get; set; }
@@ -166,7 +175,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connected organizations.
-        /// Connected organizations.
+        /// Represents references to a directory or domain of another organization whose users can request access.
         /// </summary>
         [JsonPropertyName("connectedOrganizations")]
         public IEntitlementManagementConnectedOrganizationsCollectionPage ConnectedOrganizations { get; set; }
@@ -180,7 +189,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
-        /// Entitlement management settings.
+        /// Represents the settings that control the behavior of Azure AD entitlement management.
         /// </summary>
         [JsonPropertyName("settings")]
         public EntitlementManagementSettings Settings { get; set; }

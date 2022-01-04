@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets application sign in detailed summary.
+        /// Represents a detailed summary of an application sign-in.
         /// </summary>
         [JsonPropertyName("applicationSignInDetailedSummary")]
         public IReportRootApplicationSignInDetailedSummaryCollectionPage ApplicationSignInDetailedSummary { get; set; }
@@ -35,12 +36,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication methods.
+        /// Container for navigation properties for Azure AD authentication methods resources.
         /// </summary>
         [JsonPropertyName("authenticationMethods")]
         public AuthenticationMethodsRoot AuthenticationMethods { get; set; }
     
         /// <summary>
         /// Gets or sets credential user registration details.
+        /// Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
         /// </summary>
         [JsonPropertyName("credentialUserRegistrationDetails")]
         public IReportRootCredentialUserRegistrationDetailsCollectionPage CredentialUserRegistrationDetails { get; set; }
@@ -54,6 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user credential usage details.
+        /// Represents the self-service password reset (SSPR) usage for a given tenant.
         /// </summary>
         [JsonPropertyName("userCredentialUsageDetails")]
         public IReportRootUserCredentialUsageDetailsCollectionPage UserCredentialUsageDetails { get; set; }

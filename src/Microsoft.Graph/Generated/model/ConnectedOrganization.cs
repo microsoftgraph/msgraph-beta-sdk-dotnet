@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the connected organization.
+        /// The display name of the connected organization. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

@@ -98,7 +98,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package assignment.
-        /// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.
+        /// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
         /// </summary>
         [JsonPropertyName("accessPackageAssignment")]
         public AccessPackageAssignment AccessPackageAssignment { get; set; }

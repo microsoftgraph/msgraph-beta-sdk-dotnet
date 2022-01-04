@@ -31,56 +31,56 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets advanced threat protection automatic sample submission.
-        /// Determines whether or not to enable automatic file sample submission for Microsoft Defender for Endpoint on macOS. Possible values are: notConfigured, enabled, disabled.
+        /// Determines whether or not to enable automatic file sample submission for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionAutomaticSampleSubmission")]
         public Enablement? AdvancedThreatProtectionAutomaticSampleSubmission { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection cloud delivered.
-        /// Determines whether or not to enable cloud-delivered protection for Microsoft Defender for Endpoint on macOS. Possible values are: notConfigured, enabled, disabled.
+        /// Determines whether or not to enable cloud-delivered protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionCloudDelivered")]
         public Enablement? AdvancedThreatProtectionCloudDelivered { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection diagnostic data collection.
-        /// Determines whether or not to enable diagnostic and usage data collection for Microsoft Defender for Endpoint on macOS. Possible values are: notConfigured, enabled, disabled.
+        /// Determines whether or not to enable diagnostic and usage data collection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionDiagnosticDataCollection")]
         public Enablement? AdvancedThreatProtectionDiagnosticDataCollection { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection excluded extensions.
-        /// A list of file extensions to exclude from antivirus scanning for Microsoft Defender for Endpoint on macOS.
+        /// A list of file extensions to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionExcludedExtensions")]
         public IEnumerable<string> AdvancedThreatProtectionExcludedExtensions { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection excluded files.
-        /// A list of paths to files to exclude from antivirus scanning for Microsoft Defender for Endpoint on macOS.
+        /// A list of paths to files to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionExcludedFiles")]
         public IEnumerable<string> AdvancedThreatProtectionExcludedFiles { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection excluded folders.
-        /// A list of paths to folders to exclude from antivirus scanning for Microsoft Defender for Endpoint on macOS.
+        /// A list of paths to folders to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionExcludedFolders")]
         public IEnumerable<string> AdvancedThreatProtectionExcludedFolders { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection excluded processes.
-        /// A list of process names to exclude from antivirus scanning for Microsoft Defender for Endpoint on macOS.
+        /// A list of process names to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionExcludedProcesses")]
         public IEnumerable<string> AdvancedThreatProtectionExcludedProcesses { get; set; }
     
         /// <summary>
         /// Gets or sets advanced threat protection real time.
-        /// Determines whether or not to enable real-time protection for Microsoft Defender for Endpoint on macOS. Possible values are: notConfigured, enabled, disabled.
+        /// Determines whether or not to enable real-time protection for Microsoft Defender Advanced Threat Protection on macOS. Possible values are: notConfigured, enabled, disabled.
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionRealTime")]
         public Enablement? AdvancedThreatProtectionRealTime { get; set; }

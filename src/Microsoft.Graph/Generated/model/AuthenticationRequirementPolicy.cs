@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets detail.
+        /// Provides additional detail on the feature identified in requirementProvider.
         /// </summary>
         [JsonPropertyName("detail")]
         public string Detail { get; set; }
     
         /// <summary>
         /// Gets or sets requirementProvider.
+        /// Identifies what Azure AD feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("requirementProvider")]
         public RequirementProvider? RequirementProvider { get; set; }
