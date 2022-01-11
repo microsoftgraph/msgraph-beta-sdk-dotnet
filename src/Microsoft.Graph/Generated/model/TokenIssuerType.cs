@@ -39,5 +39,15 @@ namespace Microsoft.Graph
         /// </summary>
         AzureADBackupAuth = 3,
 	
+        /// <summary>
+        /// ADFederation Services MFAAdapter
+        /// </summary>
+        ADFederationServicesMFAAdapter = 4,
+	
+        /// <summary>
+        /// NPSExtension
+        /// </summary>
+        NPSExtension = 5,
+	
     }
 }

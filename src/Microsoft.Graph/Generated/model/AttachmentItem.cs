@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public AttachmentType? AttachmentType { get; set; }
     
         /// <summary>
+        /// Gets or sets contentId.
+        /// </summary>
+        [JsonPropertyName("contentId")]
+        public string ContentId { get; set; }
+    
+        /// <summary>
         /// Gets or sets contentType.
         /// The nature of the data in the attachment. Optional.
         /// </summary>

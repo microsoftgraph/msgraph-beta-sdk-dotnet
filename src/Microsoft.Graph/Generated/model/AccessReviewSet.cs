@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets decisions.
+        /// Represents an Azure AD access review decision on an instance of a review.
         /// </summary>
         [JsonPropertyName("decisions")]
         public IAccessReviewSetDecisionsCollectionPage Decisions { get; set; }
@@ -35,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets definitions.
+        /// Represents the template and scheduling for an access review.
         /// </summary>
         [JsonPropertyName("definitions")]
         public IAccessReviewSetDefinitionsCollectionPage Definitions { get; set; }
@@ -48,6 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets history definitions.
+        /// Represents a collection of access review history data and the scopes used to collect that data.
         /// </summary>
         [JsonPropertyName("historyDefinitions")]
         public IAccessReviewSetHistoryDefinitionsCollectionPage HistoryDefinitions { get; set; }
@@ -61,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets policy.
+        /// Resource that enables administrators to manage directory-level access review policies in their tenant.
         /// </summary>
         [JsonPropertyName("policy")]
         public AccessReviewPolicy Policy { get; set; }

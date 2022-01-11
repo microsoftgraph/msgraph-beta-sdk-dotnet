@@ -89,12 +89,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for ParentList.
         /// </summary>
-        /// <returns>The <see cref="IBaseTaskListRequestBuilder"/>.</returns>
-        public IBaseTaskListRequestBuilder ParentList
+        /// <returns>The <see cref="IBaseTaskListWithReferenceRequestBuilder"/>.</returns>
+        public IBaseTaskListWithReferenceRequestBuilder ParentList
         {
             get
             {
-                return new BaseTaskListRequestBuilder(this.AppendSegmentToRequestUrl("parentList"), this.Client);
+                return new BaseTaskListWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("parentList"), this.Client);
             }
         }
     

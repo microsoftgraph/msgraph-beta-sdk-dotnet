@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets catalog id.
-        /// ID of the access package catalog referencing this access package. Read-only.
+        /// Identifier of the access package catalog referencing this access package. Read-only.
         /// </summary>
         [JsonPropertyName("catalogId")]
         public string CatalogId { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
-        /// UPN of the user or identity of the subject who created this resource. Read-only.
+        /// The userPrincipalName of the user or identity of the subject who created this resource. Read-only.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public string CreatedBy { get; set; }
@@ -50,7 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the access package.
+        /// The display name of the access package. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets modified by.
-        /// The UPN of the user who last modified this resource. Read-only.
+        /// The userPrincipalName of the user who last modified this resource. Read-only.
         /// </summary>
         [JsonPropertyName("modifiedBy")]
         public string ModifiedBy { get; set; }
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package assignment policies.
-        /// Read-only. Nullable.
+        /// Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentPolicies")]
         public IAccessPackageAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }

@@ -78,6 +78,12 @@ namespace Microsoft.Graph
         public SearchQuery Query { get; set; }
     
         /// <summary>
+        /// Gets or sets queryAlterationOptions.
+        /// </summary>
+        [JsonPropertyName("queryAlterationOptions")]
+        public SearchAlterationOptions QueryAlterationOptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets resultTemplateOptions.
         /// Provides the search result templates options for rendering connectors search results.
         /// </summary>
@@ -101,8 +107,15 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets stored_fields.
         /// </summary>
+        [Obsolete("The stored_fields will be removed on December 31, 2022. Please use the queryString instead.")]
         [JsonPropertyName("stored_fields")]
         public IEnumerable<string> Stored_fields { get; set; }
+    
+        /// <summary>
+        /// Gets or sets trimDuplicates.
+        /// </summary>
+        [JsonPropertyName("trimDuplicates")]
+        public bool? TrimDuplicates { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

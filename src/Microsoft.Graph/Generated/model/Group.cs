@@ -144,6 +144,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets mdm app id.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("mdmAppId")]
         public string MdmAppId { get; set; }
     

@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets hitsContainers.
+        /// A collection of search results.
+        /// </summary>
+        [JsonPropertyName("hitsContainers")]
+        public IEnumerable<SearchHitsContainer> HitsContainers { get; set; }
+    
+        /// <summary>
         /// Gets or sets queryAlterationResponse.
         /// Provides details of query alteration response for spelling correction.
         /// </summary>
@@ -29,11 +36,17 @@ namespace Microsoft.Graph
         public AlterationResponse QueryAlterationResponse { get; set; }
     
         /// <summary>
-        /// Gets or sets value.
-        /// Represents results from a search query, and the terms used for the query.
+        /// Gets or sets resultTemplates.
         /// </summary>
-        [JsonPropertyName("value")]
-        public IEnumerable<SearchResultSet> Value { get; set; }
+        [JsonPropertyName("resultTemplates")]
+        public ResultTemplateDictionary ResultTemplates { get; set; }
+    
+        /// <summary>
+        /// Gets or sets searchTerms.
+        /// Contains the search terms sent in the initial search query.
+        /// </summary>
+        [JsonPropertyName("searchTerms")]
+        public IEnumerable<string> SearchTerms { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

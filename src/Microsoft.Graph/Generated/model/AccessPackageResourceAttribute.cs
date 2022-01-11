@@ -23,36 +23,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attributeDestination.
+        /// Information about how to set the attribute.
         /// </summary>
         [JsonPropertyName("attributeDestination")]
         public AccessPackageResourceAttributeDestination AttributeDestination { get; set; }
     
         /// <summary>
         /// Gets or sets attributeName.
+        /// The name of the attribute in the end system.
         /// </summary>
         [JsonPropertyName("attributeName")]
         public string AttributeName { get; set; }
     
         /// <summary>
         /// Gets or sets attributeSource.
+        /// Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled.
         /// </summary>
         [JsonPropertyName("attributeSource")]
         public AccessPackageResourceAttributeSource AttributeSource { get; set; }
     
         /// <summary>
         /// Gets or sets id.
+        /// Unique identifier for the attribute.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets isEditable.
+        /// Specifies whether or not an existing attribute value can be edited by the requester.
         /// </summary>
         [JsonPropertyName("isEditable")]
         public bool? IsEditable { get; set; }
     
         /// <summary>
         /// Gets or sets isPersistedOnAssignmentRemoval.
+        /// Specifies whether the attribute will remain in the end system after an assignment ends.
         /// </summary>
         [JsonPropertyName("isPersistedOnAssignmentRemoval")]
         public bool? IsPersistedOnAssignmentRemoval { get; set; }

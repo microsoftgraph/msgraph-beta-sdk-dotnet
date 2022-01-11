@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authenticationStrengthId.
+        /// Identifier of the authentication strength.
         /// </summary>
         [JsonPropertyName("authenticationStrengthId")]
         public string AuthenticationStrengthId { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The name of the authentication strength.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

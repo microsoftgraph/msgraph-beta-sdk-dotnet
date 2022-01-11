@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for UserRegistrationDetails.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsRootUserRegistrationDetailsCollectionRequestBuilder"/>.</returns>
+        public IAuthenticationMethodsRootUserRegistrationDetailsCollectionRequestBuilder UserRegistrationDetails
+        {
+            get
+            {
+                return new AuthenticationMethodsRootUserRegistrationDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userRegistrationDetails"), this.Client);
+            }
+        }
+    
+        /// <summary>
         /// Gets the request builder for AuthenticationMethodsRootUsersRegisteredByFeature.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationMethodsRootUsersRegisteredByFeatureRequestBuilder"/>.</returns>

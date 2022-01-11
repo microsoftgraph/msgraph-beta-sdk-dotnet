@@ -30,7 +30,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets eventTypes.
-        /// List of risk event types. Deprecated. Use riskEventType instead.
         /// </summary>
         [JsonPropertyName("eventTypes")]
         public IEnumerable<RiskEventType> EventTypes { get; set; }

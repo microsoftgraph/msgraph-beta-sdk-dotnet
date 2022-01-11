@@ -23,20 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authenticationStrength.
+        /// The custom authentication strength enforced in a Conditional Access policy.
         /// </summary>
         [JsonPropertyName("authenticationStrength")]
         public AuthenticationStrength AuthenticationStrength { get; set; }
     
         /// <summary>
         /// Gets or sets conditionsNotSatisfied.
-        /// Refers to the conditional access policy conditions that are not satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
+        /// Refers to the conditional access policy conditions that are not satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
         /// </summary>
         [JsonPropertyName("conditionsNotSatisfied")]
         public ConditionalAccessConditions? ConditionsNotSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets conditionsSatisfied.
-        /// Refers to the conditional access policy conditions that are satisfied. Possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client.
+        /// Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk.
         /// </summary>
         [JsonPropertyName("conditionsSatisfied")]
         public ConditionalAccessConditions? ConditionsSatisfied { get; set; }
@@ -64,6 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets excludeRulesSatisfied.
+        /// List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{'devicePlatform' : 'DevicePlatform'}] means the policy didn’t apply, because the DevicePlatform condition was a match.
         /// </summary>
         [JsonPropertyName("excludeRulesSatisfied")]
         public IEnumerable<ConditionalAccessRuleSatisfied> ExcludeRulesSatisfied { get; set; }
@@ -77,6 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets includeRulesSatisfied.
+        /// List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ 'application' : 'AllApps'}, {'users': 'Group'}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.
         /// </summary>
         [JsonPropertyName("includeRulesSatisfied")]
         public IEnumerable<ConditionalAccessRuleSatisfied> IncludeRulesSatisfied { get; set; }

@@ -43,6 +43,12 @@ namespace Microsoft.Graph.Ediscovery
         [JsonPropertyName("includedSources")]
         public SourceType? IncludedSources { get; set; }
     
+        /// <summary>
+        /// Gets or sets site web url.
+        /// </summary>
+        [JsonPropertyName("siteWebUrl")]
+        public string SiteWebUrl { get; set; }
+    
     }
 }
 

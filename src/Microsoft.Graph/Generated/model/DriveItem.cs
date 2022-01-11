@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets audio.
-        /// Audio metadata, if the item is an audio file. Read-only.
+        /// Audio metadata, if the item is an audio file. Read-only. Only on OneDrive Personal.
         /// </summary>
         [JsonPropertyName("audio")]
         public Audio Audio { get; set; }

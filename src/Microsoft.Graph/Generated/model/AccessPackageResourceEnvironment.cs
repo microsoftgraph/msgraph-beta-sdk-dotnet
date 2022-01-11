@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// The description of this accessPackageResourceEnvironment object.
+        /// The description of this object.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets origin system.
-        /// The type of the resource in the origin system such as SharePointOnline. Supports $filter.
+        /// The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
         /// </summary>
         [JsonPropertyName("originSystem")]
         public string OriginSystem { get; set; }

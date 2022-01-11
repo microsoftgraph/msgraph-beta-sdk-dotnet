@@ -36,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attributes.
+        /// Contains attribute information for the resource.
         /// </summary>
         [JsonPropertyName("attributes")]
         public IEnumerable<AccessPackageResourceAttribute> Attributes { get; set; }

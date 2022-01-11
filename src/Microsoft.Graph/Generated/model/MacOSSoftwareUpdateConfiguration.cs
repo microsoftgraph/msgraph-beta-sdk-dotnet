@@ -31,21 +31,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets all other update behavior.
-        /// Update behavior for all other updates. Possible values are: notConfigured, default.
+        /// Update behavior for all other updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
         /// </summary>
         [JsonPropertyName("allOtherUpdateBehavior")]
         public MacOSSoftwareUpdateBehavior? AllOtherUpdateBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets config data update behavior.
-        /// Update behavior for configuration data file updates. Possible values are: notConfigured, default.
+        /// Update behavior for configuration data file updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
         /// </summary>
         [JsonPropertyName("configDataUpdateBehavior")]
         public MacOSSoftwareUpdateBehavior? ConfigDataUpdateBehavior { get; set; }
     
         /// <summary>
         /// Gets or sets critical update behavior.
-        /// Update behavior for critical updates. Possible values are: notConfigured, default.
+        /// Update behavior for critical updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
         /// </summary>
         [JsonPropertyName("criticalUpdateBehavior")]
         public MacOSSoftwareUpdateBehavior? CriticalUpdateBehavior { get; set; }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets firmware update behavior.
-        /// Update behavior for firmware updates. Possible values are: notConfigured, default.
+        /// Update behavior for firmware updates. Possible values are: notConfigured, default, downloadOnly, installASAP, notifyOnly, installLater.
         /// </summary>
         [JsonPropertyName("firmwareUpdateBehavior")]
         public MacOSSoftwareUpdateBehavior? FirmwareUpdateBehavior { get; set; }

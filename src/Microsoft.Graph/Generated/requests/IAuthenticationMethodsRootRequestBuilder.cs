@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IAuthenticationMethodsRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for UserRegistrationDetails.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationMethodsRootUserRegistrationDetailsCollectionRequestBuilder"/>.</returns>
+        IAuthenticationMethodsRootUserRegistrationDetailsCollectionRequestBuilder UserRegistrationDetails { get; }
+    
+        /// <summary>
         /// Gets the request builder for AuthenticationMethodsRootUsersRegisteredByFeature.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationMethodsRootUsersRegisteredByFeatureRequestBuilder"/>.</returns>
