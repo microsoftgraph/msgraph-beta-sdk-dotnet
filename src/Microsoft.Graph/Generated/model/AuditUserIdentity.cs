@@ -29,12 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets homeTenantId.
+        /// For user sign ins, the identifier of the tenant that the user is a member of.
         /// </summary>
         [JsonPropertyName("homeTenantId")]
         public string HomeTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets homeTenantName.
+        /// For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
         /// </summary>
         [JsonPropertyName("homeTenantName")]
         public string HomeTenantName { get; set; }

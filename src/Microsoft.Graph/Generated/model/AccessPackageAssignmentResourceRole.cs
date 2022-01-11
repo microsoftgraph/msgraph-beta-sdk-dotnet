@@ -71,7 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package subject.
-        /// Read-only. Nullable.
+        /// Read-only. Nullable. Supports $filter (eq) on objectId and $expand query parameters.
         /// </summary>
         [JsonPropertyName("accessPackageSubject")]
         public AccessPackageSubject AccessPackageSubject { get; set; }

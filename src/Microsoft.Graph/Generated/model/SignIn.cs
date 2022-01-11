@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public IEnumerable<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication context class references.
+        /// </summary>
+        [JsonPropertyName("authenticationContextClassReferences")]
+        public IEnumerable<AuthenticationContext> AuthenticationContextClassReferences { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication details.
         /// The result of the authentication attempt and additional details on the authentication method.
         /// </summary>
@@ -65,6 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication protocol.
+        /// Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.
         /// </summary>
         [JsonPropertyName("authenticationProtocol")]
         public ProtocolType? AuthenticationProtocol { get; set; }
@@ -78,15 +85,23 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication requirement policies.
+        /// Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.
         /// </summary>
         [JsonPropertyName("authenticationRequirementPolicies")]
         public IEnumerable<AuthenticationRequirementPolicy> AuthenticationRequirementPolicies { get; set; }
     
         /// <summary>
         /// Gets or sets autonomous system number.
+        /// The Autonomous System Number (ASN) of the network used by the actor.
         /// </summary>
         [JsonPropertyName("autonomousSystemNumber")]
         public Int32? AutonomousSystemNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets azure resource id.
+        /// </summary>
+        [JsonPropertyName("azureResourceId")]
+        public string AzureResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets client app used.
@@ -118,6 +133,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets cross tenant access type.
+        /// Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.
         /// </summary>
         [JsonPropertyName("crossTenantAccessType")]
         public SignInAccessType? CrossTenantAccessType { get; set; }
@@ -130,25 +146,35 @@ namespace Microsoft.Graph
         public DeviceDetail DeviceDetail { get; set; }
     
         /// <summary>
+        /// Gets or sets federated credential id.
+        /// </summary>
+        [JsonPropertyName("federatedCredentialId")]
+        public string FederatedCredentialId { get; set; }
+    
+        /// <summary>
         /// Gets or sets flagged for review.
+        /// During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.
         /// </summary>
         [JsonPropertyName("flaggedForReview")]
         public bool? FlaggedForReview { get; set; }
     
         /// <summary>
         /// Gets or sets home tenant id.
+        /// The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.
         /// </summary>
         [JsonPropertyName("homeTenantId")]
         public string HomeTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets home tenant name.
+        /// For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.
         /// </summary>
         [JsonPropertyName("homeTenantName")]
         public string HomeTenantName { get; set; }
     
         /// <summary>
         /// Gets or sets incoming token type.
+        /// Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed.
         /// </summary>
         [JsonPropertyName("incomingTokenType")]
         public IncomingTokenType? IncomingTokenType { get; set; }
@@ -162,6 +188,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ip address from resource provider.
+        /// The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.
         /// </summary>
         [JsonPropertyName("ipAddressFromResourceProvider")]
         public string IpAddressFromResourceProvider { get; set; }
@@ -175,6 +202,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is tenant restricted.
+        /// Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
         /// </summary>
         [JsonPropertyName("isTenantRestricted")]
         public bool? IsTenantRestricted { get; set; }
@@ -208,6 +236,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets private link details.
+        /// Contains information about the Azure AD Private Link policy that is associated with the sign in event.
         /// </summary>
         [JsonPropertyName("privateLinkDetails")]
         public PrivateLinkDetails PrivateLinkDetails { get; set; }
@@ -234,7 +263,14 @@ namespace Microsoft.Graph
         public string ResourceId { get; set; }
     
         /// <summary>
+        /// Gets or sets resource service principal id.
+        /// </summary>
+        [JsonPropertyName("resourceServicePrincipalId")]
+        public string ResourceServicePrincipalId { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource tenant id.
+        /// The tenant identifier of the resource referenced in the sign in.
         /// </summary>
         [JsonPropertyName("resourceTenantId")]
         public string ResourceTenantId { get; set; }
@@ -276,12 +312,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service principal credential key id.
+        /// The unique identifier of the key credential used by the service principal to authenticate.
         /// </summary>
         [JsonPropertyName("servicePrincipalCredentialKeyId")]
         public string ServicePrincipalCredentialKeyId { get; set; }
     
         /// <summary>
         /// Gets or sets service principal credential thumbprint.
+        /// The certificate thumbprint of the certificate used by the service principal to authenticate.
         /// </summary>
         [JsonPropertyName("servicePrincipalCredentialThumbprint")]
         public string ServicePrincipalCredentialThumbprint { get; set; }
@@ -301,19 +339,28 @@ namespace Microsoft.Graph
         public string ServicePrincipalName { get; set; }
     
         /// <summary>
+        /// Gets or sets session lifetime policies.
+        /// </summary>
+        [JsonPropertyName("sessionLifetimePolicies")]
+        public IEnumerable<SessionLifetimePolicy> SessionLifetimePolicies { get; set; }
+    
+        /// <summary>
         /// Gets or sets sign in event types.
+        /// Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq operator only).
         /// </summary>
         [JsonPropertyName("signInEventTypes")]
         public IEnumerable<string> SignInEventTypes { get; set; }
     
         /// <summary>
         /// Gets or sets sign in identifier.
+        /// The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.
         /// </summary>
         [JsonPropertyName("signInIdentifier")]
         public string SignInIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets sign in identifier type.
+        /// The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("signInIdentifierType")]
         public SignInIdentifierType? SignInIdentifierType { get; set; }
@@ -334,13 +381,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token issuer type.
-        /// The type of identity provider. Possible values: AzureAD, ADFederationServices, or UnknownFutureValue.
+        /// The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: AzureADBackupAuth.
         /// </summary>
         [JsonPropertyName("tokenIssuerType")]
         public TokenIssuerType? TokenIssuerType { get; set; }
     
         /// <summary>
         /// Gets or sets unique token identifier.
+        /// A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
         /// </summary>
         [JsonPropertyName("uniqueTokenIdentifier")]
         public string UniqueTokenIdentifier { get; set; }
@@ -375,6 +423,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user type.
+        /// Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("userType")]
         public SignInUserType? UserType { get; set; }

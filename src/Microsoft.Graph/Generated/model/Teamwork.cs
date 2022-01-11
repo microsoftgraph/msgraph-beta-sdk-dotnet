@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string WorkforceIntegrationsNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets devices.
+        /// </summary>
+        [JsonPropertyName("devices")]
+        public ITeamworkDevicesCollectionPage Devices { get; set; }
+
+        /// <summary>
+        /// Gets or sets devicesNextLink.
+        /// </summary>
+        [JsonPropertyName("devices@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DevicesNextLink { get; set; }
+    
     }
 }
 

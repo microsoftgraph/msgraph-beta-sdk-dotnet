@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets question.
+        /// The question asked in order to get the value of the attribute
         /// </summary>
         [JsonPropertyName("question")]
         public AccessPackageQuestion Question { get; set; }

@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets versions.
+        /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
         /// </summary>
         [JsonPropertyName("versions")]
         public IAgreementFileLocalizationVersionsCollectionPage Versions { get; set; }

@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets localizations.
+        /// The localized version of the terms of use agreement files attached to the agreement.
         /// </summary>
         [JsonPropertyName("localizations")]
         public IAgreementFileLocalizationsCollectionPage Localizations { get; set; }

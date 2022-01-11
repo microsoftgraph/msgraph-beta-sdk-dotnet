@@ -50,7 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource role.
-        /// Read-only. Nullable.
+        /// Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRole")]
         public AccessPackageResourceRole AccessPackageResourceRole { get; set; }

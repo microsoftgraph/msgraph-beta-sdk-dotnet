@@ -251,6 +251,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("registration")]
         public MeetingRegistration Registration { get; set; }
     
+        /// <summary>
+        /// Gets or sets transcripts.
+        /// </summary>
+        [JsonPropertyName("transcripts")]
+        public IOnlineMeetingTranscriptsCollectionPage Transcripts { get; set; }
+
+        /// <summary>
+        /// Gets or sets transcriptsNextLink.
+        /// </summary>
+        [JsonPropertyName("transcripts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string TranscriptsNextLink { get; set; }
+    
     }
 }
 

@@ -59,18 +59,21 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets _id.
         /// </summary>
+        [Obsolete("The _id will be removed on December 31, 2022. Use the id instead.")]
         [JsonPropertyName("_id")]
         public string _id { get; set; }
     
         /// <summary>
         /// Gets or sets _score.
         /// </summary>
+        [Obsolete("The _score will be removed on December 31, 2022. Use the rank instead.")]
         [JsonPropertyName("_score")]
         public Int32? _score { get; set; }
     
         /// <summary>
         /// Gets or sets _summary.
         /// </summary>
+        [Obsolete("The _summary will be removed on December 31, 2022. Use the summary instead.")]
         [JsonPropertyName("_summary")]
         public string _summary { get; set; }
     

@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new TeamworkWorkforceIntegrationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("workforceIntegrations"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Devices.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkDevicesCollectionRequestBuilder"/>.</returns>
+        public ITeamworkDevicesCollectionRequestBuilder Devices
+        {
+            get
+            {
+                return new TeamworkDevicesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("devices"), this.Client);
+            }
+        }
     
     }
 }

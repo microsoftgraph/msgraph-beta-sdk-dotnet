@@ -20,6 +20,19 @@ namespace Microsoft.Graph
     public partial class AuthenticationMethodsRoot : Entity
     {
     
+        /// <summary>
+        /// Gets or sets user registration details.
+        /// </summary>
+        [JsonPropertyName("userRegistrationDetails")]
+        public IAuthenticationMethodsRootUserRegistrationDetailsCollectionPage UserRegistrationDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets userRegistrationDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("userRegistrationDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserRegistrationDetailsNextLink { get; set; }
+    
     }
 }
 

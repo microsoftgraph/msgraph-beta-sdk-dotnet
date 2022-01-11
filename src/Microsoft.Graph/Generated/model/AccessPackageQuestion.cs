@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isAnswerEditable.
+        /// Specifies whether the requestor is allowed to edit answers to questions.
         /// </summary>
         [JsonPropertyName("isAnswerEditable")]
         public bool? IsAnswerEditable { get; set; }

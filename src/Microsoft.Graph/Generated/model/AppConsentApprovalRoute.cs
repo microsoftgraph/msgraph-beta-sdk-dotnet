@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app consent requests.
+        /// A collection of userConsentRequest objects for a specific application.
         /// </summary>
         [JsonPropertyName("appConsentRequests")]
         public IAppConsentApprovalRouteAppConsentRequestsCollectionPage AppConsentRequests { get; set; }

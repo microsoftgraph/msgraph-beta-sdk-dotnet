@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AuthenticationMethodsRoot authenticationMethodsRootToInitialize)
         {
 
+            if (authenticationMethodsRootToInitialize != null)
+            {
+                if (authenticationMethodsRootToInitialize.UserRegistrationDetails != null && authenticationMethodsRootToInitialize.UserRegistrationDetails.CurrentPage != null)
+                {
+                    authenticationMethodsRootToInitialize.UserRegistrationDetails.InitializeNextPageRequest(this.Client, authenticationMethodsRootToInitialize.UserRegistrationDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    authenticationMethodsRootToInitialize.UserRegistrationDetails.AdditionalData = authenticationMethodsRootToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

@@ -29,8 +29,15 @@ namespace Microsoft.Graph
         public string QueryString { get; set; }
     
         /// <summary>
+        /// Gets or sets queryTemplate.
+        /// </summary>
+        [JsonPropertyName("queryTemplate")]
+        public string QueryTemplate { get; set; }
+    
+        /// <summary>
         /// Gets or sets query_string.
         /// </summary>
+        [Obsolete("The query_string will be removed on December 31, 2022. Please use the queryString instead.")]
         [JsonPropertyName("query_string")]
         public SearchQueryString Query_string { get; set; }
     

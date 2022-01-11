@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamworkWorkforceIntegrationsCollectionRequestBuilder"/>.</returns>
         ITeamworkWorkforceIntegrationsCollectionRequestBuilder WorkforceIntegrations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Devices.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkDevicesCollectionRequestBuilder"/>.</returns>
+        ITeamworkDevicesCollectionRequestBuilder Devices { get; }
     
     }
 }

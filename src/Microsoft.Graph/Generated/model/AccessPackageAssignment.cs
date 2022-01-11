@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment state.
-        /// The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only.
+        /// The state of the access package assignment. Possible values are Delivering, Delivered, or Expired. Read-only. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("assignmentState")]
         public string AssignmentState { get; set; }
@@ -85,14 +85,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package.
-        /// Read-only. Nullable.
+        /// Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
         /// </summary>
         [JsonPropertyName("accessPackage")]
         public AccessPackage AccessPackage { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment policy.
-        /// Read-only. Nullable.
+        /// Read-only. Nullable. Supports $filter (eq) on the id property
         /// </summary>
         [JsonPropertyName("accessPackageAssignmentPolicy")]
         public AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy { get; set; }
@@ -126,7 +126,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target.
-        /// The subject of the access package assignment. Read-only. Nullable.
+        /// The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
         /// </summary>
         [JsonPropertyName("target")]
         public AccessPackageSubject Target { get; set; }

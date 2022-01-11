@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package id.
-        /// ID of the access package.
+        /// Identifier of the access package.
         /// </summary>
         [JsonPropertyName("accessPackageId")]
         public string AccessPackageId { get; set; }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the policy.
+        /// The display name of the policy. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -120,7 +120,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package.
-        /// The access package with this policy. Read-only. Nullable.
+        /// The access package with this policy. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("accessPackage")]
         public AccessPackage AccessPackage { get; set; }

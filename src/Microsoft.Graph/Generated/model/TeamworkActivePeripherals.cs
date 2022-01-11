@@ -15,32 +15,41 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SearchResultSet.
+    /// The type TeamworkActivePeripherals.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SearchResultSet>))]
-    public partial class SearchResultSet
+    [JsonConverter(typeof(DerivedTypeConverter<TeamworkActivePeripherals>))]
+    public partial class TeamworkActivePeripherals
     {
 
         /// <summary>
-        /// Gets or sets hitsContainers.
-        /// A collection of search results.
+        /// Gets or sets communicationSpeaker.
         /// </summary>
-        [JsonPropertyName("hitsContainers")]
-        public IEnumerable<SearchHitsContainer> HitsContainers { get; set; }
+        [JsonPropertyName("communicationSpeaker")]
+        public TeamworkPeripheral CommunicationSpeaker { get; set; }
     
         /// <summary>
-        /// Gets or sets resultTemplates.
-        /// A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
+        /// Gets or sets contentCamera.
         /// </summary>
-        [JsonPropertyName("resultTemplates")]
-        public ResultTemplateDictionary ResultTemplates { get; set; }
+        [JsonPropertyName("contentCamera")]
+        public TeamworkPeripheral ContentCamera { get; set; }
     
         /// <summary>
-        /// Gets or sets searchTerms.
-        /// Contains the search terms sent in the initial search query.
+        /// Gets or sets microphone.
         /// </summary>
-        [JsonPropertyName("searchTerms")]
-        public IEnumerable<string> SearchTerms { get; set; }
+        [JsonPropertyName("microphone")]
+        public TeamworkPeripheral Microphone { get; set; }
+    
+        /// <summary>
+        /// Gets or sets roomCamera.
+        /// </summary>
+        [JsonPropertyName("roomCamera")]
+        public TeamworkPeripheral RoomCamera { get; set; }
+    
+        /// <summary>
+        /// Gets or sets speaker.
+        /// </summary>
+        [JsonPropertyName("speaker")]
+        public TeamworkPeripheral Speaker { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

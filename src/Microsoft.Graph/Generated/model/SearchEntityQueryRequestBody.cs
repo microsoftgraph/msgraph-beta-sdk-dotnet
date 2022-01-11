@@ -26,11 +26,5 @@ namespace Microsoft.Graph
         [JsonPropertyName("requests")]
         public IEnumerable<SearchRequestObject> Requests { get; set; }
     
-        /// <summary>
-        /// Gets or sets QueryAlterationOptions.
-        /// </summary>
-        [JsonPropertyName("queryAlterationOptions")]
-        public SearchAlterationOptions QueryAlterationOptions { get; set; }
-    
     }
 }

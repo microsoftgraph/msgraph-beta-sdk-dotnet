@@ -52,8 +52,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for ParentList.
         /// </summary>
-        /// <returns>The <see cref="IBaseTaskListRequestBuilder"/>.</returns>
-        IBaseTaskListRequestBuilder ParentList { get; }
+        /// <returns>The <see cref="IBaseTaskListWithReferenceRequestBuilder"/>.</returns>
+        IBaseTaskListWithReferenceRequestBuilder ParentList { get; }
     
         /// <summary>
         /// Gets the request builder for BaseTaskMove.
