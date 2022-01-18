@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public Root Root { get; set; }
     
         /// <summary>
+        /// Gets or sets settings.
+        /// </summary>
+        [JsonPropertyName("settings")]
+        public SiteSettings Settings { get; set; }
+    
+        /// <summary>
         /// Gets or sets sharepoint ids.
         /// Returns identifiers useful for SharePoint REST compatibility. Read-only.
         /// </summary>
@@ -134,7 +140,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets items.
-        /// Used to address any item contained in this site. This collection can't be enumerated.
+        /// Used to address any item contained in this site. This collection cannot be enumerated.
         /// </summary>
         [JsonPropertyName("items")]
         public ISiteItemsCollectionPage Items { get; set; }
@@ -217,7 +223,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term store.
-        /// The default termStore under this site.
+        /// The termStore under this site.
         /// </summary>
         [JsonPropertyName("termStore")]
         public Microsoft.Graph.TermStore.Store TermStore { get; set; }

@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets conversationIdentityType.
-        /// Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
+        /// Type of conversation. Possible values are: team, channel, and chat.
         /// </summary>
         [JsonPropertyName("conversationIdentityType")]
         public TeamworkConversationIdentityType? ConversationIdentityType { get; set; }

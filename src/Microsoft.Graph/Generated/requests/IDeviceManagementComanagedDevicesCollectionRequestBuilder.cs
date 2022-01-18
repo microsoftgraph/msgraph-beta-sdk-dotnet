@@ -44,6 +44,15 @@ namespace Microsoft.Graph
             IEnumerable<string> managedDeviceIds = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceBulkRestoreCloudPc.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceBulkRestoreCloudPcRequestBuilder"/>.</returns>
+        IManagedDeviceBulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc(
+            IEnumerable<string> managedDeviceIds = null,
+            DateTimeOffset? restorePointDateTime = null,
+            RestoreTimeRange? timeRange = null);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceExecuteAction.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>

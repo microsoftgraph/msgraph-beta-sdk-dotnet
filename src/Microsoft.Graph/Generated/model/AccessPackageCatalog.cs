@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets catalog type.
-        /// Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
+        /// One of UserManaged or ServiceDefault.
         /// </summary>
         [JsonPropertyName("catalogType")]
         public string CatalogType { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the access package catalog.
+        /// The display name of the access package catalog. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -125,7 +125,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access packages.
-        /// The access packages in this catalog. Read-only. Nullable.
+        /// The access packages in this catalog. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("accessPackages")]
         public IAccessPackageCatalogAccessPackagesCollectionPage AccessPackages { get; set; }

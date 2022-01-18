@@ -45,6 +45,7 @@ namespace Microsoft.Graph.Ediscovery
     
         /// <summary>
         /// Gets or sets site web url.
+        /// The URL of the user's OneDrive for Business site. Read-only.
         /// </summary>
         [JsonPropertyName("siteWebUrl")]
         public string SiteWebUrl { get; set; }

@@ -30,14 +30,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets latitude.
-        /// Optional. The latitude, in decimal, for the item. Read-only.
+        /// Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
         /// </summary>
         [JsonPropertyName("latitude")]
         public double? Latitude { get; set; }
     
         /// <summary>
         /// Gets or sets longitude.
-        /// Optional. The longitude, in decimal, for the item. Read-only.
+        /// Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
         /// </summary>
         [JsonPropertyName("longitude")]
         public double? Longitude { get; set; }

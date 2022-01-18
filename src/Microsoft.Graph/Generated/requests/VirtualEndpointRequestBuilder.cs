@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Snapshots.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointSnapshotsCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointSnapshotsCollectionRequestBuilder Snapshots
+        {
+            get
+            {
+                return new VirtualEndpointSnapshotsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("snapshots"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for SupportedRegions.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointSupportedRegionsCollectionRequestBuilder"/>.</returns>

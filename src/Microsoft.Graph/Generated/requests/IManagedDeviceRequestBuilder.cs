@@ -105,6 +105,13 @@ namespace Microsoft.Graph
             string targetServicePlanId = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRestoreCloudPc.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRestoreCloudPcRequestBuilder"/>.</returns>
+        IManagedDeviceRestoreCloudPcRequestBuilder RestoreCloudPc(
+            string cloudPcSnapshotId = null);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>

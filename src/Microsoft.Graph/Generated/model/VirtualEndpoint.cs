@@ -125,6 +125,19 @@ namespace Microsoft.Graph
         public string ServicePlansNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets snapshots.
+        /// </summary>
+        [JsonPropertyName("snapshots")]
+        public IVirtualEndpointSnapshotsCollectionPage Snapshots { get; set; }
+
+        /// <summary>
+        /// Gets or sets snapshotsNextLink.
+        /// </summary>
+        [JsonPropertyName("snapshots@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SnapshotsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets supported regions.
         /// Cloud PC supported regions.
         /// </summary>

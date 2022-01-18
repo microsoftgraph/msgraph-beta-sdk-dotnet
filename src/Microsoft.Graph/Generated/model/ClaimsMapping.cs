@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
-        /// The claim that provides the display name or full name for the user. Required.
+        /// The claim that provides the display name or full name for the user. It is a required propoerty.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets userId.
-        /// The claim that provides the unique identifier for the signed-in user. Required.
+        /// The claim that provides the unique identifier for the signed-in user. It is a required propoerty.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

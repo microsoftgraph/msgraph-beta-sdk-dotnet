@@ -74,6 +74,23 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceBulkRestoreCloudPc.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceBulkRestoreCloudPcRequestBuilder"/>.</returns>
+        public IManagedDeviceBulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc(
+            IEnumerable<string> managedDeviceIds = null,
+            DateTimeOffset? restorePointDateTime = null,
+            RestoreTimeRange? timeRange = null)
+        {
+            return new ManagedDeviceBulkRestoreCloudPcRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.bulkRestoreCloudPc"),
+                this.Client,
+                managedDeviceIds,
+                restorePointDateTime,
+                timeRange);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceExecuteAction.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>

@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets displayName.
-        /// Indicates the property name of the target attribute that was changed.
+        /// Name of property that was modified.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets newValue.
-        /// Indicates the updated value for the propery.
+        /// New property value.
         /// </summary>
         [JsonPropertyName("newValue")]
         public string NewValue { get; set; }
     
         /// <summary>
         /// Gets or sets oldValue.
-        /// Indicates the previous value (before the update) for the property.
+        /// Old property value.
         /// </summary>
         [JsonPropertyName("oldValue")]
         public string OldValue { get; set; }

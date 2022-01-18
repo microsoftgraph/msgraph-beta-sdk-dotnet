@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IDomainDomainNameReferencesCollectionWithReferencesRequestBuilder DomainNameReferences { get; }
 
         /// <summary>
+        /// Gets the request builder for FederationConfiguration.
+        /// </summary>
+        /// <returns>The <see cref="IDomainFederationConfigurationCollectionRequestBuilder"/>.</returns>
+        IDomainFederationConfigurationCollectionRequestBuilder FederationConfiguration { get; }
+
+        /// <summary>
         /// Gets the request builder for ServiceConfigurationRecords.
         /// </summary>
         /// <returns>The <see cref="IDomainServiceConfigurationRecordsCollectionRequestBuilder"/>.</returns>
