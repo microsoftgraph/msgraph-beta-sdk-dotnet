@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     domainToInitialize.DomainNameReferences.AdditionalData = domainToInitialize.AdditionalData;
                 }
+                if (domainToInitialize.FederationConfiguration != null && domainToInitialize.FederationConfiguration.CurrentPage != null)
+                {
+                    domainToInitialize.FederationConfiguration.InitializeNextPageRequest(this.Client, domainToInitialize.FederationConfigurationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    domainToInitialize.FederationConfiguration.AdditionalData = domainToInitialize.AdditionalData;
+                }
                 if (domainToInitialize.ServiceConfigurationRecords != null && domainToInitialize.ServiceConfigurationRecords.CurrentPage != null)
                 {
                     domainToInitialize.ServiceConfigurationRecords.InitializeNextPageRequest(this.Client, domainToInitialize.ServiceConfigurationRecordsNextLink);

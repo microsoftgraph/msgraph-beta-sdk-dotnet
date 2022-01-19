@@ -44,14 +44,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets key.
-        /// The certificate's raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).
+        /// Value for the key credential. Should be a base 64 encoded value.
         /// </summary>
         [JsonPropertyName("key")]
         public byte[] Key { get; set; }
     
         /// <summary>
         /// Gets or sets keyId.
-        /// The unique identifier (GUID) for the key.
+        /// The unique identifier for the key.
         /// </summary>
         [JsonPropertyName("keyId")]
         public Guid? KeyId { get; set; }

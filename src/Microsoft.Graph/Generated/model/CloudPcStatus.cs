@@ -60,6 +60,11 @@ namespace Microsoft.Graph
         Resizing = 7,
 	
         /// <summary>
+        /// Restoring
+        /// </summary>
+        Restoring = 8,
+	
+        /// <summary>
         /// Pending Provision
         /// </summary>
         PendingProvision = 9,

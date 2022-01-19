@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external user lifecycle action.
-        /// Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
+        /// One of None, BlockSignIn, or BlockSignInAndDelete.
         /// </summary>
         [JsonPropertyName("externalUserLifecycleAction")]
         public string ExternalUserLifecycleAction { get; set; }

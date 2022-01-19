@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         IVirtualEndpointServicePlansCollectionRequestBuilder ServicePlans { get; }
 
         /// <summary>
+        /// Gets the request builder for Snapshots.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointSnapshotsCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointSnapshotsCollectionRequestBuilder Snapshots { get; }
+
+        /// <summary>
         /// Gets the request builder for SupportedRegions.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointSupportedRegionsCollectionRequestBuilder"/>.</returns>

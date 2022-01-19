@@ -195,6 +195,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRestoreCloudPc.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRestoreCloudPcRequestBuilder"/>.</returns>
+        public IManagedDeviceRestoreCloudPcRequestBuilder RestoreCloudPc(
+            string cloudPcSnapshotId = null)
+        {
+            return new ManagedDeviceRestoreCloudPcRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.restoreCloudPc"),
+                this.Client,
+                cloudPcSnapshotId);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceOverrideComplianceState.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceOverrideComplianceStateRequestBuilder"/>.</returns>

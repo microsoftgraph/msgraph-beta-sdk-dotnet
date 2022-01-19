@@ -49,6 +49,12 @@ namespace Microsoft.Graph
         public bool? LocalAdminEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets restore point setting.
+        /// </summary>
+        [JsonPropertyName("restorePointSetting")]
+        public CloudPcRestorePointSetting RestorePointSetting { get; set; }
+    
+        /// <summary>
         /// Gets or sets self service enabled.
         /// Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
         /// </summary>

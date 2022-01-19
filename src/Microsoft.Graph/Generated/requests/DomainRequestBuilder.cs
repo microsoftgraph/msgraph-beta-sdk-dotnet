@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for FederationConfiguration.
+        /// </summary>
+        /// <returns>The <see cref="IDomainFederationConfigurationCollectionRequestBuilder"/>.</returns>
+        public IDomainFederationConfigurationCollectionRequestBuilder FederationConfiguration
+        {
+            get
+            {
+                return new DomainFederationConfigurationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("federationConfiguration"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ServiceConfigurationRecords.
         /// </summary>
         /// <returns>The <see cref="IDomainServiceConfigurationRecordsCollectionRequestBuilder"/>.</returns>
