@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risk detections.
+        /// Risk detection in Azure AD Identity Protection and the associated information about the detection.
         /// </summary>
         [JsonPropertyName("riskDetections")]
         public IIdentityProtectionRootRiskDetectionsCollectionPage RiskDetections { get; set; }
@@ -36,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risky users.
+        /// Users that are flagged as at-risk by Azure AD Identity Protection.
         /// </summary>
         [JsonPropertyName("riskyUsers")]
         public IIdentityProtectionRootRiskyUsersCollectionPage RiskyUsers { get; set; }

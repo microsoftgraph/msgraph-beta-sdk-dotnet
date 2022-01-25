@@ -30,28 +30,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// The description for the directory role. Read-only.
+        /// The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the directory role. Read-only.
+        /// The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets role template id.
-        /// The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.
+        /// The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
         /// </summary>
         [JsonPropertyName("roleTemplateId")]
         public string RoleTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets members.
-        /// Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
+        /// Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("members")]
         public IDirectoryRoleMembersCollectionWithReferencesPage Members { get; set; }

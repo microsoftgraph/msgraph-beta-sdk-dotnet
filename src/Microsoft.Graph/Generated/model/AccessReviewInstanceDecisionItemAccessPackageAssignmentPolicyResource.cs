@@ -29,12 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accessPackageDisplayName.
+        /// Display name of the access package to which access has been granted.
         /// </summary>
         [JsonPropertyName("accessPackageDisplayName")]
         public string AccessPackageDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets accessPackageId.
+        /// Identifier of the access package to which access has been granted.
         /// </summary>
         [JsonPropertyName("accessPackageId")]
         public string AccessPackageId { get; set; }

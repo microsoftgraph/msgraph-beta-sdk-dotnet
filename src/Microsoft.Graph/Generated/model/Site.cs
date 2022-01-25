@@ -168,6 +168,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operations.
+        /// The collection of long running operations for the site.
         /// </summary>
         [JsonPropertyName("operations")]
         public ISiteOperationsCollectionPage Operations { get; set; }

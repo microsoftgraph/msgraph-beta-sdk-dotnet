@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public PlannerPlanContextType? DisplayLinkType { get; set; }
     
         /// <summary>
+        /// Gets or sets state.
+        /// </summary>
+        [JsonPropertyName("state")]
+        public PlannerContextState? State { get; set; }
+    
+        /// <summary>
         /// Gets or sets url.
         /// URL of the user experience represented by the associated plannerPlanContext.
         /// </summary>

@@ -72,6 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recommendationInsightSettings.
+        /// Optional. Describes the types of insights that aid reviewers to make access review decisions.
         /// </summary>
         [JsonPropertyName("recommendationInsightSettings")]
         public IEnumerable<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings { get; set; }

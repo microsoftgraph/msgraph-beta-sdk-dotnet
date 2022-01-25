@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).
+        /// An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets members.
-        /// Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).
+        /// Users and groups that are members of this administrative unit. Supports $expand.
         /// </summary>
         [JsonPropertyName("members")]
         public IAdministrativeUnitMembersCollectionWithReferencesPage Members { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scoped role members.
-        /// Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).
+        /// Scoped-role members of this administrative unit.
         /// </summary>
         [JsonPropertyName("scopedRoleMembers")]
         public IAdministrativeUnitScopedRoleMembersCollectionPage ScopedRoleMembers { get; set; }

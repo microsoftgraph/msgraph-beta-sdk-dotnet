@@ -93,6 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets os version.
+        /// The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("osVersion")]
         public CloudPcOperatingSystem? OsVersion { get; set; }
@@ -148,6 +149,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user account type.
+        /// The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("userAccountType")]
         public CloudPcUserAccountType? UserAccountType { get; set; }

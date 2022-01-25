@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets detail.
+        /// Describes how the conditional access authentication context was triggered. A value of previouslySatisfied means the auth context was because the user already satisfied the requirements for that authentication context in some previous authentication event. A value of required means the user had to meet the authentication context requirement as part of the sign-in flow. The possible values are: required, previouslySatisfied, notApplicable, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("detail")]
         public AuthenticationContextDetail? Detail { get; set; }
     
         /// <summary>
         /// Gets or sets id.
+        /// The identifier of a authentication context in your tenant.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }

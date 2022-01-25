@@ -44,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication context class references.
+        /// Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
         /// </summary>
         [JsonPropertyName("authenticationContextClassReferences")]
         public IEnumerable<AuthenticationContext> AuthenticationContextClassReferences { get; set; }
@@ -99,6 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets azure resource id.
+        /// Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.
         /// </summary>
         [JsonPropertyName("azureResourceId")]
         public string AzureResourceId { get; set; }
@@ -147,6 +149,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets federated credential id.
+        /// Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.
         /// </summary>
         [JsonPropertyName("federatedCredentialId")]
         public string FederatedCredentialId { get; set; }
@@ -264,6 +267,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource service principal id.
+        /// The identifier of the service principal representing the target resource in the sign-in event.
         /// </summary>
         [JsonPropertyName("resourceServicePrincipalId")]
         public string ResourceServicePrincipalId { get; set; }
@@ -340,6 +344,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets session lifetime policies.
+        /// Any conditional access session management policies that were applied during the sign-in event.
         /// </summary>
         [JsonPropertyName("sessionLifetimePolicies")]
         public IEnumerable<SessionLifetimePolicy> SessionLifetimePolicies { get; set; }
@@ -381,7 +386,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token issuer type.
-        /// The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: AzureADBackupAuth.
+        /// The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.
         /// </summary>
         [JsonPropertyName("tokenIssuerType")]
         public TokenIssuerType? TokenIssuerType { get; set; }

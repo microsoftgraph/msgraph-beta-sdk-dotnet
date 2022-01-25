@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets scope.
+        /// Details of the scope this role is associated with.
         /// </summary>
         [JsonPropertyName("scope")]
         public AccessReviewInstanceDecisionItemResource Scope { get; set; }

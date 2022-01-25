@@ -53,6 +53,7 @@ namespace Microsoft.Graph
         /// Gets or sets download uri.
         /// Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated.
         /// </summary>
+        [Obsolete("This property is being deprecated. Use the downloadUri value in the individual report instance instead")]
         [JsonPropertyName("downloadUri")]
         public string DownloadUri { get; set; }
     
@@ -60,6 +61,7 @@ namespace Microsoft.Graph
         /// Gets or sets fulfilled date time.
         /// Timestamp when all of the available data for this definition was collected. This will be set after this definition's status is set to done.
         /// </summary>
+        [Obsolete("This property is being deprecated. Use the fulfilledDateTime value in the individual report instance instead")]
         [JsonPropertyName("fulfilledDateTime")]
         public DateTimeOffset? FulfilledDateTime { get; set; }
     
@@ -78,6 +80,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? ReviewHistoryPeriodStartDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets schedule settings.
+        /// </summary>
+        [JsonPropertyName("scheduleSettings")]
+        public AccessReviewHistoryScheduleSettings ScheduleSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets scopes.
         /// Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.
         /// </summary>
@@ -90,6 +98,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("status")]
         public AccessReviewHistoryStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets instances.
+        /// </summary>
+        [JsonPropertyName("instances")]
+        public IAccessReviewHistoryDefinitionInstancesCollectionPage Instances { get; set; }
+
+        /// <summary>
+        /// Gets or sets instancesNextLink.
+        /// </summary>
+        [JsonPropertyName("instances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string InstancesNextLink { get; set; }
     
     }
 }
