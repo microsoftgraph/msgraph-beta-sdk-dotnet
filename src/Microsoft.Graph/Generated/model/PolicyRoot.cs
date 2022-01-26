@@ -106,6 +106,12 @@ namespace Microsoft.Graph
         public TenantAppManagementPolicy DefaultAppManagementPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets external identities policy.
+        /// </summary>
+        [JsonPropertyName("externalIdentitiesPolicy")]
+        public ExternalIdentitiesPolicy ExternalIdentitiesPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets home realm discovery policies.
         /// The policy to control Azure AD authentication behavior for federated users.
         /// </summary>

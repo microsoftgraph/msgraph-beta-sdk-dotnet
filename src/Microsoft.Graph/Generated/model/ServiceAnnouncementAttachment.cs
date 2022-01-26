@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content.
+        /// The attachment content.
         /// </summary>
         [JsonPropertyName("content")]
         public Stream Content { get; set; }

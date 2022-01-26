@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets last sign in date time.
+        /// Indicates when the user last signed in
         /// </summary>
         [JsonPropertyName("lastSignInDateTime")]
         public DateTimeOffset? LastSignInDateTime { get; set; }

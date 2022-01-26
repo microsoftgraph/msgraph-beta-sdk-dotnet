@@ -237,7 +237,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for Operations.
-        /// 
+        /// The collection of long running operations for the site.
         /// </summary>
         /// <returns>The <see cref="IRichLongRunningOperationRequestBuilder"/>.</returns>
         public IRichLongRunningOperationRequestBuilder Operations

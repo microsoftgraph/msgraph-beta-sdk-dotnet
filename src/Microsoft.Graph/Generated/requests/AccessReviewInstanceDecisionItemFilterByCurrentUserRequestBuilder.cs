@@ -83,7 +83,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for Insights.
-        /// 
+        /// Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
         /// </summary>
         /// <returns>The <see cref="IGovernanceInsightRequestBuilder"/>.</returns>
         public IGovernanceInsightRequestBuilder Insights

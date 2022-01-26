@@ -92,6 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets organization settings.
+        /// The Cloud PC organization settings for a tenant.
         /// </summary>
         [JsonPropertyName("organizationSettings")]
         public CloudPcOrganizationSettings OrganizationSettings { get; set; }

@@ -120,6 +120,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets insights.
+        /// Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
         /// </summary>
         [JsonPropertyName("insights")]
         public IAccessReviewInstanceDecisionItemInsightsCollectionPage Insights { get; set; }

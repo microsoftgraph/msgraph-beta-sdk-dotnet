@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         ITenantAppManagementPolicyRequestBuilder DefaultAppManagementPolicy { get; }
 
         /// <summary>
+        /// Gets the request builder for ExternalIdentitiesPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IExternalIdentitiesPolicyRequestBuilder"/>.</returns>
+        IExternalIdentitiesPolicyRequestBuilder ExternalIdentitiesPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder"/>.</returns>

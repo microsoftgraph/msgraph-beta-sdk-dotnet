@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessReviewHistoryDefinition accessReviewHistoryDefinitionToInitialize)
         {
 
+            if (accessReviewHistoryDefinitionToInitialize != null)
+            {
+                if (accessReviewHistoryDefinitionToInitialize.Instances != null && accessReviewHistoryDefinitionToInitialize.Instances.CurrentPage != null)
+                {
+                    accessReviewHistoryDefinitionToInitialize.Instances.InitializeNextPageRequest(this.Client, accessReviewHistoryDefinitionToInitialize.InstancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    accessReviewHistoryDefinitionToInitialize.Instances.AdditionalData = accessReviewHistoryDefinitionToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

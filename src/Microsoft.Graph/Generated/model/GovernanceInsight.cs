@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets insight created date time.
+        /// Indicates when the insight was created.
         /// </summary>
         [JsonPropertyName("insightCreatedDateTime")]
         public DateTimeOffset? InsightCreatedDateTime { get; set; }

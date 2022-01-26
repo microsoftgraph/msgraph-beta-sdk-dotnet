@@ -30,24 +30,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets error.
+        /// Error due to which the operation failed.
         /// </summary>
         [JsonPropertyName("error")]
         public PublicError Error { get; set; }
     
         /// <summary>
         /// Gets or sets percentage complete.
+        /// A value between 0 and 100 that indicates the progress of the operation.
         /// </summary>
         [JsonPropertyName("percentageComplete")]
         public Int32? PercentageComplete { get; set; }
     
         /// <summary>
         /// Gets or sets resource id.
+        /// A unique identifier for the result.
         /// </summary>
         [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Type of the operation.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

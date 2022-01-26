@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ExternalIdentitiesPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IExternalIdentitiesPolicyRequestBuilder"/>.</returns>
+        public IExternalIdentitiesPolicyRequestBuilder ExternalIdentitiesPolicy
+        {
+            get
+            {
+                return new ExternalIdentitiesPolicyRequestBuilder(this.AppendSegmentToRequestUrl("externalIdentitiesPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder"/>.</returns>

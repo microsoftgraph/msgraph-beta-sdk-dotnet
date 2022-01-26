@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IAccessReviewHistoryDefinitionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Instances.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewHistoryDefinitionInstancesCollectionRequestBuilder"/>.</returns>
+        IAccessReviewHistoryDefinitionInstancesCollectionRequestBuilder Instances { get; }
+    
+        /// <summary>
         /// Gets the request builder for AccessReviewHistoryDefinitionGenerateDownloadUri.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder"/>.</returns>

@@ -50,14 +50,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource id.
-        /// Required. The id of the resource which the role assignment request is associated with.
+        /// Required. The unique identifier of the Azure resource that is associated with the role assignment request. Azure resources can include subscriptions, resource groups, virtual machines, and SQL databases.
         /// </summary>
         [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
     
         /// <summary>
         /// Gets or sets role definition id.
-        /// Required. The id of the role definition which the role assignment request is associated with.
+        /// Required. The identifier of the Azure role definition that the role assignment request is associated with.
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subject id.
-        /// Required. The id of the subject which the role assignment request is associated with.
+        /// Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
         /// </summary>
         [JsonPropertyName("subjectId")]
         public string SubjectId { get; set; }

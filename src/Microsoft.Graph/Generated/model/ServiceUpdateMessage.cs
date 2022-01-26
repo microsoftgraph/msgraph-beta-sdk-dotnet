@@ -38,6 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attachments archive.
+        /// The zip file of all attachments for a message.
         /// </summary>
         [JsonPropertyName("attachmentsArchive")]
         public Stream AttachmentsArchive { get; set; }
@@ -58,6 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets has attachments.
+        /// Indicates whether the message has any attachment.
         /// </summary>
         [JsonPropertyName("hasAttachments")]
         public bool? HasAttachments { get; set; }
@@ -85,20 +87,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tags.
-        /// A collection of tags for the service message.
+        /// A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
     
         /// <summary>
         /// Gets or sets view point.
-        /// Represents user view points data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
+        /// Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
         /// </summary>
         [JsonPropertyName("viewPoint")]
         public ServiceUpdateMessageViewpoint ViewPoint { get; set; }
     
         /// <summary>
         /// Gets or sets attachments.
+        /// A collection of serviceAnnouncementAttachments.
         /// </summary>
         [JsonPropertyName("attachments")]
         public IServiceUpdateMessageAttachmentsCollectionPage Attachments { get; set; }

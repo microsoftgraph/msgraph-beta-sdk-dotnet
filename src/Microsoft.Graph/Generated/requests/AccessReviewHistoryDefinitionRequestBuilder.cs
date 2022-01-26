@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Instances.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewHistoryDefinitionInstancesCollectionRequestBuilder"/>.</returns>
+        public IAccessReviewHistoryDefinitionInstancesCollectionRequestBuilder Instances
+        {
+            get
+            {
+                return new AccessReviewHistoryDefinitionInstancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("instances"), this.Client);
+            }
+        }
+    
+        /// <summary>
         /// Gets the request builder for AccessReviewHistoryDefinitionGenerateDownloadUri.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder"/>.</returns>

@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets detail.
+        /// The human-readable details of the conditional access session management policy applied to the sign-in.
         /// </summary>
         [JsonPropertyName("detail")]
         public string Detail { get; set; }
     
         /// <summary>
         /// Gets or sets expirationRequirement.
+        /// If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("expirationRequirement")]
         public ExpirationRequirement? ExpirationRequirement { get; set; }
