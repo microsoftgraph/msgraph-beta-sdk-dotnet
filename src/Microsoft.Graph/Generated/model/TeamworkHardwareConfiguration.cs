@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets processorModel.
+        /// The CPU model on the device.
         /// </summary>
         [JsonPropertyName("processorModel")]
         public string ProcessorModel { get; set; }

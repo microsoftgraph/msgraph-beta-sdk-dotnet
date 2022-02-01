@@ -38,6 +38,12 @@ namespace Microsoft.Graph.ManagedTenants
         IManagedTenantAggregatedPolicyCompliancesCollectionRequestBuilder AggregatedPolicyCompliances { get; }
 
         /// <summary>
+        /// Gets the request builder for AuditEvents.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantAuditEventsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantAuditEventsCollectionRequestBuilder AuditEvents { get; }
+
+        /// <summary>
         /// Gets the request builder for CloudPcConnections.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantCloudPcConnectionsCollectionRequestBuilder"/>.</returns>

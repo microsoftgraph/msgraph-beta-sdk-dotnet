@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ContactMergeSuggestions.
+        /// </summary>
+        /// <returns>The <see cref="IContactMergeSuggestionsRequestBuilder"/>.</returns>
+        public IContactMergeSuggestionsRequestBuilder ContactMergeSuggestions
+        {
+            get
+            {
+                return new ContactMergeSuggestionsRequestBuilder(this.AppendSegmentToRequestUrl("contactMergeSuggestions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RegionalAndLanguageSettings.
         /// </summary>
         /// <returns>The <see cref="IRegionalAndLanguageSettingsRequestBuilder"/>.</returns>

@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets configuredDisplays.
+        /// The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("configuredDisplays")]
         public IEnumerable<TeamworkConfiguredPeripheral> ConfiguredDisplays { get; set; }
     
         /// <summary>
         /// Gets or sets displayCount.
+        /// Total number of connected displays, including the inbuilt display. Applicable only for Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("displayCount")]
         public Int32? DisplayCount { get; set; }
     
         /// <summary>
         /// Gets or sets inBuiltDisplayScreenConfiguration.
+        /// Configuration for the inbuilt display. Not applicable for Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("inBuiltDisplayScreenConfiguration")]
         public TeamworkDisplayScreenConfiguration InBuiltDisplayScreenConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets isContentDuplicationAllowed.
+        /// True if content duplication is allowed. Applicable only for Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("isContentDuplicationAllowed")]
         public bool? IsContentDuplicationAllowed { get; set; }
     
         /// <summary>
         /// Gets or sets isDualDisplayModeEnabled.
+        /// True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("isDualDisplayModeEnabled")]
         public bool? IsDualDisplayModeEnabled { get; set; }

@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets macAddresses.
+        /// MAC address.
         /// </summary>
         [JsonPropertyName("macAddresses")]
         public IEnumerable<string> MacAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
+        /// Device manufacturer.
         /// </summary>
         [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
+        /// Devie model.
         /// </summary>
         [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets serialNumber.
+        /// Device serial number.
         /// </summary>
         [JsonPropertyName("serialNumber")]
         public string SerialNumber { get; set; }
     
         /// <summary>
         /// Gets or sets uniqueId.
+        /// The unique identifier for the device.
         /// </summary>
         [JsonPropertyName("uniqueId")]
         public string UniqueId { get; set; }

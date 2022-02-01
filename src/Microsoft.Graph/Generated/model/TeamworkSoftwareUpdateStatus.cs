@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets availableVersion.
+        /// The available software version to update.
         /// </summary>
         [JsonPropertyName("availableVersion")]
         public string AvailableVersion { get; set; }
     
         /// <summary>
         /// Gets or sets currentVersion.
+        /// The current software version.
         /// </summary>
         [JsonPropertyName("currentVersion")]
         public string CurrentVersion { get; set; }
     
         /// <summary>
         /// Gets or sets softwareFreshness.
+        /// The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("softwareFreshness")]
         public TeamworkSoftwareFreshness? SoftwareFreshness { get; set; }

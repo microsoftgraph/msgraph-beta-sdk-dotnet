@@ -36,6 +36,18 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="INoncustodialDataSourceRequestBuilder"/>.</returns>
         INoncustodialDataSourceRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for NoncustodialDataSourceApplyHold.
+        /// </summary>
+        /// <returns>The <see cref="INoncustodialDataSourceApplyHoldRequestBuilder"/>.</returns>
+        INoncustodialDataSourceApplyHoldRequestBuilder ApplyHold(
+            IEnumerable<string> ids = null);
+
+        /// <summary>
+        /// Gets the request builder for NoncustodialDataSourceRemoveHold.
+        /// </summary>
+        /// <returns>The <see cref="INoncustodialDataSourceRemoveHoldRequestBuilder"/>.</returns>
+        INoncustodialDataSourceRemoveHoldRequestBuilder RemoveHold(
+            IEnumerable<string> ids = null);
     }
 }

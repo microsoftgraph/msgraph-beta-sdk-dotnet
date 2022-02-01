@@ -30,9 +30,9 @@ namespace Microsoft.Graph
         Draft = 1,
 	
         /// <summary>
-        /// In Progress
+        /// Running
         /// </summary>
-        InProgress = 2,
+        Running = 2,
 	
         /// <summary>
         /// Scheduled
@@ -40,44 +40,29 @@ namespace Microsoft.Graph
         Scheduled = 3,
 	
         /// <summary>
-        /// Completed
+        /// Succeeded
         /// </summary>
-        Completed = 4,
-	
-        /// <summary>
-        /// Partially Completed
-        /// </summary>
-        PartiallyCompleted = 5,
+        Succeeded = 4,
 	
         /// <summary>
         /// Failed
         /// </summary>
-        Failed = 6,
+        Failed = 5,
 	
         /// <summary>
         /// Cancelled
         /// </summary>
-        Cancelled = 7,
+        Cancelled = 6,
 	
         /// <summary>
         /// Excluded
         /// </summary>
-        Excluded = 8,
-	
-        /// <summary>
-        /// Deleted
-        /// </summary>
-        Deleted = 9,
-	
-        /// <summary>
-        /// Included
-        /// </summary>
-        Included = 10,
+        Excluded = 7,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 11,
+        UnknownFutureValue = 8,
 	
     }
 }

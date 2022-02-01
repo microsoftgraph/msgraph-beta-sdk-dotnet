@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets dateFormat.
+        /// The date format for the device.
         /// </summary>
         [JsonPropertyName("dateFormat")]
         public string DateFormat { get; set; }
     
         /// <summary>
         /// Gets or sets officeHoursEndTime.
+        /// The time of the day when the device is turned off.
         /// </summary>
         [JsonPropertyName("officeHoursEndTime")]
         public TimeOfDay OfficeHoursEndTime { get; set; }
     
         /// <summary>
         /// Gets or sets officeHoursStartTime.
+        /// The time of the day when the device is turned on.
         /// </summary>
         [JsonPropertyName("officeHoursStartTime")]
         public TimeOfDay OfficeHoursStartTime { get; set; }
     
         /// <summary>
         /// Gets or sets timeFormat.
+        /// The time format for the device.
         /// </summary>
         [JsonPropertyName("timeFormat")]
         public string TimeFormat { get; set; }
     
         /// <summary>
         /// Gets or sets timeZone.
+        /// The time zone to which the office hours apply.
         /// </summary>
         [JsonPropertyName("timeZone")]
         public string TimeZone { get; set; }

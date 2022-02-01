@@ -56,10 +56,22 @@ namespace Microsoft.Graph.Ediscovery
         ICustodianActivateRequestBuilder Activate();
 
         /// <summary>
+        /// Gets the request builder for CustodianApplyHold.
+        /// </summary>
+        /// <returns>The <see cref="ICustodianApplyHoldRequestBuilder"/>.</returns>
+        ICustodianApplyHoldRequestBuilder ApplyHold();
+
+        /// <summary>
         /// Gets the request builder for CustodianRelease.
         /// </summary>
         /// <returns>The <see cref="ICustodianReleaseRequestBuilder"/>.</returns>
         ICustodianReleaseRequestBuilder Release();
+
+        /// <summary>
+        /// Gets the request builder for CustodianRemoveHold.
+        /// </summary>
+        /// <returns>The <see cref="ICustodianRemoveHoldRequestBuilder"/>.</returns>
+        ICustodianRemoveHoldRequestBuilder RemoveHold();
 
         /// <summary>
         /// Gets the request builder for CustodianUpdateIndex.

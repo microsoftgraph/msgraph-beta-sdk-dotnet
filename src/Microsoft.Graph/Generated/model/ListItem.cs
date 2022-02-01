@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public ContentTypeInfo ContentType { get; set; }
     
         /// <summary>
+        /// Gets or sets deleted.
+        /// </summary>
+        [JsonPropertyName("deleted")]
+        public Deleted Deleted { get; set; }
+    
+        /// <summary>
         /// Gets or sets sharepoint ids.
         /// Returns identifiers useful for SharePoint REST compatibility. Read-only.
         /// </summary>

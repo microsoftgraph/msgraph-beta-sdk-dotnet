@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isContentCameraInverted.
+        /// True if the content camera is inverted.
         /// </summary>
         [JsonPropertyName("isContentCameraInverted")]
         public bool? IsContentCameraInverted { get; set; }
     
         /// <summary>
         /// Gets or sets isContentCameraOptional.
+        /// True if the content camera is optional.
         /// </summary>
         [JsonPropertyName("isContentCameraOptional")]
         public bool? IsContentCameraOptional { get; set; }
     
         /// <summary>
         /// Gets or sets isContentEnhancementEnabled.
+        /// True if the content enhancement is enabled.
         /// </summary>
         [JsonPropertyName("isContentEnhancementEnabled")]
         public bool? IsContentEnhancementEnabled { get; set; }

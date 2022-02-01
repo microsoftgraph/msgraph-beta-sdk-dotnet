@@ -98,6 +98,17 @@ namespace Microsoft.Graph.Ediscovery
         }
 
         /// <summary>
+        /// Gets the request builder for CustodianApplyHold.
+        /// </summary>
+        /// <returns>The <see cref="ICustodianApplyHoldRequestBuilder"/>.</returns>
+        public ICustodianApplyHoldRequestBuilder ApplyHold()
+        {
+            return new CustodianApplyHoldRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.applyHold"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for CustodianRelease.
         /// </summary>
         /// <returns>The <see cref="ICustodianReleaseRequestBuilder"/>.</returns>
@@ -105,6 +116,17 @@ namespace Microsoft.Graph.Ediscovery
         {
             return new CustodianReleaseRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.release"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CustodianRemoveHold.
+        /// </summary>
+        /// <returns>The <see cref="ICustodianRemoveHoldRequestBuilder"/>.</returns>
+        public ICustodianRemoveHoldRequestBuilder RemoveHold()
+        {
+            return new CustodianRemoveHoldRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.removeHold"),
                 this.Client);
         }
 

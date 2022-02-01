@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentCameraConfiguration.
+        /// The configuration for the content camera.
         /// </summary>
         [JsonPropertyName("contentCameraConfiguration")]
         public TeamworkContentCameraConfiguration ContentCameraConfiguration { get; set; }

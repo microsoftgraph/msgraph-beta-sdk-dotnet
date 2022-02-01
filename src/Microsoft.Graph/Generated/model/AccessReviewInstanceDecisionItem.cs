@@ -77,6 +77,12 @@ namespace Microsoft.Graph
         public string PrincipalLink { get; set; }
     
         /// <summary>
+        /// Gets or sets principal resource membership.
+        /// </summary>
+        [JsonPropertyName("principalResourceMembership")]
+        public DecisionItemPrincipalResourceMembership PrincipalResourceMembership { get; set; }
+    
+        /// <summary>
         /// Gets or sets recommendation.
         /// A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
         /// </summary>

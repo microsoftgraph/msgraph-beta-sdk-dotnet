@@ -36,6 +36,18 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="ICustodianRequestBuilder"/>.</returns>
         ICustodianRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for CustodianApplyHold.
+        /// </summary>
+        /// <returns>The <see cref="ICustodianApplyHoldRequestBuilder"/>.</returns>
+        ICustodianApplyHoldRequestBuilder ApplyHold(
+            IEnumerable<string> ids = null);
+
+        /// <summary>
+        /// Gets the request builder for CustodianRemoveHold.
+        /// </summary>
+        /// <returns>The <see cref="ICustodianRemoveHoldRequestBuilder"/>.</returns>
+        ICustodianRemoveHoldRequestBuilder RemoveHold(
+            IEnumerable<string> ids = null);
     }
 }

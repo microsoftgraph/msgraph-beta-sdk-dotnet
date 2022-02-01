@@ -35,6 +35,19 @@ namespace Microsoft.Graph.ManagedTenants
         public string AggregatedPolicyCompliancesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets audit events.
+        /// </summary>
+        [JsonPropertyName("auditEvents")]
+        public IManagedTenantAuditEventsCollectionPage AuditEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets auditEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("auditEvents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AuditEventsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets cloud pc connections.
         /// The collection of cloud PC connections across managed tenants.
         /// </summary>

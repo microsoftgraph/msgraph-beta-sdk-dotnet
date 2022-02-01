@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets adminAgentSoftwareVersion.
+        /// The software version for the admin agent running on the device.
         /// </summary>
         [JsonPropertyName("adminAgentSoftwareVersion")]
         public string AdminAgentSoftwareVersion { get; set; }
     
         /// <summary>
         /// Gets or sets firmwareSoftwareVersion.
+        /// The software version for the firmware running on the device.
         /// </summary>
         [JsonPropertyName("firmwareSoftwareVersion")]
         public string FirmwareSoftwareVersion { get; set; }
     
         /// <summary>
         /// Gets or sets operatingSystemSoftwareVersion.
+        /// The software version for the operating system on the device.
         /// </summary>
         [JsonPropertyName("operatingSystemSoftwareVersion")]
         public string OperatingSystemSoftwareVersion { get; set; }
     
         /// <summary>
         /// Gets or sets partnerAgentSoftwareVersion.
+        /// The software version for the partner agent running on the device.
         /// </summary>
         [JsonPropertyName("partnerAgentSoftwareVersion")]
         public string PartnerAgentSoftwareVersion { get; set; }
     
         /// <summary>
         /// Gets or sets teamsClientSoftwareVersion.
+        /// The software version for the Teams client running on the device.
         /// </summary>
         [JsonPropertyName("teamsClientSoftwareVersion")]
         public string TeamsClientSoftwareVersion { get; set; }

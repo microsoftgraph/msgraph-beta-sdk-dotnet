@@ -22,12 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets secrets.
+        /// Represents a collection of credentials to access provisioned cloud applications.
         /// </summary>
         [JsonPropertyName("secrets")]
         public IEnumerable<SynchronizationSecretKeyStringValuePair> Secrets { get; set; }
     
         /// <summary>
         /// Gets or sets jobs.
+        /// Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
         /// </summary>
         [JsonPropertyName("jobs")]
         public ISynchronizationJobsCollectionPage Jobs { get; set; }
@@ -41,6 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets templates.
+        /// Pre-configured synchronization settings for a particular application.
         /// </summary>
         [JsonPropertyName("templates")]
         public ISynchronizationTemplatesCollectionPage Templates { get; set; }

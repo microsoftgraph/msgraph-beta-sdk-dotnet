@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets connectionStatus.
+        /// Indicates whether a component/peripheral is connected/disconnected or its state is unknown. The possible values are: unknown, connected, disconnected, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("connectionStatus")]
         public TeamworkConnectionStatus? ConnectionStatus { get; set; }
     
         /// <summary>
         /// Gets or sets lastModifiedDateTime.
+        /// Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }

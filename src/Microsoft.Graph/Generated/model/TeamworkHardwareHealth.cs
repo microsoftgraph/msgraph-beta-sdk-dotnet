@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets computeHealth.
+        /// The system health details for a teamworkDevice.
         /// </summary>
         [JsonPropertyName("computeHealth")]
         public TeamworkPeripheralHealth ComputeHealth { get; set; }
     
         /// <summary>
         /// Gets or sets hdmiIngestHealth.
+        /// The health details about the HDMI ingest of a device.
         /// </summary>
         [JsonPropertyName("hdmiIngestHealth")]
         public TeamworkPeripheralHealth HdmiIngestHealth { get; set; }

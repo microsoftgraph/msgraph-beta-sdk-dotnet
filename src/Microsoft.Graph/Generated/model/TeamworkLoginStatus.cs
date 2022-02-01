@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets exchangeConnection.
+        /// Information about the Exchange connection.
         /// </summary>
         [JsonPropertyName("exchangeConnection")]
         public TeamworkConnection ExchangeConnection { get; set; }
     
         /// <summary>
         /// Gets or sets skypeConnection.
+        /// Information about the Skype for Business connection.
         /// </summary>
         [JsonPropertyName("skypeConnection")]
         public TeamworkConnection SkypeConnection { get; set; }
     
         /// <summary>
         /// Gets or sets teamsConnection.
+        /// Information about the Teams connection.
         /// </summary>
         [JsonPropertyName("teamsConnection")]
         public TeamworkConnection TeamsConnection { get; set; }

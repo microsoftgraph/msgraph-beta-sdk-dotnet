@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets health status.
-        /// The overall battery health status of the device.
+        /// The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
         /// </summary>
         [JsonPropertyName("healthStatus")]
         public string HealthStatus { get; set; }

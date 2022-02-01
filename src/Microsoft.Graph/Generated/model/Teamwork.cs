@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets workforce integrations.
+        /// A workforce integration with shifts.
         /// </summary>
         [JsonPropertyName("workforceIntegrations")]
         public ITeamworkWorkforceIntegrationsCollectionPage WorkforceIntegrations { get; set; }
@@ -35,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets devices.
+        /// The Teams devices provisioned for the tenant.
         /// </summary>
         [JsonPropertyName("devices")]
         public ITeamworkDevicesCollectionPage Devices { get; set; }

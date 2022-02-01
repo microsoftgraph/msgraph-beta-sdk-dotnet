@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets disable udpconnections.
-        /// When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
+        /// When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
         /// </summary>
         [JsonPropertyName("disableUDPConnections")]
         public bool? DisableUDPConnections { get; set; }

@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isMicrophoneOptional.
+        /// True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
         /// </summary>
         [JsonPropertyName("isMicrophoneOptional")]
         public bool? IsMicrophoneOptional { get; set; }

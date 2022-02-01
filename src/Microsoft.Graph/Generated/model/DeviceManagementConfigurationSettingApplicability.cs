@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platform.
-        /// Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10.
+        /// Platform setting can be applied on. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("platform")]
         public DeviceManagementConfigurationPlatforms? Platform { get; set; }

@@ -38,10 +38,22 @@ namespace Microsoft.Graph.Ediscovery
         IDataSourceRequestBuilder DataSource { get; }
     
         /// <summary>
+        /// Gets the request builder for NoncustodialDataSourceApplyHold.
+        /// </summary>
+        /// <returns>The <see cref="INoncustodialDataSourceApplyHoldRequestBuilder"/>.</returns>
+        INoncustodialDataSourceApplyHoldRequestBuilder ApplyHold();
+
+        /// <summary>
         /// Gets the request builder for NoncustodialDataSourceRelease.
         /// </summary>
         /// <returns>The <see cref="INoncustodialDataSourceReleaseRequestBuilder"/>.</returns>
         INoncustodialDataSourceReleaseRequestBuilder Release();
+
+        /// <summary>
+        /// Gets the request builder for NoncustodialDataSourceRemoveHold.
+        /// </summary>
+        /// <returns>The <see cref="INoncustodialDataSourceRemoveHoldRequestBuilder"/>.</returns>
+        INoncustodialDataSourceRemoveHoldRequestBuilder RemoveHold();
 
         /// <summary>
         /// Gets the request builder for NoncustodialDataSourceUpdateIndex.

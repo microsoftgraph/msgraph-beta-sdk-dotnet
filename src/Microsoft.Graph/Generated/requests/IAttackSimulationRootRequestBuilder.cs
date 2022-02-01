@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IAttackSimulationRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for SimulationAutomations.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootSimulationAutomationsCollectionRequestBuilder"/>.</returns>
+        IAttackSimulationRootSimulationAutomationsCollectionRequestBuilder SimulationAutomations { get; }
+
+        /// <summary>
         /// Gets the request builder for Simulations.
         /// </summary>
         /// <returns>The <see cref="IAttackSimulationRootSimulationsCollectionRequestBuilder"/>.</returns>

@@ -30,6 +30,19 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets simulation automations.
+        /// </summary>
+        [JsonPropertyName("simulationAutomations")]
+        public IAttackSimulationRootSimulationAutomationsCollectionPage SimulationAutomations { get; set; }
+
+        /// <summary>
+        /// Gets or sets simulationAutomationsNextLink.
+        /// </summary>
+        [JsonPropertyName("simulationAutomations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SimulationAutomationsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets simulations.
         /// Represent attack simulation and training campaign of a tenant.
         /// </summary>

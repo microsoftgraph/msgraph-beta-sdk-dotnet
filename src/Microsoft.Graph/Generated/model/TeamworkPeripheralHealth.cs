@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets connection.
+        /// The connected state and time since the peripheral device was connected.
         /// </summary>
         [JsonPropertyName("connection")]
         public TeamworkConnection Connection { get; set; }
     
         /// <summary>
         /// Gets or sets isOptional.
+        /// True if the peripheral is optional. Used for health computation.
         /// </summary>
         [JsonPropertyName("isOptional")]
         public bool? IsOptional { get; set; }

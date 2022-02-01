@@ -22,30 +22,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets active peripherals.
+        /// The active peripheral devices attached to the device.
         /// </summary>
         [JsonPropertyName("activePeripherals")]
         public TeamworkActivePeripherals ActivePeripherals { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// Identity of the user who created the device activity document.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The UTC date and time when the device activity document was created.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// Identity of the user who last modified the device activity details.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The UTC date and time when the device activity detail was last modified.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
