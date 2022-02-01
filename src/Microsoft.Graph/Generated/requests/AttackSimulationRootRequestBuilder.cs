@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for SimulationAutomations.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootSimulationAutomationsCollectionRequestBuilder"/>.</returns>
+        public IAttackSimulationRootSimulationAutomationsCollectionRequestBuilder SimulationAutomations
+        {
+            get
+            {
+                return new AttackSimulationRootSimulationAutomationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("simulationAutomations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Simulations.
         /// </summary>
         /// <returns>The <see cref="IAttackSimulationRootSimulationsCollectionRequestBuilder"/>.</returns>

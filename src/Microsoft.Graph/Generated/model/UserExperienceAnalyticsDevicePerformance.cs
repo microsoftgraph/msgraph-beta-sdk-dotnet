@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets disk type.
-        /// The user experience analytics device disk type. Possible values are: unkown, hdd, ssd.
+        /// The user experience analytics device disk type. Possible values are: hdd, ssd, unknown.
         /// </summary>
         [JsonPropertyName("diskType")]
         public DiskType? DiskType { get; set; }

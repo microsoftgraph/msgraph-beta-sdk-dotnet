@@ -22,18 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// Display name for the peripheral.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets product id.
+        /// The product ID of the device. Each product from a vendor has its own ID.
         /// </summary>
         [JsonPropertyName("productId")]
         public string ProductId { get; set; }
     
         /// <summary>
         /// Gets or sets vendor id.
+        /// The unique identifier for the vendor of the device. Each vendor has a unique ID.
         /// </summary>
         [JsonPropertyName("vendorId")]
         public string VendorId { get; set; }

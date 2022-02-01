@@ -51,7 +51,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets download uri.
-        /// Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated.
         /// </summary>
         [Obsolete("This property is being deprecated. Use the downloadUri value in the individual report instance instead")]
         [JsonPropertyName("downloadUri")]
@@ -59,7 +58,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fulfilled date time.
-        /// Timestamp when all of the available data for this definition was collected. This will be set after this definition's status is set to done.
         /// </summary>
         [Obsolete("This property is being deprecated. Use the fulfilledDateTime value in the individual report instance instead")]
         [JsonPropertyName("fulfilledDateTime")]
@@ -67,20 +65,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets review history period end date time.
-        /// Timestamp, reviews starting on or after this date will be included in the fetched history data. Required.
+        /// A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
         /// </summary>
         [JsonPropertyName("reviewHistoryPeriodEndDateTime")]
         public DateTimeOffset? ReviewHistoryPeriodEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review history period start date time.
-        /// Timestamp, reviews starting on or before this date will be included in the fetched history data. Required.
+        /// A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
         /// </summary>
         [JsonPropertyName("reviewHistoryPeriodStartDateTime")]
         public DateTimeOffset? ReviewHistoryPeriodStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets schedule settings.
+        /// The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined.
         /// </summary>
         [JsonPropertyName("scheduleSettings")]
         public AccessReviewHistoryScheduleSettings ScheduleSettings { get; set; }
@@ -94,13 +93,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Represents the status of the review history data collection. Possible values are: done, inprogress, error, requested.
+        /// Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public AccessReviewHistoryStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets instances.
+        /// If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.
         /// </summary>
         [JsonPropertyName("instances")]
         public IAccessReviewHistoryDefinitionInstancesCollectionPage Instances { get; set; }

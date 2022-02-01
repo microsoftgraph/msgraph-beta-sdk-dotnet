@@ -44,6 +44,12 @@ namespace Microsoft.Graph.Ediscovery
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets hold status.
+        /// </summary>
+        [JsonPropertyName("holdStatus")]
+        public DataSourceHoldStatus? HoldStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// Last modified date and time of the dataSourceContainer.
         /// </summary>

@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets file name.
-        /// The file name of the uploaded ADML file.
+        /// The file name of the ADMX file without the path. For example: edge.admx Inherited from groupPolicyDefinitionFile
         /// </summary>
         [JsonPropertyName("fileName")]
         public string FileName { get; set; }

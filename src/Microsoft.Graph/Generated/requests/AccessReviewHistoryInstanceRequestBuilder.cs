@@ -50,5 +50,16 @@ namespace Microsoft.Graph
             return new AccessReviewHistoryInstanceRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for AccessReviewHistoryInstanceGenerateDownloadUri.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewHistoryInstanceGenerateDownloadUriRequestBuilder"/>.</returns>
+        public IAccessReviewHistoryInstanceGenerateDownloadUriRequestBuilder GenerateDownloadUri()
+        {
+            return new AccessReviewHistoryInstanceGenerateDownloadUriRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.generateDownloadUri"),
+                this.Client);
+        }
+    
     }
 }

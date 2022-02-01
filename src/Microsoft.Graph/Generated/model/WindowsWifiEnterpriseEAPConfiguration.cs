@@ -80,7 +80,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets eap type.
-        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast.
+        /// Extensible Authentication Protocol (EAP). Indicates the type of EAP protocol set on the Wi-Fi endpoint (router). Possible values are: eapTls, leap, eapSim, eapTtls, peap, eapFast, teap.
         /// </summary>
         [JsonPropertyName("eapType")]
         public EapType? EapType { get; set; }

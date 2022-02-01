@@ -16,9 +16,9 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The interface IAccessReviewHistoryDefinitionGenerateDownloadUriRequest.
+    /// The interface IAccessReviewHistoryInstanceGenerateDownloadUriRequest.
     /// </summary>
-    public partial interface IAccessReviewHistoryDefinitionGenerateDownloadUriRequest : IBaseRequest
+    public partial interface IAccessReviewHistoryInstanceGenerateDownloadUriRequest : IBaseRequest
     {
 
 
@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        System.Threading.Tasks.Task<AccessReviewHistoryDefinition> PostAsync(
+        System.Threading.Tasks.Task<AccessReviewHistoryInstance> PostAsync(
             CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> PostResponseAsync(CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryInstance>> PostResponseAsync(CancellationToken cancellationToken = default);
 
 
 
@@ -44,13 +44,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        IAccessReviewHistoryDefinitionGenerateDownloadUriRequest Expand(string value);
+        IAccessReviewHistoryInstanceGenerateDownloadUriRequest Expand(string value);
 
         /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        IAccessReviewHistoryDefinitionGenerateDownloadUriRequest Select(string value);
+        IAccessReviewHistoryInstanceGenerateDownloadUriRequest Select(string value);
     }
 }

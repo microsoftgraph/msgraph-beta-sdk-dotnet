@@ -50,9 +50,14 @@ namespace Microsoft.Graph.Ediscovery
         AddToReviewSet = 5,
 	
         /// <summary>
+        /// Hold Update
+        /// </summary>
+        HoldUpdate = 6,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 6,
+        UnknownFutureValue = 7,
 	
     }
 }

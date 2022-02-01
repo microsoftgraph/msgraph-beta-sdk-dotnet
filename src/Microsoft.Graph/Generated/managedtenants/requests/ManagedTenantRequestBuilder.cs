@@ -63,6 +63,18 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
+        /// Gets the request builder for AuditEvents.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantAuditEventsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantAuditEventsCollectionRequestBuilder AuditEvents
+        {
+            get
+            {
+                return new ManagedTenantAuditEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("auditEvents"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPcConnections.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantCloudPcConnectionsCollectionRequestBuilder"/>.</returns>

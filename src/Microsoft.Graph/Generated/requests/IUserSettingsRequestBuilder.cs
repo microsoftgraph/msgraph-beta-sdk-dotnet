@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IUserInsightsSettingsRequestBuilder ItemInsights { get; }
 
         /// <summary>
+        /// Gets the request builder for ContactMergeSuggestions.
+        /// </summary>
+        /// <returns>The <see cref="IContactMergeSuggestionsRequestBuilder"/>.</returns>
+        IContactMergeSuggestionsRequestBuilder ContactMergeSuggestions { get; }
+
+        /// <summary>
         /// Gets the request builder for RegionalAndLanguageSettings.
         /// </summary>
         /// <returns>The <see cref="IRegionalAndLanguageSettingsRequestBuilder"/>.</returns>

@@ -22,54 +22,63 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connection.
+        /// Information about the connection status.
         /// </summary>
         [JsonPropertyName("connection")]
         public TeamworkConnection Connection { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// Identity of the user who created the device health document.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The UTC date and time when the device health document was created.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets hardware health.
+        /// Health details about the device hardware.
         /// </summary>
         [JsonPropertyName("hardwareHealth")]
         public TeamworkHardwareHealth HardwareHealth { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// Identity of the user who last modified the device health details.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The UTC date and time when the device health detail was last modified.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets login status.
+        /// The login status of Microsoft Teams, Skype for Business, and Exchange.
         /// </summary>
         [JsonPropertyName("loginStatus")]
         public TeamworkLoginStatus LoginStatus { get; set; }
     
         /// <summary>
         /// Gets or sets peripherals health.
+        /// Health details about all peripherals (for example, speaker and microphone) attached to a device.
         /// </summary>
         [JsonPropertyName("peripheralsHealth")]
         public TeamworkPeripheralsHealth PeripheralsHealth { get; set; }
     
         /// <summary>
         /// Gets or sets software update health.
+        /// Software updates available for the device.
         /// </summary>
         [JsonPropertyName("softwareUpdateHealth")]
         public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth { get; set; }

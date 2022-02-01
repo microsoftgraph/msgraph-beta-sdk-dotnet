@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         public UserInsightsSettings ItemInsights { get; set; }
     
         /// <summary>
+        /// Gets or sets contact merge suggestions.
+        /// </summary>
+        [JsonPropertyName("contactMergeSuggestions")]
+        public ContactMergeSuggestions ContactMergeSuggestions { get; set; }
+    
+        /// <summary>
         /// Gets or sets regional and language settings.
         /// The user's preferences for languages, regional locale and date/time formatting.
         /// </summary>

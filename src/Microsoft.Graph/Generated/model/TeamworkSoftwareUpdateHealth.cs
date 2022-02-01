@@ -23,36 +23,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets adminAgentSoftwareUpdateStatus.
+        /// The software update available for the admin agent.
         /// </summary>
         [JsonPropertyName("adminAgentSoftwareUpdateStatus")]
         public TeamworkSoftwareUpdateStatus AdminAgentSoftwareUpdateStatus { get; set; }
     
         /// <summary>
         /// Gets or sets companyPortalSoftwareUpdateStatus.
+        /// The software update available for the company portal.
         /// </summary>
         [JsonPropertyName("companyPortalSoftwareUpdateStatus")]
         public TeamworkSoftwareUpdateStatus CompanyPortalSoftwareUpdateStatus { get; set; }
     
         /// <summary>
         /// Gets or sets firmwareSoftwareUpdateStatus.
+        /// The software update available for the firmware.
         /// </summary>
         [JsonPropertyName("firmwareSoftwareUpdateStatus")]
         public TeamworkSoftwareUpdateStatus FirmwareSoftwareUpdateStatus { get; set; }
     
         /// <summary>
         /// Gets or sets operatingSystemSoftwareUpdateStatus.
+        /// The software update available for the operating system.
         /// </summary>
         [JsonPropertyName("operatingSystemSoftwareUpdateStatus")]
         public TeamworkSoftwareUpdateStatus OperatingSystemSoftwareUpdateStatus { get; set; }
     
         /// <summary>
         /// Gets or sets partnerAgentSoftwareUpdateStatus.
+        /// The software update available for the partner agent.
         /// </summary>
         [JsonPropertyName("partnerAgentSoftwareUpdateStatus")]
         public TeamworkSoftwareUpdateStatus PartnerAgentSoftwareUpdateStatus { get; set; }
     
         /// <summary>
         /// Gets or sets teamsClientSoftwareUpdateStatus.
+        /// The software update available for the Teams client.
         /// </summary>
         [JsonPropertyName("teamsClientSoftwareUpdateStatus")]
         public TeamworkSoftwareUpdateStatus TeamsClientSoftwareUpdateStatus { get; set; }

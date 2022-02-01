@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isCommunicationSpeakerOptional.
+        /// True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
         /// </summary>
         [JsonPropertyName("isCommunicationSpeakerOptional")]
         public bool? IsCommunicationSpeakerOptional { get; set; }
     
         /// <summary>
         /// Gets or sets isSpeakerOptional.
+        /// True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
         /// </summary>
         [JsonPropertyName("isSpeakerOptional")]
         public bool? IsSpeakerOptional { get; set; }

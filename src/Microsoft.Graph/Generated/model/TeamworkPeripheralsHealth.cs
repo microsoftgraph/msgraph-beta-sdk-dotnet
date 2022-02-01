@@ -23,36 +23,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets communicationSpeakerHealth.
+        /// The health details about the communication speaker.
         /// </summary>
         [JsonPropertyName("communicationSpeakerHealth")]
         public TeamworkPeripheralHealth CommunicationSpeakerHealth { get; set; }
     
         /// <summary>
         /// Gets or sets contentCameraHealth.
+        /// The health details about the content camera.
         /// </summary>
         [JsonPropertyName("contentCameraHealth")]
         public TeamworkPeripheralHealth ContentCameraHealth { get; set; }
     
         /// <summary>
         /// Gets or sets displayHealthCollection.
+        /// The health details about displays.
         /// </summary>
         [JsonPropertyName("displayHealthCollection")]
         public IEnumerable<TeamworkPeripheralHealth> DisplayHealthCollection { get; set; }
     
         /// <summary>
         /// Gets or sets microphoneHealth.
+        /// The health details about the microphone.
         /// </summary>
         [JsonPropertyName("microphoneHealth")]
         public TeamworkPeripheralHealth MicrophoneHealth { get; set; }
     
         /// <summary>
         /// Gets or sets roomCameraHealth.
+        /// The health details about the room camera.
         /// </summary>
         [JsonPropertyName("roomCameraHealth")]
         public TeamworkPeripheralHealth RoomCameraHealth { get; set; }
     
         /// <summary>
         /// Gets or sets speakerHealth.
+        /// The health details about the speaker.
         /// </summary>
         [JsonPropertyName("speakerHealth")]
         public TeamworkPeripheralHealth SpeakerHealth { get; set; }

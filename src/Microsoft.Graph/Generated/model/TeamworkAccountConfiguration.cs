@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets onPremisesCalendarSyncConfiguration.
+        /// The account used to sync the calendar.
         /// </summary>
         [JsonPropertyName("onPremisesCalendarSyncConfiguration")]
         public TeamworkOnPremisesCalendarSyncConfiguration OnPremisesCalendarSyncConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets supportedClient.
+        /// The supported client for Teams Rooms devices. The possible values are: unknown, skypeDefaultAndTeams, teamsDefaultAndSkype, skypeOnly, teamsOnly, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("supportedClient")]
         public TeamworkSupportedClient? SupportedClient { get; set; }

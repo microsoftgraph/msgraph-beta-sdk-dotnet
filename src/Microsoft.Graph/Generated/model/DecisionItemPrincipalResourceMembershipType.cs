@@ -13,31 +13,22 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum TrainingContentPreference.
+    /// The enum DecisionItemPrincipalResourceMembershipType.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum TrainingContentPreference
+	[System.Flags]
+    public enum DecisionItemPrincipalResourceMembershipType
     {
     
         /// <summary>
-        /// Unknown
+        /// Direct
         /// </summary>
-        Unknown = 0,
+        Direct = 1,
 	
         /// <summary>
-        /// Microsoft
+        /// Indirect
         /// </summary>
-        Microsoft = 1,
-	
-        /// <summary>
-        /// Custom
-        /// </summary>
-        Custom = 2,
-	
-        /// <summary>
-        /// No Training
-        /// </summary>
-        NoTraining = 3,
+        Indirect = 2,
 	
         /// <summary>
         /// Unknown Future Value

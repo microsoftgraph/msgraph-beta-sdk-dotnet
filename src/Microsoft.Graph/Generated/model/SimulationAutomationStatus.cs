@@ -13,10 +13,10 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum TrainingAssignmentPreference.
+    /// The enum SimulationAutomationStatus.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum TrainingAssignmentPreference
+    public enum SimulationAutomationStatus
     {
     
         /// <summary>
@@ -25,19 +25,29 @@ namespace Microsoft.Graph
         Unknown = 0,
 	
         /// <summary>
-        /// Auto
+        /// Draft
         /// </summary>
-        Auto = 1,
+        Draft = 1,
 	
         /// <summary>
-        /// Manual
+        /// Not Running
         /// </summary>
-        Manual = 2,
+        NotRunning = 2,
+	
+        /// <summary>
+        /// Running
+        /// </summary>
+        Running = 3,
+	
+        /// <summary>
+        /// Completed
+        /// </summary>
+        Completed = 4,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 3,
+        UnknownFutureValue = 5,
 	
     }
 }

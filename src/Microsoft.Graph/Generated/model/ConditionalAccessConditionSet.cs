@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets clientApplications.
+        /// Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
         /// </summary>
         [JsonPropertyName("clientApplications")]
         public ConditionalAccessClientApplications ClientApplications { get; set; }
@@ -85,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets users.
-        /// Users, groups, and roles included in and excluded from the policy. Required.
+        /// Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.
         /// </summary>
         [JsonPropertyName("users")]
         public ConditionalAccessUsers Users { get; set; }

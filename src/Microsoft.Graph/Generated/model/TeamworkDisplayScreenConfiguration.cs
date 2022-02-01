@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets backlightBrightness.
+        /// The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("backlightBrightness")]
         public Int32? BacklightBrightness { get; set; }
     
         /// <summary>
         /// Gets or sets backlightTimeout.
+        /// Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("backlightTimeout")]
         public Duration BacklightTimeout { get; set; }
     
         /// <summary>
         /// Gets or sets isHighContrastEnabled.
+        /// True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("isHighContrastEnabled")]
         public bool? IsHighContrastEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isScreensaverEnabled.
+        /// True if screensaver is enabled. Not applicable for Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("isScreensaverEnabled")]
         public bool? IsScreensaverEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets screensaverTimeout.
+        /// Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
         /// </summary>
         [JsonPropertyName("screensaverTimeout")]
         public Duration ScreensaverTimeout { get; set; }

@@ -60,6 +60,30 @@ namespace Microsoft.Graph.Ediscovery
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for CustodianApplyHold.
+        /// </summary>
+        /// <returns>The <see cref="ICustodianApplyHoldRequestBuilder"/>.</returns>
+        public ICustodianApplyHoldRequestBuilder ApplyHold(
+            IEnumerable<string> ids = null)
+        {
+            return new CustodianApplyHoldRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.applyHold"),
+                this.Client,
+                ids);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CustodianRemoveHold.
+        /// </summary>
+        /// <returns>The <see cref="ICustodianRemoveHoldRequestBuilder"/>.</returns>
+        public ICustodianRemoveHoldRequestBuilder RemoveHold(
+            IEnumerable<string> ids = null)
+        {
+            return new CustodianRemoveHoldRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.removeHold"),
+                this.Client,
+                ids);
+        }
     }
 }

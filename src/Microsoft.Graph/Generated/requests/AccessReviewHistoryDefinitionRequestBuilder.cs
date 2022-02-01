@@ -62,16 +62,5 @@ namespace Microsoft.Graph
             }
         }
     
-        /// <summary>
-        /// Gets the request builder for AccessReviewHistoryDefinitionGenerateDownloadUri.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder"/>.</returns>
-        public IAccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder GenerateDownloadUri()
-        {
-            return new AccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.generateDownloadUri"),
-                this.Client);
-        }
-    
     }
 }

@@ -16,14 +16,14 @@ namespace Microsoft.Graph
     using System.Threading;
 
     /// <summary>
-    /// The type AccessReviewHistoryDefinitionGenerateDownloadUriRequest.
+    /// The type AccessReviewHistoryInstanceGenerateDownloadUriRequest.
     /// </summary>
-    public partial class AccessReviewHistoryDefinitionGenerateDownloadUriRequest : BaseRequest, IAccessReviewHistoryDefinitionGenerateDownloadUriRequest
+    public partial class AccessReviewHistoryInstanceGenerateDownloadUriRequest : BaseRequest, IAccessReviewHistoryInstanceGenerateDownloadUriRequest
     {
         /// <summary>
-        /// Constructs a new AccessReviewHistoryDefinitionGenerateDownloadUriRequest.
+        /// Constructs a new AccessReviewHistoryInstanceGenerateDownloadUriRequest.
         /// </summary>
-        public AccessReviewHistoryDefinitionGenerateDownloadUriRequest(
+        public AccessReviewHistoryInstanceGenerateDownloadUriRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,11 +36,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
-        public System.Threading.Tasks.Task<AccessReviewHistoryDefinition> PostAsync(
+        public System.Threading.Tasks.Task<AccessReviewHistoryInstance> PostAsync(
             CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsync<AccessReviewHistoryDefinition>(null, cancellationToken);
+            return this.SendAsync<AccessReviewHistoryInstance>(null, cancellationToken);
         }
 
         /// <summary>
@@ -48,10 +48,10 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
-        public System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryDefinition>> PostResponseAsync(CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<GraphResponse<AccessReviewHistoryInstance>> PostResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<AccessReviewHistoryDefinition>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<AccessReviewHistoryInstance>(null, cancellationToken);
         }
 
 
@@ -61,7 +61,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IAccessReviewHistoryDefinitionGenerateDownloadUriRequest Expand(string value)
+        public IAccessReviewHistoryInstanceGenerateDownloadUriRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IAccessReviewHistoryDefinitionGenerateDownloadUriRequest Select(string value)
+        public IAccessReviewHistoryInstanceGenerateDownloadUriRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;

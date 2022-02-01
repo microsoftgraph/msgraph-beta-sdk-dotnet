@@ -79,6 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets queryAlterationOptions.
+        /// Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
         /// </summary>
         [JsonPropertyName("queryAlterationOptions")]
         public SearchAlterationOptions QueryAlterationOptions { get; set; }

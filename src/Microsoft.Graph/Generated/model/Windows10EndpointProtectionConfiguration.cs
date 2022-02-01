@@ -1312,7 +1312,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets local security options smart card removal behavior.
-        /// This security setting determines what happens when the smart card for a logged-on user is removed from the smart card reader. Possible values are: lockWorkstation, noAction, forceLogoff, disconnectRemoteDesktopSession.
+        /// This security setting determines what happens when the smart card for a logged-on user is removed from the smart card reader. Possible values are: noAction, lockWorkstation, forceLogoff, disconnectRemoteDesktopSession.
         /// </summary>
         [JsonPropertyName("localSecurityOptionsSmartCardRemovalBehavior")]
         public LocalSecurityOptionsSmartCardRemovalBehaviorType? LocalSecurityOptionsSmartCardRemovalBehavior { get; set; }

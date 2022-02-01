@@ -60,6 +60,28 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for ListItemDelta.
+        /// </summary>
+        /// <returns>The <see cref="IListItemDeltaRequestBuilder"/>.</returns>
+        public IListItemDeltaRequestBuilder Delta()
+        {
+            return new ListItemDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ListItemDelta.
+        /// </summary>
+        /// <returns>The <see cref="IListItemDeltaRequestBuilder"/>.</returns>
+        public IListItemDeltaRequestBuilder Delta(
+            string token = null)
+        {
+            return new ListItemDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client,
+                token);
+        }
     }
 }

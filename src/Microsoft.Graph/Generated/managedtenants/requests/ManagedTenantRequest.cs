@@ -252,6 +252,12 @@ namespace Microsoft.Graph.ManagedTenants
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.AggregatedPolicyCompliances.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
+                if (managedTenantToInitialize.AuditEvents != null && managedTenantToInitialize.AuditEvents.CurrentPage != null)
+                {
+                    managedTenantToInitialize.AuditEvents.InitializeNextPageRequest(this.Client, managedTenantToInitialize.AuditEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.AuditEvents.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
                 if (managedTenantToInitialize.CloudPcConnections != null && managedTenantToInitialize.CloudPcConnections.CurrentPage != null)
                 {
                     managedTenantToInitialize.CloudPcConnections.InitializeNextPageRequest(this.Client, managedTenantToInitialize.CloudPcConnectionsNextLink);

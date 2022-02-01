@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets emailToSendLogsAndFeedback.
+        /// Email address to send logs and feedback.
         /// </summary>
         [JsonPropertyName("emailToSendLogsAndFeedback")]
         public string EmailToSendLogsAndFeedback { get; set; }
     
         /// <summary>
         /// Gets or sets isAutoScreenShareEnabled.
+        /// True if auto screen shared is enabled.
         /// </summary>
         [JsonPropertyName("isAutoScreenShareEnabled")]
         public bool? IsAutoScreenShareEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isBluetoothBeaconingEnabled.
+        /// True if Bluetooth beaconing is enabled.
         /// </summary>
         [JsonPropertyName("isBluetoothBeaconingEnabled")]
         public bool? IsBluetoothBeaconingEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isHideMeetingNamesEnabled.
+        /// True if hiding meeting names is enabled.
         /// </summary>
         [JsonPropertyName("isHideMeetingNamesEnabled")]
         public bool? IsHideMeetingNamesEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets isSendLogsAndFeedbackEnabled.
+        /// True if sending logs and feedback is enabled.
         /// </summary>
         [JsonPropertyName("isSendLogsAndFeedbackEnabled")]
         public bool? IsSendLogsAndFeedbackEnabled { get; set; }

@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Ediscovery
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
+        /// <summary>
+        /// Gets or sets hold status.
+        /// </summary>
+        [JsonPropertyName("holdStatus")]
+        public DataSourceHoldStatus? HoldStatus { get; set; }
+    
     }
 }
 

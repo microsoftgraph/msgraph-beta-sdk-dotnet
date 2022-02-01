@@ -14,20 +14,37 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type AccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder.
+    /// The type ListItemDeltaRequestBuilder.
     /// </summary>
-    public partial class AccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder : BaseActionMethodRequestBuilder<IAccessReviewHistoryDefinitionGenerateDownloadUriRequest>, IAccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder
+    public partial class ListItemDeltaRequestBuilder : BaseFunctionMethodRequestBuilder<IListItemDeltaRequest>, IListItemDeltaRequestBuilder
     {
         /// <summary>
-        /// Constructs a new <see cref="AccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder"/>.
+        /// Constructs a new <see cref="ListItemDeltaRequestBuilder"/>.
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public AccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder(
+        public ListItemDeltaRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
         {
+            this.SetFunctionParameters();
+        }
+
+        /// <summary>
+        /// Constructs a new <see cref="ListItemDeltaRequestBuilder"/>.
+        /// </summary>
+        /// <param name="requestUrl">The URL for the request.</param>
+        /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="token">A token parameter for the OData method call.</param>
+        public ListItemDeltaRequestBuilder(
+            string requestUrl,
+            IBaseClient client,
+            string token)
+            : base(requestUrl, client)
+        {
+            this.SetParameter("token", token, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>
@@ -36,9 +53,9 @@ namespace Microsoft.Graph
         /// <param name="functionUrl">The request URL to </param>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>An instance of a specific request class.</returns>
-        protected override IAccessReviewHistoryDefinitionGenerateDownloadUriRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
+        protected override IListItemDeltaRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
-            var request = new AccessReviewHistoryDefinitionGenerateDownloadUriRequest(functionUrl, this.Client, options);
+            var request = new ListItemDeltaRequest(functionUrl, this.Client, options);
 
             return request;
         }

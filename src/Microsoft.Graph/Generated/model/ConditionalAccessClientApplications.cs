@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets excludeServicePrincipals.
+        /// Service principal IDs excluded from the policy scope.
         /// </summary>
         [JsonPropertyName("excludeServicePrincipals")]
         public IEnumerable<string> ExcludeServicePrincipals { get; set; }
     
         /// <summary>
         /// Gets or sets includeServicePrincipals.
+        /// Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
         /// </summary>
         [JsonPropertyName("includeServicePrincipals")]
         public IEnumerable<string> IncludeServicePrincipals { get; set; }

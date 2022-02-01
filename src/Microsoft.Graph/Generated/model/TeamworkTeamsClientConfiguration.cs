@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accountConfiguration.
+        /// The configuration of the Microsoft Teams client user account for a device.
         /// </summary>
         [JsonPropertyName("accountConfiguration")]
         public TeamworkAccountConfiguration AccountConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets featuresConfiguration.
+        /// The configuration of Microsoft Teams client features for a device.
         /// </summary>
         [JsonPropertyName("featuresConfiguration")]
         public TeamworkFeaturesConfiguration FeaturesConfiguration { get; set; }

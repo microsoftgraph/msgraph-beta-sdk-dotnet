@@ -36,6 +36,17 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IListItemRequestBuilder"/>.</returns>
         IListItemRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for ListItemDelta.
+        /// </summary>
+        /// <returns>The <see cref="IListItemDeltaRequestBuilder"/>.</returns>
+        IListItemDeltaRequestBuilder Delta();
+
+        /// <summary>
+        /// Gets the request builder for ListItemDelta.
+        /// </summary>
+        /// <returns>The <see cref="IListItemDeltaRequestBuilder"/>.</returns>
+        IListItemDeltaRequestBuilder Delta(
+            string token = null);
     }
 }

@@ -23,42 +23,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets download uri.
+        /// Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
         /// </summary>
         [JsonPropertyName("downloadUri")]
         public string DownloadUri { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
+        /// Timestamp when this instance and associated data expires and the history is deleted. Required.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets fulfilled date time.
+        /// Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
         /// </summary>
         [JsonPropertyName("fulfilledDateTime")]
         public DateTimeOffset? FulfilledDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review history period end date time.
+        /// Timestamp, reviews ending on or before this date will be included in the fetched history data.
         /// </summary>
         [JsonPropertyName("reviewHistoryPeriodEndDateTime")]
         public DateTimeOffset? ReviewHistoryPeriodEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets review history period start date time.
+        /// Timestamp, reviews starting on or after this date will be included in the fetched history data.
         /// </summary>
         [JsonPropertyName("reviewHistoryPeriodStartDateTime")]
         public DateTimeOffset? ReviewHistoryPeriodStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets run date time.
+        /// Timestamp when the instance's history data is scheduled to be generated.
         /// </summary>
         [JsonPropertyName("runDateTime")]
         public DateTimeOffset? RunDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance's data by calling generateDownloadUri method.
         /// </summary>
         [JsonPropertyName("status")]
         public AccessReviewHistoryStatus? Status { get; set; }

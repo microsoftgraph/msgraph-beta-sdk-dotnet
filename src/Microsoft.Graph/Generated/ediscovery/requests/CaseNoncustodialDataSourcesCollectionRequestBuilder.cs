@@ -60,6 +60,30 @@ namespace Microsoft.Graph.Ediscovery
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for NoncustodialDataSourceApplyHold.
+        /// </summary>
+        /// <returns>The <see cref="INoncustodialDataSourceApplyHoldRequestBuilder"/>.</returns>
+        public INoncustodialDataSourceApplyHoldRequestBuilder ApplyHold(
+            IEnumerable<string> ids = null)
+        {
+            return new NoncustodialDataSourceApplyHoldRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.applyHold"),
+                this.Client,
+                ids);
+        }
+
+        /// <summary>
+        /// Gets the request builder for NoncustodialDataSourceRemoveHold.
+        /// </summary>
+        /// <returns>The <see cref="INoncustodialDataSourceRemoveHoldRequestBuilder"/>.</returns>
+        public INoncustodialDataSourceRemoveHoldRequestBuilder RemoveHold(
+            IEnumerable<string> ids = null)
+        {
+            return new NoncustodialDataSourceRemoveHoldRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.removeHold"),
+                this.Client,
+                ids);
+        }
     }
 }

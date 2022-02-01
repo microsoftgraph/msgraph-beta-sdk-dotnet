@@ -37,11 +37,5 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IAccessReviewHistoryDefinitionInstancesCollectionRequestBuilder"/>.</returns>
         IAccessReviewHistoryDefinitionInstancesCollectionRequestBuilder Instances { get; }
     
-        /// <summary>
-        /// Gets the request builder for AccessReviewHistoryDefinitionGenerateDownloadUri.
-        /// </summary>
-        /// <returns>The <see cref="IAccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder"/>.</returns>
-        IAccessReviewHistoryDefinitionGenerateDownloadUriRequestBuilder GenerateDownloadUri();
-    
     }
 }
