@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// The interface ISecurityAlerts_v2CollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(InterfaceConverter<SecurityAlerts_v2CollectionPage>))]
-    public interface ISecurityAlerts_v2CollectionPage : ICollectionPage<Alert_v2>
+    public interface ISecurityAlerts_v2CollectionPage : ICollectionPage<Microsoft.Graph.SecurityNamespace.Alert>
     {
         /// <summary>
         /// Gets the next page <see cref="ISecurityAlerts_v2CollectionRequest"/> instance.

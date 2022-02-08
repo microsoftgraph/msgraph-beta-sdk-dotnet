@@ -240,8 +240,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="requestObjectToInitialize">The <see cref="RequestObject"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(RequestObject requestObjectToInitialize)
+        /// <param name="requestToInitialize">The <see cref="RequestObject"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(RequestObject requestToInitialize)
         {
 
         }

@@ -24,16 +24,16 @@ namespace Microsoft.Graph.Ediscovery
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
         /// <param name="sourceCollection">A sourceCollection parameter for the OData method call.</param>
-        /// <param name="additionalData">A additionalData parameter for the OData method call.</param>
+        /// <param name="additionalDataOptions">A additionalDataOptions parameter for the OData method call.</param>
         public ReviewSetAddToReviewSetRequestBuilder(
             string requestUrl,
             Microsoft.Graph.IBaseClient client,
             SourceCollection sourceCollection,
-            AdditionalDataOptions? additionalData)
+            AdditionalDataOptions? additionalDataOptions)
             : base(requestUrl, client)
         {
             this.SetParameter("sourceCollection", sourceCollection, true);
-            this.SetParameter("additionalData", additionalData, true);
+            this.SetParameter("additionalDataOptions", additionalDataOptions, true);
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace Microsoft.Graph.Ediscovery
                 request.RequestBody.SourceCollection = this.GetParameter<SourceCollection>("sourceCollection");
             }
 
-            if (this.HasParameter("additionalData"))
+            if (this.HasParameter("additionalDataOptions"))
             {
-                request.RequestBody.AdditionalData = this.GetParameter<AdditionalDataOptions?>("additionalData");
+                request.RequestBody.AdditionalDataOptions = this.GetParameter<AdditionalDataOptions?>("additionalDataOptions");
             }
 
             return request;

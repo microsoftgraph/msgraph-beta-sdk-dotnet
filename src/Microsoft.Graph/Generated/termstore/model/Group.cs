@@ -23,35 +23,35 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Date and time of group creation. Read-only.
+        /// Date and time of the group creation. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Description giving details on the term usage.
+        /// Description that gives details on the term usage.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Name of group.
+        /// Name of the group.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets parent site id.
-        /// Id of the parent site of this group.
+        /// ID of the parent site of this group.
         /// </summary>
         [JsonPropertyName("parentSiteId")]
         public string ParentSiteId { get; set; }
     
         /// <summary>
         /// Gets or sets scope.
-        /// Returns type of group. Possible values are 'global', 'system' and 'siteCollection'.
+        /// Returns the type of the group. Possible values are global, system, and siteCollection.
         /// </summary>
         [JsonPropertyName("scope")]
         public TermGroupScope? Scope { get; set; }

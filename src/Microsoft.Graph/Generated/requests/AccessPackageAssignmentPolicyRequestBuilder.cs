@@ -73,6 +73,18 @@ namespace Microsoft.Graph
                 return new AccessPackageCatalogRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageCatalog"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for CustomExtensionHandlers.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesRequestBuilder CustomExtensionHandlers
+        {
+            get
+            {
+                return new AccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("customExtensionHandlers"), this.Client);
+            }
+        }
     
     }
 }

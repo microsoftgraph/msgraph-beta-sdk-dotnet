@@ -198,6 +198,13 @@ namespace Microsoft.Graph
         public bool? UpdateCompleteScreenDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets userless shared aad mode enabled.
+        /// Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.
+        /// </summary>
+        [JsonPropertyName("userlessSharedAadModeEnabled")]
+        public bool? UserlessSharedAadModeEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets user session timeout in seconds.
         /// Indicates timeout of temporary session
         /// </summary>

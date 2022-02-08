@@ -131,6 +131,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("accessPackageCatalog")]
         public AccessPackageCatalog AccessPackageCatalog { get; set; }
     
+        /// <summary>
+        /// Gets or sets custom extension handlers.
+        /// </summary>
+        [JsonPropertyName("customExtensionHandlers")]
+        public IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesPage CustomExtensionHandlers { get; set; }
+
+        /// <summary>
+        /// Gets or sets customExtensionHandlersNextLink.
+        /// </summary>
+        [JsonPropertyName("customExtensionHandlers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CustomExtensionHandlersNextLink { get; set; }
+    
     }
 }
 

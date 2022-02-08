@@ -70,6 +70,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("startupPerformanceScore")]
         public double? StartupPerformanceScore { get; set; }
     
+        /// <summary>
+        /// Gets or sets work from anywhere score.
+        /// The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("workFromAnywhereScore")]
+        public double? WorkFromAnywhereScore { get; set; }
+    
     }
 }
 

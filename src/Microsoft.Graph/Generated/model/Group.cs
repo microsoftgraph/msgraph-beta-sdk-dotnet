@@ -31,14 +31,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assigned labels.
-        /// The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
+        /// The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("assignedLabels")]
         public IEnumerable<AssignedLabel> AssignedLabels { get; set; }
     
         /// <summary>
         /// Gets or sets assigned licenses.
-        /// The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
+        /// The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
         /// </summary>
         [JsonPropertyName("assignedLicenses")]
         public IEnumerable<AssignedLicense> AssignedLicenses { get; set; }
@@ -73,7 +73,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the group. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+        /// The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -94,7 +94,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets has members with license errors.
-        /// Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).
+        /// Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("hasMembersWithLicenseErrors")]
         public bool? HasMembersWithLicenseErrors { get; set; }
@@ -108,14 +108,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is assignable to role.
-        /// Indicates whether this group can be assigned to an Azure Active Directory role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).
+        /// Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, not).
         /// </summary>
         [JsonPropertyName("isAssignableToRole")]
         public bool? IsAssignableToRole { get; set; }
     
         /// <summary>
         /// Gets or sets license processing state.
-        /// Indicates status of the group license assignment to all members of the group. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.
+        /// Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
         /// </summary>
         [JsonPropertyName("licenseProcessingState")]
         public LicenseProcessingState LicenseProcessingState { get; set; }
@@ -129,14 +129,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail enabled.
-        /// Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not, and eq on null values).
+        /// Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not).
         /// </summary>
         [JsonPropertyName("mailEnabled")]
         public bool? MailEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . &amp;lt;&amp;gt; , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+        /// The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . &amp;lt;&amp;gt; , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }
@@ -233,7 +233,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+        /// Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("proxyAddresses")]
         public IEnumerable<string> ProxyAddresses { get; set; }
@@ -254,14 +254,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource provisioning options.
-        /// Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.
+        /// Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options.
         /// </summary>
         [JsonPropertyName("resourceProvisioningOptions")]
         public IEnumerable<string> ResourceProvisioningOptions { get; set; }
     
         /// <summary>
         /// Gets or sets security enabled.
-        /// Specifies whether the group is a security group. Required.Returned by default. Supports $filter (eq, ne, not, in).
+        /// Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
         /// </summary>
         [JsonPropertyName("securityEnabled")]
         public bool? SecurityEnabled { get; set; }
@@ -282,7 +282,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visibility.
-        /// Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public.  Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+        /// Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
         /// </summary>
         [JsonPropertyName("visibility")]
         public string Visibility { get; set; }
@@ -309,14 +309,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hide from address lists.
-        /// true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+        /// True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("hideFromAddressLists")]
         public bool? HideFromAddressLists { get; set; }
     
         /// <summary>
         /// Gets or sets hide from outlook clients.
-        /// true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+        /// True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("hideFromOutlookClients")]
         public bool? HideFromOutlookClients { get; set; }
@@ -343,7 +343,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets unseen count.
-        /// Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
+        /// Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
         /// </summary>
         [JsonPropertyName("unseenCount")]
         public Int32? UnseenCount { get; set; }
@@ -384,7 +384,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created on behalf of.
-        /// The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
         /// </summary>
         [JsonPropertyName("createdOnBehalfOf")]
         public DirectoryObject CreatedOnBehalfOf { get; set; }
@@ -405,7 +405,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets member of.
-        /// Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
+        /// Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("memberOf")]
         public IGroupMemberOfCollectionWithReferencesPage MemberOf { get; set; }
@@ -419,7 +419,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets members.
-        /// Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).
+        /// UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).
         /// </summary>
         [JsonPropertyName("members")]
         public IGroupMembersCollectionWithReferencesPage Members { get; set; }
@@ -447,7 +447,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).
+        /// The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).
         /// </summary>
         [JsonPropertyName("owners")]
         public IGroupOwnersCollectionWithReferencesPage Owners { get; set; }
@@ -461,7 +461,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets permission grants.
-        /// The permissions that have been granted for a group to a specific application. Supports $expand.
+        /// The permission that has been granted for a group to a specific application. Supports $expand.
         /// </summary>
         [JsonPropertyName("permissionGrants")]
         public IGroupPermissionGrantsCollectionPage PermissionGrants { get; set; }
@@ -475,7 +475,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
-        /// Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+        /// Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("settings")]
         public IGroupSettingsCollectionPage Settings { get; set; }
@@ -564,7 +564,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets events.
-        /// The group's events.
+        /// The group's calendar events.
         /// </summary>
         [JsonPropertyName("events")]
         public IGroupEventsCollectionPage Events { get; set; }
@@ -669,7 +669,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets planner.
-        /// Selective Planner services available to the group. Read-only. Nullable.
+        /// Entry-point to Planner resource that might exist for a Unified Group.
         /// </summary>
         [JsonPropertyName("planner")]
         public PlannerGroup Planner { get; set; }
@@ -683,7 +683,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets photo.
-        /// The group's profile photo.
+        /// The group's profile photo
         /// </summary>
         [JsonPropertyName("photo")]
         public ProfilePhoto Photo { get; set; }

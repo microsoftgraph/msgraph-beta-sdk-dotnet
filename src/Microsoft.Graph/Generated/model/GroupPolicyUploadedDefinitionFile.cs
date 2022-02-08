@@ -44,13 +44,6 @@ namespace Microsoft.Graph
         public string DefaultLanguageCode { get; set; }
     
         /// <summary>
-        /// Gets or sets file name.
-        /// The file name of the ADMX file without the path. For example: edge.admx Inherited from groupPolicyDefinitionFile
-        /// </summary>
-        [JsonPropertyName("fileName")]
-        public string FileName { get; set; }
-    
-        /// <summary>
         /// Gets or sets group policy uploaded language files.
         /// The list of ADML files associated with the uploaded ADMX file.
         /// </summary>

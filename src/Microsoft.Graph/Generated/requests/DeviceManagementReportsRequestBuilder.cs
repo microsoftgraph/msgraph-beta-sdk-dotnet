@@ -365,6 +365,64 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetComplianceSettingDetailsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetComplianceSettingDetailsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetComplianceSettingDetailsReportRequestBuilder GetComplianceSettingDetailsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetComplianceSettingDetailsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getComplianceSettingDetailsReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetComplianceSettingsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetComplianceSettingsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetComplianceSettingsReportRequestBuilder GetComplianceSettingsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetComplianceSettingsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getComplianceSettingsReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetConfigurationPoliciesReportForDevice.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetConfigurationPoliciesReportForDeviceRequestBuilder"/>.</returns>

@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         ISecurityIncidentsCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IIncidentRequestBuilder"/> for the specified Incident.
+        /// Gets an <see cref="Microsoft.Graph.SecurityNamespace.IIncidentRequestBuilder"/> for the specified Microsoft.Graph.SecurityNamespace.Incident.
         /// </summary>
-        /// <param name="id">The ID for the Incident.</param>
-        /// <returns>The <see cref="IIncidentRequestBuilder"/>.</returns>
-        IIncidentRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the Microsoft.Graph.SecurityNamespace.Incident.</param>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IIncidentRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.IIncidentRequestBuilder this[string id] { get; }
 
         
     }

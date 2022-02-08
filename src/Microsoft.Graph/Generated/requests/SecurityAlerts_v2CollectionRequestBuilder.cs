@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IAlert_v2RequestBuilder"/> for the specified SecurityAlert_v2.
+        /// Gets an <see cref="Microsoft.Graph.SecurityNamespace.IAlertRequestBuilder"/> for the specified SecurityMicrosoft.Graph.SecurityNamespace.Alert.
         /// </summary>
-        /// <param name="id">The ID for the SecurityAlert_v2.</param>
-        /// <returns>The <see cref="IAlert_v2RequestBuilder"/>.</returns>
-        public IAlert_v2RequestBuilder this[string id]
+        /// <param name="id">The ID for the SecurityMicrosoft.Graph.SecurityNamespace.Alert.</param>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IAlertRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.IAlertRequestBuilder this[string id]
         {
             get
             {
-                return new Alert_v2RequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new Microsoft.Graph.SecurityNamespace.AlertRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

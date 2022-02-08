@@ -635,6 +635,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getFileVaultKey"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceGetOemWarranty.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceGetOemWarrantyRequestBuilder"/>.</returns>
+        public IManagedDeviceGetOemWarrantyRequestBuilder GetOemWarranty()
+        {
+            return new ManagedDeviceGetOemWarrantyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOemWarranty"),
+                this.Client);
+        }
     
     }
 }

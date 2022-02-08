@@ -54,5 +54,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 6,
 	
+        /// <summary>
+        /// Linux
+        /// </summary>
+        Linux = 7,
+	
     }
 }

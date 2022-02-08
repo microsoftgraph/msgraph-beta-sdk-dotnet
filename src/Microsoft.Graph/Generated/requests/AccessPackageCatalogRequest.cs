@@ -270,6 +270,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageCatalogToInitialize.AccessPackages.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
                 }
+                if (accessPackageCatalogToInitialize.CustomAccessPackageWorkflowExtensions != null && accessPackageCatalogToInitialize.CustomAccessPackageWorkflowExtensions.CurrentPage != null)
+                {
+                    accessPackageCatalogToInitialize.CustomAccessPackageWorkflowExtensions.InitializeNextPageRequest(this.Client, accessPackageCatalogToInitialize.CustomAccessPackageWorkflowExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    accessPackageCatalogToInitialize.CustomAccessPackageWorkflowExtensions.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
+                }
 
             }
 

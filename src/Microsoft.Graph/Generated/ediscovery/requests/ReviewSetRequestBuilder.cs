@@ -68,13 +68,13 @@ namespace Microsoft.Graph.Ediscovery
         /// <returns>The <see cref="IReviewSetAddToReviewSetRequestBuilder"/>.</returns>
         public IReviewSetAddToReviewSetRequestBuilder AddToReviewSet(
             SourceCollection sourceCollection = null,
-            AdditionalDataOptions? additionalData = null)
+            AdditionalDataOptions? additionalDataOptions = null)
         {
             return new ReviewSetAddToReviewSetRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.addToReviewSet"),
                 this.Client,
                 sourceCollection,
-                additionalData);
+                additionalDataOptions);
         }
 
         /// <summary>

@@ -85,18 +85,6 @@ namespace Microsoft.Graph
                 return new MeetingRegistrationRequestBuilder(this.AppendSegmentToRequestUrl("registration"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for Transcripts.
-        /// </summary>
-        /// <returns>The <see cref="IOnlineMeetingTranscriptsCollectionRequestBuilder"/>.</returns>
-        public IOnlineMeetingTranscriptsCollectionRequestBuilder Transcripts
-        {
-            get
-            {
-                return new OnlineMeetingTranscriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("transcripts"), this.Client);
-            }
-        }
     
         /// <summary>
         /// Gets the request builder for AlternativeRecording.

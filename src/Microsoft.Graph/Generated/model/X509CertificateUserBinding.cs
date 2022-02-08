@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets priority.
+        /// The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required
         /// </summary>
         [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
     
         /// <summary>
         /// Gets or sets userProperty.
+        /// Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, email. Required.
         /// </summary>
         [JsonPropertyName("userProperty")]
         public string UserProperty { get; set; }
     
         /// <summary>
         /// Gets or sets x509CertificateField.
+        /// The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name.
         /// </summary>
         [JsonPropertyName("x509CertificateField")]
         public string X509CertificateField { get; set; }

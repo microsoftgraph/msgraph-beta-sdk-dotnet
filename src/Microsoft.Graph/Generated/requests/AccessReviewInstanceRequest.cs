@@ -258,6 +258,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     accessReviewInstanceToInitialize.Decisions.AdditionalData = accessReviewInstanceToInitialize.AdditionalData;
                 }
+                if (accessReviewInstanceToInitialize.Stages != null && accessReviewInstanceToInitialize.Stages.CurrentPage != null)
+                {
+                    accessReviewInstanceToInitialize.Stages.InitializeNextPageRequest(this.Client, accessReviewInstanceToInitialize.StagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    accessReviewInstanceToInitialize.Stages.AdditionalData = accessReviewInstanceToInitialize.AdditionalData;
+                }
 
             }
 

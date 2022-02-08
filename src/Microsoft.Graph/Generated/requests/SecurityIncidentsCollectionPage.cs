@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SecurityIncidentsCollectionPage.
     /// </summary>
-    public partial class SecurityIncidentsCollectionPage : CollectionPage<Incident>, ISecurityIncidentsCollectionPage
+    public partial class SecurityIncidentsCollectionPage : CollectionPage<Microsoft.Graph.SecurityNamespace.Incident>, ISecurityIncidentsCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="ISecurityIncidentsCollectionRequest"/> instance.

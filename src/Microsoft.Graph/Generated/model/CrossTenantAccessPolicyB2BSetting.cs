@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applications.
+        /// The list of applications targeted with your cross-tenant access policy.
         /// </summary>
         [JsonPropertyName("applications")]
         public CrossTenantAccessPolicyTargetConfiguration Applications { get; set; }
     
         /// <summary>
         /// Gets or sets usersAndGroups.
+        /// The list of users and groups targeted with your cross-tenant access policy.
         /// </summary>
         [JsonPropertyName("usersAndGroups")]
         public CrossTenantAccessPolicyTargetConfiguration UsersAndGroups { get; set; }

@@ -57,6 +57,13 @@ namespace Microsoft.Graph
         public Int32? DeviceInactivityBeforeRetirementInDay { get; set; }
     
         /// <summary>
+        /// Gets or sets enableAutopilotDiagnostics.
+        /// Determines whether the autopilot diagnostic feature is enabled or not.
+        /// </summary>
+        [JsonPropertyName("enableAutopilotDiagnostics")]
+        public bool? EnableAutopilotDiagnostics { get; set; }
+    
+        /// <summary>
         /// Gets or sets enableLogCollection.
         /// Determines whether the log collection feature should be available for use.
         /// </summary>

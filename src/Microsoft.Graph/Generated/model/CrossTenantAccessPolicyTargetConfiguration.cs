@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accessType.
+        /// Defines whether access is allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("accessType")]
         public CrossTenantAccessPolicyTargetConfigurationAccessType? AccessType { get; set; }
     
         /// <summary>
         /// Gets or sets targets.
+        /// Specifies whether to target users, groups, or applications with this rule.
         /// </summary>
         [JsonPropertyName("targets")]
         public IEnumerable<CrossTenantAccessPolicyTarget> Targets { get; set; }

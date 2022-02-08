@@ -34,29 +34,29 @@ namespace Microsoft.Graph
         {
         }
         /// <summary>
-        /// Adds the specified Alert_v2 to the collection via POST.
+        /// Adds the specified Microsoft.Graph.SecurityNamespace.Alert to the collection via POST.
         /// </summary>
-        /// <param name="alert_v2">The Alert_v2 to add.</param>
+        /// <param name="alert">The Microsoft.Graph.SecurityNamespace.Alert to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Alert_v2.</returns>
-        public System.Threading.Tasks.Task<Alert_v2> AddAsync(Alert_v2 alert_v2, CancellationToken cancellationToken = default)
+        /// <returns>The created Microsoft.Graph.SecurityNamespace.Alert.</returns>
+        public System.Threading.Tasks.Task<Microsoft.Graph.SecurityNamespace.Alert> AddAsync(Microsoft.Graph.SecurityNamespace.Alert alert, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsync<Alert_v2>(alert_v2, cancellationToken);
+            return this.SendAsync<Microsoft.Graph.SecurityNamespace.Alert>(alert, cancellationToken);
         }
 
         /// <summary>
-        /// Adds the specified Alert_v2 to the collection via POST and returns a <see cref="GraphResponse{Alert_v2}"/> object of the request.
+        /// Adds the specified Microsoft.Graph.SecurityNamespace.Alert to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.SecurityNamespace.Alert}"/> object of the request.
         /// </summary>
-        /// <param name="alert_v2">The Alert_v2 to add.</param>
+        /// <param name="alert">The Microsoft.Graph.SecurityNamespace.Alert to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Alert_v2}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Alert_v2>> AddResponseAsync(Alert_v2 alert_v2, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{Microsoft.Graph.SecurityNamespace.Alert}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Microsoft.Graph.SecurityNamespace.Alert>> AddResponseAsync(Microsoft.Graph.SecurityNamespace.Alert alert, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<Alert_v2>(alert_v2, cancellationToken);
+            return this.SendAsyncWithGraphResponse<Microsoft.Graph.SecurityNamespace.Alert>(alert, cancellationToken);
         }
 
 
@@ -107,7 +107,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public ISecurityAlerts_v2CollectionRequest Expand(Expression<Func<Alert_v2, object>> expandExpression)
+        public ISecurityAlerts_v2CollectionRequest Expand(Expression<Func<Microsoft.Graph.SecurityNamespace.Alert, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public ISecurityAlerts_v2CollectionRequest Select(Expression<Func<Alert_v2, object>> selectExpression)
+        public ISecurityAlerts_v2CollectionRequest Select(Expression<Func<Microsoft.Graph.SecurityNamespace.Alert, object>> selectExpression)
         {
             if (selectExpression == null)
             {

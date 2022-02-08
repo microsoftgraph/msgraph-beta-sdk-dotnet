@@ -44,5 +44,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("participantCapacity")]
         public Int32? ParticipantCapacity { get; set; }
     
+        /// <summary>
+        /// Gets or sets CallOptions.
+        /// </summary>
+        [JsonPropertyName("callOptions")]
+        public IncomingCallOptions CallOptions { get; set; }
+    
     }
 }

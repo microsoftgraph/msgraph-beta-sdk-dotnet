@@ -36,8 +36,14 @@ namespace Microsoft.Graph
         public bool? AutoApplyDecisionsEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets decisionHistoriesForReviewersEnabled.
+        /// </summary>
+        [JsonPropertyName("decisionHistoriesForReviewersEnabled")]
+        public bool? DecisionHistoriesForReviewersEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets defaultDecision.
-        /// Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
+        /// Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.
         /// </summary>
         [JsonPropertyName("defaultDecision")]
         public string DefaultDecision { get; set; }
@@ -93,7 +99,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recurrence.
-        /// Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
+        /// Detailed settings for recurrence using the standard Outlook recurrence object.  Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.
         /// </summary>
         [JsonPropertyName("recurrence")]
         public PatternedRecurrence Recurrence { get; set; }

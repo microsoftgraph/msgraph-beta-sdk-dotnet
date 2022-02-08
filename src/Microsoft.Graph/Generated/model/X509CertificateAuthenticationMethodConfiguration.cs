@@ -30,18 +30,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authentication mode configuration.
+        /// Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
         /// </summary>
         [JsonPropertyName("authenticationModeConfiguration")]
         public X509CertificateAuthenticationModeConfiguration AuthenticationModeConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets certificate user bindings.
+        /// Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
         /// </summary>
         [JsonPropertyName("certificateUserBindings")]
         public IEnumerable<X509CertificateUserBinding> CertificateUserBindings { get; set; }
     
         /// <summary>
         /// Gets or sets include targets.
+        /// A collection of users or groups who are enabled to use the authentication method.
         /// </summary>
         [JsonPropertyName("includeTargets")]
         public IX509CertificateAuthenticationMethodConfigurationIncludeTargetsCollectionPage IncludeTargets { get; set; }

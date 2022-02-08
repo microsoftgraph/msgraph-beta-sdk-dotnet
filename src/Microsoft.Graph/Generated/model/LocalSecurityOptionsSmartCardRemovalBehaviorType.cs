@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Lock Workstation
-        /// </summary>
-        LockWorkstation = 0,
-	
-        /// <summary>
         /// No Action
         /// </summary>
-        NoAction = 1,
+        NoAction = 0,
+	
+        /// <summary>
+        /// Lock Workstation
+        /// </summary>
+        LockWorkstation = 1,
 	
         /// <summary>
         /// Force Logoff
