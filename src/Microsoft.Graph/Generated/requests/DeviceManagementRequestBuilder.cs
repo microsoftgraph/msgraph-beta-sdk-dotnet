@@ -819,6 +819,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for OemWarrantyInformationOnboarding.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder OemWarrantyInformationOnboarding
+        {
+            get
+            {
+                return new DeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder(this.AppendSegmentToRequestUrl("oemWarrantyInformationOnboarding"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RemoteActionAudits.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementRemoteActionAuditsCollectionRequestBuilder"/>.</returns>
@@ -1283,6 +1295,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsWorkFromAnywhereMetrics"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsWorkFromAnywhereModelPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionRequestBuilder UserExperienceAnalyticsWorkFromAnywhereModelPerformance
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsWorkFromAnywhereModelPerformance"), this.Client);
             }
         }
 

@@ -416,6 +416,12 @@ namespace Microsoft.Graph
         IDeviceManagementMobileAppTroubleshootingEventsCollectionRequestBuilder MobileAppTroubleshootingEvents { get; }
 
         /// <summary>
+        /// Gets the request builder for OemWarrantyInformationOnboarding.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder OemWarrantyInformationOnboarding { get; }
+
+        /// <summary>
         /// Gets the request builder for RemoteActionAudits.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementRemoteActionAuditsCollectionRequestBuilder"/>.</returns>
@@ -648,6 +654,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereMetricsCollectionRequestBuilder UserExperienceAnalyticsWorkFromAnywhereMetrics { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsWorkFromAnywhereModelPerformance.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionRequestBuilder UserExperienceAnalyticsWorkFromAnywhereModelPerformance { get; }
 
         /// <summary>
         /// Gets the request builder for WindowsMalwareInformation.

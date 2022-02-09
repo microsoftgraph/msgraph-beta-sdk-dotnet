@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isCompliantDeviceAccepted.
+        /// Specifies whether compliant devices from external Azure AD organizations are trusted.
         /// </summary>
         [JsonPropertyName("isCompliantDeviceAccepted")]
         public bool? IsCompliantDeviceAccepted { get; set; }
     
         /// <summary>
         /// Gets or sets isHybridAzureADJoinedDeviceAccepted.
+        /// Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
         /// </summary>
         [JsonPropertyName("isHybridAzureADJoinedDeviceAccepted")]
         public bool? IsHybridAzureADJoinedDeviceAccepted { get; set; }
     
         /// <summary>
         /// Gets or sets isMfaAccepted.
+        /// Specifies whether MFA from external Azure AD organizations is trusted.
         /// </summary>
         [JsonPropertyName("isMfaAccepted")]
         public bool? IsMfaAccepted { get; set; }

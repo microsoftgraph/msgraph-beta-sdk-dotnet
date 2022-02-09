@@ -48,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMeetingRegistrationRequestBuilder"/>.</returns>
         IMeetingRegistrationRequestBuilder Registration { get; }
-
-        /// <summary>
-        /// Gets the request builder for Transcripts.
-        /// </summary>
-        /// <returns>The <see cref="IOnlineMeetingTranscriptsCollectionRequestBuilder"/>.</returns>
-        IOnlineMeetingTranscriptsCollectionRequestBuilder Transcripts { get; }
     
         /// <summary>
         /// Gets the request builder for AlternativeRecording.

@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets file name.
+        /// The file name of the ADMX file without the path. For example: edge.admx
+        /// </summary>
+        [JsonPropertyName("fileName")]
+        public string FileName { get; set; }
+    
+        /// <summary>
         /// Gets or sets language codes.
         /// The supported language codes for the ADMX file.
         /// </summary>

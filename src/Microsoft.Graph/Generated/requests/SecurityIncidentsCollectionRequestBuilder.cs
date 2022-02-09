@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="IIncidentRequestBuilder"/> for the specified SecurityIncident.
+        /// Gets an <see cref="Microsoft.Graph.SecurityNamespace.IIncidentRequestBuilder"/> for the specified SecurityMicrosoft.Graph.SecurityNamespace.Incident.
         /// </summary>
-        /// <param name="id">The ID for the SecurityIncident.</param>
-        /// <returns>The <see cref="IIncidentRequestBuilder"/>.</returns>
-        public IIncidentRequestBuilder this[string id]
+        /// <param name="id">The ID for the SecurityMicrosoft.Graph.SecurityNamespace.Incident.</param>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IIncidentRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.IIncidentRequestBuilder this[string id]
         {
             get
             {
-                return new IncidentRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new Microsoft.Graph.SecurityNamespace.IncidentRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

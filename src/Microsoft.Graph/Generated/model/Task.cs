@@ -17,13 +17,13 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Task.
     /// </summary>
-    public partial class Task : BaseTask
+    public partial class TaskObject : BaseTask
     {
     
         ///<summary>
         /// The Task constructor
         ///</summary>
-        public Task()
+        public TaskObject()
         {
             this.ODataType = "microsoft.graph.task";
         }

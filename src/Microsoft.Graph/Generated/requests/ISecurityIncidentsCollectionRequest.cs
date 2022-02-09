@@ -21,20 +21,20 @@ namespace Microsoft.Graph
     public partial interface ISecurityIncidentsCollectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Adds the specified Incident to the collection via POST.
+        /// Adds the specified Microsoft.Graph.SecurityNamespace.Incident to the collection via POST.
         /// </summary>
-        /// <param name="incident">The Incident to add.</param>
+        /// <param name="incident">The Microsoft.Graph.SecurityNamespace.Incident to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Incident.</returns>
-        System.Threading.Tasks.Task<Incident> AddAsync(Incident incident, CancellationToken cancellationToken = default);
+        /// <returns>The created Microsoft.Graph.SecurityNamespace.Incident.</returns>
+        System.Threading.Tasks.Task<Microsoft.Graph.SecurityNamespace.Incident> AddAsync(Microsoft.Graph.SecurityNamespace.Incident incident, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Adds the specified Incident to the collection via POST and returns a <see cref="GraphResponse{Incident}"/> object of the request.
+        /// Adds the specified Microsoft.Graph.SecurityNamespace.Incident to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.SecurityNamespace.Incident}"/> object of the request.
         /// </summary>
-        /// <param name="incident">The Incident to add.</param>
+        /// <param name="incident">The Microsoft.Graph.SecurityNamespace.Incident to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Incident}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Incident>> AddResponseAsync(Incident incident, CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{Microsoft.Graph.SecurityNamespace.Incident}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Microsoft.Graph.SecurityNamespace.Incident>> AddResponseAsync(Microsoft.Graph.SecurityNamespace.Incident incident, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        ISecurityIncidentsCollectionRequest Expand(Expression<Func<Incident, object>> expandExpression);
+        ISecurityIncidentsCollectionRequest Expand(Expression<Func<Microsoft.Graph.SecurityNamespace.Incident, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -77,7 +77,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        ISecurityIncidentsCollectionRequest Select(Expression<Func<Incident, object>> selectExpression);
+        ISecurityIncidentsCollectionRequest Select(Expression<Func<Microsoft.Graph.SecurityNamespace.Incident, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

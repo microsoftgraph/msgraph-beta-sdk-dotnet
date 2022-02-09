@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         ISecurityAlerts_v2CollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IAlert_v2RequestBuilder"/> for the specified Alert_v2.
+        /// Gets an <see cref="Microsoft.Graph.SecurityNamespace.IAlertRequestBuilder"/> for the specified Microsoft.Graph.SecurityNamespace.Alert.
         /// </summary>
-        /// <param name="id">The ID for the Alert_v2.</param>
-        /// <returns>The <see cref="IAlert_v2RequestBuilder"/>.</returns>
-        IAlert_v2RequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the Microsoft.Graph.SecurityNamespace.Alert.</param>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IAlertRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.IAlertRequestBuilder this[string id] { get; }
 
         
     }

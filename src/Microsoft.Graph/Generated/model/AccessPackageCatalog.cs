@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets catalog type.
-        /// One of UserManaged or ServiceDefault.
+        /// Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("catalogType")]
         public string CatalogType { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the access package catalog. Supports $filter (eq, contains).
+        /// The display name of the access package catalog.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -125,7 +125,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access packages.
-        /// The access packages in this catalog. Read-only. Nullable. Supports $expand.
+        /// The access packages in this catalog. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("accessPackages")]
         public IAccessPackageCatalogAccessPackagesCollectionPage AccessPackages { get; set; }
@@ -136,6 +136,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("accessPackages@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string AccessPackagesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom access package workflow extensions.
+        /// </summary>
+        [JsonPropertyName("customAccessPackageWorkflowExtensions")]
+        public IAccessPackageCatalogCustomAccessPackageWorkflowExtensionsCollectionPage CustomAccessPackageWorkflowExtensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets customAccessPackageWorkflowExtensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("customAccessPackageWorkflowExtensions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CustomAccessPackageWorkflowExtensionsNextLink { get; set; }
     
     }
 }

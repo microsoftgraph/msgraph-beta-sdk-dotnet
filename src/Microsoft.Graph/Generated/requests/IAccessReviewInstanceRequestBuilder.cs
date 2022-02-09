@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessReviewScheduleDefinitionWithReferenceRequestBuilder"/>.</returns>
         IAccessReviewScheduleDefinitionWithReferenceRequestBuilder Definition { get; }
+
+        /// <summary>
+        /// Gets the request builder for Stages.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceStagesCollectionRequestBuilder"/>.</returns>
+        IAccessReviewInstanceStagesCollectionRequestBuilder Stages { get; }
     
         /// <summary>
         /// Gets the request builder for AccessReviewInstanceStop.

@@ -49,5 +49,10 @@ namespace Microsoft.Graph
         /// </summary>
         EapFast = 43,
 	
+        /// <summary>
+        /// Teap
+        /// </summary>
+        Teap = 55,
+	
     }
 }

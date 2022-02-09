@@ -48,6 +48,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("batteryCapacityPoor")]
         public Int32? BatteryCapacityPoor { get; set; }
     
+        /// <summary>
+        /// Gets or sets last refreshed date time.
+        /// Recorded date time of this capacity details instance.
+        /// </summary>
+        [JsonPropertyName("lastRefreshedDateTime")]
+        public DateTimeOffset? LastRefreshedDateTime { get; set; }
+    
     }
 }
 

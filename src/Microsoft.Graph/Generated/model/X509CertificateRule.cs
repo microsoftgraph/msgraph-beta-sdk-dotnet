@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets identifier.
+        /// The identifier of the X.509 certificate. Required.
         /// </summary>
         [JsonPropertyName("identifier")]
         public string Identifier { get; set; }
     
         /// <summary>
         /// Gets or sets x509CertificateAuthenticationMode.
+        /// The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
         /// </summary>
         [JsonPropertyName("x509CertificateAuthenticationMode")]
         public X509CertificateAuthenticationMode? X509CertificateAuthenticationMode { get; set; }
     
         /// <summary>
         /// Gets or sets x509CertificateRuleType.
+        /// The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
         /// </summary>
         [JsonPropertyName("x509CertificateRuleType")]
         public X509CertificateRuleType? X509CertificateRuleType { get; set; }

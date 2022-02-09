@@ -97,6 +97,18 @@ namespace Microsoft.Graph
                 return new AccessPackageCatalogAccessPackagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackages"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for CustomAccessPackageWorkflowExtensions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageCatalogCustomAccessPackageWorkflowExtensionsCollectionRequestBuilder"/>.</returns>
+        public IAccessPackageCatalogCustomAccessPackageWorkflowExtensionsCollectionRequestBuilder CustomAccessPackageWorkflowExtensions
+        {
+            get
+            {
+                return new AccessPackageCatalogCustomAccessPackageWorkflowExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customAccessPackageWorkflowExtensions"), this.Client);
+            }
+        }
     
         
     

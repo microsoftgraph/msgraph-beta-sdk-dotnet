@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets id.
-        /// The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+        /// The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application's service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application's service principal.
         /// </summary>
         [JsonPropertyName("id")]
         public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).
+        /// Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

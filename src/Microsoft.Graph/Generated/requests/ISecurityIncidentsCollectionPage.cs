@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// The interface ISecurityIncidentsCollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(InterfaceConverter<SecurityIncidentsCollectionPage>))]
-    public interface ISecurityIncidentsCollectionPage : ICollectionPage<Incident>
+    public interface ISecurityIncidentsCollectionPage : ICollectionPage<Microsoft.Graph.SecurityNamespace.Incident>
     {
         /// <summary>
         /// Gets the next page <see cref="ISecurityIncidentsCollectionRequest"/> instance.

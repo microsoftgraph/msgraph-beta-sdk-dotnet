@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets intune account id.
-        /// Intune Account ID for given tenant
+        /// Intune Account Id for given tenant
         /// </summary>
         [JsonPropertyName("intuneAccountId")]
         public Guid? IntuneAccountId { get; set; }
@@ -945,6 +945,20 @@ namespace Microsoft.Graph
         public string MobileAppTroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets oem warranty information onboarding.
+        /// List of OEM Warranty Statuses
+        /// </summary>
+        [JsonPropertyName("oemWarrantyInformationOnboarding")]
+        public IDeviceManagementOemWarrantyInformationOnboardingCollectionPage OemWarrantyInformationOnboarding { get; set; }
+
+        /// <summary>
+        /// Gets or sets oemWarrantyInformationOnboardingNextLink.
+        /// </summary>
+        [JsonPropertyName("oemWarrantyInformationOnboarding@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string OemWarrantyInformationOnboardingNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets remote action audits.
         /// The list of device remote action audits with the tenant.
         /// </summary>
@@ -1447,6 +1461,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("userExperienceAnalyticsWorkFromAnywhereMetrics@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsWorkFromAnywhereMetricsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics work from anywhere model performance.
+        /// The user experience analytics work from anywhere model performance
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsWorkFromAnywhereModelPerformance")]
+        public IDeviceManagementUserExperienceAnalyticsWorkFromAnywhereModelPerformanceCollectionPage UserExperienceAnalyticsWorkFromAnywhereModelPerformance { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsWorkFromAnywhereModelPerformanceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsWorkFromAnywhereModelPerformance@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsWorkFromAnywhereModelPerformanceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows malware information.

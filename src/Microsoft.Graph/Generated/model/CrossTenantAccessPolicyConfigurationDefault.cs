@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets is service default.
+        /// If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
         /// </summary>
         [JsonPropertyName("isServiceDefault")]
         public bool? IsServiceDefault { get; set; }

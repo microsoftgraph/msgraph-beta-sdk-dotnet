@@ -22,10 +22,11 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Latest metadata updates from 1st February 2022 snapshot
+- Latest metadata updates from 9th February 2022 snapshot
+- Fix to disambiguate the Task type from System.Threading.Tasks and from Microsoft.Graph namespaces      
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>4.28.0</VersionPrefix>
+    <VersionPrefix>4.29.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->

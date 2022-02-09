@@ -21,82 +21,82 @@ namespace Microsoft.Graph
     public partial interface ITaskRequest : IBaseRequest
     {
         /// <summary>
-        /// Creates the specified Task using POST.
+        /// Creates the specified TaskObject using POST.
         /// </summary>
-        /// <param name="taskToCreate">The Task to create.</param>
+        /// <param name="taskObjectToCreate">The TaskObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Task.</returns>
-        System.Threading.Tasks.Task<Task> CreateAsync(Task taskToCreate, CancellationToken cancellationToken = default);
+        /// <returns>The created TaskObject.</returns>
+        System.Threading.Tasks.Task<TaskObject> CreateAsync(TaskObject taskObjectToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Creates the specified Task using POST and returns a <see cref="GraphResponse{Task}"/> object.
+        /// Creates the specified TaskObject using POST and returns a <see cref="GraphResponse{TaskObject}"/> object.
         /// </summary>
-        /// <param name="taskToCreate">The Task to create.</param>
+        /// <param name="taskObjectToCreate">The TaskObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Task}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Task>> CreateResponseAsync(Task taskToCreate, CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{TaskObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaskObject>> CreateResponseAsync(TaskObject taskObjectToCreate, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Deletes the specified Task.
+        /// Deletes the specified TaskObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Deletes the specified Task and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified TaskObject and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Task.
+        /// Gets the specified TaskObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The Task.</returns>
-        System.Threading.Tasks.Task<Task> GetAsync(CancellationToken cancellationToken = default);
+        /// <returns>The TaskObject.</returns>
+        System.Threading.Tasks.Task<TaskObject> GetAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Gets the specified Task and returns a <see cref="GraphResponse{Task}"/> object.
+        /// Gets the specified TaskObject and returns a <see cref="GraphResponse{TaskObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Task}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Task>> GetResponseAsync(CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{TaskObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaskObject>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Task using PATCH.
+        /// Updates the specified TaskObject using PATCH.
         /// </summary>
-        /// <param name="taskToUpdate">The Task to update.</param>
-        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated Task.</returns>
-        System.Threading.Tasks.Task<Task> UpdateAsync(Task taskToUpdate, CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Updates the specified Task using PATCH and returns a <see cref="GraphResponse{Task}"/> object.
-        /// </summary>
-        /// <param name="taskToUpdate">The Task to update.</param>
+        /// <param name="taskObjectToUpdate">The TaskObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{Task}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Task>> UpdateResponseAsync(Task taskToUpdate, CancellationToken cancellationToken = default);
+        /// <returns>The updated TaskObject.</returns>
+        System.Threading.Tasks.Task<TaskObject> UpdateAsync(TaskObject taskObjectToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Task using PUT.
+        /// Updates the specified TaskObject using PATCH and returns a <see cref="GraphResponse{TaskObject}"/> object.
         /// </summary>
-        /// <param name="taskToUpdate">The Task object to update.</param>
+        /// <param name="taskObjectToUpdate">The TaskObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TaskObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaskObject>> UpdateResponseAsync(TaskObject taskObjectToUpdate, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Updates the specified TaskObject using PUT.
+        /// </summary>
+        /// <param name="taskObjectToUpdate">The TaskObject object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task<Task> PutAsync(Task taskToUpdate, CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<TaskObject> PutAsync(TaskObject taskObjectToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Updates the specified Task using PUT and returns a <see cref="GraphResponse{Task}"/> object.
+        /// Updates the specified TaskObject using PUT and returns a <see cref="GraphResponse{TaskObject}"/> object.
         /// </summary>
-        /// <param name="taskToUpdate">The Task object to update.</param>
+        /// <param name="taskObjectToUpdate">The TaskObject object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task of <see cref="GraphResponse{Task}"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse<Task>> PutResponseAsync(Task taskToUpdate, CancellationToken cancellationToken = default);
+        /// <returns>The task of <see cref="GraphResponse{TaskObject}"/> to await.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TaskObject>> PutResponseAsync(TaskObject taskObjectToUpdate, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Adds the specified expand value to the request.
@@ -110,7 +110,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        ITaskRequest Expand(Expression<Func<Task, object>> expandExpression);
+        ITaskRequest Expand(Expression<Func<TaskObject, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -124,7 +124,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        ITaskRequest Select(Expression<Func<Task, object>> selectExpression);
+        ITaskRequest Select(Expression<Func<TaskObject, object>> selectExpression);
 
     }
 }

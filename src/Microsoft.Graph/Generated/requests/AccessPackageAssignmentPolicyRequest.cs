@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(AccessPackageAssignmentPolicy accessPackageAssignmentPolicyToInitialize)
         {
 
+            if (accessPackageAssignmentPolicyToInitialize != null)
+            {
+                if (accessPackageAssignmentPolicyToInitialize.CustomExtensionHandlers != null && accessPackageAssignmentPolicyToInitialize.CustomExtensionHandlers.CurrentPage != null)
+                {
+                    accessPackageAssignmentPolicyToInitialize.CustomExtensionHandlers.InitializeNextPageRequest(this.Client, accessPackageAssignmentPolicyToInitialize.CustomExtensionHandlersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    accessPackageAssignmentPolicyToInitialize.CustomExtensionHandlers.AdditionalData = accessPackageAssignmentPolicyToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

@@ -50,5 +50,15 @@ namespace Microsoft.Graph
         /// </summary>
         Windows10 = 32,
 	
+        /// <summary>
+        /// Linux
+        /// </summary>
+        Linux = 128,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 1073741824,
+	
     }
 }

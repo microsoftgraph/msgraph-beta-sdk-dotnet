@@ -85,7 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets decisions.
-        /// Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+        /// Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         [JsonPropertyName("decisions")]
         public IAccessReviewInstanceDecisionsCollectionPage Decisions { get; set; }
@@ -103,6 +103,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("definition")]
         public AccessReviewScheduleDefinition Definition { get; set; }
+    
+        /// <summary>
+        /// Gets or sets stages.
+        /// </summary>
+        [JsonPropertyName("stages")]
+        public IAccessReviewInstanceStagesCollectionPage Stages { get; set; }
+
+        /// <summary>
+        /// Gets or sets stagesNextLink.
+        /// </summary>
+        [JsonPropertyName("stages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string StagesNextLink { get; set; }
     
     }
 }

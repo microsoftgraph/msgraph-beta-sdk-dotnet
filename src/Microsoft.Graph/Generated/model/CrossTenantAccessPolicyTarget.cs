@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets target.
+        /// The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.
         /// </summary>
         [JsonPropertyName("target")]
         public string Target { get; set; }
     
         /// <summary>
         /// Gets or sets targetType.
+        /// The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("targetType")]
         public CrossTenantAccessPolicyTargetType? TargetType { get; set; }

@@ -42,7 +42,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Timestamp when the access review series was created. Supports $select. Read-only.
+        /// Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -98,7 +98,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scope.
-        /// Defines the entities whose access is reviewed. For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
+        /// Defines the entities whose access is reviewed.  For supported scopes, see accessReviewScope. Required on create. Supports $select and $filter (contains only). For examples of options for configuring scope, see Configure the scope of your access review definition using the Microsoft Graph API.
         /// </summary>
         [JsonPropertyName("scope")]
         public AccessReviewScope Scope { get; set; }
@@ -111,6 +111,12 @@ namespace Microsoft.Graph
         public AccessReviewScheduleSettings Settings { get; set; }
     
         /// <summary>
+        /// Gets or sets stage settings.
+        /// </summary>
+        [JsonPropertyName("stageSettings")]
+        public IEnumerable<AccessReviewStageSettings> StageSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
         /// This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.
         /// </summary>
@@ -119,7 +125,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets instances.
-        /// Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.
+        /// If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
         /// </summary>
         [JsonPropertyName("instances")]
         public IAccessReviewScheduleDefinitionInstancesCollectionPage Instances { get; set; }

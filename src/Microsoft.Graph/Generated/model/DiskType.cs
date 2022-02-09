@@ -20,11 +20,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Unkown
-        /// </summary>
-        Unkown = 0,
-	
-        /// <summary>
         /// Hdd
         /// </summary>
         Hdd = 1,
@@ -33,6 +28,11 @@ namespace Microsoft.Graph
         /// Ssd
         /// </summary>
         Ssd = 2,
+	
+        /// <summary>
+        /// Unknown
+        /// </summary>
+        Unknown = 3,
 	
     }
 }

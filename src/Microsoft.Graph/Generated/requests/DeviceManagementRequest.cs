@@ -558,6 +558,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MobileAppTroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.OemWarrantyInformationOnboarding != null && deviceManagementToInitialize.OemWarrantyInformationOnboarding.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.OemWarrantyInformationOnboarding.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.OemWarrantyInformationOnboardingNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.OemWarrantyInformationOnboarding.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.RemoteActionAudits != null && deviceManagementToInitialize.RemoteActionAudits.CurrentPage != null)
                 {
                     deviceManagementToInitialize.RemoteActionAudits.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.RemoteActionAuditsNextLink);
@@ -755,6 +761,12 @@ namespace Microsoft.Graph
                     deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetricsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereMetrics.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereModelPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereModelPerformanceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.WindowsMalwareInformation != null && deviceManagementToInitialize.WindowsMalwareInformation.CurrentPage != null)
                 {

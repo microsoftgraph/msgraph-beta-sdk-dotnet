@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SecurityAlerts_v2CollectionPage.
     /// </summary>
-    public partial class SecurityAlerts_v2CollectionPage : CollectionPage<Alert_v2>, ISecurityAlerts_v2CollectionPage
+    public partial class SecurityAlerts_v2CollectionPage : CollectionPage<Microsoft.Graph.SecurityNamespace.Alert>, ISecurityAlerts_v2CollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="ISecurityAlerts_v2CollectionRequest"/> instance.

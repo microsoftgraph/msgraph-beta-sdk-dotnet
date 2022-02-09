@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets rules.
+        /// Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.
         /// </summary>
         [JsonPropertyName("rules")]
         public IEnumerable<X509CertificateRule> Rules { get; set; }
     
         /// <summary>
         /// Gets or sets x509CertificateAuthenticationDefaultMode.
+        /// The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("x509CertificateAuthenticationDefaultMode")]
         public X509CertificateAuthenticationMode? X509CertificateAuthenticationDefaultMode { get; set; }

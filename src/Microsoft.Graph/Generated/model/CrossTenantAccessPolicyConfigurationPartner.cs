@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets is service provider.
+        /// Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
         /// </summary>
         [JsonPropertyName("isServiceProvider")]
         public bool? IsServiceProvider { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
+        /// The tenant identifier for the partner Azure AD organization. Read-only.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

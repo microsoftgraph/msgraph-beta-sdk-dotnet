@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is synced from on premises.
-        /// Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+        /// Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
         /// </summary>
         [JsonPropertyName("isSyncedFromOnPremises")]
         public bool? IsSyncedFromOnPremises { get; set; }

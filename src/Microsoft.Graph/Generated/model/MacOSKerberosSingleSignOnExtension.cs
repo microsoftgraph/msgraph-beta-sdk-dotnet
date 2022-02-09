@@ -210,13 +210,6 @@ namespace Microsoft.Graph
         public string SignInHelpText { get; set; }
     
         /// <summary>
-        /// Gets or sets singleSignOnExtensionPreferredKDCs.
-        /// Soon to be deprecated.
-        /// </summary>
-        [JsonPropertyName("singleSignOnExtensionPreferredKDCs")]
-        public IEnumerable<string> SingleSignOnExtensionPreferredKDCs { get; set; }
-    
-        /// <summary>
         /// Gets or sets tlsForLDAPRequired.
         /// When set to True, LDAP connections are required to use Transport Layer Security (TLS). Available for devices running macOS versions 11 and later.
         /// </summary>
@@ -229,13 +222,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("usernameLabelCustom")]
         public string UsernameLabelCustom { get; set; }
-    
-        /// <summary>
-        /// Gets or sets usernameLableCustom.
-        /// Soon to be deprecated.
-        /// </summary>
-        [JsonPropertyName("usernameLableCustom")]
-        public string UsernameLableCustom { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.

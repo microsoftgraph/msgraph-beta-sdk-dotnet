@@ -36,31 +36,31 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified Task using POST.
+        /// Creates the specified TaskObject using POST.
         /// </summary>
-        /// <param name="taskToCreate">The Task to create.</param>
+        /// <param name="taskObjectToCreate">The TaskObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Task.</returns>
-        public async System.Threading.Tasks.Task<Task> CreateAsync(Task taskToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created TaskObject.</returns>
+        public async System.Threading.Tasks.Task<TaskObject> CreateAsync(TaskObject taskObjectToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<Task>(taskToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<TaskObject>(taskObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified Task using POST and returns a <see cref="GraphResponse{Task}"/> object.
+        /// Creates the specified TaskObject using POST and returns a <see cref="GraphResponse{TaskObject}"/> object.
         /// </summary>
-        /// <param name="taskToCreate">The Task to create.</param>
+        /// <param name="taskObjectToCreate">The TaskObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Task}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Task>> CreateResponseAsync(Task taskToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{TaskObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TaskObject>> CreateResponseAsync(TaskObject taskObjectToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<Task>(taskToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<TaskObject>(taskObjectToCreate, cancellationToken);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<Task>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<TaskObject>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the specified Task.
+        /// Gets the specified TaskObject.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The Task.</returns>
-        public async System.Threading.Tasks.Task<Task> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The TaskObject.</returns>
+        public async System.Threading.Tasks.Task<TaskObject> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<Task>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<TaskObject>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified Task and returns a <see cref="GraphResponse{Task}"/> object.
+        /// Gets the specified TaskObject and returns a <see cref="GraphResponse{TaskObject}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{Task}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Task>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{TaskObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TaskObject>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<Task>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<TaskObject>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified Task using PATCH.
+        /// Updates the specified TaskObject using PATCH.
         /// </summary>
-        /// <param name="taskToUpdate">The Task to update.</param>
+        /// <param name="taskObjectToUpdate">The TaskObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated Task.</returns>
-        public async System.Threading.Tasks.Task<Task> UpdateAsync(Task taskToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The updated TaskObject.</returns>
+        public async System.Threading.Tasks.Task<TaskObject> UpdateAsync(TaskObject taskObjectToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<Task>(taskToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<TaskObject>(taskObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Task using PATCH and returns a <see cref="GraphResponse{Task}"/> object.
+        /// Updates the specified TaskObject using PATCH and returns a <see cref="GraphResponse{TaskObject}"/> object.
         /// </summary>
-        /// <param name="taskToUpdate">The Task to update.</param>
+        /// <param name="taskObjectToUpdate">The TaskObject to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{Task}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Task>> UpdateResponseAsync(Task taskToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{TaskObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TaskObject>> UpdateResponseAsync(TaskObject taskObjectToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<Task>(taskToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<TaskObject>(taskObjectToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified Task using PUT.
+        /// Updates the specified TaskObject using PUT.
         /// </summary>
-        /// <param name="taskToUpdate">The Task object to update.</param>
+        /// <param name="taskObjectToUpdate">The TaskObject object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<Task> PutAsync(Task taskToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<TaskObject> PutAsync(TaskObject taskObjectToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<Task>(taskToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<TaskObject>(taskObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Task using PUT and returns a <see cref="GraphResponse{Task}"/> object.
+        /// Updates the specified TaskObject using PUT and returns a <see cref="GraphResponse{TaskObject}"/> object.
         /// </summary>
-        /// <param name="taskToUpdate">The Task object to update.</param>
+        /// <param name="taskObjectToUpdate">The TaskObject object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{Task}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<Task>> PutResponseAsync(Task taskToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{TaskObject}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TaskObject>> PutResponseAsync(TaskObject taskObjectToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<Task>(taskToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<TaskObject>(taskObjectToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public ITaskRequest Expand(Expression<Func<Task, object>> expandExpression)
+        public ITaskRequest Expand(Expression<Func<TaskObject, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public ITaskRequest Select(Expression<Func<Task, object>> selectExpression)
+        public ITaskRequest Select(Expression<Func<TaskObject, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -240,8 +240,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="taskToInitialize">The <see cref="Task"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(Task taskToInitialize)
+        /// <param name="taskToInitialize">The <see cref="TaskObject"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(TaskObject taskToInitialize)
         {
 
         }

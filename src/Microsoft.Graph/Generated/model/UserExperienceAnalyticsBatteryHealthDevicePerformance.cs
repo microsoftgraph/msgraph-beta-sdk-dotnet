@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Battery Health Device Performance.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsBatteryHealthDevicePerformance>))]
     public partial class UserExperienceAnalyticsBatteryHealthDevicePerformance : Entity
     {
     
@@ -60,7 +61,14 @@ namespace Microsoft.Graph
         /// The overall battery health status of the device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
         /// </summary>
         [JsonPropertyName("healthStatus")]
-        public string HealthStatus { get; set; }
+        public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
+    
+        /// <summary>
+        /// Gets or sets manufacturer.
+        /// The manufacturer name of the device.
+        /// </summary>
+        [JsonPropertyName("manufacturer")]
+        public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets max capacity percentage.
