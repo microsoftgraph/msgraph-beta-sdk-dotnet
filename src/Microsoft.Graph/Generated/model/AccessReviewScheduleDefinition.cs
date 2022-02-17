@@ -112,6 +112,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets stage settings.
+        /// Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.
         /// </summary>
         [JsonPropertyName("stageSettings")]
         public IEnumerable<AccessReviewStageSettings> StageSettings { get; set; }

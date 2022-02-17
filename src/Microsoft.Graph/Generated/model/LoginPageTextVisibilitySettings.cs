@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets hideCannotAccessYourAccount.
+        /// Option to hide the self-service password reset (SSPR) 'Can't access your account?' hyperlink on the sign-in form.
         /// </summary>
         [JsonPropertyName("hideCannotAccessYourAccount")]
         public bool? HideCannotAccessYourAccount { get; set; }
     
         /// <summary>
         /// Gets or sets hideForgotMyPassword.
+        /// Option to hide the self-service password reset (SSPR) 'Forgot my password' hyperlink on the sign-in form.
         /// </summary>
         [JsonPropertyName("hideForgotMyPassword")]
         public bool? HideForgotMyPassword { get; set; }
     
         /// <summary>
         /// Gets or sets hidePrivacyAndCookies.
+        /// Option to hide the 'Privacy &amp; Cookies' hyperlink in the footer.
         /// </summary>
         [JsonPropertyName("hidePrivacyAndCookies")]
         public bool? HidePrivacyAndCookies { get; set; }
     
         /// <summary>
         /// Gets or sets hideResetItNow.
+        /// Option to hide the self-service password reset (SSPR) 'reset it now' hyperlink on the sign-in form.
         /// </summary>
         [JsonPropertyName("hideResetItNow")]
         public bool? HideResetItNow { get; set; }
     
         /// <summary>
         /// Gets or sets hideTermsOfUse.
+        /// Option to hide the 'Terms of Use' hyperlink in the footer.
         /// </summary>
         [JsonPropertyName("hideTermsOfUse")]
         public bool? HideTermsOfUse { get; set; }

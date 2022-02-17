@@ -219,7 +219,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets published permission scopes.
-        /// The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
+        /// The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.
         /// </summary>
         [JsonPropertyName("publishedPermissionScopes")]
         public IEnumerable<PermissionScope> PublishedPermissionScopes { get; set; }

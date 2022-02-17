@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets added by.
-        /// Read-only.
+        /// The name of the user or application that first added this resource. Read-only.
         /// </summary>
         [JsonPropertyName("addedBy")]
         public string AddedBy { get; set; }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets attributes.
-        /// Contains attribute information for the resource.
+        /// Contains information about the attributes to be collected from the requestor and sent to the resource application.
         /// </summary>
         [JsonPropertyName("attributes")]
         public IEnumerable<AccessPackageResourceAttribute> Attributes { get; set; }

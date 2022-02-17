@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets id.
-        /// Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.
+        /// Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.
         /// </summary>
         [JsonPropertyName("id")]
         public Guid? Id { get; set; }

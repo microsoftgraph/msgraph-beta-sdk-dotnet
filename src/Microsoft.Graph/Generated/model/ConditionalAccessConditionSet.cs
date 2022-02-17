@@ -72,6 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets servicePrincipalRiskLevels.
+        /// Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("servicePrincipalRiskLevels")]
         public IEnumerable<RiskLevel> ServicePrincipalRiskLevels { get; set; }
