@@ -23,28 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attributeDestination.
-        /// Information about how to set the attribute.
+        /// Information about how to set the attribute, currently a accessPackageUserDirectoryAttributeStore object type.
         /// </summary>
         [JsonPropertyName("attributeDestination")]
         public AccessPackageResourceAttributeDestination AttributeDestination { get; set; }
     
         /// <summary>
         /// Gets or sets attributeName.
-        /// The name of the attribute in the end system.
+        /// The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
         /// </summary>
         [JsonPropertyName("attributeName")]
         public string AttributeName { get; set; }
     
         /// <summary>
         /// Gets or sets attributeSource.
-        /// Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled.
+        /// Information about how to populate the attribute value when an accessPackageAssignmentRequest is being fulfilled, currently a accessPackageResourceAttributeQuestion object type.
         /// </summary>
         [JsonPropertyName("attributeSource")]
         public AccessPackageResourceAttributeSource AttributeSource { get; set; }
     
         /// <summary>
         /// Gets or sets id.
-        /// Unique identifier for the attribute.
+        /// Unique identifier for the attribute on the access package resource. Read-only.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }

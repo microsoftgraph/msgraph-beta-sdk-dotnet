@@ -15,39 +15,29 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SearchResponse.
+    /// The type JoinMeetingIdSettings.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SearchResponse>))]
-    public partial class SearchResponse
+    [JsonConverter(typeof(DerivedTypeConverter<JoinMeetingIdSettings>))]
+    public partial class JoinMeetingIdSettings
     {
 
         /// <summary>
-        /// Gets or sets hitsContainers.
-        /// A collection of search results.
+        /// Gets or sets isPasscodeRequired.
         /// </summary>
-        [JsonPropertyName("hitsContainers")]
-        public IEnumerable<SearchHitsContainer> HitsContainers { get; set; }
+        [JsonPropertyName("isPasscodeRequired")]
+        public bool? IsPasscodeRequired { get; set; }
     
         /// <summary>
-        /// Gets or sets queryAlterationResponse.
-        /// Provides information related to spelling corrections in the alteration response.
+        /// Gets or sets joinMeetingId.
         /// </summary>
-        [JsonPropertyName("queryAlterationResponse")]
-        public AlterationResponse QueryAlterationResponse { get; set; }
+        [JsonPropertyName("joinMeetingId")]
+        public string JoinMeetingId { get; set; }
     
         /// <summary>
-        /// Gets or sets resultTemplates.
-        /// A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
+        /// Gets or sets passcode.
         /// </summary>
-        [JsonPropertyName("resultTemplates")]
-        public ResultTemplateDictionary ResultTemplates { get; set; }
-    
-        /// <summary>
-        /// Gets or sets searchTerms.
-        /// Contains the search terms sent in the initial search query.
-        /// </summary>
-        [JsonPropertyName("searchTerms")]
-        public IEnumerable<string> SearchTerms { get; set; }
+        [JsonPropertyName("passcode")]
+        public string Passcode { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

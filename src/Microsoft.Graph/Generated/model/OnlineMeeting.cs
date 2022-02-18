@@ -170,6 +170,12 @@ namespace Microsoft.Graph
         public ItemBody JoinInformation { get; set; }
     
         /// <summary>
+        /// Gets or sets join meeting id settings.
+        /// </summary>
+        [JsonPropertyName("joinMeetingIdSettings")]
+        public JoinMeetingIdSettings JoinMeetingIdSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets join url.
         /// </summary>
         [JsonPropertyName("joinUrl")]

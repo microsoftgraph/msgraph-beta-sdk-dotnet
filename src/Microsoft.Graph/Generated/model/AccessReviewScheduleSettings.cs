@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets decisionHistoriesForReviewersEnabled.
+        /// Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
         /// </summary>
         [JsonPropertyName("decisionHistoriesForReviewersEnabled")]
         public bool? DecisionHistoriesForReviewersEnabled { get; set; }
@@ -78,14 +79,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recommendationInsightSettings.
-        /// Optional. Describes the types of insights that aid reviewers to make access review decisions.
+        /// Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
         /// </summary>
         [JsonPropertyName("recommendationInsightSettings")]
         public IEnumerable<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings { get; set; }
     
         /// <summary>
         /// Gets or sets recommendationLookBackDuration.
-        /// Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.
+        /// Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
         /// </summary>
         [JsonPropertyName("recommendationLookBackDuration")]
         public Duration RecommendationLookBackDuration { get; set; }

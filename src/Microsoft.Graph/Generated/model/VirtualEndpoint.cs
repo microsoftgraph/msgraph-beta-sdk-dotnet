@@ -127,6 +127,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets snapshots.
+        /// Cloud PC snapshots.
         /// </summary>
         [JsonPropertyName("snapshots")]
         public IVirtualEndpointSnapshotsCollectionPage Snapshots { get; set; }
