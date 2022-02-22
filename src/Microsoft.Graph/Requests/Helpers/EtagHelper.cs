@@ -6,6 +6,7 @@ namespace Microsoft.Graph
 {
     using System;
     using System.Text.Json;
+    using Microsoft.Kiota.Abstractions.Serialization;
 
     /// <summary>
     /// Helper class to extract @odata.etag property and to specify If-Match headers for requests.
@@ -22,7 +23,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="entity">The entity that contains an etag.</param>
         /// <returns>Etag value if present, null otherwise.</returns>
-        public static string GetEtag(this Entity entity)
+        public static string GetEtag(this IParsable entity)
         {
             if (entity == null)
             {
