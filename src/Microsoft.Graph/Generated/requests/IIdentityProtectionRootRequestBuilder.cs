@@ -38,10 +38,22 @@ namespace Microsoft.Graph
         IIdentityProtectionRootRiskDetectionsCollectionRequestBuilder RiskDetections { get; }
 
         /// <summary>
+        /// Gets the request builder for RiskyServicePrincipals.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder"/>.</returns>
+        IIdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder RiskyServicePrincipals { get; }
+
+        /// <summary>
         /// Gets the request builder for RiskyUsers.
         /// </summary>
         /// <returns>The <see cref="IIdentityProtectionRootRiskyUsersCollectionRequestBuilder"/>.</returns>
         IIdentityProtectionRootRiskyUsersCollectionRequestBuilder RiskyUsers { get; }
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalRiskDetections.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder"/>.</returns>
+        IIdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder ServicePrincipalRiskDetections { get; }
     
     }
 }

@@ -80,6 +80,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets userPurposeV2.
         /// </summary>
+        [Obsolete("The UserPurposeV2 API is deprecated and will stop returning data on April 30, 2022. Please use the UserPurpose API.")]
         [JsonPropertyName("userPurposeV2")]
         public MailboxRecipientType? UserPurposeV2 { get; set; }
     

@@ -74,6 +74,12 @@ namespace Microsoft.Graph
         IPolicyRootClaimsMappingPoliciesCollectionRequestBuilder ClaimsMappingPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for CrossTenantAccessPolicy.
+        /// </summary>
+        /// <returns>The <see cref="ICrossTenantAccessPolicyRequestBuilder"/>.</returns>
+        ICrossTenantAccessPolicyRequestBuilder CrossTenantAccessPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for DefaultAppManagementPolicy.
         /// </summary>
         /// <returns>The <see cref="ITenantAppManagementPolicyRequestBuilder"/>.</returns>

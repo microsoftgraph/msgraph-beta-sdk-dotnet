@@ -252,11 +252,23 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     identityProtectionRootToInitialize.RiskDetections.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
                 }
+                if (identityProtectionRootToInitialize.RiskyServicePrincipals != null && identityProtectionRootToInitialize.RiskyServicePrincipals.CurrentPage != null)
+                {
+                    identityProtectionRootToInitialize.RiskyServicePrincipals.InitializeNextPageRequest(this.Client, identityProtectionRootToInitialize.RiskyServicePrincipalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    identityProtectionRootToInitialize.RiskyServicePrincipals.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
+                }
                 if (identityProtectionRootToInitialize.RiskyUsers != null && identityProtectionRootToInitialize.RiskyUsers.CurrentPage != null)
                 {
                     identityProtectionRootToInitialize.RiskyUsers.InitializeNextPageRequest(this.Client, identityProtectionRootToInitialize.RiskyUsersNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     identityProtectionRootToInitialize.RiskyUsers.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
+                }
+                if (identityProtectionRootToInitialize.ServicePrincipalRiskDetections != null && identityProtectionRootToInitialize.ServicePrincipalRiskDetections.CurrentPage != null)
+                {
+                    identityProtectionRootToInitialize.ServicePrincipalRiskDetections.InitializeNextPageRequest(this.Client, identityProtectionRootToInitialize.ServicePrincipalRiskDetectionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    identityProtectionRootToInitialize.ServicePrincipalRiskDetections.AdditionalData = identityProtectionRootToInitialize.AdditionalData;
                 }
 
             }

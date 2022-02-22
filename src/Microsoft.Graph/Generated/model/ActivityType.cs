@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 2,
 	
+        /// <summary>
+        /// Service Principal
+        /// </summary>
+        ServicePrincipal = 3,
+	
     }
 }
