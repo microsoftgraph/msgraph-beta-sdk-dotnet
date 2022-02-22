@@ -1,0 +1,36 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace MicrosoftGraph.Models.Microsoft.Graph {
+    public class Picture : Entity, IParsable {
+        public byte[] Content { get; set; }
+        public string ContentType { get; set; }
+        public int? Height { get; set; }
+        public int? Width { get; set; }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
+                {"content", (o,n) => { (o as Picture).Content = n.GetByteArrayValue(); } },
+                {"contentType", (o,n) => { (o as Picture).ContentType = n.GetStringValue(); } },
+                {"height", (o,n) => { (o as Picture).Height = n.GetIntValue(); } },
+                {"width", (o,n) => { (o as Picture).Width = n.GetIntValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteByteArrayValue("content", Content);
+            writer.WriteStringValue("contentType", ContentType);
+            writer.WriteIntValue("height", Height);
+            writer.WriteIntValue("width", Width);
+        }
+    }
+}

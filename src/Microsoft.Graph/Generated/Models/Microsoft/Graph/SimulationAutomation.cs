@@ -1,0 +1,54 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace MicrosoftGraph.Models.Microsoft.Graph {
+    public class SimulationAutomation : Entity, IParsable {
+        public EmailIdentity CreatedBy { get; set; }
+        public DateTimeOffset? CreatedDateTime { get; set; }
+        public string Description { get; set; }
+        public string DisplayName { get; set; }
+        public EmailIdentity LastModifiedBy { get; set; }
+        public DateTimeOffset? LastModifiedDateTime { get; set; }
+        public DateTimeOffset? LastRunDateTime { get; set; }
+        public DateTimeOffset? NextRunDateTime { get; set; }
+        public List<SimulationAutomationRun> Runs { get; set; }
+        public SimulationAutomationStatus? Status { get; set; }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
+                {"createdBy", (o,n) => { (o as SimulationAutomation).CreatedBy = n.GetObjectValue<EmailIdentity>(); } },
+                {"createdDateTime", (o,n) => { (o as SimulationAutomation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", (o,n) => { (o as SimulationAutomation).Description = n.GetStringValue(); } },
+                {"displayName", (o,n) => { (o as SimulationAutomation).DisplayName = n.GetStringValue(); } },
+                {"lastModifiedBy", (o,n) => { (o as SimulationAutomation).LastModifiedBy = n.GetObjectValue<EmailIdentity>(); } },
+                {"lastModifiedDateTime", (o,n) => { (o as SimulationAutomation).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastRunDateTime", (o,n) => { (o as SimulationAutomation).LastRunDateTime = n.GetDateTimeOffsetValue(); } },
+                {"nextRunDateTime", (o,n) => { (o as SimulationAutomation).NextRunDateTime = n.GetDateTimeOffsetValue(); } },
+                {"runs", (o,n) => { (o as SimulationAutomation).Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>().ToList(); } },
+                {"status", (o,n) => { (o as SimulationAutomation).Status = n.GetEnumValue<SimulationAutomationStatus>(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteObjectValue<EmailIdentity>("createdBy", CreatedBy);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteObjectValue<EmailIdentity>("lastModifiedBy", LastModifiedBy);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteDateTimeOffsetValue("lastRunDateTime", LastRunDateTime);
+            writer.WriteDateTimeOffsetValue("nextRunDateTime", NextRunDateTime);
+            writer.WriteCollectionOfObjectValues<SimulationAutomationRun>("runs", Runs);
+            writer.WriteEnumValue<SimulationAutomationStatus>("status", Status);
+        }
+    }
+}

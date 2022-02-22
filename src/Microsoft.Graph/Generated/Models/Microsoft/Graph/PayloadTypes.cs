@@ -1,0 +1,40 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace MicrosoftGraph.Models.Microsoft.Graph {
+    public class PayloadTypes : IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The notification content of a raw user notification that will be delivered to and consumed by the app client on all supported platforms (Windows, iOS, Android or WebPush) receiving this notification. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.</summary>
+        public string RawContent { get; set; }
+        /// <summary>The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.</summary>
+        public VisualProperties VisualContent { get; set; }
+        /// <summary>
+        /// Instantiates a new payloadTypes and sets the default values.
+        /// </summary>
+        public PayloadTypes() {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>> {
+                {"rawContent", (o,n) => { (o as PayloadTypes).RawContent = n.GetStringValue(); } },
+                {"visualContent", (o,n) => { (o as PayloadTypes).VisualContent = n.GetObjectValue<VisualProperties>(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("rawContent", RawContent);
+            writer.WriteObjectValue<VisualProperties>("visualContent", VisualContent);
+            writer.WriteAdditionalData(AdditionalData);
+        }
+    }
+}

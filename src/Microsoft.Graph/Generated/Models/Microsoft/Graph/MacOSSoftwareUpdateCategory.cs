@@ -1,0 +1,8 @@
+namespace MicrosoftGraph.Models.Microsoft.Graph {
+    public enum MacOSSoftwareUpdateCategory {
+        Critical,
+        ConfigurationDataFile,
+        Firmware,
+        Other,
+    }
+}

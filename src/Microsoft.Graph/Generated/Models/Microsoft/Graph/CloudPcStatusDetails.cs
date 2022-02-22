@@ -1,0 +1,44 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace MicrosoftGraph.Models.Microsoft.Graph {
+    public class CloudPcStatusDetails : IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Any additional information about the Cloud PC status.</summary>
+        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> AdditionalInformation { get; set; }
+        /// <summary>The code associated with the Cloud PC status.</summary>
+        public string Code { get; set; }
+        /// <summary>The status message.</summary>
+        public string Message { get; set; }
+        /// <summary>
+        /// Instantiates a new cloudPcStatusDetails and sets the default values.
+        /// </summary>
+        public CloudPcStatusDetails() {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>> {
+                {"additionalInformation", (o,n) => { (o as CloudPcStatusDetails).AdditionalInformation = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"code", (o,n) => { (o as CloudPcStatusDetails).Code = n.GetStringValue(); } },
+                {"message", (o,n) => { (o as CloudPcStatusDetails).Message = n.GetStringValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("additionalInformation", AdditionalInformation);
+            writer.WriteStringValue("code", Code);
+            writer.WriteStringValue("message", Message);
+            writer.WriteAdditionalData(AdditionalData);
+        }
+    }
+}

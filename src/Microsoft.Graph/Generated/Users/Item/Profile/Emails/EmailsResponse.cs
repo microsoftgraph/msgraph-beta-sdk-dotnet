@@ -1,0 +1,39 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Models.Microsoft.Graph;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace MicrosoftGraph.Users.Item.Profile.Emails {
+    public class EmailsResponse : IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        public string NextLink { get; set; }
+        public List<ItemEmail> Value { get; set; }
+        /// <summary>
+        /// Instantiates a new emailsResponse and sets the default values.
+        /// </summary>
+        public EmailsResponse() {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>> {
+                {"@odata.nextLink", (o,n) => { (o as EmailsResponse).NextLink = n.GetStringValue(); } },
+                {"value", (o,n) => { (o as EmailsResponse).Value = n.GetCollectionOfObjectValues<ItemEmail>().ToList(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.nextLink", NextLink);
+            writer.WriteCollectionOfObjectValues<ItemEmail>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
+        }
+    }
+}

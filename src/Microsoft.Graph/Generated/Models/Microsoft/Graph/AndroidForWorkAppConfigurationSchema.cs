@@ -1,0 +1,32 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace MicrosoftGraph.Models.Microsoft.Graph {
+    public class AndroidForWorkAppConfigurationSchema : Entity, IParsable {
+        /// <summary>UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app</summary>
+        public byte[] ExampleJson { get; set; }
+        /// <summary>Collection of items each representing a named configuration option in the schema</summary>
+        public List<AndroidForWorkAppConfigurationSchemaItem> SchemaItems { get; set; }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
+            return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
+                {"exampleJson", (o,n) => { (o as AndroidForWorkAppConfigurationSchema).ExampleJson = n.GetByteArrayValue(); } },
+                {"schemaItems", (o,n) => { (o as AndroidForWorkAppConfigurationSchema).SchemaItems = n.GetCollectionOfObjectValues<AndroidForWorkAppConfigurationSchemaItem>().ToList(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteByteArrayValue("exampleJson", ExampleJson);
+            writer.WriteCollectionOfObjectValues<AndroidForWorkAppConfigurationSchemaItem>("schemaItems", SchemaItems);
+        }
+    }
+}
