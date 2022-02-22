@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.Calendar.CalendarView.Item.MultiValueExtendedProperties.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.Calendar.CalendarView.Item.MultiValueExtende
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.calendar.calendarView.item.multiValueExtendedProperties.item collection</summary>
-        public MultiValueExtendedPropertiesRequestBuilder this[string position] { get {
+        public MultiValueLegacyExtendedPropertyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("multiValueLegacyExtendedProperty_id", position);
-            return new MultiValueExtendedPropertiesRequestBuilder(urlTplParams, RequestAdapter);
+            return new MultiValueLegacyExtendedPropertyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.

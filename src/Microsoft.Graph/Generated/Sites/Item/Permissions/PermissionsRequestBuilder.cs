@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Sites.Item.Permissions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Sites.Item.Permissions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.sites.item.permissions.item collection</summary>
-        public PermissionsRequestBuilder this[string position] { get {
+        public PermissionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("permission_id", position);
-            return new PermissionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new PermissionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PermissionsRequestBuilder and sets the default values.

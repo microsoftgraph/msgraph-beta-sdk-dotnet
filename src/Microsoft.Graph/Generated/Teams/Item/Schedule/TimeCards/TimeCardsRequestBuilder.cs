@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Teams.Item.Schedule.TimeCards.ClockIn;
+using MicrosoftGraph.Teams.Item.Schedule.TimeCards.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.Teams.Item.Schedule.TimeCards {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teams.item.schedule.timeCards.item collection</summary>
-        public TimeCardsRequestBuilder this[string position] { get {
+        public TimeCardRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("timeCard_id", position);
-            return new TimeCardsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TimeCardRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TimeCardsRequestBuilder and sets the default values.

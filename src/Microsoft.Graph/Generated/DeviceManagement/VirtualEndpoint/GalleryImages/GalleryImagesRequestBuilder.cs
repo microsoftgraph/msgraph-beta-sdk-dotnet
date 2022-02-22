@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.VirtualEndpoint.GalleryImages.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.GalleryImages {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.virtualEndpoint.galleryImages.item collection</summary>
-        public GalleryImagesRequestBuilder this[string position] { get {
+        public CloudPcGalleryImageRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcGalleryImage_id", position);
-            return new GalleryImagesRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcGalleryImageRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GalleryImagesRequestBuilder and sets the default values.

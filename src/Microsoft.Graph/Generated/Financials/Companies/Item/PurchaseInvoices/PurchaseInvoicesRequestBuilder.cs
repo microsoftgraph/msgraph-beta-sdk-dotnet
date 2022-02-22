@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.PurchaseInvoices.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.PurchaseInvoices {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.purchaseInvoices.item collection</summary>
-        public PurchaseInvoicesRequestBuilder this[string position] { get {
+        public PurchaseInvoiceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("purchaseInvoice_id", position);
-            return new PurchaseInvoicesRequestBuilder(urlTplParams, RequestAdapter);
+            return new PurchaseInvoiceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PurchaseInvoicesRequestBuilder and sets the default values.

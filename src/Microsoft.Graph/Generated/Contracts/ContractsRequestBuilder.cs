@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Contracts.GetByIds;
 using MicrosoftGraph.Contracts.GetUserOwnedObjects;
+using MicrosoftGraph.Contracts.Item;
 using MicrosoftGraph.Contracts.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -29,10 +30,10 @@ namespace MicrosoftGraph.Contracts {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.contracts.item collection</summary>
-        public ContractsRequestBuilder this[string position] { get {
+        public ContractRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contract_id", position);
-            return new ContractsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContractRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContractsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.AccessReviews.Item.MyDecisions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.AccessReviews.Item.MyDecisions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.accessReviews.item.myDecisions.item collection</summary>
-        public MyDecisionsRequestBuilder this[string position] { get {
+        public AccessReviewDecisionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewDecision_id", position);
-            return new MyDecisionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewDecisionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MyDecisionsRequestBuilder and sets the default values.

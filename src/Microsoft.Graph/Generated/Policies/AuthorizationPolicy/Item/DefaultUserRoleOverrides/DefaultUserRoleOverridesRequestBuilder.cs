@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverri
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.authorizationPolicy.item.defaultUserRoleOverrides.item collection</summary>
-        public DefaultUserRoleOverridesRequestBuilder this[string position] { get {
+        public DefaultUserRoleOverrideRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("defaultUserRoleOverride_id", position);
-            return new DefaultUserRoleOverridesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DefaultUserRoleOverrideRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DefaultUserRoleOverridesRequestBuilder and sets the default values.

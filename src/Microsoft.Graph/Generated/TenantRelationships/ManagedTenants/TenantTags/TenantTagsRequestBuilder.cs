@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.TenantTags.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantTags {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.tenantTags.item collection</summary>
-        public TenantTagsRequestBuilder this[string position] { get {
+        public TenantTagRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantTag_id", position);
-            return new TenantTagsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TenantTagRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TenantTagsRequestBuilder and sets the default values.

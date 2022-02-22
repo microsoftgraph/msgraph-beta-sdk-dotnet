@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.InternalSponsors.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.ConnectedOrgan
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.connectedOrganizations.item.internalSponsors.item collection</summary>
-        public InternalSponsorsRequestBuilder this[string position] { get {
+        public DirectoryObjectRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);
-            return new InternalSponsorsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryObjectRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InternalSponsorsRequestBuilder and sets the default values.

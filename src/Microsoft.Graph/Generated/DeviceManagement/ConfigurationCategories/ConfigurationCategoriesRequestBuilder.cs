@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.ConfigurationCategories.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.ConfigurationCategories {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.configurationCategories.item collection</summary>
-        public ConfigurationCategoriesRequestBuilder this[string position] { get {
+        public DeviceManagementConfigurationCategoryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationCategory_id", position);
-            return new ConfigurationCategoriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementConfigurationCategoryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConfigurationCategoriesRequestBuilder and sets the default values.

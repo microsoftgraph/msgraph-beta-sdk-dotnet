@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies;
+using MicrosoftGraph.DeviceManagement.Templates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceManagement.Templates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.templates.item collection</summary>
-        public TemplatesRequestBuilder this[string position] { get {
+        public DeviceManagementTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTemplate_id", position);
-            return new TemplatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TemplatesRequestBuilder and sets the default values.

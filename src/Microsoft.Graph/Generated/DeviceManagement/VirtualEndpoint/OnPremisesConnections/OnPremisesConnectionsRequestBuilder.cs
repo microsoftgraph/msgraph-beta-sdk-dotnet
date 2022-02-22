@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.OnPremisesConnections 
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.virtualEndpoint.onPremisesConnections.item collection</summary>
-        public OnPremisesConnectionsRequestBuilder this[string position] { get {
+        public CloudPcOnPremisesConnectionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcOnPremisesConnection_id", position);
-            return new OnPremisesConnectionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcOnPremisesConnectionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OnPremisesConnectionsRequestBuilder and sets the default values.

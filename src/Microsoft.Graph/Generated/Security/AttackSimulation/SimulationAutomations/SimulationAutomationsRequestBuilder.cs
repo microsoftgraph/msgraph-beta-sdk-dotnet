@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Security.AttackSimulation.SimulationAutomations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Security.AttackSimulation.SimulationAutomations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.attackSimulation.simulationAutomations.item collection</summary>
-        public SimulationAutomationsRequestBuilder this[string position] { get {
+        public SimulationAutomationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("simulationAutomation_id", position);
-            return new SimulationAutomationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new SimulationAutomationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SimulationAutomationsRequestBuilder and sets the default values.

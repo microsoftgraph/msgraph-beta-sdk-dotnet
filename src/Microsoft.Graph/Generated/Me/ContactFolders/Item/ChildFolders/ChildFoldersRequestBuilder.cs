@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Me.ContactFolders.Item.ChildFolders.Delta;
+using MicrosoftGraph.Me.ContactFolders.Item.ChildFolders.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Me.ContactFolders.Item.ChildFolders {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.contactFolders.item.childFolders.item collection</summary>
-        public ChildFoldersRequestBuilder this[string position] { get {
+        public ContactFolderRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contactFolder_id1", position);
-            return new ChildFoldersRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContactFolderRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildFoldersRequestBuilder and sets the default values.

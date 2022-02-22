@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.IdentityGovernance.AccessReviews.HistoryDefinitions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.IdentityGovernance.AccessReviews.HistoryDefinitions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.accessReviews.historyDefinitions.item collection</summary>
-        public HistoryDefinitionsRequestBuilder this[string position] { get {
+        public AccessReviewHistoryDefinitionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewHistoryDefinition_id", position);
-            return new HistoryDefinitionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewHistoryDefinitionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HistoryDefinitionsRequestBuilder and sets the default values.

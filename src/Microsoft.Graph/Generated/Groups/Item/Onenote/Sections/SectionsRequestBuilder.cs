@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Groups.Item.Onenote.Sections.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Groups.Item.Onenote.Sections {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.groups.item.onenote.sections.item collection</summary>
-        public SectionsRequestBuilder this[string position] { get {
+        public OnenoteSectionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenoteSection_id", position);
-            return new SectionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnenoteSectionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SectionsRequestBuilder and sets the default values.

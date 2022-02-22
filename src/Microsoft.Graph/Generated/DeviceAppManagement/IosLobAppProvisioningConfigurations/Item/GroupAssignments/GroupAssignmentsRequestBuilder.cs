@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.GroupAssignments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.iosLobAppProvisioningConfigurations.item.groupAssignments.item collection</summary>
-        public GroupAssignmentsRequestBuilder this[string position] { get {
+        public MobileAppProvisioningConfigGroupAssignmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppProvisioningConfigGroupAssignment_id", position);
-            return new GroupAssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileAppProvisioningConfigGroupAssignmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupAssignmentsRequestBuilder and sets the default values.

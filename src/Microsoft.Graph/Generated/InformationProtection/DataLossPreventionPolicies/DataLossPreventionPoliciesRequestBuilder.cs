@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.InformationProtection.DataLossPreventionPolicies.Evaluate;
+using MicrosoftGraph.InformationProtection.DataLossPreventionPolicies.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.InformationProtection.DataLossPreventionPolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.informationProtection.dataLossPreventionPolicies.item collection</summary>
-        public DataLossPreventionPoliciesRequestBuilder this[string position] { get {
+        public DataLossPreventionPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataLossPreventionPolicy_id", position);
-            return new DataLossPreventionPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DataLossPreventionPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DataLossPreventionPoliciesRequestBuilder and sets the default values.

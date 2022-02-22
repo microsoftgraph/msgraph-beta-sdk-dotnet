@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DataSharingConsents.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DataSharingConsents {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.dataSharingConsents.item collection</summary>
-        public DataSharingConsentsRequestBuilder this[string position] { get {
+        public DataSharingConsentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataSharingConsent_id", position);
-            return new DataSharingConsentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DataSharingConsentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DataSharingConsentsRequestBuilder and sets the default values.

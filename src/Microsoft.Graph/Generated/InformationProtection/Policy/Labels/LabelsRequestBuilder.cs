@@ -4,6 +4,7 @@ using MicrosoftGraph.InformationProtection.Policy.Labels.EvaluateApplication;
 using MicrosoftGraph.InformationProtection.Policy.Labels.EvaluateClassificationResults;
 using MicrosoftGraph.InformationProtection.Policy.Labels.EvaluateRemoval;
 using MicrosoftGraph.InformationProtection.Policy.Labels.ExtractLabel;
+using MicrosoftGraph.InformationProtection.Policy.Labels.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,10 @@ namespace MicrosoftGraph.InformationProtection.Policy.Labels {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.informationProtection.policy.labels.item collection</summary>
-        public LabelsRequestBuilder this[string position] { get {
+        public InformationProtectionLabelRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("informationProtectionLabel_id", position);
-            return new LabelsRequestBuilder(urlTplParams, RequestAdapter);
+            return new InformationProtectionLabelRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LabelsRequestBuilder and sets the default values.

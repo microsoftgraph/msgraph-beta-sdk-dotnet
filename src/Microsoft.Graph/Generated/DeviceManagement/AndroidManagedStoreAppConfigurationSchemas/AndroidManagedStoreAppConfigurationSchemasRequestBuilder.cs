@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.AndroidManagedStoreAppConfigurationSchemas.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.AndroidManagedStoreAppConfigurationSch
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.androidManagedStoreAppConfigurationSchemas.item collection</summary>
-        public AndroidManagedStoreAppConfigurationSchemasRequestBuilder this[string position] { get {
+        public AndroidManagedStoreAppConfigurationSchemaRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidManagedStoreAppConfigurationSchema_id", position);
-            return new AndroidManagedStoreAppConfigurationSchemasRequestBuilder(urlTplParams, RequestAdapter);
+            return new AndroidManagedStoreAppConfigurationSchemaRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AndroidManagedStoreAppConfigurationSchemasRequestBuilder and sets the default values.

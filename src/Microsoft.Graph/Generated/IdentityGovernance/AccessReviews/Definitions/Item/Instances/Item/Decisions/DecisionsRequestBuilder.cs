@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.FilterByCurrentUserWithOn;
+using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item;
 using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.RecordAllDecisions;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -22,10 +23,10 @@ namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Insta
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.accessReviews.definitions.item.instances.item.decisions.item collection</summary>
-        public DecisionsRequestBuilder this[string position] { get {
+        public AccessReviewInstanceDecisionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstanceDecisionItem_id", position);
-            return new DecisionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewInstanceDecisionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DecisionsRequestBuilder and sets the default values.

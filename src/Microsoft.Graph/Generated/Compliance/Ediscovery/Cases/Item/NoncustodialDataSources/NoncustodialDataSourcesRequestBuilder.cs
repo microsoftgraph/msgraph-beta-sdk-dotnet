@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.ApplyHold;
+using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item;
 using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.RemoveHold;
 using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
 using System;
@@ -25,10 +26,10 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSource
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.noncustodialDataSources.item collection</summary>
-        public NoncustodialDataSourcesRequestBuilder this[string position] { get {
+        public NoncustodialDataSourceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("noncustodialDataSource_id", position);
-            return new NoncustodialDataSourcesRequestBuilder(urlTplParams, RequestAdapter);
+            return new NoncustodialDataSourceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NoncustodialDataSourcesRequestBuilder and sets the default values.

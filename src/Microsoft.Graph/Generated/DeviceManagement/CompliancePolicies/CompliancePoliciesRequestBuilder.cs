@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.CompliancePolicies.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.CompliancePolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.compliancePolicies.item collection</summary>
-        public CompliancePoliciesRequestBuilder this[string position] { get {
+        public DeviceManagementCompliancePolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementCompliancePolicy_id", position);
-            return new CompliancePoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementCompliancePolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CompliancePoliciesRequestBuilder and sets the default values.

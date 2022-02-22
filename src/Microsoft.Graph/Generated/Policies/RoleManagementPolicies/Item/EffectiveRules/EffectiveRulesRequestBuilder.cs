@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.RoleManagementPolicies.Item.EffectiveRules.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.RoleManagementPolicies.Item.EffectiveRules {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.roleManagementPolicies.item.effectiveRules.item collection</summary>
-        public EffectiveRulesRequestBuilder this[string position] { get {
+        public UnifiedRoleManagementPolicyRuleRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleManagementPolicyRule_id", position);
-            return new EffectiveRulesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleManagementPolicyRuleRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EffectiveRulesRequestBuilder and sets the default values.

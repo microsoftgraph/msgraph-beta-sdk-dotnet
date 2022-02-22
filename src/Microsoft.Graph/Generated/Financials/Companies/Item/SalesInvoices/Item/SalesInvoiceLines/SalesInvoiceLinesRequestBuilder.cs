@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.SalesInvoices.Item.SalesInvoi
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.salesInvoices.item.salesInvoiceLines.item collection</summary>
-        public SalesInvoiceLinesRequestBuilder this[string position] { get {
+        public SalesInvoiceLineRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesInvoiceLine_id", position);
-            return new SalesInvoiceLinesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SalesInvoiceLineRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SalesInvoiceLinesRequestBuilder and sets the default values.

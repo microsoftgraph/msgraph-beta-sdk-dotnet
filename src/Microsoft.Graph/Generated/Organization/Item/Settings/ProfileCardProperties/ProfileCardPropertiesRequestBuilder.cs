@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Organization.Item.Settings.ProfileCardProperties.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Organization.Item.Settings.ProfileCardProperties {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.organization.item.settings.profileCardProperties.item collection</summary>
-        public ProfileCardPropertiesRequestBuilder this[string position] { get {
+        public ProfileCardPropertyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("profileCardProperty_id", position);
-            return new ProfileCardPropertiesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ProfileCardPropertyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ProfileCardPropertiesRequestBuilder and sets the default values.

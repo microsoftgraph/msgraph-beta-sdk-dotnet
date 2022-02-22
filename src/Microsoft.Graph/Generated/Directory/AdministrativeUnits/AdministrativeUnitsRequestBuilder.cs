@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Directory.AdministrativeUnits.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Directory.AdministrativeUnits {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.directory.administrativeUnits.item collection</summary>
-        public AdministrativeUnitsRequestBuilder this[string position] { get {
+        public AdministrativeUnitRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("administrativeUnit_id", position);
-            return new AdministrativeUnitsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AdministrativeUnitRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.WindowsInformationProtectionWipeActions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.WindowsInformationProtectionWipeAct
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.windowsInformationProtectionWipeActions.item collection</summary>
-        public WindowsInformationProtectionWipeActionsRequestBuilder this[string position] { get {
+        public WindowsInformationProtectionWipeActionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionWipeAction_id", position);
-            return new WindowsInformationProtectionWipeActionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsInformationProtectionWipeActionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsInformationProtectionWipeActionsRequestBuilder and sets the default values.

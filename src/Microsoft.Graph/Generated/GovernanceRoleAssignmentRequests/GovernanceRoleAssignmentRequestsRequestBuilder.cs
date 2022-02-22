@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.GovernanceRoleAssignmentRequests.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.GovernanceRoleAssignmentRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.governanceRoleAssignmentRequests.item collection</summary>
-        public GovernanceRoleAssignmentRequestsRequestBuilder this[string position] { get {
+        public GovernanceRoleAssignmentRequestRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleAssignmentRequest_id", position);
-            return new GovernanceRoleAssignmentRequestsRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernanceRoleAssignmentRequestRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GovernanceRoleAssignmentRequestsRequestBuilder and sets the default values.

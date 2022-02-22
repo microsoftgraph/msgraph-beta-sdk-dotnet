@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Security.Alerts.Item;
 using MicrosoftGraph.Security.Alerts.UpdateAlerts;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.Security.Alerts {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.alerts.item collection</summary>
-        public AlertsRequestBuilder this[string position] { get {
+        public AlertRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("alert_id", position);
-            return new AlertsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AlertRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AlertsRequestBuilder and sets the default values.

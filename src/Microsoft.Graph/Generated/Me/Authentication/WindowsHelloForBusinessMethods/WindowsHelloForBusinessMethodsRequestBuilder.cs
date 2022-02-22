@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.Authentication.WindowsHelloForBusinessMethods.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.Authentication.WindowsHelloForBusinessMethods {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.authentication.windowsHelloForBusinessMethods.item collection</summary>
-        public WindowsHelloForBusinessMethodsRequestBuilder this[string position] { get {
+        public WindowsHelloForBusinessAuthenticationMethodRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsHelloForBusinessAuthenticationMethod_id", position);
-            return new WindowsHelloForBusinessMethodsRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsHelloForBusinessAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.

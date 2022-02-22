@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.ConfigurationPolicies.Item.Settings.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.ConfigurationPolicies.Item.Settings {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.configurationPolicies.item.settings.item collection</summary>
-        public SettingsRequestBuilder this[string position] { get {
+        public DeviceManagementConfigurationSettingRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationSetting_id", position);
-            return new SettingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementConfigurationSettingRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SettingsRequestBuilder and sets the default values.

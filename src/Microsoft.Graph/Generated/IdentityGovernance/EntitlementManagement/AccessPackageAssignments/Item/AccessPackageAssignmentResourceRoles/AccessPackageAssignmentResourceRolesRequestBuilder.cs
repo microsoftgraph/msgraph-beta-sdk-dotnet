@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.Item;
 using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackageAssignmentResourceRoles.My;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageA
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.accessPackageAssignments.item.accessPackageAssignmentResourceRoles.item collection</summary>
-        public AccessPackageAssignmentResourceRolesRequestBuilder this[string position] { get {
+        public AccessPackageAssignmentResourceRoleRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessPackageAssignmentResourceRole_id", position);
-            return new AccessPackageAssignmentResourceRolesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessPackageAssignmentResourceRoleRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AccessPackageAssignmentResourceRolesRequestBuilder and sets the default values.

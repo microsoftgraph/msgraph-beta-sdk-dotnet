@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.AppConsentRequestsForApproval.Item.UserConsentRequests.Item.Approval.Steps.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.AppConsentRequestsForApproval.Item.UserConse
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.appConsentRequestsForApproval.item.userConsentRequests.item.approval.steps.item collection</summary>
-        public StepsRequestBuilder this[string position] { get {
+        public ApprovalStepRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approvalStep_id", position);
-            return new StepsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApprovalStepRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new StepsRequestBuilder and sets the default values.

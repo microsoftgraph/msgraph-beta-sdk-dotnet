@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementActions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementActions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.managementActions.item collection</summary>
-        public ManagementActionsRequestBuilder this[string position] { get {
+        public ManagementActionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementAction_id", position);
-            return new ManagementActionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagementActionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagementActionsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.TaxAreas.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.TaxAreas {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.taxAreas.item collection</summary>
-        public TaxAreasRequestBuilder this[string position] { get {
+        public TaxAreaRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("taxArea_id", position);
-            return new TaxAreasRequestBuilder(urlTplParams, RequestAdapter);
+            return new TaxAreaRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TaxAreasRequestBuilder and sets the default values.

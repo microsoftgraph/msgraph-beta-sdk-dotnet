@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.ShipmentMethods.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.ShipmentMethods {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.shipmentMethods.item collection</summary>
-        public ShipmentMethodsRequestBuilder this[string position] { get {
+        public ShipmentMethodRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("shipmentMethod_id", position);
-            return new ShipmentMethodsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ShipmentMethodRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ShipmentMethodsRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.ServicePrincipalCreationPolicies.Item.Excludes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.ServicePrincipalCreationPolicies.Item.Excludes
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.servicePrincipalCreationPolicies.item.excludes.item collection</summary>
-        public ExcludesRequestBuilder this[string position] { get {
+        public ServicePrincipalCreationConditionSetRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipalCreationConditionSet_id", position);
-            return new ExcludesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServicePrincipalCreationConditionSetRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExcludesRequestBuilder and sets the default values.

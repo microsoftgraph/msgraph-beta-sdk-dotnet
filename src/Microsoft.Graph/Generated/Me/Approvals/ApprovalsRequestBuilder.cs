@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Me.Approvals.FilterByCurrentUserWithOn;
+using MicrosoftGraph.Me.Approvals.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Me.Approvals {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.approvals.item collection</summary>
-        public ApprovalsRequestBuilder this[string position] { get {
+        public ApprovalRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approval_id", position);
-            return new ApprovalsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApprovalRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ApprovalsRequestBuilder and sets the default values.

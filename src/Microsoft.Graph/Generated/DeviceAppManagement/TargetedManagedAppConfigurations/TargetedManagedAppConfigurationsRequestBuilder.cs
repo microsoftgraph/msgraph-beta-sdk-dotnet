@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceAppManagement.TargetedManagedAppConfigurations.HasPayloadLinks;
+using MicrosoftGraph.DeviceAppManagement.TargetedManagedAppConfigurations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceAppManagement.TargetedManagedAppConfigurations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.targetedManagedAppConfigurations.item collection</summary>
-        public TargetedManagedAppConfigurationsRequestBuilder this[string position] { get {
+        public TargetedManagedAppConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("targetedManagedAppConfiguration_id", position);
-            return new TargetedManagedAppConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TargetedManagedAppConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TargetedManagedAppConfigurationsRequestBuilder and sets the default values.

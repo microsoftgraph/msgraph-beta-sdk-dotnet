@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Domains.Item.VerificationDnsRecords.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Domains.Item.VerificationDnsRecords {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.domains.item.verificationDnsRecords.item collection</summary>
-        public VerificationDnsRecordsRequestBuilder this[string position] { get {
+        public DomainDnsRecordRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("domainDnsRecord_id", position);
-            return new VerificationDnsRecordsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DomainDnsRecordRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VerificationDnsRecordsRequestBuilder and sets the default values.

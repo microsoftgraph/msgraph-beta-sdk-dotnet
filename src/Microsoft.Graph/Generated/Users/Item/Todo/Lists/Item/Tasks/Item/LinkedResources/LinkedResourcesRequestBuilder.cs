@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResources {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.todo.lists.item.tasks.item.linkedResources.item collection</summary>
-        public LinkedResourcesRequestBuilder this[string position] { get {
+        public LinkedResourceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("linkedResource_id", position);
-            return new LinkedResourcesRequestBuilder(urlTplParams, RequestAdapter);
+            return new LinkedResourceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LinkedResourcesRequestBuilder and sets the default values.

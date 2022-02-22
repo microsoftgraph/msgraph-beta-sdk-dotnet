@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.Teamwork.InstalledApps.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.Teamwork.InstalledApps {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.teamwork.installedApps.item collection</summary>
-        public InstalledAppsRequestBuilder this[string position] { get {
+        public UserScopeTeamsAppInstallationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userScopeTeamsAppInstallation_id", position);
-            return new InstalledAppsRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserScopeTeamsAppInstallationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstalledAppsRequestBuilder and sets the default values.

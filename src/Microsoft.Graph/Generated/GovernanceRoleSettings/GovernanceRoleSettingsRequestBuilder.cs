@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.GovernanceRoleSettings.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.GovernanceRoleSettings {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.governanceRoleSettings.item collection</summary>
-        public GovernanceRoleSettingsRequestBuilder this[string position] { get {
+        public GovernanceRoleSettingRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleSetting_id", position);
-            return new GovernanceRoleSettingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernanceRoleSettingRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GovernanceRoleSettingsRequestBuilder and sets the default values.

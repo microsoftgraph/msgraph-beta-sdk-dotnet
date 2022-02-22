@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.GovernanceResources.Item;
 using MicrosoftGraph.GovernanceResources.Register;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.GovernanceResources {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.governanceResources.item collection</summary>
-        public GovernanceResourcesRequestBuilder this[string position] { get {
+        public GovernanceResourceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceResource_id", position);
-            return new GovernanceResourcesRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernanceResourceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GovernanceResourcesRequestBuilder and sets the default values.

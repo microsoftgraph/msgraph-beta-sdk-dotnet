@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Communications.CallRecords.Item.Sessions.Item.Segments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.CallRecords;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Communications.CallRecords.Item.Sessions.Item.Segments 
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.communications.callRecords.item.sessions.item.segments.item collection</summary>
-        public SegmentsRequestBuilder this[string position] { get {
+        public SegmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("segment_id", position);
-            return new SegmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new SegmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SegmentsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.Journals.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.Journals {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.journals.item collection</summary>
-        public JournalsRequestBuilder this[string position] { get {
+        public JournalRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("journal_id", position);
-            return new JournalsRequestBuilder(urlTplParams, RequestAdapter);
+            return new JournalRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new JournalsRequestBuilder and sets the default values.

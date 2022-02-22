@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions;
 using MicrosoftGraph.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices;
 using MicrosoftGraph.DeviceManagement.DeviceConfigurations.HasPayloadLinks;
+using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceConfigurations.item collection</summary>
-        public DeviceConfigurationsRequestBuilder this[string position] { get {
+        public DeviceConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfiguration_id", position);
-            return new DeviceConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceConfigurationsRequestBuilder and sets the default values.

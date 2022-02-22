@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsAppHealthApplic
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.item collection</summary>
-        public UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder this[string position] { get {
+        public UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsAppHealthAppPerformanceByAppVersion_id", position);
-            return new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder and sets the default values.

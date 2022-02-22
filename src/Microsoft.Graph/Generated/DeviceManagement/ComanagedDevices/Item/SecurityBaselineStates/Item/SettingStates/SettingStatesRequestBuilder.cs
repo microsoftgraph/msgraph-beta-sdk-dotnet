@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.SecurityBaseline
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.comanagedDevices.item.securityBaselineStates.item.settingStates.item collection</summary>
-        public SettingStatesRequestBuilder this[string position] { get {
+        public SecurityBaselineSettingStateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("securityBaselineSettingState_id", position);
-            return new SettingStatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SecurityBaselineSettingStateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SettingStatesRequestBuilder and sets the default values.

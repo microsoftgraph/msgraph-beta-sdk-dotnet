@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Communications.OnlineMeetings.Item.MeetingAttendanceReport.AttendanceRecords.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Communications.OnlineMeetings.Item.MeetingAttendanceRep
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.communications.onlineMeetings.item.meetingAttendanceReport.attendanceRecords.item collection</summary>
-        public AttendanceRecordsRequestBuilder this[string position] { get {
+        public AttendanceRecordRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attendanceRecord_id", position);
-            return new AttendanceRecordsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AttendanceRecordRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AttendanceRecordsRequestBuilder and sets the default values.

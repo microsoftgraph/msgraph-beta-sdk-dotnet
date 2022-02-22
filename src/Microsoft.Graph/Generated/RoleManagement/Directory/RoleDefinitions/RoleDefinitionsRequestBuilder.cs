@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.RoleManagement.Directory.RoleDefinitions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.RoleManagement.Directory.RoleDefinitions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.roleManagement.directory.roleDefinitions.item collection</summary>
-        public RoleDefinitionsRequestBuilder this[string position] { get {
+        public UnifiedRoleDefinitionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleDefinition_id", position);
-            return new RoleDefinitionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleDefinitionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleDefinitionsRequestBuilder and sets the default values.

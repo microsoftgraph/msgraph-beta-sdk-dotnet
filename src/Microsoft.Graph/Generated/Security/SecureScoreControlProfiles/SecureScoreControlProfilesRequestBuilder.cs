@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Security.SecureScoreControlProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Security.SecureScoreControlProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.secureScoreControlProfiles.item collection</summary>
-        public SecureScoreControlProfilesRequestBuilder this[string position] { get {
+        public SecureScoreControlProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("secureScoreControlProfile_id", position);
-            return new SecureScoreControlProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SecureScoreControlProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SecureScoreControlProfilesRequestBuilder and sets the default values.

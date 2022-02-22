@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.MobilityManagementPolicies.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.MobilityManagementPolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.mobilityManagementPolicies.item collection</summary>
-        public MobilityManagementPoliciesRequestBuilder this[string position] { get {
+        public MobilityManagementPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobilityManagementPolicy_id", position);
-            return new MobilityManagementPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobilityManagementPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobilityManagementPoliciesRequestBuilder and sets the default values.

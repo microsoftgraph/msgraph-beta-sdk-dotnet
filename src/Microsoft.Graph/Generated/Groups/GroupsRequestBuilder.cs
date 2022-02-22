@@ -4,6 +4,7 @@ using MicrosoftGraph.Groups.Delta;
 using MicrosoftGraph.Groups.EvaluateDynamicMembership;
 using MicrosoftGraph.Groups.GetByIds;
 using MicrosoftGraph.Groups.GetUserOwnedObjects;
+using MicrosoftGraph.Groups.Item;
 using MicrosoftGraph.Groups.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -34,10 +35,10 @@ namespace MicrosoftGraph.Groups {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.groups.item collection</summary>
-        public GroupsRequestBuilder this[string position] { get {
+        public GroupRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("group_id", position);
-            return new GroupsRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupsRequestBuilder and sets the default values.

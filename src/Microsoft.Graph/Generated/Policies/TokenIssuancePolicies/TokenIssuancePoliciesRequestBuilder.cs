@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.TokenIssuancePolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.TokenIssuancePolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.tokenIssuancePolicies.item collection</summary>
-        public TokenIssuancePoliciesRequestBuilder this[string position] { get {
+        public TokenIssuancePolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tokenIssuancePolicy_id", position);
-            return new TokenIssuancePoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new TokenIssuancePolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.

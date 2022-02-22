@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item.EnrollmentP
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.depOnboardingSettings.item.enrollmentProfiles.item collection</summary>
-        public EnrollmentProfilesRequestBuilder this[string position] { get {
+        public EnrollmentProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("enrollmentProfile_id", position);
-            return new EnrollmentProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new EnrollmentProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EnrollmentProfilesRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Workbooks.Item.Subscriptions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Workbooks.Item.Subscriptions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.subscriptions.item collection</summary>
-        public SubscriptionsRequestBuilder this[string position] { get {
+        public SubscriptionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscription_id", position);
-            return new SubscriptionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new SubscriptionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SubscriptionsRequestBuilder and sets the default values.

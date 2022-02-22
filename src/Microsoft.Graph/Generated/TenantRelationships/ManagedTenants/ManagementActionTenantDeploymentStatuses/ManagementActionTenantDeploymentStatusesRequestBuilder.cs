@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
 using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ChangeDeploymentStatus;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementActionTena
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.managementActionTenantDeploymentStatuses.item collection</summary>
-        public ManagementActionTenantDeploymentStatusesRequestBuilder this[string position] { get {
+        public ManagementActionTenantDeploymentStatusRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementActionTenantDeploymentStatus_id", position);
-            return new ManagementActionTenantDeploymentStatusesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagementActionTenantDeploymentStatusRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagementActionTenantDeploymentStatusesRequestBuilder and sets the default values.

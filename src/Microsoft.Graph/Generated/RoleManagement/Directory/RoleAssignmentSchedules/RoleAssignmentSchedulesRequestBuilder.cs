@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.RoleManagement.Directory.RoleAssignmentSchedules.FilterByCurrentUserWithOn;
+using MicrosoftGraph.RoleManagement.Directory.RoleAssignmentSchedules.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.RoleManagement.Directory.RoleAssignmentSchedules {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.roleManagement.directory.roleAssignmentSchedules.item collection</summary>
-        public RoleAssignmentSchedulesRequestBuilder this[string position] { get {
+        public UnifiedRoleAssignmentScheduleRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleAssignmentSchedule_id", position);
-            return new RoleAssignmentSchedulesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleAssignmentScheduleRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleAssignmentSchedulesRequestBuilder and sets the default values.

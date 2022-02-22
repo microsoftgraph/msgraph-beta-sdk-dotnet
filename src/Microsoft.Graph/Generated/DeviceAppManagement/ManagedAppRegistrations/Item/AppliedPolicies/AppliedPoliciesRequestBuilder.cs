@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.AppliedPolicies.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.Applie
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.managedAppRegistrations.item.appliedPolicies.item collection</summary>
-        public AppliedPoliciesRequestBuilder this[string position] { get {
+        public ManagedAppPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAppPolicy_id", position);
-            return new AppliedPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedAppPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppliedPoliciesRequestBuilder and sets the default values.

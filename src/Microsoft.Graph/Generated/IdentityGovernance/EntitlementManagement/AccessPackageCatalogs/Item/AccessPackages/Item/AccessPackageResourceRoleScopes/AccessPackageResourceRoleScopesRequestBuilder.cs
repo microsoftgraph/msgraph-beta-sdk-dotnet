@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.AccessPackageResourceRoleScopes.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageC
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.accessPackageCatalogs.item.accessPackages.item.accessPackageResourceRoleScopes.item collection</summary>
-        public AccessPackageResourceRoleScopesRequestBuilder this[string position] { get {
+        public AccessPackageResourceRoleScopeRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessPackageResourceRoleScope_id", position);
-            return new AccessPackageResourceRoleScopesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessPackageResourceRoleScopeRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AccessPackageResourceRoleScopesRequestBuilder and sets the default values.

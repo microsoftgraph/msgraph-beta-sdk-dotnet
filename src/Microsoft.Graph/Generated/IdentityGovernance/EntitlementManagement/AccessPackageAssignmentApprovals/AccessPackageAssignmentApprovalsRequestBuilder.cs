@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentApprovals.FilterByCurrentUserWithOn;
+using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentApprovals.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageA
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.accessPackageAssignmentApprovals.item collection</summary>
-        public AccessPackageAssignmentApprovalsRequestBuilder this[string position] { get {
+        public ApprovalRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approval_id", position);
-            return new AccessPackageAssignmentApprovalsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApprovalRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AccessPackageAssignmentApprovalsRequestBuilder and sets the default values.

@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Applications.Delta;
 using MicrosoftGraph.Applications.GetByIds;
 using MicrosoftGraph.Applications.GetUserOwnedObjects;
+using MicrosoftGraph.Applications.Item;
 using MicrosoftGraph.Applications.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -30,10 +31,10 @@ namespace MicrosoftGraph.Applications {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.applications.item collection</summary>
-        public ApplicationsRequestBuilder this[string position] { get {
+        public ApplicationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("application_id", position);
-            return new ApplicationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApplicationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ApplicationsRequestBuilder and sets the default values.

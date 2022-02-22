@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.ConditionalAccessPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.ConditionalAccessPolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.conditionalAccessPolicies.item collection</summary>
-        public ConditionalAccessPoliciesRequestBuilder this[string position] { get {
+        public ConditionalAccessPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conditionalAccessPolicy_id", position);
-            return new ConditionalAccessPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConditionalAccessPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConditionalAccessPoliciesRequestBuilder and sets the default values.

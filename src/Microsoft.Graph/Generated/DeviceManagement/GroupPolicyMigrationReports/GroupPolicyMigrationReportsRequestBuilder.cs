@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport;
+using MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyMigrationReports.item collection</summary>
-        public GroupPolicyMigrationReportsRequestBuilder this[string position] { get {
+        public GroupPolicyMigrationReportRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyMigrationReport_id", position);
-            return new GroupPolicyMigrationReportsRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupPolicyMigrationReportRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupPolicyMigrationReportsRequestBuilder and sets the default values.

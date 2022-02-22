@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.TelecomExpenseManagementPartners.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.TelecomExpenseManagementPartners {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.telecomExpenseManagementPartners.item collection</summary>
-        public TelecomExpenseManagementPartnersRequestBuilder this[string position] { get {
+        public TelecomExpenseManagementPartnerRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("telecomExpenseManagementPartner_id", position);
-            return new TelecomExpenseManagementPartnersRequestBuilder(urlTplParams, RequestAdapter);
+            return new TelecomExpenseManagementPartnerRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TelecomExpenseManagementPartnersRequestBuilder and sets the default values.

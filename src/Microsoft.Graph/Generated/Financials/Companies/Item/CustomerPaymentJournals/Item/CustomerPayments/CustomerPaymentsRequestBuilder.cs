@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPayments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.CustomerPaymentJournals.Item.
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.customerPaymentJournals.item.customerPayments.item collection</summary>
-        public CustomerPaymentsRequestBuilder this[string position] { get {
+        public CustomerPaymentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("customerPayment_id", position);
-            return new CustomerPaymentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new CustomerPaymentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CustomerPaymentsRequestBuilder and sets the default values.

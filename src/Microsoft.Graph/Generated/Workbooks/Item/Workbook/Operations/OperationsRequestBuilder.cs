@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Workbooks.Item.Workbook.Operations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Operations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.operations.item collection</summary>
-        public OperationsRequestBuilder this[string position] { get {
+        public WorkbookOperationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookOperation_id", position);
-            return new OperationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookOperationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

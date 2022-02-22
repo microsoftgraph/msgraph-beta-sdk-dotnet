@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceCustomAttributeShellScripts.item collection</summary>
-        public DeviceCustomAttributeShellScriptsRequestBuilder this[string position] { get {
+        public DeviceCustomAttributeShellScriptRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceCustomAttributeShellScript_id", position);
-            return new DeviceCustomAttributeShellScriptsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceCustomAttributeShellScriptRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceCustomAttributeShellScriptsRequestBuilder and sets the default values.

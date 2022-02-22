@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Workbooks.Item.ListItem.Versions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Workbooks.Item.ListItem.Versions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.listItem.versions.item collection</summary>
-        public VersionsRequestBuilder this[string position] { get {
+        public ListItemVersionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("listItemVersion_id", position);
-            return new VersionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ListItemVersionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VersionsRequestBuilder and sets the default values.

@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.AssignmentFilters.Enable;
 using MicrosoftGraph.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform;
 using MicrosoftGraph.DeviceManagement.AssignmentFilters.GetState;
+using MicrosoftGraph.DeviceManagement.AssignmentFilters.Item;
 using MicrosoftGraph.DeviceManagement.AssignmentFilters.ValidateFilter;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -27,10 +28,10 @@ namespace MicrosoftGraph.DeviceManagement.AssignmentFilters {
             new ValidateFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.assignmentFilters.item collection</summary>
-        public AssignmentFiltersRequestBuilder this[string position] { get {
+        public DeviceAndAppManagementAssignmentFilterRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceAndAppManagementAssignmentFilter_id", position);
-            return new AssignmentFiltersRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceAndAppManagementAssignmentFilterRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentFiltersRequestBuilder and sets the default values.

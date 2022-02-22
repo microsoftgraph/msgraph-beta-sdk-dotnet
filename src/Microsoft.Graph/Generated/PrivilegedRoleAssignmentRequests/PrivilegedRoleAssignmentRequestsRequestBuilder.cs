@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.PrivilegedRoleAssignmentRequests.Item;
 using MicrosoftGraph.PrivilegedRoleAssignmentRequests.My;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.PrivilegedRoleAssignmentRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.privilegedRoleAssignmentRequests.item collection</summary>
-        public PrivilegedRoleAssignmentRequestsRequestBuilder this[string position] { get {
+        public PrivilegedRoleAssignmentRequestRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedRoleAssignmentRequest_id", position);
-            return new PrivilegedRoleAssignmentRequestsRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrivilegedRoleAssignmentRequestRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PrivilegedRoleAssignmentRequestsRequestBuilder and sets the default values.

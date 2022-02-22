@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.DeviceEnrollmentConfigurations.Item.Assignments.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.DeviceEnrollmentConfigurations.Item.Assignme
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.deviceEnrollmentConfigurations.item.assignments.item collection</summary>
-        public AssignmentsRequestBuilder this[string position] { get {
+        public EnrollmentConfigurationAssignmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("enrollmentConfigurationAssignment_id", position);
-            return new AssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new EnrollmentConfigurationAssignmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

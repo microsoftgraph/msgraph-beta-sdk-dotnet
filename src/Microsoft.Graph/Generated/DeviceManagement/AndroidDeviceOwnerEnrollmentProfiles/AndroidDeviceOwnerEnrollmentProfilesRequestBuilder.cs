@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.androidDeviceOwnerEnrollmentProfiles.item collection</summary>
-        public AndroidDeviceOwnerEnrollmentProfilesRequestBuilder this[string position] { get {
+        public AndroidDeviceOwnerEnrollmentProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidDeviceOwnerEnrollmentProfile_id", position);
-            return new AndroidDeviceOwnerEnrollmentProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AndroidDeviceOwnerEnrollmentProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerEnrollmentProfilesRequestBuilder and sets the default values.

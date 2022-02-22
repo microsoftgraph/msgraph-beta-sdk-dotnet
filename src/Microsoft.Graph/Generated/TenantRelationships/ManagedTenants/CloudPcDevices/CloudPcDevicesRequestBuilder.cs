@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcDevices.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcDevices {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.cloudPcDevices.item collection</summary>
-        public CloudPcDevicesRequestBuilder this[string position] { get {
+        public CloudPcDeviceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcDevice_id", position);
-            return new CloudPcDevicesRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcDeviceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CloudPcDevicesRequestBuilder and sets the default values.

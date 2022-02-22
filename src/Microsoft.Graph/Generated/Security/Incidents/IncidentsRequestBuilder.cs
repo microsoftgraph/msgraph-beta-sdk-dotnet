@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.Security;
+using MicrosoftGraph.Security.Incidents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Security.Incidents {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.incidents.item collection</summary>
-        public IncidentsRequestBuilder this[string position] { get {
+        public IncidentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("incident_id", position);
-            return new IncidentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new IncidentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IncidentsRequestBuilder and sets the default values.

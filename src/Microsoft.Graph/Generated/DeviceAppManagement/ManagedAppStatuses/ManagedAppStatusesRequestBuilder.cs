@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.ManagedAppStatuses.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.ManagedAppStatuses {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.managedAppStatuses.item collection</summary>
-        public ManagedAppStatusesRequestBuilder this[string position] { get {
+        public ManagedAppStatusRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAppStatus_id", position);
-            return new ManagedAppStatusesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedAppStatusRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedAppStatusesRequestBuilder and sets the default values.

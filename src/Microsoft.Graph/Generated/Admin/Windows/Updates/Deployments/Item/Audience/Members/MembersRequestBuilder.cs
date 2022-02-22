@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Members.EnrollAssets;
 using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Members.EnrollAssetsById;
+using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item;
 using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Members.UnenrollAssets;
 using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Members.UnenrollAssetsById;
 using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
@@ -33,10 +34,10 @@ namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Members
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.admin.windows.updates.deployments.item.audience.members.item collection</summary>
-        public MembersRequestBuilder this[string position] { get {
+        public UpdatableAssetRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("updatableAsset_id", position);
-            return new MembersRequestBuilder(urlTplParams, RequestAdapter);
+            return new UpdatableAssetRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.

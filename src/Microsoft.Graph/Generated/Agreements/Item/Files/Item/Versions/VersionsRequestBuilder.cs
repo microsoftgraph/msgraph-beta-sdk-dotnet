@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Agreements.Item.Files.Item.Versions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Agreements.Item.Files.Item.Versions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.agreements.item.files.item.versions.item collection</summary>
-        public VersionsRequestBuilder this[string position] { get {
+        public AgreementFileVersionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementFileVersion_id", position);
-            return new VersionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementFileVersionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VersionsRequestBuilder and sets the default values.

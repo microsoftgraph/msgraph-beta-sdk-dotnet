@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.IdentityProtection.RiskyUsers.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.IdentityProtection.RiskyUsers {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityProtection.riskyUsers.item collection</summary>
-        public RiskyUsersRequestBuilder this[string position] { get {
+        public RiskyUserRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyUser_id", position);
-            return new RiskyUsersRequestBuilder(urlTplParams, RequestAdapter);
+            return new RiskyUserRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RiskyUsersRequestBuilder and sets the default values.

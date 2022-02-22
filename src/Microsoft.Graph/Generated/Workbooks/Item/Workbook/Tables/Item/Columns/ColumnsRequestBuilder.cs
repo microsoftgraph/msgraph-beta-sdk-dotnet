@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Columns.Add;
 using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Columns.Count;
+using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Columns.Item;
 using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Columns.ItemAtWithIndex;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,10 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Columns {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.tables.item.columns.item collection</summary>
-        public ColumnsRequestBuilder this[string position] { get {
+        public WorkbookTableColumnRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookTableColumn_id", position);
-            return new ColumnsRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookTableColumnRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ColumnsRequestBuilder and sets the default values.

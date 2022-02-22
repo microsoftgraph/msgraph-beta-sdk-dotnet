@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.Templates.Item.Categories.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.Templates.Item.Categories {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.templates.item.categories.item collection</summary>
-        public CategoriesRequestBuilder this[string position] { get {
+        public DeviceManagementTemplateSettingCategoryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTemplateSettingCategory_id", position);
-            return new CategoriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementTemplateSettingCategoryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CategoriesRequestBuilder and sets the default values.

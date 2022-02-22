@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.TokenLifetimePolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.TokenLifetimePolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.tokenLifetimePolicies.item collection</summary>
-        public TokenLifetimePoliciesRequestBuilder this[string position] { get {
+        public TokenLifetimePolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tokenLifetimePolicy_id", position);
-            return new TokenLifetimePoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new TokenLifetimePolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.

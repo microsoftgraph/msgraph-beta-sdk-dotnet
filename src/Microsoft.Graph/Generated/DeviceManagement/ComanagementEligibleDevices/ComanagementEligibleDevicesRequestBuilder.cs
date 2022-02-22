@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.ComanagementEligibleDevices.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.ComanagementEligibleDevices {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.comanagementEligibleDevices.item collection</summary>
-        public ComanagementEligibleDevicesRequestBuilder this[string position] { get {
+        public ComanagementEligibleDeviceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("comanagementEligibleDevice_id", position);
-            return new ComanagementEligibleDevicesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ComanagementEligibleDeviceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ComanagementEligibleDevicesRequestBuilder and sets the default values.

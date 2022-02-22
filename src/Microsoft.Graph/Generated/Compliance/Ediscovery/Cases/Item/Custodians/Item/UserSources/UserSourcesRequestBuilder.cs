@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.UserSources.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.UserSo
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.custodians.item.userSources.item collection</summary>
-        public UserSourcesRequestBuilder this[string position] { get {
+        public UserSourceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userSource_id", position);
-            return new UserSourcesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserSourceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserSourcesRequestBuilder and sets the default values.

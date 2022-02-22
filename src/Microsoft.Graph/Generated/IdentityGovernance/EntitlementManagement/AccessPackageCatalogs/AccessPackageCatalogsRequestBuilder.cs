@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item;
 using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Search;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageC
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.accessPackageCatalogs.item collection</summary>
-        public AccessPackageCatalogsRequestBuilder this[string position] { get {
+        public AccessPackageCatalogRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessPackageCatalog_id", position);
-            return new AccessPackageCatalogsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessPackageCatalogRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AccessPackageCatalogsRequestBuilder and sets the default values.

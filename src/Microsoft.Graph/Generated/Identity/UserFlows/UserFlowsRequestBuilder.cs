@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Identity.UserFlows.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Identity.UserFlows {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identity.userFlows.item collection</summary>
-        public UserFlowsRequestBuilder this[string position] { get {
+        public IdentityUserFlowRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlow_id", position);
-            return new UserFlowsRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityUserFlowRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserFlowsRequestBuilder and sets the default values.

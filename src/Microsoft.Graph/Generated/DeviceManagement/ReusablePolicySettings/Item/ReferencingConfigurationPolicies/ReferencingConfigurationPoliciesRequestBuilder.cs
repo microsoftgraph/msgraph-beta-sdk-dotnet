@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.ReusablePolicySettings.Item.Referencin
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.reusablePolicySettings.item.referencingConfigurationPolicies.item collection</summary>
-        public ReferencingConfigurationPoliciesRequestBuilder this[string position] { get {
+        public DeviceManagementConfigurationPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationPolicy_id", position);
-            return new ReferencingConfigurationPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementConfigurationPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ReferencingConfigurationPoliciesRequestBuilder and sets the default values.

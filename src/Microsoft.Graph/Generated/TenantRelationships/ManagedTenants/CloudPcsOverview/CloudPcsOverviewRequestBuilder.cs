@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcsOverview.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcsOverview {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.cloudPcsOverview.item collection</summary>
-        public CloudPcsOverviewRequestBuilder this[string position] { get {
+        public CloudPcOverviewRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcOverview_tenantId", position);
-            return new CloudPcsOverviewRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcOverviewRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CloudPcsOverviewRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.Outlook.MasterCategories.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.Outlook.MasterCategories {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.outlook.masterCategories.item collection</summary>
-        public MasterCategoriesRequestBuilder this[string position] { get {
+        public OutlookCategoryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookCategory_id", position);
-            return new MasterCategoriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutlookCategoryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MasterCategoriesRequestBuilder and sets the default values.

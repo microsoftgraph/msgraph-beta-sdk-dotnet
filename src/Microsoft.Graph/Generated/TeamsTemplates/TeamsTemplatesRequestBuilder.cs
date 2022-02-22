@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.TeamsTemplates.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TeamsTemplates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teamsTemplates.item collection</summary>
-        public TeamsTemplatesRequestBuilder this[string position] { get {
+        public TeamsTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsTemplate_id", position);
-            return new TeamsTemplatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamsTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TeamsTemplatesRequestBuilder and sets the default values.

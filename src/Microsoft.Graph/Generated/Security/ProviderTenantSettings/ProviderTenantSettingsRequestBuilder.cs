@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Security.ProviderTenantSettings.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Security.ProviderTenantSettings {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.providerTenantSettings.item collection</summary>
-        public ProviderTenantSettingsRequestBuilder this[string position] { get {
+        public ProviderTenantSettingRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("providerTenantSetting_id", position);
-            return new ProviderTenantSettingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ProviderTenantSettingRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ProviderTenantSettingsRequestBuilder and sets the default values.

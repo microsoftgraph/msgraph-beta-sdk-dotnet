@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Teams.Item.Schedule.SwapShiftsChangeRequests.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Teams.Item.Schedule.SwapShiftsChangeRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teams.item.schedule.swapShiftsChangeRequests.item collection</summary>
-        public SwapShiftsChangeRequestsRequestBuilder this[string position] { get {
+        public SwapShiftsChangeRequestRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("swapShiftsChangeRequest_id", position);
-            return new SwapShiftsChangeRequestsRequestBuilder(urlTplParams, RequestAdapter);
+            return new SwapShiftsChangeRequestRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SwapShiftsChangeRequestsRequestBuilder and sets the default values.

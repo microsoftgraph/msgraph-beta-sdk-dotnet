@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Directory.OutboundSharedUserProfiles.Item.Tenants.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Directory.OutboundSharedUserProfiles.Item.Tenants {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.directory.outboundSharedUserProfiles.item.tenants.item collection</summary>
-        public TenantsRequestBuilder this[string position] { get {
+        public TenantReferenceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantReference_tenantId", position);
-            return new TenantsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TenantReferenceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TenantsRequestBuilder and sets the default values.

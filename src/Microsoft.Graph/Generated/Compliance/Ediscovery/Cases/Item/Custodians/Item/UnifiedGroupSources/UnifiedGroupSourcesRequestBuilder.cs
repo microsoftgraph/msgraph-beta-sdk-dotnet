@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.Unifie
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.custodians.item.unifiedGroupSources.item collection</summary>
-        public UnifiedGroupSourcesRequestBuilder this[string position] { get {
+        public UnifiedGroupSourceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedGroupSource_id", position);
-            return new UnifiedGroupSourcesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedGroupSourceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.

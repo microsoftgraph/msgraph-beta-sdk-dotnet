@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.TermStore;
+using MicrosoftGraph.TermStore.Groups.Item.Sets.Item.Relations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TermStore.Groups.Item.Sets.Item.Relations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.termStore.groups.item.sets.item.relations.item collection</summary>
-        public RelationsRequestBuilder this[string position] { get {
+        public RelationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("relation_id", position);
-            return new RelationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new RelationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RelationsRequestBuilder and sets the default values.

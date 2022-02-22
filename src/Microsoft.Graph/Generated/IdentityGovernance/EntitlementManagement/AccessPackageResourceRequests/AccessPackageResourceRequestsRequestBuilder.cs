@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageResourceRequests.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageR
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.accessPackageResourceRequests.item collection</summary>
-        public AccessPackageResourceRequestsRequestBuilder this[string position] { get {
+        public AccessPackageResourceRequestRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessPackageResourceRequest_id", position);
-            return new AccessPackageResourceRequestsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessPackageResourceRequestRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AccessPackageResourceRequestsRequestBuilder and sets the default values.

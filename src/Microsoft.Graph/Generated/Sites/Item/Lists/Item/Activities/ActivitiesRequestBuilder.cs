@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Sites.Item.Lists.Item.Activities.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.Activities {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.sites.item.lists.item.activities.item collection</summary>
-        public ActivitiesRequestBuilder this[string position] { get {
+        public ItemActivityOLDRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemActivityOLD_id", position);
-            return new ActivitiesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ItemActivityOLDRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ActivitiesRequestBuilder and sets the default values.

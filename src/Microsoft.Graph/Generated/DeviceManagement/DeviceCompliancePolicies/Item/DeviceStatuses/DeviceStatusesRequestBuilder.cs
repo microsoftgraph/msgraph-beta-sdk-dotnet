@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceStatuses.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceSt
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceCompliancePolicies.item.deviceStatuses.item collection</summary>
-        public DeviceStatusesRequestBuilder this[string position] { get {
+        public DeviceComplianceDeviceStatusRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceComplianceDeviceStatus_id", position);
-            return new DeviceStatusesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceComplianceDeviceStatusRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceStatusesRequestBuilder and sets the default values.

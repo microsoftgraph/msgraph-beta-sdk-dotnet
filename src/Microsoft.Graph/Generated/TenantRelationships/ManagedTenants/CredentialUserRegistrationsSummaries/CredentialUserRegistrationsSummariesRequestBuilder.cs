@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.CredentialUserRegist
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.credentialUserRegistrationsSummaries.item collection</summary>
-        public CredentialUserRegistrationsSummariesRequestBuilder this[string position] { get {
+        public CredentialUserRegistrationsSummaryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("credentialUserRegistrationsSummary_id", position);
-            return new CredentialUserRegistrationsSummariesRequestBuilder(urlTplParams, RequestAdapter);
+            return new CredentialUserRegistrationsSummaryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CredentialUserRegistrationsSummariesRequestBuilder and sets the default values.

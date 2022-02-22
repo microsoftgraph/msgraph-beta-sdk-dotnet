@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Shares.Item.List.Operations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Shares.Item.List.Operations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.shares.item.list.operations.item collection</summary>
-        public OperationsRequestBuilder this[string position] { get {
+        public RichLongRunningOperationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("richLongRunningOperation_id", position);
-            return new OperationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new RichLongRunningOperationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

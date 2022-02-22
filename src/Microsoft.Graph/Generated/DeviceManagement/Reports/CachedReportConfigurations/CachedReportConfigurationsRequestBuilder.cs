@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.Reports.CachedReportConfigurations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.Reports.CachedReportConfigurations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.reports.cachedReportConfigurations.item collection</summary>
-        public CachedReportConfigurationsRequestBuilder this[string position] { get {
+        public DeviceManagementCachedReportConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementCachedReportConfiguration_id", position);
-            return new CachedReportConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementCachedReportConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CachedReportConfigurationsRequestBuilder and sets the default values.

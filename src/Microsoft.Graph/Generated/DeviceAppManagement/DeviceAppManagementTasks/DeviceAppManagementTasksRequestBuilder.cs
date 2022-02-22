@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.DeviceAppManagementTasks.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.DeviceAppManagementTasks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.deviceAppManagementTasks.item collection</summary>
-        public DeviceAppManagementTasksRequestBuilder this[string position] { get {
+        public DeviceAppManagementTaskRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceAppManagementTask_id", position);
-            return new DeviceAppManagementTasksRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceAppManagementTaskRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceAppManagementTasksRequestBuilder and sets the default values.

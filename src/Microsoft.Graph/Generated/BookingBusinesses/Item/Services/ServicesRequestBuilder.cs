@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.BookingBusinesses.Item.Services.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.BookingBusinesses.Item.Services {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.bookingBusinesses.item.services.item collection</summary>
-        public ServicesRequestBuilder this[string position] { get {
+        public BookingServiceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingService_id", position);
-            return new ServicesRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookingServiceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ServicesRequestBuilder and sets the default values.

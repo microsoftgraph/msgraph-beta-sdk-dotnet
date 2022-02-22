@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.MailFolders.Item.MessageRules.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.MailFolders.Item.MessageRules {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.mailFolders.item.messageRules.item collection</summary>
-        public MessageRulesRequestBuilder this[string position] { get {
+        public MessageRuleRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageRule_id", position);
-            return new MessageRulesRequestBuilder(urlTplParams, RequestAdapter);
+            return new MessageRuleRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MessageRulesRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles.Item.Drive
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsDriverUpdateProfiles.item.driverInventories.item collection</summary>
-        public DriverInventoriesRequestBuilder this[string position] { get {
+        public WindowsDriverUpdateInventoryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDriverUpdateInventory_id", position);
-            return new DriverInventoriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsDriverUpdateInventoryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DriverInventoriesRequestBuilder and sets the default values.

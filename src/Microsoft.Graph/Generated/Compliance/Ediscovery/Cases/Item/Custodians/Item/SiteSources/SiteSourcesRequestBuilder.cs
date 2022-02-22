@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.SiteSources.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.SiteSo
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.custodians.item.siteSources.item collection</summary>
-        public SiteSourcesRequestBuilder this[string position] { get {
+        public SiteSourceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("siteSource_id", position);
-            return new SiteSourcesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SiteSourceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SiteSourcesRequestBuilder and sets the default values.

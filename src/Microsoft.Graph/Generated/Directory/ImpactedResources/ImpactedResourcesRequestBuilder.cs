@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Directory.ImpactedResources.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Directory.ImpactedResources {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.directory.impactedResources.item collection</summary>
-        public ImpactedResourcesRequestBuilder this[string position] { get {
+        public RecommendationResourceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("recommendationResource_id", position);
-            return new ImpactedResourcesRequestBuilder(urlTplParams, RequestAdapter);
+            return new RecommendationResourceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ImpactedResourcesRequestBuilder and sets the default values.

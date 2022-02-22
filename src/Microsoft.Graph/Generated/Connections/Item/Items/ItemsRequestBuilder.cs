@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Connections.Item.Items.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Connections.Item.Items {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.connections.item.items.item collection</summary>
-        public ItemsRequestBuilder this[string position] { get {
+        public ExternalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalItem_id", position);
-            return new ItemsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExternalItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ItemsRequestBuilder and sets the default values.

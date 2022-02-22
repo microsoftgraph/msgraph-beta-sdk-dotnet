@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.Search;
+using MicrosoftGraph.Search.Bookmarks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Search.Bookmarks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.search.bookmarks.item collection</summary>
-        public BookmarksRequestBuilder this[string position] { get {
+        public BookmarkRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookmark_id", position);
-            return new BookmarksRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookmarkRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new BookmarksRequestBuilder and sets the default values.

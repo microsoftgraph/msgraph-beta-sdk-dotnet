@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DeviceShellScripts.Item.UserRunStates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceShellScripts.Item.UserRunStates 
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceShellScripts.item.userRunStates.item collection</summary>
-        public UserRunStatesRequestBuilder this[string position] { get {
+        public DeviceManagementScriptUserStateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementScriptUserState_id", position);
-            return new UserRunStatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementScriptUserStateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserRunStatesRequestBuilder and sets the default values.

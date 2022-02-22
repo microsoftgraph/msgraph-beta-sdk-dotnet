@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Directories.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item.synchronization.jobs.item.schema.directories.item collection</summary>
-        public DirectoriesRequestBuilder this[string position] { get {
+        public DirectoryDefinitionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryDefinition_id", position);
-            return new DirectoriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryDefinitionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoriesRequestBuilder and sets the default values.

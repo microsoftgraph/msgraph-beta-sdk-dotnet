@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory;
 using MicrosoftGraph.DeviceManagement.AuditEvents.GetAuditCategories;
+using MicrosoftGraph.DeviceManagement.AuditEvents.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,10 @@ namespace MicrosoftGraph.DeviceManagement.AuditEvents {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.auditEvents.item collection</summary>
-        public AuditEventsRequestBuilder this[string position] { get {
+        public AuditEventRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("auditEvent_id", position);
-            return new AuditEventsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AuditEventRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AuditEventsRequestBuilder and sets the default values.

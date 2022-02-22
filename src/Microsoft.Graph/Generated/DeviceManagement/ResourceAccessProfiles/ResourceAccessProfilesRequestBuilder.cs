@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.ResourceAccessProfiles.Item;
 using MicrosoftGraph.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceManagement.ResourceAccessProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.resourceAccessProfiles.item collection</summary>
-        public ResourceAccessProfilesRequestBuilder this[string position] { get {
+        public DeviceManagementResourceAccessProfileBaseRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementResourceAccessProfileBase_id", position);
-            return new ResourceAccessProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementResourceAccessProfileBaseRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourceAccessProfilesRequestBuilder and sets the default values.

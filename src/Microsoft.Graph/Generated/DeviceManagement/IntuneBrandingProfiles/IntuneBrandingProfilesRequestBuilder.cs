@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.IntuneBrandingProfiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.IntuneBrandingProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.intuneBrandingProfiles.item collection</summary>
-        public IntuneBrandingProfilesRequestBuilder this[string position] { get {
+        public IntuneBrandingProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("intuneBrandingProfile_id", position);
-            return new IntuneBrandingProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new IntuneBrandingProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IntuneBrandingProfilesRequestBuilder and sets the default values.

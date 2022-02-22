@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Teams.Item.Tags.Item.Members.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Teams.Item.Tags.Item.Members {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teams.item.tags.item.members.item collection</summary>
-        public MembersRequestBuilder this[string position] { get {
+        public TeamworkTagMemberRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamworkTagMember_id", position);
-            return new MembersRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamworkTagMemberRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.

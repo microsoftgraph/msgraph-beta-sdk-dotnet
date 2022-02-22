@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.App.Calls.Item.Participants.Invite;
+using MicrosoftGraph.App.Calls.Item.Participants.Item;
 using MicrosoftGraph.App.Calls.Item.Participants.MuteAll;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -25,10 +26,10 @@ namespace MicrosoftGraph.App.Calls.Item.Participants {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.app.calls.item.participants.item collection</summary>
-        public ParticipantsRequestBuilder this[string position] { get {
+        public ParticipantRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("participant_id", position);
-            return new ParticipantsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ParticipantRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ParticipantsRequestBuilder and sets the default values.

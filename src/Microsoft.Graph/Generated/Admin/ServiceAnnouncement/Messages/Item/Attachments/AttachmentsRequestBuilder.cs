@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Item.Attachments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Item.Attachments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.admin.serviceAnnouncement.messages.item.attachments.item collection</summary>
-        public AttachmentsRequestBuilder this[string position] { get {
+        public ServiceAnnouncementAttachmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceAnnouncementAttachment_id", position);
-            return new AttachmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServiceAnnouncementAttachmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AttachmentsRequestBuilder and sets the default values.

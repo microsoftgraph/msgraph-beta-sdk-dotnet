@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.GroupAssignments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.GroupAssi
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceManagementScripts.item.groupAssignments.item collection</summary>
-        public GroupAssignmentsRequestBuilder this[string position] { get {
+        public DeviceManagementScriptGroupAssignmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementScriptGroupAssignment_id", position);
-            return new GroupAssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementScriptGroupAssignmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupAssignmentsRequestBuilder and sets the default values.

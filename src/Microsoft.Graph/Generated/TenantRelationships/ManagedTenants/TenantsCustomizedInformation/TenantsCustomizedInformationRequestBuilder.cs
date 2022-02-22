@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantsCustomizedInf
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.tenantsCustomizedInformation.item collection</summary>
-        public TenantsCustomizedInformationRequestBuilder this[string position] { get {
+        public TenantCustomizedInformationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantCustomizedInformation_id", position);
-            return new TenantsCustomizedInformationRequestBuilder(urlTplParams, RequestAdapter);
+            return new TenantCustomizedInformationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TenantsCustomizedInformationRequestBuilder and sets the default values.

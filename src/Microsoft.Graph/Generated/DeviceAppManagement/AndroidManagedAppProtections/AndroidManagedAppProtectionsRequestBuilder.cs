@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks;
+using MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.androidManagedAppProtections.item collection</summary>
-        public AndroidManagedAppProtectionsRequestBuilder this[string position] { get {
+        public AndroidManagedAppProtectionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidManagedAppProtection_id", position);
-            return new AndroidManagedAppProtectionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AndroidManagedAppProtectionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AndroidManagedAppProtectionsRequestBuilder and sets the default values.

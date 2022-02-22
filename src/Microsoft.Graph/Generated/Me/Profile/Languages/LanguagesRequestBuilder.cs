@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.Profile.Languages.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.Profile.Languages {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.profile.languages.item collection</summary>
-        public LanguagesRequestBuilder this[string position] { get {
+        public LanguageProficiencyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("languageProficiency_id", position);
-            return new LanguagesRequestBuilder(urlTplParams, RequestAdapter);
+            return new LanguageProficiencyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LanguagesRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.MobileAppIntentAndStates.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.MobileAppIntentAndStates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.mobileAppIntentAndStates.item collection</summary>
-        public MobileAppIntentAndStatesRequestBuilder this[string position] { get {
+        public MobileAppIntentAndStateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppIntentAndState_id", position);
-            return new MobileAppIntentAndStatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileAppIntentAndStateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileAppIntentAndStatesRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Me.AppConsentRequestsForApproval.FilterByCurrentUserWithOn;
+using MicrosoftGraph.Me.AppConsentRequestsForApproval.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Me.AppConsentRequestsForApproval {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.appConsentRequestsForApproval.item collection</summary>
-        public AppConsentRequestsForApprovalRequestBuilder this[string position] { get {
+        public AppConsentRequestRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appConsentRequest_id", position);
-            return new AppConsentRequestsForApprovalRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppConsentRequestRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppConsentRequestsForApprovalRequestBuilder and sets the default values.

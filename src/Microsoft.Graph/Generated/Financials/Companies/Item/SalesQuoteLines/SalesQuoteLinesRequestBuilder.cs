@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.SalesQuoteLines.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.SalesQuoteLines {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.salesQuoteLines.item collection</summary>
-        public SalesQuoteLinesRequestBuilder this[string position] { get {
+        public SalesQuoteLineRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesQuoteLine_id", position);
-            return new SalesQuoteLinesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SalesQuoteLineRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SalesQuoteLinesRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Workbooks.Item.Thumbnails.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Workbooks.Item.Thumbnails {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.thumbnails.item collection</summary>
-        public ThumbnailsRequestBuilder this[string position] { get {
+        public ThumbnailSetRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("thumbnailSet_id", position);
-            return new ThumbnailsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ThumbnailSetRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ThumbnailsRequestBuilder and sets the default values.

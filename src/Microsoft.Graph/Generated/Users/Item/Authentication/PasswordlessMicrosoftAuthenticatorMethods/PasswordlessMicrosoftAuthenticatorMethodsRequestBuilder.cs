@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.Authentication.PasswordlessMicrosoftAuthenti
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.authentication.passwordlessMicrosoftAuthenticatorMethods.item collection</summary>
-        public PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder this[string position] { get {
+        public PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("passwordlessMicrosoftAuthenticatorAuthenticationMethod_id", position);
-            return new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(urlTplParams, RequestAdapter);
+            return new PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.

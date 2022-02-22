@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.DefaultManagedAppProtections.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.DefaultManagedAppProtections {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.defaultManagedAppProtections.item collection</summary>
-        public DefaultManagedAppProtectionsRequestBuilder this[string position] { get {
+        public DefaultManagedAppProtectionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("defaultManagedAppProtection_id", position);
-            return new DefaultManagedAppProtectionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DefaultManagedAppProtectionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DefaultManagedAppProtectionsRequestBuilder and sets the default values.

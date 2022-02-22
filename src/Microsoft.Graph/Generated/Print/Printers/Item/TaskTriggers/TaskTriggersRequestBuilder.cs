@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Print.Printers.Item.TaskTriggers.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Print.Printers.Item.TaskTriggers {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.print.printers.item.taskTriggers.item collection</summary>
-        public TaskTriggersRequestBuilder this[string position] { get {
+        public PrintTaskTriggerRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printTaskTrigger_id", position);
-            return new TaskTriggersRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintTaskTriggerRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TaskTriggersRequestBuilder and sets the default values.

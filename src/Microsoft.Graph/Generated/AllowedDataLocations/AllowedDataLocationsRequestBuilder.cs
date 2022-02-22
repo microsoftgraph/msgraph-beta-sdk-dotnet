@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.AllowedDataLocations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.AllowedDataLocations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.allowedDataLocations.item collection</summary>
-        public AllowedDataLocationsRequestBuilder this[string position] { get {
+        public AllowedDataLocationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("allowedDataLocation_id", position);
-            return new AllowedDataLocationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AllowedDataLocationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AllowedDataLocationsRequestBuilder and sets the default values.

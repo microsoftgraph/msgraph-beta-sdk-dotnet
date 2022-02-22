@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Devices.GetByIds;
 using MicrosoftGraph.Devices.GetUserOwnedObjects;
+using MicrosoftGraph.Devices.Item;
 using MicrosoftGraph.Devices.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -29,10 +30,10 @@ namespace MicrosoftGraph.Devices {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.devices.item collection</summary>
-        public DevicesRequestBuilder this[string position] { get {
+        public DeviceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("device_id", position);
-            return new DevicesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DevicesRequestBuilder and sets the default values.

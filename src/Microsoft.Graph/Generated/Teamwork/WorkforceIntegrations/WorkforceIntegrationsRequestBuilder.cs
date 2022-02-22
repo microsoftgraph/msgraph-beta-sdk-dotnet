@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Teamwork.WorkforceIntegrations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Teamwork.WorkforceIntegrations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teamwork.workforceIntegrations.item collection</summary>
-        public WorkforceIntegrationsRequestBuilder this[string position] { get {
+        public WorkforceIntegrationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workforceIntegration_id", position);
-            return new WorkforceIntegrationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkforceIntegrationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WorkforceIntegrationsRequestBuilder and sets the default values.

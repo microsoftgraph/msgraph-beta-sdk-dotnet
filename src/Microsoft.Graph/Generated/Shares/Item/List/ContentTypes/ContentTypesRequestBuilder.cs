@@ -4,6 +4,7 @@ using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Shares.Item.List.ContentTypes.AddCopy;
 using MicrosoftGraph.Shares.Item.List.ContentTypes.AddCopyFromContentTypeHub;
 using MicrosoftGraph.Shares.Item.List.ContentTypes.GetCompatibleHubContentTypes;
+using MicrosoftGraph.Shares.Item.List.ContentTypes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,10 +27,10 @@ namespace MicrosoftGraph.Shares.Item.List.ContentTypes {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.shares.item.list.contentTypes.item collection</summary>
-        public ContentTypesRequestBuilder this[string position] { get {
+        public ContentTypeRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType_id", position);
-            return new ContentTypesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContentTypeRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContentTypesRequestBuilder and sets the default values.

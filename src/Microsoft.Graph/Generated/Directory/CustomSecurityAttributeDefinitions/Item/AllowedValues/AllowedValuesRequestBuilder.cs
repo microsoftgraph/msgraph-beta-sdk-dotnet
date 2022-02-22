@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Directory.CustomSecurityAttributeDefinitions.Item.AllowedValues.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Directory.CustomSecurityAttributeDefinitions.Item.Allow
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.directory.customSecurityAttributeDefinitions.item.allowedValues.item collection</summary>
-        public AllowedValuesRequestBuilder this[string position] { get {
+        public AllowedValueRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("allowedValue_id", position);
-            return new AllowedValuesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AllowedValueRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AllowedValuesRequestBuilder and sets the default values.

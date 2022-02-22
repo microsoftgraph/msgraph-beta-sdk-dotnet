@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DataClassification.EvaluateLabelJobs.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DataClassification.EvaluateLabelJobs {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.dataClassification.evaluateLabelJobs.item collection</summary>
-        public EvaluateLabelJobsRequestBuilder this[string position] { get {
+        public JobResponseBaseRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("jobResponseBase_id", position);
-            return new EvaluateLabelJobsRequestBuilder(urlTplParams, RequestAdapter);
+            return new JobResponseBaseRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EvaluateLabelJobsRequestBuilder and sets the default values.

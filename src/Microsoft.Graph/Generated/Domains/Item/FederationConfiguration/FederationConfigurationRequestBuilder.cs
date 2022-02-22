@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Domains.Item.FederationConfiguration.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Domains.Item.FederationConfiguration {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.domains.item.federationConfiguration.item collection</summary>
-        public FederationConfigurationRequestBuilder this[string position] { get {
+        public InternalDomainFederationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("internalDomainFederation_id", position);
-            return new FederationConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new InternalDomainFederationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FederationConfigurationRequestBuilder and sets the default values.

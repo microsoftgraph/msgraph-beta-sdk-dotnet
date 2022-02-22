@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Print.TaskDefinitions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Print.TaskDefinitions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.print.taskDefinitions.item collection</summary>
-        public TaskDefinitionsRequestBuilder this[string position] { get {
+        public PrintTaskDefinitionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printTaskDefinition_id", position);
-            return new TaskDefinitionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintTaskDefinitionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TaskDefinitionsRequestBuilder and sets the default values.

@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Contacts.Delta;
 using MicrosoftGraph.Contacts.GetByIds;
 using MicrosoftGraph.Contacts.GetUserOwnedObjects;
+using MicrosoftGraph.Contacts.Item;
 using MicrosoftGraph.Contacts.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -30,10 +31,10 @@ namespace MicrosoftGraph.Contacts {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.contacts.item collection</summary>
-        public ContactsRequestBuilder this[string position] { get {
+        public OrgContactRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("orgContact_id", position);
-            return new ContactsRequestBuilder(urlTplParams, RequestAdapter);
+            return new OrgContactRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContactsRequestBuilder and sets the default values.

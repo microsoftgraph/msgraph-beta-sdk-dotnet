@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssets;
 using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssetsById;
+using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item;
 using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssets;
 using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssetsById;
 using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
@@ -33,10 +34,10 @@ namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusi
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.admin.windows.updates.deployments.item.audience.exclusions.item collection</summary>
-        public ExclusionsRequestBuilder this[string position] { get {
+        public UpdatableAssetRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("updatableAsset_id", position);
-            return new ExclusionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new UpdatableAssetRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExclusionsRequestBuilder and sets the default values.

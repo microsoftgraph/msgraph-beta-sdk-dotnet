@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Series.Count;
+using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Series.Item;
 using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Series.ItemAtWithIndex;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,10 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.It
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.tables.item.worksheet.charts.item.series.item collection</summary>
-        public SeriesRequestBuilder this[string position] { get {
+        public WorkbookChartSeriesRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookChartSeries_id", position);
-            return new SeriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookChartSeriesRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SeriesRequestBuilder and sets the default values.

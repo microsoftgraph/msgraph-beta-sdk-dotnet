@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Admin.ServiceAnnouncement.HealthOverviews.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Admin.ServiceAnnouncement.HealthOverviews {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.admin.serviceAnnouncement.healthOverviews.item collection</summary>
-        public HealthOverviewsRequestBuilder this[string position] { get {
+        public ServiceHealthRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceHealth_id", position);
-            return new HealthOverviewsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServiceHealthRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HealthOverviewsRequestBuilder and sets the default values.

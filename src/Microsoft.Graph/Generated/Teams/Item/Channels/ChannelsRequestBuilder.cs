@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Teams.Item.Channels.AllMessages;
 using MicrosoftGraph.Teams.Item.Channels.GetAllMessages;
+using MicrosoftGraph.Teams.Item.Channels.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,10 +20,10 @@ namespace MicrosoftGraph.Teams.Item.Channels {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teams.item.channels.item collection</summary>
-        public ChannelsRequestBuilder this[string position] { get {
+        public ChannelRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("channel_id", position);
-            return new ChannelsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChannelRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \teams\{team-id}\channels\microsoft.graph.allMessages()

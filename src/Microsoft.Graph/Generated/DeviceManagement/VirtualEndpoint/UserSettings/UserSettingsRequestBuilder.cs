@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.VirtualEndpoint.UserSettings.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.UserSettings {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.virtualEndpoint.userSettings.item collection</summary>
-        public UserSettingsRequestBuilder this[string position] { get {
+        public CloudPcUserSettingRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcUserSetting_id", position);
-            return new UserSettingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcUserSettingRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserSettingsRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.Authentication.EmailMethods.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.Authentication.EmailMethods {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.authentication.emailMethods.item collection</summary>
-        public EmailMethodsRequestBuilder this[string position] { get {
+        public EmailAuthenticationMethodRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("emailAuthenticationMethod_id", position);
-            return new EmailMethodsRequestBuilder(urlTplParams, RequestAdapter);
+            return new EmailAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EmailMethodsRequestBuilder and sets the default values.

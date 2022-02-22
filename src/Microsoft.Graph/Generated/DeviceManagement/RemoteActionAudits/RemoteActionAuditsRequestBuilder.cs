@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.RemoteActionAudits.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.RemoteActionAudits {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.remoteActionAudits.item collection</summary>
-        public RemoteActionAuditsRequestBuilder this[string position] { get {
+        public RemoteActionAuditRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("remoteActionAudit_id", position);
-            return new RemoteActionAuditsRequestBuilder(urlTplParams, RequestAdapter);
+            return new RemoteActionAuditRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RemoteActionAuditsRequestBuilder and sets the default values.

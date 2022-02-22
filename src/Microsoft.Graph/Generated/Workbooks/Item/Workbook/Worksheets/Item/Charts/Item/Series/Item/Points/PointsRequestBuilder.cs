@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.Count;
+using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.Item;
 using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.ItemAtWithIndex;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,10 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Ser
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.worksheets.item.charts.item.series.item.points.item collection</summary>
-        public PointsRequestBuilder this[string position] { get {
+        public WorkbookChartPointRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookChartPoint_id", position);
-            return new PointsRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookChartPointRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PointsRequestBuilder and sets the default values.

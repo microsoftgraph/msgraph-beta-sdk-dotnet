@@ -4,6 +4,7 @@ using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Users.Item.ManagedDevices.BulkReprovisionCloudPc;
 using MicrosoftGraph.Users.Item.ManagedDevices.BulkRestoreCloudPc;
 using MicrosoftGraph.Users.Item.ManagedDevices.ExecuteAction;
+using MicrosoftGraph.Users.Item.ManagedDevices.Item;
 using MicrosoftGraph.Users.Item.ManagedDevices.MoveDevicesToOU;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,10 @@ namespace MicrosoftGraph.Users.Item.ManagedDevices {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.managedDevices.item collection</summary>
-        public ManagedDevicesRequestBuilder this[string position] { get {
+        public ManagedDeviceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDevice_id", position);
-            return new ManagedDevicesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.

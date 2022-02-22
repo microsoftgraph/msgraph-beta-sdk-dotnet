@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.RoleManagement.Directory.ResourceNamespaces.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.RoleManagement.Directory.ResourceNamespaces {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.roleManagement.directory.resourceNamespaces.item collection</summary>
-        public ResourceNamespacesRequestBuilder this[string position] { get {
+        public UnifiedRbacResourceNamespaceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRbacResourceNamespace_id", position);
-            return new ResourceNamespacesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRbacResourceNamespaceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourceNamespacesRequestBuilder and sets the default values.

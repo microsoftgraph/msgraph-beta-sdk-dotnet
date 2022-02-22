@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Querie
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.reviewSets.item.queries.item collection</summary>
-        public QueriesRequestBuilder this[string position] { get {
+        public ReviewSetQueryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("reviewSetQuery_id", position);
-            return new QueriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ReviewSetQueryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new QueriesRequestBuilder and sets the default values.

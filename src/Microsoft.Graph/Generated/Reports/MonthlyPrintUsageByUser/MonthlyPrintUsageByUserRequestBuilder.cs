@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Reports.MonthlyPrintUsageByUser.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Reports.MonthlyPrintUsageByUser {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.reports.monthlyPrintUsageByUser.item collection</summary>
-        public MonthlyPrintUsageByUserRequestBuilder this[string position] { get {
+        public PrintUsageByUserRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printUsageByUser_id", position);
-            return new MonthlyPrintUsageByUserRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintUsageByUserRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MonthlyPrintUsageByUserRequestBuilder and sets the default values.

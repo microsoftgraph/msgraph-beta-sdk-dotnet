@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Groups.Item.Events.Delta;
+using MicrosoftGraph.Groups.Item.Events.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Groups.Item.Events {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.groups.item.events.item collection</summary>
-        public EventsRequestBuilder this[string position] { get {
+        public EventRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id", position);
-            return new EventsRequestBuilder(urlTplParams, RequestAdapter);
+            return new EventRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EventsRequestBuilder and sets the default values.

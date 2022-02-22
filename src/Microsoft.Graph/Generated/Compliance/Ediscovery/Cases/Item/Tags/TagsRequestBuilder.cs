@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy;
+using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.tags.item collection</summary>
-        public TagsRequestBuilder this[string position] { get {
+        public TagRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tag_id", position);
-            return new TagsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TagRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\microsoft.graph.ediscovery.asHierarchy()

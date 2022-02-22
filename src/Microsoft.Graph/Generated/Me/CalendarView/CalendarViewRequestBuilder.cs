@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Me.CalendarView.Delta;
+using MicrosoftGraph.Me.CalendarView.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Me.CalendarView {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.calendarView.item collection</summary>
-        public CalendarViewRequestBuilder this[string position] { get {
+        public EventRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id", position);
-            return new CalendarViewRequestBuilder(urlTplParams, RequestAdapter);
+            return new EventRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarViewRequestBuilder and sets the default values.

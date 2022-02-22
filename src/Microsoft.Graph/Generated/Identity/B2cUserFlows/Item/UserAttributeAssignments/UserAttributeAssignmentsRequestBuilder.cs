@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Identity.B2cUserFlows.Item.UserAttributeAssignments.GetOrder;
+using MicrosoftGraph.Identity.B2cUserFlows.Item.UserAttributeAssignments.Item;
 using MicrosoftGraph.Identity.B2cUserFlows.Item.UserAttributeAssignments.SetOrder;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -22,10 +23,10 @@ namespace MicrosoftGraph.Identity.B2cUserFlows.Item.UserAttributeAssignments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identity.b2cUserFlows.item.userAttributeAssignments.item collection</summary>
-        public UserAttributeAssignmentsRequestBuilder this[string position] { get {
+        public IdentityUserFlowAttributeAssignmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlowAttributeAssignment_id", position);
-            return new UserAttributeAssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityUserFlowAttributeAssignmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserAttributeAssignmentsRequestBuilder and sets the default values.

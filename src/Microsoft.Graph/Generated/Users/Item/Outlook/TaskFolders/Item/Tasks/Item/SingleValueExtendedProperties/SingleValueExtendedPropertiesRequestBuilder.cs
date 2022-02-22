@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.Outlook.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.Outlook.TaskFolders.Item.Tasks.Item.SingleVa
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.outlook.taskFolders.item.tasks.item.singleValueExtendedProperties.item collection</summary>
-        public SingleValueExtendedPropertiesRequestBuilder this[string position] { get {
+        public SingleValueLegacyExtendedPropertyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("singleValueLegacyExtendedProperty_id", position);
-            return new SingleValueExtendedPropertiesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SingleValueLegacyExtendedPropertyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.

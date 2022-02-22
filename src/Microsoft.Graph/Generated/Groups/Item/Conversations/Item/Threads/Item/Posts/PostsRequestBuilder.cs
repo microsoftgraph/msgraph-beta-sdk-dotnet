@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Groups.Item.Conversations.Item.Threads.Item.Posts {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.groups.item.conversations.item.threads.item.posts.item collection</summary>
-        public PostsRequestBuilder this[string position] { get {
+        public PostRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("post_id", position);
-            return new PostsRequestBuilder(urlTplParams, RequestAdapter);
+            return new PostRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PostsRequestBuilder and sets the default values.

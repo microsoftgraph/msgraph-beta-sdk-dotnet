@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.ManagedEBooks.Item.UserStateSummary.Item.DeviceStates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.ManagedEBooks.Item.UserStateSummary
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.managedEBooks.item.userStateSummary.item.deviceStates.item collection</summary>
-        public DeviceStatesRequestBuilder this[string position] { get {
+        public DeviceInstallStateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceInstallState_id", position);
-            return new DeviceStatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceInstallStateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceStatesRequestBuilder and sets the default values.

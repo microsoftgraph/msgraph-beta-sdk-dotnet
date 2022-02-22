@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.MailFolders.Item.UserConfigurations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.MailFolders.Item.UserConfigurations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.mailFolders.item.userConfigurations.item collection</summary>
-        public UserConfigurationsRequestBuilder this[string position] { get {
+        public UserConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userConfiguration_id", position);
-            return new UserConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserConfigurationsRequestBuilder and sets the default values.

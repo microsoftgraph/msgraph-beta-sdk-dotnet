@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.Reports.ExportJobs.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.Reports.ExportJobs {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.reports.exportJobs.item collection</summary>
-        public ExportJobsRequestBuilder this[string position] { get {
+        public DeviceManagementExportJobRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExportJob_id", position);
-            return new ExportJobsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementExportJobRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExportJobsRequestBuilder and sets the default values.

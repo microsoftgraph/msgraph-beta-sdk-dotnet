@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Users.Item.MailFolders.Item.ChildFolders.Delta;
+using MicrosoftGraph.Users.Item.MailFolders.Item.ChildFolders.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Users.Item.MailFolders.Item.ChildFolders {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.mailFolders.item.childFolders.item collection</summary>
-        public ChildFoldersRequestBuilder this[string position] { get {
+        public MailFolderRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mailFolder_id1", position);
-            return new ChildFoldersRequestBuilder(urlTplParams, RequestAdapter);
+            return new MailFolderRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildFoldersRequestBuilder and sets the default values.

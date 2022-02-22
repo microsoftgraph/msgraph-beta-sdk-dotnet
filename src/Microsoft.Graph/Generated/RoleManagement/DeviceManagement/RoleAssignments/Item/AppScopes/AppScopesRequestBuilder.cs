@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.RoleManagement.DeviceManagement.RoleAssignments.Item.AppScopes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.RoleManagement.DeviceManagement.RoleAssignments.Item.Ap
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.roleManagement.deviceManagement.roleAssignments.item.appScopes.item collection</summary>
-        public AppScopesRequestBuilder this[string position] { get {
+        public AppScopeRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appScope_id", position);
-            return new AppScopesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppScopeRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppScopesRequestBuilder and sets the default values.

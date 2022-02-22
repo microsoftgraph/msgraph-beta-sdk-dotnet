@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DataClassification.ClassifyTextJobs.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DataClassification.ClassifyTextJobs {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.dataClassification.classifyTextJobs.item collection</summary>
-        public ClassifyTextJobsRequestBuilder this[string position] { get {
+        public JobResponseBaseRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("jobResponseBase_id", position);
-            return new ClassifyTextJobsRequestBuilder(urlTplParams, RequestAdapter);
+            return new JobResponseBaseRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ClassifyTextJobsRequestBuilder and sets the default values.

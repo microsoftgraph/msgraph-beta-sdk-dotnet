@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.PermissionGrantPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.PermissionGrantPolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.permissionGrantPolicies.item collection</summary>
-        public PermissionGrantPoliciesRequestBuilder this[string position] { get {
+        public PermissionGrantPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("permissionGrantPolicy_id", position);
-            return new PermissionGrantPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new PermissionGrantPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PermissionGrantPoliciesRequestBuilder and sets the default values.

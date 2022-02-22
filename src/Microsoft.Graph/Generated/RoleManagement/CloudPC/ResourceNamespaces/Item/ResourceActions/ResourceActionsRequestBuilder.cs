@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.RoleManagement.CloudPC.ResourceNamespaces.Item.ResourceActions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.RoleManagement.CloudPC.ResourceNamespaces.Item.Resource
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.roleManagement.cloudPC.resourceNamespaces.item.resourceActions.item collection</summary>
-        public ResourceActionsRequestBuilder this[string position] { get {
+        public UnifiedRbacResourceActionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRbacResourceAction_id", position);
-            return new ResourceActionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRbacResourceActionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourceActionsRequestBuilder and sets the default values.

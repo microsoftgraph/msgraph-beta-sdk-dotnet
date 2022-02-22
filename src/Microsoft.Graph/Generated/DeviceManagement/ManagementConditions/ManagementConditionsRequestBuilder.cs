@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.ManagementConditions.GetManagementConditionsForPlatformWithPlatform;
+using MicrosoftGraph.DeviceManagement.ManagementConditions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.DeviceManagement.ManagementConditions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.managementConditions.item collection</summary>
-        public ManagementConditionsRequestBuilder this[string position] { get {
+        public ManagementConditionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementCondition_id", position);
-            return new ManagementConditionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagementConditionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagementConditionsRequestBuilder and sets the default values.

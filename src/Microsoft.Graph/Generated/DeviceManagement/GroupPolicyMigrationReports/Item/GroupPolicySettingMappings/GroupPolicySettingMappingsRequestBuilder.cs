@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports.Item.GroupPolicySettingMappings.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports.Item.Group
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyMigrationReports.item.groupPolicySettingMappings.item collection</summary>
-        public GroupPolicySettingMappingsRequestBuilder this[string position] { get {
+        public GroupPolicySettingMappingRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicySettingMapping_id", position);
-            return new GroupPolicySettingMappingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupPolicySettingMappingRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupPolicySettingMappingsRequestBuilder and sets the default values.

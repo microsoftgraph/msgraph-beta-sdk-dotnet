@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.HasPayloadLinks;
+using MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.iosLobAppProvisioningConfigurations.item collection</summary>
-        public IosLobAppProvisioningConfigurationsRequestBuilder this[string position] { get {
+        public IosLobAppProvisioningConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("iosLobAppProvisioningConfiguration_id", position);
-            return new IosLobAppProvisioningConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new IosLobAppProvisioningConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IosLobAppProvisioningConfigurationsRequestBuilder and sets the default values.

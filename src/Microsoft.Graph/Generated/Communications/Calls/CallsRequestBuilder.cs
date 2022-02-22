@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Communications.Calls.Item;
 using MicrosoftGraph.Communications.Calls.LogTeleconferenceDeviceQuality;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.Communications.Calls {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.communications.calls.item collection</summary>
-        public CallsRequestBuilder this[string position] { get {
+        public CallRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("call_id", position);
-            return new CallsRequestBuilder(urlTplParams, RequestAdapter);
+            return new CallRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CallsRequestBuilder and sets the default values.

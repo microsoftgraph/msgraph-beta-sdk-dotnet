@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.AuditLogs.Provisioning.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.AuditLogs.Provisioning {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.auditLogs.provisioning.item collection</summary>
-        public ProvisioningRequestBuilder this[string position] { get {
+        public ProvisioningObjectSummaryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("provisioningObjectSummary_id", position);
-            return new ProvisioningRequestBuilder(urlTplParams, RequestAdapter);
+            return new ProvisioningObjectSummaryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ProvisioningRequestBuilder and sets the default values.

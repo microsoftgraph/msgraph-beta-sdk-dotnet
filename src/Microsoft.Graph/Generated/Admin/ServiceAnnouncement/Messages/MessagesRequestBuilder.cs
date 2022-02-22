@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Archive;
 using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Favorite;
+using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Item;
 using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.MarkRead;
 using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.MarkUnread;
 using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Unarchive;
@@ -41,10 +42,10 @@ namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.admin.serviceAnnouncement.messages.item collection</summary>
-        public MessagesRequestBuilder this[string position] { get {
+        public ServiceUpdateMessageRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceUpdateMessage_id", position);
-            return new MessagesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServiceUpdateMessageRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MessagesRequestBuilder and sets the default values.

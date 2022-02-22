@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups.Item;
 using MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.tenantGroups.item collection</summary>
-        public TenantGroupsRequestBuilder this[string position] { get {
+        public TenantGroupRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantGroup_id", position);
-            return new TenantGroupsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TenantGroupRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TenantGroupsRequestBuilder and sets the default values.

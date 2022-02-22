@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.WindowsInformationProtectionAppLearnin
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsInformationProtectionAppLearningSummaries.item collection</summary>
-        public WindowsInformationProtectionAppLearningSummariesRequestBuilder this[string position] { get {
+        public WindowsInformationProtectionAppLearningSummaryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionAppLearningSummary_id", position);
-            return new WindowsInformationProtectionAppLearningSummariesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsInformationProtectionAppLearningSummaryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsInformationProtectionAppLearningSummariesRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.Dimensions.Item.DimensionValues.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.Dimensions.Item.DimensionValu
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.dimensions.item.dimensionValues.item collection</summary>
-        public DimensionValuesRequestBuilder this[string position] { get {
+        public DimensionValueRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dimensionValue_id", position);
-            return new DimensionValuesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DimensionValueRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DimensionValuesRequestBuilder and sets the default values.

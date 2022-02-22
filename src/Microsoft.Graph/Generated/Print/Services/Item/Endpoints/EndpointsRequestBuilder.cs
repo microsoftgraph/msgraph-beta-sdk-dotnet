@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Print.Services.Item.Endpoints.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Print.Services.Item.Endpoints {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.print.services.item.endpoints.item collection</summary>
-        public EndpointsRequestBuilder this[string position] { get {
+        public PrintServiceEndpointRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printServiceEndpoint_id", position);
-            return new EndpointsRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintServiceEndpointRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EndpointsRequestBuilder and sets the default values.

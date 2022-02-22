@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId;
+using MicrosoftGraph.DeviceAppManagement.VppTokens.Item;
 using MicrosoftGraph.DeviceAppManagement.VppTokens.SyncLicenseCounts;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -22,10 +23,10 @@ namespace MicrosoftGraph.DeviceAppManagement.VppTokens {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.vppTokens.item collection</summary>
-        public VppTokensRequestBuilder this[string position] { get {
+        public VppTokenRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("vppToken_id", position);
-            return new VppTokensRequestBuilder(urlTplParams, RequestAdapter);
+            return new VppTokenRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VppTokensRequestBuilder and sets the default values.

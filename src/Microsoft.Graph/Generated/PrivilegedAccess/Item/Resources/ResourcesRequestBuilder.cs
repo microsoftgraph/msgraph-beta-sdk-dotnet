@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.PrivilegedAccess.Item.Resources.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.PrivilegedAccess.Item.Resources {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.privilegedAccess.item.resources.item collection</summary>
-        public ResourcesRequestBuilder this[string position] { get {
+        public GovernanceResourceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceResource_id", position);
-            return new ResourcesRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernanceResourceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourcesRequestBuilder and sets the default values.

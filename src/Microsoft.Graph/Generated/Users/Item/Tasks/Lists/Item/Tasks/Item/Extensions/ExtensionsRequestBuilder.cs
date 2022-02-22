@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.Tasks.Lists.Item.Tasks.Item.Extensions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.Tasks.Lists.Item.Tasks.Item.Extensions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.tasks.lists.item.tasks.item.extensions.item collection</summary>
-        public ExtensionsRequestBuilder this[string position] { get {
+        public ExtensionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("extension_id", position);
-            return new ExtensionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExtensionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExtensionsRequestBuilder and sets the default values.

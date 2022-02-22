@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.ApprovalWorkflowProviders.Item.BusinessFlows.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.ApprovalWorkflowProviders.Item.BusinessFlows {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.approvalWorkflowProviders.item.businessFlows.item collection</summary>
-        public BusinessFlowsRequestBuilder this[string position] { get {
+        public BusinessFlowRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("businessFlow_id", position);
-            return new BusinessFlowsRequestBuilder(urlTplParams, RequestAdapter);
+            return new BusinessFlowRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new BusinessFlowsRequestBuilder and sets the default values.

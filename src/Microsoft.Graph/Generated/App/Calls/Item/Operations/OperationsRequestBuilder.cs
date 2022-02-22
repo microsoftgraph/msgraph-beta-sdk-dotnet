@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.App.Calls.Item.Operations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.App.Calls.Item.Operations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.app.calls.item.operations.item collection</summary>
-        public OperationsRequestBuilder this[string position] { get {
+        public CommsOperationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("commsOperation_id", position);
-            return new OperationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new CommsOperationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

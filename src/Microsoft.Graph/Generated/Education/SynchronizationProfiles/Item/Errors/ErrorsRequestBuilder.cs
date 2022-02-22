@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Education.SynchronizationProfiles.Item.Errors.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Education.SynchronizationProfiles.Item.Errors {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.education.synchronizationProfiles.item.errors.item collection</summary>
-        public ErrorsRequestBuilder this[string position] { get {
+        public EducationSynchronizationErrorRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSynchronizationError_id", position);
-            return new ErrorsRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationSynchronizationErrorRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ErrorsRequestBuilder and sets the default values.

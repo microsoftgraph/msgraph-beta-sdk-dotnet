@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.ManagedEBookCategories.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.ManagedEBookCategories {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.managedEBookCategories.item collection</summary>
-        public ManagedEBookCategoriesRequestBuilder this[string position] { get {
+        public ManagedEBookCategoryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedEBookCategory_id", position);
-            return new ManagedEBookCategoriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedEBookCategoryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedEBookCategoriesRequestBuilder and sets the default values.

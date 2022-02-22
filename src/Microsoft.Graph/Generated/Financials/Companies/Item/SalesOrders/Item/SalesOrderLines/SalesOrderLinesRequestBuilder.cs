@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.SalesOrders.Item.SalesOrderLines.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.SalesOrders.Item.SalesOrderLi
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.salesOrders.item.salesOrderLines.item collection</summary>
-        public SalesOrderLinesRequestBuilder this[string position] { get {
+        public SalesOrderLineRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesOrderLine_id", position);
-            return new SalesOrderLinesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SalesOrderLineRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SalesOrderLinesRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.SubscribedSkus.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.SubscribedSkus {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.subscribedSkus.item collection</summary>
-        public SubscribedSkusRequestBuilder this[string position] { get {
+        public SubscribedSkuRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscribedSku_id", position);
-            return new SubscribedSkusRequestBuilder(urlTplParams, RequestAdapter);
+            return new SubscribedSkuRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SubscribedSkusRequestBuilder and sets the default values.

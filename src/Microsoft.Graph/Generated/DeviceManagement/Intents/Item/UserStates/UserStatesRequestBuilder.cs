@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.Intents.Item.UserStates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.Intents.Item.UserStates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.intents.item.userStates.item collection</summary>
-        public UserStatesRequestBuilder this[string position] { get {
+        public DeviceManagementIntentUserStateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementIntentUserState_id", position);
-            return new UserStatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementIntentUserStateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserStatesRequestBuilder and sets the default values.

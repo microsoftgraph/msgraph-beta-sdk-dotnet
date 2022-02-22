@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Me.ManagedDevices.BulkReprovisionCloudPc;
 using MicrosoftGraph.Me.ManagedDevices.BulkRestoreCloudPc;
 using MicrosoftGraph.Me.ManagedDevices.ExecuteAction;
+using MicrosoftGraph.Me.ManagedDevices.Item;
 using MicrosoftGraph.Me.ManagedDevices.MoveDevicesToOU;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -33,10 +34,10 @@ namespace MicrosoftGraph.Me.ManagedDevices {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.managedDevices.item collection</summary>
-        public ManagedDevicesRequestBuilder this[string position] { get {
+        public ManagedDeviceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDevice_id", position);
-            return new ManagedDevicesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.

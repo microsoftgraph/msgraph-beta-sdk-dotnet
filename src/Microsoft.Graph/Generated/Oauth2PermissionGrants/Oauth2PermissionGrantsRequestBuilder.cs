@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Oauth2PermissionGrants.Delta;
+using MicrosoftGraph.Oauth2PermissionGrants.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Oauth2PermissionGrants {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.oauth2PermissionGrants.item collection</summary>
-        public Oauth2PermissionGrantsRequestBuilder this[string position] { get {
+        public OAuth2PermissionGrantRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("oAuth2PermissionGrant_id", position);
-            return new Oauth2PermissionGrantsRequestBuilder(urlTplParams, RequestAdapter);
+            return new OAuth2PermissionGrantRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DataPolicyOperations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DataPolicyOperations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.dataPolicyOperations.item collection</summary>
-        public DataPolicyOperationsRequestBuilder this[string position] { get {
+        public DataPolicyOperationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataPolicyOperation_id", position);
-            return new DataPolicyOperationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DataPolicyOperationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DataPolicyOperationsRequestBuilder and sets the default values.

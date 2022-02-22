@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.PrivilegedOperationEvents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.PrivilegedOperationEvents {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.privilegedOperationEvents.item collection</summary>
-        public PrivilegedOperationEventsRequestBuilder this[string position] { get {
+        public PrivilegedOperationEventRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedOperationEvent_id", position);
-            return new PrivilegedOperationEventsRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrivilegedOperationEventRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PrivilegedOperationEventsRequestBuilder and sets the default values.

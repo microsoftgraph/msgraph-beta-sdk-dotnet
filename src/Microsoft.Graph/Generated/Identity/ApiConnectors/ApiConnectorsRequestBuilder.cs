@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Identity.ApiConnectors.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Identity.ApiConnectors {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identity.apiConnectors.item collection</summary>
-        public ApiConnectorsRequestBuilder this[string position] { get {
+        public IdentityApiConnectorRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityApiConnector_id", position);
-            return new ApiConnectorsRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityApiConnectorRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ApiConnectorsRequestBuilder and sets the default values.

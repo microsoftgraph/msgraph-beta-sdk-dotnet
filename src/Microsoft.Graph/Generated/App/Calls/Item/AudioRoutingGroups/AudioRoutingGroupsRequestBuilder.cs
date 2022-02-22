@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.App.Calls.Item.AudioRoutingGroups.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.App.Calls.Item.AudioRoutingGroups {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.app.calls.item.audioRoutingGroups.item collection</summary>
-        public AudioRoutingGroupsRequestBuilder this[string position] { get {
+        public AudioRoutingGroupRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("audioRoutingGroup_id", position);
-            return new AudioRoutingGroupsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AudioRoutingGroupRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AudioRoutingGroupsRequestBuilder and sets the default values.

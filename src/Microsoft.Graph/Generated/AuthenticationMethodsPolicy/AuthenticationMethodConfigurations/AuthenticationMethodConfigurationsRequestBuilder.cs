@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.AuthenticationMethodsPolicy.AuthenticationMethodConfigurations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.AuthenticationMethodsPolicy.AuthenticationMethodConfigu
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.authenticationMethodsPolicy.authenticationMethodConfigurations.item collection</summary>
-        public AuthenticationMethodConfigurationsRequestBuilder this[string position] { get {
+        public AuthenticationMethodConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationMethodConfiguration_id", position);
-            return new AuthenticationMethodConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AuthenticationMethodConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AuthenticationMethodConfigurationsRequestBuilder and sets the default values.

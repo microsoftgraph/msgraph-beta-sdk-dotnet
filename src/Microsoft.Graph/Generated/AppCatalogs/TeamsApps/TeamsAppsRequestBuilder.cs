@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.AppCatalogs.TeamsApps.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.AppCatalogs.TeamsApps {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.appCatalogs.teamsApps.item collection</summary>
-        public TeamsAppsRequestBuilder this[string position] { get {
+        public TeamsAppRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsApp_id", position);
-            return new TeamsAppsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamsAppRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TeamsAppsRequestBuilder and sets the default values.

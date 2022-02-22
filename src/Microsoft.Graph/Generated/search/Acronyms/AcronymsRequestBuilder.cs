@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.Search;
+using MicrosoftGraph.Search.Acronyms.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Search.Acronyms {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.search.acronyms.item collection</summary>
-        public AcronymsRequestBuilder this[string position] { get {
+        public AcronymRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("acronym_id", position);
-            return new AcronymsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AcronymRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AcronymsRequestBuilder and sets the default values.

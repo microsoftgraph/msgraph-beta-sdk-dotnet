@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceAppManagement.PolicySets.GetPolicySets;
+using MicrosoftGraph.DeviceAppManagement.PolicySets.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceAppManagement.PolicySets {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.policySets.item collection</summary>
-        public PolicySetsRequestBuilder this[string position] { get {
+        public PolicySetRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("policySet_id", position);
-            return new PolicySetsRequestBuilder(urlTplParams, RequestAdapter);
+            return new PolicySetRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PolicySetsRequestBuilder and sets the default values.

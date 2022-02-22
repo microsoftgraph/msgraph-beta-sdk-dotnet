@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.ApprovalWorkflowProviders.Item.PolicyTemplates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.ApprovalWorkflowProviders.Item.PolicyTemplates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.approvalWorkflowProviders.item.policyTemplates.item collection</summary>
-        public PolicyTemplatesRequestBuilder this[string position] { get {
+        public GovernancePolicyTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governancePolicyTemplate_id", position);
-            return new PolicyTemplatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernancePolicyTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PolicyTemplatesRequestBuilder and sets the default values.

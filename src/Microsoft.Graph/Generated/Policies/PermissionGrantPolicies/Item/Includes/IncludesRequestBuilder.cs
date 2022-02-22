@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.PermissionGrantPolicies.Item.Includes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.PermissionGrantPolicies.Item.Includes {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.permissionGrantPolicies.item.includes.item collection</summary>
-        public IncludesRequestBuilder this[string position] { get {
+        public PermissionGrantConditionSetRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("permissionGrantConditionSet_id", position);
-            return new IncludesRequestBuilder(urlTplParams, RequestAdapter);
+            return new PermissionGrantConditionSetRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IncludesRequestBuilder and sets the default values.

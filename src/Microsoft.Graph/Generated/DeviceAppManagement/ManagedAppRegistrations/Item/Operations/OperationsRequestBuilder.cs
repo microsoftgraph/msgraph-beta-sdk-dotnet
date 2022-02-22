@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.Operat
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.managedAppRegistrations.item.operations.item collection</summary>
-        public OperationsRequestBuilder this[string position] { get {
+        public ManagedAppOperationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAppOperation_id", position);
-            return new OperationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedAppOperationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

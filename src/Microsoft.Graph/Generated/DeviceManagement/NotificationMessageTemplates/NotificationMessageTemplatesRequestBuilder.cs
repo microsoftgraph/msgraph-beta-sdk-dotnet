@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.NotificationMessageTemplates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.NotificationMessageTemplates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.notificationMessageTemplates.item collection</summary>
-        public NotificationMessageTemplatesRequestBuilder this[string position] { get {
+        public NotificationMessageTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("notificationMessageTemplate_id", position);
-            return new NotificationMessageTemplatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new NotificationMessageTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NotificationMessageTemplatesRequestBuilder and sets the default values.

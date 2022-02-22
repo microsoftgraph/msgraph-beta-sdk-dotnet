@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.TrustFramework.KeySets.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TrustFramework.KeySets {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.trustFramework.keySets.item collection</summary>
-        public KeySetsRequestBuilder this[string position] { get {
+        public TrustFrameworkKeySetRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("trustFrameworkKeySet_id", position);
-            return new KeySetsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TrustFrameworkKeySetRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new KeySetsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.Intents.Item.DeviceSettingStateSummaries.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.Intents.Item.DeviceSettingStateSummari
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.intents.item.deviceSettingStateSummaries.item collection</summary>
-        public DeviceSettingStateSummariesRequestBuilder this[string position] { get {
+        public DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementIntentDeviceSettingStateSummary_id", position);
-            return new DeviceSettingStateSummariesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementIntentDeviceSettingStateSummaryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceSettingStateSummariesRequestBuilder and sets the default values.

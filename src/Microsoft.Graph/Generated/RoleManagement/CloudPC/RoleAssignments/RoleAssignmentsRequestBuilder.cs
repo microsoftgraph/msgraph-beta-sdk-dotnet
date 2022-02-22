@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.RoleManagement.CloudPC.RoleAssignments.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.RoleManagement.CloudPC.RoleAssignments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.roleManagement.cloudPC.roleAssignments.item collection</summary>
-        public RoleAssignmentsRequestBuilder this[string position] { get {
+        public UnifiedRoleAssignmentMultipleRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleAssignmentMultiple_id", position);
-            return new RoleAssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleAssignmentMultipleRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleAssignmentsRequestBuilder and sets the default values.

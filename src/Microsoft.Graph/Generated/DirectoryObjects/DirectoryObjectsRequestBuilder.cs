@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DirectoryObjects.GetByIds;
 using MicrosoftGraph.DirectoryObjects.GetUserOwnedObjects;
+using MicrosoftGraph.DirectoryObjects.Item;
 using MicrosoftGraph.DirectoryObjects.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -29,10 +30,10 @@ namespace MicrosoftGraph.DirectoryObjects {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.directoryObjects.item collection</summary>
-        public DirectoryObjectsRequestBuilder this[string position] { get {
+        public DirectoryObjectRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);
-            return new DirectoryObjectsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryObjectRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryObjectsRequestBuilder and sets the default values.

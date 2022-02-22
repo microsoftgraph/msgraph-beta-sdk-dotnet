@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.FilterOperators.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.FilterOperators {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.filterOperators.item collection</summary>
-        public FilterOperatorsRequestBuilder this[string position] { get {
+        public FilterOperatorSchemaRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("filterOperatorSchema_id", position);
-            return new FilterOperatorsRequestBuilder(urlTplParams, RequestAdapter);
+            return new FilterOperatorSchemaRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FilterOperatorsRequestBuilder and sets the default values.

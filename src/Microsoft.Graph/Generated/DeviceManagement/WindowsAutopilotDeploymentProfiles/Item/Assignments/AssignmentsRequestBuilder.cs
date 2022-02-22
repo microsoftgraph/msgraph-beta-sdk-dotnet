@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.Assignments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.Ite
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsAutopilotDeploymentProfiles.item.assignments.item collection</summary>
-        public AssignmentsRequestBuilder this[string position] { get {
+        public WindowsAutopilotDeploymentProfileAssignmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsAutopilotDeploymentProfileAssignment_id", position);
-            return new AssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsAutopilotDeploymentProfileAssignmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

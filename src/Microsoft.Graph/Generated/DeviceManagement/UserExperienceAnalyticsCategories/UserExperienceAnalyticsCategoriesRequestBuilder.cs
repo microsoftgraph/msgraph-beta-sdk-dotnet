@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsCategories.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsCategories {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsCategories.item collection</summary>
-        public UserExperienceAnalyticsCategoriesRequestBuilder this[string position] { get {
+        public UserExperienceAnalyticsCategoryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsCategory_id", position);
-            return new UserExperienceAnalyticsCategoriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsCategoryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsCategoriesRequestBuilder and sets the default values.

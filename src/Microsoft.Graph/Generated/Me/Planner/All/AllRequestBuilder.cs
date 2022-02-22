@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Me.Planner.All.Delta;
+using MicrosoftGraph.Me.Planner.All.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Me.Planner.All {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.planner.all.item collection</summary>
-        public AllRequestBuilder this[string position] { get {
+        public PlannerDeltaRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerDelta_id", position);
-            return new AllRequestBuilder(urlTplParams, RequestAdapter);
+            return new PlannerDeltaRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AllRequestBuilder and sets the default values.

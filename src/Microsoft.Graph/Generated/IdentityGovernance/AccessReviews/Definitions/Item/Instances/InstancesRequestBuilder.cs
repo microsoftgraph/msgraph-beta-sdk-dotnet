@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.FilterByCurrentUserWithOn;
+using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Insta
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.accessReviews.definitions.item.instances.item collection</summary>
-        public InstancesRequestBuilder this[string position] { get {
+        public AccessReviewInstanceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstance_id", position);
-            return new InstancesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewInstanceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstancesRequestBuilder and sets the default values.

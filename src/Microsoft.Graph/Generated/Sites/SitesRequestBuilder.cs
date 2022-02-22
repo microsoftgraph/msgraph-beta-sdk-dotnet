@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Sites.Add;
 using MicrosoftGraph.Sites.Delta;
+using MicrosoftGraph.Sites.Item;
 using MicrosoftGraph.Sites.Remove;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,10 @@ namespace MicrosoftGraph.Sites {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.sites.item collection</summary>
-        public SitesRequestBuilder this[string position] { get {
+        public SiteRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("site_id", position);
-            return new SitesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SiteRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SitesRequestBuilder and sets the default values.

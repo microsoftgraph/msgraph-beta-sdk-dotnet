@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Teams.Item.PermissionGrants.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Teams.Item.PermissionGrants {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teams.item.permissionGrants.item collection</summary>
-        public PermissionGrantsRequestBuilder this[string position] { get {
+        public ResourceSpecificPermissionGrantRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("resourceSpecificPermissionGrant_id", position);
-            return new PermissionGrantsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ResourceSpecificPermissionGrantRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PermissionGrantsRequestBuilder and sets the default values.

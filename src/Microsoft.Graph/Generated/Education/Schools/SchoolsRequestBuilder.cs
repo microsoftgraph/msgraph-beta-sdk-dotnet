@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Education.Schools.Delta;
+using MicrosoftGraph.Education.Schools.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Education.Schools {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.education.schools.item collection</summary>
-        public SchoolsRequestBuilder this[string position] { get {
+        public EducationSchoolRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSchool_id", position);
-            return new SchoolsRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationSchoolRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SchoolsRequestBuilder and sets the default values.

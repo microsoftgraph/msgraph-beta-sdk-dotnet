@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DomainJoinConnectors.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DomainJoinConnectors {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.domainJoinConnectors.item collection</summary>
-        public DomainJoinConnectorsRequestBuilder this[string position] { get {
+        public DeviceManagementDomainJoinConnectorRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementDomainJoinConnector_id", position);
-            return new DomainJoinConnectorsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementDomainJoinConnectorRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DomainJoinConnectorsRequestBuilder and sets the default values.

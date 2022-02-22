@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.TemplateSettings.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.TemplateSettings {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.templateSettings.item collection</summary>
-        public TemplateSettingsRequestBuilder this[string position] { get {
+        public DeviceManagementConfigurationSettingTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationSettingTemplate_id", position);
-            return new TemplateSettingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementConfigurationSettingTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TemplateSettingsRequestBuilder and sets the default values.

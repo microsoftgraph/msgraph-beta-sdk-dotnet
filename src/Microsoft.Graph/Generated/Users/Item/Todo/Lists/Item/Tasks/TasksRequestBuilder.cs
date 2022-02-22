@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Users.Item.Todo.Lists.Item.Tasks.Delta;
+using MicrosoftGraph.Users.Item.Todo.Lists.Item.Tasks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Users.Item.Todo.Lists.Item.Tasks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.todo.lists.item.tasks.item collection</summary>
-        public TasksRequestBuilder this[string position] { get {
+        public TodoTaskRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("todoTask_id", position);
-            return new TasksRequestBuilder(urlTplParams, RequestAdapter);
+            return new TodoTaskRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TasksRequestBuilder and sets the default values.

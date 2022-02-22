@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DirectoryRoleTemplates.GetByIds;
 using MicrosoftGraph.DirectoryRoleTemplates.GetUserOwnedObjects;
+using MicrosoftGraph.DirectoryRoleTemplates.Item;
 using MicrosoftGraph.DirectoryRoleTemplates.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -29,10 +30,10 @@ namespace MicrosoftGraph.DirectoryRoleTemplates {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.directoryRoleTemplates.item collection</summary>
-        public DirectoryRoleTemplatesRequestBuilder this[string position] { get {
+        public DirectoryRoleTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryRoleTemplate_id", position);
-            return new DirectoryRoleTemplatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryRoleTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryRoleTemplatesRequestBuilder and sets the default values.

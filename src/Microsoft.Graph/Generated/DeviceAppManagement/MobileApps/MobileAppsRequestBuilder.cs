@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus;
 using MicrosoftGraph.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount;
 using MicrosoftGraph.DeviceAppManagement.MobileApps.HasPayloadLinks;
+using MicrosoftGraph.DeviceAppManagement.MobileApps.Item;
 using MicrosoftGraph.DeviceAppManagement.MobileApps.ValidateXml;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -27,10 +28,10 @@ namespace MicrosoftGraph.DeviceAppManagement.MobileApps {
             new ValidateXmlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.mobileApps.item collection</summary>
-        public MobileAppsRequestBuilder this[string position] { get {
+        public MobileAppRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileApp_id", position);
-            return new MobileAppsRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileAppRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileAppsRequestBuilder and sets the default values.

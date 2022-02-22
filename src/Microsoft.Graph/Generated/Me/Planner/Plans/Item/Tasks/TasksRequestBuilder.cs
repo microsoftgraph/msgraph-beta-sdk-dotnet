@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.Planner.Plans.Item.Tasks.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.Planner.Plans.Item.Tasks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.planner.plans.item.tasks.item collection</summary>
-        public TasksRequestBuilder this[string position] { get {
+        public PlannerTaskRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerTask_id", position);
-            return new TasksRequestBuilder(urlTplParams, RequestAdapter);
+            return new PlannerTaskRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TasksRequestBuilder and sets the default values.

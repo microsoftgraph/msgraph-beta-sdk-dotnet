@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Admin.Windows.Updates.Catalog.Entries.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Admin.Windows.Updates.Catalog.Entries {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.admin.windows.updates.catalog.entries.item collection</summary>
-        public EntriesRequestBuilder this[string position] { get {
+        public CatalogEntryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("catalogEntry_id", position);
-            return new EntriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new CatalogEntryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EntriesRequestBuilder and sets the default values.

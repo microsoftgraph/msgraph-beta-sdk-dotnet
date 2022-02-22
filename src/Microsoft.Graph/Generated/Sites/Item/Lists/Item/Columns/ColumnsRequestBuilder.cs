@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Sites.Item.Lists.Item.Columns.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.Columns {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.sites.item.lists.item.columns.item collection</summary>
-        public ColumnsRequestBuilder this[string position] { get {
+        public ColumnDefinitionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("columnDefinition_id", position);
-            return new ColumnsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ColumnDefinitionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ColumnsRequestBuilder and sets the default values.

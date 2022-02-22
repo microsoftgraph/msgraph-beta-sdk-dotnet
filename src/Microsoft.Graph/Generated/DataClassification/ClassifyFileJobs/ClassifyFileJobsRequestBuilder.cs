@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DataClassification.ClassifyFileJobs.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DataClassification.ClassifyFileJobs {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.dataClassification.classifyFileJobs.item collection</summary>
-        public ClassifyFileJobsRequestBuilder this[string position] { get {
+        public JobResponseBaseRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("jobResponseBase_id", position);
-            return new ClassifyFileJobsRequestBuilder(urlTplParams, RequestAdapter);
+            return new JobResponseBaseRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ClassifyFileJobsRequestBuilder and sets the default values.

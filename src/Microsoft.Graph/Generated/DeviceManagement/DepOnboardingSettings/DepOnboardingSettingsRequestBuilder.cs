@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime;
+using MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.depOnboardingSettings.item collection</summary>
-        public DepOnboardingSettingsRequestBuilder this[string position] { get {
+        public DepOnboardingSettingRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("depOnboardingSetting_id", position);
-            return new DepOnboardingSettingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DepOnboardingSettingRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.

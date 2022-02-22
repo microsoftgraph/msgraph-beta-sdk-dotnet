@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.Ite
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsAutopilotDeploymentProfiles.item.assignedDevices.item collection</summary>
-        public AssignedDevicesRequestBuilder this[string position] { get {
+        public WindowsAutopilotDeviceIdentityRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsAutopilotDeviceIdentity_id", position);
-            return new AssignedDevicesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsAutopilotDeviceIdentityRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignedDevicesRequestBuilder and sets the default values.

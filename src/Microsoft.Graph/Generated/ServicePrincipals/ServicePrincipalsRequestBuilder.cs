@@ -4,6 +4,7 @@ using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.ServicePrincipals.Delta;
 using MicrosoftGraph.ServicePrincipals.GetByIds;
 using MicrosoftGraph.ServicePrincipals.GetUserOwnedObjects;
+using MicrosoftGraph.ServicePrincipals.Item;
 using MicrosoftGraph.ServicePrincipals.ValidateProperties;
 using System;
 using System.Collections.Generic;
@@ -30,10 +31,10 @@ namespace MicrosoftGraph.ServicePrincipals {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item collection</summary>
-        public ServicePrincipalsRequestBuilder this[string position] { get {
+        public ServicePrincipalRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipal_id", position);
-            return new ServicePrincipalsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServicePrincipalRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ServicePrincipalsRequestBuilder and sets the default values.

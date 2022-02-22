@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.AutopilotEvents.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.AutopilotEvents {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.autopilotEvents.item collection</summary>
-        public AutopilotEventsRequestBuilder this[string position] { get {
+        public DeviceManagementAutopilotEventRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementAutopilotEvent_id", position);
-            return new AutopilotEventsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementAutopilotEventRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AutopilotEventsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.MobileAppConfigurations.Item.Assignments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.MobileAppConfigurations.Item.Assign
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.mobileAppConfigurations.item.assignments.item collection</summary>
-        public AssignmentsRequestBuilder this[string position] { get {
+        public ManagedDeviceMobileAppConfigurationAssignmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceMobileAppConfigurationAssignment_id", position);
-            return new AssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceMobileAppConfigurationAssignmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

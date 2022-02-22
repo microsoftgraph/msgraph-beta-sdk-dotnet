@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcesses.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsDeviceStartupPr
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsDeviceStartupProcesses.item collection</summary>
-        public UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder this[string position] { get {
+        public UserExperienceAnalyticsDeviceStartupProcessRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsDeviceStartupProcess_id", position);
-            return new UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsDeviceStartupProcessRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsDeviceStartupProcessesRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Chats.Item.Members.Add;
+using MicrosoftGraph.Chats.Item.Members.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.Chats.Item.Members {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.chats.item.members.item collection</summary>
-        public MembersRequestBuilder this[string position] { get {
+        public ConversationMemberRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conversationMember_id", position);
-            return new MembersRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConversationMemberRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Identity.B2cUserFlows.Item.Languages.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Identity.B2cUserFlows.Item.Languages {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identity.b2cUserFlows.item.languages.item collection</summary>
-        public LanguagesRequestBuilder this[string position] { get {
+        public UserFlowLanguageConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userFlowLanguageConfiguration_id", position);
-            return new LanguagesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserFlowLanguageConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LanguagesRequestBuilder and sets the default values.

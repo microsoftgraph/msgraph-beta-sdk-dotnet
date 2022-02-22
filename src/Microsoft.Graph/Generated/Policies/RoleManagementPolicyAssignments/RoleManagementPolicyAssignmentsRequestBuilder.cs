@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.RoleManagementPolicyAssignments.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.RoleManagementPolicyAssignments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.roleManagementPolicyAssignments.item collection</summary>
-        public RoleManagementPolicyAssignmentsRequestBuilder this[string position] { get {
+        public UnifiedRoleManagementPolicyAssignmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleManagementPolicyAssignment_id", position);
-            return new RoleManagementPolicyAssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleManagementPolicyAssignmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleManagementPolicyAssignmentsRequestBuilder and sets the default values.

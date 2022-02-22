@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.RoleManagementPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.RoleManagementPolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.roleManagementPolicies.item collection</summary>
-        public RoleManagementPoliciesRequestBuilder this[string position] { get {
+        public UnifiedRoleManagementPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleManagementPolicy_id", position);
-            return new RoleManagementPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleManagementPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleManagementPoliciesRequestBuilder and sets the default values.

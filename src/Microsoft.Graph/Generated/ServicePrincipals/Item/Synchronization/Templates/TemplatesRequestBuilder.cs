@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item.synchronization.templates.item collection</summary>
-        public TemplatesRequestBuilder this[string position] { get {
+        public SynchronizationTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("synchronizationTemplate_id", position);
-            return new TemplatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SynchronizationTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TemplatesRequestBuilder and sets the default values.

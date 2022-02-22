@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Workbooks.Item.Workbook.Comments.Item.Replies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Comments.Item.Replies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.comments.item.replies.item collection</summary>
-        public RepliesRequestBuilder this[string position] { get {
+        public WorkbookCommentReplyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookCommentReply_id", position);
-            return new RepliesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookCommentReplyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RepliesRequestBuilder and sets the default values.

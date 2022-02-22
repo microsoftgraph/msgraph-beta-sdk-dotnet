@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.TermStore;
+using MicrosoftGraph.TermStore.Groups.Item.Sets.Item.Terms.Item.Children.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TermStore.Groups.Item.Sets.Item.Terms.Item.Children {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.termStore.groups.item.sets.item.terms.item.children.item collection</summary>
-        public ChildrenRequestBuilder this[string position] { get {
+        public TermRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("term_id1", position);
-            return new ChildrenRequestBuilder(urlTplParams, RequestAdapter);
+            return new TermRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildrenRequestBuilder and sets the default values.

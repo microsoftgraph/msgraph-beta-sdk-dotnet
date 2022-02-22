@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.ClaimsMappingPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.ClaimsMappingPolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.claimsMappingPolicies.item collection</summary>
-        public ClaimsMappingPoliciesRequestBuilder this[string position] { get {
+        public ClaimsMappingPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("claimsMappingPolicy_id", position);
-            return new ClaimsMappingPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ClaimsMappingPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.

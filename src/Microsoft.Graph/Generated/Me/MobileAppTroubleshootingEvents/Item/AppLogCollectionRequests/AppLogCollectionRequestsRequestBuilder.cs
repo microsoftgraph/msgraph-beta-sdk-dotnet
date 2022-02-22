@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.MobileAppTroubleshootingEvents.Item.AppLogCollection
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.mobileAppTroubleshootingEvents.item.appLogCollectionRequests.item collection</summary>
-        public AppLogCollectionRequestsRequestBuilder this[string position] { get {
+        public AppLogCollectionRequestRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appLogCollectionRequest_id", position);
-            return new AppLogCollectionRequestsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppLogCollectionRequestRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppLogCollectionRequestsRequestBuilder and sets the default values.

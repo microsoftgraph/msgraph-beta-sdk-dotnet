@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Add;
+using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.worksheets.item collection</summary>
-        public WorksheetsRequestBuilder this[string position] { get {
+        public WorkbookWorksheetRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookWorksheet_id", position);
-            return new WorksheetsRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookWorksheetRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WorksheetsRequestBuilder and sets the default values.

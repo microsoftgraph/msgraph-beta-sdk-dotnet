@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.InformationProtection.ThreatAssessmentRequests.Item.Results.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.InformationProtection.ThreatAssessmentRequests.Item.Res
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.informationProtection.threatAssessmentRequests.item.results.item collection</summary>
-        public ResultsRequestBuilder this[string position] { get {
+        public ThreatAssessmentResultRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("threatAssessmentResult_id", position);
-            return new ResultsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ThreatAssessmentResultRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResultsRequestBuilder and sets the default values.

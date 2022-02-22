@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.GroupLifecyclePolicies.Item;
 using MicrosoftGraph.GroupLifecyclePolicies.RenewGroup;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.GroupLifecyclePolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.groupLifecyclePolicies.item collection</summary>
-        public GroupLifecyclePoliciesRequestBuilder this[string position] { get {
+        public GroupLifecyclePolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupLifecyclePolicy_id", position);
-            return new GroupLifecyclePoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupLifecyclePolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.

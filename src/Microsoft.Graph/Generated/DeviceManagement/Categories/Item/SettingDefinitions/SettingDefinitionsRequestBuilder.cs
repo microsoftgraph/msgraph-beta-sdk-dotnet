@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.Categories.Item.SettingDefinitions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.Categories.Item.SettingDefinitions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.categories.item.settingDefinitions.item collection</summary>
-        public SettingDefinitionsRequestBuilder this[string position] { get {
+        public DeviceManagementSettingDefinitionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementSettingDefinition_id", position);
-            return new SettingDefinitionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementSettingDefinitionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SettingDefinitionsRequestBuilder and sets the default values.

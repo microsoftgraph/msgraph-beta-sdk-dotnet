@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.Outlook.TaskGroups.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.Outlook.TaskGroups {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.outlook.taskGroups.item collection</summary>
-        public TaskGroupsRequestBuilder this[string position] { get {
+        public OutlookTaskGroupRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookTaskGroup_id", position);
-            return new TaskGroupsRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutlookTaskGroupRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TaskGroupsRequestBuilder and sets the default values.

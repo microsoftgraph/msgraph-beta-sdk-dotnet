@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.TrustFramework.Policies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TrustFramework.Policies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.trustFramework.policies.item collection</summary>
-        public PoliciesRequestBuilder this[string position] { get {
+        public TrustFrameworkPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("trustFrameworkPolicy_id", position);
-            return new PoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new TrustFrameworkPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PoliciesRequestBuilder and sets the default values.

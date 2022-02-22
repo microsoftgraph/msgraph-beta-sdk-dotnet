@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceConfigurationsAllManagedDeviceCe
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceConfigurationsAllManagedDeviceCertificateStates.item collection</summary>
-        public DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder this[string position] { get {
+        public ManagedAllDeviceCertificateStateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAllDeviceCertificateState_id", position);
-            return new DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedAllDeviceCertificateStateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder and sets the default values.

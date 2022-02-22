@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.ManagedDevices.Item.DeviceConfigurationStates.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.ManagedDevices.Item.DeviceConfigurationState
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.managedDevices.item.deviceConfigurationStates.item collection</summary>
-        public DeviceConfigurationStatesRequestBuilder this[string position] { get {
+        public DeviceConfigurationStateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfigurationState_id", position);
-            return new DeviceConfigurationStatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceConfigurationStateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceConfigurationStatesRequestBuilder and sets the default values.

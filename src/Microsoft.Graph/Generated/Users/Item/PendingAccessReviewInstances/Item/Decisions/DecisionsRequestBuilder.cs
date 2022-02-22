@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Decisions.FilterByCurrentUserWithOn;
+using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item;
 using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Decisions.RecordAllDecisions;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,10 @@ namespace MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Decisions 
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.pendingAccessReviewInstances.item.decisions.item collection</summary>
-        public DecisionsRequestBuilder this[string position] { get {
+        public AccessReviewInstanceDecisionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstanceDecisionItem_id", position);
-            return new DecisionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewInstanceDecisionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DecisionsRequestBuilder and sets the default values.

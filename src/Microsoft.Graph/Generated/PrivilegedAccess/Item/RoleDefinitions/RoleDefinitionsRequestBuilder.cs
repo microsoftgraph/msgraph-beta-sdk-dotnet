@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.PrivilegedAccess.Item.RoleDefinitions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.PrivilegedAccess.Item.RoleDefinitions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.privilegedAccess.item.roleDefinitions.item collection</summary>
-        public RoleDefinitionsRequestBuilder this[string position] { get {
+        public GovernanceRoleDefinitionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleDefinition_id", position);
-            return new RoleDefinitionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernanceRoleDefinitionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleDefinitionsRequestBuilder and sets the default values.

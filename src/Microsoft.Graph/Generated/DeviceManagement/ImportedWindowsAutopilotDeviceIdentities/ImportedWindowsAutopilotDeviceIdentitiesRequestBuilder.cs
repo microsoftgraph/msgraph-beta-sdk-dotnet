@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import;
+using MicrosoftGraph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentiti
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.importedWindowsAutopilotDeviceIdentities.item collection</summary>
-        public ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder this[string position] { get {
+        public ImportedWindowsAutopilotDeviceIdentityRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("importedWindowsAutopilotDeviceIdentity_id", position);
-            return new ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ImportedWindowsAutopilotDeviceIdentityRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder and sets the default values.

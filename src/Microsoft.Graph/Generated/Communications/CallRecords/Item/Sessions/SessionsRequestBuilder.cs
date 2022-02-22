@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Communications.CallRecords.Item.Sessions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.CallRecords;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Communications.CallRecords.Item.Sessions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.communications.callRecords.item.sessions.item collection</summary>
-        public SessionsRequestBuilder this[string position] { get {
+        public SessionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("session_id", position);
-            return new SessionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new SessionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SessionsRequestBuilder and sets the default values.

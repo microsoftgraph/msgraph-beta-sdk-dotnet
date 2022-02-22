@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections.Item.Apps.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections.Item.A
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.androidManagedAppProtections.item.apps.item collection</summary>
-        public AppsRequestBuilder this[string position] { get {
+        public ManagedMobileAppRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedMobileApp_id", position);
-            return new AppsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedMobileAppRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppsRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Identity.IdentityProviders.AvailableProviderTypes;
+using MicrosoftGraph.Identity.IdentityProviders.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Identity.IdentityProviders {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identity.identityProviders.item collection</summary>
-        public IdentityProvidersRequestBuilder this[string position] { get {
+        public IdentityProviderBaseRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityProviderBase_id", position);
-            return new IdentityProvidersRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityProviderBaseRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \identity\identityProviders\microsoft.graph.availableProviderTypes()

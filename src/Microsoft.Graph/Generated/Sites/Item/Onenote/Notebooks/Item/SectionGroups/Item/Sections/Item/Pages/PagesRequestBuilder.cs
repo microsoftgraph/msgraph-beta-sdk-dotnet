@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.Item.Pages.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Se
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.sites.item.onenote.notebooks.item.sectionGroups.item.sections.item.pages.item collection</summary>
-        public PagesRequestBuilder this[string position] { get {
+        public OnenotePageRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenotePage_id", position);
-            return new PagesRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnenotePageRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PagesRequestBuilder and sets the default values.

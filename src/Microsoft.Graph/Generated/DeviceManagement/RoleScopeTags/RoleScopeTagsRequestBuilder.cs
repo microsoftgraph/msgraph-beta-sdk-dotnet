@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.RoleScopeTags.GetRoleScopeTagsById;
 using MicrosoftGraph.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag;
+using MicrosoftGraph.DeviceManagement.RoleScopeTags.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,10 @@ namespace MicrosoftGraph.DeviceManagement.RoleScopeTags {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.roleScopeTags.item collection</summary>
-        public RoleScopeTagsRequestBuilder this[string position] { get {
+        public RoleScopeTagRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("roleScopeTag_id", position);
-            return new RoleScopeTagsRequestBuilder(urlTplParams, RequestAdapter);
+            return new RoleScopeTagRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleScopeTagsRequestBuilder and sets the default values.

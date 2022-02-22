@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.OnPremisesPublishingProfiles.Item.PublishedResources.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.PublishedResources {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.onPremisesPublishingProfiles.item.publishedResources.item collection</summary>
-        public PublishedResourcesRequestBuilder this[string position] { get {
+        public PublishedResourceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("publishedResource_id", position);
-            return new PublishedResourcesRequestBuilder(urlTplParams, RequestAdapter);
+            return new PublishedResourceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PublishedResourcesRequestBuilder and sets the default values.

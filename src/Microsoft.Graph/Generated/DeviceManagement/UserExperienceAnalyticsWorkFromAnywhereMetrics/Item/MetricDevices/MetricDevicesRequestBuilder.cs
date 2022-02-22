@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsWorkFromAnywhereMetrics.Item.MetricDevices.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsWorkFromAnywher
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsWorkFromAnywhereMetrics.item.metricDevices.item collection</summary>
-        public MetricDevicesRequestBuilder this[string position] { get {
+        public UserExperienceAnalyticsWorkFromAnywhereDeviceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsWorkFromAnywhereDevice_id", position);
-            return new MetricDevicesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsWorkFromAnywhereDeviceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MetricDevicesRequestBuilder and sets the default values.

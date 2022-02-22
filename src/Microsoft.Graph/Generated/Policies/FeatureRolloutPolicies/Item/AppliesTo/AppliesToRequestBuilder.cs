@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.featureRolloutPolicies.item.appliesTo.item collection</summary>
-        public AppliesToRequestBuilder this[string position] { get {
+        public DirectoryObjectRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);
-            return new AppliesToRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryObjectRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppliesToRequestBuilder and sets the default values.

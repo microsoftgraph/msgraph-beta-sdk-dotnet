@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Teams.Item.Schedule.OfferShiftRequests.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Teams.Item.Schedule.OfferShiftRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teams.item.schedule.offerShiftRequests.item collection</summary>
-        public OfferShiftRequestsRequestBuilder this[string position] { get {
+        public OfferShiftRequestRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("offerShiftRequest_id", position);
-            return new OfferShiftRequestsRequestBuilder(urlTplParams, RequestAdapter);
+            return new OfferShiftRequestRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OfferShiftRequestsRequestBuilder and sets the default values.

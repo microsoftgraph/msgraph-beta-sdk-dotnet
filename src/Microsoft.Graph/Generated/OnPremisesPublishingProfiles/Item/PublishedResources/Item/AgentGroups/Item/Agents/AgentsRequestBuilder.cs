@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.Agents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.PublishedResources.It
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.onPremisesPublishingProfiles.item.publishedResources.item.agentGroups.item.agents.item collection</summary>
-        public AgentsRequestBuilder this[string position] { get {
+        public OnPremisesAgentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onPremisesAgent_id", position);
-            return new AgentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnPremisesAgentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AgentsRequestBuilder and sets the default values.

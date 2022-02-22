@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.AccessReviews.Item.Instances.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.AccessReviews.Item.Instances {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.accessReviews.item.instances.item collection</summary>
-        public InstancesRequestBuilder this[string position] { get {
+        public AccessReviewRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReview_id1", position);
-            return new InstancesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstancesRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.ServicePrincipals.Item.AppRoleAssignments.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.ServicePrincipals.Item.AppRoleAssignments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item.appRoleAssignments.item collection</summary>
-        public AppRoleAssignmentsRequestBuilder this[string position] { get {
+        public AppRoleAssignmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appRoleAssignment_id", position);
-            return new AppRoleAssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppRoleAssignmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.

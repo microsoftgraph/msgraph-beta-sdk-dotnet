@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DataClassification.ExactMatchDataStores.Item.Sessions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DataClassification.ExactMatchDataStores.Item.Sessions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.dataClassification.exactMatchDataStores.item.sessions.item collection</summary>
-        public SessionsRequestBuilder this[string position] { get {
+        public ExactMatchSessionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("exactMatchSession_id", position);
-            return new SessionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExactMatchSessionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SessionsRequestBuilder and sets the default values.

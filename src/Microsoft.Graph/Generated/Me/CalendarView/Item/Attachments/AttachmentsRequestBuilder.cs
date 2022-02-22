@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Me.CalendarView.Item.Attachments.CreateUploadSession;
+using MicrosoftGraph.Me.CalendarView.Item.Attachments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.Me.CalendarView.Item.Attachments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.calendarView.item.attachments.item collection</summary>
-        public AttachmentsRequestBuilder this[string position] { get {
+        public AttachmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attachment_id", position);
-            return new AttachmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AttachmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AttachmentsRequestBuilder and sets the default values.

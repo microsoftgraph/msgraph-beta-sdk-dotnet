@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DataClassification.SensitiveTypes.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DataClassification.SensitiveTypes {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.dataClassification.sensitiveTypes.item collection</summary>
-        public SensitiveTypesRequestBuilder this[string position] { get {
+        public SensitiveTypeRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitiveType_id", position);
-            return new SensitiveTypesRequestBuilder(urlTplParams, RequestAdapter);
+            return new SensitiveTypeRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SensitiveTypesRequestBuilder and sets the default values.

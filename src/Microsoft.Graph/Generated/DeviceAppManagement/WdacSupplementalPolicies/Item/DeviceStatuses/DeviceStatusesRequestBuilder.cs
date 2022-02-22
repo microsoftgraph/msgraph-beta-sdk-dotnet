@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.Devic
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.wdacSupplementalPolicies.item.deviceStatuses.item collection</summary>
-        public DeviceStatusesRequestBuilder this[string position] { get {
+        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus_id", position);
-            return new DeviceStatusesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceStatusesRequestBuilder and sets the default values.

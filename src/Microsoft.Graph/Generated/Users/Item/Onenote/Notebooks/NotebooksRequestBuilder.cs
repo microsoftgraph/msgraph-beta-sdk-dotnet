@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Users.Item.Onenote.Notebooks.GetNotebookFromWebUrl;
 using MicrosoftGraph.Users.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks;
+using MicrosoftGraph.Users.Item.Onenote.Notebooks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,10 +23,10 @@ namespace MicrosoftGraph.Users.Item.Onenote.Notebooks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.onenote.notebooks.item collection</summary>
-        public NotebooksRequestBuilder this[string position] { get {
+        public NotebookRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("notebook_id", position);
-            return new NotebooksRequestBuilder(urlTplParams, RequestAdapter);
+            return new NotebookRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NotebooksRequestBuilder and sets the default values.

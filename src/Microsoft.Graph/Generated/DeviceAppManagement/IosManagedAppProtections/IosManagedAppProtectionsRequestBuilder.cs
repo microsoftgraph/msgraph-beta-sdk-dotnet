@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceAppManagement.IosManagedAppProtections.HasPayloadLinks;
+using MicrosoftGraph.DeviceAppManagement.IosManagedAppProtections.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceAppManagement.IosManagedAppProtections {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.iosManagedAppProtections.item collection</summary>
-        public IosManagedAppProtectionsRequestBuilder this[string position] { get {
+        public IosManagedAppProtectionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("iosManagedAppProtection_id", position);
-            return new IosManagedAppProtectionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new IosManagedAppProtectionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IosManagedAppProtectionsRequestBuilder and sets the default values.

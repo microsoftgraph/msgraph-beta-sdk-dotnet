@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.ConnectedOrgan
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.connectedOrganizations.item collection</summary>
-        public ConnectedOrganizationsRequestBuilder this[string position] { get {
+        public ConnectedOrganizationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectedOrganization_id", position);
-            return new ConnectedOrganizationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConnectedOrganizationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.

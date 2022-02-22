@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.InformationProtection.Bitlocker.RecoveryKeys.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.InformationProtection.Bitlocker.RecoveryKeys {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.informationProtection.bitlocker.recoveryKeys.item collection</summary>
-        public RecoveryKeysRequestBuilder this[string position] { get {
+        public BitlockerRecoveryKeyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bitlockerRecoveryKey_id", position);
-            return new RecoveryKeysRequestBuilder(urlTplParams, RequestAdapter);
+            return new BitlockerRecoveryKeyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RecoveryKeysRequestBuilder and sets the default values.

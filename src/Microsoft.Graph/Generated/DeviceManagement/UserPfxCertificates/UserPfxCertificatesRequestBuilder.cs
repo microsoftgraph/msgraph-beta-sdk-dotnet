@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.UserPfxCertificates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.UserPfxCertificates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userPfxCertificates.item collection</summary>
-        public UserPfxCertificatesRequestBuilder this[string position] { get {
+        public UserPFXCertificateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userPFXCertificate_id", position);
-            return new UserPfxCertificatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserPFXCertificateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserPfxCertificatesRequestBuilder and sets the default values.

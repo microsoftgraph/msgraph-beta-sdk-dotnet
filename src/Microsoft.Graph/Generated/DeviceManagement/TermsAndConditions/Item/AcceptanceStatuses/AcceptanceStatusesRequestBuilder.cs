@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.TermsAndConditions.Item.AcceptanceStatuses.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.TermsAndConditions.Item.AcceptanceStat
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.termsAndConditions.item.acceptanceStatuses.item collection</summary>
-        public AcceptanceStatusesRequestBuilder this[string position] { get {
+        public TermsAndConditionsAcceptanceStatusRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("termsAndConditionsAcceptanceStatus_id", position);
-            return new AcceptanceStatusesRequestBuilder(urlTplParams, RequestAdapter);
+            return new TermsAndConditionsAcceptanceStatusRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AcceptanceStatusesRequestBuilder and sets the default values.

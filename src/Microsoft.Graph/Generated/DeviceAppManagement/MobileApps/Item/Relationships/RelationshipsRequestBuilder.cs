@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.MobileApps.Item.Relationships.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.MobileApps.Item.Relationships {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.mobileApps.item.relationships.item collection</summary>
-        public RelationshipsRequestBuilder this[string position] { get {
+        public MobileAppRelationshipRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppRelationship_id", position);
-            return new RelationshipsRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileAppRelationshipRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RelationshipsRequestBuilder and sets the default values.

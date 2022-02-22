@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.MessageTraces.Item.Recipients.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.MessageTraces.Item.Recipients {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.messageTraces.item.recipients.item collection</summary>
-        public RecipientsRequestBuilder this[string position] { get {
+        public MessageRecipientRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageRecipient_id", position);
-            return new RecipientsRequestBuilder(urlTplParams, RequestAdapter);
+            return new MessageRecipientRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RecipientsRequestBuilder and sets the default values.

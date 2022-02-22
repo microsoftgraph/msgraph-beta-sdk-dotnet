@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DataClassification.ExactMatchDataStores.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DataClassification.ExactMatchDataStores {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.dataClassification.exactMatchDataStores.item collection</summary>
-        public ExactMatchDataStoresRequestBuilder this[string position] { get {
+        public ExactMatchDataStoreRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("exactMatchDataStore_id", position);
-            return new ExactMatchDataStoresRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExactMatchDataStoreRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExactMatchDataStoresRequestBuilder and sets the default values.

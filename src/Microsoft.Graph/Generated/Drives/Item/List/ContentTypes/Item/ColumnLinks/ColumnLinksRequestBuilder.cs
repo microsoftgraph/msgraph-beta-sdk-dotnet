@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Drives.Item.List.ContentTypes.Item.ColumnLinks.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Drives.Item.List.ContentTypes.Item.ColumnLinks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.drives.item.list.contentTypes.item.columnLinks.item collection</summary>
-        public ColumnLinksRequestBuilder this[string position] { get {
+        public ColumnLinkRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("columnLink_id", position);
-            return new ColumnLinksRequestBuilder(urlTplParams, RequestAdapter);
+            return new ColumnLinkRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ColumnLinksRequestBuilder and sets the default values.

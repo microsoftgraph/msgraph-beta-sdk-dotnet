@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DerivedCredentials.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DerivedCredentials {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.derivedCredentials.item collection</summary>
-        public DerivedCredentialsRequestBuilder this[string position] { get {
+        public DeviceManagementDerivedCredentialSettingsRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementDerivedCredentialSettings_id", position);
-            return new DerivedCredentialsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementDerivedCredentialSettingsRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DerivedCredentialsRequestBuilder and sets the default values.

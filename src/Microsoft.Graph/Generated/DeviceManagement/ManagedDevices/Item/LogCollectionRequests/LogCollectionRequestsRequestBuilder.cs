@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.ManagedDevices.Item.LogCollectionRequests.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.LogCollectionReque
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.managedDevices.item.logCollectionRequests.item collection</summary>
-        public LogCollectionRequestsRequestBuilder this[string position] { get {
+        public DeviceLogCollectionResponseRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceLogCollectionResponse_id", position);
-            return new LogCollectionRequestsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceLogCollectionResponseRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LogCollectionRequestsRequestBuilder and sets the default values.

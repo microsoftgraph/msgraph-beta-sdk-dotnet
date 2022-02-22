@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.Outlook.TaskGroups.Item.TaskFolders.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.Outlook.TaskGroups.Item.TaskFolders {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.outlook.taskGroups.item.taskFolders.item collection</summary>
-        public TaskFoldersRequestBuilder this[string position] { get {
+        public OutlookTaskFolderRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookTaskFolder_id", position);
-            return new TaskFoldersRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutlookTaskFolderRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TaskFoldersRequestBuilder and sets the default values.

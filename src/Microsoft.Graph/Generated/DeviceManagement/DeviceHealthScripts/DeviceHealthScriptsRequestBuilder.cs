@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.DeviceHealthScripts.AreGlobalScriptsAvailable;
 using MicrosoftGraph.DeviceManagement.DeviceHealthScripts.EnableGlobalScripts;
 using MicrosoftGraph.DeviceManagement.DeviceHealthScripts.GetRemediationSummary;
+using MicrosoftGraph.DeviceManagement.DeviceHealthScripts.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceHealthScripts {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceHealthScripts.item collection</summary>
-        public DeviceHealthScriptsRequestBuilder this[string position] { get {
+        public DeviceHealthScriptRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceHealthScript_id", position);
-            return new DeviceHealthScriptsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceHealthScriptRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.areGlobalScriptsAvailable()

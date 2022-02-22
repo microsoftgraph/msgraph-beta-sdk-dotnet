@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Chats.AllMessages;
 using MicrosoftGraph.Chats.GetAllMessages;
+using MicrosoftGraph.Chats.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,10 @@ namespace MicrosoftGraph.Chats {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.chats.item collection</summary>
-        public ChatsRequestBuilder this[string position] { get {
+        public ChatRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chat_id", position);
-            return new ChatsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChatRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \chats\microsoft.graph.allMessages()

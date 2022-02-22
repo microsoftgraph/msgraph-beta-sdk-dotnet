@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.RoleManagement.Directory.RoleAssignmentApprovals.FilterByCurrentUserWithOn;
+using MicrosoftGraph.RoleManagement.Directory.RoleAssignmentApprovals.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.RoleManagement.Directory.RoleAssignmentApprovals {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.roleManagement.directory.roleAssignmentApprovals.item collection</summary>
-        public RoleAssignmentApprovalsRequestBuilder this[string position] { get {
+        public ApprovalRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approval_id", position);
-            return new RoleAssignmentApprovalsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApprovalRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleAssignmentApprovalsRequestBuilder and sets the default values.

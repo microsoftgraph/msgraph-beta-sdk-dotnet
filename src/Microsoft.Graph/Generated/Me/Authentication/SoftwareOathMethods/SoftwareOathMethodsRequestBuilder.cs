@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.Authentication.SoftwareOathMethods.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.Authentication.SoftwareOathMethods {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.authentication.softwareOathMethods.item collection</summary>
-        public SoftwareOathMethodsRequestBuilder this[string position] { get {
+        public SoftwareOathAuthenticationMethodRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("softwareOathAuthenticationMethod_id", position);
-            return new SoftwareOathMethodsRequestBuilder(urlTplParams, RequestAdapter);
+            return new SoftwareOathAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SoftwareOathMethodsRequestBuilder and sets the default values.

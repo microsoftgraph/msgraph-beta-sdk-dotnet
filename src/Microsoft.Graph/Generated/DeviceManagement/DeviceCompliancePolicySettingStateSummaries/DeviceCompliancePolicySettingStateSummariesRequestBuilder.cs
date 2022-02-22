@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicySettingStateSummaries.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceCompliancePolicySettingStateSumm
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceCompliancePolicySettingStateSummaries.item collection</summary>
-        public DeviceCompliancePolicySettingStateSummariesRequestBuilder this[string position] { get {
+        public DeviceCompliancePolicySettingStateSummaryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceCompliancePolicySettingStateSummary_id", position);
-            return new DeviceCompliancePolicySettingStateSummariesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceCompliancePolicySettingStateSummaryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceCompliancePolicySettingStateSummariesRequestBuilder and sets the default values.

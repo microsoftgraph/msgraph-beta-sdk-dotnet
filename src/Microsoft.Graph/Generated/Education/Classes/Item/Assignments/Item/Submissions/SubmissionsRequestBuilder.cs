@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Education.Classes.Item.Assignments.Item.Submissions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Education.Classes.Item.Assignments.Item.Submissions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.education.classes.item.assignments.item.submissions.item collection</summary>
-        public SubmissionsRequestBuilder this[string position] { get {
+        public EducationSubmissionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSubmission_id", position);
-            return new SubmissionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationSubmissionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SubmissionsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsDeviceMetricHistory.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsDeviceMetricHis
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsDeviceMetricHistory.item collection</summary>
-        public UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder this[string position] { get {
+        public UserExperienceAnalyticsMetricHistoryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsMetricHistory_id", position);
-            return new UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsMetricHistoryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder and sets the default values.

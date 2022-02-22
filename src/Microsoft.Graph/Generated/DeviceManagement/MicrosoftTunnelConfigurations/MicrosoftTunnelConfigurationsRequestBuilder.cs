@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.MicrosoftTunnelConfigurations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.MicrosoftTunnelConfigurations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.microsoftTunnelConfigurations.item collection</summary>
-        public MicrosoftTunnelConfigurationsRequestBuilder this[string position] { get {
+        public MicrosoftTunnelConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("microsoftTunnelConfiguration_id", position);
-            return new MicrosoftTunnelConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new MicrosoftTunnelConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MicrosoftTunnelConfigurationsRequestBuilder and sets the default values.

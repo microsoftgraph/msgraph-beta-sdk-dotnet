@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.VirtualEndpoint.ServicePlans.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.ServicePlans {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.virtualEndpoint.servicePlans.item collection</summary>
-        public ServicePlansRequestBuilder this[string position] { get {
+        public CloudPcServicePlanRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcServicePlan_id", position);
-            return new ServicePlansRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcServicePlanRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ServicePlansRequestBuilder and sets the default values.

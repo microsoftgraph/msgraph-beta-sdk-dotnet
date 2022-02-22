@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.AdvancedThreatProtectionOnboardingStateSummary.AdvancedThreatProtectionOnboardingDeviceSettingStates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.AdvancedThreatProtectionOnboardingStat
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.advancedThreatProtectionOnboardingStateSummary.advancedThreatProtectionOnboardingDeviceSettingStates.item collection</summary>
-        public AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder this[string position] { get {
+        public AdvancedThreatProtectionOnboardingDeviceSettingStateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("advancedThreatProtectionOnboardingDeviceSettingState_id", position);
-            return new AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AdvancedThreatProtectionOnboardingDeviceSettingStateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.WindowsFeatureUpdateProfiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.WindowsFeatureUpdateProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsFeatureUpdateProfiles.item collection</summary>
-        public WindowsFeatureUpdateProfilesRequestBuilder this[string position] { get {
+        public WindowsFeatureUpdateProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsFeatureUpdateProfile_id", position);
-            return new WindowsFeatureUpdateProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsFeatureUpdateProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsFeatureUpdateProfilesRequestBuilder and sets the default values.

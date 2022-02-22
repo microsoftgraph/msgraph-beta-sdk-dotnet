@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Item.UpdateStateSummaries.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.It
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item.updateStateSummaries.item collection</summary>
-        public UpdateStateSummariesRequestBuilder this[string position] { get {
+        public MacOSSoftwareUpdateStateSummaryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("macOSSoftwareUpdateStateSummary_id", position);
-            return new UpdateStateSummariesRequestBuilder(urlTplParams, RequestAdapter);
+            return new MacOSSoftwareUpdateStateSummaryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UpdateStateSummariesRequestBuilder and sets the default values.

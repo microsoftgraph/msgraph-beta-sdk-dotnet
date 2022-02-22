@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Me.PendingAccessReviewInstances.FilterByCurrentUserWithOn;
+using MicrosoftGraph.Me.PendingAccessReviewInstances.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Me.PendingAccessReviewInstances {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.pendingAccessReviewInstances.item collection</summary>
-        public PendingAccessReviewInstancesRequestBuilder this[string position] { get {
+        public AccessReviewInstanceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstance_id", position);
-            return new PendingAccessReviewInstancesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewInstanceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PendingAccessReviewInstancesRequestBuilder and sets the default values.

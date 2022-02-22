@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.BookingBusinesses.Item.StaffMembers.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.BookingBusinesses.Item.StaffMembers {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.bookingBusinesses.item.staffMembers.item collection</summary>
-        public StaffMembersRequestBuilder this[string position] { get {
+        public BookingStaffMemberRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingStaffMember_id", position);
-            return new StaffMembersRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookingStaffMemberRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new StaffMembersRequestBuilder and sets the default values.

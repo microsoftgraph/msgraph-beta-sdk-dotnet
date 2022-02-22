@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Teams.Item.Schedule.TimeOffReasons.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Teams.Item.Schedule.TimeOffReasons {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teams.item.schedule.timeOffReasons.item collection</summary>
-        public TimeOffReasonsRequestBuilder this[string position] { get {
+        public TimeOffReasonRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("timeOffReason_id", position);
-            return new TimeOffReasonsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TimeOffReasonRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TimeOffReasonsRequestBuilder and sets the default values.

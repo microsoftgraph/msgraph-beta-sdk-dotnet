@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.PivotTables.Item;
 using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.PivotTables.RefreshAll;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.PivotTables {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.worksheets.item.pivotTables.item collection</summary>
-        public PivotTablesRequestBuilder this[string position] { get {
+        public WorkbookPivotTableRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookPivotTable_id", position);
-            return new PivotTablesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookPivotTableRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PivotTablesRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.CalendarGroups.Item.Calendars.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.CalendarGroups.Item.Calendars {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.calendarGroups.item.calendars.item collection</summary>
-        public CalendarsRequestBuilder this[string position] { get {
+        public CalendarRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("calendar_id", position);
-            return new CalendarsRequestBuilder(urlTplParams, RequestAdapter);
+            return new CalendarRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Education.Classes.Item.Assignments.Item.Submissions.Item.Outcomes.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Education.Classes.Item.Assignments.Item.Submissions.Ite
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.education.classes.item.assignments.item.submissions.item.outcomes.item collection</summary>
-        public OutcomesRequestBuilder this[string position] { get {
+        public EducationOutcomeRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationOutcome_id", position);
-            return new OutcomesRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationOutcomeRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OutcomesRequestBuilder and sets the default values.

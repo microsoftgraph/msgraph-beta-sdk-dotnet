@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.RoleManagement.DeviceManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.RoleManagement.DeviceManagement.RoleDefinitions.Item.In
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.roleManagement.deviceManagement.roleDefinitions.item.inheritsPermissionsFrom.item collection</summary>
-        public InheritsPermissionsFromRequestBuilder this[string position] { get {
+        public UnifiedRoleDefinitionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleDefinition_id1", position);
-            return new InheritsPermissionsFromRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleDefinitionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InheritsPermissionsFromRequestBuilder and sets the default values.

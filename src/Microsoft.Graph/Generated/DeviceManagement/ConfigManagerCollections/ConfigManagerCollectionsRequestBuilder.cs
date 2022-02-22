@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId;
+using MicrosoftGraph.DeviceManagement.ConfigManagerCollections.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.DeviceManagement.ConfigManagerCollections {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.configManagerCollections.item collection</summary>
-        public ConfigManagerCollectionsRequestBuilder this[string position] { get {
+        public ConfigManagerCollectionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("configManagerCollection_id", position);
-            return new ConfigManagerCollectionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConfigManagerCollectionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConfigManagerCollectionsRequestBuilder and sets the default values.

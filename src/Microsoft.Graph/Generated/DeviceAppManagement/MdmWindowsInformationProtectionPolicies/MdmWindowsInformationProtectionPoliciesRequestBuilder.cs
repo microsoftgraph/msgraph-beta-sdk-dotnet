@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.HasPayloadLinks;
+using MicrosoftGraph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceAppManagement.MdmWindowsInformationProtectionPoli
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.mdmWindowsInformationProtectionPolicies.item collection</summary>
-        public MdmWindowsInformationProtectionPoliciesRequestBuilder this[string position] { get {
+        public MdmWindowsInformationProtectionPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mdmWindowsInformationProtectionPolicy_id", position);
-            return new MdmWindowsInformationProtectionPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new MdmWindowsInformationProtectionPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MdmWindowsInformationProtectionPoliciesRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.HasPayloadLinks;
+using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceManagementScripts {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceManagementScripts.item collection</summary>
-        public DeviceManagementScriptsRequestBuilder this[string position] { get {
+        public DeviceManagementScriptRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementScript_id", position);
-            return new DeviceManagementScriptsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementScriptRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceManagementScriptsRequestBuilder and sets the default values.

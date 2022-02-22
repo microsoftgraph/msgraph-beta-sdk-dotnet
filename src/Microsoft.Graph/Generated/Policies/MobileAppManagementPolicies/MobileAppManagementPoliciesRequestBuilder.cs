@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.MobileAppManagementPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.MobileAppManagementPolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.mobileAppManagementPolicies.item collection</summary>
-        public MobileAppManagementPoliciesRequestBuilder this[string position] { get {
+        public MobilityManagementPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobilityManagementPolicy_id", position);
-            return new MobileAppManagementPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobilityManagementPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileAppManagementPoliciesRequestBuilder and sets the default values.

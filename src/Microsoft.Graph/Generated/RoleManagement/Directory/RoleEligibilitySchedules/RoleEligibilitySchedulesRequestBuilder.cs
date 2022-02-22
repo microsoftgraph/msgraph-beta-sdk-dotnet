@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.RoleManagement.Directory.RoleEligibilitySchedules.FilterByCurrentUserWithOn;
+using MicrosoftGraph.RoleManagement.Directory.RoleEligibilitySchedules.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.RoleManagement.Directory.RoleEligibilitySchedules {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.roleManagement.directory.roleEligibilitySchedules.item collection</summary>
-        public RoleEligibilitySchedulesRequestBuilder this[string position] { get {
+        public UnifiedRoleEligibilityScheduleRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleEligibilitySchedule_id", position);
-            return new RoleEligibilitySchedulesRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleEligibilityScheduleRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleEligibilitySchedulesRequestBuilder and sets the default values.

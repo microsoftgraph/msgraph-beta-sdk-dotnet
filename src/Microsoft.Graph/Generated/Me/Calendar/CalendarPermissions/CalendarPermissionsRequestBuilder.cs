@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.Calendar.CalendarPermissions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.Calendar.CalendarPermissions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.calendar.calendarPermissions.item collection</summary>
-        public CalendarPermissionsRequestBuilder this[string position] { get {
+        public CalendarPermissionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("calendarPermission_id", position);
-            return new CalendarPermissionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new CalendarPermissionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarPermissionsRequestBuilder and sets the default values.

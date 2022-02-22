@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRegressionSummary.ManufacturerRegression.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRegressionSumma
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsRegressionSummary.manufacturerRegression.item collection</summary>
-        public ManufacturerRegressionRequestBuilder this[string position] { get {
+        public UserExperienceAnalyticsMetricRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsMetric_id", position);
-            return new ManufacturerRegressionRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsMetricRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManufacturerRegressionRequestBuilder and sets the default values.

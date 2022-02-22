@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.UnitsOfMeasure.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.UnitsOfMeasure {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.unitsOfMeasure.item collection</summary>
-        public UnitsOfMeasureRequestBuilder this[string position] { get {
+        public UnitOfMeasureRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unitOfMeasure_id", position);
-            return new UnitsOfMeasureRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnitOfMeasureRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UnitsOfMeasureRequestBuilder and sets the default values.

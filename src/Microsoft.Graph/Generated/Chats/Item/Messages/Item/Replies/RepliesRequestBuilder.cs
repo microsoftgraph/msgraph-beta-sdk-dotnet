@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Chats.Item.Messages.Item.Replies.Delta;
+using MicrosoftGraph.Chats.Item.Messages.Item.Replies.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Chats.Item.Messages.Item.Replies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.chats.item.messages.item.replies.item collection</summary>
-        public RepliesRequestBuilder this[string position] { get {
+        public ChatMessageRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessage_id1", position);
-            return new RepliesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChatMessageRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RepliesRequestBuilder and sets the default values.

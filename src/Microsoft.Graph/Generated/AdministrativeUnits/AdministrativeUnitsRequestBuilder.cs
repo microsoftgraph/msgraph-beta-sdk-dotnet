@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.AdministrativeUnits.Delta;
 using MicrosoftGraph.AdministrativeUnits.GetByIds;
 using MicrosoftGraph.AdministrativeUnits.GetUserOwnedObjects;
+using MicrosoftGraph.AdministrativeUnits.Item;
 using MicrosoftGraph.AdministrativeUnits.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -30,10 +31,10 @@ namespace MicrosoftGraph.AdministrativeUnits {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.administrativeUnits.item collection</summary>
-        public AdministrativeUnitsRequestBuilder this[string position] { get {
+        public AdministrativeUnitRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("administrativeUnit_id", position);
-            return new AdministrativeUnitsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AdministrativeUnitRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.

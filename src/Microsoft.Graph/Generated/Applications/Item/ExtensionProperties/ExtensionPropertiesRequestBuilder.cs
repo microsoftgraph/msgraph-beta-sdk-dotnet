@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Applications.Item.ExtensionProperties.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Applications.Item.ExtensionProperties {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.applications.item.extensionProperties.item collection</summary>
-        public ExtensionPropertiesRequestBuilder this[string position] { get {
+        public ExtensionPropertyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("extensionProperty_id", position);
-            return new ExtensionPropertiesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExtensionPropertyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.

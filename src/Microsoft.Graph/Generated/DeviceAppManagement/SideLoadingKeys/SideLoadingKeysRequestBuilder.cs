@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.SideLoadingKeys.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.SideLoadingKeys {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.sideLoadingKeys.item collection</summary>
-        public SideLoadingKeysRequestBuilder this[string position] { get {
+        public SideLoadingKeyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sideLoadingKey_id", position);
-            return new SideLoadingKeysRequestBuilder(urlTplParams, RequestAdapter);
+            return new SideLoadingKeyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SideLoadingKeysRequestBuilder and sets the default values.

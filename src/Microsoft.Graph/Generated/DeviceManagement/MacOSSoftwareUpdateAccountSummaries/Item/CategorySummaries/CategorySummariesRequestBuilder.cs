@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.It
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item collection</summary>
-        public CategorySummariesRequestBuilder this[string position] { get {
+        public MacOSSoftwareUpdateCategorySummaryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("macOSSoftwareUpdateCategorySummary_id", position);
-            return new CategorySummariesRequestBuilder(urlTplParams, RequestAdapter);
+            return new MacOSSoftwareUpdateCategorySummaryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CategorySummariesRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.GroupPolicyDefinitions.Item.Presentations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyDefinitions.Item.Presentati
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyDefinitions.item.presentations.item collection</summary>
-        public PresentationsRequestBuilder this[string position] { get {
+        public GroupPolicyPresentationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyPresentation_id", position);
-            return new PresentationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupPolicyPresentationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PresentationsRequestBuilder and sets the default values.

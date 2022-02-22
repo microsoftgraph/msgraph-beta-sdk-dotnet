@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Agreements.Item.Acceptances.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Agreements.Item.Acceptances {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.agreements.item.acceptances.item collection</summary>
-        public AcceptancesRequestBuilder this[string position] { get {
+        public AgreementAcceptanceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementAcceptance_id", position);
-            return new AcceptancesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementAcceptanceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AcceptancesRequestBuilder and sets the default values.

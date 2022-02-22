@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.CompliancePolicies.Item.ScheduledActionsForRule.Item.ScheduledActionConfigurations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.CompliancePolicies.Item.ScheduledActio
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.compliancePolicies.item.scheduledActionsForRule.item.scheduledActionConfigurations.item collection</summary>
-        public ScheduledActionConfigurationsRequestBuilder this[string position] { get {
+        public DeviceManagementComplianceActionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementComplianceActionItem_id", position);
-            return new ScheduledActionConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementComplianceActionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.

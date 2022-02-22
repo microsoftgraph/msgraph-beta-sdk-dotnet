@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.OnlineMeetings.Item.Registration.CustomQuest
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.onlineMeetings.item.registration.customQuestions.item collection</summary>
-        public CustomQuestionsRequestBuilder this[string position] { get {
+        public MeetingRegistrationQuestionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("meetingRegistrationQuestion_id", position);
-            return new CustomQuestionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new MeetingRegistrationQuestionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CustomQuestionsRequestBuilder and sets the default values.

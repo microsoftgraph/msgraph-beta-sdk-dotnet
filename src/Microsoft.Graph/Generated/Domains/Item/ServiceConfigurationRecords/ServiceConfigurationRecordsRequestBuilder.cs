@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Domains.Item.ServiceConfigurationRecords.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Domains.Item.ServiceConfigurationRecords {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.domains.item.serviceConfigurationRecords.item collection</summary>
-        public ServiceConfigurationRecordsRequestBuilder this[string position] { get {
+        public DomainDnsRecordRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("domainDnsRecord_id", position);
-            return new ServiceConfigurationRecordsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DomainDnsRecordRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ServiceConfigurationRecordsRequestBuilder and sets the default values.

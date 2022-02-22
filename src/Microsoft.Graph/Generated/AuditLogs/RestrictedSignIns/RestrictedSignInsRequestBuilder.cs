@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.AuditLogs.RestrictedSignIns.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.AuditLogs.RestrictedSignIns {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.auditLogs.restrictedSignIns.item collection</summary>
-        public RestrictedSignInsRequestBuilder this[string position] { get {
+        public RestrictedSignInRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("restrictedSignIn_id", position);
-            return new RestrictedSignInsRequestBuilder(urlTplParams, RequestAdapter);
+            return new RestrictedSignInRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RestrictedSignInsRequestBuilder and sets the default values.

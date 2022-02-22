@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Security.TiIndicators.DeleteTiIndicators;
 using MicrosoftGraph.Security.TiIndicators.DeleteTiIndicatorsByExternalId;
+using MicrosoftGraph.Security.TiIndicators.Item;
 using MicrosoftGraph.Security.TiIndicators.SubmitTiIndicators;
 using MicrosoftGraph.Security.TiIndicators.UpdateTiIndicators;
 using System;
@@ -33,10 +34,10 @@ namespace MicrosoftGraph.Security.TiIndicators {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.tiIndicators.item collection</summary>
-        public TiIndicatorsRequestBuilder this[string position] { get {
+        public TiIndicatorRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tiIndicator_id", position);
-            return new TiIndicatorsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TiIndicatorRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TiIndicatorsRequestBuilder and sets the default values.

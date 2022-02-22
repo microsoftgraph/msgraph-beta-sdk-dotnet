@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Admin.Windows.Updates.Deployments {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.admin.windows.updates.deployments.item collection</summary>
-        public DeploymentsRequestBuilder this[string position] { get {
+        public DeploymentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deployment_id", position);
-            return new DeploymentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeploymentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeploymentsRequestBuilder and sets the default values.

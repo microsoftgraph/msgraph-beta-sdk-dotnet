@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.IdentityGovernance.AppConsent.AppConsentRequests.FilterByCurrentUserWithOn;
+using MicrosoftGraph.IdentityGovernance.AppConsent.AppConsentRequests.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.IdentityGovernance.AppConsent.AppConsentRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.appConsent.appConsentRequests.item collection</summary>
-        public AppConsentRequestsRequestBuilder this[string position] { get {
+        public AppConsentRequestRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appConsentRequest_id", position);
-            return new AppConsentRequestsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppConsentRequestRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppConsentRequestsRequestBuilder and sets the default values.

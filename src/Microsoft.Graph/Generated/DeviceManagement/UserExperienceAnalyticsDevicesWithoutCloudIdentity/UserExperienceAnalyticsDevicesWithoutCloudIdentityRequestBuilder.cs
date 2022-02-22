@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsDevicesWithoutC
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsDevicesWithoutCloudIdentity.item collection</summary>
-        public UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder this[string position] { get {
+        public UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsDeviceWithoutCloudIdentity_id", position);
-            return new UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsDeviceWithoutCloudIdentityRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder and sets the default values.

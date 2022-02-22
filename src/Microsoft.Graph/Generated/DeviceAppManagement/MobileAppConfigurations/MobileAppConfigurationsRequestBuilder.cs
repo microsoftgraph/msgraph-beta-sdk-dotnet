@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceAppManagement.MobileAppConfigurations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceAppManagement.MobileAppConfigurations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.mobileAppConfigurations.item collection</summary>
-        public MobileAppConfigurationsRequestBuilder this[string position] { get {
+        public ManagedDeviceMobileAppConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceMobileAppConfiguration_id", position);
-            return new MobileAppConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceMobileAppConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileAppConfigurationsRequestBuilder and sets the default values.

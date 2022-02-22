@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Directory.OutboundSharedUserProfiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Directory.OutboundSharedUserProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.directory.outboundSharedUserProfiles.item collection</summary>
-        public OutboundSharedUserProfilesRequestBuilder this[string position] { get {
+        public OutboundSharedUserProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outboundSharedUserProfile_userId", position);
-            return new OutboundSharedUserProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutboundSharedUserProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OutboundSharedUserProfilesRequestBuilder and sets the default values.

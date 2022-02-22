@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.AndroidForWorkEnrollmentProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.androidForWorkEnrollmentProfiles.item collection</summary>
-        public AndroidForWorkEnrollmentProfilesRequestBuilder this[string position] { get {
+        public AndroidForWorkEnrollmentProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidForWorkEnrollmentProfile_id", position);
-            return new AndroidForWorkEnrollmentProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AndroidForWorkEnrollmentProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AndroidForWorkEnrollmentProfilesRequestBuilder and sets the default values.

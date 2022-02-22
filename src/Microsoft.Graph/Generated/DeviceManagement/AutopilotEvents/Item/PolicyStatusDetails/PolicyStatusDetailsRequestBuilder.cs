@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetai
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.autopilotEvents.item.policyStatusDetails.item collection</summary>
-        public PolicyStatusDetailsRequestBuilder this[string position] { get {
+        public DeviceManagementAutopilotPolicyStatusDetailRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementAutopilotPolicyStatusDetail_id", position);
-            return new PolicyStatusDetailsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementAutopilotPolicyStatusDetailRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PolicyStatusDetailsRequestBuilder and sets the default values.

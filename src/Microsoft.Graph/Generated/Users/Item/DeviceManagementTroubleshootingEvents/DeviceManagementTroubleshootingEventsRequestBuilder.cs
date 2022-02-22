@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Users.Item.DeviceManagementTroubleshootingEvents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Users.Item.DeviceManagementTroubleshootingEvents {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.deviceManagementTroubleshootingEvents.item collection</summary>
-        public DeviceManagementTroubleshootingEventsRequestBuilder this[string position] { get {
+        public DeviceManagementTroubleshootingEventRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTroubleshootingEvent_id", position);
-            return new DeviceManagementTroubleshootingEventsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementTroubleshootingEventRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceManagementTroubleshootingEventsRequestBuilder and sets the default values.

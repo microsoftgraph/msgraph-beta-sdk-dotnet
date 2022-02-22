@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.RiskyUsers.Item.History.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.RiskyUsers.Item.History {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.riskyUsers.item.history.item collection</summary>
-        public HistoryRequestBuilder this[string position] { get {
+        public RiskyUserHistoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyUserHistoryItem_id", position);
-            return new HistoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new RiskyUserHistoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HistoryRequestBuilder and sets the default values.

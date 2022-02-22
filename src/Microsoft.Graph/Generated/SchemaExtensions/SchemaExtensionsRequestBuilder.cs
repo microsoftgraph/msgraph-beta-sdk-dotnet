@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.SchemaExtensions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.SchemaExtensions {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.schemaExtensions.item collection</summary>
-        public SchemaExtensionsRequestBuilder this[string position] { get {
+        public SchemaExtensionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("schemaExtension_id", position);
-            return new SchemaExtensionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new SchemaExtensionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SchemaExtensionsRequestBuilder and sets the default values.

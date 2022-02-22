@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Names.Add;
 using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Names.AddFormulaLocal;
+using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Names.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,10 +26,10 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Names {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.tables.item.worksheet.names.item collection</summary>
-        public NamesRequestBuilder this[string position] { get {
+        public WorkbookNamedItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookNamedItem_id", position);
-            return new NamesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookNamedItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NamesRequestBuilder and sets the default values.

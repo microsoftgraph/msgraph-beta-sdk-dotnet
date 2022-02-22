@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.EmbeddedSIMActivationCodePools.Item.DeviceStates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.EmbeddedSIMActivationCodePools.Item.De
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.embeddedSIMActivationCodePools.item.deviceStates.item collection</summary>
-        public DeviceStatesRequestBuilder this[string position] { get {
+        public EmbeddedSIMDeviceStateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("embeddedSIMDeviceState_id", position);
-            return new DeviceStatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new EmbeddedSIMDeviceStateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceStatesRequestBuilder and sets the default values.

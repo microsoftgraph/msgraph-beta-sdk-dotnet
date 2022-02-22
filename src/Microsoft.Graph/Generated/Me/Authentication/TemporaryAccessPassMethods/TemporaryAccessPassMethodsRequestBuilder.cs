@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.Authentication.TemporaryAccessPassMethods.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.Authentication.TemporaryAccessPassMethods {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.authentication.temporaryAccessPassMethods.item collection</summary>
-        public TemporaryAccessPassMethodsRequestBuilder this[string position] { get {
+        public TemporaryAccessPassAuthenticationMethodRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("temporaryAccessPassAuthenticationMethod_id", position);
-            return new TemporaryAccessPassMethodsRequestBuilder(urlTplParams, RequestAdapter);
+            return new TemporaryAccessPassAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TemporaryAccessPassMethodsRequestBuilder and sets the default values.

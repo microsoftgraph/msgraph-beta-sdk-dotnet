@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.ServicePrincipals.Item.Endpoints.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.ServicePrincipals.Item.Endpoints {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item.endpoints.item collection</summary>
-        public EndpointsRequestBuilder this[string position] { get {
+        public EndpointRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("endpoint_id", position);
-            return new EndpointsRequestBuilder(urlTplParams, RequestAdapter);
+            return new EndpointRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EndpointsRequestBuilder and sets the default values.

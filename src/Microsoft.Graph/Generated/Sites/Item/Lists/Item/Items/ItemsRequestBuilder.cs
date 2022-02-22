@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Sites.Item.Lists.Item.Items.Delta;
 using MicrosoftGraph.Sites.Item.Lists.Item.Items.DeltaWithToken;
+using MicrosoftGraph.Sites.Item.Lists.Item.Items.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,10 +20,10 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.Items {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.sites.item.lists.item.items.item collection</summary>
-        public ItemsRequestBuilder this[string position] { get {
+        public ListItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("listItem_id", position);
-            return new ItemsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ListItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ItemsRequestBuilder and sets the default values.

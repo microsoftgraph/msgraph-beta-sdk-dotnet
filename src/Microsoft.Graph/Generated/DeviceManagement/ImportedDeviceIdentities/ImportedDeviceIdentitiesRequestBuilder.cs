@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList;
+using MicrosoftGraph.DeviceManagement.ImportedDeviceIdentities.Item;
 using MicrosoftGraph.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -25,10 +26,10 @@ namespace MicrosoftGraph.DeviceManagement.ImportedDeviceIdentities {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.importedDeviceIdentities.item collection</summary>
-        public ImportedDeviceIdentitiesRequestBuilder this[string position] { get {
+        public ImportedDeviceIdentityRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("importedDeviceIdentity_id", position);
-            return new ImportedDeviceIdentitiesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ImportedDeviceIdentityRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ImportedDeviceIdentitiesRequestBuilder and sets the default values.

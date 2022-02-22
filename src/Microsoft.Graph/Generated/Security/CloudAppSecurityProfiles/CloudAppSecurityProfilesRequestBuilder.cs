@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Security.CloudAppSecurityProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Security.CloudAppSecurityProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.cloudAppSecurityProfiles.item collection</summary>
-        public CloudAppSecurityProfilesRequestBuilder this[string position] { get {
+        public CloudAppSecurityProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudAppSecurityProfile_id", position);
-            return new CloudAppSecurityProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudAppSecurityProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CloudAppSecurityProfilesRequestBuilder and sets the default values.

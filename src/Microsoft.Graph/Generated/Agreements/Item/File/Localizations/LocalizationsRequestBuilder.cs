@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Agreements.Item.File.Localizations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Agreements.Item.File.Localizations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.agreements.item.file.localizations.item collection</summary>
-        public LocalizationsRequestBuilder this[string position] { get {
+        public AgreementFileLocalizationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementFileLocalization_id", position);
-            return new LocalizationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementFileLocalizationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LocalizationsRequestBuilder and sets the default values.

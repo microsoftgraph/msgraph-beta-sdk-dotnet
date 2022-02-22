@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Jobs.Item;
 using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Jobs {
             new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item.synchronization.jobs.item collection</summary>
-        public JobsRequestBuilder this[string position] { get {
+        public SynchronizationJobRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("synchronizationJob_id", position);
-            return new JobsRequestBuilder(urlTplParams, RequestAdapter);
+            return new SynchronizationJobRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new JobsRequestBuilder and sets the default values.

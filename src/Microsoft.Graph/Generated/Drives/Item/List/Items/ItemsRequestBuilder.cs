@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Drives.Item.List.Items.Delta;
 using MicrosoftGraph.Drives.Item.List.Items.DeltaWithToken;
+using MicrosoftGraph.Drives.Item.List.Items.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,10 @@ namespace MicrosoftGraph.Drives.Item.List.Items {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.drives.item.list.items.item collection</summary>
-        public ItemsRequestBuilder this[string position] { get {
+        public ListItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("listItem_id", position);
-            return new ItemsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ListItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ItemsRequestBuilder and sets the default values.

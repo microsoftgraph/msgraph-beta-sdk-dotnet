@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.ApplicationTemplates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.ApplicationTemplates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.applicationTemplates.item collection</summary>
-        public ApplicationTemplatesRequestBuilder this[string position] { get {
+        public ApplicationTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("applicationTemplate_id", position);
-            return new ApplicationTemplatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApplicationTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ApplicationTemplatesRequestBuilder and sets the default values.

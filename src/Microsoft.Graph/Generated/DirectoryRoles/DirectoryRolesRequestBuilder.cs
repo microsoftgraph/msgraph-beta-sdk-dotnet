@@ -3,6 +3,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DirectoryRoles.Delta;
 using MicrosoftGraph.DirectoryRoles.GetByIds;
 using MicrosoftGraph.DirectoryRoles.GetUserOwnedObjects;
+using MicrosoftGraph.DirectoryRoles.Item;
 using MicrosoftGraph.DirectoryRoles.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -30,10 +31,10 @@ namespace MicrosoftGraph.DirectoryRoles {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.directoryRoles.item collection</summary>
-        public DirectoryRolesRequestBuilder this[string position] { get {
+        public DirectoryRoleRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryRole_id", position);
-            return new DirectoryRolesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryRoleRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryRolesRequestBuilder and sets the default values.

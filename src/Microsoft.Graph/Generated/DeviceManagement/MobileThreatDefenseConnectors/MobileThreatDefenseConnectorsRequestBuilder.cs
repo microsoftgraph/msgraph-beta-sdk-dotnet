@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.MobileThreatDefenseConnectors.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.MobileThreatDefenseConnectors {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.mobileThreatDefenseConnectors.item collection</summary>
-        public MobileThreatDefenseConnectorsRequestBuilder this[string position] { get {
+        public MobileThreatDefenseConnectorRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileThreatDefenseConnector_id", position);
-            return new MobileThreatDefenseConnectorsRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileThreatDefenseConnectorRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileThreatDefenseConnectorsRequestBuilder and sets the default values.

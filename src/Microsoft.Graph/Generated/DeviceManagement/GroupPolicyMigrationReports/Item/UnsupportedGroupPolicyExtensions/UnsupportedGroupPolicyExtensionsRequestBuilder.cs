@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports.Item.UnsupportedGroupPolicyExtensions.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports.Item.Unsup
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyMigrationReports.item.unsupportedGroupPolicyExtensions.item collection</summary>
-        public UnsupportedGroupPolicyExtensionsRequestBuilder this[string position] { get {
+        public UnsupportedGroupPolicyExtensionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unsupportedGroupPolicyExtension_id", position);
-            return new UnsupportedGroupPolicyExtensionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnsupportedGroupPolicyExtensionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UnsupportedGroupPolicyExtensionsRequestBuilder and sets the default values.

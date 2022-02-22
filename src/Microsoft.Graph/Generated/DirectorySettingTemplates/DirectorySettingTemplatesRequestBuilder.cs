@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DirectorySettingTemplates.GetByIds;
 using MicrosoftGraph.DirectorySettingTemplates.GetUserOwnedObjects;
+using MicrosoftGraph.DirectorySettingTemplates.Item;
 using MicrosoftGraph.DirectorySettingTemplates.ValidateProperties;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
@@ -29,10 +30,10 @@ namespace MicrosoftGraph.DirectorySettingTemplates {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.directorySettingTemplates.item collection</summary>
-        public DirectorySettingTemplatesRequestBuilder this[string position] { get {
+        public DirectorySettingTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directorySettingTemplate_id", position);
-            return new DirectorySettingTemplatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectorySettingTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectorySettingTemplatesRequestBuilder and sets the default values.

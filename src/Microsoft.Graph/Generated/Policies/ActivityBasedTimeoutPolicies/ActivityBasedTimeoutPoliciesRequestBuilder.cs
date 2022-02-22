@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Policies.ActivityBasedTimeoutPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Policies.ActivityBasedTimeoutPolicies {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.policies.activityBasedTimeoutPolicies.item collection</summary>
-        public ActivityBasedTimeoutPoliciesRequestBuilder this[string position] { get {
+        public ActivityBasedTimeoutPolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activityBasedTimeoutPolicy_id", position);
-            return new ActivityBasedTimeoutPoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ActivityBasedTimeoutPolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ActivityBasedTimeoutPoliciesRequestBuilder and sets the default values.

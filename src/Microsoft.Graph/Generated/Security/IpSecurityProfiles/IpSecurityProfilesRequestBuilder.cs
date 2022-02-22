@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Security.IpSecurityProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Security.IpSecurityProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.ipSecurityProfiles.item collection</summary>
-        public IpSecurityProfilesRequestBuilder this[string position] { get {
+        public IpSecurityProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ipSecurityProfile_id", position);
-            return new IpSecurityProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new IpSecurityProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IpSecurityProfilesRequestBuilder and sets the default values.

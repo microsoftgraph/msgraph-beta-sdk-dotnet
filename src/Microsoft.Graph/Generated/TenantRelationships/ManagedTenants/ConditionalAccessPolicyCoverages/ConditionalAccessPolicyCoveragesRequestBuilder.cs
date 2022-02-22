@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.ConditionalAccessPolicyCoverages.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ConditionalAccessPol
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.conditionalAccessPolicyCoverages.item collection</summary>
-        public ConditionalAccessPolicyCoveragesRequestBuilder this[string position] { get {
+        public ConditionalAccessPolicyCoverageRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conditionalAccessPolicyCoverage_id", position);
-            return new ConditionalAccessPolicyCoveragesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConditionalAccessPolicyCoverageRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConditionalAccessPolicyCoveragesRequestBuilder and sets the default values.

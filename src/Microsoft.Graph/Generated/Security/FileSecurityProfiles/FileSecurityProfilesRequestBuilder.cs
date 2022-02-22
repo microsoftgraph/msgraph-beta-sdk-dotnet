@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Security.FileSecurityProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Security.FileSecurityProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.fileSecurityProfiles.item collection</summary>
-        public FileSecurityProfilesRequestBuilder this[string position] { get {
+        public FileSecurityProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("fileSecurityProfile_id", position);
-            return new FileSecurityProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new FileSecurityProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FileSecurityProfilesRequestBuilder and sets the default values.

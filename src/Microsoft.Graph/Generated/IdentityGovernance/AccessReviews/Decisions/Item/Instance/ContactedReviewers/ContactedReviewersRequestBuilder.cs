@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.ContactedReviewers.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instanc
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.accessReviews.decisions.item.instance.contactedReviewers.item collection</summary>
-        public ContactedReviewersRequestBuilder this[string position] { get {
+        public AccessReviewReviewerRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewReviewer_id", position);
-            return new ContactedReviewersRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewReviewerRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContactedReviewersRequestBuilder and sets the default values.

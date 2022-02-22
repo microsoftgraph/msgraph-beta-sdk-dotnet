@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.VirtualEndpoint.Snapshots.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.Snapshots {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.virtualEndpoint.snapshots.item collection</summary>
-        public SnapshotsRequestBuilder this[string position] { get {
+        public CloudPcSnapshotRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcSnapshot_id", position);
-            return new SnapshotsRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcSnapshotRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SnapshotsRequestBuilder and sets the default values.

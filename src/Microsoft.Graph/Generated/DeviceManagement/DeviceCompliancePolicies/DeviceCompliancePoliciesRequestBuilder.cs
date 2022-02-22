@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire;
 using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks;
+using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.Item;
 using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization;
 using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState;
 using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript;
@@ -37,10 +38,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies {
             new ValidateComplianceScriptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceCompliancePolicies.item collection</summary>
-        public DeviceCompliancePoliciesRequestBuilder this[string position] { get {
+        public DeviceCompliancePolicyRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceCompliancePolicy_id", position);
-            return new DeviceCompliancePoliciesRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceCompliancePolicyRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceCompliancePoliciesRequestBuilder and sets the default values.

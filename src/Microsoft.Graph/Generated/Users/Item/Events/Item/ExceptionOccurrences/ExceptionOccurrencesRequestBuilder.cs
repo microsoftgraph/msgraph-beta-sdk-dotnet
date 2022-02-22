@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Users.Item.Events.Item.ExceptionOccurrences.Delta;
+using MicrosoftGraph.Users.Item.Events.Item.ExceptionOccurrences.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Users.Item.Events.Item.ExceptionOccurrences {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.events.item.exceptionOccurrences.item collection</summary>
-        public ExceptionOccurrencesRequestBuilder this[string position] { get {
+        public EventRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id1", position);
-            return new ExceptionOccurrencesRequestBuilder(urlTplParams, RequestAdapter);
+            return new EventRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.

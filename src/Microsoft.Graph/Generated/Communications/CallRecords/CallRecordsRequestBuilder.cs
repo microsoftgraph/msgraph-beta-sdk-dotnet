@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Communications.CallRecords.Item;
 using MicrosoftGraph.Models.Microsoft.Graph.CallRecords;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Communications.CallRecords {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.communications.callRecords.item collection</summary>
-        public CallRecordsRequestBuilder this[string position] { get {
+        public CallRecordRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("callRecord_id", position);
-            return new CallRecordsRequestBuilder(urlTplParams, RequestAdapter);
+            return new CallRecordRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CallRecordsRequestBuilder and sets the default values.

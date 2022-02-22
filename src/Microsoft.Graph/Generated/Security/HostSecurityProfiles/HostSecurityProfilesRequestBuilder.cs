@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Security.HostSecurityProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Security.HostSecurityProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.security.hostSecurityProfiles.item collection</summary>
-        public HostSecurityProfilesRequestBuilder this[string position] { get {
+        public HostSecurityProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("hostSecurityProfile_id", position);
-            return new HostSecurityProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new HostSecurityProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HostSecurityProfilesRequestBuilder and sets the default values.

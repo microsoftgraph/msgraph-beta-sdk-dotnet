@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.ExchangeConnectors.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.ExchangeConnectors {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.exchangeConnectors.item collection</summary>
-        public ExchangeConnectorsRequestBuilder this[string position] { get {
+        public DeviceManagementExchangeConnectorRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExchangeConnector_id", position);
-            return new ExchangeConnectorsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementExchangeConnectorRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExchangeConnectorsRequestBuilder and sets the default values.

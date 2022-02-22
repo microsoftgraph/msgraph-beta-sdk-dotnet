@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.OfficeConfiguration.ClientConfigurations.Item;
 using MicrosoftGraph.OfficeConfiguration.ClientConfigurations.UpdatePriorities;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.OfficeConfiguration.ClientConfigurations {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.officeConfiguration.clientConfigurations.item collection</summary>
-        public ClientConfigurationsRequestBuilder this[string position] { get {
+        public OfficeClientConfigurationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("officeClientConfiguration_id", position);
-            return new ClientConfigurationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new OfficeClientConfigurationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ClientConfigurationsRequestBuilder and sets the default values.

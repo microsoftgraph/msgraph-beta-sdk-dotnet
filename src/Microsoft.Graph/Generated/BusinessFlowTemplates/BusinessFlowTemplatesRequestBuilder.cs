@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.BusinessFlowTemplates.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.BusinessFlowTemplates {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.businessFlowTemplates.item collection</summary>
-        public BusinessFlowTemplatesRequestBuilder this[string position] { get {
+        public BusinessFlowTemplateRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("businessFlowTemplate_id", position);
-            return new BusinessFlowTemplatesRequestBuilder(urlTplParams, RequestAdapter);
+            return new BusinessFlowTemplateRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new BusinessFlowTemplatesRequestBuilder and sets the default values.

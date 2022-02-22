@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Users.Item.OnlineMeetings.CreateOrGet;
+using MicrosoftGraph.Users.Item.OnlineMeetings.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.Users.Item.OnlineMeetings {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.onlineMeetings.item collection</summary>
-        public OnlineMeetingsRequestBuilder this[string position] { get {
+        public OnlineMeetingRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onlineMeeting_id", position);
-            return new OnlineMeetingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnlineMeetingRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OnlineMeetingsRequestBuilder and sets the default values.

@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Decisions.Item.Insights.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Decisions.Item.Ins
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.pendingAccessReviewInstances.item.decisions.item.insights.item collection</summary>
-        public InsightsRequestBuilder this[string position] { get {
+        public GovernanceInsightRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceInsight_id", position);
-            return new InsightsRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernanceInsightRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InsightsRequestBuilder and sets the default values.

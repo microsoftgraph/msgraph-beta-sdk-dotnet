@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item.Assignments.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.I
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.appleUserInitiatedEnrollmentProfiles.item.assignments.item collection</summary>
-        public AssignmentsRequestBuilder this[string position] { get {
+        public AppleEnrollmentProfileAssignmentRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appleEnrollmentProfileAssignment_id", position);
-            return new AssignmentsRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppleEnrollmentProfileAssignmentRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

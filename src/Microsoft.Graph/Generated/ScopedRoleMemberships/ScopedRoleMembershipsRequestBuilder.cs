@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.ScopedRoleMemberships.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.ScopedRoleMemberships {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.scopedRoleMemberships.item collection</summary>
-        public ScopedRoleMembershipsRequestBuilder this[string position] { get {
+        public ScopedRoleMembershipRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("scopedRoleMembership_id", position);
-            return new ScopedRoleMembershipsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ScopedRoleMembershipRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ScopedRoleMembershipsRequestBuilder and sets the default values.

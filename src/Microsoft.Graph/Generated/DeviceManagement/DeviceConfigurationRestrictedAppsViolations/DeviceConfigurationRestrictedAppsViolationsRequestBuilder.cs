@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.DeviceConfigurationRestrictedAppsViolations.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceConfigurationRestrictedAppsViola
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceConfigurationRestrictedAppsViolations.item collection</summary>
-        public DeviceConfigurationRestrictedAppsViolationsRequestBuilder this[string position] { get {
+        public RestrictedAppsViolationRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("restrictedAppsViolation_id", position);
-            return new DeviceConfigurationRestrictedAppsViolationsRequestBuilder(urlTplParams, RequestAdapter);
+            return new RestrictedAppsViolationRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceConfigurationRestrictedAppsViolationsRequestBuilder and sets the default values.

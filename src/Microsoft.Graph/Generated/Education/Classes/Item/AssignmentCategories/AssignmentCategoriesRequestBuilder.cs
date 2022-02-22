@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Education.Classes.Item.AssignmentCategories.Delta;
+using MicrosoftGraph.Education.Classes.Item.AssignmentCategories.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Education.Classes.Item.AssignmentCategories {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.education.classes.item.assignmentCategories.item collection</summary>
-        public AssignmentCategoriesRequestBuilder this[string position] { get {
+        public EducationCategoryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationCategory_id", position);
-            return new AssignmentCategoriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationCategoryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentCategoriesRequestBuilder and sets the default values.

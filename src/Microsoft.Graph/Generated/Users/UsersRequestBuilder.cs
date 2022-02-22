@@ -5,6 +5,7 @@ using MicrosoftGraph.Users.Delta;
 using MicrosoftGraph.Users.GetByIds;
 using MicrosoftGraph.Users.GetManagedAppBlockedUsers;
 using MicrosoftGraph.Users.GetUserOwnedObjects;
+using MicrosoftGraph.Users.Item;
 using MicrosoftGraph.Users.ValidatePassword;
 using MicrosoftGraph.Users.ValidateProperties;
 using System;
@@ -35,10 +36,10 @@ namespace MicrosoftGraph.Users {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the MicrosoftGraph.users.item collection</summary>
-        public UsersRequestBuilder this[string position] { get {
+        public UserRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("user_id", position);
-            return new UsersRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UsersRequestBuilder and sets the default values.

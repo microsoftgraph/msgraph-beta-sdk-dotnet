@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsDriverUpdateProfiles.item collection</summary>
-        public WindowsDriverUpdateProfilesRequestBuilder this[string position] { get {
+        public WindowsDriverUpdateProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDriverUpdateProfile_id", position);
-            return new WindowsDriverUpdateProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsDriverUpdateProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsDriverUpdateProfilesRequestBuilder and sets the default values.

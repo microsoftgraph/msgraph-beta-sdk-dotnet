@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Me.Tasks.Lists.Item.Tasks.Delta;
+using MicrosoftGraph.Me.Tasks.Lists.Item.Tasks.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Me.Tasks.Lists.Item.Tasks {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.me.tasks.lists.item.tasks.item collection</summary>
-        public TasksRequestBuilder this[string position] { get {
+        public BaseTaskRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("baseTask_id", position);
-            return new TasksRequestBuilder(urlTplParams, RequestAdapter);
+            return new BaseTaskRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TasksRequestBuilder and sets the default values.

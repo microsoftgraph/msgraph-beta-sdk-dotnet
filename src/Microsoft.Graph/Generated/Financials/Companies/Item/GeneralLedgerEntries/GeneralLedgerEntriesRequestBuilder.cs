@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.Financials.Companies.Item.GeneralLedgerEntries.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Financials.Companies.Item.GeneralLedgerEntries {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.generalLedgerEntries.item collection</summary>
-        public GeneralLedgerEntriesRequestBuilder this[string position] { get {
+        public GeneralLedgerEntryRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("generalLedgerEntry_id", position);
-            return new GeneralLedgerEntriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new GeneralLedgerEntryRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GeneralLedgerEntriesRequestBuilder and sets the default values.

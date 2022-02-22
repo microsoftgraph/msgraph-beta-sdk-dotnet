@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyUploadedDefinitionFiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyUploadedDefinitionFiles.item collection</summary>
-        public GroupPolicyUploadedDefinitionFilesRequestBuilder this[string position] { get {
+        public GroupPolicyUploadedDefinitionFileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyUploadedDefinitionFile_id", position);
-            return new GroupPolicyUploadedDefinitionFilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupPolicyUploadedDefinitionFileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupPolicyUploadedDefinitionFilesRequestBuilder and sets the default values.

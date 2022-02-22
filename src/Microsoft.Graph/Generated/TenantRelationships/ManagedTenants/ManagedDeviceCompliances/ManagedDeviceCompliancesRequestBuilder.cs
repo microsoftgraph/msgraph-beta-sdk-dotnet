@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagedDeviceCompliances.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagedDeviceComplia
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.managedDeviceCompliances.item collection</summary>
-        public ManagedDeviceCompliancesRequestBuilder this[string position] { get {
+        public ManagedDeviceComplianceRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceCompliance_id", position);
-            return new ManagedDeviceCompliancesRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceComplianceRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedDeviceCompliancesRequestBuilder and sets the default values.

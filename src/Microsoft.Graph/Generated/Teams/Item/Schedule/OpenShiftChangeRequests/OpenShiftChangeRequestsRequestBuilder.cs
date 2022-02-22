@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.Teams.Item.Schedule.OpenShiftChangeRequests.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.Teams.Item.Schedule.OpenShiftChangeRequests {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.teams.item.schedule.openShiftChangeRequests.item collection</summary>
-        public OpenShiftChangeRequestsRequestBuilder this[string position] { get {
+        public OpenShiftChangeRequestRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("openShiftChangeRequest_id", position);
-            return new OpenShiftChangeRequestsRequestBuilder(urlTplParams, RequestAdapter);
+            return new OpenShiftChangeRequestRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.

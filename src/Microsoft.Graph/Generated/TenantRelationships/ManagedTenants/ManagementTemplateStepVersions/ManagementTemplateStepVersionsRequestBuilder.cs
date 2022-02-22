@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementTemplateSt
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.managementTemplateStepVersions.item collection</summary>
-        public ManagementTemplateStepVersionsRequestBuilder this[string position] { get {
+        public ManagementTemplateStepVersionRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementTemplateStepVersion_id", position);
-            return new ManagementTemplateStepVersionsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagementTemplateStepVersionRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagementTemplateStepVersionsRequestBuilder and sets the default values.

@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraph.OnPremisesPublishingProfiles.Item.Connectors.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.Connectors {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.onPremisesPublishingProfiles.item.connectors.item collection</summary>
-        public ConnectorsRequestBuilder this[string position] { get {
+        public ConnectorRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connector_id", position);
-            return new ConnectorsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConnectorRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConnectorsRequestBuilder and sets the default values.

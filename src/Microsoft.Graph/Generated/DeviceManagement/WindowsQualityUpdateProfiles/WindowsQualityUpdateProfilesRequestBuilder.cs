@@ -1,5 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraph.DeviceManagement.WindowsQualityUpdateProfiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,10 @@ namespace MicrosoftGraph.DeviceManagement.WindowsQualityUpdateProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsQualityUpdateProfiles.item collection</summary>
-        public WindowsQualityUpdateProfilesRequestBuilder this[string position] { get {
+        public WindowsQualityUpdateProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsQualityUpdateProfile_id", position);
-            return new WindowsQualityUpdateProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsQualityUpdateProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsQualityUpdateProfilesRequestBuilder and sets the default values.

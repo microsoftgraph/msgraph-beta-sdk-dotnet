@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DataClassification.SensitivityLabels.Evaluate;
+using MicrosoftGraph.DataClassification.SensitivityLabels.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DataClassification.SensitivityLabels {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.dataClassification.sensitivityLabels.item collection</summary>
-        public SensitivityLabelsRequestBuilder this[string position] { get {
+        public SensitivityLabelRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel_id", position);
-            return new SensitivityLabelsRequestBuilder(urlTplParams, RequestAdapter);
+            return new SensitivityLabelRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SensitivityLabelsRequestBuilder and sets the default values.

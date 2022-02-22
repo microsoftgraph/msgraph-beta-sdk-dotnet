@@ -1,6 +1,7 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.HasPayloadLinks;
+using MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,10 @@ namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsAutopilotDeploymentProfiles.item collection</summary>
-        public WindowsAutopilotDeploymentProfilesRequestBuilder this[string position] { get {
+        public WindowsAutopilotDeploymentProfileRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsAutopilotDeploymentProfile_id", position);
-            return new WindowsAutopilotDeploymentProfilesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsAutopilotDeploymentProfileRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsAutopilotDeploymentProfilesRequestBuilder and sets the default values.

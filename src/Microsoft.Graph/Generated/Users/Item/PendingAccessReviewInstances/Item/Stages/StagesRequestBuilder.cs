@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.FilterByCurrentUserWithOn;
+using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages {
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.pendingAccessReviewInstances.item.stages.item collection</summary>
-        public StagesRequestBuilder this[string position] { get {
+        public AccessReviewStageRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewStage_id", position);
-            return new StagesRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewStageRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new StagesRequestBuilder and sets the default values.

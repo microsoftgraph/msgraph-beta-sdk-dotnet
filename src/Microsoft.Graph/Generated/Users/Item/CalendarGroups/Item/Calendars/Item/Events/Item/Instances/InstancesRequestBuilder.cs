@@ -2,6 +2,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraph.Models.Microsoft.Graph;
 using MicrosoftGraph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Delta;
+using MicrosoftGraph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,10 +19,10 @@ namespace MicrosoftGraph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.It
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the MicrosoftGraph.users.item.calendarGroups.item.calendars.item.events.item.instances.item collection</summary>
-        public InstancesRequestBuilder this[string position] { get {
+        public EventRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id1", position);
-            return new InstancesRequestBuilder(urlTplParams, RequestAdapter);
+            return new EventRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstancesRequestBuilder and sets the default values.
