@@ -79,5 +79,15 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 11,
 	
+        /// <summary>
+        /// Admin Confirmed Service Principal Compromised
+        /// </summary>
+        AdminConfirmedServicePrincipalCompromised = 12,
+	
+        /// <summary>
+        /// Admin Dismissed All Risk For Service Principal
+        /// </summary>
+        AdminDismissedAllRiskForServicePrincipal = 13,
+	
     }
 }

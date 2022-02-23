@@ -50,5 +50,16 @@ namespace Microsoft.Graph
             return new CrossTenantAccessPolicyConfigurationDefaultRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefault.
+        /// </summary>
+        /// <returns>The <see cref="ICrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder"/>.</returns>
+        public ICrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder ResetToSystemDefault()
+        {
+            return new CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.resetToSystemDefault"),
+                this.Client);
+        }
+    
     }
 }

@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for RiskyServicePrincipals.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder"/>.</returns>
+        public IIdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder RiskyServicePrincipals
+        {
+            get
+            {
+                return new IdentityProtectionRootRiskyServicePrincipalsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("riskyServicePrincipals"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RiskyUsers.
         /// </summary>
         /// <returns>The <see cref="IIdentityProtectionRootRiskyUsersCollectionRequestBuilder"/>.</returns>
@@ -71,6 +83,18 @@ namespace Microsoft.Graph
             get
             {
                 return new IdentityProtectionRootRiskyUsersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("riskyUsers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalRiskDetections.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder"/>.</returns>
+        public IIdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder ServicePrincipalRiskDetections
+        {
+            get
+            {
+                return new IdentityProtectionRootServicePrincipalRiskDetectionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("servicePrincipalRiskDetections"), this.Client);
             }
         }
     

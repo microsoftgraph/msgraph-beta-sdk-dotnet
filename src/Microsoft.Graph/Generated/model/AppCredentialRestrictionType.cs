@@ -40,6 +40,11 @@ namespace Microsoft.Graph
         SymmetricKeyLifetime = 3,
 	
         /// <summary>
+        /// Custom Password Addition
+        /// </summary>
+        CustomPasswordAddition = 4,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 99,

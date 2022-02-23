@@ -10,11 +10,13 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum MailboxRecipientType.
     /// </summary>
+    [Obsolete("The UserPurposeV2 API is deprecated and will stop returning data on April 30, 2022. Please use the UserPurpose API.")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum MailboxRecipientType
     {

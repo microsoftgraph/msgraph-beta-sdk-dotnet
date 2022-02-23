@@ -36,6 +36,20 @@ namespace Microsoft.Graph
         public string RiskDetectionsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets risky service principals.
+        /// Azure AD service principals that are at risk.
+        /// </summary>
+        [JsonPropertyName("riskyServicePrincipals")]
+        public IIdentityProtectionRootRiskyServicePrincipalsCollectionPage RiskyServicePrincipals { get; set; }
+
+        /// <summary>
+        /// Gets or sets riskyServicePrincipalsNextLink.
+        /// </summary>
+        [JsonPropertyName("riskyServicePrincipals@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string RiskyServicePrincipalsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets risky users.
         /// Users that are flagged as at-risk by Azure AD Identity Protection.
         /// </summary>
@@ -48,6 +62,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("riskyUsers@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string RiskyUsersNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service principal risk detections.
+        /// Represents information about detected at-risk service principals in an Azure AD tenant.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalRiskDetections")]
+        public IIdentityProtectionRootServicePrincipalRiskDetectionsCollectionPage ServicePrincipalRiskDetections { get; set; }
+
+        /// <summary>
+        /// Gets or sets servicePrincipalRiskDetectionsNextLink.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalRiskDetections@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ServicePrincipalRiskDetectionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

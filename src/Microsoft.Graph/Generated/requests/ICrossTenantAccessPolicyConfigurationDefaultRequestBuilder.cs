@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new ICrossTenantAccessPolicyConfigurationDefaultRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for CrossTenantAccessPolicyConfigurationDefaultResetToSystemDefault.
+        /// </summary>
+        /// <returns>The <see cref="ICrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder"/>.</returns>
+        ICrossTenantAccessPolicyConfigurationDefaultResetToSystemDefaultRequestBuilder ResetToSystemDefault();
+    
     }
 }
