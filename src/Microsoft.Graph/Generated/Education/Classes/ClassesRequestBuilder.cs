@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Education.Classes.Delta;
-using MicrosoftGraph.Education.Classes.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Education.Classes.Delta;
+using MicrosoftGraphSdk.Education.Classes.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Classes {
+namespace MicrosoftGraphSdk.Education.Classes {
     /// <summary>Builds and executes requests for operations under \education\classes</summary>
     public class ClassesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Education.Classes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.education.classes.item collection</summary>
-        public EducationClassRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.education.classes.item collection</summary>
+        public EducationClassItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationClass_id", position);
-            return new EducationClassRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationClassItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ClassesRequestBuilder and sets the default values.

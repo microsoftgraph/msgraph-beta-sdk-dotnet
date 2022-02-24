@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.ManagedDevices.BulkReprovisionCloudPc;
-using MicrosoftGraph.Users.Item.ManagedDevices.BulkRestoreCloudPc;
-using MicrosoftGraph.Users.Item.ManagedDevices.ExecuteAction;
-using MicrosoftGraph.Users.Item.ManagedDevices.Item;
-using MicrosoftGraph.Users.Item.ManagedDevices.MoveDevicesToOU;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.ManagedDevices.BulkReprovisionCloudPc;
+using MicrosoftGraphSdk.Users.Item.ManagedDevices.BulkRestoreCloudPc;
+using MicrosoftGraphSdk.Users.Item.ManagedDevices.ExecuteAction;
+using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item;
+using MicrosoftGraphSdk.Users.Item.ManagedDevices.MoveDevicesToOU;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.ManagedDevices {
+namespace MicrosoftGraphSdk.Users.Item.ManagedDevices {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\managedDevices</summary>
     public class ManagedDevicesRequestBuilder {
         public BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc { get =>
@@ -33,11 +33,11 @@ namespace MicrosoftGraph.Users.Item.ManagedDevices {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.managedDevices.item collection</summary>
-        public ManagedDeviceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.managedDevices.item collection</summary>
+        public ManagedDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDevice_id", position);
-            return new ManagedDeviceRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
@@ -93,7 +93,7 @@ namespace MicrosoftGraph.Users.Item.ManagedDevices {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -125,10 +125,10 @@ namespace MicrosoftGraph.Users.Item.ManagedDevices {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>The managed devices associated with the user.</summary>
         public class GetQueryParameters : QueryParametersBase {

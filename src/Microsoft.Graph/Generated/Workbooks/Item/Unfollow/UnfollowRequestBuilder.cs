@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Unfollow {
+namespace MicrosoftGraphSdk.Workbooks.Item.Unfollow {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.unfollow</summary>
     public class UnfollowRequestBuilder {
         /// <summary>Path parameters for the request</summary>

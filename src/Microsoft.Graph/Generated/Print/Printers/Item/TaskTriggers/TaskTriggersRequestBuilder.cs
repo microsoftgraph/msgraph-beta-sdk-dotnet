@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Print.Printers.Item.TaskTriggers.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Print.Printers.Item.TaskTriggers.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.Printers.Item.TaskTriggers {
+namespace MicrosoftGraphSdk.Print.Printers.Item.TaskTriggers {
     /// <summary>Builds and executes requests for operations under \print\printers\{printer-id}\taskTriggers</summary>
     public class TaskTriggersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Print.Printers.Item.TaskTriggers {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.print.printers.item.taskTriggers.item collection</summary>
-        public PrintTaskTriggerRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.print.printers.item.taskTriggers.item collection</summary>
+        public PrintTaskTriggerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printTaskTrigger_id", position);
-            return new PrintTaskTriggerRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintTaskTriggerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TaskTriggersRequestBuilder and sets the default values.

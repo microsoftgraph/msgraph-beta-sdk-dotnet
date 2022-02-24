@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus {
+namespace MicrosoftGraphSdk.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\deviceAppManagementTasks\{deviceAppManagementTask-id}\microsoft.graph.updateStatus</summary>
     public class UpdateStatusRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Security.AttackSimulation.SimulationAutomations;
-using MicrosoftGraph.Security.AttackSimulation.Simulations;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations;
+using MicrosoftGraphSdk.Security.AttackSimulation.Simulations;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.AttackSimulation {
+namespace MicrosoftGraphSdk.Security.AttackSimulation {
     /// <summary>Builds and executes requests for operations under \security\attackSimulation</summary>
     public class AttackSimulationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

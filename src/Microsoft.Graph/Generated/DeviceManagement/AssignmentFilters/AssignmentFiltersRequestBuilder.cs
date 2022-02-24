@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.AssignmentFilters.Enable;
-using MicrosoftGraph.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform;
-using MicrosoftGraph.DeviceManagement.AssignmentFilters.GetState;
-using MicrosoftGraph.DeviceManagement.AssignmentFilters.Item;
-using MicrosoftGraph.DeviceManagement.AssignmentFilters.ValidateFilter;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Enable;
+using MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform;
+using MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetState;
+using MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item;
+using MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AssignmentFilters {
+namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters {
     /// <summary>Builds and executes requests for operations under \deviceManagement\assignmentFilters</summary>
     public class AssignmentFiltersRequestBuilder {
         public EnableRequestBuilder Enable { get =>
@@ -27,11 +27,11 @@ namespace MicrosoftGraph.DeviceManagement.AssignmentFilters {
         public ValidateFilterRequestBuilder ValidateFilter { get =>
             new ValidateFilterRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.assignmentFilters.item collection</summary>
-        public DeviceAndAppManagementAssignmentFilterRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.assignmentFilters.item collection</summary>
+        public DeviceAndAppManagementAssignmentFilterItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceAndAppManagementAssignmentFilter_id", position);
-            return new DeviceAndAppManagementAssignmentFilterRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceAndAppManagementAssignmentFilterItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentFiltersRequestBuilder and sets the default values.

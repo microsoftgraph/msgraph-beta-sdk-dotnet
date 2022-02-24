@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AttributeMappingFunctionSchema : Entity, IParsable {
         /// <summary>Collection of function parameters.</summary>
         public List<AttributeMappingParameterSchema> Parameters { get; set; }

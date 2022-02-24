@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.OnPremisesPublishingProfiles.Item.Agents.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Agents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.Agents {
+namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Agents {
     /// <summary>Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\agents</summary>
     public class AgentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.Agents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.onPremisesPublishingProfiles.item.agents.item collection</summary>
-        public OnPremisesAgentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item.agents.item collection</summary>
+        public OnPremisesAgentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onPremisesAgent_id", position);
-            return new OnPremisesAgentRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnPremisesAgentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AgentsRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies {
+namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies</summary>
     public class WdacSupplementalPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.wdacSupplementalPolicies.item collection</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.wdacSupplementalPolicies.item collection</summary>
+        public WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDefenderApplicationControlSupplementalPolicy_id", position);
-            return new WindowsDefenderApplicationControlSupplementalPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WdacSupplementalPoliciesRequestBuilder and sets the default values.

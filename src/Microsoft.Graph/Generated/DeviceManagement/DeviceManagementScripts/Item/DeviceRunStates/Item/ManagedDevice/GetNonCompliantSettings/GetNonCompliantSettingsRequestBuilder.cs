@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetNonCompliantSettings {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetNonCompliantSettings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getNonCompliantSettings()</summary>
     public class GetNonCompliantSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRun
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetNonCompliantSettings.GetNonCompliantSettings>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetNonCompliantSettings>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetNonCompliantSettings.GetNonCompliantSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetNonCompliantSettings>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

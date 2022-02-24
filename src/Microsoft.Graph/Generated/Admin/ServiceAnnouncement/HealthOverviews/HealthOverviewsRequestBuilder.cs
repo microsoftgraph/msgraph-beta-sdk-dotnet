@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Admin.ServiceAnnouncement.HealthOverviews.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.ServiceAnnouncement.HealthOverviews {
+namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews {
     /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\healthOverviews</summary>
     public class HealthOverviewsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Admin.ServiceAnnouncement.HealthOverviews {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.admin.serviceAnnouncement.healthOverviews.item collection</summary>
-        public ServiceHealthRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.serviceAnnouncement.healthOverviews.item collection</summary>
+        public ServiceHealthItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceHealth_id", position);
-            return new ServiceHealthRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServiceHealthItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HealthOverviewsRequestBuilder and sets the default values.

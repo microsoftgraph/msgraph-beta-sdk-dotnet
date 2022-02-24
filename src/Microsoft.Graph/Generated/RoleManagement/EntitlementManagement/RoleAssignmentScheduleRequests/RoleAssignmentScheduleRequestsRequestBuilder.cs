@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.FilterByCurrentUserWithOn;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests {
+namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests {
     /// <summary>Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleRequests</summary>
     public class RoleAssignmentScheduleRequestsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentSche
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.roleManagement.entitlementManagement.roleAssignmentScheduleRequests.item collection</summary>
-        public UnifiedRoleAssignmentScheduleRequestRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.entitlementManagement.roleAssignmentScheduleRequests.item collection</summary>
+        public UnifiedRoleAssignmentScheduleRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleAssignmentScheduleRequest_id", position);
-            return new UnifiedRoleAssignmentScheduleRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleAssignmentScheduleRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleAssignmentScheduleRequestsRequestBuilder and sets the default values.

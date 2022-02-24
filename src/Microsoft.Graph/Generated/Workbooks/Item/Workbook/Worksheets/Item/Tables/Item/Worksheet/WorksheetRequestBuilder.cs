@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.CellWithRowWithColumn;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.Range;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.RangeWithAddress;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.UsedRange;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.UsedRangeWithValuesOnly;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.CellWithRowWithColumn;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.Range;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.RangeWithAddress;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.UsedRange;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet.UsedRangeWithValuesOnly;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Worksheet {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables\{workbookTable-id}\worksheet</summary>
     public class WorksheetRequestBuilder {
         /// <summary>Path parameters for the request</summary>

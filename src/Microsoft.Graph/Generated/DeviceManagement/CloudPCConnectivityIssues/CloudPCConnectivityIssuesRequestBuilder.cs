@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.CloudPCConnectivityIssues.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.CloudPCConnectivityIssues.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.CloudPCConnectivityIssues {
+namespace MicrosoftGraphSdk.DeviceManagement.CloudPCConnectivityIssues {
     /// <summary>Builds and executes requests for operations under \deviceManagement\cloudPCConnectivityIssues</summary>
     public class CloudPCConnectivityIssuesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.CloudPCConnectivityIssues {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.cloudPCConnectivityIssues.item collection</summary>
-        public CloudPCConnectivityIssueRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.cloudPCConnectivityIssues.item collection</summary>
+        public CloudPCConnectivityIssueItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPCConnectivityIssue_id", position);
-            return new CloudPCConnectivityIssueRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPCConnectivityIssueItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CloudPCConnectivityIssuesRequestBuilder and sets the default values.

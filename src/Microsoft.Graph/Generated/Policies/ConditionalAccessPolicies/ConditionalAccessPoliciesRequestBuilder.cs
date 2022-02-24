@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.ConditionalAccessPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.ConditionalAccessPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.ConditionalAccessPolicies {
+namespace MicrosoftGraphSdk.Policies.ConditionalAccessPolicies {
     /// <summary>Builds and executes requests for operations under \policies\conditionalAccessPolicies</summary>
     public class ConditionalAccessPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.ConditionalAccessPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.conditionalAccessPolicies.item collection</summary>
-        public ConditionalAccessPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.conditionalAccessPolicies.item collection</summary>
+        public ConditionalAccessPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conditionalAccessPolicy_id", position);
-            return new ConditionalAccessPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConditionalAccessPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConditionalAccessPoliciesRequestBuilder and sets the default values.

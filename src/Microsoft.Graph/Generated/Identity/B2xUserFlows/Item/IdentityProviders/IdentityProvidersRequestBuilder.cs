@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Identity.B2xUserFlows.Item.IdentityProviders.Ref;
+using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.IdentityProviders.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.B2xUserFlows.Item.IdentityProviders {
+namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.IdentityProviders {
     /// <summary>Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\identityProviders</summary>
     public class IdentityProvidersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

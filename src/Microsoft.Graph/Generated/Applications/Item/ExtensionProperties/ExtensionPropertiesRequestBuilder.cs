@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Applications.Item.ExtensionProperties.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Applications.Item.ExtensionProperties.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.ExtensionProperties {
+namespace MicrosoftGraphSdk.Applications.Item.ExtensionProperties {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\extensionProperties</summary>
     public class ExtensionPropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Applications.Item.ExtensionProperties {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.applications.item.extensionProperties.item collection</summary>
-        public ExtensionPropertyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.applications.item.extensionProperties.item collection</summary>
+        public ExtensionPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("extensionProperty_id", position);
-            return new ExtensionPropertyRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExtensionPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.

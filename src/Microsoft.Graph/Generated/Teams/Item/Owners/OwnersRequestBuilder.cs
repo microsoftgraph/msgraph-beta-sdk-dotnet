@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Teams.Item.Owners.Ref;
+using MicrosoftGraphSdk.Teams.Item.Owners.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Owners {
+namespace MicrosoftGraphSdk.Teams.Item.Owners {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\owners</summary>
     public class OwnersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

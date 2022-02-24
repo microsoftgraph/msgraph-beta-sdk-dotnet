@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion {
     /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion</summary>
     public class UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsAppHealthApplic
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.item collection</summary>
-        public UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion.item collection</summary>
+        public UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsAppHealthAppPerformanceByAppVersion_id", position);
-            return new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder and sets the default values.

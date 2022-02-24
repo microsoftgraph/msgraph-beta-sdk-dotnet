@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ManagedDevices.Item.DetectedApps.Ref;
+using MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.DetectedApps.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.DetectedApps {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.DetectedApps {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\detectedApps</summary>
     public class DetectedAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

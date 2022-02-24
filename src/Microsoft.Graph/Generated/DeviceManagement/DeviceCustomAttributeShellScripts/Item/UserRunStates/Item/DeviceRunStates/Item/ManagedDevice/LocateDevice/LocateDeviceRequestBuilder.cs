@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates.Item.DeviceRunStates.Item.ManagedDevice.LocateDevice {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates.Item.DeviceRunStates.Item.ManagedDevice.LocateDevice {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.locateDevice</summary>
     public class LocateDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

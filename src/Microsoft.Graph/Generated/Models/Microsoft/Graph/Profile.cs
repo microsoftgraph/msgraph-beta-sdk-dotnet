@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Profile : Entity, IParsable {
         public List<UserAccountInformation> Account { get; set; }
         /// <summary>Represents details of addresses associated with the user.</summary>

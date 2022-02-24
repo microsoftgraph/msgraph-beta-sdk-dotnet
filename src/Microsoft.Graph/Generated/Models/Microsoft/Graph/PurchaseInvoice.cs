@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PurchaseInvoice : Entity, IParsable {
         public PostalAddressType BuyFromAddress { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Currency Currency { get; set; }
+        public Currency Currency { get; set; }
         public string CurrencyCode { get; set; }
         public string CurrencyId { get; set; }
-        public Decimal? DiscountAmount { get; set; }
+        public decimal? DiscountAmount { get; set; }
         public bool? DiscountAppliedBeforeTax { get; set; }
         public Date? DueDate { get; set; }
         public Date? InvoiceDate { get; set; }
@@ -27,10 +27,10 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public string ShipToContact { get; set; }
         public string ShipToName { get; set; }
         public string Status { get; set; }
-        public Decimal? TotalAmountExcludingTax { get; set; }
-        public Decimal? TotalAmountIncludingTax { get; set; }
-        public Decimal? TotalTaxAmount { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Vendor Vendor { get; set; }
+        public decimal? TotalAmountExcludingTax { get; set; }
+        public decimal? TotalAmountIncludingTax { get; set; }
+        public decimal? TotalTaxAmount { get; set; }
+        public Vendor Vendor { get; set; }
         public string VendorId { get; set; }
         public string VendorInvoiceNumber { get; set; }
         public string VendorName { get; set; }
@@ -41,7 +41,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"buyFromAddress", (o,n) => { (o as PurchaseInvoice).BuyFromAddress = n.GetObjectValue<PostalAddressType>(); } },
-                {"currency", (o,n) => { (o as PurchaseInvoice).Currency = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Currency>(); } },
+                {"currency", (o,n) => { (o as PurchaseInvoice).Currency = n.GetObjectValue<Currency>(); } },
                 {"currencyCode", (o,n) => { (o as PurchaseInvoice).CurrencyCode = n.GetStringValue(); } },
                 {"currencyId", (o,n) => { (o as PurchaseInvoice).CurrencyId = n.GetStringValue(); } },
                 {"discountAmount", (o,n) => { (o as PurchaseInvoice).DiscountAmount = n.GetDecimalValue(); } },
@@ -64,7 +64,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"totalAmountExcludingTax", (o,n) => { (o as PurchaseInvoice).TotalAmountExcludingTax = n.GetDecimalValue(); } },
                 {"totalAmountIncludingTax", (o,n) => { (o as PurchaseInvoice).TotalAmountIncludingTax = n.GetDecimalValue(); } },
                 {"totalTaxAmount", (o,n) => { (o as PurchaseInvoice).TotalTaxAmount = n.GetDecimalValue(); } },
-                {"vendor", (o,n) => { (o as PurchaseInvoice).Vendor = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Vendor>(); } },
+                {"vendor", (o,n) => { (o as PurchaseInvoice).Vendor = n.GetObjectValue<Vendor>(); } },
                 {"vendorId", (o,n) => { (o as PurchaseInvoice).VendorId = n.GetStringValue(); } },
                 {"vendorInvoiceNumber", (o,n) => { (o as PurchaseInvoice).VendorInvoiceNumber = n.GetStringValue(); } },
                 {"vendorName", (o,n) => { (o as PurchaseInvoice).VendorName = n.GetStringValue(); } },
@@ -79,7 +79,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<PostalAddressType>("buyFromAddress", BuyFromAddress);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Currency>("currency", Currency);
+            writer.WriteObjectValue<Currency>("currency", Currency);
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteStringValue("currencyId", CurrencyId);
             writer.WriteDecimalValue("discountAmount", DiscountAmount);
@@ -102,7 +102,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteDecimalValue("totalAmountExcludingTax", TotalAmountExcludingTax);
             writer.WriteDecimalValue("totalAmountIncludingTax", TotalAmountIncludingTax);
             writer.WriteDecimalValue("totalTaxAmount", TotalTaxAmount);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Vendor>("vendor", Vendor);
+            writer.WriteObjectValue<Vendor>("vendor", Vendor);
             writer.WriteStringValue("vendorId", VendorId);
             writer.WriteStringValue("vendorInvoiceNumber", VendorInvoiceNumber);
             writer.WriteStringValue("vendorName", VendorName);

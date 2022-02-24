@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp.RevokeAllLicenses;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp.RevokeDeviceLicense;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp.RevokeUserLicense;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp.RevokeAllLicenses;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp.RevokeDeviceLicense;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp.RevokeUserLicense;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp {
+namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.iosVppApp</summary>
     public class IosVppAppRequestBuilder {
         /// <summary>Path parameters for the request</summary>

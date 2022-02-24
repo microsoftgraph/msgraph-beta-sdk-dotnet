@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Post : OutlookItem, IParsable {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
         public List<Attachment> Attachments { get; set; }
@@ -21,7 +21,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The importance of a group post: low, normal, high.</summary>
         public Importance? Importance { get; set; }
         /// <summary>Read-only. Supports $expand.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Post InReplyTo { get; set; }
+        public Post InReplyTo { get; set; }
         public List<Mention> Mentions { get; set; }
         /// <summary>The collection of multi-value extended properties defined for the post. Read-only. Nullable.</summary>
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties { get; set; }
@@ -46,7 +46,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"from", (o,n) => { (o as Post).From = n.GetObjectValue<Recipient>(); } },
                 {"hasAttachments", (o,n) => { (o as Post).HasAttachments = n.GetBoolValue(); } },
                 {"importance", (o,n) => { (o as Post).Importance = n.GetEnumValue<Importance>(); } },
-                {"inReplyTo", (o,n) => { (o as Post).InReplyTo = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Post>(); } },
+                {"inReplyTo", (o,n) => { (o as Post).InReplyTo = n.GetObjectValue<Post>(); } },
                 {"mentions", (o,n) => { (o as Post).Mentions = n.GetCollectionOfObjectValues<Mention>().ToList(); } },
                 {"multiValueExtendedProperties", (o,n) => { (o as Post).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>().ToList(); } },
                 {"newParticipants", (o,n) => { (o as Post).NewParticipants = n.GetCollectionOfObjectValues<Recipient>().ToList(); } },
@@ -70,7 +70,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<Recipient>("from", From);
             writer.WriteBoolValue("hasAttachments", HasAttachments);
             writer.WriteEnumValue<Importance>("importance", Importance);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Post>("inReplyTo", InReplyTo);
+            writer.WriteObjectValue<Post>("inReplyTo", InReplyTo);
             writer.WriteCollectionOfObjectValues<Mention>("mentions", Mentions);
             writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteCollectionOfObjectValues<Recipient>("newParticipants", NewParticipants);

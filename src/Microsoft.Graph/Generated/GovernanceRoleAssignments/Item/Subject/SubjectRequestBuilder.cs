@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GovernanceRoleAssignments.Item.Subject {
+namespace MicrosoftGraphSdk.GovernanceRoleAssignments.Item.Subject {
     /// <summary>Builds and executes requests for operations under \governanceRoleAssignments\{governanceRoleAssignment-id}\subject</summary>
     public class SubjectRequestBuilder {
         /// <summary>Path parameters for the request</summary>

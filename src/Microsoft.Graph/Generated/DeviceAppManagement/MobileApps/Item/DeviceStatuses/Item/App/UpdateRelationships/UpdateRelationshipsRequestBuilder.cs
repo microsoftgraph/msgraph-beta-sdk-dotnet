@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.MobileApps.Item.DeviceStatuses.Item.App.UpdateRelationships {
+namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.DeviceStatuses.Item.App.UpdateRelationships {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.updateRelationships</summary>
     public class UpdateRelationshipsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

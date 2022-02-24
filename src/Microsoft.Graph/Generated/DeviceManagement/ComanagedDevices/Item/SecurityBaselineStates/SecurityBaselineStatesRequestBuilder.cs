@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.SecurityBaselineStates {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\securityBaselineStates</summary>
     public class SecurityBaselineStatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.SecurityBaseline
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.comanagedDevices.item.securityBaselineStates.item collection</summary>
-        public SecurityBaselineStateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.comanagedDevices.item.securityBaselineStates.item collection</summary>
+        public SecurityBaselineStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("securityBaselineState_id", position);
-            return new SecurityBaselineStateRequestBuilder(urlTplParams, RequestAdapter);
+            return new SecurityBaselineStateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SecurityBaselineStatesRequestBuilder and sets the default values.

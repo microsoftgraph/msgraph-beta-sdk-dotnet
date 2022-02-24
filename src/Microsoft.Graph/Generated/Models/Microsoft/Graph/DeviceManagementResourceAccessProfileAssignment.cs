@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceManagementResourceAccessProfileAssignment : Entity, IParsable {
         /// <summary>The assignment intent for the resource access profile. Possible values are: apply, remove.</summary>
         public DeviceManagementResourceAccessProfileIntent? Intent { get; set; }

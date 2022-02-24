@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Print.Connectors.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Print.Connectors.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.Connectors {
+namespace MicrosoftGraphSdk.Print.Connectors {
     /// <summary>Builds and executes requests for operations under \print\connectors</summary>
     public class ConnectorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Print.Connectors {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.print.connectors.item collection</summary>
-        public PrintConnectorRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.print.connectors.item collection</summary>
+        public PrintConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printConnector_id", position);
-            return new PrintConnectorRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConnectorsRequestBuilder and sets the default values.

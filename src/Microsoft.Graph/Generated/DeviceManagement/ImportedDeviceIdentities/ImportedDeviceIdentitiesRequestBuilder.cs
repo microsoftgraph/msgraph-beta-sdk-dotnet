@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList;
-using MicrosoftGraph.DeviceManagement.ImportedDeviceIdentities.Item;
-using MicrosoftGraph.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList;
+using MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.Item;
+using MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ImportedDeviceIdentities {
+namespace MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities {
     /// <summary>Builds and executes requests for operations under \deviceManagement\importedDeviceIdentities</summary>
     public class ImportedDeviceIdentitiesRequestBuilder {
         public ImportDeviceIdentityListRequestBuilder ImportDeviceIdentityList { get =>
@@ -25,11 +25,11 @@ namespace MicrosoftGraph.DeviceManagement.ImportedDeviceIdentities {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.importedDeviceIdentities.item collection</summary>
-        public ImportedDeviceIdentityRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.importedDeviceIdentities.item collection</summary>
+        public ImportedDeviceIdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("importedDeviceIdentity_id", position);
-            return new ImportedDeviceIdentityRequestBuilder(urlTplParams, RequestAdapter);
+            return new ImportedDeviceIdentityItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ImportedDeviceIdentitiesRequestBuilder and sets the default values.

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.PivotTables.Item;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.PivotTables.RefreshAll;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.PivotTables.Item;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.PivotTables.RefreshAll;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.PivotTables {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.PivotTables {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\pivotTables</summary>
     public class PivotTablesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.PivotTable
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.names.item.worksheet.pivotTables.item collection</summary>
-        public WorkbookPivotTableRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.names.item.worksheet.pivotTables.item collection</summary>
+        public WorkbookPivotTableItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookPivotTable_id", position);
-            return new WorkbookPivotTableRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookPivotTableItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PivotTablesRequestBuilder and sets the default values.

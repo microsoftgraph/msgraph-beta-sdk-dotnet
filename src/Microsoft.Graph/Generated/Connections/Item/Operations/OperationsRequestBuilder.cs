@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Connections.Item.Operations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors;
+using MicrosoftGraphSdk.Connections.Item.Operations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Connections.Item.Operations {
+namespace MicrosoftGraphSdk.Connections.Item.Operations {
     /// <summary>Builds and executes requests for operations under \connections\{externalConnection-id}\operations</summary>
     public class OperationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Connections.Item.Operations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.connections.item.operations.item collection</summary>
-        public ConnectionOperationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.connections.item.operations.item collection</summary>
+        public ConnectionOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectionOperation_id", position);
-            return new ConnectionOperationRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConnectionOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

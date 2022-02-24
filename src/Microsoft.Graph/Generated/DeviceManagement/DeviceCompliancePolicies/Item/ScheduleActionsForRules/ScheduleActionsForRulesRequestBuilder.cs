@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\microsoft.graph.scheduleActionsForRules</summary>
     public class ScheduleActionsForRulesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

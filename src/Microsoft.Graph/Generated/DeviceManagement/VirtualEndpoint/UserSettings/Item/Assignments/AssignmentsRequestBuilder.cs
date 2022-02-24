@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assignments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assignments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assignments {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assignments {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings\{cloudPcUserSetting-id}\assignments</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assi
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.virtualEndpoint.userSettings.item.assignments.item collection</summary>
-        public CloudPcUserSettingAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.virtualEndpoint.userSettings.item.assignments.item collection</summary>
+        public CloudPcUserSettingAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcUserSettingAssignment_id", position);
-            return new CloudPcUserSettingAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcUserSettingAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

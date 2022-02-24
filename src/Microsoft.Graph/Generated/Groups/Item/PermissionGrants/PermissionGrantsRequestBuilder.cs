@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.PermissionGrants.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.PermissionGrants.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.PermissionGrants {
+namespace MicrosoftGraphSdk.Groups.Item.PermissionGrants {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\permissionGrants</summary>
     public class PermissionGrantsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Groups.Item.PermissionGrants {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.groups.item.permissionGrants.item collection</summary>
-        public ResourceSpecificPermissionGrantRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.permissionGrants.item collection</summary>
+        public ResourceSpecificPermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("resourceSpecificPermissionGrant_id", position);
-            return new ResourceSpecificPermissionGrantRequestBuilder(urlTplParams, RequestAdapter);
+            return new ResourceSpecificPermissionGrantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PermissionGrantsRequestBuilder and sets the default values.

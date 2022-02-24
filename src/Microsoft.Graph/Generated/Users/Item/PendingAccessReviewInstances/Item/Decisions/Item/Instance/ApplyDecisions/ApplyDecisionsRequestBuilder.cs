@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.ApplyDecisions {
+namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.ApplyDecisions {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}\instance\microsoft.graph.applyDecisions</summary>
     public class ApplyDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

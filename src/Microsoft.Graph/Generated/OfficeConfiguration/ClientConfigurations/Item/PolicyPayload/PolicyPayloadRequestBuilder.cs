@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OfficeConfiguration.ClientConfigurations.Item.PolicyPayload {
+namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.PolicyPayload {
     /// <summary>Builds and executes requests for operations under \officeConfiguration\clientConfigurations\{officeClientConfiguration-id}\policyPayload</summary>
     public class PolicyPayloadRequestBuilder {
         /// <summary>Path parameters for the request</summary>

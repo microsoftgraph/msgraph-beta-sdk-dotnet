@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Connections.Item.Groups.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors;
+using MicrosoftGraphSdk.Connections.Item.Groups.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Connections.Item.Groups {
+namespace MicrosoftGraphSdk.Connections.Item.Groups {
     /// <summary>Builds and executes requests for operations under \connections\{externalConnection-id}\groups</summary>
     public class GroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Connections.Item.Groups {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.connections.item.groups.item collection</summary>
-        public ExternalGroupRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.connections.item.groups.item collection</summary>
+        public ExternalGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalGroup_id", position);
-            return new ExternalGroupRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExternalGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupsRequestBuilder and sets the default values.

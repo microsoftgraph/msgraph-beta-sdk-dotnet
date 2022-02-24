@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SitePage : BaseItem, IParsable {
         /// <summary>The content type of the page.</summary>
         public ContentTypeInfo ContentType { get; set; }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class List : BaseItem, IParsable {
         /// <summary>The recent activities that took place within this list.</summary>
         public List<ItemActivityOLD> Activities { get; set; }
@@ -14,9 +14,9 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The displayable title of the list.</summary>
         public string DisplayName { get; set; }
         /// <summary>Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Drive Drive { get; set; }
+        public Drive Drive { get; set; }
         /// <summary>All items contained in the list.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.ListItem> Items { get; set; }
+        public List<ListItem> Items { get; set; }
         /// <summary>Provides additional details about the list.</summary>
         public ListInfo List_prop { get; set; }
         /// <summary>The collection of long running operations for the list.</summary>
@@ -36,8 +36,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"columns", (o,n) => { (o as List).Columns = n.GetCollectionOfObjectValues<ColumnDefinition>().ToList(); } },
                 {"contentTypes", (o,n) => { (o as List).ContentTypes = n.GetCollectionOfObjectValues<ContentType>().ToList(); } },
                 {"displayName", (o,n) => { (o as List).DisplayName = n.GetStringValue(); } },
-                {"drive", (o,n) => { (o as List).Drive = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Drive>(); } },
-                {"items", (o,n) => { (o as List).Items = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ListItem>().ToList(); } },
+                {"drive", (o,n) => { (o as List).Drive = n.GetObjectValue<Drive>(); } },
+                {"items", (o,n) => { (o as List).Items = n.GetCollectionOfObjectValues<ListItem>().ToList(); } },
                 {"list", (o,n) => { (o as List).List_prop = n.GetObjectValue<ListInfo>(); } },
                 {"operations", (o,n) => { (o as List).Operations = n.GetCollectionOfObjectValues<RichLongRunningOperation>().ToList(); } },
                 {"sharepointIds", (o,n) => { (o as List).SharepointIds = n.GetObjectValue<SharepointIds>(); } },
@@ -56,8 +56,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<ColumnDefinition>("columns", Columns);
             writer.WriteCollectionOfObjectValues<ContentType>("contentTypes", ContentTypes);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Drive>("drive", Drive);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ListItem>("items", Items);
+            writer.WriteObjectValue<Drive>("drive", Drive);
+            writer.WriteCollectionOfObjectValues<ListItem>("items", Items);
             writer.WriteObjectValue<ListInfo>("list", List_prop);
             writer.WriteCollectionOfObjectValues<RichLongRunningOperation>("operations", Operations);
             writer.WriteObjectValue<SharepointIds>("sharepointIds", SharepointIds);

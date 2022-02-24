@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.GovernanceRoleSettings.Item.Resource.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.GovernanceRoleSettings.Item.Resource.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GovernanceRoleSettings.Item.Resource {
+namespace MicrosoftGraphSdk.GovernanceRoleSettings.Item.Resource {
     /// <summary>Builds and executes requests for operations under \governanceRoleSettings\{governanceRoleSetting-id}\resource</summary>
     public class ResourceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

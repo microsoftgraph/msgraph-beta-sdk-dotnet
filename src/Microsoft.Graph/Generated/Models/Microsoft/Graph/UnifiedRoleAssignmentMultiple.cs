@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UnifiedRoleAssignmentMultiple : Entity, IParsable {
         /// <summary>Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.</summary>
         public List<string> AppScopeIds { get; set; }
         /// <summary>Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AppScope> AppScopes { get; set; }
+        public List<AppScope> AppScopes { get; set; }
         public string Condition { get; set; }
         /// <summary>Description of the role assignment.</summary>
         public string Description { get; set; }
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"appScopeIds", (o,n) => { (o as UnifiedRoleAssignmentMultiple).AppScopeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"appScopes", (o,n) => { (o as UnifiedRoleAssignmentMultiple).AppScopes = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AppScope>().ToList(); } },
+                {"appScopes", (o,n) => { (o as UnifiedRoleAssignmentMultiple).AppScopes = n.GetCollectionOfObjectValues<AppScope>().ToList(); } },
                 {"condition", (o,n) => { (o as UnifiedRoleAssignmentMultiple).Condition = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as UnifiedRoleAssignmentMultiple).Description = n.GetStringValue(); } },
                 {"directoryScopeIds", (o,n) => { (o as UnifiedRoleAssignmentMultiple).DirectoryScopeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -52,7 +52,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("appScopeIds", AppScopeIds);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AppScope>("appScopes", AppScopes);
+            writer.WriteCollectionOfObjectValues<AppScope>("appScopes", AppScopes);
             writer.WriteStringValue("condition", Condition);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("directoryScopeIds", DirectoryScopeIds);

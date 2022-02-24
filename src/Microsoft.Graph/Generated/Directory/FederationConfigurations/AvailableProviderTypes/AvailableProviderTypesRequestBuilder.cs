@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Directory.FederationConfigurations.AvailableProviderTypes {
+namespace MicrosoftGraphSdk.Directory.FederationConfigurations.AvailableProviderTypes {
     /// <summary>Builds and executes requests for operations under \directory\federationConfigurations\microsoft.graph.availableProviderTypes()</summary>
     public class AvailableProviderTypesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

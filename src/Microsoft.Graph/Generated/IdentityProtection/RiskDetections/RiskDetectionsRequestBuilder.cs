@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityProtection.RiskDetections.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityProtection.RiskDetections.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityProtection.RiskDetections {
+namespace MicrosoftGraphSdk.IdentityProtection.RiskDetections {
     /// <summary>Builds and executes requests for operations under \identityProtection\riskDetections</summary>
     public class RiskDetectionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.IdentityProtection.RiskDetections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityProtection.riskDetections.item collection</summary>
-        public RiskDetectionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityProtection.riskDetections.item collection</summary>
+        public RiskDetectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskDetection_id", position);
-            return new RiskDetectionRequestBuilder(urlTplParams, RequestAdapter);
+            return new RiskDetectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RiskDetectionsRequestBuilder and sets the default values.

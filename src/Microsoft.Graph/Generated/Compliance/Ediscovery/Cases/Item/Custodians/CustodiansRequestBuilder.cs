@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.ApplyHold;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.RemoveHold;
-using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.ApplyHold;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.RemoveHold;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians</summary>
     public class CustodiansRequestBuilder {
         public ApplyHoldRequestBuilder ApplyHold { get =>
@@ -25,11 +25,11 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.custodians.item collection</summary>
-        public CustodianRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.custodians.item collection</summary>
+        public CustodianItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("custodian_id", position);
-            return new CustodianRequestBuilder(urlTplParams, RequestAdapter);
+            return new CustodianItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CustodiansRequestBuilder and sets the default values.

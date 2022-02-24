@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.CalendarView.Item.Instances.Item.Forward {
+namespace MicrosoftGraphSdk.Me.CalendarView.Item.Instances.Item.Forward {
     /// <summary>Builds and executes requests for operations under \me\calendarView\{event-id}\instances\{event-id1}\microsoft.graph.forward</summary>
     public class ForwardRequestBuilder {
         /// <summary>Path parameters for the request</summary>

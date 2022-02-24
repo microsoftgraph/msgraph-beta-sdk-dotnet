@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.RemoteAssistancePartners.Item.Disconnect {
+namespace MicrosoftGraphSdk.DeviceManagement.RemoteAssistancePartners.Item.Disconnect {
     /// <summary>Builds and executes requests for operations under \deviceManagement\remoteAssistancePartners\{remoteAssistancePartner-id}\microsoft.graph.disconnect</summary>
     public class DisconnectRequestBuilder {
         /// <summary>Path parameters for the request</summary>

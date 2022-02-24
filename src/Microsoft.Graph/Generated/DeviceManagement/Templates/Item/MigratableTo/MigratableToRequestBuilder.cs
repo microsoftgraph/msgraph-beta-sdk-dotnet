@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.Templates.Item.MigratableTo.ImportOffice365DeviceConfigurationPolicies;
-using MicrosoftGraph.DeviceManagement.Templates.Item.MigratableTo.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.ImportOffice365DeviceConfigurationPolicies;
+using MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Templates.Item.MigratableTo {
+namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo {
     /// <summary>Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo</summary>
     public class MigratableToRequestBuilder {
         public ImportOffice365DeviceConfigurationPoliciesRequestBuilder ImportOffice365DeviceConfigurationPolicies { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceManagement.Templates.Item.MigratableTo {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.templates.item.migratableTo.item collection</summary>
-        public DeviceManagementTemplateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.templates.item.migratableTo.item collection</summary>
+        public DeviceManagementTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTemplate_id1", position);
-            return new DeviceManagementTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MigratableToRequestBuilder and sets the default values.

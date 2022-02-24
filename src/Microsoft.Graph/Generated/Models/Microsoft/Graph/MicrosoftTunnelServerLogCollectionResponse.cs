@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MicrosoftTunnelServerLogCollectionResponse : Entity, IParsable {
         /// <summary>The end time of the logs collected</summary>
         public DateTimeOffset? EndDateTime { get; set; }

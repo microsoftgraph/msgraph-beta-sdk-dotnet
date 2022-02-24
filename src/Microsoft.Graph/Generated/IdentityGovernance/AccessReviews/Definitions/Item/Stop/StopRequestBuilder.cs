@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Stop {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Stop {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}\microsoft.graph.stop</summary>
     public class StopRequestBuilder {
         /// <summary>Path parameters for the request</summary>

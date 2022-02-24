@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Contacts.Item.Manager.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Contacts.Item.Manager.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Contacts.Item.Manager {
+namespace MicrosoftGraphSdk.Contacts.Item.Manager {
     /// <summary>Builds and executes requests for operations under \contacts\{orgContact-id}\manager</summary>
     public class ManagerRequestBuilder {
         /// <summary>Path parameters for the request</summary>

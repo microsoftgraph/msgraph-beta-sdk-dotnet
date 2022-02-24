@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.RejectedSenders.Ref;
+using MicrosoftGraphSdk.Groups.Item.RejectedSenders.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.RejectedSenders {
+namespace MicrosoftGraphSdk.Groups.Item.RejectedSenders {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\rejectedSenders</summary>
     public class RejectedSendersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

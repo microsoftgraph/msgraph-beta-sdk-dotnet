@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.CloudPC.RoleAssignments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.CloudPC.RoleAssignments.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.CloudPC.RoleAssignments {
+namespace MicrosoftGraphSdk.RoleManagement.CloudPC.RoleAssignments {
     /// <summary>Builds and executes requests for operations under \roleManagement\cloudPC\roleAssignments</summary>
     public class RoleAssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.RoleManagement.CloudPC.RoleAssignments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.roleManagement.cloudPC.roleAssignments.item collection</summary>
-        public UnifiedRoleAssignmentMultipleRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.cloudPC.roleAssignments.item collection</summary>
+        public UnifiedRoleAssignmentMultipleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleAssignmentMultiple_id", position);
-            return new UnifiedRoleAssignmentMultipleRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleAssignmentMultipleItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleAssignmentsRequestBuilder and sets the default values.

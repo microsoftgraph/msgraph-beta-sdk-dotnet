@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class WorkloadAction : IParsable {
         /// <summary>The unique identifier for the workload action. Required. Read-only.</summary>
         public string ActionId { get; set; }

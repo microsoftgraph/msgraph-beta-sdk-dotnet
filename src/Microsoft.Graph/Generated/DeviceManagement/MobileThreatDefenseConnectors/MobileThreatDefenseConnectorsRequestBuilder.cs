@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.MobileThreatDefenseConnectors.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.MobileThreatDefenseConnectors.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.MobileThreatDefenseConnectors {
+namespace MicrosoftGraphSdk.DeviceManagement.MobileThreatDefenseConnectors {
     /// <summary>Builds and executes requests for operations under \deviceManagement\mobileThreatDefenseConnectors</summary>
     public class MobileThreatDefenseConnectorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.MobileThreatDefenseConnectors {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.mobileThreatDefenseConnectors.item collection</summary>
-        public MobileThreatDefenseConnectorRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.mobileThreatDefenseConnectors.item collection</summary>
+        public MobileThreatDefenseConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileThreatDefenseConnector_id", position);
-            return new MobileThreatDefenseConnectorRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileThreatDefenseConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileThreatDefenseConnectorsRequestBuilder and sets the default values.

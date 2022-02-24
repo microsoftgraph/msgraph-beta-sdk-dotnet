@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.IntuneBrandingProfiles.Item.Assign {
+namespace MicrosoftGraphSdk.DeviceManagement.IntuneBrandingProfiles.Item.Assign {
     /// <summary>Builds and executes requests for operations under \deviceManagement\intuneBrandingProfiles\{intuneBrandingProfile-id}\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

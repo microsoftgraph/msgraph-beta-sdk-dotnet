@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.FeatureRolloutPolicies.Item.AppliesTo.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.FeatureRolloutPolicies.Item.AppliesTo.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
+namespace MicrosoftGraphSdk.Policies.FeatureRolloutPolicies.Item.AppliesTo {
     /// <summary>Builds and executes requests for operations under \policies\featureRolloutPolicies\{featureRolloutPolicy-id}\appliesTo</summary>
     public class AppliesToRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.FeatureRolloutPolicies.Item.AppliesTo {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.featureRolloutPolicies.item.appliesTo.item collection</summary>
-        public DirectoryObjectRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.featureRolloutPolicies.item.appliesTo.item collection</summary>
+        public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);
-            return new DirectoryObjectRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppliesToRequestBuilder and sets the default values.

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Ref;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateCollections.Item.ManagementTemplates {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateCollections\{managementTemplateCollection-id}\managementTemplates</summary>
     public class ManagementTemplatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

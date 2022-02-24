@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.TermsOfUse.Agreements.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.Agreements.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.TermsOfUse.Agreements {
+namespace MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.Agreements {
     /// <summary>Builds and executes requests for operations under \identityGovernance\termsOfUse\agreements</summary>
     public class AgreementsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.IdentityGovernance.TermsOfUse.Agreements {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.termsOfUse.agreements.item collection</summary>
-        public AgreementRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.termsOfUse.agreements.item collection</summary>
+        public AgreementItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreement_id", position);
-            return new AgreementRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AgreementsRequestBuilder and sets the default values.

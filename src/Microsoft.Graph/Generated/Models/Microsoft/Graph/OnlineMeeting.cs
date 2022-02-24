@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OnlineMeeting : Entity, IParsable {
         public AccessLevel? AccessLevel { get; set; }
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
@@ -19,7 +19,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The content stream of the alternative recording of a Microsoft Teams live event. Read-only.</summary>
         public byte[] AlternativeRecording { get; set; }
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.MeetingAttendanceReport> AttendanceReports { get; set; }
+        public List<MeetingAttendanceReport> AttendanceReports { get; set; }
         /// <summary>The content stream of the attendee report of a Microsoft Teams live event. Read-only.</summary>
         public byte[] AttendeeReport { get; set; }
         /// <summary>The phone access (dial-in) information for an online meeting. Read-only.</summary>
@@ -49,7 +49,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public string JoinUrl { get; set; }
         /// <summary>Specifies which participants can bypass the meeting   lobby.</summary>
         public LobbyBypassSettings LobbyBypassSettings { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.MeetingAttendanceReport MeetingAttendanceReport { get; set; }
+        public MeetingAttendanceReport MeetingAttendanceReport { get; set; }
         /// <summary>The participants associated with the online meeting.  This includes the organizer and the attendees.</summary>
         public MeetingParticipants Participants { get; set; }
         /// <summary>Indicates whether to record the meeting automatically.</summary>
@@ -76,7 +76,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"allowMeetingChat", (o,n) => { (o as OnlineMeeting).AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
                 {"allowTeamworkReactions", (o,n) => { (o as OnlineMeeting).AllowTeamworkReactions = n.GetBoolValue(); } },
                 {"alternativeRecording", (o,n) => { (o as OnlineMeeting).AlternativeRecording = n.GetByteArrayValue(); } },
-                {"attendanceReports", (o,n) => { (o as OnlineMeeting).AttendanceReports = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.MeetingAttendanceReport>().ToList(); } },
+                {"attendanceReports", (o,n) => { (o as OnlineMeeting).AttendanceReports = n.GetCollectionOfObjectValues<MeetingAttendanceReport>().ToList(); } },
                 {"attendeeReport", (o,n) => { (o as OnlineMeeting).AttendeeReport = n.GetByteArrayValue(); } },
                 {"audioConferencing", (o,n) => { (o as OnlineMeeting).AudioConferencing = n.GetObjectValue<AudioConferencing>(); } },
                 {"broadcastSettings", (o,n) => { (o as OnlineMeeting).BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(); } },
@@ -95,7 +95,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"joinMeetingIdSettings", (o,n) => { (o as OnlineMeeting).JoinMeetingIdSettings = n.GetObjectValue<JoinMeetingIdSettings>(); } },
                 {"joinUrl", (o,n) => { (o as OnlineMeeting).JoinUrl = n.GetStringValue(); } },
                 {"lobbyBypassSettings", (o,n) => { (o as OnlineMeeting).LobbyBypassSettings = n.GetObjectValue<LobbyBypassSettings>(); } },
-                {"meetingAttendanceReport", (o,n) => { (o as OnlineMeeting).MeetingAttendanceReport = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.MeetingAttendanceReport>(); } },
+                {"meetingAttendanceReport", (o,n) => { (o as OnlineMeeting).MeetingAttendanceReport = n.GetObjectValue<MeetingAttendanceReport>(); } },
                 {"participants", (o,n) => { (o as OnlineMeeting).Participants = n.GetObjectValue<MeetingParticipants>(); } },
                 {"recordAutomatically", (o,n) => { (o as OnlineMeeting).RecordAutomatically = n.GetBoolValue(); } },
                 {"recording", (o,n) => { (o as OnlineMeeting).Recording = n.GetByteArrayValue(); } },
@@ -119,7 +119,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteEnumValue<MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.MeetingAttendanceReport>("attendanceReports", AttendanceReports);
+            writer.WriteCollectionOfObjectValues<MeetingAttendanceReport>("attendanceReports", AttendanceReports);
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
             writer.WriteObjectValue<AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
@@ -138,7 +138,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<JoinMeetingIdSettings>("joinMeetingIdSettings", JoinMeetingIdSettings);
             writer.WriteStringValue("joinUrl", JoinUrl);
             writer.WriteObjectValue<LobbyBypassSettings>("lobbyBypassSettings", LobbyBypassSettings);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.MeetingAttendanceReport>("meetingAttendanceReport", MeetingAttendanceReport);
+            writer.WriteObjectValue<MeetingAttendanceReport>("meetingAttendanceReport", MeetingAttendanceReport);
             writer.WriteObjectValue<MeetingParticipants>("participants", Participants);
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
             writer.WriteByteArrayValue("recording", Recording);

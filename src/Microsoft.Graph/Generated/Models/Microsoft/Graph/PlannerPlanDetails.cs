@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PlannerPlanDetails : PlannerDelta, IParsable {
         /// <summary>An object that specifies the descriptions of the six categories that can be associated with tasks in the plan</summary>
         public PlannerCategoryDescriptions CategoryDescriptions { get; set; }

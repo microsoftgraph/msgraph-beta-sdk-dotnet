@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Outlook.TaskGroups.Item.TaskFolders {
+namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups.Item.TaskFolders {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\outlook\taskGroups\{outlookTaskGroup-id}\taskFolders</summary>
     public class TaskFoldersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Outlook.TaskGroups.Item.TaskFolders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.outlook.taskGroups.item.taskFolders.item collection</summary>
-        public OutlookTaskFolderRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.outlook.taskGroups.item.taskFolders.item collection</summary>
+        public OutlookTaskFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookTaskFolder_id", position);
-            return new OutlookTaskFolderRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutlookTaskFolderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TaskFoldersRequestBuilder and sets the default values.

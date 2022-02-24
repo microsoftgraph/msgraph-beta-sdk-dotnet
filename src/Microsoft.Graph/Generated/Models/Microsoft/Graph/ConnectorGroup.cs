@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ConnectorGroup : Entity, IParsable {
         /// <summary>Read-only. Nullable.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Application> Applications { get; set; }
+        public List<Application> Applications { get; set; }
         /// <summary>Indicates the type of hybrid agent. This pre-set by the system. Possible values are: applicationProxy. Read-only.</summary>
         public ConnectorGroupType? ConnectorGroupType { get; set; }
         /// <summary>Indicates if the connectorGroup is the default connectorGroup. Only a single connector group can be the default connectorGroup and this is pre-set by the system. Read-only.</summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"applications", (o,n) => { (o as ConnectorGroup).Applications = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Application>().ToList(); } },
+                {"applications", (o,n) => { (o as ConnectorGroup).Applications = n.GetCollectionOfObjectValues<Application>().ToList(); } },
                 {"connectorGroupType", (o,n) => { (o as ConnectorGroup).ConnectorGroupType = n.GetEnumValue<ConnectorGroupType>(); } },
                 {"isDefault", (o,n) => { (o as ConnectorGroup).IsDefault = n.GetBoolValue(); } },
                 {"members", (o,n) => { (o as ConnectorGroup).Members = n.GetCollectionOfObjectValues<Connector>().ToList(); } },
@@ -37,7 +37,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Application>("applications", Applications);
+            writer.WriteCollectionOfObjectValues<Application>("applications", Applications);
             writer.WriteEnumValue<ConnectorGroupType>("connectorGroupType", ConnectorGroupType);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteCollectionOfObjectValues<Connector>("members", Members);

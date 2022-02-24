@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DirectoryObjects.Item.CheckMemberGroups {
+namespace MicrosoftGraphSdk.DirectoryObjects.Item.CheckMemberGroups {
     /// <summary>Builds and executes requests for operations under \directoryObjects\{directoryObject-id}\microsoft.graph.checkMemberGroups</summary>
     public class CheckMemberGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

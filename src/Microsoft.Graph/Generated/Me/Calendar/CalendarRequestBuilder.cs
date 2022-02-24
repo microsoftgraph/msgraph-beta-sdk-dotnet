@@ -1,20 +1,20 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Calendar.AllowedCalendarSharingRolesWithUser;
-using MicrosoftGraph.Me.Calendar.CalendarPermissions;
-using MicrosoftGraph.Me.Calendar.CalendarView;
-using MicrosoftGraph.Me.Calendar.Events;
-using MicrosoftGraph.Me.Calendar.GetSchedule;
-using MicrosoftGraph.Me.Calendar.MultiValueExtendedProperties;
-using MicrosoftGraph.Me.Calendar.SingleValueExtendedProperties;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Calendar.AllowedCalendarSharingRolesWithUser;
+using MicrosoftGraphSdk.Me.Calendar.CalendarPermissions;
+using MicrosoftGraphSdk.Me.Calendar.CalendarView;
+using MicrosoftGraphSdk.Me.Calendar.Events;
+using MicrosoftGraphSdk.Me.Calendar.GetSchedule;
+using MicrosoftGraphSdk.Me.Calendar.MultiValueExtendedProperties;
+using MicrosoftGraphSdk.Me.Calendar.SingleValueExtendedProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Calendar {
+namespace MicrosoftGraphSdk.Me.Calendar {
     /// <summary>Builds and executes requests for operations under \me\calendar</summary>
     public class CalendarRequestBuilder {
         public CalendarPermissionsRequestBuilder CalendarPermissions { get =>
@@ -118,7 +118,7 @@ namespace MicrosoftGraph.Me.Calendar {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.Calendar body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -149,9 +149,9 @@ namespace MicrosoftGraph.Me.Calendar {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.Calendar> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.Calendar>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The user's primary calendar. Read-only.
@@ -161,7 +161,7 @@ namespace MicrosoftGraph.Me.Calendar {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraph.Models.Microsoft.Graph.Calendar body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

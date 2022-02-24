@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Authentication.Methods.Item.DisableSmsSignIn {
+namespace MicrosoftGraphSdk.Users.Item.Authentication.Methods.Item.DisableSmsSignIn {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\authentication\methods\{authenticationMethod-id}\microsoft.graph.disableSmsSignIn</summary>
     public class DisableSmsSignInRequestBuilder {
         /// <summary>Path parameters for the request</summary>

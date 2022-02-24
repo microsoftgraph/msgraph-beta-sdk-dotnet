@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsImpactingProcess {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsImpactingProcess {
     public class UserExperienceAnalyticsImpactingProcessResponse : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string NextLink { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess> Value { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess> Value { get; set; }
         /// <summary>
         /// Instantiates a new userExperienceAnalyticsImpactingProcessResponse and sets the default values.
         /// </summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsImpactingProces
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as UserExperienceAnalyticsImpactingProcessResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as UserExperienceAnalyticsImpactingProcessResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess>().ToList(); } },
+                {"value", (o,n) => { (o as UserExperienceAnalyticsImpactingProcessResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess>().ToList(); } },
             };
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsImpactingProces
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.nextLink", NextLink);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess>("value", Value);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

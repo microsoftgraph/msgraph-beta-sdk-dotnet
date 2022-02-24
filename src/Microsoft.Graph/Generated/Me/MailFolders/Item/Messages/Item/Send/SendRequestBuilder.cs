@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.MailFolders.Item.Messages.Item.Send {
+namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.Send {
     /// <summary>Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.send</summary>
     public class SendRequestBuilder {
         /// <summary>Path parameters for the request</summary>

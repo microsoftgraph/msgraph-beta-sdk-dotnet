@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Teamwork.InstalledApps.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Teamwork.InstalledApps.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Teamwork.InstalledApps {
+namespace MicrosoftGraphSdk.Users.Item.Teamwork.InstalledApps {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\teamwork\installedApps</summary>
     public class InstalledAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Teamwork.InstalledApps {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.teamwork.installedApps.item collection</summary>
-        public UserScopeTeamsAppInstallationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.teamwork.installedApps.item collection</summary>
+        public UserScopeTeamsAppInstallationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userScopeTeamsAppInstallation_id", position);
-            return new UserScopeTeamsAppInstallationRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserScopeTeamsAppInstallationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstalledAppsRequestBuilder and sets the default values.

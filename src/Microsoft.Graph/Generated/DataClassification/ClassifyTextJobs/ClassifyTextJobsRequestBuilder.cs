@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DataClassification.ClassifyTextJobs.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DataClassification.ClassifyTextJobs.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DataClassification.ClassifyTextJobs {
+namespace MicrosoftGraphSdk.DataClassification.ClassifyTextJobs {
     /// <summary>Builds and executes requests for operations under \dataClassification\classifyTextJobs</summary>
     public class ClassifyTextJobsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DataClassification.ClassifyTextJobs {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.dataClassification.classifyTextJobs.item collection</summary>
-        public JobResponseBaseRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.dataClassification.classifyTextJobs.item collection</summary>
+        public JobResponseBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("jobResponseBase_id", position);
-            return new JobResponseBaseRequestBuilder(urlTplParams, RequestAdapter);
+            return new JobResponseBaseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ClassifyTextJobsRequestBuilder and sets the default values.

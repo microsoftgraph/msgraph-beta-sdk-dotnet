@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drives.Item.List.ContentTypes.Item.Base.Unpublish {
+namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Base.Unpublish {
     /// <summary>Builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\base\microsoft.graph.unpublish</summary>
     public class UnpublishRequestBuilder {
         /// <summary>Path parameters for the request</summary>

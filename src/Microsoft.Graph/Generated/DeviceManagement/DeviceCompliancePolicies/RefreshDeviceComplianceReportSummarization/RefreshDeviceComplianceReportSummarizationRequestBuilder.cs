@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\microsoft.graph.refreshDeviceComplianceReportSummarization</summary>
     public class RefreshDeviceComplianceReportSummarizationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

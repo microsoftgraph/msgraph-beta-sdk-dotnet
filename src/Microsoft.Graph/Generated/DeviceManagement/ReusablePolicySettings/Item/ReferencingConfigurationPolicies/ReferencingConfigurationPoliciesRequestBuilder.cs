@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies {
+namespace MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.ReferencingConfigurationPolicies {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reusablePolicySettings\{deviceManagementReusablePolicySetting-id}\referencingConfigurationPolicies</summary>
     public class ReferencingConfigurationPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ReusablePolicySettings.Item.Referencin
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.reusablePolicySettings.item.referencingConfigurationPolicies.item collection</summary>
-        public DeviceManagementConfigurationPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.reusablePolicySettings.item.referencingConfigurationPolicies.item collection</summary>
+        public DeviceManagementConfigurationPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationPolicy_id", position);
-            return new DeviceManagementConfigurationPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementConfigurationPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ReferencingConfigurationPoliciesRequestBuilder and sets the default values.

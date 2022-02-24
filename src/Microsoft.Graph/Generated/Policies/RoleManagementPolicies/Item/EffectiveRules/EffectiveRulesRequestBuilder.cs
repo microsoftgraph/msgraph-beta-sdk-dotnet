@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.RoleManagementPolicies.Item.EffectiveRules.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.EffectiveRules.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.RoleManagementPolicies.Item.EffectiveRules {
+namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.EffectiveRules {
     /// <summary>Builds and executes requests for operations under \policies\roleManagementPolicies\{unifiedRoleManagementPolicy-id}\effectiveRules</summary>
     public class EffectiveRulesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.RoleManagementPolicies.Item.EffectiveRules {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.roleManagementPolicies.item.effectiveRules.item collection</summary>
-        public UnifiedRoleManagementPolicyRuleRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.roleManagementPolicies.item.effectiveRules.item collection</summary>
+        public UnifiedRoleManagementPolicyRuleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleManagementPolicyRule_id", position);
-            return new UnifiedRoleManagementPolicyRuleRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleManagementPolicyRuleItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EffectiveRulesRequestBuilder and sets the default values.

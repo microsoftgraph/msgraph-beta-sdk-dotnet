@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TelecomExpenseManagementPartner : Entity, IParsable {
         /// <summary>Whether the partner's AAD app has been authorized to access Intune.</summary>
         public bool? AppAuthorized { get; set; }

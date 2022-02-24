@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.LegalHolds.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.LegalHolds {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds</summary>
     public class LegalHoldsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.LegalHolds {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.legalHolds.item collection</summary>
-        public LegalHoldRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.legalHolds.item collection</summary>
+        public LegalHoldItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("legalHold_id", position);
-            return new LegalHoldRequestBuilder(urlTplParams, RequestAdapter);
+            return new LegalHoldItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LegalHoldsRequestBuilder and sets the default values.

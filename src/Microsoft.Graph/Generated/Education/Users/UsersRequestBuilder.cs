@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Education.Users.Delta;
-using MicrosoftGraph.Education.Users.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Education.Users.Delta;
+using MicrosoftGraphSdk.Education.Users.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Users {
+namespace MicrosoftGraphSdk.Education.Users {
     /// <summary>Builds and executes requests for operations under \education\users</summary>
     public class UsersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Education.Users {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.education.users.item collection</summary>
-        public EducationUserRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.education.users.item collection</summary>
+        public EducationUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationUser_id", position);
-            return new EducationUserRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UsersRequestBuilder and sets the default values.

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceManagementScriptDeviceState : Entity, IParsable {
         /// <summary>Error code corresponding to erroneous execution of the device management script.</summary>
         public int? ErrorCode { get; set; }
@@ -12,7 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Latest time the device management script executes.</summary>
         public DateTimeOffset? LastStateUpdateDateTime { get; set; }
         /// <summary>The managed devices that executes the device management script.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice ManagedDevice { get; set; }
+        public ManagedDevice ManagedDevice { get; set; }
         /// <summary>Details of execution output.</summary>
         public string ResultMessage { get; set; }
         /// <summary>State of latest run of the device management script. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.</summary>
@@ -25,7 +25,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"errorCode", (o,n) => { (o as DeviceManagementScriptDeviceState).ErrorCode = n.GetIntValue(); } },
                 {"errorDescription", (o,n) => { (o as DeviceManagementScriptDeviceState).ErrorDescription = n.GetStringValue(); } },
                 {"lastStateUpdateDateTime", (o,n) => { (o as DeviceManagementScriptDeviceState).LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDevice", (o,n) => { (o as DeviceManagementScriptDeviceState).ManagedDevice = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice>(); } },
+                {"managedDevice", (o,n) => { (o as DeviceManagementScriptDeviceState).ManagedDevice = n.GetObjectValue<ManagedDevice>(); } },
                 {"resultMessage", (o,n) => { (o as DeviceManagementScriptDeviceState).ResultMessage = n.GetStringValue(); } },
                 {"runState", (o,n) => { (o as DeviceManagementScriptDeviceState).RunState = n.GetEnumValue<RunState>(); } },
             };
@@ -40,7 +40,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteStringValue("errorDescription", ErrorDescription);
             writer.WriteDateTimeOffsetValue("lastStateUpdateDateTime", LastStateUpdateDateTime);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice>("managedDevice", ManagedDevice);
+            writer.WriteObjectValue<ManagedDevice>("managedDevice", ManagedDevice);
             writer.WriteStringValue("resultMessage", ResultMessage);
             writer.WriteEnumValue<RunState>("runState", RunState);
         }

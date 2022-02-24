@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.Principal.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.Principal.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.Principal {
+namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests.Item.Principal {
     /// <summary>Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}\principal</summary>
     public class PrincipalRequestBuilder {
         /// <summary>Path parameters for the request</summary>

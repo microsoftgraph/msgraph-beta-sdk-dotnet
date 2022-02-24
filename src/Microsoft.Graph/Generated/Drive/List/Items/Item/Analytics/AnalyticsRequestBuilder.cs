@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Drive.List.Items.Item.Analytics.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Drive.List.Items.Item.Analytics.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drive.List.Items.Item.Analytics {
+namespace MicrosoftGraphSdk.Drive.List.Items.Item.Analytics {
     /// <summary>Builds and executes requests for operations under \drive\list\items\{listItem-id}\analytics</summary>
     public class AnalyticsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

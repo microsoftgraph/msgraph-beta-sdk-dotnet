@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ConnectedOrganization : Entity, IParsable {
         /// <summary>UPN of the user who created this resource. Read-only.</summary>
         public string CreatedBy { get; set; }

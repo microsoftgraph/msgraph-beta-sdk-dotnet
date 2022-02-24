@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DataClassification.SensitivityLabels.Evaluate;
-using MicrosoftGraph.DataClassification.SensitivityLabels.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DataClassification.SensitivityLabels.Evaluate;
+using MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DataClassification.SensitivityLabels {
+namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels {
     /// <summary>Builds and executes requests for operations under \dataClassification\sensitivityLabels</summary>
     public class SensitivityLabelsRequestBuilder {
         public EvaluateRequestBuilder Evaluate { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DataClassification.SensitivityLabels {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.dataClassification.sensitivityLabels.item collection</summary>
-        public SensitivityLabelRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.dataClassification.sensitivityLabels.item collection</summary>
+        public SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel_id", position);
-            return new SensitivityLabelRequestBuilder(urlTplParams, RequestAdapter);
+            return new SensitivityLabelItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SensitivityLabelsRequestBuilder and sets the default values.

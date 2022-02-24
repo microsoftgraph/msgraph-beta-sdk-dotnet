@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.DeploySummary {
+namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeploySummary {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deploySummary</summary>
     public class DeploySummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>

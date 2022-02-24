@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.DeviceEnrollmentConfigurations.Item.Assignments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Item.Assignments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.DeviceEnrollmentConfigurations.Item.Assignments {
+namespace MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations.Item.Assignments {
     /// <summary>Builds and executes requests for operations under \me\deviceEnrollmentConfigurations\{deviceEnrollmentConfiguration-id}\assignments</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.DeviceEnrollmentConfigurations.Item.Assignments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.deviceEnrollmentConfigurations.item.assignments.item collection</summary>
-        public EnrollmentConfigurationAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.deviceEnrollmentConfigurations.item.assignments.item collection</summary>
+        public EnrollmentConfigurationAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("enrollmentConfigurationAssignment_id", position);
-            return new EnrollmentConfigurationAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new EnrollmentConfigurationAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

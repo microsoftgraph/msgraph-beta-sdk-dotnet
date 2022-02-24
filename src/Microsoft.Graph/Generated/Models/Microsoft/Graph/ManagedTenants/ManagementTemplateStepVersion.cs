@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementTemplateStepVersion : Entity, IParsable {
         public TemplateAction ConfigurationAction { get; set; }
         public List<ManagementTemplateStepDeployment> Deployments { get; set; }

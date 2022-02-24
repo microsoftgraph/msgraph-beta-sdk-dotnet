@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPayments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPayments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPayments {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.CustomerPaymentJournals.Item.CustomerPayments {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\customerPaymentJournals\{customerPaymentJournal-id}\customerPayments</summary>
     public class CustomerPaymentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Financials.Companies.Item.CustomerPaymentJournals.Item.
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.customerPaymentJournals.item.customerPayments.item collection</summary>
-        public CustomerPaymentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.customerPaymentJournals.item.customerPayments.item collection</summary>
+        public CustomerPaymentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("customerPayment_id", position);
-            return new CustomerPaymentRequestBuilder(urlTplParams, RequestAdapter);
+            return new CustomerPaymentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CustomerPaymentsRequestBuilder and sets the default values.

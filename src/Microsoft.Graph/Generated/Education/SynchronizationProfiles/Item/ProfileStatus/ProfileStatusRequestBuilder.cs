@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.SynchronizationProfiles.Item.ProfileStatus {
+namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.ProfileStatus {
     /// <summary>Builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\profileStatus</summary>
     public class ProfileStatusRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests {
+namespace MicrosoftGraphSdk.DeviceManagement.MobileAppTroubleshootingEvents.Item.AppLogCollectionRequests {
     /// <summary>Builds and executes requests for operations under \deviceManagement\mobileAppTroubleshootingEvents\{mobileAppTroubleshootingEvent-id}\appLogCollectionRequests</summary>
     public class AppLogCollectionRequestsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.MobileAppTroubleshootingEvents.Item.Ap
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.mobileAppTroubleshootingEvents.item.appLogCollectionRequests.item collection</summary>
-        public AppLogCollectionRequestRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.mobileAppTroubleshootingEvents.item.appLogCollectionRequests.item collection</summary>
+        public AppLogCollectionRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appLogCollectionRequest_id", position);
-            return new AppLogCollectionRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppLogCollectionRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppLogCollectionRequestsRequestBuilder and sets the default values.

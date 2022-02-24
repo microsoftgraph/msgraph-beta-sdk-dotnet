@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.ApprovalWorkflowProviders.Item.PolicyTemplates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.PolicyTemplates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ApprovalWorkflowProviders.Item.PolicyTemplates {
+namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.PolicyTemplates {
     /// <summary>Builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\policyTemplates</summary>
     public class PolicyTemplatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.ApprovalWorkflowProviders.Item.PolicyTemplates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.approvalWorkflowProviders.item.policyTemplates.item collection</summary>
-        public GovernancePolicyTemplateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.approvalWorkflowProviders.item.policyTemplates.item collection</summary>
+        public GovernancePolicyTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governancePolicyTemplate_id", position);
-            return new GovernancePolicyTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernancePolicyTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PolicyTemplatesRequestBuilder and sets the default values.

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Events.Item.ExceptionOccurrences.Item.SnoozeReminder {
+namespace MicrosoftGraphSdk.Groups.Item.Events.Item.ExceptionOccurrences.Item.SnoozeReminder {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\events\{event-id}\exceptionOccurrences\{event-id1}\microsoft.graph.snoozeReminder</summary>
     public class SnoozeReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Drive.List.ContentTypes.Item.ColumnLinks.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Drive.List.ContentTypes.Item.ColumnLinks.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drive.List.ContentTypes.Item.ColumnLinks {
+namespace MicrosoftGraphSdk.Drive.List.ContentTypes.Item.ColumnLinks {
     /// <summary>Builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\columnLinks</summary>
     public class ColumnLinksRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Drive.List.ContentTypes.Item.ColumnLinks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.drive.list.contentTypes.item.columnLinks.item collection</summary>
-        public ColumnLinkRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.drive.list.contentTypes.item.columnLinks.item collection</summary>
+        public ColumnLinkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("columnLink_id", position);
-            return new ColumnLinkRequestBuilder(urlTplParams, RequestAdapter);
+            return new ColumnLinkItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ColumnLinksRequestBuilder and sets the default values.

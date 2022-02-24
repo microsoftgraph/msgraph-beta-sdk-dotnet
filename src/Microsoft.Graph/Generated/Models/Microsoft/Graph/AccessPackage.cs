@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackage : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies { get; set; }
+        public List<AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies { get; set; }
         /// <summary>Read-only. Nullable.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackageCatalog AccessPackageCatalog { get; set; }
+        public AccessPackageCatalog AccessPackageCatalog { get; set; }
         /// <summary>Nullable.</summary>
         public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes { get; set; }
         /// <summary>The access packages that are incompatible with this package. Read-only.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage> AccessPackagesIncompatibleWith { get; set; }
+        public List<AccessPackage> AccessPackagesIncompatibleWith { get; set; }
         /// <summary>Identifier of the access package catalog referencing this access package. Read-only.</summary>
         public string CatalogId { get; set; }
         /// <summary>The userPrincipalName of the user or identity of the subject who created this resource. Read-only.</summary>
@@ -24,9 +24,9 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The display name of the access package. Supports $filter (eq, contains).</summary>
         public string DisplayName { get; set; }
         /// <summary>The  access packages whose assigned users are ineligible to be assigned this access package.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage> IncompatibleAccessPackages { get; set; }
+        public List<AccessPackage> IncompatibleAccessPackages { get; set; }
         /// <summary>The groups whose members are ineligible to be assigned this access package.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Group> IncompatibleGroups { get; set; }
+        public List<Group> IncompatibleGroups { get; set; }
         /// <summary>Whether the access package is hidden from the requestor.</summary>
         public bool? IsHidden { get; set; }
         /// <summary>Indicates whether role scopes are visible.</summary>
@@ -40,17 +40,17 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageAssignmentPolicies", (o,n) => { (o as AccessPackage).AccessPackageAssignmentPolicies = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageAssignmentPolicy>().ToList(); } },
-                {"accessPackageCatalog", (o,n) => { (o as AccessPackage).AccessPackageCatalog = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageCatalog>(); } },
+                {"accessPackageAssignmentPolicies", (o,n) => { (o as AccessPackage).AccessPackageAssignmentPolicies = n.GetCollectionOfObjectValues<AccessPackageAssignmentPolicy>().ToList(); } },
+                {"accessPackageCatalog", (o,n) => { (o as AccessPackage).AccessPackageCatalog = n.GetObjectValue<AccessPackageCatalog>(); } },
                 {"accessPackageResourceRoleScopes", (o,n) => { (o as AccessPackage).AccessPackageResourceRoleScopes = n.GetCollectionOfObjectValues<AccessPackageResourceRoleScope>().ToList(); } },
-                {"accessPackagesIncompatibleWith", (o,n) => { (o as AccessPackage).AccessPackagesIncompatibleWith = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>().ToList(); } },
+                {"accessPackagesIncompatibleWith", (o,n) => { (o as AccessPackage).AccessPackagesIncompatibleWith = n.GetCollectionOfObjectValues<AccessPackage>().ToList(); } },
                 {"catalogId", (o,n) => { (o as AccessPackage).CatalogId = n.GetStringValue(); } },
                 {"createdBy", (o,n) => { (o as AccessPackage).CreatedBy = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as AccessPackage).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as AccessPackage).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AccessPackage).DisplayName = n.GetStringValue(); } },
-                {"incompatibleAccessPackages", (o,n) => { (o as AccessPackage).IncompatibleAccessPackages = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>().ToList(); } },
-                {"incompatibleGroups", (o,n) => { (o as AccessPackage).IncompatibleGroups = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Group>().ToList(); } },
+                {"incompatibleAccessPackages", (o,n) => { (o as AccessPackage).IncompatibleAccessPackages = n.GetCollectionOfObjectValues<AccessPackage>().ToList(); } },
+                {"incompatibleGroups", (o,n) => { (o as AccessPackage).IncompatibleGroups = n.GetCollectionOfObjectValues<Group>().ToList(); } },
                 {"isHidden", (o,n) => { (o as AccessPackage).IsHidden = n.GetBoolValue(); } },
                 {"isRoleScopesVisible", (o,n) => { (o as AccessPackage).IsRoleScopesVisible = n.GetBoolValue(); } },
                 {"modifiedBy", (o,n) => { (o as AccessPackage).ModifiedBy = n.GetStringValue(); } },
@@ -64,17 +64,17 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicies", AccessPackageAssignmentPolicies);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageCatalog>("accessPackageCatalog", AccessPackageCatalog);
+            writer.WriteCollectionOfObjectValues<AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicies", AccessPackageAssignmentPolicies);
+            writer.WriteObjectValue<AccessPackageCatalog>("accessPackageCatalog", AccessPackageCatalog);
             writer.WriteCollectionOfObjectValues<AccessPackageResourceRoleScope>("accessPackageResourceRoleScopes", AccessPackageResourceRoleScopes);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>("accessPackagesIncompatibleWith", AccessPackagesIncompatibleWith);
+            writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackagesIncompatibleWith", AccessPackagesIncompatibleWith);
             writer.WriteStringValue("catalogId", CatalogId);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>("incompatibleAccessPackages", IncompatibleAccessPackages);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Group>("incompatibleGroups", IncompatibleGroups);
+            writer.WriteCollectionOfObjectValues<AccessPackage>("incompatibleAccessPackages", IncompatibleAccessPackages);
+            writer.WriteCollectionOfObjectValues<Group>("incompatibleGroups", IncompatibleGroups);
             writer.WriteBoolValue("isHidden", IsHidden);
             writer.WriteBoolValue("isRoleScopesVisible", IsRoleScopesVisible);
             writer.WriteStringValue("modifiedBy", ModifiedBy);

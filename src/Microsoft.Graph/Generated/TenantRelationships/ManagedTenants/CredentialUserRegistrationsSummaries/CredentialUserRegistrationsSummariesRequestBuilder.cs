@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CredentialUserRegistrationsSummaries {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\credentialUserRegistrationsSummaries</summary>
     public class CredentialUserRegistrationsSummariesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.CredentialUserRegist
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.credentialUserRegistrationsSummaries.item collection</summary>
-        public CredentialUserRegistrationsSummaryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.credentialUserRegistrationsSummaries.item collection</summary>
+        public CredentialUserRegistrationsSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("credentialUserRegistrationsSummary_id", position);
-            return new CredentialUserRegistrationsSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new CredentialUserRegistrationsSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CredentialUserRegistrationsSummariesRequestBuilder and sets the default values.

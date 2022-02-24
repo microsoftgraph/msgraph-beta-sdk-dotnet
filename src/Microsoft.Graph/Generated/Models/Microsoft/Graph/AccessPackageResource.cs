@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageResource : Entity, IParsable {
         /// <summary>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceEnvironment AccessPackageResourceEnvironment { get; set; }
+        public AccessPackageResourceEnvironment AccessPackageResourceEnvironment { get; set; }
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceRole> AccessPackageResourceRoles { get; set; }
+        public List<AccessPackageResourceRole> AccessPackageResourceRoles { get; set; }
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceScope> AccessPackageResourceScopes { get; set; }
+        public List<AccessPackageResourceScope> AccessPackageResourceScopes { get; set; }
         /// <summary>The name of the user or application that first added this resource. Read-only.</summary>
         public string AddedBy { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
@@ -36,9 +36,9 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResourceEnvironment", (o,n) => { (o as AccessPackageResource).AccessPackageResourceEnvironment = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceEnvironment>(); } },
-                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageResource).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceRole>().ToList(); } },
-                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageResource).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceScope>().ToList(); } },
+                {"accessPackageResourceEnvironment", (o,n) => { (o as AccessPackageResource).AccessPackageResourceEnvironment = n.GetObjectValue<AccessPackageResourceEnvironment>(); } },
+                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageResource).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>().ToList(); } },
+                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageResource).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>().ToList(); } },
                 {"addedBy", (o,n) => { (o as AccessPackageResource).AddedBy = n.GetStringValue(); } },
                 {"addedOn", (o,n) => { (o as AccessPackageResource).AddedOn = n.GetDateTimeOffsetValue(); } },
                 {"attributes", (o,n) => { (o as AccessPackageResource).Attributes = n.GetCollectionOfObjectValues<AccessPackageResourceAttribute>().ToList(); } },
@@ -58,9 +58,9 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceEnvironment>("accessPackageResourceEnvironment", AccessPackageResourceEnvironment);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceScope>("accessPackageResourceScopes", AccessPackageResourceScopes);
+            writer.WriteObjectValue<AccessPackageResourceEnvironment>("accessPackageResourceEnvironment", AccessPackageResourceEnvironment);
+            writer.WriteCollectionOfObjectValues<AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
+            writer.WriteCollectionOfObjectValues<AccessPackageResourceScope>("accessPackageResourceScopes", AccessPackageResourceScopes);
             writer.WriteStringValue("addedBy", AddedBy);
             writer.WriteDateTimeOffsetValue("addedOn", AddedOn);
             writer.WriteCollectionOfObjectValues<AccessPackageResourceAttribute>("attributes", Attributes);

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProjectParticipation : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the project (for example, digital transformation, oil rig).</summary>
         public List<string> Categories { get; set; }

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Print.Services.Item.Endpoints.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Print.Services.Item.Endpoints.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.Services.Item.Endpoints {
+namespace MicrosoftGraphSdk.Print.Services.Item.Endpoints {
     /// <summary>Builds and executes requests for operations under \print\services\{printService-id}\endpoints</summary>
     public class EndpointsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Print.Services.Item.Endpoints {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.print.services.item.endpoints.item collection</summary>
-        public PrintServiceEndpointRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.print.services.item.endpoints.item collection</summary>
+        public PrintServiceEndpointItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printServiceEndpoint_id", position);
-            return new PrintServiceEndpointRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintServiceEndpointItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EndpointsRequestBuilder and sets the default values.

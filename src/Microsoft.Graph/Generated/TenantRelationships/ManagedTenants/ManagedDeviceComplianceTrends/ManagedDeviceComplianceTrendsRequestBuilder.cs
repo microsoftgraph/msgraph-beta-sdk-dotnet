@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\managedDeviceComplianceTrends</summary>
     public class ManagedDeviceComplianceTrendsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagedDeviceComplia
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.managedDeviceComplianceTrends.item collection</summary>
-        public ManagedDeviceComplianceTrendRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.managedDeviceComplianceTrends.item collection</summary>
+        public ManagedDeviceComplianceTrendItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceComplianceTrend_id", position);
-            return new ManagedDeviceComplianceTrendRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceComplianceTrendItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedDeviceComplianceTrendsRequestBuilder and sets the default values.

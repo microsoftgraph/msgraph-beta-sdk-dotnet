@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SchemaExtension : Entity, IParsable {
         /// <summary>Description for the schema extension. Supports $filter (eq).</summary>
         public string Description { get; set; }

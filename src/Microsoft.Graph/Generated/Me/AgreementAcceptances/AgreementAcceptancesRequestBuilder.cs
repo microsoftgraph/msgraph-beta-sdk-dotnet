@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.AgreementAcceptances.Ref;
+using MicrosoftGraphSdk.Me.AgreementAcceptances.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.AgreementAcceptances {
+namespace MicrosoftGraphSdk.Me.AgreementAcceptances {
     /// <summary>Builds and executes requests for operations under \me\agreementAcceptances</summary>
     public class AgreementAcceptancesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

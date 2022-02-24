@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Connections.Item.Quota.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors;
+using MicrosoftGraphSdk.Connections.Item.Quota.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Connections.Item.Quota {
+namespace MicrosoftGraphSdk.Connections.Item.Quota {
     /// <summary>Builds and executes requests for operations under \connections\{externalConnection-id}\quota</summary>
     public class QuotaRequestBuilder {
         /// <summary>Path parameters for the request</summary>

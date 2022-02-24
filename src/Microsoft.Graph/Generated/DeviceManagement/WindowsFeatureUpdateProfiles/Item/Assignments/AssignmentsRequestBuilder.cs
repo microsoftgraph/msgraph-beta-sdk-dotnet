@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assignments {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsFeatureUpdateProfiles\{windowsFeatureUpdateProfile-id}\assignments</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.WindowsFeatureUpdateProfiles.Item.Assi
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsFeatureUpdateProfiles.item.assignments.item collection</summary>
-        public WindowsFeatureUpdateProfileAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsFeatureUpdateProfiles.item.assignments.item collection</summary>
+        public WindowsFeatureUpdateProfileAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsFeatureUpdateProfileAssignment_id", position);
-            return new WindowsFeatureUpdateProfileAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsFeatureUpdateProfileAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

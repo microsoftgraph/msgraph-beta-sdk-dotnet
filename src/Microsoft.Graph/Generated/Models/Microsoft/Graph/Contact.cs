@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Contact : OutlookItem, IParsable {
         /// <summary>The name of the contact's assistant.</summary>
         public string AssistantName { get; set; }

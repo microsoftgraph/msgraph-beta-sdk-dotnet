@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatusSummary {
+namespace MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.DeviceStatusSummary {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileAppConfigurations\{managedDeviceMobileAppConfiguration-id}\deviceStatusSummary</summary>
     public class DeviceStatusSummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>

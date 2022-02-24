@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Contacts.Item.TransitiveMemberOf.Ref;
+using MicrosoftGraphSdk.Contacts.Item.TransitiveMemberOf.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Contacts.Item.TransitiveMemberOf {
+namespace MicrosoftGraphSdk.Contacts.Item.TransitiveMemberOf {
     /// <summary>Builds and executes requests for operations under \contacts\{orgContact-id}\transitiveMemberOf</summary>
     public class TransitiveMemberOfRequestBuilder {
         /// <summary>Path parameters for the request</summary>

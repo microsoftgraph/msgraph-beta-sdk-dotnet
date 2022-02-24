@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.OfficeConfiguration.ClientConfigurations.Item;
-using MicrosoftGraph.OfficeConfiguration.ClientConfigurations.UpdatePriorities;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item;
+using MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.UpdatePriorities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OfficeConfiguration.ClientConfigurations {
+namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations {
     /// <summary>Builds and executes requests for operations under \officeConfiguration\clientConfigurations</summary>
     public class ClientConfigurationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.OfficeConfiguration.ClientConfigurations {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.officeConfiguration.clientConfigurations.item collection</summary>
-        public OfficeClientConfigurationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.officeConfiguration.clientConfigurations.item collection</summary>
+        public OfficeClientConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("officeClientConfiguration_id", position);
-            return new OfficeClientConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new OfficeClientConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ClientConfigurationsRequestBuilder and sets the default values.

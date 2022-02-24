@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemActionStat : IParsable {
         /// <summary>The number of times the action took place. Read-only.</summary>
         public int? ActionCount { get; set; }

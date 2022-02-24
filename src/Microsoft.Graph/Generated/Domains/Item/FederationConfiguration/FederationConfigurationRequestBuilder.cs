@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Domains.Item.FederationConfiguration.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Domains.Item.FederationConfiguration.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Domains.Item.FederationConfiguration {
+namespace MicrosoftGraphSdk.Domains.Item.FederationConfiguration {
     /// <summary>Builds and executes requests for operations under \domains\{domain-id}\federationConfiguration</summary>
     public class FederationConfigurationRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Domains.Item.FederationConfiguration {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.domains.item.federationConfiguration.item collection</summary>
-        public InternalDomainFederationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.domains.item.federationConfiguration.item collection</summary>
+        public InternalDomainFederationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("internalDomainFederation_id", position);
-            return new InternalDomainFederationRequestBuilder(urlTplParams, RequestAdapter);
+            return new InternalDomainFederationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FederationConfigurationRequestBuilder and sets the default values.

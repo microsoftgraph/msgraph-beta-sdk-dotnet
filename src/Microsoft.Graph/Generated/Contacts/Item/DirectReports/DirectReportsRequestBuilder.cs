@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Contacts.Item.DirectReports.Ref;
+using MicrosoftGraphSdk.Contacts.Item.DirectReports.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Contacts.Item.DirectReports {
+namespace MicrosoftGraphSdk.Contacts.Item.DirectReports {
     /// <summary>Builds and executes requests for operations under \contacts\{orgContact-id}\directReports</summary>
     public class DirectReportsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

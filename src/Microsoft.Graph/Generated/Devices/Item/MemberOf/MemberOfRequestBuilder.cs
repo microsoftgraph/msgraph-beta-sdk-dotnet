@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Devices.Item.MemberOf.Ref;
+using MicrosoftGraphSdk.Devices.Item.MemberOf.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Devices.Item.MemberOf {
+namespace MicrosoftGraphSdk.Devices.Item.MemberOf {
     /// <summary>Builds and executes requests for operations under \devices\{device-id}\memberOf</summary>
     public class MemberOfRequestBuilder {
         /// <summary>Path parameters for the request</summary>

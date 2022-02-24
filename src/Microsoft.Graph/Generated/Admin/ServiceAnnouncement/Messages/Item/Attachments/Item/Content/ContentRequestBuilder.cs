@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Item.Attachments.Item.Content {
+namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.Attachments.Item.Content {
     /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\messages\{serviceUpdateMessage-id}\attachments\{serviceAnnouncementAttachment-id}\content</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

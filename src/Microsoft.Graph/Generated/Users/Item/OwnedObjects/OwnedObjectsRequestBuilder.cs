@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Users.Item.OwnedObjects.Ref;
+using MicrosoftGraphSdk.Users.Item.OwnedObjects.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.OwnedObjects {
+namespace MicrosoftGraphSdk.Users.Item.OwnedObjects {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\ownedObjects</summary>
     public class OwnedObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

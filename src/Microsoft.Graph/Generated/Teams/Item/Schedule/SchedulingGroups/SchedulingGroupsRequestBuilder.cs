@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teams.Item.Schedule.SchedulingGroups.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teams.Item.Schedule.SchedulingGroups.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Schedule.SchedulingGroups {
+namespace MicrosoftGraphSdk.Teams.Item.Schedule.SchedulingGroups {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\schedule\schedulingGroups</summary>
     public class SchedulingGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Teams.Item.Schedule.SchedulingGroups {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.teams.item.schedule.schedulingGroups.item collection</summary>
-        public SchedulingGroupRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.schedulingGroups.item collection</summary>
+        public SchedulingGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("schedulingGroup_id", position);
-            return new SchedulingGroupRequestBuilder(urlTplParams, RequestAdapter);
+            return new SchedulingGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SchedulingGroupsRequestBuilder and sets the default values.

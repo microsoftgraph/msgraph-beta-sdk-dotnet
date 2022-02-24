@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.ContactFolders.Item.Contacts.Item.Photo.Value;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.ContactFolders.Item.Contacts.Item.Photo.Value;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ContactFolders.Item.Contacts.Item.Photo {
+namespace MicrosoftGraphSdk.Me.ContactFolders.Item.Contacts.Item.Photo {
     /// <summary>Builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\contacts\{contact-id}\photo</summary>
     public class PhotoRequestBuilder {
         public ContentRequestBuilder Content { get =>

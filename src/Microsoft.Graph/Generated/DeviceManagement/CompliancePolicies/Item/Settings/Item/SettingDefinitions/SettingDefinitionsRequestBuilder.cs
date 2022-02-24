@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.CompliancePolicies.Item.Settings.Item.SettingDefinitions.Ref;
+using MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.Settings.Item.SettingDefinitions.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.CompliancePolicies.Item.Settings.Item.SettingDefinitions {
+namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.Settings.Item.SettingDefinitions {
     /// <summary>Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\settings\{deviceManagementConfigurationSetting-id}\settingDefinitions</summary>
     public class SettingDefinitionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

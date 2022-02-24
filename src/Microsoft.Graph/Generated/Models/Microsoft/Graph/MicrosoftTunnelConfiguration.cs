@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MicrosoftTunnelConfiguration : Entity, IParsable {
         /// <summary>Additional settings that may be applied to the server</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> AdvancedSettings { get; set; }
+        public List<KeyValuePair> AdvancedSettings { get; set; }
         /// <summary>The Default Domain appendix that will be used by the clients</summary>
         public string DefaultDomainSuffix { get; set; }
         /// <summary>The MicrosoftTunnelConfiguration's description</summary>
@@ -36,7 +36,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"advancedSettings", (o,n) => { (o as MicrosoftTunnelConfiguration).AdvancedSettings = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"advancedSettings", (o,n) => { (o as MicrosoftTunnelConfiguration).AdvancedSettings = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"defaultDomainSuffix", (o,n) => { (o as MicrosoftTunnelConfiguration).DefaultDomainSuffix = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as MicrosoftTunnelConfiguration).Description = n.GetStringValue(); } },
                 {"disableUDPConnections", (o,n) => { (o as MicrosoftTunnelConfiguration).DisableUDPConnections = n.GetBoolValue(); } },
@@ -58,7 +58,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("advancedSettings", AdvancedSettings);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("advancedSettings", AdvancedSettings);
             writer.WriteStringValue("defaultDomainSuffix", DefaultDomainSuffix);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disableUDPConnections", DisableUDPConnections);

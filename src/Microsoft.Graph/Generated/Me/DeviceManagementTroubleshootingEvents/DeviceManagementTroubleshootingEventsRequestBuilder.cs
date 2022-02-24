@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.DeviceManagementTroubleshootingEvents.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.DeviceManagementTroubleshootingEvents.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.DeviceManagementTroubleshootingEvents {
+namespace MicrosoftGraphSdk.Me.DeviceManagementTroubleshootingEvents {
     /// <summary>Builds and executes requests for operations under \me\deviceManagementTroubleshootingEvents</summary>
     public class DeviceManagementTroubleshootingEventsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.DeviceManagementTroubleshootingEvents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.deviceManagementTroubleshootingEvents.item collection</summary>
-        public DeviceManagementTroubleshootingEventRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.deviceManagementTroubleshootingEvents.item collection</summary>
+        public DeviceManagementTroubleshootingEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTroubleshootingEvent_id", position);
-            return new DeviceManagementTroubleshootingEventRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementTroubleshootingEventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceManagementTroubleshootingEventsRequestBuilder and sets the default values.

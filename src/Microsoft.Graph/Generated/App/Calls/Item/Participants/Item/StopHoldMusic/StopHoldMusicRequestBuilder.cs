@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.App.Calls.Item.Participants.Item.StopHoldMusic {
+namespace MicrosoftGraphSdk.App.Calls.Item.Participants.Item.StopHoldMusic {
     /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\participants\{participant-id}\microsoft.graph.stopHoldMusic</summary>
     public class StopHoldMusicRequestBuilder {
         /// <summary>Path parameters for the request</summary>

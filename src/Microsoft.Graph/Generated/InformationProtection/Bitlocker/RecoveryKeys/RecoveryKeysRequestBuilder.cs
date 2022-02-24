@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.InformationProtection.Bitlocker.RecoveryKeys.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.InformationProtection.Bitlocker.RecoveryKeys {
+namespace MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys {
     /// <summary>Builds and executes requests for operations under \informationProtection\bitlocker\recoveryKeys</summary>
     public class RecoveryKeysRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.InformationProtection.Bitlocker.RecoveryKeys {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.informationProtection.bitlocker.recoveryKeys.item collection</summary>
-        public BitlockerRecoveryKeyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.bitlocker.recoveryKeys.item collection</summary>
+        public BitlockerRecoveryKeyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bitlockerRecoveryKey_id", position);
-            return new BitlockerRecoveryKeyRequestBuilder(urlTplParams, RequestAdapter);
+            return new BitlockerRecoveryKeyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RecoveryKeysRequestBuilder and sets the default values.

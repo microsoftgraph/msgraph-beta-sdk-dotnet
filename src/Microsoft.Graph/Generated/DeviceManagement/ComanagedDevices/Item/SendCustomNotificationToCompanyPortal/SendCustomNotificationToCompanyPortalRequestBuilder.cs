@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.SendCustomNotificationToCompanyPortal {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.SendCustomNotificationToCompanyPortal {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.sendCustomNotificationToCompanyPortal</summary>
     public class SendCustomNotificationToCompanyPortalRequestBuilder {
         /// <summary>Path parameters for the request</summary>

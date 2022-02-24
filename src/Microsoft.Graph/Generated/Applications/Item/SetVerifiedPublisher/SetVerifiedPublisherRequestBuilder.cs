@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.SetVerifiedPublisher {
+namespace MicrosoftGraphSdk.Applications.Item.SetVerifiedPublisher {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\microsoft.graph.setVerifiedPublisher</summary>
     public class SetVerifiedPublisherRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ComanagementEligibleDevices.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ComanagementEligibleDevices.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagementEligibleDevices {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagementEligibleDevices {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagementEligibleDevices</summary>
     public class ComanagementEligibleDevicesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ComanagementEligibleDevices {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.comanagementEligibleDevices.item collection</summary>
-        public ComanagementEligibleDeviceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.comanagementEligibleDevices.item collection</summary>
+        public ComanagementEligibleDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("comanagementEligibleDevice_id", position);
-            return new ComanagementEligibleDeviceRequestBuilder(urlTplParams, RequestAdapter);
+            return new ComanagementEligibleDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ComanagementEligibleDevicesRequestBuilder and sets the default values.

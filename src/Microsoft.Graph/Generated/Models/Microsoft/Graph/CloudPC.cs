@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CloudPC : Entity, IParsable {
         /// <summary>The Azure Active Directory (Azure AD) device ID of the Cloud PC.</summary>
         public string AadDeviceId { get; set; }

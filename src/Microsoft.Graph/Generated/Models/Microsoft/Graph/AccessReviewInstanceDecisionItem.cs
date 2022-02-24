@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessReviewInstanceDecisionItem : Entity, IParsable {
         /// <summary>The identifier of the accessReviewInstance parent. Supports $select. Read-only.</summary>
         public string AccessReviewId { get; set; }
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Justification left by the reviewer when they made the decision.</summary>
         public string Justification { get; set; }
         /// <summary>Every decision item in an access review represents a principal's access to a resource. This property represents details of the principal. For example, if a decision item represents access of User 'Bob' to Group 'Sales' - The principal is 'Bob' and the resource is 'Sales'. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Identity Principal { get; set; }
+        public Identity Principal { get; set; }
         /// <summary>A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.</summary>
         public string PrincipalLink { get; set; }
         public DecisionItemPrincipalResourceMembership PrincipalResourceMembership { get; set; }
@@ -51,7 +51,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"insights", (o,n) => { (o as AccessReviewInstanceDecisionItem).Insights = n.GetCollectionOfObjectValues<GovernanceInsight>().ToList(); } },
                 {"instance", (o,n) => { (o as AccessReviewInstanceDecisionItem).Instance = n.GetObjectValue<AccessReviewInstance>(); } },
                 {"justification", (o,n) => { (o as AccessReviewInstanceDecisionItem).Justification = n.GetStringValue(); } },
-                {"principal", (o,n) => { (o as AccessReviewInstanceDecisionItem).Principal = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>(); } },
+                {"principal", (o,n) => { (o as AccessReviewInstanceDecisionItem).Principal = n.GetObjectValue<Identity>(); } },
                 {"principalLink", (o,n) => { (o as AccessReviewInstanceDecisionItem).PrincipalLink = n.GetStringValue(); } },
                 {"principalResourceMembership", (o,n) => { (o as AccessReviewInstanceDecisionItem).PrincipalResourceMembership = n.GetObjectValue<DecisionItemPrincipalResourceMembership>(); } },
                 {"recommendation", (o,n) => { (o as AccessReviewInstanceDecisionItem).Recommendation = n.GetStringValue(); } },
@@ -77,7 +77,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<GovernanceInsight>("insights", Insights);
             writer.WriteObjectValue<AccessReviewInstance>("instance", Instance);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>("principal", Principal);
+            writer.WriteObjectValue<Identity>("principal", Principal);
             writer.WriteStringValue("principalLink", PrincipalLink);
             writer.WriteObjectValue<DecisionItemPrincipalResourceMembership>("principalResourceMembership", PrincipalResourceMembership);
             writer.WriteStringValue("recommendation", Recommendation);

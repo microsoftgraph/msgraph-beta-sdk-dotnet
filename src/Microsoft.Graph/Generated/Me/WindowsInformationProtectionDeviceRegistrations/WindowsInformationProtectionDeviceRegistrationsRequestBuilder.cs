@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.WindowsInformationProtectionDeviceRegistrations.Ref;
+using MicrosoftGraphSdk.Me.WindowsInformationProtectionDeviceRegistrations.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.WindowsInformationProtectionDeviceRegistrations {
+namespace MicrosoftGraphSdk.Me.WindowsInformationProtectionDeviceRegistrations {
     /// <summary>Builds and executes requests for operations under \me\windowsInformationProtectionDeviceRegistrations</summary>
     public class WindowsInformationProtectionDeviceRegistrationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

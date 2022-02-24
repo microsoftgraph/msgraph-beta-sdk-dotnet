@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Planner.Plans.Item.Details {
+namespace MicrosoftGraphSdk.Me.Planner.Plans.Item.Details {
     /// <summary>Builds and executes requests for operations under \me\planner\plans\{plannerPlan-id}\details</summary>
     public class DetailsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Add;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Add;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets</summary>
     public class WorksheetsRequestBuilder {
         public AddRequestBuilder Add { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.worksheets.item collection</summary>
-        public WorkbookWorksheetRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.worksheets.item collection</summary>
+        public WorkbookWorksheetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookWorksheet_id", position);
-            return new WorkbookWorksheetRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookWorksheetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WorksheetsRequestBuilder and sets the default values.

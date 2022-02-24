@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.EndGracePeriod {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.EndGracePeriod {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs\{cloudPC-id}\microsoft.graph.endGracePeriod</summary>
     public class EndGracePeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

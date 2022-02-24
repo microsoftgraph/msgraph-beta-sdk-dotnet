@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.CallRecords {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords {
     public class Session : Entity, IParsable {
         /// <summary>Endpoint that answered the session.</summary>
         public Endpoint Callee { get; set; }

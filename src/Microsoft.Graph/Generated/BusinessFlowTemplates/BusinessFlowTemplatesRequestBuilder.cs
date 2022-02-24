@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.BusinessFlowTemplates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.BusinessFlowTemplates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.BusinessFlowTemplates {
+namespace MicrosoftGraphSdk.BusinessFlowTemplates {
     /// <summary>Builds and executes requests for operations under \businessFlowTemplates</summary>
     public class BusinessFlowTemplatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.BusinessFlowTemplates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.businessFlowTemplates.item collection</summary>
-        public BusinessFlowTemplateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.businessFlowTemplates.item collection</summary>
+        public BusinessFlowTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("businessFlowTemplate_id", position);
-            return new BusinessFlowTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new BusinessFlowTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new BusinessFlowTemplatesRequestBuilder and sets the default values.

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Sort.Apply {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Sort.Apply {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\sort\microsoft.graph.apply</summary>
     public class ApplyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

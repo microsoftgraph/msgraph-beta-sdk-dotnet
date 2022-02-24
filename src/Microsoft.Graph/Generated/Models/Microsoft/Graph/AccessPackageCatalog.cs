@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageCatalog : Entity, IParsable {
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceRole> AccessPackageResourceRoles { get; set; }
+        public List<AccessPackageResourceRole> AccessPackageResourceRoles { get; set; }
         /// <summary>Read-only. Nullable.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource> AccessPackageResources { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceScope> AccessPackageResourceScopes { get; set; }
+        public List<AccessPackageResource> AccessPackageResources { get; set; }
+        public List<AccessPackageResourceScope> AccessPackageResourceScopes { get; set; }
         /// <summary>The access packages in this catalog. Read-only. Nullable.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage> AccessPackages { get; set; }
+        public List<AccessPackage> AccessPackages { get; set; }
         /// <summary>Has the value Published if the access packages are available for management.</summary>
         public string CatalogStatus { get; set; }
         /// <summary>Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.</summary>
@@ -35,10 +35,10 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceRole>().ToList(); } },
-                {"accessPackageResources", (o,n) => { (o as AccessPackageCatalog).AccessPackageResources = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource>().ToList(); } },
-                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceScope>().ToList(); } },
-                {"accessPackages", (o,n) => { (o as AccessPackageCatalog).AccessPackages = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>().ToList(); } },
+                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>().ToList(); } },
+                {"accessPackageResources", (o,n) => { (o as AccessPackageCatalog).AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>().ToList(); } },
+                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageCatalog).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>().ToList(); } },
+                {"accessPackages", (o,n) => { (o as AccessPackageCatalog).AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>().ToList(); } },
                 {"catalogStatus", (o,n) => { (o as AccessPackageCatalog).CatalogStatus = n.GetStringValue(); } },
                 {"catalogType", (o,n) => { (o as AccessPackageCatalog).CatalogType = n.GetStringValue(); } },
                 {"createdBy", (o,n) => { (o as AccessPackageCatalog).CreatedBy = n.GetStringValue(); } },
@@ -58,10 +58,10 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource>("accessPackageResources", AccessPackageResources);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResourceScope>("accessPackageResourceScopes", AccessPackageResourceScopes);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>("accessPackages", AccessPackages);
+            writer.WriteCollectionOfObjectValues<AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
+            writer.WriteCollectionOfObjectValues<AccessPackageResource>("accessPackageResources", AccessPackageResources);
+            writer.WriteCollectionOfObjectValues<AccessPackageResourceScope>("accessPackageResourceScopes", AccessPackageResourceScopes);
+            writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackages", AccessPackages);
             writer.WriteStringValue("catalogStatus", CatalogStatus);
             writer.WriteStringValue("catalogType", CatalogType);
             writer.WriteStringValue("createdBy", CreatedBy);

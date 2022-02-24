@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
         public List<string> ApplicationIds { get; set; }
         public List<string> ApplicationPublisherIds { get; set; }

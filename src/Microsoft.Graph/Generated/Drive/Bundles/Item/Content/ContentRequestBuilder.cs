@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drive.Bundles.Item.Content {
+namespace MicrosoftGraphSdk.Drive.Bundles.Item.Content {
     /// <summary>Builds and executes requests for operations under \drive\bundles\{driveItem-id}\content</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WorkbookWorksheet : Entity, IParsable {
         /// <summary>Returns collection of charts that are part of the worksheet. Read-only.</summary>
         public List<WorkbookChart> Charts { get; set; }

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsInformationProtectionNetworkLearningSummaries</summary>
     public class WindowsInformationProtectionNetworkLearningSummariesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.WindowsInformationProtectionNetworkLea
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsInformationProtectionNetworkLearningSummaries.item collection</summary>
-        public WindowsInformationProtectionNetworkLearningSummaryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsInformationProtectionNetworkLearningSummaries.item collection</summary>
+        public WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionNetworkLearningSummary_id", position);
-            return new WindowsInformationProtectionNetworkLearningSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsInformationProtectionNetworkLearningSummariesRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute {
+namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.UserAttribute {
     /// <summary>Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\{identityUserFlowAttributeAssignment-id}\userAttribute</summary>
     public class UserAttributeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

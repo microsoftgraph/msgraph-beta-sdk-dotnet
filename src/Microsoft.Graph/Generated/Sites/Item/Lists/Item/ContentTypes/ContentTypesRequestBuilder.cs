@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.AddCopy;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.AddCopyFromContentTypeHub;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.AddCopy;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.AddCopyFromContentTypeHub;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes</summary>
     public class ContentTypesRequestBuilder {
         public AddCopyRequestBuilder AddCopy { get =>
@@ -26,11 +26,11 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.sites.item.lists.item.contentTypes.item collection</summary>
-        public ContentTypeRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.lists.item.contentTypes.item collection</summary>
+        public ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType_id", position);
-            return new ContentTypeRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContentTypeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContentTypesRequestBuilder and sets the default values.

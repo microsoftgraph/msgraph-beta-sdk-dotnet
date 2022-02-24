@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.AcceptRecommendations;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ApplyDecisions;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.BatchRecordDecisions;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ResetDecisions;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.SendReminder;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Stop;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.AcceptRecommendations;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ApplyDecisions;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.BatchRecordDecisions;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ResetDecisions;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.SendReminder;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Stop;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance {
+namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}\stages\{accessReviewStage-id}\decisions\{accessReviewInstanceDecisionItem-id}\instance</summary>
     public class InstanceRequestBuilder {
         public AcceptRecommendationsRequestBuilder AcceptRecommendations { get =>

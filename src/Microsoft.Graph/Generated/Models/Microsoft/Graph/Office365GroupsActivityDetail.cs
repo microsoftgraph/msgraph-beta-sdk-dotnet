@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Office365GroupsActivityDetail : Entity, IParsable {
         /// <summary>The storage used of the group mailbox.</summary>
         public long? ExchangeMailboxStorageUsedInBytes { get; set; }

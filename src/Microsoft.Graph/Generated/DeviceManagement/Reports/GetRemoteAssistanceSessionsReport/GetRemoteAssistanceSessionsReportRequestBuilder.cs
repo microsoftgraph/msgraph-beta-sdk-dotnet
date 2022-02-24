@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetRemoteAssistanceSessionsReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getRemoteAssistanceSessionsReport</summary>
     public class GetRemoteAssistanceSessionsReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

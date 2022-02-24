@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.UnblockManagedApps {
+namespace MicrosoftGraphSdk.Users.Item.UnblockManagedApps {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\microsoft.graph.unblockManagedApps</summary>
     public class UnblockManagedAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

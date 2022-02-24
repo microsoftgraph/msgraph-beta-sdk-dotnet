@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IdentityContainer : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -16,7 +16,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>the entry point for the Conditional Access (CA) object model.</summary>
         public ConditionalAccessRoot ConditionalAccess { get; set; }
         /// <summary>Represents entry point for continuous access evaluation policy.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.ContinuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicy { get; set; }
+        public ContinuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicy { get; set; }
         /// <summary>Represents entry point for identity provider base.</summary>
         public List<IdentityProviderBase> IdentityProviders { get; set; }
         /// <summary>Represents entry point for identity userflow attributes.</summary>
@@ -37,7 +37,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"b2cUserFlows", (o,n) => { (o as IdentityContainer).B2cUserFlows = n.GetCollectionOfObjectValues<B2cIdentityUserFlow>().ToList(); } },
                 {"b2xUserFlows", (o,n) => { (o as IdentityContainer).B2xUserFlows = n.GetCollectionOfObjectValues<B2xIdentityUserFlow>().ToList(); } },
                 {"conditionalAccess", (o,n) => { (o as IdentityContainer).ConditionalAccess = n.GetObjectValue<ConditionalAccessRoot>(); } },
-                {"continuousAccessEvaluationPolicy", (o,n) => { (o as IdentityContainer).ContinuousAccessEvaluationPolicy = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ContinuousAccessEvaluationPolicy>(); } },
+                {"continuousAccessEvaluationPolicy", (o,n) => { (o as IdentityContainer).ContinuousAccessEvaluationPolicy = n.GetObjectValue<ContinuousAccessEvaluationPolicy>(); } },
                 {"identityProviders", (o,n) => { (o as IdentityContainer).IdentityProviders = n.GetCollectionOfObjectValues<IdentityProviderBase>().ToList(); } },
                 {"userFlowAttributes", (o,n) => { (o as IdentityContainer).UserFlowAttributes = n.GetCollectionOfObjectValues<IdentityUserFlowAttribute>().ToList(); } },
                 {"userFlows", (o,n) => { (o as IdentityContainer).UserFlows = n.GetCollectionOfObjectValues<IdentityUserFlow>().ToList(); } },
@@ -53,7 +53,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<B2cIdentityUserFlow>("b2cUserFlows", B2cUserFlows);
             writer.WriteCollectionOfObjectValues<B2xIdentityUserFlow>("b2xUserFlows", B2xUserFlows);
             writer.WriteObjectValue<ConditionalAccessRoot>("conditionalAccess", ConditionalAccess);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ContinuousAccessEvaluationPolicy>("continuousAccessEvaluationPolicy", ContinuousAccessEvaluationPolicy);
+            writer.WriteObjectValue<ContinuousAccessEvaluationPolicy>("continuousAccessEvaluationPolicy", ContinuousAccessEvaluationPolicy);
             writer.WriteCollectionOfObjectValues<IdentityProviderBase>("identityProviders", IdentityProviders);
             writer.WriteCollectionOfObjectValues<IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);
             writer.WriteCollectionOfObjectValues<IdentityUserFlow>("userFlows", UserFlows);

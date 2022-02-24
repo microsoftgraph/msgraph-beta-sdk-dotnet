@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Sites.Add {
+namespace MicrosoftGraphSdk.Sites.Add {
     public class AddRequestBody : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Site> Value { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Site> Value { get; set; }
         /// <summary>
         /// Instantiates a new addRequestBody and sets the default values.
         /// </summary>
@@ -20,7 +20,7 @@ namespace MicrosoftGraph.Sites.Add {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"value", (o,n) => { (o as AddRequestBody).Value = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Site>().ToList(); } },
+                {"value", (o,n) => { (o as AddRequestBody).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>().ToList(); } },
             };
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraph.Sites.Add {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Site>("value", Value);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

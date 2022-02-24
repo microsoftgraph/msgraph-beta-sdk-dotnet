@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.Logo {
+namespace MicrosoftGraphSdk.Applications.Item.Logo {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\logo</summary>
     public class LogoRequestBuilder {
         /// <summary>Path parameters for the request</summary>

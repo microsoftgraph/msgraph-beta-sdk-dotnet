@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.TermsAndConditions.Item.AcceptanceStatuses.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.AcceptanceStatuses.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.TermsAndConditions.Item.AcceptanceStatuses {
+namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.AcceptanceStatuses {
     /// <summary>Builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\acceptanceStatuses</summary>
     public class AcceptanceStatusesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.TermsAndConditions.Item.AcceptanceStat
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.termsAndConditions.item.acceptanceStatuses.item collection</summary>
-        public TermsAndConditionsAcceptanceStatusRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.termsAndConditions.item.acceptanceStatuses.item collection</summary>
+        public TermsAndConditionsAcceptanceStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("termsAndConditionsAcceptanceStatus_id", position);
-            return new TermsAndConditionsAcceptanceStatusRequestBuilder(urlTplParams, RequestAdapter);
+            return new TermsAndConditionsAcceptanceStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AcceptanceStatusesRequestBuilder and sets the default values.

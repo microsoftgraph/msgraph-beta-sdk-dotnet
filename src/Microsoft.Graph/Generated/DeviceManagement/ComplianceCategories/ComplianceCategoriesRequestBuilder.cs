@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ComplianceCategories.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ComplianceCategories.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComplianceCategories {
+namespace MicrosoftGraphSdk.DeviceManagement.ComplianceCategories {
     /// <summary>Builds and executes requests for operations under \deviceManagement\complianceCategories</summary>
     public class ComplianceCategoriesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ComplianceCategories {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.complianceCategories.item collection</summary>
-        public DeviceManagementConfigurationCategoryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.complianceCategories.item collection</summary>
+        public DeviceManagementConfigurationCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationCategory_id", position);
-            return new DeviceManagementConfigurationCategoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementConfigurationCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ComplianceCategoriesRequestBuilder and sets the default values.

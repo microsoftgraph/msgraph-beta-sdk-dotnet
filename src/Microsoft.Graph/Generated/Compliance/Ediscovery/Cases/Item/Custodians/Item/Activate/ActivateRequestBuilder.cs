@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.Activate {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.Activate {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\microsoft.graph.ediscovery.activate</summary>
     public class ActivateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

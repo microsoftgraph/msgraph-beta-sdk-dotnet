@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Onenote.SectionGroups.Item.Sections.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Onenote.SectionGroups.Item.Sections.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Onenote.SectionGroups.Item.Sections {
+namespace MicrosoftGraphSdk.Me.Onenote.SectionGroups.Item.Sections {
     /// <summary>Builds and executes requests for operations under \me\onenote\sectionGroups\{sectionGroup-id}\sections</summary>
     public class SectionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.Onenote.SectionGroups.Item.Sections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.onenote.sectionGroups.item.sections.item collection</summary>
-        public OnenoteSectionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.onenote.sectionGroups.item.sections.item collection</summary>
+        public OnenoteSectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenoteSection_id", position);
-            return new OnenoteSectionRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnenoteSectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SectionsRequestBuilder and sets the default values.

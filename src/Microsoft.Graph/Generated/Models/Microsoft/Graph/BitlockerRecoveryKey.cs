@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class BitlockerRecoveryKey : Entity, IParsable {
         /// <summary>The date and time when the key was originally backed up to Azure Active Directory. Not nullable.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }

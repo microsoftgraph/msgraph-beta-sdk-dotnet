@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.CreatedObjects.Ref;
+using MicrosoftGraphSdk.Me.CreatedObjects.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.CreatedObjects {
+namespace MicrosoftGraphSdk.Me.CreatedObjects {
     /// <summary>Builds and executes requests for operations under \me\createdObjects</summary>
     public class CreatedObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,12 +1,12 @@
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.IntendedPolicies.Item.TargetedManagedAppProtection.Assign;
-using MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.IntendedPolicies.Item.TargetedManagedAppProtection.TargetApps;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.IntendedPolicies.Item.TargetedManagedAppProtection.Assign;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.IntendedPolicies.Item.TargetedManagedAppProtection.TargetApps;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.IntendedPolicies.Item.TargetedManagedAppProtection {
+namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.IntendedPolicies.Item.TargetedManagedAppProtection {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\intendedPolicies\{managedAppPolicy-id}\microsoft.graph.targetedManagedAppProtection</summary>
     public class TargetedManagedAppProtectionRequestBuilder {
         public AssignRequestBuilder Assign { get =>

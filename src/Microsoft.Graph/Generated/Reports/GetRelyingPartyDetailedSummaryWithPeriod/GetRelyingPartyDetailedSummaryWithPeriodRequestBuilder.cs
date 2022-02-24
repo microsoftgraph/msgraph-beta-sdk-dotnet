@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
+namespace MicrosoftGraphSdk.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getRelyingPartyDetailedSummary(period='{period}')</summary>
     public class GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

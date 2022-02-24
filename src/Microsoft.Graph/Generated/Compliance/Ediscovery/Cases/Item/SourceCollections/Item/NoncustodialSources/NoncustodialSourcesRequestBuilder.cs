@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.ApplyHold;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.Ref;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.RemoveHold;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.ApplyHold;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.Ref;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources.RemoveHold;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\noncustodialSources</summary>
     public class NoncustodialSourcesRequestBuilder {
         public ApplyHoldRequestBuilder ApplyHold { get =>

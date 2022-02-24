@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Clone {
+namespace MicrosoftGraphSdk.Teams.Item.Clone {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\microsoft.graph.clone</summary>
     public class CloneRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Me.CalendarGroups.Item.Calendars.Item.GetSchedule {
+namespace MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.GetSchedule {
     public class GetSchedule : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

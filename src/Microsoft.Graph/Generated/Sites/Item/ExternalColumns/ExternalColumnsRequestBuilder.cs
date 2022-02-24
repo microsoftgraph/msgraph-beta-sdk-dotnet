@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Sites.Item.ExternalColumns.Ref;
+using MicrosoftGraphSdk.Sites.Item.ExternalColumns.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.ExternalColumns {
+namespace MicrosoftGraphSdk.Sites.Item.ExternalColumns {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\externalColumns</summary>
     public class ExternalColumnsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

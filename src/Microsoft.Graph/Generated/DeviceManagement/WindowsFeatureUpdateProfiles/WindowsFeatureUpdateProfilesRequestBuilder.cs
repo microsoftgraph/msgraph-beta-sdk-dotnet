@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsFeatureUpdateProfiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsFeatureUpdateProfiles {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsFeatureUpdateProfiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsFeatureUpdateProfiles</summary>
     public class WindowsFeatureUpdateProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.WindowsFeatureUpdateProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsFeatureUpdateProfiles.item collection</summary>
-        public WindowsFeatureUpdateProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsFeatureUpdateProfiles.item collection</summary>
+        public WindowsFeatureUpdateProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsFeatureUpdateProfile_id", position);
-            return new WindowsFeatureUpdateProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsFeatureUpdateProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsFeatureUpdateProfilesRequestBuilder and sets the default values.

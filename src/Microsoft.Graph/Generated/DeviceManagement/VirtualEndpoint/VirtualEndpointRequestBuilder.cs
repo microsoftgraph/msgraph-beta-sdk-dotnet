@@ -1,25 +1,25 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.AuditEvents;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.CloudPCs;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.DeviceImages;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.GalleryImages;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.OrganizationSettings;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.ServicePlans;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.Snapshots;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.SupportedRegions;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.UserSettings;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.GalleryImages;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OrganizationSettings;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.ServicePlans;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.Snapshots;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.SupportedRegions;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.UserSettings;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint</summary>
     public class VirtualEndpointRequestBuilder {
         public AuditEventsRequestBuilder AuditEvents { get =>
@@ -130,7 +130,7 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.VirtualEndpoint body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.VirtualEndpoint body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -161,9 +161,9 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.VirtualEndpoint> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.VirtualEndpoint> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.VirtualEndpoint>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.VirtualEndpoint>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\microsoft.graph.getEffectivePermissions()
@@ -179,7 +179,7 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraph.Models.Microsoft.Graph.VirtualEndpoint body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.VirtualEndpoint body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

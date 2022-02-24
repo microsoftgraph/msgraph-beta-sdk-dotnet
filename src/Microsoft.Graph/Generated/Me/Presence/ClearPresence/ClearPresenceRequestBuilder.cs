@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Presence.ClearPresence {
+namespace MicrosoftGraphSdk.Me.Presence.ClearPresence {
     /// <summary>Builds and executes requests for operations under \me\presence\microsoft.graph.clearPresence</summary>
     public class ClearPresenceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

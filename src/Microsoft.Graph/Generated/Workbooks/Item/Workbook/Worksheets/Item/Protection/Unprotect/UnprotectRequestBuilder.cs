@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Protection.Unprotect {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Protection.Unprotect {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\protection\microsoft.graph.unprotect</summary>
     public class UnprotectRequestBuilder {
         /// <summary>Path parameters for the request</summary>

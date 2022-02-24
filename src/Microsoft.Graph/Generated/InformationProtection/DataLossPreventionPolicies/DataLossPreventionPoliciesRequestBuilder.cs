@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.InformationProtection.DataLossPreventionPolicies.Evaluate;
-using MicrosoftGraph.InformationProtection.DataLossPreventionPolicies.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies.Evaluate;
+using MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.InformationProtection.DataLossPreventionPolicies {
+namespace MicrosoftGraphSdk.InformationProtection.DataLossPreventionPolicies {
     /// <summary>Builds and executes requests for operations under \informationProtection\dataLossPreventionPolicies</summary>
     public class DataLossPreventionPoliciesRequestBuilder {
         public EvaluateRequestBuilder Evaluate { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.InformationProtection.DataLossPreventionPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.informationProtection.dataLossPreventionPolicies.item collection</summary>
-        public DataLossPreventionPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.dataLossPreventionPolicies.item collection</summary>
+        public DataLossPreventionPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataLossPreventionPolicy_id", position);
-            return new DataLossPreventionPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new DataLossPreventionPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DataLossPreventionPoliciesRequestBuilder and sets the default values.

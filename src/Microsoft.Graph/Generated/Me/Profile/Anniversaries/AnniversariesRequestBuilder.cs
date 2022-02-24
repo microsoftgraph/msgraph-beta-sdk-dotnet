@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Profile.Anniversaries.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Profile.Anniversaries.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Profile.Anniversaries {
+namespace MicrosoftGraphSdk.Me.Profile.Anniversaries {
     /// <summary>Builds and executes requests for operations under \me\profile\anniversaries</summary>
     public class AnniversariesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.Profile.Anniversaries {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.profile.anniversaries.item collection</summary>
-        public PersonAnnualEventRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.profile.anniversaries.item collection</summary>
+        public PersonAnnualEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("personAnnualEvent_id", position);
-            return new PersonAnnualEventRequestBuilder(urlTplParams, RequestAdapter);
+            return new PersonAnnualEventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AnniversariesRequestBuilder and sets the default values.

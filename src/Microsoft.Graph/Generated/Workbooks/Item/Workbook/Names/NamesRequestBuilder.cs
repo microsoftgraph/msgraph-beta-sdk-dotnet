@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Add;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.AddFormulaLocal;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Add;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.AddFormulaLocal;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Names {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names</summary>
     public class NamesRequestBuilder {
         public AddRequestBuilder Add { get =>
@@ -25,11 +25,11 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Names {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.names.item collection</summary>
-        public WorkbookNamedItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.names.item collection</summary>
+        public WorkbookNamedItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookNamedItem_id", position);
-            return new WorkbookNamedItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookNamedItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NamesRequestBuilder and sets the default values.

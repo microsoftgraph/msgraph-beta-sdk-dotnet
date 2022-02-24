@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.GroupPolicyCategories.Item.Children.Ref;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item.Children.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyCategories.Item.Children {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item.Children {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\children</summary>
     public class ChildrenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

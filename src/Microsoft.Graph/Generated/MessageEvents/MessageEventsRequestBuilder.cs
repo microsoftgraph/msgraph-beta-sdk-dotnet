@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.MessageEvents.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.MessageEvents.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.MessageEvents {
+namespace MicrosoftGraphSdk.MessageEvents {
     /// <summary>Builds and executes requests for operations under \messageEvents</summary>
     public class MessageEventsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.MessageEvents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.messageEvents.item collection</summary>
-        public MessageEventRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.messageEvents.item collection</summary>
+        public MessageEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageEvent_id", position);
-            return new MessageEventRequestBuilder(urlTplParams, RequestAdapter);
+            return new MessageEventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MessageEventsRequestBuilder and sets the default values.

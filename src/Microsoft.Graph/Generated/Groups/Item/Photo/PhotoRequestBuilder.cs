@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.Photo.Value;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.Photo.Value;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Photo {
+namespace MicrosoftGraphSdk.Groups.Item.Photo {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\photo</summary>
     public class PhotoRequestBuilder {
         public ContentRequestBuilder Content { get =>

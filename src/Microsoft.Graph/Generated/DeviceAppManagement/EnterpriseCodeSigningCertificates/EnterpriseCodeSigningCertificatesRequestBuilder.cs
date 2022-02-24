@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.EnterpriseCodeSigningCertificates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.EnterpriseCodeSigningCertificates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.EnterpriseCodeSigningCertificates {
+namespace MicrosoftGraphSdk.DeviceAppManagement.EnterpriseCodeSigningCertificates {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\enterpriseCodeSigningCertificates</summary>
     public class EnterpriseCodeSigningCertificatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.EnterpriseCodeSigningCertificates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.enterpriseCodeSigningCertificates.item collection</summary>
-        public EnterpriseCodeSigningCertificateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.enterpriseCodeSigningCertificates.item collection</summary>
+        public EnterpriseCodeSigningCertificateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("enterpriseCodeSigningCertificate_id", position);
-            return new EnterpriseCodeSigningCertificateRequestBuilder(urlTplParams, RequestAdapter);
+            return new EnterpriseCodeSigningCertificateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EnterpriseCodeSigningCertificatesRequestBuilder and sets the default values.

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>The anti-malware version for the managed device. Optional. Read-only.</summary>
         public string AntiMalwareVersion { get; set; }

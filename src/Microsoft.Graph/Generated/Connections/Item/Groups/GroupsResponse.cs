@@ -1,10 +1,10 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Connections.Item.Groups {
+namespace MicrosoftGraphSdk.Connections.Item.Groups {
     public class GroupsResponse : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

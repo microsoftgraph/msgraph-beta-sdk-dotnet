@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId;
-using MicrosoftGraph.DeviceManagement.ConfigManagerCollections.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId;
+using MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ConfigManagerCollections {
+namespace MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections {
     /// <summary>Builds and executes requests for operations under \deviceManagement\configManagerCollections</summary>
     public class ConfigManagerCollectionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.DeviceManagement.ConfigManagerCollections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.configManagerCollections.item collection</summary>
-        public ConfigManagerCollectionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.configManagerCollections.item collection</summary>
+        public ConfigManagerCollectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("configManagerCollection_id", position);
-            return new ConfigManagerCollectionRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConfigManagerCollectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConfigManagerCollectionsRequestBuilder and sets the default values.

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.PolicySets.GetPolicySets;
-using MicrosoftGraph.DeviceAppManagement.PolicySets.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.GetPolicySets;
+using MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.PolicySets {
+namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\policySets</summary>
     public class PolicySetsRequestBuilder {
         public GetPolicySetsRequestBuilder GetPolicySets { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceAppManagement.PolicySets {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.policySets.item collection</summary>
-        public PolicySetRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.policySets.item collection</summary>
+        public PolicySetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("policySet_id", position);
-            return new PolicySetRequestBuilder(urlTplParams, RequestAdapter);
+            return new PolicySetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PolicySetsRequestBuilder and sets the default values.

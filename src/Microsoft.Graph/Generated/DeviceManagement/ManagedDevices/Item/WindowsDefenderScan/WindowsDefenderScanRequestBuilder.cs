@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.WindowsDefenderScan {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.WindowsDefenderScan {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.windowsDefenderScan</summary>
     public class WindowsDefenderScanRequestBuilder {
         /// <summary>Path parameters for the request</summary>

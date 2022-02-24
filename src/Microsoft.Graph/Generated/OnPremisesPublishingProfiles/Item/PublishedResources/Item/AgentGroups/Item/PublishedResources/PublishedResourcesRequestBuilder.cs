@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.PublishedResources.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.PublishedResources.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.PublishedResources {
+namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources.Item.AgentGroups.Item.PublishedResources {
     /// <summary>Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\publishedResources\{publishedResource-id}\agentGroups\{onPremisesAgentGroup-id}\publishedResources</summary>
     public class PublishedResourcesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.PublishedResources.It
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.onPremisesPublishingProfiles.item.publishedResources.item.agentGroups.item.publishedResources.item collection</summary>
-        public PublishedResourceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item.publishedResources.item.agentGroups.item.publishedResources.item collection</summary>
+        public PublishedResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("publishedResource_id1", position);
-            return new PublishedResourceRequestBuilder(urlTplParams, RequestAdapter);
+            return new PublishedResourceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PublishedResourcesRequestBuilder and sets the default values.

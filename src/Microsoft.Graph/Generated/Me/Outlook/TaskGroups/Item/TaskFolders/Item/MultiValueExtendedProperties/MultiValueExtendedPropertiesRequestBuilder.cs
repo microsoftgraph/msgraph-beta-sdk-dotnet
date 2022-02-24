@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Outlook.TaskGroups.Item.TaskFolders.Item.MultiValueExtendedProperties.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Outlook.TaskGroups.Item.TaskFolders.Item.MultiValueExtendedProperties.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Outlook.TaskGroups.Item.TaskFolders.Item.MultiValueExtendedProperties {
+namespace MicrosoftGraphSdk.Me.Outlook.TaskGroups.Item.TaskFolders.Item.MultiValueExtendedProperties {
     /// <summary>Builds and executes requests for operations under \me\outlook\taskGroups\{outlookTaskGroup-id}\taskFolders\{outlookTaskFolder-id}\multiValueExtendedProperties</summary>
     public class MultiValueExtendedPropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.Outlook.TaskGroups.Item.TaskFolders.Item.MultiValueE
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.outlook.taskGroups.item.taskFolders.item.multiValueExtendedProperties.item collection</summary>
-        public MultiValueLegacyExtendedPropertyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.outlook.taskGroups.item.taskFolders.item.multiValueExtendedProperties.item collection</summary>
+        public MultiValueLegacyExtendedPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("multiValueLegacyExtendedProperty_id", position);
-            return new MultiValueLegacyExtendedPropertyRequestBuilder(urlTplParams, RequestAdapter);
+            return new MultiValueLegacyExtendedPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.

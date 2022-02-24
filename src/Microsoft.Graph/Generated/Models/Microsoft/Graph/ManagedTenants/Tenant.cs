@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class Tenant : Entity, IParsable {
         /// <summary>The relationship details for the tenant with the managing entity.</summary>
         public TenantContract Contract { get; set; }

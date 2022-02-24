@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SecurityAction : Entity, IParsable {
         /// <summary>Reason for invoking this action.</summary>
         public string ActionReason { get; set; }
@@ -23,7 +23,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Action name.</summary>
         public string Name { get; set; }
         /// <summary>Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> Parameters { get; set; }
+        public List<KeyValuePair> Parameters { get; set; }
         /// <summary>Collection of securityActionState to keep the history of an action.</summary>
         public List<SecurityActionState> States { get; set; }
         /// <summary>Status of the action. Possible values are: NotStarted, Running, Completed, Failed.</summary>
@@ -46,7 +46,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"errorInfo", (o,n) => { (o as SecurityAction).ErrorInfo = n.GetObjectValue<ResultInfo>(); } },
                 {"lastActionDateTime", (o,n) => { (o as SecurityAction).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", (o,n) => { (o as SecurityAction).Name = n.GetStringValue(); } },
-                {"parameters", (o,n) => { (o as SecurityAction).Parameters = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"parameters", (o,n) => { (o as SecurityAction).Parameters = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"states", (o,n) => { (o as SecurityAction).States = n.GetCollectionOfObjectValues<SecurityActionState>().ToList(); } },
                 {"status", (o,n) => { (o as SecurityAction).Status = n.GetEnumValue<OperationStatus>(); } },
                 {"user", (o,n) => { (o as SecurityAction).User = n.GetStringValue(); } },
@@ -69,7 +69,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<ResultInfo>("errorInfo", ErrorInfo);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("parameters", Parameters);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("parameters", Parameters);
             writer.WriteCollectionOfObjectValues<SecurityActionState>("states", States);
             writer.WriteEnumValue<OperationStatus>("status", Status);
             writer.WriteStringValue("user", User);

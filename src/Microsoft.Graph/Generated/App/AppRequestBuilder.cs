@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.App.Calls;
-using MicrosoftGraph.App.OnlineMeetings;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.App.Calls;
+using MicrosoftGraphSdk.App.OnlineMeetings;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.App {
+namespace MicrosoftGraphSdk.App {
     /// <summary>Builds and executes requests for operations under \app</summary>
     public class AppRequestBuilder {
         public CallsRequestBuilder Calls { get =>

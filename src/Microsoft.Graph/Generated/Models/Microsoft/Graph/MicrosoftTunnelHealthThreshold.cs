@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MicrosoftTunnelHealthThreshold : Entity, IParsable {
         /// <summary>The default threshold for being healthy</summary>
         public long? DefaultHealthyThreshold { get; set; }

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item.Policy.Assign;
-using MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item.Policy.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item.Policy.Assign;
+using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item.Policy.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item.Policy {
+namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item.Policy {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deviceStatuses\{windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus-id}\policy</summary>
     public class PolicyRequestBuilder {
         public AssignRequestBuilder Assign { get =>

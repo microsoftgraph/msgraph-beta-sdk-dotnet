@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Applications.Item.FederatedIdentityCredentials.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Applications.Item.FederatedIdentityCredentials.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.FederatedIdentityCredentials {
+namespace MicrosoftGraphSdk.Applications.Item.FederatedIdentityCredentials {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\federatedIdentityCredentials</summary>
     public class FederatedIdentityCredentialsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Applications.Item.FederatedIdentityCredentials {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.applications.item.federatedIdentityCredentials.item collection</summary>
-        public FederatedIdentityCredentialRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.applications.item.federatedIdentityCredentials.item collection</summary>
+        public FederatedIdentityCredentialItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("federatedIdentityCredential_id", position);
-            return new FederatedIdentityCredentialRequestBuilder(urlTplParams, RequestAdapter);
+            return new FederatedIdentityCredentialItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FederatedIdentityCredentialsRequestBuilder and sets the default values.

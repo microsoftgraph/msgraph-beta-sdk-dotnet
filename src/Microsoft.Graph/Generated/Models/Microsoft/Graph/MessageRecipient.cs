@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MessageRecipient : Entity, IParsable {
         public MessageStatus? DeliveryStatus { get; set; }
         public List<MessageEvent> Events { get; set; }

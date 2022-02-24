@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.InformationProtection.Policy.Labels.EvaluateApplication;
-using MicrosoftGraph.InformationProtection.Policy.Labels.EvaluateClassificationResults;
-using MicrosoftGraph.InformationProtection.Policy.Labels.EvaluateRemoval;
-using MicrosoftGraph.InformationProtection.Policy.Labels.ExtractLabel;
-using MicrosoftGraph.InformationProtection.Policy.Labels.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplication;
+using MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateClassificationResults;
+using MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateRemoval;
+using MicrosoftGraphSdk.InformationProtection.Policy.Labels.ExtractLabel;
+using MicrosoftGraphSdk.InformationProtection.Policy.Labels.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.InformationProtection.Policy.Labels {
+namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels {
     /// <summary>Builds and executes requests for operations under \informationProtection\policy\labels</summary>
     public class LabelsRequestBuilder {
         public EvaluateApplicationRequestBuilder EvaluateApplication { get =>
@@ -33,11 +33,11 @@ namespace MicrosoftGraph.InformationProtection.Policy.Labels {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.informationProtection.policy.labels.item collection</summary>
-        public InformationProtectionLabelRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.policy.labels.item collection</summary>
+        public InformationProtectionLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("informationProtectionLabel_id", position);
-            return new InformationProtectionLabelRequestBuilder(urlTplParams, RequestAdapter);
+            return new InformationProtectionLabelItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LabelsRequestBuilder and sets the default values.

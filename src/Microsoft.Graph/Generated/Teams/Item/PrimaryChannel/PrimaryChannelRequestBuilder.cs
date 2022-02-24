@@ -1,20 +1,20 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.CompleteMigration;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.FilesFolder;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.Members;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.Messages;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.ProvisionEmail;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.RemoveEmail;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.Tabs;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.CompleteMigration;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.FilesFolder;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Members;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.ProvisionEmail;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.RemoveEmail;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Tabs;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.PrimaryChannel {
+namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\primaryChannel</summary>
     public class PrimaryChannelRequestBuilder {
         public CompleteMigrationRequestBuilder CompleteMigration { get =>

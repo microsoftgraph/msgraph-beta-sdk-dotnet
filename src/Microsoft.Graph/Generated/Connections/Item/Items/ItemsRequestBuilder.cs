@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Connections.Item.Items.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors;
+using MicrosoftGraphSdk.Connections.Item.Items.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Connections.Item.Items {
+namespace MicrosoftGraphSdk.Connections.Item.Items {
     /// <summary>Builds and executes requests for operations under \connections\{externalConnection-id}\items</summary>
     public class ItemsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Connections.Item.Items {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.connections.item.items.item collection</summary>
-        public ExternalItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.connections.item.items.item collection</summary>
+        public ExternalItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalItem_id", position);
-            return new ExternalItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExternalItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ItemsRequestBuilder and sets the default values.

@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DetectedApps.Item.ManagedDevices.BulkReprovisionCloudPc;
-using MicrosoftGraph.DeviceManagement.DetectedApps.Item.ManagedDevices.BulkRestoreCloudPc;
-using MicrosoftGraph.DeviceManagement.DetectedApps.Item.ManagedDevices.ExecuteAction;
-using MicrosoftGraph.DeviceManagement.DetectedApps.Item.ManagedDevices.MoveDevicesToOU;
-using MicrosoftGraph.DeviceManagement.DetectedApps.Item.ManagedDevices.Ref;
+using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.BulkReprovisionCloudPc;
+using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.BulkRestoreCloudPc;
+using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.ExecuteAction;
+using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.MoveDevicesToOU;
+using MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DetectedApps.Item.ManagedDevices {
+namespace MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices {
     /// <summary>Builds and executes requests for operations under \deviceManagement\detectedApps\{detectedApp-id}\managedDevices</summary>
     public class ManagedDevicesRequestBuilder {
         public BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc { get =>

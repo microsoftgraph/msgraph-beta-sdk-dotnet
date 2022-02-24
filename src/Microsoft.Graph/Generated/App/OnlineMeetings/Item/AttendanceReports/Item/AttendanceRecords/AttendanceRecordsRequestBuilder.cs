@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.App.OnlineMeetings.Item.AttendanceReports.Item.AttendanceRecords.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.App.OnlineMeetings.Item.AttendanceReports.Item.AttendanceRecords.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.App.OnlineMeetings.Item.AttendanceReports.Item.AttendanceRecords {
+namespace MicrosoftGraphSdk.App.OnlineMeetings.Item.AttendanceReports.Item.AttendanceRecords {
     /// <summary>Builds and executes requests for operations under \app\onlineMeetings\{onlineMeeting-id}\attendanceReports\{meetingAttendanceReport-id}\attendanceRecords</summary>
     public class AttendanceRecordsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.App.OnlineMeetings.Item.AttendanceReports.Item.Attendan
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.app.onlineMeetings.item.attendanceReports.item.attendanceRecords.item collection</summary>
-        public AttendanceRecordRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.app.onlineMeetings.item.attendanceReports.item.attendanceRecords.item collection</summary>
+        public AttendanceRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attendanceRecord_id", position);
-            return new AttendanceRecordRequestBuilder(urlTplParams, RequestAdapter);
+            return new AttendanceRecordItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AttendanceRecordsRequestBuilder and sets the default values.

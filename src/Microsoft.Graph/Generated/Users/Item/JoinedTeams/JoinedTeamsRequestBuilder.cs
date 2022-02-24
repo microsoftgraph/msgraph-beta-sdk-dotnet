@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Users.Item.JoinedTeams.Ref;
+using MicrosoftGraphSdk.Users.Item.JoinedTeams.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.JoinedTeams {
+namespace MicrosoftGraphSdk.Users.Item.JoinedTeams {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\joinedTeams</summary>
     public class JoinedTeamsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

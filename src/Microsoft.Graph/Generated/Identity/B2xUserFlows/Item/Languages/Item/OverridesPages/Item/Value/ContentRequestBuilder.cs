@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.B2xUserFlows.Item.Languages.Item.OverridesPages.Item.Value {
+namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.OverridesPages.Item.Value {
     /// <summary>Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}\overridesPages\{userFlowLanguagePage-id}\$value</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

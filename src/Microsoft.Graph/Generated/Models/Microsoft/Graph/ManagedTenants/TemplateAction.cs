@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class TemplateAction : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string Description { get; set; }
         public string DisplayName { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.LicenseDetails Licenses { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails Licenses { get; set; }
         public string Service { get; set; }
         public List<Setting> Settings { get; set; }
         public string TemplateActionId { get; set; }
@@ -26,7 +26,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"description", (o,n) => { (o as TemplateAction).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as TemplateAction).DisplayName = n.GetStringValue(); } },
-                {"licenses", (o,n) => { (o as TemplateAction).Licenses = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.LicenseDetails>(); } },
+                {"licenses", (o,n) => { (o as TemplateAction).Licenses = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails>(); } },
                 {"service", (o,n) => { (o as TemplateAction).Service = n.GetStringValue(); } },
                 {"settings", (o,n) => { (o as TemplateAction).Settings = n.GetCollectionOfObjectValues<Setting>().ToList(); } },
                 {"templateActionId", (o,n) => { (o as TemplateAction).TemplateActionId = n.GetStringValue(); } },
@@ -40,7 +40,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.LicenseDetails>("licenses", Licenses);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseDetails>("licenses", Licenses);
             writer.WriteStringValue("service", Service);
             writer.WriteCollectionOfObjectValues<Setting>("settings", Settings);
             writer.WriteStringValue("templateActionId", TemplateActionId);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken {
+namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken {
     /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.uploadDepToken</summary>
     public class UploadDepTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

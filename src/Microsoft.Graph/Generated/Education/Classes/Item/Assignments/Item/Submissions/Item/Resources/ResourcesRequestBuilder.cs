@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Education.Classes.Item.Assignments.Item.Submissions.Item.Resources.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.Resources.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Classes.Item.Assignments.Item.Submissions.Item.Resources {
+namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.Submissions.Item.Resources {
     /// <summary>Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\resources</summary>
     public class ResourcesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Education.Classes.Item.Assignments.Item.Submissions.Ite
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.education.classes.item.assignments.item.submissions.item.resources.item collection</summary>
-        public EducationSubmissionResourceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.education.classes.item.assignments.item.submissions.item.resources.item collection</summary>
+        public EducationSubmissionResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSubmissionResource_id", position);
-            return new EducationSubmissionResourceRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationSubmissionResourceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourcesRequestBuilder and sets the default values.

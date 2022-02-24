@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ServiceAnnouncementBase : Entity, IParsable {
         /// <summary>Additional details about service event. This property doesn't support filters.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> Details { get; set; }
+        public List<KeyValuePair> Details { get; set; }
         /// <summary>The end time of the service event.</summary>
         public DateTimeOffset? EndDateTime { get; set; }
         /// <summary>The last modified time of the service event.</summary>
@@ -20,7 +20,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"details", (o,n) => { (o as ServiceAnnouncementBase).Details = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"details", (o,n) => { (o as ServiceAnnouncementBase).Details = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"endDateTime", (o,n) => { (o as ServiceAnnouncementBase).EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as ServiceAnnouncementBase).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"startDateTime", (o,n) => { (o as ServiceAnnouncementBase).StartDateTime = n.GetDateTimeOffsetValue(); } },
@@ -34,7 +34,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("details", Details);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("details", Details);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.TemplateSettings.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.TemplateSettings.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.TemplateSettings {
+namespace MicrosoftGraphSdk.DeviceManagement.TemplateSettings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\templateSettings</summary>
     public class TemplateSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.TemplateSettings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.templateSettings.item collection</summary>
-        public DeviceManagementConfigurationSettingTemplateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.templateSettings.item collection</summary>
+        public DeviceManagementConfigurationSettingTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationSettingTemplate_id", position);
-            return new DeviceManagementConfigurationSettingTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementConfigurationSettingTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TemplateSettingsRequestBuilder and sets the default values.

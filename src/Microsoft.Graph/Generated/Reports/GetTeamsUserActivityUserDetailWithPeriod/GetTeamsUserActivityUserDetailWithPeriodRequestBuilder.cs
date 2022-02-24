@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetTeamsUserActivityUserDetailWithPeriod {
+namespace MicrosoftGraphSdk.Reports.GetTeamsUserActivityUserDetailWithPeriod {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityUserDetail(period='{period}')</summary>
     public class GetTeamsUserActivityUserDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

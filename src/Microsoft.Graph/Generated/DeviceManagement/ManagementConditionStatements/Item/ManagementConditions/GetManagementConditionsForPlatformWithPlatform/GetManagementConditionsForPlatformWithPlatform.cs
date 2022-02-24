@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.DeviceManagement.ManagementConditionStatements.Item.ManagementConditions.GetManagementConditionsForPlatformWithPlatform {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item.ManagementConditions.GetManagementConditionsForPlatformWithPlatform {
     public class GetManagementConditionsForPlatformWithPlatform : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

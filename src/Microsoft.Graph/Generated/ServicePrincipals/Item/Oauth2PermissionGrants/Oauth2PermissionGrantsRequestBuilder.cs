@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.ServicePrincipals.Item.Oauth2PermissionGrants.Ref;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Oauth2PermissionGrants.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.Oauth2PermissionGrants {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.Oauth2PermissionGrants {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\oauth2PermissionGrants</summary>
     public class Oauth2PermissionGrantsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

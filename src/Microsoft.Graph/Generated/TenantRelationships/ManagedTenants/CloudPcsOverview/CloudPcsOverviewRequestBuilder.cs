@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcsOverview.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcsOverview.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcsOverview {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcsOverview {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcsOverview</summary>
     public class CloudPcsOverviewRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcsOverview {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.cloudPcsOverview.item collection</summary>
-        public CloudPcOverviewRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.cloudPcsOverview.item collection</summary>
+        public CloudPcOverviewItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcOverview_tenantId", position);
-            return new CloudPcOverviewRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcOverviewItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CloudPcsOverviewRequestBuilder and sets the default values.

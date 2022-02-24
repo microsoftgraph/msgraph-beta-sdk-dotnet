@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.WipeAndBlockManagedApps {
+namespace MicrosoftGraphSdk.Me.WipeAndBlockManagedApps {
     /// <summary>Builds and executes requests for operations under \me\microsoft.graph.wipeAndBlockManagedApps</summary>
     public class WipeAndBlockManagedAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

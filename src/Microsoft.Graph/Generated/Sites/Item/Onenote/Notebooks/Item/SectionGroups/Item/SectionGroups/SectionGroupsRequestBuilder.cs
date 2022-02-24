@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.Ref;
+using MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups {
+namespace MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\onenote\notebooks\{notebook-id}\sectionGroups\{sectionGroup-id}\sectionGroups</summary>
     public class SectionGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Sites.Item.Lists.Item.Activities.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.Activities.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.Activities {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Activities {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\activities</summary>
     public class ActivitiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.Activities {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.sites.item.lists.item.activities.item collection</summary>
-        public ItemActivityOLDRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.lists.item.activities.item collection</summary>
+        public ItemActivityOLDItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemActivityOLD_id", position);
-            return new ItemActivityOLDRequestBuilder(urlTplParams, RequestAdapter);
+            return new ItemActivityOLDItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ActivitiesRequestBuilder and sets the default values.

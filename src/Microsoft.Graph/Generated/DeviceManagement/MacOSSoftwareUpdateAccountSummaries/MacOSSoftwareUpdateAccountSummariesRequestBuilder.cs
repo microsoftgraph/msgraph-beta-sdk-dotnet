@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries {
+namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries {
     /// <summary>Builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries</summary>
     public class MacOSSoftwareUpdateAccountSummariesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.macOSSoftwareUpdateAccountSummaries.item collection</summary>
-        public MacOSSoftwareUpdateAccountSummaryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.macOSSoftwareUpdateAccountSummaries.item collection</summary>
+        public MacOSSoftwareUpdateAccountSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("macOSSoftwareUpdateAccountSummary_id", position);
-            return new MacOSSoftwareUpdateAccountSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new MacOSSoftwareUpdateAccountSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MacOSSoftwareUpdateAccountSummariesRequestBuilder and sets the default values.

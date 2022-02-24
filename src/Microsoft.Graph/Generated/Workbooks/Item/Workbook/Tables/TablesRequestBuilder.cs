@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Add;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Count;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.ItemAtWithIndex;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Add;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Count;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.ItemAtWithIndex;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables</summary>
     public class TablesRequestBuilder {
         public AddRequestBuilder Add { get =>
@@ -23,11 +23,11 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.tables.item collection</summary>
-        public WorkbookTableRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.tables.item collection</summary>
+        public WorkbookTableItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookTable_id", position);
-            return new WorkbookTableRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookTableItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TablesRequestBuilder and sets the default values.

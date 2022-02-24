@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService {
+namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.UnshareForSchoolDataSyncService {
     /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.unshareForSchoolDataSyncService</summary>
     public class UnshareForSchoolDataSyncServiceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

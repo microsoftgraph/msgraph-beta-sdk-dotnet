@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Messages.Item.CreateReply {
+namespace MicrosoftGraphSdk.Users.Item.Messages.Item.CreateReply {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\messages\{message-id}\microsoft.graph.createReply</summary>
     public class CreateReplyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

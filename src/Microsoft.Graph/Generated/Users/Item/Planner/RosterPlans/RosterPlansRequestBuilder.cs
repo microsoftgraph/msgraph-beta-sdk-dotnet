@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Users.Item.Planner.RosterPlans.Ref;
+using MicrosoftGraphSdk.Users.Item.Planner.RosterPlans.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Planner.RosterPlans {
+namespace MicrosoftGraphSdk.Users.Item.Planner.RosterPlans {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\planner\rosterPlans</summary>
     public class RosterPlansRequestBuilder {
         /// <summary>Path parameters for the request</summary>

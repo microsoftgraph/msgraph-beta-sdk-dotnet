@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RbacApplication : Entity, IParsable {
         public List<UnifiedRbacResourceNamespace> ResourceNamespaces { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Approval> RoleAssignmentApprovals { get; set; }
+        public List<Approval> RoleAssignmentApprovals { get; set; }
         /// <summary>Resource to grant access to users or groups.</summary>
         public List<UnifiedRoleAssignment> RoleAssignments { get; set; }
         public List<UnifiedRoleAssignmentScheduleInstance> RoleAssignmentScheduleInstances { get; set; }
@@ -23,7 +23,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"resourceNamespaces", (o,n) => { (o as RbacApplication).ResourceNamespaces = n.GetCollectionOfObjectValues<UnifiedRbacResourceNamespace>().ToList(); } },
-                {"roleAssignmentApprovals", (o,n) => { (o as RbacApplication).RoleAssignmentApprovals = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Approval>().ToList(); } },
+                {"roleAssignmentApprovals", (o,n) => { (o as RbacApplication).RoleAssignmentApprovals = n.GetCollectionOfObjectValues<Approval>().ToList(); } },
                 {"roleAssignments", (o,n) => { (o as RbacApplication).RoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>().ToList(); } },
                 {"roleAssignmentScheduleInstances", (o,n) => { (o as RbacApplication).RoleAssignmentScheduleInstances = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentScheduleInstance>().ToList(); } },
                 {"roleAssignmentScheduleRequests", (o,n) => { (o as RbacApplication).RoleAssignmentScheduleRequests = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentScheduleRequest>().ToList(); } },
@@ -42,7 +42,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<UnifiedRbacResourceNamespace>("resourceNamespaces", ResourceNamespaces);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Approval>("roleAssignmentApprovals", RoleAssignmentApprovals);
+            writer.WriteCollectionOfObjectValues<Approval>("roleAssignmentApprovals", RoleAssignmentApprovals);
             writer.WriteCollectionOfObjectValues<UnifiedRoleAssignment>("roleAssignments", RoleAssignments);
             writer.WriteCollectionOfObjectValues<UnifiedRoleAssignmentScheduleInstance>("roleAssignmentScheduleInstances", RoleAssignmentScheduleInstances);
             writer.WriteCollectionOfObjectValues<UnifiedRoleAssignmentScheduleRequest>("roleAssignmentScheduleRequests", RoleAssignmentScheduleRequests);

@@ -1,10 +1,10 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Me.ManagedDevices.ExecuteAction {
+namespace MicrosoftGraphSdk.Me.ManagedDevices.ExecuteAction {
     public class ExecuteActionRequestBody : IParsable {
         public ManagedDeviceRemoteAction? ActionName { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Directory.ImpactedResources.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Directory.ImpactedResources.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Directory.ImpactedResources {
+namespace MicrosoftGraphSdk.Directory.ImpactedResources {
     /// <summary>Builds and executes requests for operations under \directory\impactedResources</summary>
     public class ImpactedResourcesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Directory.ImpactedResources {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.directory.impactedResources.item collection</summary>
-        public RecommendationResourceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.impactedResources.item collection</summary>
+        public RecommendationResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("recommendationResource_id", position);
-            return new RecommendationResourceRequestBuilder(urlTplParams, RequestAdapter);
+            return new RecommendationResourceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ImpactedResourcesRequestBuilder and sets the default values.

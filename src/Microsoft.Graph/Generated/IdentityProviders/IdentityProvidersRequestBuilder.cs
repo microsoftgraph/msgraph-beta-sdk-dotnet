@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityProviders.AvailableProviderTypes;
-using MicrosoftGraph.IdentityProviders.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityProviders.AvailableProviderTypes;
+using MicrosoftGraphSdk.IdentityProviders.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityProviders {
+namespace MicrosoftGraphSdk.IdentityProviders {
     /// <summary>Builds and executes requests for operations under \identityProviders</summary>
     public class IdentityProvidersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.IdentityProviders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityProviders.item collection</summary>
-        public IdentityProviderRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityProviders.item collection</summary>
+        public IdentityProviderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityProvider_id", position);
-            return new IdentityProviderRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityProviderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \identityProviders\microsoft.graph.availableProviderTypes()

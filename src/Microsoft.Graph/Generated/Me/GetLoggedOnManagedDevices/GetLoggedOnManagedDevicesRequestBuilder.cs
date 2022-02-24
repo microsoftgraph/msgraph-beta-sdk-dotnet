@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.GetLoggedOnManagedDevices {
+namespace MicrosoftGraphSdk.Me.GetLoggedOnManagedDevices {
     /// <summary>Builds and executes requests for operations under \me\microsoft.graph.getLoggedOnManagedDevices()</summary>
     public class GetLoggedOnManagedDevicesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.Me.GetLoggedOnManagedDevices {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevices>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetLoggedOnManagedDevices>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Me.GetLoggedOnManagedDevices.GetLoggedOnManagedDevices>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetLoggedOnManagedDevices>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

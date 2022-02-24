@@ -1,4 +1,4 @@
-namespace MicrosoftGraph.Models.Microsoft.Graph.Security {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public enum AlertStatus {
         Unknown,
         New,

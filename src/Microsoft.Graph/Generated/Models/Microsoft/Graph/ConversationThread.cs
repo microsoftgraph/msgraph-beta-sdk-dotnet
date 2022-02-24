@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ConversationThread : Entity, IParsable {
         /// <summary>The Cc: recipients for the thread. Returned only on $select.</summary>
         public List<Recipient> CcRecipients { get; set; }
@@ -14,7 +14,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Returned by default.</summary>
         public DateTimeOffset? LastDeliveredDateTime { get; set; }
         /// <summary>Read-only. Nullable.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Post> Posts { get; set; }
+        public List<Post> Posts { get; set; }
         /// <summary>A short summary from the body of the latest post in this conversation. Returned by default.</summary>
         public string Preview { get; set; }
         /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.</summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"hasAttachments", (o,n) => { (o as ConversationThread).HasAttachments = n.GetBoolValue(); } },
                 {"isLocked", (o,n) => { (o as ConversationThread).IsLocked = n.GetBoolValue(); } },
                 {"lastDeliveredDateTime", (o,n) => { (o as ConversationThread).LastDeliveredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"posts", (o,n) => { (o as ConversationThread).Posts = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Post>().ToList(); } },
+                {"posts", (o,n) => { (o as ConversationThread).Posts = n.GetCollectionOfObjectValues<Post>().ToList(); } },
                 {"preview", (o,n) => { (o as ConversationThread).Preview = n.GetStringValue(); } },
                 {"topic", (o,n) => { (o as ConversationThread).Topic = n.GetStringValue(); } },
                 {"toRecipients", (o,n) => { (o as ConversationThread).ToRecipients = n.GetCollectionOfObjectValues<Recipient>().ToList(); } },
@@ -50,7 +50,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteBoolValue("hasAttachments", HasAttachments);
             writer.WriteBoolValue("isLocked", IsLocked);
             writer.WriteDateTimeOffsetValue("lastDeliveredDateTime", LastDeliveredDateTime);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Post>("posts", Posts);
+            writer.WriteCollectionOfObjectValues<Post>("posts", Posts);
             writer.WriteStringValue("preview", Preview);
             writer.WriteStringValue("topic", Topic);
             writer.WriteCollectionOfObjectValues<Recipient>("toRecipients", ToRecipients);

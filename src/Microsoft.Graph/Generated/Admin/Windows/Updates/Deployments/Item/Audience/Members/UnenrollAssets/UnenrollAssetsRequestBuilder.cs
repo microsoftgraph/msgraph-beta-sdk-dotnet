@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Members.UnenrollAssets {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Members.UnenrollAssets {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\members\microsoft.graph.windowsUpdates.unenrollAssets</summary>
     public class UnenrollAssetsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

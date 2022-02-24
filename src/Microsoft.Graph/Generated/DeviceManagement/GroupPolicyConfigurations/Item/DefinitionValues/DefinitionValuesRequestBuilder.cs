@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.GroupPolicyConfigurations.Item.DefinitionValues.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.DefinitionValues.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyConfigurations.Item.DefinitionValues {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.DefinitionValues {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyConfigurations\{groupPolicyConfiguration-id}\definitionValues</summary>
     public class DefinitionValuesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyConfigurations.Item.Definit
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyConfigurations.item.definitionValues.item collection</summary>
-        public GroupPolicyDefinitionValueRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.groupPolicyConfigurations.item.definitionValues.item collection</summary>
+        public GroupPolicyDefinitionValueItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyDefinitionValue_id", position);
-            return new GroupPolicyDefinitionValueRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupPolicyDefinitionValueItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DefinitionValuesRequestBuilder and sets the default values.

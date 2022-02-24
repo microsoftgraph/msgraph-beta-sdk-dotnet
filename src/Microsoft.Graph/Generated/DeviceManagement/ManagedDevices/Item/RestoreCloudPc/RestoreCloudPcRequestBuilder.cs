@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.RestoreCloudPc {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.RestoreCloudPc {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.restoreCloudPc</summary>
     public class RestoreCloudPcRequestBuilder {
         /// <summary>Path parameters for the request</summary>

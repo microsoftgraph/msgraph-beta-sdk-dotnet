@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AuthenticationMethodConfigurations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AuthenticationMethodConfigurations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AuthenticationMethodConfigurations {
+namespace MicrosoftGraphSdk.AuthenticationMethodConfigurations {
     /// <summary>Builds and executes requests for operations under \authenticationMethodConfigurations</summary>
     public class AuthenticationMethodConfigurationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.AuthenticationMethodConfigurations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.authenticationMethodConfigurations.item collection</summary>
-        public AuthenticationMethodConfigurationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.authenticationMethodConfigurations.item collection</summary>
+        public AuthenticationMethodConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationMethodConfiguration_id", position);
-            return new AuthenticationMethodConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new AuthenticationMethodConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AuthenticationMethodConfigurationsRequestBuilder and sets the default values.

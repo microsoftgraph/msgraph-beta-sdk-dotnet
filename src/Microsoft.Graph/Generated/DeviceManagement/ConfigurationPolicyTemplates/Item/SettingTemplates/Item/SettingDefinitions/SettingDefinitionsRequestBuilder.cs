@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions {
+namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicyTemplates.Item.SettingTemplates.Item.SettingDefinitions {
     /// <summary>Builds and executes requests for operations under \deviceManagement\configurationPolicyTemplates\{deviceManagementConfigurationPolicyTemplate-id}\settingTemplates\{deviceManagementConfigurationSettingTemplate-id}\settingDefinitions</summary>
     public class SettingDefinitionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ConfigurationPolicyTemplates.Item.Sett
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.configurationPolicyTemplates.item.settingTemplates.item.settingDefinitions.item collection</summary>
-        public DeviceManagementConfigurationSettingDefinitionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.configurationPolicyTemplates.item.settingTemplates.item.settingDefinitions.item collection</summary>
+        public DeviceManagementConfigurationSettingDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationSettingDefinition_id", position);
-            return new DeviceManagementConfigurationSettingDefinitionRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementConfigurationSettingDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SettingDefinitionsRequestBuilder and sets the default values.

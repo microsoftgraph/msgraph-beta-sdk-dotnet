@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Workbooks.Item.Activities.Ref;
+using MicrosoftGraphSdk.Workbooks.Item.Activities.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Activities {
+namespace MicrosoftGraphSdk.Workbooks.Item.Activities {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\activities</summary>
     public class ActivitiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assign {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.UserSettings.Item.Assign {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\userSettings\{cloudPcUserSetting-id}\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

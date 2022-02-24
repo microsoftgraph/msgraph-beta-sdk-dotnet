@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.IosUpdateStatuses.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.IosUpdateStatuses.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.IosUpdateStatuses {
+namespace MicrosoftGraphSdk.DeviceManagement.IosUpdateStatuses {
     /// <summary>Builds and executes requests for operations under \deviceManagement\iosUpdateStatuses</summary>
     public class IosUpdateStatusesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.IosUpdateStatuses {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.iosUpdateStatuses.item collection</summary>
-        public IosUpdateDeviceStatusRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.iosUpdateStatuses.item collection</summary>
+        public IosUpdateDeviceStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("iosUpdateDeviceStatus_id", position);
-            return new IosUpdateDeviceStatusRequestBuilder(urlTplParams, RequestAdapter);
+            return new IosUpdateDeviceStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IosUpdateStatusesRequestBuilder and sets the default values.

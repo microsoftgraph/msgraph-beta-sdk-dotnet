@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.MicrosoftTunnelHealthThresholds.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelHealthThresholds.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.MicrosoftTunnelHealthThresholds {
+namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelHealthThresholds {
     /// <summary>Builds and executes requests for operations under \deviceManagement\microsoftTunnelHealthThresholds</summary>
     public class MicrosoftTunnelHealthThresholdsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.MicrosoftTunnelHealthThresholds {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.microsoftTunnelHealthThresholds.item collection</summary>
-        public MicrosoftTunnelHealthThresholdRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.microsoftTunnelHealthThresholds.item collection</summary>
+        public MicrosoftTunnelHealthThresholdItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("microsoftTunnelHealthThreshold_id", position);
-            return new MicrosoftTunnelHealthThresholdRequestBuilder(urlTplParams, RequestAdapter);
+            return new MicrosoftTunnelHealthThresholdItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MicrosoftTunnelHealthThresholdsRequestBuilder and sets the default values.

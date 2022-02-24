@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Reports.AuthenticationMethods.UserRegistrationDetails;
-using MicrosoftGraph.Reports.AuthenticationMethods.UsersRegisteredByFeature;
-using MicrosoftGraph.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles;
-using MicrosoftGraph.Reports.AuthenticationMethods.UsersRegisteredByMethod;
-using MicrosoftGraph.Reports.AuthenticationMethods.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Reports.AuthenticationMethods.UserRegistrationDetails;
+using MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByFeature;
+using MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles;
+using MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByMethod;
+using MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.AuthenticationMethods {
+namespace MicrosoftGraphSdk.Reports.AuthenticationMethods {
     /// <summary>Builds and executes requests for operations under \reports\authenticationMethods</summary>
     public class AuthenticationMethodsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

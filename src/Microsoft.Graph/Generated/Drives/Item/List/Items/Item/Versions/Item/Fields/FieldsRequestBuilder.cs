@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drives.Item.List.Items.Item.Versions.Item.Fields {
+namespace MicrosoftGraphSdk.Drives.Item.List.Items.Item.Versions.Item.Fields {
     /// <summary>Builds and executes requests for operations under \drives\{drive-id}\list\items\{listItem-id}\versions\{listItemVersion-id}\fields</summary>
     public class FieldsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

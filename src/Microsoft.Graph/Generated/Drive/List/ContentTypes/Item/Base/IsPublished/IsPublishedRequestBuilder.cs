@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drive.List.ContentTypes.Item.Base.IsPublished {
+namespace MicrosoftGraphSdk.Drive.List.ContentTypes.Item.Base.IsPublished {
     /// <summary>Builds and executes requests for operations under \drive\list\contentTypes\{contentType-id}\base\microsoft.graph.isPublished()</summary>
     public class IsPublishedRequestBuilder {
         /// <summary>Path parameters for the request</summary>

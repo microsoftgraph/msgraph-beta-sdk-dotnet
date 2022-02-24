@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DirectoryRoles.Item.ScopedMembers.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DirectoryRoles.Item.ScopedMembers.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DirectoryRoles.Item.ScopedMembers {
+namespace MicrosoftGraphSdk.DirectoryRoles.Item.ScopedMembers {
     /// <summary>Builds and executes requests for operations under \directoryRoles\{directoryRole-id}\scopedMembers</summary>
     public class ScopedMembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DirectoryRoles.Item.ScopedMembers {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.directoryRoles.item.scopedMembers.item collection</summary>
-        public ScopedRoleMembershipRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directoryRoles.item.scopedMembers.item collection</summary>
+        public ScopedRoleMembershipItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("scopedRoleMembership_id", position);
-            return new ScopedRoleMembershipRequestBuilder(urlTplParams, RequestAdapter);
+            return new ScopedRoleMembershipItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ScopedMembersRequestBuilder and sets the default values.

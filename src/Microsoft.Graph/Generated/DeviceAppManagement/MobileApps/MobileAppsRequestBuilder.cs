@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.HasPayloadLinks;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.Item;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.ValidateXml;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.HasPayloadLinks;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.ValidateXml;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.MobileApps {
+namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps</summary>
     public class MobileAppsRequestBuilder {
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
@@ -27,11 +27,11 @@ namespace MicrosoftGraph.DeviceAppManagement.MobileApps {
         public ValidateXmlRequestBuilder ValidateXml { get =>
             new ValidateXmlRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.mobileApps.item collection</summary>
-        public MobileAppRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.mobileApps.item collection</summary>
+        public MobileAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileApp_id", position);
-            return new MobileAppRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileAppItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileAppsRequestBuilder and sets the default values.

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Devices.Item.RegisteredUsers.Ref;
+using MicrosoftGraphSdk.Devices.Item.RegisteredUsers.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Devices.Item.RegisteredUsers {
+namespace MicrosoftGraphSdk.Devices.Item.RegisteredUsers {
     /// <summary>Builds and executes requests for operations under \devices\{device-id}\registeredUsers</summary>
     public class RegisteredUsersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

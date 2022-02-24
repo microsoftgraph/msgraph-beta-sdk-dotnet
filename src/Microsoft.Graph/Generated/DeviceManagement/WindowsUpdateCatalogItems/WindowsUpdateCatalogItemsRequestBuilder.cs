@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsUpdateCatalogItems.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsUpdateCatalogItems.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsUpdateCatalogItems {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsUpdateCatalogItems {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsUpdateCatalogItems</summary>
     public class WindowsUpdateCatalogItemsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.WindowsUpdateCatalogItems {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsUpdateCatalogItems.item collection</summary>
-        public WindowsUpdateCatalogItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsUpdateCatalogItems.item collection</summary>
+        public WindowsUpdateCatalogItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsUpdateCatalogItem_id", position);
-            return new WindowsUpdateCatalogItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsUpdateCatalogItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsUpdateCatalogItemsRequestBuilder and sets the default values.

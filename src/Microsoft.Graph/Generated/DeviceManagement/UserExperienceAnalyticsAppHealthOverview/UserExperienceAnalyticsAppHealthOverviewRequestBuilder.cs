@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsAppHealthOverview.MetricValues;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthOverview.MetricValues;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsAppHealthOverview {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthOverview {
     /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsAppHealthOverview</summary>
     public class UserExperienceAnalyticsAppHealthOverviewRequestBuilder {
         public MetricValuesRequestBuilder MetricValues { get =>

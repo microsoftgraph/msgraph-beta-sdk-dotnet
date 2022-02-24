@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.SyncDevice {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.SyncDevice {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.syncDevice</summary>
     public class SyncDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

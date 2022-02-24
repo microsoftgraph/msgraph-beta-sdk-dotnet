@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GovernanceInsight : Entity, IParsable {
         /// <summary>Indicates when the insight was created.</summary>
         public DateTimeOffset? InsightCreatedDateTime { get; set; }

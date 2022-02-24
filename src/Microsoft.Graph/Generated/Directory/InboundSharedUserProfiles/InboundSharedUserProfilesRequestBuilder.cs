@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Directory.InboundSharedUserProfiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Directory.InboundSharedUserProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Directory.InboundSharedUserProfiles {
+namespace MicrosoftGraphSdk.Directory.InboundSharedUserProfiles {
     /// <summary>Builds and executes requests for operations under \directory\inboundSharedUserProfiles</summary>
     public class InboundSharedUserProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Directory.InboundSharedUserProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.directory.inboundSharedUserProfiles.item collection</summary>
-        public InboundSharedUserProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.inboundSharedUserProfiles.item collection</summary>
+        public InboundSharedUserProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("inboundSharedUserProfile_userId", position);
-            return new InboundSharedUserProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new InboundSharedUserProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InboundSharedUserProfilesRequestBuilder and sets the default values.

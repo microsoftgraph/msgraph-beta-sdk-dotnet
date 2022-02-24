@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.Directory.ResourceNamespaces.Item.ResourceActions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.Directory.ResourceNamespaces.Item.ResourceActions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.Directory.ResourceNamespaces.Item.ResourceActions {
+namespace MicrosoftGraphSdk.RoleManagement.Directory.ResourceNamespaces.Item.ResourceActions {
     /// <summary>Builds and executes requests for operations under \roleManagement\directory\resourceNamespaces\{unifiedRbacResourceNamespace-id}\resourceActions</summary>
     public class ResourceActionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.RoleManagement.Directory.ResourceNamespaces.Item.Resour
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.roleManagement.directory.resourceNamespaces.item.resourceActions.item collection</summary>
-        public UnifiedRbacResourceActionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.directory.resourceNamespaces.item.resourceActions.item collection</summary>
+        public UnifiedRbacResourceActionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRbacResourceAction_id", position);
-            return new UnifiedRbacResourceActionRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRbacResourceActionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourceActionsRequestBuilder and sets the default values.

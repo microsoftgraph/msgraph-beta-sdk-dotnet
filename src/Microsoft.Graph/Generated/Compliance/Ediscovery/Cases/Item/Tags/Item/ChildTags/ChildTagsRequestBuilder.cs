@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.AsHierarchy;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Ref;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.AsHierarchy;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags</summary>
     public class ChildTagsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

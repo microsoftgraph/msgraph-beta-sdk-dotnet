@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.PrivilegedRoleAssignments.Item;
-using MicrosoftGraph.PrivilegedRoleAssignments.My;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.PrivilegedRoleAssignments.Item;
+using MicrosoftGraphSdk.PrivilegedRoleAssignments.My;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PrivilegedRoleAssignments {
+namespace MicrosoftGraphSdk.PrivilegedRoleAssignments {
     /// <summary>Builds and executes requests for operations under \privilegedRoleAssignments</summary>
     public class PrivilegedRoleAssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.PrivilegedRoleAssignments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.privilegedRoleAssignments.item collection</summary>
-        public PrivilegedRoleAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.privilegedRoleAssignments.item collection</summary>
+        public PrivilegedRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedRoleAssignment_id", position);
-            return new PrivilegedRoleAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrivilegedRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PrivilegedRoleAssignmentsRequestBuilder and sets the default values.

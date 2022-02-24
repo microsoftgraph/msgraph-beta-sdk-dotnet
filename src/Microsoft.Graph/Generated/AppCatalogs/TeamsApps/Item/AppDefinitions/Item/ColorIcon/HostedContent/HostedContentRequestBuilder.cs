@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.ColorIcon.HostedContent.Value;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.ColorIcon.HostedContent.Value;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.ColorIcon.HostedContent {
+namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.ColorIcon.HostedContent {
     /// <summary>Builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\colorIcon\hostedContent</summary>
     public class HostedContentRequestBuilder {
         public ContentRequestBuilder Content { get =>

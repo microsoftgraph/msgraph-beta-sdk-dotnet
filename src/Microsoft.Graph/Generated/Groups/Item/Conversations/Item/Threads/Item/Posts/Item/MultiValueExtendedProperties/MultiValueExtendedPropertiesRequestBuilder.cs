@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.MultiValueExtendedProperties.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.MultiValueExtendedProperties.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.MultiValueExtendedProperties {
+namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.MultiValueExtendedProperties {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads\{conversationThread-id}\posts\{post-id}\multiValueExtendedProperties</summary>
     public class MultiValueExtendedPropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.groups.item.conversations.item.threads.item.posts.item.multiValueExtendedProperties.item collection</summary>
-        public MultiValueLegacyExtendedPropertyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.conversations.item.threads.item.posts.item.multiValueExtendedProperties.item collection</summary>
+        public MultiValueLegacyExtendedPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("multiValueLegacyExtendedProperty_id", position);
-            return new MultiValueLegacyExtendedPropertyRequestBuilder(urlTplParams, RequestAdapter);
+            return new MultiValueLegacyExtendedPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.

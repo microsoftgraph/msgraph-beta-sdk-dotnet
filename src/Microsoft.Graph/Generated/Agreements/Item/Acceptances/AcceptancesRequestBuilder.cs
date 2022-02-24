@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Agreements.Item.Acceptances.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Agreements.Item.Acceptances.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Agreements.Item.Acceptances {
+namespace MicrosoftGraphSdk.Agreements.Item.Acceptances {
     /// <summary>Builds and executes requests for operations under \agreements\{agreement-id}\acceptances</summary>
     public class AcceptancesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Agreements.Item.Acceptances {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.agreements.item.acceptances.item collection</summary>
-        public AgreementAcceptanceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.agreements.item.acceptances.item collection</summary>
+        public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementAcceptance_id", position);
-            return new AgreementAcceptanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementAcceptanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AcceptancesRequestBuilder and sets the default values.

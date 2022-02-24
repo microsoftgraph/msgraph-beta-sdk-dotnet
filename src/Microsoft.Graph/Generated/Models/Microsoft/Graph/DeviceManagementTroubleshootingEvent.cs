@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceManagementTroubleshootingEvent : Entity, IParsable {
         /// <summary>A set of string key and string value pairs which provides additional information on the Troubleshooting event</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> AdditionalInformation { get; set; }
+        public List<KeyValuePair> AdditionalInformation { get; set; }
         /// <summary>Id used for tracing the failure in the service.</summary>
         public string CorrelationId { get; set; }
         /// <summary>Time when the event occurred .</summary>
@@ -20,7 +20,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"additionalInformation", (o,n) => { (o as DeviceManagementTroubleshootingEvent).AdditionalInformation = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"additionalInformation", (o,n) => { (o as DeviceManagementTroubleshootingEvent).AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"correlationId", (o,n) => { (o as DeviceManagementTroubleshootingEvent).CorrelationId = n.GetStringValue(); } },
                 {"eventDateTime", (o,n) => { (o as DeviceManagementTroubleshootingEvent).EventDateTime = n.GetDateTimeOffsetValue(); } },
                 {"eventName", (o,n) => { (o as DeviceManagementTroubleshootingEvent).EventName = n.GetStringValue(); } },
@@ -34,7 +34,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("additionalInformation", AdditionalInformation);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("additionalInformation", AdditionalInformation);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
             writer.WriteStringValue("eventName", EventName);

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.HasPayloadLinks;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.HasPayloadLinks;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceManagementScripts {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceManagementScripts</summary>
     public class DeviceManagementScriptsRequestBuilder {
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceManagement.DeviceManagementScripts {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceManagementScripts.item collection</summary>
-        public DeviceManagementScriptRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceManagementScripts.item collection</summary>
+        public DeviceManagementScriptItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementScript_id", position);
-            return new DeviceManagementScriptRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementScriptItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceManagementScriptsRequestBuilder and sets the default values.

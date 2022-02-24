@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Agreements.Item.Files.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Agreements.Item.Files.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Agreements.Item.Files {
+namespace MicrosoftGraphSdk.Agreements.Item.Files {
     /// <summary>Builds and executes requests for operations under \agreements\{agreement-id}\files</summary>
     public class FilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Agreements.Item.Files {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.agreements.item.files.item collection</summary>
-        public AgreementFileLocalizationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.agreements.item.files.item collection</summary>
+        public AgreementFileLocalizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementFileLocalization_id", position);
-            return new AgreementFileLocalizationRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementFileLocalizationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FilesRequestBuilder and sets the default values.

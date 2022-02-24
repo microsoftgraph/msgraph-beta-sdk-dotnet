@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Print.PrinterShares.Item.AllowedUsers.Ref;
+using MicrosoftGraphSdk.Print.PrinterShares.Item.AllowedUsers.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.PrinterShares.Item.AllowedUsers {
+namespace MicrosoftGraphSdk.Print.PrinterShares.Item.AllowedUsers {
     /// <summary>Builds and executes requests for operations under \print\printerShares\{printerShare-id}\allowedUsers</summary>
     public class AllowedUsersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

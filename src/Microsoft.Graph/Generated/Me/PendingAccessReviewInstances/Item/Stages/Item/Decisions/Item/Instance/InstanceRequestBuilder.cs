@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.AcceptRecommendations;
-using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ApplyDecisions;
-using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.BatchRecordDecisions;
-using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ResetDecisions;
-using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.SendReminder;
-using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Stop;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.AcceptRecommendations;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ApplyDecisions;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.BatchRecordDecisions;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.ResetDecisions;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.SendReminder;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.Stop;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance {
+namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance {
     /// <summary>Builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\stages\{accessReviewStage-id}\decisions\{accessReviewInstanceDecisionItem-id}\instance</summary>
     public class InstanceRequestBuilder {
         public AcceptRecommendationsRequestBuilder AcceptRecommendations { get =>

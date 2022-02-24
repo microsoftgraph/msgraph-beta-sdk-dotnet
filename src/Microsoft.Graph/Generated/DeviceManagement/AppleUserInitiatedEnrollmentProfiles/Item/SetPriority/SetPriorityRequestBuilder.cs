@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item.SetPriority {
+namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item.SetPriority {
     /// <summary>Builds and executes requests for operations under \deviceManagement\appleUserInitiatedEnrollmentProfiles\{appleUserInitiatedEnrollmentProfile-id}\microsoft.graph.setPriority</summary>
     public class SetPriorityRequestBuilder {
         /// <summary>Path parameters for the request</summary>

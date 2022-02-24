@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators {
+namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\synchronization\templates\{synchronizationTemplate-id}\schema\microsoft.graph.filterOperators()</summary>
     public class FilterOperatorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.Applications.Item.Synchronization.Templates.Item.Schema
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperators>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<FilterOperators>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperators>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<FilterOperators>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

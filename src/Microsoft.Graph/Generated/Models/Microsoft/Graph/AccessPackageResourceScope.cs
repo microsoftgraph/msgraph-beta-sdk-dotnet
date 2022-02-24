@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageResourceScope : Entity, IParsable {
         /// <summary>Read-only. Nullable.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource AccessPackageResource { get; set; }
+        public AccessPackageResource AccessPackageResource { get; set; }
         /// <summary>The description of the scope.</summary>
         public string Description { get; set; }
         /// <summary>The display name of the scope.</summary>
@@ -26,7 +26,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceScope).AccessPackageResource = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource>(); } },
+                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceScope).AccessPackageResource = n.GetObjectValue<AccessPackageResource>(); } },
                 {"description", (o,n) => { (o as AccessPackageResourceScope).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AccessPackageResourceScope).DisplayName = n.GetStringValue(); } },
                 {"isRootScope", (o,n) => { (o as AccessPackageResourceScope).IsRootScope = n.GetBoolValue(); } },
@@ -43,7 +43,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource>("accessPackageResource", AccessPackageResource);
+            writer.WriteObjectValue<AccessPackageResource>("accessPackageResource", AccessPackageResource);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isRootScope", IsRootScope);

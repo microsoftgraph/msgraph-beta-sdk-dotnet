@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsQualityUpdateProfiles.Item.Assign {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles.Item.Assign {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsQualityUpdateProfiles\{windowsQualityUpdateProfile-id}\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

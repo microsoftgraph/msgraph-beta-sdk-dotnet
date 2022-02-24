@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.SetDefaultProfile {
+namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.SetDefaultProfile {
     /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\enrollmentProfiles\{enrollmentProfile-id}\microsoft.graph.setDefaultProfile</summary>
     public class SetDefaultProfileRequestBuilder {
         /// <summary>Path parameters for the request</summary>

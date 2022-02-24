@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.Assignments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.Assignments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.Assignments {
+namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.Assignments {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\assignments</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.Assig
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.wdacSupplementalPolicies.item.assignments.item collection</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicyAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.wdacSupplementalPolicies.item.assignments.item collection</summary>
+        public WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDefenderApplicationControlSupplementalPolicyAssignment_id", position);
-            return new WindowsDefenderApplicationControlSupplementalPolicyAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teamwork.Devices.Item.Restart {
+namespace MicrosoftGraphSdk.Teamwork.Devices.Item.Restart {
     /// <summary>Builds and executes requests for operations under \teamwork\devices\{teamworkDevice-id}\microsoft.graph.restart</summary>
     public class RestartRequestBuilder {
         /// <summary>Path parameters for the request</summary>

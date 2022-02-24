@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Team : Entity, IParsable {
         /// <summary>The collection of channels and messages associated with the team.</summary>
         public List<Channel> Channels { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>Settings to configure use of Giphy, memes, and stickers in the team.</summary>
         public TeamFunSettings FunSettings { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Group Group { get; set; }
+        public Group Group { get; set; }
         /// <summary>Settings to configure whether guests can create, update, or delete channels in the team.</summary>
         public TeamGuestSettings GuestSettings { get; set; }
         /// <summary>The apps installed in this team.</summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The async operations that ran or are running on this team.</summary>
         public List<TeamsAsyncOperation> Operations { get; set; }
         /// <summary>The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.User> Owners { get; set; }
+        public List<User> Owners { get; set; }
         /// <summary>A collection of permissions granted to apps to access the team.</summary>
         public List<ResourceSpecificPermissionGrant> PermissionGrants { get; set; }
         /// <summary>The team photo.</summary>
@@ -47,7 +47,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The general channel for the team.</summary>
         public Channel PrimaryChannel { get; set; }
         /// <summary>The schedule of shifts for this team.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Schedule Schedule { get; set; }
+        public Schedule Schedule { get; set; }
         /// <summary>Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.</summary>
         public TeamSpecialization? Specialization { get; set; }
         /// <summary>The tags associated with the team.</summary>
@@ -70,7 +70,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"discoverySettings", (o,n) => { (o as Team).DiscoverySettings = n.GetObjectValue<TeamDiscoverySettings>(); } },
                 {"displayName", (o,n) => { (o as Team).DisplayName = n.GetStringValue(); } },
                 {"funSettings", (o,n) => { (o as Team).FunSettings = n.GetObjectValue<TeamFunSettings>(); } },
-                {"group", (o,n) => { (o as Team).Group = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Group>(); } },
+                {"group", (o,n) => { (o as Team).Group = n.GetObjectValue<Group>(); } },
                 {"guestSettings", (o,n) => { (o as Team).GuestSettings = n.GetObjectValue<TeamGuestSettings>(); } },
                 {"installedApps", (o,n) => { (o as Team).InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>().ToList(); } },
                 {"internalId", (o,n) => { (o as Team).InternalId = n.GetStringValue(); } },
@@ -80,11 +80,11 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"memberSettings", (o,n) => { (o as Team).MemberSettings = n.GetObjectValue<TeamMemberSettings>(); } },
                 {"messagingSettings", (o,n) => { (o as Team).MessagingSettings = n.GetObjectValue<TeamMessagingSettings>(); } },
                 {"operations", (o,n) => { (o as Team).Operations = n.GetCollectionOfObjectValues<TeamsAsyncOperation>().ToList(); } },
-                {"owners", (o,n) => { (o as Team).Owners = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.User>().ToList(); } },
+                {"owners", (o,n) => { (o as Team).Owners = n.GetCollectionOfObjectValues<User>().ToList(); } },
                 {"permissionGrants", (o,n) => { (o as Team).PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>().ToList(); } },
                 {"photo", (o,n) => { (o as Team).Photo = n.GetObjectValue<ProfilePhoto>(); } },
                 {"primaryChannel", (o,n) => { (o as Team).PrimaryChannel = n.GetObjectValue<Channel>(); } },
-                {"schedule", (o,n) => { (o as Team).Schedule = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Schedule>(); } },
+                {"schedule", (o,n) => { (o as Team).Schedule = n.GetObjectValue<Schedule>(); } },
                 {"specialization", (o,n) => { (o as Team).Specialization = n.GetEnumValue<TeamSpecialization>(); } },
                 {"tags", (o,n) => { (o as Team).Tags = n.GetCollectionOfObjectValues<TeamworkTag>().ToList(); } },
                 {"template", (o,n) => { (o as Team).Template = n.GetObjectValue<TeamsTemplate>(); } },
@@ -106,7 +106,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<TeamDiscoverySettings>("discoverySettings", DiscoverySettings);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<TeamFunSettings>("funSettings", FunSettings);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Group>("group", Group);
+            writer.WriteObjectValue<Group>("group", Group);
             writer.WriteObjectValue<TeamGuestSettings>("guestSettings", GuestSettings);
             writer.WriteCollectionOfObjectValues<TeamsAppInstallation>("installedApps", InstalledApps);
             writer.WriteStringValue("internalId", InternalId);
@@ -116,11 +116,11 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<TeamMemberSettings>("memberSettings", MemberSettings);
             writer.WriteObjectValue<TeamMessagingSettings>("messagingSettings", MessagingSettings);
             writer.WriteCollectionOfObjectValues<TeamsAsyncOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.User>("owners", Owners);
+            writer.WriteCollectionOfObjectValues<User>("owners", Owners);
             writer.WriteCollectionOfObjectValues<ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
             writer.WriteObjectValue<ProfilePhoto>("photo", Photo);
             writer.WriteObjectValue<Channel>("primaryChannel", PrimaryChannel);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Schedule>("schedule", Schedule);
+            writer.WriteObjectValue<Schedule>("schedule", Schedule);
             writer.WriteEnumValue<TeamSpecialization>("specialization", Specialization);
             writer.WriteCollectionOfObjectValues<TeamworkTag>("tags", Tags);
             writer.WriteObjectValue<TeamsTemplate>("template", Template);

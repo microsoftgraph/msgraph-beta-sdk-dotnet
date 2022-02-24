@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managementConditions\{managementCondition-id}\managementConditionStatements\microsoft.graph.getManagementConditionStatementsForPlatform(platform={platform})</summary>
     public class GetManagementConditionStatementsForPlatformWithPlatformRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -66,9 +66,9 @@ namespace MicrosoftGraph.DeviceManagement.ManagementConditions.Item.ManagementCo
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform.GetManagementConditionStatementsForPlatformWithPlatform>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetManagementConditionStatementsForPlatformWithPlatform>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.DeviceManagement.ManagementConditions.Item.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform.GetManagementConditionStatementsForPlatformWithPlatform>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetManagementConditionStatementsForPlatformWithPlatform>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Journal : Entity, IParsable {
-        public MicrosoftGraph.Models.Microsoft.Graph.Account Account { get; set; }
+        public Account Account { get; set; }
         public string BalancingAccountId { get; set; }
         public string BalancingAccountNumber { get; set; }
         public string Code { get; set; }
@@ -17,7 +17,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as Journal).Account = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Account>(); } },
+                {"account", (o,n) => { (o as Journal).Account = n.GetObjectValue<Account>(); } },
                 {"balancingAccountId", (o,n) => { (o as Journal).BalancingAccountId = n.GetStringValue(); } },
                 {"balancingAccountNumber", (o,n) => { (o as Journal).BalancingAccountNumber = n.GetStringValue(); } },
                 {"code", (o,n) => { (o as Journal).Code = n.GetStringValue(); } },
@@ -33,7 +33,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Account>("account", Account);
+            writer.WriteObjectValue<Account>("account", Account);
             writer.WriteStringValue("balancingAccountId", BalancingAccountId);
             writer.WriteStringValue("balancingAccountNumber", BalancingAccountNumber);
             writer.WriteStringValue("code", Code);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Events.Item.Instances.Item.Cancel {
+namespace MicrosoftGraphSdk.Groups.Item.Events.Item.Instances.Item.Cancel {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\events\{event-id}\instances\{event-id1}\microsoft.graph.cancel</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

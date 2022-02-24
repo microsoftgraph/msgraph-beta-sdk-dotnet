@@ -1,20 +1,20 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Outlook.MasterCategories;
-using MicrosoftGraph.Users.Item.Outlook.SupportedLanguages;
-using MicrosoftGraph.Users.Item.Outlook.SupportedTimeZones;
-using MicrosoftGraph.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard;
-using MicrosoftGraph.Users.Item.Outlook.TaskFolders;
-using MicrosoftGraph.Users.Item.Outlook.TaskGroups;
-using MicrosoftGraph.Users.Item.Outlook.Tasks;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Outlook.MasterCategories;
+using MicrosoftGraphSdk.Users.Item.Outlook.SupportedLanguages;
+using MicrosoftGraphSdk.Users.Item.Outlook.SupportedTimeZones;
+using MicrosoftGraphSdk.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard;
+using MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders;
+using MicrosoftGraphSdk.Users.Item.Outlook.TaskGroups;
+using MicrosoftGraphSdk.Users.Item.Outlook.Tasks;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Outlook {
+namespace MicrosoftGraphSdk.Users.Item.Outlook {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\outlook</summary>
     public class OutlookRequestBuilder {
         public MasterCategoriesRequestBuilder MasterCategories { get =>

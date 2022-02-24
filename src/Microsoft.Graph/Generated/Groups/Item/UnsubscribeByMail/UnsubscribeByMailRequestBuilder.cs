@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.UnsubscribeByMail {
+namespace MicrosoftGraphSdk.Groups.Item.UnsubscribeByMail {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\microsoft.graph.unsubscribeByMail</summary>
     public class UnsubscribeByMailRequestBuilder {
         /// <summary>Path parameters for the request</summary>

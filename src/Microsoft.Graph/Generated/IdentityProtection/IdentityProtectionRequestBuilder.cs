@@ -1,15 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityProtection.RiskDetections;
-using MicrosoftGraph.IdentityProtection.RiskyUsers;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityProtection.RiskDetections;
+using MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals;
+using MicrosoftGraphSdk.IdentityProtection.RiskyUsers;
+using MicrosoftGraphSdk.IdentityProtection.ServicePrincipalRiskDetections;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityProtection {
+namespace MicrosoftGraphSdk.IdentityProtection {
     /// <summary>Builds and executes requests for operations under \identityProtection</summary>
     public class IdentityProtectionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -19,8 +21,14 @@ namespace MicrosoftGraph.IdentityProtection {
         public RiskDetectionsRequestBuilder RiskDetections { get =>
             new RiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        public RiskyServicePrincipalsRequestBuilder RiskyServicePrincipals { get =>
+            new RiskyServicePrincipalsRequestBuilder(PathParameters, RequestAdapter);
+        }
         public RiskyUsersRequestBuilder RiskyUsers { get =>
             new RiskyUsersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public ServicePrincipalRiskDetectionsRequestBuilder ServicePrincipalRiskDetections { get =>
+            new ServicePrincipalRiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

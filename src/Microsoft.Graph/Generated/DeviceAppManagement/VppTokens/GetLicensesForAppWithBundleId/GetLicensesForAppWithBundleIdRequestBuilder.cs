@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId {
+namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\vppTokens\microsoft.graph.getLicensesForApp(bundleId='{bundleId}')</summary>
     public class GetLicensesForAppWithBundleIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -66,9 +66,9 @@ namespace MicrosoftGraph.DeviceAppManagement.VppTokens.GetLicensesForAppWithBund
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetLicensesForAppWithBundleId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleId>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetLicensesForAppWithBundleId>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

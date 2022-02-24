@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
     public class ExternalConnection : Entity, IParsable {
         /// <summary>Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors.Configuration Configuration { get; set; }
+        public Configuration Configuration { get; set; }
         /// <summary>The Teams App ID. Optional.</summary>
         public string ConnectorId { get; set; }
         /// <summary>Description of the connection displayed in the Microsoft 365 admin center. Optional.</summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
         public List<ConnectionOperation> Operations { get; set; }
         public ConnectionQuota Quota { get; set; }
         /// <summary>Read-only. Nullable.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors.Schema Schema { get; set; }
+        public Schema Schema { get; set; }
         /// <summary>The settings configuring the search experience for content in this connection, such as the display templates for search results.</summary>
         public SearchSettings SearchSettings { get; set; }
         /// <summary>Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.</summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"configuration", (o,n) => { (o as ExternalConnection).Configuration = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors.Configuration>(); } },
+                {"configuration", (o,n) => { (o as ExternalConnection).Configuration = n.GetObjectValue<Configuration>(); } },
                 {"connectorId", (o,n) => { (o as ExternalConnection).ConnectorId = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as ExternalConnection).Description = n.GetStringValue(); } },
                 {"groups", (o,n) => { (o as ExternalConnection).Groups = n.GetCollectionOfObjectValues<ExternalGroup>().ToList(); } },
@@ -41,7 +41,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
                 {"name", (o,n) => { (o as ExternalConnection).Name = n.GetStringValue(); } },
                 {"operations", (o,n) => { (o as ExternalConnection).Operations = n.GetCollectionOfObjectValues<ConnectionOperation>().ToList(); } },
                 {"quota", (o,n) => { (o as ExternalConnection).Quota = n.GetObjectValue<ConnectionQuota>(); } },
-                {"schema", (o,n) => { (o as ExternalConnection).Schema = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors.Schema>(); } },
+                {"schema", (o,n) => { (o as ExternalConnection).Schema = n.GetObjectValue<Schema>(); } },
                 {"searchSettings", (o,n) => { (o as ExternalConnection).SearchSettings = n.GetObjectValue<SearchSettings>(); } },
                 {"state", (o,n) => { (o as ExternalConnection).State = n.GetEnumValue<ConnectionState>(); } },
             };
@@ -53,7 +53,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors.Configuration>("configuration", Configuration);
+            writer.WriteObjectValue<Configuration>("configuration", Configuration);
             writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<ExternalGroup>("groups", Groups);
@@ -62,7 +62,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<ConnectionOperation>("operations", Operations);
             writer.WriteObjectValue<ConnectionQuota>("quota", Quota);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors.Schema>("schema", Schema);
+            writer.WriteObjectValue<Schema>("schema", Schema);
             writer.WriteObjectValue<SearchSettings>("searchSettings", SearchSettings);
             writer.WriteEnumValue<ConnectionState>("state", State);
         }

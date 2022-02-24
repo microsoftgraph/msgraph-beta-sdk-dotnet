@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Command : Entity, IParsable {
         public string AppServiceName { get; set; }
         public string Error { get; set; }
@@ -11,7 +11,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public PayloadRequest Payload { get; set; }
         public string PermissionTicket { get; set; }
         public string PostBackUri { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.PayloadResponse Responsepayload { get; set; }
+        public PayloadResponse Responsepayload { get; set; }
         public string Status { get; set; }
         public string Type { get; set; }
         /// <summary>
@@ -25,7 +25,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"payload", (o,n) => { (o as Command).Payload = n.GetObjectValue<PayloadRequest>(); } },
                 {"permissionTicket", (o,n) => { (o as Command).PermissionTicket = n.GetStringValue(); } },
                 {"postBackUri", (o,n) => { (o as Command).PostBackUri = n.GetStringValue(); } },
-                {"responsepayload", (o,n) => { (o as Command).Responsepayload = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PayloadResponse>(); } },
+                {"responsepayload", (o,n) => { (o as Command).Responsepayload = n.GetObjectValue<PayloadResponse>(); } },
                 {"status", (o,n) => { (o as Command).Status = n.GetStringValue(); } },
                 {"type", (o,n) => { (o as Command).Type = n.GetStringValue(); } },
             };
@@ -43,7 +43,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<PayloadRequest>("payload", Payload);
             writer.WriteStringValue("permissionTicket", PermissionTicket);
             writer.WriteStringValue("postBackUri", PostBackUri);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PayloadResponse>("responsepayload", Responsepayload);
+            writer.WriteObjectValue<PayloadResponse>("responsepayload", Responsepayload);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("type", Type);
         }

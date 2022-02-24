@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ApiApplication : IParsable {
         /// <summary>When true, allows an application to use claims mapping without specifying a custom signing key.</summary>
         public bool? AcceptMappedClaims { get; set; }

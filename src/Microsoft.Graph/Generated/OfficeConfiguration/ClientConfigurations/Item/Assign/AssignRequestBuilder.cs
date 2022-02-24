@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OfficeConfiguration.ClientConfigurations.Item.Assign {
+namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.Assign {
     /// <summary>Builds and executes requests for operations under \officeConfiguration\clientConfigurations\{officeClientConfiguration-id}\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -68,10 +68,10 @@ namespace MicrosoftGraph.OfficeConfiguration.ClientConfigurations.Item.Assign {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.OfficeConfiguration.ClientConfigurations.Item.Assign.Assign>> PostAsync(AssignRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<Assign>> PostAsync(AssignRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.OfficeConfiguration.ClientConfigurations.Item.Assign.Assign>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Assign>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

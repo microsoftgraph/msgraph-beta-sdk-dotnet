@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Education.Classes.Item.Teachers.Delta;
-using MicrosoftGraph.Education.Classes.Item.Teachers.Ref;
+using MicrosoftGraphSdk.Education.Classes.Item.Teachers.Delta;
+using MicrosoftGraphSdk.Education.Classes.Item.Teachers.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Classes.Item.Teachers {
+namespace MicrosoftGraphSdk.Education.Classes.Item.Teachers {
     /// <summary>Builds and executes requests for operations under \education\classes\{educationClass-id}\teachers</summary>
     public class TeachersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

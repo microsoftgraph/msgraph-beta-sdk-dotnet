@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.SalesOrders.Item.Customer.Picture.Item.Content {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesOrders.Item.Customer.Picture.Item.Content {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\salesOrders\{salesOrder-id}\customer\picture\{picture-id}\content</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

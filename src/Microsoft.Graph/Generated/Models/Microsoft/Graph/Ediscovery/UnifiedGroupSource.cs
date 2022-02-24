@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class UnifiedGroupSource : DataSource, IParsable {
-        public MicrosoftGraph.Models.Microsoft.Graph.Group Group { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Group Group { get; set; }
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
         public SourceType? IncludedSources { get; set; }
         /// <summary>
@@ -13,7 +13,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"group", (o,n) => { (o as UnifiedGroupSource).Group = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Group>(); } },
+                {"group", (o,n) => { (o as UnifiedGroupSource).Group = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>(); } },
                 {"includedSources", (o,n) => { (o as UnifiedGroupSource).IncludedSources = n.GetEnumValue<SourceType>(); } },
             };
         }
@@ -24,7 +24,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Group>("group", Group);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>("group", Group);
             writer.WriteEnumValue<SourceType>("includedSources", IncludedSources);
         }
     }

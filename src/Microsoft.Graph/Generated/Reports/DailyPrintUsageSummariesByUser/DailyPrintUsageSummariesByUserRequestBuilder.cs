@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Reports.DailyPrintUsageSummariesByUser.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Reports.DailyPrintUsageSummariesByUser.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.DailyPrintUsageSummariesByUser {
+namespace MicrosoftGraphSdk.Reports.DailyPrintUsageSummariesByUser {
     /// <summary>Builds and executes requests for operations under \reports\dailyPrintUsageSummariesByUser</summary>
     public class DailyPrintUsageSummariesByUserRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Reports.DailyPrintUsageSummariesByUser {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.reports.dailyPrintUsageSummariesByUser.item collection</summary>
-        public PrintUsageByUserRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.reports.dailyPrintUsageSummariesByUser.item collection</summary>
+        public PrintUsageByUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printUsageByUser_id", position);
-            return new PrintUsageByUserRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintUsageByUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DailyPrintUsageSummariesByUserRequestBuilder and sets the default values.

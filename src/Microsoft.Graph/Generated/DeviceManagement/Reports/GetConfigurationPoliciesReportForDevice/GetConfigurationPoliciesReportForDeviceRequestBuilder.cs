@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetConfigurationPoliciesReportForDevice {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetConfigurationPoliciesReportForDevice {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigurationPoliciesReportForDevice</summary>
     public class GetConfigurationPoliciesReportForDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

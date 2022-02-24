@@ -1,4 +1,4 @@
-namespace MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
     public enum RequestedDeploymentStateValue {
         None,
         Paused,

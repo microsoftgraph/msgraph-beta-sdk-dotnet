@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Chats.Item.Messages.Item.HostedContents.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Chats.Item.Messages.Item.HostedContents.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Chats.Item.Messages.Item.HostedContents {
+namespace MicrosoftGraphSdk.Chats.Item.Messages.Item.HostedContents {
     /// <summary>Builds and executes requests for operations under \chats\{chat-id}\messages\{chatMessage-id}\hostedContents</summary>
     public class HostedContentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Chats.Item.Messages.Item.HostedContents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.chats.item.messages.item.hostedContents.item collection</summary>
-        public ChatMessageHostedContentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.chats.item.messages.item.hostedContents.item collection</summary>
+        public ChatMessageHostedContentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessageHostedContent_id", position);
-            return new ChatMessageHostedContentRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChatMessageHostedContentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HostedContentsRequestBuilder and sets the default values.

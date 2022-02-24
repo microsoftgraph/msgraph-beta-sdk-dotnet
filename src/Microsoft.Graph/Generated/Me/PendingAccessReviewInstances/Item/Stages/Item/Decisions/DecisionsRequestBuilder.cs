@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.FilterByCurrentUserWithOn;
-using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item;
-using MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.RecordAllDecisions;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item;
+using MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.RecordAllDecisions;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions {
+namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions {
     /// <summary>Builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\stages\{accessReviewStage-id}\decisions</summary>
     public class DecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -22,11 +22,11 @@ namespace MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisi
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.pendingAccessReviewInstances.item.stages.item.decisions.item collection</summary>
-        public AccessReviewInstanceDecisionItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.pendingAccessReviewInstances.item.stages.item.decisions.item collection</summary>
+        public AccessReviewInstanceDecisionItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstanceDecisionItem_id", position);
-            return new AccessReviewInstanceDecisionItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewInstanceDecisionItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DecisionsRequestBuilder and sets the default values.

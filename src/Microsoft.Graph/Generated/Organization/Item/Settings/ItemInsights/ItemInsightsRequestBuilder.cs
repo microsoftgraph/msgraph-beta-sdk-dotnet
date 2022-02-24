@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Organization.Item.Settings.ItemInsights {
+namespace MicrosoftGraphSdk.Organization.Item.Settings.ItemInsights {
     /// <summary>Builds and executes requests for operations under \organization\{organization-id}\settings\itemInsights</summary>
     public class ItemInsightsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.BookingBusinesses.Item.Unpublish {
+namespace MicrosoftGraphSdk.BookingBusinesses.Item.Unpublish {
     /// <summary>Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\microsoft.graph.unpublish</summary>
     public class UnpublishRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Me.Teamwork.SendActivityNotification {
+namespace MicrosoftGraphSdk.Me.Teamwork.SendActivityNotification {
     public class SendActivityNotificationRequestBody : IParsable {
         public string ActivityType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public long? ChainId { get; set; }
         public ItemBody PreviewText { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> TemplateParameters { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair> TemplateParameters { get; set; }
         public TeamworkActivityTopic Topic { get; set; }
         /// <summary>
         /// Instantiates a new sendActivityNotificationRequestBody and sets the default values.
@@ -27,7 +27,7 @@ namespace MicrosoftGraph.Me.Teamwork.SendActivityNotification {
                 {"activityType", (o,n) => { (o as SendActivityNotificationRequestBody).ActivityType = n.GetStringValue(); } },
                 {"chainId", (o,n) => { (o as SendActivityNotificationRequestBody).ChainId = n.GetLongValue(); } },
                 {"previewText", (o,n) => { (o as SendActivityNotificationRequestBody).PreviewText = n.GetObjectValue<ItemBody>(); } },
-                {"templateParameters", (o,n) => { (o as SendActivityNotificationRequestBody).TemplateParameters = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"templateParameters", (o,n) => { (o as SendActivityNotificationRequestBody).TemplateParameters = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
                 {"topic", (o,n) => { (o as SendActivityNotificationRequestBody).Topic = n.GetObjectValue<TeamworkActivityTopic>(); } },
             };
         }
@@ -40,7 +40,7 @@ namespace MicrosoftGraph.Me.Teamwork.SendActivityNotification {
             writer.WriteStringValue("activityType", ActivityType);
             writer.WriteLongValue("chainId", ChainId);
             writer.WriteObjectValue<ItemBody>("previewText", PreviewText);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("templateParameters", TemplateParameters);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.KeyValuePair>("templateParameters", TemplateParameters);
             writer.WriteObjectValue<TeamworkActivityTopic>("topic", Topic);
             writer.WriteAdditionalData(AdditionalData);
         }

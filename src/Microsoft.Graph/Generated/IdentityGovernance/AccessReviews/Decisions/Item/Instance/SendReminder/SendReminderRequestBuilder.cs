@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.SendReminder {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.SendReminder {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\decisions\{accessReviewInstanceDecisionItem-id}\instance\microsoft.graph.sendReminder</summary>
     public class SendReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

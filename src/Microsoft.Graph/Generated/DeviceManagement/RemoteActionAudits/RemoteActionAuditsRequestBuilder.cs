@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.RemoteActionAudits.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.RemoteActionAudits.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.RemoteActionAudits {
+namespace MicrosoftGraphSdk.DeviceManagement.RemoteActionAudits {
     /// <summary>Builds and executes requests for operations under \deviceManagement\remoteActionAudits</summary>
     public class RemoteActionAuditsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.RemoteActionAudits {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.remoteActionAudits.item collection</summary>
-        public RemoteActionAuditRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.remoteActionAudits.item collection</summary>
+        public RemoteActionAuditItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("remoteActionAudit_id", position);
-            return new RemoteActionAuditRequestBuilder(urlTplParams, RequestAdapter);
+            return new RemoteActionAuditItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RemoteActionAuditsRequestBuilder and sets the default values.

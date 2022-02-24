@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Security.ProviderTenantSettings.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Security.ProviderTenantSettings.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.ProviderTenantSettings {
+namespace MicrosoftGraphSdk.Security.ProviderTenantSettings {
     /// <summary>Builds and executes requests for operations under \security\providerTenantSettings</summary>
     public class ProviderTenantSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Security.ProviderTenantSettings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.security.providerTenantSettings.item collection</summary>
-        public ProviderTenantSettingRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.security.providerTenantSettings.item collection</summary>
+        public ProviderTenantSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("providerTenantSetting_id", position);
-            return new ProviderTenantSettingRequestBuilder(urlTplParams, RequestAdapter);
+            return new ProviderTenantSettingItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ProviderTenantSettingsRequestBuilder and sets the default values.

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Onenote.Notebooks.Item.CopyNotebook {
+namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.Item.CopyNotebook {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\onenote\notebooks\{notebook-id}\microsoft.graph.copyNotebook</summary>
     public class CopyNotebookRequestBuilder {
         /// <summary>Path parameters for the request</summary>

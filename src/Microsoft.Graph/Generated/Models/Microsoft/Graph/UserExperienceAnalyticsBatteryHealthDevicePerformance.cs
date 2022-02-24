@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserExperienceAnalyticsBatteryHealthDevicePerformance : Entity, IParsable {
         /// <summary>Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647</summary>
         public int? BatteryAgeInDays { get; set; }

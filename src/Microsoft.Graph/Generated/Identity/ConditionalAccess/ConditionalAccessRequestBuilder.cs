@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Identity.ConditionalAccess.AuthenticationContextClassReferences;
-using MicrosoftGraph.Identity.ConditionalAccess.NamedLocations;
-using MicrosoftGraph.Identity.ConditionalAccess.Policies;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Identity.ConditionalAccess.AuthenticationContextClassReferences;
+using MicrosoftGraphSdk.Identity.ConditionalAccess.NamedLocations;
+using MicrosoftGraphSdk.Identity.ConditionalAccess.Policies;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.ConditionalAccess {
+namespace MicrosoftGraphSdk.Identity.ConditionalAccess {
     /// <summary>Builds and executes requests for operations under \identity\conditionalAccess</summary>
     public class ConditionalAccessRequestBuilder {
         public AuthenticationContextClassReferencesRequestBuilder AuthenticationContextClassReferences { get =>

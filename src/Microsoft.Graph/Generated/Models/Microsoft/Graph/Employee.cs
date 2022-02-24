@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Employee : Entity, IParsable {
         public PostalAddressType Address { get; set; }
         public Date? BirthDate { get; set; }
@@ -19,7 +19,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public string Number { get; set; }
         public string PersonalEmail { get; set; }
         public string PhoneNumber { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Picture> Picture { get; set; }
+        public List<Picture> Picture { get; set; }
         public string StatisticsGroupCode { get; set; }
         public string Status { get; set; }
         public string Surname { get; set; }
@@ -42,7 +42,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"number", (o,n) => { (o as Employee).Number = n.GetStringValue(); } },
                 {"personalEmail", (o,n) => { (o as Employee).PersonalEmail = n.GetStringValue(); } },
                 {"phoneNumber", (o,n) => { (o as Employee).PhoneNumber = n.GetStringValue(); } },
-                {"picture", (o,n) => { (o as Employee).Picture = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Picture>().ToList(); } },
+                {"picture", (o,n) => { (o as Employee).Picture = n.GetCollectionOfObjectValues<Picture>().ToList(); } },
                 {"statisticsGroupCode", (o,n) => { (o as Employee).StatisticsGroupCode = n.GetStringValue(); } },
                 {"status", (o,n) => { (o as Employee).Status = n.GetStringValue(); } },
                 {"surname", (o,n) => { (o as Employee).Surname = n.GetStringValue(); } },
@@ -69,7 +69,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("personalEmail", PersonalEmail);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Picture>("picture", Picture);
+            writer.WriteCollectionOfObjectValues<Picture>("picture", Picture);
             writer.WriteStringValue("statisticsGroupCode", StatisticsGroupCode);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("surname", Surname);

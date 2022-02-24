@@ -3,24 +3,24 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Customer : Entity, IParsable {
         public PostalAddressType Address { get; set; }
         public string Blocked { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Currency Currency { get; set; }
+        public Currency Currency { get; set; }
         public string CurrencyCode { get; set; }
         public string CurrencyId { get; set; }
         public string DisplayName { get; set; }
         public string Email { get; set; }
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         public string Number { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.PaymentMethod PaymentMethod { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
         public string PaymentMethodId { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.PaymentTerm PaymentTerm { get; set; }
+        public PaymentTerm PaymentTerm { get; set; }
         public string PaymentTermsId { get; set; }
         public string PhoneNumber { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Picture> Picture { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.ShipmentMethod ShipmentMethod { get; set; }
+        public List<Picture> Picture { get; set; }
+        public ShipmentMethod ShipmentMethod { get; set; }
         public string ShipmentMethodId { get; set; }
         public string TaxAreaDisplayName { get; set; }
         public string TaxAreaId { get; set; }
@@ -35,20 +35,20 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"address", (o,n) => { (o as Customer).Address = n.GetObjectValue<PostalAddressType>(); } },
                 {"blocked", (o,n) => { (o as Customer).Blocked = n.GetStringValue(); } },
-                {"currency", (o,n) => { (o as Customer).Currency = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Currency>(); } },
+                {"currency", (o,n) => { (o as Customer).Currency = n.GetObjectValue<Currency>(); } },
                 {"currencyCode", (o,n) => { (o as Customer).CurrencyCode = n.GetStringValue(); } },
                 {"currencyId", (o,n) => { (o as Customer).CurrencyId = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Customer).DisplayName = n.GetStringValue(); } },
                 {"email", (o,n) => { (o as Customer).Email = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Customer).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"number", (o,n) => { (o as Customer).Number = n.GetStringValue(); } },
-                {"paymentMethod", (o,n) => { (o as Customer).PaymentMethod = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PaymentMethod>(); } },
+                {"paymentMethod", (o,n) => { (o as Customer).PaymentMethod = n.GetObjectValue<PaymentMethod>(); } },
                 {"paymentMethodId", (o,n) => { (o as Customer).PaymentMethodId = n.GetStringValue(); } },
-                {"paymentTerm", (o,n) => { (o as Customer).PaymentTerm = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PaymentTerm>(); } },
+                {"paymentTerm", (o,n) => { (o as Customer).PaymentTerm = n.GetObjectValue<PaymentTerm>(); } },
                 {"paymentTermsId", (o,n) => { (o as Customer).PaymentTermsId = n.GetStringValue(); } },
                 {"phoneNumber", (o,n) => { (o as Customer).PhoneNumber = n.GetStringValue(); } },
-                {"picture", (o,n) => { (o as Customer).Picture = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Picture>().ToList(); } },
-                {"shipmentMethod", (o,n) => { (o as Customer).ShipmentMethod = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ShipmentMethod>(); } },
+                {"picture", (o,n) => { (o as Customer).Picture = n.GetCollectionOfObjectValues<Picture>().ToList(); } },
+                {"shipmentMethod", (o,n) => { (o as Customer).ShipmentMethod = n.GetObjectValue<ShipmentMethod>(); } },
                 {"shipmentMethodId", (o,n) => { (o as Customer).ShipmentMethodId = n.GetStringValue(); } },
                 {"taxAreaDisplayName", (o,n) => { (o as Customer).TaxAreaDisplayName = n.GetStringValue(); } },
                 {"taxAreaId", (o,n) => { (o as Customer).TaxAreaId = n.GetStringValue(); } },
@@ -67,20 +67,20 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteObjectValue<PostalAddressType>("address", Address);
             writer.WriteStringValue("blocked", Blocked);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Currency>("currency", Currency);
+            writer.WriteObjectValue<Currency>("currency", Currency);
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteStringValue("currencyId", CurrencyId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("number", Number);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PaymentMethod>("paymentMethod", PaymentMethod);
+            writer.WriteObjectValue<PaymentMethod>("paymentMethod", PaymentMethod);
             writer.WriteStringValue("paymentMethodId", PaymentMethodId);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PaymentTerm>("paymentTerm", PaymentTerm);
+            writer.WriteObjectValue<PaymentTerm>("paymentTerm", PaymentTerm);
             writer.WriteStringValue("paymentTermsId", PaymentTermsId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Picture>("picture", Picture);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ShipmentMethod>("shipmentMethod", ShipmentMethod);
+            writer.WriteCollectionOfObjectValues<Picture>("picture", Picture);
+            writer.WriteObjectValue<ShipmentMethod>("shipmentMethod", ShipmentMethod);
             writer.WriteStringValue("shipmentMethodId", ShipmentMethodId);
             writer.WriteStringValue("taxAreaDisplayName", TaxAreaDisplayName);
             writer.WriteStringValue("taxAreaId", TaxAreaId);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Onenote.Notebooks.Item.Sections.Item.Pages.Item.ParentNotebook.Ref {
+namespace MicrosoftGraphSdk.Sites.Item.Onenote.Notebooks.Item.Sections.Item.Pages.Item.ParentNotebook.Ref {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\onenote\notebooks\{notebook-id}\sections\{onenoteSection-id}\pages\{onenotePage-id}\parentNotebook\$ref</summary>
     public class RefRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -78,7 +78,7 @@ namespace MicrosoftGraph.Sites.Item.Onenote.Notebooks.Item.Sections.Item.Pages.I
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePutRequestInformation(MicrosoftGraph.Sites.Item.Onenote.Notebooks.Item.Sections.Item.Pages.Item.ParentNotebook.Ref.Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePutRequestInformation(Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PUT,
@@ -120,7 +120,7 @@ namespace MicrosoftGraph.Sites.Item.Onenote.Notebooks.Item.Sections.Item.Pages.I
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PutAsync(MicrosoftGraph.Sites.Item.Onenote.Notebooks.Item.Sections.Item.Pages.Item.ParentNotebook.Ref.Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PutAsync(Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePutRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

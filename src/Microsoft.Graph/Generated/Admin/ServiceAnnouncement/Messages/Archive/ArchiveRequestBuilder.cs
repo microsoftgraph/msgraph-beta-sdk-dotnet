@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Archive {
+namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Archive {
     /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.archive</summary>
     public class ArchiveRequestBuilder {
         /// <summary>Path parameters for the request</summary>

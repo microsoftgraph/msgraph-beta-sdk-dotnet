@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.InformationProtection.Policy.Labels;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.InformationProtection.Policy.Labels;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.InformationProtection.Policy {
+namespace MicrosoftGraphSdk.InformationProtection.Policy {
     /// <summary>Builds and executes requests for operations under \informationProtection\policy</summary>
     public class PolicyRequestBuilder {
         public LabelsRequestBuilder Labels { get =>

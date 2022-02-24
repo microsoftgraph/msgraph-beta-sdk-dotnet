@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.ConnectedOrganizations {
+namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.ConnectedOrganizations {
     /// <summary>Builds and executes requests for operations under \identityGovernance\entitlementManagement\connectedOrganizations</summary>
     public class ConnectedOrganizationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.ConnectedOrgan
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.connectedOrganizations.item collection</summary>
-        public ConnectedOrganizationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.entitlementManagement.connectedOrganizations.item collection</summary>
+        public ConnectedOrganizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectedOrganization_id", position);
-            return new ConnectedOrganizationRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConnectedOrganizationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.
@@ -77,7 +77,7 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.ConnectedOrgan
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.ConnectedOrganization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -109,10 +109,10 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.ConnectedOrgan
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.ConnectedOrganization> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.ConnectedOrganization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.ConnectedOrganization>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents references to a directory or domain of another organization whose users can request access.</summary>
         public class GetQueryParameters : QueryParametersBase {

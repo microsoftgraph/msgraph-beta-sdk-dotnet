@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime;
-using MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime;
+using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings {
+namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings</summary>
     public class DepOnboardingSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.depOnboardingSettings.item collection</summary>
-        public DepOnboardingSettingRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.depOnboardingSettings.item collection</summary>
+        public DepOnboardingSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("depOnboardingSetting_id", position);
-            return new DepOnboardingSettingRequestBuilder(urlTplParams, RequestAdapter);
+            return new DepOnboardingSettingItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.Printers.Item.RestoreFactoryDefaults {
+namespace MicrosoftGraphSdk.Print.Printers.Item.RestoreFactoryDefaults {
     /// <summary>Builds and executes requests for operations under \print\printers\{printer-id}\microsoft.graph.restoreFactoryDefaults</summary>
     public class RestoreFactoryDefaultsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

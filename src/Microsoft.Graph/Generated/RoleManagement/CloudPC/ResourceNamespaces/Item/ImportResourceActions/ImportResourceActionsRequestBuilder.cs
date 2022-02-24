@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.CloudPC.ResourceNamespaces.Item.ImportResourceActions {
+namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.ImportResourceActions {
     /// <summary>Builds and executes requests for operations under \roleManagement\cloudPC\resourceNamespaces\{unifiedRbacResourceNamespace-id}\microsoft.graph.importResourceActions</summary>
     public class ImportResourceActionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

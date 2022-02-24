@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DataClassification.ExactMatchUploadAgents.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DataClassification.ExactMatchUploadAgents.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DataClassification.ExactMatchUploadAgents {
+namespace MicrosoftGraphSdk.DataClassification.ExactMatchUploadAgents {
     /// <summary>Builds and executes requests for operations under \dataClassification\exactMatchUploadAgents</summary>
     public class ExactMatchUploadAgentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DataClassification.ExactMatchUploadAgents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.dataClassification.exactMatchUploadAgents.item collection</summary>
-        public ExactMatchUploadAgentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.dataClassification.exactMatchUploadAgents.item collection</summary>
+        public ExactMatchUploadAgentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("exactMatchUploadAgent_id", position);
-            return new ExactMatchUploadAgentRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExactMatchUploadAgentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExactMatchUploadAgentsRequestBuilder and sets the default values.

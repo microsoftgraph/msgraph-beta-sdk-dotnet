@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.EmbeddedSIMActivationCodePools.Item.DeviceStates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item.DeviceStates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.EmbeddedSIMActivationCodePools.Item.DeviceStates {
+namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item.DeviceStates {
     /// <summary>Builds and executes requests for operations under \deviceManagement\embeddedSIMActivationCodePools\{embeddedSIMActivationCodePool-id}\deviceStates</summary>
     public class DeviceStatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.EmbeddedSIMActivationCodePools.Item.De
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.embeddedSIMActivationCodePools.item.deviceStates.item collection</summary>
-        public EmbeddedSIMDeviceStateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.embeddedSIMActivationCodePools.item.deviceStates.item collection</summary>
+        public EmbeddedSIMDeviceStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("embeddedSIMDeviceState_id", position);
-            return new EmbeddedSIMDeviceStateRequestBuilder(urlTplParams, RequestAdapter);
+            return new EmbeddedSIMDeviceStateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceStatesRequestBuilder and sets the default values.

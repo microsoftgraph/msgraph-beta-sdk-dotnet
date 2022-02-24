@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ResourceAccessProfiles.Item;
-using MicrosoftGraph.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.Item;
+using MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ResourceAccessProfiles {
+namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\resourceAccessProfiles</summary>
     public class ResourceAccessProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceManagement.ResourceAccessProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.resourceAccessProfiles.item collection</summary>
-        public DeviceManagementResourceAccessProfileBaseRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.resourceAccessProfiles.item collection</summary>
+        public DeviceManagementResourceAccessProfileBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementResourceAccessProfileBase_id", position);
-            return new DeviceManagementResourceAccessProfileBaseRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementResourceAccessProfileBaseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourceAccessProfilesRequestBuilder and sets the default values.

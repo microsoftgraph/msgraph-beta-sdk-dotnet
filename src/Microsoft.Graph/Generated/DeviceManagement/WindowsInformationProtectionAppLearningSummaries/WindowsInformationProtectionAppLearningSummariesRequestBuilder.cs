@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionAppLearningSummaries {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsInformationProtectionAppLearningSummaries</summary>
     public class WindowsInformationProtectionAppLearningSummariesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.WindowsInformationProtectionAppLearnin
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsInformationProtectionAppLearningSummaries.item collection</summary>
-        public WindowsInformationProtectionAppLearningSummaryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsInformationProtectionAppLearningSummaries.item collection</summary>
+        public WindowsInformationProtectionAppLearningSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionAppLearningSummary_id", position);
-            return new WindowsInformationProtectionAppLearningSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsInformationProtectionAppLearningSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsInformationProtectionAppLearningSummariesRequestBuilder and sets the default values.

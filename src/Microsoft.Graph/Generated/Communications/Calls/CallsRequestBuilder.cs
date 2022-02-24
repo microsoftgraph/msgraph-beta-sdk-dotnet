@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Communications.Calls.Item;
-using MicrosoftGraph.Communications.Calls.LogTeleconferenceDeviceQuality;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Communications.Calls.Item;
+using MicrosoftGraphSdk.Communications.Calls.LogTeleconferenceDeviceQuality;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Communications.Calls {
+namespace MicrosoftGraphSdk.Communications.Calls {
     /// <summary>Builds and executes requests for operations under \communications\calls</summary>
     public class CallsRequestBuilder {
         public LogTeleconferenceDeviceQualityRequestBuilder LogTeleconferenceDeviceQuality { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.Communications.Calls {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.communications.calls.item collection</summary>
-        public CallRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.communications.calls.item collection</summary>
+        public CallItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("call_id", position);
-            return new CallRequestBuilder(urlTplParams, RequestAdapter);
+            return new CallItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CallsRequestBuilder and sets the default values.

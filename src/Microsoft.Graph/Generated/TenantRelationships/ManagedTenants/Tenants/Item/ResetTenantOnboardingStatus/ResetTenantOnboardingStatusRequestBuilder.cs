@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.Tenants.Item.ResetTenantOnboardingStatus {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.Tenants.Item.ResetTenantOnboardingStatus {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\tenants\{tenant-id}\microsoft.graph.managedTenants.resetTenantOnboardingStatus</summary>
     public class ResetTenantOnboardingStatusRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsCategories.Item.MetricValues {
     /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsCategories\{userExperienceAnalyticsCategory-id}\metricValues</summary>
     public class MetricValuesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsCategories.Item
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsCategories.item.metricValues.item collection</summary>
-        public UserExperienceAnalyticsMetricRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.userExperienceAnalyticsCategories.item.metricValues.item collection</summary>
+        public UserExperienceAnalyticsMetricItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsMetric_id", position);
-            return new UserExperienceAnalyticsMetricRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsMetricItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MetricValuesRequestBuilder and sets the default values.

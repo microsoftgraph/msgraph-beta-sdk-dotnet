@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Shares.Item.List.ContentTypes.Item.ColumnPositions.Ref;
+using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item.ColumnPositions.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.List.ContentTypes.Item.ColumnPositions {
+namespace MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item.ColumnPositions {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\contentTypes\{contentType-id}\columnPositions</summary>
     public class ColumnPositionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

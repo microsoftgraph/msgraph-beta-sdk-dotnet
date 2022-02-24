@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Print.Printers.Item.Share.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Print.Printers.Item.Share.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.Printers.Item.Share {
+namespace MicrosoftGraphSdk.Print.Printers.Item.Share {
     /// <summary>Builds and executes requests for operations under \print\printers\{printer-id}\share</summary>
     public class ShareRequestBuilder {
         /// <summary>Path parameters for the request</summary>

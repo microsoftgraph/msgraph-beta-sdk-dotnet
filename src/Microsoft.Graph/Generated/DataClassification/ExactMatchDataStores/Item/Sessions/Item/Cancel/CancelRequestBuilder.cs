@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Cancel {
+namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Cancel {
     /// <summary>Builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}\microsoft.graph.cancel</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

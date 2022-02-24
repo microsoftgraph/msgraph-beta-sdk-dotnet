@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.ServicePrincipals.Delta;
-using MicrosoftGraph.ServicePrincipals.GetByIds;
-using MicrosoftGraph.ServicePrincipals.GetUserOwnedObjects;
-using MicrosoftGraph.ServicePrincipals.Item;
-using MicrosoftGraph.ServicePrincipals.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.ServicePrincipals.Delta;
+using MicrosoftGraphSdk.ServicePrincipals.GetByIds;
+using MicrosoftGraphSdk.ServicePrincipals.GetUserOwnedObjects;
+using MicrosoftGraphSdk.ServicePrincipals.Item;
+using MicrosoftGraphSdk.ServicePrincipals.ValidateProperties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals {
+namespace MicrosoftGraphSdk.ServicePrincipals {
     /// <summary>Builds and executes requests for operations under \servicePrincipals</summary>
     public class ServicePrincipalsRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -30,11 +30,11 @@ namespace MicrosoftGraph.ServicePrincipals {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item collection</summary>
-        public ServicePrincipalRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item collection</summary>
+        public ServicePrincipalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipal_id", position);
-            return new ServicePrincipalRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServicePrincipalItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ServicePrincipalsRequestBuilder and sets the default values.

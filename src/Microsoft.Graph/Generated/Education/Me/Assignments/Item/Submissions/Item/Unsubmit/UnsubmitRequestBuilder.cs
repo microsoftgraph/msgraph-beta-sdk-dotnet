@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Me.Assignments.Item.Submissions.Item.Unsubmit {
+namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Submissions.Item.Unsubmit {
     /// <summary>Builds and executes requests for operations under \education\me\assignments\{educationAssignment-id}\submissions\{educationSubmission-id}\microsoft.graph.unsubmit</summary>
     public class UnsubmitRequestBuilder {
         /// <summary>Path parameters for the request</summary>

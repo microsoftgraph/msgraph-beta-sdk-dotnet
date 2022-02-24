@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Presence.SetPresence {
+namespace MicrosoftGraphSdk.Users.Item.Presence.SetPresence {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\presence\microsoft.graph.setPresence</summary>
     public class SetPresenceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

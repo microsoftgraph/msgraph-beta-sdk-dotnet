@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Devices.ValidateProperties {
+namespace MicrosoftGraphSdk.Devices.ValidateProperties {
     /// <summary>Builds and executes requests for operations under \devices\microsoft.graph.validateProperties</summary>
     public class ValidatePropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

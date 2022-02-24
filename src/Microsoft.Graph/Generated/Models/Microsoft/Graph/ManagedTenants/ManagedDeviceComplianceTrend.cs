@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagedDeviceComplianceTrend : Entity, IParsable {
         /// <summary>The number of devices with a compliant status. Required. Read-only.</summary>
         public int? CompliantDeviceCount { get; set; }

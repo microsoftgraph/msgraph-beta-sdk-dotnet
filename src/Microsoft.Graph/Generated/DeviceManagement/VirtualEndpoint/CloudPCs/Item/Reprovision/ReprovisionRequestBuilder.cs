@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs\{cloudPC-id}\microsoft.graph.reprovision</summary>
     public class ReprovisionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

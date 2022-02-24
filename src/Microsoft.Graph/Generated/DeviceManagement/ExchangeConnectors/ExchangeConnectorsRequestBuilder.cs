@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ExchangeConnectors.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ExchangeConnectors.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ExchangeConnectors {
+namespace MicrosoftGraphSdk.DeviceManagement.ExchangeConnectors {
     /// <summary>Builds and executes requests for operations under \deviceManagement\exchangeConnectors</summary>
     public class ExchangeConnectorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ExchangeConnectors {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.exchangeConnectors.item collection</summary>
-        public DeviceManagementExchangeConnectorRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.exchangeConnectors.item collection</summary>
+        public DeviceManagementExchangeConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExchangeConnector_id", position);
-            return new DeviceManagementExchangeConnectorRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementExchangeConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExchangeConnectorsRequestBuilder and sets the default values.

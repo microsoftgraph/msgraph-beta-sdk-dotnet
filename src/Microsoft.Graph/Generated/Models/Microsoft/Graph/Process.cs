@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Process : IParsable {
         /// <summary>User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.</summary>
         public string AccountName { get; set; }

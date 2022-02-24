@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Chats.Item.MarkChatUnreadForUser {
+namespace MicrosoftGraphSdk.Chats.Item.MarkChatUnreadForUser {
     /// <summary>Builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.markChatUnreadForUser</summary>
     public class MarkChatUnreadForUserRequestBuilder {
         /// <summary>Path parameters for the request</summary>

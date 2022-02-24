@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ExactMatchDataStoreBase : Entity, IParsable {
         public List<ExactDataMatchStoreColumn> Columns { get; set; }
         public DateTimeOffset? DataLastUpdatedDateTime { get; set; }

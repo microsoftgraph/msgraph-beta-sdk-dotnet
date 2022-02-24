@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Security.AttackSimulation.SimulationAutomations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.AttackSimulation.SimulationAutomations {
+namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations {
     /// <summary>Builds and executes requests for operations under \security\attackSimulation\simulationAutomations</summary>
     public class SimulationAutomationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Security.AttackSimulation.SimulationAutomations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.security.attackSimulation.simulationAutomations.item collection</summary>
-        public SimulationAutomationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.security.attackSimulation.simulationAutomations.item collection</summary>
+        public SimulationAutomationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("simulationAutomation_id", position);
-            return new SimulationAutomationRequestBuilder(urlTplParams, RequestAdapter);
+            return new SimulationAutomationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SimulationAutomationsRequestBuilder and sets the default values.

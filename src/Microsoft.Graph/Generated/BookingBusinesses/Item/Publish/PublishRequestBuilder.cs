@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.BookingBusinesses.Item.Publish {
+namespace MicrosoftGraphSdk.BookingBusinesses.Item.Publish {
     /// <summary>Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\microsoft.graph.publish</summary>
     public class PublishRequestBuilder {
         /// <summary>Path parameters for the request</summary>

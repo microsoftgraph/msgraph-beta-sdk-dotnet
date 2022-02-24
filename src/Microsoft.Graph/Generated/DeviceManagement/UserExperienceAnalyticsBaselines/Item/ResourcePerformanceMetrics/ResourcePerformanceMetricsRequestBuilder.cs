@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.ResourcePerformanceMetrics.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.ResourcePerformanceMetrics.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.ResourcePerformanceMetrics {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.ResourcePerformanceMetrics {
     /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\resourcePerformanceMetrics</summary>
     public class ResourcePerformanceMetricsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

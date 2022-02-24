@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.UpdateAdDomainPassword {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.UpdateAdDomainPassword {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\onPremisesConnections\{cloudPcOnPremisesConnection-id}\microsoft.graph.updateAdDomainPassword</summary>
     public class UpdateAdDomainPasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>

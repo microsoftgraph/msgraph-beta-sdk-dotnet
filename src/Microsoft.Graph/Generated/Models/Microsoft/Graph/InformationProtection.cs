@@ -3,24 +3,24 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class InformationProtection : Entity, IParsable {
-        public MicrosoftGraph.Models.Microsoft.Graph.Bitlocker Bitlocker { get; set; }
+        public Bitlocker Bitlocker { get; set; }
         public List<DataLossPreventionPolicy> DataLossPreventionPolicies { get; set; }
         public InformationProtectionPolicy Policy { get; set; }
         public List<SensitivityLabel> SensitivityLabels { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.SensitivityPolicySettings SensitivityPolicySettings { get; set; }
+        public SensitivityPolicySettings SensitivityPolicySettings { get; set; }
         public List<ThreatAssessmentRequest> ThreatAssessmentRequests { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"bitlocker", (o,n) => { (o as InformationProtection).Bitlocker = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Bitlocker>(); } },
+                {"bitlocker", (o,n) => { (o as InformationProtection).Bitlocker = n.GetObjectValue<Bitlocker>(); } },
                 {"dataLossPreventionPolicies", (o,n) => { (o as InformationProtection).DataLossPreventionPolicies = n.GetCollectionOfObjectValues<DataLossPreventionPolicy>().ToList(); } },
                 {"policy", (o,n) => { (o as InformationProtection).Policy = n.GetObjectValue<InformationProtectionPolicy>(); } },
                 {"sensitivityLabels", (o,n) => { (o as InformationProtection).SensitivityLabels = n.GetCollectionOfObjectValues<SensitivityLabel>().ToList(); } },
-                {"sensitivityPolicySettings", (o,n) => { (o as InformationProtection).SensitivityPolicySettings = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.SensitivityPolicySettings>(); } },
+                {"sensitivityPolicySettings", (o,n) => { (o as InformationProtection).SensitivityPolicySettings = n.GetObjectValue<SensitivityPolicySettings>(); } },
                 {"threatAssessmentRequests", (o,n) => { (o as InformationProtection).ThreatAssessmentRequests = n.GetCollectionOfObjectValues<ThreatAssessmentRequest>().ToList(); } },
             };
         }
@@ -31,11 +31,11 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Bitlocker>("bitlocker", Bitlocker);
+            writer.WriteObjectValue<Bitlocker>("bitlocker", Bitlocker);
             writer.WriteCollectionOfObjectValues<DataLossPreventionPolicy>("dataLossPreventionPolicies", DataLossPreventionPolicies);
             writer.WriteObjectValue<InformationProtectionPolicy>("policy", Policy);
             writer.WriteCollectionOfObjectValues<SensitivityLabel>("sensitivityLabels", SensitivityLabels);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.SensitivityPolicySettings>("sensitivityPolicySettings", SensitivityPolicySettings);
+            writer.WriteObjectValue<SensitivityPolicySettings>("sensitivityPolicySettings", SensitivityPolicySettings);
             writer.WriteCollectionOfObjectValues<ThreatAssessmentRequest>("threatAssessmentRequests", ThreatAssessmentRequests);
         }
     }

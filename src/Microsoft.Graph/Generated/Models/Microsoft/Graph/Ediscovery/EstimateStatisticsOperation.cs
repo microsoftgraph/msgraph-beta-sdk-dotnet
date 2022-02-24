@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class EstimateStatisticsOperation : CaseOperation, IParsable {
         /// <summary>The estimated count of items for the sourceCollection that matched the content query.</summary>
         public long? IndexedItemCount { get; set; }

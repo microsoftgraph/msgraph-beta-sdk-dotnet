@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.Calendar.CalendarPermissions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.Calendar.CalendarPermissions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Calendar.CalendarPermissions {
+namespace MicrosoftGraphSdk.Groups.Item.Calendar.CalendarPermissions {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\calendar\calendarPermissions</summary>
     public class CalendarPermissionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Groups.Item.Calendar.CalendarPermissions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.groups.item.calendar.calendarPermissions.item collection</summary>
-        public CalendarPermissionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.calendar.calendarPermissions.item collection</summary>
+        public CalendarPermissionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("calendarPermission_id", position);
-            return new CalendarPermissionRequestBuilder(urlTplParams, RequestAdapter);
+            return new CalendarPermissionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarPermissionsRequestBuilder and sets the default values.

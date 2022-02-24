@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Contacts.Item.CheckMemberObjects {
+namespace MicrosoftGraphSdk.Contacts.Item.CheckMemberObjects {
     /// <summary>Builds and executes requests for operations under \contacts\{orgContact-id}\microsoft.graph.checkMemberObjects</summary>
     public class CheckMemberObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

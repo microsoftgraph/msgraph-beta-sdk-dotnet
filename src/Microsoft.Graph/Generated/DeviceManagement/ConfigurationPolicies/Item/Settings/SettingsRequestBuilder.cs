@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ConfigurationPolicies.Item.Settings.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicies.Item.Settings.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ConfigurationPolicies.Item.Settings {
+namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicies.Item.Settings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\configurationPolicies\{deviceManagementConfigurationPolicy-id}\settings</summary>
     public class SettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ConfigurationPolicies.Item.Settings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.configurationPolicies.item.settings.item collection</summary>
-        public DeviceManagementConfigurationSettingRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.configurationPolicies.item.settings.item collection</summary>
+        public DeviceManagementConfigurationSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationSetting_id", position);
-            return new DeviceManagementConfigurationSettingRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementConfigurationSettingItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SettingsRequestBuilder and sets the default values.

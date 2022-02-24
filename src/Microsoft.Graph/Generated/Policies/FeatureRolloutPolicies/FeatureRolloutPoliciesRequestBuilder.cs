@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.FeatureRolloutPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.FeatureRolloutPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.FeatureRolloutPolicies {
+namespace MicrosoftGraphSdk.Policies.FeatureRolloutPolicies {
     /// <summary>Builds and executes requests for operations under \policies\featureRolloutPolicies</summary>
     public class FeatureRolloutPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.FeatureRolloutPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.featureRolloutPolicies.item collection</summary>
-        public FeatureRolloutPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.featureRolloutPolicies.item collection</summary>
+        public FeatureRolloutPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("featureRolloutPolicy_id", position);
-            return new FeatureRolloutPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new FeatureRolloutPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FeatureRolloutPoliciesRequestBuilder and sets the default values.

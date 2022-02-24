@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class VirtualEndpoint : Entity, IParsable {
         /// <summary>Cloud PC audit event.</summary>
         public List<CloudPcAuditEvent> AuditEvents { get; set; }
         /// <summary>Cloud managed virtual desktops.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.CloudPC> CloudPCs { get; set; }
+        public List<CloudPC> CloudPCs { get; set; }
         /// <summary>The image resource on Cloud PC.</summary>
         public List<CloudPcDeviceImage> DeviceImages { get; set; }
         /// <summary>The gallery image resource on Cloud PC.</summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"auditEvents", (o,n) => { (o as VirtualEndpoint).AuditEvents = n.GetCollectionOfObjectValues<CloudPcAuditEvent>().ToList(); } },
-                {"cloudPCs", (o,n) => { (o as VirtualEndpoint).CloudPCs = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.CloudPC>().ToList(); } },
+                {"cloudPCs", (o,n) => { (o as VirtualEndpoint).CloudPCs = n.GetCollectionOfObjectValues<CloudPC>().ToList(); } },
                 {"deviceImages", (o,n) => { (o as VirtualEndpoint).DeviceImages = n.GetCollectionOfObjectValues<CloudPcDeviceImage>().ToList(); } },
                 {"galleryImages", (o,n) => { (o as VirtualEndpoint).GalleryImages = n.GetCollectionOfObjectValues<CloudPcGalleryImage>().ToList(); } },
                 {"onPremisesConnections", (o,n) => { (o as VirtualEndpoint).OnPremisesConnections = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnection>().ToList(); } },
@@ -53,7 +53,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<CloudPcAuditEvent>("auditEvents", AuditEvents);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.CloudPC>("cloudPCs", CloudPCs);
+            writer.WriteCollectionOfObjectValues<CloudPC>("cloudPCs", CloudPCs);
             writer.WriteCollectionOfObjectValues<CloudPcDeviceImage>("deviceImages", DeviceImages);
             writer.WriteCollectionOfObjectValues<CloudPcGalleryImage>("galleryImages", GalleryImages);
             writer.WriteCollectionOfObjectValues<CloudPcOnPremisesConnection>("onPremisesConnections", OnPremisesConnections);

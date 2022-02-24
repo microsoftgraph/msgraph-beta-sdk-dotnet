@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TeamworkTeamsClientConfiguration : IParsable {
         /// <summary>The configuration of the Microsoft Teams client user account for a device.</summary>
         public TeamworkAccountConfiguration AccountConfiguration { get; set; }

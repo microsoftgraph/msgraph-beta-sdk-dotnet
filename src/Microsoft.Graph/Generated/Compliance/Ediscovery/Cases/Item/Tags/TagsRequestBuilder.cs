@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.AsHierarchy;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags</summary>
     public class TagsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.tags.item collection</summary>
-        public TagRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.tags.item collection</summary>
+        public TagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tag_id", position);
-            return new TagRequestBuilder(urlTplParams, RequestAdapter);
+            return new TagItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\microsoft.graph.ediscovery.asHierarchy()

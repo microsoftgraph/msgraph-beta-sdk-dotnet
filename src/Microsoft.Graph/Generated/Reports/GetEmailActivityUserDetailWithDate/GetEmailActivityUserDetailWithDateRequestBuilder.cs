@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetEmailActivityUserDetailWithDate {
+namespace MicrosoftGraphSdk.Reports.GetEmailActivityUserDetailWithDate {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getEmailActivityUserDetail(date={date})</summary>
     public class GetEmailActivityUserDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

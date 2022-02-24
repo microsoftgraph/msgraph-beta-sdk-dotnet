@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DirectorySettingTemplates.GetByIds;
-using MicrosoftGraph.DirectorySettingTemplates.GetUserOwnedObjects;
-using MicrosoftGraph.DirectorySettingTemplates.Item;
-using MicrosoftGraph.DirectorySettingTemplates.ValidateProperties;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DirectorySettingTemplates.GetByIds;
+using MicrosoftGraphSdk.DirectorySettingTemplates.GetUserOwnedObjects;
+using MicrosoftGraphSdk.DirectorySettingTemplates.Item;
+using MicrosoftGraphSdk.DirectorySettingTemplates.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DirectorySettingTemplates {
+namespace MicrosoftGraphSdk.DirectorySettingTemplates {
     /// <summary>Builds and executes requests for operations under \directorySettingTemplates</summary>
     public class DirectorySettingTemplatesRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -29,11 +29,11 @@ namespace MicrosoftGraph.DirectorySettingTemplates {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.directorySettingTemplates.item collection</summary>
-        public DirectorySettingTemplateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directorySettingTemplates.item collection</summary>
+        public DirectorySettingTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directorySettingTemplate_id", position);
-            return new DirectorySettingTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectorySettingTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectorySettingTemplatesRequestBuilder and sets the default values.

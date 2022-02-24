@@ -1,21 +1,21 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Identity.ApiConnectors;
-using MicrosoftGraph.Identity.B2cUserFlows;
-using MicrosoftGraph.Identity.B2xUserFlows;
-using MicrosoftGraph.Identity.ConditionalAccess;
-using MicrosoftGraph.Identity.ContinuousAccessEvaluationPolicy;
-using MicrosoftGraph.Identity.IdentityProviders;
-using MicrosoftGraph.Identity.UserFlowAttributes;
-using MicrosoftGraph.Identity.UserFlows;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Identity.ApiConnectors;
+using MicrosoftGraphSdk.Identity.B2cUserFlows;
+using MicrosoftGraphSdk.Identity.B2xUserFlows;
+using MicrosoftGraphSdk.Identity.ConditionalAccess;
+using MicrosoftGraphSdk.Identity.ContinuousAccessEvaluationPolicy;
+using MicrosoftGraphSdk.Identity.IdentityProviders;
+using MicrosoftGraphSdk.Identity.UserFlowAttributes;
+using MicrosoftGraphSdk.Identity.UserFlows;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity {
+namespace MicrosoftGraphSdk.Identity {
     /// <summary>Builds and executes requests for operations under \identity</summary>
     public class IdentityRequestBuilder {
         public ApiConnectorsRequestBuilder ApiConnectors { get =>

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.DeviceImages.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.DeviceImages {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages</summary>
     public class DeviceImagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.DeviceImages {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.virtualEndpoint.deviceImages.item collection</summary>
-        public CloudPcDeviceImageRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.virtualEndpoint.deviceImages.item collection</summary>
+        public CloudPcDeviceImageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcDeviceImage_id", position);
-            return new CloudPcDeviceImageRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcDeviceImageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceImagesRequestBuilder and sets the default values.

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ListItem : BaseItem, IParsable {
         /// <summary>The list of recent activities that took place on this item.</summary>
         public List<ItemActivityOLD> Activities { get; set; }
@@ -13,7 +13,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public ContentTypeInfo ContentType { get; set; }
         public Deleted Deleted { get; set; }
         /// <summary>For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.DriveItem DriveItem { get; set; }
+        public DriveItem DriveItem { get; set; }
         /// <summary>The values of the columns set on this list item.</summary>
         public FieldValueSet Fields { get; set; }
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"analytics", (o,n) => { (o as ListItem).Analytics = n.GetObjectValue<ItemAnalytics>(); } },
                 {"contentType", (o,n) => { (o as ListItem).ContentType = n.GetObjectValue<ContentTypeInfo>(); } },
                 {"deleted", (o,n) => { (o as ListItem).Deleted = n.GetObjectValue<Deleted>(); } },
-                {"driveItem", (o,n) => { (o as ListItem).DriveItem = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>(); } },
+                {"driveItem", (o,n) => { (o as ListItem).DriveItem = n.GetObjectValue<DriveItem>(); } },
                 {"fields", (o,n) => { (o as ListItem).Fields = n.GetObjectValue<FieldValueSet>(); } },
                 {"sharepointIds", (o,n) => { (o as ListItem).SharepointIds = n.GetObjectValue<SharepointIds>(); } },
                 {"versions", (o,n) => { (o as ListItem).Versions = n.GetCollectionOfObjectValues<ListItemVersion>().ToList(); } },
@@ -46,7 +46,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<ItemAnalytics>("analytics", Analytics);
             writer.WriteObjectValue<ContentTypeInfo>("contentType", ContentType);
             writer.WriteObjectValue<Deleted>("deleted", Deleted);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>("driveItem", DriveItem);
+            writer.WriteObjectValue<DriveItem>("driveItem", DriveItem);
             writer.WriteObjectValue<FieldValueSet>("fields", Fields);
             writer.WriteObjectValue<SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteCollectionOfObjectValues<ListItemVersion>("versions", Versions);

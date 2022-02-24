@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Chats.Item.MarkChatReadForUser {
+namespace MicrosoftGraphSdk.Chats.Item.MarkChatReadForUser {
     /// <summary>Builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.markChatReadForUser</summary>
     public class MarkChatReadForUserRequestBuilder {
         /// <summary>Path parameters for the request</summary>

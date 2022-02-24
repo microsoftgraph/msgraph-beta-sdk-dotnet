@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.GroupAssignments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.GroupAssignments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.GroupAssignments {
+namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.GroupAssignments {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations\{iosLobAppProvisioningConfiguration-id}\groupAssignments</summary>
     public class GroupAssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.iosLobAppProvisioningConfigurations.item.groupAssignments.item collection</summary>
-        public MobileAppProvisioningConfigGroupAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.iosLobAppProvisioningConfigurations.item.groupAssignments.item collection</summary>
+        public MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppProvisioningConfigGroupAssignment_id", position);
-            return new MobileAppProvisioningConfigGroupAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileAppProvisioningConfigGroupAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupAssignmentsRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ManagementConditionStatements.Item.ManagementConditions.GetManagementConditionsForPlatformWithPlatform;
-using MicrosoftGraph.DeviceManagement.ManagementConditionStatements.Item.ManagementConditions.Ref;
+using MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item.ManagementConditions.GetManagementConditionsForPlatformWithPlatform;
+using MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item.ManagementConditions.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagementConditionStatements.Item.ManagementConditions {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item.ManagementConditions {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managementConditionStatements\{managementConditionStatement-id}\managementConditions</summary>
     public class ManagementConditionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

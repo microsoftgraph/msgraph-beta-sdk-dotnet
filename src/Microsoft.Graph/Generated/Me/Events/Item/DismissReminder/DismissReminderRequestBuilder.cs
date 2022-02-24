@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Events.Item.DismissReminder {
+namespace MicrosoftGraphSdk.Me.Events.Item.DismissReminder {
     /// <summary>Builds and executes requests for operations under \me\events\{event-id}\microsoft.graph.dismissReminder</summary>
     public class DismissReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

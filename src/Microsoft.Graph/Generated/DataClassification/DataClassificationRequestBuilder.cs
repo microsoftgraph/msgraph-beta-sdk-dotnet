@@ -1,25 +1,25 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DataClassification.ClassifyExactMatches;
-using MicrosoftGraph.DataClassification.ClassifyFile;
-using MicrosoftGraph.DataClassification.ClassifyFileJobs;
-using MicrosoftGraph.DataClassification.ClassifyText;
-using MicrosoftGraph.DataClassification.ClassifyTextJobs;
-using MicrosoftGraph.DataClassification.EvaluateDlpPoliciesJobs;
-using MicrosoftGraph.DataClassification.EvaluateLabelJobs;
-using MicrosoftGraph.DataClassification.ExactMatchDataStores;
-using MicrosoftGraph.DataClassification.ExactMatchUploadAgents;
-using MicrosoftGraph.DataClassification.Jobs;
-using MicrosoftGraph.DataClassification.SensitiveTypes;
-using MicrosoftGraph.DataClassification.SensitivityLabels;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DataClassification.ClassifyExactMatches;
+using MicrosoftGraphSdk.DataClassification.ClassifyFile;
+using MicrosoftGraphSdk.DataClassification.ClassifyFileJobs;
+using MicrosoftGraphSdk.DataClassification.ClassifyText;
+using MicrosoftGraphSdk.DataClassification.ClassifyTextJobs;
+using MicrosoftGraphSdk.DataClassification.EvaluateDlpPoliciesJobs;
+using MicrosoftGraphSdk.DataClassification.EvaluateLabelJobs;
+using MicrosoftGraphSdk.DataClassification.ExactMatchDataStores;
+using MicrosoftGraphSdk.DataClassification.ExactMatchUploadAgents;
+using MicrosoftGraphSdk.DataClassification.Jobs;
+using MicrosoftGraphSdk.DataClassification.SensitiveTypes;
+using MicrosoftGraphSdk.DataClassification.SensitivityLabels;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DataClassification {
+namespace MicrosoftGraphSdk.DataClassification {
     /// <summary>Builds and executes requests for operations under \dataClassification</summary>
     public class DataClassificationRequestBuilder {
         public ClassifyExactMatchesRequestBuilder ClassifyExactMatches { get =>

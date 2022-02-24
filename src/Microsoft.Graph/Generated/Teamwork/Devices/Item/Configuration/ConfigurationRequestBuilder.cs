@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teamwork.Devices.Item.Configuration {
+namespace MicrosoftGraphSdk.Teamwork.Devices.Item.Configuration {
     /// <summary>Builds and executes requests for operations under \teamwork\devices\{teamworkDevice-id}\configuration</summary>
     public class ConfigurationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

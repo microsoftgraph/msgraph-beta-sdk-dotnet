@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AppCatalogs : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.TeamsApp> TeamsApps { get; set; }
+        public List<TeamsApp> TeamsApps { get; set; }
         /// <summary>
         /// Instantiates a new AppCatalogs and sets the default values.
         /// </summary>
@@ -19,7 +19,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"teamsApps", (o,n) => { (o as AppCatalogs).TeamsApps = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.TeamsApp>().ToList(); } },
+                {"teamsApps", (o,n) => { (o as AppCatalogs).TeamsApps = n.GetCollectionOfObjectValues<TeamsApp>().ToList(); } },
             };
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.TeamsApp>("teamsApps", TeamsApps);
+            writer.WriteCollectionOfObjectValues<TeamsApp>("teamsApps", TeamsApps);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

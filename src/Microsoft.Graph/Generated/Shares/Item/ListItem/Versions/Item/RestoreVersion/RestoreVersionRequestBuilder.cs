@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.ListItem.Versions.Item.RestoreVersion {
+namespace MicrosoftGraphSdk.Shares.Item.ListItem.Versions.Item.RestoreVersion {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\listItem\versions\{listItemVersion-id}\microsoft.graph.restoreVersion</summary>
     public class RestoreVersionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

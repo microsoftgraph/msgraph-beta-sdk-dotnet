@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Item.AttachmentsArchive {
+namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.AttachmentsArchive {
     /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\messages\{serviceUpdateMessage-id}\attachmentsArchive</summary>
     public class AttachmentsArchiveRequestBuilder {
         /// <summary>Path parameters for the request</summary>

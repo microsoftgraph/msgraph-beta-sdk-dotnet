@@ -3,25 +3,25 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Item {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Item {
     public class Item : Entity, IParsable {
         public string BaseUnitOfMeasureId { get; set; }
         public bool? Blocked { get; set; }
         public string DisplayName { get; set; }
         public string Gtin { get; set; }
-        public Decimal? Inventory { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.ItemCategory ItemCategory { get; set; }
+        public decimal? Inventory { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory ItemCategory { get; set; }
         public string ItemCategoryCode { get; set; }
         public string ItemCategoryId { get; set; }
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         public string Number { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Picture> Picture { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture> Picture { get; set; }
         public bool? PriceIncludesTax { get; set; }
         public string TaxGroupCode { get; set; }
         public string TaxGroupId { get; set; }
         public string Type { get; set; }
-        public Decimal? UnitCost { get; set; }
-        public Decimal? UnitPrice { get; set; }
+        public decimal? UnitCost { get; set; }
+        public decimal? UnitPrice { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -32,12 +32,12 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.Item {
                 {"displayName", (o,n) => { (o as Item).DisplayName = n.GetStringValue(); } },
                 {"gtin", (o,n) => { (o as Item).Gtin = n.GetStringValue(); } },
                 {"inventory", (o,n) => { (o as Item).Inventory = n.GetDecimalValue(); } },
-                {"itemCategory", (o,n) => { (o as Item).ItemCategory = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ItemCategory>(); } },
+                {"itemCategory", (o,n) => { (o as Item).ItemCategory = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory>(); } },
                 {"itemCategoryCode", (o,n) => { (o as Item).ItemCategoryCode = n.GetStringValue(); } },
                 {"itemCategoryId", (o,n) => { (o as Item).ItemCategoryId = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Item).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"number", (o,n) => { (o as Item).Number = n.GetStringValue(); } },
-                {"picture", (o,n) => { (o as Item).Picture = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Picture>().ToList(); } },
+                {"picture", (o,n) => { (o as Item).Picture = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture>().ToList(); } },
                 {"priceIncludesTax", (o,n) => { (o as Item).PriceIncludesTax = n.GetBoolValue(); } },
                 {"taxGroupCode", (o,n) => { (o as Item).TaxGroupCode = n.GetStringValue(); } },
                 {"taxGroupId", (o,n) => { (o as Item).TaxGroupId = n.GetStringValue(); } },
@@ -58,12 +58,12 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.Item {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("gtin", Gtin);
             writer.WriteDecimalValue("inventory", Inventory);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ItemCategory>("itemCategory", ItemCategory);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory>("itemCategory", ItemCategory);
             writer.WriteStringValue("itemCategoryCode", ItemCategoryCode);
             writer.WriteStringValue("itemCategoryId", ItemCategoryId);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("number", Number);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Picture>("picture", Picture);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture>("picture", Picture);
             writer.WriteBoolValue("priceIncludesTax", PriceIncludesTax);
             writer.WriteStringValue("taxGroupCode", TaxGroupCode);
             writer.WriteStringValue("taxGroupId", TaxGroupId);

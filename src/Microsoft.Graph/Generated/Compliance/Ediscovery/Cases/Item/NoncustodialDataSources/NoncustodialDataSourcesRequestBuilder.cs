@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.ApplyHold;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.RemoveHold;
-using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.ApplyHold;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.RemoveHold;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\noncustodialDataSources</summary>
     public class NoncustodialDataSourcesRequestBuilder {
         public ApplyHoldRequestBuilder ApplyHold { get =>
@@ -25,11 +25,11 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSource
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.noncustodialDataSources.item collection</summary>
-        public NoncustodialDataSourceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.noncustodialDataSources.item collection</summary>
+        public NoncustodialDataSourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("noncustodialDataSource_id", position);
-            return new NoncustodialDataSourceRequestBuilder(urlTplParams, RequestAdapter);
+            return new NoncustodialDataSourceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NoncustodialDataSourcesRequestBuilder and sets the default values.

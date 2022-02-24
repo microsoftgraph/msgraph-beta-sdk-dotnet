@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.GetEffectivePermissions {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.GetEffectivePermissions {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\microsoft.graph.getEffectivePermissions()</summary>
     public class GetEffectivePermissionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

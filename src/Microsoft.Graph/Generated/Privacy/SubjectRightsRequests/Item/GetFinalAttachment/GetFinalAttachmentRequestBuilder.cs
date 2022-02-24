@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Privacy.SubjectRightsRequests.Item.GetFinalAttachment {
+namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.GetFinalAttachment {
     /// <summary>Builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\microsoft.graph.getFinalAttachment()</summary>
     public class GetFinalAttachmentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

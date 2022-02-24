@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.ResetDecisions {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.ResetDecisions {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\decisions\{accessReviewInstanceDecisionItem-id}\instance\microsoft.graph.resetDecisions</summary>
     public class ResetDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

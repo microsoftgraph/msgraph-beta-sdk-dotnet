@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class TenantCustomizedInformation : Entity, IParsable {
         /// <summary>The collection of contacts for the managed tenant. Optional.</summary>
         public List<TenantContactInformation> Contacts { get; set; }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IosManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>
         public string AllowedIosDeviceModels { get; set; }
@@ -24,7 +24,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps.</summary>
         public bool? DisableProtectionOfManagedOutboundOpenInData { get; set; }
         /// <summary>Apps in this list will be exempt from the policy and will be able to receive data from managed apps.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> ExemptedAppProtocols { get; set; }
+        public List<KeyValuePair> ExemptedAppProtocols { get; set; }
         /// <summary>A list of custom urls that are allowed to invocate an unmanaged app</summary>
         public List<string> ExemptedUniversalLinks { get; set; }
         /// <summary>Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.</summary>
@@ -55,7 +55,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"deployedAppCount", (o,n) => { (o as IosManagedAppProtection).DeployedAppCount = n.GetIntValue(); } },
                 {"deploymentSummary", (o,n) => { (o as IosManagedAppProtection).DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(); } },
                 {"disableProtectionOfManagedOutboundOpenInData", (o,n) => { (o as IosManagedAppProtection).DisableProtectionOfManagedOutboundOpenInData = n.GetBoolValue(); } },
-                {"exemptedAppProtocols", (o,n) => { (o as IosManagedAppProtection).ExemptedAppProtocols = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"exemptedAppProtocols", (o,n) => { (o as IosManagedAppProtection).ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"exemptedUniversalLinks", (o,n) => { (o as IosManagedAppProtection).ExemptedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"faceIdBlocked", (o,n) => { (o as IosManagedAppProtection).FaceIdBlocked = n.GetBoolValue(); } },
                 {"filterOpenInToOnlyManagedApps", (o,n) => { (o as IosManagedAppProtection).FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
@@ -82,7 +82,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteIntValue("deployedAppCount", DeployedAppCount);
             writer.WriteObjectValue<ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
             writer.WriteBoolValue("disableProtectionOfManagedOutboundOpenInData", DisableProtectionOfManagedOutboundOpenInData);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("exemptedAppProtocols", ExemptedAppProtocols);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("exemptedAppProtocols", ExemptedAppProtocols);
             writer.WriteCollectionOfPrimitiveValues<string>("exemptedUniversalLinks", ExemptedUniversalLinks);
             writer.WriteBoolValue("faceIdBlocked", FaceIdBlocked);
             writer.WriteBoolValue("filterOpenInToOnlyManagedApps", FilterOpenInToOnlyManagedApps);

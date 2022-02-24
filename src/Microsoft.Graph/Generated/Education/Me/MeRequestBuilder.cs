@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Education.Me.Assignments;
-using MicrosoftGraph.Education.Me.Classes;
-using MicrosoftGraph.Education.Me.Rubrics;
-using MicrosoftGraph.Education.Me.Schools;
-using MicrosoftGraph.Education.Me.TaughtClasses;
-using MicrosoftGraph.Education.Me.User;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Education.Me.Assignments;
+using MicrosoftGraphSdk.Education.Me.Classes;
+using MicrosoftGraphSdk.Education.Me.Rubrics;
+using MicrosoftGraphSdk.Education.Me.Schools;
+using MicrosoftGraphSdk.Education.Me.TaughtClasses;
+using MicrosoftGraphSdk.Education.Me.User;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Me {
+namespace MicrosoftGraphSdk.Education.Me {
     /// <summary>Builds and executes requests for operations under \education\me</summary>
     public class MeRequestBuilder {
         public AssignmentsRequestBuilder Assignments { get =>

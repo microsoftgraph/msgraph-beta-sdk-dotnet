@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues {
+namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues {
     /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\healthOverviews\{serviceHealth-id}\issues</summary>
     public class IssuesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.admin.serviceAnnouncement.healthOverviews.item.issues.item collection</summary>
-        public ServiceHealthIssueRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.serviceAnnouncement.healthOverviews.item.issues.item collection</summary>
+        public ServiceHealthIssueItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceHealthIssue_id", position);
-            return new ServiceHealthIssueRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServiceHealthIssueItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IssuesRequestBuilder and sets the default values.

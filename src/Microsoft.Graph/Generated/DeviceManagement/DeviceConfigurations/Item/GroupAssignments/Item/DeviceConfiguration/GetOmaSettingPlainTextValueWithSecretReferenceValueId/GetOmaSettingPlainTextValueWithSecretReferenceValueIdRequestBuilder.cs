@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.GetOmaSettingPlainTextValueWithSecretReferenceValueId {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.GetOmaSettingPlainTextValueWithSecretReferenceValueId {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration\microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')</summary>
     public class GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

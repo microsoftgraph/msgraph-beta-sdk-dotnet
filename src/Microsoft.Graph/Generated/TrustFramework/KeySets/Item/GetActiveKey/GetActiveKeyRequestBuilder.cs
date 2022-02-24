@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TrustFramework.KeySets.Item.GetActiveKey {
+namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.GetActiveKey {
     /// <summary>Builds and executes requests for operations under \trustFramework\keySets\{trustFrameworkKeySet-id}\microsoft.graph.getActiveKey()</summary>
     public class GetActiveKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

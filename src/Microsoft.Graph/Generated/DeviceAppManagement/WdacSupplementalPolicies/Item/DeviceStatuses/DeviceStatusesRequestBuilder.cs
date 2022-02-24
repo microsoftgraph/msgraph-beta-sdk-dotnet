@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses {
+namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.DeviceStatuses {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\wdacSupplementalPolicies\{windowsDefenderApplicationControlSupplementalPolicy-id}\deviceStatuses</summary>
     public class DeviceStatusesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies.Item.Devic
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.wdacSupplementalPolicies.item.deviceStatuses.item collection</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.wdacSupplementalPolicies.item.deviceStatuses.item collection</summary>
+        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus_id", position);
-            return new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceStatusesRequestBuilder and sets the default values.

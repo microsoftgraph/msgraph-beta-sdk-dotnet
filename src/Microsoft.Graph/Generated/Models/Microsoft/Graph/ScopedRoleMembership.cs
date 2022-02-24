@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ScopedRoleMembership : Entity, IParsable {
         /// <summary>Unique identifier for the administrative unit that the directory role is scoped to</summary>
         public string AdministrativeUnitId { get; set; }
         /// <summary>Unique identifier for the directory role that the member is in.</summary>
         public string RoleId { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Identity RoleMemberInfo { get; set; }
+        public Identity RoleMemberInfo { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -17,7 +17,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"administrativeUnitId", (o,n) => { (o as ScopedRoleMembership).AdministrativeUnitId = n.GetStringValue(); } },
                 {"roleId", (o,n) => { (o as ScopedRoleMembership).RoleId = n.GetStringValue(); } },
-                {"roleMemberInfo", (o,n) => { (o as ScopedRoleMembership).RoleMemberInfo = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>(); } },
+                {"roleMemberInfo", (o,n) => { (o as ScopedRoleMembership).RoleMemberInfo = n.GetObjectValue<Identity>(); } },
             };
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteStringValue("administrativeUnitId", AdministrativeUnitId);
             writer.WriteStringValue("roleId", RoleId);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>("roleMemberInfo", RoleMemberInfo);
+            writer.WriteObjectValue<Identity>("roleMemberInfo", RoleMemberInfo);
         }
     }
 }

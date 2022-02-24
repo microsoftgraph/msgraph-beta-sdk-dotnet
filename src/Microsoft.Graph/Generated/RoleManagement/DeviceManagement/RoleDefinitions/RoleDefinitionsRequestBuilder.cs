@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.DeviceManagement.RoleDefinitions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.DeviceManagement.RoleDefinitions {
+namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions {
     /// <summary>Builds and executes requests for operations under \roleManagement\deviceManagement\roleDefinitions</summary>
     public class RoleDefinitionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.RoleManagement.DeviceManagement.RoleDefinitions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.roleManagement.deviceManagement.roleDefinitions.item collection</summary>
-        public UnifiedRoleDefinitionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.deviceManagement.roleDefinitions.item collection</summary>
+        public UnifiedRoleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleDefinition_id", position);
-            return new UnifiedRoleDefinitionRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleDefinitionsRequestBuilder and sets the default values.

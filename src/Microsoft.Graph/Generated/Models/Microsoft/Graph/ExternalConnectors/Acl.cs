@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
     public class Acl : IParsable {
         /// <summary>The access granted to the identity. Possible values are: grant, deny, unknownFutureValue.</summary>
         public AccessType? AccessType { get; set; }

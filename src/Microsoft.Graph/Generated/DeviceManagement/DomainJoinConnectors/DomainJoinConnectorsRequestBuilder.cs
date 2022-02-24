@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DomainJoinConnectors.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DomainJoinConnectors.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DomainJoinConnectors {
+namespace MicrosoftGraphSdk.DeviceManagement.DomainJoinConnectors {
     /// <summary>Builds and executes requests for operations under \deviceManagement\domainJoinConnectors</summary>
     public class DomainJoinConnectorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.DomainJoinConnectors {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.domainJoinConnectors.item collection</summary>
-        public DeviceManagementDomainJoinConnectorRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.domainJoinConnectors.item collection</summary>
+        public DeviceManagementDomainJoinConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementDomainJoinConnector_id", position);
-            return new DeviceManagementDomainJoinConnectorRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementDomainJoinConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DomainJoinConnectorsRequestBuilder and sets the default values.

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ManagementCondition : Entity, IParsable {
         /// <summary>The applicable platforms for this management condition.</summary>
         public List<DevicePlatformType?> ApplicablePlatforms { get; set; }

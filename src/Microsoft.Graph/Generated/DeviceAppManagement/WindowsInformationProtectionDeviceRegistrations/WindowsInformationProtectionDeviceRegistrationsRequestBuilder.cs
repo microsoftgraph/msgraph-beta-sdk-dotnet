@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations {
+namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\windowsInformationProtectionDeviceRegistrations</summary>
     public class WindowsInformationProtectionDeviceRegistrationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.WindowsInformationProtectionDeviceR
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.windowsInformationProtectionDeviceRegistrations.item collection</summary>
-        public WindowsInformationProtectionDeviceRegistrationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.windowsInformationProtectionDeviceRegistrations.item collection</summary>
+        public WindowsInformationProtectionDeviceRegistrationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionDeviceRegistration_id", position);
-            return new WindowsInformationProtectionDeviceRegistrationRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsInformationProtectionDeviceRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsInformationProtectionDeviceRegistrationsRequestBuilder and sets the default values.

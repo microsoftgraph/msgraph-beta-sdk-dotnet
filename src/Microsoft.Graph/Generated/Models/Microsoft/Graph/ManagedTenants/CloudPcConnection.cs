@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class CloudPcConnection : Entity, IParsable {
         /// <summary>The display name of the cloud PC connection. Required. Read-only.</summary>
         public string DisplayName { get; set; }

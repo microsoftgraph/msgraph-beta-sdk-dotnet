@@ -1,20 +1,20 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Delta;
-using MicrosoftGraph.Users.GetByIds;
-using MicrosoftGraph.Users.GetManagedAppBlockedUsers;
-using MicrosoftGraph.Users.GetUserOwnedObjects;
-using MicrosoftGraph.Users.Item;
-using MicrosoftGraph.Users.ValidatePassword;
-using MicrosoftGraph.Users.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Delta;
+using MicrosoftGraphSdk.Users.GetByIds;
+using MicrosoftGraphSdk.Users.GetManagedAppBlockedUsers;
+using MicrosoftGraphSdk.Users.GetUserOwnedObjects;
+using MicrosoftGraphSdk.Users.Item;
+using MicrosoftGraphSdk.Users.ValidatePassword;
+using MicrosoftGraphSdk.Users.ValidateProperties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users {
+namespace MicrosoftGraphSdk.Users {
     /// <summary>Builds and executes requests for operations under \users</summary>
     public class UsersRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -35,11 +35,11 @@ namespace MicrosoftGraph.Users {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item collection</summary>
-        public UserRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item collection</summary>
+        public UserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("user_id", position);
-            return new UserRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UsersRequestBuilder and sets the default values.
@@ -95,7 +95,7 @@ namespace MicrosoftGraph.Users {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.User body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.User body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -139,10 +139,10 @@ namespace MicrosoftGraph.Users {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.User> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.User body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.User> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.User body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.User>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.User>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from users</summary>
         public class GetQueryParameters : QueryParametersBase {

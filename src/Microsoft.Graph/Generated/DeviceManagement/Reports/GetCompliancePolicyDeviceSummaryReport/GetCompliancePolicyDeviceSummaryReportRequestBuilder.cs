@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetCompliancePolicyDeviceSummaryReport {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetCompliancePolicyDeviceSummaryReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCompliancePolicyDeviceSummaryReport</summary>
     public class GetCompliancePolicyDeviceSummaryReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

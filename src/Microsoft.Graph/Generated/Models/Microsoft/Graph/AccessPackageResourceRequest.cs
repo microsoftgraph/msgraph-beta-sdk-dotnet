@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageResourceRequest : Entity, IParsable {
         /// <summary>Nullable.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource AccessPackageResource { get; set; }
+        public AccessPackageResource AccessPackageResource { get; set; }
         /// <summary>The unique ID of the access package catalog.</summary>
         public string CatalogId { get; set; }
         public bool? ExecuteImmediately { get; set; }
@@ -17,7 +17,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The requestor's justification for adding or removing the resource.</summary>
         public string Justification { get; set; }
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackageSubject Requestor { get; set; }
+        public AccessPackageSubject Requestor { get; set; }
         /// <summary>The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.</summary>
         public string RequestState { get; set; }
         /// <summary>Read-only.</summary>
@@ -29,13 +29,13 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceRequest).AccessPackageResource = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource>(); } },
+                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceRequest).AccessPackageResource = n.GetObjectValue<AccessPackageResource>(); } },
                 {"catalogId", (o,n) => { (o as AccessPackageResourceRequest).CatalogId = n.GetStringValue(); } },
                 {"executeImmediately", (o,n) => { (o as AccessPackageResourceRequest).ExecuteImmediately = n.GetBoolValue(); } },
                 {"expirationDateTime", (o,n) => { (o as AccessPackageResourceRequest).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isValidationOnly", (o,n) => { (o as AccessPackageResourceRequest).IsValidationOnly = n.GetBoolValue(); } },
                 {"justification", (o,n) => { (o as AccessPackageResourceRequest).Justification = n.GetStringValue(); } },
-                {"requestor", (o,n) => { (o as AccessPackageResourceRequest).Requestor = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageSubject>(); } },
+                {"requestor", (o,n) => { (o as AccessPackageResourceRequest).Requestor = n.GetObjectValue<AccessPackageSubject>(); } },
                 {"requestState", (o,n) => { (o as AccessPackageResourceRequest).RequestState = n.GetStringValue(); } },
                 {"requestStatus", (o,n) => { (o as AccessPackageResourceRequest).RequestStatus = n.GetStringValue(); } },
                 {"requestType", (o,n) => { (o as AccessPackageResourceRequest).RequestType = n.GetStringValue(); } },
@@ -48,13 +48,13 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource>("accessPackageResource", AccessPackageResource);
+            writer.WriteObjectValue<AccessPackageResource>("accessPackageResource", AccessPackageResource);
             writer.WriteStringValue("catalogId", CatalogId);
             writer.WriteBoolValue("executeImmediately", ExecuteImmediately);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteBoolValue("isValidationOnly", IsValidationOnly);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageSubject>("requestor", Requestor);
+            writer.WriteObjectValue<AccessPackageSubject>("requestor", Requestor);
             writer.WriteStringValue("requestState", RequestState);
             writer.WriteStringValue("requestStatus", RequestStatus);
             writer.WriteStringValue("requestType", RequestType);

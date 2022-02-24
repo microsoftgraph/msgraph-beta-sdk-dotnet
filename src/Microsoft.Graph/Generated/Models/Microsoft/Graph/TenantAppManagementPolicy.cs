@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TenantAppManagementPolicy : PolicyBase, IParsable {
         /// <summary>Restrictions that apply as default to all application objects in the tenant.</summary>
         public AppManagementConfiguration ApplicationRestrictions { get; set; }

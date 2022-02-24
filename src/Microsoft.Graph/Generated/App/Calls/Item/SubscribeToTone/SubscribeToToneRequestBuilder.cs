@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.App.Calls.Item.SubscribeToTone {
+namespace MicrosoftGraphSdk.App.Calls.Item.SubscribeToTone {
     /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.subscribeToTone</summary>
     public class SubscribeToToneRequestBuilder {
         /// <summary>Path parameters for the request</summary>

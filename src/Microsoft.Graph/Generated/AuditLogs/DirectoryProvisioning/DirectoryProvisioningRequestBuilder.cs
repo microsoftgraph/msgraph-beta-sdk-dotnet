@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AuditLogs.DirectoryProvisioning.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AuditLogs.DirectoryProvisioning.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AuditLogs.DirectoryProvisioning {
+namespace MicrosoftGraphSdk.AuditLogs.DirectoryProvisioning {
     /// <summary>Builds and executes requests for operations under \auditLogs\directoryProvisioning</summary>
     public class DirectoryProvisioningRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.AuditLogs.DirectoryProvisioning {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.auditLogs.directoryProvisioning.item collection</summary>
-        public ProvisioningObjectSummaryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.auditLogs.directoryProvisioning.item collection</summary>
+        public ProvisioningObjectSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("provisioningObjectSummary_id", position);
-            return new ProvisioningObjectSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new ProvisioningObjectSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryProvisioningRequestBuilder and sets the default values.

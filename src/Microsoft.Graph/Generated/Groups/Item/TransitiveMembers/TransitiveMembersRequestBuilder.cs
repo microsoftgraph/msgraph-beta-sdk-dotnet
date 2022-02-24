@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.TransitiveMembers.Ref;
+using MicrosoftGraphSdk.Groups.Item.TransitiveMembers.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.TransitiveMembers {
+namespace MicrosoftGraphSdk.Groups.Item.TransitiveMembers {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\transitiveMembers</summary>
     public class TransitiveMembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.AutopilotEvents.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.AutopilotEvents.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AutopilotEvents {
+namespace MicrosoftGraphSdk.DeviceManagement.AutopilotEvents {
     /// <summary>Builds and executes requests for operations under \deviceManagement\autopilotEvents</summary>
     public class AutopilotEventsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.AutopilotEvents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.autopilotEvents.item collection</summary>
-        public DeviceManagementAutopilotEventRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.autopilotEvents.item collection</summary>
+        public DeviceManagementAutopilotEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementAutopilotEvent_id", position);
-            return new DeviceManagementAutopilotEventRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementAutopilotEventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AutopilotEventsRequestBuilder and sets the default values.

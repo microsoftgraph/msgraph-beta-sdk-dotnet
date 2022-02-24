@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Planner.Plans.Item.Buckets.Item.Tasks.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Planner.Plans.Item.Buckets.Item.Tasks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Planner.Plans.Item.Buckets.Item.Tasks {
+namespace MicrosoftGraphSdk.Planner.Plans.Item.Buckets.Item.Tasks {
     /// <summary>Builds and executes requests for operations under \planner\plans\{plannerPlan-id}\buckets\{plannerBucket-id}\tasks</summary>
     public class TasksRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Planner.Plans.Item.Buckets.Item.Tasks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.planner.plans.item.buckets.item.tasks.item collection</summary>
-        public PlannerTaskRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.planner.plans.item.buckets.item.tasks.item collection</summary>
+        public PlannerTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerTask_id", position);
-            return new PlannerTaskRequestBuilder(urlTplParams, RequestAdapter);
+            return new PlannerTaskItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TasksRequestBuilder and sets the default values.

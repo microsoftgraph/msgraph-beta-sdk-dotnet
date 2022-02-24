@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.Item.Format.Fill.SetSolidColor {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Series.Item.Points.Item.Format.Fill.SetSolidColor {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points\{workbookChartPoint-id}\format\fill\microsoft.graph.setSolidColor</summary>
     public class SetSolidColorRequestBuilder {
         /// <summary>Path parameters for the request</summary>

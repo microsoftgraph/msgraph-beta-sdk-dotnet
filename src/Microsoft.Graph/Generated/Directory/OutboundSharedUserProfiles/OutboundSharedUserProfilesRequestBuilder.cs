@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Directory.OutboundSharedUserProfiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Directory.OutboundSharedUserProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Directory.OutboundSharedUserProfiles {
+namespace MicrosoftGraphSdk.Directory.OutboundSharedUserProfiles {
     /// <summary>Builds and executes requests for operations under \directory\outboundSharedUserProfiles</summary>
     public class OutboundSharedUserProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Directory.OutboundSharedUserProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.directory.outboundSharedUserProfiles.item collection</summary>
-        public OutboundSharedUserProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.outboundSharedUserProfiles.item collection</summary>
+        public OutboundSharedUserProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outboundSharedUserProfile_userId", position);
-            return new OutboundSharedUserProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutboundSharedUserProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OutboundSharedUserProfilesRequestBuilder and sets the default values.

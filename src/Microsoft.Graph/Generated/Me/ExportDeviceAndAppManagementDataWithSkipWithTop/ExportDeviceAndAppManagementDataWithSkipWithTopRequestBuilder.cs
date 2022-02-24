@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ExportDeviceAndAppManagementDataWithSkipWithTop {
+namespace MicrosoftGraphSdk.Me.ExportDeviceAndAppManagementDataWithSkipWithTop {
     /// <summary>Builds and executes requests for operations under \me\microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})</summary>
     public class ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder {
         /// <summary>Path parameters for the request</summary>

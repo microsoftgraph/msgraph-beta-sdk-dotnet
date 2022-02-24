@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Renew {
+namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Sessions.Item.Renew {
     /// <summary>Builds and executes requests for operations under \dataClassification\exactMatchDataStores\{exactMatchDataStore-id}\sessions\{exactMatchSession-id}\microsoft.graph.renew</summary>
     public class RenewRequestBuilder {
         /// <summary>Path parameters for the request</summary>

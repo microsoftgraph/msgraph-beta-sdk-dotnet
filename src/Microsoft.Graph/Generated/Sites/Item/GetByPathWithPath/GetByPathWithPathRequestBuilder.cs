@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.GetByPathWithPath {
+namespace MicrosoftGraphSdk.Sites.Item.GetByPathWithPath {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\microsoft.graph.getByPath(path='{path}')</summary>
     public class GetByPathWithPathRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -76,7 +76,7 @@ namespace MicrosoftGraph.Sites.Item.GetByPathWithPath {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type site</summary>
-            public MicrosoftGraph.Models.Microsoft.Graph.Site Site { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.Site Site { get; set; }
             /// <summary>
             /// Instantiates a new getByPathWithPathResponse and sets the default values.
             /// </summary>
@@ -88,7 +88,7 @@ namespace MicrosoftGraph.Sites.Item.GetByPathWithPath {
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"site", (o,n) => { (o as GetByPathWithPathResponse).Site = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Site>(); } },
+                    {"site", (o,n) => { (o as GetByPathWithPathResponse).Site = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>(); } },
                 };
             }
             /// <summary>
@@ -97,7 +97,7 @@ namespace MicrosoftGraph.Sites.Item.GetByPathWithPath {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Site>("site", Site);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>("site", Site);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

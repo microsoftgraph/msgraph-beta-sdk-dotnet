@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Tasks.Lists.Delta;
-using MicrosoftGraph.Me.Tasks.Lists.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Tasks.Lists.Delta;
+using MicrosoftGraphSdk.Me.Tasks.Lists.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Tasks.Lists {
+namespace MicrosoftGraphSdk.Me.Tasks.Lists {
     /// <summary>Builds and executes requests for operations under \me\tasks\lists</summary>
     public class ListsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Me.Tasks.Lists {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.tasks.lists.item collection</summary>
-        public BaseTaskListRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.tasks.lists.item collection</summary>
+        public BaseTaskListItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("baseTaskList_id", position);
-            return new BaseTaskListRequestBuilder(urlTplParams, RequestAdapter);
+            return new BaseTaskListItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ListsRequestBuilder and sets the default values.

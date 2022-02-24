@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ManagedAppOperation : Entity, IParsable {
         /// <summary>The operation name.</summary>
         public string DisplayName { get; set; }

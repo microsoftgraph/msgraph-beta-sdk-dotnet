@@ -3,19 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserAnalytics : Entity, IParsable {
         /// <summary>The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.ActivityStatistics> ActivityStatistics { get; set; }
+        public List<ActivityStatistics> ActivityStatistics { get; set; }
         /// <summary>The current settings for a user to use the analytics API.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Settings Settings { get; set; }
+        public Settings Settings { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activityStatistics", (o,n) => { (o as UserAnalytics).ActivityStatistics = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ActivityStatistics>().ToList(); } },
-                {"settings", (o,n) => { (o as UserAnalytics).Settings = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Settings>(); } },
+                {"activityStatistics", (o,n) => { (o as UserAnalytics).ActivityStatistics = n.GetCollectionOfObjectValues<ActivityStatistics>().ToList(); } },
+                {"settings", (o,n) => { (o as UserAnalytics).Settings = n.GetObjectValue<Settings>(); } },
             };
         }
         /// <summary>
@@ -25,8 +25,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ActivityStatistics>("activityStatistics", ActivityStatistics);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Settings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<ActivityStatistics>("activityStatistics", ActivityStatistics);
+            writer.WriteObjectValue<Settings>("settings", Settings);
         }
     }
 }

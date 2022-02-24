@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid {
+namespace MicrosoftGraphSdk.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid {
     /// <summary>Builds and executes requests for operations under \deviceManagement\resourceOperations\{resourceOperation-id}\microsoft.graph.getScopesForUser(userid='{userid}')</summary>
     public class GetScopesForUserWithUseridRequestBuilder {
         /// <summary>Path parameters for the request</summary>

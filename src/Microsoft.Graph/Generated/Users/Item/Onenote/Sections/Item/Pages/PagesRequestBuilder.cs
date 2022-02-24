@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Onenote.Sections.Item.Pages.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Onenote.Sections.Item.Pages.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Onenote.Sections.Item.Pages {
+namespace MicrosoftGraphSdk.Users.Item.Onenote.Sections.Item.Pages {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\onenote\sections\{onenoteSection-id}\pages</summary>
     public class PagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Onenote.Sections.Item.Pages {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.onenote.sections.item.pages.item collection</summary>
-        public OnenotePageRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.onenote.sections.item.pages.item collection</summary>
+        public OnenotePageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenotePage_id", position);
-            return new OnenotePageRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnenotePageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PagesRequestBuilder and sets the default values.

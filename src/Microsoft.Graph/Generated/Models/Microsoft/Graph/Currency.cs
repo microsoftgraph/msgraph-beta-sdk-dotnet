@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Currency : Entity, IParsable {
         public string AmountDecimalPlaces { get; set; }
-        public Decimal? AmountRoundingPrecision { get; set; }
+        public decimal? AmountRoundingPrecision { get; set; }
         public string Code { get; set; }
         public string DisplayName { get; set; }
         public DateTimeOffset? LastModifiedDateTime { get; set; }

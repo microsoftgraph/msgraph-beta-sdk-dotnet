@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ManagedDevice : Entity, IParsable {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AadRegistered { get; set; }
@@ -12,7 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Android security patch level. This property is read-only.</summary>
         public string AndroidSecurityPatchLevel { get; set; }
         /// <summary>Managed device mobile app configuration states for this device.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails> AssignmentFilterEvaluationStatusDetails { get; set; }
+        public List<AssignmentFilterEvaluationStatusDetails> AssignmentFilterEvaluationStatusDetails { get; set; }
         /// <summary>Reports if the managed device is enrolled via auto-pilot. This property is read-only.</summary>
         public bool? AutopilotEnrolled { get; set; }
         /// <summary>The unique identifier for the Azure Active Directory device. Read only. This property is read-only.</summary>
@@ -41,7 +41,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>List of ComplexType deviceActionResult objects. This property is read-only.</summary>
         public List<DeviceActionResult> DeviceActionResults { get; set; }
         /// <summary>Device category</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.DeviceCategory DeviceCategory { get; set; }
+        public DeviceCategory DeviceCategory { get; set; }
         /// <summary>Device category display name. This property is read-only.</summary>
         public string DeviceCategoryDisplayName { get; set; }
         /// <summary>Device compliance policy states for this device.</summary>
@@ -171,7 +171,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Device user principal name. This property is read-only.</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>The primary users associated with the managed device.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.User> Users { get; set; }
+        public List<User> Users { get; set; }
         /// <summary>Indicates the last logged on users of a device. This property is read-only.</summary>
         public List<LoggedOnUser> UsersLoggedOn { get; set; }
         /// <summary>Wi-Fi MAC. This property is read-only.</summary>
@@ -179,7 +179,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Count of active malware for this windows device. This property is read-only.</summary>
         public int? WindowsActiveMalwareCount { get; set; }
         /// <summary>The device protection status. This property is read-only.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.WindowsProtectionState WindowsProtectionState { get; set; }
+        public WindowsProtectionState WindowsProtectionState { get; set; }
         /// <summary>Count of remediated malware for this windows device. This property is read-only.</summary>
         public int? WindowsRemediatedMalwareCount { get; set; }
         /// <summary>
@@ -190,7 +190,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"aadRegistered", (o,n) => { (o as ManagedDevice).AadRegistered = n.GetBoolValue(); } },
                 {"activationLockBypassCode", (o,n) => { (o as ManagedDevice).ActivationLockBypassCode = n.GetStringValue(); } },
                 {"androidSecurityPatchLevel", (o,n) => { (o as ManagedDevice).AndroidSecurityPatchLevel = n.GetStringValue(); } },
-                {"assignmentFilterEvaluationStatusDetails", (o,n) => { (o as ManagedDevice).AssignmentFilterEvaluationStatusDetails = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails>().ToList(); } },
+                {"assignmentFilterEvaluationStatusDetails", (o,n) => { (o as ManagedDevice).AssignmentFilterEvaluationStatusDetails = n.GetCollectionOfObjectValues<AssignmentFilterEvaluationStatusDetails>().ToList(); } },
                 {"autopilotEnrolled", (o,n) => { (o as ManagedDevice).AutopilotEnrolled = n.GetBoolValue(); } },
                 {"azureActiveDirectoryDeviceId", (o,n) => { (o as ManagedDevice).AzureActiveDirectoryDeviceId = n.GetStringValue(); } },
                 {"azureADDeviceId", (o,n) => { (o as ManagedDevice).AzureADDeviceId = n.GetStringValue(); } },
@@ -205,7 +205,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"configurationManagerClientInformation", (o,n) => { (o as ManagedDevice).ConfigurationManagerClientInformation = n.GetObjectValue<ConfigurationManagerClientInformation>(); } },
                 {"detectedApps", (o,n) => { (o as ManagedDevice).DetectedApps = n.GetCollectionOfObjectValues<DetectedApp>().ToList(); } },
                 {"deviceActionResults", (o,n) => { (o as ManagedDevice).DeviceActionResults = n.GetCollectionOfObjectValues<DeviceActionResult>().ToList(); } },
-                {"deviceCategory", (o,n) => { (o as ManagedDevice).DeviceCategory = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DeviceCategory>(); } },
+                {"deviceCategory", (o,n) => { (o as ManagedDevice).DeviceCategory = n.GetObjectValue<DeviceCategory>(); } },
                 {"deviceCategoryDisplayName", (o,n) => { (o as ManagedDevice).DeviceCategoryDisplayName = n.GetStringValue(); } },
                 {"deviceCompliancePolicyStates", (o,n) => { (o as ManagedDevice).DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>().ToList(); } },
                 {"deviceConfigurationStates", (o,n) => { (o as ManagedDevice).DeviceConfigurationStates = n.GetCollectionOfObjectValues<DeviceConfigurationState>().ToList(); } },
@@ -270,11 +270,11 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"userDisplayName", (o,n) => { (o as ManagedDevice).UserDisplayName = n.GetStringValue(); } },
                 {"userId", (o,n) => { (o as ManagedDevice).UserId = n.GetStringValue(); } },
                 {"userPrincipalName", (o,n) => { (o as ManagedDevice).UserPrincipalName = n.GetStringValue(); } },
-                {"users", (o,n) => { (o as ManagedDevice).Users = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.User>().ToList(); } },
+                {"users", (o,n) => { (o as ManagedDevice).Users = n.GetCollectionOfObjectValues<User>().ToList(); } },
                 {"usersLoggedOn", (o,n) => { (o as ManagedDevice).UsersLoggedOn = n.GetCollectionOfObjectValues<LoggedOnUser>().ToList(); } },
                 {"wiFiMacAddress", (o,n) => { (o as ManagedDevice).WiFiMacAddress = n.GetStringValue(); } },
                 {"windowsActiveMalwareCount", (o,n) => { (o as ManagedDevice).WindowsActiveMalwareCount = n.GetIntValue(); } },
-                {"windowsProtectionState", (o,n) => { (o as ManagedDevice).WindowsProtectionState = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.WindowsProtectionState>(); } },
+                {"windowsProtectionState", (o,n) => { (o as ManagedDevice).WindowsProtectionState = n.GetObjectValue<WindowsProtectionState>(); } },
                 {"windowsRemediatedMalwareCount", (o,n) => { (o as ManagedDevice).WindowsRemediatedMalwareCount = n.GetIntValue(); } },
             };
         }
@@ -288,7 +288,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteBoolValue("aadRegistered", AadRegistered);
             writer.WriteStringValue("activationLockBypassCode", ActivationLockBypassCode);
             writer.WriteStringValue("androidSecurityPatchLevel", AndroidSecurityPatchLevel);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails>("assignmentFilterEvaluationStatusDetails", AssignmentFilterEvaluationStatusDetails);
+            writer.WriteCollectionOfObjectValues<AssignmentFilterEvaluationStatusDetails>("assignmentFilterEvaluationStatusDetails", AssignmentFilterEvaluationStatusDetails);
             writer.WriteBoolValue("autopilotEnrolled", AutopilotEnrolled);
             writer.WriteStringValue("azureActiveDirectoryDeviceId", AzureActiveDirectoryDeviceId);
             writer.WriteStringValue("azureADDeviceId", AzureADDeviceId);
@@ -303,7 +303,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<ConfigurationManagerClientInformation>("configurationManagerClientInformation", ConfigurationManagerClientInformation);
             writer.WriteCollectionOfObjectValues<DetectedApp>("detectedApps", DetectedApps);
             writer.WriteCollectionOfObjectValues<DeviceActionResult>("deviceActionResults", DeviceActionResults);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DeviceCategory>("deviceCategory", DeviceCategory);
+            writer.WriteObjectValue<DeviceCategory>("deviceCategory", DeviceCategory);
             writer.WriteStringValue("deviceCategoryDisplayName", DeviceCategoryDisplayName);
             writer.WriteCollectionOfObjectValues<DeviceCompliancePolicyState>("deviceCompliancePolicyStates", DeviceCompliancePolicyStates);
             writer.WriteCollectionOfObjectValues<DeviceConfigurationState>("deviceConfigurationStates", DeviceConfigurationStates);
@@ -368,11 +368,11 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.User>("users", Users);
+            writer.WriteCollectionOfObjectValues<User>("users", Users);
             writer.WriteCollectionOfObjectValues<LoggedOnUser>("usersLoggedOn", UsersLoggedOn);
             writer.WriteStringValue("wiFiMacAddress", WiFiMacAddress);
             writer.WriteIntValue("windowsActiveMalwareCount", WindowsActiveMalwareCount);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.WindowsProtectionState>("windowsProtectionState", WindowsProtectionState);
+            writer.WriteObjectValue<WindowsProtectionState>("windowsProtectionState", WindowsProtectionState);
             writer.WriteIntValue("windowsRemediatedMalwareCount", WindowsRemediatedMalwareCount);
         }
     }

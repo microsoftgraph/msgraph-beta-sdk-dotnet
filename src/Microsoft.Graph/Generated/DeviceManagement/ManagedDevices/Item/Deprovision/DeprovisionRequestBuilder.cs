@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.Deprovision {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.Deprovision {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.deprovision</summary>
     public class DeprovisionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

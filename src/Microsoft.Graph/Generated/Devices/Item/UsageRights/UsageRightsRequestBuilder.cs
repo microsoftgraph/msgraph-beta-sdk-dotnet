@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Devices.Item.UsageRights.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Devices.Item.UsageRights.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Devices.Item.UsageRights {
+namespace MicrosoftGraphSdk.Devices.Item.UsageRights {
     /// <summary>Builds and executes requests for operations under \devices\{device-id}\usageRights</summary>
     public class UsageRightsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Devices.Item.UsageRights {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.devices.item.usageRights.item collection</summary>
-        public UsageRightRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.devices.item.usageRights.item collection</summary>
+        public UsageRightItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("usageRight_id", position);
-            return new UsageRightRequestBuilder(urlTplParams, RequestAdapter);
+            return new UsageRightItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UsageRightsRequestBuilder and sets the default values.

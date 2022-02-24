@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.ServicePrincipals.Item.MemberOf.Ref;
+using MicrosoftGraphSdk.ServicePrincipals.Item.MemberOf.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.MemberOf {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.MemberOf {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\memberOf</summary>
     public class MemberOfRequestBuilder {
         /// <summary>Path parameters for the request</summary>

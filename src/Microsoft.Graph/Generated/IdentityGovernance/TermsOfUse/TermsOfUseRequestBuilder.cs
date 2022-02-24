@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.TermsOfUse.AgreementAcceptances;
-using MicrosoftGraph.IdentityGovernance.TermsOfUse.Agreements;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.AgreementAcceptances;
+using MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.Agreements;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.TermsOfUse {
+namespace MicrosoftGraphSdk.IdentityGovernance.TermsOfUse {
     /// <summary>Builds and executes requests for operations under \identityGovernance\termsOfUse</summary>
     public class TermsOfUseRequestBuilder {
         public AgreementAcceptancesRequestBuilder AgreementAcceptances { get =>

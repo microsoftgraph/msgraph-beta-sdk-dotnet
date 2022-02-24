@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.GovernanceRoleSettings.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.GovernanceRoleSettings.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GovernanceRoleSettings {
+namespace MicrosoftGraphSdk.GovernanceRoleSettings {
     /// <summary>Builds and executes requests for operations under \governanceRoleSettings</summary>
     public class GovernanceRoleSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.GovernanceRoleSettings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.governanceRoleSettings.item collection</summary>
-        public GovernanceRoleSettingRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.governanceRoleSettings.item collection</summary>
+        public GovernanceRoleSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleSetting_id", position);
-            return new GovernanceRoleSettingRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernanceRoleSettingItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GovernanceRoleSettingsRequestBuilder and sets the default values.

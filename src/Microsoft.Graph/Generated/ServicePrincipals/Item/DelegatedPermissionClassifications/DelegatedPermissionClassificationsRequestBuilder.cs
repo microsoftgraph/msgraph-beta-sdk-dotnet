@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.ServicePrincipals.Item.DelegatedPermissionClassifications.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.ServicePrincipals.Item.DelegatedPermissionClassifications.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.DelegatedPermissionClassifications {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.DelegatedPermissionClassifications {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\delegatedPermissionClassifications</summary>
     public class DelegatedPermissionClassificationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.ServicePrincipals.Item.DelegatedPermissionClassificatio
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item.delegatedPermissionClassifications.item collection</summary>
-        public DelegatedPermissionClassificationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.delegatedPermissionClassifications.item collection</summary>
+        public DelegatedPermissionClassificationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("delegatedPermissionClassification_id", position);
-            return new DelegatedPermissionClassificationRequestBuilder(urlTplParams, RequestAdapter);
+            return new DelegatedPermissionClassificationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DelegatedPermissionClassificationsRequestBuilder and sets the default values.

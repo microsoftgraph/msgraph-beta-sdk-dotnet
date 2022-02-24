@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetEmailAppUsageAppsUserCountsWithPeriod {
+namespace MicrosoftGraphSdk.Reports.GetEmailAppUsageAppsUserCountsWithPeriod {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getEmailAppUsageAppsUserCounts(period='{period}')</summary>
     public class GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

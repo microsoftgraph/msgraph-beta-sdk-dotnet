@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections.Item.DeploymentSummary {
+namespace MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections.Item.DeploymentSummary {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections\{androidManagedAppProtection-id}\deploymentSummary</summary>
     public class DeploymentSummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>

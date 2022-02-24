@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TimeConstraint : IParsable {
         /// <summary>The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.</summary>
         public ActivityDomain? ActivityDomain { get; set; }

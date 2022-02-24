@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WindowsAutopilotDeploymentProfile : Entity, IParsable {
         /// <summary>The list of assigned devices for the profile.</summary>
         public List<WindowsAutopilotDeviceIdentity> AssignedDevices { get; set; }

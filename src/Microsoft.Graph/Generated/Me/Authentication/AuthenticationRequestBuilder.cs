@@ -1,24 +1,24 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Authentication.EmailMethods;
-using MicrosoftGraph.Me.Authentication.Fido2Methods;
-using MicrosoftGraph.Me.Authentication.Methods;
-using MicrosoftGraph.Me.Authentication.MicrosoftAuthenticatorMethods;
-using MicrosoftGraph.Me.Authentication.Operations;
-using MicrosoftGraph.Me.Authentication.PasswordlessMicrosoftAuthenticatorMethods;
-using MicrosoftGraph.Me.Authentication.PasswordMethods;
-using MicrosoftGraph.Me.Authentication.PhoneMethods;
-using MicrosoftGraph.Me.Authentication.SoftwareOathMethods;
-using MicrosoftGraph.Me.Authentication.TemporaryAccessPassMethods;
-using MicrosoftGraph.Me.Authentication.WindowsHelloForBusinessMethods;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Authentication.EmailMethods;
+using MicrosoftGraphSdk.Me.Authentication.Fido2Methods;
+using MicrosoftGraphSdk.Me.Authentication.Methods;
+using MicrosoftGraphSdk.Me.Authentication.MicrosoftAuthenticatorMethods;
+using MicrosoftGraphSdk.Me.Authentication.Operations;
+using MicrosoftGraphSdk.Me.Authentication.PasswordlessMicrosoftAuthenticatorMethods;
+using MicrosoftGraphSdk.Me.Authentication.PasswordMethods;
+using MicrosoftGraphSdk.Me.Authentication.PhoneMethods;
+using MicrosoftGraphSdk.Me.Authentication.SoftwareOathMethods;
+using MicrosoftGraphSdk.Me.Authentication.TemporaryAccessPassMethods;
+using MicrosoftGraphSdk.Me.Authentication.WindowsHelloForBusinessMethods;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Authentication {
+namespace MicrosoftGraphSdk.Me.Authentication {
     /// <summary>Builds and executes requests for operations under \me\authentication</summary>
     public class AuthenticationRequestBuilder {
         public EmailMethodsRequestBuilder EmailMethods { get =>
@@ -129,7 +129,7 @@ namespace MicrosoftGraph.Me.Authentication {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.Authentication body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -160,9 +160,9 @@ namespace MicrosoftGraph.Me.Authentication {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.Authentication> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.Authentication>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property authentication in me
@@ -172,7 +172,7 @@ namespace MicrosoftGraph.Me.Authentication {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraph.Models.Microsoft.Graph.Authentication body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Authentication body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

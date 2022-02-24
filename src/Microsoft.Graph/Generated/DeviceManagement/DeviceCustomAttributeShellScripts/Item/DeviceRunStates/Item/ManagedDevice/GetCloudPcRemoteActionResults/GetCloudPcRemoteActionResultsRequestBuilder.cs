@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice.GetCloudPcRemoteActionResults {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice.GetCloudPcRemoteActionResults {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getCloudPcRemoteActionResults()</summary>
     public class GetCloudPcRemoteActionResultsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice.GetCloudPcRemoteActionResults.GetCloudPcRemoteActionResults>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetCloudPcRemoteActionResults>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice.GetCloudPcRemoteActionResults.GetCloudPcRemoteActionResults>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetCloudPcRemoteActionResults>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

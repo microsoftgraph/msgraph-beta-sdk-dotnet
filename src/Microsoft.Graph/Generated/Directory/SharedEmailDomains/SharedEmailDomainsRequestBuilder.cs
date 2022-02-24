@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Directory.SharedEmailDomains.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Directory.SharedEmailDomains.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Directory.SharedEmailDomains {
+namespace MicrosoftGraphSdk.Directory.SharedEmailDomains {
     /// <summary>Builds and executes requests for operations under \directory\sharedEmailDomains</summary>
     public class SharedEmailDomainsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Directory.SharedEmailDomains {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.directory.sharedEmailDomains.item collection</summary>
-        public SharedEmailDomainRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.sharedEmailDomains.item collection</summary>
+        public SharedEmailDomainItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedEmailDomain_id", position);
-            return new SharedEmailDomainRequestBuilder(urlTplParams, RequestAdapter);
+            return new SharedEmailDomainItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SharedEmailDomainsRequestBuilder and sets the default values.

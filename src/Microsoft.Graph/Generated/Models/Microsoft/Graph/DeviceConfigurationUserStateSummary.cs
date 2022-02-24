@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceConfigurationUserStateSummary : Entity, IParsable {
         /// <summary>Number of compliant users</summary>
         public int? CompliantUserCount { get; set; }

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ManagementConditions.GetManagementConditionsForPlatformWithPlatform;
-using MicrosoftGraph.DeviceManagement.ManagementConditions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ManagementConditions.GetManagementConditionsForPlatformWithPlatform;
+using MicrosoftGraphSdk.DeviceManagement.ManagementConditions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagementConditions {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managementConditions</summary>
     public class ManagementConditionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.DeviceManagement.ManagementConditions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.managementConditions.item collection</summary>
-        public ManagementConditionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.managementConditions.item collection</summary>
+        public ManagementConditionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementCondition_id", position);
-            return new ManagementConditionRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagementConditionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagementConditionsRequestBuilder and sets the default values.

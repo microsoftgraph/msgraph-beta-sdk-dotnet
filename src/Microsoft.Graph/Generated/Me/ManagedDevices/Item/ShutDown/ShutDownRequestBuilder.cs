@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ManagedDevices.Item.ShutDown {
+namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ShutDown {
     /// <summary>Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.shutDown</summary>
     public class ShutDownRequestBuilder {
         /// <summary>Path parameters for the request</summary>

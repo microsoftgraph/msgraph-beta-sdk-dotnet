@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PolicySetAssignment : Entity, IParsable {
         /// <summary>Last modified time of the PolicySetAssignment.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }

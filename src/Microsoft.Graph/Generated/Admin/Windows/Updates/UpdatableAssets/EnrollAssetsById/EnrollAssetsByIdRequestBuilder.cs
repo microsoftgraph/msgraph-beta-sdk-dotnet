@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.UpdatableAssets.EnrollAssetsById {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.EnrollAssetsById {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\updatableAssets\microsoft.graph.windowsUpdates.enrollAssetsById</summary>
     public class EnrollAssetsByIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

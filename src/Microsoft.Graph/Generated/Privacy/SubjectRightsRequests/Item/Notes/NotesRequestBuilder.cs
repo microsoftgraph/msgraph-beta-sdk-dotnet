@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Privacy.SubjectRightsRequests.Item.Notes.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.Notes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Privacy.SubjectRightsRequests.Item.Notes {
+namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.Notes {
     /// <summary>Builds and executes requests for operations under \privacy\subjectRightsRequests\{subjectRightsRequest-id}\notes</summary>
     public class NotesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Privacy.SubjectRightsRequests.Item.Notes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.privacy.subjectRightsRequests.item.notes.item collection</summary>
-        public AuthoredNoteRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.privacy.subjectRightsRequests.item.notes.item collection</summary>
+        public AuthoredNoteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authoredNote_id", position);
-            return new AuthoredNoteRequestBuilder(urlTplParams, RequestAdapter);
+            return new AuthoredNoteItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NotesRequestBuilder and sets the default values.

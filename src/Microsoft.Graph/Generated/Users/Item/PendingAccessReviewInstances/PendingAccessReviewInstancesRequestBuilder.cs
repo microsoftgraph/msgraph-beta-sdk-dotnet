@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.FilterByCurrentUserWithOn;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.PendingAccessReviewInstances {
+namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances</summary>
     public class PendingAccessReviewInstancesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Users.Item.PendingAccessReviewInstances {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.pendingAccessReviewInstances.item collection</summary>
-        public AccessReviewInstanceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.pendingAccessReviewInstances.item collection</summary>
+        public AccessReviewInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstance_id", position);
-            return new AccessReviewInstanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PendingAccessReviewInstancesRequestBuilder and sets the default values.

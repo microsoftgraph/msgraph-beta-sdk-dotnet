@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.UnifiedGroupSources {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\custodians\{custodian-id}\unifiedGroupSources</summary>
     public class UnifiedGroupSourcesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Custodians.Item.Unifie
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.custodians.item.unifiedGroupSources.item collection</summary>
-        public UnifiedGroupSourceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.custodians.item.unifiedGroupSources.item collection</summary>
+        public UnifiedGroupSourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedGroupSource_id", position);
-            return new UnifiedGroupSourceRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedGroupSourceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.

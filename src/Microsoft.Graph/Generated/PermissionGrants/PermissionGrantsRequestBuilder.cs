@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.PermissionGrants.GetByIds;
-using MicrosoftGraph.PermissionGrants.GetUserOwnedObjects;
-using MicrosoftGraph.PermissionGrants.Item;
-using MicrosoftGraph.PermissionGrants.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.PermissionGrants.GetByIds;
+using MicrosoftGraphSdk.PermissionGrants.GetUserOwnedObjects;
+using MicrosoftGraphSdk.PermissionGrants.Item;
+using MicrosoftGraphSdk.PermissionGrants.ValidateProperties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PermissionGrants {
+namespace MicrosoftGraphSdk.PermissionGrants {
     /// <summary>Builds and executes requests for operations under \permissionGrants</summary>
     public class PermissionGrantsRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -29,11 +29,11 @@ namespace MicrosoftGraph.PermissionGrants {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.permissionGrants.item collection</summary>
-        public ResourceSpecificPermissionGrantRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.permissionGrants.item collection</summary>
+        public ResourceSpecificPermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("resourceSpecificPermissionGrant_id", position);
-            return new ResourceSpecificPermissionGrantRequestBuilder(urlTplParams, RequestAdapter);
+            return new ResourceSpecificPermissionGrantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PermissionGrantsRequestBuilder and sets the default values.

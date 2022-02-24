@@ -1,4 +1,4 @@
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public enum DelegatedPrivilegeStatus {
         None,
         DelegatedAdminPrivileges,

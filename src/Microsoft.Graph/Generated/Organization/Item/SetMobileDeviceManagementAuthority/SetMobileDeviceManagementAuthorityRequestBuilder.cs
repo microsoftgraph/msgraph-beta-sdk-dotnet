@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Organization.Item.SetMobileDeviceManagementAuthority {
+namespace MicrosoftGraphSdk.Organization.Item.SetMobileDeviceManagementAuthority {
     /// <summary>Builds and executes requests for operations under \organization\{organization-id}\microsoft.graph.setMobileDeviceManagementAuthority</summary>
     public class SetMobileDeviceManagementAuthorityRequestBuilder {
         /// <summary>Path parameters for the request</summary>

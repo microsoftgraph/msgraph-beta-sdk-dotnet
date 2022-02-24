@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId {
+namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.getRelatedAppStates(userPrincipalName='{userPrincipalName}',deviceId='{deviceId}')</summary>
     public class GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -68,9 +68,9 @@ namespace MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.D
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetRelatedAppStatesWithUserPrincipalNameWithDeviceId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetRelatedAppStatesWithUserPrincipalNameWithDeviceId>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

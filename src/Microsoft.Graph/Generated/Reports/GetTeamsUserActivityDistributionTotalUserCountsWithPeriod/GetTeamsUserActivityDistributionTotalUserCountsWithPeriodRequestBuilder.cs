@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetTeamsUserActivityDistributionTotalUserCountsWithPeriod {
+namespace MicrosoftGraphSdk.Reports.GetTeamsUserActivityDistributionTotalUserCountsWithPeriod {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getTeamsUserActivityDistributionTotalUserCounts(period='{period}')</summary>
     public class GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

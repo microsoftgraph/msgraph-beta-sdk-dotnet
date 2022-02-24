@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Applications.Item.CreatedOnBehalfOf.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Applications.Item.CreatedOnBehalfOf.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.CreatedOnBehalfOf {
+namespace MicrosoftGraphSdk.Applications.Item.CreatedOnBehalfOf {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\createdOnBehalfOf</summary>
     public class CreatedOnBehalfOfRequestBuilder {
         /// <summary>Path parameters for the request</summary>

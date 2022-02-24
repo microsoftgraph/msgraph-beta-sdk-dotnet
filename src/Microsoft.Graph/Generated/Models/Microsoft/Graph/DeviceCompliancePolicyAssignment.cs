@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceCompliancePolicyAssignment : Entity, IParsable {
         /// <summary>The assignment source for the device compliance policy, direct or parcel/policySet. Possible values are: direct, policySets.</summary>
         public DeviceAndAppManagementAssignmentSource? Source { get; set; }

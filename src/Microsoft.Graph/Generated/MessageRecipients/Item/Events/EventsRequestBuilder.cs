@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.MessageRecipients.Item.Events.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.MessageRecipients.Item.Events.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.MessageRecipients.Item.Events {
+namespace MicrosoftGraphSdk.MessageRecipients.Item.Events {
     /// <summary>Builds and executes requests for operations under \messageRecipients\{messageRecipient-id}\events</summary>
     public class EventsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.MessageRecipients.Item.Events {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.messageRecipients.item.events.item collection</summary>
-        public MessageEventRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.messageRecipients.item.events.item collection</summary>
+        public MessageEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageEvent_id", position);
-            return new MessageEventRequestBuilder(urlTplParams, RequestAdapter);
+            return new MessageEventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EventsRequestBuilder and sets the default values.

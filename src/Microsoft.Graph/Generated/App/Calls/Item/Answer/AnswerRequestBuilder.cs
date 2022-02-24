@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.App.Calls.Item.Answer {
+namespace MicrosoftGraphSdk.App.Calls.Item.Answer {
     /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\microsoft.graph.answer</summary>
     public class AnswerRequestBuilder {
         /// <summary>Path parameters for the request</summary>

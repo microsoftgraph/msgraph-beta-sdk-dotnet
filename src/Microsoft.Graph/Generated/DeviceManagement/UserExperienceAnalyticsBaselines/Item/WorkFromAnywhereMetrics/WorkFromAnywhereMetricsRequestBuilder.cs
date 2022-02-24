@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.WorkFromAnywhereMetrics.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.WorkFromAnywhereMetrics.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsBaselines.Item.WorkFromAnywhereMetrics {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.Item.WorkFromAnywhereMetrics {
     /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBaselines\{userExperienceAnalyticsBaseline-id}\workFromAnywhereMetrics</summary>
     public class WorkFromAnywhereMetricsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

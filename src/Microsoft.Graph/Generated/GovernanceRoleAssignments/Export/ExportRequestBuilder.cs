@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GovernanceRoleAssignments.Export {
+namespace MicrosoftGraphSdk.GovernanceRoleAssignments.Export {
     /// <summary>Builds and executes requests for operations under \governanceRoleAssignments\microsoft.graph.export()</summary>
     public class ExportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

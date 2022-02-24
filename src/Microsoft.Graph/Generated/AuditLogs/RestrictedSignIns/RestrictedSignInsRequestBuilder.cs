@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AuditLogs.RestrictedSignIns.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AuditLogs.RestrictedSignIns.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AuditLogs.RestrictedSignIns {
+namespace MicrosoftGraphSdk.AuditLogs.RestrictedSignIns {
     /// <summary>Builds and executes requests for operations under \auditLogs\restrictedSignIns</summary>
     public class RestrictedSignInsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.AuditLogs.RestrictedSignIns {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.auditLogs.restrictedSignIns.item collection</summary>
-        public RestrictedSignInRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.auditLogs.restrictedSignIns.item collection</summary>
+        public RestrictedSignInItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("restrictedSignIn_id", position);
-            return new RestrictedSignInRequestBuilder(urlTplParams, RequestAdapter);
+            return new RestrictedSignInItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RestrictedSignInsRequestBuilder and sets the default values.

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceComplianceScriptDeviceState : Entity, IParsable {
         /// <summary>Detection state from the lastest device compliance script execution. Possible values are: unknown, success, fail, scriptError, pending, notApplicable.</summary>
         public RunState? DetectionState { get; set; }
@@ -14,7 +14,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The last time that Intune Managment Extension synced with Intune</summary>
         public DateTimeOffset? LastSyncDateTime { get; set; }
         /// <summary>The managed device on which the device compliance script executed</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice ManagedDevice { get; set; }
+        public ManagedDevice ManagedDevice { get; set; }
         /// <summary>Error from the detection script</summary>
         public string ScriptError { get; set; }
         /// <summary>Output of the detection script</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"expectedStateUpdateDateTime", (o,n) => { (o as DeviceComplianceScriptDeviceState).ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastStateUpdateDateTime", (o,n) => { (o as DeviceComplianceScriptDeviceState).LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSyncDateTime", (o,n) => { (o as DeviceComplianceScriptDeviceState).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDevice", (o,n) => { (o as DeviceComplianceScriptDeviceState).ManagedDevice = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice>(); } },
+                {"managedDevice", (o,n) => { (o as DeviceComplianceScriptDeviceState).ManagedDevice = n.GetObjectValue<ManagedDevice>(); } },
                 {"scriptError", (o,n) => { (o as DeviceComplianceScriptDeviceState).ScriptError = n.GetStringValue(); } },
                 {"scriptOutput", (o,n) => { (o as DeviceComplianceScriptDeviceState).ScriptOutput = n.GetStringValue(); } },
             };
@@ -44,7 +44,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("expectedStateUpdateDateTime", ExpectedStateUpdateDateTime);
             writer.WriteDateTimeOffsetValue("lastStateUpdateDateTime", LastStateUpdateDateTime);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice>("managedDevice", ManagedDevice);
+            writer.WriteObjectValue<ManagedDevice>("managedDevice", ManagedDevice);
             writer.WriteStringValue("scriptError", ScriptError);
             writer.WriteStringValue("scriptOutput", ScriptOutput);
         }

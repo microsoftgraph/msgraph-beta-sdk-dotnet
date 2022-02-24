@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.MailFolders.Item.ChildFolders.Delta;
-using MicrosoftGraph.Me.MailFolders.Item.ChildFolders.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Delta;
+using MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.MailFolders.Item.ChildFolders {
+namespace MicrosoftGraphSdk.Me.MailFolders.Item.ChildFolders {
     /// <summary>Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\childFolders</summary>
     public class ChildFoldersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Me.MailFolders.Item.ChildFolders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.mailFolders.item.childFolders.item collection</summary>
-        public MailFolderRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.mailFolders.item.childFolders.item collection</summary>
+        public MailFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mailFolder_id1", position);
-            return new MailFolderRequestBuilder(urlTplParams, RequestAdapter);
+            return new MailFolderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChildFoldersRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.Tabs.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Tabs.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.PrimaryChannel.Tabs {
+namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Tabs {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\primaryChannel\tabs</summary>
     public class TabsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Teams.Item.PrimaryChannel.Tabs {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.teams.item.primaryChannel.tabs.item collection</summary>
-        public TeamsTabRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.primaryChannel.tabs.item collection</summary>
+        public TeamsTabItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsTab_id", position);
-            return new TeamsTabRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamsTabItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TabsRequestBuilder and sets the default values.

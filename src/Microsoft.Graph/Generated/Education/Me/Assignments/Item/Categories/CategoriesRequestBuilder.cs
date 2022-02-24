@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Education.Me.Assignments.Item.Categories.Delta;
-using MicrosoftGraph.Education.Me.Assignments.Item.Categories.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Education.Me.Assignments.Item.Categories.Delta;
+using MicrosoftGraphSdk.Education.Me.Assignments.Item.Categories.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Me.Assignments.Item.Categories {
+namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Categories {
     /// <summary>Builds and executes requests for operations under \education\me\assignments\{educationAssignment-id}\categories</summary>
     public class CategoriesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Education.Me.Assignments.Item.Categories {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.education.me.assignments.item.categories.item collection</summary>
-        public EducationCategoryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.education.me.assignments.item.categories.item collection</summary>
+        public EducationCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationCategory_id", position);
-            return new EducationCategoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CategoriesRequestBuilder and sets the default values.

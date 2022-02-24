@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.OemWarrantyInformationOnboarding.Item.Enable {
+namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.Item.Enable {
     /// <summary>Builds and executes requests for operations under \deviceManagement\oemWarrantyInformationOnboarding\{oemWarrantyInformationOnboarding-id}\microsoft.graph.enable</summary>
     public class EnableRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById {
     public class UpdateAudienceByIdRequestBody : IParsable {
         public List<string> AddExclusions { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

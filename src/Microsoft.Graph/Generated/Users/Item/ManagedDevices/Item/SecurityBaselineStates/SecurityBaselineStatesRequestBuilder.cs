@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.ManagedDevices.Item.SecurityBaselineStates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.SecurityBaselineStates.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.ManagedDevices.Item.SecurityBaselineStates {
+namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.SecurityBaselineStates {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\securityBaselineStates</summary>
     public class SecurityBaselineStatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.ManagedDevices.Item.SecurityBaselineStates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.managedDevices.item.securityBaselineStates.item collection</summary>
-        public SecurityBaselineStateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.managedDevices.item.securityBaselineStates.item collection</summary>
+        public SecurityBaselineStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("securityBaselineState_id", position);
-            return new SecurityBaselineStateRequestBuilder(urlTplParams, RequestAdapter);
+            return new SecurityBaselineStateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SecurityBaselineStatesRequestBuilder and sets the default values.

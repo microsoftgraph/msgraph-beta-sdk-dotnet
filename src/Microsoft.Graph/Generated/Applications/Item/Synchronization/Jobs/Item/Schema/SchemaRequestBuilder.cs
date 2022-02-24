@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Applications.Item.Synchronization.Jobs.Item.Schema.Directories;
-using MicrosoftGraph.Applications.Item.Synchronization.Jobs.Item.Schema.FilterOperators;
-using MicrosoftGraph.Applications.Item.Synchronization.Jobs.Item.Schema.Functions;
-using MicrosoftGraph.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.Directories;
+using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.FilterOperators;
+using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.Functions;
+using MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.Synchronization.Jobs.Item.Schema {
+namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item.Schema {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\synchronization\jobs\{synchronizationJob-id}\schema</summary>
     public class SchemaRequestBuilder {
         public DirectoriesRequestBuilder Directories { get =>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Members.Item.MemberOf.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Members.Item.MemberOf.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Members.Item.MemberOf {
+namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Members.Item.MemberOf {
     /// <summary>Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}\members\{connector-id}\memberOf</summary>
     public class MemberOfRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.onPremisesPublishingProfiles.item.connectorGroups.item.members.item.memberOf.item collection</summary>
-        public ConnectorGroupRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item.connectorGroups.item.members.item.memberOf.item collection</summary>
+        public ConnectorGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectorGroup_id1", position);
-            return new ConnectorGroupRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConnectorGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MemberOfRequestBuilder and sets the default values.
@@ -77,7 +77,7 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -109,10 +109,10 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>The connectorGroup that the connector is a member of. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

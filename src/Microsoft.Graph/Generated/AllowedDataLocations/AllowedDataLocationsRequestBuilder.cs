@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AllowedDataLocations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AllowedDataLocations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AllowedDataLocations {
+namespace MicrosoftGraphSdk.AllowedDataLocations {
     /// <summary>Builds and executes requests for operations under \allowedDataLocations</summary>
     public class AllowedDataLocationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.AllowedDataLocations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.allowedDataLocations.item collection</summary>
-        public AllowedDataLocationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.allowedDataLocations.item collection</summary>
+        public AllowedDataLocationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("allowedDataLocation_id", position);
-            return new AllowedDataLocationRequestBuilder(urlTplParams, RequestAdapter);
+            return new AllowedDataLocationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AllowedDataLocationsRequestBuilder and sets the default values.

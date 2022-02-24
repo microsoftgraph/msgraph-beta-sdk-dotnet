@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.ColumnPositions.Ref;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.ColumnPositions.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.ColumnPositions {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.ColumnPositions {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\columnPositions</summary>
     public class ColumnPositionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks;
-using MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks;
+using MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections {
+namespace MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\androidManagedAppProtections</summary>
     public class AndroidManagedAppProtectionsRequestBuilder {
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.androidManagedAppProtections.item collection</summary>
-        public AndroidManagedAppProtectionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.androidManagedAppProtections.item collection</summary>
+        public AndroidManagedAppProtectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidManagedAppProtection_id", position);
-            return new AndroidManagedAppProtectionRequestBuilder(urlTplParams, RequestAdapter);
+            return new AndroidManagedAppProtectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AndroidManagedAppProtectionsRequestBuilder and sets the default values.

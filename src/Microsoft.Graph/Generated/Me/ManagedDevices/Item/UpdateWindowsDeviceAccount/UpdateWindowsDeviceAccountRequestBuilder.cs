@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ManagedDevices.Item.UpdateWindowsDeviceAccount {
+namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.UpdateWindowsDeviceAccount {
     /// <summary>Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.updateWindowsDeviceAccount</summary>
     public class UpdateWindowsDeviceAccountRequestBuilder {
         /// <summary>Path parameters for the request</summary>

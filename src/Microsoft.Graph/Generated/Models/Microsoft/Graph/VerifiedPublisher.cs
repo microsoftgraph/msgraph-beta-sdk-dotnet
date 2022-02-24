@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class VerifiedPublisher : IParsable {
         /// <summary>The timestamp when the verified publisher was first added or most recently updated.</summary>
         public DateTimeOffset? AddedDateTime { get; set; }

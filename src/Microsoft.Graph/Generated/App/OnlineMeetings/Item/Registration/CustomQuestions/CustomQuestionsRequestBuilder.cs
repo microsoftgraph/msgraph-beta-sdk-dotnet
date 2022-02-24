@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.App.OnlineMeetings.Item.Registration.CustomQuestions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.App.OnlineMeetings.Item.Registration.CustomQuestions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.App.OnlineMeetings.Item.Registration.CustomQuestions {
+namespace MicrosoftGraphSdk.App.OnlineMeetings.Item.Registration.CustomQuestions {
     /// <summary>Builds and executes requests for operations under \app\onlineMeetings\{onlineMeeting-id}\registration\customQuestions</summary>
     public class CustomQuestionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.App.OnlineMeetings.Item.Registration.CustomQuestions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.app.onlineMeetings.item.registration.customQuestions.item collection</summary>
-        public MeetingRegistrationQuestionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.app.onlineMeetings.item.registration.customQuestions.item collection</summary>
+        public MeetingRegistrationQuestionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("meetingRegistrationQuestion_id", position);
-            return new MeetingRegistrationQuestionRequestBuilder(urlTplParams, RequestAdapter);
+            return new MeetingRegistrationQuestionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CustomQuestionsRequestBuilder and sets the default values.

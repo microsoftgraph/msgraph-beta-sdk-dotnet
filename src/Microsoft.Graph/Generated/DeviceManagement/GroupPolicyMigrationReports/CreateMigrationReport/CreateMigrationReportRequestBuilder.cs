@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports\microsoft.graph.createMigrationReport</summary>
     public class CreateMigrationReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

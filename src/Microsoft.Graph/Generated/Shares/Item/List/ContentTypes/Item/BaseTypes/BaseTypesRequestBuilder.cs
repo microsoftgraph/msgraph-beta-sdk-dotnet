@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Shares.Item.List.ContentTypes.Item.BaseTypes.AddCopy;
-using MicrosoftGraph.Shares.Item.List.ContentTypes.Item.BaseTypes.AddCopyFromContentTypeHub;
-using MicrosoftGraph.Shares.Item.List.ContentTypes.Item.BaseTypes.GetCompatibleHubContentTypes;
-using MicrosoftGraph.Shares.Item.List.ContentTypes.Item.BaseTypes.Ref;
+using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item.BaseTypes.AddCopy;
+using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item.BaseTypes.AddCopyFromContentTypeHub;
+using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item.BaseTypes.GetCompatibleHubContentTypes;
+using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item.BaseTypes.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.List.ContentTypes.Item.BaseTypes {
+namespace MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item.BaseTypes {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\contentTypes\{contentType-id}\baseTypes</summary>
     public class BaseTypesRequestBuilder {
         public AddCopyRequestBuilder AddCopy { get =>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.SalesInvoices.Item.Send {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.Send {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}\microsoft.graph.send</summary>
     public class SendRequestBuilder {
         /// <summary>Path parameters for the request</summary>

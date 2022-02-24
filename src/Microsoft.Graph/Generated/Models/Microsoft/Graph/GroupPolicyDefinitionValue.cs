@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GroupPolicyDefinitionValue : Entity, IParsable {
         /// <summary>Specifies how the value should be configured. This can be either as a Policy or as a Preference. Possible values are: policy, preference.</summary>
         public GroupPolicyConfigurationType? ConfigurationType { get; set; }

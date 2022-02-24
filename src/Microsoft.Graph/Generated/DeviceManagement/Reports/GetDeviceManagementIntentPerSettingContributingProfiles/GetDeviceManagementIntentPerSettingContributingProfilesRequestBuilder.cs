@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getDeviceManagementIntentPerSettingContributingProfiles</summary>
     public class GetDeviceManagementIntentPerSettingContributingProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

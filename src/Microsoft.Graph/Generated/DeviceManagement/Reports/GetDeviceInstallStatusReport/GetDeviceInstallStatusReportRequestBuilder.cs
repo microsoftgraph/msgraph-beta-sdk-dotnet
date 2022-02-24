@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetDeviceInstallStatusReport {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetDeviceInstallStatusReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getDeviceInstallStatusReport</summary>
     public class GetDeviceInstallStatusReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

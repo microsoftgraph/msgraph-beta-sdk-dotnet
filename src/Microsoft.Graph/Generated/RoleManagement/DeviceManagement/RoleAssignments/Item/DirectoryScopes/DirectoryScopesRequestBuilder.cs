@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.RoleManagement.DeviceManagement.RoleAssignments.Item.DirectoryScopes.Ref;
+using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item.DirectoryScopes.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.DeviceManagement.RoleAssignments.Item.DirectoryScopes {
+namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item.DirectoryScopes {
     /// <summary>Builds and executes requests for operations under \roleManagement\deviceManagement\roleAssignments\{unifiedRoleAssignmentMultiple-id}\directoryScopes</summary>
     public class DirectoryScopesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

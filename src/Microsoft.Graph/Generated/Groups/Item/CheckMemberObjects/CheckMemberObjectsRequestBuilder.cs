@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.CheckMemberObjects {
+namespace MicrosoftGraphSdk.Groups.Item.CheckMemberObjects {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\microsoft.graph.checkMemberObjects</summary>
     public class CheckMemberObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

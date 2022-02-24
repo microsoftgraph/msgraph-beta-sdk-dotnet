@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Title.Format.Fill.SetSolidColor {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Title.Format.Fill.SetSolidColor {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\title\format\fill\microsoft.graph.setSolidColor</summary>
     public class SetSolidColorRequestBuilder {
         /// <summary>Path parameters for the request</summary>

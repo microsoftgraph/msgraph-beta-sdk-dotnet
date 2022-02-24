@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.InformationProtection.Policy.Labels.ExtractLabel {
+namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.ExtractLabel {
     /// <summary>Builds and executes requests for operations under \informationProtection\policy\labels\microsoft.graph.extractLabel</summary>
     public class ExtractLabelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram {
+namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.SyncWithAppleDeviceEnrollmentProgram {
     /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.syncWithAppleDeviceEnrollmentProgram</summary>
     public class SyncWithAppleDeviceEnrollmentProgramRequestBuilder {
         /// <summary>Path parameters for the request</summary>

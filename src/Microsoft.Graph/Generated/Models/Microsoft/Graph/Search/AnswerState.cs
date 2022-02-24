@@ -1,4 +1,4 @@
-namespace MicrosoftGraph.Models.Microsoft.Graph.Search {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     public enum AnswerState {
         Published,
         Draft,

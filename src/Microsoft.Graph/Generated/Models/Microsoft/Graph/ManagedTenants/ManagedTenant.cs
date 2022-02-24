@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagedTenant : Entity, IParsable {
         /// <summary>Aggregate view of device compliance policies across managed tenants.</summary>
         public List<AggregatedPolicyCompliance> AggregatedPolicyCompliances { get; set; }
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
         public List<ManagementIntent> ManagementIntents { get; set; }
         public List<ManagementTemplateCollection> ManagementTemplateCollections { get; set; }
         /// <summary>The collection of baseline management templates across managed tenants.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate> ManagementTemplates { get; set; }
+        public List<ManagementTemplate> ManagementTemplates { get; set; }
         public List<ManagementTemplateStep> ManagementTemplateSteps { get; set; }
         public List<ManagementTemplateStepVersion> ManagementTemplateStepVersions { get; set; }
         /// <summary>The collection of a logical grouping of managed tenants used by the multi-tenant management platform.</summary>
@@ -48,7 +48,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
         public List<WindowsDeviceMalwareState> WindowsDeviceMalwareStates { get; set; }
         /// <summary>The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.WindowsProtectionState> WindowsProtectionStates { get; set; }
+        public List<WindowsProtectionState> WindowsProtectionStates { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -68,7 +68,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
                 {"managementActionTenantDeploymentStatuses", (o,n) => { (o as ManagedTenant).ManagementActionTenantDeploymentStatuses = n.GetCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>().ToList(); } },
                 {"managementIntents", (o,n) => { (o as ManagedTenant).ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntent>().ToList(); } },
                 {"managementTemplateCollections", (o,n) => { (o as ManagedTenant).ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>().ToList(); } },
-                {"managementTemplates", (o,n) => { (o as ManagedTenant).ManagementTemplates = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate>().ToList(); } },
+                {"managementTemplates", (o,n) => { (o as ManagedTenant).ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>().ToList(); } },
                 {"managementTemplateSteps", (o,n) => { (o as ManagedTenant).ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>().ToList(); } },
                 {"managementTemplateStepVersions", (o,n) => { (o as ManagedTenant).ManagementTemplateStepVersions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>().ToList(); } },
                 {"tenantGroups", (o,n) => { (o as ManagedTenant).TenantGroups = n.GetCollectionOfObjectValues<TenantGroup>().ToList(); } },
@@ -77,7 +77,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
                 {"tenantsDetailedInformation", (o,n) => { (o as ManagedTenant).TenantsDetailedInformation = n.GetCollectionOfObjectValues<TenantDetailedInformation>().ToList(); } },
                 {"tenantTags", (o,n) => { (o as ManagedTenant).TenantTags = n.GetCollectionOfObjectValues<TenantTag>().ToList(); } },
                 {"windowsDeviceMalwareStates", (o,n) => { (o as ManagedTenant).WindowsDeviceMalwareStates = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>().ToList(); } },
-                {"windowsProtectionStates", (o,n) => { (o as ManagedTenant).WindowsProtectionStates = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.WindowsProtectionState>().ToList(); } },
+                {"windowsProtectionStates", (o,n) => { (o as ManagedTenant).WindowsProtectionStates = n.GetCollectionOfObjectValues<WindowsProtectionState>().ToList(); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
             writer.WriteCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("managementActionTenantDeploymentStatuses", ManagementActionTenantDeploymentStatuses);
             writer.WriteCollectionOfObjectValues<ManagementIntent>("managementIntents", ManagementIntents);
             writer.WriteCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", ManagementTemplateCollections);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate>("managementTemplates", ManagementTemplates);
+            writer.WriteCollectionOfObjectValues<ManagementTemplate>("managementTemplates", ManagementTemplates);
             writer.WriteCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", ManagementTemplateSteps);
             writer.WriteCollectionOfObjectValues<ManagementTemplateStepVersion>("managementTemplateStepVersions", ManagementTemplateStepVersions);
             writer.WriteCollectionOfObjectValues<TenantGroup>("tenantGroups", TenantGroups);
@@ -110,7 +110,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
             writer.WriteCollectionOfObjectValues<TenantDetailedInformation>("tenantsDetailedInformation", TenantsDetailedInformation);
             writer.WriteCollectionOfObjectValues<TenantTag>("tenantTags", TenantTags);
             writer.WriteCollectionOfObjectValues<WindowsDeviceMalwareState>("windowsDeviceMalwareStates", WindowsDeviceMalwareStates);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.WindowsProtectionState>("windowsProtectionStates", WindowsProtectionStates);
+            writer.WriteCollectionOfObjectValues<WindowsProtectionState>("windowsProtectionStates", WindowsProtectionStates);
         }
     }
 }

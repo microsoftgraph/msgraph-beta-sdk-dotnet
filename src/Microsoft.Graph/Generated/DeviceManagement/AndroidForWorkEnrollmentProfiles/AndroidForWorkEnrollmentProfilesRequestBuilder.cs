@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidForWorkEnrollmentProfiles {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidForWorkEnrollmentProfiles</summary>
     public class AndroidForWorkEnrollmentProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.AndroidForWorkEnrollmentProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.androidForWorkEnrollmentProfiles.item collection</summary>
-        public AndroidForWorkEnrollmentProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.androidForWorkEnrollmentProfiles.item collection</summary>
+        public AndroidForWorkEnrollmentProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidForWorkEnrollmentProfile_id", position);
-            return new AndroidForWorkEnrollmentProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new AndroidForWorkEnrollmentProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AndroidForWorkEnrollmentProfilesRequestBuilder and sets the default values.

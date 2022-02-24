@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.Assign;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.AssignedAccessMultiModeProfiles;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.GetOmaSettingPlainTextValueWithSecretReferenceValueId;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.Ref;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.WindowsPrivacyAccessControls;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.WindowsUpdateForBusinessConfiguration;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.Assign;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.AssignedAccessMultiModeProfiles;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.GetOmaSettingPlainTextValueWithSecretReferenceValueId;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.Ref;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.WindowsPrivacyAccessControls;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.WindowsUpdateForBusinessConfiguration;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration</summary>
     public class DeviceConfigurationRequestBuilder {
         public AssignRequestBuilder Assign { get =>
@@ -93,9 +93,9 @@ namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignm
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.DeviceConfiguration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.DeviceConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration\microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId='{secretReferenceValueId}')

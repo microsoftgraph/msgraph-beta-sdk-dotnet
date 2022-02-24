@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Sites.Item.Lists.Item.Items.Delta;
-using MicrosoftGraph.Sites.Item.Lists.Item.Items.DeltaWithToken;
-using MicrosoftGraph.Sites.Item.Lists.Item.Items.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.Items.Delta;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.Items.DeltaWithToken;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.Items.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.Items {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Items {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\items</summary>
     public class ItemsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -19,11 +19,11 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.Items {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.sites.item.lists.item.items.item collection</summary>
-        public ListItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.lists.item.items.item collection</summary>
+        public ListItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("listItem_id", position);
-            return new ListItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new ListItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ItemsRequestBuilder and sets the default values.
@@ -79,7 +79,7 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.Items {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.ListItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -125,10 +125,10 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.Items {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.ListItem> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.ListItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.ListItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ListItem>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>All items contained in the list.</summary>
         public class GetQueryParameters : QueryParametersBase {

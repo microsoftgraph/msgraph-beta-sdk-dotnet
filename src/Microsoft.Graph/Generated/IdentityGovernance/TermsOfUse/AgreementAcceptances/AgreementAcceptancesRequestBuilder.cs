@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.TermsOfUse.AgreementAcceptances.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.AgreementAcceptances.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.TermsOfUse.AgreementAcceptances {
+namespace MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.AgreementAcceptances {
     /// <summary>Builds and executes requests for operations under \identityGovernance\termsOfUse\agreementAcceptances</summary>
     public class AgreementAcceptancesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.IdentityGovernance.TermsOfUse.AgreementAcceptances {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.termsOfUse.agreementAcceptances.item collection</summary>
-        public AgreementAcceptanceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.termsOfUse.agreementAcceptances.item collection</summary>
+        public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementAcceptance_id", position);
-            return new AgreementAcceptanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new AgreementAcceptanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.

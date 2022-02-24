@@ -1,4 +1,4 @@
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public enum Windows10EditionType {
         Windows10Enterprise,
         Windows10EnterpriseN,

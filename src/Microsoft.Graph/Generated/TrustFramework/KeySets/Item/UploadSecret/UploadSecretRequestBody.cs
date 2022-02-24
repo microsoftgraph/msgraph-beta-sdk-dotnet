@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.TrustFramework.KeySets.Item.UploadSecret {
+namespace MicrosoftGraphSdk.TrustFramework.KeySets.Item.UploadSecret {
     public class UploadSecretRequestBody : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

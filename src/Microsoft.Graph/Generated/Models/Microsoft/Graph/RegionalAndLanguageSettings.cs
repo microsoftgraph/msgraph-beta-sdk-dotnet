@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RegionalAndLanguageSettings : Entity, IParsable {
         /// <summary>Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.</summary>
         public List<LocaleInfo> AuthoringLanguages { get; set; }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceConfigurationAssignment : Entity, IParsable {
         /// <summary>The admin intent to apply or remove the profile. Possible values are: apply, remove.</summary>
         public DeviceConfigAssignmentIntent? Intent { get; set; }

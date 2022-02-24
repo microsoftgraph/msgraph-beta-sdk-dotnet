@@ -1,10 +1,10 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.DeviceAppManagement.PolicySets.Item.Update {
+namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Update {
     public class UpdateRequestBody : IParsable {
         public List<PolicySetItem> AddedPolicySetItems { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

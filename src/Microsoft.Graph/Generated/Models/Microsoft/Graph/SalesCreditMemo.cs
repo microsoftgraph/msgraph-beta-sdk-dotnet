@@ -4,21 +4,21 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SalesCreditMemo : Entity, IParsable {
         public PostalAddressType BillingPostalAddress { get; set; }
         public string BillToCustomerId { get; set; }
         public string BillToCustomerNumber { get; set; }
         public string BillToName { get; set; }
         public Date? CreditMemoDate { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Currency Currency { get; set; }
+        public Currency Currency { get; set; }
         public string CurrencyCode { get; set; }
         public string CurrencyId { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Customer Customer { get; set; }
+        public Customer Customer { get; set; }
         public string CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string CustomerNumber { get; set; }
-        public Decimal? DiscountAmount { get; set; }
+        public decimal? DiscountAmount { get; set; }
         public bool? DiscountAppliedBeforeTax { get; set; }
         public Date? DueDate { get; set; }
         public string Email { get; set; }
@@ -27,7 +27,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public string InvoiceNumber { get; set; }
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         public string Number { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.PaymentTerm PaymentTerm { get; set; }
+        public PaymentTerm PaymentTerm { get; set; }
         public string PaymentTermsId { get; set; }
         public string PhoneNumber { get; set; }
         public bool? PricesIncludeTax { get; set; }
@@ -35,9 +35,9 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public string Salesperson { get; set; }
         public PostalAddressType SellingPostalAddress { get; set; }
         public string Status { get; set; }
-        public Decimal? TotalAmountExcludingTax { get; set; }
-        public Decimal? TotalAmountIncludingTax { get; set; }
-        public Decimal? TotalTaxAmount { get; set; }
+        public decimal? TotalAmountExcludingTax { get; set; }
+        public decimal? TotalAmountIncludingTax { get; set; }
+        public decimal? TotalTaxAmount { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -48,10 +48,10 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"billToCustomerNumber", (o,n) => { (o as SalesCreditMemo).BillToCustomerNumber = n.GetStringValue(); } },
                 {"billToName", (o,n) => { (o as SalesCreditMemo).BillToName = n.GetStringValue(); } },
                 {"creditMemoDate", (o,n) => { (o as SalesCreditMemo).CreditMemoDate = n.GetDateValue(); } },
-                {"currency", (o,n) => { (o as SalesCreditMemo).Currency = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Currency>(); } },
+                {"currency", (o,n) => { (o as SalesCreditMemo).Currency = n.GetObjectValue<Currency>(); } },
                 {"currencyCode", (o,n) => { (o as SalesCreditMemo).CurrencyCode = n.GetStringValue(); } },
                 {"currencyId", (o,n) => { (o as SalesCreditMemo).CurrencyId = n.GetStringValue(); } },
-                {"customer", (o,n) => { (o as SalesCreditMemo).Customer = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Customer>(); } },
+                {"customer", (o,n) => { (o as SalesCreditMemo).Customer = n.GetObjectValue<Customer>(); } },
                 {"customerId", (o,n) => { (o as SalesCreditMemo).CustomerId = n.GetStringValue(); } },
                 {"customerName", (o,n) => { (o as SalesCreditMemo).CustomerName = n.GetStringValue(); } },
                 {"customerNumber", (o,n) => { (o as SalesCreditMemo).CustomerNumber = n.GetStringValue(); } },
@@ -64,7 +64,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"invoiceNumber", (o,n) => { (o as SalesCreditMemo).InvoiceNumber = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as SalesCreditMemo).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"number", (o,n) => { (o as SalesCreditMemo).Number = n.GetStringValue(); } },
-                {"paymentTerm", (o,n) => { (o as SalesCreditMemo).PaymentTerm = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PaymentTerm>(); } },
+                {"paymentTerm", (o,n) => { (o as SalesCreditMemo).PaymentTerm = n.GetObjectValue<PaymentTerm>(); } },
                 {"paymentTermsId", (o,n) => { (o as SalesCreditMemo).PaymentTermsId = n.GetStringValue(); } },
                 {"phoneNumber", (o,n) => { (o as SalesCreditMemo).PhoneNumber = n.GetStringValue(); } },
                 {"pricesIncludeTax", (o,n) => { (o as SalesCreditMemo).PricesIncludeTax = n.GetBoolValue(); } },
@@ -89,10 +89,10 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("billToCustomerNumber", BillToCustomerNumber);
             writer.WriteStringValue("billToName", BillToName);
             writer.WriteDateValue("creditMemoDate", CreditMemoDate);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Currency>("currency", Currency);
+            writer.WriteObjectValue<Currency>("currency", Currency);
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteStringValue("currencyId", CurrencyId);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Customer>("customer", Customer);
+            writer.WriteObjectValue<Customer>("customer", Customer);
             writer.WriteStringValue("customerId", CustomerId);
             writer.WriteStringValue("customerName", CustomerName);
             writer.WriteStringValue("customerNumber", CustomerNumber);
@@ -105,7 +105,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("invoiceNumber", InvoiceNumber);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("number", Number);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PaymentTerm>("paymentTerm", PaymentTerm);
+            writer.WriteObjectValue<PaymentTerm>("paymentTerm", PaymentTerm);
             writer.WriteStringValue("paymentTermsId", PaymentTermsId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteBoolValue("pricesIncludeTax", PricesIncludeTax);

@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.Onenote.Pages.Item.ParentSection.CopyToNotebook;
-using MicrosoftGraph.Groups.Item.Onenote.Pages.Item.ParentSection.CopyToSectionGroup;
-using MicrosoftGraph.Groups.Item.Onenote.Pages.Item.ParentSection.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.Onenote.Pages.Item.ParentSection.CopyToNotebook;
+using MicrosoftGraphSdk.Groups.Item.Onenote.Pages.Item.ParentSection.CopyToSectionGroup;
+using MicrosoftGraphSdk.Groups.Item.Onenote.Pages.Item.ParentSection.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Onenote.Pages.Item.ParentSection {
+namespace MicrosoftGraphSdk.Groups.Item.Onenote.Pages.Item.ParentSection {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\onenote\pages\{onenotePage-id}\parentSection</summary>
     public class ParentSectionRequestBuilder {
         public CopyToNotebookRequestBuilder CopyToNotebook { get =>

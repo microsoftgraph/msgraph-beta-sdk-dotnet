@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AuditLogs.SignIns.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AuditLogs.SignIns.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AuditLogs.SignIns {
+namespace MicrosoftGraphSdk.AuditLogs.SignIns {
     /// <summary>Builds and executes requests for operations under \auditLogs\signIns</summary>
     public class SignInsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.AuditLogs.SignIns {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.auditLogs.signIns.item collection</summary>
-        public SignInRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.auditLogs.signIns.item collection</summary>
+        public SignInItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("signIn_id", position);
-            return new SignInRequestBuilder(urlTplParams, RequestAdapter);
+            return new SignInItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SignInsRequestBuilder and sets the default values.

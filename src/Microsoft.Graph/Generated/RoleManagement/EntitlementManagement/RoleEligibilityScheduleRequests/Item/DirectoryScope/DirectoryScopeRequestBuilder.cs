@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.DirectoryScope.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.DirectoryScope.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.DirectoryScope {
+namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.DirectoryScope {
     /// <summary>Builds and executes requests for operations under \roleManagement\entitlementManagement\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}\directoryScope</summary>
     public class DirectoryScopeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

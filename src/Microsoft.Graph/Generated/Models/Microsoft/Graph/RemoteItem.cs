@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RemoteItem : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -12,7 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Date and time of item creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Indicates that the remote item is a file. Read-only.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.File File { get; set; }
+        public File File { get; set; }
         /// <summary>Information about the remote item from the local file system. Read-only.</summary>
         public FileSystemInfo FileSystemInfo { get; set; }
         /// <summary>Indicates that the remote item is a folder. Read-only.</summary>
@@ -20,7 +20,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Unique identifier for the remote item in its drive. Read-only.</summary>
         public string Id { get; set; }
         /// <summary>Image metadata, if the item is an image. Read-only.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Image Image { get; set; }
+        public Image Image { get; set; }
         /// <summary>Identity of the user, device, and application which last modified the item. Read-only.</summary>
         public IdentitySet LastModifiedBy { get; set; }
         /// <summary>Date and time the item was last modified. Read-only.</summary>
@@ -58,11 +58,11 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"createdBy", (o,n) => { (o as RemoteItem).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
                 {"createdDateTime", (o,n) => { (o as RemoteItem).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"file", (o,n) => { (o as RemoteItem).File = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.File>(); } },
+                {"file", (o,n) => { (o as RemoteItem).File = n.GetObjectValue<File>(); } },
                 {"fileSystemInfo", (o,n) => { (o as RemoteItem).FileSystemInfo = n.GetObjectValue<FileSystemInfo>(); } },
                 {"folder", (o,n) => { (o as RemoteItem).Folder = n.GetObjectValue<Folder>(); } },
                 {"id", (o,n) => { (o as RemoteItem).Id = n.GetStringValue(); } },
-                {"image", (o,n) => { (o as RemoteItem).Image = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Image>(); } },
+                {"image", (o,n) => { (o as RemoteItem).Image = n.GetObjectValue<Image>(); } },
                 {"lastModifiedBy", (o,n) => { (o as RemoteItem).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as RemoteItem).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", (o,n) => { (o as RemoteItem).Name = n.GetStringValue(); } },
@@ -85,11 +85,11 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.File>("file", File);
+            writer.WriteObjectValue<File>("file", File);
             writer.WriteObjectValue<FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteObjectValue<Folder>("folder", Folder);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Image>("image", Image);
+            writer.WriteObjectValue<Image>("image", Image);
             writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);

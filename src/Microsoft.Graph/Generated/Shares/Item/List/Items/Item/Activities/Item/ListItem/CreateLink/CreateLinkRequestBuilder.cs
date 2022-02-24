@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.List.Items.Item.Activities.Item.ListItem.CreateLink {
+namespace MicrosoftGraphSdk.Shares.Item.List.Items.Item.Activities.Item.ListItem.CreateLink {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\items\{listItem-id}\activities\{itemActivityOLD-id}\listItem\microsoft.graph.createLink</summary>
     public class CreateLinkRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -79,7 +79,7 @@ namespace MicrosoftGraph.Shares.Item.List.Items.Item.Activities.Item.ListItem.Cr
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type permission</summary>
-            public MicrosoftGraph.Models.Microsoft.Graph.Permission Permission { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.Permission Permission { get; set; }
             /// <summary>
             /// Instantiates a new createLinkResponse and sets the default values.
             /// </summary>
@@ -91,7 +91,7 @@ namespace MicrosoftGraph.Shares.Item.List.Items.Item.Activities.Item.ListItem.Cr
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"permission", (o,n) => { (o as CreateLinkResponse).Permission = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Permission>(); } },
+                    {"permission", (o,n) => { (o as CreateLinkResponse).Permission = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(); } },
                 };
             }
             /// <summary>
@@ -100,7 +100,7 @@ namespace MicrosoftGraph.Shares.Item.List.Items.Item.Activities.Item.ListItem.Cr
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Permission>("permission", Permission);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>("permission", Permission);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

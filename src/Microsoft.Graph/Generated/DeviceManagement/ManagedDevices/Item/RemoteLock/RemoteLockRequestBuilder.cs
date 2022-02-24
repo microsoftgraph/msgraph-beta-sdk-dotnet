@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.RemoteLock {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.RemoteLock {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.remoteLock</summary>
     public class RemoteLockRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MobileAppInstallSummary : Entity, IParsable {
         /// <summary>Number of Devices that have failed to install this app.</summary>
         public int? FailedDeviceCount { get; set; }

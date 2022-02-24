@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ContentInfo : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -12,7 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Identifier used for Azure Information Protection Analytics.</summary>
         public string Identifier { get; set; }
         /// <summary>Existing Microsoft Information Protection metadata is passed as key/value pairs, where the key is the MSIP_Label_GUID_PropName.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> Metadata { get; set; }
+        public List<KeyValuePair> Metadata { get; set; }
         /// <summary>Possible values are: rest, motion, use.</summary>
         public ContentState? State { get; set; }
         /// <summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"format", (o,n) => { (o as ContentInfo).Format = n.GetEnumValue<ContentFormat>(); } },
                 {"identifier", (o,n) => { (o as ContentInfo).Identifier = n.GetStringValue(); } },
-                {"metadata", (o,n) => { (o as ContentInfo).Metadata = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"metadata", (o,n) => { (o as ContentInfo).Metadata = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"state", (o,n) => { (o as ContentInfo).State = n.GetEnumValue<ContentState>(); } },
             };
         }
@@ -40,7 +40,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<ContentFormat>("format", Format);
             writer.WriteStringValue("identifier", Identifier);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("metadata", Metadata);
             writer.WriteEnumValue<ContentState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

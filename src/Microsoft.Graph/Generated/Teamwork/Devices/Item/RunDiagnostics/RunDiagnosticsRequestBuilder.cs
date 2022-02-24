@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teamwork.Devices.Item.RunDiagnostics {
+namespace MicrosoftGraphSdk.Teamwork.Devices.Item.RunDiagnostics {
     /// <summary>Builds and executes requests for operations under \teamwork\devices\{teamworkDevice-id}\microsoft.graph.runDiagnostics</summary>
     public class RunDiagnosticsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

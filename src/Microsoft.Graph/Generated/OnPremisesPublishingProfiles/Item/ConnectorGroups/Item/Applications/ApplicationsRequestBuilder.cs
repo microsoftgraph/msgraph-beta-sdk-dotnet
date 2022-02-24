@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Applications.Ref;
+using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Applications.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Applications {
+namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Applications {
     /// <summary>Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectorGroups\{connectorGroup-id}\applications</summary>
     public class ApplicationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members {
+namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item.Members {
     /// <summary>Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectors\{connector-id}\memberOf\{connectorGroup-id}\members</summary>
     public class MembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.Connectors.Item.Membe
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.onPremisesPublishingProfiles.item.connectors.item.memberOf.item.members.item collection</summary>
-        public ConnectorRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item.connectors.item.memberOf.item.members.item collection</summary>
+        public ConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connector_id1", position);
-            return new ConnectorRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConnectorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.

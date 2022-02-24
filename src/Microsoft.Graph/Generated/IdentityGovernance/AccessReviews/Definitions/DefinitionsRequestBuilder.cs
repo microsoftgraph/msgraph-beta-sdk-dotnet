@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.FilterByCurrentUserWithOn;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\definitions</summary>
     public class DefinitionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.accessReviews.definitions.item collection</summary>
-        public AccessReviewScheduleDefinitionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.definitions.item collection</summary>
+        public AccessReviewScheduleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewScheduleDefinition_id", position);
-            return new AccessReviewScheduleDefinitionRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewScheduleDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DefinitionsRequestBuilder and sets the default values.

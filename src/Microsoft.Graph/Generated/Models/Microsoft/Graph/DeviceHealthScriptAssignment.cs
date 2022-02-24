@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceHealthScriptAssignment : Entity, IParsable {
         /// <summary>Determine whether we want to run detection script only or run both detection script and remediation script</summary>
         public bool? RunRemediationScript { get; set; }

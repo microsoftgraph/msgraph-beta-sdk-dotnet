@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AdministrativeUnits.Delta;
-using MicrosoftGraph.AdministrativeUnits.GetByIds;
-using MicrosoftGraph.AdministrativeUnits.GetUserOwnedObjects;
-using MicrosoftGraph.AdministrativeUnits.Item;
-using MicrosoftGraph.AdministrativeUnits.ValidateProperties;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AdministrativeUnits.Delta;
+using MicrosoftGraphSdk.AdministrativeUnits.GetByIds;
+using MicrosoftGraphSdk.AdministrativeUnits.GetUserOwnedObjects;
+using MicrosoftGraphSdk.AdministrativeUnits.Item;
+using MicrosoftGraphSdk.AdministrativeUnits.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AdministrativeUnits {
+namespace MicrosoftGraphSdk.AdministrativeUnits {
     /// <summary>Builds and executes requests for operations under \administrativeUnits</summary>
     public class AdministrativeUnitsRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -30,11 +30,11 @@ namespace MicrosoftGraph.AdministrativeUnits {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.administrativeUnits.item collection</summary>
-        public AdministrativeUnitRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.administrativeUnits.item collection</summary>
+        public AdministrativeUnitItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("administrativeUnit_id", position);
-            return new AdministrativeUnitRequestBuilder(urlTplParams, RequestAdapter);
+            return new AdministrativeUnitItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
@@ -90,7 +90,7 @@ namespace MicrosoftGraph.AdministrativeUnits {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.AdministrativeUnit body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -128,10 +128,10 @@ namespace MicrosoftGraph.AdministrativeUnits {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.AdministrativeUnit> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.AdministrativeUnit body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.AdministrativeUnit>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from administrativeUnits</summary>
         public class GetQueryParameters : QueryParametersBase {

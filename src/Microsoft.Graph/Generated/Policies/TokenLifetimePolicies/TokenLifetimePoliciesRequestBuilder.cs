@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.TokenLifetimePolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.TokenLifetimePolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.TokenLifetimePolicies {
+namespace MicrosoftGraphSdk.Policies.TokenLifetimePolicies {
     /// <summary>Builds and executes requests for operations under \policies\tokenLifetimePolicies</summary>
     public class TokenLifetimePoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.TokenLifetimePolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.tokenLifetimePolicies.item collection</summary>
-        public TokenLifetimePolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.tokenLifetimePolicies.item collection</summary>
+        public TokenLifetimePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tokenLifetimePolicy_id", position);
-            return new TokenLifetimePolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new TokenLifetimePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.HasPayloadLinks;
-using MicrosoftGraph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.HasPayloadLinks;
+using MicrosoftGraphSdk.DeviceAppManagement.MdmWindowsInformationProtectionPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies {
+namespace MicrosoftGraphSdk.DeviceAppManagement.MdmWindowsInformationProtectionPolicies {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mdmWindowsInformationProtectionPolicies</summary>
     public class MdmWindowsInformationProtectionPoliciesRequestBuilder {
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceAppManagement.MdmWindowsInformationProtectionPoli
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.mdmWindowsInformationProtectionPolicies.item collection</summary>
-        public MdmWindowsInformationProtectionPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.mdmWindowsInformationProtectionPolicies.item collection</summary>
+        public MdmWindowsInformationProtectionPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mdmWindowsInformationProtectionPolicy_id", position);
-            return new MdmWindowsInformationProtectionPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new MdmWindowsInformationProtectionPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MdmWindowsInformationProtectionPoliciesRequestBuilder and sets the default values.

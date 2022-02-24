@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs\{cloudPC-id}\microsoft.graph.rename</summary>
     public class RenameRequestBuilder {
         /// <summary>Path parameters for the request</summary>

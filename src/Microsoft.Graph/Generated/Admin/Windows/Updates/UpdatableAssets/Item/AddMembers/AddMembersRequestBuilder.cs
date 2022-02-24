@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.UpdatableAssets.Item.AddMembers {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item.AddMembers {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\updatableAssets\{updatableAsset-id}\microsoft.graph.windowsUpdates.addMembers</summary>
     public class AddMembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

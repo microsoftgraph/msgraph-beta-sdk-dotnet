@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrintJob : Entity, IParsable {
         /// <summary>A group of settings that a printer should use to print a job.</summary>
         public PrintJobConfiguration Configuration { get; set; }

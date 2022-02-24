@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProgramResource : Identity, IParsable {
         /// <summary>Type of the resource, indicating whether it is a group or an app.</summary>
         public string Type { get; set; }

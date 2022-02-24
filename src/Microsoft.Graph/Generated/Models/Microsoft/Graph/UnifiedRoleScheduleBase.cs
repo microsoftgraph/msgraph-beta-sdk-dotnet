@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UnifiedRoleScheduleBase : Entity, IParsable {
         /// <summary>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AppScope AppScope { get; set; }
+        public AppScope AppScope { get; set; }
         /// <summary>Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units or all users.</summary>
         public string AppScopeId { get; set; }
         /// <summary>Time that the schedule was created.</summary>
@@ -34,7 +34,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"appScope", (o,n) => { (o as UnifiedRoleScheduleBase).AppScope = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AppScope>(); } },
+                {"appScope", (o,n) => { (o as UnifiedRoleScheduleBase).AppScope = n.GetObjectValue<AppScope>(); } },
                 {"appScopeId", (o,n) => { (o as UnifiedRoleScheduleBase).AppScopeId = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as UnifiedRoleScheduleBase).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdUsing", (o,n) => { (o as UnifiedRoleScheduleBase).CreatedUsing = n.GetStringValue(); } },
@@ -55,7 +55,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AppScope>("appScope", AppScope);
+            writer.WriteObjectValue<AppScope>("appScope", AppScope);
             writer.WriteStringValue("appScopeId", AppScopeId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("createdUsing", CreatedUsing);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.OnenotePatchContent {
+namespace MicrosoftGraphSdk.Sites.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.OnenotePatchContent {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\onenote\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\pages\{onenotePage-id}\microsoft.graph.onenotePatchContent</summary>
     public class OnenotePatchContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

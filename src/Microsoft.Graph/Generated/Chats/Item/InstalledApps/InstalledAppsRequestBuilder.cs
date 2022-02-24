@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Chats.Item.InstalledApps.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Chats.Item.InstalledApps.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Chats.Item.InstalledApps {
+namespace MicrosoftGraphSdk.Chats.Item.InstalledApps {
     /// <summary>Builds and executes requests for operations under \chats\{chat-id}\installedApps</summary>
     public class InstalledAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Chats.Item.InstalledApps {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.chats.item.installedApps.item collection</summary>
-        public TeamsAppInstallationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.chats.item.installedApps.item collection</summary>
+        public TeamsAppInstallationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsAppInstallation_id", position);
-            return new TeamsAppInstallationRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamsAppInstallationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstalledAppsRequestBuilder and sets the default values.

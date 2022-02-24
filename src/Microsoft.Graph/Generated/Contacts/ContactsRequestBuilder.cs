@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Contacts.Delta;
-using MicrosoftGraph.Contacts.GetByIds;
-using MicrosoftGraph.Contacts.GetUserOwnedObjects;
-using MicrosoftGraph.Contacts.Item;
-using MicrosoftGraph.Contacts.ValidateProperties;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Contacts.Delta;
+using MicrosoftGraphSdk.Contacts.GetByIds;
+using MicrosoftGraphSdk.Contacts.GetUserOwnedObjects;
+using MicrosoftGraphSdk.Contacts.Item;
+using MicrosoftGraphSdk.Contacts.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Contacts {
+namespace MicrosoftGraphSdk.Contacts {
     /// <summary>Builds and executes requests for operations under \contacts</summary>
     public class ContactsRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -30,11 +30,11 @@ namespace MicrosoftGraph.Contacts {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.contacts.item collection</summary>
-        public OrgContactRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.contacts.item collection</summary>
+        public OrgContactItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("orgContact_id", position);
-            return new OrgContactRequestBuilder(urlTplParams, RequestAdapter);
+            return new OrgContactItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContactsRequestBuilder and sets the default values.

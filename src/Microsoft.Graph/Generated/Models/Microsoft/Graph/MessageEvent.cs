@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MessageEvent : Entity, IParsable {
         public DateTimeOffset? DateTime { get; set; }
         public string Description { get; set; }

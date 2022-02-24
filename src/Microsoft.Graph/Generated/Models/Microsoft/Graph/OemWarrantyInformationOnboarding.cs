@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OemWarrantyInformationOnboarding : Entity, IParsable {
         /// <summary>Specifies whether warranty API is available. This property is read-only.</summary>
         public bool? Available { get; set; }

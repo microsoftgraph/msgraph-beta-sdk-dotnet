@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Classes.Item.Assignments.Item.SetUpResourcesFolder {
+namespace MicrosoftGraphSdk.Education.Classes.Item.Assignments.Item.SetUpResourcesFolder {
     /// <summary>Builds and executes requests for operations under \education\classes\{educationClass-id}\assignments\{educationAssignment-id}\microsoft.graph.setUpResourcesFolder</summary>
     public class SetUpResourcesFolderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.BulkRestoreCloudPc {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.BulkRestoreCloudPc {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\microsoft.graph.bulkRestoreCloudPc</summary>
     public class BulkRestoreCloudPcRequestBuilder {
         /// <summary>Path parameters for the request</summary>

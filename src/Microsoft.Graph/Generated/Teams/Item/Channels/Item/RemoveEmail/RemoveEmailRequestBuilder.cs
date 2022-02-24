@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Channels.Item.RemoveEmail {
+namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.RemoveEmail {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\microsoft.graph.removeEmail</summary>
     public class RemoveEmailRequestBuilder {
         /// <summary>Path parameters for the request</summary>

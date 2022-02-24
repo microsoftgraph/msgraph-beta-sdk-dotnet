@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion : Entity, IParsable {
         /// <summary>The number of devices where the app has been active. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDeviceCount { get; set; }

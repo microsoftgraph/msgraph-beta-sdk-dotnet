@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.Base.AssociateWithHubSites;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.Base.CopyToDefaultContentLocation;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.Base.IsPublished;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.Base.Publish;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.Base.Ref;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.Base.Unpublish;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.Base.AssociateWithHubSites;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.Base.CopyToDefaultContentLocation;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.Base.IsPublished;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.Base.Publish;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.Base.Ref;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.Base.Unpublish;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.Base {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.Base {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\base</summary>
     public class BaseRequestBuilder {
         public AssociateWithHubSitesRequestBuilder AssociateWithHubSites { get =>

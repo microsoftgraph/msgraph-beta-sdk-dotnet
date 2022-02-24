@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation.GetDownloadUrl {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation.GetDownloadUrl {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\operations\{caseOperation-id}\microsoft.graph.ediscovery.caseExportOperation\microsoft.graph.ediscovery.getDownloadUrl()</summary>
     public class GetDownloadUrlRequestBuilder {
         /// <summary>Path parameters for the request</summary>

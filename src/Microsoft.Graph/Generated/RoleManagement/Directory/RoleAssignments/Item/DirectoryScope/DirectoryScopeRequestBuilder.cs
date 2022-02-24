@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.Directory.RoleAssignments.Item.DirectoryScope.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignments.Item.DirectoryScope.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.Directory.RoleAssignments.Item.DirectoryScope {
+namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignments.Item.DirectoryScope {
     /// <summary>Builds and executes requests for operations under \roleManagement\directory\roleAssignments\{unifiedRoleAssignment-id}\directoryScope</summary>
     public class DirectoryScopeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

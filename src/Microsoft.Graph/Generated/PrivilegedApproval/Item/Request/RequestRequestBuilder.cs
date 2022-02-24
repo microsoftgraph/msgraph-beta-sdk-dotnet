@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.PrivilegedApproval.Item.Request.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.PrivilegedApproval.Item.Request.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PrivilegedApproval.Item.Request {
+namespace MicrosoftGraphSdk.PrivilegedApproval.Item.Request {
     /// <summary>Builds and executes requests for operations under \privilegedApproval\{privilegedApproval-id}\request</summary>
     public class RequestRequestBuilder {
         /// <summary>Path parameters for the request</summary>

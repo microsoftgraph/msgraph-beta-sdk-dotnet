@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.AcceptRecommendations;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ApplyDecisions;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.BatchRecordDecisions;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ResetDecisions;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.SendReminder;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.Stop;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.AcceptRecommendations;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ApplyDecisions;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.BatchRecordDecisions;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ResetDecisions;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.SendReminder;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.Stop;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}\instances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}\instance</summary>
     public class InstanceRequestBuilder {
         public AcceptRecommendationsRequestBuilder AcceptRecommendations { get =>

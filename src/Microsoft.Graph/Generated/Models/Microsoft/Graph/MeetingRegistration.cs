@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MeetingRegistration : MeetingRegistrationBase, IParsable {
         /// <summary>Custom registration questions.</summary>
         public List<MeetingRegistrationQuestion> CustomQuestions { get; set; }

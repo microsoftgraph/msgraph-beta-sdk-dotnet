@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WindowsDriverUpdateProfile : Entity, IParsable {
         /// <summary>Driver update profile approval type. For example, manual or automatic approval. Possible values are: manual, automatic.</summary>
         public DriverUpdateProfileApprovalType? ApprovalType { get; set; }

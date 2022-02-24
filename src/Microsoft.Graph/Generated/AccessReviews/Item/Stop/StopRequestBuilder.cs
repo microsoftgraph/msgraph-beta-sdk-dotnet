@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AccessReviews.Item.Stop {
+namespace MicrosoftGraphSdk.AccessReviews.Item.Stop {
     /// <summary>Builds and executes requests for operations under \accessReviews\{accessReview-id}\microsoft.graph.stop</summary>
     public class StopRequestBuilder {
         /// <summary>Path parameters for the request</summary>

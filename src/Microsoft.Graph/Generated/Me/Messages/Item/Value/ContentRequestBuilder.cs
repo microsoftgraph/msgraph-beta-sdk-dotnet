@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Messages.Item.Value {
+namespace MicrosoftGraphSdk.Me.Messages.Item.Value {
     /// <summary>Builds and executes requests for operations under \me\messages\{message-id}\$value</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

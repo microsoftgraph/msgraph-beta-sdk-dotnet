@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Activities.Item.HistoryItems.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Activities.Item.HistoryItems.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Activities.Item.HistoryItems {
+namespace MicrosoftGraphSdk.Users.Item.Activities.Item.HistoryItems {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}\historyItems</summary>
     public class HistoryItemsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Activities.Item.HistoryItems {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.activities.item.historyItems.item collection</summary>
-        public ActivityHistoryItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.activities.item.historyItems.item collection</summary>
+        public ActivityHistoryItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activityHistoryItem_id", position);
-            return new ActivityHistoryItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new ActivityHistoryItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HistoryItemsRequestBuilder and sets the default values.

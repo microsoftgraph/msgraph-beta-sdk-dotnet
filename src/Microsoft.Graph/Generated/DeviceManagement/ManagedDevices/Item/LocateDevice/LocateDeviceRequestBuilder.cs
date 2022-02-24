@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.LocateDevice {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.LocateDevice {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.locateDevice</summary>
     public class LocateDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

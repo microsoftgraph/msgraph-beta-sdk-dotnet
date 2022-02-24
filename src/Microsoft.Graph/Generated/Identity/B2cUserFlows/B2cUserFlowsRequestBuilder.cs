@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Identity.B2cUserFlows.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Identity.B2cUserFlows.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.B2cUserFlows {
+namespace MicrosoftGraphSdk.Identity.B2cUserFlows {
     /// <summary>Builds and executes requests for operations under \identity\b2cUserFlows</summary>
     public class B2cUserFlowsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Identity.B2cUserFlows {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identity.b2cUserFlows.item collection</summary>
-        public B2cIdentityUserFlowRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.b2cUserFlows.item collection</summary>
+        public B2cIdentityUserFlowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("b2cIdentityUserFlow_id", position);
-            return new B2cIdentityUserFlowRequestBuilder(urlTplParams, RequestAdapter);
+            return new B2cIdentityUserFlowItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new B2cUserFlowsRequestBuilder and sets the default values.

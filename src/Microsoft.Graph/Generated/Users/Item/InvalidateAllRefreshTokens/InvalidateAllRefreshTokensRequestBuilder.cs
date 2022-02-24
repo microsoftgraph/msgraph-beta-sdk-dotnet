@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.InvalidateAllRefreshTokens {
+namespace MicrosoftGraphSdk.Users.Item.InvalidateAllRefreshTokens {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\microsoft.graph.invalidateAllRefreshTokens</summary>
     public class InvalidateAllRefreshTokensRequestBuilder {
         /// <summary>Path parameters for the request</summary>

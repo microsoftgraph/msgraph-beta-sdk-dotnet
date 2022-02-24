@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.AddMembersById {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item.AddMembersById {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\{updatableAsset-id}\microsoft.graph.windowsUpdates.addMembersById</summary>
     public class AddMembersByIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

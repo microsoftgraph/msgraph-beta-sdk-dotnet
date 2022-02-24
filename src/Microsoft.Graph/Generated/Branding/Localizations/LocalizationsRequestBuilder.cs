@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Branding.Localizations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Branding.Localizations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Branding.Localizations {
+namespace MicrosoftGraphSdk.Branding.Localizations {
     /// <summary>Builds and executes requests for operations under \branding\localizations</summary>
     public class LocalizationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Branding.Localizations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.branding.localizations.item collection</summary>
-        public OrganizationalBrandingLocalizationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.branding.localizations.item collection</summary>
+        public OrganizationalBrandingLocalizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("organizationalBrandingLocalization_id", position);
-            return new OrganizationalBrandingLocalizationRequestBuilder(urlTplParams, RequestAdapter);
+            return new OrganizationalBrandingLocalizationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LocalizationsRequestBuilder and sets the default values.

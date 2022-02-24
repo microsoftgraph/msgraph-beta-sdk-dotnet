@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssetsById {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssetsById {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions\microsoft.graph.windowsUpdates.enrollAssetsById</summary>
     public class EnrollAssetsByIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

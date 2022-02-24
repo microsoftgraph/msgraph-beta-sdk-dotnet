@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Onenote.Sections.Item.Pages.Item.CopyToSection {
+namespace MicrosoftGraphSdk.Users.Item.Onenote.Sections.Item.Pages.Item.CopyToSection {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\onenote\sections\{onenoteSection-id}\pages\{onenotePage-id}\microsoft.graph.copyToSection</summary>
     public class CopyToSectionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

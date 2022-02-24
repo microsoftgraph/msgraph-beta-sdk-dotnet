@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Planner.Plans.Item.Tasks.Item.BucketTaskBoardFormat {
+namespace MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item.Tasks.Item.BucketTaskBoardFormat {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\bucketTaskBoardFormat</summary>
     public class BucketTaskBoardFormatRequestBuilder {
         /// <summary>Path parameters for the request</summary>

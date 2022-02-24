@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.RoleAssignments.Item.RoleScopeTags.GetRoleScopeTagsById;
-using MicrosoftGraph.DeviceManagement.RoleAssignments.Item.RoleScopeTags.HasCustomRoleScopeTag;
-using MicrosoftGraph.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Ref;
+using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.GetRoleScopeTagsById;
+using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.HasCustomRoleScopeTag;
+using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.RoleAssignments.Item.RoleScopeTags {
+namespace MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags {
     /// <summary>Builds and executes requests for operations under \deviceManagement\roleAssignments\{deviceAndAppManagementRoleAssignment-id}\roleScopeTags</summary>
     public class RoleScopeTagsRequestBuilder {
         public GetRoleScopeTagsByIdRequestBuilder GetRoleScopeTagsById { get =>

@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Directory : Entity, IParsable {
         /// <summary>Conceptual container for user and group directory objects.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AdministrativeUnit> AdministrativeUnits { get; set; }
+        public List<AdministrativeUnit> AdministrativeUnits { get; set; }
         /// <summary>Group of related custom security attribute definitions.</summary>
         public List<AttributeSet> AttributeSets { get; set; }
         /// <summary>Schema of a custom security attributes (key-value pairs).</summary>
@@ -27,7 +27,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"administrativeUnits", (o,n) => { (o as Directory).AdministrativeUnits = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AdministrativeUnit>().ToList(); } },
+                {"administrativeUnits", (o,n) => { (o as Directory).AdministrativeUnits = n.GetCollectionOfObjectValues<AdministrativeUnit>().ToList(); } },
                 {"attributeSets", (o,n) => { (o as Directory).AttributeSets = n.GetCollectionOfObjectValues<AttributeSet>().ToList(); } },
                 {"customSecurityAttributeDefinitions", (o,n) => { (o as Directory).CustomSecurityAttributeDefinitions = n.GetCollectionOfObjectValues<CustomSecurityAttributeDefinition>().ToList(); } },
                 {"deletedItems", (o,n) => { (o as Directory).DeletedItems = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
@@ -47,7 +47,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
+            writer.WriteCollectionOfObjectValues<AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
             writer.WriteCollectionOfObjectValues<AttributeSet>("attributeSets", AttributeSets);
             writer.WriteCollectionOfObjectValues<CustomSecurityAttributeDefinition>("customSecurityAttributeDefinitions", CustomSecurityAttributeDefinitions);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("deletedItems", DeletedItems);

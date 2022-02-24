@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest {
+namespace MicrosoftGraphSdk.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest {
     /// <summary>Builds and executes requests for operations under \deviceManagement\applePushNotificationCertificate\microsoft.graph.generateApplePushNotificationCertificateSigningRequest</summary>
     public class GenerateApplePushNotificationCertificateSigningRequestRequestBuilder {
         /// <summary>Path parameters for the request</summary>

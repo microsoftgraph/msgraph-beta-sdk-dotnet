@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceManagementReports : Entity, IParsable {
         /// <summary>Entity representing the configuration of a cached report</summary>
         public List<DeviceManagementCachedReportConfiguration> CachedReportConfigurations { get; set; }

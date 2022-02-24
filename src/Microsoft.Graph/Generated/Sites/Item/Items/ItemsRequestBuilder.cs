@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Sites.Item.Items.Ref;
+using MicrosoftGraphSdk.Sites.Item.Items.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Items {
+namespace MicrosoftGraphSdk.Sites.Item.Items {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\items</summary>
     public class ItemsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementTemplateCollection : Entity, IParsable {
         public string Description { get; set; }
         public string DisplayName { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate> ManagementTemplates { get; set; }
+        public List<ManagementTemplate> ManagementTemplates { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -15,7 +15,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"description", (o,n) => { (o as ManagementTemplateCollection).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as ManagementTemplateCollection).DisplayName = n.GetStringValue(); } },
-                {"managementTemplates", (o,n) => { (o as ManagementTemplateCollection).ManagementTemplates = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate>().ToList(); } },
+                {"managementTemplates", (o,n) => { (o as ManagementTemplateCollection).ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>().ToList(); } },
             };
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate>("managementTemplates", ManagementTemplates);
+            writer.WriteCollectionOfObjectValues<ManagementTemplate>("managementTemplates", ManagementTemplates);
         }
     }
 }

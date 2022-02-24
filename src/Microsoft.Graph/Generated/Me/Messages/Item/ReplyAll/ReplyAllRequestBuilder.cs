@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Messages.Item.ReplyAll {
+namespace MicrosoftGraphSdk.Me.Messages.Item.ReplyAll {
     /// <summary>Builds and executes requests for operations under \me\messages\{message-id}\microsoft.graph.replyAll</summary>
     public class ReplyAllRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.GetManagedDevicesWithAppFailures {
+namespace MicrosoftGraphSdk.Users.Item.GetManagedDevicesWithAppFailures {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\microsoft.graph.getManagedDevicesWithAppFailures()</summary>
     public class GetManagedDevicesWithAppFailuresRequestBuilder {
         /// <summary>Path parameters for the request</summary>

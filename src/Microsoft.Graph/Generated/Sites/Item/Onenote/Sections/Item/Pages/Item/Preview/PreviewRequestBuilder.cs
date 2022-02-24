@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Onenote.Sections.Item.Pages.Item.Preview {
+namespace MicrosoftGraphSdk.Sites.Item.Onenote.Sections.Item.Pages.Item.Preview {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\onenote\sections\{onenoteSection-id}\pages\{onenotePage-id}\microsoft.graph.preview()</summary>
     public class PreviewRequestBuilder {
         /// <summary>Path parameters for the request</summary>

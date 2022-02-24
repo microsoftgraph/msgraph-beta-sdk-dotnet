@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ApprovalStep : Entity, IParsable {
         /// <summary>Indicates whether the step is assigned to the calling user to review. Read-only.</summary>
         public bool? AssignedToMe { get; set; }
@@ -12,7 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The justification associated with the approval step decision.</summary>
         public string Justification { get; set; }
         /// <summary>The identifier of the reviewer. Read-only.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Identity ReviewedBy { get; set; }
+        public Identity ReviewedBy { get; set; }
         /// <summary>The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ReviewedDateTime { get; set; }
         /// <summary>The result of this approval record. Possible values include: NotReviewed, Approved, Denied.</summary>
@@ -27,7 +27,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"assignedToMe", (o,n) => { (o as ApprovalStep).AssignedToMe = n.GetBoolValue(); } },
                 {"displayName", (o,n) => { (o as ApprovalStep).DisplayName = n.GetStringValue(); } },
                 {"justification", (o,n) => { (o as ApprovalStep).Justification = n.GetStringValue(); } },
-                {"reviewedBy", (o,n) => { (o as ApprovalStep).ReviewedBy = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>(); } },
+                {"reviewedBy", (o,n) => { (o as ApprovalStep).ReviewedBy = n.GetObjectValue<Identity>(); } },
                 {"reviewedDateTime", (o,n) => { (o as ApprovalStep).ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"reviewResult", (o,n) => { (o as ApprovalStep).ReviewResult = n.GetStringValue(); } },
                 {"status", (o,n) => { (o as ApprovalStep).Status = n.GetStringValue(); } },
@@ -43,7 +43,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteBoolValue("assignedToMe", AssignedToMe);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>("reviewedBy", ReviewedBy);
+            writer.WriteObjectValue<Identity>("reviewedBy", ReviewedBy);
             writer.WriteDateTimeOffsetValue("reviewedDateTime", ReviewedDateTime);
             writer.WriteStringValue("reviewResult", ReviewResult);
             writer.WriteStringValue("status", Status);

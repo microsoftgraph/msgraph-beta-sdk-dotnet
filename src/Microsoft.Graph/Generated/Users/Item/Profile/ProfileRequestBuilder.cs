@@ -1,32 +1,32 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Profile.Account;
-using MicrosoftGraph.Users.Item.Profile.Addresses;
-using MicrosoftGraph.Users.Item.Profile.Anniversaries;
-using MicrosoftGraph.Users.Item.Profile.Awards;
-using MicrosoftGraph.Users.Item.Profile.Certifications;
-using MicrosoftGraph.Users.Item.Profile.EducationalActivities;
-using MicrosoftGraph.Users.Item.Profile.Emails;
-using MicrosoftGraph.Users.Item.Profile.Interests;
-using MicrosoftGraph.Users.Item.Profile.Languages;
-using MicrosoftGraph.Users.Item.Profile.Names;
-using MicrosoftGraph.Users.Item.Profile.Notes;
-using MicrosoftGraph.Users.Item.Profile.Patents;
-using MicrosoftGraph.Users.Item.Profile.Phones;
-using MicrosoftGraph.Users.Item.Profile.Positions;
-using MicrosoftGraph.Users.Item.Profile.Projects;
-using MicrosoftGraph.Users.Item.Profile.Publications;
-using MicrosoftGraph.Users.Item.Profile.Skills;
-using MicrosoftGraph.Users.Item.Profile.WebAccounts;
-using MicrosoftGraph.Users.Item.Profile.Websites;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Profile.Account;
+using MicrosoftGraphSdk.Users.Item.Profile.Addresses;
+using MicrosoftGraphSdk.Users.Item.Profile.Anniversaries;
+using MicrosoftGraphSdk.Users.Item.Profile.Awards;
+using MicrosoftGraphSdk.Users.Item.Profile.Certifications;
+using MicrosoftGraphSdk.Users.Item.Profile.EducationalActivities;
+using MicrosoftGraphSdk.Users.Item.Profile.Emails;
+using MicrosoftGraphSdk.Users.Item.Profile.Interests;
+using MicrosoftGraphSdk.Users.Item.Profile.Languages;
+using MicrosoftGraphSdk.Users.Item.Profile.Names;
+using MicrosoftGraphSdk.Users.Item.Profile.Notes;
+using MicrosoftGraphSdk.Users.Item.Profile.Patents;
+using MicrosoftGraphSdk.Users.Item.Profile.Phones;
+using MicrosoftGraphSdk.Users.Item.Profile.Positions;
+using MicrosoftGraphSdk.Users.Item.Profile.Projects;
+using MicrosoftGraphSdk.Users.Item.Profile.Publications;
+using MicrosoftGraphSdk.Users.Item.Profile.Skills;
+using MicrosoftGraphSdk.Users.Item.Profile.WebAccounts;
+using MicrosoftGraphSdk.Users.Item.Profile.Websites;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Profile {
+namespace MicrosoftGraphSdk.Users.Item.Profile {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\profile</summary>
     public class ProfileRequestBuilder {
         public AccountRequestBuilder Account { get =>
@@ -161,7 +161,7 @@ namespace MicrosoftGraph.Users.Item.Profile {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.Profile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Profile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -192,9 +192,9 @@ namespace MicrosoftGraph.Users.Item.Profile {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.Profile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Profile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.Profile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Profile>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents properties that are descriptive of a user in a tenant.
@@ -204,7 +204,7 @@ namespace MicrosoftGraph.Users.Item.Profile {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraph.Models.Microsoft.Graph.Profile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Profile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
