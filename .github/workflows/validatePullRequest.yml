@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-dotnet@v1.9.0
         with:
           dotnet-version: 6.0.x
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: csharp
       - name: Add NuGet kiota source
         run: |
           dotnet nuget add source ${{env.NUGET_URL}} -n ReadKiotaGithubPackages -u ${{secrets.PUBLISH_GH_USERNAME}} -p ${{secrets.PUBLISH_GH_TOKEN}} --store-password-in-clear-text
@@ -29,22 +33,8 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore ${{ env.solutionName }}
       - name: Build
-        run: dotnet build ${{ env.solutionName }} --no-restore -c Release
+        run: dotnet build ${{ env.solutionName }} --no-restore -c Release /p:UseSharedCompilation=false
       - name: Test
         run: dotnet test ${{ env.solutionName }} --no-build --verbosity normal -c Release /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=opencover
-      - name: Publish
-        run: dotnet publish ${{ env.solutionName }} --no-restore --no-build --verbosity normal -c Release
-      - name: Pack
-        run: dotnet pack ${{ env.solutionName }} --no-restore --no-build --verbosity normal -c Release
-      - name: Upload Coverage Results
-        uses: actions/upload-artifact@v2
-        with:
-          name: codeCoverage
-          path: |
-            ${{ env.relativePath }}/Microsoft.Kiota.Authentication.Azure.Tests/TestResults  
-      - name: Upload Nuget package
-        uses: actions/upload-artifact@v2
-        with:
-          name: drop
-          path: |
-            ${{ env.relativePath }}/src/bin/Release/*.nupkg
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1
