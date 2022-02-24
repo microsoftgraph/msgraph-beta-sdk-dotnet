@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Chats.Item.InstalledApps.Item.Upgrade {
+namespace MicrosoftGraphSdk.Chats.Item.InstalledApps.Item.Upgrade {
     /// <summary>Builds and executes requests for operations under \chats\{chat-id}\installedApps\{teamsAppInstallation-id}\microsoft.graph.upgrade</summary>
     public class UpgradeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetAttackSimulationSimulationUserCoverage {
+namespace MicrosoftGraphSdk.Reports.GetAttackSimulationSimulationUserCoverage {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getAttackSimulationSimulationUserCoverage()</summary>
     public class GetAttackSimulationSimulationUserCoverageRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.Reports.GetAttackSimulationSimulationUserCoverage {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Reports.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoverage>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetAttackSimulationSimulationUserCoverage>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Reports.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoverage>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetAttackSimulationSimulationUserCoverage>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

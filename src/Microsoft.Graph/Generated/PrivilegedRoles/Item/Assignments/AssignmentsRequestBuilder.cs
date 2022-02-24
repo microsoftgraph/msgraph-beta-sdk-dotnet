@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.PrivilegedRoles.Item.Assignments.Ref;
+using MicrosoftGraphSdk.PrivilegedRoles.Item.Assignments.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PrivilegedRoles.Item.Assignments {
+namespace MicrosoftGraphSdk.PrivilegedRoles.Item.Assignments {
     /// <summary>Builds and executes requests for operations under \privilegedRoles\{privilegedRole-id}\assignments</summary>
     public class AssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EducationOutcome : Entity, IParsable {
         /// <summary>The individual who updated the resource.</summary>
         public IdentitySet LastModifiedBy { get; set; }

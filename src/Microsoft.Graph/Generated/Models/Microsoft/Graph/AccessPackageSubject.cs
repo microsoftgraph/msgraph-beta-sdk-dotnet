@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageSubject : Entity, IParsable {
         public string AltSecId { get; set; }
         /// <summary>The connected organization of the subject. Read-only. Nullable.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.ConnectedOrganization ConnectedOrganization { get; set; }
+        public ConnectedOrganization ConnectedOrganization { get; set; }
         /// <summary>The identifier of the connected organization of the subject.</summary>
         public string ConnectedOrganizationId { get; set; }
         /// <summary>The display name of the subject.</summary>
@@ -28,7 +28,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"altSecId", (o,n) => { (o as AccessPackageSubject).AltSecId = n.GetStringValue(); } },
-                {"connectedOrganization", (o,n) => { (o as AccessPackageSubject).ConnectedOrganization = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ConnectedOrganization>(); } },
+                {"connectedOrganization", (o,n) => { (o as AccessPackageSubject).ConnectedOrganization = n.GetObjectValue<ConnectedOrganization>(); } },
                 {"connectedOrganizationId", (o,n) => { (o as AccessPackageSubject).ConnectedOrganizationId = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AccessPackageSubject).DisplayName = n.GetStringValue(); } },
                 {"email", (o,n) => { (o as AccessPackageSubject).Email = n.GetStringValue(); } },
@@ -46,7 +46,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("altSecId", AltSecId);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ConnectedOrganization>("connectedOrganization", ConnectedOrganization);
+            writer.WriteObjectValue<ConnectedOrganization>("connectedOrganization", ConnectedOrganization);
             writer.WriteStringValue("connectedOrganizationId", ConnectedOrganizationId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);

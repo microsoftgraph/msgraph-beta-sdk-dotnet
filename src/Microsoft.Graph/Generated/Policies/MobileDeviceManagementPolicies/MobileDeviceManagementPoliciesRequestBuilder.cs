@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.MobileDeviceManagementPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.MobileDeviceManagementPolicies {
+namespace MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies {
     /// <summary>Builds and executes requests for operations under \policies\mobileDeviceManagementPolicies</summary>
     public class MobileDeviceManagementPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.MobileDeviceManagementPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.mobileDeviceManagementPolicies.item collection</summary>
-        public MobilityManagementPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.mobileDeviceManagementPolicies.item collection</summary>
+        public MobilityManagementPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobilityManagementPolicy_id", position);
-            return new MobilityManagementPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobilityManagementPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileDeviceManagementPoliciesRequestBuilder and sets the default values.

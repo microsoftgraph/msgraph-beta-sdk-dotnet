@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserExperienceAnalyticsMetricHistory : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
         public string DeviceId { get; set; }

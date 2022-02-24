@@ -1,11 +1,11 @@
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraph.Users.Item.Messages.Item.CalendarSharingMessage.Accept;
+using MicrosoftGraphSdk.Users.Item.Messages.Item.CalendarSharingMessage.Accept;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Messages.Item.CalendarSharingMessage {
+namespace MicrosoftGraphSdk.Users.Item.Messages.Item.CalendarSharingMessage {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\messages\{message-id}\microsoft.graph.calendarSharingMessage</summary>
     public class CalendarSharingMessageRequestBuilder {
         public AcceptRequestBuilder Accept { get =>

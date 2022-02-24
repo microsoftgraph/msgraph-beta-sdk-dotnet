@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AppConsentApprovalRoute : Entity, IParsable {
         /// <summary>A collection of userConsentRequest objects for a specific application.</summary>
         public List<AppConsentRequest> AppConsentRequests { get; set; }

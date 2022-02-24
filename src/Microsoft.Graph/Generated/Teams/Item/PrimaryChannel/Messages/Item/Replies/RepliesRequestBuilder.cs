@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.Messages.Item.Replies.Delta;
-using MicrosoftGraph.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Delta;
+using MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.PrimaryChannel.Messages.Item.Replies {
+namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Messages.Item.Replies {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\primaryChannel\messages\{chatMessage-id}\replies</summary>
     public class RepliesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Teams.Item.PrimaryChannel.Messages.Item.Replies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.teams.item.primaryChannel.messages.item.replies.item collection</summary>
-        public ChatMessageRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.primaryChannel.messages.item.replies.item collection</summary>
+        public ChatMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessage_id1", position);
-            return new ChatMessageRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChatMessageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RepliesRequestBuilder and sets the default values.

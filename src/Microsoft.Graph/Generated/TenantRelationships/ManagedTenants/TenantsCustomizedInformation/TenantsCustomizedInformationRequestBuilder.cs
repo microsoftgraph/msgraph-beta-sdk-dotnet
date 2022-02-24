@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantsCustomizedInformation.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantsCustomizedInformation {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantsCustomizedInformation {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantsCustomizedInformation</summary>
     public class TenantsCustomizedInformationRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantsCustomizedInf
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.tenantsCustomizedInformation.item collection</summary>
-        public TenantCustomizedInformationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.tenantsCustomizedInformation.item collection</summary>
+        public TenantCustomizedInformationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantCustomizedInformation_id", position);
-            return new TenantCustomizedInformationRequestBuilder(urlTplParams, RequestAdapter);
+            return new TenantCustomizedInformationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TenantsCustomizedInformationRequestBuilder and sets the default values.

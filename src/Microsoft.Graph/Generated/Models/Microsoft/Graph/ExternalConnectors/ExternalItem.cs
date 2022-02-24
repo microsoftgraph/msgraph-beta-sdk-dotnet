@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
     public class ExternalItem : Entity, IParsable {
         /// <summary>An array of access control entries. Each entry specifies the access granted to a user or group. Required.</summary>
         public List<Acl> Acl { get; set; }

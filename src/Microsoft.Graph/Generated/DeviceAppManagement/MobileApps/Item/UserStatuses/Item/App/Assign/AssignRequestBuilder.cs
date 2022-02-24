@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.Assign {
+namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.Assign {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

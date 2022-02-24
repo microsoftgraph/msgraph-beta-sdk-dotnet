@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources.Ref;
+using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources {
+namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources {
     /// <summary>Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceEnvironments\{accessPackageResourceEnvironment-id}\accessPackageResources</summary>
     public class AccessPackageResourcesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Devices.Item.RegisteredOwners.Ref;
+using MicrosoftGraphSdk.Devices.Item.RegisteredOwners.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Devices.Item.RegisteredOwners {
+namespace MicrosoftGraphSdk.Devices.Item.RegisteredOwners {
     /// <summary>Builds and executes requests for operations under \devices\{device-id}\registeredOwners</summary>
     public class RegisteredOwnersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

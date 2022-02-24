@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.WindowsPrivacyAccessControls {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.GroupAssignments.Item.DeviceConfiguration.WindowsPrivacyAccessControls {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\groupAssignments\{deviceConfigurationGroupAssignment-id}\deviceConfiguration\microsoft.graph.windowsPrivacyAccessControls</summary>
     public class WindowsPrivacyAccessControlsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessReviewSettings : IParsable {
         /// <summary>Indicates whether showing recommendations to reviewers is enabled.</summary>
         public bool? AccessRecommendationsEnabled { get; set; }

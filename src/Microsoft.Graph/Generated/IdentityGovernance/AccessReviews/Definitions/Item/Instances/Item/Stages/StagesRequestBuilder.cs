@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.FilterByCurrentUserWithOn;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}\instances\{accessReviewInstance-id}\stages</summary>
     public class StagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Insta
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.accessReviews.definitions.item.instances.item.stages.item collection</summary>
-        public AccessReviewStageRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.definitions.item.instances.item.stages.item collection</summary>
+        public AccessReviewStageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewStage_id", position);
-            return new AccessReviewStageRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewStageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new StagesRequestBuilder and sets the default values.

@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Planner.All;
-using MicrosoftGraph.Me.Planner.FavoritePlans;
-using MicrosoftGraph.Me.Planner.Plans;
-using MicrosoftGraph.Me.Planner.RecentPlans;
-using MicrosoftGraph.Me.Planner.RosterPlans;
-using MicrosoftGraph.Me.Planner.Tasks;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Planner.All;
+using MicrosoftGraphSdk.Me.Planner.FavoritePlans;
+using MicrosoftGraphSdk.Me.Planner.Plans;
+using MicrosoftGraphSdk.Me.Planner.RecentPlans;
+using MicrosoftGraphSdk.Me.Planner.RosterPlans;
+using MicrosoftGraphSdk.Me.Planner.Tasks;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Planner {
+namespace MicrosoftGraphSdk.Me.Planner {
     /// <summary>Builds and executes requests for operations under \me\planner</summary>
     public class PlannerRequestBuilder {
         public AllRequestBuilder All { get =>

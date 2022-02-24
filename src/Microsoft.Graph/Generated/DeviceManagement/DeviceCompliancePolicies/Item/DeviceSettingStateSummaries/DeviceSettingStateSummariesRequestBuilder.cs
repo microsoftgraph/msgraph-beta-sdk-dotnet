@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceSettingStateSummaries.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Item.DeviceSettingStateSummaries.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceSettingStateSummaries {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Item.DeviceSettingStateSummaries {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies\{deviceCompliancePolicy-id}\deviceSettingStateSummaries</summary>
     public class DeviceSettingStateSummariesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.Item.DeviceSe
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceCompliancePolicies.item.deviceSettingStateSummaries.item collection</summary>
-        public SettingStateDeviceSummaryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceCompliancePolicies.item.deviceSettingStateSummaries.item collection</summary>
+        public SettingStateDeviceSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("settingStateDeviceSummary_id", position);
-            return new SettingStateDeviceSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new SettingStateDeviceSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceSettingStateSummariesRequestBuilder and sets the default values.

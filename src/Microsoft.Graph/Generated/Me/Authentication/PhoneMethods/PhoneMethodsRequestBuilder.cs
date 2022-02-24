@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Authentication.PhoneMethods.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Authentication.PhoneMethods.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Authentication.PhoneMethods {
+namespace MicrosoftGraphSdk.Me.Authentication.PhoneMethods {
     /// <summary>Builds and executes requests for operations under \me\authentication\phoneMethods</summary>
     public class PhoneMethodsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.Authentication.PhoneMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.authentication.phoneMethods.item collection</summary>
-        public PhoneAuthenticationMethodRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.authentication.phoneMethods.item collection</summary>
+        public PhoneAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("phoneAuthenticationMethod_id", position);
-            return new PhoneAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
+            return new PhoneAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PhoneMethodsRequestBuilder and sets the default values.

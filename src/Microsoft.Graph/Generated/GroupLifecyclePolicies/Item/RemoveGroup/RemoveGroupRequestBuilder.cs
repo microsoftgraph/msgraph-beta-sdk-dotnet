@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GroupLifecyclePolicies.Item.RemoveGroup {
+namespace MicrosoftGraphSdk.GroupLifecyclePolicies.Item.RemoveGroup {
     /// <summary>Builds and executes requests for operations under \groupLifecyclePolicies\{groupLifecyclePolicy-id}\microsoft.graph.removeGroup</summary>
     public class RemoveGroupRequestBuilder {
         /// <summary>Path parameters for the request</summary>

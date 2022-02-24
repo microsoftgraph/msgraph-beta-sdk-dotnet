@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.GovernanceResources.Item;
-using MicrosoftGraph.GovernanceResources.Register;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.GovernanceResources.Item;
+using MicrosoftGraphSdk.GovernanceResources.Register;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GovernanceResources {
+namespace MicrosoftGraphSdk.GovernanceResources {
     /// <summary>Builds and executes requests for operations under \governanceResources</summary>
     public class GovernanceResourcesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.GovernanceResources {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.governanceResources.item collection</summary>
-        public GovernanceResourceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.governanceResources.item collection</summary>
+        public GovernanceResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceResource_id", position);
-            return new GovernanceResourceRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernanceResourceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GovernanceResourcesRequestBuilder and sets the default values.

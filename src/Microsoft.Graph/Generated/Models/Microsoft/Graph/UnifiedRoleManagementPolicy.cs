@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UnifiedRoleManagementPolicy : Entity, IParsable {
         /// <summary>Description for the policy.</summary>
         public string Description { get; set; }
@@ -14,7 +14,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>This can only be set to true for a single tenant wide policy which will apply to all scopes and roles. Set the scopeId to '/' and scopeType to Directory.</summary>
         public bool? IsOrganizationDefault { get; set; }
         /// <summary>The identity who last modified the role setting.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Identity LastModifiedBy { get; set; }
+        public Identity LastModifiedBy { get; set; }
         /// <summary>The time when the role setting was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>The collection of rules like approval rule, expiration rule, etc.</summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"displayName", (o,n) => { (o as UnifiedRoleManagementPolicy).DisplayName = n.GetStringValue(); } },
                 {"effectiveRules", (o,n) => { (o as UnifiedRoleManagementPolicy).EffectiveRules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>().ToList(); } },
                 {"isOrganizationDefault", (o,n) => { (o as UnifiedRoleManagementPolicy).IsOrganizationDefault = n.GetBoolValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as UnifiedRoleManagementPolicy).LastModifiedBy = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>(); } },
+                {"lastModifiedBy", (o,n) => { (o as UnifiedRoleManagementPolicy).LastModifiedBy = n.GetObjectValue<Identity>(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as UnifiedRoleManagementPolicy).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"rules", (o,n) => { (o as UnifiedRoleManagementPolicy).Rules = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>().ToList(); } },
                 {"scopeId", (o,n) => { (o as UnifiedRoleManagementPolicy).ScopeId = n.GetStringValue(); } },
@@ -50,7 +50,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>("effectiveRules", EffectiveRules);
             writer.WriteBoolValue("isOrganizationDefault", IsOrganizationDefault);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Identity>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfObjectValues<UnifiedRoleManagementPolicyRule>("rules", Rules);
             writer.WriteStringValue("scopeId", ScopeId);

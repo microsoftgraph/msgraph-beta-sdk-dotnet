@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AdministrativeUnits.Item.CheckMemberGroups {
+namespace MicrosoftGraphSdk.AdministrativeUnits.Item.CheckMemberGroups {
     /// <summary>Builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\microsoft.graph.checkMemberGroups</summary>
     public class CheckMemberGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Applications.Item.AppManagementPolicies.Ref;
+using MicrosoftGraphSdk.Applications.Item.AppManagementPolicies.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.AppManagementPolicies {
+namespace MicrosoftGraphSdk.Applications.Item.AppManagementPolicies {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\appManagementPolicies</summary>
     public class AppManagementPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

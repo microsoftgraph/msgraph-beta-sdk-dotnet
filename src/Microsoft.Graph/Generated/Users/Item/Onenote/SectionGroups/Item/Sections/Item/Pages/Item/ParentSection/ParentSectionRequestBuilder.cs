@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection.CopyToNotebook;
-using MicrosoftGraph.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection.CopyToSectionGroup;
-using MicrosoftGraph.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection.CopyToNotebook;
+using MicrosoftGraphSdk.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection.CopyToSectionGroup;
+using MicrosoftGraphSdk.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection {
+namespace MicrosoftGraphSdk.Users.Item.Onenote.SectionGroups.Item.Sections.Item.Pages.Item.ParentSection {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\onenote\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\pages\{onenotePage-id}\parentSection</summary>
     public class ParentSectionRequestBuilder {
         public CopyToNotebookRequestBuilder CopyToNotebook { get =>

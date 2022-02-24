@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon.HostedContent;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon.HostedContent;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon {
+namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon {
     /// <summary>Builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\outlineIcon</summary>
     public class OutlineIconRequestBuilder {
         public HostedContentRequestBuilder HostedContent { get =>

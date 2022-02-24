@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GovernanceRoleSetting : Entity, IParsable {
         /// <summary>The rule settings that are evaluated when an administrator tries to add an eligible role assignment.</summary>
         public List<GovernanceRuleSetting> AdminEligibleSettings { get; set; }

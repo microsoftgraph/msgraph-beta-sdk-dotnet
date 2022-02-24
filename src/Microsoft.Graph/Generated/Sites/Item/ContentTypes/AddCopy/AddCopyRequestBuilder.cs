@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.ContentTypes.AddCopy {
+namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.AddCopy {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\contentTypes\microsoft.graph.addCopy</summary>
     public class AddCopyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

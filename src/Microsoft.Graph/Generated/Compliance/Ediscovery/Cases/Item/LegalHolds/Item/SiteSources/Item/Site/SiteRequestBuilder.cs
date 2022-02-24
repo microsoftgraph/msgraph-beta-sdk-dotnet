@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.SiteSources.Item.Site.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.SiteSources.Item.Site.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.SiteSources.Item.Site {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.SiteSources.Item.Site {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\legalHolds\{legalHold-id}\siteSources\{siteSource-id}\site</summary>
     public class SiteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -76,9 +76,9 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.SiteSo
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.Site> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Site> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.Site>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Site>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>The SharePoint site associated with the siteSource.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides {
+namespace MicrosoftGraphSdk.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverrides {
     /// <summary>Builds and executes requests for operations under \policies\authorizationPolicy\{authorizationPolicy-id}\defaultUserRoleOverrides</summary>
     public class DefaultUserRoleOverridesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.AuthorizationPolicy.Item.DefaultUserRoleOverri
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.authorizationPolicy.item.defaultUserRoleOverrides.item collection</summary>
-        public DefaultUserRoleOverrideRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.authorizationPolicy.item.defaultUserRoleOverrides.item collection</summary>
+        public DefaultUserRoleOverrideItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("defaultUserRoleOverride_id", position);
-            return new DefaultUserRoleOverrideRequestBuilder(urlTplParams, RequestAdapter);
+            return new DefaultUserRoleOverrideItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DefaultUserRoleOverridesRequestBuilder and sets the default values.

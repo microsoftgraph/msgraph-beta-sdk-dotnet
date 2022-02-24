@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Users.Item.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration;
-using MicrosoftGraph.Users.Item.ManagedAppRegistrations.Ref;
+using MicrosoftGraphSdk.Users.Item.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration;
+using MicrosoftGraphSdk.Users.Item.ManagedAppRegistrations.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.ManagedAppRegistrations {
+namespace MicrosoftGraphSdk.Users.Item.ManagedAppRegistrations {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\managedAppRegistrations</summary>
     public class ManagedAppRegistrationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

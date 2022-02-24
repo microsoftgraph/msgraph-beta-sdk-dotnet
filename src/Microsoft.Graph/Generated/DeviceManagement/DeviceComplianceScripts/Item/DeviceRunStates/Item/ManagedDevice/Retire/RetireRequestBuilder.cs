@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.ManagedDevice.Retire {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.ManagedDevice.Retire {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceComplianceScripts\{deviceComplianceScript-id}\deviceRunStates\{deviceComplianceScriptDeviceState-id}\managedDevice\microsoft.graph.retire</summary>
     public class RetireRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings\microsoft.graph.requestSignupUrl</summary>
     public class RequestSignupUrlRequestBuilder {
         /// <summary>Path parameters for the request</summary>

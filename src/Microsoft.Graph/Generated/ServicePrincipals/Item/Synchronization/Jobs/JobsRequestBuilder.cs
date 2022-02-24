@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Jobs.Item;
-using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.ValidateCredentials;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Jobs {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\jobs</summary>
     public class JobsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Jobs {
         public ValidateCredentialsRequestBuilder ValidateCredentials { get =>
             new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item.synchronization.jobs.item collection</summary>
-        public SynchronizationJobRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.synchronization.jobs.item collection</summary>
+        public SynchronizationJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("synchronizationJob_id", position);
-            return new SynchronizationJobRequestBuilder(urlTplParams, RequestAdapter);
+            return new SynchronizationJobItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new JobsRequestBuilder and sets the default values.

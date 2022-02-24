@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.AppConsent.AppConsentRequests;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.AppConsent.AppConsentRequests;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AppConsent {
+namespace MicrosoftGraphSdk.IdentityGovernance.AppConsent {
     /// <summary>Builds and executes requests for operations under \identityGovernance\appConsent</summary>
     public class AppConsentRequestBuilder {
         public AppConsentRequestsRequestBuilder AppConsentRequests { get =>

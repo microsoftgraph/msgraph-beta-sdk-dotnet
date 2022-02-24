@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Axes.SeriesAxis.MajorGridlines.Format;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Axes.SeriesAxis.MajorGridlines.Format;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Axes.SeriesAxis.MajorGridlines {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Axes.SeriesAxis.MajorGridlines {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\axes\seriesAxis\majorGridlines</summary>
     public class MajorGridlinesRequestBuilder {
         public FormatRequestBuilder Format { get =>

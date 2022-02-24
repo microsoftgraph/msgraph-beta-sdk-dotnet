@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.BypassActivationLock {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.BypassActivationLock {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.bypassActivationLock</summary>
     public class BypassActivationLockRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings {
+namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.Categories.Item.RecommendedSettings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\categories\{deviceManagementTemplateSettingCategory-id}\recommendedSettings</summary>
     public class RecommendedSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.Templates.Item.Categories.Item.Recomme
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.templates.item.categories.item.recommendedSettings.item collection</summary>
-        public DeviceManagementSettingInstanceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.templates.item.categories.item.recommendedSettings.item collection</summary>
+        public DeviceManagementSettingInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementSettingInstance_id", position);
-            return new DeviceManagementSettingInstanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementSettingInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RecommendedSettingsRequestBuilder and sets the default values.

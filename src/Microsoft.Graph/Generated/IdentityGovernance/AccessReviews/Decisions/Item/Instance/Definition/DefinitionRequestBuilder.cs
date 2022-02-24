@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Definition.Ref;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Definition.Stop;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Definition.Ref;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Definition.Stop;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Definition {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Definition {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\decisions\{accessReviewInstanceDecisionItem-id}\instance\definition</summary>
     public class DefinitionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

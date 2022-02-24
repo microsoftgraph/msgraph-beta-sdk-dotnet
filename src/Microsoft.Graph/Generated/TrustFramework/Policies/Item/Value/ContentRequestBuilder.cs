@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TrustFramework.Policies.Item.Value {
+namespace MicrosoftGraphSdk.TrustFramework.Policies.Item.Value {
     /// <summary>Builds and executes requests for operations under \trustFramework\policies\{trustFrameworkPolicy-id}\$value</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

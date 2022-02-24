@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision {
+namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequestsAwaitingMyDecision {
     /// <summary>Builds and executes requests for operations under \approvalWorkflowProviders\{approvalWorkflowProvider-id}\businessFlowsWithRequestsAwaitingMyDecision</summary>
     public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequest
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.approvalWorkflowProviders.item.businessFlowsWithRequestsAwaitingMyDecision.item collection</summary>
-        public BusinessFlowRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.approvalWorkflowProviders.item.businessFlowsWithRequestsAwaitingMyDecision.item collection</summary>
+        public BusinessFlowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("businessFlow_id", position);
-            return new BusinessFlowRequestBuilder(urlTplParams, RequestAdapter);
+            return new BusinessFlowItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder and sets the default values.

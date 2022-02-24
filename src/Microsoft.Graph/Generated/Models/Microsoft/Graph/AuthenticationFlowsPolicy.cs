@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AuthenticationFlowsPolicy : Entity, IParsable {
         /// <summary>Inherited property. A description of the policy. Optional. Read-only.</summary>
         public string Description { get; set; }

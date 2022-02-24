@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Planner.FavoritePlans.Ref;
+using MicrosoftGraphSdk.Me.Planner.FavoritePlans.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Planner.FavoritePlans {
+namespace MicrosoftGraphSdk.Me.Planner.FavoritePlans {
     /// <summary>Builds and executes requests for operations under \me\planner\favoritePlans</summary>
     public class FavoritePlansRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DirectoryRoleTemplates.GetByIds;
-using MicrosoftGraph.DirectoryRoleTemplates.GetUserOwnedObjects;
-using MicrosoftGraph.DirectoryRoleTemplates.Item;
-using MicrosoftGraph.DirectoryRoleTemplates.ValidateProperties;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DirectoryRoleTemplates.GetByIds;
+using MicrosoftGraphSdk.DirectoryRoleTemplates.GetUserOwnedObjects;
+using MicrosoftGraphSdk.DirectoryRoleTemplates.Item;
+using MicrosoftGraphSdk.DirectoryRoleTemplates.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DirectoryRoleTemplates {
+namespace MicrosoftGraphSdk.DirectoryRoleTemplates {
     /// <summary>Builds and executes requests for operations under \directoryRoleTemplates</summary>
     public class DirectoryRoleTemplatesRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -29,11 +29,11 @@ namespace MicrosoftGraph.DirectoryRoleTemplates {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.directoryRoleTemplates.item collection</summary>
-        public DirectoryRoleTemplateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directoryRoleTemplates.item collection</summary>
+        public DirectoryRoleTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryRoleTemplate_id", position);
-            return new DirectoryRoleTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryRoleTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryRoleTemplatesRequestBuilder and sets the default values.

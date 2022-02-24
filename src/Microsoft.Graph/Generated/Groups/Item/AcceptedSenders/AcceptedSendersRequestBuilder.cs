@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.AcceptedSenders.Ref;
+using MicrosoftGraphSdk.Groups.Item.AcceptedSenders.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.AcceptedSenders {
+namespace MicrosoftGraphSdk.Groups.Item.AcceptedSenders {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\acceptedSenders</summary>
     public class AcceptedSendersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

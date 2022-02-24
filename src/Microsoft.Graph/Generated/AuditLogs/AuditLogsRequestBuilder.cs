@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AuditLogs.DirectoryAudits;
-using MicrosoftGraph.AuditLogs.DirectoryProvisioning;
-using MicrosoftGraph.AuditLogs.Provisioning;
-using MicrosoftGraph.AuditLogs.RestrictedSignIns;
-using MicrosoftGraph.AuditLogs.SignIns;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AuditLogs.DirectoryAudits;
+using MicrosoftGraphSdk.AuditLogs.DirectoryProvisioning;
+using MicrosoftGraphSdk.AuditLogs.Provisioning;
+using MicrosoftGraphSdk.AuditLogs.RestrictedSignIns;
+using MicrosoftGraphSdk.AuditLogs.SignIns;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AuditLogs {
+namespace MicrosoftGraphSdk.AuditLogs {
     /// <summary>Builds and executes requests for operations under \auditLogs</summary>
     public class AuditLogsRequestBuilder {
         public DirectoryAuditsRequestBuilder DirectoryAudits { get =>

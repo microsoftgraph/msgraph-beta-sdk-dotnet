@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GovernanceRoleAssignmentRequests.Item.Cancel {
+namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests.Item.Cancel {
     /// <summary>Builds and executes requests for operations under \governanceRoleAssignmentRequests\{governanceRoleAssignmentRequest-id}\microsoft.graph.cancel</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

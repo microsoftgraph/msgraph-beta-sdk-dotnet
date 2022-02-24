@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.RemoveHold {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.RemoveHold {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\noncustodialDataSources\{noncustodialDataSource-id}\microsoft.graph.ediscovery.removeHold</summary>
     public class RemoveHoldRequestBuilder {
         /// <summary>Path parameters for the request</summary>

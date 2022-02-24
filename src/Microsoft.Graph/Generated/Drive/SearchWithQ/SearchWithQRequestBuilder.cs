@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drive.SearchWithQ {
+namespace MicrosoftGraphSdk.Drive.SearchWithQ {
     /// <summary>Builds and executes requests for operations under \drive\microsoft.graph.search(q='{q}')</summary>
     public class SearchWithQRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -66,9 +66,9 @@ namespace MicrosoftGraph.Drive.SearchWithQ {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Drive.SearchWithQ.SearchWithQ>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<SearchWithQ>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Drive.SearchWithQ.SearchWithQ>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<SearchWithQ>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

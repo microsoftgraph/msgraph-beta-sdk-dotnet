@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrivilegedOperationEvent : Entity, IParsable {
         /// <summary>Detailed human readable information for the event.</summary>
         public string AdditionalInformation { get; set; }

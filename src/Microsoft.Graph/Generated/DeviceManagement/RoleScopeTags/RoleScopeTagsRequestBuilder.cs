@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.RoleScopeTags.GetRoleScopeTagsById;
-using MicrosoftGraph.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag;
-using MicrosoftGraph.DeviceManagement.RoleScopeTags.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.RoleScopeTags.GetRoleScopeTagsById;
+using MicrosoftGraphSdk.DeviceManagement.RoleScopeTags.HasCustomRoleScopeTag;
+using MicrosoftGraphSdk.DeviceManagement.RoleScopeTags.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.RoleScopeTags {
+namespace MicrosoftGraphSdk.DeviceManagement.RoleScopeTags {
     /// <summary>Builds and executes requests for operations under \deviceManagement\roleScopeTags</summary>
     public class RoleScopeTagsRequestBuilder {
         public GetRoleScopeTagsByIdRequestBuilder GetRoleScopeTagsById { get =>
@@ -22,11 +22,11 @@ namespace MicrosoftGraph.DeviceManagement.RoleScopeTags {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.roleScopeTags.item collection</summary>
-        public RoleScopeTagRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.roleScopeTags.item collection</summary>
+        public RoleScopeTagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("roleScopeTag_id", position);
-            return new RoleScopeTagRequestBuilder(urlTplParams, RequestAdapter);
+            return new RoleScopeTagItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleScopeTagsRequestBuilder and sets the default values.

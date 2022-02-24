@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.DriverInventories {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles\{windowsDriverUpdateProfile-id}\driverInventories</summary>
     public class DriverInventoriesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles.Item.Drive
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsDriverUpdateProfiles.item.driverInventories.item collection</summary>
-        public WindowsDriverUpdateInventoryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsDriverUpdateProfiles.item.driverInventories.item collection</summary>
+        public WindowsDriverUpdateInventoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDriverUpdateInventory_id", position);
-            return new WindowsDriverUpdateInventoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsDriverUpdateInventoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DriverInventoriesRequestBuilder and sets the default values.

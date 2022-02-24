@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SynchronizationJob : Entity, IParsable {
         /// <summary>Schedule used to run the job. Read-only.</summary>
         public SynchronizationSchedule Schedule { get; set; }
@@ -12,7 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Status of the job, which includes when the job was last run, current job state, and errors.</summary>
         public SynchronizationStatus Status { get; set; }
         /// <summary>Settings associated with the job. Some settings are inherited from the template.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> SynchronizationJobSettings { get; set; }
+        public List<KeyValuePair> SynchronizationJobSettings { get; set; }
         /// <summary>Identifier of the synchronization template this job is based on.</summary>
         public string TemplateId { get; set; }
         /// <summary>
@@ -23,7 +23,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"schedule", (o,n) => { (o as SynchronizationJob).Schedule = n.GetObjectValue<SynchronizationSchedule>(); } },
                 {"schema", (o,n) => { (o as SynchronizationJob).Schema = n.GetObjectValue<SynchronizationSchema>(); } },
                 {"status", (o,n) => { (o as SynchronizationJob).Status = n.GetObjectValue<SynchronizationStatus>(); } },
-                {"synchronizationJobSettings", (o,n) => { (o as SynchronizationJob).SynchronizationJobSettings = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"synchronizationJobSettings", (o,n) => { (o as SynchronizationJob).SynchronizationJobSettings = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"templateId", (o,n) => { (o as SynchronizationJob).TemplateId = n.GetStringValue(); } },
             };
         }
@@ -37,7 +37,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<SynchronizationSchedule>("schedule", Schedule);
             writer.WriteObjectValue<SynchronizationSchema>("schema", Schema);
             writer.WriteObjectValue<SynchronizationStatus>("status", Status);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("synchronizationJobSettings", SynchronizationJobSettings);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("synchronizationJobSettings", SynchronizationJobSettings);
             writer.WriteStringValue("templateId", TemplateId);
         }
     }

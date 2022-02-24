@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetM365AppUserDetailWithDate {
+namespace MicrosoftGraphSdk.Reports.GetM365AppUserDetailWithDate {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getM365AppUserDetail(date={date})</summary>
     public class GetM365AppUserDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

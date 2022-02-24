@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Education.Classes.Item.Group.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Education.Classes.Item.Group.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Classes.Item.Group {
+namespace MicrosoftGraphSdk.Education.Classes.Item.Group {
     /// <summary>Builds and executes requests for operations under \education\classes\{educationClass-id}\group</summary>
     public class GroupRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -76,9 +76,9 @@ namespace MicrosoftGraph.Education.Classes.Item.Group {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.Group> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Group> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.Group>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>The underlying Microsoft 365 group object.</summary>
         public class GetQueryParameters : QueryParametersBase {

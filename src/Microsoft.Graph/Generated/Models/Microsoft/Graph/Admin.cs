@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Admin : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A container for service communications resources. Read-only.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.ServiceAnnouncement ServiceAnnouncement { get; set; }
+        public ServiceAnnouncement ServiceAnnouncement { get; set; }
         /// <summary>A container for all Windows Update for Business deployment service functionality. Read-only.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates.Windows Windows { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Windows Windows { get; set; }
         /// <summary>
         /// Instantiates a new Admin and sets the default values.
         /// </summary>
@@ -23,8 +23,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"serviceAnnouncement", (o,n) => { (o as Admin).ServiceAnnouncement = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ServiceAnnouncement>(); } },
-                {"windows", (o,n) => { (o as Admin).Windows = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates.Windows>(); } },
+                {"serviceAnnouncement", (o,n) => { (o as Admin).ServiceAnnouncement = n.GetObjectValue<ServiceAnnouncement>(); } },
+                {"windows", (o,n) => { (o as Admin).Windows = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Windows>(); } },
             };
         }
         /// <summary>
@@ -33,8 +33,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates.Windows>("windows", Windows);
+            writer.WriteObjectValue<ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Windows>("windows", Windows);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MobileAppProvisioningConfigGroupAssignment : Entity, IParsable {
         /// <summary>The ID of the AAD group in which the app provisioning configuration is being targeted.</summary>
         public string TargetGroupId { get; set; }

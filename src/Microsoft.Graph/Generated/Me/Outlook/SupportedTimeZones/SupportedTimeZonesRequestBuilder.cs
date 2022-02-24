@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Outlook.SupportedTimeZones {
+namespace MicrosoftGraphSdk.Me.Outlook.SupportedTimeZones {
     /// <summary>Builds and executes requests for operations under \me\outlook\microsoft.graph.supportedTimeZones()</summary>
     public class SupportedTimeZonesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

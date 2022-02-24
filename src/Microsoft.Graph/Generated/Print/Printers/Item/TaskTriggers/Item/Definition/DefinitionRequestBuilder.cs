@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Print.Printers.Item.TaskTriggers.Item.Definition.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Print.Printers.Item.TaskTriggers.Item.Definition.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.Printers.Item.TaskTriggers.Item.Definition {
+namespace MicrosoftGraphSdk.Print.Printers.Item.TaskTriggers.Item.Definition {
     /// <summary>Builds and executes requests for operations under \print\printers\{printer-id}\taskTriggers\{printTaskTrigger-id}\definition</summary>
     public class DefinitionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

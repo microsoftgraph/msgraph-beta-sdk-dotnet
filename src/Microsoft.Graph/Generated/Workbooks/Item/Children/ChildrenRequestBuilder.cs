@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Workbooks.Item.Children.Ref;
+using MicrosoftGraphSdk.Workbooks.Item.Children.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Children {
+namespace MicrosoftGraphSdk.Workbooks.Item.Children {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\children</summary>
     public class ChildrenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

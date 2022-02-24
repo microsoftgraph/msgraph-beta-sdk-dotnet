@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.PrivilegedAccess.Item.RoleAssignmentRequests.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.PrivilegedAccess.Item.RoleAssignmentRequests.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PrivilegedAccess.Item.RoleAssignmentRequests {
+namespace MicrosoftGraphSdk.PrivilegedAccess.Item.RoleAssignmentRequests {
     /// <summary>Builds and executes requests for operations under \privilegedAccess\{privilegedAccess-id}\roleAssignmentRequests</summary>
     public class RoleAssignmentRequestsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.PrivilegedAccess.Item.RoleAssignmentRequests {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.privilegedAccess.item.roleAssignmentRequests.item collection</summary>
-        public GovernanceRoleAssignmentRequestRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.privilegedAccess.item.roleAssignmentRequests.item collection</summary>
+        public GovernanceRoleAssignmentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleAssignmentRequest_id", position);
-            return new GovernanceRoleAssignmentRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new GovernanceRoleAssignmentRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleAssignmentRequestsRequestBuilder and sets the default values.

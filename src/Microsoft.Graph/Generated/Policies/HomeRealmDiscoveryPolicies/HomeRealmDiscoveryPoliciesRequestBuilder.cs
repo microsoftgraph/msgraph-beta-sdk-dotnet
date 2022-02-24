@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.HomeRealmDiscoveryPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.HomeRealmDiscoveryPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.HomeRealmDiscoveryPolicies {
+namespace MicrosoftGraphSdk.Policies.HomeRealmDiscoveryPolicies {
     /// <summary>Builds and executes requests for operations under \policies\homeRealmDiscoveryPolicies</summary>
     public class HomeRealmDiscoveryPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.HomeRealmDiscoveryPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.homeRealmDiscoveryPolicies.item collection</summary>
-        public HomeRealmDiscoveryPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.homeRealmDiscoveryPolicies.item collection</summary>
+        public HomeRealmDiscoveryPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("homeRealmDiscoveryPolicy_id", position);
-            return new HomeRealmDiscoveryPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new HomeRealmDiscoveryPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.

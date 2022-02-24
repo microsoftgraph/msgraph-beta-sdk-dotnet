@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Profile.Names.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Profile.Names.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Profile.Names {
+namespace MicrosoftGraphSdk.Me.Profile.Names {
     /// <summary>Builds and executes requests for operations under \me\profile\names</summary>
     public class NamesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.Profile.Names {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.profile.names.item collection</summary>
-        public PersonNameRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.profile.names.item collection</summary>
+        public PersonNameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("personName_id", position);
-            return new PersonNameRequestBuilder(urlTplParams, RequestAdapter);
+            return new PersonNameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NamesRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Authentication.EmailMethods.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Authentication.EmailMethods.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Authentication.EmailMethods {
+namespace MicrosoftGraphSdk.Users.Item.Authentication.EmailMethods {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\authentication\emailMethods</summary>
     public class EmailMethodsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Authentication.EmailMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.authentication.emailMethods.item collection</summary>
-        public EmailAuthenticationMethodRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.authentication.emailMethods.item collection</summary>
+        public EmailAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("emailAuthenticationMethod_id", position);
-            return new EmailAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
+            return new EmailAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EmailMethodsRequestBuilder and sets the default values.

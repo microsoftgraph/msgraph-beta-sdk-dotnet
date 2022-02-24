@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetSharePointActivityUserDetailWithPeriod {
+namespace MicrosoftGraphSdk.Reports.GetSharePointActivityUserDetailWithPeriod {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityUserDetail(period='{period}')</summary>
     public class GetSharePointActivityUserDetailWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

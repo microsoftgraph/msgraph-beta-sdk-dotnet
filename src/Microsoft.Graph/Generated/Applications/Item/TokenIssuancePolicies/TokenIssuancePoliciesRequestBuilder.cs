@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Applications.Item.TokenIssuancePolicies.Ref;
+using MicrosoftGraphSdk.Applications.Item.TokenIssuancePolicies.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.TokenIssuancePolicies {
+namespace MicrosoftGraphSdk.Applications.Item.TokenIssuancePolicies {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\tokenIssuancePolicies</summary>
     public class TokenIssuancePoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

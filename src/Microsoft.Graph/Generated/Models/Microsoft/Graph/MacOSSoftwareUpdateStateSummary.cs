@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MacOSSoftwareUpdateStateSummary : Entity, IParsable {
         /// <summary>Human readable name of the software update</summary>
         public string DisplayName { get; set; }

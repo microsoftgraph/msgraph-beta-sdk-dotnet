@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.B2cUserFlows.Item.Languages.Item.DefaultPages.Item.Value {
+namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.Languages.Item.DefaultPages.Item.Value {
     /// <summary>Builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}\defaultPages\{userFlowLanguagePage-id}\$value</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

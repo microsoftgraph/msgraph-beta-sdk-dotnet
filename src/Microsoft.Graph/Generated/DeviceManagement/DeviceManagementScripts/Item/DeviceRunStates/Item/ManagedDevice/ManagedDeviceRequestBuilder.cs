@@ -1,53 +1,53 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ActivateDeviceEsim;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.BypassActivationLock;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.CleanWindowsDevice;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.CreateDeviceLogCollectionRequest;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.DeleteUserFromSharedAppleDevice;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Deprovision;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Disable;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.DisableLostMode;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.EnableLostMode;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetCloudPcRemoteActionResults;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetFileVaultKey;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetNonCompliantSettings;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetOemWarranty;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.LocateDevice;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.LogoutSharedAppleDeviceActiveUser;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.OverrideComplianceState;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.PlayLostModeSound;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RebootNow;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RecoverPasscode;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Reenable;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Ref;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RemoteLock;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ReprovisionCloudPc;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RequestRemoteAssistance;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ResetPasscode;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ResizeCloudPc;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RestoreCloudPc;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Retire;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RevokeAppleVppLicenses;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RotateBitLockerKeys;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RotateFileVaultKey;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.SendCustomNotificationToCompanyPortal;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.SetDeviceName;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ShutDown;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.SyncDevice;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.TriggerConfigurationManagerAction;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.UpdateWindowsDeviceAccount;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.WindowsDefenderScan;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.WindowsDefenderUpdateSignatures;
-using MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Wipe;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ActivateDeviceEsim;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.BypassActivationLock;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.CleanWindowsDevice;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.CreateDeviceLogCollectionRequest;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.DeleteUserFromSharedAppleDevice;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Deprovision;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Disable;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.DisableLostMode;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.EnableLostMode;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetCloudPcRemoteActionResults;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetFileVaultKey;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetNonCompliantSettings;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.GetOemWarranty;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.LocateDevice;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.LogoutSharedAppleDeviceActiveUser;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.OverrideComplianceState;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.PlayLostModeSound;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RebootNow;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RecoverPasscode;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Reenable;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Ref;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RemoteLock;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ReprovisionCloudPc;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RequestRemoteAssistance;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ResetPasscode;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ResizeCloudPc;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RestoreCloudPc;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Retire;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RevokeAppleVppLicenses;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RotateBitLockerKeys;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.RotateFileVaultKey;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.SendCustomNotificationToCompanyPortal;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.SetDeviceName;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.ShutDown;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.SyncDevice;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.TriggerConfigurationManagerAction;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.UpdateWindowsDeviceAccount;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.WindowsDefenderScan;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.WindowsDefenderUpdateSignatures;
+using MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice.Wipe;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.DeviceRunStates.Item.ManagedDevice {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice</summary>
     public class ManagedDeviceRequestBuilder {
         public ActivateDeviceEsimRequestBuilder ActivateDeviceEsim { get =>
@@ -220,9 +220,9 @@ namespace MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.DeviceRun
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDevice>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.getCloudPcRemoteActionResults()

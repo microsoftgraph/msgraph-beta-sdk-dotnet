@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.LogCollectionRequests.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.LogCollectionRequests.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.LogCollectionRequests {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.LogCollectionRequests {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\logCollectionRequests</summary>
     public class LogCollectionRequestsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.LogCollectionReq
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.comanagedDevices.item.logCollectionRequests.item collection</summary>
-        public DeviceLogCollectionResponseRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.comanagedDevices.item.logCollectionRequests.item collection</summary>
+        public DeviceLogCollectionResponseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceLogCollectionResponse_id", position);
-            return new DeviceLogCollectionResponseRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceLogCollectionResponseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LogCollectionRequestsRequestBuilder and sets the default values.

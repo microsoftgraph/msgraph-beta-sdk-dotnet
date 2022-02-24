@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.Assign;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.IosVppApp;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.Ref;
-using MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.UpdateRelationships;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.Assign;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.IosVppApp;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.Ref;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App.UpdateRelationships;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App {
+namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.App {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\app</summary>
     public class AppRequestBuilder {
         public AssignRequestBuilder Assign { get =>

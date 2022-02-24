@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.GetCompatibleHubContentTypes {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.GetCompatibleHubContentTypes {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\baseTypes\microsoft.graph.getCompatibleHubContentTypes()</summary>
     public class GetCompatibleHubContentTypesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.GetCo
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypes>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetCompatibleHubContentTypes>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.BaseTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypes>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetCompatibleHubContentTypes>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

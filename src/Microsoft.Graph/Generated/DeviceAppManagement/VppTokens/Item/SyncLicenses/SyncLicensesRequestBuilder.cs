@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.VppTokens.Item.SyncLicenses {
+namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item.SyncLicenses {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\vppTokens\{vppToken-id}\microsoft.graph.syncLicenses</summary>
     public class SyncLicensesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

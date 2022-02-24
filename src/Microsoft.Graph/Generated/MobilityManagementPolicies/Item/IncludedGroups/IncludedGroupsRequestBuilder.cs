@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.MobilityManagementPolicies.Item.IncludedGroups.Ref;
+using MicrosoftGraphSdk.MobilityManagementPolicies.Item.IncludedGroups.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.MobilityManagementPolicies.Item.IncludedGroups {
+namespace MicrosoftGraphSdk.MobilityManagementPolicies.Item.IncludedGroups {
     /// <summary>Builds and executes requests for operations under \mobilityManagementPolicies\{mobilityManagementPolicy-id}\includedGroups</summary>
     public class IncludedGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

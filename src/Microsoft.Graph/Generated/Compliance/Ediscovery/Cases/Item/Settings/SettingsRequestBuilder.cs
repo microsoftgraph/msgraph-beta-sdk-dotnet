@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Settings.ResetToDefault;
-using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Settings.ResetToDefault;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Settings {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Settings {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\settings</summary>
     public class SettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

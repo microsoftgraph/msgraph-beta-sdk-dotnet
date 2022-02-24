@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AccessReviews.Item.Reviewers.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AccessReviews.Item.Reviewers.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AccessReviews.Item.Reviewers {
+namespace MicrosoftGraphSdk.AccessReviews.Item.Reviewers {
     /// <summary>Builds and executes requests for operations under \accessReviews\{accessReview-id}\reviewers</summary>
     public class ReviewersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.AccessReviews.Item.Reviewers {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.accessReviews.item.reviewers.item collection</summary>
-        public AccessReviewReviewerRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.accessReviews.item.reviewers.item collection</summary>
+        public AccessReviewReviewerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewReviewer_id", position);
-            return new AccessReviewReviewerRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewReviewerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ReviewersRequestBuilder and sets the default values.

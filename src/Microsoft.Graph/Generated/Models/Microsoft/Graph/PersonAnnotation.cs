@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PersonAnnotation : ItemFacet, IParsable {
         /// <summary>Contains the detail of the note itself.</summary>
         public ItemBody Detail { get; set; }

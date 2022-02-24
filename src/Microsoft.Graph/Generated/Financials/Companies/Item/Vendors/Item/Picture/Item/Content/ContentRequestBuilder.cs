@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.Vendors.Item.Picture.Item.Content {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.Vendors.Item.Picture.Item.Content {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\vendors\{vendor-id}\picture\{picture-id}\content</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

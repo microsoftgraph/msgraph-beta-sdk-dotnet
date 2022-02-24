@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Shares.Item.List.Activities.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Shares.Item.List.Activities.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.List.Activities {
+namespace MicrosoftGraphSdk.Shares.Item.List.Activities {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\activities</summary>
     public class ActivitiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Shares.Item.List.Activities {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.shares.item.list.activities.item collection</summary>
-        public ItemActivityOLDRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.shares.item.list.activities.item collection</summary>
+        public ItemActivityOLDItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemActivityOLD_id", position);
-            return new ItemActivityOLDRequestBuilder(urlTplParams, RequestAdapter);
+            return new ItemActivityOLDItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ActivitiesRequestBuilder and sets the default values.

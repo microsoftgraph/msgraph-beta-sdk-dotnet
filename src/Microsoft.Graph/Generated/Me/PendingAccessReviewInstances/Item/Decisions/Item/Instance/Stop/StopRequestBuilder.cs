@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stop {
+namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stop {
     /// <summary>Builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}\instance\microsoft.graph.stop</summary>
     public class StopRequestBuilder {
         /// <summary>Path parameters for the request</summary>

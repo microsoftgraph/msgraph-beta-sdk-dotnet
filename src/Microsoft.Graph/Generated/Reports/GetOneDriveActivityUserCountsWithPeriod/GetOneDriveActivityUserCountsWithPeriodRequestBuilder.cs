@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetOneDriveActivityUserCountsWithPeriod {
+namespace MicrosoftGraphSdk.Reports.GetOneDriveActivityUserCountsWithPeriod {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getOneDriveActivityUserCounts(period='{period}')</summary>
     public class GetOneDriveActivityUserCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

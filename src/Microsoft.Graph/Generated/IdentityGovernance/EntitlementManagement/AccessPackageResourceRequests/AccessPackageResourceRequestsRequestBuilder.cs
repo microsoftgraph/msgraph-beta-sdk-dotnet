@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageResourceRequests.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageResourceRequests.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageResourceRequests {
+namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageResourceRequests {
     /// <summary>Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageResourceRequests</summary>
     public class AccessPackageResourceRequestsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageR
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.accessPackageResourceRequests.item collection</summary>
-        public AccessPackageResourceRequestRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.entitlementManagement.accessPackageResourceRequests.item collection</summary>
+        public AccessPackageResourceRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessPackageResourceRequest_id", position);
-            return new AccessPackageResourceRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessPackageResourceRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AccessPackageResourceRequestsRequestBuilder and sets the default values.

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GroupPolicyPresentationValue : Entity, IParsable {
         /// <summary>The date and time the object was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }

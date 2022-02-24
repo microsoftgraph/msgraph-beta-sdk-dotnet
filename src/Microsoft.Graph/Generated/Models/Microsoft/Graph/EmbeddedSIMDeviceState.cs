@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EmbeddedSIMDeviceState : Entity, IParsable {
         /// <summary>The time the embedded SIM device status was created. Generated service side.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }

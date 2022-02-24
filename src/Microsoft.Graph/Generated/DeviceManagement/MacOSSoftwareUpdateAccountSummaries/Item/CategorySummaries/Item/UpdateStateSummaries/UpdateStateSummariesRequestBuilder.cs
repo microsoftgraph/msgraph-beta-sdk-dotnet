@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Item.UpdateStateSummaries.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Item.UpdateStateSummaries.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Item.UpdateStateSummaries {
+namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Item.UpdateStateSummaries {
     /// <summary>Builds and executes requests for operations under \deviceManagement\macOSSoftwareUpdateAccountSummaries\{macOSSoftwareUpdateAccountSummary-id}\categorySummaries\{macOSSoftwareUpdateCategorySummary-id}\updateStateSummaries</summary>
     public class UpdateStateSummariesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.It
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item.updateStateSummaries.item collection</summary>
-        public MacOSSoftwareUpdateStateSummaryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.macOSSoftwareUpdateAccountSummaries.item.categorySummaries.item.updateStateSummaries.item collection</summary>
+        public MacOSSoftwareUpdateStateSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("macOSSoftwareUpdateStateSummary_id", position);
-            return new MacOSSoftwareUpdateStateSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new MacOSSoftwareUpdateStateSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UpdateStateSummariesRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DerivedCredentials.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DerivedCredentials.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DerivedCredentials {
+namespace MicrosoftGraphSdk.DeviceManagement.DerivedCredentials {
     /// <summary>Builds and executes requests for operations under \deviceManagement\derivedCredentials</summary>
     public class DerivedCredentialsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.DerivedCredentials {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.derivedCredentials.item collection</summary>
-        public DeviceManagementDerivedCredentialSettingsRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.derivedCredentials.item collection</summary>
+        public DeviceManagementDerivedCredentialSettingsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementDerivedCredentialSettings_id", position);
-            return new DeviceManagementDerivedCredentialSettingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementDerivedCredentialSettingsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DerivedCredentialsRequestBuilder and sets the default values.

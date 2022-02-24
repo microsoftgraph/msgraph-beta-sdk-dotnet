@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Applications.Item.RemovePassword {
+namespace MicrosoftGraphSdk.Applications.Item.RemovePassword {
     /// <summary>Builds and executes requests for operations under \applications\{application-id}\microsoft.graph.removePassword</summary>
     public class RemovePasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>

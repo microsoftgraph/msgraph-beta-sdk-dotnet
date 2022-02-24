@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.Directory.RoleDefinitions.Item.InheritsPermissionsFrom.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.Directory.RoleDefinitions.Item.InheritsPermissionsFrom.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.Directory.RoleDefinitions.Item.InheritsPermissionsFrom {
+namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleDefinitions.Item.InheritsPermissionsFrom {
     /// <summary>Builds and executes requests for operations under \roleManagement\directory\roleDefinitions\{unifiedRoleDefinition-id}\inheritsPermissionsFrom</summary>
     public class InheritsPermissionsFromRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.RoleManagement.Directory.RoleDefinitions.Item.InheritsP
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.roleManagement.directory.roleDefinitions.item.inheritsPermissionsFrom.item collection</summary>
-        public UnifiedRoleDefinitionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.directory.roleDefinitions.item.inheritsPermissionsFrom.item collection</summary>
+        public UnifiedRoleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleDefinition_id1", position);
-            return new UnifiedRoleDefinitionRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InheritsPermissionsFromRequestBuilder and sets the default values.

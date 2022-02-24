@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ConditionalAccessPolicyCoverage : Entity, IParsable {
         /// <summary>The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.</summary>
         public string ConditionalAccessPolicyState { get; set; }

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.ProgramControls.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.ProgramControls.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ProgramControls {
+namespace MicrosoftGraphSdk.ProgramControls {
     /// <summary>Builds and executes requests for operations under \programControls</summary>
     public class ProgramControlsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.ProgramControls {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.programControls.item collection</summary>
-        public ProgramControlRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.programControls.item collection</summary>
+        public ProgramControlItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("programControl_id", position);
-            return new ProgramControlRequestBuilder(urlTplParams, RequestAdapter);
+            return new ProgramControlItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ProgramControlsRequestBuilder and sets the default values.

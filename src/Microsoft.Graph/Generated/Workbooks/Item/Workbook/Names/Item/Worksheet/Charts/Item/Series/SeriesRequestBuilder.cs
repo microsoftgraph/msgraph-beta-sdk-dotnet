@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Count;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.ItemAtWithIndex;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Count;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.ItemAtWithIndex;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series</summary>
     public class SeriesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -19,11 +19,11 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Ite
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.names.item.worksheet.charts.item.series.item collection</summary>
-        public WorkbookChartSeriesRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.names.item.worksheet.charts.item.series.item collection</summary>
+        public WorkbookChartSeriesItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookChartSeries_id", position);
-            return new WorkbookChartSeriesRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookChartSeriesItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SeriesRequestBuilder and sets the default values.

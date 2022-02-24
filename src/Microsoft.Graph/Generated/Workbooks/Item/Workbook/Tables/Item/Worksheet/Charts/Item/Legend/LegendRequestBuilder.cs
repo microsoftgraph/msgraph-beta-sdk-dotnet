@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Legend.Format;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Legend.Format;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Legend {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Legend {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\legend</summary>
     public class LegendRequestBuilder {
         public FormatRequestBuilder Format { get =>

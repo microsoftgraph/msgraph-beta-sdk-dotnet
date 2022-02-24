@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item.CreateToken {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item.CreateToken {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidForWorkEnrollmentProfiles\{androidForWorkEnrollmentProfile-id}\microsoft.graph.createToken</summary>
     public class CreateTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

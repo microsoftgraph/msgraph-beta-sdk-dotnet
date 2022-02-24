@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AdministrativeUnits.Item.GetMemberObjects {
+namespace MicrosoftGraphSdk.AdministrativeUnits.Item.GetMemberObjects {
     /// <summary>Builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\microsoft.graph.getMemberObjects</summary>
     public class GetMemberObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

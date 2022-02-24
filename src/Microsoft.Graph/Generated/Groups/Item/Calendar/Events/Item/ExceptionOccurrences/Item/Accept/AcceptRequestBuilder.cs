@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Accept {
+namespace MicrosoftGraphSdk.Groups.Item.Calendar.Events.Item.ExceptionOccurrences.Item.Accept {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\calendar\events\{event-id}\exceptionOccurrences\{event-id1}\microsoft.graph.accept</summary>
     public class AcceptRequestBuilder {
         /// <summary>Path parameters for the request</summary>

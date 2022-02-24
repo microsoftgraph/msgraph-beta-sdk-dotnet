@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Chats.GetAllMessages {
+namespace MicrosoftGraphSdk.Chats.GetAllMessages {
     /// <summary>Builds and executes requests for operations under \chats\microsoft.graph.getAllMessages()</summary>
     public class GetAllMessagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.Chats.GetAllMessages {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Chats.GetAllMessages.GetAllMessages>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetAllMessages>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Chats.GetAllMessages.GetAllMessages>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetAllMessages>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

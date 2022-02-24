@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Format.Font;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Format.Line;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Format.Font;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Format.Line;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Format {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Format {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\categoryAxis\format</summary>
     public class FormatRequestBuilder {
         public FontRequestBuilder Font { get =>

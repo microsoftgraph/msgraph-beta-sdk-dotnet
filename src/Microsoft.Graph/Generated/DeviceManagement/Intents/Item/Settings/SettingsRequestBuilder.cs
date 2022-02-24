@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.Intents.Item.Settings.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.Intents.Item.Settings.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Intents.Item.Settings {
+namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.Settings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\settings</summary>
     public class SettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.Intents.Item.Settings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.intents.item.settings.item collection</summary>
-        public DeviceManagementSettingInstanceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.intents.item.settings.item collection</summary>
+        public DeviceManagementSettingInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementSettingInstance_id", position);
-            return new DeviceManagementSettingInstanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementSettingInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SettingsRequestBuilder and sets the default values.

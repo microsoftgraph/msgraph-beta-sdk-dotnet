@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceAppManagement : Entity, IParsable {
         /// <summary>Android managed app policies.</summary>
         public List<AndroidManagedAppProtection> AndroidManagedAppProtections { get; set; }
@@ -50,7 +50,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.</summary>
         public List<SideLoadingKey> SideLoadingKeys { get; set; }
         /// <summary>The WinPhone Symantec Code Signing Certificate.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.SymantecCodeSigningCertificate SymantecCodeSigningCertificate { get; set; }
+        public SymantecCodeSigningCertificate SymantecCodeSigningCertificate { get; set; }
         /// <summary>Targeted managed app configurations.</summary>
         public List<TargetedManagedAppConfiguration> TargetedManagedAppConfigurations { get; set; }
         /// <summary>List of Vpp tokens for this organization.</summary>
@@ -64,7 +64,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Windows information protection wipe actions.</summary>
         public List<WindowsInformationProtectionWipeAction> WindowsInformationProtectionWipeActions { get; set; }
         /// <summary>Windows management app.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.WindowsManagementApp WindowsManagementApp { get; set; }
+        public WindowsManagementApp WindowsManagementApp { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -92,14 +92,14 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"mobileApps", (o,n) => { (o as DeviceAppManagement).MobileApps = n.GetCollectionOfObjectValues<MobileApp>().ToList(); } },
                 {"policySets", (o,n) => { (o as DeviceAppManagement).PolicySets = n.GetCollectionOfObjectValues<PolicySet>().ToList(); } },
                 {"sideLoadingKeys", (o,n) => { (o as DeviceAppManagement).SideLoadingKeys = n.GetCollectionOfObjectValues<SideLoadingKey>().ToList(); } },
-                {"symantecCodeSigningCertificate", (o,n) => { (o as DeviceAppManagement).SymantecCodeSigningCertificate = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.SymantecCodeSigningCertificate>(); } },
+                {"symantecCodeSigningCertificate", (o,n) => { (o as DeviceAppManagement).SymantecCodeSigningCertificate = n.GetObjectValue<SymantecCodeSigningCertificate>(); } },
                 {"targetedManagedAppConfigurations", (o,n) => { (o as DeviceAppManagement).TargetedManagedAppConfigurations = n.GetCollectionOfObjectValues<TargetedManagedAppConfiguration>().ToList(); } },
                 {"vppTokens", (o,n) => { (o as DeviceAppManagement).VppTokens = n.GetCollectionOfObjectValues<VppToken>().ToList(); } },
                 {"wdacSupplementalPolicies", (o,n) => { (o as DeviceAppManagement).WdacSupplementalPolicies = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicy>().ToList(); } },
                 {"windowsInformationProtectionDeviceRegistrations", (o,n) => { (o as DeviceAppManagement).WindowsInformationProtectionDeviceRegistrations = n.GetCollectionOfObjectValues<WindowsInformationProtectionDeviceRegistration>().ToList(); } },
                 {"windowsInformationProtectionPolicies", (o,n) => { (o as DeviceAppManagement).WindowsInformationProtectionPolicies = n.GetCollectionOfObjectValues<WindowsInformationProtectionPolicy>().ToList(); } },
                 {"windowsInformationProtectionWipeActions", (o,n) => { (o as DeviceAppManagement).WindowsInformationProtectionWipeActions = n.GetCollectionOfObjectValues<WindowsInformationProtectionWipeAction>().ToList(); } },
-                {"windowsManagementApp", (o,n) => { (o as DeviceAppManagement).WindowsManagementApp = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.WindowsManagementApp>(); } },
+                {"windowsManagementApp", (o,n) => { (o as DeviceAppManagement).WindowsManagementApp = n.GetObjectValue<WindowsManagementApp>(); } },
             };
         }
         /// <summary>
@@ -131,14 +131,14 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<MobileApp>("mobileApps", MobileApps);
             writer.WriteCollectionOfObjectValues<PolicySet>("policySets", PolicySets);
             writer.WriteCollectionOfObjectValues<SideLoadingKey>("sideLoadingKeys", SideLoadingKeys);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.SymantecCodeSigningCertificate>("symantecCodeSigningCertificate", SymantecCodeSigningCertificate);
+            writer.WriteObjectValue<SymantecCodeSigningCertificate>("symantecCodeSigningCertificate", SymantecCodeSigningCertificate);
             writer.WriteCollectionOfObjectValues<TargetedManagedAppConfiguration>("targetedManagedAppConfigurations", TargetedManagedAppConfigurations);
             writer.WriteCollectionOfObjectValues<VppToken>("vppTokens", VppTokens);
             writer.WriteCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicy>("wdacSupplementalPolicies", WdacSupplementalPolicies);
             writer.WriteCollectionOfObjectValues<WindowsInformationProtectionDeviceRegistration>("windowsInformationProtectionDeviceRegistrations", WindowsInformationProtectionDeviceRegistrations);
             writer.WriteCollectionOfObjectValues<WindowsInformationProtectionPolicy>("windowsInformationProtectionPolicies", WindowsInformationProtectionPolicies);
             writer.WriteCollectionOfObjectValues<WindowsInformationProtectionWipeAction>("windowsInformationProtectionWipeActions", WindowsInformationProtectionWipeActions);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.WindowsManagementApp>("windowsManagementApp", WindowsManagementApp);
+            writer.WriteObjectValue<WindowsManagementApp>("windowsManagementApp", WindowsManagementApp);
         }
     }
 }

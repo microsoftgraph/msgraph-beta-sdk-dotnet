@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.VirtualEndpoint.SupportedRegions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.SupportedRegions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.SupportedRegions {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.SupportedRegions {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\supportedRegions</summary>
     public class SupportedRegionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.SupportedRegions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.virtualEndpoint.supportedRegions.item collection</summary>
-        public CloudPcSupportedRegionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.virtualEndpoint.supportedRegions.item collection</summary>
+        public CloudPcSupportedRegionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcSupportedRegion_id", position);
-            return new CloudPcSupportedRegionRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcSupportedRegionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SupportedRegionsRequestBuilder and sets the default values.

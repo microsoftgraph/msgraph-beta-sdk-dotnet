@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
         public ApiApplication Api { get; set; }
@@ -16,7 +16,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Specifies the certification status of the application.</summary>
         public Certification Certification { get; set; }
         /// <summary>The connectorGroup the application is using with Azure AD Application Proxy. Nullable.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup ConnectorGroup { get; set; }
+        public ConnectorGroup ConnectorGroup { get; set; }
         /// <summary>The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Read-only.</summary>
@@ -70,7 +70,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public string SignInAudience { get; set; }
         /// <summary>Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.</summary>
         public SpaApplication Spa { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Synchronization Synchronization { get; set; }
+        public Synchronization Synchronization { get; set; }
         /// <summary>Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> Tags { get; set; }
         /// <summary>Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</summary>
@@ -94,7 +94,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"appManagementPolicies", (o,n) => { (o as Application).AppManagementPolicies = n.GetCollectionOfObjectValues<AppManagementPolicy>().ToList(); } },
                 {"appRoles", (o,n) => { (o as Application).AppRoles = n.GetCollectionOfObjectValues<AppRole>().ToList(); } },
                 {"certification", (o,n) => { (o as Application).Certification = n.GetObjectValue<Certification>(); } },
-                {"connectorGroup", (o,n) => { (o as Application).ConnectorGroup = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup>(); } },
+                {"connectorGroup", (o,n) => { (o as Application).ConnectorGroup = n.GetObjectValue<ConnectorGroup>(); } },
                 {"createdDateTime", (o,n) => { (o as Application).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdOnBehalfOf", (o,n) => { (o as Application).CreatedOnBehalfOf = n.GetObjectValue<DirectoryObject>(); } },
                 {"defaultRedirectUri", (o,n) => { (o as Application).DefaultRedirectUri = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"requiredResourceAccess", (o,n) => { (o as Application).RequiredResourceAccess = n.GetCollectionOfObjectValues<RequiredResourceAccess>().ToList(); } },
                 {"signInAudience", (o,n) => { (o as Application).SignInAudience = n.GetStringValue(); } },
                 {"spa", (o,n) => { (o as Application).Spa = n.GetObjectValue<SpaApplication>(); } },
-                {"synchronization", (o,n) => { (o as Application).Synchronization = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Synchronization>(); } },
+                {"synchronization", (o,n) => { (o as Application).Synchronization = n.GetObjectValue<Synchronization>(); } },
                 {"tags", (o,n) => { (o as Application).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"tokenEncryptionKeyId", (o,n) => { (o as Application).TokenEncryptionKeyId = n.GetStringValue(); } },
                 {"tokenIssuancePolicies", (o,n) => { (o as Application).TokenIssuancePolicies = n.GetCollectionOfObjectValues<TokenIssuancePolicy>().ToList(); } },
@@ -144,7 +144,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<AppManagementPolicy>("appManagementPolicies", AppManagementPolicies);
             writer.WriteCollectionOfObjectValues<AppRole>("appRoles", AppRoles);
             writer.WriteObjectValue<Certification>("certification", Certification);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup>("connectorGroup", ConnectorGroup);
+            writer.WriteObjectValue<ConnectorGroup>("connectorGroup", ConnectorGroup);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("defaultRedirectUri", DefaultRedirectUri);
@@ -172,7 +172,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<RequiredResourceAccess>("requiredResourceAccess", RequiredResourceAccess);
             writer.WriteStringValue("signInAudience", SignInAudience);
             writer.WriteObjectValue<SpaApplication>("spa", Spa);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Synchronization>("synchronization", Synchronization);
+            writer.WriteObjectValue<Synchronization>("synchronization", Synchronization);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("tokenEncryptionKeyId", TokenEncryptionKeyId);
             writer.WriteCollectionOfObjectValues<TokenIssuancePolicy>("tokenIssuancePolicies", TokenIssuancePolicies);

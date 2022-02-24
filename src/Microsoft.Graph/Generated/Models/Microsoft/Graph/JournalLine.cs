@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class JournalLine : Entity, IParsable {
-        public MicrosoftGraph.Models.Microsoft.Graph.Account Account { get; set; }
+        public Account Account { get; set; }
         public string AccountId { get; set; }
         public string AccountNumber { get; set; }
-        public Decimal? Amount { get; set; }
+        public decimal? Amount { get; set; }
         public string Comment { get; set; }
         public string Description { get; set; }
         public string DocumentNumber { get; set; }
@@ -23,7 +23,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as JournalLine).Account = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Account>(); } },
+                {"account", (o,n) => { (o as JournalLine).Account = n.GetObjectValue<Account>(); } },
                 {"accountId", (o,n) => { (o as JournalLine).AccountId = n.GetStringValue(); } },
                 {"accountNumber", (o,n) => { (o as JournalLine).AccountNumber = n.GetStringValue(); } },
                 {"amount", (o,n) => { (o as JournalLine).Amount = n.GetDecimalValue(); } },
@@ -44,7 +44,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Account>("account", Account);
+            writer.WriteObjectValue<Account>("account", Account);
             writer.WriteStringValue("accountId", AccountId);
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteDecimalValue("amount", Amount);

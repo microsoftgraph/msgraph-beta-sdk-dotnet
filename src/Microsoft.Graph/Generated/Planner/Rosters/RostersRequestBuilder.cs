@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Planner.Rosters.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Planner.Rosters.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Planner.Rosters {
+namespace MicrosoftGraphSdk.Planner.Rosters {
     /// <summary>Builds and executes requests for operations under \planner\rosters</summary>
     public class RostersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Planner.Rosters {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.planner.rosters.item collection</summary>
-        public PlannerRosterRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.planner.rosters.item collection</summary>
+        public PlannerRosterItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerRoster_id", position);
-            return new PlannerRosterRequestBuilder(urlTplParams, RequestAdapter);
+            return new PlannerRosterItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RostersRequestBuilder and sets the default values.

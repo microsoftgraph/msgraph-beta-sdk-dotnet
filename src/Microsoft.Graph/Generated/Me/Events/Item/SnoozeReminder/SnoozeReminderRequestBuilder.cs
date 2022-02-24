@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Events.Item.SnoozeReminder {
+namespace MicrosoftGraphSdk.Me.Events.Item.SnoozeReminder {
     /// <summary>Builds and executes requests for operations under \me\events\{event-id}\microsoft.graph.snoozeReminder</summary>
     public class SnoozeReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

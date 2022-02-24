@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.OnlineMeetings.Item.Recording {
+namespace MicrosoftGraphSdk.Me.OnlineMeetings.Item.Recording {
     /// <summary>Builds and executes requests for operations under \me\onlineMeetings\{onlineMeeting-id}\recording</summary>
     public class RecordingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DirectoryRoles.Delta;
-using MicrosoftGraph.DirectoryRoles.GetByIds;
-using MicrosoftGraph.DirectoryRoles.GetUserOwnedObjects;
-using MicrosoftGraph.DirectoryRoles.Item;
-using MicrosoftGraph.DirectoryRoles.ValidateProperties;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DirectoryRoles.Delta;
+using MicrosoftGraphSdk.DirectoryRoles.GetByIds;
+using MicrosoftGraphSdk.DirectoryRoles.GetUserOwnedObjects;
+using MicrosoftGraphSdk.DirectoryRoles.Item;
+using MicrosoftGraphSdk.DirectoryRoles.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DirectoryRoles {
+namespace MicrosoftGraphSdk.DirectoryRoles {
     /// <summary>Builds and executes requests for operations under \directoryRoles</summary>
     public class DirectoryRolesRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -30,11 +30,11 @@ namespace MicrosoftGraph.DirectoryRoles {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.directoryRoles.item collection</summary>
-        public DirectoryRoleRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directoryRoles.item collection</summary>
+        public DirectoryRoleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryRole_id", position);
-            return new DirectoryRoleRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryRoleItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryRolesRequestBuilder and sets the default values.

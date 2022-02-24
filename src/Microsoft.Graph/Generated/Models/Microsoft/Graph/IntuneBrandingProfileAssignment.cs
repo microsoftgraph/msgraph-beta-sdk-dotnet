@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class IntuneBrandingProfileAssignment : Entity, IParsable {
         /// <summary>Assignment target that the branding profile is assigned to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

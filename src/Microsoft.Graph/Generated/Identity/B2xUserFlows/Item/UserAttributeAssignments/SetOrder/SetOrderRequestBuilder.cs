@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder {
+namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder {
     /// <summary>Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.setOrder</summary>
     public class SetOrderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

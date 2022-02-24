@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentApprovals.Item.Steps.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentApprovals.Item.Steps.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentApprovals.Item.Steps {
+namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentApprovals.Item.Steps {
     /// <summary>Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentApprovals\{approval-id}\steps</summary>
     public class StepsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageA
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.accessPackageAssignmentApprovals.item.steps.item collection</summary>
-        public ApprovalStepRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.entitlementManagement.accessPackageAssignmentApprovals.item.steps.item collection</summary>
+        public ApprovalStepItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approvalStep_id", position);
-            return new ApprovalStepRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApprovalStepItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new StepsRequestBuilder and sets the default values.

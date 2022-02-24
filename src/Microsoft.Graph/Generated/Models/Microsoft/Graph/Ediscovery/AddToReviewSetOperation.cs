@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class AddToReviewSetOperation : CaseOperation, IParsable {
         /// <summary>The review set to which items matching the source collection query are added to.</summary>
         public ReviewSet ReviewSet { get; set; }

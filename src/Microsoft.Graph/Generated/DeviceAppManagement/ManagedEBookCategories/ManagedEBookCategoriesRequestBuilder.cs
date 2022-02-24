@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.ManagedEBookCategories.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedEBookCategories.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.ManagedEBookCategories {
+namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBookCategories {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\managedEBookCategories</summary>
     public class ManagedEBookCategoriesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.ManagedEBookCategories {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.managedEBookCategories.item collection</summary>
-        public ManagedEBookCategoryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.managedEBookCategories.item collection</summary>
+        public ManagedEBookCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedEBookCategory_id", position);
-            return new ManagedEBookCategoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedEBookCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedEBookCategoriesRequestBuilder and sets the default values.

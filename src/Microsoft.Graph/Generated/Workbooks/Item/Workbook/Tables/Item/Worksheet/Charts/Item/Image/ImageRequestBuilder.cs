@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Image {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Image {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\microsoft.graph.image()</summary>
     public class ImageRequestBuilder {
         /// <summary>Path parameters for the request</summary>

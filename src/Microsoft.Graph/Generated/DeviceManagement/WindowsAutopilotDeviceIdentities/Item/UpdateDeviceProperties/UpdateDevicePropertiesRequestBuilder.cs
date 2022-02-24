@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UpdateDeviceProperties {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UpdateDeviceProperties {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.updateDeviceProperties</summary>
     public class UpdateDevicePropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

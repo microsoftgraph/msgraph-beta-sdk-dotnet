@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.ServicePrincipals.Item.ClaimsMappingPolicies.Ref;
+using MicrosoftGraphSdk.ServicePrincipals.Item.ClaimsMappingPolicies.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.ClaimsMappingPolicies {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.ClaimsMappingPolicies {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\claimsMappingPolicies</summary>
     public class ClaimsMappingPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

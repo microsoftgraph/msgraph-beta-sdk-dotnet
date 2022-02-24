@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ApplicationServicePrincipal : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Application Application { get; set; }
+        public Application Application { get; set; }
         public ServicePrincipal ServicePrincipal { get; set; }
         /// <summary>
         /// Instantiates a new applicationServicePrincipal and sets the default values.
@@ -20,7 +20,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"application", (o,n) => { (o as ApplicationServicePrincipal).Application = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Application>(); } },
+                {"application", (o,n) => { (o as ApplicationServicePrincipal).Application = n.GetObjectValue<Application>(); } },
                 {"servicePrincipal", (o,n) => { (o as ApplicationServicePrincipal).ServicePrincipal = n.GetObjectValue<ServicePrincipal>(); } },
             };
         }
@@ -30,7 +30,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Application>("application", Application);
+            writer.WriteObjectValue<Application>("application", Application);
             writer.WriteObjectValue<ServicePrincipal>("servicePrincipal", ServicePrincipal);
             writer.WriteAdditionalData(AdditionalData);
         }

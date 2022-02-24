@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings\microsoft.graph.approveApps</summary>
     public class ApproveAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

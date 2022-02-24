@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Shares.Item.ListItem.Versions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Shares.Item.ListItem.Versions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.ListItem.Versions {
+namespace MicrosoftGraphSdk.Shares.Item.ListItem.Versions {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\listItem\versions</summary>
     public class VersionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Shares.Item.ListItem.Versions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.shares.item.listItem.versions.item collection</summary>
-        public ListItemVersionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.shares.item.listItem.versions.item collection</summary>
+        public ListItemVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("listItemVersion_id", position);
-            return new ListItemVersionRequestBuilder(urlTplParams, RequestAdapter);
+            return new ListItemVersionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VersionsRequestBuilder and sets the default values.

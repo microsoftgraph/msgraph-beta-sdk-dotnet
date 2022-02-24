@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.RevokeToken {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item.RevokeToken {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidDeviceOwnerEnrollmentProfiles\{androidDeviceOwnerEnrollmentProfile-id}\microsoft.graph.revokeToken</summary>
     public class RevokeTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

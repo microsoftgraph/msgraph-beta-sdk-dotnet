@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetAllCertificatesReport {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetAllCertificatesReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getAllCertificatesReport</summary>
     public class GetAllCertificatesReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

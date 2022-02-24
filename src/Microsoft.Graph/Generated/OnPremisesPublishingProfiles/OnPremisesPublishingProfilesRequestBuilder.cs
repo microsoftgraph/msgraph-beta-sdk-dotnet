@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.OnPremisesPublishingProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OnPremisesPublishingProfiles {
+namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles {
     /// <summary>Builds and executes requests for operations under \onPremisesPublishingProfiles</summary>
     public class OnPremisesPublishingProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.onPremisesPublishingProfiles.item collection</summary>
-        public OnPremisesPublishingProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.onPremisesPublishingProfiles.item collection</summary>
+        public OnPremisesPublishingProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onPremisesPublishingProfile_id", position);
-            return new OnPremisesPublishingProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnPremisesPublishingProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OnPremisesPublishingProfilesRequestBuilder and sets the default values.

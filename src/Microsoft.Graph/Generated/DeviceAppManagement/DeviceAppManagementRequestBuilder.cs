@@ -1,39 +1,39 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.AndroidManagedAppProtections;
-using MicrosoftGraph.DeviceAppManagement.DefaultManagedAppProtections;
-using MicrosoftGraph.DeviceAppManagement.DeviceAppManagementTasks;
-using MicrosoftGraph.DeviceAppManagement.EnterpriseCodeSigningCertificates;
-using MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations;
-using MicrosoftGraph.DeviceAppManagement.IosManagedAppProtections;
-using MicrosoftGraph.DeviceAppManagement.ManagedAppPolicies;
-using MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations;
-using MicrosoftGraph.DeviceAppManagement.ManagedAppStatuses;
-using MicrosoftGraph.DeviceAppManagement.ManagedEBookCategories;
-using MicrosoftGraph.DeviceAppManagement.ManagedEBooks;
-using MicrosoftGraph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies;
-using MicrosoftGraph.DeviceAppManagement.MobileAppCategories;
-using MicrosoftGraph.DeviceAppManagement.MobileAppConfigurations;
-using MicrosoftGraph.DeviceAppManagement.MobileApps;
-using MicrosoftGraph.DeviceAppManagement.PolicySets;
-using MicrosoftGraph.DeviceAppManagement.SideLoadingKeys;
-using MicrosoftGraph.DeviceAppManagement.SymantecCodeSigningCertificate;
-using MicrosoftGraph.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps;
-using MicrosoftGraph.DeviceAppManagement.TargetedManagedAppConfigurations;
-using MicrosoftGraph.DeviceAppManagement.VppTokens;
-using MicrosoftGraph.DeviceAppManagement.WdacSupplementalPolicies;
-using MicrosoftGraph.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations;
-using MicrosoftGraph.DeviceAppManagement.WindowsInformationProtectionPolicies;
-using MicrosoftGraph.DeviceAppManagement.WindowsInformationProtectionWipeActions;
-using MicrosoftGraph.DeviceAppManagement.WindowsManagementApp;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections;
+using MicrosoftGraphSdk.DeviceAppManagement.DefaultManagedAppProtections;
+using MicrosoftGraphSdk.DeviceAppManagement.DeviceAppManagementTasks;
+using MicrosoftGraphSdk.DeviceAppManagement.EnterpriseCodeSigningCertificates;
+using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations;
+using MicrosoftGraphSdk.DeviceAppManagement.IosManagedAppProtections;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppStatuses;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedEBookCategories;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks;
+using MicrosoftGraphSdk.DeviceAppManagement.MdmWindowsInformationProtectionPolicies;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileAppCategories;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations;
+using MicrosoftGraphSdk.DeviceAppManagement.MobileApps;
+using MicrosoftGraphSdk.DeviceAppManagement.PolicySets;
+using MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys;
+using MicrosoftGraphSdk.DeviceAppManagement.SymantecCodeSigningCertificate;
+using MicrosoftGraphSdk.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps;
+using MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations;
+using MicrosoftGraphSdk.DeviceAppManagement.VppTokens;
+using MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies;
+using MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionDeviceRegistrations;
+using MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionPolicies;
+using MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionWipeActions;
+using MicrosoftGraphSdk.DeviceAppManagement.WindowsManagementApp;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement {
+namespace MicrosoftGraphSdk.DeviceAppManagement {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement</summary>
     public class DeviceAppManagementRequestBuilder {
         public AndroidManagedAppProtectionsRequestBuilder AndroidManagedAppProtections { get =>
@@ -174,7 +174,7 @@ namespace MicrosoftGraph.DeviceAppManagement {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.DeviceAppManagement body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAppManagement body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -194,9 +194,9 @@ namespace MicrosoftGraph.DeviceAppManagement {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.DeviceAppManagement> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAppManagement> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.DeviceAppManagement>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAppManagement>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update deviceAppManagement
@@ -206,7 +206,7 @@ namespace MicrosoftGraph.DeviceAppManagement {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraph.Models.Microsoft.Graph.DeviceAppManagement body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAppManagement body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

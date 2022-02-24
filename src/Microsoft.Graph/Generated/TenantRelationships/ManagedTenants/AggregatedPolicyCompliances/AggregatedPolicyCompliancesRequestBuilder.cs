@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.AggregatedPolicyCompliances {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\aggregatedPolicyCompliances</summary>
     public class AggregatedPolicyCompliancesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.AggregatedPolicyComp
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.aggregatedPolicyCompliances.item collection</summary>
-        public AggregatedPolicyComplianceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.aggregatedPolicyCompliances.item collection</summary>
+        public AggregatedPolicyComplianceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("aggregatedPolicyCompliance_id", position);
-            return new AggregatedPolicyComplianceRequestBuilder(urlTplParams, RequestAdapter);
+            return new AggregatedPolicyComplianceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AggregatedPolicyCompliancesRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.RoleManagementPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.RoleManagementPolicies {
+namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies {
     /// <summary>Builds and executes requests for operations under \policies\roleManagementPolicies</summary>
     public class RoleManagementPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.RoleManagementPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.roleManagementPolicies.item collection</summary>
-        public UnifiedRoleManagementPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.roleManagementPolicies.item collection</summary>
+        public UnifiedRoleManagementPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleManagementPolicy_id", position);
-            return new UnifiedRoleManagementPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleManagementPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleManagementPoliciesRequestBuilder and sets the default values.

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.CustodianSources.Ref;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.CustodianSources.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.CustodianSources {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.CustodianSources {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\custodianSources</summary>
     public class CustodianSourcesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PlannerRoster : Entity, IParsable {
         /// <summary>Retrieves the members of the plannerRoster.</summary>
         public List<PlannerRosterMember> Members { get; set; }

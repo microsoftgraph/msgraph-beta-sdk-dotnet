@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementIntents.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementIntents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementIntents {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementIntents {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\managementIntents</summary>
     public class ManagementIntentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementIntents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.managementIntents.item collection</summary>
-        public ManagementIntentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.managementIntents.item collection</summary>
+        public ManagementIntentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementIntent_id", position);
-            return new ManagementIntentRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagementIntentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagementIntentsRequestBuilder and sets the default values.

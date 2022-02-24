@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SensitivityPolicySettings : Entity, IParsable {
         public SensitivityLabelTarget? ApplicableTo { get; set; }
         public bool? DowngradeSensitivityRequiresJustification { get; set; }

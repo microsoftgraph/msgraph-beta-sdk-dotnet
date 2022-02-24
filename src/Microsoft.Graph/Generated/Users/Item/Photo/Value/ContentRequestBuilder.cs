@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Photo.Value {
+namespace MicrosoftGraphSdk.Users.Item.Photo.Value {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\photo\$value</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

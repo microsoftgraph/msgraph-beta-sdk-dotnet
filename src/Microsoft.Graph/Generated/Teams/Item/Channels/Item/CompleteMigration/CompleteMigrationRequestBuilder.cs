@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Channels.Item.CompleteMigration {
+namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.CompleteMigration {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\channels\{channel-id}\microsoft.graph.completeMigration</summary>
     public class CompleteMigrationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

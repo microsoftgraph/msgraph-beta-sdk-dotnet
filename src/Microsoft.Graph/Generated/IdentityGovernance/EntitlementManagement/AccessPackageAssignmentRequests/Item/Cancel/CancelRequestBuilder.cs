@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.Cancel {
+namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentRequests.Item.Cancel {
     /// <summary>Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignmentRequests\{accessPackageAssignmentRequest-id}\microsoft.graph.cancel</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

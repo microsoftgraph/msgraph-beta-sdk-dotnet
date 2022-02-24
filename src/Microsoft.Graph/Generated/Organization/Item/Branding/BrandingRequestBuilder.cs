@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Organization.Item.Branding {
+namespace MicrosoftGraphSdk.Organization.Item.Branding {
     /// <summary>Builds and executes requests for operations under \organization\{organization-id}\branding</summary>
     public class BrandingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

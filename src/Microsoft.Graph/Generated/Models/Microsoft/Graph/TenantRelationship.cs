@@ -1,10 +1,10 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TenantRelationship : Entity, IParsable {
         /// <summary>The operations available to interact with the multi-tenant management platform.</summary>
         public ManagedTenant ManagedTenants { get; set; }

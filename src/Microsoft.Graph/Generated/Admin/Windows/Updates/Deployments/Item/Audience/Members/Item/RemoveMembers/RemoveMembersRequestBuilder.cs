@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.RemoveMembers {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Members.Item.RemoveMembers {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\members\{updatableAsset-id}\microsoft.graph.windowsUpdates.removeMembers</summary>
     public class RemoveMembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

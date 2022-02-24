@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleAccessPackages.FilterByCurrentUserWithOn;
-using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleAccessPackages.Ref;
-using MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleAccessPackages.Search;
+using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleAccessPackages.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleAccessPackages.Ref;
+using MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleAccessPackages.Search;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleAccessPackages {
+namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Item.IncompatibleAccessPackages {
     /// <summary>Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\{accessPackageCatalog-id}\accessPackages\{accessPackage-id}\incompatibleAccessPackages</summary>
     public class IncompatibleAccessPackagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

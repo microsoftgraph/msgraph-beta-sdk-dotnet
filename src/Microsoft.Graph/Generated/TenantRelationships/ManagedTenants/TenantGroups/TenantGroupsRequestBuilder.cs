@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups.Item;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups.Item;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantGroups</summary>
     public class TenantGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.tenantGroups.item collection</summary>
-        public TenantGroupRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.tenantGroups.item collection</summary>
+        public TenantGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantGroup_id", position);
-            return new TenantGroupRequestBuilder(urlTplParams, RequestAdapter);
+            return new TenantGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TenantGroupsRequestBuilder and sets the default values.

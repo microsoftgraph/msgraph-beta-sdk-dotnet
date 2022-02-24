@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\microsoft.graph.updateGlobalScript</summary>
     public class UpdateGlobalScriptRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantGroups\microsoft.graph.managedTenants.tenantSearch</summary>
     public class TenantSearchRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -68,10 +68,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups.TenantS
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch.TenantSearch>> PostAsync(TenantSearchRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<TenantSearch>> PostAsync(TenantSearchRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch.TenantSearch>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<TenantSearch>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

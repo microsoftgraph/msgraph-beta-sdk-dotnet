@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Security.AttackSimulation.SimulationAutomations.Item.Runs.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item.Runs.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.AttackSimulation.SimulationAutomations.Item.Runs {
+namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations.Item.Runs {
     /// <summary>Builds and executes requests for operations under \security\attackSimulation\simulationAutomations\{simulationAutomation-id}\runs</summary>
     public class RunsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Security.AttackSimulation.SimulationAutomations.Item.Ru
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.security.attackSimulation.simulationAutomations.item.runs.item collection</summary>
-        public SimulationAutomationRunRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.security.attackSimulation.simulationAutomations.item.runs.item collection</summary>
+        public SimulationAutomationRunItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("simulationAutomationRun_id", position);
-            return new SimulationAutomationRunRequestBuilder(urlTplParams, RequestAdapter);
+            return new SimulationAutomationRunItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RunsRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.ValueAxis.Title.Format;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.ValueAxis.Title.Format;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.ValueAxis.Title {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.ValueAxis.Title {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\valueAxis\title</summary>
     public class TitleRequestBuilder {
         public FormatRequestBuilder Format { get =>

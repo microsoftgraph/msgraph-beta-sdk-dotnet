@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.Security;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.RunHuntingQuery {
+namespace MicrosoftGraphSdk.Security.RunHuntingQuery {
     /// <summary>Builds and executes requests for operations under \security\microsoft.graph.security.runHuntingQuery</summary>
     public class RunHuntingQueryRequestBuilder {
         /// <summary>Path parameters for the request</summary>

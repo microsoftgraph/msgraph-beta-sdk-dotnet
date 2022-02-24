@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Ref {
+namespace MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item.RoleScopeTags.Ref {
     public class Ref : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

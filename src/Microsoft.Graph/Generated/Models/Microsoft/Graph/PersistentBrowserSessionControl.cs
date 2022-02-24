@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PersistentBrowserSessionControl : ConditionalAccessSessionControl, IParsable {
         /// <summary>Possible values are: always, never.</summary>
         public PersistentBrowserSessionMode? Mode { get; set; }

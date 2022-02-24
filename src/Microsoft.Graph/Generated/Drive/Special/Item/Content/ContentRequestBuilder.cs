@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drive.Special.Item.Content {
+namespace MicrosoftGraphSdk.Drive.Special.Item.Content {
     /// <summary>Builds and executes requests for operations under \drive\special\{driveItem-id}\content</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

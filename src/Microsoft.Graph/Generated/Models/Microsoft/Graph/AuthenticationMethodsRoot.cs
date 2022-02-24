@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AuthenticationMethodsRoot : Entity, IParsable {
         /// <summary>Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.UserRegistrationDetails> UserRegistrationDetails { get; set; }
+        public List<UserRegistrationDetails> UserRegistrationDetails { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"userRegistrationDetails", (o,n) => { (o as AuthenticationMethodsRoot).UserRegistrationDetails = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.UserRegistrationDetails>().ToList(); } },
+                {"userRegistrationDetails", (o,n) => { (o as AuthenticationMethodsRoot).UserRegistrationDetails = n.GetCollectionOfObjectValues<UserRegistrationDetails>().ToList(); } },
             };
         }
         /// <summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.UserRegistrationDetails>("userRegistrationDetails", UserRegistrationDetails);
+            writer.WriteCollectionOfObjectValues<UserRegistrationDetails>("userRegistrationDetails", UserRegistrationDetails);
         }
     }
 }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Search {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     public class Acronym : SearchAnswer, IParsable {
         public string StandsFor { get; set; }
         public AnswerState? State { get; set; }

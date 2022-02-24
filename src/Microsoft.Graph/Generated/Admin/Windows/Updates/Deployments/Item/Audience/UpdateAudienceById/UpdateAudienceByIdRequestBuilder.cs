@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\microsoft.graph.windowsUpdates.updateAudienceById</summary>
     public class UpdateAudienceByIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

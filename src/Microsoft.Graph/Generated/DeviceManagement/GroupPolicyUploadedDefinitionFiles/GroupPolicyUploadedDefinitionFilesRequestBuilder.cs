@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyUploadedDefinitionFiles {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles</summary>
     public class GroupPolicyUploadedDefinitionFilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyUploadedDefinitionFiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyUploadedDefinitionFiles.item collection</summary>
-        public GroupPolicyUploadedDefinitionFileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.groupPolicyUploadedDefinitionFiles.item collection</summary>
+        public GroupPolicyUploadedDefinitionFileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyUploadedDefinitionFile_id", position);
-            return new GroupPolicyUploadedDefinitionFileRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupPolicyUploadedDefinitionFileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupPolicyUploadedDefinitionFilesRequestBuilder and sets the default values.

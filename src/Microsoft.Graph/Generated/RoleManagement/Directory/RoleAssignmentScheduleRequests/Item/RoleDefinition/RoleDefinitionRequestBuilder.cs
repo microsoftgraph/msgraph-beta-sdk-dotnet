@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.Directory.RoleAssignmentScheduleRequests.Item.RoleDefinition.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentScheduleRequests.Item.RoleDefinition.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.Directory.RoleAssignmentScheduleRequests.Item.RoleDefinition {
+namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentScheduleRequests.Item.RoleDefinition {
     /// <summary>Builds and executes requests for operations under \roleManagement\directory\roleAssignmentScheduleRequests\{unifiedRoleAssignmentScheduleRequest-id}\roleDefinition</summary>
     public class RoleDefinitionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Sort.Reapply {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Sort.Reapply {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables\{workbookTable-id}\sort\microsoft.graph.reapply</summary>
     public class ReapplyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

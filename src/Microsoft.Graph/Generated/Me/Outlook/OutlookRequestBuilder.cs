@@ -1,20 +1,20 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Outlook.MasterCategories;
-using MicrosoftGraph.Me.Outlook.SupportedLanguages;
-using MicrosoftGraph.Me.Outlook.SupportedTimeZones;
-using MicrosoftGraph.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard;
-using MicrosoftGraph.Me.Outlook.TaskFolders;
-using MicrosoftGraph.Me.Outlook.TaskGroups;
-using MicrosoftGraph.Me.Outlook.Tasks;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Outlook.MasterCategories;
+using MicrosoftGraphSdk.Me.Outlook.SupportedLanguages;
+using MicrosoftGraphSdk.Me.Outlook.SupportedTimeZones;
+using MicrosoftGraphSdk.Me.Outlook.SupportedTimeZonesWithTimeZoneStandard;
+using MicrosoftGraphSdk.Me.Outlook.TaskFolders;
+using MicrosoftGraphSdk.Me.Outlook.TaskGroups;
+using MicrosoftGraphSdk.Me.Outlook.Tasks;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Outlook {
+namespace MicrosoftGraphSdk.Me.Outlook {
     /// <summary>Builds and executes requests for operations under \me\outlook</summary>
     public class OutlookRequestBuilder {
         public MasterCategoriesRequestBuilder MasterCategories { get =>

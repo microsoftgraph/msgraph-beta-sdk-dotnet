@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageResourceEnvironment : Entity, IParsable {
         /// <summary>Read-only. Required.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource> AccessPackageResources { get; set; }
+        public List<AccessPackageResource> AccessPackageResources { get; set; }
         /// <summary>Connection information of an environment used to connect to a resource.</summary>
         public ConnectionInfo ConnectionInfo { get; set; }
         /// <summary>The display name of the user that created this object.</summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResources", (o,n) => { (o as AccessPackageResourceEnvironment).AccessPackageResources = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource>().ToList(); } },
+                {"accessPackageResources", (o,n) => { (o as AccessPackageResourceEnvironment).AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>().ToList(); } },
                 {"connectionInfo", (o,n) => { (o as AccessPackageResourceEnvironment).ConnectionInfo = n.GetObjectValue<ConnectionInfo>(); } },
                 {"createdBy", (o,n) => { (o as AccessPackageResourceEnvironment).CreatedBy = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as AccessPackageResourceEnvironment).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -52,7 +52,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageResource>("accessPackageResources", AccessPackageResources);
+            writer.WriteCollectionOfObjectValues<AccessPackageResource>("accessPackageResources", AccessPackageResources);
             writer.WriteObjectValue<ConnectionInfo>("connectionInfo", ConnectionInfo);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.WindowsManagementApp.SetAsManagedInstaller {
+namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsManagementApp.SetAsManagedInstaller {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\windowsManagementApp\microsoft.graph.setAsManagedInstaller</summary>
     public class SetAsManagedInstallerRequestBuilder {
         /// <summary>Path parameters for the request</summary>

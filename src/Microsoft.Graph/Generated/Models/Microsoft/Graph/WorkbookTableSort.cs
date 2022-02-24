@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WorkbookTableSort : Entity, IParsable {
         /// <summary>Represents the current conditions used to last sort the table. Read-only.</summary>
         public List<WorkbookSortField> Fields { get; set; }

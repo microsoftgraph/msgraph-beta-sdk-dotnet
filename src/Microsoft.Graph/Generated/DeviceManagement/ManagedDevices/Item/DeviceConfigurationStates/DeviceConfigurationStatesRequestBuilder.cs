@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ManagedDevices.Item.DeviceConfigurationStates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.DeviceConfigurationStates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.DeviceConfigurationStates {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.DeviceConfigurationStates {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\deviceConfigurationStates</summary>
     public class DeviceConfigurationStatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.DeviceConfiguratio
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.managedDevices.item.deviceConfigurationStates.item collection</summary>
-        public DeviceConfigurationStateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.managedDevices.item.deviceConfigurationStates.item collection</summary>
+        public DeviceConfigurationStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfigurationState_id", position);
-            return new DeviceConfigurationStateRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceConfigurationStateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceConfigurationStatesRequestBuilder and sets the default values.

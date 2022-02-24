@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Onenote.SectionGroups.Item.Sections.Item.Pages.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Onenote.SectionGroups.Item.Sections.Item.Pages.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Onenote.SectionGroups.Item.Sections.Item.Pages {
+namespace MicrosoftGraphSdk.Me.Onenote.SectionGroups.Item.Sections.Item.Pages {
     /// <summary>Builds and executes requests for operations under \me\onenote\sectionGroups\{sectionGroup-id}\sections\{onenoteSection-id}\pages</summary>
     public class PagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.Onenote.SectionGroups.Item.Sections.Item.Pages {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.onenote.sectionGroups.item.sections.item.pages.item collection</summary>
-        public OnenotePageRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.onenote.sectionGroups.item.sections.item.pages.item collection</summary>
+        public OnenotePageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenotePage_id", position);
-            return new OnenotePageRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnenotePageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PagesRequestBuilder and sets the default values.

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Templates.Item.CompareWithTemplateId {
+namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.CompareWithTemplateId {
     /// <summary>Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\microsoft.graph.compare(templateId='{templateId}')</summary>
     public class CompareWithTemplateIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -66,9 +66,9 @@ namespace MicrosoftGraph.DeviceManagement.Templates.Item.CompareWithTemplateId {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.DeviceManagement.Templates.Item.CompareWithTemplateId.CompareWithTemplateId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<CompareWithTemplateId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.DeviceManagement.Templates.Item.CompareWithTemplateId.CompareWithTemplateId>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<CompareWithTemplateId>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

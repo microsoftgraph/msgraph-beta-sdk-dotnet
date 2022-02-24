@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class B2cAuthenticationMethodsPolicy : Entity, IParsable {
         /// <summary>The tenant admin can configure local accounts using email if the email and password authentication method is enabled.</summary>
         public bool? IsEmailPasswordAuthenticationEnabled { get; set; }

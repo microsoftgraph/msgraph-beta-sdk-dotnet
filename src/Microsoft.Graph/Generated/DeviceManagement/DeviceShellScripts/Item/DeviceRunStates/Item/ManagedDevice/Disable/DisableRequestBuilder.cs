@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceShellScripts.Item.DeviceRunStates.Item.ManagedDevice.Disable {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceShellScripts.Item.DeviceRunStates.Item.ManagedDevice.Disable {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.disable</summary>
     public class DisableRequestBuilder {
         /// <summary>Path parameters for the request</summary>

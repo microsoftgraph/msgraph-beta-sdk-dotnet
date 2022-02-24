@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DirectoryRoles.Item.Members.Ref;
+using MicrosoftGraphSdk.DirectoryRoles.Item.Members.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DirectoryRoles.Item.Members {
+namespace MicrosoftGraphSdk.DirectoryRoles.Item.Members {
     /// <summary>Builds and executes requests for operations under \directoryRoles\{directoryRole-id}\members</summary>
     public class MembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

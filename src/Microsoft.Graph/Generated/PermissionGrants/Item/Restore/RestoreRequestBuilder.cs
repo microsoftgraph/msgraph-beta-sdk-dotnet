@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PermissionGrants.Item.Restore {
+namespace MicrosoftGraphSdk.PermissionGrants.Item.Restore {
     /// <summary>Builds and executes requests for operations under \permissionGrants\{resourceSpecificPermissionGrant-id}\microsoft.graph.restore</summary>
     public class RestoreRequestBuilder {
         /// <summary>Path parameters for the request</summary>

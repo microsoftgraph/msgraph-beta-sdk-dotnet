@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Analytics.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Analytics.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Analytics {
+namespace MicrosoftGraphSdk.Workbooks.Item.Analytics {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\analytics</summary>
     public class AnalyticsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

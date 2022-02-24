@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemActivityOLD : Entity, IParsable {
         public ItemActionSet Action { get; set; }
         public IdentitySet Actor { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.DriveItem DriveItem { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.ListItem ListItem { get; set; }
+        public DriveItem DriveItem { get; set; }
+        public ListItem ListItem { get; set; }
         public ItemActivityTimeSet Times { get; set; }
         /// <summary>
         /// The deserialization information for the current model
@@ -17,8 +17,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"action", (o,n) => { (o as ItemActivityOLD).Action = n.GetObjectValue<ItemActionSet>(); } },
                 {"actor", (o,n) => { (o as ItemActivityOLD).Actor = n.GetObjectValue<IdentitySet>(); } },
-                {"driveItem", (o,n) => { (o as ItemActivityOLD).DriveItem = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>(); } },
-                {"listItem", (o,n) => { (o as ItemActivityOLD).ListItem = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ListItem>(); } },
+                {"driveItem", (o,n) => { (o as ItemActivityOLD).DriveItem = n.GetObjectValue<DriveItem>(); } },
+                {"listItem", (o,n) => { (o as ItemActivityOLD).ListItem = n.GetObjectValue<ListItem>(); } },
                 {"times", (o,n) => { (o as ItemActivityOLD).Times = n.GetObjectValue<ItemActivityTimeSet>(); } },
             };
         }
@@ -31,8 +31,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteObjectValue<ItemActionSet>("action", Action);
             writer.WriteObjectValue<IdentitySet>("actor", Actor);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>("driveItem", DriveItem);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ListItem>("listItem", ListItem);
+            writer.WriteObjectValue<DriveItem>("driveItem", DriveItem);
+            writer.WriteObjectValue<ListItem>("listItem", ListItem);
             writer.WriteObjectValue<ItemActivityTimeSet>("times", Times);
         }
     }

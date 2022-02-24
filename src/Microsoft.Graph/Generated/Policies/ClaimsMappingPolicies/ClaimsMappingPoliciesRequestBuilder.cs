@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.ClaimsMappingPolicies.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.ClaimsMappingPolicies.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.ClaimsMappingPolicies {
+namespace MicrosoftGraphSdk.Policies.ClaimsMappingPolicies {
     /// <summary>Builds and executes requests for operations under \policies\claimsMappingPolicies</summary>
     public class ClaimsMappingPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.ClaimsMappingPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.claimsMappingPolicies.item collection</summary>
-        public ClaimsMappingPolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.claimsMappingPolicies.item collection</summary>
+        public ClaimsMappingPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("claimsMappingPolicy_id", position);
-            return new ClaimsMappingPolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new ClaimsMappingPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.

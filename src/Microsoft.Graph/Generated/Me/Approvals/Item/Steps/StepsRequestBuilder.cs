@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Approvals.Item.Steps.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Approvals.Item.Steps.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Approvals.Item.Steps {
+namespace MicrosoftGraphSdk.Me.Approvals.Item.Steps {
     /// <summary>Builds and executes requests for operations under \me\approvals\{approval-id}\steps</summary>
     public class StepsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.Approvals.Item.Steps {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.approvals.item.steps.item collection</summary>
-        public ApprovalStepRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.approvals.item.steps.item collection</summary>
+        public ApprovalStepItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approvalStep_id", position);
-            return new ApprovalStepRequestBuilder(urlTplParams, RequestAdapter);
+            return new ApprovalStepItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new StepsRequestBuilder and sets the default values.

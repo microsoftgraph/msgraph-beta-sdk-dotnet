@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.LastEstimateStatisticsOperation.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.LastEstimateStatisticsOperation.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.LastEstimateStatisticsOperation {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.LastEstimateStatisticsOperation {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\sourceCollections\{sourceCollection-id}\lastEstimateStatisticsOperation</summary>
     public class LastEstimateStatisticsOperationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GroupPolicyCategory : Entity, IParsable {
         /// <summary>The children categories</summary>
         public List<GroupPolicyCategory> Children { get; set; }

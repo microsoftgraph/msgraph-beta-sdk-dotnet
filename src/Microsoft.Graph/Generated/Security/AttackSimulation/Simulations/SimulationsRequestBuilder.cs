@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Security.AttackSimulation.Simulations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Security.AttackSimulation.Simulations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.AttackSimulation.Simulations {
+namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations {
     /// <summary>Builds and executes requests for operations under \security\attackSimulation\simulations</summary>
     public class SimulationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Security.AttackSimulation.Simulations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.security.attackSimulation.simulations.item collection</summary>
-        public SimulationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.security.attackSimulation.simulations.item collection</summary>
+        public SimulationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("simulation_id", position);
-            return new SimulationRequestBuilder(urlTplParams, RequestAdapter);
+            return new SimulationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SimulationsRequestBuilder and sets the default values.

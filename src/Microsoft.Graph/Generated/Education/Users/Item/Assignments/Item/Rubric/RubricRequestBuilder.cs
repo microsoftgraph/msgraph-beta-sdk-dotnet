@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Users.Item.Assignments.Item.Rubric {
+namespace MicrosoftGraphSdk.Education.Users.Item.Assignments.Item.Rubric {
     /// <summary>Builds and executes requests for operations under \education\users\{educationUser-id}\assignments\{educationAssignment-id}\rubric</summary>
     public class RubricRequestBuilder {
         /// <summary>Path parameters for the request</summary>

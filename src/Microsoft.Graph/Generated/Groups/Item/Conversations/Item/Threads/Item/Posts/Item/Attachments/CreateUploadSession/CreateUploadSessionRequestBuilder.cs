@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Attachments.CreateUploadSession {
+namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Attachments.CreateUploadSession {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads\{conversationThread-id}\posts\{post-id}\attachments\microsoft.graph.createUploadSession</summary>
     public class CreateUploadSessionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

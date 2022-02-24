@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.GroupLifecyclePolicies.Item;
-using MicrosoftGraph.GroupLifecyclePolicies.RenewGroup;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.GroupLifecyclePolicies.Item;
+using MicrosoftGraphSdk.GroupLifecyclePolicies.RenewGroup;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GroupLifecyclePolicies {
+namespace MicrosoftGraphSdk.GroupLifecyclePolicies {
     /// <summary>Builds and executes requests for operations under \groupLifecyclePolicies</summary>
     public class GroupLifecyclePoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.GroupLifecyclePolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.groupLifecyclePolicies.item collection</summary>
-        public GroupLifecyclePolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.groupLifecyclePolicies.item collection</summary>
+        public GroupLifecyclePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupLifecyclePolicy_id", position);
-            return new GroupLifecyclePolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupLifecyclePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.

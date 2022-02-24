@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Communications.OnlineMeetings.Item.AttendanceReports {
+namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.AttendanceReports {
     public class AttendanceReportsResponse : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string NextLink { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.MeetingAttendanceReport> Value { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport> Value { get; set; }
         /// <summary>
         /// Instantiates a new attendanceReportsResponse and sets the default values.
         /// </summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.Communications.OnlineMeetings.Item.AttendanceReports {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as AttendanceReportsResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as AttendanceReportsResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.MeetingAttendanceReport>().ToList(); } },
+                {"value", (o,n) => { (o as AttendanceReportsResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport>().ToList(); } },
             };
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.Communications.OnlineMeetings.Item.AttendanceReports {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.nextLink", NextLink);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.MeetingAttendanceReport>("value", Value);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.MeetingAttendanceReport>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

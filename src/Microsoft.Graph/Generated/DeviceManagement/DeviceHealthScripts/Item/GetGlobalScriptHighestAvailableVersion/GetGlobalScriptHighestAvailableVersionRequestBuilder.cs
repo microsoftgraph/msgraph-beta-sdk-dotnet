@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceHealthScripts.Item.GetGlobalScriptHighestAvailableVersion {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.GetGlobalScriptHighestAvailableVersion {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\microsoft.graph.getGlobalScriptHighestAvailableVersion</summary>
     public class GetGlobalScriptHighestAvailableVersionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

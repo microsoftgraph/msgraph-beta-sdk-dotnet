@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis.Format;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis.MajorGridlines;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis.MinorGridlines;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis.Title;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis.Format;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis.MajorGridlines;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis.MinorGridlines;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis.Title;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Axes.ValueAxis {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\axes\valueAxis</summary>
     public class ValueAxisRequestBuilder {
         public FormatRequestBuilder Format { get =>

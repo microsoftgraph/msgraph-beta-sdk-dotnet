@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey {
+namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey {
     /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\microsoft.graph.getEncryptionPublicKey()</summary>
     public class GetEncryptionPublicKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

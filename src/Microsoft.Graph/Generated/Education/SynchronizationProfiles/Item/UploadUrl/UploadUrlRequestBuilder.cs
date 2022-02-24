@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.SynchronizationProfiles.Item.UploadUrl {
+namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.UploadUrl {
     /// <summary>Builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\microsoft.graph.uploadUrl()</summary>
     public class UploadUrlRequestBuilder {
         /// <summary>Path parameters for the request</summary>

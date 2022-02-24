@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Directory.AttributeSets.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Directory.AttributeSets.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Directory.AttributeSets {
+namespace MicrosoftGraphSdk.Directory.AttributeSets {
     /// <summary>Builds and executes requests for operations under \directory\attributeSets</summary>
     public class AttributeSetsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Directory.AttributeSets {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.directory.attributeSets.item collection</summary>
-        public AttributeSetRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.attributeSets.item collection</summary>
+        public AttributeSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attributeSet_id", position);
-            return new AttributeSetRequestBuilder(urlTplParams, RequestAdapter);
+            return new AttributeSetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AttributeSetsRequestBuilder and sets the default values.

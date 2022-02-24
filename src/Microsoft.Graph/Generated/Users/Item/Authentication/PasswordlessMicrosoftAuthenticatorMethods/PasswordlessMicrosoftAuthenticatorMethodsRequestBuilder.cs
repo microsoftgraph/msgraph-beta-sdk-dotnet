@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods {
+namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\authentication\passwordlessMicrosoftAuthenticatorMethods</summary>
     public class PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Authentication.PasswordlessMicrosoftAuthenti
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.authentication.passwordlessMicrosoftAuthenticatorMethods.item collection</summary>
-        public PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.authentication.passwordlessMicrosoftAuthenticatorMethods.item collection</summary>
+        public PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("passwordlessMicrosoftAuthenticatorAuthenticationMethod_id", position);
-            return new PasswordlessMicrosoftAuthenticatorAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
+            return new PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.

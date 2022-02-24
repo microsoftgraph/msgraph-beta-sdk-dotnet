@@ -1,12 +1,12 @@
 using Microsoft.Kiota.Abstractions;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration.ExtendFeatureUpdatesPause;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration.ExtendQualityUpdatesPause;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration.ExtendFeatureUpdatesPause;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration.ExtendQualityUpdatesPause;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.WindowsUpdateForBusinessConfiguration {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\microsoft.graph.windowsUpdateForBusinessConfiguration</summary>
     public class WindowsUpdateForBusinessConfigurationRequestBuilder {
         public ExtendFeatureUpdatesPauseRequestBuilder ExtendFeatureUpdatesPause { get =>

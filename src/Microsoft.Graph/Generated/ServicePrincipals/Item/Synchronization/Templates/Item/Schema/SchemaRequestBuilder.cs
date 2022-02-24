@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories;
-using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators;
-using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Functions;
-using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.ParseExpression;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Functions;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.ParseExpression;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Item.Schema {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\templates\{synchronizationTemplate-id}\schema</summary>
     public class SchemaRequestBuilder {
         public DirectoriesRequestBuilder Directories { get =>

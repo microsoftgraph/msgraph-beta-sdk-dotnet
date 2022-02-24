@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RoleScopeTagAutoAssignment : Entity, IParsable {
         /// <summary>The auto-assignment target for the specific Role Scope Tag.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

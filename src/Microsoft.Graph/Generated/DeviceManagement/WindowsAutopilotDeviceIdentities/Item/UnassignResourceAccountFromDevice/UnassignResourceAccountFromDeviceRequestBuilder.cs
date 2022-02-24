@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignResourceAccountFromDevice {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.UnassignResourceAccountFromDevice {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.unassignResourceAccountFromDevice</summary>
     public class UnassignResourceAccountFromDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

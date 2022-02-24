@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ManagedDevices.Item.ReprovisionCloudPc {
+namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.ReprovisionCloudPc {
     /// <summary>Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.reprovisionCloudPc</summary>
     public class ReprovisionCloudPcRequestBuilder {
         /// <summary>Path parameters for the request</summary>

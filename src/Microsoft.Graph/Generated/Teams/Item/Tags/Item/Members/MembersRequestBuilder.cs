@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teams.Item.Tags.Item.Members.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teams.Item.Tags.Item.Members.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Tags.Item.Members {
+namespace MicrosoftGraphSdk.Teams.Item.Tags.Item.Members {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\tags\{teamworkTag-id}\members</summary>
     public class MembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Teams.Item.Tags.Item.Members {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.teams.item.tags.item.members.item collection</summary>
-        public TeamworkTagMemberRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.tags.item.members.item collection</summary>
+        public TeamworkTagMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamworkTagMember_id", position);
-            return new TeamworkTagMemberRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamworkTagMemberItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.

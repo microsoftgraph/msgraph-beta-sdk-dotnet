@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
     public class ConnectionQuota : Entity, IParsable {
         public long? ItemsRemaining { get; set; }
         /// <summary>

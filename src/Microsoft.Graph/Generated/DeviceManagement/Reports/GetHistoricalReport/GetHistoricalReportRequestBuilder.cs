@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetHistoricalReport {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetHistoricalReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getHistoricalReport</summary>
     public class GetHistoricalReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

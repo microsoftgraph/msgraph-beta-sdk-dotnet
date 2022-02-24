@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.TrustFramework.KeySets.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.TrustFramework.KeySets.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TrustFramework.KeySets {
+namespace MicrosoftGraphSdk.TrustFramework.KeySets {
     /// <summary>Builds and executes requests for operations under \trustFramework\keySets</summary>
     public class KeySetsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.TrustFramework.KeySets {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.trustFramework.keySets.item collection</summary>
-        public TrustFrameworkKeySetRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.trustFramework.keySets.item collection</summary>
+        public TrustFrameworkKeySetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("trustFrameworkKeySet_id", position);
-            return new TrustFrameworkKeySetRequestBuilder(urlTplParams, RequestAdapter);
+            return new TrustFrameworkKeySetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new KeySetsRequestBuilder and sets the default values.

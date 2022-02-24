@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Todo.Lists.Item.Tasks.Delta {
+namespace MicrosoftGraphSdk.Me.Todo.Lists.Item.Tasks.Delta {
     /// <summary>Builds and executes requests for operations under \me\todo\lists\{todoTaskList-id}\tasks\microsoft.graph.delta()</summary>
     public class DeltaRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.Me.Todo.Lists.Item.Tasks.Delta {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Me.Todo.Lists.Item.Tasks.Delta.Delta>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<Delta>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Me.Todo.Lists.Item.Tasks.Delta.Delta>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Delta>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

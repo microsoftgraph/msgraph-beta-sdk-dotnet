@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PermissionGrantConditionSet : Entity, IParsable {
         /// <summary>Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.</summary>
         public bool? CertifiedClientApplicationsOnly { get; set; }

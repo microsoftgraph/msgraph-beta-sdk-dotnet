@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CloudPcStatusDetails : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Any additional information about the Cloud PC status.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> AdditionalInformation { get; set; }
+        public List<KeyValuePair> AdditionalInformation { get; set; }
         /// <summary>The code associated with the Cloud PC status.</summary>
         public string Code { get; set; }
         /// <summary>The status message.</summary>
@@ -24,7 +24,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"additionalInformation", (o,n) => { (o as CloudPcStatusDetails).AdditionalInformation = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"additionalInformation", (o,n) => { (o as CloudPcStatusDetails).AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"code", (o,n) => { (o as CloudPcStatusDetails).Code = n.GetStringValue(); } },
                 {"message", (o,n) => { (o as CloudPcStatusDetails).Message = n.GetStringValue(); } },
             };
@@ -35,7 +35,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("additionalInformation", AdditionalInformation);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("additionalInformation", AdditionalInformation);
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);

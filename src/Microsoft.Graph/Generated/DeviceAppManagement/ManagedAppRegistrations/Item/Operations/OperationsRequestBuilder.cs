@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.Operations {
+namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.Operations {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\{managedAppRegistration-id}\operations</summary>
     public class OperationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.ManagedAppRegistrations.Item.Operat
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.managedAppRegistrations.item.operations.item collection</summary>
-        public ManagedAppOperationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.managedAppRegistrations.item.operations.item collection</summary>
+        public ManagedAppOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAppOperation_id", position);
-            return new ManagedAppOperationRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedAppOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

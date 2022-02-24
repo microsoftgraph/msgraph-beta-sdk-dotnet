@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Communications.CallRecords.Item.Sessions.Item.Segments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.CallRecords;
+using MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item.Segments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.CallRecords;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Communications.CallRecords.Item.Sessions.Item.Segments {
+namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item.Segments {
     /// <summary>Builds and executes requests for operations under \communications\callRecords\{callRecord-id}\sessions\{session-id}\segments</summary>
     public class SegmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Communications.CallRecords.Item.Sessions.Item.Segments 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.communications.callRecords.item.sessions.item.segments.item collection</summary>
-        public SegmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.communications.callRecords.item.sessions.item.segments.item collection</summary>
+        public SegmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("segment_id", position);
-            return new SegmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new SegmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SegmentsRequestBuilder and sets the default values.

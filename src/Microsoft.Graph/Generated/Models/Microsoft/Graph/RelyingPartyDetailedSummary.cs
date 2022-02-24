@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class RelyingPartyDetailedSummary : Entity, IParsable {
         /// <summary>Number of failed sign in on Active Directory Federation Service in the period specified.</summary>
         public long? FailedSignInCount { get; set; }
         /// <summary>Indication of whether the application can be moved to Azure AD or require more investigation. Possible values are: ready, needsReview, additionalStepsRequired, unknownFutureValue.</summary>
         public MigrationStatus? MigrationStatus { get; set; }
         /// <summary>Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Azure AD.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> MigrationValidationDetails { get; set; }
+        public List<KeyValuePair> MigrationValidationDetails { get; set; }
         /// <summary>This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.</summary>
         public string RelyingPartyId { get; set; }
         /// <summary>Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.</summary>
@@ -34,7 +34,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"failedSignInCount", (o,n) => { (o as RelyingPartyDetailedSummary).FailedSignInCount = n.GetLongValue(); } },
                 {"migrationStatus", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationStatus = n.GetEnumValue<MigrationStatus>(); } },
-                {"migrationValidationDetails", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationValidationDetails = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"migrationValidationDetails", (o,n) => { (o as RelyingPartyDetailedSummary).MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"relyingPartyId", (o,n) => { (o as RelyingPartyDetailedSummary).RelyingPartyId = n.GetStringValue(); } },
                 {"relyingPartyName", (o,n) => { (o as RelyingPartyDetailedSummary).RelyingPartyName = n.GetStringValue(); } },
                 {"replyUrls", (o,n) => { (o as RelyingPartyDetailedSummary).ReplyUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -54,7 +54,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteLongValue("failedSignInCount", FailedSignInCount);
             writer.WriteEnumValue<MigrationStatus>("migrationStatus", MigrationStatus);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("migrationValidationDetails", MigrationValidationDetails);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("migrationValidationDetails", MigrationValidationDetails);
             writer.WriteStringValue("relyingPartyId", RelyingPartyId);
             writer.WriteStringValue("relyingPartyName", RelyingPartyName);
             writer.WriteCollectionOfPrimitiveValues<string>("replyUrls", ReplyUrls);

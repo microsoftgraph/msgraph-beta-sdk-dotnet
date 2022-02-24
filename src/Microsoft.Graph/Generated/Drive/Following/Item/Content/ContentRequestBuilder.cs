@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drive.Following.Item.Content {
+namespace MicrosoftGraphSdk.Drive.Following.Item.Content {
     /// <summary>Builds and executes requests for operations under \drive\following\{driveItem-id}\content</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

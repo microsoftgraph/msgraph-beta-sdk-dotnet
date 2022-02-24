@@ -1,16 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Organization.GetByIds;
-using MicrosoftGraph.Organization.GetUserOwnedObjects;
-using MicrosoftGraph.Organization.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Organization.GetByIds;
+using MicrosoftGraphSdk.Organization.GetUserOwnedObjects;
+using MicrosoftGraphSdk.Organization.Item;
+using MicrosoftGraphSdk.Organization.ValidateProperties;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Organization {
+namespace MicrosoftGraphSdk.Organization {
     /// <summary>Builds and executes requests for operations under \organization</summary>
     public class OrganizationRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -28,11 +29,11 @@ namespace MicrosoftGraph.Organization {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.organization.item collection</summary>
-        public OrganizationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.organization.item collection</summary>
+        public OrganizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("organization_id", position);
-            return new OrganizationRequestBuilder(urlTplParams, RequestAdapter);
+            return new OrganizationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OrganizationRequestBuilder and sets the default values.
@@ -88,7 +89,7 @@ namespace MicrosoftGraph.Organization {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.Organization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Organization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -120,10 +121,10 @@ namespace MicrosoftGraph.Organization {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.Organization> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.Organization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Organization> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Organization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.Organization>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Organization>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from organization</summary>
         public class GetQueryParameters : QueryParametersBase {

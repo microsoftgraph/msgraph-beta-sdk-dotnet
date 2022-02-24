@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcDevices.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcDevices.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcDevices {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CloudPcDevices {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\cloudPcDevices</summary>
     public class CloudPcDevicesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.CloudPcDevices {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.cloudPcDevices.item collection</summary>
-        public CloudPcDeviceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.cloudPcDevices.item collection</summary>
+        public CloudPcDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcDevice_id", position);
-            return new CloudPcDeviceRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudPcDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CloudPcDevicesRequestBuilder and sets the default values.

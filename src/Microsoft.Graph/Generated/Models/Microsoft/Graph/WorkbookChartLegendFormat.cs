@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WorkbookChartLegendFormat : Entity, IParsable {
         /// <summary>Represents the fill format of an object, which includes background formating information. Read-only.</summary>
         public WorkbookChartFill Fill { get; set; }

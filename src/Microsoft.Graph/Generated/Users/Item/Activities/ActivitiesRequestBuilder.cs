@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Activities.Item;
-using MicrosoftGraph.Users.Item.Activities.Recent;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Activities.Item;
+using MicrosoftGraphSdk.Users.Item.Activities.Recent;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Activities {
+namespace MicrosoftGraphSdk.Users.Item.Activities {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\activities</summary>
     public class ActivitiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Users.Item.Activities {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.activities.item collection</summary>
-        public UserActivityRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.activities.item collection</summary>
+        public UserActivityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userActivity_id", position);
-            return new UserActivityRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserActivityItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ActivitiesRequestBuilder and sets the default values.

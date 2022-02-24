@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ChromeOSOnboardingSettings.Disconnect {
+namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Disconnect {
     /// <summary>Builds and executes requests for operations under \deviceManagement\chromeOSOnboardingSettings\microsoft.graph.disconnect</summary>
     public class DisconnectRequestBuilder {
         /// <summary>Path parameters for the request</summary>

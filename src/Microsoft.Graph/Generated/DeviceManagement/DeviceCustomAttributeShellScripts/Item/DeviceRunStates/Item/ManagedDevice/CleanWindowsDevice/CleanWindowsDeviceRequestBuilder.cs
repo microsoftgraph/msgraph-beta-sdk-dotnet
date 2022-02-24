@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice.CleanWindowsDevice {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice.CleanWindowsDevice {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.cleanWindowsDevice</summary>
     public class CleanWindowsDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

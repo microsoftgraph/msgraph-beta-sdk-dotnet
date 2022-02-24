@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item.GroupAssignments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.GroupAssignments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item.GroupAssignments {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.GroupAssignments {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\groupAssignments</summary>
     public class GroupAssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceCustomAttributeShellScripts.item.groupAssignments.item collection</summary>
-        public DeviceManagementScriptGroupAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceCustomAttributeShellScripts.item.groupAssignments.item collection</summary>
+        public DeviceManagementScriptGroupAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementScriptGroupAssignment_id", position);
-            return new DeviceManagementScriptGroupAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementScriptGroupAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupAssignmentsRequestBuilder and sets the default values.

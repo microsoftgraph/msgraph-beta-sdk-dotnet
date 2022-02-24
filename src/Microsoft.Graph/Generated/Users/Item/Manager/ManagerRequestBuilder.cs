@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Manager.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Manager.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Manager {
+namespace MicrosoftGraphSdk.Users.Item.Manager {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\manager</summary>
     public class ManagerRequestBuilder {
         /// <summary>Path parameters for the request</summary>

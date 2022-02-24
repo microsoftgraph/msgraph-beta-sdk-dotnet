@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.Deployments {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\deployments</summary>
     public class DeploymentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Admin.Windows.Updates.Deployments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.admin.windows.updates.deployments.item collection</summary>
-        public DeploymentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.windows.updates.deployments.item collection</summary>
+        public DeploymentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deployment_id", position);
-            return new DeploymentRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeploymentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeploymentsRequestBuilder and sets the default values.

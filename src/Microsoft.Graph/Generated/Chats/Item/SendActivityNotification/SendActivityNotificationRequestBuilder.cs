@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Chats.Item.SendActivityNotification {
+namespace MicrosoftGraphSdk.Chats.Item.SendActivityNotification {
     /// <summary>Builds and executes requests for operations under \chats\{chat-id}\microsoft.graph.sendActivityNotification</summary>
     public class SendActivityNotificationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

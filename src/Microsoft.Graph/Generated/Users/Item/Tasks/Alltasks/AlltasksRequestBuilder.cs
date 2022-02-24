@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Tasks.Alltasks.Delta;
-using MicrosoftGraph.Users.Item.Tasks.Alltasks.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Tasks.Alltasks.Delta;
+using MicrosoftGraphSdk.Users.Item.Tasks.Alltasks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Tasks.Alltasks {
+namespace MicrosoftGraphSdk.Users.Item.Tasks.Alltasks {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\tasks\alltasks</summary>
     public class AlltasksRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Users.Item.Tasks.Alltasks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.tasks.alltasks.item collection</summary>
-        public BaseTaskRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.tasks.alltasks.item collection</summary>
+        public BaseTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("baseTask_id", position);
-            return new BaseTaskRequestBuilder(urlTplParams, RequestAdapter);
+            return new BaseTaskItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AlltasksRequestBuilder and sets the default values.

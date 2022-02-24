@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks {
+namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\onenote\notebooks\microsoft.graph.getRecentNotebooks(includePersonalNotebooks={includePersonalNotebooks})</summary>
     public class GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -66,9 +66,9 @@ namespace MicrosoftGraph.Users.Item.Onenote.Notebooks.GetRecentNotebooksWithIncl
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Users.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooks>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetRecentNotebooksWithIncludePersonalNotebooks>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Users.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks.GetRecentNotebooksWithIncludePersonalNotebooks>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetRecentNotebooksWithIncludePersonalNotebooks>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

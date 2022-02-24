@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.DeviceManagement.ResourceNamespaces;
-using MicrosoftGraph.RoleManagement.DeviceManagement.RoleAssignments;
-using MicrosoftGraph.RoleManagement.DeviceManagement.RoleDefinitions;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces;
+using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments;
+using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleDefinitions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.DeviceManagement {
+namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement {
     /// <summary>Builds and executes requests for operations under \roleManagement\deviceManagement</summary>
     public class DeviceManagementRequestBuilder {
         /// <summary>Path parameters for the request</summary>

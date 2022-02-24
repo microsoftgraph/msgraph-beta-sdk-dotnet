@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.AppRoleAssignments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.AppRoleAssignments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.AppRoleAssignments {
+namespace MicrosoftGraphSdk.Groups.Item.AppRoleAssignments {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\appRoleAssignments</summary>
     public class AppRoleAssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Groups.Item.AppRoleAssignments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.groups.item.appRoleAssignments.item collection</summary>
-        public AppRoleAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.appRoleAssignments.item collection</summary>
+        public AppRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appRoleAssignment_id", position);
-            return new AppRoleAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.

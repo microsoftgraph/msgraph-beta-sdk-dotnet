@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.ManagedAppPolicies.Item.WindowsInformationProtection.Assign {
+namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies.Item.WindowsInformationProtection.Assign {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\managedAppPolicies\{managedAppPolicy-id}\microsoft.graph.windowsInformationProtection\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

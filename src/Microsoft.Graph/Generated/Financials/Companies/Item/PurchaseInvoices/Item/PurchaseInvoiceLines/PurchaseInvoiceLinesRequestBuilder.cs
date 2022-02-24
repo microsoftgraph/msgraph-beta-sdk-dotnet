@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Financials.Companies.Item.PurchaseInvoices.Item.PurchaseInvoiceLines.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Financials.Companies.Item.PurchaseInvoices.Item.PurchaseInvoiceLines.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.PurchaseInvoices.Item.PurchaseInvoiceLines {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.PurchaseInvoices.Item.PurchaseInvoiceLines {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\purchaseInvoices\{purchaseInvoice-id}\purchaseInvoiceLines</summary>
     public class PurchaseInvoiceLinesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Financials.Companies.Item.PurchaseInvoices.Item.Purchas
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.purchaseInvoices.item.purchaseInvoiceLines.item collection</summary>
-        public PurchaseInvoiceLineRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.purchaseInvoices.item.purchaseInvoiceLines.item collection</summary>
+        public PurchaseInvoiceLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("purchaseInvoiceLine_id", position);
-            return new PurchaseInvoiceLineRequestBuilder(urlTplParams, RequestAdapter);
+            return new PurchaseInvoiceLineItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PurchaseInvoiceLinesRequestBuilder and sets the default values.

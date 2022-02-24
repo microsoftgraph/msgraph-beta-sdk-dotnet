@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Domains.Item.DomainNameReferences.Ref;
+using MicrosoftGraphSdk.Domains.Item.DomainNameReferences.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Domains.Item.DomainNameReferences {
+namespace MicrosoftGraphSdk.Domains.Item.DomainNameReferences {
     /// <summary>Builds and executes requests for operations under \domains\{domain-id}\domainNameReferences</summary>
     public class DomainNameReferencesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

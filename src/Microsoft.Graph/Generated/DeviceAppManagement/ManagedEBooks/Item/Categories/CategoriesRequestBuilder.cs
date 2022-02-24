@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.ManagedEBooks.Item.Categories.Ref;
+using MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks.Item.Categories.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.ManagedEBooks.Item.Categories {
+namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks.Item.Categories {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\managedEBooks\{managedEBook-id}\categories</summary>
     public class CategoriesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

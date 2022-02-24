@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.EnableLostMode {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.EnableLostMode {
     public class EnableLostModeRequestBody : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

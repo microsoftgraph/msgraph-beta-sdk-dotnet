@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.Members.Ref;
+using MicrosoftGraphSdk.Groups.Item.Members.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Members {
+namespace MicrosoftGraphSdk.Groups.Item.Members {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\members</summary>
     public class MembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Favorite {
+namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Favorite {
     /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.favorite</summary>
     public class FavoriteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

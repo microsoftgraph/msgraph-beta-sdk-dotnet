@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Activities.Item.HistoryItems.Item.Activity.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Activities.Item.HistoryItems.Item.Activity.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Activities.Item.HistoryItems.Item.Activity {
+namespace MicrosoftGraphSdk.Users.Item.Activities.Item.HistoryItems.Item.Activity {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\activities\{userActivity-id}\historyItems\{activityHistoryItem-id}\activity</summary>
     public class ActivityRequestBuilder {
         /// <summary>Path parameters for the request</summary>

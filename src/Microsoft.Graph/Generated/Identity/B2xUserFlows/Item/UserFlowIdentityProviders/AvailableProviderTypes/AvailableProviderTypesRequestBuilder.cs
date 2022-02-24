@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.AvailableProviderTypes {
+namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.AvailableProviderTypes {
     /// <summary>Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userFlowIdentityProviders\microsoft.graph.availableProviderTypes()</summary>
     public class AvailableProviderTypesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

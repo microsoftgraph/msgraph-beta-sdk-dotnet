@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.Reports.ExportJobs.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.Reports.ExportJobs.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.ExportJobs {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.ExportJobs {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\exportJobs</summary>
     public class ExportJobsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.Reports.ExportJobs {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.reports.exportJobs.item collection</summary>
-        public DeviceManagementExportJobRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.reports.exportJobs.item collection</summary>
+        public DeviceManagementExportJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExportJob_id", position);
-            return new DeviceManagementExportJobRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementExportJobItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExportJobsRequestBuilder and sets the default values.

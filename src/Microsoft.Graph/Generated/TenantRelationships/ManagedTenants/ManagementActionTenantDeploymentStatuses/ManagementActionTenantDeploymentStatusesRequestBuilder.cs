@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ChangeDeploymentStatus;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.ChangeDeploymentStatus;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\managementActionTenantDeploymentStatuses</summary>
     public class ManagementActionTenantDeploymentStatusesRequestBuilder {
         public ChangeDeploymentStatusRequestBuilder ChangeDeploymentStatus { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementActionTena
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.managementActionTenantDeploymentStatuses.item collection</summary>
-        public ManagementActionTenantDeploymentStatusRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.managementActionTenantDeploymentStatuses.item collection</summary>
+        public ManagementActionTenantDeploymentStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementActionTenantDeploymentStatus_id", position);
-            return new ManagementActionTenantDeploymentStatusRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagementActionTenantDeploymentStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagementActionTenantDeploymentStatusesRequestBuilder and sets the default values.

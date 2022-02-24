@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.HasPayloadLinks;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.HasPayloadLinks;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceConfigurations</summary>
     public class DeviceConfigurationsRequestBuilder {
         public GetTargetedUsersAndDevicesRequestBuilder GetTargetedUsersAndDevices { get =>
@@ -26,11 +26,11 @@ namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceConfigurations.item collection</summary>
-        public DeviceConfigurationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceConfigurations.item collection</summary>
+        public DeviceConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfiguration_id", position);
-            return new DeviceConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceConfigurationsRequestBuilder and sets the default values.
@@ -86,7 +86,7 @@ namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.DeviceConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -124,10 +124,10 @@ namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.DeviceConfiguration> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.DeviceConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.DeviceConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfiguration>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>The device configurations.</summary>
         public class GetQueryParameters : QueryParametersBase {

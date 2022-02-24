@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SiteCollection : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -12,7 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The hostname for the site collection. Read-only.</summary>
         public string Hostname { get; set; }
         /// <summary>If present, indicates that this is a root site collection in SharePoint. Read-only.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Root Root { get; set; }
+        public Root Root { get; set; }
         /// <summary>
         /// Instantiates a new siteCollection and sets the default values.
         /// </summary>
@@ -26,7 +26,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"dataLocationCode", (o,n) => { (o as SiteCollection).DataLocationCode = n.GetStringValue(); } },
                 {"hostname", (o,n) => { (o as SiteCollection).Hostname = n.GetStringValue(); } },
-                {"root", (o,n) => { (o as SiteCollection).Root = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Root>(); } },
+                {"root", (o,n) => { (o as SiteCollection).Root = n.GetObjectValue<Root>(); } },
             };
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dataLocationCode", DataLocationCode);
             writer.WriteStringValue("hostname", Hostname);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Root>("root", Root);
+            writer.WriteObjectValue<Root>("root", Root);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

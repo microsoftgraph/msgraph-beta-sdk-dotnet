@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.TenantRelationships.ManagedTenants.WindowsProtectionStates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.WindowsProtectionStates.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.WindowsProtectionStates {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.WindowsProtectionStates {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\windowsProtectionStates</summary>
     public class WindowsProtectionStatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.WindowsProtectionSta
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.tenantRelationships.managedTenants.windowsProtectionStates.item collection</summary>
-        public WindowsProtectionStateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.tenantRelationships.managedTenants.windowsProtectionStates.item collection</summary>
+        public WindowsProtectionStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsProtectionState_id", position);
-            return new WindowsProtectionStateRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsProtectionStateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsProtectionStatesRequestBuilder and sets the default values.
@@ -77,7 +77,7 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.WindowsProtectionSta
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.WindowsProtectionState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -109,10 +109,10 @@ namespace MicrosoftGraph.TenantRelationships.ManagedTenants.WindowsProtectionSta
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.WindowsProtectionState> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.WindowsProtectionState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.WindowsProtectionState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
         public class GetQueryParameters : QueryParametersBase {

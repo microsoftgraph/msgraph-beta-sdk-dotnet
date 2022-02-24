@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class CaseOperation : Entity, IParsable {
         /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics</summary>
         public CaseAction? Action { get; set; }

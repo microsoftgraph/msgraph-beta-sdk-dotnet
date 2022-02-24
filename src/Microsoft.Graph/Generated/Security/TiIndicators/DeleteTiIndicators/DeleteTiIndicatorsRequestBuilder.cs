@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.TiIndicators.DeleteTiIndicators {
+namespace MicrosoftGraphSdk.Security.TiIndicators.DeleteTiIndicators {
     /// <summary>Builds and executes requests for operations under \security\tiIndicators\microsoft.graph.deleteTiIndicators</summary>
     public class DeleteTiIndicatorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -68,10 +68,10 @@ namespace MicrosoftGraph.Security.TiIndicators.DeleteTiIndicators {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Security.TiIndicators.DeleteTiIndicators.DeleteTiIndicators>> PostAsync(DeleteTiIndicatorsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<DeleteTiIndicators>> PostAsync(DeleteTiIndicatorsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Security.TiIndicators.DeleteTiIndicators.DeleteTiIndicators>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<DeleteTiIndicators>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

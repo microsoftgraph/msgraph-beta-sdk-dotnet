@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Drives.Item.List.ContentTypes.Item.Base.AssociateWithHubSites;
-using MicrosoftGraph.Drives.Item.List.ContentTypes.Item.Base.CopyToDefaultContentLocation;
-using MicrosoftGraph.Drives.Item.List.ContentTypes.Item.Base.IsPublished;
-using MicrosoftGraph.Drives.Item.List.ContentTypes.Item.Base.Publish;
-using MicrosoftGraph.Drives.Item.List.ContentTypes.Item.Base.Ref;
-using MicrosoftGraph.Drives.Item.List.ContentTypes.Item.Base.Unpublish;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Base.AssociateWithHubSites;
+using MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Base.CopyToDefaultContentLocation;
+using MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Base.IsPublished;
+using MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Base.Publish;
+using MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Base.Ref;
+using MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Base.Unpublish;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drives.Item.List.ContentTypes.Item.Base {
+namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Base {
     /// <summary>Builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\base</summary>
     public class BaseRequestBuilder {
         public AssociateWithHubSitesRequestBuilder AssociateWithHubSites { get =>

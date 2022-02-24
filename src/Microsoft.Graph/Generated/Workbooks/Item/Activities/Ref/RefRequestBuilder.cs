@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Activities.Ref {
+namespace MicrosoftGraphSdk.Workbooks.Item.Activities.Ref {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\activities\$ref</summary>
     public class RefRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -69,7 +69,7 @@ namespace MicrosoftGraph.Workbooks.Item.Activities.Ref {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Workbooks.Item.Activities.Ref.Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -101,10 +101,10 @@ namespace MicrosoftGraph.Workbooks.Item.Activities.Ref {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Workbooks.Item.Activities.Ref.Ref> PostAsync(MicrosoftGraph.Workbooks.Item.Activities.Ref.Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Ref> PostAsync(Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Workbooks.Item.Activities.Ref.Ref>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Ref>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of recent activities that took place on this item.</summary>
         public class GetQueryParameters : QueryParametersBase {

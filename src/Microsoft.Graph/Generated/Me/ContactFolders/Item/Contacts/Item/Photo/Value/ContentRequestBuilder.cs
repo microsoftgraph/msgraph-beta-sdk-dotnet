@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ContactFolders.Item.Contacts.Item.Photo.Value {
+namespace MicrosoftGraphSdk.Me.ContactFolders.Item.Contacts.Item.Photo.Value {
     /// <summary>Builds and executes requests for operations under \me\contactFolders\{contactFolder-id}\contacts\{contact-id}\photo\$value</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

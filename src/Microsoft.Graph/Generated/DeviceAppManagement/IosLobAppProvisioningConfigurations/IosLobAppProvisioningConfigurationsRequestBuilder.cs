@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.HasPayloadLinks;
-using MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.HasPayloadLinks;
+using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations {
+namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations</summary>
     public class IosLobAppProvisioningConfigurationsRequestBuilder {
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.iosLobAppProvisioningConfigurations.item collection</summary>
-        public IosLobAppProvisioningConfigurationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.iosLobAppProvisioningConfigurations.item collection</summary>
+        public IosLobAppProvisioningConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("iosLobAppProvisioningConfiguration_id", position);
-            return new IosLobAppProvisioningConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new IosLobAppProvisioningConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IosLobAppProvisioningConfigurationsRequestBuilder and sets the default values.

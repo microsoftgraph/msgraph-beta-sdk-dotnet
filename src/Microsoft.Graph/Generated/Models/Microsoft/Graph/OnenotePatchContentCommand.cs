@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OnenotePatchContentCommand : IParsable {
         /// <summary>The action to perform on the target element. The possible values are: replace, append, delete, insert, or prepend.</summary>
         public OnenotePatchActionType? Action { get; set; }

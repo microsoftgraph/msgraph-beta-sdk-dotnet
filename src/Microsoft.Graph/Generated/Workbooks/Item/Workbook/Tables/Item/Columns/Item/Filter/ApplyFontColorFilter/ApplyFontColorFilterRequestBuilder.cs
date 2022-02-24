@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyFontColorFilter {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyFontColorFilter {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyFontColorFilter</summary>
     public class ApplyFontColorFilterRequestBuilder {
         /// <summary>Path parameters for the request</summary>

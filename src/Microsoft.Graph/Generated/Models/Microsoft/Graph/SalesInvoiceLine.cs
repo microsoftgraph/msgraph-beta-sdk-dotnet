@@ -1,42 +1,42 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SalesInvoiceLine : Entity, IParsable {
-        public MicrosoftGraph.Models.Microsoft.Graph.Account Account { get; set; }
+        public Account Account { get; set; }
         public string AccountId { get; set; }
-        public Decimal? AmountExcludingTax { get; set; }
-        public Decimal? AmountIncludingTax { get; set; }
+        public decimal? AmountExcludingTax { get; set; }
+        public decimal? AmountIncludingTax { get; set; }
         public string Description { get; set; }
-        public Decimal? DiscountAmount { get; set; }
+        public decimal? DiscountAmount { get; set; }
         public bool? DiscountAppliedBeforeTax { get; set; }
-        public Decimal? DiscountPercent { get; set; }
+        public decimal? DiscountPercent { get; set; }
         public string DocumentId { get; set; }
-        public Decimal? InvoiceDiscountAllocation { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Item.Item Item { get; set; }
+        public decimal? InvoiceDiscountAllocation { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Item.Item Item { get; set; }
         public string ItemId { get; set; }
         public string LineType { get; set; }
-        public Decimal? NetAmount { get; set; }
-        public Decimal? NetAmountIncludingTax { get; set; }
-        public Decimal? NetTaxAmount { get; set; }
-        public Decimal? Quantity { get; set; }
+        public decimal? NetAmount { get; set; }
+        public decimal? NetAmountIncludingTax { get; set; }
+        public decimal? NetTaxAmount { get; set; }
+        public decimal? Quantity { get; set; }
         public int? Sequence { get; set; }
         public Date? ShipmentDate { get; set; }
         public string TaxCode { get; set; }
-        public Decimal? TaxPercent { get; set; }
-        public Decimal? TotalTaxAmount { get; set; }
+        public decimal? TaxPercent { get; set; }
+        public decimal? TotalTaxAmount { get; set; }
         public string UnitOfMeasureId { get; set; }
-        public Decimal? UnitPrice { get; set; }
+        public decimal? UnitPrice { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as SalesInvoiceLine).Account = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Account>(); } },
+                {"account", (o,n) => { (o as SalesInvoiceLine).Account = n.GetObjectValue<Account>(); } },
                 {"accountId", (o,n) => { (o as SalesInvoiceLine).AccountId = n.GetStringValue(); } },
                 {"amountExcludingTax", (o,n) => { (o as SalesInvoiceLine).AmountExcludingTax = n.GetDecimalValue(); } },
                 {"amountIncludingTax", (o,n) => { (o as SalesInvoiceLine).AmountIncludingTax = n.GetDecimalValue(); } },
@@ -46,7 +46,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"discountPercent", (o,n) => { (o as SalesInvoiceLine).DiscountPercent = n.GetDecimalValue(); } },
                 {"documentId", (o,n) => { (o as SalesInvoiceLine).DocumentId = n.GetStringValue(); } },
                 {"invoiceDiscountAllocation", (o,n) => { (o as SalesInvoiceLine).InvoiceDiscountAllocation = n.GetDecimalValue(); } },
-                {"item", (o,n) => { (o as SalesInvoiceLine).Item = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Item.Item>(); } },
+                {"item", (o,n) => { (o as SalesInvoiceLine).Item = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Item.Item>(); } },
                 {"itemId", (o,n) => { (o as SalesInvoiceLine).ItemId = n.GetStringValue(); } },
                 {"lineType", (o,n) => { (o as SalesInvoiceLine).LineType = n.GetStringValue(); } },
                 {"netAmount", (o,n) => { (o as SalesInvoiceLine).NetAmount = n.GetDecimalValue(); } },
@@ -69,7 +69,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Account>("account", Account);
+            writer.WriteObjectValue<Account>("account", Account);
             writer.WriteStringValue("accountId", AccountId);
             writer.WriteDecimalValue("amountExcludingTax", AmountExcludingTax);
             writer.WriteDecimalValue("amountIncludingTax", AmountIncludingTax);
@@ -79,7 +79,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteDecimalValue("discountPercent", DiscountPercent);
             writer.WriteStringValue("documentId", DocumentId);
             writer.WriteDecimalValue("invoiceDiscountAllocation", InvoiceDiscountAllocation);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Item.Item>("item", Item);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Item.Item>("item", Item);
             writer.WriteStringValue("itemId", ItemId);
             writer.WriteStringValue("lineType", LineType);
             writer.WriteDecimalValue("netAmount", NetAmount);

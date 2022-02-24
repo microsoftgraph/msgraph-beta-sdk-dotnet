@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies;
-using MicrosoftGraph.DeviceManagement.Templates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies;
+using MicrosoftGraphSdk.DeviceManagement.Templates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Templates {
+namespace MicrosoftGraphSdk.DeviceManagement.Templates {
     /// <summary>Builds and executes requests for operations under \deviceManagement\templates</summary>
     public class TemplatesRequestBuilder {
         public ImportOffice365DeviceConfigurationPoliciesRequestBuilder ImportOffice365DeviceConfigurationPolicies { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceManagement.Templates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.templates.item collection</summary>
-        public DeviceManagementTemplateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.templates.item collection</summary>
+        public DeviceManagementTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTemplate_id", position);
-            return new DeviceManagementTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TemplatesRequestBuilder and sets the default values.

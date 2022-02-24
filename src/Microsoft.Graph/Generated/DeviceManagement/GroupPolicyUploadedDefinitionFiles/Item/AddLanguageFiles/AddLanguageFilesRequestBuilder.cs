@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.AddLanguageFiles {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.AddLanguageFiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles\{groupPolicyUploadedDefinitionFile-id}\microsoft.graph.addLanguageFiles</summary>
     public class AddLanguageFilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

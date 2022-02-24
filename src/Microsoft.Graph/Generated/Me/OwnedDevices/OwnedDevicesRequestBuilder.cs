@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.OwnedDevices.Ref;
+using MicrosoftGraphSdk.Me.OwnedDevices.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.OwnedDevices {
+namespace MicrosoftGraphSdk.Me.OwnedDevices {
     /// <summary>Builds and executes requests for operations under \me\ownedDevices</summary>
     public class OwnedDevicesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

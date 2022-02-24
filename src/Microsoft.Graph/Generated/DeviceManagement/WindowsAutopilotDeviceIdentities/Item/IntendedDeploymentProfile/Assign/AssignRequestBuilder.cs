@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.IntendedDeploymentProfile.Assign {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.IntendedDeploymentProfile.Assign {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\intendedDeploymentProfile\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

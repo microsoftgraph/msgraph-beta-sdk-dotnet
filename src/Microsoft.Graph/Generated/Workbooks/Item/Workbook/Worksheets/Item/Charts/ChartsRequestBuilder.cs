@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Add;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Count;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.ItemAtWithIndex;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.ItemWithName;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Add;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Count;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.ItemAtWithIndex;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.ItemWithName;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts</summary>
     public class ChartsRequestBuilder {
         public AddRequestBuilder Add { get =>
@@ -24,11 +24,11 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.worksheets.item.charts.item collection</summary>
-        public WorkbookChartRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.worksheets.item.charts.item collection</summary>
+        public WorkbookChartItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookChart_id", position);
-            return new WorkbookChartRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookChartItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChartsRequestBuilder and sets the default values.

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetOffice365ActivationsUserCounts {
+namespace MicrosoftGraphSdk.Reports.GetOffice365ActivationsUserCounts {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActivationsUserCounts()</summary>
     public class GetOffice365ActivationsUserCountsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

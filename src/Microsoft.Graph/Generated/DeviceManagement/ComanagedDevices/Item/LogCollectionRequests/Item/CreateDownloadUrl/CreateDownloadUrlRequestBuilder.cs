@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\logCollectionRequests\{deviceLogCollectionResponse-id}\microsoft.graph.createDownloadUrl</summary>
     public class CreateDownloadUrlRequestBuilder {
         /// <summary>Path parameters for the request</summary>

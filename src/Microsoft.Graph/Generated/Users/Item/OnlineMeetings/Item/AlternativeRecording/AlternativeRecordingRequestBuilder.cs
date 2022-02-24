@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.OnlineMeetings.Item.AlternativeRecording {
+namespace MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.AlternativeRecording {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\alternativeRecording</summary>
     public class AlternativeRecordingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

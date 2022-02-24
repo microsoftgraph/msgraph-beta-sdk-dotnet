@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DataClassification.ExactMatchDataStores.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DataClassification.ExactMatchDataStores {
+namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores {
     /// <summary>Builds and executes requests for operations under \dataClassification\exactMatchDataStores</summary>
     public class ExactMatchDataStoresRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DataClassification.ExactMatchDataStores {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.dataClassification.exactMatchDataStores.item collection</summary>
-        public ExactMatchDataStoreRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.dataClassification.exactMatchDataStores.item collection</summary>
+        public ExactMatchDataStoreItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("exactMatchDataStore_id", position);
-            return new ExactMatchDataStoreRequestBuilder(urlTplParams, RequestAdapter);
+            return new ExactMatchDataStoreItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExactMatchDataStoresRequestBuilder and sets the default values.

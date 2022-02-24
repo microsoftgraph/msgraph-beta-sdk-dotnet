@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.TermStore;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.TermStore {
+namespace MicrosoftGraphSdk.Sites.Item.TermStore {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\termStore</summary>
     public class TermStoreRequestBuilder {
         /// <summary>Path parameters for the request</summary>

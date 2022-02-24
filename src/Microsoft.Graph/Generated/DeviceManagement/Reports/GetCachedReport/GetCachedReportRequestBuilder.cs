@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetCachedReport {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetCachedReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getCachedReport</summary>
     public class GetCachedReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

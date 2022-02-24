@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Sites.Item.Lists.Item.Items.Item.Analytics.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.Items.Item.Analytics.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.Items.Item.Analytics {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Items.Item.Analytics {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\items\{listItem-id}\analytics</summary>
     public class AnalyticsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

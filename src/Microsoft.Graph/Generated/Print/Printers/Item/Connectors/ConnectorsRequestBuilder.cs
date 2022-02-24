@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Print.Printers.Item.Connectors.Ref;
+using MicrosoftGraphSdk.Print.Printers.Item.Connectors.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.Printers.Item.Connectors {
+namespace MicrosoftGraphSdk.Print.Printers.Item.Connectors {
     /// <summary>Builds and executes requests for operations under \print\printers\{printer-id}\connectors</summary>
     public class ConnectorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories.Item.Discover {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories.Item.Discover {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\templates\{synchronizationTemplate-id}\schema\directories\{directoryDefinition-id}\microsoft.graph.discover</summary>
     public class DiscoverRequestBuilder {
         /// <summary>Path parameters for the request</summary>

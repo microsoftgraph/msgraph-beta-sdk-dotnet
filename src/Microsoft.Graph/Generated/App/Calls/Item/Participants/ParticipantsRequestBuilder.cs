@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.App.Calls.Item.Participants.Invite;
-using MicrosoftGraph.App.Calls.Item.Participants.Item;
-using MicrosoftGraph.App.Calls.Item.Participants.MuteAll;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.App.Calls.Item.Participants.Invite;
+using MicrosoftGraphSdk.App.Calls.Item.Participants.Item;
+using MicrosoftGraphSdk.App.Calls.Item.Participants.MuteAll;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.App.Calls.Item.Participants {
+namespace MicrosoftGraphSdk.App.Calls.Item.Participants {
     /// <summary>Builds and executes requests for operations under \app\calls\{call-id}\participants</summary>
     public class ParticipantsRequestBuilder {
         public InviteRequestBuilder Invite { get =>
@@ -25,11 +25,11 @@ namespace MicrosoftGraph.App.Calls.Item.Participants {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.app.calls.item.participants.item collection</summary>
-        public ParticipantRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.app.calls.item.participants.item collection</summary>
+        public ParticipantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("participant_id", position);
-            return new ParticipantRequestBuilder(urlTplParams, RequestAdapter);
+            return new ParticipantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ParticipantsRequestBuilder and sets the default values.

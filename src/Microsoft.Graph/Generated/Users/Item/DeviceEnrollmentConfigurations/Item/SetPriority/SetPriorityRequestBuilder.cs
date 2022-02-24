@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.DeviceEnrollmentConfigurations.Item.SetPriority {
+namespace MicrosoftGraphSdk.Users.Item.DeviceEnrollmentConfigurations.Item.SetPriority {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\deviceEnrollmentConfigurations\{deviceEnrollmentConfiguration-id}\microsoft.graph.setPriority</summary>
     public class SetPriorityRequestBuilder {
         /// <summary>Path parameters for the request</summary>

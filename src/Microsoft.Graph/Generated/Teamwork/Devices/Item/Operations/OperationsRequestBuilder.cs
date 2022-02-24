@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teamwork.Devices.Item.Operations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teamwork.Devices.Item.Operations.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teamwork.Devices.Item.Operations {
+namespace MicrosoftGraphSdk.Teamwork.Devices.Item.Operations {
     /// <summary>Builds and executes requests for operations under \teamwork\devices\{teamworkDevice-id}\operations</summary>
     public class OperationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Teamwork.Devices.Item.Operations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.teamwork.devices.item.operations.item collection</summary>
-        public TeamworkDeviceOperationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.teamwork.devices.item.operations.item collection</summary>
+        public TeamworkDeviceOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamworkDeviceOperation_id", position);
-            return new TeamworkDeviceOperationRequestBuilder(urlTplParams, RequestAdapter);
+            return new TeamworkDeviceOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OperationsRequestBuilder and sets the default values.

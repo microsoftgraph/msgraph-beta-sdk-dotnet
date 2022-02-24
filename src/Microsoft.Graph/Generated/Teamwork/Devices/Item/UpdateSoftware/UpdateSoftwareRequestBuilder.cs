@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teamwork.Devices.Item.UpdateSoftware {
+namespace MicrosoftGraphSdk.Teamwork.Devices.Item.UpdateSoftware {
     /// <summary>Builds and executes requests for operations under \teamwork\devices\{teamworkDevice-id}\microsoft.graph.updateSoftware</summary>
     public class UpdateSoftwareRequestBuilder {
         /// <summary>Path parameters for the request</summary>

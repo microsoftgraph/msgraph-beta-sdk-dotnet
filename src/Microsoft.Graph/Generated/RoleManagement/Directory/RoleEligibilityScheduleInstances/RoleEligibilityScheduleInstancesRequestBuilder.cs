@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.Directory.RoleEligibilityScheduleInstances.FilterByCurrentUserWithOn;
-using MicrosoftGraph.RoleManagement.Directory.RoleEligibilityScheduleInstances.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleInstances.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleInstances.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.Directory.RoleEligibilityScheduleInstances {
+namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilityScheduleInstances {
     /// <summary>Builds and executes requests for operations under \roleManagement\directory\roleEligibilityScheduleInstances</summary>
     public class RoleEligibilityScheduleInstancesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.RoleManagement.Directory.RoleEligibilityScheduleInstanc
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.roleManagement.directory.roleEligibilityScheduleInstances.item collection</summary>
-        public UnifiedRoleEligibilityScheduleInstanceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.directory.roleEligibilityScheduleInstances.item collection</summary>
+        public UnifiedRoleEligibilityScheduleInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleEligibilityScheduleInstance_id", position);
-            return new UnifiedRoleEligibilityScheduleInstanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRoleEligibilityScheduleInstanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleEligibilityScheduleInstancesRequestBuilder and sets the default values.

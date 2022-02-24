@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId {
+namespace MicrosoftGraphSdk.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId {
     /// <summary>Builds and executes requests for operations under \deviceManagement\configManagerCollections\microsoft.graph.getPolicySummary(policyId='{policyId}')</summary>
     public class GetPolicySummaryWithPolicyIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>

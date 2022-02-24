@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.BookingBusinesses.Item.CustomQuestions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.BookingBusinesses.Item.CustomQuestions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.BookingBusinesses.Item.CustomQuestions {
+namespace MicrosoftGraphSdk.BookingBusinesses.Item.CustomQuestions {
     /// <summary>Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\customQuestions</summary>
     public class CustomQuestionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.BookingBusinesses.Item.CustomQuestions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.bookingBusinesses.item.customQuestions.item collection</summary>
-        public BookingCustomQuestionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.bookingBusinesses.item.customQuestions.item collection</summary>
+        public BookingCustomQuestionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingCustomQuestion_id", position);
-            return new BookingCustomQuestionRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookingCustomQuestionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CustomQuestionsRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Financials.Companies.Item.Dimensions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Financials.Companies.Item.Dimensions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.Dimensions {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.Dimensions {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\dimensions</summary>
     public class DimensionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Financials.Companies.Item.Dimensions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.dimensions.item collection</summary>
-        public DimensionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.dimensions.item collection</summary>
+        public DimensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dimension_id", position);
-            return new DimensionRequestBuilder(urlTplParams, RequestAdapter);
+            return new DimensionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DimensionsRequestBuilder and sets the default values.

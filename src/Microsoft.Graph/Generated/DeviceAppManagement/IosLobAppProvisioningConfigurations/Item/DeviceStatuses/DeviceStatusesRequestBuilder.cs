@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.DeviceStatuses.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.DeviceStatuses.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.DeviceStatuses {
+namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.DeviceStatuses {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations\{iosLobAppProvisioningConfiguration-id}\deviceStatuses</summary>
     public class DeviceStatusesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.iosLobAppProvisioningConfigurations.item.deviceStatuses.item collection</summary>
-        public ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.iosLobAppProvisioningConfigurations.item.deviceStatuses.item collection</summary>
+        public ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceMobileAppConfigurationDeviceStatus_id", position);
-            return new ManagedDeviceMobileAppConfigurationDeviceStatusRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceStatusesRequestBuilder and sets the default values.

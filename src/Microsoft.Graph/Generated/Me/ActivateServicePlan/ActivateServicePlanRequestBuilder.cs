@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ActivateServicePlan {
+namespace MicrosoftGraphSdk.Me.ActivateServicePlan {
     /// <summary>Builds and executes requests for operations under \me\microsoft.graph.activateServicePlan</summary>
     public class ActivateServicePlanRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserPFXCertificate : Entity, IParsable {
         /// <summary>Date/time when this PFX certificate was imported.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }

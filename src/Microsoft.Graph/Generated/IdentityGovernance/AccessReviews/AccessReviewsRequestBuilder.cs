@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.HistoryDefinitions;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Policy;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Policy;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews</summary>
     public class AccessReviewsRequestBuilder {
         public DecisionsRequestBuilder Decisions { get =>

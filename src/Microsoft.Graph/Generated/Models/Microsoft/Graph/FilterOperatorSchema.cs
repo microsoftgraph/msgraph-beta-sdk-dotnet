@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class FilterOperatorSchema : Entity, IParsable {
         /// <summary>Arity of the operator. Possible values are: Binary, Unary. The default is Binary.</summary>
         public ScopeOperatorType? Arity { get; set; }

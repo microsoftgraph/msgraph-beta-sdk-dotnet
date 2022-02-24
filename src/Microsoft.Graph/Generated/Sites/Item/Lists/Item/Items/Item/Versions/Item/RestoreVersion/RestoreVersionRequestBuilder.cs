@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.Items.Item.Versions.Item.RestoreVersion {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Items.Item.Versions.Item.RestoreVersion {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\items\{listItem-id}\versions\{listItemVersion-id}\microsoft.graph.restoreVersion</summary>
     public class RestoreVersionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

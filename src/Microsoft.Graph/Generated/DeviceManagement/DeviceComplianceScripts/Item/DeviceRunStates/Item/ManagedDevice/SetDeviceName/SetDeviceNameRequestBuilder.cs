@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.ManagedDevice.SetDeviceName {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.ManagedDevice.SetDeviceName {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceComplianceScripts\{deviceComplianceScript-id}\deviceRunStates\{deviceComplianceScriptDeviceState-id}\managedDevice\microsoft.graph.setDeviceName</summary>
     public class SetDeviceNameRequestBuilder {
         /// <summary>Path parameters for the request</summary>

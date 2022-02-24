@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GovernanceResources.Register {
+namespace MicrosoftGraphSdk.GovernanceResources.Register {
     /// <summary>Builds and executes requests for operations under \governanceResources\microsoft.graph.register</summary>
     public class RegisterRequestBuilder {
         /// <summary>Path parameters for the request</summary>

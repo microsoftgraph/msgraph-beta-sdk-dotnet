@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.OemWarrantyInformationOnboarding.Item.Disable {
+namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding.Item.Disable {
     /// <summary>Builds and executes requests for operations under \deviceManagement\oemWarrantyInformationOnboarding\{oemWarrantyInformationOnboarding-id}\microsoft.graph.disable</summary>
     public class DisableRequestBuilder {
         /// <summary>Path parameters for the request</summary>

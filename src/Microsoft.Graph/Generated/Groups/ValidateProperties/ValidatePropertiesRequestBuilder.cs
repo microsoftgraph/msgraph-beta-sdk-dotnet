@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.ValidateProperties {
+namespace MicrosoftGraphSdk.Groups.ValidateProperties {
     /// <summary>Builds and executes requests for operations under \groups\microsoft.graph.validateProperties</summary>
     public class ValidatePropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

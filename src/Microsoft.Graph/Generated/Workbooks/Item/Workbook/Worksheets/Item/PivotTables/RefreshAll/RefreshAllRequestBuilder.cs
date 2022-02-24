@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.PivotTables.RefreshAll {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.PivotTables.RefreshAll {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\pivotTables\microsoft.graph.refreshAll</summary>
     public class RefreshAllRequestBuilder {
         /// <summary>Path parameters for the request</summary>

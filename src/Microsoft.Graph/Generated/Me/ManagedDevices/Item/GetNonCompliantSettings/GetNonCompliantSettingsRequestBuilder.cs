@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ManagedDevices.Item.GetNonCompliantSettings {
+namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.GetNonCompliantSettings {
     /// <summary>Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.getNonCompliantSettings()</summary>
     public class GetNonCompliantSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.Me.ManagedDevices.Item.GetNonCompliantSettings {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettings>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetNonCompliantSettings>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetNonCompliantSettings>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageAssignment : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackage AccessPackage { get; set; }
+        public AccessPackage AccessPackage { get; set; }
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy { get; set; }
+        public AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy { get; set; }
         public List<AccessPackageAssignmentRequest> AccessPackageAssignmentRequests { get; set; }
         /// <summary>The resource roles delivered to the target user for this assignment. Read-only. Nullable.</summary>
         public List<AccessPackageAssignmentResourceRole> AccessPackageAssignmentResourceRoles { get; set; }
@@ -29,7 +29,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>When the access assignment is to be in place. Read-only.</summary>
         public RequestSchedule Schedule { get; set; }
         /// <summary>The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackageSubject Target { get; set; }
+        public AccessPackageSubject Target { get; set; }
         /// <summary>The ID of the subject with the assignment. Read-only.</summary>
         public string TargetId { get; set; }
         /// <summary>
@@ -37,8 +37,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackage", (o,n) => { (o as AccessPackageAssignment).AccessPackage = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>(); } },
-                {"accessPackageAssignmentPolicy", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentPolicy = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageAssignmentPolicy>(); } },
+                {"accessPackage", (o,n) => { (o as AccessPackageAssignment).AccessPackage = n.GetObjectValue<AccessPackage>(); } },
+                {"accessPackageAssignmentPolicy", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentPolicy = n.GetObjectValue<AccessPackageAssignmentPolicy>(); } },
                 {"accessPackageAssignmentRequests", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentRequests = n.GetCollectionOfObjectValues<AccessPackageAssignmentRequest>().ToList(); } },
                 {"accessPackageAssignmentResourceRoles", (o,n) => { (o as AccessPackageAssignment).AccessPackageAssignmentResourceRoles = n.GetCollectionOfObjectValues<AccessPackageAssignmentResourceRole>().ToList(); } },
                 {"accessPackageId", (o,n) => { (o as AccessPackageAssignment).AccessPackageId = n.GetStringValue(); } },
@@ -49,7 +49,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"expiredDateTime", (o,n) => { (o as AccessPackageAssignment).ExpiredDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isExtended", (o,n) => { (o as AccessPackageAssignment).IsExtended = n.GetBoolValue(); } },
                 {"schedule", (o,n) => { (o as AccessPackageAssignment).Schedule = n.GetObjectValue<RequestSchedule>(); } },
-                {"target", (o,n) => { (o as AccessPackageAssignment).Target = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageSubject>(); } },
+                {"target", (o,n) => { (o as AccessPackageAssignment).Target = n.GetObjectValue<AccessPackageSubject>(); } },
                 {"targetId", (o,n) => { (o as AccessPackageAssignment).TargetId = n.GetStringValue(); } },
             };
         }
@@ -60,8 +60,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>("accessPackage", AccessPackage);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicy", AccessPackageAssignmentPolicy);
+            writer.WriteObjectValue<AccessPackage>("accessPackage", AccessPackage);
+            writer.WriteObjectValue<AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicy", AccessPackageAssignmentPolicy);
             writer.WriteCollectionOfObjectValues<AccessPackageAssignmentRequest>("accessPackageAssignmentRequests", AccessPackageAssignmentRequests);
             writer.WriteCollectionOfObjectValues<AccessPackageAssignmentResourceRole>("accessPackageAssignmentResourceRoles", AccessPackageAssignmentResourceRoles);
             writer.WriteStringValue("accessPackageId", AccessPackageId);
@@ -72,7 +72,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("expiredDateTime", ExpiredDateTime);
             writer.WriteBoolValue("isExtended", IsExtended);
             writer.WriteObjectValue<RequestSchedule>("schedule", Schedule);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageSubject>("target", Target);
+            writer.WriteObjectValue<AccessPackageSubject>("target", Target);
             writer.WriteStringValue("targetId", TargetId);
         }
     }

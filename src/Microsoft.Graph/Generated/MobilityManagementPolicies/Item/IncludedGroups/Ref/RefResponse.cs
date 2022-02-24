@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.MobilityManagementPolicies.Item.IncludedGroups.Ref {
+namespace MicrosoftGraphSdk.MobilityManagementPolicies.Item.IncludedGroups.Ref {
     public class RefResponse : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

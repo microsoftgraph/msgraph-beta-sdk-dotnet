@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.ManagedDevices.Item.ResizeCloudPc {
+namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.ResizeCloudPc {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.resizeCloudPc</summary>
     public class ResizeCloudPcRequestBuilder {
         /// <summary>Path parameters for the request</summary>

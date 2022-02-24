@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Unfavorite {
+namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Unfavorite {
     /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\messages\microsoft.graph.unfavorite</summary>
     public class UnfavoriteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

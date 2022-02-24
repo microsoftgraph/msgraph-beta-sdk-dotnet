@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ManagedDevices.Item.RotateFileVaultKey {
+namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.RotateFileVaultKey {
     /// <summary>Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.rotateFileVaultKey</summary>
     public class RotateFileVaultKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

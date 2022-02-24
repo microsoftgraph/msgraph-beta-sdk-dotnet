@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teams.Item.Channels.AllMessages;
-using MicrosoftGraph.Teams.Item.Channels.GetAllMessages;
-using MicrosoftGraph.Teams.Item.Channels.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teams.Item.Channels.AllMessages;
+using MicrosoftGraphSdk.Teams.Item.Channels.GetAllMessages;
+using MicrosoftGraphSdk.Teams.Item.Channels.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Channels {
+namespace MicrosoftGraphSdk.Teams.Item.Channels {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\channels</summary>
     public class ChannelsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -19,11 +19,11 @@ namespace MicrosoftGraph.Teams.Item.Channels {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.teams.item.channels.item collection</summary>
-        public ChannelRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.channels.item collection</summary>
+        public ChannelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("channel_id", position);
-            return new ChannelRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChannelItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \teams\{team-id}\channels\microsoft.graph.allMessages()

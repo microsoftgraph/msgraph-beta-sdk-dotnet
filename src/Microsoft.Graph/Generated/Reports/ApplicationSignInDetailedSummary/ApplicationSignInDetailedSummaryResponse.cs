@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Reports.ApplicationSignInDetailedSummary {
+namespace MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary {
     public class ApplicationSignInDetailedSummaryResponse : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string NextLink { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.ApplicationSignInDetailedSummary> Value { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary> Value { get; set; }
         /// <summary>
         /// Instantiates a new applicationSignInDetailedSummaryResponse and sets the default values.
         /// </summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.Reports.ApplicationSignInDetailedSummary {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as ApplicationSignInDetailedSummaryResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as ApplicationSignInDetailedSummaryResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>().ToList(); } },
+                {"value", (o,n) => { (o as ApplicationSignInDetailedSummaryResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>().ToList(); } },
             };
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.Reports.ApplicationSignInDetailedSummary {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.nextLink", NextLink);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>("value", Value);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

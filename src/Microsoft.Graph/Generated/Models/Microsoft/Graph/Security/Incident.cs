@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Security {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class Incident : Entity, IParsable {
         public List<Alert> Alerts { get; set; }
         public string AssignedTo { get; set; }

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Users.Item.Planner.RecentPlans.Ref;
+using MicrosoftGraphSdk.Users.Item.Planner.RecentPlans.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Planner.RecentPlans {
+namespace MicrosoftGraphSdk.Users.Item.Planner.RecentPlans {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\planner\recentPlans</summary>
     public class RecentPlansRequestBuilder {
         /// <summary>Path parameters for the request</summary>

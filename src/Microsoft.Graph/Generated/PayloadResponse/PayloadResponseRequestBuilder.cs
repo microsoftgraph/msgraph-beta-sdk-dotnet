@@ -1,13 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.PayloadResponse.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PayloadResponse {
+namespace MicrosoftGraphSdk.PayloadResponse {
     /// <summary>Builds and executes requests for operations under \payloadResponse</summary>
     public class PayloadResponseRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -16,11 +17,11 @@ namespace MicrosoftGraph.PayloadResponse {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.payloadResponse.item collection</summary>
-        public PayloadResponseRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.payloadResponse.item collection</summary>
+        public PayloadResponseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("payloadResponse_id", position);
-            return new PayloadResponseRequestBuilder(urlTplParams, RequestAdapter);
+            return new PayloadResponseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PayloadResponseRequestBuilder and sets the default values.
@@ -76,7 +77,7 @@ namespace MicrosoftGraph.PayloadResponse {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.PayloadResponse body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadResponse body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -108,10 +109,10 @@ namespace MicrosoftGraph.PayloadResponse {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.PayloadResponse> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.PayloadResponse body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadResponse> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadResponse body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.PayloadResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PayloadResponse>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from payloadResponse</summary>
         public class GetQueryParameters : QueryParametersBase {

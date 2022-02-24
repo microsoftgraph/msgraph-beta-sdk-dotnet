@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.CompliancePolicies.Item.ScheduledActionsForRule.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.ScheduledActionsForRule.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.CompliancePolicies.Item.ScheduledActionsForRule {
+namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.ScheduledActionsForRule {
     /// <summary>Builds and executes requests for operations under \deviceManagement\compliancePolicies\{deviceManagementCompliancePolicy-id}\scheduledActionsForRule</summary>
     public class ScheduledActionsForRuleRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.CompliancePolicies.Item.ScheduledActio
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.compliancePolicies.item.scheduledActionsForRule.item collection</summary>
-        public DeviceManagementComplianceScheduledActionForRuleRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.compliancePolicies.item.scheduledActionsForRule.item collection</summary>
+        public DeviceManagementComplianceScheduledActionForRuleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementComplianceScheduledActionForRule_id", position);
-            return new DeviceManagementComplianceScheduledActionForRuleRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementComplianceScheduledActionForRuleItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ScheduledActionsForRuleRequestBuilder and sets the default values.

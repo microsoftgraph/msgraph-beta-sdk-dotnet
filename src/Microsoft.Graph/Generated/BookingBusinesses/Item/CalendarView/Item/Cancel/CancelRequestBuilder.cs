@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.BookingBusinesses.Item.CalendarView.Item.Cancel {
+namespace MicrosoftGraphSdk.BookingBusinesses.Item.CalendarView.Item.Cancel {
     /// <summary>Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\calendarView\{bookingAppointment-id}\microsoft.graph.cancel</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

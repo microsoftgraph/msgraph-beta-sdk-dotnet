@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsDriverUpdateProfiles</summary>
     public class WindowsDriverUpdateProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.WindowsDriverUpdateProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsDriverUpdateProfiles.item collection</summary>
-        public WindowsDriverUpdateProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsDriverUpdateProfiles.item collection</summary>
+        public WindowsDriverUpdateProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDriverUpdateProfile_id", position);
-            return new WindowsDriverUpdateProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsDriverUpdateProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsDriverUpdateProfilesRequestBuilder and sets the default values.

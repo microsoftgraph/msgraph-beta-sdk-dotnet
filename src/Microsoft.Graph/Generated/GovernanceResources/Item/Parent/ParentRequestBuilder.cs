@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.GovernanceResources.Item.Parent.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.GovernanceResources.Item.Parent.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GovernanceResources.Item.Parent {
+namespace MicrosoftGraphSdk.GovernanceResources.Item.Parent {
     /// <summary>Builds and executes requests for operations under \governanceResources\{governanceResource-id}\parent</summary>
     public class ParentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

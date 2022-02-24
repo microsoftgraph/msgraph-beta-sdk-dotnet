@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Protection.Protect {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Protection.Protect {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\protection\microsoft.graph.protect</summary>
     public class ProtectRequestBuilder {
         /// <summary>Path parameters for the request</summary>

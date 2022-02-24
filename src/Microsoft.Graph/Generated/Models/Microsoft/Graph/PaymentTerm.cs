@@ -3,12 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PaymentTerm : Entity, IParsable {
         public bool? CalculateDiscountOnCreditMemos { get; set; }
         public string Code { get; set; }
         public string DiscountDateCalculation { get; set; }
-        public Decimal? DiscountPercent { get; set; }
+        public decimal? DiscountPercent { get; set; }
         public string DisplayName { get; set; }
         public string DueDateCalculation { get; set; }
         public DateTimeOffset? LastModifiedDateTime { get; set; }

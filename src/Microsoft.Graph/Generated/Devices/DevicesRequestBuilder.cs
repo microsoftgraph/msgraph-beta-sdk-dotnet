@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Devices.GetByIds;
-using MicrosoftGraph.Devices.GetUserOwnedObjects;
-using MicrosoftGraph.Devices.Item;
-using MicrosoftGraph.Devices.ValidateProperties;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Devices.GetByIds;
+using MicrosoftGraphSdk.Devices.GetUserOwnedObjects;
+using MicrosoftGraphSdk.Devices.Item;
+using MicrosoftGraphSdk.Devices.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Devices {
+namespace MicrosoftGraphSdk.Devices {
     /// <summary>Builds and executes requests for operations under \devices</summary>
     public class DevicesRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -29,11 +29,11 @@ namespace MicrosoftGraph.Devices {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.devices.item collection</summary>
-        public DeviceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.devices.item collection</summary>
+        public DeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("device_id", position);
-            return new DeviceRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DevicesRequestBuilder and sets the default values.
@@ -89,7 +89,7 @@ namespace MicrosoftGraph.Devices {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.Device body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.Device body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -121,10 +121,10 @@ namespace MicrosoftGraph.Devices {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.Device> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.Device body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Device> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Device body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.Device>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Device>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from devices</summary>
         public class GetQueryParameters : QueryParametersBase {

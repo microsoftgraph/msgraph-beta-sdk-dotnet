@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Profile.Addresses.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Profile.Addresses.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Profile.Addresses {
+namespace MicrosoftGraphSdk.Users.Item.Profile.Addresses {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\profile\addresses</summary>
     public class AddressesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Profile.Addresses {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.profile.addresses.item collection</summary>
-        public ItemAddressRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.profile.addresses.item collection</summary>
+        public ItemAddressItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemAddress_id", position);
-            return new ItemAddressRequestBuilder(urlTplParams, RequestAdapter);
+            return new ItemAddressItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AddressesRequestBuilder and sets the default values.

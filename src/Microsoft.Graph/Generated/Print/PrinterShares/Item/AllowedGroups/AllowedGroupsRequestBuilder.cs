@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Print.PrinterShares.Item.AllowedGroups.Ref;
+using MicrosoftGraphSdk.Print.PrinterShares.Item.AllowedGroups.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.PrinterShares.Item.AllowedGroups {
+namespace MicrosoftGraphSdk.Print.PrinterShares.Item.AllowedGroups {
     /// <summary>Builds and executes requests for operations under \print\printerShares\{printerShare-id}\allowedGroups</summary>
     public class AllowedGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl {
+namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl {
     /// <summary>Builds and executes requests for operations under \deviceManagement\microsoftTunnelServerLogCollectionResponses\{microsoftTunnelServerLogCollectionResponse-id}\microsoft.graph.createDownloadUrl</summary>
     public class CreateDownloadUrlRequestBuilder {
         /// <summary>Path parameters for the request</summary>

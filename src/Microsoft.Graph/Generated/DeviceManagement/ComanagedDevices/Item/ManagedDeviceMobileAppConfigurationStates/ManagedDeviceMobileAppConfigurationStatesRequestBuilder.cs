@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.ManagedDeviceMobileAppConfigurationStates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.ManagedDeviceMobileAppConfigurationStates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.ManagedDeviceMobileAppConfigurationStates {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.ManagedDeviceMobileAppConfigurationStates {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\managedDeviceMobileAppConfigurationStates</summary>
     public class ManagedDeviceMobileAppConfigurationStatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.ManagedDeviceMob
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.comanagedDevices.item.managedDeviceMobileAppConfigurationStates.item collection</summary>
-        public ManagedDeviceMobileAppConfigurationStateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.comanagedDevices.item.managedDeviceMobileAppConfigurationStates.item collection</summary>
+        public ManagedDeviceMobileAppConfigurationStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceMobileAppConfigurationState_id", position);
-            return new ManagedDeviceMobileAppConfigurationStateRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceMobileAppConfigurationStateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedDeviceMobileAppConfigurationStatesRequestBuilder and sets the default values.

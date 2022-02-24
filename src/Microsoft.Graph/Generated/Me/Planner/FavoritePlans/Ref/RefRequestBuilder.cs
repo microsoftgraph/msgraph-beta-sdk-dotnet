@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Planner.FavoritePlans.Ref {
+namespace MicrosoftGraphSdk.Me.Planner.FavoritePlans.Ref {
     /// <summary>Builds and executes requests for operations under \me\planner\favoritePlans\$ref</summary>
     public class RefRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -69,7 +69,7 @@ namespace MicrosoftGraph.Me.Planner.FavoritePlans.Ref {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Me.Planner.FavoritePlans.Ref.Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -101,10 +101,10 @@ namespace MicrosoftGraph.Me.Planner.FavoritePlans.Ref {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Me.Planner.FavoritePlans.Ref.Ref> PostAsync(MicrosoftGraph.Me.Planner.FavoritePlans.Ref.Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Ref> PostAsync(Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Me.Planner.FavoritePlans.Ref.Ref>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Ref>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.</summary>
         public class GetQueryParameters : QueryParametersBase {

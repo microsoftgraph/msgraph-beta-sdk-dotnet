@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Sites.Item.Lists.Item.Subscriptions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.Subscriptions.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.Subscriptions {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Subscriptions {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\subscriptions</summary>
     public class SubscriptionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Sites.Item.Lists.Item.Subscriptions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.sites.item.lists.item.subscriptions.item collection</summary>
-        public SubscriptionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.lists.item.subscriptions.item collection</summary>
+        public SubscriptionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscription_id", position);
-            return new SubscriptionRequestBuilder(urlTplParams, RequestAdapter);
+            return new SubscriptionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SubscriptionsRequestBuilder and sets the default values.

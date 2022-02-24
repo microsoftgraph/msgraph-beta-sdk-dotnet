@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AndroidManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.</summary>
         public string AllowedAndroidDeviceManufacturers { get; set; }
@@ -20,7 +20,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Defines a managed app behavior, either warn, block or wipe, if the screen lock is required on android device but is not set.</summary>
         public ManagedAppRemediationAction? AppActionIfDeviceLockNotSet { get; set; }
         /// <summary>If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> ApprovedKeyboards { get; set; }
+        public List<KeyValuePair> ApprovedKeyboards { get; set; }
         /// <summary>List of apps to which the policy is deployed.</summary>
         public List<ManagedMobileApp> Apps { get; set; }
         /// <summary>Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.</summary>
@@ -48,7 +48,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Indicates whether application data for managed apps should be encrypted</summary>
         public bool? EncryptAppData { get; set; }
         /// <summary>App packages in this list will be exempt from the policy and will be able to receive data from managed apps.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> ExemptedAppPackages { get; set; }
+        public List<KeyValuePair> ExemptedAppPackages { get; set; }
         /// <summary>Indicates if keyboard restriction is enabled. If enabled list of approved keyboards must be provided as well.</summary>
         public bool? KeyboardsRestricted { get; set; }
         /// <summary>Minimum version of the Company portal that must be installed on the device or app access will be blocked</summary>
@@ -87,7 +87,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"appActionIfAndroidSafetyNetAppsVerificationFailed", (o,n) => { (o as AndroidManagedAppProtection).AppActionIfAndroidSafetyNetAppsVerificationFailed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfAndroidSafetyNetDeviceAttestationFailed", (o,n) => { (o as AndroidManagedAppProtection).AppActionIfAndroidSafetyNetDeviceAttestationFailed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfDeviceLockNotSet", (o,n) => { (o as AndroidManagedAppProtection).AppActionIfDeviceLockNotSet = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                {"approvedKeyboards", (o,n) => { (o as AndroidManagedAppProtection).ApprovedKeyboards = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"approvedKeyboards", (o,n) => { (o as AndroidManagedAppProtection).ApprovedKeyboards = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"apps", (o,n) => { (o as AndroidManagedAppProtection).Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>().ToList(); } },
                 {"biometricAuthenticationBlocked", (o,n) => { (o as AndroidManagedAppProtection).BiometricAuthenticationBlocked = n.GetBoolValue(); } },
                 {"blockAfterCompanyPortalUpdateDeferralInDays", (o,n) => { (o as AndroidManagedAppProtection).BlockAfterCompanyPortalUpdateDeferralInDays = n.GetIntValue(); } },
@@ -101,7 +101,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"deviceLockRequired", (o,n) => { (o as AndroidManagedAppProtection).DeviceLockRequired = n.GetBoolValue(); } },
                 {"disableAppEncryptionIfDeviceEncryptionIsEnabled", (o,n) => { (o as AndroidManagedAppProtection).DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
                 {"encryptAppData", (o,n) => { (o as AndroidManagedAppProtection).EncryptAppData = n.GetBoolValue(); } },
-                {"exemptedAppPackages", (o,n) => { (o as AndroidManagedAppProtection).ExemptedAppPackages = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"exemptedAppPackages", (o,n) => { (o as AndroidManagedAppProtection).ExemptedAppPackages = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"keyboardsRestricted", (o,n) => { (o as AndroidManagedAppProtection).KeyboardsRestricted = n.GetBoolValue(); } },
                 {"minimumRequiredCompanyPortalVersion", (o,n) => { (o as AndroidManagedAppProtection).MinimumRequiredCompanyPortalVersion = n.GetStringValue(); } },
                 {"minimumRequiredPatchVersion", (o,n) => { (o as AndroidManagedAppProtection).MinimumRequiredPatchVersion = n.GetStringValue(); } },
@@ -131,7 +131,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidSafetyNetAppsVerificationFailed", AppActionIfAndroidSafetyNetAppsVerificationFailed);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidSafetyNetDeviceAttestationFailed", AppActionIfAndroidSafetyNetDeviceAttestationFailed);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDeviceLockNotSet", AppActionIfDeviceLockNotSet);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("approvedKeyboards", ApprovedKeyboards);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("approvedKeyboards", ApprovedKeyboards);
             writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);
             writer.WriteBoolValue("biometricAuthenticationBlocked", BiometricAuthenticationBlocked);
             writer.WriteIntValue("blockAfterCompanyPortalUpdateDeferralInDays", BlockAfterCompanyPortalUpdateDeferralInDays);
@@ -145,7 +145,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteBoolValue("deviceLockRequired", DeviceLockRequired);
             writer.WriteBoolValue("disableAppEncryptionIfDeviceEncryptionIsEnabled", DisableAppEncryptionIfDeviceEncryptionIsEnabled);
             writer.WriteBoolValue("encryptAppData", EncryptAppData);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("exemptedAppPackages", ExemptedAppPackages);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("exemptedAppPackages", ExemptedAppPackages);
             writer.WriteBoolValue("keyboardsRestricted", KeyboardsRestricted);
             writer.WriteStringValue("minimumRequiredCompanyPortalVersion", MinimumRequiredCompanyPortalVersion);
             writer.WriteStringValue("minimumRequiredPatchVersion", MinimumRequiredPatchVersion);

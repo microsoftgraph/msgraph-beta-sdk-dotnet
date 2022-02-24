@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.InformationProtection.ThreatAssessmentRequests.Item.Results.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests.Item.Results.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.InformationProtection.ThreatAssessmentRequests.Item.Results {
+namespace MicrosoftGraphSdk.InformationProtection.ThreatAssessmentRequests.Item.Results {
     /// <summary>Builds and executes requests for operations under \informationProtection\threatAssessmentRequests\{threatAssessmentRequest-id}\results</summary>
     public class ResultsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.InformationProtection.ThreatAssessmentRequests.Item.Res
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.informationProtection.threatAssessmentRequests.item.results.item collection</summary>
-        public ThreatAssessmentResultRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.threatAssessmentRequests.item.results.item collection</summary>
+        public ThreatAssessmentResultItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("threatAssessmentResult_id", position);
-            return new ThreatAssessmentResultRequestBuilder(urlTplParams, RequestAdapter);
+            return new ThreatAssessmentResultItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResultsRequestBuilder and sets the default values.

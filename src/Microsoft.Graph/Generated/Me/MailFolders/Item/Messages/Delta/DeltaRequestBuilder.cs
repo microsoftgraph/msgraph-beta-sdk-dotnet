@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.MailFolders.Item.Messages.Delta {
+namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Delta {
     /// <summary>Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\microsoft.graph.delta()</summary>
     public class DeltaRequestBuilder {
         /// <summary>Path parameters for the request</summary>

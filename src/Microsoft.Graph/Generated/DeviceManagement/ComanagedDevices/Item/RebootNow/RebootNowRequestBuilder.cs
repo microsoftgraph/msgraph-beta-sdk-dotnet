@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.RebootNow {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.RebootNow {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.rebootNow</summary>
     public class RebootNowRequestBuilder {
         /// <summary>Path parameters for the request</summary>

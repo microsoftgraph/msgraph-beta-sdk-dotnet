@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Channel : Entity, IParsable {
         /// <summary>Read only. Timestamp at which the channel was created.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -14,7 +14,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The email address for sending messages to the channel. Read-only.</summary>
         public string Email { get; set; }
         /// <summary>Metadata for the location where the channel's files are stored.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.DriveItem FilesFolder { get; set; }
+        public DriveItem FilesFolder { get; set; }
         /// <summary>Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.</summary>
         public bool? IsFavoriteByDefault { get; set; }
         /// <summary>A collection of membership records associated with the channel.</summary>
@@ -38,7 +38,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as Channel).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Channel).DisplayName = n.GetStringValue(); } },
                 {"email", (o,n) => { (o as Channel).Email = n.GetStringValue(); } },
-                {"filesFolder", (o,n) => { (o as Channel).FilesFolder = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>(); } },
+                {"filesFolder", (o,n) => { (o as Channel).FilesFolder = n.GetObjectValue<DriveItem>(); } },
                 {"isFavoriteByDefault", (o,n) => { (o as Channel).IsFavoriteByDefault = n.GetBoolValue(); } },
                 {"members", (o,n) => { (o as Channel).Members = n.GetCollectionOfObjectValues<ConversationMember>().ToList(); } },
                 {"membershipType", (o,n) => { (o as Channel).MembershipType = n.GetEnumValue<ChannelMembershipType>(); } },
@@ -59,7 +59,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>("filesFolder", FilesFolder);
+            writer.WriteObjectValue<DriveItem>("filesFolder", FilesFolder);
             writer.WriteBoolValue("isFavoriteByDefault", IsFavoriteByDefault);
             writer.WriteCollectionOfObjectValues<ConversationMember>("members", Members);
             writer.WriteEnumValue<ChannelMembershipType>("membershipType", MembershipType);

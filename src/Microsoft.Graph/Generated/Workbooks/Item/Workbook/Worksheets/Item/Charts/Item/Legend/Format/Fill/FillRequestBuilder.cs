@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Legend.Format.Fill.Clear;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Legend.Format.Fill.SetSolidColor;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Legend.Format.Fill.Clear;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Legend.Format.Fill.SetSolidColor;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Legend.Format.Fill {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Legend.Format.Fill {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\legend\format\fill</summary>
     public class FillRequestBuilder {
         public ClearRequestBuilder Clear { get =>

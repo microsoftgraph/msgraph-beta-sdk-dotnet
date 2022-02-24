@@ -1,20 +1,20 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps;
-using MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CompleteSignup;
-using MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken;
-using MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl;
-using MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState;
-using MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SyncApps;
-using MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.Unbind;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps;
+using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CompleteSignup;
+using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken;
+using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl;
+using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState;
+using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SyncApps;
+using MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.Unbind;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings</summary>
     public class AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder {
         public ApproveAppsRequestBuilder ApproveApps { get =>
@@ -113,7 +113,7 @@ namespace MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSe
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -144,9 +144,9 @@ namespace MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSe
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The singleton Android managed store account enterprise settings entity.
@@ -156,7 +156,7 @@ namespace MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSe
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraph.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AndroidManagedStoreAccountEnterpriseSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

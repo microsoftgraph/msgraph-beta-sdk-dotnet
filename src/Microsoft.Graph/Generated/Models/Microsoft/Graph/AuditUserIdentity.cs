@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AuditUserIdentity : UserIdentity, IParsable {
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of.</summary>
         public string HomeTenantId { get; set; }

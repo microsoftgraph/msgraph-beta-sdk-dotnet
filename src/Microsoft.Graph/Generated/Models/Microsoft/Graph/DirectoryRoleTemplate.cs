@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DirectoryRoleTemplate : DirectoryObject, IParsable {
         /// <summary>The description to set for the directory role. Read-only.</summary>
         public string Description { get; set; }

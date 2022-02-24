@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Application.Calculate;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Application.Calculate;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Application {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Application {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\application</summary>
     public class ApplicationRequestBuilder {
         public CalculateRequestBuilder Calculate { get =>

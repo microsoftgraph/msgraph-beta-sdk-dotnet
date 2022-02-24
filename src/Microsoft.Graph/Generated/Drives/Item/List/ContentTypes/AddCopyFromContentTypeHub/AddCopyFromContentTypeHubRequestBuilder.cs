@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drives.Item.List.ContentTypes.AddCopyFromContentTypeHub {
+namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes.AddCopyFromContentTypeHub {
     /// <summary>Builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\microsoft.graph.addCopyFromContentTypeHub</summary>
     public class AddCopyFromContentTypeHubRequestBuilder {
         /// <summary>Path parameters for the request</summary>

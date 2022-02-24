@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Members;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById;
-using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Members;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudienceById;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience</summary>
     public class AudienceRequestBuilder {
         public ExclusionsRequestBuilder Exclusions { get =>

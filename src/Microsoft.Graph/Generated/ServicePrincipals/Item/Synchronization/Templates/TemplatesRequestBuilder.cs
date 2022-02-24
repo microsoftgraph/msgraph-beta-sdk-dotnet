@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\templates</summary>
     public class TemplatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item.synchronization.templates.item collection</summary>
-        public SynchronizationTemplateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.synchronization.templates.item collection</summary>
+        public SynchronizationTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("synchronizationTemplate_id", position);
-            return new SynchronizationTemplateRequestBuilder(urlTplParams, RequestAdapter);
+            return new SynchronizationTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TemplatesRequestBuilder and sets the default values.

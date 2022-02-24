@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AttackSimulationRoot : Entity, IParsable {
         public List<SimulationAutomation> SimulationAutomations { get; set; }
         /// <summary>Represent attack simulation and training campaign of a tenant.</summary>

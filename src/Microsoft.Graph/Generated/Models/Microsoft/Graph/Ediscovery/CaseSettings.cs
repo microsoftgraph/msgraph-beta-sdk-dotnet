@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class CaseSettings : Entity, IParsable {
         /// <summary>The OCR (Optical Character Recognition) settings for the case.</summary>
         public OcrSettings Ocr { get; set; }

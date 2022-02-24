@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DirectoryRoleTemplates.GetUserOwnedObjects {
+namespace MicrosoftGraphSdk.DirectoryRoleTemplates.GetUserOwnedObjects {
     /// <summary>Builds and executes requests for operations under \directoryRoleTemplates\microsoft.graph.getUserOwnedObjects</summary>
     public class GetUserOwnedObjectsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class AggregatedPolicyCompliance : Entity, IParsable {
         /// <summary>Identifier for the device compliance policy. Optional. Read-only.</summary>
         public string CompliancePolicyId { get; set; }

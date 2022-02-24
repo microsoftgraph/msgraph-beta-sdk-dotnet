@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
     public class DeploymentAudience : Entity, IParsable {
         /// <summary>Specifies the assets to exclude from the audience.</summary>
         public List<UpdatableAsset> Exclusions { get; set; }

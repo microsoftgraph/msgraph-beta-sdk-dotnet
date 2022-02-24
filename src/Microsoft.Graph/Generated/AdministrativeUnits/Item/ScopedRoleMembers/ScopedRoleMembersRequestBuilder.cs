@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AdministrativeUnits.Item.ScopedRoleMembers.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AdministrativeUnits.Item.ScopedRoleMembers.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AdministrativeUnits.Item.ScopedRoleMembers {
+namespace MicrosoftGraphSdk.AdministrativeUnits.Item.ScopedRoleMembers {
     /// <summary>Builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\scopedRoleMembers</summary>
     public class ScopedRoleMembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.AdministrativeUnits.Item.ScopedRoleMembers {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.administrativeUnits.item.scopedRoleMembers.item collection</summary>
-        public ScopedRoleMembershipRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.administrativeUnits.item.scopedRoleMembers.item collection</summary>
+        public ScopedRoleMembershipItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("scopedRoleMembership_id", position);
-            return new ScopedRoleMembershipRequestBuilder(urlTplParams, RequestAdapter);
+            return new ScopedRoleMembershipItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ScopedRoleMembersRequestBuilder and sets the default values.

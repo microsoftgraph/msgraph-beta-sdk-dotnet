@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DefaultManagedAppProtection : ManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)</summary>
         public string AllowedAndroidDeviceManufacturers { get; set; }
@@ -46,7 +46,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Protocol of a custom dialer app to click-to-open a phone number on iOS, for example, skype:.</summary>
         public string CustomDialerAppProtocol { get; set; }
         /// <summary>A set of string key and string value pairs to be sent to the affected users, unalterned by this service</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> CustomSettings { get; set; }
+        public List<KeyValuePair> CustomSettings { get; set; }
         /// <summary>Count of apps to which the current policy is deployed.</summary>
         public int? DeployedAppCount { get; set; }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
@@ -60,9 +60,9 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Indicates whether managed-app data should be encrypted. (Android only)</summary>
         public bool? EncryptAppData { get; set; }
         /// <summary>Android App packages in this list will be exempt from the policy and will be able to receive data from managed apps. (Android only)</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> ExemptedAppPackages { get; set; }
+        public List<KeyValuePair> ExemptedAppPackages { get; set; }
         /// <summary>iOS Apps in this list will be exempt from the policy and will be able to receive data from managed apps. (iOS Only)</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> ExemptedAppProtocols { get; set; }
+        public List<KeyValuePair> ExemptedAppProtocols { get; set; }
         /// <summary>Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)</summary>
         public bool? FaceIdBlocked { get; set; }
         /// <summary>Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False. (iOS Only)</summary>
@@ -124,15 +124,15 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"customDialerAppDisplayName", (o,n) => { (o as DefaultManagedAppProtection).CustomDialerAppDisplayName = n.GetStringValue(); } },
                 {"customDialerAppPackageId", (o,n) => { (o as DefaultManagedAppProtection).CustomDialerAppPackageId = n.GetStringValue(); } },
                 {"customDialerAppProtocol", (o,n) => { (o as DefaultManagedAppProtection).CustomDialerAppProtocol = n.GetStringValue(); } },
-                {"customSettings", (o,n) => { (o as DefaultManagedAppProtection).CustomSettings = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"customSettings", (o,n) => { (o as DefaultManagedAppProtection).CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"deployedAppCount", (o,n) => { (o as DefaultManagedAppProtection).DeployedAppCount = n.GetIntValue(); } },
                 {"deploymentSummary", (o,n) => { (o as DefaultManagedAppProtection).DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(); } },
                 {"deviceLockRequired", (o,n) => { (o as DefaultManagedAppProtection).DeviceLockRequired = n.GetBoolValue(); } },
                 {"disableAppEncryptionIfDeviceEncryptionIsEnabled", (o,n) => { (o as DefaultManagedAppProtection).DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
                 {"disableProtectionOfManagedOutboundOpenInData", (o,n) => { (o as DefaultManagedAppProtection).DisableProtectionOfManagedOutboundOpenInData = n.GetBoolValue(); } },
                 {"encryptAppData", (o,n) => { (o as DefaultManagedAppProtection).EncryptAppData = n.GetBoolValue(); } },
-                {"exemptedAppPackages", (o,n) => { (o as DefaultManagedAppProtection).ExemptedAppPackages = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
-                {"exemptedAppProtocols", (o,n) => { (o as DefaultManagedAppProtection).ExemptedAppProtocols = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"exemptedAppPackages", (o,n) => { (o as DefaultManagedAppProtection).ExemptedAppPackages = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"exemptedAppProtocols", (o,n) => { (o as DefaultManagedAppProtection).ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
                 {"faceIdBlocked", (o,n) => { (o as DefaultManagedAppProtection).FaceIdBlocked = n.GetBoolValue(); } },
                 {"filterOpenInToOnlyManagedApps", (o,n) => { (o as DefaultManagedAppProtection).FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
                 {"minimumRequiredCompanyPortalVersion", (o,n) => { (o as DefaultManagedAppProtection).MinimumRequiredCompanyPortalVersion = n.GetStringValue(); } },
@@ -180,15 +180,15 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("customDialerAppDisplayName", CustomDialerAppDisplayName);
             writer.WriteStringValue("customDialerAppPackageId", CustomDialerAppPackageId);
             writer.WriteStringValue("customDialerAppProtocol", CustomDialerAppProtocol);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("customSettings", CustomSettings);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("customSettings", CustomSettings);
             writer.WriteIntValue("deployedAppCount", DeployedAppCount);
             writer.WriteObjectValue<ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
             writer.WriteBoolValue("deviceLockRequired", DeviceLockRequired);
             writer.WriteBoolValue("disableAppEncryptionIfDeviceEncryptionIsEnabled", DisableAppEncryptionIfDeviceEncryptionIsEnabled);
             writer.WriteBoolValue("disableProtectionOfManagedOutboundOpenInData", DisableProtectionOfManagedOutboundOpenInData);
             writer.WriteBoolValue("encryptAppData", EncryptAppData);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("exemptedAppPackages", ExemptedAppPackages);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("exemptedAppProtocols", ExemptedAppProtocols);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("exemptedAppPackages", ExemptedAppPackages);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("exemptedAppProtocols", ExemptedAppProtocols);
             writer.WriteBoolValue("faceIdBlocked", FaceIdBlocked);
             writer.WriteBoolValue("filterOpenInToOnlyManagedApps", FilterOpenInToOnlyManagedApps);
             writer.WriteStringValue("minimumRequiredCompanyPortalVersion", MinimumRequiredCompanyPortalVersion);

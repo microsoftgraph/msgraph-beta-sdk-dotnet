@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Rows.Add;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Rows.Count;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Rows.Item;
-using MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Rows.ItemAtWithIndex;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Rows.Add;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Rows.Count;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Rows.Item;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Rows.ItemAtWithIndex;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Rows {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Rows {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\rows</summary>
     public class RowsRequestBuilder {
         public AddRequestBuilder Add { get =>
@@ -23,11 +23,11 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Rows {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.tables.item.rows.item collection</summary>
-        public WorkbookTableRowRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.tables.item.rows.item collection</summary>
+        public WorkbookTableRowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookTableRow_id", position);
-            return new WorkbookTableRowRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookTableRowItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RowsRequestBuilder and sets the default values.

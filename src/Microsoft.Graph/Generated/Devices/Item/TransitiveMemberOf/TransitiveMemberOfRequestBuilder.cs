@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Devices.Item.TransitiveMemberOf.Ref;
+using MicrosoftGraphSdk.Devices.Item.TransitiveMemberOf.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Devices.Item.TransitiveMemberOf {
+namespace MicrosoftGraphSdk.Devices.Item.TransitiveMemberOf {
     /// <summary>Builds and executes requests for operations under \devices\{device-id}\transitiveMemberOf</summary>
     public class TransitiveMemberOfRequestBuilder {
         /// <summary>Path parameters for the request</summary>

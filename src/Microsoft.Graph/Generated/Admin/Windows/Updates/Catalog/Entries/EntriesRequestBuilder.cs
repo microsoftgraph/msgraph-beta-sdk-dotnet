@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Admin.Windows.Updates.Catalog.Entries.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Catalog.Entries.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.Catalog.Entries {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog.Entries {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\catalog\entries</summary>
     public class EntriesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Admin.Windows.Updates.Catalog.Entries {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.admin.windows.updates.catalog.entries.item collection</summary>
-        public CatalogEntryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.windows.updates.catalog.entries.item collection</summary>
+        public CatalogEntryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("catalogEntry_id", position);
-            return new CatalogEntryRequestBuilder(urlTplParams, RequestAdapter);
+            return new CatalogEntryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EntriesRequestBuilder and sets the default values.

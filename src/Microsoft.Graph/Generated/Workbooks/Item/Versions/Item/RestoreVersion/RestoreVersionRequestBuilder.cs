@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Versions.Item.RestoreVersion {
+namespace MicrosoftGraphSdk.Workbooks.Item.Versions.Item.RestoreVersion {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\versions\{driveItemVersion-id}\microsoft.graph.restoreVersion</summary>
     public class RestoreVersionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

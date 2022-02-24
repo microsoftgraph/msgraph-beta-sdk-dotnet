@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.InformationProtection.SensitivityLabels.Item.Sublabels.Evaluate;
-using MicrosoftGraph.InformationProtection.SensitivityLabels.Item.Sublabels.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Item.Sublabels.Evaluate;
+using MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Item.Sublabels.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.InformationProtection.SensitivityLabels.Item.Sublabels {
+namespace MicrosoftGraphSdk.InformationProtection.SensitivityLabels.Item.Sublabels {
     /// <summary>Builds and executes requests for operations under \informationProtection\sensitivityLabels\{sensitivityLabel-id}\sublabels</summary>
     public class SublabelsRequestBuilder {
         public EvaluateRequestBuilder Evaluate { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.InformationProtection.SensitivityLabels.Item.Sublabels 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.informationProtection.sensitivityLabels.item.sublabels.item collection</summary>
-        public SensitivityLabelRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.informationProtection.sensitivityLabels.item.sublabels.item collection</summary>
+        public SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel_id1", position);
-            return new SensitivityLabelRequestBuilder(urlTplParams, RequestAdapter);
+            return new SensitivityLabelItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SublabelsRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.BookingBusinesses.Item.CalendarView.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.BookingBusinesses.Item.CalendarView.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.BookingBusinesses.Item.CalendarView {
+namespace MicrosoftGraphSdk.BookingBusinesses.Item.CalendarView {
     /// <summary>Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\calendarView</summary>
     public class CalendarViewRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.BookingBusinesses.Item.CalendarView {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.bookingBusinesses.item.calendarView.item collection</summary>
-        public BookingAppointmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.bookingBusinesses.item.calendarView.item collection</summary>
+        public BookingAppointmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingAppointment_id", position);
-            return new BookingAppointmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookingAppointmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CalendarViewRequestBuilder and sets the default values.

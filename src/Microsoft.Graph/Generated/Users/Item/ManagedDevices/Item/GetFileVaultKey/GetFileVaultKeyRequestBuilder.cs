@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.ManagedDevices.Item.GetFileVaultKey {
+namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.GetFileVaultKey {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.getFileVaultKey()</summary>
     public class GetFileVaultKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

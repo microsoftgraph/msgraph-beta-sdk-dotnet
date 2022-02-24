@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.ApplyTags {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.ApplyTags {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\reviewSets\{reviewSet-id}\queries\{reviewSetQuery-id}\microsoft.graph.ediscovery.applyTags</summary>
     public class ApplyTagsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

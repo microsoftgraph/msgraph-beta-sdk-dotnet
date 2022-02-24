@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityProtection.RiskyUsers.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityProtection.RiskyUsers.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityProtection.RiskyUsers {
+namespace MicrosoftGraphSdk.IdentityProtection.RiskyUsers {
     /// <summary>Builds and executes requests for operations under \identityProtection\riskyUsers</summary>
     public class RiskyUsersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.IdentityProtection.RiskyUsers {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityProtection.riskyUsers.item collection</summary>
-        public RiskyUserRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityProtection.riskyUsers.item collection</summary>
+        public RiskyUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyUser_id", position);
-            return new RiskyUserRequestBuilder(urlTplParams, RequestAdapter);
+            return new RiskyUserItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RiskyUsersRequestBuilder and sets the default values.

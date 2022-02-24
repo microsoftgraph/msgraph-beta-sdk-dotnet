@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.MailFolders.Item.Messages.Item.Attachments.CreateUploadSession;
-using MicrosoftGraph.Me.MailFolders.Item.Messages.Item.Attachments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.Attachments.CreateUploadSession;
+using MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.Attachments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.MailFolders.Item.Messages.Item.Attachments {
+namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.Attachments {
     /// <summary>Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\attachments</summary>
     public class AttachmentsRequestBuilder {
         public CreateUploadSessionRequestBuilder CreateUploadSession { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.Me.MailFolders.Item.Messages.Item.Attachments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.mailFolders.item.messages.item.attachments.item collection</summary>
-        public AttachmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.mailFolders.item.messages.item.attachments.item collection</summary>
+        public AttachmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attachment_id", position);
-            return new AttachmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new AttachmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AttachmentsRequestBuilder and sets the default values.

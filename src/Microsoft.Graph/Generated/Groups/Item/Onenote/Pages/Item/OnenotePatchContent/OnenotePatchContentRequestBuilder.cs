@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Onenote.Pages.Item.OnenotePatchContent {
+namespace MicrosoftGraphSdk.Groups.Item.Onenote.Pages.Item.OnenotePatchContent {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\onenote\pages\{onenotePage-id}\microsoft.graph.onenotePatchContent</summary>
     public class OnenotePatchContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

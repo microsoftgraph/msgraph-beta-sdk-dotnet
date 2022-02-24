@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidForWorkSettings.CompleteSignup {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkSettings.CompleteSignup {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidForWorkSettings\microsoft.graph.completeSignup</summary>
     public class CompleteSignupRequestBuilder {
         /// <summary>Path parameters for the request</summary>

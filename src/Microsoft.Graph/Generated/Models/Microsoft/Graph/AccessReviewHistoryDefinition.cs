@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessReviewHistoryDefinition : Entity, IParsable {
         public UserIdentity CreatedBy { get; set; }
         /// <summary>Timestamp when the access review definition was created.</summary>

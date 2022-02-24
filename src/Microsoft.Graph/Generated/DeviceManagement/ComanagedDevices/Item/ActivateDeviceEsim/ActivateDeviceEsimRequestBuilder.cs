@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ComanagedDevices.Item.ActivateDeviceEsim {
+namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.ActivateDeviceEsim {
     /// <summary>Builds and executes requests for operations under \deviceManagement\comanagedDevices\{managedDevice-id}\microsoft.graph.activateDeviceEsim</summary>
     public class ActivateDeviceEsimRequestBuilder {
         /// <summary>Path parameters for the request</summary>

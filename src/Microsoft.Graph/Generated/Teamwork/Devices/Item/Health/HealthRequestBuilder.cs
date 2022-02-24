@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teamwork.Devices.Item.Health {
+namespace MicrosoftGraphSdk.Teamwork.Devices.Item.Health {
     /// <summary>Builds and executes requests for operations under \teamwork\devices\{teamworkDevice-id}\health</summary>
     public class HealthRequestBuilder {
         /// <summary>Path parameters for the request</summary>

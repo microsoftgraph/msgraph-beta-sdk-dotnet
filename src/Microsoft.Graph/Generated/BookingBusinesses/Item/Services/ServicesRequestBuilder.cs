@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.BookingBusinesses.Item.Services.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.BookingBusinesses.Item.Services.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.BookingBusinesses.Item.Services {
+namespace MicrosoftGraphSdk.BookingBusinesses.Item.Services {
     /// <summary>Builds and executes requests for operations under \bookingBusinesses\{bookingBusiness-id}\services</summary>
     public class ServicesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.BookingBusinesses.Item.Services {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.bookingBusinesses.item.services.item collection</summary>
-        public BookingServiceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.bookingBusinesses.item.services.item collection</summary>
+        public BookingServiceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingService_id", position);
-            return new BookingServiceRequestBuilder(urlTplParams, RequestAdapter);
+            return new BookingServiceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ServicesRequestBuilder and sets the default values.

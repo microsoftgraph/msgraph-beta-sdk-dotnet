@@ -1,13 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.CertificateBasedAuthConfiguration.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.CertificateBasedAuthConfiguration {
+namespace MicrosoftGraphSdk.CertificateBasedAuthConfiguration {
     /// <summary>Builds and executes requests for operations under \certificateBasedAuthConfiguration</summary>
     public class CertificateBasedAuthConfigurationRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -16,11 +17,11 @@ namespace MicrosoftGraph.CertificateBasedAuthConfiguration {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.certificateBasedAuthConfiguration.item collection</summary>
-        public CertificateBasedAuthConfigurationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.certificateBasedAuthConfiguration.item collection</summary>
+        public CertificateBasedAuthConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("certificateBasedAuthConfiguration_id", position);
-            return new CertificateBasedAuthConfigurationRequestBuilder(urlTplParams, RequestAdapter);
+            return new CertificateBasedAuthConfigurationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.
@@ -76,7 +77,7 @@ namespace MicrosoftGraph.CertificateBasedAuthConfiguration {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.CertificateBasedAuthConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -108,10 +109,10 @@ namespace MicrosoftGraph.CertificateBasedAuthConfiguration {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.CertificateBasedAuthConfiguration> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.CertificateBasedAuthConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.CertificateBasedAuthConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from certificateBasedAuthConfiguration</summary>
         public class GetQueryParameters : QueryParametersBase {

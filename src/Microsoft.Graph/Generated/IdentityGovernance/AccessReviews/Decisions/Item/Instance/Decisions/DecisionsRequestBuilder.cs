@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions.FilterByCurrentUserWithOn;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions.Item;
-using MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions.RecordAllDecisions;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions.Item;
+using MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions.RecordAllDecisions;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Decisions {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\decisions\{accessReviewInstanceDecisionItem-id}\instance\decisions</summary>
     public class DecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -22,11 +22,11 @@ namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.Item.Instanc
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.accessReviews.decisions.item.instance.decisions.item collection</summary>
-        public AccessReviewInstanceDecisionItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.accessReviews.decisions.item.instance.decisions.item collection</summary>
+        public AccessReviewInstanceDecisionItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstanceDecisionItem_id1", position);
-            return new AccessReviewInstanceDecisionItemRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewInstanceDecisionItemItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DecisionsRequestBuilder and sets the default values.

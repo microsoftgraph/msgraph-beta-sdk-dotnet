@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.GroupPolicyCategories.Item.DefinitionFile.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item.DefinitionFile.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyCategories.Item.DefinitionFile {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item.DefinitionFile {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyCategories\{groupPolicyCategory-id}\definitionFile</summary>
     public class DefinitionFileRequestBuilder {
         /// <summary>Path parameters for the request</summary>

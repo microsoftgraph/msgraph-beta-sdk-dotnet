@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Admin.Windows.Updates.UpdatableAssets.EnrollAssets;
-using MicrosoftGraph.Admin.Windows.Updates.UpdatableAssets.EnrollAssetsById;
-using MicrosoftGraph.Admin.Windows.Updates.UpdatableAssets.Item;
-using MicrosoftGraph.Admin.Windows.Updates.UpdatableAssets.UnenrollAssets;
-using MicrosoftGraph.Admin.Windows.Updates.UpdatableAssets.UnenrollAssetsById;
-using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
+using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.EnrollAssets;
+using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.EnrollAssetsById;
+using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item;
+using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.UnenrollAssets;
+using MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.UnenrollAssetsById;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.UpdatableAssets {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\updatableAssets</summary>
     public class UpdatableAssetsRequestBuilder {
         public EnrollAssetsRequestBuilder EnrollAssets { get =>
@@ -33,11 +33,11 @@ namespace MicrosoftGraph.Admin.Windows.Updates.UpdatableAssets {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.admin.windows.updates.updatableAssets.item collection</summary>
-        public UpdatableAssetRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.windows.updates.updatableAssets.item collection</summary>
+        public UpdatableAssetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("updatableAsset_id", position);
-            return new UpdatableAssetRequestBuilder(urlTplParams, RequestAdapter);
+            return new UpdatableAssetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UpdatableAssetsRequestBuilder and sets the default values.

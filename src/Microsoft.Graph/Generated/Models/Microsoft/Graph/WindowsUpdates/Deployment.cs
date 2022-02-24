@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
     public class Deployment : Entity, IParsable {
         /// <summary>Specifies the audience to which content is deployed.</summary>
         public DeploymentAudience Audience { get; set; }

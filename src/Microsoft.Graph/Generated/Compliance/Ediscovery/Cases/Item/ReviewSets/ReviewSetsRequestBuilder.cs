@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases.Item.ReviewSets.Item;
-using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.ReviewSets {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\reviewSets</summary>
     public class ReviewSetsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.ReviewSets {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.compliance.ediscovery.cases.item.reviewSets.item collection</summary>
-        public ReviewSetRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.compliance.ediscovery.cases.item.reviewSets.item collection</summary>
+        public ReviewSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("reviewSet_id", position);
-            return new ReviewSetRequestBuilder(urlTplParams, RequestAdapter);
+            return new ReviewSetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ReviewSetsRequestBuilder and sets the default values.

@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssets;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssetsById;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssets;
-using MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssetsById;
-using MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssets;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.EnrollAssetsById;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.Item;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssets;
+using MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions.UnenrollAssetsById;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions {
+namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Exclusions {
     /// <summary>Builds and executes requests for operations under \admin\windows\updates\deployments\{deployment-id}\audience\exclusions</summary>
     public class ExclusionsRequestBuilder {
         public EnrollAssetsRequestBuilder EnrollAssets { get =>
@@ -33,11 +33,11 @@ namespace MicrosoftGraph.Admin.Windows.Updates.Deployments.Item.Audience.Exclusi
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.admin.windows.updates.deployments.item.audience.exclusions.item collection</summary>
-        public UpdatableAssetRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.windows.updates.deployments.item.audience.exclusions.item collection</summary>
+        public UpdatableAssetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("updatableAsset_id", position);
-            return new UpdatableAssetRequestBuilder(urlTplParams, RequestAdapter);
+            return new UpdatableAssetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExclusionsRequestBuilder and sets the default values.

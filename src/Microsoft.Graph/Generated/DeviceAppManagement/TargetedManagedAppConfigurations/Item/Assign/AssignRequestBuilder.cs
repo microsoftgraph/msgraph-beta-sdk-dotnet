@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assign {
+namespace MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Assign {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations\{targetedManagedAppConfiguration-id}\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

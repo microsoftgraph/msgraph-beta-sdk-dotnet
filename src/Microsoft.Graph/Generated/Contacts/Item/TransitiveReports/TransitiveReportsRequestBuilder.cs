@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Contacts.Item.TransitiveReports.Ref;
+using MicrosoftGraphSdk.Contacts.Item.TransitiveReports.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Contacts.Item.TransitiveReports {
+namespace MicrosoftGraphSdk.Contacts.Item.TransitiveReports {
     /// <summary>Builds and executes requests for operations under \contacts\{orgContact-id}\transitiveReports</summary>
     public class TransitiveReportsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

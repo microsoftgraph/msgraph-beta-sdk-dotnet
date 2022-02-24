@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WorkbookTableColumn : Entity, IParsable {
         /// <summary>Retrieve the filter applied to the column. Read-only.</summary>
         public WorkbookFilter Filter { get; set; }

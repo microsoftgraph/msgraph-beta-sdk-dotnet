@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRegressionSummary.SummarizeDeviceRegressionPerformanceWithSummarizeBy {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSummary.SummarizeDeviceRegressionPerformanceWithSummarizeBy {
     /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRegressionSummary\microsoft.graph.summarizeDeviceRegressionPerformance(summarizeBy={summarizeBy})</summary>
     public class SummarizeDeviceRegressionPerformanceWithSummarizeByRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -76,7 +76,7 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRegressionSumma
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type userExperienceAnalyticsRegressionSummary</summary>
-            public MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
             /// <summary>
             /// Instantiates a new summarizeDeviceRegressionPerformanceWithSummarizeByResponse and sets the default values.
             /// </summary>
@@ -88,7 +88,7 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRegressionSumma
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"userExperienceAnalyticsRegressionSummary", (o,n) => { (o as SummarizeDeviceRegressionPerformanceWithSummarizeByResponse).UserExperienceAnalyticsRegressionSummary = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>(); } },
+                    {"userExperienceAnalyticsRegressionSummary", (o,n) => { (o as SummarizeDeviceRegressionPerformanceWithSummarizeByResponse).UserExperienceAnalyticsRegressionSummary = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>(); } },
                 };
             }
             /// <summary>
@@ -97,7 +97,7 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRegressionSumma
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>("userExperienceAnalyticsRegressionSummary", UserExperienceAnalyticsRegressionSummary);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>("userExperienceAnalyticsRegressionSummary", UserExperienceAnalyticsRegressionSummary);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

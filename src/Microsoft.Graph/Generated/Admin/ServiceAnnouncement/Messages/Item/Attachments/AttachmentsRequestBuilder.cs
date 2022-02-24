@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Item.Attachments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.Attachments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Item.Attachments {
+namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item.Attachments {
     /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\messages\{serviceUpdateMessage-id}\attachments</summary>
     public class AttachmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Item.Attachments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.admin.serviceAnnouncement.messages.item.attachments.item collection</summary>
-        public ServiceAnnouncementAttachmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.serviceAnnouncement.messages.item.attachments.item collection</summary>
+        public ServiceAnnouncementAttachmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceAnnouncementAttachment_id", position);
-            return new ServiceAnnouncementAttachmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServiceAnnouncementAttachmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AttachmentsRequestBuilder and sets the default values.

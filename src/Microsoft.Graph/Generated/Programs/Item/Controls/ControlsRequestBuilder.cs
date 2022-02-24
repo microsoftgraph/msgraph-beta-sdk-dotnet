@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Programs.Item.Controls.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Programs.Item.Controls.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Programs.Item.Controls {
+namespace MicrosoftGraphSdk.Programs.Item.Controls {
     /// <summary>Builds and executes requests for operations under \programs\{program-id}\controls</summary>
     public class ControlsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Programs.Item.Controls {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.programs.item.controls.item collection</summary>
-        public ProgramControlRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.programs.item.controls.item collection</summary>
+        public ProgramControlItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("programControl_id", position);
-            return new ProgramControlRequestBuilder(urlTplParams, RequestAdapter);
+            return new ProgramControlItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ControlsRequestBuilder and sets the default values.

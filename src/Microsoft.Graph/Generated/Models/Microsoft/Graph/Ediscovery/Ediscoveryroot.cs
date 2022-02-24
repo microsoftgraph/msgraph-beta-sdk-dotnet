@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class Ediscoveryroot : Entity, IParsable {
         public List<Case> Cases { get; set; }
         /// <summary>

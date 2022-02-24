@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform;
-using MicrosoftGraph.DeviceManagement.ManagementConditionStatements.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.GetManagementConditionStatementsForPlatformWithPlatform;
+using MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagementConditionStatements {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managementConditionStatements</summary>
     public class ManagementConditionStatementsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.DeviceManagement.ManagementConditionStatements {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.managementConditionStatements.item collection</summary>
-        public ManagementConditionStatementRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.managementConditionStatements.item collection</summary>
+        public ManagementConditionStatementItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementConditionStatement_id", position);
-            return new ManagementConditionStatementRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagementConditionStatementItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagementConditionStatementsRequestBuilder and sets the default values.

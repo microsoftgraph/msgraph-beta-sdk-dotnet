@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.CalendarView.Item.ExceptionOccurrences.Item.Forward {
+namespace MicrosoftGraphSdk.Groups.Item.CalendarView.Item.ExceptionOccurrences.Item.Forward {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\calendarView\{event-id}\exceptionOccurrences\{event-id1}\microsoft.graph.forward</summary>
     public class ForwardRequestBuilder {
         /// <summary>Path parameters for the request</summary>

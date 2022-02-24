@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Communications.Calls.Item.Redirect {
+namespace MicrosoftGraphSdk.Communications.Calls.Item.Redirect {
     /// <summary>Builds and executes requests for operations under \communications\calls\{call-id}\microsoft.graph.redirect</summary>
     public class RedirectRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WorkbookRangeFormat : Entity, IParsable {
         /// <summary>Collection of border objects that apply to the overall range selected Read-only.</summary>
         public List<WorkbookRangeBorder> Borders { get; set; }

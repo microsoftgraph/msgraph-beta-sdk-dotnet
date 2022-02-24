@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Apps.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Apps.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Apps {
+namespace MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations.Item.Apps {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\targetedManagedAppConfigurations\{targetedManagedAppConfiguration-id}\apps</summary>
     public class AppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceAppManagement.TargetedManagedAppConfigurations.It
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.targetedManagedAppConfigurations.item.apps.item collection</summary>
-        public ManagedMobileAppRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.targetedManagedAppConfigurations.item.apps.item collection</summary>
+        public ManagedMobileAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedMobileApp_id", position);
-            return new ManagedMobileAppRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedMobileAppItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppsRequestBuilder and sets the default values.

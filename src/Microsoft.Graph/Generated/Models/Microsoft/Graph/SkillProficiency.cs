@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SkillProficiency : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the skill (for example, personal, professional, hobby).</summary>
         public List<string> Categories { get; set; }

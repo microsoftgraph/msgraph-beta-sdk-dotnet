@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WorkforceIntegration : ChangeTrackedEntity, IParsable {
         /// <summary>API version for the call back URL. Start with 1.</summary>
         public int? ApiVersion { get; set; }

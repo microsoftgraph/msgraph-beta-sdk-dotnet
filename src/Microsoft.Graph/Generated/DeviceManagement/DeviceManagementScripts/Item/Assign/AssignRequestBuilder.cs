@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceManagementScripts.Item.Assign {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.Assign {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceManagementScripts\{deviceManagementScript-id}\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

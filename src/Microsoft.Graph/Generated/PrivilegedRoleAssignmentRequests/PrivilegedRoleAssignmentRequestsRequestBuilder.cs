@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.PrivilegedRoleAssignmentRequests.Item;
-using MicrosoftGraph.PrivilegedRoleAssignmentRequests.My;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests.Item;
+using MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests.My;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PrivilegedRoleAssignmentRequests {
+namespace MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests {
     /// <summary>Builds and executes requests for operations under \privilegedRoleAssignmentRequests</summary>
     public class PrivilegedRoleAssignmentRequestsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.PrivilegedRoleAssignmentRequests {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.privilegedRoleAssignmentRequests.item collection</summary>
-        public PrivilegedRoleAssignmentRequestRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.privilegedRoleAssignmentRequests.item collection</summary>
+        public PrivilegedRoleAssignmentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedRoleAssignmentRequest_id", position);
-            return new PrivilegedRoleAssignmentRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrivilegedRoleAssignmentRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PrivilegedRoleAssignmentRequestsRequestBuilder and sets the default values.

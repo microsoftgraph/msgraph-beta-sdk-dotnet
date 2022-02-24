@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.Registration.CustomQuestions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.OnlineMeetings.Item.Registration {
+namespace MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.Registration {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\registration</summary>
     public class RegistrationRequestBuilder {
         public CustomQuestionsRequestBuilder CustomQuestions { get =>

@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Shares.Item.List.ContentTypes.AddCopy;
-using MicrosoftGraph.Shares.Item.List.ContentTypes.AddCopyFromContentTypeHub;
-using MicrosoftGraph.Shares.Item.List.ContentTypes.GetCompatibleHubContentTypes;
-using MicrosoftGraph.Shares.Item.List.ContentTypes.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.AddCopy;
+using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.AddCopyFromContentTypeHub;
+using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.GetCompatibleHubContentTypes;
+using MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.List.ContentTypes {
+namespace MicrosoftGraphSdk.Shares.Item.List.ContentTypes {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\contentTypes</summary>
     public class ContentTypesRequestBuilder {
         public AddCopyRequestBuilder AddCopy { get =>
@@ -26,11 +26,11 @@ namespace MicrosoftGraph.Shares.Item.List.ContentTypes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.shares.item.list.contentTypes.item collection</summary>
-        public ContentTypeRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.shares.item.list.contentTypes.item collection</summary>
+        public ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType_id", position);
-            return new ContentTypeRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContentTypeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContentTypesRequestBuilder and sets the default values.

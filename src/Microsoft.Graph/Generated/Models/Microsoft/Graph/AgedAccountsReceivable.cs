@@ -4,17 +4,17 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AgedAccountsReceivable : Entity, IParsable {
         public Date? AgedAsOfDate { get; set; }
-        public Decimal? BalanceDue { get; set; }
+        public decimal? BalanceDue { get; set; }
         public string CurrencyCode { get; set; }
-        public Decimal? CurrentAmount { get; set; }
+        public decimal? CurrentAmount { get; set; }
         public string CustomerNumber { get; set; }
         public string Name { get; set; }
-        public Decimal? Period1Amount { get; set; }
-        public Decimal? Period2Amount { get; set; }
-        public Decimal? Period3Amount { get; set; }
+        public decimal? Period1Amount { get; set; }
+        public decimal? Period2Amount { get; set; }
+        public decimal? Period3Amount { get; set; }
         public string PeriodLengthFilter { get; set; }
         /// <summary>
         /// The deserialization information for the current model

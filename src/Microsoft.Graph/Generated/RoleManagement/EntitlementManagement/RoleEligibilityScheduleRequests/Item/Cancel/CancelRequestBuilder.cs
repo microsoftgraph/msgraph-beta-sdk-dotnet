@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.Cancel {
+namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests.Item.Cancel {
     /// <summary>Builds and executes requests for operations under \roleManagement\entitlementManagement\roleEligibilityScheduleRequests\{unifiedRoleEligibilityScheduleRequest-id}\microsoft.graph.cancel</summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>

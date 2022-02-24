@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrintServiceEndpoint : Entity, IParsable {
         /// <summary>A human-readable display name for the endpoint.</summary>
         public string DisplayName { get; set; }

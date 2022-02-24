@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.GroupPolicyDefinitionFiles.Item.Definitions.Ref;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitionFiles.Item.Definitions.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyDefinitionFiles.Item.Definitions {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitionFiles.Item.Definitions {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyDefinitionFiles\{groupPolicyDefinitionFile-id}\definitions</summary>
     public class DefinitionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

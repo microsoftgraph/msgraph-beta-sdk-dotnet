@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.ValidatePermission {
+namespace MicrosoftGraphSdk.Workbooks.Item.ValidatePermission {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.validatePermission</summary>
     public class ValidatePermissionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

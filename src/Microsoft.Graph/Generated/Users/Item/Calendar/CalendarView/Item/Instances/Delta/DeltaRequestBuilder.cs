@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Calendar.CalendarView.Item.Instances.Delta {
+namespace MicrosoftGraphSdk.Users.Item.Calendar.CalendarView.Item.Instances.Delta {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\calendar\calendarView\{event-id}\instances\microsoft.graph.delta()</summary>
     public class DeltaRequestBuilder {
         /// <summary>Path parameters for the request</summary>

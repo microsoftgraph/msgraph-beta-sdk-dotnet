@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings\microsoft.graph.createGooglePlayWebToken</summary>
     public class CreateGooglePlayWebTokenRequestBuilder {
         /// <summary>Path parameters for the request</summary>

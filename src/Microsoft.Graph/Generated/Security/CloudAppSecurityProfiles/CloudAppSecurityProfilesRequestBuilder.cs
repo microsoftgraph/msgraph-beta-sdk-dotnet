@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Security.CloudAppSecurityProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Security.CloudAppSecurityProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.CloudAppSecurityProfiles {
+namespace MicrosoftGraphSdk.Security.CloudAppSecurityProfiles {
     /// <summary>Builds and executes requests for operations under \security\cloudAppSecurityProfiles</summary>
     public class CloudAppSecurityProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Security.CloudAppSecurityProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.security.cloudAppSecurityProfiles.item collection</summary>
-        public CloudAppSecurityProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.security.cloudAppSecurityProfiles.item collection</summary>
+        public CloudAppSecurityProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudAppSecurityProfile_id", position);
-            return new CloudAppSecurityProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new CloudAppSecurityProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CloudAppSecurityProfilesRequestBuilder and sets the default values.

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.Events.Item.ExceptionOccurrences.Delta;
-using MicrosoftGraph.Groups.Item.Events.Item.ExceptionOccurrences.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.Events.Item.ExceptionOccurrences.Delta;
+using MicrosoftGraphSdk.Groups.Item.Events.Item.ExceptionOccurrences.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Events.Item.ExceptionOccurrences {
+namespace MicrosoftGraphSdk.Groups.Item.Events.Item.ExceptionOccurrences {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\events\{event-id}\exceptionOccurrences</summary>
     public class ExceptionOccurrencesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Groups.Item.Events.Item.ExceptionOccurrences {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.groups.item.events.item.exceptionOccurrences.item collection</summary>
-        public EventRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.events.item.exceptionOccurrences.item collection</summary>
+        public EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id1", position);
-            return new EventRequestBuilder(urlTplParams, RequestAdapter);
+            return new EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.

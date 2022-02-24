@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.PrimaryChannel.ProvisionEmail {
+namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.ProvisionEmail {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\primaryChannel\microsoft.graph.provisionEmail</summary>
     public class ProvisionEmailRequestBuilder {
         /// <summary>Path parameters for the request</summary>

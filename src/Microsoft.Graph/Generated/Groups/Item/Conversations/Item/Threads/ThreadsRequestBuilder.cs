@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.Conversations.Item.Threads.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Conversations.Item.Threads {
+namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\conversations\{conversation-id}\threads</summary>
     public class ThreadsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Groups.Item.Conversations.Item.Threads {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.groups.item.conversations.item.threads.item collection</summary>
-        public ConversationThreadRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.conversations.item.threads.item collection</summary>
+        public ConversationThreadItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conversationThread_id", position);
-            return new ConversationThreadRequestBuilder(urlTplParams, RequestAdapter);
+            return new ConversationThreadItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ThreadsRequestBuilder and sets the default values.

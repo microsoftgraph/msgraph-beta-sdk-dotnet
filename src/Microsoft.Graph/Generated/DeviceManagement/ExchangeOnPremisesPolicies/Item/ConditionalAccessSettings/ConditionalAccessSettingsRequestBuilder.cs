@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ExchangeOnPremisesPolicies.Item.ConditionalAccessSettings {
+namespace MicrosoftGraphSdk.DeviceManagement.ExchangeOnPremisesPolicies.Item.ConditionalAccessSettings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\exchangeOnPremisesPolicies\{deviceManagementExchangeOnPremisesPolicy-id}\conditionalAccessSettings</summary>
     public class ConditionalAccessSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

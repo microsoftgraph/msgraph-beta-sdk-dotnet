@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DataClassification.EvaluateDlpPoliciesJobs.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DataClassification.EvaluateDlpPoliciesJobs.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DataClassification.EvaluateDlpPoliciesJobs {
+namespace MicrosoftGraphSdk.DataClassification.EvaluateDlpPoliciesJobs {
     /// <summary>Builds and executes requests for operations under \dataClassification\evaluateDlpPoliciesJobs</summary>
     public class EvaluateDlpPoliciesJobsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DataClassification.EvaluateDlpPoliciesJobs {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.dataClassification.evaluateDlpPoliciesJobs.item collection</summary>
-        public JobResponseBaseRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.dataClassification.evaluateDlpPoliciesJobs.item collection</summary>
+        public JobResponseBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("jobResponseBase_id", position);
-            return new JobResponseBaseRequestBuilder(urlTplParams, RequestAdapter);
+            return new JobResponseBaseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EvaluateDlpPoliciesJobsRequestBuilder and sets the default values.

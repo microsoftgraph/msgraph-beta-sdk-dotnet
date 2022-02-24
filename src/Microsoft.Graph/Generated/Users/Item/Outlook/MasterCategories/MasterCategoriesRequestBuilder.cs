@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Outlook.MasterCategories.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Outlook.MasterCategories.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Outlook.MasterCategories {
+namespace MicrosoftGraphSdk.Users.Item.Outlook.MasterCategories {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\outlook\masterCategories</summary>
     public class MasterCategoriesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Outlook.MasterCategories {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.outlook.masterCategories.item collection</summary>
-        public OutlookCategoryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.outlook.masterCategories.item collection</summary>
+        public OutlookCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookCategory_id", position);
-            return new OutlookCategoryRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutlookCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MasterCategoriesRequestBuilder and sets the default values.

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.GroupPolicyOperations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.GroupPolicyOperations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.GroupPolicyOperations {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.GroupPolicyOperations {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyUploadedDefinitionFiles\{groupPolicyUploadedDefinitionFile-id}\groupPolicyOperations</summary>
     public class GroupPolicyOperationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Ite
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyUploadedDefinitionFiles.item.groupPolicyOperations.item collection</summary>
-        public GroupPolicyOperationRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.groupPolicyUploadedDefinitionFiles.item.groupPolicyOperations.item collection</summary>
+        public GroupPolicyOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyOperation_id", position);
-            return new GroupPolicyOperationRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupPolicyOperationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupPolicyOperationsRequestBuilder and sets the default values.

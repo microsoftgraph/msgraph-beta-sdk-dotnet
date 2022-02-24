@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SingleValueLegacyExtendedProperty : Entity, IParsable {
         /// <summary>A property value.</summary>
         public string Value { get; set; }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AndroidForWorkAppConfigurationSchemaItem : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -24,7 +24,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Unique key the application uses to identify the item</summary>
         public string SchemaItemKey { get; set; }
         /// <summary>List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> Selections { get; set; }
+        public List<KeyValuePair> Selections { get; set; }
         /// <summary>
         /// Instantiates a new androidForWorkAppConfigurationSchemaItem and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).DisplayName = n.GetStringValue(); } },
                 {"schemaItemKey", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).SchemaItemKey = n.GetStringValue(); } },
-                {"selections", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).Selections = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"selections", (o,n) => { (o as AndroidForWorkAppConfigurationSchemaItem).Selections = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("schemaItemKey", SchemaItemKey);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("selections", Selections);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("selections", Selections);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

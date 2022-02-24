@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PermissionGrantPolicy : PolicyBase, IParsable {
         /// <summary>Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.</summary>
         public List<PermissionGrantConditionSet> Excludes { get; set; }

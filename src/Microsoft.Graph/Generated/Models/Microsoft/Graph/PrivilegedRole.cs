@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PrivilegedRole : Entity, IParsable {
         /// <summary>The assignments for this role. Read-only. Nullable.</summary>
         public List<PrivilegedRoleAssignment> Assignments { get; set; }

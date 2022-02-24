@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UnifiedRoleAssignmentScheduleRequest : Request, IParsable {
         /// <summary>Represents the type of the operation on the role assignment. The possible values are: AdminAssign: For administrators to assign roles to users or groups.AdminRemove: For administrators to remove users or groups from roles. AdminUpdate: For administrators to change existing role assignments.AdminExtend: For administrators to extend expiring assignments.AdminRenew: For administrators to renew expired assignments.SelfActivate: For users to activate their assignments.SelfDeactivate: For users to deactivate their active assignments.SelfExtend: For users to request to extend their expiring assignments.SelfRenew: For users to request to renew their expired assignments.</summary>
         public string Action { get; set; }
         /// <summary>If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.</summary>
         public UnifiedRoleEligibilitySchedule ActivatedUsing { get; set; }
         /// <summary>Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AppScope AppScope { get; set; }
+        public AppScope AppScope { get; set; }
         /// <summary>Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.</summary>
         public string AppScopeId { get; set; }
         /// <summary>Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.</summary>
@@ -44,7 +44,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"action", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).Action = n.GetStringValue(); } },
                 {"activatedUsing", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(); } },
-                {"appScope", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).AppScope = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AppScope>(); } },
+                {"appScope", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).AppScope = n.GetObjectValue<AppScope>(); } },
                 {"appScopeId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).AppScopeId = n.GetStringValue(); } },
                 {"directoryScope", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).DirectoryScope = n.GetObjectValue<DirectoryObject>(); } },
                 {"directoryScopeId", (o,n) => { (o as UnifiedRoleAssignmentScheduleRequest).DirectoryScopeId = n.GetStringValue(); } },
@@ -69,7 +69,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             base.Serialize(writer);
             writer.WriteStringValue("action", Action);
             writer.WriteObjectValue<UnifiedRoleEligibilitySchedule>("activatedUsing", ActivatedUsing);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AppScope>("appScope", AppScope);
+            writer.WriteObjectValue<AppScope>("appScope", AppScope);
             writer.WriteStringValue("appScopeId", AppScopeId);
             writer.WriteObjectValue<DirectoryObject>("directoryScope", DirectoryScope);
             writer.WriteStringValue("directoryScopeId", DirectoryScopeId);

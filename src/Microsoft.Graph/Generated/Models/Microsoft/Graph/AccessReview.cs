@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessReview : Entity, IParsable {
         /// <summary>The business flow template identifier. Required on create.  This value is case sensitive.</summary>
         public string BusinessFlowTemplateId { get; set; }
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The collection of decisions for the caller, if the caller is a reviewer.</summary>
         public List<AccessReviewDecision> MyDecisions { get; set; }
         /// <summary>The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Identity ReviewedEntity { get; set; }
+        public Identity ReviewedEntity { get; set; }
         /// <summary>The collection of reviewers for an access review, if access review reviewerType is of type delegated.</summary>
         public List<AccessReviewReviewer> Reviewers { get; set; }
         /// <summary>The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.</summary>
@@ -46,7 +46,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"endDateTime", (o,n) => { (o as AccessReview).EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"instances", (o,n) => { (o as AccessReview).Instances = n.GetCollectionOfObjectValues<AccessReview>().ToList(); } },
                 {"myDecisions", (o,n) => { (o as AccessReview).MyDecisions = n.GetCollectionOfObjectValues<AccessReviewDecision>().ToList(); } },
-                {"reviewedEntity", (o,n) => { (o as AccessReview).ReviewedEntity = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>(); } },
+                {"reviewedEntity", (o,n) => { (o as AccessReview).ReviewedEntity = n.GetObjectValue<Identity>(); } },
                 {"reviewers", (o,n) => { (o as AccessReview).Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewer>().ToList(); } },
                 {"reviewerType", (o,n) => { (o as AccessReview).ReviewerType = n.GetStringValue(); } },
                 {"settings", (o,n) => { (o as AccessReview).Settings = n.GetObjectValue<AccessReviewSettings>(); } },
@@ -69,7 +69,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<AccessReview>("instances", Instances);
             writer.WriteCollectionOfObjectValues<AccessReviewDecision>("myDecisions", MyDecisions);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Identity>("reviewedEntity", ReviewedEntity);
+            writer.WriteObjectValue<Identity>("reviewedEntity", ReviewedEntity);
             writer.WriteCollectionOfObjectValues<AccessReviewReviewer>("reviewers", Reviewers);
             writer.WriteStringValue("reviewerType", ReviewerType);
             writer.WriteObjectValue<AccessReviewSettings>("settings", Settings);

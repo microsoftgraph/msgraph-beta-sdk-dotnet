@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WindowsInformationProtection : ManagedAppPolicy, IParsable {
         /// <summary>Navigation property to list of security groups targeted for policy.</summary>
         public List<TargetedManagedAppPolicyAssignment> Assignments { get; set; }

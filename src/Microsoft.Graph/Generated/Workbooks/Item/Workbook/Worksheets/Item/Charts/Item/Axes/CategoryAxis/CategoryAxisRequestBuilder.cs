@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Format;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.MajorGridlines;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.MinorGridlines;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Title;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Format;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.MajorGridlines;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.MinorGridlines;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis.Title;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.CategoryAxis {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\categoryAxis</summary>
     public class CategoryAxisRequestBuilder {
         public FormatRequestBuilder Format { get =>

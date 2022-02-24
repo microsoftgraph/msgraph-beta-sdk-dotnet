@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Reports.MonthlyPrintUsageByPrinter.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Reports.MonthlyPrintUsageByPrinter.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.MonthlyPrintUsageByPrinter {
+namespace MicrosoftGraphSdk.Reports.MonthlyPrintUsageByPrinter {
     /// <summary>Builds and executes requests for operations under \reports\monthlyPrintUsageByPrinter</summary>
     public class MonthlyPrintUsageByPrinterRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Reports.MonthlyPrintUsageByPrinter {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.reports.monthlyPrintUsageByPrinter.item collection</summary>
-        public PrintUsageByPrinterRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.reports.monthlyPrintUsageByPrinter.item collection</summary>
+        public PrintUsageByPrinterItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printUsageByPrinter_id", position);
-            return new PrintUsageByPrinterRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintUsageByPrinterItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MonthlyPrintUsageByPrinterRequestBuilder and sets the default values.

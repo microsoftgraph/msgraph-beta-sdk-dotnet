@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.Onenote.Resources.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.Onenote.Resources.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Onenote.Resources {
+namespace MicrosoftGraphSdk.Groups.Item.Onenote.Resources {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\onenote\resources</summary>
     public class ResourcesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Groups.Item.Onenote.Resources {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.groups.item.onenote.resources.item collection</summary>
-        public OnenoteResourceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.groups.item.onenote.resources.item collection</summary>
+        public OnenoteResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenoteResource_id", position);
-            return new OnenoteResourceRequestBuilder(urlTplParams, RequestAdapter);
+            return new OnenoteResourceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourcesRequestBuilder and sets the default values.

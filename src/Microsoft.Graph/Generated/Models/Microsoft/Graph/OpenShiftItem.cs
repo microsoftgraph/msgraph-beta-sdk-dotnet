@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OpenShiftItem : ShiftItem, IParsable {
         /// <summary>Count of the number of slots for the given open shift.</summary>
         public int? OpenSlotCount { get; set; }

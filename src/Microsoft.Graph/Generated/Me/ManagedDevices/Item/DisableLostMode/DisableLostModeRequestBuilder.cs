@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ManagedDevices.Item.DisableLostMode {
+namespace MicrosoftGraphSdk.Me.ManagedDevices.Item.DisableLostMode {
     /// <summary>Builds and executes requests for operations under \me\managedDevices\{managedDevice-id}\microsoft.graph.disableLostMode</summary>
     public class DisableLostModeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

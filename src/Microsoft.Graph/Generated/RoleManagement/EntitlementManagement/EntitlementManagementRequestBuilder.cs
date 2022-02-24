@@ -1,25 +1,25 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.ResourceNamespaces;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentApprovals;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignments;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentSchedules;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleDefinitions;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleEligibilitySchedules;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.ResourceNamespaces;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentApprovals;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignments;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentSchedules;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleDefinitions;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilityScheduleInstances;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilityScheduleRequests;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilitySchedules;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.EntitlementManagement {
+namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
     /// <summary>Builds and executes requests for operations under \roleManagement\entitlementManagement</summary>
     public class EntitlementManagementRequestBuilder {
         /// <summary>Path parameters for the request</summary>

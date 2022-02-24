@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Users.Item.ManagedDevices.Item.Users.Ref;
+using MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Users.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.ManagedDevices.Item.Users {
+namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Users {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\users</summary>
     public class UsersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

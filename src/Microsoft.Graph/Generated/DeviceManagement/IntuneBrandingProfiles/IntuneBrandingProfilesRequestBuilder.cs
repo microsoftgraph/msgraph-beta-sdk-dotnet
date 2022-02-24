@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.IntuneBrandingProfiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.IntuneBrandingProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.IntuneBrandingProfiles {
+namespace MicrosoftGraphSdk.DeviceManagement.IntuneBrandingProfiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\intuneBrandingProfiles</summary>
     public class IntuneBrandingProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.IntuneBrandingProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.intuneBrandingProfiles.item collection</summary>
-        public IntuneBrandingProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.intuneBrandingProfiles.item collection</summary>
+        public IntuneBrandingProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("intuneBrandingProfile_id", position);
-            return new IntuneBrandingProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new IntuneBrandingProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IntuneBrandingProfilesRequestBuilder and sets the default values.

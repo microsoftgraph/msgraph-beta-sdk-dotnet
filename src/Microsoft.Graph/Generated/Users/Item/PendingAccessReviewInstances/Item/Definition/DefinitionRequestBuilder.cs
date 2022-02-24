@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Definition.Ref;
-using MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Definition.Stop;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Definition.Ref;
+using MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Definition.Stop;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Definition {
+namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Definition {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}\definition</summary>
     public class DefinitionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

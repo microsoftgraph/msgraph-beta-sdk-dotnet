@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.Planner.Plans;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Groups.Item.Planner.Plans;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Planner {
+namespace MicrosoftGraphSdk.Groups.Item.Planner {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\planner</summary>
     public class PlannerRequestBuilder {
         /// <summary>Path parameters for the request</summary>

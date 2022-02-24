@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.AsHierarchy {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.AsHierarchy {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\tags\{tag-id}\childTags\microsoft.graph.ediscovery.asHierarchy()</summary>
     public class AsHierarchyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -64,9 +64,9 @@ namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.As
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.AsHierarchy.AsHierarchy>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<AsHierarchy>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.AsHierarchy.AsHierarchy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<AsHierarchy>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

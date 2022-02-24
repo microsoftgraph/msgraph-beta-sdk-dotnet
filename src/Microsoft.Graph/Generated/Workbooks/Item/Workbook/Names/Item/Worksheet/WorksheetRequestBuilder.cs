@@ -1,23 +1,23 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.CellWithRowWithColumn;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Names;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.PivotTables;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Protection;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Range;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.RangeWithAddress;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Tables;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.UsedRange;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.UsedRangeWithValuesOnly;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.CellWithRowWithColumn;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Names;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.PivotTables;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Protection;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Range;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.RangeWithAddress;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Tables;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.UsedRange;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.UsedRangeWithValuesOnly;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet</summary>
     public class WorksheetRequestBuilder {
         public ChartsRequestBuilder Charts { get =>

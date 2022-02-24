@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.ManagedDevice.RequestRemoteAssistance {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts.Item.DeviceRunStates.Item.ManagedDevice.RequestRemoteAssistance {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceComplianceScripts\{deviceComplianceScript-id}\deviceRunStates\{deviceComplianceScriptDeviceState-id}\managedDevice\microsoft.graph.requestRemoteAssistance</summary>
     public class RequestRemoteAssistanceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

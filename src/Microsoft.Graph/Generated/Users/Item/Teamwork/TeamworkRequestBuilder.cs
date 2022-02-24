@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Teamwork.InstalledApps;
-using MicrosoftGraph.Users.Item.Teamwork.SendActivityNotification;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Teamwork.InstalledApps;
+using MicrosoftGraphSdk.Users.Item.Teamwork.SendActivityNotification;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Teamwork {
+namespace MicrosoftGraphSdk.Users.Item.Teamwork {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\teamwork</summary>
     public class TeamworkRequestBuilder {
         public InstalledAppsRequestBuilder InstalledApps { get =>

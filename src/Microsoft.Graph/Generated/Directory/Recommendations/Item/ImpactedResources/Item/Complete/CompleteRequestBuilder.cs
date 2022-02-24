@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Directory.Recommendations.Item.ImpactedResources.Item.Complete {
+namespace MicrosoftGraphSdk.Directory.Recommendations.Item.ImpactedResources.Item.Complete {
     /// <summary>Builds and executes requests for operations under \directory\recommendations\{recommendation-id}\impactedResources\{recommendationResource-id}\microsoft.graph.complete</summary>
     public class CompleteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

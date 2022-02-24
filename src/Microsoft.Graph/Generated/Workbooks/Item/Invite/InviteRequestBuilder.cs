@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Invite {
+namespace MicrosoftGraphSdk.Workbooks.Item.Invite {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.invite</summary>
     public class InviteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -68,10 +68,10 @@ namespace MicrosoftGraph.Workbooks.Item.Invite {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Workbooks.Item.Invite.Invite>> PostAsync(InviteRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<Invite>> PostAsync(InviteRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Workbooks.Item.Invite.Invite>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Invite>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

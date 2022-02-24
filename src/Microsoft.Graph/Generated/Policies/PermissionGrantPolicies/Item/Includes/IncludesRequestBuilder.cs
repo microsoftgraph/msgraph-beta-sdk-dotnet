@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.PermissionGrantPolicies.Item.Includes.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Includes.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.PermissionGrantPolicies.Item.Includes {
+namespace MicrosoftGraphSdk.Policies.PermissionGrantPolicies.Item.Includes {
     /// <summary>Builds and executes requests for operations under \policies\permissionGrantPolicies\{permissionGrantPolicy-id}\includes</summary>
     public class IncludesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Policies.PermissionGrantPolicies.Item.Includes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.policies.permissionGrantPolicies.item.includes.item collection</summary>
-        public PermissionGrantConditionSetRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.policies.permissionGrantPolicies.item.includes.item collection</summary>
+        public PermissionGrantConditionSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("permissionGrantConditionSet_id", position);
-            return new PermissionGrantConditionSetRequestBuilder(urlTplParams, RequestAdapter);
+            return new PermissionGrantConditionSetItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IncludesRequestBuilder and sets the default values.

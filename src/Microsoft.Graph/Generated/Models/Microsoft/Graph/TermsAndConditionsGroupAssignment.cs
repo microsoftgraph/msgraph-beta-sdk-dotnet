@@ -3,19 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class TermsAndConditionsGroupAssignment : Entity, IParsable {
         /// <summary>Unique identifier of a group that the T&C policy is assigned to.</summary>
         public string TargetGroupId { get; set; }
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.TermsAndConditions TermsAndConditions { get; set; }
+        public TermsAndConditions TermsAndConditions { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"targetGroupId", (o,n) => { (o as TermsAndConditionsGroupAssignment).TargetGroupId = n.GetStringValue(); } },
-                {"termsAndConditions", (o,n) => { (o as TermsAndConditionsGroupAssignment).TermsAndConditions = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.TermsAndConditions>(); } },
+                {"termsAndConditions", (o,n) => { (o as TermsAndConditionsGroupAssignment).TermsAndConditions = n.GetObjectValue<TermsAndConditions>(); } },
             };
         }
         /// <summary>
@@ -26,7 +26,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("targetGroupId", TargetGroupId);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.TermsAndConditions>("termsAndConditions", TermsAndConditions);
+            writer.WriteObjectValue<TermsAndConditions>("termsAndConditions", TermsAndConditions);
         }
     }
 }

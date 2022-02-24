@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EmbeddedSIMActivationCodePool : Entity, IParsable {
         /// <summary>The total count of activation codes which belong to this pool.</summary>
         public int? ActivationCodeCount { get; set; }

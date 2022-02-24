@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Onenote.Resources.Item.Content {
+namespace MicrosoftGraphSdk.Me.Onenote.Resources.Item.Content {
     /// <summary>Builds and executes requests for operations under \me\onenote\resources\{onenoteResource-id}\content</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

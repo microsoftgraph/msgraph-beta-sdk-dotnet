@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDevices.Item.RotateBitLockerKeys {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.RotateBitLockerKeys {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDevices\{managedDevice-id}\microsoft.graph.rotateBitLockerKeys</summary>
     public class RotateBitLockerKeysRequestBuilder {
         /// <summary>Path parameters for the request</summary>

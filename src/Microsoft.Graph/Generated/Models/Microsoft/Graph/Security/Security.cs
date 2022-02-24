@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Security {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class Security : Entity, IParsable {
         /// <summary>Read-only. Nullable.</summary>
         public List<Alert> Alerts { get; set; }

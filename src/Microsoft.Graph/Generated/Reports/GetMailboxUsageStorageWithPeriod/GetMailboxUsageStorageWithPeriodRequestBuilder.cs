@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetMailboxUsageStorageWithPeriod {
+namespace MicrosoftGraphSdk.Reports.GetMailboxUsageStorageWithPeriod {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getMailboxUsageStorage(period='{period}')</summary>
     public class GetMailboxUsageStorageWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

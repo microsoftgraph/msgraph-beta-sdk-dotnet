@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Checkin {
+namespace MicrosoftGraphSdk.Workbooks.Item.Checkin {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.checkin</summary>
     public class CheckinRequestBuilder {
         /// <summary>Path parameters for the request</summary>

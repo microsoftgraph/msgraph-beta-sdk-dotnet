@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Planner.Plans.Item.Tasks.Item.AssignedToTaskBoardFormat {
+namespace MicrosoftGraphSdk.Me.Planner.Plans.Item.Tasks.Item.AssignedToTaskBoardFormat {
     /// <summary>Builds and executes requests for operations under \me\planner\plans\{plannerPlan-id}\tasks\{plannerTask-id}\assignedToTaskBoardFormat</summary>
     public class AssignedToTaskBoardFormatRequestBuilder {
         /// <summary>Path parameters for the request</summary>

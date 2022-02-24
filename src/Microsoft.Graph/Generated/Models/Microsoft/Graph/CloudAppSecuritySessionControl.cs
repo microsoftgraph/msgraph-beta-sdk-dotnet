@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CloudAppSecuritySessionControl : ConditionalAccessSessionControl, IParsable {
         /// <summary>Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.</summary>
         public CloudAppSecuritySessionControlType? CloudAppSecurityType { get; set; }

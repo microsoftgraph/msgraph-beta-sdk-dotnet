@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.SalesInvoices.Item.Post {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.Post {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\salesInvoices\{salesInvoice-id}\microsoft.graph.post</summary>
     public class PostRequestBuilder {
         /// <summary>Path parameters for the request</summary>

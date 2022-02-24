@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions {
+namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssignments.Item.TermsAndConditions {
     /// <summary>Builds and executes requests for operations under \deviceManagement\termsAndConditions\{termsAndConditions-id}\groupAssignments\{termsAndConditionsGroupAssignment-id}\termsAndConditions</summary>
     public class TermsAndConditionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -76,9 +76,9 @@ namespace MicrosoftGraph.DeviceManagement.TermsAndConditions.Item.GroupAssignmen
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.TermsAndConditions> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.TermsAndConditions>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
         public class GetQueryParameters : QueryParametersBase {

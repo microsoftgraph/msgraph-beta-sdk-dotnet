@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Financials.Companies.Item.UnitsOfMeasure.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Financials.Companies.Item.UnitsOfMeasure.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.UnitsOfMeasure {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.UnitsOfMeasure {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\unitsOfMeasure</summary>
     public class UnitsOfMeasureRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Financials.Companies.Item.UnitsOfMeasure {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.unitsOfMeasure.item collection</summary>
-        public UnitOfMeasureRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.unitsOfMeasure.item collection</summary>
+        public UnitOfMeasureItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unitOfMeasure_id", position);
-            return new UnitOfMeasureRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnitOfMeasureItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UnitsOfMeasureRequestBuilder and sets the default values.

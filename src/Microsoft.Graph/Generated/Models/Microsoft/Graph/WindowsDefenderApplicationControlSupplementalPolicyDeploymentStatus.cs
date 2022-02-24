@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus : Entity, IParsable {
         /// <summary>The deployment state of the policy. Possible values are: unknown, success, tokenError, notAuthorizedByToken, policyNotFound.</summary>
         public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus { get; set; }

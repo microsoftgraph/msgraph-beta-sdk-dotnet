@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignUserToDevice {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignUserToDevice {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeviceIdentities\{windowsAutopilotDeviceIdentity-id}\microsoft.graph.assignUserToDevice</summary>
     public class AssignUserToDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teams.Item.Schedule.TimeCards.ClockIn;
-using MicrosoftGraph.Teams.Item.Schedule.TimeCards.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.ClockIn;
+using MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Schedule.TimeCards {
+namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\schedule\timeCards</summary>
     public class TimeCardsRequestBuilder {
         public ClockInRequestBuilder ClockIn { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.Teams.Item.Schedule.TimeCards {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.teams.item.schedule.timeCards.item collection</summary>
-        public TimeCardRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.timeCards.item collection</summary>
+        public TimeCardItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("timeCard_id", position);
-            return new TimeCardRequestBuilder(urlTplParams, RequestAdapter);
+            return new TimeCardItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TimeCardsRequestBuilder and sets the default values.

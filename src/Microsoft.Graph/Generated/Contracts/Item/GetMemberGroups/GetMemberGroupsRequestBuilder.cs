@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Contracts.Item.GetMemberGroups {
+namespace MicrosoftGraphSdk.Contracts.Item.GetMemberGroups {
     /// <summary>Builds and executes requests for operations under \contracts\{contract-id}\microsoft.graph.getMemberGroups</summary>
     public class GetMemberGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

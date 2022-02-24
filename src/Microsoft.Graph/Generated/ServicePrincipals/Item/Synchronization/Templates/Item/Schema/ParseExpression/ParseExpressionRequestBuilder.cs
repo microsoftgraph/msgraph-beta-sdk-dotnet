@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.ParseExpression {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.ParseExpression {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\synchronization\templates\{synchronizationTemplate-id}\schema\microsoft.graph.parseExpression</summary>
     public class ParseExpressionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ManagedDeviceEncryptionStates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ManagedDeviceEncryptionStates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ManagedDeviceEncryptionStates {
+namespace MicrosoftGraphSdk.DeviceManagement.ManagedDeviceEncryptionStates {
     /// <summary>Builds and executes requests for operations under \deviceManagement\managedDeviceEncryptionStates</summary>
     public class ManagedDeviceEncryptionStatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.ManagedDeviceEncryptionStates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.managedDeviceEncryptionStates.item collection</summary>
-        public ManagedDeviceEncryptionStateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.managedDeviceEncryptionStates.item collection</summary>
+        public ManagedDeviceEncryptionStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceEncryptionState_id", position);
-            return new ManagedDeviceEncryptionStateRequestBuilder(urlTplParams, RequestAdapter);
+            return new ManagedDeviceEncryptionStateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ManagedDeviceEncryptionStatesRequestBuilder and sets the default values.

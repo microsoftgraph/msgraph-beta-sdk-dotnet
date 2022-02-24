@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidDeviceOwnerEnrollmentProfiles</summary>
     public class AndroidDeviceOwnerEnrollmentProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.AndroidDeviceOwnerEnrollmentProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.androidDeviceOwnerEnrollmentProfiles.item collection</summary>
-        public AndroidDeviceOwnerEnrollmentProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.androidDeviceOwnerEnrollmentProfiles.item collection</summary>
+        public AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidDeviceOwnerEnrollmentProfile_id", position);
-            return new AndroidDeviceOwnerEnrollmentProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerEnrollmentProfilesRequestBuilder and sets the default values.

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Teamwork : Entity, IParsable {
         /// <summary>The Teams devices provisioned for the tenant.</summary>
         public List<TeamworkDevice> Devices { get; set; }

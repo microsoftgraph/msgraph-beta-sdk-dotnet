@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Calendars.Item.CalendarView.Item.Calendar.AllowedCalendarSharingRolesWithUser;
-using MicrosoftGraph.Users.Item.Calendars.Item.CalendarView.Item.Calendar.GetSchedule;
-using MicrosoftGraph.Users.Item.Calendars.Item.CalendarView.Item.Calendar.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Calendars.Item.CalendarView.Item.Calendar.AllowedCalendarSharingRolesWithUser;
+using MicrosoftGraphSdk.Users.Item.Calendars.Item.CalendarView.Item.Calendar.GetSchedule;
+using MicrosoftGraphSdk.Users.Item.Calendars.Item.CalendarView.Item.Calendar.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Calendars.Item.CalendarView.Item.Calendar {
+namespace MicrosoftGraphSdk.Users.Item.Calendars.Item.CalendarView.Item.Calendar {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\calendarView\{event-id}\calendar</summary>
     public class CalendarRequestBuilder {
         public GetScheduleRequestBuilder GetSchedule { get =>
@@ -89,9 +89,9 @@ namespace MicrosoftGraph.Users.Item.Calendars.Item.CalendarView.Item.Calendar {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.Calendar> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.Calendar>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>The calendar that contains the event. Navigation property. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

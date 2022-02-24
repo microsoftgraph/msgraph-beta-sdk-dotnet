@@ -1,13 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceAppImpact {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBatteryHealthDeviceAppImpact {
     /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsBatteryHealthDeviceAppImpact</summary>
     public class UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -16,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsBatteryHealthDe
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsBatteryHealthDeviceAppImpact.item collection</summary>
-        public UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.userExperienceAnalyticsBatteryHealthDeviceAppImpact.item collection</summary>
+        public UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsBatteryHealthDeviceAppImpact_id", position);
-            return new UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsBatteryHealthDeviceAppImpactItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsBatteryHealthDeviceAppImpactRequestBuilder and sets the default values.
@@ -76,7 +77,7 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsBatteryHealthDe
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthDeviceAppImpact body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthDeviceAppImpact body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -108,10 +109,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsBatteryHealthDe
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthDeviceAppImpact> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthDeviceAppImpact body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthDeviceAppImpact> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthDeviceAppImpact body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>User Experience Analytics Battery Health Device App Impact</summary>
         public class GetQueryParameters : QueryParametersBase {

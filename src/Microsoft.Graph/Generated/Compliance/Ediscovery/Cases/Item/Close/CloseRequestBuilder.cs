@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.Close {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Close {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\microsoft.graph.ediscovery.close</summary>
     public class CloseRequestBuilder {
         /// <summary>Path parameters for the request</summary>

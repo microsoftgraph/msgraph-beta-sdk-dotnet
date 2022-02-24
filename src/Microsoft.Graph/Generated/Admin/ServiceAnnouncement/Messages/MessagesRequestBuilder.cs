@@ -1,20 +1,20 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Archive;
-using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Favorite;
-using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Item;
-using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.MarkRead;
-using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.MarkUnread;
-using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Unarchive;
-using MicrosoftGraph.Admin.ServiceAnnouncement.Messages.Unfavorite;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Archive;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Favorite;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Item;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.MarkRead;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.MarkUnread;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Unarchive;
+using MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages.Unfavorite;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages {
+namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.Messages {
     /// <summary>Builds and executes requests for operations under \admin\serviceAnnouncement\messages</summary>
     public class MessagesRequestBuilder {
         public ArchiveRequestBuilder Archive { get =>
@@ -41,11 +41,11 @@ namespace MicrosoftGraph.Admin.ServiceAnnouncement.Messages {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.admin.serviceAnnouncement.messages.item collection</summary>
-        public ServiceUpdateMessageRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.admin.serviceAnnouncement.messages.item collection</summary>
+        public ServiceUpdateMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceUpdateMessage_id", position);
-            return new ServiceUpdateMessageRequestBuilder(urlTplParams, RequestAdapter);
+            return new ServiceUpdateMessageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MessagesRequestBuilder and sets the default values.

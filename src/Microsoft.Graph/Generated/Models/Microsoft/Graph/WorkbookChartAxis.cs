@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WorkbookChartAxis : Entity, IParsable {
         /// <summary>Represents the formatting of a chart object, which includes line and font formatting. Read-only.</summary>
         public WorkbookChartAxisFormat Format { get; set; }

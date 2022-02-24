@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Groups.Item.MembersWithLicenseErrors.Ref;
+using MicrosoftGraphSdk.Groups.Item.MembersWithLicenseErrors.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.MembersWithLicenseErrors {
+namespace MicrosoftGraphSdk.Groups.Item.MembersWithLicenseErrors {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\membersWithLicenseErrors</summary>
     public class MembersWithLicenseErrorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

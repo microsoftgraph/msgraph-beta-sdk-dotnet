@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Tasks.Alltasks.Item.Move {
+namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.Move {
     /// <summary>Builds and executes requests for operations under \me\tasks\alltasks\{baseTask-id}\microsoft.graph.move</summary>
     public class MoveRequestBuilder {
         /// <summary>Path parameters for the request</summary>

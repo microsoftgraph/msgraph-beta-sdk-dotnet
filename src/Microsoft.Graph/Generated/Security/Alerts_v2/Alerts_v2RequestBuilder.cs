@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Security.Alerts_v2.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Security.Alerts_v2.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.Alerts_v2 {
+namespace MicrosoftGraphSdk.Security.Alerts_v2 {
     /// <summary>Builds and executes requests for operations under \security\alerts_v2</summary>
     public class Alerts_v2RequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Security.Alerts_v2 {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.security.alerts_v2.item collection</summary>
-        public AlertRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.security.alerts_v2.item collection</summary>
+        public AlertItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("alert_id", position);
-            return new AlertRequestBuilder(urlTplParams, RequestAdapter);
+            return new AlertItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new Alerts_v2RequestBuilder and sets the default values.

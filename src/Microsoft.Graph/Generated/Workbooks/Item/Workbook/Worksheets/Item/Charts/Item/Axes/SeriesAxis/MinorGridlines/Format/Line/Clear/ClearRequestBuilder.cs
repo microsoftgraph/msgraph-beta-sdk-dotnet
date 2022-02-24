@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.SeriesAxis.MinorGridlines.Format.Line.Clear {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.Axes.SeriesAxis.MinorGridlines.Format.Line.Clear {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\charts\{workbookChart-id}\axes\seriesAxis\minorGridlines\format\line\microsoft.graph.clear</summary>
     public class ClearRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Domains.Item.VerificationDnsRecords.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Domains.Item.VerificationDnsRecords.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Domains.Item.VerificationDnsRecords {
+namespace MicrosoftGraphSdk.Domains.Item.VerificationDnsRecords {
     /// <summary>Builds and executes requests for operations under \domains\{domain-id}\verificationDnsRecords</summary>
     public class VerificationDnsRecordsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Domains.Item.VerificationDnsRecords {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.domains.item.verificationDnsRecords.item collection</summary>
-        public DomainDnsRecordRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.domains.item.verificationDnsRecords.item collection</summary>
+        public DomainDnsRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("domainDnsRecord_id", position);
-            return new DomainDnsRecordRequestBuilder(urlTplParams, RequestAdapter);
+            return new DomainDnsRecordItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VerificationDnsRecordsRequestBuilder and sets the default values.

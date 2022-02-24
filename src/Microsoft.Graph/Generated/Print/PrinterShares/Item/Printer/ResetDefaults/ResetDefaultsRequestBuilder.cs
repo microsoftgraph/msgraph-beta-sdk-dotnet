@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.PrinterShares.Item.Printer.ResetDefaults {
+namespace MicrosoftGraphSdk.Print.PrinterShares.Item.Printer.ResetDefaults {
     /// <summary>Builds and executes requests for operations under \print\printerShares\{printerShare-id}\printer\microsoft.graph.resetDefaults</summary>
     public class ResetDefaultsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

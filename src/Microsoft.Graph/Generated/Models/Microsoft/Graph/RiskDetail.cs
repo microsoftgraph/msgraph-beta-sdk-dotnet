@@ -1,4 +1,4 @@
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public enum RiskDetail {
         None,
         AdminGeneratedTemporaryPassword,
@@ -12,5 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         Hidden,
         AdminConfirmedUserCompromised,
         UnknownFutureValue,
+        AdminConfirmedServicePrincipalCompromised,
+        AdminDismissedAllRiskForServicePrincipal,
     }
 }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AppleEnrollmentProfileAssignment : Entity, IParsable {
         /// <summary>The assignment target for the Apple user initiated deployment profile.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }

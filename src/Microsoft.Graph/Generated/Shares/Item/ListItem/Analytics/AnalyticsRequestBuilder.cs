@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Shares.Item.ListItem.Analytics.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Shares.Item.ListItem.Analytics.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.ListItem.Analytics {
+namespace MicrosoftGraphSdk.Shares.Item.ListItem.Analytics {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\listItem\analytics</summary>
     public class AnalyticsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

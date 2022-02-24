@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Tables.Item.ClearFilters {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Worksheet.Tables.Item.ClearFilters {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\tables\{workbookTable-id1}\microsoft.graph.clearFilters</summary>
     public class ClearFiltersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Authentication.WindowsHelloForBusinessMethods.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Authentication.WindowsHelloForBusinessMethods.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Authentication.WindowsHelloForBusinessMethods {
+namespace MicrosoftGraphSdk.Me.Authentication.WindowsHelloForBusinessMethods {
     /// <summary>Builds and executes requests for operations under \me\authentication\windowsHelloForBusinessMethods</summary>
     public class WindowsHelloForBusinessMethodsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.Authentication.WindowsHelloForBusinessMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.authentication.windowsHelloForBusinessMethods.item collection</summary>
-        public WindowsHelloForBusinessAuthenticationMethodRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.authentication.windowsHelloForBusinessMethods.item collection</summary>
+        public WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsHelloForBusinessAuthenticationMethod_id", position);
-            return new WindowsHelloForBusinessAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.

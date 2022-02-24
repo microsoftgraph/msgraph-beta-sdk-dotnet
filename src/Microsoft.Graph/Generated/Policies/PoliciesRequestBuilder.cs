@@ -1,37 +1,38 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.AccessReviewPolicy;
-using MicrosoftGraph.Policies.ActivityBasedTimeoutPolicies;
-using MicrosoftGraph.Policies.AdminConsentRequestPolicy;
-using MicrosoftGraph.Policies.AppManagementPolicies;
-using MicrosoftGraph.Policies.AuthenticationFlowsPolicy;
-using MicrosoftGraph.Policies.AuthenticationMethodsPolicy;
-using MicrosoftGraph.Policies.AuthorizationPolicy;
-using MicrosoftGraph.Policies.B2cAuthenticationMethodsPolicy;
-using MicrosoftGraph.Policies.ClaimsMappingPolicies;
-using MicrosoftGraph.Policies.ConditionalAccessPolicies;
-using MicrosoftGraph.Policies.DefaultAppManagementPolicy;
-using MicrosoftGraph.Policies.DirectoryRoleAccessReviewPolicy;
-using MicrosoftGraph.Policies.ExternalIdentitiesPolicy;
-using MicrosoftGraph.Policies.FeatureRolloutPolicies;
-using MicrosoftGraph.Policies.HomeRealmDiscoveryPolicies;
-using MicrosoftGraph.Policies.IdentitySecurityDefaultsEnforcementPolicy;
-using MicrosoftGraph.Policies.MobileAppManagementPolicies;
-using MicrosoftGraph.Policies.MobileDeviceManagementPolicies;
-using MicrosoftGraph.Policies.PermissionGrantPolicies;
-using MicrosoftGraph.Policies.RoleManagementPolicies;
-using MicrosoftGraph.Policies.RoleManagementPolicyAssignments;
-using MicrosoftGraph.Policies.ServicePrincipalCreationPolicies;
-using MicrosoftGraph.Policies.TokenIssuancePolicies;
-using MicrosoftGraph.Policies.TokenLifetimePolicies;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.AccessReviewPolicy;
+using MicrosoftGraphSdk.Policies.ActivityBasedTimeoutPolicies;
+using MicrosoftGraphSdk.Policies.AdminConsentRequestPolicy;
+using MicrosoftGraphSdk.Policies.AppManagementPolicies;
+using MicrosoftGraphSdk.Policies.AuthenticationFlowsPolicy;
+using MicrosoftGraphSdk.Policies.AuthenticationMethodsPolicy;
+using MicrosoftGraphSdk.Policies.AuthorizationPolicy;
+using MicrosoftGraphSdk.Policies.B2cAuthenticationMethodsPolicy;
+using MicrosoftGraphSdk.Policies.ClaimsMappingPolicies;
+using MicrosoftGraphSdk.Policies.ConditionalAccessPolicies;
+using MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy;
+using MicrosoftGraphSdk.Policies.DefaultAppManagementPolicy;
+using MicrosoftGraphSdk.Policies.DirectoryRoleAccessReviewPolicy;
+using MicrosoftGraphSdk.Policies.ExternalIdentitiesPolicy;
+using MicrosoftGraphSdk.Policies.FeatureRolloutPolicies;
+using MicrosoftGraphSdk.Policies.HomeRealmDiscoveryPolicies;
+using MicrosoftGraphSdk.Policies.IdentitySecurityDefaultsEnforcementPolicy;
+using MicrosoftGraphSdk.Policies.MobileAppManagementPolicies;
+using MicrosoftGraphSdk.Policies.MobileDeviceManagementPolicies;
+using MicrosoftGraphSdk.Policies.PermissionGrantPolicies;
+using MicrosoftGraphSdk.Policies.RoleManagementPolicies;
+using MicrosoftGraphSdk.Policies.RoleManagementPolicyAssignments;
+using MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies;
+using MicrosoftGraphSdk.Policies.TokenIssuancePolicies;
+using MicrosoftGraphSdk.Policies.TokenLifetimePolicies;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies {
+namespace MicrosoftGraphSdk.Policies {
     /// <summary>Builds and executes requests for operations under \policies</summary>
     public class PoliciesRequestBuilder {
         public AccessReviewPolicyRequestBuilder AccessReviewPolicy { get =>
@@ -63,6 +64,9 @@ namespace MicrosoftGraph.Policies {
         }
         public ConditionalAccessPoliciesRequestBuilder ConditionalAccessPolicies { get =>
             new ConditionalAccessPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public CrossTenantAccessPolicyRequestBuilder CrossTenantAccessPolicy { get =>
+            new CrossTenantAccessPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         public DefaultAppManagementPolicyRequestBuilder DefaultAppManagementPolicy { get =>
             new DefaultAppManagementPolicyRequestBuilder(PathParameters, RequestAdapter);

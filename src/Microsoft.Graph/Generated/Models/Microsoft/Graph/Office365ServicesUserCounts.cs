@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Office365ServicesUserCounts : Entity, IParsable {
         /// <summary>The number of active users on Exchange. Any user who can read and send email is considered an active user.</summary>
         public long? ExchangeActive { get; set; }

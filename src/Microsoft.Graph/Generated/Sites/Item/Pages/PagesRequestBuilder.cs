@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Sites.Item.Pages.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Sites.Item.Pages.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Pages {
+namespace MicrosoftGraphSdk.Sites.Item.Pages {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\pages</summary>
     public class PagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Sites.Item.Pages {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.sites.item.pages.item collection</summary>
-        public SitePageRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.sites.item.pages.item collection</summary>
+        public SitePageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sitePage_id", position);
-            return new SitePageRequestBuilder(urlTplParams, RequestAdapter);
+            return new SitePageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PagesRequestBuilder and sets the default values.

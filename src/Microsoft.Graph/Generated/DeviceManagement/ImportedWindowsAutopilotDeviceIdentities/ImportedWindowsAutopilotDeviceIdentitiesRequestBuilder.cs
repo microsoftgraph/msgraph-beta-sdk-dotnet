@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import;
-using MicrosoftGraph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import;
+using MicrosoftGraphSdk.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities {
+namespace MicrosoftGraphSdk.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities {
     /// <summary>Builds and executes requests for operations under \deviceManagement\importedWindowsAutopilotDeviceIdentities</summary>
     public class ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder {
         public ImportRequestBuilder Import { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentiti
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.importedWindowsAutopilotDeviceIdentities.item collection</summary>
-        public ImportedWindowsAutopilotDeviceIdentityRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.importedWindowsAutopilotDeviceIdentities.item collection</summary>
+        public ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("importedWindowsAutopilotDeviceIdentity_id", position);
-            return new ImportedWindowsAutopilotDeviceIdentityRequestBuilder(urlTplParams, RequestAdapter);
+            return new ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder and sets the default values.

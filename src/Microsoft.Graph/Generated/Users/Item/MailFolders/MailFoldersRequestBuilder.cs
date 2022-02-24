@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.MailFolders.Delta;
-using MicrosoftGraph.Users.Item.MailFolders.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.MailFolders.Delta;
+using MicrosoftGraphSdk.Users.Item.MailFolders.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.MailFolders {
+namespace MicrosoftGraphSdk.Users.Item.MailFolders {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\mailFolders</summary>
     public class MailFoldersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Users.Item.MailFolders {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.mailFolders.item collection</summary>
-        public MailFolderRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.mailFolders.item collection</summary>
+        public MailFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mailFolder_id", position);
-            return new MailFolderRequestBuilder(urlTplParams, RequestAdapter);
+            return new MailFolderItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MailFoldersRequestBuilder and sets the default values.

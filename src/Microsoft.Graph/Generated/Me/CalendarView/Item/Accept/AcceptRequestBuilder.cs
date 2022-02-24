@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.CalendarView.Item.Accept {
+namespace MicrosoftGraphSdk.Me.CalendarView.Item.Accept {
     /// <summary>Builds and executes requests for operations under \me\calendarView\{event-id}\microsoft.graph.accept</summary>
     public class AcceptRequestBuilder {
         /// <summary>Path parameters for the request</summary>

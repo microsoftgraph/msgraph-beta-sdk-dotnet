@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.ApiConnectors.Item.UploadClientCertificate {
+namespace MicrosoftGraphSdk.Identity.ApiConnectors.Item.UploadClientCertificate {
     /// <summary>Builds and executes requests for operations under \identity\apiConnectors\{identityApiConnector-id}\microsoft.graph.uploadClientCertificate</summary>
     public class UploadClientCertificateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

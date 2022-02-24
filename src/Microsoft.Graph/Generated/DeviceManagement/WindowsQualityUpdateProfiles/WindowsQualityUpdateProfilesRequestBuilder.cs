@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsQualityUpdateProfiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsQualityUpdateProfiles {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsQualityUpdateProfiles</summary>
     public class WindowsQualityUpdateProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.WindowsQualityUpdateProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsQualityUpdateProfiles.item collection</summary>
-        public WindowsQualityUpdateProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsQualityUpdateProfiles.item collection</summary>
+        public WindowsQualityUpdateProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsQualityUpdateProfile_id", position);
-            return new WindowsQualityUpdateProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsQualityUpdateProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsQualityUpdateProfilesRequestBuilder and sets the default values.

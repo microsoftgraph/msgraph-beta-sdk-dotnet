@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AuditLogs.DirectoryAudits.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AuditLogs.DirectoryAudits.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AuditLogs.DirectoryAudits {
+namespace MicrosoftGraphSdk.AuditLogs.DirectoryAudits {
     /// <summary>Builds and executes requests for operations under \auditLogs\directoryAudits</summary>
     public class DirectoryAuditsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.AuditLogs.DirectoryAudits {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.auditLogs.directoryAudits.item collection</summary>
-        public DirectoryAuditRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.auditLogs.directoryAudits.item collection</summary>
+        public DirectoryAuditItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryAudit_id", position);
-            return new DirectoryAuditRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryAuditItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryAuditsRequestBuilder and sets the default values.

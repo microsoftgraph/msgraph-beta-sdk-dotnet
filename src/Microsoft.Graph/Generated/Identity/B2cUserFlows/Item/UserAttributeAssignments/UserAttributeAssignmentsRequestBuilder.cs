@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Identity.B2cUserFlows.Item.UserAttributeAssignments.GetOrder;
-using MicrosoftGraph.Identity.B2cUserFlows.Item.UserAttributeAssignments.Item;
-using MicrosoftGraph.Identity.B2cUserFlows.Item.UserAttributeAssignments.SetOrder;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.GetOrder;
+using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.Item;
+using MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.SetOrder;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.B2cUserFlows.Item.UserAttributeAssignments {
+namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments {
     /// <summary>Builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\userAttributeAssignments</summary>
     public class UserAttributeAssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -22,11 +22,11 @@ namespace MicrosoftGraph.Identity.B2cUserFlows.Item.UserAttributeAssignments {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identity.b2cUserFlows.item.userAttributeAssignments.item collection</summary>
-        public IdentityUserFlowAttributeAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.b2cUserFlows.item.userAttributeAssignments.item collection</summary>
+        public IdentityUserFlowAttributeAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlowAttributeAssignment_id", position);
-            return new IdentityUserFlowAttributeAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityUserFlowAttributeAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserAttributeAssignmentsRequestBuilder and sets the default values.

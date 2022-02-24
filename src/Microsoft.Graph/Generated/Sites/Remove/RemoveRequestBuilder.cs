@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Remove {
+namespace MicrosoftGraphSdk.Sites.Remove {
     /// <summary>Builds and executes requests for operations under \sites\microsoft.graph.remove</summary>
     public class RemoveRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -68,10 +68,10 @@ namespace MicrosoftGraph.Sites.Remove {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Sites.Remove.Remove>> PostAsync(RemoveRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<Remove>> PostAsync(RemoveRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Sites.Remove.Remove>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Remove>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public enum AttestationLevel {
         Attested,
         NotAttested,

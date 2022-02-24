@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
     public class MonitoringRule : IParsable {
         /// <summary>The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.</summary>
         public MonitoringAction? Action { get; set; }

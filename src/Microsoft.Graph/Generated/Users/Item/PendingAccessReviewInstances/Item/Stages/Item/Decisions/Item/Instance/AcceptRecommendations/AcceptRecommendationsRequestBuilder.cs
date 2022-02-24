@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.AcceptRecommendations {
+namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.Item.Decisions.Item.Instance.AcceptRecommendations {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\pendingAccessReviewInstances\{accessReviewInstance-id}\stages\{accessReviewStage-id}\decisions\{accessReviewInstanceDecisionItem-id}\instance\microsoft.graph.acceptRecommendations</summary>
     public class AcceptRecommendationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.FilterOperators.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.FilterOperators.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.FilterOperators {
+namespace MicrosoftGraphSdk.FilterOperators {
     /// <summary>Builds and executes requests for operations under \filterOperators</summary>
     public class FilterOperatorsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.FilterOperators {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.filterOperators.item collection</summary>
-        public FilterOperatorSchemaRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.filterOperators.item collection</summary>
+        public FilterOperatorSchemaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("filterOperatorSchema_id", position);
-            return new FilterOperatorSchemaRequestBuilder(urlTplParams, RequestAdapter);
+            return new FilterOperatorSchemaItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FilterOperatorsRequestBuilder and sets the default values.

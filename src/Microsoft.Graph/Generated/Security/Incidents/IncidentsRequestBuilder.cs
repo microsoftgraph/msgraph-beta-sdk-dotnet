@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.Security;
-using MicrosoftGraph.Security.Incidents.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
+using MicrosoftGraphSdk.Security.Incidents.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.Incidents {
+namespace MicrosoftGraphSdk.Security.Incidents {
     /// <summary>Builds and executes requests for operations under \security\incidents</summary>
     public class IncidentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Security.Incidents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.security.incidents.item collection</summary>
-        public IncidentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.security.incidents.item collection</summary>
+        public IncidentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("incident_id", position);
-            return new IncidentRequestBuilder(urlTplParams, RequestAdapter);
+            return new IncidentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new IncidentsRequestBuilder and sets the default values.

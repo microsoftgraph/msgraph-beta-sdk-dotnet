@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.Intents.Item.UserStates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.Intents.Item.UserStates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Intents.Item.UserStates {
+namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.UserStates {
     /// <summary>Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\userStates</summary>
     public class UserStatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.Intents.Item.UserStates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.intents.item.userStates.item collection</summary>
-        public DeviceManagementIntentUserStateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.intents.item.userStates.item collection</summary>
+        public DeviceManagementIntentUserStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementIntentUserState_id", position);
-            return new DeviceManagementIntentUserStateRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementIntentUserStateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserStatesRequestBuilder and sets the default values.

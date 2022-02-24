@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ServicePrincipal : DirectoryObject, IParsable {
         /// <summary>true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).</summary>
         public bool? AccountEnabled { get; set; }
@@ -58,7 +58,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public InformationalUrl Info { get; set; }
         /// <summary>The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).</summary>
         public List<KeyCredential> KeyCredentials { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.LicenseDetails> LicenseDetails { get; set; }
+        public List<LicenseDetails> LicenseDetails { get; set; }
         /// <summary>Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.</summary>
         public string LoginUrl { get; set; }
         /// <summary>Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.</summary>
@@ -100,7 +100,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public string ServicePrincipalType { get; set; }
         /// <summary>Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.</summary>
         public string SignInAudience { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.Synchronization Synchronization { get; set; }
+        public Synchronization Synchronization { get; set; }
         /// <summary>Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> Tags { get; set; }
         /// <summary>Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</summary>
@@ -142,7 +142,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"homeRealmDiscoveryPolicies", (o,n) => { (o as ServicePrincipal).HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<HomeRealmDiscoveryPolicy>().ToList(); } },
                 {"info", (o,n) => { (o as ServicePrincipal).Info = n.GetObjectValue<InformationalUrl>(); } },
                 {"keyCredentials", (o,n) => { (o as ServicePrincipal).KeyCredentials = n.GetCollectionOfObjectValues<KeyCredential>().ToList(); } },
-                {"licenseDetails", (o,n) => { (o as ServicePrincipal).LicenseDetails = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.LicenseDetails>().ToList(); } },
+                {"licenseDetails", (o,n) => { (o as ServicePrincipal).LicenseDetails = n.GetCollectionOfObjectValues<LicenseDetails>().ToList(); } },
                 {"loginUrl", (o,n) => { (o as ServicePrincipal).LoginUrl = n.GetStringValue(); } },
                 {"logoutUrl", (o,n) => { (o as ServicePrincipal).LogoutUrl = n.GetStringValue(); } },
                 {"memberOf", (o,n) => { (o as ServicePrincipal).MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
@@ -164,7 +164,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"servicePrincipalNames", (o,n) => { (o as ServicePrincipal).ServicePrincipalNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"servicePrincipalType", (o,n) => { (o as ServicePrincipal).ServicePrincipalType = n.GetStringValue(); } },
                 {"signInAudience", (o,n) => { (o as ServicePrincipal).SignInAudience = n.GetStringValue(); } },
-                {"synchronization", (o,n) => { (o as ServicePrincipal).Synchronization = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Synchronization>(); } },
+                {"synchronization", (o,n) => { (o as ServicePrincipal).Synchronization = n.GetObjectValue<Synchronization>(); } },
                 {"tags", (o,n) => { (o as ServicePrincipal).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"tokenEncryptionKeyId", (o,n) => { (o as ServicePrincipal).TokenEncryptionKeyId = n.GetStringValue(); } },
                 {"tokenIssuancePolicies", (o,n) => { (o as ServicePrincipal).TokenIssuancePolicies = n.GetCollectionOfObjectValues<TokenIssuancePolicy>().ToList(); } },
@@ -206,7 +206,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
             writer.WriteObjectValue<InformationalUrl>("info", Info);
             writer.WriteCollectionOfObjectValues<KeyCredential>("keyCredentials", KeyCredentials);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.LicenseDetails>("licenseDetails", LicenseDetails);
+            writer.WriteCollectionOfObjectValues<LicenseDetails>("licenseDetails", LicenseDetails);
             writer.WriteStringValue("loginUrl", LoginUrl);
             writer.WriteStringValue("logoutUrl", LogoutUrl);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("memberOf", MemberOf);
@@ -228,7 +228,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfPrimitiveValues<string>("servicePrincipalNames", ServicePrincipalNames);
             writer.WriteStringValue("servicePrincipalType", ServicePrincipalType);
             writer.WriteStringValue("signInAudience", SignInAudience);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Synchronization>("synchronization", Synchronization);
+            writer.WriteObjectValue<Synchronization>("synchronization", Synchronization);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("tokenEncryptionKeyId", TokenEncryptionKeyId);
             writer.WriteCollectionOfObjectValues<TokenIssuancePolicy>("tokenIssuancePolicies", TokenIssuancePolicies);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot {
+namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot {
     /// <summary>Builds and executes requests for operations under \deviceManagement\virtualEndpoint\cloudPCs\{cloudPC-id}\microsoft.graph.troubleshoot</summary>
     public class TroubleshootRequestBuilder {
         /// <summary>Path parameters for the request</summary>

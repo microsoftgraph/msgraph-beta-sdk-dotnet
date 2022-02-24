@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DeviceHealthScripts.AreGlobalScriptsAvailable;
-using MicrosoftGraph.DeviceManagement.DeviceHealthScripts.EnableGlobalScripts;
-using MicrosoftGraph.DeviceManagement.DeviceHealthScripts.GetRemediationSummary;
-using MicrosoftGraph.DeviceManagement.DeviceHealthScripts.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.AreGlobalScriptsAvailable;
+using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.EnableGlobalScripts;
+using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.GetRemediationSummary;
+using MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceHealthScripts {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceHealthScripts</summary>
     public class DeviceHealthScriptsRequestBuilder {
         public EnableGlobalScriptsRequestBuilder EnableGlobalScripts { get =>
@@ -23,11 +23,11 @@ namespace MicrosoftGraph.DeviceManagement.DeviceHealthScripts {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceHealthScripts.item collection</summary>
-        public DeviceHealthScriptRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceHealthScripts.item collection</summary>
+        public DeviceHealthScriptItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceHealthScript_id", position);
-            return new DeviceHealthScriptRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceHealthScriptItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.areGlobalScriptsAvailable()

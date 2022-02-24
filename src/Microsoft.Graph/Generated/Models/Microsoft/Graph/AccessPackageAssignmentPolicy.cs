@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackage AccessPackage { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.AccessPackageCatalog AccessPackageCatalog { get; set; }
+        public AccessPackage AccessPackage { get; set; }
+        public AccessPackageCatalog AccessPackageCatalog { get; set; }
         /// <summary>Identifier of the access package.</summary>
         public string AccessPackageId { get; set; }
         /// <summary>Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.</summary>
@@ -42,8 +42,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackage", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackage = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>(); } },
-                {"accessPackageCatalog", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackageCatalog = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageCatalog>(); } },
+                {"accessPackage", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackage = n.GetObjectValue<AccessPackage>(); } },
+                {"accessPackageCatalog", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackageCatalog = n.GetObjectValue<AccessPackageCatalog>(); } },
                 {"accessPackageId", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessPackageId = n.GetStringValue(); } },
                 {"accessReviewSettings", (o,n) => { (o as AccessPackageAssignmentPolicy).AccessReviewSettings = n.GetObjectValue<AssignmentReviewSettings>(); } },
                 {"canExtend", (o,n) => { (o as AccessPackageAssignmentPolicy).CanExtend = n.GetBoolValue(); } },
@@ -68,8 +68,8 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackage>("accessPackage", AccessPackage);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.AccessPackageCatalog>("accessPackageCatalog", AccessPackageCatalog);
+            writer.WriteObjectValue<AccessPackage>("accessPackage", AccessPackage);
+            writer.WriteObjectValue<AccessPackageCatalog>("accessPackageCatalog", AccessPackageCatalog);
             writer.WriteStringValue("accessPackageId", AccessPackageId);
             writer.WriteObjectValue<AssignmentReviewSettings>("accessReviewSettings", AccessReviewSettings);
             writer.WriteBoolValue("canExtend", CanExtend);

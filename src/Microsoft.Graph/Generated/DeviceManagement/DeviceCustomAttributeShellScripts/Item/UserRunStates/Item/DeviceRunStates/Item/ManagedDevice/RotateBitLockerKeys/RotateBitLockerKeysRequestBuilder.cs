@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates.Item.DeviceRunStates.Item.ManagedDevice.RotateBitLockerKeys {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.UserRunStates.Item.DeviceRunStates.Item.ManagedDevice.RotateBitLockerKeys {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\userRunStates\{deviceManagementScriptUserState-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.rotateBitLockerKeys</summary>
     public class RotateBitLockerKeysRequestBuilder {
         /// <summary>Path parameters for the request</summary>

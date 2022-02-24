@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GovernanceRoleDefinition : Entity, IParsable {
         /// <summary>The display name of the role definition.</summary>
         public string DisplayName { get; set; }

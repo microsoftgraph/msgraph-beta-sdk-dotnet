@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails {
+namespace MicrosoftGraphSdk.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetails {
     /// <summary>Builds and executes requests for operations under \deviceManagement\autopilotEvents\{deviceManagementAutopilotEvent-id}\policyStatusDetails</summary>
     public class PolicyStatusDetailsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.AutopilotEvents.Item.PolicyStatusDetai
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.autopilotEvents.item.policyStatusDetails.item collection</summary>
-        public DeviceManagementAutopilotPolicyStatusDetailRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.autopilotEvents.item.policyStatusDetails.item collection</summary>
+        public DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementAutopilotPolicyStatusDetail_id", position);
-            return new DeviceManagementAutopilotPolicyStatusDetailRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PolicyStatusDetailsRequestBuilder and sets the default values.

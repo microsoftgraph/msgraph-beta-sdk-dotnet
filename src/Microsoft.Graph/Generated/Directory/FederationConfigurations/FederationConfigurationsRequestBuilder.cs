@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Directory.FederationConfigurations.AvailableProviderTypes;
-using MicrosoftGraph.Directory.FederationConfigurations.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Directory.FederationConfigurations.AvailableProviderTypes;
+using MicrosoftGraphSdk.Directory.FederationConfigurations.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Directory.FederationConfigurations {
+namespace MicrosoftGraphSdk.Directory.FederationConfigurations {
     /// <summary>Builds and executes requests for operations under \directory\federationConfigurations</summary>
     public class FederationConfigurationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Directory.FederationConfigurations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.directory.federationConfigurations.item collection</summary>
-        public IdentityProviderBaseRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directory.federationConfigurations.item collection</summary>
+        public IdentityProviderBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityProviderBase_id", position);
-            return new IdentityProviderBaseRequestBuilder(urlTplParams, RequestAdapter);
+            return new IdentityProviderBaseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Builds and executes requests for operations under \directory\federationConfigurations\microsoft.graph.availableProviderTypes()

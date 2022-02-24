@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState {
+namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.SetAndroidDeviceOwnerFullyManagedEnrollmentState {
     /// <summary>Builds and executes requests for operations under \deviceManagement\androidManagedStoreAccountEnterpriseSettings\microsoft.graph.setAndroidDeviceOwnerFullyManagedEnrollmentState</summary>
     public class SetAndroidDeviceOwnerFullyManagedEnrollmentStateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

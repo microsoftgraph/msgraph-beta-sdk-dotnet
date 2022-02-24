@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UserExperienceAnalyticsCategory : Entity, IParsable {
         /// <summary>The insights for the user experience analytics category.</summary>
         public List<UserExperienceAnalyticsInsight> Insights { get; set; }

@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Add;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Count;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns.ItemAtWithIndex;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Add;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Count;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns.Item;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns.ItemAtWithIndex;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Columns {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\tables\{workbookTable-id}\columns</summary>
     public class ColumnsRequestBuilder {
         public AddRequestBuilder Add { get =>
@@ -23,11 +23,11 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.Col
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.worksheets.item.tables.item.columns.item collection</summary>
-        public WorkbookTableColumnRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.worksheets.item.tables.item.columns.item collection</summary>
+        public WorkbookTableColumnItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookTableColumn_id", position);
-            return new WorkbookTableColumnRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookTableColumnItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ColumnsRequestBuilder and sets the default values.

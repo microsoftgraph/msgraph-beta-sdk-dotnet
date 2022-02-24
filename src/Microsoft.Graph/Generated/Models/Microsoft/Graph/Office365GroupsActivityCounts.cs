@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Office365GroupsActivityCounts : Entity, IParsable {
         /// <summary>The number of emails received by Group mailboxes.</summary>
         public long? ExchangeEmailsReceived { get; set; }

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Series.Count {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Worksheet.Charts.Item.Series.Count {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\worksheet\charts\{workbookChart-id}\series\microsoft.graph.count()</summary>
     public class CountRequestBuilder {
         /// <summary>Path parameters for the request</summary>

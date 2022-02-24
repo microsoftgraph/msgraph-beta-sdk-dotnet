@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.Permission.Grant {
+namespace MicrosoftGraphSdk.Shares.Item.Permission.Grant {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\permission\microsoft.graph.grant</summary>
     public class GrantRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -68,10 +68,10 @@ namespace MicrosoftGraph.Shares.Item.Permission.Grant {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Shares.Item.Permission.Grant.Grant>> PostAsync(GrantRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<Grant>> PostAsync(GrantRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Shares.Item.Permission.Grant.Grant>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Grant>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

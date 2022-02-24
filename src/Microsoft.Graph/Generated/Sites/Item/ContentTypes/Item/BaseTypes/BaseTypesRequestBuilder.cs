@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Sites.Item.ContentTypes.Item.BaseTypes.AddCopy;
-using MicrosoftGraph.Sites.Item.ContentTypes.Item.BaseTypes.AddCopyFromContentTypeHub;
-using MicrosoftGraph.Sites.Item.ContentTypes.Item.BaseTypes.GetCompatibleHubContentTypes;
-using MicrosoftGraph.Sites.Item.ContentTypes.Item.BaseTypes.Ref;
+using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.BaseTypes.AddCopy;
+using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.BaseTypes.AddCopyFromContentTypeHub;
+using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.BaseTypes.GetCompatibleHubContentTypes;
+using MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.BaseTypes.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.ContentTypes.Item.BaseTypes {
+namespace MicrosoftGraphSdk.Sites.Item.ContentTypes.Item.BaseTypes {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\contentTypes\{contentType-id}\baseTypes</summary>
     public class BaseTypesRequestBuilder {
         public AddCopyRequestBuilder AddCopy { get =>

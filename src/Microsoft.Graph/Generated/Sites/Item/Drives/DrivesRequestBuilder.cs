@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Sites.Item.Drives.Ref;
+using MicrosoftGraphSdk.Sites.Item.Drives.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Drives {
+namespace MicrosoftGraphSdk.Sites.Item.Drives {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\drives</summary>
     public class DrivesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

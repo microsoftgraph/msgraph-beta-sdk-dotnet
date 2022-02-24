@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PrivilegedSignupStatus.CanSignUp {
+namespace MicrosoftGraphSdk.PrivilegedSignupStatus.CanSignUp {
     /// <summary>Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.canSignUp()</summary>
     public class CanSignUpRequestBuilder {
         /// <summary>Path parameters for the request</summary>

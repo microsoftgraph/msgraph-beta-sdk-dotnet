@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.CloudPC.ResourceNamespaces.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.CloudPC.ResourceNamespaces {
+namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces {
     /// <summary>Builds and executes requests for operations under \roleManagement\cloudPC\resourceNamespaces</summary>
     public class ResourceNamespacesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.RoleManagement.CloudPC.ResourceNamespaces {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.roleManagement.cloudPC.resourceNamespaces.item collection</summary>
-        public UnifiedRbacResourceNamespaceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.roleManagement.cloudPC.resourceNamespaces.item collection</summary>
+        public UnifiedRbacResourceNamespaceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRbacResourceNamespace_id", position);
-            return new UnifiedRbacResourceNamespaceRequestBuilder(urlTplParams, RequestAdapter);
+            return new UnifiedRbacResourceNamespaceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ResourceNamespacesRequestBuilder and sets the default values.

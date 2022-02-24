@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Security.Incidents.Item.Alerts.Ref;
+using MicrosoftGraphSdk.Security.Incidents.Item.Alerts.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.Incidents.Item.Alerts {
+namespace MicrosoftGraphSdk.Security.Incidents.Item.Alerts {
     /// <summary>Builds and executes requests for operations under \security\incidents\{incident-id}\alerts</summary>
     public class AlertsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetOffice365ActivationsUserDetail {
+namespace MicrosoftGraphSdk.Reports.GetOffice365ActivationsUserDetail {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getOffice365ActivationsUserDetail()</summary>
     public class GetOffice365ActivationsUserDetailRequestBuilder {
         /// <summary>Path parameters for the request</summary>

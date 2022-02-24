@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.TemplateStepVersion.Deploy {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.TemplateStepVersion.Deploy {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateStepVersions\{managementTemplateStepVersion-id}\deployments\{managementTemplateStepDeployment-id}\templateStepVersion\microsoft.graph.managedTenants.deploy</summary>
     public class DeployRequestBuilder {
         /// <summary>Path parameters for the request</summary>

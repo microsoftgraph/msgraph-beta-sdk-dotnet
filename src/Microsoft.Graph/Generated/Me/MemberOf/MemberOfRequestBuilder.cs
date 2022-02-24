@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.MemberOf.Ref;
+using MicrosoftGraphSdk.Me.MemberOf.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.MemberOf {
+namespace MicrosoftGraphSdk.Me.MemberOf {
     /// <summary>Builds and executes requests for operations under \me\memberOf</summary>
     public class MemberOfRequestBuilder {
         /// <summary>Path parameters for the request</summary>

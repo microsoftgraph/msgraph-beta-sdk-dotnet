@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AppLogCollectionRequest : Entity, IParsable {
         /// <summary>Time at which the upload log request reached a terminal state</summary>
         public DateTimeOffset? CompletedDateTime { get; set; }

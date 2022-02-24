@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.RoleManagement.CloudPC.RoleAssignments.Item.Principals.Ref;
+using MicrosoftGraphSdk.RoleManagement.CloudPC.RoleAssignments.Item.Principals.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.CloudPC.RoleAssignments.Item.Principals {
+namespace MicrosoftGraphSdk.RoleManagement.CloudPC.RoleAssignments.Item.Principals {
     /// <summary>Builds and executes requests for operations under \roleManagement\cloudPC\roleAssignments\{unifiedRoleAssignmentMultiple-id}\principals</summary>
     public class PrincipalsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class CloudPcDevice : Entity, IParsable {
         /// <summary>The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.</summary>
         public string CloudPcStatus { get; set; }

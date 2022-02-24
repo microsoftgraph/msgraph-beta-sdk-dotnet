@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DeviceHealthScriptDeviceState : Entity, IParsable {
         /// <summary>A list of the assignment filter ids used for health script applicability evaluation</summary>
         public List<string> AssignmentFilterIds { get; set; }
@@ -16,7 +16,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The last time that Intune Managment Extension synced with Intune</summary>
         public DateTimeOffset? LastSyncDateTime { get; set; }
         /// <summary>The managed device on which the device health script executed</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice ManagedDevice { get; set; }
+        public ManagedDevice ManagedDevice { get; set; }
         /// <summary>Error from the detection script after remediation</summary>
         public string PostRemediationDetectionScriptError { get; set; }
         /// <summary>Detection script output after remediation</summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"expectedStateUpdateDateTime", (o,n) => { (o as DeviceHealthScriptDeviceState).ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastStateUpdateDateTime", (o,n) => { (o as DeviceHealthScriptDeviceState).LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSyncDateTime", (o,n) => { (o as DeviceHealthScriptDeviceState).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDevice", (o,n) => { (o as DeviceHealthScriptDeviceState).ManagedDevice = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice>(); } },
+                {"managedDevice", (o,n) => { (o as DeviceHealthScriptDeviceState).ManagedDevice = n.GetObjectValue<ManagedDevice>(); } },
                 {"postRemediationDetectionScriptError", (o,n) => { (o as DeviceHealthScriptDeviceState).PostRemediationDetectionScriptError = n.GetStringValue(); } },
                 {"postRemediationDetectionScriptOutput", (o,n) => { (o as DeviceHealthScriptDeviceState).PostRemediationDetectionScriptOutput = n.GetStringValue(); } },
                 {"preRemediationDetectionScriptError", (o,n) => { (o as DeviceHealthScriptDeviceState).PreRemediationDetectionScriptError = n.GetStringValue(); } },
@@ -60,7 +60,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("expectedStateUpdateDateTime", ExpectedStateUpdateDateTime);
             writer.WriteDateTimeOffsetValue("lastStateUpdateDateTime", LastStateUpdateDateTime);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ManagedDevice>("managedDevice", ManagedDevice);
+            writer.WriteObjectValue<ManagedDevice>("managedDevice", ManagedDevice);
             writer.WriteStringValue("postRemediationDetectionScriptError", PostRemediationDetectionScriptError);
             writer.WriteStringValue("postRemediationDetectionScriptOutput", PostRemediationDetectionScriptOutput);
             writer.WriteStringValue("preRemediationDetectionScriptError", PreRemediationDetectionScriptError);

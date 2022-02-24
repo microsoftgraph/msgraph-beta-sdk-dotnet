@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships.ManagedTenants.TenantTags.Item.AssignTag {
+namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags.Item.AssignTag {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\tenantTags\{tenantTag-id}\microsoft.graph.managedTenants.assignTag</summary>
     public class AssignTagRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Communications.CallRecords;
-using MicrosoftGraph.Communications.Calls;
-using MicrosoftGraph.Communications.GetPresencesByUserId;
-using MicrosoftGraph.Communications.OnlineMeetings;
-using MicrosoftGraph.Communications.Presences;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Communications.CallRecords;
+using MicrosoftGraphSdk.Communications.Calls;
+using MicrosoftGraphSdk.Communications.GetPresencesByUserId;
+using MicrosoftGraphSdk.Communications.OnlineMeetings;
+using MicrosoftGraphSdk.Communications.Presences;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Communications {
+namespace MicrosoftGraphSdk.Communications {
     /// <summary>Builds and executes requests for operations under \communications</summary>
     public class CommunicationsRequestBuilder {
         public CallRecordsRequestBuilder CallRecords { get =>

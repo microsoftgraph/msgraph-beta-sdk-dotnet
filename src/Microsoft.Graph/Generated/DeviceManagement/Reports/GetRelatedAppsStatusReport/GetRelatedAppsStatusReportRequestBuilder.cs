@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetRelatedAppsStatusReport {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetRelatedAppsStatusReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getRelatedAppsStatusReport</summary>
     public class GetRelatedAppsStatusReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

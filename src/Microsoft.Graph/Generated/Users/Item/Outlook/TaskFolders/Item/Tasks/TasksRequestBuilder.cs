@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Outlook.TaskFolders.Item.Tasks.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders.Item.Tasks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Outlook.TaskFolders.Item.Tasks {
+namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders.Item.Tasks {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\outlook\taskFolders\{outlookTaskFolder-id}\tasks</summary>
     public class TasksRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Outlook.TaskFolders.Item.Tasks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.outlook.taskFolders.item.tasks.item collection</summary>
-        public OutlookTaskRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.outlook.taskFolders.item.tasks.item collection</summary>
+        public OutlookTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookTask_id", position);
-            return new OutlookTaskRequestBuilder(urlTplParams, RequestAdapter);
+            return new OutlookTaskItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TasksRequestBuilder and sets the default values.

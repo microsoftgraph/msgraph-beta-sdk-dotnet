@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.PolicySets.GetPolicySets {
+namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.GetPolicySets {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\policySets\microsoft.graph.getPolicySets</summary>
     public class GetPolicySetsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -68,10 +68,10 @@ namespace MicrosoftGraph.DeviceAppManagement.PolicySets.GetPolicySets {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.DeviceAppManagement.PolicySets.GetPolicySets.GetPolicySets>> PostAsync(GetPolicySetsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<GetPolicySets>> PostAsync(GetPolicySetsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.DeviceAppManagement.PolicySets.GetPolicySets.GetPolicySets>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetPolicySets>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

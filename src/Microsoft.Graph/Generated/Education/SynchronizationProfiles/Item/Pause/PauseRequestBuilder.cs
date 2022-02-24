@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.SynchronizationProfiles.Item.Pause {
+namespace MicrosoftGraphSdk.Education.SynchronizationProfiles.Item.Pause {
     /// <summary>Builds and executes requests for operations under \education\synchronizationProfiles\{educationSynchronizationProfile-id}\microsoft.graph.pause</summary>
     public class PauseRequestBuilder {
         /// <summary>Path parameters for the request</summary>

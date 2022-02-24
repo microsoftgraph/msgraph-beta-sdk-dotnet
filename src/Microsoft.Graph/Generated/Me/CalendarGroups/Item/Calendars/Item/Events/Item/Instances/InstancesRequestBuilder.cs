@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Delta;
-using MicrosoftGraph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Delta;
+using MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances {
+namespace MicrosoftGraphSdk.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances {
     /// <summary>Builds and executes requests for operations under \me\calendarGroups\{calendarGroup-id}\calendars\{calendar-id}\events\{event-id}\instances</summary>
     public class InstancesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Insta
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.calendarGroups.item.calendars.item.events.item.instances.item collection</summary>
-        public EventRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.calendarGroups.item.calendars.item.events.item.instances.item collection</summary>
+        public EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event_id1", position);
-            return new EventRequestBuilder(urlTplParams, RequestAdapter);
+            return new EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new InstancesRequestBuilder and sets the default values.

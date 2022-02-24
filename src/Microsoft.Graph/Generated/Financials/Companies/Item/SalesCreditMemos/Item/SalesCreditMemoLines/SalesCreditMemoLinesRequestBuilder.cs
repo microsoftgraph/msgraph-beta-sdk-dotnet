@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemos.Item.SalesCreditMemoLines {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\salesCreditMemos\{salesCreditMemo-id}\salesCreditMemoLines</summary>
     public class SalesCreditMemoLinesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Financials.Companies.Item.SalesCreditMemos.Item.SalesCr
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.salesCreditMemos.item.salesCreditMemoLines.item collection</summary>
-        public SalesCreditMemoLineRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.salesCreditMemos.item.salesCreditMemoLines.item collection</summary>
+        public SalesCreditMemoLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesCreditMemoLine_id", position);
-            return new SalesCreditMemoLineRequestBuilder(urlTplParams, RequestAdapter);
+            return new SalesCreditMemoLineItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SalesCreditMemoLinesRequestBuilder and sets the default values.

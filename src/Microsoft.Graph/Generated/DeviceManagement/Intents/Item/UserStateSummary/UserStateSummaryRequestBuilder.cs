@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Intents.Item.UserStateSummary {
+namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.UserStateSummary {
     /// <summary>Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\userStateSummary</summary>
     public class UserStateSummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>

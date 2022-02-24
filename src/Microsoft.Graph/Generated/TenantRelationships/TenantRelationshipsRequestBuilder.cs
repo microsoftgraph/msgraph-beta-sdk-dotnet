@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.TenantRelationships.ManagedTenants;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.TenantRelationships {
+namespace MicrosoftGraphSdk.TenantRelationships {
     /// <summary>Builds and executes requests for operations under \tenantRelationships</summary>
     public class TenantRelationshipsRequestBuilder {
         public ManagedTenantsRequestBuilder ManagedTenants { get =>

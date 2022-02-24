@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.HasPayloadLinks;
-using MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.HasPayloadLinks;
+using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles</summary>
     public class WindowsAutopilotDeploymentProfilesRequestBuilder {
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.windowsAutopilotDeploymentProfiles.item collection</summary>
-        public WindowsAutopilotDeploymentProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.windowsAutopilotDeploymentProfiles.item collection</summary>
+        public WindowsAutopilotDeploymentProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsAutopilotDeploymentProfile_id", position);
-            return new WindowsAutopilotDeploymentProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new WindowsAutopilotDeploymentProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new WindowsAutopilotDeploymentProfilesRequestBuilder and sets the default values.

@@ -1,10 +1,10 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Functions.Beta_Inv {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Beta_Inv {
     public class Beta_InvRequestBody : IParsable {
         public Json A { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

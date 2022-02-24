@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.GroupPolicyDefinitionFiles.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitionFiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyDefinitionFiles {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitionFiles {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyDefinitionFiles</summary>
     public class GroupPolicyDefinitionFilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyDefinitionFiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyDefinitionFiles.item collection</summary>
-        public GroupPolicyDefinitionFileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.groupPolicyDefinitionFiles.item collection</summary>
+        public GroupPolicyDefinitionFileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyDefinitionFile_id", position);
-            return new GroupPolicyDefinitionFileRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupPolicyDefinitionFileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupPolicyDefinitionFilesRequestBuilder and sets the default values.

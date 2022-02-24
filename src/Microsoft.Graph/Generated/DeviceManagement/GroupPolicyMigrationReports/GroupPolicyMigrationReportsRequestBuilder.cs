@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport;
-using MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport;
+using MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports {
+namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports {
     /// <summary>Builds and executes requests for operations under \deviceManagement\groupPolicyMigrationReports</summary>
     public class GroupPolicyMigrationReportsRequestBuilder {
         public CreateMigrationReportRequestBuilder CreateMigrationReport { get =>
@@ -21,11 +21,11 @@ namespace MicrosoftGraph.DeviceManagement.GroupPolicyMigrationReports {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.groupPolicyMigrationReports.item collection</summary>
-        public GroupPolicyMigrationReportRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.groupPolicyMigrationReports.item collection</summary>
+        public GroupPolicyMigrationReportItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyMigrationReport_id", position);
-            return new GroupPolicyMigrationReportRequestBuilder(urlTplParams, RequestAdapter);
+            return new GroupPolicyMigrationReportItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new GroupPolicyMigrationReportsRequestBuilder and sets the default values.

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp.RevokeUserLicense {
+namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Item.DeviceStatuses.Item.App.IosVppApp.RevokeUserLicense {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\mobileApps\{mobileApp-id}\userStatuses\{userAppInstallStatus-id}\deviceStatuses\{mobileAppInstallStatus-id}\app\microsoft.graph.iosVppApp\microsoft.graph.revokeUserLicense</summary>
     public class RevokeUserLicenseRequestBuilder {
         /// <summary>Path parameters for the request</summary>

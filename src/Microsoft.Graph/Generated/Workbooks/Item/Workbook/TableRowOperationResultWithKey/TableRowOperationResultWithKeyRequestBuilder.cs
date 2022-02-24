@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.TableRowOperationResultWithKey {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.TableRowOperationResultWithKey {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.tableRowOperationResult(key='{key}')</summary>
     public class TableRowOperationResultWithKeyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

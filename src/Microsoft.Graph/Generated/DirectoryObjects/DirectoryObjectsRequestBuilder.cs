@@ -1,17 +1,17 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DirectoryObjects.GetByIds;
-using MicrosoftGraph.DirectoryObjects.GetUserOwnedObjects;
-using MicrosoftGraph.DirectoryObjects.Item;
-using MicrosoftGraph.DirectoryObjects.ValidateProperties;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DirectoryObjects.GetByIds;
+using MicrosoftGraphSdk.DirectoryObjects.GetUserOwnedObjects;
+using MicrosoftGraphSdk.DirectoryObjects.Item;
+using MicrosoftGraphSdk.DirectoryObjects.ValidateProperties;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DirectoryObjects {
+namespace MicrosoftGraphSdk.DirectoryObjects {
     /// <summary>Builds and executes requests for operations under \directoryObjects</summary>
     public class DirectoryObjectsRequestBuilder {
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -29,11 +29,11 @@ namespace MicrosoftGraph.DirectoryObjects {
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.directoryObjects.item collection</summary>
-        public DirectoryObjectRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.directoryObjects.item collection</summary>
+        public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject_id", position);
-            return new DirectoryObjectRequestBuilder(urlTplParams, RequestAdapter);
+            return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DirectoryObjectsRequestBuilder and sets the default values.

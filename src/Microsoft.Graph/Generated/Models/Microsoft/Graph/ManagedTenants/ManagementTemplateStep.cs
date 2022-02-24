@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementTemplateStep : Entity, IParsable {
         public ManagementCategory? Category { get; set; }
         public string Description { get; set; }
         public string DisplayName { get; set; }
         public string ManagementPortal { get; set; }
-        public MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate ManagementTemplate { get; set; }
+        public ManagementTemplate ManagementTemplate { get; set; }
         public string PortalLink { get; set; }
         public int? Priority { get; set; }
         public ManagementProvider? Provider { get; set; }
@@ -23,7 +23,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
                 {"description", (o,n) => { (o as ManagementTemplateStep).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as ManagementTemplateStep).DisplayName = n.GetStringValue(); } },
                 {"managementPortal", (o,n) => { (o as ManagementTemplateStep).ManagementPortal = n.GetStringValue(); } },
-                {"managementTemplate", (o,n) => { (o as ManagementTemplateStep).ManagementTemplate = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate>(); } },
+                {"managementTemplate", (o,n) => { (o as ManagementTemplateStep).ManagementTemplate = n.GetObjectValue<ManagementTemplate>(); } },
                 {"portalLink", (o,n) => { (o as ManagementTemplateStep).PortalLink = n.GetStringValue(); } },
                 {"priority", (o,n) => { (o as ManagementTemplateStep).Priority = n.GetIntValue(); } },
                 {"provider", (o,n) => { (o as ManagementTemplateStep).Provider = n.GetEnumValue<ManagementProvider>(); } },
@@ -41,7 +41,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("managementPortal", ManagementPortal);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants.ManagementTemplate>("managementTemplate", ManagementTemplate);
+            writer.WriteObjectValue<ManagementTemplate>("managementTemplate", ManagementTemplate);
             writer.WriteStringValue("portalLink", PortalLink);
             writer.WriteIntValue("priority", Priority);
             writer.WriteEnumValue<ManagementProvider>("provider", Provider);

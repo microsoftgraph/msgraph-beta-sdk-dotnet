@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.MailFolders.Item.Messages.Item.Unsubscribe {
+namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.Unsubscribe {
     /// <summary>Builds and executes requests for operations under \me\mailFolders\{mailFolder-id}\messages\{message-id}\microsoft.graph.unsubscribe</summary>
     public class UnsubscribeRequestBuilder {
         /// <summary>Path parameters for the request</summary>

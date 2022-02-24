@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Onenote.SectionGroups.Item.ParentNotebook.CopyNotebook;
-using MicrosoftGraph.Users.Item.Onenote.SectionGroups.Item.ParentNotebook.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Onenote.SectionGroups.Item.ParentNotebook.CopyNotebook;
+using MicrosoftGraphSdk.Users.Item.Onenote.SectionGroups.Item.ParentNotebook.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Onenote.SectionGroups.Item.ParentNotebook {
+namespace MicrosoftGraphSdk.Users.Item.Onenote.SectionGroups.Item.ParentNotebook {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\onenote\sectionGroups\{sectionGroup-id}\parentNotebook</summary>
     public class ParentNotebookRequestBuilder {
         public CopyNotebookRequestBuilder CopyNotebook { get =>

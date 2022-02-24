@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetSharePointActivityPagesWithPeriod {
+namespace MicrosoftGraphSdk.Reports.GetSharePointActivityPagesWithPeriod {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getSharePointActivityPages(period='{period}')</summary>
     public class GetSharePointActivityPagesWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

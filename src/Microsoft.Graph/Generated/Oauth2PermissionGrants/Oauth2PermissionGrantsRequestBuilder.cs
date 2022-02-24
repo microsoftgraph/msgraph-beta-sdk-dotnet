@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Oauth2PermissionGrants.Delta;
-using MicrosoftGraph.Oauth2PermissionGrants.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Oauth2PermissionGrants.Delta;
+using MicrosoftGraphSdk.Oauth2PermissionGrants.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Oauth2PermissionGrants {
+namespace MicrosoftGraphSdk.Oauth2PermissionGrants {
     /// <summary>Builds and executes requests for operations under \oauth2PermissionGrants</summary>
     public class Oauth2PermissionGrantsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Oauth2PermissionGrants {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.oauth2PermissionGrants.item collection</summary>
-        public OAuth2PermissionGrantRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.oauth2PermissionGrants.item collection</summary>
+        public OAuth2PermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("oAuth2PermissionGrant_id", position);
-            return new OAuth2PermissionGrantRequestBuilder(urlTplParams, RequestAdapter);
+            return new OAuth2PermissionGrantItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.

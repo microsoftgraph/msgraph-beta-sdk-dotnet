@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Education.Classes;
-using MicrosoftGraph.Education.Me;
-using MicrosoftGraph.Education.Schools;
-using MicrosoftGraph.Education.SynchronizationProfiles;
-using MicrosoftGraph.Education.Users;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Education.Classes;
+using MicrosoftGraphSdk.Education.Me;
+using MicrosoftGraphSdk.Education.Schools;
+using MicrosoftGraphSdk.Education.SynchronizationProfiles;
+using MicrosoftGraphSdk.Education.Users;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education {
+namespace MicrosoftGraphSdk.Education {
     /// <summary>Builds and executes requests for operations under \education</summary>
     public class EducationRequestBuilder {
         public ClassesRequestBuilder Classes { get =>

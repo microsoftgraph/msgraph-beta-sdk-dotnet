@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups {
+namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups {
     public class ConnectorGroupsResponse : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         public string NextLink { get; set; }
-        public List<MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup> Value { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup> Value { get; set; }
         /// <summary>
         /// Instantiates a new connectorGroupsResponse and sets the default values.
         /// </summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups {
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as ConnectorGroupsResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as ConnectorGroupsResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup>().ToList(); } },
+                {"value", (o,n) => { (o as ConnectorGroupsResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>().ToList(); } },
             };
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace MicrosoftGraph.OnPremisesPublishingProfiles.Item.ConnectorGroups {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.nextLink", NextLink);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.ConnectorGroup>("value", Value);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

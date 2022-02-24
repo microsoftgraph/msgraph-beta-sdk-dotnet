@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.Columns.Item.SourceColumn.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.Columns.Item.SourceColumn.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Sites.Item.Lists.Item.ContentTypes.Item.Columns.Item.SourceColumn {
+namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.ContentTypes.Item.Columns.Item.SourceColumn {
     /// <summary>Builds and executes requests for operations under \sites\{site-id}\lists\{list-id}\contentTypes\{contentType-id}\columns\{columnDefinition-id}\sourceColumn</summary>
     public class SourceColumnRequestBuilder {
         /// <summary>Path parameters for the request</summary>

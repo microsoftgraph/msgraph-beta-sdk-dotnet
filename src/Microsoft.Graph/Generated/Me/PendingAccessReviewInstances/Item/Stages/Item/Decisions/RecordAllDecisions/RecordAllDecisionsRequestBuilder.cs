@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.RecordAllDecisions {
+namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.Stages.Item.Decisions.RecordAllDecisions {
     /// <summary>Builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\stages\{accessReviewStage-id}\decisions\microsoft.graph.recordAllDecisions</summary>
     public class RecordAllDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

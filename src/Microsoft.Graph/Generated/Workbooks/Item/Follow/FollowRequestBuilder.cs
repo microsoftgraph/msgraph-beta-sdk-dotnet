@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Follow {
+namespace MicrosoftGraphSdk.Workbooks.Item.Follow {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\microsoft.graph.follow</summary>
     public class FollowRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -74,7 +74,7 @@ namespace MicrosoftGraph.Workbooks.Item.Follow {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type driveItem</summary>
-            public MicrosoftGraph.Models.Microsoft.Graph.DriveItem DriveItem { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem DriveItem { get; set; }
             /// <summary>
             /// Instantiates a new followResponse and sets the default values.
             /// </summary>
@@ -86,7 +86,7 @@ namespace MicrosoftGraph.Workbooks.Item.Follow {
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"driveItem", (o,n) => { (o as FollowResponse).DriveItem = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>(); } },
+                    {"driveItem", (o,n) => { (o as FollowResponse).DriveItem = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(); } },
                 };
             }
             /// <summary>
@@ -95,7 +95,7 @@ namespace MicrosoftGraph.Workbooks.Item.Follow {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>("driveItem", DriveItem);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>("driveItem", DriveItem);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

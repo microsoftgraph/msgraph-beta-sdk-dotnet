@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DataSharingConsents.Item.ConsentToDataSharing {
+namespace MicrosoftGraphSdk.DeviceManagement.DataSharingConsents.Item.ConsentToDataSharing {
     /// <summary>Builds and executes requests for operations under \deviceManagement\dataSharingConsents\{dataSharingConsent-id}\microsoft.graph.consentToDataSharing</summary>
     public class ConsentToDataSharingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

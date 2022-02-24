@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class PersonWebsite : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the website (for example, personal, recipes).</summary>
         public List<string> Categories { get; set; }

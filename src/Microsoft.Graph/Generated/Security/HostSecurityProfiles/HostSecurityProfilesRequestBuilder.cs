@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Security.HostSecurityProfiles.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Security.HostSecurityProfiles.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.HostSecurityProfiles {
+namespace MicrosoftGraphSdk.Security.HostSecurityProfiles {
     /// <summary>Builds and executes requests for operations under \security\hostSecurityProfiles</summary>
     public class HostSecurityProfilesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Security.HostSecurityProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.security.hostSecurityProfiles.item collection</summary>
-        public HostSecurityProfileRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.security.hostSecurityProfiles.item collection</summary>
+        public HostSecurityProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("hostSecurityProfile_id", position);
-            return new HostSecurityProfileRequestBuilder(urlTplParams, RequestAdapter);
+            return new HostSecurityProfileItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new HostSecurityProfilesRequestBuilder and sets the default values.

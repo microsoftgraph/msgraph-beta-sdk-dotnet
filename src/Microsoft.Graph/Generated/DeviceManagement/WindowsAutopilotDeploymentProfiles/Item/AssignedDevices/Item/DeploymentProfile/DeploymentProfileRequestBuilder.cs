@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.DeploymentProfile.Assign;
-using MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.DeploymentProfile.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.DeploymentProfile.Assign;
+using MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.DeploymentProfile.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.DeploymentProfile {
+namespace MicrosoftGraphSdk.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.DeploymentProfile {
     /// <summary>Builds and executes requests for operations under \deviceManagement\windowsAutopilotDeploymentProfiles\{windowsAutopilotDeploymentProfile-id}\assignedDevices\{windowsAutopilotDeviceIdentity-id}\deploymentProfile</summary>
     public class DeploymentProfileRequestBuilder {
         public AssignRequestBuilder Assign { get =>

@@ -1,15 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.ChromeOSOnboardingSettings.Connect;
-using MicrosoftGraph.DeviceManagement.ChromeOSOnboardingSettings.Disconnect;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Connect;
+using MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Disconnect;
+using MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.ChromeOSOnboardingSettings {
+namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\chromeOSOnboardingSettings</summary>
     public class ChromeOSOnboardingSettingsRequestBuilder {
         public ConnectRequestBuilder Connect { get =>
@@ -24,11 +25,11 @@ namespace MicrosoftGraph.DeviceManagement.ChromeOSOnboardingSettings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.chromeOSOnboardingSettings.item collection</summary>
-        public ChromeOSOnboardingSettingsRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.chromeOSOnboardingSettings.item collection</summary>
+        public ChromeOSOnboardingSettingsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chromeOSOnboardingSettings_id", position);
-            return new ChromeOSOnboardingSettingsRequestBuilder(urlTplParams, RequestAdapter);
+            return new ChromeOSOnboardingSettingsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ChromeOSOnboardingSettingsRequestBuilder and sets the default values.
@@ -84,7 +85,7 @@ namespace MicrosoftGraph.DeviceManagement.ChromeOSOnboardingSettings {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.ChromeOSOnboardingSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -116,10 +117,10 @@ namespace MicrosoftGraph.DeviceManagement.ChromeOSOnboardingSettings {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.ChromeOSOnboardingSettings> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.ChromeOSOnboardingSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.ChromeOSOnboardingSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of ChromeOSOnboardingSettings settings associated with account.</summary>
         public class GetQueryParameters : QueryParametersBase {

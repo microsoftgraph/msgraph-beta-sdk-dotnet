@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Compliance.Ediscovery.Cases;
-using MicrosoftGraph.Models.Microsoft.Graph.Ediscovery;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery</summary>
     public class EdiscoveryRequestBuilder {
         public CasesRequestBuilder Cases { get =>

@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Planner.Rosters.Item.Members.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Planner.Rosters.Item.Members.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Planner.Rosters.Item.Members {
+namespace MicrosoftGraphSdk.Planner.Rosters.Item.Members {
     /// <summary>Builds and executes requests for operations under \planner\rosters\{plannerRoster-id}\members</summary>
     public class MembersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Planner.Rosters.Item.Members {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.planner.rosters.item.members.item collection</summary>
-        public PlannerRosterMemberRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.planner.rosters.item.members.item collection</summary>
+        public PlannerRosterMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerRosterMember_id", position);
-            return new PlannerRosterMemberRequestBuilder(urlTplParams, RequestAdapter);
+            return new PlannerRosterMemberItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.

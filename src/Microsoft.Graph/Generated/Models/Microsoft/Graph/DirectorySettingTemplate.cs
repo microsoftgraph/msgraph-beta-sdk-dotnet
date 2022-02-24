@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DirectorySettingTemplate : DirectoryObject, IParsable {
         /// <summary>Description of the template. Read-only.</summary>
         public string Description { get; set; }

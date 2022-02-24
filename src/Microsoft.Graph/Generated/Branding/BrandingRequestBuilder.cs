@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Branding.Localizations;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Branding.Localizations;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Branding {
+namespace MicrosoftGraphSdk.Branding {
     /// <summary>Builds and executes requests for operations under \branding</summary>
     public class BrandingRequestBuilder {
         public LocalizationsRequestBuilder Localizations { get =>

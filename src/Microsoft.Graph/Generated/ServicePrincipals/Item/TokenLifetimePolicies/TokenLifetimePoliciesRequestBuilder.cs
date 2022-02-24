@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.ServicePrincipals.Item.TokenLifetimePolicies.Ref;
+using MicrosoftGraphSdk.ServicePrincipals.Item.TokenLifetimePolicies.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.TokenLifetimePolicies {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.TokenLifetimePolicies {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\tokenLifetimePolicies</summary>
     public class TokenLifetimePoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

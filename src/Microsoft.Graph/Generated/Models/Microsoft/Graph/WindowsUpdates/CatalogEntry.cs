@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
     public class CatalogEntry : Entity, IParsable {
         /// <summary>The date on which the content is no longer available to deploy using the service. Read-only.</summary>
         public DateTimeOffset? DeployableUntilDateTime { get; set; }

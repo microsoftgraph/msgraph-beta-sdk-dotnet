@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WindowsAssignedAccessProfile : Entity, IParsable {
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu.</summary>
         public List<string> AppUserModelIds { get; set; }

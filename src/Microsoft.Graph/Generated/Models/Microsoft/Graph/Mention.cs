@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Mention : Entity, IParsable {
         /// <summary>The name of the application where the mention is created. Optional. Not used and defaulted as null for message.</summary>
         public string Application { get; set; }

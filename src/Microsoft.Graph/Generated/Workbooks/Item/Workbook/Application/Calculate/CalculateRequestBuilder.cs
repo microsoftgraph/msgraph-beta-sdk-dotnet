@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Application.Calculate {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Application.Calculate {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\application\microsoft.graph.calculate</summary>
     public class CalculateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

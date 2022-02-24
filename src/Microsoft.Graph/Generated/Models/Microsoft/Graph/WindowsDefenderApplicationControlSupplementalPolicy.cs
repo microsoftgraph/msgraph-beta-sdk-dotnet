@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class WindowsDefenderApplicationControlSupplementalPolicy : Entity, IParsable {
         /// <summary>The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.</summary>
         public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments { get; set; }

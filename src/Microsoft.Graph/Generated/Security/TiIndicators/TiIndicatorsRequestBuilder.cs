@@ -1,18 +1,18 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Security.TiIndicators.DeleteTiIndicators;
-using MicrosoftGraph.Security.TiIndicators.DeleteTiIndicatorsByExternalId;
-using MicrosoftGraph.Security.TiIndicators.Item;
-using MicrosoftGraph.Security.TiIndicators.SubmitTiIndicators;
-using MicrosoftGraph.Security.TiIndicators.UpdateTiIndicators;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Security.TiIndicators.DeleteTiIndicators;
+using MicrosoftGraphSdk.Security.TiIndicators.DeleteTiIndicatorsByExternalId;
+using MicrosoftGraphSdk.Security.TiIndicators.Item;
+using MicrosoftGraphSdk.Security.TiIndicators.SubmitTiIndicators;
+using MicrosoftGraphSdk.Security.TiIndicators.UpdateTiIndicators;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Security.TiIndicators {
+namespace MicrosoftGraphSdk.Security.TiIndicators {
     /// <summary>Builds and executes requests for operations under \security\tiIndicators</summary>
     public class TiIndicatorsRequestBuilder {
         public DeleteTiIndicatorsRequestBuilder DeleteTiIndicators { get =>
@@ -33,11 +33,11 @@ namespace MicrosoftGraph.Security.TiIndicators {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.security.tiIndicators.item collection</summary>
-        public TiIndicatorRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.security.tiIndicators.item collection</summary>
+        public TiIndicatorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tiIndicator_id", position);
-            return new TiIndicatorRequestBuilder(urlTplParams, RequestAdapter);
+            return new TiIndicatorItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TiIndicatorsRequestBuilder and sets the default values.

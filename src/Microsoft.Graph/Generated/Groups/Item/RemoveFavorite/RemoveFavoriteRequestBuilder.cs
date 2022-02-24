@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.RemoveFavorite {
+namespace MicrosoftGraphSdk.Groups.Item.RemoveFavorite {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\microsoft.graph.removeFavorite</summary>
     public class RemoveFavoriteRequestBuilder {
         /// <summary>Path parameters for the request</summary>

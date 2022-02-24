@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Protection.Protect;
-using MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Protection.Unprotect;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Protection.Protect;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Protection.Unprotect;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Worksheets.Item.Protection {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Protection {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\worksheets\{workbookWorksheet-id}\protection</summary>
     public class ProtectionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

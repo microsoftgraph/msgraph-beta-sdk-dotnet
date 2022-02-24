@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Analytics.ActivityStatistics;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Analytics.ActivityStatistics;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Analytics {
+namespace MicrosoftGraphSdk.Me.Analytics {
     /// <summary>Builds and executes requests for operations under \me\analytics</summary>
     public class AnalyticsRequestBuilder {
         public ActivityStatisticsRequestBuilder ActivityStatistics { get =>

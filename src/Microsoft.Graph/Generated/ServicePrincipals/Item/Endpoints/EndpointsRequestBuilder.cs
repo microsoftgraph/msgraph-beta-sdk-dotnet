@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.ServicePrincipals.Item.Endpoints.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Endpoints.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.Endpoints {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.Endpoints {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\endpoints</summary>
     public class EndpointsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.ServicePrincipals.Item.Endpoints {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.servicePrincipals.item.endpoints.item collection</summary>
-        public EndpointRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.servicePrincipals.item.endpoints.item collection</summary>
+        public EndpointItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("endpoint_id", position);
-            return new EndpointRequestBuilder(urlTplParams, RequestAdapter);
+            return new EndpointItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EndpointsRequestBuilder and sets the default values.

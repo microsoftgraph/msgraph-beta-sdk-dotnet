@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ExternalConnectors {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalConnectors {
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>If status is failed, provides more information about the error that caused the failure.</summary>
         public PublicError Error { get; set; }

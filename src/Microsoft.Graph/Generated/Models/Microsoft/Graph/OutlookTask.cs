@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class OutlookTask : OutlookItem, IParsable {
         /// <summary>The name of the person who has been assigned the task in Outlook. Read-only.</summary>
         public string AssignedTo { get; set; }

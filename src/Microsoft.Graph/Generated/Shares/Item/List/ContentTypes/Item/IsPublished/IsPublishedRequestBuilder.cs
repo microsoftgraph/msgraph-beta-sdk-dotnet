@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Shares.Item.List.ContentTypes.Item.IsPublished {
+namespace MicrosoftGraphSdk.Shares.Item.List.ContentTypes.Item.IsPublished {
     /// <summary>Builds and executes requests for operations under \shares\{sharedDriveItem-id}\list\contentTypes\{contentType-id}\microsoft.graph.isPublished()</summary>
     public class IsPublishedRequestBuilder {
         /// <summary>Path parameters for the request</summary>

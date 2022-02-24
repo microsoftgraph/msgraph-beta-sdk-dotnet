@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.RoleAssignments.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.RoleAssignments.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.RoleAssignments {
+namespace MicrosoftGraphSdk.DeviceManagement.RoleAssignments {
     /// <summary>Builds and executes requests for operations under \deviceManagement\roleAssignments</summary>
     public class RoleAssignmentsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.RoleAssignments {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.roleAssignments.item collection</summary>
-        public DeviceAndAppManagementRoleAssignmentRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.roleAssignments.item collection</summary>
+        public DeviceAndAppManagementRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceAndAppManagementRoleAssignment_id", position);
-            return new DeviceAndAppManagementRoleAssignmentRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceAndAppManagementRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RoleAssignmentsRequestBuilder and sets the default values.

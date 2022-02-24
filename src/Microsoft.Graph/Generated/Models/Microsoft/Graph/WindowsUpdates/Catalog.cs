@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.WindowsUpdates {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
     public class Catalog : Entity, IParsable {
         /// <summary>Lists the content that you can approve for deployment. Read-only.</summary>
         public List<CatalogEntry> Entries { get; set; }

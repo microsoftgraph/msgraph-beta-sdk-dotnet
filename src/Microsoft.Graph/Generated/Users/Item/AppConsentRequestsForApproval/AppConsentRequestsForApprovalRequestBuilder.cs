@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.AppConsentRequestsForApproval.FilterByCurrentUserWithOn;
-using MicrosoftGraph.Users.Item.AppConsentRequestsForApproval.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.AppConsentRequestsForApproval.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.Users.Item.AppConsentRequestsForApproval.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.AppConsentRequestsForApproval {
+namespace MicrosoftGraphSdk.Users.Item.AppConsentRequestsForApproval {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\appConsentRequestsForApproval</summary>
     public class AppConsentRequestsForApprovalRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Users.Item.AppConsentRequestsForApproval {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.appConsentRequestsForApproval.item collection</summary>
-        public AppConsentRequestRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.appConsentRequestsForApproval.item collection</summary>
+        public AppConsentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appConsentRequest_id", position);
-            return new AppConsentRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppConsentRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppConsentRequestsForApprovalRequestBuilder and sets the default values.

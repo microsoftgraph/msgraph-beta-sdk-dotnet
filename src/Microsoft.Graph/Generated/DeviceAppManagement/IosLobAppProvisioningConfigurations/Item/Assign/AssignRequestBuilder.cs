@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign {
+namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\iosLobAppProvisioningConfigurations\{iosLobAppProvisioningConfiguration-id}\microsoft.graph.assign</summary>
     public class AssignRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AccessReviews.Item.ApplyDecisions {
+namespace MicrosoftGraphSdk.AccessReviews.Item.ApplyDecisions {
     /// <summary>Builds and executes requests for operations under \accessReviews\{accessReview-id}\microsoft.graph.applyDecisions</summary>
     public class ApplyDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

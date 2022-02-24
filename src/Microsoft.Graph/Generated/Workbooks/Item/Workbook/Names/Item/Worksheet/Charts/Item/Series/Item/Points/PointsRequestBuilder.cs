@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item.Points.Count;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item.Points.Item;
-using MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item.Points.ItemAtWithIndex;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item.Points.Count;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item.Points.Item;
+using MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item.Points.ItemAtWithIndex;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item.Points {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Item.Series.Item.Points {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\names\{workbookNamedItem-id}\worksheet\charts\{workbookChart-id}\series\{workbookChartSeries-id}\points</summary>
     public class PointsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -19,11 +19,11 @@ namespace MicrosoftGraph.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.Ite
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.workbooks.item.workbook.names.item.worksheet.charts.item.series.item.points.item collection</summary>
-        public WorkbookChartPointRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.workbooks.item.workbook.names.item.worksheet.charts.item.series.item.points.item collection</summary>
+        public WorkbookChartPointItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookChartPoint_id", position);
-            return new WorkbookChartPointRequestBuilder(urlTplParams, RequestAdapter);
+            return new WorkbookChartPointItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new PointsRequestBuilder and sets the default values.

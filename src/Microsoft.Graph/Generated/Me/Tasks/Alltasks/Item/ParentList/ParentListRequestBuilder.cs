@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Tasks.Alltasks.Item.ParentList.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.ParentList.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Tasks.Alltasks.Item.ParentList {
+namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.ParentList {
     /// <summary>Builds and executes requests for operations under \me\tasks\alltasks\{baseTask-id}\parentList</summary>
     public class ParentListRequestBuilder {
         /// <summary>Path parameters for the request</summary>

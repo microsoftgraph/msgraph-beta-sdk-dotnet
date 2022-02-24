@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Organization : DirectoryObject, IParsable {
         /// <summary>The collection of service plans associated with the tenant. Not nullable.</summary>
         public List<AssignedPlan> AssignedPlans { get; set; }
@@ -11,7 +11,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Telephone number for the organization. Although this is a string collection, only one number can be set for this property.</summary>
         public List<string> BusinessPhones { get; set; }
         /// <summary>Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.CertificateBasedAuthConfiguration> CertificateBasedAuthConfiguration { get; set; }
+        public List<CertificateBasedAuthConfiguration> CertificateBasedAuthConfiguration { get; set; }
         /// <summary>Certificate connector setting.</summary>
         public CertificateConnectorSetting CertificateConnectorSetting { get; set; }
         /// <summary>City name of the address for the organization.</summary>
@@ -49,7 +49,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public List<string> SecurityComplianceNotificationMails { get; set; }
         public List<string> SecurityComplianceNotificationPhones { get; set; }
         /// <summary>Retrieve the properties and relationships of organizationSettings object. Nullable.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.OrganizationSettings Settings { get; set; }
+        public OrganizationSettings Settings { get; set; }
         /// <summary>State name of the address for the organization.</summary>
         public string State { get; set; }
         /// <summary>Street name of the address for organization.</summary>
@@ -66,7 +66,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"assignedPlans", (o,n) => { (o as Organization).AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>().ToList(); } },
                 {"branding", (o,n) => { (o as Organization).Branding = n.GetObjectValue<OrganizationalBranding>(); } },
                 {"businessPhones", (o,n) => { (o as Organization).BusinessPhones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"certificateBasedAuthConfiguration", (o,n) => { (o as Organization).CertificateBasedAuthConfiguration = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.CertificateBasedAuthConfiguration>().ToList(); } },
+                {"certificateBasedAuthConfiguration", (o,n) => { (o as Organization).CertificateBasedAuthConfiguration = n.GetCollectionOfObjectValues<CertificateBasedAuthConfiguration>().ToList(); } },
                 {"certificateConnectorSetting", (o,n) => { (o as Organization).CertificateConnectorSetting = n.GetObjectValue<CertificateConnectorSetting>(); } },
                 {"city", (o,n) => { (o as Organization).City = n.GetStringValue(); } },
                 {"country", (o,n) => { (o as Organization).Country = n.GetStringValue(); } },
@@ -86,7 +86,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"provisionedPlans", (o,n) => { (o as Organization).ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>().ToList(); } },
                 {"securityComplianceNotificationMails", (o,n) => { (o as Organization).SecurityComplianceNotificationMails = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"securityComplianceNotificationPhones", (o,n) => { (o as Organization).SecurityComplianceNotificationPhones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"settings", (o,n) => { (o as Organization).Settings = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.OrganizationSettings>(); } },
+                {"settings", (o,n) => { (o as Organization).Settings = n.GetObjectValue<OrganizationSettings>(); } },
                 {"state", (o,n) => { (o as Organization).State = n.GetStringValue(); } },
                 {"street", (o,n) => { (o as Organization).Street = n.GetStringValue(); } },
                 {"technicalNotificationMails", (o,n) => { (o as Organization).TechnicalNotificationMails = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -103,7 +103,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<AssignedPlan>("assignedPlans", AssignedPlans);
             writer.WriteObjectValue<OrganizationalBranding>("branding", Branding);
             writer.WriteCollectionOfPrimitiveValues<string>("businessPhones", BusinessPhones);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.CertificateBasedAuthConfiguration>("certificateBasedAuthConfiguration", CertificateBasedAuthConfiguration);
+            writer.WriteCollectionOfObjectValues<CertificateBasedAuthConfiguration>("certificateBasedAuthConfiguration", CertificateBasedAuthConfiguration);
             writer.WriteObjectValue<CertificateConnectorSetting>("certificateConnectorSetting", CertificateConnectorSetting);
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("country", Country);
@@ -123,7 +123,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<ProvisionedPlan>("provisionedPlans", ProvisionedPlans);
             writer.WriteCollectionOfPrimitiveValues<string>("securityComplianceNotificationMails", SecurityComplianceNotificationMails);
             writer.WriteCollectionOfPrimitiveValues<string>("securityComplianceNotificationPhones", SecurityComplianceNotificationPhones);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.OrganizationSettings>("settings", Settings);
+            writer.WriteObjectValue<OrganizationSettings>("settings", Settings);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("street", Street);
             writer.WriteCollectionOfPrimitiveValues<string>("technicalNotificationMails", TechnicalNotificationMails);

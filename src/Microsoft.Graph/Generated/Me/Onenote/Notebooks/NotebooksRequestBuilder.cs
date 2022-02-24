@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Onenote.Notebooks.GetNotebookFromWebUrl;
-using MicrosoftGraph.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks;
-using MicrosoftGraph.Me.Onenote.Notebooks.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Onenote.Notebooks.GetNotebookFromWebUrl;
+using MicrosoftGraphSdk.Me.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks;
+using MicrosoftGraphSdk.Me.Onenote.Notebooks.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Onenote.Notebooks {
+namespace MicrosoftGraphSdk.Me.Onenote.Notebooks {
     /// <summary>Builds and executes requests for operations under \me\onenote\notebooks</summary>
     public class NotebooksRequestBuilder {
         public GetNotebookFromWebUrlRequestBuilder GetNotebookFromWebUrl { get =>
@@ -22,11 +22,11 @@ namespace MicrosoftGraph.Me.Onenote.Notebooks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.onenote.notebooks.item collection</summary>
-        public NotebookRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.onenote.notebooks.item collection</summary>
+        public NotebookItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("notebook_id", position);
-            return new NotebookRequestBuilder(urlTplParams, RequestAdapter);
+            return new NotebookItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new NotebooksRequestBuilder and sets the default values.

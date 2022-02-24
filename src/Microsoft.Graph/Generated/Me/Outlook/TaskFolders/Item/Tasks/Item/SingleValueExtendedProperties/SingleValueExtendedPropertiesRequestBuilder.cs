@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.Outlook.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.Outlook.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Outlook.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties {
+namespace MicrosoftGraphSdk.Me.Outlook.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties {
     /// <summary>Builds and executes requests for operations under \me\outlook\taskFolders\{outlookTaskFolder-id}\tasks\{outlookTask-id}\singleValueExtendedProperties</summary>
     public class SingleValueExtendedPropertiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.Outlook.TaskFolders.Item.Tasks.Item.SingleValueExten
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.outlook.taskFolders.item.tasks.item.singleValueExtendedProperties.item collection</summary>
-        public SingleValueLegacyExtendedPropertyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.outlook.taskFolders.item.tasks.item.singleValueExtendedProperties.item collection</summary>
+        public SingleValueLegacyExtendedPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("singleValueLegacyExtendedProperty_id", position);
-            return new SingleValueLegacyExtendedPropertyRequestBuilder(urlTplParams, RequestAdapter);
+            return new SingleValueLegacyExtendedPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.

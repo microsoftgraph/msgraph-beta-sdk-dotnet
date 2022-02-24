@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.ServicePrincipals.Item.Owners.Ref;
+using MicrosoftGraphSdk.ServicePrincipals.Item.Owners.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.Owners {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.Owners {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\owners</summary>
     public class OwnersRequestBuilder {
         /// <summary>Path parameters for the request</summary>

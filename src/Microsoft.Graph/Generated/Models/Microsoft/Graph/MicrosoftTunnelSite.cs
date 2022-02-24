@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MicrosoftTunnelSite : Entity, IParsable {
         /// <summary>The MicrosoftTunnelSite's description</summary>
         public string Description { get; set; }
@@ -13,7 +13,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The MicrosoftTunnelSite's Internal Network Access Probe URL</summary>
         public string InternalNetworkProbeUrl { get; set; }
         /// <summary>The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.MicrosoftTunnelConfiguration MicrosoftTunnelConfiguration { get; set; }
+        public MicrosoftTunnelConfiguration MicrosoftTunnelConfiguration { get; set; }
         /// <summary>A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite</summary>
         public List<MicrosoftTunnelServer> MicrosoftTunnelServers { get; set; }
         /// <summary>The MicrosoftTunnelSite's public domain name or IP address</summary>
@@ -38,7 +38,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as MicrosoftTunnelSite).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as MicrosoftTunnelSite).DisplayName = n.GetStringValue(); } },
                 {"internalNetworkProbeUrl", (o,n) => { (o as MicrosoftTunnelSite).InternalNetworkProbeUrl = n.GetStringValue(); } },
-                {"microsoftTunnelConfiguration", (o,n) => { (o as MicrosoftTunnelSite).MicrosoftTunnelConfiguration = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.MicrosoftTunnelConfiguration>(); } },
+                {"microsoftTunnelConfiguration", (o,n) => { (o as MicrosoftTunnelSite).MicrosoftTunnelConfiguration = n.GetObjectValue<MicrosoftTunnelConfiguration>(); } },
                 {"microsoftTunnelServers", (o,n) => { (o as MicrosoftTunnelSite).MicrosoftTunnelServers = n.GetCollectionOfObjectValues<MicrosoftTunnelServer>().ToList(); } },
                 {"publicAddress", (o,n) => { (o as MicrosoftTunnelSite).PublicAddress = n.GetStringValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as MicrosoftTunnelSite).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -59,7 +59,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("internalNetworkProbeUrl", InternalNetworkProbeUrl);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.MicrosoftTunnelConfiguration>("microsoftTunnelConfiguration", MicrosoftTunnelConfiguration);
+            writer.WriteObjectValue<MicrosoftTunnelConfiguration>("microsoftTunnelConfiguration", MicrosoftTunnelConfiguration);
             writer.WriteCollectionOfObjectValues<MicrosoftTunnelServer>("microsoftTunnelServers", MicrosoftTunnelServers);
             writer.WriteStringValue("publicAddress", PublicAddress);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);

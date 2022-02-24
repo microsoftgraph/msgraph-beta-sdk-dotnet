@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class EnrollmentConfigurationAssignment : Entity, IParsable {
         /// <summary>Type of resource used for deployment to a group, direct or policySet. Possible values are: direct, policySets.</summary>
         public DeviceAndAppManagementAssignmentSource? Source { get; set; }

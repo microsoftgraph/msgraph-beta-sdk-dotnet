@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class ReviewSetQuery : Entity, IParsable {
         /// <summary>The user who created the query.</summary>
         public IdentitySet CreatedBy { get; set; }

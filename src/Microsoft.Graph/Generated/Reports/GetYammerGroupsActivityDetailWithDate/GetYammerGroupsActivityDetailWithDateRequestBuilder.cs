@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetYammerGroupsActivityDetailWithDate {
+namespace MicrosoftGraphSdk.Reports.GetYammerGroupsActivityDetailWithDate {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getYammerGroupsActivityDetail(date={date})</summary>
     public class GetYammerGroupsActivityDetailWithDateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

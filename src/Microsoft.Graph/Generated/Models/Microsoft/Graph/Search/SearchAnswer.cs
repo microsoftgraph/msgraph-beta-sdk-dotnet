@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Search {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     public class SearchAnswer : Entity, IParsable {
         public string Description { get; set; }
         public string DisplayName { get; set; }

@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId;
-using MicrosoftGraph.DeviceAppManagement.VppTokens.Item;
-using MicrosoftGraph.DeviceAppManagement.VppTokens.SyncLicenseCounts;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId;
+using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item;
+using MicrosoftGraphSdk.DeviceAppManagement.VppTokens.SyncLicenseCounts;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceAppManagement.VppTokens {
+namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens {
     /// <summary>Builds and executes requests for operations under \deviceAppManagement\vppTokens</summary>
     public class VppTokensRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -22,11 +22,11 @@ namespace MicrosoftGraph.DeviceAppManagement.VppTokens {
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceAppManagement.vppTokens.item collection</summary>
-        public VppTokenRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceAppManagement.vppTokens.item collection</summary>
+        public VppTokenItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("vppToken_id", position);
-            return new VppTokenRequestBuilder(urlTplParams, RequestAdapter);
+            return new VppTokenItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new VppTokensRequestBuilder and sets the default values.

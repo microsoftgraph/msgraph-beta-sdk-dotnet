@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref;
+using MicrosoftGraphSdk.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies {
+namespace MicrosoftGraphSdk.ServicePrincipals.Item.HomeRealmDiscoveryPolicies {
     /// <summary>Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\homeRealmDiscoveryPolicies</summary>
     public class HomeRealmDiscoveryPoliciesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

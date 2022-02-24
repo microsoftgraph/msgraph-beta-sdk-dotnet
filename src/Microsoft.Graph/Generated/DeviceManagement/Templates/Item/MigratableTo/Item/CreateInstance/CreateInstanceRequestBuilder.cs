@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Templates.Item.MigratableTo.Item.CreateInstance {
+namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo.Item.CreateInstance {
     /// <summary>Builds and executes requests for operations under \deviceManagement\templates\{deviceManagementTemplate-id}\migratableTo\{deviceManagementTemplate-id1}\microsoft.graph.createInstance</summary>
     public class CreateInstanceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

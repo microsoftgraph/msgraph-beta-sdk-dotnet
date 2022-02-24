@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ObjectMapping : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -18,7 +18,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Human-friendly name of the object mapping.</summary>
         public string Name { get; set; }
         /// <summary>Defines a filter to be used when deciding whether a given object should be provisioned. For example, you might want to only provision users that are located in the US.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Filter Scope { get; set; }
+        public Filter Scope { get; set; }
         /// <summary>Name of the object in the source directory. Must match the object name from the source directory definition.</summary>
         public string SourceObjectName { get; set; }
         /// <summary>Name of the object in target directory. Must match the object name from the target directory definition.</summary>
@@ -39,7 +39,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"flowTypes", (o,n) => { (o as ObjectMapping).FlowTypes = n.GetEnumValue<ObjectFlowTypes>(); } },
                 {"metadata", (o,n) => { (o as ObjectMapping).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>().ToList(); } },
                 {"name", (o,n) => { (o as ObjectMapping).Name = n.GetStringValue(); } },
-                {"scope", (o,n) => { (o as ObjectMapping).Scope = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Filter>(); } },
+                {"scope", (o,n) => { (o as ObjectMapping).Scope = n.GetObjectValue<Filter>(); } },
                 {"sourceObjectName", (o,n) => { (o as ObjectMapping).SourceObjectName = n.GetStringValue(); } },
                 {"targetObjectName", (o,n) => { (o as ObjectMapping).TargetObjectName = n.GetStringValue(); } },
             };
@@ -55,7 +55,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteEnumValue<ObjectFlowTypes>("flowTypes", FlowTypes);
             writer.WriteCollectionOfObjectValues<MetadataEntry>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Filter>("scope", Scope);
+            writer.WriteObjectValue<Filter>("scope", Scope);
             writer.WriteStringValue("sourceObjectName", SourceObjectName);
             writer.WriteStringValue("targetObjectName", TargetObjectName);
             writer.WriteAdditionalData(AdditionalData);

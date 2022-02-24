@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.MessageTraces.Item.Recipients.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.MessageTraces.Item.Recipients.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.MessageTraces.Item.Recipients {
+namespace MicrosoftGraphSdk.MessageTraces.Item.Recipients {
     /// <summary>Builds and executes requests for operations under \messageTraces\{messageTrace-id}\recipients</summary>
     public class RecipientsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.MessageTraces.Item.Recipients {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.messageTraces.item.recipients.item collection</summary>
-        public MessageRecipientRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.messageTraces.item.recipients.item collection</summary>
+        public MessageRecipientItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageRecipient_id", position);
-            return new MessageRecipientRequestBuilder(urlTplParams, RequestAdapter);
+            return new MessageRecipientItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new RecipientsRequestBuilder and sets the default values.

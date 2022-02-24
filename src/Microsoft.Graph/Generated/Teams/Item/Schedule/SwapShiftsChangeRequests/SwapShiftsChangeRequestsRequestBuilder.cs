@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teams.Item.Schedule.SwapShiftsChangeRequests.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teams.Item.Schedule.SwapShiftsChangeRequests.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Schedule.SwapShiftsChangeRequests {
+namespace MicrosoftGraphSdk.Teams.Item.Schedule.SwapShiftsChangeRequests {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\schedule\swapShiftsChangeRequests</summary>
     public class SwapShiftsChangeRequestsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Teams.Item.Schedule.SwapShiftsChangeRequests {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.teams.item.schedule.swapShiftsChangeRequests.item collection</summary>
-        public SwapShiftsChangeRequestRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.swapShiftsChangeRequests.item collection</summary>
+        public SwapShiftsChangeRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("swapShiftsChangeRequest_id", position);
-            return new SwapShiftsChangeRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new SwapShiftsChangeRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SwapShiftsChangeRequestsRequestBuilder and sets the default values.

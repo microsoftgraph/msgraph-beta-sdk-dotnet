@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ApplyDecisions {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Decisions.Item.Instance.ApplyDecisions {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\definitions\{accessReviewScheduleDefinition-id}\instances\{accessReviewInstance-id}\decisions\{accessReviewInstanceDecisionItem-id}\instance\microsoft.graph.applyDecisions</summary>
     public class ApplyDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

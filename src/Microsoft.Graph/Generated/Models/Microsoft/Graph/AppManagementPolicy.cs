@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AppManagementPolicy : PolicyBase, IParsable {
         /// <summary>Collection of application and service principals to which a policy is applied.</summary>
         public List<DirectoryObject> AppliesTo { get; set; }

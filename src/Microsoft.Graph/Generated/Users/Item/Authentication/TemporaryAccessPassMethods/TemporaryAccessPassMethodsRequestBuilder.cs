@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.Authentication.TemporaryAccessPassMethods.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.Authentication.TemporaryAccessPassMethods.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Authentication.TemporaryAccessPassMethods {
+namespace MicrosoftGraphSdk.Users.Item.Authentication.TemporaryAccessPassMethods {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\authentication\temporaryAccessPassMethods</summary>
     public class TemporaryAccessPassMethodsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Users.Item.Authentication.TemporaryAccessPassMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.authentication.temporaryAccessPassMethods.item collection</summary>
-        public TemporaryAccessPassAuthenticationMethodRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.authentication.temporaryAccessPassMethods.item collection</summary>
+        public TemporaryAccessPassAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("temporaryAccessPassAuthenticationMethod_id", position);
-            return new TemporaryAccessPassAuthenticationMethodRequestBuilder(urlTplParams, RequestAdapter);
+            return new TemporaryAccessPassAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TemporaryAccessPassMethodsRequestBuilder and sets the default values.

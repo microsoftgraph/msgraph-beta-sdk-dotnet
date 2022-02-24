@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementActionTenantDeploymentStatus : Entity, IParsable {
         /// <summary>The collection of deployment status for each instance of a management action. Optional.</summary>
         public List<ManagementActionDeploymentStatus> Statuses { get; set; }

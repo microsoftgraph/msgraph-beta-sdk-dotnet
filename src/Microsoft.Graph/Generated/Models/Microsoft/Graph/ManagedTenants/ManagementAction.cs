@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.ManagedTenants {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementAction : Entity, IParsable {
         /// <summary>The category for the management action. Possible values are: custom, devices, identity, unknownFutureValue. Optional. Read-only.</summary>
         public ManagementCategory? Category { get; set; }

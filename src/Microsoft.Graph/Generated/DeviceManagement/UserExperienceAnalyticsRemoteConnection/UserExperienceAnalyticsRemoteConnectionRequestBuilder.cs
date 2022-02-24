@@ -1,14 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRemoteConnection.Item;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRemoteConnection {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRemoteConnection {
     /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRemoteConnection</summary>
     public class UserExperienceAnalyticsRemoteConnectionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +18,11 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRemoteConnectio
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsRemoteConnection.item collection</summary>
-        public UserExperienceAnalyticsRemoteConnectionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.userExperienceAnalyticsRemoteConnection.item collection</summary>
+        public UserExperienceAnalyticsRemoteConnectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsRemoteConnection_id", position);
-            return new UserExperienceAnalyticsRemoteConnectionRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsRemoteConnectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsRemoteConnectionRequestBuilder and sets the default values.
@@ -77,7 +78,7 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRemoteConnectio
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -109,10 +110,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsRemoteConnectio
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRemoteConnection>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsRemoteConnection\microsoft.graph.summarizeDeviceRemoteConnection(summarizeBy={summarizeBy})

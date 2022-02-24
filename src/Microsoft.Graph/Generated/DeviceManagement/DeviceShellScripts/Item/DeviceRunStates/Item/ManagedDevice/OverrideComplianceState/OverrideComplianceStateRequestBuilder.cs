@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceShellScripts.Item.DeviceRunStates.Item.ManagedDevice.OverrideComplianceState {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceShellScripts.Item.DeviceRunStates.Item.ManagedDevice.OverrideComplianceState {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceShellScripts\{deviceShellScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.overrideComplianceState</summary>
     public class OverrideComplianceStateRequestBuilder {
         /// <summary>Path parameters for the request</summary>

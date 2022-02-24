@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Financials.Companies.Item.Employees.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Financials.Companies.Item.Employees.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Financials.Companies.Item.Employees {
+namespace MicrosoftGraphSdk.Financials.Companies.Item.Employees {
     /// <summary>Builds and executes requests for operations under \financials\companies\{company-id}\employees</summary>
     public class EmployeesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Financials.Companies.Item.Employees {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.financials.companies.item.employees.item collection</summary>
-        public EmployeeRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.financials.companies.item.employees.item collection</summary>
+        public EmployeeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("employee_id", position);
-            return new EmployeeRequestBuilder(urlTplParams, RequestAdapter);
+            return new EmployeeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new EmployeesRequestBuilder and sets the default values.

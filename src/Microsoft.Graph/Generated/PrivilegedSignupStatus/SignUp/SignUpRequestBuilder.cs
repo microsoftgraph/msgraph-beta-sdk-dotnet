@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PrivilegedSignupStatus.SignUp {
+namespace MicrosoftGraphSdk.PrivilegedSignupStatus.SignUp {
     /// <summary>Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.signUp</summary>
     public class SignUpRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -74,7 +74,7 @@ namespace MicrosoftGraph.PrivilegedSignupStatus.SignUp {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type privilegedSignupStatus</summary>
-            public MicrosoftGraph.Models.Microsoft.Graph.PrivilegedSignupStatus PrivilegedSignupStatus { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus PrivilegedSignupStatus { get; set; }
             /// <summary>
             /// Instantiates a new signUpResponse and sets the default values.
             /// </summary>
@@ -86,7 +86,7 @@ namespace MicrosoftGraph.PrivilegedSignupStatus.SignUp {
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"privilegedSignupStatus", (o,n) => { (o as SignUpResponse).PrivilegedSignupStatus = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PrivilegedSignupStatus>(); } },
+                    {"privilegedSignupStatus", (o,n) => { (o as SignUpResponse).PrivilegedSignupStatus = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(); } },
                 };
             }
             /// <summary>
@@ -95,7 +95,7 @@ namespace MicrosoftGraph.PrivilegedSignupStatus.SignUp {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.PrivilegedSignupStatus>("privilegedSignupStatus", PrivilegedSignupStatus);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>("privilegedSignupStatus", PrivilegedSignupStatus);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

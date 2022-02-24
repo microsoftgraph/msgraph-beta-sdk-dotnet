@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.TentativelyAccept {
+namespace MicrosoftGraphSdk.Users.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.TentativelyAccept {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\calendars\{calendar-id}\calendarView\{event-id}\exceptionOccurrences\{event-id1}\microsoft.graph.tentativelyAccept</summary>
     public class TentativelyAcceptRequestBuilder {
         /// <summary>Path parameters for the request</summary>

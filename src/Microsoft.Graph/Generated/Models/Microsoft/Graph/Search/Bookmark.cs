@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph.Search {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     public class Bookmark : SearchAnswer, IParsable {
         public DateTimeOffset? AvailabilityEndDateTime { get; set; }
         public DateTimeOffset? AvailabilityStartDateTime { get; set; }

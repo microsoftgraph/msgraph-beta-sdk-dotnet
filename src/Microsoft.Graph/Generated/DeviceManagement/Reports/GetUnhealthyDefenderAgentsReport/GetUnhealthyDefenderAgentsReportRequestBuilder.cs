@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetUnhealthyDefenderAgentsReport {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetUnhealthyDefenderAgentsReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getUnhealthyDefenderAgentsReport</summary>
     public class GetUnhealthyDefenderAgentsReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

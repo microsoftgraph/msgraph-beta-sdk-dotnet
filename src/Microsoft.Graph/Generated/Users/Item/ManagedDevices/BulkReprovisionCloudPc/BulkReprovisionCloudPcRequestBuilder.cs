@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.ManagedDevices.BulkReprovisionCloudPc {
+namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.BulkReprovisionCloudPc {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\managedDevices\microsoft.graph.bulkReprovisionCloudPc</summary>
     public class BulkReprovisionCloudPcRequestBuilder {
         /// <summary>Path parameters for the request</summary>

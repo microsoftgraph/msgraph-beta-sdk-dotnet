@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AccessReviews.Decisions.RecordAllDecisions {
+namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.RecordAllDecisions {
     /// <summary>Builds and executes requests for operations under \identityGovernance\accessReviews\decisions\microsoft.graph.recordAllDecisions</summary>
     public class RecordAllDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

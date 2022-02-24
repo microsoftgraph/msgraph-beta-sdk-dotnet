@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Organization.Item.CertificateBasedAuthConfiguration.Ref;
+using MicrosoftGraphSdk.Organization.Item.CertificateBasedAuthConfiguration.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Organization.Item.CertificateBasedAuthConfiguration {
+namespace MicrosoftGraphSdk.Organization.Item.CertificateBasedAuthConfiguration {
     /// <summary>Builds and executes requests for operations under \organization\{organization-id}\certificateBasedAuthConfiguration</summary>
     public class CertificateBasedAuthConfigurationRequestBuilder {
         /// <summary>Path parameters for the request</summary>

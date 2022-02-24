@@ -4,13 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GeneralLedgerEntry : Entity, IParsable {
-        public MicrosoftGraph.Models.Microsoft.Graph.Account Account { get; set; }
+        public Account Account { get; set; }
         public string AccountId { get; set; }
         public string AccountNumber { get; set; }
-        public Decimal? CreditAmount { get; set; }
-        public Decimal? DebitAmount { get; set; }
+        public decimal? CreditAmount { get; set; }
+        public decimal? DebitAmount { get; set; }
         public string Description { get; set; }
         public string DocumentNumber { get; set; }
         public string DocumentType { get; set; }
@@ -21,7 +21,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"account", (o,n) => { (o as GeneralLedgerEntry).Account = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Account>(); } },
+                {"account", (o,n) => { (o as GeneralLedgerEntry).Account = n.GetObjectValue<Account>(); } },
                 {"accountId", (o,n) => { (o as GeneralLedgerEntry).AccountId = n.GetStringValue(); } },
                 {"accountNumber", (o,n) => { (o as GeneralLedgerEntry).AccountNumber = n.GetStringValue(); } },
                 {"creditAmount", (o,n) => { (o as GeneralLedgerEntry).CreditAmount = n.GetDecimalValue(); } },
@@ -40,7 +40,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Account>("account", Account);
+            writer.WriteObjectValue<Account>("account", Account);
             writer.WriteStringValue("accountId", AccountId);
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteDecimalValue("creditAmount", CreditAmount);

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignments.Item.DirectoryScope.Ref {
+namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignments.Item.DirectoryScope.Ref {
     /// <summary>Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignments\{unifiedRoleAssignment-id}\directoryScope\$ref</summary>
     public class RefRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -78,7 +78,7 @@ namespace MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignments.It
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePutRequestInformation(MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignments.Item.DirectoryScope.Ref.Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePutRequestInformation(Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PUT,
@@ -120,7 +120,7 @@ namespace MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignments.It
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PutAsync(MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignments.Item.DirectoryScope.Ref.Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PutAsync(Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePutRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

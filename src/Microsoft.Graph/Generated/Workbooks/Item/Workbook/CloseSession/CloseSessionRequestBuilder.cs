@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.CloseSession {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.CloseSession {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\microsoft.graph.closeSession</summary>
     public class CloseSessionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

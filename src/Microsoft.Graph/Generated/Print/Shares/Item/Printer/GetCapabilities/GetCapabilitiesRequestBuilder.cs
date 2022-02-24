@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.Shares.Item.Printer.GetCapabilities {
+namespace MicrosoftGraphSdk.Print.Shares.Item.Printer.GetCapabilities {
     /// <summary>Builds and executes requests for operations under \print\shares\{printerShare-id}\printer\microsoft.graph.getCapabilities()</summary>
     public class GetCapabilitiesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

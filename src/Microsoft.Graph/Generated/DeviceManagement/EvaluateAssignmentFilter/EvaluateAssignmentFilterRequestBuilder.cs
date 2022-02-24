@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.EvaluateAssignmentFilter {
+namespace MicrosoftGraphSdk.DeviceManagement.EvaluateAssignmentFilter {
     /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.evaluateAssignmentFilter</summary>
     public class EvaluateAssignmentFilterRequestBuilder {
         /// <summary>Path parameters for the request</summary>

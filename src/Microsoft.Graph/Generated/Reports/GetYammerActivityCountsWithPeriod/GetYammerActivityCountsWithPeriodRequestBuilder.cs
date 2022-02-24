@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Reports.GetYammerActivityCountsWithPeriod {
+namespace MicrosoftGraphSdk.Reports.GetYammerActivityCountsWithPeriod {
     /// <summary>Builds and executes requests for operations under \reports\microsoft.graph.getYammerActivityCounts(period='{period}')</summary>
     public class GetYammerActivityCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AccessReviews.Item.SendReminder {
+namespace MicrosoftGraphSdk.AccessReviews.Item.SendReminder {
     /// <summary>Builds and executes requests for operations under \accessReviews\{accessReview-id}\microsoft.graph.sendReminder</summary>
     public class SendReminderRequestBuilder {
         /// <summary>Path parameters for the request</summary>

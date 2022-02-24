@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Policies.RoleManagementPolicyAssignments.Item.Policy.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Policies.RoleManagementPolicyAssignments.Item.Policy.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Policies.RoleManagementPolicyAssignments.Item.Policy {
+namespace MicrosoftGraphSdk.Policies.RoleManagementPolicyAssignments.Item.Policy {
     /// <summary>Builds and executes requests for operations under \policies\roleManagementPolicyAssignments\{unifiedRoleManagementPolicyAssignment-id}\policy</summary>
     public class PolicyRequestBuilder {
         /// <summary>Path parameters for the request</summary>

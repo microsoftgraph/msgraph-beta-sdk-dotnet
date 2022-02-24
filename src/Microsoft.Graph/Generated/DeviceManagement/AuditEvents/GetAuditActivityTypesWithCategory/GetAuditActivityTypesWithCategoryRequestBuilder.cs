@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory {
+namespace MicrosoftGraphSdk.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory {
     /// <summary>Builds and executes requests for operations under \deviceManagement\auditEvents\microsoft.graph.getAuditActivityTypes(category='{category}')</summary>
     public class GetAuditActivityTypesWithCategoryRequestBuilder {
         /// <summary>Path parameters for the request</summary>

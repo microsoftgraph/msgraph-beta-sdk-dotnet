@@ -1,4 +1,4 @@
-namespace MicrosoftGraph.Models.Microsoft.Graph.Ediscovery {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public enum DataSourceHoldStatus {
         NotApplied,
         Applied,

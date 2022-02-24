@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.RoleManagement.DeviceManagement.RoleAssignments.Item.Principals.Ref;
+using MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item.Principals.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.DeviceManagement.RoleAssignments.Item.Principals {
+namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item.Principals {
     /// <summary>Builds and executes requests for operations under \roleManagement\deviceManagement\roleAssignments\{unifiedRoleAssignmentMultiple-id}\principals</summary>
     public class PrincipalsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

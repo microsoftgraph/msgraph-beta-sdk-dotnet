@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ItemActivity : Entity, IParsable {
         /// <summary>An item was accessed.</summary>
         public AccessAction Access { get; set; }
@@ -12,7 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Identity of who performed the action. Read-only.</summary>
         public IdentitySet Actor { get; set; }
         /// <summary>Exposes the driveItem that was the target of this activity.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.DriveItem DriveItem { get; set; }
+        public DriveItem DriveItem { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -21,7 +21,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"access", (o,n) => { (o as ItemActivity).Access = n.GetObjectValue<AccessAction>(); } },
                 {"activityDateTime", (o,n) => { (o as ItemActivity).ActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 {"actor", (o,n) => { (o as ItemActivity).Actor = n.GetObjectValue<IdentitySet>(); } },
-                {"driveItem", (o,n) => { (o as ItemActivity).DriveItem = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>(); } },
+                {"driveItem", (o,n) => { (o as ItemActivity).DriveItem = n.GetObjectValue<DriveItem>(); } },
             };
         }
         /// <summary>
@@ -34,7 +34,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteObjectValue<AccessAction>("access", Access);
             writer.WriteDateTimeOffsetValue("activityDateTime", ActivityDateTime);
             writer.WriteObjectValue<IdentitySet>("actor", Actor);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.DriveItem>("driveItem", DriveItem);
+            writer.WriteObjectValue<DriveItem>("driveItem", DriveItem);
         }
     }
 }

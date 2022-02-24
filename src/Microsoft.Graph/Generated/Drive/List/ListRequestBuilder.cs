@@ -1,20 +1,20 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Drive.List.Activities;
-using MicrosoftGraph.Drive.List.Columns;
-using MicrosoftGraph.Drive.List.ContentTypes;
-using MicrosoftGraph.Drive.List.Drive;
-using MicrosoftGraph.Drive.List.Items;
-using MicrosoftGraph.Drive.List.Operations;
-using MicrosoftGraph.Drive.List.Subscriptions;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Drive.List.Activities;
+using MicrosoftGraphSdk.Drive.List.Columns;
+using MicrosoftGraphSdk.Drive.List.ContentTypes;
+using MicrosoftGraphSdk.Drive.List.Drive;
+using MicrosoftGraphSdk.Drive.List.Items;
+using MicrosoftGraphSdk.Drive.List.Operations;
+using MicrosoftGraphSdk.Drive.List.Subscriptions;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drive.List {
+namespace MicrosoftGraphSdk.Drive.List {
     /// <summary>Builds and executes requests for operations under \drive\list</summary>
     public class ListRequestBuilder {
         public ActivitiesRequestBuilder Activities { get =>
@@ -113,7 +113,7 @@ namespace MicrosoftGraph.Drive.List {
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.List body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePatchRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.List body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -144,9 +144,9 @@ namespace MicrosoftGraph.Drive.List {
         /// <param name="q">Request query parameters</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.List> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.List> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.List>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.List>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// For drives in SharePoint, the underlying document library list. Read-only. Nullable.
@@ -156,7 +156,7 @@ namespace MicrosoftGraph.Drive.List {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MicrosoftGraph.Models.Microsoft.Graph.List body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.List body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);

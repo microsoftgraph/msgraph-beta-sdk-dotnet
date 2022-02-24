@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MobilityManagementPolicy : Entity, IParsable {
         /// <summary>Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.</summary>
         public PolicyScope? AppliesTo { get; set; }
@@ -16,7 +16,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>Display name of the mobility management application.</summary>
         public string DisplayName { get; set; }
         /// <summary>Azure AD groups under the scope of the mobility management application if appliesTo is selected</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Group> IncludedGroups { get; set; }
+        public List<Group> IncludedGroups { get; set; }
         /// <summary>Whether policy is valid. Invalid policies may not be updated and should be deleted.</summary>
         public bool? IsValid { get; set; }
         /// <summary>Terms of Use URL of the mobility management application.</summary>
@@ -31,7 +31,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as MobilityManagementPolicy).Description = n.GetStringValue(); } },
                 {"discoveryUrl", (o,n) => { (o as MobilityManagementPolicy).DiscoveryUrl = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as MobilityManagementPolicy).DisplayName = n.GetStringValue(); } },
-                {"includedGroups", (o,n) => { (o as MobilityManagementPolicy).IncludedGroups = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Group>().ToList(); } },
+                {"includedGroups", (o,n) => { (o as MobilityManagementPolicy).IncludedGroups = n.GetCollectionOfObjectValues<Group>().ToList(); } },
                 {"isValid", (o,n) => { (o as MobilityManagementPolicy).IsValid = n.GetBoolValue(); } },
                 {"termsOfUseUrl", (o,n) => { (o as MobilityManagementPolicy).TermsOfUseUrl = n.GetStringValue(); } },
             };
@@ -48,7 +48,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("discoveryUrl", DiscoveryUrl);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Group>("includedGroups", IncludedGroups);
+            writer.WriteCollectionOfObjectValues<Group>("includedGroups", IncludedGroups);
             writer.WriteBoolValue("isValid", IsValid);
             writer.WriteStringValue("termsOfUseUrl", TermsOfUseUrl);
         }

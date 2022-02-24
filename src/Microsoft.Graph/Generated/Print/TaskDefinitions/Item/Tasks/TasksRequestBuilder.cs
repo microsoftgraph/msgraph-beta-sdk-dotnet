@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Print.TaskDefinitions.Item.Tasks.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.TaskDefinitions.Item.Tasks {
+namespace MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks {
     /// <summary>Builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks</summary>
     public class TasksRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Print.TaskDefinitions.Item.Tasks {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.print.taskDefinitions.item.tasks.item collection</summary>
-        public PrintTaskRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.print.taskDefinitions.item.tasks.item collection</summary>
+        public PrintTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printTask_id", position);
-            return new PrintTaskRequestBuilder(urlTplParams, RequestAdapter);
+            return new PrintTaskItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new TasksRequestBuilder and sets the default values.

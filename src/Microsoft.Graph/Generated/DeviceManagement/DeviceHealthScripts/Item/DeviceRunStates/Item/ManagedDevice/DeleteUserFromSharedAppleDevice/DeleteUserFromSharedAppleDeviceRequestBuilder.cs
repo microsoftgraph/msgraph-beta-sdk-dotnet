@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceHealthScripts.Item.DeviceRunStates.Item.ManagedDevice.DeleteUserFromSharedAppleDevice {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.DeviceRunStates.Item.ManagedDevice.DeleteUserFromSharedAppleDevice {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\{deviceHealthScript-id}\deviceRunStates\{deviceHealthScriptDeviceState-id}\managedDevice\microsoft.graph.deleteUserFromSharedAppleDevice</summary>
     public class DeleteUserFromSharedAppleDeviceRequestBuilder {
         /// <summary>Path parameters for the request</summary>

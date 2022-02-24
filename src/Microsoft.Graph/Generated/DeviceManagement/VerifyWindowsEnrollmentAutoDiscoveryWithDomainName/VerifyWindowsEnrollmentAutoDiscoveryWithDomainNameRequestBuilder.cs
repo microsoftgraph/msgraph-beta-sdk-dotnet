@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName {
+namespace MicrosoftGraphSdk.DeviceManagement.VerifyWindowsEnrollmentAutoDiscoveryWithDomainName {
     /// <summary>Builds and executes requests for operations under \deviceManagement\microsoft.graph.verifyWindowsEnrollmentAutoDiscovery(domainName='{domainName}')</summary>
     public class VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder {
         /// <summary>Path parameters for the request</summary>

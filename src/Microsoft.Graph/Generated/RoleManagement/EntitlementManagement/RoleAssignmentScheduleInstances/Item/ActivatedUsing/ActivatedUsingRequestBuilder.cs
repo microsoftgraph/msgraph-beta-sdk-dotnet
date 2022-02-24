@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.ActivatedUsing.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.ActivatedUsing.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.ActivatedUsing {
+namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances.Item.ActivatedUsing {
     /// <summary>Builds and executes requests for operations under \roleManagement\entitlementManagement\roleAssignmentScheduleInstances\{unifiedRoleAssignmentScheduleInstance-id}\activatedUsing</summary>
     public class ActivatedUsingRequestBuilder {
         /// <summary>Path parameters for the request</summary>

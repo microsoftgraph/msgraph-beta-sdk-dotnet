@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.GovernanceRoleAssignments.Item.LinkedEligibleRoleAssignment.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.GovernanceRoleAssignments.Item.LinkedEligibleRoleAssignment.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.GovernanceRoleAssignments.Item.LinkedEligibleRoleAssignment {
+namespace MicrosoftGraphSdk.GovernanceRoleAssignments.Item.LinkedEligibleRoleAssignment {
     /// <summary>Builds and executes requests for operations under \governanceRoleAssignments\{governanceRoleAssignment-id}\linkedEligibleRoleAssignment</summary>
     public class LinkedEligibleRoleAssignmentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

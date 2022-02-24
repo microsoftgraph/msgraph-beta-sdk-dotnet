@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Print.TaskDefinitions.Item.Tasks.Item.Definition.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks.Item.Definition.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Print.TaskDefinitions.Item.Tasks.Item.Definition {
+namespace MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks.Item.Definition {
     /// <summary>Builds and executes requests for operations under \print\taskDefinitions\{printTaskDefinition-id}\tasks\{printTask-id}\definition</summary>
     public class DefinitionRequestBuilder {
         /// <summary>Path parameters for the request</summary>

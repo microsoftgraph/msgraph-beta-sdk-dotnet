@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PrivilegedSignupStatus.IsSignedUp {
+namespace MicrosoftGraphSdk.PrivilegedSignupStatus.IsSignedUp {
     /// <summary>Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.isSignedUp()</summary>
     public class IsSignedUpRequestBuilder {
         /// <summary>Path parameters for the request</summary>

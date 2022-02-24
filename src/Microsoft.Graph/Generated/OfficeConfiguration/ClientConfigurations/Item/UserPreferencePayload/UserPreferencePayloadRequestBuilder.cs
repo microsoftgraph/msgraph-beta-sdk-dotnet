@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.OfficeConfiguration.ClientConfigurations.Item.UserPreferencePayload {
+namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item.UserPreferencePayload {
     /// <summary>Builds and executes requests for operations under \officeConfiguration\clientConfigurations\{officeClientConfiguration-id}\userPreferencePayload</summary>
     public class UserPreferencePayloadRequestBuilder {
         /// <summary>Path parameters for the request</summary>

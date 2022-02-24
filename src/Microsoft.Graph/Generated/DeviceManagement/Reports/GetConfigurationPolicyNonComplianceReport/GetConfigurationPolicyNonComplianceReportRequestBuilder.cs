@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceReport {
+namespace MicrosoftGraphSdk.DeviceManagement.Reports.GetConfigurationPolicyNonComplianceReport {
     /// <summary>Builds and executes requests for operations under \deviceManagement\reports\microsoft.graph.getConfigurationPolicyNonComplianceReport</summary>
     public class GetConfigurationPolicyNonComplianceReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

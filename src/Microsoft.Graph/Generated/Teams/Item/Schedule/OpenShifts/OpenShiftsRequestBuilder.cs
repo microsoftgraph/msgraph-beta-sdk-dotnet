@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Teams.Item.Schedule.OpenShifts.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Teams.Item.Schedule.OpenShifts.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Teams.Item.Schedule.OpenShifts {
+namespace MicrosoftGraphSdk.Teams.Item.Schedule.OpenShifts {
     /// <summary>Builds and executes requests for operations under \teams\{team-id}\schedule\openShifts</summary>
     public class OpenShiftsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Teams.Item.Schedule.OpenShifts {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.teams.item.schedule.openShifts.item collection</summary>
-        public OpenShiftRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.teams.item.schedule.openShifts.item collection</summary>
+        public OpenShiftItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("openShift_id", position);
-            return new OpenShiftRequestBuilder(urlTplParams, RequestAdapter);
+            return new OpenShiftItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new OpenShiftsRequestBuilder and sets the default values.

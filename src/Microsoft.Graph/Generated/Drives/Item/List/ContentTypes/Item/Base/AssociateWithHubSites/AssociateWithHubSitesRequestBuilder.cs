@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Drives.Item.List.ContentTypes.Item.Base.AssociateWithHubSites {
+namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Base.AssociateWithHubSites {
     /// <summary>Builds and executes requests for operations under \drives\{drive-id}\list\contentTypes\{contentType-id}\base\microsoft.graph.associateWithHubSites</summary>
     public class AssociateWithHubSitesRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ManagedAppConfiguration : ManagedAppPolicy, IParsable {
         /// <summary>A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair> CustomSettings { get; set; }
+        public List<KeyValuePair> CustomSettings { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"customSettings", (o,n) => { (o as ManagedAppConfiguration).CustomSettings = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>().ToList(); } },
+                {"customSettings", (o,n) => { (o as ManagedAppConfiguration).CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
             };
         }
         /// <summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.KeyValuePair>("customSettings", CustomSettings);
+            writer.WriteCollectionOfObjectValues<KeyValuePair>("customSettings", CustomSettings);
         }
     }
 }

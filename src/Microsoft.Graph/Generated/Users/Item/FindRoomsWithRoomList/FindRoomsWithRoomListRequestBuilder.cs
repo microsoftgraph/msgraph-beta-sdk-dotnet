@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.FindRoomsWithRoomList {
+namespace MicrosoftGraphSdk.Users.Item.FindRoomsWithRoomList {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\microsoft.graph.findRooms(RoomList='{RoomList}')</summary>
     public class FindRoomsWithRoomListRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -66,9 +66,9 @@ namespace MicrosoftGraph.Users.Item.FindRoomsWithRoomList {
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<IEnumerable<MicrosoftGraph.Users.Item.FindRoomsWithRoomList.FindRoomsWithRoomList>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<IEnumerable<FindRoomsWithRoomList>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<MicrosoftGraph.Users.Item.FindRoomsWithRoomList.FindRoomsWithRoomList>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<FindRoomsWithRoomList>(requestInfo, responseHandler, default, cancellationToken);
         }
     }
 }

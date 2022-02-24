@@ -1,16 +1,16 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.RoleManagement.CloudPC.ResourceNamespaces;
-using MicrosoftGraph.RoleManagement.CloudPC.RoleAssignments;
-using MicrosoftGraph.RoleManagement.CloudPC.RoleDefinitions;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces;
+using MicrosoftGraphSdk.RoleManagement.CloudPC.RoleAssignments;
+using MicrosoftGraphSdk.RoleManagement.CloudPC.RoleDefinitions;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.RoleManagement.CloudPC {
+namespace MicrosoftGraphSdk.RoleManagement.CloudPC {
     /// <summary>Builds and executes requests for operations under \roleManagement\cloudPC</summary>
     public class CloudPCRequestBuilder {
         /// <summary>Path parameters for the request</summary>

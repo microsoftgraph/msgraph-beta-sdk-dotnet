@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ProgramControl : Entity, IParsable {
         /// <summary>The controlId of the control, in particular the identifier of an access review. Required on create.</summary>
         public string ControlId { get; set; }
@@ -16,7 +16,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The user who created the program control.</summary>
         public UserIdentity Owner { get; set; }
         /// <summary>The program this control is part of.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Program Program { get; set; }
+        public Program Program { get; set; }
         /// <summary>The programId of the program this control is a part of. Required on create.</summary>
         public string ProgramId { get; set; }
         /// <summary>The resource, a group or an app, targeted by this program control's access review.</summary>
@@ -33,7 +33,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"createdDateTime", (o,n) => { (o as ProgramControl).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as ProgramControl).DisplayName = n.GetStringValue(); } },
                 {"owner", (o,n) => { (o as ProgramControl).Owner = n.GetObjectValue<UserIdentity>(); } },
-                {"program", (o,n) => { (o as ProgramControl).Program = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Program>(); } },
+                {"program", (o,n) => { (o as ProgramControl).Program = n.GetObjectValue<Program>(); } },
                 {"programId", (o,n) => { (o as ProgramControl).ProgramId = n.GetStringValue(); } },
                 {"resource", (o,n) => { (o as ProgramControl).Resource = n.GetObjectValue<ProgramResource>(); } },
                 {"status", (o,n) => { (o as ProgramControl).Status = n.GetStringValue(); } },
@@ -51,7 +51,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<UserIdentity>("owner", Owner);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Program>("program", Program);
+            writer.WriteObjectValue<Program>("program", Program);
             writer.WriteStringValue("programId", ProgramId);
             writer.WriteObjectValue<ProgramResource>("resource", Resource);
             writer.WriteStringValue("status", Status);

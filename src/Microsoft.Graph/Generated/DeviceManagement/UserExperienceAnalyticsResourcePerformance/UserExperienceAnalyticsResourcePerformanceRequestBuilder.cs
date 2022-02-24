@@ -1,14 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsResourcePerformance.Item;
+using MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsResourcePerformance {
+namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsResourcePerformance {
     /// <summary>Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsResourcePerformance</summary>
     public class UserExperienceAnalyticsResourcePerformanceRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +18,11 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsResourcePerform
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.userExperienceAnalyticsResourcePerformance.item collection</summary>
-        public UserExperienceAnalyticsResourcePerformanceRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.userExperienceAnalyticsResourcePerformance.item collection</summary>
+        public UserExperienceAnalyticsResourcePerformanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsResourcePerformance_id", position);
-            return new UserExperienceAnalyticsResourcePerformanceRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserExperienceAnalyticsResourcePerformanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsResourcePerformanceRequestBuilder and sets the default values.
@@ -77,7 +78,7 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsResourcePerform
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsResourcePerformance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
+        public RequestInformation CreatePostRequestInformation(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsResourcePerformance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -109,10 +110,10 @@ namespace MicrosoftGraph.DeviceManagement.UserExperienceAnalyticsResourcePerform
         /// <param name="o">Request options</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsResourcePerformance> PostAsync(MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsResourcePerformance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsResourcePerformance> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsResourcePerformance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraph.Models.Microsoft.Graph.UserExperienceAnalyticsResourcePerformance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsResourcePerformance>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsResourcePerformance\microsoft.graph.summarizeDeviceResourcePerformance(summarizeBy={summarizeBy})

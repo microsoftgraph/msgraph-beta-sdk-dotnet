@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile, IParsable {
         /// <summary>The contents of the uploaded ADMX file.</summary>
         public byte[] Content { get; set; }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Print : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -12,7 +12,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The list of print long running operations.</summary>
         public List<PrintOperation> Operations { get; set; }
         /// <summary>The list of printers registered in the tenant.</summary>
-        public List<MicrosoftGraph.Models.Microsoft.Graph.Printer> Printers { get; set; }
+        public List<Printer> Printers { get; set; }
         public List<PrinterShare> PrinterShares { get; set; }
         public ReportRoot Reports { get; set; }
         /// <summary>The list of available Universal Print service endpoints.</summary>
@@ -36,7 +36,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"connectors", (o,n) => { (o as Print).Connectors = n.GetCollectionOfObjectValues<PrintConnector>().ToList(); } },
                 {"operations", (o,n) => { (o as Print).Operations = n.GetCollectionOfObjectValues<PrintOperation>().ToList(); } },
-                {"printers", (o,n) => { (o as Print).Printers = n.GetCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Printer>().ToList(); } },
+                {"printers", (o,n) => { (o as Print).Printers = n.GetCollectionOfObjectValues<Printer>().ToList(); } },
                 {"printerShares", (o,n) => { (o as Print).PrinterShares = n.GetCollectionOfObjectValues<PrinterShare>().ToList(); } },
                 {"reports", (o,n) => { (o as Print).Reports = n.GetObjectValue<ReportRoot>(); } },
                 {"services", (o,n) => { (o as Print).Services = n.GetCollectionOfObjectValues<PrintService>().ToList(); } },
@@ -53,7 +53,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<PrintConnector>("connectors", Connectors);
             writer.WriteCollectionOfObjectValues<PrintOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<MicrosoftGraph.Models.Microsoft.Graph.Printer>("printers", Printers);
+            writer.WriteCollectionOfObjectValues<Printer>("printers", Printers);
             writer.WriteCollectionOfObjectValues<PrinterShare>("printerShares", PrinterShares);
             writer.WriteObjectValue<ReportRoot>("reports", Reports);
             writer.WriteCollectionOfObjectValues<PrintService>("services", Services);

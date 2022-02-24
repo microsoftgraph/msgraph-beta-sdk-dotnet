@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.OnlineMeetings.Item.AttendeeReport {
+namespace MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.AttendeeReport {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\onlineMeetings\{onlineMeeting-id}\attendeeReport</summary>
     public class AttendeeReportRequestBuilder {
         /// <summary>Path parameters for the request</summary>

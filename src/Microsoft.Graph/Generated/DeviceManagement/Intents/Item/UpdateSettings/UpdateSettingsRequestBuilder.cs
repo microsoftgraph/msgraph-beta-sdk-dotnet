@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.Intents.Item.UpdateSettings {
+namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.UpdateSettings {
     /// <summary>Builds and executes requests for operations under \deviceManagement\intents\{deviceManagementIntent-id}\microsoft.graph.updateSettings</summary>
     public class UpdateSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

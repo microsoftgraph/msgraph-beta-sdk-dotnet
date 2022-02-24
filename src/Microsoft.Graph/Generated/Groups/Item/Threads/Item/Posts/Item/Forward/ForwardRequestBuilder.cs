@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Groups.Item.Threads.Item.Posts.Item.Forward {
+namespace MicrosoftGraphSdk.Groups.Item.Threads.Item.Posts.Item.Forward {
     /// <summary>Builds and executes requests for operations under \groups\{group-id}\threads\{conversationThread-id}\posts\{post-id}\microsoft.graph.forward</summary>
     public class ForwardRequestBuilder {
         /// <summary>Path parameters for the request</summary>

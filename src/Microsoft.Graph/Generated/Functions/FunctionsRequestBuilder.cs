@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Functions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Functions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Functions {
+namespace MicrosoftGraphSdk.Functions {
     /// <summary>Builds and executes requests for operations under \functions</summary>
     public class FunctionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Functions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.functions.item collection</summary>
-        public AttributeMappingFunctionSchemaRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.functions.item collection</summary>
+        public AttributeMappingFunctionSchemaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attributeMappingFunctionSchema_id", position);
-            return new AttributeMappingFunctionSchemaRequestBuilder(urlTplParams, RequestAdapter);
+            return new AttributeMappingFunctionSchemaItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new FunctionsRequestBuilder and sets the default values.

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.ManagedDevices.Item.Reenable {
+namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.Reenable {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\managedDevices\{managedDevice-id}\microsoft.graph.reenable</summary>
     public class ReenableRequestBuilder {
         /// <summary>Path parameters for the request</summary>

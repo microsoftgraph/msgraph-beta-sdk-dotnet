@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.ApplyHold {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.ApplyHold {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\noncustodialDataSources\{noncustodialDataSource-id}\microsoft.graph.ediscovery.applyHold</summary>
     public class ApplyHoldRequestBuilder {
         /// <summary>Path parameters for the request</summary>

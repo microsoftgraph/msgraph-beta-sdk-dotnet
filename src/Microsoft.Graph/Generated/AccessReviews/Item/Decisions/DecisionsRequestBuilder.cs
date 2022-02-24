@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.AccessReviews.Item.Decisions.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.AccessReviews.Item.Decisions.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AccessReviews.Item.Decisions {
+namespace MicrosoftGraphSdk.AccessReviews.Item.Decisions {
     /// <summary>Builds and executes requests for operations under \accessReviews\{accessReview-id}\decisions</summary>
     public class DecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.AccessReviews.Item.Decisions {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.accessReviews.item.decisions.item collection</summary>
-        public AccessReviewDecisionRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.accessReviews.item.decisions.item collection</summary>
+        public AccessReviewDecisionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewDecision_id", position);
-            return new AccessReviewDecisionRequestBuilder(urlTplParams, RequestAdapter);
+            return new AccessReviewDecisionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DecisionsRequestBuilder and sets the default values.

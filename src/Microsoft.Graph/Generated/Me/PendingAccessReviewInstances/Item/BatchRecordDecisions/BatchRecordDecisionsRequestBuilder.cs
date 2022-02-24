@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.PendingAccessReviewInstances.Item.BatchRecordDecisions {
+namespace MicrosoftGraphSdk.Me.PendingAccessReviewInstances.Item.BatchRecordDecisions {
     /// <summary>Builds and executes requests for operations under \me\pendingAccessReviewInstances\{accessReviewInstance-id}\microsoft.graph.batchRecordDecisions</summary>
     public class BatchRecordDecisionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

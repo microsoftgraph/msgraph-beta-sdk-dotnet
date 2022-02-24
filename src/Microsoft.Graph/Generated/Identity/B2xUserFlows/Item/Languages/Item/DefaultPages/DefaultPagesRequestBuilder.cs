@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages {
+namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages {
     /// <summary>Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\languages\{userFlowLanguageConfiguration-id}\defaultPages</summary>
     public class DefaultPagesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Identity.B2xUserFlows.Item.Languages.Item.DefaultPages 
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identity.b2xUserFlows.item.languages.item.defaultPages.item collection</summary>
-        public UserFlowLanguagePageRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identity.b2xUserFlows.item.languages.item.defaultPages.item collection</summary>
+        public UserFlowLanguagePageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userFlowLanguagePage_id", position);
-            return new UserFlowLanguagePageRequestBuilder(urlTplParams, RequestAdapter);
+            return new UserFlowLanguagePageItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DefaultPagesRequestBuilder and sets the default values.

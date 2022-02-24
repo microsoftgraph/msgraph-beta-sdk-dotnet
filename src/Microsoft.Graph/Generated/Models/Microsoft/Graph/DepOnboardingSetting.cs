@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DepOnboardingSetting : Entity, IParsable {
         /// <summary>The Apple ID used to obtain the current token.</summary>
         public string AppleIdentifier { get; set; }

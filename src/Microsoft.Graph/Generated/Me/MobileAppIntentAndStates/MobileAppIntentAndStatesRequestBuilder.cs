@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Me.MobileAppIntentAndStates.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Me.MobileAppIntentAndStates.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.MobileAppIntentAndStates {
+namespace MicrosoftGraphSdk.Me.MobileAppIntentAndStates {
     /// <summary>Builds and executes requests for operations under \me\mobileAppIntentAndStates</summary>
     public class MobileAppIntentAndStatesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.Me.MobileAppIntentAndStates {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.me.mobileAppIntentAndStates.item collection</summary>
-        public MobileAppIntentAndStateRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.me.mobileAppIntentAndStates.item collection</summary>
+        public MobileAppIntentAndStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppIntentAndState_id", position);
-            return new MobileAppIntentAndStateRequestBuilder(urlTplParams, RequestAdapter);
+            return new MobileAppIntentAndStateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new MobileAppIntentAndStatesRequestBuilder and sets the default values.

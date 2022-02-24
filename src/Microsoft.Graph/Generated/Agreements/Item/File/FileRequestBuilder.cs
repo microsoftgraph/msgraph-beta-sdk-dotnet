@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Agreements.Item.File.Localizations;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Agreements.Item.File.Localizations;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Agreements.Item.File {
+namespace MicrosoftGraphSdk.Agreements.Item.File {
     /// <summary>Builds and executes requests for operations under \agreements\{agreement-id}\file</summary>
     public class FileRequestBuilder {
         public LocalizationsRequestBuilder Localizations { get =>

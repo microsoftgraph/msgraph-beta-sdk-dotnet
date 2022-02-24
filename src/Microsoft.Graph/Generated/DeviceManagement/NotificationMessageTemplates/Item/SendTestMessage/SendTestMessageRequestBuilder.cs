@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.NotificationMessageTemplates.Item.SendTestMessage {
+namespace MicrosoftGraphSdk.DeviceManagement.NotificationMessageTemplates.Item.SendTestMessage {
     /// <summary>Builds and executes requests for operations under \deviceManagement\notificationMessageTemplates\{notificationMessageTemplate-id}\microsoft.graph.sendTestMessage</summary>
     public class SendTestMessageRequestBuilder {
         /// <summary>Path parameters for the request</summary>

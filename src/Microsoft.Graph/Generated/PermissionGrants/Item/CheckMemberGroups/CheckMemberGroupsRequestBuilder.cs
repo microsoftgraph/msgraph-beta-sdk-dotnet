@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.PermissionGrants.Item.CheckMemberGroups {
+namespace MicrosoftGraphSdk.PermissionGrants.Item.CheckMemberGroups {
     /// <summary>Builds and executes requests for operations under \permissionGrants\{resourceSpecificPermissionGrant-id}\microsoft.graph.checkMemberGroups</summary>
     public class CheckMemberGroupsRequestBuilder {
         /// <summary>Path parameters for the request</summary>

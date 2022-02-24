@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Users.Item.Presence.SetPresence {
+namespace MicrosoftGraphSdk.Users.Item.Presence.SetPresence {
     public class SetPresenceRequestBody : IParsable {
         public string Activity { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

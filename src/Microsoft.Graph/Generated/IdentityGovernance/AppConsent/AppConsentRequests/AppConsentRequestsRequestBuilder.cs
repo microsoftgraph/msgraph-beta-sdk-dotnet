@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.IdentityGovernance.AppConsent.AppConsentRequests.FilterByCurrentUserWithOn;
-using MicrosoftGraph.IdentityGovernance.AppConsent.AppConsentRequests.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.IdentityGovernance.AppConsent.AppConsentRequests.FilterByCurrentUserWithOn;
+using MicrosoftGraphSdk.IdentityGovernance.AppConsent.AppConsentRequests.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.IdentityGovernance.AppConsent.AppConsentRequests {
+namespace MicrosoftGraphSdk.IdentityGovernance.AppConsent.AppConsentRequests {
     /// <summary>Builds and executes requests for operations under \identityGovernance\appConsent\appConsentRequests</summary>
     public class AppConsentRequestsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.IdentityGovernance.AppConsent.AppConsentRequests {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.identityGovernance.appConsent.appConsentRequests.item collection</summary>
-        public AppConsentRequestRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.identityGovernance.appConsent.appConsentRequests.item collection</summary>
+        public AppConsentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appConsentRequest_id", position);
-            return new AppConsentRequestRequestBuilder(urlTplParams, RequestAdapter);
+            return new AppConsentRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new AppConsentRequestsRequestBuilder and sets the default values.

@@ -1,13 +1,13 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Contacts.Item.MemberOf.Ref;
+using MicrosoftGraphSdk.Contacts.Item.MemberOf.Ref;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Contacts.Item.MemberOf {
+namespace MicrosoftGraphSdk.Contacts.Item.MemberOf {
     /// <summary>Builds and executes requests for operations under \contacts\{orgContact-id}\memberOf</summary>
     public class MemberOfRequestBuilder {
         /// <summary>Path parameters for the request</summary>

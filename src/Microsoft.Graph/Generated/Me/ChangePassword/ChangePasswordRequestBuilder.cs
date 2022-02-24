@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.ChangePassword {
+namespace MicrosoftGraphSdk.Me.ChangePassword {
     /// <summary>Builds and executes requests for operations under \me\microsoft.graph.changePassword</summary>
     public class ChangePasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>

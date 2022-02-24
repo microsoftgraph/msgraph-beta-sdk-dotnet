@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Me.Events.Item.ExceptionOccurrences.Item.Decline {
+namespace MicrosoftGraphSdk.Me.Events.Item.ExceptionOccurrences.Item.Decline {
     /// <summary>Builds and executes requests for operations under \me\events\{event-id}\exceptionOccurrences\{event-id1}\microsoft.graph.decline</summary>
     public class DeclineRequestBuilder {
         /// <summary>Path parameters for the request</summary>

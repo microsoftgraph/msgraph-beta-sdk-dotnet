@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.DeviceSettingStateSummaries.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.DeviceSettingStateSummaries.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.DeviceSettingStateSummaries {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurations.Item.DeviceSettingStateSummaries {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceConfigurations\{deviceConfiguration-id}\deviceSettingStateSummaries</summary>
     public class DeviceSettingStateSummariesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -17,11 +17,11 @@ namespace MicrosoftGraph.DeviceManagement.DeviceConfigurations.Item.DeviceSettin
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceConfigurations.item.deviceSettingStateSummaries.item collection</summary>
-        public SettingStateDeviceSummaryRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceConfigurations.item.deviceSettingStateSummaries.item collection</summary>
+        public SettingStateDeviceSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("settingStateDeviceSummary_id", position);
-            return new SettingStateDeviceSummaryRequestBuilder(urlTplParams, RequestAdapter);
+            return new SettingStateDeviceSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceSettingStateSummariesRequestBuilder and sets the default values.

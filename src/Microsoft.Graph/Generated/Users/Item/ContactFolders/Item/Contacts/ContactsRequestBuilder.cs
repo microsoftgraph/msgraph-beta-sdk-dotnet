@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Models.Microsoft.Graph;
-using MicrosoftGraph.Users.Item.ContactFolders.Item.Contacts.Delta;
-using MicrosoftGraph.Users.Item.ContactFolders.Item.Contacts.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Users.Item.ContactFolders.Item.Contacts.Delta;
+using MicrosoftGraphSdk.Users.Item.ContactFolders.Item.Contacts.Item;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Users.Item.ContactFolders.Item.Contacts {
+namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item.Contacts {
     /// <summary>Builds and executes requests for operations under \users\{user-id}\contactFolders\{contactFolder-id}\contacts</summary>
     public class ContactsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Users.Item.ContactFolders.Item.Contacts {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.users.item.contactFolders.item.contacts.item collection</summary>
-        public ContactRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.users.item.contactFolders.item.contacts.item collection</summary>
+        public ContactItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contact_id", position);
-            return new ContactRequestBuilder(urlTplParams, RequestAdapter);
+            return new ContactItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new ContactsRequestBuilder and sets the default values.

@@ -1,15 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.Education.Schools.Delta;
-using MicrosoftGraph.Education.Schools.Item;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.Education.Schools.Delta;
+using MicrosoftGraphSdk.Education.Schools.Item;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Education.Schools {
+namespace MicrosoftGraphSdk.Education.Schools {
     /// <summary>Builds and executes requests for operations under \education\schools</summary>
     public class SchoolsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
@@ -18,11 +18,11 @@ namespace MicrosoftGraph.Education.Schools {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the MicrosoftGraph.education.schools.item collection</summary>
-        public EducationSchoolRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.education.schools.item collection</summary>
+        public EducationSchoolItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSchool_id", position);
-            return new EducationSchoolRequestBuilder(urlTplParams, RequestAdapter);
+            return new EducationSchoolItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new SchoolsRequestBuilder and sets the default values.

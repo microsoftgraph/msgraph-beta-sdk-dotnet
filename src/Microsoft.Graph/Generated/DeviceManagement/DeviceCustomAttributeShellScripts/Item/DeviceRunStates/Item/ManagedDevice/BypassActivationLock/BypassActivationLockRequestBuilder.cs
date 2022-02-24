@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice.BypassActivationLock {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCustomAttributeShellScripts.Item.DeviceRunStates.Item.ManagedDevice.BypassActivationLock {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCustomAttributeShellScripts\{deviceCustomAttributeShellScript-id}\deviceRunStates\{deviceManagementScriptDeviceState-id}\managedDevice\microsoft.graph.bypassActivationLock</summary>
     public class BypassActivationLockRequestBuilder {
         /// <summary>Path parameters for the request</summary>

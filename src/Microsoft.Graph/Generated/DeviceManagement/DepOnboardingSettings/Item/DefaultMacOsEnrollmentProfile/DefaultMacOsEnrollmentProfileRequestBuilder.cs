@@ -1,14 +1,14 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.Ref;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile.Ref;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile {
+namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.DefaultMacOsEnrollmentProfile {
     /// <summary>Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\{depOnboardingSetting-id}\defaultMacOsEnrollmentProfile</summary>
     public class DefaultMacOsEnrollmentProfileRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace MicrosoftGraph.Models.Microsoft.Graph {
+namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class Event : OutlookItem, IParsable {
         /// <summary>true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.</summary>
         public bool? AllowNewTimeProposals { get; set; }
@@ -16,7 +16,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
         /// <summary>The preview of the message associated with the event. It is in text format.</summary>
         public string BodyPreview { get; set; }
         /// <summary>The calendar that contains the event. Navigation property. Read-only.</summary>
-        public MicrosoftGraph.Models.Microsoft.Graph.Calendar Calendar { get; set; }
+        public Calendar Calendar { get; set; }
         /// <summary>Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).</summary>
         public List<string> CancelledOccurrences { get; set; }
         /// <summary>The date, time, and time zone that the event ends. By default, the end time is in UTC.</summary>
@@ -74,7 +74,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
                 {"attendees", (o,n) => { (o as Event).Attendees = n.GetCollectionOfObjectValues<Attendee>().ToList(); } },
                 {"body", (o,n) => { (o as Event).Body = n.GetObjectValue<ItemBody>(); } },
                 {"bodyPreview", (o,n) => { (o as Event).BodyPreview = n.GetStringValue(); } },
-                {"calendar", (o,n) => { (o as Event).Calendar = n.GetObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Calendar>(); } },
+                {"calendar", (o,n) => { (o as Event).Calendar = n.GetObjectValue<Calendar>(); } },
                 {"cancelledOccurrences", (o,n) => { (o as Event).CancelledOccurrences = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"end", (o,n) => { (o as Event).End = n.GetObjectValue<DateTimeTimeZone>(); } },
                 {"exceptionOccurrences", (o,n) => { (o as Event).ExceptionOccurrences = n.GetCollectionOfObjectValues<Event>().ToList(); } },
@@ -128,7 +128,7 @@ namespace MicrosoftGraph.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<Attendee>("attendees", Attendees);
             writer.WriteObjectValue<ItemBody>("body", Body);
             writer.WriteStringValue("bodyPreview", BodyPreview);
-            writer.WriteObjectValue<MicrosoftGraph.Models.Microsoft.Graph.Calendar>("calendar", Calendar);
+            writer.WriteObjectValue<Calendar>("calendar", Calendar);
             writer.WriteCollectionOfPrimitiveValues<string>("cancelledOccurrences", CancelledOccurrences);
             writer.WriteObjectValue<DateTimeTimeZone>("end", End);
             writer.WriteCollectionOfObjectValues<Event>("exceptionOccurrences", ExceptionOccurrences);

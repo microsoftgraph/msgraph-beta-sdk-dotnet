@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Workbooks.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomItemsFilter {
+namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomItemsFilter {
     /// <summary>Builds and executes requests for operations under \workbooks\{driveItem-id}\workbook\tables\{workbookTable-id}\columns\{workbookTableColumn-id}\filter\microsoft.graph.applyBottomItemsFilter</summary>
     public class ApplyBottomItemsFilterRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon.HostedContent.Value {
+namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.OutlineIcon.HostedContent.Value {
     /// <summary>Builds and executes requests for operations under \appCatalogs\teamsApps\{teamsApp-id}\appDefinitions\{teamsAppDefinition-id}\outlineIcon\hostedContent\$value</summary>
     public class ContentRequestBuilder {
         /// <summary>Path parameters for the request</summary>

@@ -1,19 +1,19 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire;
-using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks;
-using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.Item;
-using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization;
-using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState;
-using MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript;
-using MicrosoftGraph.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire;
+using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks;
+using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Item;
+using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization;
+using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState;
+using MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript;
+using MicrosoftGraphSdk.Models.Microsoft.Graph;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies {
+namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies {
     /// <summary>Builds and executes requests for operations under \deviceManagement\deviceCompliancePolicies</summary>
     public class DeviceCompliancePoliciesRequestBuilder {
         public GetDevicesScheduledToRetireRequestBuilder GetDevicesScheduledToRetire { get =>
@@ -37,11 +37,11 @@ namespace MicrosoftGraph.DeviceManagement.DeviceCompliancePolicies {
         public ValidateComplianceScriptRequestBuilder ValidateComplianceScript { get =>
             new ValidateComplianceScriptRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the MicrosoftGraph.deviceManagement.deviceCompliancePolicies.item collection</summary>
-        public DeviceCompliancePolicyRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the MicrosoftGraphSdk.deviceManagement.deviceCompliancePolicies.item collection</summary>
+        public DeviceCompliancePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceCompliancePolicy_id", position);
-            return new DeviceCompliancePolicyRequestBuilder(urlTplParams, RequestAdapter);
+            return new DeviceCompliancePolicyItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new DeviceCompliancePoliciesRequestBuilder and sets the default values.

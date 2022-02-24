@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-namespace MicrosoftGraph.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.UpdateIndex {
+namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.NoncustodialDataSources.Item.UpdateIndex {
     /// <summary>Builds and executes requests for operations under \compliance\ediscovery\cases\{case-id}\noncustodialDataSources\{noncustodialDataSource-id}\microsoft.graph.ediscovery.updateIndex</summary>
     public class UpdateIndexRequestBuilder {
         /// <summary>Path parameters for the request</summary>
