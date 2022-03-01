@@ -1014,6 +1014,12 @@ namespace Microsoft.Graph
         public string AgreementAcceptancesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets security.
+        /// </summary>
+        [JsonPropertyName("security")]
+        public Microsoft.Graph.SecurityNamespace.Security Security { get; set; }
+    
+        /// <summary>
         /// Gets or sets device enrollment configurations.
         /// Get enrollment configurations targeted to the user
         /// </summary>

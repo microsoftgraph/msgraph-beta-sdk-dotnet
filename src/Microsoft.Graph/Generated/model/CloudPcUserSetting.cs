@@ -50,6 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets restore point setting.
+        /// Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
         /// </summary>
         [JsonPropertyName("restorePointSetting")]
         public CloudPcRestorePointSetting RestorePointSetting { get; set; }

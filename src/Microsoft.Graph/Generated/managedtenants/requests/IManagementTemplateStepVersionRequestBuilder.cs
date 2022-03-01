@@ -32,6 +32,12 @@ namespace Microsoft.Graph.ManagedTenants
         new IManagementTemplateStepVersionRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
         /// <summary>
+        /// Gets the request builder for AcceptedFor.
+        /// </summary>
+        /// <returns>The <see cref="IManagementTemplateStepWithReferenceRequestBuilder"/>.</returns>
+        IManagementTemplateStepWithReferenceRequestBuilder AcceptedFor { get; }
+
+        /// <summary>
         /// Gets the request builder for Deployments.
         /// </summary>
         /// <returns>The <see cref="IManagementTemplateStepVersionDeploymentsCollectionRequestBuilder"/>.</returns>
@@ -42,14 +48,6 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <returns>The <see cref="IManagementTemplateStepWithReferenceRequestBuilder"/>.</returns>
         IManagementTemplateStepWithReferenceRequestBuilder TemplateStep { get; }
-    
-        /// <summary>
-        /// Gets the request builder for ManagementTemplateStepVersionDeploy.
-        /// </summary>
-        /// <returns>The <see cref="IManagementTemplateStepVersionDeployRequestBuilder"/>.</returns>
-        IManagementTemplateStepVersionDeployRequestBuilder Deploy(
-            string tenantId = null,
-            IEnumerable<Setting> settingsList = null);
     
     }
 }

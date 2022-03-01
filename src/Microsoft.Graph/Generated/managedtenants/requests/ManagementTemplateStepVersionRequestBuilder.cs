@@ -51,6 +51,18 @@ namespace Microsoft.Graph.ManagedTenants
         }
     
         /// <summary>
+        /// Gets the request builder for AcceptedFor.
+        /// </summary>
+        /// <returns>The <see cref="IManagementTemplateStepWithReferenceRequestBuilder"/>.</returns>
+        public IManagementTemplateStepWithReferenceRequestBuilder AcceptedFor
+        {
+            get
+            {
+                return new ManagementTemplateStepWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("acceptedFor"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Deployments.
         /// </summary>
         /// <returns>The <see cref="IManagementTemplateStepVersionDeploymentsCollectionRequestBuilder"/>.</returns>
@@ -72,21 +84,6 @@ namespace Microsoft.Graph.ManagedTenants
             {
                 return new ManagementTemplateStepWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("templateStep"), this.Client);
             }
-        }
-    
-        /// <summary>
-        /// Gets the request builder for ManagementTemplateStepVersionDeploy.
-        /// </summary>
-        /// <returns>The <see cref="IManagementTemplateStepVersionDeployRequestBuilder"/>.</returns>
-        public IManagementTemplateStepVersionDeployRequestBuilder Deploy(
-            string tenantId = null,
-            IEnumerable<Setting> settingsList = null)
-        {
-            return new ManagementTemplateStepVersionDeployRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.managedTenants.deploy"),
-                this.Client,
-                tenantId,
-                settingsList);
         }
     
     }

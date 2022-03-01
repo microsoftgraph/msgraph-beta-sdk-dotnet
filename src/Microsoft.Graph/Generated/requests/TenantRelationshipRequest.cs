@@ -244,6 +244,24 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(TenantRelationship tenantRelationshipToInitialize)
         {
 
+            if (tenantRelationshipToInitialize != null)
+            {
+                if (tenantRelationshipToInitialize.DelegatedAdminCustomers != null && tenantRelationshipToInitialize.DelegatedAdminCustomers.CurrentPage != null)
+                {
+                    tenantRelationshipToInitialize.DelegatedAdminCustomers.InitializeNextPageRequest(this.Client, tenantRelationshipToInitialize.DelegatedAdminCustomersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    tenantRelationshipToInitialize.DelegatedAdminCustomers.AdditionalData = tenantRelationshipToInitialize.AdditionalData;
+                }
+                if (tenantRelationshipToInitialize.DelegatedAdminRelationships != null && tenantRelationshipToInitialize.DelegatedAdminRelationships.CurrentPage != null)
+                {
+                    tenantRelationshipToInitialize.DelegatedAdminRelationships.InitializeNextPageRequest(this.Client, tenantRelationshipToInitialize.DelegatedAdminRelationshipsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    tenantRelationshipToInitialize.DelegatedAdminRelationships.AdditionalData = tenantRelationshipToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

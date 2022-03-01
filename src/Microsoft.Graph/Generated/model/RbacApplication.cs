@@ -62,6 +62,19 @@ namespace Microsoft.Graph
         public string RoleDefinitionsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets transitive role assignments.
+        /// </summary>
+        [JsonPropertyName("transitiveRoleAssignments")]
+        public IRbacApplicationTransitiveRoleAssignmentsCollectionPage TransitiveRoleAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets transitiveRoleAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("transitiveRoleAssignments@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string TransitiveRoleAssignmentsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets role assignment approvals.
         /// </summary>
         [JsonPropertyName("roleAssignmentApprovals")]

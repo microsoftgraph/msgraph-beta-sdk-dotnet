@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InformationProtectionLabelExtractLabelRequest.
     /// </summary>
+    [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.")]
     public partial class InformationProtectionLabelExtractLabelRequest : BaseRequest, IInformationProtectionLabelExtractLabelRequest
     {
         /// <summary>

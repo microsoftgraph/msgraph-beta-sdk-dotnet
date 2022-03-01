@@ -31,30 +31,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication configuration.
+        /// Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.
         /// </summary>
         [JsonPropertyName("authenticationConfiguration")]
         public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets client configuration.
+        /// HTTP connection settings that define how long Azure AD can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.
         /// </summary>
         [JsonPropertyName("clientConfiguration")]
         public CustomExtensionClientConfiguration ClientConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// Description for the customCalloutExtension object.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Display name for the customCalloutExtension object.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets endpoint configuration.
+        /// The type and details for configuring the endpoint to call the logic app's workflow.
         /// </summary>
         [JsonPropertyName("endpointConfiguration")]
         public CustomExtensionEndpointConfiguration EndpointConfiguration { get; set; }

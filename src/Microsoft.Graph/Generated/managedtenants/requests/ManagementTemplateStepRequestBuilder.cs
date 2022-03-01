@@ -51,6 +51,18 @@ namespace Microsoft.Graph.ManagedTenants
         }
     
         /// <summary>
+        /// Gets the request builder for AcceptedVersion.
+        /// </summary>
+        /// <returns>The <see cref="IManagementTemplateStepVersionWithReferenceRequestBuilder"/>.</returns>
+        public IManagementTemplateStepVersionWithReferenceRequestBuilder AcceptedVersion
+        {
+            get
+            {
+                return new ManagementTemplateStepVersionWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("acceptedVersion"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagementTemplate.
         /// </summary>
         /// <returns>The <see cref="IManagementTemplateWithReferenceRequestBuilder"/>.</returns>
@@ -63,14 +75,14 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
-        /// Gets the request builder for StepVersions.
+        /// Gets the request builder for Versions.
         /// </summary>
-        /// <returns>The <see cref="IManagementTemplateStepStepVersionsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IManagementTemplateStepStepVersionsCollectionWithReferencesRequestBuilder StepVersions
+        /// <returns>The <see cref="IManagementTemplateStepVersionsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IManagementTemplateStepVersionsCollectionWithReferencesRequestBuilder Versions
         {
             get
             {
-                return new ManagementTemplateStepStepVersionsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("stepVersions"), this.Client);
+                return new ManagementTemplateStepVersionsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("versions"), this.Client);
             }
         }
     

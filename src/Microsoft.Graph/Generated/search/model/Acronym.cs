@@ -23,12 +23,14 @@ namespace Microsoft.Graph.Search
     
         /// <summary>
         /// Gets or sets stands for.
+        /// What the acronym stands for.
         /// </summary>
         [JsonPropertyName("standsFor")]
         public string StandsFor { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.
         /// </summary>
         [JsonPropertyName("state")]
         public AnswerState? State { get; set; }

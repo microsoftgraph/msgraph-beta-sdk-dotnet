@@ -133,6 +133,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom extension handlers.
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// </summary>
         [JsonPropertyName("customExtensionHandlers")]
         public IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionWithReferencesPage CustomExtensionHandlers { get; set; }

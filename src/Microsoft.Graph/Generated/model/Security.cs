@@ -27,30 +27,10 @@ namespace Microsoft.Graph
         public IEnumerable<SecurityProviderStatus> ProviderStatus { get; set; }
     
         /// <summary>
-        /// Gets or sets alerts_v2.
+        /// Gets or sets information protection.
         /// </summary>
-        [JsonPropertyName("alerts_v2")]
-        public ISecurityAlerts_v2CollectionPage Alerts_v2 { get; set; }
-
-        /// <summary>
-        /// Gets or sets alerts_v2NextLink.
-        /// </summary>
-        [JsonPropertyName("alerts_v2@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string Alerts_v2NextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets incidents.
-        /// </summary>
-        [JsonPropertyName("incidents")]
-        public ISecurityIncidentsCollectionPage Incidents { get; set; }
-
-        /// <summary>
-        /// Gets or sets incidentsNextLink.
-        /// </summary>
-        [JsonPropertyName("incidents@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string IncidentsNextLink { get; set; }
+        [JsonPropertyName("informationProtection")]
+        public Microsoft.Graph.SecurityNamespace.InformationProtection InformationProtection { get; set; }
     
         /// <summary>
         /// Gets or sets attack simulation.

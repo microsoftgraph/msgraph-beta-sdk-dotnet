@@ -59,5 +59,10 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         UnknownFutureValue = 7,
 	
+        /// <summary>
+        /// Purge Data
+        /// </summary>
+        PurgeData = 8,
+	
     }
 }

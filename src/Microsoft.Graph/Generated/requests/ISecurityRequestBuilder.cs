@@ -32,16 +32,10 @@ namespace Microsoft.Graph
         new ISecurityRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for Alerts_v2.
+        /// Gets the request builder for InformationProtection.
         /// </summary>
-        /// <returns>The <see cref="ISecurityAlerts_v2CollectionRequestBuilder"/>.</returns>
-        ISecurityAlerts_v2CollectionRequestBuilder Alerts_v2 { get; }
-
-        /// <summary>
-        /// Gets the request builder for Incidents.
-        /// </summary>
-        /// <returns>The <see cref="ISecurityIncidentsCollectionRequestBuilder"/>.</returns>
-        ISecurityIncidentsCollectionRequestBuilder Incidents { get; }
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IInformationProtectionRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.IInformationProtectionRequestBuilder InformationProtection { get; }
 
         /// <summary>
         /// Gets the request builder for AttackSimulation.
@@ -120,13 +114,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISecurityUserSecurityProfilesCollectionRequestBuilder"/>.</returns>
         ISecurityUserSecurityProfilesCollectionRequestBuilder UserSecurityProfiles { get; }
-    
-        /// <summary>
-        /// Gets the request builder for SecurityRunHuntingQuery.
-        /// </summary>
-        /// <returns>The <see cref="ISecurityRunHuntingQueryRequestBuilder"/>.</returns>
-        ISecurityRunHuntingQueryRequestBuilder RunHuntingQuery(
-            string query = null);
     
     }
 }

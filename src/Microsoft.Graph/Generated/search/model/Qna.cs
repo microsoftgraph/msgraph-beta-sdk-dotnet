@@ -23,54 +23,63 @@ namespace Microsoft.Graph.Search
     
         /// <summary>
         /// Gets or sets availability end date time.
+        /// Timestamp of when the qna will stop to appear as a search result. Set as null for always available.
         /// </summary>
         [JsonPropertyName("availabilityEndDateTime")]
         public DateTimeOffset? AvailabilityEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets availability start date time.
+        /// Timestamp of when the qna will start to appear as a search result. Set as null for always available.
         /// </summary>
         [JsonPropertyName("availabilityStartDateTime")]
         public DateTimeOffset? AvailabilityStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets group ids.
+        /// List of security groups able to view this qna.
         /// </summary>
         [JsonPropertyName("groupIds")]
         public IEnumerable<string> GroupIds { get; set; }
     
         /// <summary>
         /// Gets or sets is suggested.
+        /// True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.
         /// </summary>
         [JsonPropertyName("isSuggested")]
         public bool? IsSuggested { get; set; }
     
         /// <summary>
         /// Gets or sets keywords.
+        /// Keywords that trigger this qna to appear in search results.
         /// </summary>
         [JsonPropertyName("keywords")]
         public AnswerKeyword Keywords { get; set; }
     
         /// <summary>
         /// Gets or sets language tags.
+        /// A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{REGION}. As an example, en-US is English as used in the United States. See supported language tags for the list of possible values.
         /// </summary>
         [JsonPropertyName("languageTags")]
         public IEnumerable<string> LanguageTags { get; set; }
     
         /// <summary>
         /// Gets or sets platforms.
+        /// List of devices and operating systems able to view this qna. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.
         /// </summary>
         [JsonPropertyName("platforms")]
         public IEnumerable<Microsoft.Graph.DevicePlatformType> Platforms { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// State of the qna. Possible values are: published, draft, excluded, or unknownFutureValue.
         /// </summary>
         [JsonPropertyName("state")]
         public AnswerState? State { get; set; }
     
         /// <summary>
         /// Gets or sets targeted variations.
+        /// Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.
         /// </summary>
         [JsonPropertyName("targetedVariations")]
         public IEnumerable<AnswerVariant> TargetedVariations { get; set; }

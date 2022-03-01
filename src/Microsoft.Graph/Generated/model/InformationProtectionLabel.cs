@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Information Protection Label.
     /// </summary>
+    [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.")]
     public partial class InformationProtectionLabel : Entity
     {
     

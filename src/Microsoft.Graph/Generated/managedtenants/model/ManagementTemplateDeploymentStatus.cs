@@ -20,49 +20,29 @@ namespace Microsoft.Graph.ManagedTenants
     {
     
         /// <summary>
-        /// To Address
+        /// Unknown
         /// </summary>
-        ToAddress = 0,
-	
-        /// <summary>
-        /// Completed
-        /// </summary>
-        Completed = 5,
-	
-        /// <summary>
-        /// Error
-        /// </summary>
-        Error = 10,
-	
-        /// <summary>
-        /// Time Out
-        /// </summary>
-        TimeOut = 15,
+        Unknown = 0,
 	
         /// <summary>
         /// In Progress
         /// </summary>
-        InProgress = 20,
+        InProgress = 5,
 	
         /// <summary>
-        /// Planned
+        /// Completed
         /// </summary>
-        Planned = 25,
+        Completed = 10,
 	
         /// <summary>
-        /// Resolved By3rd Party
+        /// Failed
         /// </summary>
-        ResolvedBy3rdParty = 30,
+        Failed = 15,
 	
         /// <summary>
-        /// Resolved Through Alternate Mitigation
+        /// Ineligible
         /// </summary>
-        ResolvedThroughAlternateMitigation = 35,
-	
-        /// <summary>
-        /// Risk Accepted
-        /// </summary>
-        RiskAccepted = 40,
+        Ineligible = 20,
 	
         /// <summary>
         /// Unknown Future Value

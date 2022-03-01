@@ -30,13 +30,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets or sets body.
-        /// The task body that typically contains information about the task.
-        /// </summary>
-        [JsonPropertyName("body")]
-        public ItemBody Body { get; set; }
-    
-        /// <summary>
         /// Gets or sets body last modified date time.
         /// The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
         /// </summary>
@@ -86,13 +79,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets personal properties.
-        /// Properties that are personal to a user such as reminderDateTime.
-        /// </summary>
-        [JsonPropertyName("personalProperties")]
-        public PersonalTaskProperties PersonalProperties { get; set; }
-    
-        /// <summary>
         /// Gets or sets recurrence.
         /// The recurrence pattern for the task.
         /// </summary>
@@ -112,6 +98,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("status")]
         public TaskStatus_v2? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets text body.
+        /// </summary>
+        [JsonPropertyName("textBody")]
+        public string TextBody { get; set; }
+    
+        /// <summary>
+        /// Gets or sets viewpoint.
+        /// </summary>
+        [JsonPropertyName("viewpoint")]
+        public TaskViewpoint Viewpoint { get; set; }
     
         /// <summary>
         /// Gets or sets checklist items.

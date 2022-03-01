@@ -29,6 +29,18 @@ namespace Microsoft.Graph.ManagedTenants
         public ManagementCategory? Category { get; set; }
     
         /// <summary>
+        /// Gets or sets created by user id.
+        /// </summary>
+        [JsonPropertyName("createdByUserId")]
+        public string CreatedByUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// </summary>
+        [JsonPropertyName("createdDateTime")]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// The description for the management template. Optional. Read-only.
         /// </summary>
@@ -43,11 +55,47 @@ namespace Microsoft.Graph.ManagedTenants
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets information links.
+        /// </summary>
+        [JsonPropertyName("informationLinks")]
+        public IEnumerable<Microsoft.Graph.ActionUrl> InformationLinks { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last action by user id.
+        /// </summary>
+        [JsonPropertyName("lastActionByUserId")]
+        public string LastActionByUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last action date time.
+        /// </summary>
+        [JsonPropertyName("lastActionDateTime")]
+        public DateTimeOffset? LastActionDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets parameters.
         /// The collection of parameters used by the management template. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("parameters")]
         public IEnumerable<TemplateParameter> Parameters { get; set; }
+    
+        /// <summary>
+        /// Gets or sets priority.
+        /// </summary>
+        [JsonPropertyName("priority")]
+        public Int32? Priority { get; set; }
+    
+        /// <summary>
+        /// Gets or sets provider.
+        /// </summary>
+        [JsonPropertyName("provider")]
+        public ManagementProvider? Provider { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user impact.
+        /// </summary>
+        [JsonPropertyName("userImpact")]
+        public string UserImpact { get; set; }
     
         /// <summary>
         /// Gets or sets version.

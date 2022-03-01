@@ -47,7 +47,7 @@ namespace Microsoft.Graph
         /// The GUID of the label that should be applied to the information.
         /// </summary>
         [JsonPropertyName("labelId")]
-        public Guid? LabelId { get; set; }
+        public string LabelId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

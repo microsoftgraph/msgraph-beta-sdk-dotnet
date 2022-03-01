@@ -495,6 +495,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Security.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ISecurityRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.ISecurityRequestBuilder Security
+        {
+            get
+            {
+                return new Microsoft.Graph.SecurityNamespace.SecurityRequestBuilder(this.AppendSegmentToRequestUrl("security"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceEnrollmentConfigurations.
         /// </summary>
         /// <returns>The <see cref="IUserDeviceEnrollmentConfigurationsCollectionRequestBuilder"/>.</returns>

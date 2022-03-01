@@ -40,7 +40,7 @@ namespace Microsoft.Graph
         /// The GUID of the discovered sensitive information type.
         /// </summary>
         [JsonPropertyName("sensitiveTypeId")]
-        public Guid? SensitiveTypeId { get; set; }
+        public string SensitiveTypeId { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

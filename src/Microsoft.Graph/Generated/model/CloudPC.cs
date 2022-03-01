@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last remote action result.
-        /// The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Rename, Reboot, Reprovision, and Troubleshoot.
+        /// The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.
         /// </summary>
         [JsonPropertyName("lastRemoteActionResult")]
         public CloudPcRemoteActionResult LastRemoteActionResult { get; set; }
@@ -135,7 +135,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.
+        /// The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed, restoring.
         /// </summary>
         [JsonPropertyName("status")]
         public CloudPcStatus? Status { get; set; }

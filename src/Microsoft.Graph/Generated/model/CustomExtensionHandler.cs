@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets stage.
+        /// Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("stage")]
         public AccessPackageCustomExtensionStage? Stage { get; set; }
     
         /// <summary>
         /// Gets or sets custom extension.
+        /// Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("customExtension")]
         public CustomAccessPackageWorkflowExtension CustomExtension { get; set; }

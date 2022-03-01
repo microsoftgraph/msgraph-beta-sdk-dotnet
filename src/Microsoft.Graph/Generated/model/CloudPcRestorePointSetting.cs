@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets frequencyInHours.
+        /// The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.
         /// </summary>
         [JsonPropertyName("frequencyInHours")]
         public Int32? FrequencyInHours { get; set; }
     
         /// <summary>
         /// Gets or sets userRestoreEnabled.
+        /// If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.
         /// </summary>
         [JsonPropertyName("userRestoreEnabled")]
         public bool? UserRestoreEnabled { get; set; }

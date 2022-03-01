@@ -85,6 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource roles.
+        /// The roles in each resource in a catalog. Read-only.
         /// </summary>
         [JsonPropertyName("accessPackageResourceRoles")]
         public IAccessPackageCatalogAccessPackageResourceRolesCollectionPage AccessPackageResourceRoles { get; set; }
@@ -112,6 +113,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access package resource scopes.
+        /// Read-only.
         /// </summary>
         [JsonPropertyName("accessPackageResourceScopes")]
         public IAccessPackageCatalogAccessPackageResourceScopesCollectionPage AccessPackageResourceScopes { get; set; }

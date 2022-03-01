@@ -66,6 +66,12 @@ namespace Microsoft.Graph.Ediscovery
         /// </summary>
         /// <returns>The <see cref="ISourceCollectionEstimateStatisticsRequestBuilder"/>.</returns>
         ISourceCollectionEstimateStatisticsRequestBuilder EstimateStatistics();
+
+        /// <summary>
+        /// Gets the request builder for SourceCollectionPurgeData.
+        /// </summary>
+        /// <returns>The <see cref="ISourceCollectionPurgeDataRequestBuilder"/>.</returns>
+        ISourceCollectionPurgeDataRequestBuilder PurgeData();
     
     }
 }

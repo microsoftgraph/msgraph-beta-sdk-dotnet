@@ -61,6 +61,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets policy.
         /// </summary>
+        [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.")]
         [JsonPropertyName("policy")]
         public InformationProtectionPolicy Policy { get; set; }
     

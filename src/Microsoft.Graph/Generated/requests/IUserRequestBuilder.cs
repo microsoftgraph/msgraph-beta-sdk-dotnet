@@ -254,6 +254,12 @@ namespace Microsoft.Graph
         IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder AgreementAcceptances { get; }
 
         /// <summary>
+        /// Gets the request builder for Security.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.ISecurityRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.ISecurityRequestBuilder Security { get; }
+
+        /// <summary>
         /// Gets the request builder for DeviceEnrollmentConfigurations.
         /// </summary>
         /// <returns>The <see cref="IUserDeviceEnrollmentConfigurationsCollectionRequestBuilder"/>.</returns>

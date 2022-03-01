@@ -239,6 +239,13 @@ namespace Microsoft.Graph
         public WebApplication Web { get; set; }
     
         /// <summary>
+        /// Gets or sets windows.
+        /// Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.
+        /// </summary>
+        [JsonPropertyName("windows")]
+        public WindowsApplication Windows { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises publishing.
         /// Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.
         /// </summary>

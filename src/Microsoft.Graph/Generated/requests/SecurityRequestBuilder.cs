@@ -51,26 +51,14 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for Alerts_v2.
+        /// Gets the request builder for InformationProtection.
         /// </summary>
-        /// <returns>The <see cref="ISecurityAlerts_v2CollectionRequestBuilder"/>.</returns>
-        public ISecurityAlerts_v2CollectionRequestBuilder Alerts_v2
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IInformationProtectionRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.IInformationProtectionRequestBuilder InformationProtection
         {
             get
             {
-                return new SecurityAlerts_v2CollectionRequestBuilder(this.AppendSegmentToRequestUrl("alerts_v2"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Incidents.
-        /// </summary>
-        /// <returns>The <see cref="ISecurityIncidentsCollectionRequestBuilder"/>.</returns>
-        public ISecurityIncidentsCollectionRequestBuilder Incidents
-        {
-            get
-            {
-                return new SecurityIncidentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("incidents"), this.Client);
+                return new Microsoft.Graph.SecurityNamespace.InformationProtectionRequestBuilder(this.AppendSegmentToRequestUrl("informationProtection"), this.Client);
             }
         }
 
@@ -228,19 +216,6 @@ namespace Microsoft.Graph
             {
                 return new SecurityUserSecurityProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userSecurityProfiles"), this.Client);
             }
-        }
-    
-        /// <summary>
-        /// Gets the request builder for SecurityRunHuntingQuery.
-        /// </summary>
-        /// <returns>The <see cref="ISecurityRunHuntingQueryRequestBuilder"/>.</returns>
-        public ISecurityRunHuntingQueryRequestBuilder RunHuntingQuery(
-            string query = null)
-        {
-            return new SecurityRunHuntingQueryRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.runHuntingQuery"),
-                this.Client,
-                query);
         }
     
     }

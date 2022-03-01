@@ -87,6 +87,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TransitiveRoleAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationTransitiveRoleAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IRbacApplicationTransitiveRoleAssignmentsCollectionRequestBuilder TransitiveRoleAssignments
+        {
+            get
+            {
+                return new RbacApplicationTransitiveRoleAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("transitiveRoleAssignments"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RoleAssignmentApprovals.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRoleAssignmentApprovalsCollectionRequestBuilder"/>.</returns>

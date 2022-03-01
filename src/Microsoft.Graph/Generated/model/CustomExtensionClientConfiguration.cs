@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets timeoutInMilliseconds.
+        /// The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
         /// </summary>
         [JsonPropertyName("timeoutInMilliseconds")]
         public Int32? TimeoutInMilliseconds { get; set; }

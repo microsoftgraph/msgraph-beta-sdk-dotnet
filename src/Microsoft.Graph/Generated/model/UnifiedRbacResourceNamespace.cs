@@ -22,12 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets name.
+        /// Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets resource actions.
+        /// Operations that an authorized principal are allowed to perform.
         /// </summary>
         [JsonPropertyName("resourceActions")]
         public IUnifiedRbacResourceNamespaceResourceActionsCollectionPage ResourceActions { get; set; }
