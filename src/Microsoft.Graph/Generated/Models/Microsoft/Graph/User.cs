@@ -1,4 +1,5 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -230,6 +231,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> Schools { get; set; }
         /// <summary>The scoped-role administrative unit memberships for this user. Read-only. Nullable.</summary>
         public List<ScopedRoleMembership> ScopedRoleMemberOf { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security Security { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public UserSettings Settings { get; set; }
         /// <summary>true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select. Supports $filter (eq, ne, not, in).</summary>
@@ -387,6 +389,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"responsibilities", (o,n) => { (o as User).Responsibilities = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"schools", (o,n) => { (o as User).Schools = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"scopedRoleMemberOf", (o,n) => { (o as User).ScopedRoleMemberOf = n.GetCollectionOfObjectValues<ScopedRoleMembership>().ToList(); } },
+                {"security", (o,n) => { (o as User).Security = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security>(); } },
                 {"settings", (o,n) => { (o as User).Settings = n.GetObjectValue<UserSettings>(); } },
                 {"showInAddressList", (o,n) => { (o as User).ShowInAddressList = n.GetBoolValue(); } },
                 {"signInActivity", (o,n) => { (o as User).SignInActivity = n.GetObjectValue<SignInActivity>(); } },
@@ -533,6 +536,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfPrimitiveValues<string>("responsibilities", Responsibilities);
             writer.WriteCollectionOfPrimitiveValues<string>("schools", Schools);
             writer.WriteCollectionOfObjectValues<ScopedRoleMembership>("scopedRoleMemberOf", ScopedRoleMemberOf);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Security.Security>("security", Security);
             writer.WriteObjectValue<UserSettings>("settings", Settings);
             writer.WriteBoolValue("showInAddressList", ShowInAddressList);
             writer.WriteObjectValue<SignInActivity>("signInActivity", SignInActivity);

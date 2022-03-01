@@ -17,6 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<UnifiedRoleEligibilityScheduleInstance> RoleEligibilityScheduleInstances { get; set; }
         public List<UnifiedRoleEligibilityScheduleRequest> RoleEligibilityScheduleRequests { get; set; }
         public List<UnifiedRoleEligibilitySchedule> RoleEligibilitySchedules { get; set; }
+        public List<UnifiedRoleAssignment> TransitiveRoleAssignments { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -32,6 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"roleEligibilityScheduleInstances", (o,n) => { (o as RbacApplication).RoleEligibilityScheduleInstances = n.GetCollectionOfObjectValues<UnifiedRoleEligibilityScheduleInstance>().ToList(); } },
                 {"roleEligibilityScheduleRequests", (o,n) => { (o as RbacApplication).RoleEligibilityScheduleRequests = n.GetCollectionOfObjectValues<UnifiedRoleEligibilityScheduleRequest>().ToList(); } },
                 {"roleEligibilitySchedules", (o,n) => { (o as RbacApplication).RoleEligibilitySchedules = n.GetCollectionOfObjectValues<UnifiedRoleEligibilitySchedule>().ToList(); } },
+                {"transitiveRoleAssignments", (o,n) => { (o as RbacApplication).TransitiveRoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>().ToList(); } },
             };
         }
         /// <summary>
@@ -51,6 +53,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<UnifiedRoleEligibilityScheduleInstance>("roleEligibilityScheduleInstances", RoleEligibilityScheduleInstances);
             writer.WriteCollectionOfObjectValues<UnifiedRoleEligibilityScheduleRequest>("roleEligibilityScheduleRequests", RoleEligibilityScheduleRequests);
             writer.WriteCollectionOfObjectValues<UnifiedRoleEligibilitySchedule>("roleEligibilitySchedules", RoleEligibilitySchedules);
+            writer.WriteCollectionOfObjectValues<UnifiedRoleAssignment>("transitiveRoleAssignments", TransitiveRoleAssignments);
         }
     }
 }

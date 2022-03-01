@@ -5,10 +5,14 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class UnifiedRbacResourceAction : Entity, IParsable {
+        /// <summary>HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.</summary>
         public string ActionVerb { get; set; }
+        /// <summary>Description for the action. Supports $filter (eq).</summary>
         public string Description { get; set; }
+        /// <summary>Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).</summary>
         public string Name { get; set; }
         public UnifiedRbacResourceScope ResourceScope { get; set; }
+        /// <summary>Not implemented.</summary>
         public string ResourceScopeId { get; set; }
         /// <summary>
         /// The deserialization information for the current model

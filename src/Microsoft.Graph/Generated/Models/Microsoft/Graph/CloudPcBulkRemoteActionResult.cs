@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CloudPcBulkRemoteActionResult : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A list of all the Intune managed device IDs that completed the bulk action with a failure.</summary>
         public List<string> FailedDeviceIds { get; set; }
+        /// <summary>A list of all the Intune managed device IDs that were not found when the bulk action was attempted.</summary>
         public List<string> NotFoundDeviceIds { get; set; }
+        /// <summary>A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.</summary>
         public List<string> NotSupportedDeviceIds { get; set; }
+        /// <summary>A list of all the Intune managed device IDs that completed the bulk action successfully.</summary>
         public List<string> SuccessfulDeviceIds { get; set; }
         /// <summary>
         /// Instantiates a new cloudPcBulkRemoteActionResult and sets the default values.

@@ -6,8 +6,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class SearchEntity : Entity, IParsable {
+        /// <summary>Administrative answer in Microsoft Search results to define common acronyms in a organization.</summary>
         public List<Acronym> Acronyms { get; set; }
+        /// <summary>Administrative answer in Microsoft Search results for common search queries in an organization.</summary>
         public List<Bookmark> Bookmarks { get; set; }
+        /// <summary>Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.</summary>
         public List<Qna> Qnas { get; set; }
         /// <summary>
         /// The deserialization information for the current model

@@ -51,7 +51,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get accessPackageResourceScopes from identityGovernance
+        /// Read-only.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to accessPackageResourceScopes for identityGovernance
+        /// Read-only.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -90,7 +90,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Get accessPackageResourceScopes from identityGovernance
+        /// Read-only.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return await RequestAdapter.SendAsync<AccessPackageResourceScopesResponse>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to accessPackageResourceScopes for identityGovernance
+        /// Read-only.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             var requestInfo = CreatePostRequestInformation(body, h, o);
             return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResourceScope>(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get accessPackageResourceScopes from identityGovernance</summary>
+        /// <summary>Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

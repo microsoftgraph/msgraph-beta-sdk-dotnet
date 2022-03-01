@@ -9,6 +9,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> ApplicationPublisherIds { get; set; }
         public bool? ApplicationsFromVerifiedPublisherOnly { get; set; }
         public List<string> ApplicationTenantIds { get; set; }
+        public bool? CertifiedApplicationsOnly { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -18,6 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"applicationPublisherIds", (o,n) => { (o as ServicePrincipalCreationConditionSet).ApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"applicationsFromVerifiedPublisherOnly", (o,n) => { (o as ServicePrincipalCreationConditionSet).ApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
                 {"applicationTenantIds", (o,n) => { (o as ServicePrincipalCreationConditionSet).ApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"certifiedApplicationsOnly", (o,n) => { (o as ServicePrincipalCreationConditionSet).CertifiedApplicationsOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -31,6 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfPrimitiveValues<string>("applicationPublisherIds", ApplicationPublisherIds);
             writer.WriteBoolValue("applicationsFromVerifiedPublisherOnly", ApplicationsFromVerifiedPublisherOnly);
             writer.WriteCollectionOfPrimitiveValues<string>("applicationTenantIds", ApplicationTenantIds);
+            writer.WriteBoolValue("certifiedApplicationsOnly", CertifiedApplicationsOnly);
         }
     }
 }

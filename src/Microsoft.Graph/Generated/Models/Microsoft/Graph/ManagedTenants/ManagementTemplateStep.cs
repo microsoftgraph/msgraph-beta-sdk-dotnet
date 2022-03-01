@@ -5,29 +5,35 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementTemplateStep : Entity, IParsable {
+        public ManagementTemplateStepVersion AcceptedVersion { get; set; }
         public ManagementCategory? Category { get; set; }
+        public string CreatedByUserId { get; set; }
+        public DateTimeOffset? CreatedDateTime { get; set; }
         public string Description { get; set; }
         public string DisplayName { get; set; }
-        public string ManagementPortal { get; set; }
+        public string LastActionByUserId { get; set; }
+        public DateTimeOffset? LastActionDateTime { get; set; }
         public ManagementTemplate ManagementTemplate { get; set; }
-        public string PortalLink { get; set; }
+        public ActionUrl PortalLink { get; set; }
         public int? Priority { get; set; }
-        public ManagementProvider? Provider { get; set; }
-        public List<ManagementTemplateStepVersion> StepVersions { get; set; }
+        public List<ManagementTemplateStepVersion> Versions { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
+                {"acceptedVersion", (o,n) => { (o as ManagementTemplateStep).AcceptedVersion = n.GetObjectValue<ManagementTemplateStepVersion>(); } },
                 {"category", (o,n) => { (o as ManagementTemplateStep).Category = n.GetEnumValue<ManagementCategory>(); } },
+                {"createdByUserId", (o,n) => { (o as ManagementTemplateStep).CreatedByUserId = n.GetStringValue(); } },
+                {"createdDateTime", (o,n) => { (o as ManagementTemplateStep).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as ManagementTemplateStep).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as ManagementTemplateStep).DisplayName = n.GetStringValue(); } },
-                {"managementPortal", (o,n) => { (o as ManagementTemplateStep).ManagementPortal = n.GetStringValue(); } },
+                {"lastActionByUserId", (o,n) => { (o as ManagementTemplateStep).LastActionByUserId = n.GetStringValue(); } },
+                {"lastActionDateTime", (o,n) => { (o as ManagementTemplateStep).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managementTemplate", (o,n) => { (o as ManagementTemplateStep).ManagementTemplate = n.GetObjectValue<ManagementTemplate>(); } },
-                {"portalLink", (o,n) => { (o as ManagementTemplateStep).PortalLink = n.GetStringValue(); } },
+                {"portalLink", (o,n) => { (o as ManagementTemplateStep).PortalLink = n.GetObjectValue<ActionUrl>(); } },
                 {"priority", (o,n) => { (o as ManagementTemplateStep).Priority = n.GetIntValue(); } },
-                {"provider", (o,n) => { (o as ManagementTemplateStep).Provider = n.GetEnumValue<ManagementProvider>(); } },
-                {"stepVersions", (o,n) => { (o as ManagementTemplateStep).StepVersions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>().ToList(); } },
+                {"versions", (o,n) => { (o as ManagementTemplateStep).Versions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>().ToList(); } },
             };
         }
         /// <summary>
@@ -37,15 +43,18 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<ManagementTemplateStepVersion>("acceptedVersion", AcceptedVersion);
             writer.WriteEnumValue<ManagementCategory>("category", Category);
+            writer.WriteStringValue("createdByUserId", CreatedByUserId);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("managementPortal", ManagementPortal);
+            writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
+            writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
             writer.WriteObjectValue<ManagementTemplate>("managementTemplate", ManagementTemplate);
-            writer.WriteStringValue("portalLink", PortalLink);
+            writer.WriteObjectValue<ActionUrl>("portalLink", PortalLink);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteEnumValue<ManagementProvider>("provider", Provider);
-            writer.WriteCollectionOfObjectValues<ManagementTemplateStepVersion>("stepVersions", StepVersions);
+            writer.WriteCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", Versions);
         }
     }
 }

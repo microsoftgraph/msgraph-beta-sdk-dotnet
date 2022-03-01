@@ -48,7 +48,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete navigation property accessPackageResourceRoles for identityGovernance
+        /// The roles in each resource in a catalog. Read-only.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -63,7 +63,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Get accessPackageResourceRoles from identityGovernance
+        /// The roles in each resource in a catalog. Read-only.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -84,7 +84,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property accessPackageResourceRoles in identityGovernance
+        /// The roles in each resource in a catalog. Read-only.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Delete navigation property accessPackageResourceRoles for identityGovernance
+        /// The roles in each resource in a catalog. Read-only.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -113,7 +113,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Get accessPackageResourceRoles from identityGovernance
+        /// The roles in each resource in a catalog. Read-only.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -125,7 +125,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResourceRole>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property accessPackageResourceRoles in identityGovernance
+        /// The roles in each resource in a catalog. Read-only.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -137,7 +137,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get accessPackageResourceRoles from identityGovernance</summary>
+        /// <summary>The roles in each resource in a catalog. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

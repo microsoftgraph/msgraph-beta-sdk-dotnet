@@ -5,10 +5,15 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     public class SearchAnswer : Entity, IParsable {
+        /// <summary>Search answer description shown on search results page.</summary>
         public string Description { get; set; }
+        /// <summary>Search answer name displayed in search results.</summary>
         public string DisplayName { get; set; }
+        /// <summary>Details of the user that created or last modified the search answer. Read-only.</summary>
         public IdentitySet LastModifiedBy { get; set; }
+        /// <summary>Timestamp of when the search answer is created or edited. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+        /// <summary>Search answer URL link. When users click this search answer in search results, they will go to this URL.</summary>
         public string WebUrl { get; set; }
         /// <summary>
         /// The deserialization information for the current model

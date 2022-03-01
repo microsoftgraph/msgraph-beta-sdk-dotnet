@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CustomAccessPackageWorkflowExtension : CustomCalloutExtension, IParsable {
+        /// <summary>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>
         /// The deserialization information for the current model

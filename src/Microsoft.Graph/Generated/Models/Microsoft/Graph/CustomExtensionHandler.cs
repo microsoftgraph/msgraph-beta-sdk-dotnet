@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CustomExtensionHandler : Entity, IParsable {
+        /// <summary>Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.</summary>
         public CustomAccessPackageWorkflowExtension CustomExtension { get; set; }
+        /// <summary>Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
         public AccessPackageCustomExtensionStage? Stage { get; set; }
         /// <summary>
         /// The deserialization information for the current model

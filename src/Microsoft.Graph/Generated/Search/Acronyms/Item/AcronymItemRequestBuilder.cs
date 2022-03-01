@@ -44,7 +44,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete navigation property acronyms for search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -59,7 +59,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get acronyms from search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -80,7 +80,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property acronyms in search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -98,7 +98,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete navigation property acronyms for search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -109,7 +109,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Get acronyms from search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms.Item {
             return await RequestAdapter.SendAsync<Acronym>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property acronyms in search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -133,7 +133,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms.Item {
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get acronyms from search</summary>
+        /// <summary>Administrative answer in Microsoft Search results to define common acronyms in a organization.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

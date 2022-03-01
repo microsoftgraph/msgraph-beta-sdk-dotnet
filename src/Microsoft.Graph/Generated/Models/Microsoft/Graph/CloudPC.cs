@@ -17,7 +17,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public CloudPcLoginResult LastLoginResult { get; set; }
         /// <summary>The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime { get; set; }
-        /// <summary>The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Rename, Reboot, Reprovision, and Troubleshoot.</summary>
+        /// <summary>The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.</summary>
         public CloudPcRemoteActionResult LastRemoteActionResult { get; set; }
         /// <summary>The Intune device ID of the Cloud PC.</summary>
         public string ManagedDeviceId { get; set; }
@@ -37,7 +37,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ServicePlanName { get; set; }
         /// <summary>The service plan type of the Cloud PC.</summary>
         public CloudPcServicePlanType? ServicePlanType { get; set; }
-        /// <summary>The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed.</summary>
+        /// <summary>The status of the Cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed, restoring.</summary>
         public CloudPcStatus? Status { get; set; }
         /// <summary>The details of the Cloud PC status.</summary>
         public CloudPcStatusDetails StatusDetails { get; set; }

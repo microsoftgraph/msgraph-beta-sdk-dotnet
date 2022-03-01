@@ -7,10 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     public class AnswerVariant : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Answer variation description shown on search results page.</summary>
         public string Description { get; set; }
+        /// <summary>Answer variation name displayed in search results.</summary>
         public string DisplayName { get; set; }
         public string LanguageTag { get; set; }
         public DevicePlatformType? Platform { get; set; }
+        /// <summary>Answer variation URL link. When users click this answer variation in search results, they will go to this URL.</summary>
         public string WebUrl { get; set; }
         /// <summary>
         /// Instantiates a new answerVariant and sets the default values.

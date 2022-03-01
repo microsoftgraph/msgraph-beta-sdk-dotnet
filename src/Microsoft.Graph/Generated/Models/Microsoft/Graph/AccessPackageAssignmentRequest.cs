@@ -15,6 +15,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? CompletedDate { get; set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
+        /// <summary>A collection of custom workflow extension instances being run on an assignment request. Read-only.</summary>
         public List<CustomExtensionHandlerInstance> CustomExtensionHandlerInstances { get; set; }
         public DateTimeOffset? ExpirationDateTime { get; set; }
         /// <summary>True if the request is not to be processed for assignment.</summary>

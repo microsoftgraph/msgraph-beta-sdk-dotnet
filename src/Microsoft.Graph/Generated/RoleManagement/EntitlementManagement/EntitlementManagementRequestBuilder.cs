@@ -13,6 +13,7 @@ using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilitySche
 using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibilitySchedules;
 using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleScheduleInstancesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
 using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleSchedulesWithDirectoryScopeIdWithAppScopeIdWithPrincipalIdWithRoleDefinitionId;
+using MicrosoftGraphSdk.RoleManagement.EntitlementManagement.TransitiveRoleAssignments;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -55,6 +56,9 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement {
         }
         public RoleEligibilitySchedulesRequestBuilder RoleEligibilitySchedules { get =>
             new RoleEligibilitySchedulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public TransitiveRoleAssignmentsRequestBuilder TransitiveRoleAssignments { get =>
+            new TransitiveRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

@@ -47,7 +47,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get customExtensionHandlers from identityGovernance
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Get customExtensionHandlers from identityGovernance
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -79,7 +79,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             var requestInfo = CreateGetRequestInformation(q, h, o);
             return await RequestAdapter.SendAsync<CustomExtensionHandlersResponse>(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get customExtensionHandlers from identityGovernance</summary>
+        /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -58,7 +58,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -73,7 +73,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -91,7 +91,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -113,7 +113,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.
+        /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>

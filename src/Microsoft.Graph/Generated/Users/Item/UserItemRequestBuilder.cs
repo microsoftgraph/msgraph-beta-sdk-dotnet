@@ -83,6 +83,7 @@ using MicrosoftGraphSdk.Users.Item.ReprocessLicenseAssignment;
 using MicrosoftGraphSdk.Users.Item.Restore;
 using MicrosoftGraphSdk.Users.Item.RevokeSignInSessions;
 using MicrosoftGraphSdk.Users.Item.ScopedRoleMemberOf;
+using MicrosoftGraphSdk.Users.Item.Security;
 using MicrosoftGraphSdk.Users.Item.SendMail;
 using MicrosoftGraphSdk.Users.Item.Settings;
 using MicrosoftGraphSdk.Users.Item.Tasks;
@@ -316,6 +317,9 @@ namespace MicrosoftGraphSdk.Users.Item {
         }
         public ScopedRoleMemberOfRequestBuilder ScopedRoleMemberOf { get =>
             new ScopedRoleMemberOfRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public SecurityRequestBuilder Security { get =>
+            new SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         public SendMailRequestBuilder SendMail { get =>
             new SendMailRequestBuilder(PathParameters, RequestAdapter);

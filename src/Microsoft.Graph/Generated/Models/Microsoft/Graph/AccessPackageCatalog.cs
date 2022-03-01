@@ -5,9 +5,11 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageCatalog : Entity, IParsable {
+        /// <summary>The roles in each resource in a catalog. Read-only.</summary>
         public List<AccessPackageResourceRole> AccessPackageResourceRoles { get; set; }
         /// <summary>Read-only. Nullable.</summary>
         public List<AccessPackageResource> AccessPackageResources { get; set; }
+        /// <summary>Read-only.</summary>
         public List<AccessPackageResourceScope> AccessPackageResourceScopes { get; set; }
         /// <summary>The access packages in this catalog. Read-only. Nullable.</summary>
         public List<AccessPackage> AccessPackages { get; set; }
