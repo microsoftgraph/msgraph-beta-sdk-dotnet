@@ -7,9 +7,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CustomExtensionHandlerInstance : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Identifier of the customAccessPackageWorkflowExtension triggered at this instance.</summary>
         public string CustomExtensionId { get; set; }
+        /// <summary>The unique run ID for the logic app.</summary>
         public string ExternalCorrelationId { get; set; }
+        /// <summary>Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
         public AccessPackageCustomExtensionStage? Stage { get; set; }
+        /// <summary>Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.</summary>
         public AccessPackageCustomExtensionHandlerStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new customExtensionHandlerInstance and sets the default values.

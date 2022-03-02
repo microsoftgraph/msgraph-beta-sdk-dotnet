@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     public class Acronym : SearchAnswer, IParsable {
+        /// <summary>What the acronym stands for.</summary>
         public string StandsFor { get; set; }
+        /// <summary>State of the acronym. Possible values are: published, draft, excluded, or unknownFutureValue.</summary>
         public AnswerState? State { get; set; }
         /// <summary>
         /// The deserialization information for the current model

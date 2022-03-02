@@ -5,21 +5,33 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
     public class ManagementTemplateStepVersion : Entity, IParsable {
-        public TemplateAction ConfigurationAction { get; set; }
+        public ManagementTemplateStep AcceptedFor { get; set; }
+        public string ContentMarkdown { get; set; }
+        public string CreatedByUserId { get; set; }
+        public DateTimeOffset? CreatedDateTime { get; set; }
         public List<ManagementTemplateStepDeployment> Deployments { get; set; }
+        public string LastActionByUserId { get; set; }
+        public DateTimeOffset? LastActionDateTime { get; set; }
+        public string Name { get; set; }
         public ManagementTemplateStep TemplateStep { get; set; }
-        public TemplateAction ValidationAction { get; set; }
         public int? Version { get; set; }
+        public string VersionInformation { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"configurationAction", (o,n) => { (o as ManagementTemplateStepVersion).ConfigurationAction = n.GetObjectValue<TemplateAction>(); } },
+                {"acceptedFor", (o,n) => { (o as ManagementTemplateStepVersion).AcceptedFor = n.GetObjectValue<ManagementTemplateStep>(); } },
+                {"contentMarkdown", (o,n) => { (o as ManagementTemplateStepVersion).ContentMarkdown = n.GetStringValue(); } },
+                {"createdByUserId", (o,n) => { (o as ManagementTemplateStepVersion).CreatedByUserId = n.GetStringValue(); } },
+                {"createdDateTime", (o,n) => { (o as ManagementTemplateStepVersion).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deployments", (o,n) => { (o as ManagementTemplateStepVersion).Deployments = n.GetCollectionOfObjectValues<ManagementTemplateStepDeployment>().ToList(); } },
+                {"lastActionByUserId", (o,n) => { (o as ManagementTemplateStepVersion).LastActionByUserId = n.GetStringValue(); } },
+                {"lastActionDateTime", (o,n) => { (o as ManagementTemplateStepVersion).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                {"name", (o,n) => { (o as ManagementTemplateStepVersion).Name = n.GetStringValue(); } },
                 {"templateStep", (o,n) => { (o as ManagementTemplateStepVersion).TemplateStep = n.GetObjectValue<ManagementTemplateStep>(); } },
-                {"validationAction", (o,n) => { (o as ManagementTemplateStepVersion).ValidationAction = n.GetObjectValue<TemplateAction>(); } },
                 {"version", (o,n) => { (o as ManagementTemplateStepVersion).Version = n.GetIntValue(); } },
+                {"versionInformation", (o,n) => { (o as ManagementTemplateStepVersion).VersionInformation = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -29,11 +41,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TemplateAction>("configurationAction", ConfigurationAction);
+            writer.WriteObjectValue<ManagementTemplateStep>("acceptedFor", AcceptedFor);
+            writer.WriteStringValue("contentMarkdown", ContentMarkdown);
+            writer.WriteStringValue("createdByUserId", CreatedByUserId);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<ManagementTemplateStepDeployment>("deployments", Deployments);
+            writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
+            writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<ManagementTemplateStep>("templateStep", TemplateStep);
-            writer.WriteObjectValue<TemplateAction>("validationAction", ValidationAction);
             writer.WriteIntValue("version", Version);
+            writer.WriteStringValue("versionInformation", VersionInformation);
         }
     }
 }

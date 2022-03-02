@@ -84,6 +84,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public VerifiedPublisher VerifiedPublisher { get; set; }
         /// <summary>Specifies settings for a web application.</summary>
         public WebApplication Web { get; set; }
+        /// <summary>Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.</summary>
+        public WindowsApplication Windows { get; set; }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -130,6 +132,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"uniqueName", (o,n) => { (o as Application).UniqueName = n.GetStringValue(); } },
                 {"verifiedPublisher", (o,n) => { (o as Application).VerifiedPublisher = n.GetObjectValue<VerifiedPublisher>(); } },
                 {"web", (o,n) => { (o as Application).Web = n.GetObjectValue<WebApplication>(); } },
+                {"windows", (o,n) => { (o as Application).Windows = n.GetObjectValue<WindowsApplication>(); } },
             };
         }
         /// <summary>
@@ -180,6 +183,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("uniqueName", UniqueName);
             writer.WriteObjectValue<VerifiedPublisher>("verifiedPublisher", VerifiedPublisher);
             writer.WriteObjectValue<WebApplication>("web", Web);
+            writer.WriteObjectValue<WindowsApplication>("windows", Windows);
         }
     }
 }

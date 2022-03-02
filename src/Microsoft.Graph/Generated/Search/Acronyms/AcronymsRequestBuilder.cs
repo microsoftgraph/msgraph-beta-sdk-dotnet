@@ -51,7 +51,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get acronyms from search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to acronyms for search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -90,7 +90,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms {
             return requestInfo;
         }
         /// <summary>
-        /// Get acronyms from search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms {
             return await RequestAdapter.SendAsync<AcronymsResponse>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to acronyms for search
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms {
             var requestInfo = CreatePostRequestInformation(body, h, o);
             return await RequestAdapter.SendAsync<Acronym>(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get acronyms from search</summary>
+        /// <summary>Administrative answer in Microsoft Search results to define common acronyms in a organization.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

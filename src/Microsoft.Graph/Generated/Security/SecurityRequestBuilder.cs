@@ -1,17 +1,15 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.Security;
-using MicrosoftGraphSdk.Security.Alerts_v2;
 using MicrosoftGraphSdk.Security.Alerts;
 using MicrosoftGraphSdk.Security.AttackSimulation;
 using MicrosoftGraphSdk.Security.CloudAppSecurityProfiles;
 using MicrosoftGraphSdk.Security.DomainSecurityProfiles;
 using MicrosoftGraphSdk.Security.FileSecurityProfiles;
 using MicrosoftGraphSdk.Security.HostSecurityProfiles;
-using MicrosoftGraphSdk.Security.Incidents;
+using MicrosoftGraphSdk.Security.InformationProtection;
 using MicrosoftGraphSdk.Security.IpSecurityProfiles;
 using MicrosoftGraphSdk.Security.ProviderTenantSettings;
-using MicrosoftGraphSdk.Security.RunHuntingQuery;
 using MicrosoftGraphSdk.Security.SecureScoreControlProfiles;
 using MicrosoftGraphSdk.Security.SecureScores;
 using MicrosoftGraphSdk.Security.SecurityActions;
@@ -29,9 +27,6 @@ namespace MicrosoftGraphSdk.Security {
         public AlertsRequestBuilder Alerts { get =>
             new AlertsRequestBuilder(PathParameters, RequestAdapter);
         }
-        public Alerts_v2RequestBuilder Alerts_v2 { get =>
-            new Alerts_v2RequestBuilder(PathParameters, RequestAdapter);
-        }
         public AttackSimulationRequestBuilder AttackSimulation { get =>
             new AttackSimulationRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -47,8 +42,8 @@ namespace MicrosoftGraphSdk.Security {
         public HostSecurityProfilesRequestBuilder HostSecurityProfiles { get =>
             new HostSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
-        public IncidentsRequestBuilder Incidents { get =>
-            new IncidentsRequestBuilder(PathParameters, RequestAdapter);
+        public InformationProtectionRequestBuilder InformationProtection { get =>
+            new InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         public IpSecurityProfilesRequestBuilder IpSecurityProfiles { get =>
             new IpSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
@@ -60,9 +55,6 @@ namespace MicrosoftGraphSdk.Security {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        public RunHuntingQueryRequestBuilder RunHuntingQuery { get =>
-            new RunHuntingQueryRequestBuilder(PathParameters, RequestAdapter);
-        }
         public SecureScoreControlProfilesRequestBuilder SecureScoreControlProfiles { get =>
             new SecureScoreControlProfilesRequestBuilder(PathParameters, RequestAdapter);
         }

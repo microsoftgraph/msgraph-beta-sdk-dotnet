@@ -48,7 +48,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete navigation property resourceActions for roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// </summary>
@@ -63,7 +63,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
             return requestInfo;
         }
         /// <summary>
-        /// Get resourceActions from roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -84,7 +84,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property resourceActions in roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
             return requestInfo;
         }
         /// <summary>
-        /// Delete navigation property resourceActions for roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -113,7 +113,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Get resourceActions from roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -125,7 +125,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
             return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property resourceActions in roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -137,7 +137,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
             var requestInfo = CreatePatchRequestInformation(body, h, o);
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get resourceActions from roleManagement</summary>
+        /// <summary>Operations that an authorized principal are allowed to perform.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Expand related entities</summary>
             public string[] Expand { get; set; }

@@ -1,6 +1,8 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph;
+using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminCustomers;
+using MicrosoftGraphSdk.TenantRelationships.DelegatedAdminRelationships;
 using MicrosoftGraphSdk.TenantRelationships.ManagedTenants;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,12 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.TenantRelationships {
     /// <summary>Builds and executes requests for operations under \tenantRelationships</summary>
     public class TenantRelationshipsRequestBuilder {
+        public DelegatedAdminCustomersRequestBuilder DelegatedAdminCustomers { get =>
+            new DelegatedAdminCustomersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        public DelegatedAdminRelationshipsRequestBuilder DelegatedAdminRelationships { get =>
+            new DelegatedAdminRelationshipsRequestBuilder(PathParameters, RequestAdapter);
+        }
         public ManagedTenantsRequestBuilder ManagedTenants { get =>
             new ManagedTenantsRequestBuilder(PathParameters, RequestAdapter);
         }

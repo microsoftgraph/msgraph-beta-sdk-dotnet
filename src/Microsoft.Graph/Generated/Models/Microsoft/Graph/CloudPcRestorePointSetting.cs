@@ -7,7 +7,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class CloudPcRestorePointSetting : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.</summary>
         public int? FrequencyInHours { get; set; }
+        /// <summary>If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.</summary>
         public bool? UserRestoreEnabled { get; set; }
         /// <summary>
         /// Instantiates a new cloudPcRestorePointSetting and sets the default values.

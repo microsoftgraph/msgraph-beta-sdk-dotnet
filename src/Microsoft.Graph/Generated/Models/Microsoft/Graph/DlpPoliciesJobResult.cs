@@ -7,6 +7,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DlpPoliciesJobResult : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        public string AuditCorrelationId { get; set; }
+        public DateTimeOffset? EvaluationDateTime { get; set; }
         public List<MatchingDlpRule> MatchingRules { get; set; }
         /// <summary>
         /// Instantiates a new dlpPoliciesJobResult and sets the default values.
@@ -19,6 +21,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
+                {"auditCorrelationId", (o,n) => { (o as DlpPoliciesJobResult).AuditCorrelationId = n.GetStringValue(); } },
+                {"evaluationDateTime", (o,n) => { (o as DlpPoliciesJobResult).EvaluationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"matchingRules", (o,n) => { (o as DlpPoliciesJobResult).MatchingRules = n.GetCollectionOfObjectValues<MatchingDlpRule>().ToList(); } },
             };
         }
@@ -28,6 +32,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("auditCorrelationId", AuditCorrelationId);
+            writer.WriteDateTimeOffsetValue("evaluationDateTime", EvaluationDateTime);
             writer.WriteCollectionOfObjectValues<MatchingDlpRule>("matchingRules", MatchingRules);
             writer.WriteAdditionalData(AdditionalData);
         }

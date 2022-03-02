@@ -43,7 +43,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get ref of customExtensionHandlers from identityGovernance
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -64,7 +64,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to customExtensionHandlers for identityGovernance
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -82,7 +82,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return requestInfo;
         }
         /// <summary>
-        /// Get ref of customExtensionHandlers from identityGovernance
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -94,7 +94,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             return await RequestAdapter.SendAsync<RefResponse>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property ref to customExtensionHandlers for identityGovernance
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
             var requestInfo = CreatePostRequestInformation(body, h, o);
             return await RequestAdapter.SendAsync<Ref>(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get ref of customExtensionHandlers from identityGovernance</summary>
+        /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

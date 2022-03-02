@@ -51,7 +51,7 @@ namespace MicrosoftGraphSdk.Search.Bookmarks {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get bookmarks from search
+        /// Administrative answer in Microsoft Search results for common search queries in an organization.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Search.Bookmarks {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to bookmarks for search
+        /// Administrative answer in Microsoft Search results for common search queries in an organization.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -90,7 +90,7 @@ namespace MicrosoftGraphSdk.Search.Bookmarks {
             return requestInfo;
         }
         /// <summary>
-        /// Get bookmarks from search
+        /// Administrative answer in Microsoft Search results for common search queries in an organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.Search.Bookmarks {
             return await RequestAdapter.SendAsync<BookmarksResponse>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to bookmarks for search
+        /// Administrative answer in Microsoft Search results for common search queries in an organization.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.Search.Bookmarks {
             var requestInfo = CreatePostRequestInformation(body, h, o);
             return await RequestAdapter.SendAsync<Bookmark>(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get bookmarks from search</summary>
+        /// <summary>Administrative answer in Microsoft Search results for common search queries in an organization.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

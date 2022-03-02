@@ -1,7 +1,6 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.TemplateStepVersion.Deploy;
 using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.TemplateStepVersion.Ref;
 using System;
 using System.Collections.Generic;
@@ -12,9 +11,6 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.TemplateStepVersion {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateStepVersions\{managementTemplateStepVersion-id}\deployments\{managementTemplateStepDeployment-id}\templateStepVersion</summary>
     public class TemplateStepVersionRequestBuilder {
-        public DeployRequestBuilder Deploy { get =>
-            new DeployRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         public RefRequestBuilder Ref { get =>

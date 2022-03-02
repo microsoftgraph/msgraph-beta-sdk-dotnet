@@ -51,7 +51,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces.I
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get resourceActions from roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
         /// <param name="q">Request query parameters</param>
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces.I
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to resourceActions for roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="body"></param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -90,7 +90,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces.I
             return requestInfo;
         }
         /// <summary>
-        /// Get resourceActions from roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
         /// <param name="o">Request options</param>
@@ -102,7 +102,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces.I
             return await RequestAdapter.SendAsync<ResourceActionsResponse>(requestInfo, responseHandler, default, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to resourceActions for roleManagement
+        /// Operations that an authorized principal are allowed to perform.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="h">Request headers</param>
@@ -114,7 +114,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.ResourceNamespaces.I
             var requestInfo = CreatePostRequestInformation(body, h, o);
             return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, responseHandler, default, cancellationToken);
         }
-        /// <summary>Get resourceActions from roleManagement</summary>
+        /// <summary>Operations that an authorized principal are allowed to perform.</summary>
         public class GetQueryParameters : QueryParametersBase {
             /// <summary>Include count of items</summary>
             public bool? Count { get; set; }

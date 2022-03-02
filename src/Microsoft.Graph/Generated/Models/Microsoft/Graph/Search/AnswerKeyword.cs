@@ -7,8 +7,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Search {
     public class AnswerKeyword : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A collection of keywords used to trigger the search answer.</summary>
         public List<string> Keywords { get; set; }
+        /// <summary>If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.</summary>
         public bool? MatchSimilarKeywords { get; set; }
+        /// <summary>Unique keywords that will guarantee the search answer is triggered.</summary>
         public List<string> ReservedKeywords { get; set; }
         /// <summary>
         /// Instantiates a new answerKeyword and sets the default values.

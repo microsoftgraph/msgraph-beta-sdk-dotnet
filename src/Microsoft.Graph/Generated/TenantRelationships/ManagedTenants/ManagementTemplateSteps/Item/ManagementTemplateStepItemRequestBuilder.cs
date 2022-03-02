@@ -1,8 +1,9 @@
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.AcceptedVersion;
 using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.ManagementTemplate;
-using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.StepVersions;
+using MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item.Versions;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,6 +13,9 @@ using System.Threading.Tasks;
 namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplateSteps.Item {
     /// <summary>Builds and executes requests for operations under \tenantRelationships\managedTenants\managementTemplateSteps\{managementTemplateStep-id}</summary>
     public class ManagementTemplateStepItemRequestBuilder {
+        public AcceptedVersionRequestBuilder AcceptedVersion { get =>
+            new AcceptedVersionRequestBuilder(PathParameters, RequestAdapter);
+        }
         public ManagementTemplateRequestBuilder ManagementTemplate { get =>
             new ManagementTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -19,11 +23,11 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplat
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        public StepVersionsRequestBuilder StepVersions { get =>
-            new StepVersionsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        public VersionsRequestBuilder Versions { get =>
+            new VersionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new ManagementTemplateStepItemRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

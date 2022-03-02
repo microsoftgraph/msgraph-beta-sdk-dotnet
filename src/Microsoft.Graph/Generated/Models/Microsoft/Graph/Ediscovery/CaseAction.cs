@@ -8,5 +8,6 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         AddToReviewSet,
         HoldUpdate,
         UnknownFutureValue,
+        PurgeData,
     }
 }

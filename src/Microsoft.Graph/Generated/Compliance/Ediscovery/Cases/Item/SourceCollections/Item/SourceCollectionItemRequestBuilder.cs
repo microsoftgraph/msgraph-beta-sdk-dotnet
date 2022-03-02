@@ -6,6 +6,7 @@ using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.
 using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.EstimateStatistics;
 using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.LastEstimateStatisticsOperation;
 using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.NoncustodialSources;
+using MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.Item.PurgeData;
 using MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,9 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.I
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        public PurgeDataRequestBuilder PurgeData { get =>
+            new PurgeDataRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
