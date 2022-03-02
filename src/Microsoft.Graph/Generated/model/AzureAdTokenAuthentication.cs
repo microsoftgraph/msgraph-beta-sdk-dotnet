@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets resourceId.
+        /// The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.
         /// </summary>
         [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }

@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InformationProtectionEncryptBufferRequest.
     /// </summary>
+    [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.")]
     public partial class InformationProtectionEncryptBufferRequest : BaseRequest, IInformationProtectionEncryptBufferRequest
     {
         /// <summary>

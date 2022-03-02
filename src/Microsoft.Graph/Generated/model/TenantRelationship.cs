@@ -27,6 +27,32 @@ namespace Microsoft.Graph
         [JsonPropertyName("managedTenants")]
         public Microsoft.Graph.ManagedTenants.ManagedTenant ManagedTenants { get; set; }
     
+        /// <summary>
+        /// Gets or sets delegated admin customers.
+        /// </summary>
+        [JsonPropertyName("delegatedAdminCustomers")]
+        public ITenantRelationshipDelegatedAdminCustomersCollectionPage DelegatedAdminCustomers { get; set; }
+
+        /// <summary>
+        /// Gets or sets delegatedAdminCustomersNextLink.
+        /// </summary>
+        [JsonPropertyName("delegatedAdminCustomers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DelegatedAdminCustomersNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets delegated admin relationships.
+        /// </summary>
+        [JsonPropertyName("delegatedAdminRelationships")]
+        public ITenantRelationshipDelegatedAdminRelationshipsCollectionPage DelegatedAdminRelationships { get; set; }
+
+        /// <summary>
+        /// Gets or sets delegatedAdminRelationshipsNextLink.
+        /// </summary>
+        [JsonPropertyName("delegatedAdminRelationships@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DelegatedAdminRelationshipsNextLink { get; set; }
+    
     }
 }
 

@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         IRbacApplicationRoleDefinitionsCollectionRequestBuilder RoleDefinitions { get; }
 
         /// <summary>
+        /// Gets the request builder for TransitiveRoleAssignments.
+        /// </summary>
+        /// <returns>The <see cref="IRbacApplicationTransitiveRoleAssignmentsCollectionRequestBuilder"/>.</returns>
+        IRbacApplicationTransitiveRoleAssignmentsCollectionRequestBuilder TransitiveRoleAssignments { get; }
+
+        /// <summary>
         /// Gets the request builder for RoleAssignmentApprovals.
         /// </summary>
         /// <returns>The <see cref="IRbacApplicationRoleAssignmentApprovalsCollectionRequestBuilder"/>.</returns>

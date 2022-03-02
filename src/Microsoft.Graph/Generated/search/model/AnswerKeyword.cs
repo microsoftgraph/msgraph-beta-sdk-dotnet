@@ -23,18 +23,21 @@ namespace Microsoft.Graph.Search
 
         /// <summary>
         /// Gets or sets keywords.
+        /// A collection of keywords used to trigger the search answer.
         /// </summary>
         [JsonPropertyName("keywords")]
         public IEnumerable<string> Keywords { get; set; }
     
         /// <summary>
         /// Gets or sets matchSimilarKeywords.
+        /// If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.
         /// </summary>
         [JsonPropertyName("matchSimilarKeywords")]
         public bool? MatchSimilarKeywords { get; set; }
     
         /// <summary>
         /// Gets or sets reservedKeywords.
+        /// Unique keywords that will guarantee the search answer is triggered.
         /// </summary>
         [JsonPropertyName("reservedKeywords")]
         public IEnumerable<string> ReservedKeywords { get; set; }

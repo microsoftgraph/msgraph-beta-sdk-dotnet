@@ -36,6 +36,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.ManagedTenants.IManagedTenantRequestBuilder"/>.</returns>
         Microsoft.Graph.ManagedTenants.IManagedTenantRequestBuilder ManagedTenants { get; }
+
+        /// <summary>
+        /// Gets the request builder for DelegatedAdminCustomers.
+        /// </summary>
+        /// <returns>The <see cref="ITenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder"/>.</returns>
+        ITenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder DelegatedAdminCustomers { get; }
+
+        /// <summary>
+        /// Gets the request builder for DelegatedAdminRelationships.
+        /// </summary>
+        /// <returns>The <see cref="ITenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder"/>.</returns>
+        ITenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder DelegatedAdminRelationships { get; }
     
     }
 }

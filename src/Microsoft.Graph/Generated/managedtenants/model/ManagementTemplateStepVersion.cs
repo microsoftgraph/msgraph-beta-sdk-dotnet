@@ -21,22 +21,58 @@ namespace Microsoft.Graph.ManagedTenants
     {
     
         /// <summary>
-        /// Gets or sets configuration action.
+        /// Gets or sets content markdown.
         /// </summary>
-        [JsonPropertyName("configurationAction")]
-        public TemplateAction ConfigurationAction { get; set; }
+        [JsonPropertyName("contentMarkdown")]
+        public string ContentMarkdown { get; set; }
     
         /// <summary>
-        /// Gets or sets validation action.
+        /// Gets or sets created by user id.
         /// </summary>
-        [JsonPropertyName("validationAction")]
-        public TemplateAction ValidationAction { get; set; }
+        [JsonPropertyName("createdByUserId")]
+        public string CreatedByUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// </summary>
+        [JsonPropertyName("createdDateTime")]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last action by user id.
+        /// </summary>
+        [JsonPropertyName("lastActionByUserId")]
+        public string LastActionByUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last action date time.
+        /// </summary>
+        [JsonPropertyName("lastActionDateTime")]
+        public DateTimeOffset? LastActionDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets version.
         /// </summary>
         [JsonPropertyName("version")]
         public Int32? Version { get; set; }
+    
+        /// <summary>
+        /// Gets or sets version information.
+        /// </summary>
+        [JsonPropertyName("versionInformation")]
+        public string VersionInformation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets accepted for.
+        /// </summary>
+        [JsonPropertyName("acceptedFor")]
+        public ManagementTemplateStep AcceptedFor { get; set; }
     
         /// <summary>
         /// Gets or sets deployments.

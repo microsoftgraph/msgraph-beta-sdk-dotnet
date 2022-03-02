@@ -23,30 +23,35 @@ namespace Microsoft.Graph.Search
     
         /// <summary>
         /// Gets or sets description.
+        /// Search answer description shown on search results page.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// Search answer name displayed in search results.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// Details of the user that created or last modified the search answer. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// Timestamp of when the search answer is created or edited. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets web url.
+        /// Search answer URL link. When users click this search answer in search results, they will go to this URL.
         /// </summary>
         [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }

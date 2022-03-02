@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets acronyms.
+        /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
         /// </summary>
         [JsonPropertyName("acronyms")]
         public ISearchEntityAcronymsCollectionPage Acronyms { get; set; }
@@ -35,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets bookmarks.
+        /// Administrative answer in Microsoft Search results for common search queries in an organization.
         /// </summary>
         [JsonPropertyName("bookmarks")]
         public ISearchEntityBookmarksCollectionPage Bookmarks { get; set; }
@@ -48,6 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets qnas.
+        /// Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
         /// </summary>
         [JsonPropertyName("qnas")]
         public ISearchEntityQnasCollectionPage Qnas { get; set; }

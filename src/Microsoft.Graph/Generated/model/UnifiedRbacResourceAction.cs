@@ -22,24 +22,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets action verb.
+        /// HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
         /// </summary>
         [JsonPropertyName("actionVerb")]
         public string ActionVerb { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// Description for the action. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets resource scope id.
+        /// Not implemented.
         /// </summary>
         [JsonPropertyName("resourceScopeId")]
         public string ResourceScopeId { get; set; }

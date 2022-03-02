@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("applicationTenantIds")]
         public IEnumerable<string> ApplicationTenantIds { get; set; }
     
+        /// <summary>
+        /// Gets or sets certified applications only.
+        /// </summary>
+        [JsonPropertyName("certifiedApplicationsOnly")]
+        public bool? CertifiedApplicationsOnly { get; set; }
+    
     }
 }
 

@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets failedDeviceIds.
+        /// A list of all the Intune managed device IDs that completed the bulk action with a failure.
         /// </summary>
         [JsonPropertyName("failedDeviceIds")]
         public IEnumerable<string> FailedDeviceIds { get; set; }
     
         /// <summary>
         /// Gets or sets notFoundDeviceIds.
+        /// A list of all the Intune managed device IDs that were not found when the bulk action was attempted.
         /// </summary>
         [JsonPropertyName("notFoundDeviceIds")]
         public IEnumerable<string> NotFoundDeviceIds { get; set; }
     
         /// <summary>
         /// Gets or sets notSupportedDeviceIds.
+        /// A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.
         /// </summary>
         [JsonPropertyName("notSupportedDeviceIds")]
         public IEnumerable<string> NotSupportedDeviceIds { get; set; }
     
         /// <summary>
         /// Gets or sets successfulDeviceIds.
+        /// A list of all the Intune managed device IDs that completed the bulk action successfully.
         /// </summary>
         [JsonPropertyName("successfulDeviceIds")]
         public IEnumerable<string> SuccessfulDeviceIds { get; set; }

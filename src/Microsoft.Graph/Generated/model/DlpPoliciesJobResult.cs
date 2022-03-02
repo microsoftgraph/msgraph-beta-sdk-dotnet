@@ -22,6 +22,18 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets auditCorrelationId.
+        /// </summary>
+        [JsonPropertyName("auditCorrelationId")]
+        public string AuditCorrelationId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets evaluationDateTime.
+        /// </summary>
+        [JsonPropertyName("evaluationDateTime")]
+        public DateTimeOffset? EvaluationDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets matchingRules.
         /// </summary>
         [JsonPropertyName("matchingRules")]

@@ -61,6 +61,30 @@ namespace Microsoft.Graph
                 return new Microsoft.Graph.ManagedTenants.ManagedTenantRequestBuilder(this.AppendSegmentToRequestUrl("managedTenants"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for DelegatedAdminCustomers.
+        /// </summary>
+        /// <returns>The <see cref="ITenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder"/>.</returns>
+        public ITenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder DelegatedAdminCustomers
+        {
+            get
+            {
+                return new TenantRelationshipDelegatedAdminCustomersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("delegatedAdminCustomers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DelegatedAdminRelationships.
+        /// </summary>
+        /// <returns>The <see cref="ITenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder"/>.</returns>
+        public ITenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder DelegatedAdminRelationships
+        {
+            get
+            {
+                return new TenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("delegatedAdminRelationships"), this.Client);
+            }
+        }
     
     }
 }

@@ -120,6 +120,17 @@ namespace Microsoft.Graph.Ediscovery
                 this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.estimateStatistics"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for SourceCollectionPurgeData.
+        /// </summary>
+        /// <returns>The <see cref="ISourceCollectionPurgeDataRequestBuilder"/>.</returns>
+        public ISourceCollectionPurgeDataRequestBuilder PurgeData()
+        {
+            return new SourceCollectionPurgeDataRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.ediscovery.purgeData"),
+                this.Client);
+        }
     
     }
 }

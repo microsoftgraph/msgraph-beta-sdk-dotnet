@@ -246,11 +246,11 @@ namespace Microsoft.Graph.ManagedTenants
 
             if (managementTemplateStepToInitialize != null)
             {
-                if (managementTemplateStepToInitialize.StepVersions != null && managementTemplateStepToInitialize.StepVersions.CurrentPage != null)
+                if (managementTemplateStepToInitialize.Versions != null && managementTemplateStepToInitialize.Versions.CurrentPage != null)
                 {
-                    managementTemplateStepToInitialize.StepVersions.InitializeNextPageRequest(this.Client, managementTemplateStepToInitialize.StepVersionsNextLink);
+                    managementTemplateStepToInitialize.Versions.InitializeNextPageRequest(this.Client, managementTemplateStepToInitialize.VersionsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
-                    managementTemplateStepToInitialize.StepVersions.AdditionalData = managementTemplateStepToInitialize.AdditionalData;
+                    managementTemplateStepToInitialize.Versions.AdditionalData = managementTemplateStepToInitialize.AdditionalData;
                 }
 
             }

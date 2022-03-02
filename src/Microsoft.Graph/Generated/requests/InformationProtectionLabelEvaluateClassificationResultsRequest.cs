@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type InformationProtectionLabelEvaluateClassificationResultsRequest.
     /// </summary>
+    [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.")]
     public partial class InformationProtectionLabelEvaluateClassificationResultsRequest : BaseRequest, IInformationProtectionLabelEvaluateClassificationResultsRequest
     {
         /// <summary>

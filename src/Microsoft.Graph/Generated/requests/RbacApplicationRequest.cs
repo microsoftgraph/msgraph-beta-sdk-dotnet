@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleDefinitions.AdditionalData = rbacApplicationToInitialize.AdditionalData;
                 }
+                if (rbacApplicationToInitialize.TransitiveRoleAssignments != null && rbacApplicationToInitialize.TransitiveRoleAssignments.CurrentPage != null)
+                {
+                    rbacApplicationToInitialize.TransitiveRoleAssignments.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.TransitiveRoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    rbacApplicationToInitialize.TransitiveRoleAssignments.AdditionalData = rbacApplicationToInitialize.AdditionalData;
+                }
                 if (rbacApplicationToInitialize.RoleAssignmentApprovals != null && rbacApplicationToInitialize.RoleAssignmentApprovals.CurrentPage != null)
                 {
                     rbacApplicationToInitialize.RoleAssignmentApprovals.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentApprovalsNextLink);

@@ -29,18 +29,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets logicAppWorkflowName.
+        /// The name of the logic app.
         /// </summary>
         [JsonPropertyName("logicAppWorkflowName")]
         public string LogicAppWorkflowName { get; set; }
     
         /// <summary>
         /// Gets or sets resourceGroupName.
+        /// The Azure resource group name for the logic app.
         /// </summary>
         [JsonPropertyName("resourceGroupName")]
         public string ResourceGroupName { get; set; }
     
         /// <summary>
         /// Gets or sets subscriptionId.
+        /// Identifier of the Azure subscription for the logic app.
         /// </summary>
         [JsonPropertyName("subscriptionId")]
         public string SubscriptionId { get; set; }

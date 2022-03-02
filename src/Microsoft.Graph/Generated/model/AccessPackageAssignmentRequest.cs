@@ -43,6 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom extension handler instances.
+        /// A collection of custom workflow extension instances being run on an assignment request. Read-only.
         /// </summary>
         [JsonPropertyName("customExtensionHandlerInstances")]
         public IEnumerable<CustomExtensionHandlerInstance> CustomExtensionHandlerInstances { get; set; }

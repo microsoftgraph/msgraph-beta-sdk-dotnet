@@ -22,16 +22,34 @@ namespace Microsoft.Graph.ManagedTenants
     {
     
         /// <summary>
+        /// Gets or sets created by user id.
+        /// </summary>
+        [JsonPropertyName("createdByUserId")]
+        public string CreatedByUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// </summary>
+        [JsonPropertyName("createdDateTime")]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets error.
         /// </summary>
         [JsonPropertyName("error")]
         public GraphAPIErrorDetails Error { get; set; }
     
         /// <summary>
-        /// Gets or sets settings.
+        /// Gets or sets last action by user id.
         /// </summary>
-        [JsonPropertyName("settings")]
-        public IEnumerable<Setting> Settings { get; set; }
+        [JsonPropertyName("lastActionByUserId")]
+        public string LastActionByUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last action date time.
+        /// </summary>
+        [JsonPropertyName("lastActionDateTime")]
+        public DateTimeOffset? LastActionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets status.

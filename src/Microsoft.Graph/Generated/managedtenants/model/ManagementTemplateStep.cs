@@ -28,6 +28,18 @@ namespace Microsoft.Graph.ManagedTenants
         public ManagementCategory? Category { get; set; }
     
         /// <summary>
+        /// Gets or sets created by user id.
+        /// </summary>
+        [JsonPropertyName("createdByUserId")]
+        public string CreatedByUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// </summary>
+        [JsonPropertyName("createdDateTime")]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// </summary>
         [JsonPropertyName("description")]
@@ -40,16 +52,22 @@ namespace Microsoft.Graph.ManagedTenants
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets management portal.
+        /// Gets or sets last action by user id.
         /// </summary>
-        [JsonPropertyName("managementPortal")]
-        public string ManagementPortal { get; set; }
+        [JsonPropertyName("lastActionByUserId")]
+        public string LastActionByUserId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last action date time.
+        /// </summary>
+        [JsonPropertyName("lastActionDateTime")]
+        public DateTimeOffset? LastActionDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets portal link.
         /// </summary>
         [JsonPropertyName("portalLink")]
-        public string PortalLink { get; set; }
+        public Microsoft.Graph.ActionUrl PortalLink { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
@@ -58,10 +76,10 @@ namespace Microsoft.Graph.ManagedTenants
         public Int32? Priority { get; set; }
     
         /// <summary>
-        /// Gets or sets provider.
+        /// Gets or sets accepted version.
         /// </summary>
-        [JsonPropertyName("provider")]
-        public ManagementProvider? Provider { get; set; }
+        [JsonPropertyName("acceptedVersion")]
+        public ManagementTemplateStepVersion AcceptedVersion { get; set; }
     
         /// <summary>
         /// Gets or sets management template.
@@ -70,17 +88,17 @@ namespace Microsoft.Graph.ManagedTenants
         public ManagementTemplate ManagementTemplate { get; set; }
     
         /// <summary>
-        /// Gets or sets step versions.
+        /// Gets or sets versions.
         /// </summary>
-        [JsonPropertyName("stepVersions")]
-        public IManagementTemplateStepStepVersionsCollectionWithReferencesPage StepVersions { get; set; }
+        [JsonPropertyName("versions")]
+        public IManagementTemplateStepVersionsCollectionWithReferencesPage Versions { get; set; }
 
         /// <summary>
-        /// Gets or sets stepVersionsNextLink.
+        /// Gets or sets versionsNextLink.
         /// </summary>
-        [JsonPropertyName("stepVersions@odata.nextLink")]
+        [JsonPropertyName("versions@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
-        public string StepVersionsNextLink { get; set; }
+        public string VersionsNextLink { get; set; }
     
     }
 }

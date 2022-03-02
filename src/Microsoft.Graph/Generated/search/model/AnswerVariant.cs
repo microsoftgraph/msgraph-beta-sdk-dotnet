@@ -23,12 +23,14 @@ namespace Microsoft.Graph.Search
 
         /// <summary>
         /// Gets or sets description.
+        /// Answer variation description shown on search results page.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// Answer variation name displayed in search results.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -47,6 +49,7 @@ namespace Microsoft.Graph.Search
     
         /// <summary>
         /// Gets or sets webUrl.
+        /// Answer variation URL link. When users click this answer variation in search results, they will go to this URL.
         /// </summary>
         [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }

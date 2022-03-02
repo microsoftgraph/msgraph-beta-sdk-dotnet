@@ -17,12 +17,14 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Information Protection Policy.
     /// </summary>
+    [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.")]
     public partial class InformationProtectionPolicy : Entity
     {
     
         /// <summary>
         /// Gets or sets labels.
         /// </summary>
+        [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs.")]
         [JsonPropertyName("labels")]
         public IInformationProtectionPolicyLabelsCollectionPage Labels { get; set; }
 
