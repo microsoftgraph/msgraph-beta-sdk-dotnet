@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories.Item.Definiti
         /// </summary>
         public async Task<DefinitionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DefinitionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DefinitionsResponse>(requestInfo, DefinitionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The immediate GroupPolicyDefinition children of the category</summary>
         public class GetQueryParameters : QueryParametersBase {

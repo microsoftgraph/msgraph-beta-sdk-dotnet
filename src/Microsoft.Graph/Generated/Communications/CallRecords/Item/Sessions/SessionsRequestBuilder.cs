@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions {
         /// </summary>
         public async Task<SessionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SessionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SessionsResponse>(requestInfo, SessionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions {
         public async Task<Session> PostAsync(Session body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Session>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Session>(requestInfo, Session.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

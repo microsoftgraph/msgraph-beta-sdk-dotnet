@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Policies.AccessReviewPolicy {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewPolicy>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The policy that contains directory-level access review settings.

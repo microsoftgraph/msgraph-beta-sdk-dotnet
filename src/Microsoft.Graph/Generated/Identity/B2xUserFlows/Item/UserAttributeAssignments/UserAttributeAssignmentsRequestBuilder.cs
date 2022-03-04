@@ -104,7 +104,7 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments 
         /// </summary>
         public async Task<UserAttributeAssignmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserAttributeAssignmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserAttributeAssignmentsResponse>(requestInfo, UserAttributeAssignmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\userAttributeAssignments\microsoft.graph.getOrder()
@@ -123,7 +123,7 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserAttributeAssignments 
         public async Task<IdentityUserFlowAttributeAssignment> PostAsync(IdentityUserFlowAttributeAssignment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<IdentityUserFlowAttributeAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IdentityUserFlowAttributeAssignment>(requestInfo, IdentityUserFlowAttributeAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The user attribute assignments included in the user flow.</summary>
         public class GetQueryParameters : QueryParametersBase {

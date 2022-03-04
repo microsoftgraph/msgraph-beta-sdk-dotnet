@@ -91,7 +91,7 @@ namespace MicrosoftGraphSdk.Print.Printers.Item.Shares.Ref {
         /// </summary>
         public async Task<RefResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RefResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RefResponse>(requestInfo, RefResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
@@ -104,7 +104,7 @@ namespace MicrosoftGraphSdk.Print.Printers.Item.Shares.Ref {
         public async Task<Ref> PostAsync(Ref body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Ref>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Ref>(requestInfo, Ref.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

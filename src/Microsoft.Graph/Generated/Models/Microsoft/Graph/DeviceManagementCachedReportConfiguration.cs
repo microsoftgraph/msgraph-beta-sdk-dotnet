@@ -22,6 +22,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.</summary>
         public DeviceManagementReportStatus? Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementCachedReportConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementCachedReportConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {

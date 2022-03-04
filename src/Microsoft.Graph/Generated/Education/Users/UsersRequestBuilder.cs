@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.Education.Users {
         /// </summary>
         public async Task<UsersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UsersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UsersResponse>(requestInfo, UsersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to users for education
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.Education.Users {
         public async Task<EducationUser> PostAsync(EducationUser body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EducationUser>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationUser>(requestInfo, EducationUser.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get users from education</summary>
         public class GetQueryParameters : QueryParametersBase {

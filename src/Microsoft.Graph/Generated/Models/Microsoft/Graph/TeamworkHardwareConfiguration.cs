@@ -18,12 +18,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkHardwareConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkHardwareConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"compute", (o,n) => { (o as TeamworkHardwareConfiguration).Compute = n.GetObjectValue<TeamworkPeripheral>(); } },
-                {"hdmiIngest", (o,n) => { (o as TeamworkHardwareConfiguration).HdmiIngest = n.GetObjectValue<TeamworkPeripheral>(); } },
+                {"compute", (o,n) => { (o as TeamworkHardwareConfiguration).Compute = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                {"hdmiIngest", (o,n) => { (o as TeamworkHardwareConfiguration).HdmiIngest = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
                 {"processorModel", (o,n) => { (o as TeamworkHardwareConfiguration).ProcessorModel = n.GetStringValue(); } },
             };
         }

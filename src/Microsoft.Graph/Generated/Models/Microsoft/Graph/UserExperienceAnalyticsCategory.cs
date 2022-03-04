@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The metric values for the user experience analytics category.</summary>
         public List<UserExperienceAnalyticsMetric> MetricValues { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UserExperienceAnalyticsCategory CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserExperienceAnalyticsCategory();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"insights", (o,n) => { (o as UserExperienceAnalyticsCategory).Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>().ToList(); } },
-                {"metricValues", (o,n) => { (o as UserExperienceAnalyticsCategory).MetricValues = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>().ToList(); } },
+                {"insights", (o,n) => { (o as UserExperienceAnalyticsCategory).Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>(UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue).ToList(); } },
+                {"metricValues", (o,n) => { (o as UserExperienceAnalyticsCategory).MetricValues = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

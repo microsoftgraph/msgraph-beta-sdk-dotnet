@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Updates> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Updates>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Updates>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Updates.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.

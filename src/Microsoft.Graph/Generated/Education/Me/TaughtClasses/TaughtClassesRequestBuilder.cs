@@ -84,7 +84,7 @@ namespace MicrosoftGraphSdk.Education.Me.TaughtClasses {
         /// </summary>
         public async Task<TaughtClassesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TaughtClassesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TaughtClassesResponse>(requestInfo, TaughtClassesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Classes for which the user is a teacher.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemoLines {
         /// </summary>
         public async Task<SalesCreditMemoLinesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SalesCreditMemoLinesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesCreditMemoLinesResponse>(requestInfo, SalesCreditMemoLinesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to salesCreditMemoLines for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesCreditMemoLines {
         public async Task<SalesCreditMemoLine> PostAsync(SalesCreditMemoLine body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SalesCreditMemoLine>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesCreditMemoLine>(requestInfo, SalesCreditMemoLine.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get salesCreditMemoLines from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

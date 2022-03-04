@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDeviceEncryptionStates {
         /// </summary>
         public async Task<ManagedDeviceEncryptionStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedDeviceEncryptionStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceEncryptionStatesResponse>(requestInfo, ManagedDeviceEncryptionStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Encryption report for devices in this account
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDeviceEncryptionStates {
         public async Task<ManagedDeviceEncryptionState> PostAsync(ManagedDeviceEncryptionState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagedDeviceEncryptionState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceEncryptionState>(requestInfo, ManagedDeviceEncryptionState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Encryption report for devices in this account</summary>
         public class GetQueryParameters : QueryParametersBase {

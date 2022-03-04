@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Color
         /// </summary>
         public async Task<TeamworkHostedContent> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TeamworkHostedContent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkHostedContent>(requestInfo, TeamworkHostedContent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The contents of the app icon if the icon is hosted within the Teams infrastructure.

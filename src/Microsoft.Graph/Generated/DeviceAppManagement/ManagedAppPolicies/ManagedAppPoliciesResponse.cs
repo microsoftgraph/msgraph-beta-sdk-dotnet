@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppPolicies {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ManagedAppPoliciesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagedAppPoliciesResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as ManagedAppPoliciesResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as ManagedAppPoliciesResponse).Value = n.GetCollectionOfObjectValues<ManagedAppPolicy>().ToList(); } },
+                {"value", (o,n) => { (o as ManagedAppPoliciesResponse).Value = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

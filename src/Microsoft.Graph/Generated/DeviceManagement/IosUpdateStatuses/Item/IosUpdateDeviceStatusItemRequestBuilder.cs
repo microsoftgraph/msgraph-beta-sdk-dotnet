@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.IosUpdateStatuses.Item {
         /// </summary>
         public async Task<IosUpdateDeviceStatus> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IosUpdateDeviceStatus>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IosUpdateDeviceStatus>(requestInfo, IosUpdateDeviceStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The IOS software update installation statuses for this account.

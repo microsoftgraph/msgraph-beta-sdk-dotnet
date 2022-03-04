@@ -38,6 +38,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SynchronizationStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SynchronizationStatus();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -45,14 +53,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"code", (o,n) => { (o as SynchronizationStatus).Code = n.GetEnumValue<SynchronizationStatusCode>(); } },
                 {"countSuccessiveCompleteFailures", (o,n) => { (o as SynchronizationStatus).CountSuccessiveCompleteFailures = n.GetLongValue(); } },
                 {"escrowsPruned", (o,n) => { (o as SynchronizationStatus).EscrowsPruned = n.GetBoolValue(); } },
-                {"lastExecution", (o,n) => { (o as SynchronizationStatus).LastExecution = n.GetObjectValue<SynchronizationTaskExecution>(); } },
-                {"lastSuccessfulExecution", (o,n) => { (o as SynchronizationStatus).LastSuccessfulExecution = n.GetObjectValue<SynchronizationTaskExecution>(); } },
-                {"lastSuccessfulExecutionWithExports", (o,n) => { (o as SynchronizationStatus).LastSuccessfulExecutionWithExports = n.GetObjectValue<SynchronizationTaskExecution>(); } },
-                {"progress", (o,n) => { (o as SynchronizationStatus).Progress = n.GetCollectionOfObjectValues<SynchronizationProgress>().ToList(); } },
-                {"quarantine", (o,n) => { (o as SynchronizationStatus).Quarantine = n.GetObjectValue<SynchronizationQuarantine>(); } },
+                {"lastExecution", (o,n) => { (o as SynchronizationStatus).LastExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                {"lastSuccessfulExecution", (o,n) => { (o as SynchronizationStatus).LastSuccessfulExecution = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                {"lastSuccessfulExecutionWithExports", (o,n) => { (o as SynchronizationStatus).LastSuccessfulExecutionWithExports = n.GetObjectValue<SynchronizationTaskExecution>(SynchronizationTaskExecution.CreateFromDiscriminatorValue); } },
+                {"progress", (o,n) => { (o as SynchronizationStatus).Progress = n.GetCollectionOfObjectValues<SynchronizationProgress>(SynchronizationProgress.CreateFromDiscriminatorValue).ToList(); } },
+                {"quarantine", (o,n) => { (o as SynchronizationStatus).Quarantine = n.GetObjectValue<SynchronizationQuarantine>(SynchronizationQuarantine.CreateFromDiscriminatorValue); } },
                 {"steadyStateFirstAchievedTime", (o,n) => { (o as SynchronizationStatus).SteadyStateFirstAchievedTime = n.GetDateTimeOffsetValue(); } },
                 {"steadyStateLastAchievedTime", (o,n) => { (o as SynchronizationStatus).SteadyStateLastAchievedTime = n.GetDateTimeOffsetValue(); } },
-                {"synchronizedEntryCountByType", (o,n) => { (o as SynchronizationStatus).SynchronizedEntryCountByType = n.GetCollectionOfObjectValues<StringKeyLongValuePair>().ToList(); } },
+                {"synchronizedEntryCountByType", (o,n) => { (o as SynchronizationStatus).SynchronizedEntryCountByType = n.GetCollectionOfObjectValues<StringKeyLongValuePair>(StringKeyLongValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"troubleshootingUrl", (o,n) => { (o as SynchronizationStatus).TroubleshootingUrl = n.GetStringValue(); } },
             };
         }

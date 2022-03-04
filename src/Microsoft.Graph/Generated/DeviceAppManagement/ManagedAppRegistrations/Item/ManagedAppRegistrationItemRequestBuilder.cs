@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item {
         /// </summary>
         public async Task<ManagedAppRegistration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, ManagedAppRegistration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The managed app registrations.

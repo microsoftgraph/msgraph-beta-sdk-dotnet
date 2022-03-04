@@ -15,6 +15,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Not implemented.</summary>
         public string ResourceScopeId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UnifiedRbacResourceAction CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UnifiedRbacResourceAction();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -22,7 +30,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"actionVerb", (o,n) => { (o as UnifiedRbacResourceAction).ActionVerb = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as UnifiedRbacResourceAction).Description = n.GetStringValue(); } },
                 {"name", (o,n) => { (o as UnifiedRbacResourceAction).Name = n.GetStringValue(); } },
-                {"resourceScope", (o,n) => { (o as UnifiedRbacResourceAction).ResourceScope = n.GetObjectValue<UnifiedRbacResourceScope>(); } },
+                {"resourceScope", (o,n) => { (o as UnifiedRbacResourceAction).ResourceScope = n.GetObjectValue<UnifiedRbacResourceScope>(UnifiedRbacResourceScope.CreateFromDiscriminatorValue); } },
                 {"resourceScopeId", (o,n) => { (o as UnifiedRbacResourceAction).ResourceScopeId = n.GetStringValue(); } },
             };
         }

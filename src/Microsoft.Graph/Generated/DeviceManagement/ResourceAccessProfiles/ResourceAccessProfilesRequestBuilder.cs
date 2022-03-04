@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles {
         /// </summary>
         public async Task<ResourceAccessProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ResourceAccessProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ResourceAccessProfilesResponse>(requestInfo, ResourceAccessProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of resource access settings associated with account.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles {
         public async Task<DeviceManagementResourceAccessProfileBase> PostAsync(DeviceManagementResourceAccessProfileBase body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileBase>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileBase>(requestInfo, DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of resource access settings associated with account.</summary>
         public class GetQueryParameters : QueryParametersBase {

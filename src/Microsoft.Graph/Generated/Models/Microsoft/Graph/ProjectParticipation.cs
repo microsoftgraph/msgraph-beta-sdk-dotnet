@@ -21,17 +21,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<RelatedPerson> Sponsors { get; set; }
         public string ThumbnailUrl { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ProjectParticipation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ProjectParticipation();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"categories", (o,n) => { (o as ProjectParticipation).Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"client", (o,n) => { (o as ProjectParticipation).Client = n.GetObjectValue<CompanyDetail>(); } },
+                {"client", (o,n) => { (o as ProjectParticipation).Client = n.GetObjectValue<CompanyDetail>(CompanyDetail.CreateFromDiscriminatorValue); } },
                 {"collaborationTags", (o,n) => { (o as ProjectParticipation).CollaborationTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"colleagues", (o,n) => { (o as ProjectParticipation).Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>().ToList(); } },
-                {"detail", (o,n) => { (o as ProjectParticipation).Detail = n.GetObjectValue<PositionDetail>(); } },
+                {"colleagues", (o,n) => { (o as ProjectParticipation).Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue).ToList(); } },
+                {"detail", (o,n) => { (o as ProjectParticipation).Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as ProjectParticipation).DisplayName = n.GetStringValue(); } },
-                {"sponsors", (o,n) => { (o as ProjectParticipation).Sponsors = n.GetCollectionOfObjectValues<RelatedPerson>().ToList(); } },
+                {"sponsors", (o,n) => { (o as ProjectParticipation).Sponsors = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue).ToList(); } },
                 {"thumbnailUrl", (o,n) => { (o as ProjectParticipation).ThumbnailUrl = n.GetStringValue(); } },
             };
         }

@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels 
         /// </summary>
         public async Task<SublabelsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SublabelsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SublabelsResponse>(requestInfo, SublabelsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to sublabels for dataClassification
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DataClassification.SensitivityLabels.Item.Sublabels 
         public async Task<SensitivityLabel> PostAsync(SensitivityLabel body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get sublabels from dataClassification</summary>
         public class GetQueryParameters : QueryParametersBase {

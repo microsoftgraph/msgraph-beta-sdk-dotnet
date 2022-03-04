@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
         /// </summary>
         public async Task<ResourceActionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ResourceActionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ResourceActionsResponse>(requestInfo, ResourceActionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Operations that an authorized principal are allowed to perform.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.RoleManagement.CloudPC.ResourceNamespaces.Item.Resou
         public async Task<UnifiedRbacResourceAction> PostAsync(UnifiedRbacResourceAction body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, UnifiedRbacResourceAction.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Operations that an authorized principal are allowed to perform.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimesOff {
         /// </summary>
         public async Task<TimesOffResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TimesOffResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TimesOffResponse>(requestInfo, TimesOffResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The instances of times off in the schedule.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimesOff {
         public async Task<TimeOff> PostAsync(TimeOff body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TimeOff>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TimeOff>(requestInfo, TimeOff.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The instances of times off in the schedule.</summary>
         public class GetQueryParameters : QueryParametersBase {

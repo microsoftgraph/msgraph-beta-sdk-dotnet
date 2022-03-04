@@ -12,12 +12,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The hostname for the site collection. Read-only.</summary>
         public string Hostname { get; set; }
         /// <summary>If present, indicates that this is a root site collection in SharePoint. Read-only.</summary>
-        public Root Root { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Root Root { get; set; }
         /// <summary>
         /// Instantiates a new siteCollection and sets the default values.
         /// </summary>
         public SiteCollection() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SiteCollection CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SiteCollection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -26,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"dataLocationCode", (o,n) => { (o as SiteCollection).DataLocationCode = n.GetStringValue(); } },
                 {"hostname", (o,n) => { (o as SiteCollection).Hostname = n.GetStringValue(); } },
-                {"root", (o,n) => { (o as SiteCollection).Root = n.GetObjectValue<Root>(); } },
+                {"root", (o,n) => { (o as SiteCollection).Root = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Root>(MicrosoftGraphSdk.Models.Microsoft.Graph.Root.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -37,7 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dataLocationCode", DataLocationCode);
             writer.WriteStringValue("hostname", Hostname);
-            writer.WriteObjectValue<Root>("root", Root);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Root>("root", Root);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

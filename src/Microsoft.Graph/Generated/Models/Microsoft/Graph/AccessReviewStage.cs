@@ -18,14 +18,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.</summary>
         public string Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessReviewStage CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessReviewStage();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"decisions", (o,n) => { (o as AccessReviewStage).Decisions = n.GetCollectionOfObjectValues<AccessReviewInstanceDecisionItem>().ToList(); } },
+                {"decisions", (o,n) => { (o as AccessReviewStage).Decisions = n.GetCollectionOfObjectValues<AccessReviewInstanceDecisionItem>(AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue).ToList(); } },
                 {"endDateTime", (o,n) => { (o as AccessReviewStage).EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fallbackReviewers", (o,n) => { (o as AccessReviewStage).FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>().ToList(); } },
-                {"reviewers", (o,n) => { (o as AccessReviewStage).Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>().ToList(); } },
+                {"fallbackReviewers", (o,n) => { (o as AccessReviewStage).FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"reviewers", (o,n) => { (o as AccessReviewStage).Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
                 {"startDateTime", (o,n) => { (o as AccessReviewStage).StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", (o,n) => { (o as AccessReviewStage).Status = n.GetStringValue(); } },
             };

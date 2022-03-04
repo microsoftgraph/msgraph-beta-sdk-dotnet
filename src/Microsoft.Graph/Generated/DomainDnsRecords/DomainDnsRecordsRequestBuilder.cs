@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DomainDnsRecords {
         /// </summary>
         public async Task<DomainDnsRecordsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DomainDnsRecordsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DomainDnsRecordsResponse>(requestInfo, DomainDnsRecordsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to domainDnsRecords
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DomainDnsRecords {
         public async Task<DomainDnsRecord> PostAsync(DomainDnsRecord body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DomainDnsRecord>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DomainDnsRecord>(requestInfo, DomainDnsRecord.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from domainDnsRecords</summary>
         public class GetQueryParameters : QueryParametersBase {

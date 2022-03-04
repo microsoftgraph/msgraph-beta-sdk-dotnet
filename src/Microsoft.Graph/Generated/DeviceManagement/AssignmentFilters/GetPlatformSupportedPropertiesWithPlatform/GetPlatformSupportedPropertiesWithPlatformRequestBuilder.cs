@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.GetPlatformSuppor
         /// </summary>
         public async Task<IEnumerable<GetPlatformSupportedPropertiesWithPlatform>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetPlatformSupportedPropertiesWithPlatform>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetPlatformSupportedPropertiesWithPlatform>(requestInfo, GetPlatformSupportedPropertiesWithPlatform.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

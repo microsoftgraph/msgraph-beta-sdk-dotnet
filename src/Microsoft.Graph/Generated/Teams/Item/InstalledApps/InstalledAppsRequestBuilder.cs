@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.InstalledApps {
         /// </summary>
         public async Task<InstalledAppsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<InstalledAppsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<InstalledAppsResponse>(requestInfo, InstalledAppsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The apps installed in this team.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.InstalledApps {
         public async Task<TeamsAppInstallation> PostAsync(TeamsAppInstallation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, TeamsAppInstallation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The apps installed in this team.</summary>
         public class GetQueryParameters : QueryParametersBase {

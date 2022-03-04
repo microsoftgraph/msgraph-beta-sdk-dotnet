@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Planner.Plans.Item.Buckets.Item {
         /// </summary>
         public async Task<PlannerBucket> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, PlannerBucket.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Collection of buckets in the plan.

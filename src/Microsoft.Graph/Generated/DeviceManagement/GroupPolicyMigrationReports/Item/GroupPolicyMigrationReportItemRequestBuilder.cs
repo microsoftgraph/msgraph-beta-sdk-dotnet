@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.Item {
         /// </summary>
         public async Task<GroupPolicyMigrationReport> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyMigrationReport>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyMigrationReport>(requestInfo, GroupPolicyMigrationReport.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A list of Group Policy migration reports.

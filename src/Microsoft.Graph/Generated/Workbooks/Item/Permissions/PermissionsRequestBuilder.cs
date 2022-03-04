@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Permissions {
         /// </summary>
         public async Task<PermissionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PermissionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PermissionsResponse>(requestInfo, PermissionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The set of permissions for the item. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Permissions {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Permission body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Permission.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The set of permissions for the item. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

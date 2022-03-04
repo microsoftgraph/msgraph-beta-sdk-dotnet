@@ -16,7 +16,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The install state of the app. Possible values are: installed, failed, notInstalled, uninstallFailed, pendingInstall, unknown, notApplicable.</summary>
         public ResultantAppState? InstallState { get; set; }
         /// <summary>Mobile App Intent. Possible values are: available, notAvailable, requiredInstall, requiredUninstall, requiredAndAvailableInstall, availableInstallWithoutEnrollment, exclude.</summary>
-        public MobileAppIntent? MobileAppIntent { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MobileAppIntent? MobileAppIntent { get; set; }
         /// <summary>The supported platforms for the app.</summary>
         public List<MobileAppSupportedDeviceType> SupportedDeviceTypes { get; set; }
         /// <summary>
@@ -24,6 +24,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public MobileAppIntentAndStateDetail() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static MobileAppIntentAndStateDetail CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MobileAppIntentAndStateDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -35,7 +43,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"displayVersion", (o,n) => { (o as MobileAppIntentAndStateDetail).DisplayVersion = n.GetStringValue(); } },
                 {"installState", (o,n) => { (o as MobileAppIntentAndStateDetail).InstallState = n.GetEnumValue<ResultantAppState>(); } },
                 {"mobileAppIntent", (o,n) => { (o as MobileAppIntentAndStateDetail).MobileAppIntent = n.GetEnumValue<MobileAppIntent>(); } },
-                {"supportedDeviceTypes", (o,n) => { (o as MobileAppIntentAndStateDetail).SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>().ToList(); } },
+                {"supportedDeviceTypes", (o,n) => { (o as MobileAppIntentAndStateDetail).SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>(MobileAppSupportedDeviceType.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Calendars {
         /// </summary>
         public async Task<CalendarsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CalendarsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CalendarsResponse>(requestInfo, CalendarsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The user's calendars. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Calendars {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The user's calendars. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

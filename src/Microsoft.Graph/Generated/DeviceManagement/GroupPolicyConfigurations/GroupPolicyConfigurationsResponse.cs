@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static GroupPolicyConfigurationsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GroupPolicyConfigurationsResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as GroupPolicyConfigurationsResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as GroupPolicyConfigurationsResponse).Value = n.GetCollectionOfObjectValues<GroupPolicyConfiguration>().ToList(); } },
+                {"value", (o,n) => { (o as GroupPolicyConfigurationsResponse).Value = n.GetCollectionOfObjectValues<GroupPolicyConfiguration>(GroupPolicyConfiguration.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

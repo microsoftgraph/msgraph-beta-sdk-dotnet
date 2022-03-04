@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.Todo.Lists.Item.Tasks.Item.LinkedResource
         /// </summary>
         public async Task<LinkedResource> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<LinkedResource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<LinkedResource>(requestInfo, LinkedResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of resources linked to the task.

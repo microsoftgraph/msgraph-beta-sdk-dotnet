@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Planner.Buckets.Item.Tasks.Item.AssignedToTaskBoardF
         /// </summary>
         public async Task<PlannerAssignedToTaskBoardTaskFormat> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PlannerAssignedToTaskBoardTaskFormat>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerAssignedToTaskBoardTaskFormat>(requestInfo, PlannerAssignedToTaskBoardTaskFormat.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.

@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations
         /// </summary>
         public async Task<TargetedManagedAppConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TargetedManagedAppConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TargetedManagedAppConfigurationsResponse>(requestInfo, TargetedManagedAppConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Targeted managed app configurations.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations
         public async Task<TargetedManagedAppConfiguration> PostAsync(TargetedManagedAppConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TargetedManagedAppConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TargetedManagedAppConfiguration>(requestInfo, TargetedManagedAppConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Targeted managed app configurations.</summary>
         public class GetQueryParameters : QueryParametersBase {

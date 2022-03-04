@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.PrivilegedOperationEvents.Item {
         /// </summary>
         public async Task<PrivilegedOperationEvent> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrivilegedOperationEvent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedOperationEvent>(requestInfo, PrivilegedOperationEvent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update entity in privilegedOperationEvents

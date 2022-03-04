@@ -36,6 +36,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AuditActor CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AuditActor();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -50,7 +58,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"userId", (o,n) => { (o as AuditActor).UserId = n.GetStringValue(); } },
                 {"userPermissions", (o,n) => { (o as AuditActor).UserPermissions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"userPrincipalName", (o,n) => { (o as AuditActor).UserPrincipalName = n.GetStringValue(); } },
-                {"userRoleScopeTags", (o,n) => { (o as AuditActor).UserRoleScopeTags = n.GetCollectionOfObjectValues<RoleScopeTagInfo>().ToList(); } },
+                {"userRoleScopeTags", (o,n) => { (o as AuditActor).UserRoleScopeTags = n.GetCollectionOfObjectValues<RoleScopeTagInfo>(RoleScopeTagInfo.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

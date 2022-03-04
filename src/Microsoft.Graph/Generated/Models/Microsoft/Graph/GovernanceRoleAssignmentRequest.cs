@@ -32,6 +32,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.</summary>
         public string Type { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new GovernanceRoleAssignmentRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GovernanceRoleAssignmentRequest();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -40,13 +48,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"linkedEligibleRoleAssignmentId", (o,n) => { (o as GovernanceRoleAssignmentRequest).LinkedEligibleRoleAssignmentId = n.GetStringValue(); } },
                 {"reason", (o,n) => { (o as GovernanceRoleAssignmentRequest).Reason = n.GetStringValue(); } },
                 {"requestedDateTime", (o,n) => { (o as GovernanceRoleAssignmentRequest).RequestedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resource", (o,n) => { (o as GovernanceRoleAssignmentRequest).Resource = n.GetObjectValue<GovernanceResource>(); } },
+                {"resource", (o,n) => { (o as GovernanceRoleAssignmentRequest).Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
                 {"resourceId", (o,n) => { (o as GovernanceRoleAssignmentRequest).ResourceId = n.GetStringValue(); } },
-                {"roleDefinition", (o,n) => { (o as GovernanceRoleAssignmentRequest).RoleDefinition = n.GetObjectValue<GovernanceRoleDefinition>(); } },
+                {"roleDefinition", (o,n) => { (o as GovernanceRoleAssignmentRequest).RoleDefinition = n.GetObjectValue<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
                 {"roleDefinitionId", (o,n) => { (o as GovernanceRoleAssignmentRequest).RoleDefinitionId = n.GetStringValue(); } },
-                {"schedule", (o,n) => { (o as GovernanceRoleAssignmentRequest).Schedule = n.GetObjectValue<GovernanceSchedule>(); } },
-                {"status", (o,n) => { (o as GovernanceRoleAssignmentRequest).Status = n.GetObjectValue<GovernanceRoleAssignmentRequestStatus>(); } },
-                {"subject", (o,n) => { (o as GovernanceRoleAssignmentRequest).Subject = n.GetObjectValue<GovernanceSubject>(); } },
+                {"schedule", (o,n) => { (o as GovernanceRoleAssignmentRequest).Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
+                {"status", (o,n) => { (o as GovernanceRoleAssignmentRequest).Status = n.GetObjectValue<GovernanceRoleAssignmentRequestStatus>(GovernanceRoleAssignmentRequestStatus.CreateFromDiscriminatorValue); } },
+                {"subject", (o,n) => { (o as GovernanceRoleAssignmentRequest).Subject = n.GetObjectValue<GovernanceSubject>(GovernanceSubject.CreateFromDiscriminatorValue); } },
                 {"subjectId", (o,n) => { (o as GovernanceRoleAssignmentRequest).SubjectId = n.GetStringValue(); } },
                 {"type", (o,n) => { (o as GovernanceRoleAssignmentRequest).Type = n.GetStringValue(); } },
             };

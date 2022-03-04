@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Midb {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static MidbRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MidbRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"numBytes", (o,n) => { (o as MidbRequestBody).NumBytes = n.GetObjectValue<Json>(); } },
-                {"startNum", (o,n) => { (o as MidbRequestBody).StartNum = n.GetObjectValue<Json>(); } },
-                {"text", (o,n) => { (o as MidbRequestBody).Text = n.GetObjectValue<Json>(); } },
+                {"numBytes", (o,n) => { (o as MidbRequestBody).NumBytes = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"startNum", (o,n) => { (o as MidbRequestBody).StartNum = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"text", (o,n) => { (o as MidbRequestBody).Text = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

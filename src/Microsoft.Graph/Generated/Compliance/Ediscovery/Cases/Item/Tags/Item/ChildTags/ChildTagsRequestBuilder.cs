@@ -84,7 +84,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags
         /// </summary>
         public async Task<ChildTagsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ChildTagsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ChildTagsResponse>(requestInfo, ChildTagsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Returns the tags that are a child of a tag.</summary>
         public class GetQueryParameters : QueryParametersBase {

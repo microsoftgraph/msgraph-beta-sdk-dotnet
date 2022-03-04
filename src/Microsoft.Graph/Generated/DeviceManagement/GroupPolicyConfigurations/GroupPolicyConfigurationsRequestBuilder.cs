@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations {
         /// </summary>
         public async Task<GroupPolicyConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyConfigurationsResponse>(requestInfo, GroupPolicyConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The group policy configurations created by this account.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations {
         public async Task<GroupPolicyConfiguration> PostAsync(GroupPolicyConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyConfiguration>(requestInfo, GroupPolicyConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The group policy configurations created by this account.</summary>
         public class GetQueryParameters : QueryParametersBase {

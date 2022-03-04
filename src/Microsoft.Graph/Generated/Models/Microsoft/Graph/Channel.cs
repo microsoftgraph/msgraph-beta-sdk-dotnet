@@ -30,6 +30,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
         public string WebUrl { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Channel CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Channel();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -38,13 +46,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"description", (o,n) => { (o as Channel).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Channel).DisplayName = n.GetStringValue(); } },
                 {"email", (o,n) => { (o as Channel).Email = n.GetStringValue(); } },
-                {"filesFolder", (o,n) => { (o as Channel).FilesFolder = n.GetObjectValue<DriveItem>(); } },
+                {"filesFolder", (o,n) => { (o as Channel).FilesFolder = n.GetObjectValue<DriveItem>(DriveItem.CreateFromDiscriminatorValue); } },
                 {"isFavoriteByDefault", (o,n) => { (o as Channel).IsFavoriteByDefault = n.GetBoolValue(); } },
-                {"members", (o,n) => { (o as Channel).Members = n.GetCollectionOfObjectValues<ConversationMember>().ToList(); } },
+                {"members", (o,n) => { (o as Channel).Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue).ToList(); } },
                 {"membershipType", (o,n) => { (o as Channel).MembershipType = n.GetEnumValue<ChannelMembershipType>(); } },
-                {"messages", (o,n) => { (o as Channel).Messages = n.GetCollectionOfObjectValues<ChatMessage>().ToList(); } },
-                {"moderationSettings", (o,n) => { (o as Channel).ModerationSettings = n.GetObjectValue<ChannelModerationSettings>(); } },
-                {"tabs", (o,n) => { (o as Channel).Tabs = n.GetCollectionOfObjectValues<TeamsTab>().ToList(); } },
+                {"messages", (o,n) => { (o as Channel).Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue).ToList(); } },
+                {"moderationSettings", (o,n) => { (o as Channel).ModerationSettings = n.GetObjectValue<ChannelModerationSettings>(ChannelModerationSettings.CreateFromDiscriminatorValue); } },
+                {"tabs", (o,n) => { (o as Channel).Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue).ToList(); } },
                 {"webUrl", (o,n) => { (o as Channel).WebUrl = n.GetStringValue(); } },
             };
         }

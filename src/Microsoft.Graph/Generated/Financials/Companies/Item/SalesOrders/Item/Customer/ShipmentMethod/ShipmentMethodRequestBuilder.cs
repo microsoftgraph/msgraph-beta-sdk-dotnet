@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesOrders.Item.Customer.
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ShipmentMethod> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ShipmentMethod>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ShipmentMethod>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ShipmentMethod.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property shipmentMethod in financials

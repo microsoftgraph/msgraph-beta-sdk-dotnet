@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Planner.Tasks {
         /// </summary>
         public async Task<TasksResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TasksResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TasksResponse>(requestInfo, TasksResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Returns a collection of the specified tasks
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Planner.Tasks {
         public async Task<PlannerTask> PostAsync(PlannerTask body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable. Returns a collection of the specified tasks</summary>
         public class GetQueryParameters : QueryParametersBase {

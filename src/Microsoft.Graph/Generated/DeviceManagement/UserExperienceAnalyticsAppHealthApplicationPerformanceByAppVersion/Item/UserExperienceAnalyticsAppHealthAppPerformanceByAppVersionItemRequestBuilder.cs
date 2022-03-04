@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthApp
         /// </summary>
         public async Task<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(requestInfo, UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics appHealth Application Performance by App Version

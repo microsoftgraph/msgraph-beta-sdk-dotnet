@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Phones {
         /// </summary>
         public async Task<PhonesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PhonesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PhonesResponse>(requestInfo, PhonesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents detailed information about phone numbers associated with a user in various services.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Phones {
         public async Task<ItemPhone> PostAsync(ItemPhone body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ItemPhone>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemPhone>(requestInfo, ItemPhone.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents detailed information about phone numbers associated with a user in various services.</summary>
         public class GetQueryParameters : QueryParametersBase {

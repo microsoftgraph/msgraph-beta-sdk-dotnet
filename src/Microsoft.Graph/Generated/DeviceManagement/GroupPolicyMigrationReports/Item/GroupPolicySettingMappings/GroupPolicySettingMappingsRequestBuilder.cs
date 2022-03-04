@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.Item.Gr
         /// </summary>
         public async Task<GroupPolicySettingMappingsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicySettingMappingsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicySettingMappingsResponse>(requestInfo, GroupPolicySettingMappingsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A list of group policy settings to MDM/Intune mappings.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports.Item.Gr
         public async Task<GroupPolicySettingMapping> PostAsync(GroupPolicySettingMapping body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicySettingMapping>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicySettingMapping>(requestInfo, GroupPolicySettingMapping.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A list of group policy settings to MDM/Intune mappings.</summary>
         public class GetQueryParameters : QueryParametersBase {

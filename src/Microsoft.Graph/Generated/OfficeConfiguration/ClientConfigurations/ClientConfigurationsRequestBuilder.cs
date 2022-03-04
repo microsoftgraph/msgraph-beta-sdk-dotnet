@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations {
         /// </summary>
         public async Task<ClientConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ClientConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ClientConfigurationsResponse>(requestInfo, ClientConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of office Client configuration.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations {
         public async Task<OfficeClientConfiguration> PostAsync(OfficeClientConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OfficeClientConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OfficeClientConfiguration>(requestInfo, OfficeClientConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of office Client configuration.</summary>
         public class GetQueryParameters : QueryParametersBase {

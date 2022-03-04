@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Planner.Plans {
         /// </summary>
         public async Task<PlansResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PlansResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlansResponse>(requestInfo, PlansResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Planner.Plans {
         public async Task<PlannerPlan> PostAsync(PlannerPlan body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable. Returns the plannerTasks assigned to the user.</summary>
         public class GetQueryParameters : QueryParametersBase {

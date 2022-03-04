@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicesWitho
         /// </summary>
         public async Task<UserExperienceAnalyticsDevicesWithoutCloudIdentityResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDevicesWithoutCloudIdentityResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDevicesWithoutCloudIdentityResponse>(requestInfo, UserExperienceAnalyticsDevicesWithoutCloudIdentityResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics devices without cloud identity.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicesWitho
         public async Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> PostAsync(UserExperienceAnalyticsDeviceWithoutCloudIdentity body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceWithoutCloudIdentity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceWithoutCloudIdentity>(requestInfo, UserExperienceAnalyticsDeviceWithoutCloudIdentity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>User experience analytics devices without cloud identity.</summary>
         public class GetQueryParameters : QueryParametersBase {

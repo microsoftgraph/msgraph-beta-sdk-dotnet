@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DataPolicyOperations {
         /// </summary>
         public async Task<DataPolicyOperationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DataPolicyOperationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DataPolicyOperationsResponse>(requestInfo, DataPolicyOperationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to dataPolicyOperations
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DataPolicyOperations {
         public async Task<DataPolicyOperation> PostAsync(DataPolicyOperation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DataPolicyOperation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DataPolicyOperation>(requestInfo, DataPolicyOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from dataPolicyOperations</summary>
         public class GetQueryParameters : QueryParametersBase {

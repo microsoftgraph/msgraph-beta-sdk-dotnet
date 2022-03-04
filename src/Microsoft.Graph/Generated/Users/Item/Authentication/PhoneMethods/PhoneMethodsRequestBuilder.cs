@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PhoneMethods {
         /// </summary>
         public async Task<PhoneMethodsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PhoneMethodsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PhoneMethodsResponse>(requestInfo, PhoneMethodsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to phoneMethods for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PhoneMethods {
         public async Task<PhoneAuthenticationMethod> PostAsync(PhoneAuthenticationMethod body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PhoneAuthenticationMethod>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PhoneAuthenticationMethod>(requestInfo, PhoneAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get phoneMethods from users</summary>
         public class GetQueryParameters : QueryParametersBase {

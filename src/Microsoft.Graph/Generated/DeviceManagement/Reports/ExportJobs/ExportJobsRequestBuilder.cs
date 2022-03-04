@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Reports.ExportJobs {
         /// </summary>
         public async Task<ExportJobsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExportJobsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExportJobsResponse>(requestInfo, ExportJobsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Entity representing a job to export a report
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Reports.ExportJobs {
         public async Task<DeviceManagementExportJob> PostAsync(DeviceManagementExportJob body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementExportJob>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementExportJob>(requestInfo, DeviceManagementExportJob.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Entity representing a job to export a report</summary>
         public class GetQueryParameters : QueryParametersBase {

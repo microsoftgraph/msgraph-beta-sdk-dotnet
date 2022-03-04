@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The content of the service issue post.</summary>
         public ItemBody Description { get; set; }
         /// <summary>The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.</summary>
-        public PostType? PostType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PostType? PostType { get; set; }
         /// <summary>
         /// Instantiates a new serviceHealthIssuePost and sets the default values.
         /// </summary>
@@ -20,12 +20,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ServiceHealthIssuePost CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ServiceHealthIssuePost();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"createdDateTime", (o,n) => { (o as ServiceHealthIssuePost).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", (o,n) => { (o as ServiceHealthIssuePost).Description = n.GetObjectValue<ItemBody>(); } },
+                {"description", (o,n) => { (o as ServiceHealthIssuePost).Description = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"postType", (o,n) => { (o as ServiceHealthIssuePost).PostType = n.GetEnumValue<PostType>(); } },
             };
         }

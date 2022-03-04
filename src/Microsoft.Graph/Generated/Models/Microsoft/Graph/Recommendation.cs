@@ -21,16 +21,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public RecommendationPriority? Priority { get; set; }
         public RecommendationStatus? Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Recommendation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Recommendation();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"actionSteps", (o,n) => { (o as Recommendation).ActionSteps = n.GetCollectionOfObjectValues<ActionStep>().ToList(); } },
+                {"actionSteps", (o,n) => { (o as Recommendation).ActionSteps = n.GetCollectionOfObjectValues<ActionStep>(ActionStep.CreateFromDiscriminatorValue).ToList(); } },
                 {"benefits", (o,n) => { (o as Recommendation).Benefits = n.GetStringValue(); } },
                 {"category", (o,n) => { (o as Recommendation).Category = n.GetEnumValue<RecommendationCategory>(); } },
                 {"createdDateTime", (o,n) => { (o as Recommendation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as Recommendation).DisplayName = n.GetStringValue(); } },
-                {"impactedResources", (o,n) => { (o as Recommendation).ImpactedResources = n.GetCollectionOfObjectValues<RecommendationResource>().ToList(); } },
+                {"impactedResources", (o,n) => { (o as Recommendation).ImpactedResources = n.GetCollectionOfObjectValues<RecommendationResource>(RecommendationResource.CreateFromDiscriminatorValue).ToList(); } },
                 {"impactStartDateTime", (o,n) => { (o as Recommendation).ImpactStartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"impactType", (o,n) => { (o as Recommendation).ImpactType = n.GetStringValue(); } },
                 {"insights", (o,n) => { (o as Recommendation).Insights = n.GetStringValue(); } },

@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Organization.Item.CertificateBasedAuthConfiguration 
         /// </summary>
         public async Task<CertificateBasedAuthConfigurationResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CertificateBasedAuthConfigurationResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CertificateBasedAuthConfigurationResponse>(requestInfo, CertificateBasedAuthConfigurationResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.</summary>
         public class GetQueryParameters : QueryParametersBase {

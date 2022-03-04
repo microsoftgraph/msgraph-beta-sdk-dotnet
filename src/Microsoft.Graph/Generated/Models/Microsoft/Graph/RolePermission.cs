@@ -18,12 +18,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static RolePermission CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RolePermission();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"actions", (o,n) => { (o as RolePermission).Actions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"resourceActions", (o,n) => { (o as RolePermission).ResourceActions = n.GetCollectionOfObjectValues<ResourceAction>().ToList(); } },
+                {"resourceActions", (o,n) => { (o as RolePermission).ResourceActions = n.GetCollectionOfObjectValues<ResourceAction>(ResourceAction.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

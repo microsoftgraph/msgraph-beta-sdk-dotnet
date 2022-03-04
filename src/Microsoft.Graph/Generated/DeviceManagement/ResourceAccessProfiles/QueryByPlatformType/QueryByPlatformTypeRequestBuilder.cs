@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.QueryByPlatf
         public async Task<IEnumerable<QueryByPlatformType>> PostAsync(QueryByPlatformTypeRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<QueryByPlatformType>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<QueryByPlatformType>(requestInfo, QueryByPlatformType.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

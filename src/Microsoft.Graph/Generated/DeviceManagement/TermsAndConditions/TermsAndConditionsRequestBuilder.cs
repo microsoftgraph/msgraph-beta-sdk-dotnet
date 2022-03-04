@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions {
         /// </summary>
         public async Task<TermsAndConditionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TermsAndConditionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsResponse>(requestInfo, TermsAndConditionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The terms and conditions associated with device management of the company.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The terms and conditions associated with device management of the company.</summary>
         public class GetQueryParameters : QueryParametersBase {

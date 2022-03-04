@@ -16,15 +16,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
         public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementTroubleshootingEvent CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementTroubleshootingEvent();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"additionalInformation", (o,n) => { (o as DeviceManagementTroubleshootingEvent).AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"additionalInformation", (o,n) => { (o as DeviceManagementTroubleshootingEvent).AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"correlationId", (o,n) => { (o as DeviceManagementTroubleshootingEvent).CorrelationId = n.GetStringValue(); } },
                 {"eventDateTime", (o,n) => { (o as DeviceManagementTroubleshootingEvent).EventDateTime = n.GetDateTimeOffsetValue(); } },
                 {"eventName", (o,n) => { (o as DeviceManagementTroubleshootingEvent).EventName = n.GetStringValue(); } },
-                {"troubleshootingErrorDetails", (o,n) => { (o as DeviceManagementTroubleshootingEvent).TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(); } },
+                {"troubleshootingErrorDetails", (o,n) => { (o as DeviceManagementTroubleshootingEvent).TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

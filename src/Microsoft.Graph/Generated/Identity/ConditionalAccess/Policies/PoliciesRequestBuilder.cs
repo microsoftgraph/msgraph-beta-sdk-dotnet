@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.Policies {
         /// </summary>
         public async Task<PoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PoliciesResponse>(requestInfo, PoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess.Policies {
         public async Task<ConditionalAccessPolicy> PostAsync(ConditionalAccessPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ConditionalAccessPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConditionalAccessPolicy>(requestInfo, ConditionalAccessPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access (CA) policies.</summary>
         public class GetQueryParameters : QueryParametersBase {

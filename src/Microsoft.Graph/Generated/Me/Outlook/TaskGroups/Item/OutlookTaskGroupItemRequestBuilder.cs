@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Me.Outlook.TaskGroups.Item {
         /// </summary>
         public async Task<OutlookTaskGroup> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OutlookTaskGroup>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OutlookTaskGroup>(requestInfo, OutlookTaskGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property taskGroups in me

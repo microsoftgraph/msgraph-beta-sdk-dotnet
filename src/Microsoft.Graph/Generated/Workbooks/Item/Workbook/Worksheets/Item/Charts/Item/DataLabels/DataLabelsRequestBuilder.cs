@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.
         /// </summary>
         public async Task<WorkbookChartDataLabels> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WorkbookChartDataLabels>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookChartDataLabels>(requestInfo, WorkbookChartDataLabels.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the datalabels on the chart. Read-only.

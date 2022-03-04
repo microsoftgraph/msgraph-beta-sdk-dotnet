@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.Users.Item.Planner.All {
         /// </summary>
         public async Task<AllResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AllResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AllResponse>(requestInfo, AllResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to all for users
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.Users.Item.Planner.All {
         public async Task<PlannerDelta> PostAsync(PlannerDelta body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PlannerDelta>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerDelta>(requestInfo, PlannerDelta.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get all from users</summary>
         public class GetQueryParameters : QueryParametersBase {

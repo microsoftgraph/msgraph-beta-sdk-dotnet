@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Search.Query {
         public async Task<IEnumerable<SearchResponse>> PostAsync(QueryRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<SearchResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<SearchResponse>(requestInfo, SearchResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

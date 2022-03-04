@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Sites {
         /// </summary>
         public async Task<SitesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SitesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SitesResponse>(requestInfo, SitesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of the sub-sites under this site.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileAppConfigurations.Item.Dev
         /// </summary>
         public async Task<ManagedDeviceMobileAppConfigurationDeviceSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationDeviceSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationDeviceSummary>(requestInfo, ManagedDeviceMobileAppConfigurationDeviceSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// App configuration device status summary.

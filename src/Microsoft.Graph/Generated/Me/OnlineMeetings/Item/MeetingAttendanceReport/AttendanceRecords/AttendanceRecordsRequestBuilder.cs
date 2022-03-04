@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.OnlineMeetings.Item.MeetingAttendanceReport.Atten
         /// </summary>
         public async Task<AttendanceRecordsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AttendanceRecordsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttendanceRecordsResponse>(requestInfo, AttendanceRecordsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of attendance records of an attendance report. Read-only.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.OnlineMeetings.Item.MeetingAttendanceReport.Atten
         public async Task<AttendanceRecord> PostAsync(AttendanceRecord body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AttendanceRecord>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttendanceRecord>(requestInfo, AttendanceRecord.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of attendance records of an attendance report. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Tags.Item.Members {
         /// </summary>
         public async Task<MembersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MembersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MembersResponse>(requestInfo, MembersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Users assigned to the tag.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Tags.Item.Members {
         public async Task<TeamworkTagMember> PostAsync(TeamworkTagMember body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TeamworkTagMember>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkTagMember>(requestInfo, TeamworkTagMember.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Users assigned to the tag.</summary>
         public class GetQueryParameters : QueryParametersBase {

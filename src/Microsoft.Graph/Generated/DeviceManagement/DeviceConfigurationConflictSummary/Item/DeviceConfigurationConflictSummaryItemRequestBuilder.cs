@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurationConflictSummary.
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfigurationConflictSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfigurationConflictSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfigurationConflictSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceConfigurationConflictSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Summary of policies in conflict state for this account.

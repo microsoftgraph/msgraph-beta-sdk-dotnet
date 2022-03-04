@@ -32,11 +32,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Technologies for this policy. Possible values are: none, mdm, windows10XManagement, configManager, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.</summary>
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementCompliancePolicy();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as DeviceManagementCompliancePolicy).Assignments = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as DeviceManagementCompliancePolicy).Assignments = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>(DeviceManagementConfigurationPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as DeviceManagementCompliancePolicy).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"creationSource", (o,n) => { (o as DeviceManagementCompliancePolicy).CreationSource = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as DeviceManagementCompliancePolicy).Description = n.GetStringValue(); } },
@@ -45,9 +53,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"name", (o,n) => { (o as DeviceManagementCompliancePolicy).Name = n.GetStringValue(); } },
                 {"platforms", (o,n) => { (o as DeviceManagementCompliancePolicy).Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
                 {"roleScopeTagIds", (o,n) => { (o as DeviceManagementCompliancePolicy).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"scheduledActionsForRule", (o,n) => { (o as DeviceManagementCompliancePolicy).ScheduledActionsForRule = n.GetCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>().ToList(); } },
+                {"scheduledActionsForRule", (o,n) => { (o as DeviceManagementCompliancePolicy).ScheduledActionsForRule = n.GetCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>(DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue).ToList(); } },
                 {"settingCount", (o,n) => { (o as DeviceManagementCompliancePolicy).SettingCount = n.GetIntValue(); } },
-                {"settings", (o,n) => { (o as DeviceManagementCompliancePolicy).Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>().ToList(); } },
+                {"settings", (o,n) => { (o as DeviceManagementCompliancePolicy).Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue).ToList(); } },
                 {"technologies", (o,n) => { (o as DeviceManagementCompliancePolicy).Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
             };
         }

@@ -24,14 +24,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static EducationResource CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new EducationResource();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"createdBy", (o,n) => { (o as EducationResource).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"createdBy", (o,n) => { (o as EducationResource).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as EducationResource).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as EducationResource).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as EducationResource).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"lastModifiedBy", (o,n) => { (o as EducationResource).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as EducationResource).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }

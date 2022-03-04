@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Dimension CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Dimension();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"code", (o,n) => { (o as Dimension).Code = n.GetStringValue(); } },
-                {"dimensionValues", (o,n) => { (o as Dimension).DimensionValues = n.GetCollectionOfObjectValues<DimensionValue>().ToList(); } },
+                {"dimensionValues", (o,n) => { (o as Dimension).DimensionValues = n.GetCollectionOfObjectValues<DimensionValue>(DimensionValue.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as Dimension).DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Dimension).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };

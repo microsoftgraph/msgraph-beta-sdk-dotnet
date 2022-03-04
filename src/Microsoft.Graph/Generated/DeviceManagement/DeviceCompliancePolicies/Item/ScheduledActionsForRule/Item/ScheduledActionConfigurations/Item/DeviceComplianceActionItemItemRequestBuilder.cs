@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.Item.Sched
         /// </summary>
         public async Task<DeviceComplianceActionItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceComplianceActionItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceComplianceActionItem>(requestInfo, DeviceComplianceActionItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.

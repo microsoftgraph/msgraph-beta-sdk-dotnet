@@ -56,35 +56,43 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The list of installation states for this mobile app.</summary>
         public List<UserAppInstallStatus> UserStatuses { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MobileApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MobileApp();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as MobileApp).Assignments = n.GetCollectionOfObjectValues<MobileAppAssignment>().ToList(); } },
-                {"categories", (o,n) => { (o as MobileApp).Categories = n.GetCollectionOfObjectValues<MobileAppCategory>().ToList(); } },
+                {"assignments", (o,n) => { (o as MobileApp).Assignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"categories", (o,n) => { (o as MobileApp).Categories = n.GetCollectionOfObjectValues<MobileAppCategory>(MobileAppCategory.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as MobileApp).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"dependentAppCount", (o,n) => { (o as MobileApp).DependentAppCount = n.GetIntValue(); } },
                 {"description", (o,n) => { (o as MobileApp).Description = n.GetStringValue(); } },
                 {"developer", (o,n) => { (o as MobileApp).Developer = n.GetStringValue(); } },
-                {"deviceStatuses", (o,n) => { (o as MobileApp).DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>().ToList(); } },
+                {"deviceStatuses", (o,n) => { (o as MobileApp).DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>(MobileAppInstallStatus.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as MobileApp).DisplayName = n.GetStringValue(); } },
                 {"informationUrl", (o,n) => { (o as MobileApp).InformationUrl = n.GetStringValue(); } },
-                {"installSummary", (o,n) => { (o as MobileApp).InstallSummary = n.GetObjectValue<MobileAppInstallSummary>(); } },
+                {"installSummary", (o,n) => { (o as MobileApp).InstallSummary = n.GetObjectValue<MobileAppInstallSummary>(MobileAppInstallSummary.CreateFromDiscriminatorValue); } },
                 {"isAssigned", (o,n) => { (o as MobileApp).IsAssigned = n.GetBoolValue(); } },
                 {"isFeatured", (o,n) => { (o as MobileApp).IsFeatured = n.GetBoolValue(); } },
-                {"largeIcon", (o,n) => { (o as MobileApp).LargeIcon = n.GetObjectValue<MimeContent>(); } },
+                {"largeIcon", (o,n) => { (o as MobileApp).LargeIcon = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as MobileApp).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"notes", (o,n) => { (o as MobileApp).Notes = n.GetStringValue(); } },
                 {"owner", (o,n) => { (o as MobileApp).Owner = n.GetStringValue(); } },
                 {"privacyInformationUrl", (o,n) => { (o as MobileApp).PrivacyInformationUrl = n.GetStringValue(); } },
                 {"publisher", (o,n) => { (o as MobileApp).Publisher = n.GetStringValue(); } },
                 {"publishingState", (o,n) => { (o as MobileApp).PublishingState = n.GetEnumValue<MobileAppPublishingState>(); } },
-                {"relationships", (o,n) => { (o as MobileApp).Relationships = n.GetCollectionOfObjectValues<MobileAppRelationship>().ToList(); } },
+                {"relationships", (o,n) => { (o as MobileApp).Relationships = n.GetCollectionOfObjectValues<MobileAppRelationship>(MobileAppRelationship.CreateFromDiscriminatorValue).ToList(); } },
                 {"roleScopeTagIds", (o,n) => { (o as MobileApp).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"supersededAppCount", (o,n) => { (o as MobileApp).SupersededAppCount = n.GetIntValue(); } },
                 {"supersedingAppCount", (o,n) => { (o as MobileApp).SupersedingAppCount = n.GetIntValue(); } },
                 {"uploadState", (o,n) => { (o as MobileApp).UploadState = n.GetIntValue(); } },
-                {"userStatuses", (o,n) => { (o as MobileApp).UserStatuses = n.GetCollectionOfObjectValues<UserAppInstallStatus>().ToList(); } },
+                {"userStatuses", (o,n) => { (o as MobileApp).UserStatuses = n.GetCollectionOfObjectValues<UserAppInstallStatus>(UserAppInstallStatus.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

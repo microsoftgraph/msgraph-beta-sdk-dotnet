@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.Sit
         /// </summary>
         public async Task<SiteSourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SiteSourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SiteSourcesResponse>(requestInfo, SiteSourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Data source entity for SharePoint sites associated with the legal hold.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.Sit
         public async Task<SiteSource> PostAsync(SiteSource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SiteSource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SiteSource>(requestInfo, SiteSource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Data source entity for SharePoint sites associated with the legal hold.</summary>
         public class GetQueryParameters : QueryParametersBase {

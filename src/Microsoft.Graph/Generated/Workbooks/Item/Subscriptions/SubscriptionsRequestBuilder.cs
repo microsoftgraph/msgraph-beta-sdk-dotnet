@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Subscriptions {
         /// </summary>
         public async Task<SubscriptionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SubscriptionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SubscriptionsResponse>(requestInfo, SubscriptionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The set of subscriptions on the item. Only supported on the root of a drive.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Subscriptions {
         public async Task<Subscription> PostAsync(Subscription body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Subscription>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Subscription>(requestInfo, Subscription.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The set of subscriptions on the item. Only supported on the root of a drive.</summary>
         public class GetQueryParameters : QueryParametersBase {

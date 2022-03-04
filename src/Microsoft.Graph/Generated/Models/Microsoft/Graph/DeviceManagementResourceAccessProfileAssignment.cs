@@ -12,13 +12,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Base type for assignment targets.</summary>
         public DeviceAndAppManagementAssignmentTarget Target { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementResourceAccessProfileAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementResourceAccessProfileAssignment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"intent", (o,n) => { (o as DeviceManagementResourceAccessProfileAssignment).Intent = n.GetEnumValue<DeviceManagementResourceAccessProfileIntent>(); } },
                 {"sourceId", (o,n) => { (o as DeviceManagementResourceAccessProfileAssignment).SourceId = n.GetStringValue(); } },
-                {"target", (o,n) => { (o as DeviceManagementResourceAccessProfileAssignment).Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(); } },
+                {"target", (o,n) => { (o as DeviceManagementResourceAccessProfileAssignment).Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

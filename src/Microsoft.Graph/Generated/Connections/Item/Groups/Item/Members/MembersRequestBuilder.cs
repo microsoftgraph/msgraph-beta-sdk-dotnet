@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Connections.Item.Groups.Item.Members {
         /// </summary>
         public async Task<MembersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MembersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MembersResponse>(requestInfo, MembersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Connections.Item.Groups.Item.Members {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Identity body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Identity>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Identity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.</summary>
         public class GetQueryParameters : QueryParametersBase {

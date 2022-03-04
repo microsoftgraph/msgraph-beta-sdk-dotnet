@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceShellScripts.Item.UserRunStat
         /// </summary>
         public async Task<DeviceRunStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceRunStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceRunStatesResponse>(requestInfo, DeviceRunStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of run states for this script across all devices of specific user.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceShellScripts.Item.UserRunStat
         public async Task<DeviceManagementScriptDeviceState> PostAsync(DeviceManagementScriptDeviceState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementScriptDeviceState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementScriptDeviceState>(requestInfo, DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of run states for this script across all devices of specific user.</summary>
         public class GetQueryParameters : QueryParametersBase {

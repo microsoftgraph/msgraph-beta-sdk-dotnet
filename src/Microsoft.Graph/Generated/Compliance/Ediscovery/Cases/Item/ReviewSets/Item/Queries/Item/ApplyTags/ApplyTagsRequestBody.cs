@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Que
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ApplyTagsRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ApplyTagsRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"tagsToAdd", (o,n) => { (o as ApplyTagsRequestBody).TagsToAdd = n.GetCollectionOfObjectValues<Tag>().ToList(); } },
-                {"tagsToRemove", (o,n) => { (o as ApplyTagsRequestBody).TagsToRemove = n.GetCollectionOfObjectValues<Tag>().ToList(); } },
+                {"tagsToAdd", (o,n) => { (o as ApplyTagsRequestBody).TagsToAdd = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue).ToList(); } },
+                {"tagsToRemove", (o,n) => { (o as ApplyTagsRequestBody).TagsToRemove = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

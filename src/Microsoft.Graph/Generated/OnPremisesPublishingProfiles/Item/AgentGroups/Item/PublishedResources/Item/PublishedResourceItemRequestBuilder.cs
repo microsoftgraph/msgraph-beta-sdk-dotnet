@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.AgentGroups.Item.P
         /// </summary>
         public async Task<PublishedResource> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PublishedResource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PublishedResource>(requestInfo, PublishedResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of publishedResource that are assigned to an onPremisesAgentGroup. Read-only. Nullable.

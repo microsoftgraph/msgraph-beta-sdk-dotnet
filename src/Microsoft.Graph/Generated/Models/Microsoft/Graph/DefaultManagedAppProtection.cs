@@ -100,6 +100,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped</summary>
         public int? WipeAfterCompanyPortalUpdateDeferralInDays { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DefaultManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DefaultManagedAppProtection();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -114,7 +122,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"appActionIfDeviceLockNotSet", (o,n) => { (o as DefaultManagedAppProtection).AppActionIfDeviceLockNotSet = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfIosDeviceModelNotAllowed", (o,n) => { (o as DefaultManagedAppProtection).AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appDataEncryptionType", (o,n) => { (o as DefaultManagedAppProtection).AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
-                {"apps", (o,n) => { (o as DefaultManagedAppProtection).Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>().ToList(); } },
+                {"apps", (o,n) => { (o as DefaultManagedAppProtection).Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue).ToList(); } },
                 {"biometricAuthenticationBlocked", (o,n) => { (o as DefaultManagedAppProtection).BiometricAuthenticationBlocked = n.GetBoolValue(); } },
                 {"blockAfterCompanyPortalUpdateDeferralInDays", (o,n) => { (o as DefaultManagedAppProtection).BlockAfterCompanyPortalUpdateDeferralInDays = n.GetIntValue(); } },
                 {"connectToVpnOnLaunch", (o,n) => { (o as DefaultManagedAppProtection).ConnectToVpnOnLaunch = n.GetBoolValue(); } },
@@ -124,15 +132,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"customDialerAppDisplayName", (o,n) => { (o as DefaultManagedAppProtection).CustomDialerAppDisplayName = n.GetStringValue(); } },
                 {"customDialerAppPackageId", (o,n) => { (o as DefaultManagedAppProtection).CustomDialerAppPackageId = n.GetStringValue(); } },
                 {"customDialerAppProtocol", (o,n) => { (o as DefaultManagedAppProtection).CustomDialerAppProtocol = n.GetStringValue(); } },
-                {"customSettings", (o,n) => { (o as DefaultManagedAppProtection).CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"customSettings", (o,n) => { (o as DefaultManagedAppProtection).CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"deployedAppCount", (o,n) => { (o as DefaultManagedAppProtection).DeployedAppCount = n.GetIntValue(); } },
-                {"deploymentSummary", (o,n) => { (o as DefaultManagedAppProtection).DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(); } },
+                {"deploymentSummary", (o,n) => { (o as DefaultManagedAppProtection).DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 {"deviceLockRequired", (o,n) => { (o as DefaultManagedAppProtection).DeviceLockRequired = n.GetBoolValue(); } },
                 {"disableAppEncryptionIfDeviceEncryptionIsEnabled", (o,n) => { (o as DefaultManagedAppProtection).DisableAppEncryptionIfDeviceEncryptionIsEnabled = n.GetBoolValue(); } },
                 {"disableProtectionOfManagedOutboundOpenInData", (o,n) => { (o as DefaultManagedAppProtection).DisableProtectionOfManagedOutboundOpenInData = n.GetBoolValue(); } },
                 {"encryptAppData", (o,n) => { (o as DefaultManagedAppProtection).EncryptAppData = n.GetBoolValue(); } },
-                {"exemptedAppPackages", (o,n) => { (o as DefaultManagedAppProtection).ExemptedAppPackages = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
-                {"exemptedAppProtocols", (o,n) => { (o as DefaultManagedAppProtection).ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"exemptedAppPackages", (o,n) => { (o as DefaultManagedAppProtection).ExemptedAppPackages = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"exemptedAppProtocols", (o,n) => { (o as DefaultManagedAppProtection).ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"faceIdBlocked", (o,n) => { (o as DefaultManagedAppProtection).FaceIdBlocked = n.GetBoolValue(); } },
                 {"filterOpenInToOnlyManagedApps", (o,n) => { (o as DefaultManagedAppProtection).FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
                 {"minimumRequiredCompanyPortalVersion", (o,n) => { (o as DefaultManagedAppProtection).MinimumRequiredCompanyPortalVersion = n.GetStringValue(); } },

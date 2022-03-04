@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.TransitiveRoleA
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.

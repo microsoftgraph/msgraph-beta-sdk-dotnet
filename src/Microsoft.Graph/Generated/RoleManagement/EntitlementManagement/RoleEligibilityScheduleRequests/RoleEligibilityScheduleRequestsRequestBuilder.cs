@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibility
         /// </summary>
         public async Task<RoleEligibilityScheduleRequestsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleEligibilityScheduleRequestsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleEligibilityScheduleRequestsResponse>(requestInfo, RoleEligibilityScheduleRequestsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to roleEligibilityScheduleRequests for roleManagement
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleEligibility
         public async Task<UnifiedRoleEligibilityScheduleRequest> PostAsync(UnifiedRoleEligibilityScheduleRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleRequest>(requestInfo, UnifiedRoleEligibilityScheduleRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get roleEligibilityScheduleRequests from roleManagement</summary>
         public class GetQueryParameters : QueryParametersBase {

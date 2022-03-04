@@ -131,7 +131,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSu
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics regression summary

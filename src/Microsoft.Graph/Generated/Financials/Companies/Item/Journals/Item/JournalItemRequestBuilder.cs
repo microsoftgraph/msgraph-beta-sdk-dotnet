@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.Journals.Item {
         /// </summary>
         public async Task<Journal> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Journal>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Journal>(requestInfo, Journal.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property journals in financials

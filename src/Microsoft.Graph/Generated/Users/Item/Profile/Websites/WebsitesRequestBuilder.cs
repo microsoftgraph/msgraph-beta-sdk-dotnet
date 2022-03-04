@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Websites {
         /// </summary>
         public async Task<WebsitesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WebsitesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WebsitesResponse>(requestInfo, WebsitesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents detailed information about websites associated with a user in various services.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Websites {
         public async Task<PersonWebsite> PostAsync(PersonWebsite body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PersonWebsite>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonWebsite>(requestInfo, PersonWebsite.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents detailed information about websites associated with a user in various services.</summary>
         public class GetQueryParameters : QueryParametersBase {

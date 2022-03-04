@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Follow {
         /// </summary>
         public async Task<FollowResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<FollowResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<FollowResponse>(requestInfo, FollowResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes driveItem</summary>
         public class FollowResponse : IParsable {
@@ -81,12 +81,16 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Follow {
             public FollowResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static FollowResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new FollowResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"driveItem", (o,n) => { (o as FollowResponse).DriveItem = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(); } },
+                    {"driveItem", (o,n) => { (o as FollowResponse).DriveItem = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

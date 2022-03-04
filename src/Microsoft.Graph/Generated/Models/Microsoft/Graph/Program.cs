@@ -12,11 +12,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The name of the program.  Required on create.</summary>
         public string DisplayName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Program CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Program();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"controls", (o,n) => { (o as Program).Controls = n.GetCollectionOfObjectValues<ProgramControl>().ToList(); } },
+                {"controls", (o,n) => { (o as Program).Controls = n.GetCollectionOfObjectValues<ProgramControl>(ProgramControl.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as Program).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Program).DisplayName = n.GetStringValue(); } },
             };

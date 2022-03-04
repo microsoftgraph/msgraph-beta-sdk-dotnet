@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Threads.Item {
         /// </summary>
         public async Task<ConversationThread> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConversationThread>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConversationThread>(requestInfo, ConversationThread.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The group's conversation threads. Nullable.

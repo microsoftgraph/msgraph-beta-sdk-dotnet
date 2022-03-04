@@ -30,19 +30,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The template's version information</summary>
         public string VersionInfo { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementTemplate CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementTemplate();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"categories", (o,n) => { (o as DeviceManagementTemplate).Categories = n.GetCollectionOfObjectValues<DeviceManagementTemplateSettingCategory>().ToList(); } },
+                {"categories", (o,n) => { (o as DeviceManagementTemplate).Categories = n.GetCollectionOfObjectValues<DeviceManagementTemplateSettingCategory>(DeviceManagementTemplateSettingCategory.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as DeviceManagementTemplate).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as DeviceManagementTemplate).DisplayName = n.GetStringValue(); } },
                 {"intentCount", (o,n) => { (o as DeviceManagementTemplate).IntentCount = n.GetIntValue(); } },
                 {"isDeprecated", (o,n) => { (o as DeviceManagementTemplate).IsDeprecated = n.GetBoolValue(); } },
-                {"migratableTo", (o,n) => { (o as DeviceManagementTemplate).MigratableTo = n.GetCollectionOfObjectValues<DeviceManagementTemplate>().ToList(); } },
+                {"migratableTo", (o,n) => { (o as DeviceManagementTemplate).MigratableTo = n.GetCollectionOfObjectValues<DeviceManagementTemplate>(DeviceManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
                 {"platformType", (o,n) => { (o as DeviceManagementTemplate).PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
                 {"publishedDateTime", (o,n) => { (o as DeviceManagementTemplate).PublishedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"settings", (o,n) => { (o as DeviceManagementTemplate).Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>().ToList(); } },
+                {"settings", (o,n) => { (o as DeviceManagementTemplate).Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue).ToList(); } },
                 {"templateSubtype", (o,n) => { (o as DeviceManagementTemplate).TemplateSubtype = n.GetEnumValue<DeviceManagementTemplateSubtype>(); } },
                 {"templateType", (o,n) => { (o as DeviceManagementTemplate).TemplateType = n.GetEnumValue<DeviceManagementTemplateType>(); } },
                 {"versionInfo", (o,n) => { (o as DeviceManagementTemplate).VersionInfo = n.GetStringValue(); } },

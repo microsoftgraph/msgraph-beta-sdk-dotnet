@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Defi
         /// </summary>
         public async Task<DefinitionValuesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DefinitionValuesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DefinitionValuesResponse>(requestInfo, DefinitionValuesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of enabled or disabled group policy definition values for the configuration.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Defi
         public async Task<GroupPolicyDefinitionValue> PostAsync(GroupPolicyDefinitionValue body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyDefinitionValue>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyDefinitionValue>(requestInfo, GroupPolicyDefinitionValue.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of enabled or disabled group policy definition values for the configuration.</summary>
         public class GetQueryParameters : QueryParametersBase {

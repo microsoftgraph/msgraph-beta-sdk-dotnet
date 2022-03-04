@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards {
         /// </summary>
         public async Task<TimeCardsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TimeCardsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TimeCardsResponse>(requestInfo, TimeCardsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to timeCards for teams
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards {
         public async Task<TimeCard> PostAsync(TimeCard body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TimeCard>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get timeCards from teams</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Me.Profile.EducationalActivities.Item {
         /// </summary>
         public async Task<EducationalActivity> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EducationalActivity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationalActivity>(requestInfo, EducationalActivity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.

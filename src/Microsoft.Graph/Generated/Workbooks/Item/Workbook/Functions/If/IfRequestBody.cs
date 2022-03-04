@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.If {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static IfRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new IfRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"logicalTest", (o,n) => { (o as IfRequestBody).LogicalTest = n.GetObjectValue<Json>(); } },
-                {"valueIfFalse", (o,n) => { (o as IfRequestBody).ValueIfFalse = n.GetObjectValue<Json>(); } },
-                {"valueIfTrue", (o,n) => { (o as IfRequestBody).ValueIfTrue = n.GetObjectValue<Json>(); } },
+                {"logicalTest", (o,n) => { (o as IfRequestBody).LogicalTest = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"valueIfFalse", (o,n) => { (o as IfRequestBody).ValueIfFalse = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"valueIfTrue", (o,n) => { (o as IfRequestBody).ValueIfTrue = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

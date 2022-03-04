@@ -6,13 +6,21 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class MeetingRegistrationQuestion : Entity, IParsable {
         /// <summary>Answer input type of the custom registration question.</summary>
-        public AnswerInputType? AnswerInputType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AnswerInputType? AnswerInputType { get; set; }
         /// <summary>Answer options when answerInputType is radioButton.</summary>
         public List<string> AnswerOptions { get; set; }
         /// <summary>Display name of the custom registration question.</summary>
         public string DisplayName { get; set; }
         /// <summary>Indicates whether the question is required. Default value is false.</summary>
         public bool? IsRequired { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MeetingRegistrationQuestion CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MeetingRegistrationQuestion();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

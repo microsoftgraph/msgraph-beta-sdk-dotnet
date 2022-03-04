@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssign
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TermsAndConditions.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
         public class GetQueryParameters : QueryParametersBase {

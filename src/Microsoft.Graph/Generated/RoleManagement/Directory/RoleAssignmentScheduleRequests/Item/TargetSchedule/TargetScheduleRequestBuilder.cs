@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleAssignmentScheduleReque
         /// </summary>
         public async Task<UnifiedRoleAssignmentSchedule> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentSchedule>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentSchedule>(requestInfo, UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Property indicating the schedule for an eligible role assignment.</summary>
         public class GetQueryParameters : QueryParametersBase {

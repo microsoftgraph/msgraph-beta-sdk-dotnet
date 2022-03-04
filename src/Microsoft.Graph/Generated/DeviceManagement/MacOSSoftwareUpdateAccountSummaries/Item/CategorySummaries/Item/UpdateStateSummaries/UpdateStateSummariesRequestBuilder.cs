@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
         /// </summary>
         public async Task<UpdateStateSummariesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UpdateStateSummariesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdateStateSummariesResponse>(requestInfo, UpdateStateSummariesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Summary of the update states.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
         public async Task<MacOSSoftwareUpdateStateSummary> PostAsync(MacOSSoftwareUpdateStateSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateStateSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateStateSummary>(requestInfo, MacOSSoftwareUpdateStateSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Summary of the update states.</summary>
         public class GetQueryParameters : QueryParametersBase {

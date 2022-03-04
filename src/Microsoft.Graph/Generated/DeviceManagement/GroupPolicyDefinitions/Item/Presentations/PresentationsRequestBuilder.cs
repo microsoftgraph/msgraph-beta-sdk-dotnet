@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.Present
         /// </summary>
         public async Task<PresentationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PresentationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PresentationsResponse>(requestInfo, PresentationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The group policy presentations associated with the definition.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.Present
         public async Task<GroupPolicyPresentation> PostAsync(GroupPolicyPresentation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyPresentation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyPresentation>(requestInfo, GroupPolicyPresentation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The group policy presentations associated with the definition.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Resources {
         /// </summary>
         public async Task<ResourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ResourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ResourcesResponse>(requestInfo, ResourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Resources {
         public async Task<EducationAssignmentResource> PostAsync(EducationAssignmentResource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EducationAssignmentResource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationAssignmentResource>(requestInfo, EducationAssignmentResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

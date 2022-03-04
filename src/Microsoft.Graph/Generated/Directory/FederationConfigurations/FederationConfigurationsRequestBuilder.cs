@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.Directory.FederationConfigurations {
         /// </summary>
         public async Task<FederationConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<FederationConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<FederationConfigurationsResponse>(requestInfo, FederationConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.Directory.FederationConfigurations {
         public async Task<IdentityProviderBase> PostAsync(IdentityProviderBase body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<IdentityProviderBase>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IdentityProviderBase>(requestInfo, IdentityProviderBase.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.</summary>
         public class GetQueryParameters : QueryParametersBase {

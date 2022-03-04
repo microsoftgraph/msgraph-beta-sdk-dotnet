@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Domains.Item.DomainNameReferences {
         /// </summary>
         public async Task<DomainNameReferencesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DomainNameReferencesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DomainNameReferencesResponse>(requestInfo, DomainNameReferencesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only, Nullable</summary>
         public class GetQueryParameters : QueryParametersBase {

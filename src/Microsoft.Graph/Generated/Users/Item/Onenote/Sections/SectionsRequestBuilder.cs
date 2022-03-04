@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Sections {
         /// </summary>
         public async Task<SectionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SectionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SectionsResponse>(requestInfo, SectionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Sections {
         public async Task<OnenoteSection> PostAsync(OnenoteSection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OnenoteSection>(requestInfo, OnenoteSection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

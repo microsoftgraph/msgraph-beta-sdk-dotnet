@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Date {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DateRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DateRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"day", (o,n) => { (o as DateRequestBody).Day = n.GetObjectValue<Json>(); } },
-                {"month", (o,n) => { (o as DateRequestBody).Month = n.GetObjectValue<Json>(); } },
-                {"year", (o,n) => { (o as DateRequestBody).Year = n.GetObjectValue<Json>(); } },
+                {"day", (o,n) => { (o as DateRequestBody).Day = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"month", (o,n) => { (o as DateRequestBody).Month = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"year", (o,n) => { (o as DateRequestBody).Year = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

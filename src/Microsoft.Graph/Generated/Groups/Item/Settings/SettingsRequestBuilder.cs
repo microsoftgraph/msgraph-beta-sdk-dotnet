@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Settings {
         /// </summary>
         public async Task<SettingsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SettingsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SettingsResponse>(requestInfo, SettingsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Settings {
         public async Task<DirectorySetting> PostAsync(DirectorySetting body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DirectorySetting>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DirectorySetting>(requestInfo, DirectorySetting.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

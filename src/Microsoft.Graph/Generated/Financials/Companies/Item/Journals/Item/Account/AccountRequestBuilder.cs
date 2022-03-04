@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.Journals.Item.Account {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Account> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Account>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Account>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Account.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property account in financials

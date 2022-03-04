@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         /// <summary>Settings to configure use of Giphy, memes, and stickers in the team.</summary>
         public TeamFunSettings FunSettings { get; set; }
-        public Group Group { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Group Group { get; set; }
         /// <summary>Settings to configure whether guests can create, update, or delete channels in the team.</summary>
         public TeamGuestSettings GuestSettings { get; set; }
         /// <summary>The apps installed in this team.</summary>
@@ -47,9 +47,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The general channel for the team.</summary>
         public Channel PrimaryChannel { get; set; }
         /// <summary>The schedule of shifts for this team.</summary>
-        public Schedule Schedule { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule Schedule { get; set; }
         /// <summary>Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.</summary>
         public TeamSpecialization? Specialization { get; set; }
+        public TeamSummary Summary { get; set; }
         /// <summary>The tags associated with the team.</summary>
         public List<TeamworkTag> Tags { get; set; }
         /// <summary>The template this team was created from. See available templates.</summary>
@@ -59,35 +60,44 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.</summary>
         public string WebUrl { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Team CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Team();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"channels", (o,n) => { (o as Team).Channels = n.GetCollectionOfObjectValues<Channel>().ToList(); } },
+                {"channels", (o,n) => { (o as Team).Channels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue).ToList(); } },
                 {"classification", (o,n) => { (o as Team).Classification = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as Team).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as Team).Description = n.GetStringValue(); } },
-                {"discoverySettings", (o,n) => { (o as Team).DiscoverySettings = n.GetObjectValue<TeamDiscoverySettings>(); } },
+                {"discoverySettings", (o,n) => { (o as Team).DiscoverySettings = n.GetObjectValue<TeamDiscoverySettings>(TeamDiscoverySettings.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as Team).DisplayName = n.GetStringValue(); } },
-                {"funSettings", (o,n) => { (o as Team).FunSettings = n.GetObjectValue<TeamFunSettings>(); } },
-                {"group", (o,n) => { (o as Team).Group = n.GetObjectValue<Group>(); } },
-                {"guestSettings", (o,n) => { (o as Team).GuestSettings = n.GetObjectValue<TeamGuestSettings>(); } },
-                {"installedApps", (o,n) => { (o as Team).InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>().ToList(); } },
+                {"funSettings", (o,n) => { (o as Team).FunSettings = n.GetObjectValue<TeamFunSettings>(TeamFunSettings.CreateFromDiscriminatorValue); } },
+                {"group", (o,n) => { (o as Team).Group = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>(MicrosoftGraphSdk.Models.Microsoft.Graph.Group.CreateFromDiscriminatorValue); } },
+                {"guestSettings", (o,n) => { (o as Team).GuestSettings = n.GetObjectValue<TeamGuestSettings>(TeamGuestSettings.CreateFromDiscriminatorValue); } },
+                {"installedApps", (o,n) => { (o as Team).InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>(TeamsAppInstallation.CreateFromDiscriminatorValue).ToList(); } },
                 {"internalId", (o,n) => { (o as Team).InternalId = n.GetStringValue(); } },
                 {"isArchived", (o,n) => { (o as Team).IsArchived = n.GetBoolValue(); } },
                 {"isMembershipLimitedToOwners", (o,n) => { (o as Team).IsMembershipLimitedToOwners = n.GetBoolValue(); } },
-                {"members", (o,n) => { (o as Team).Members = n.GetCollectionOfObjectValues<ConversationMember>().ToList(); } },
-                {"memberSettings", (o,n) => { (o as Team).MemberSettings = n.GetObjectValue<TeamMemberSettings>(); } },
-                {"messagingSettings", (o,n) => { (o as Team).MessagingSettings = n.GetObjectValue<TeamMessagingSettings>(); } },
-                {"operations", (o,n) => { (o as Team).Operations = n.GetCollectionOfObjectValues<TeamsAsyncOperation>().ToList(); } },
-                {"owners", (o,n) => { (o as Team).Owners = n.GetCollectionOfObjectValues<User>().ToList(); } },
-                {"permissionGrants", (o,n) => { (o as Team).PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>().ToList(); } },
-                {"photo", (o,n) => { (o as Team).Photo = n.GetObjectValue<ProfilePhoto>(); } },
-                {"primaryChannel", (o,n) => { (o as Team).PrimaryChannel = n.GetObjectValue<Channel>(); } },
-                {"schedule", (o,n) => { (o as Team).Schedule = n.GetObjectValue<Schedule>(); } },
+                {"members", (o,n) => { (o as Team).Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue).ToList(); } },
+                {"memberSettings", (o,n) => { (o as Team).MemberSettings = n.GetObjectValue<TeamMemberSettings>(TeamMemberSettings.CreateFromDiscriminatorValue); } },
+                {"messagingSettings", (o,n) => { (o as Team).MessagingSettings = n.GetObjectValue<TeamMessagingSettings>(TeamMessagingSettings.CreateFromDiscriminatorValue); } },
+                {"operations", (o,n) => { (o as Team).Operations = n.GetCollectionOfObjectValues<TeamsAsyncOperation>(TeamsAsyncOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"owners", (o,n) => { (o as Team).Owners = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue).ToList(); } },
+                {"permissionGrants", (o,n) => { (o as Team).PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue).ToList(); } },
+                {"photo", (o,n) => { (o as Team).Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
+                {"primaryChannel", (o,n) => { (o as Team).PrimaryChannel = n.GetObjectValue<Channel>(Channel.CreateFromDiscriminatorValue); } },
+                {"schedule", (o,n) => { (o as Team).Schedule = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule>(MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule.CreateFromDiscriminatorValue); } },
                 {"specialization", (o,n) => { (o as Team).Specialization = n.GetEnumValue<TeamSpecialization>(); } },
-                {"tags", (o,n) => { (o as Team).Tags = n.GetCollectionOfObjectValues<TeamworkTag>().ToList(); } },
-                {"template", (o,n) => { (o as Team).Template = n.GetObjectValue<TeamsTemplate>(); } },
+                {"summary", (o,n) => { (o as Team).Summary = n.GetObjectValue<TeamSummary>(TeamSummary.CreateFromDiscriminatorValue); } },
+                {"tags", (o,n) => { (o as Team).Tags = n.GetCollectionOfObjectValues<TeamworkTag>(TeamworkTag.CreateFromDiscriminatorValue).ToList(); } },
+                {"template", (o,n) => { (o as Team).Template = n.GetObjectValue<TeamsTemplate>(TeamsTemplate.CreateFromDiscriminatorValue); } },
                 {"visibility", (o,n) => { (o as Team).Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
                 {"webUrl", (o,n) => { (o as Team).WebUrl = n.GetStringValue(); } },
             };
@@ -106,7 +116,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<TeamDiscoverySettings>("discoverySettings", DiscoverySettings);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<TeamFunSettings>("funSettings", FunSettings);
-            writer.WriteObjectValue<Group>("group", Group);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>("group", Group);
             writer.WriteObjectValue<TeamGuestSettings>("guestSettings", GuestSettings);
             writer.WriteCollectionOfObjectValues<TeamsAppInstallation>("installedApps", InstalledApps);
             writer.WriteStringValue("internalId", InternalId);
@@ -120,8 +130,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
             writer.WriteObjectValue<ProfilePhoto>("photo", Photo);
             writer.WriteObjectValue<Channel>("primaryChannel", PrimaryChannel);
-            writer.WriteObjectValue<Schedule>("schedule", Schedule);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Schedule>("schedule", Schedule);
             writer.WriteEnumValue<TeamSpecialization>("specialization", Specialization);
+            writer.WriteObjectValue<TeamSummary>("summary", Summary);
             writer.WriteCollectionOfObjectValues<TeamworkTag>("tags", Tags);
             writer.WriteObjectValue<TeamsTemplate>("template", Template);
             writer.WriteEnumValue<TeamVisibilityType>("visibility", Visibility);

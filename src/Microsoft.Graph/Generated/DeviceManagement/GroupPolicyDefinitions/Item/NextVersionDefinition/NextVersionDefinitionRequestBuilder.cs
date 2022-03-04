@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyDefinitions.Item.NextVer
         /// </summary>
         public async Task<GroupPolicyDefinition> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyDefinition>(requestInfo, GroupPolicyDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Definition of the next version of this definition

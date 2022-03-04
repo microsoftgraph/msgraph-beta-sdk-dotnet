@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item.UserConsentReq
         /// </summary>
         public async Task<UserConsentRequestsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserConsentRequestsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserConsentRequestsResponse>(requestInfo, UserConsentRequestsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A list of pending user consent requests.
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.Me.AppConsentRequestsForApproval.Item.UserConsentReq
         public async Task<UserConsentRequest> PostAsync(UserConsentRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserConsentRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserConsentRequest>(requestInfo, UserConsentRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A list of pending user consent requests.</summary>
         public class GetQueryParameters : QueryParametersBase {

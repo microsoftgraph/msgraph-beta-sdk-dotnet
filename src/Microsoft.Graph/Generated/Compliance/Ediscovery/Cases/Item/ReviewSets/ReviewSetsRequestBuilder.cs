@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets {
         /// </summary>
         public async Task<ReviewSetsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ReviewSetsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ReviewSetsResponse>(requestInfo, ReviewSetsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Returns a list of reviewSet objects in the case. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets {
         public async Task<ReviewSet> PostAsync(ReviewSet body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ReviewSet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ReviewSet>(requestInfo, ReviewSet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Returns a list of reviewSet objects in the case. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

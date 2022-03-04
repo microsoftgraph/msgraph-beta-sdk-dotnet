@@ -12,12 +12,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
         public string UserId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MobileAppIntentAndState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MobileAppIntentAndState();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"managedDeviceIdentifier", (o,n) => { (o as MobileAppIntentAndState).ManagedDeviceIdentifier = n.GetStringValue(); } },
-                {"mobileAppList", (o,n) => { (o as MobileAppIntentAndState).MobileAppList = n.GetCollectionOfObjectValues<MobileAppIntentAndStateDetail>().ToList(); } },
+                {"mobileAppList", (o,n) => { (o as MobileAppIntentAndState).MobileAppList = n.GetCollectionOfObjectValues<MobileAppIntentAndStateDetail>(MobileAppIntentAndStateDetail.CreateFromDiscriminatorValue).ToList(); } },
                 {"userId", (o,n) => { (o as MobileAppIntentAndState).UserId = n.GetStringValue(); } },
             };
         }

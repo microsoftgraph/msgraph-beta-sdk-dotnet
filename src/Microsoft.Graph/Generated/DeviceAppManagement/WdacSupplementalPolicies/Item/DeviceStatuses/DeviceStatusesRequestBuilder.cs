@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.De
         /// </summary>
         public async Task<DeviceStatusesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceStatusesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceStatusesResponse>(requestInfo, DeviceStatusesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WdacSupplementalPolicies.Item.De
         public async Task<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> PostAsync(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(requestInfo, WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.</summary>
         public class GetQueryParameters : QueryParametersBase {

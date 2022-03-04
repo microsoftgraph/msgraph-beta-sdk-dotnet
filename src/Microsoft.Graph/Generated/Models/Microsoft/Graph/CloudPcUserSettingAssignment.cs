@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The assignment target for the user setting. Currently, the only target supported for this user setting is a user group. For details, see cloudPcManagementGroupAssignmentTarget.</summary>
         public CloudPcManagementAssignmentTarget Target { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CloudPcUserSettingAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CloudPcUserSettingAssignment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"createdDateTime", (o,n) => { (o as CloudPcUserSettingAssignment).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"target", (o,n) => { (o as CloudPcUserSettingAssignment).Target = n.GetObjectValue<CloudPcManagementAssignmentTarget>(); } },
+                {"target", (o,n) => { (o as CloudPcUserSettingAssignment).Target = n.GetObjectValue<CloudPcManagementAssignmentTarget>(CloudPcManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

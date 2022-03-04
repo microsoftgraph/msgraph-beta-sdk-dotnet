@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.Decisions.Item {
         /// </summary>
         public async Task<AccessReviewInstanceDecisionItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AccessReviewInstanceDecisionItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccessReviewInstanceDecisionItem>(requestInfo, AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents an Azure AD access review decision on an instance of a review.

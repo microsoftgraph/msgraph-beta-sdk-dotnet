@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Me.Planner.RecentPlans {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static RecentPlansResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RecentPlansResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as RecentPlansResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as RecentPlansResponse).Value = n.GetCollectionOfObjectValues<PlannerPlan>().ToList(); } },
+                {"value", (o,n) => { (o as RecentPlansResponse).Value = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

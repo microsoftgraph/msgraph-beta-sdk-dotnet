@@ -22,12 +22,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AuthenticationMethodsRegistrationCampaign CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AuthenticationMethodsRegistrationCampaign();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"excludeTargets", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).ExcludeTargets = n.GetCollectionOfObjectValues<ExcludeTarget>().ToList(); } },
-                {"includeTargets", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodsRegistrationCampaignIncludeTarget>().ToList(); } },
+                {"excludeTargets", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).ExcludeTargets = n.GetCollectionOfObjectValues<ExcludeTarget>(ExcludeTarget.CreateFromDiscriminatorValue).ToList(); } },
+                {"includeTargets", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodsRegistrationCampaignIncludeTarget>(AuthenticationMethodsRegistrationCampaignIncludeTarget.CreateFromDiscriminatorValue).ToList(); } },
                 {"snoozeDurationInDays", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).SnoozeDurationInDays = n.GetIntValue(); } },
                 {"state", (o,n) => { (o as AuthenticationMethodsRegistrationCampaign).State = n.GetEnumValue<AdvancedConfigState>(); } },
             };

@@ -19,11 +19,19 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyExactMatches {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ClassifyExactMatchesRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ClassifyExactMatchesRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"contentClassifications", (o,n) => { (o as ClassifyExactMatchesRequestBody).ContentClassifications = n.GetCollectionOfObjectValues<ContentClassification>().ToList(); } },
+                {"contentClassifications", (o,n) => { (o as ClassifyExactMatchesRequestBody).ContentClassifications = n.GetCollectionOfObjectValues<ContentClassification>(ContentClassification.CreateFromDiscriminatorValue).ToList(); } },
                 {"sensitiveTypeIds", (o,n) => { (o as ClassifyExactMatchesRequestBody).SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"text", (o,n) => { (o as ClassifyExactMatchesRequestBody).Text = n.GetStringValue(); } },
                 {"timeoutInMs", (o,n) => { (o as ClassifyExactMatchesRequestBody).TimeoutInMs = n.GetStringValue(); } },

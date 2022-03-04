@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.Resources {
         /// </summary>
         public async Task<ResourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ResourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ResourcesResponse>(requestInfo, ResourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of resources for the provider.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess.Item.Resources {
         public async Task<GovernanceResource> PostAsync(GovernanceResource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GovernanceResource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceResource>(requestInfo, GovernanceResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of resources for the provider.</summary>
         public class GetQueryParameters : QueryParametersBase {

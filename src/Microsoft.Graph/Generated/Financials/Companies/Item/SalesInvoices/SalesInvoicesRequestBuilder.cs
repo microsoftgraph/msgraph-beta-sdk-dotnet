@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices {
         /// </summary>
         public async Task<SalesInvoicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SalesInvoicesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesInvoicesResponse>(requestInfo, SalesInvoicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to salesInvoices for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices {
         public async Task<SalesInvoice> PostAsync(SalesInvoice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SalesInvoice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesInvoice>(requestInfo, SalesInvoice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get salesInvoices from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

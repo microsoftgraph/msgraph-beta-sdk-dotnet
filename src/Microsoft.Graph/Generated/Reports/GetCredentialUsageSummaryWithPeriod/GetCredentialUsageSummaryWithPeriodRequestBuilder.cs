@@ -69,7 +69,7 @@ namespace MicrosoftGraphSdk.Reports.GetCredentialUsageSummaryWithPeriod {
         /// </summary>
         public async Task<IEnumerable<CredentialUsageSummary>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<CredentialUsageSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<CredentialUsageSummary>(requestInfo, CredentialUsageSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

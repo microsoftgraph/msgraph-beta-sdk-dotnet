@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Activities {
         /// </summary>
         public async Task<ActivitiesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ActivitiesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ActivitiesResponse>(requestInfo, ActivitiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The recent activities that took place within this list.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Activities {
         public async Task<ItemActivityOLD> PostAsync(ItemActivityOLD body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ItemActivityOLD>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemActivityOLD>(requestInfo, ItemActivityOLD.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The recent activities that took place within this list.</summary>
         public class GetQueryParameters : QueryParametersBase {

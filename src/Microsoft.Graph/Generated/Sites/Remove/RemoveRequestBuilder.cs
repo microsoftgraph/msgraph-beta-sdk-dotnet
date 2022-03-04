@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.Sites.Remove {
         public async Task<IEnumerable<Remove>> PostAsync(RemoveRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<Remove>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Remove>(requestInfo, Remove.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

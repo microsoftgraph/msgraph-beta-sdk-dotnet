@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.CustomQuestions {
         /// </summary>
         public async Task<CustomQuestionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CustomQuestionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomQuestionsResponse>(requestInfo, CustomQuestionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// All the custom questions of this business. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.CustomQuestions {
         public async Task<BookingCustomQuestion> PostAsync(BookingCustomQuestion body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>All the custom questions of this business. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

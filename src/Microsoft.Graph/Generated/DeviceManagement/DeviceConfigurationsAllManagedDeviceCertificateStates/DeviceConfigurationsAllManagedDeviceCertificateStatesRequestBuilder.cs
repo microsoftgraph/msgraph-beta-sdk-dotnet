@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurationsAllManagedDevic
         /// </summary>
         public async Task<DeviceConfigurationsAllManagedDeviceCertificateStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceConfigurationsAllManagedDeviceCertificateStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceConfigurationsAllManagedDeviceCertificateStatesResponse>(requestInfo, DeviceConfigurationsAllManagedDeviceCertificateStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Summary of all certificates for all devices.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceConfigurationsAllManagedDevic
         public async Task<ManagedAllDeviceCertificateState> PostAsync(ManagedAllDeviceCertificateState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagedAllDeviceCertificateState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedAllDeviceCertificateState>(requestInfo, ManagedAllDeviceCertificateState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Summary of all certificates for all devices.</summary>
         public class GetQueryParameters : QueryParametersBase {

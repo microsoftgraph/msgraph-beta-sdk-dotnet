@@ -22,11 +22,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ConditionalAccessDevices CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ConditionalAccessDevices();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceFilter", (o,n) => { (o as ConditionalAccessDevices).DeviceFilter = n.GetObjectValue<ConditionalAccessFilter>(); } },
+                {"deviceFilter", (o,n) => { (o as ConditionalAccessDevices).DeviceFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
                 {"excludeDevices", (o,n) => { (o as ConditionalAccessDevices).ExcludeDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"excludeDeviceStates", (o,n) => { (o as ConditionalAccessDevices).ExcludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"includeDevices", (o,n) => { (o as ConditionalAccessDevices).IncludeDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },

@@ -13,13 +13,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.</summary>
         public List<Qna> Qnas { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SearchEntity CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SearchEntity();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acronyms", (o,n) => { (o as SearchEntity).Acronyms = n.GetCollectionOfObjectValues<Acronym>().ToList(); } },
-                {"bookmarks", (o,n) => { (o as SearchEntity).Bookmarks = n.GetCollectionOfObjectValues<Bookmark>().ToList(); } },
-                {"qnas", (o,n) => { (o as SearchEntity).Qnas = n.GetCollectionOfObjectValues<Qna>().ToList(); } },
+                {"acronyms", (o,n) => { (o as SearchEntity).Acronyms = n.GetCollectionOfObjectValues<Acronym>(Acronym.CreateFromDiscriminatorValue).ToList(); } },
+                {"bookmarks", (o,n) => { (o as SearchEntity).Bookmarks = n.GetCollectionOfObjectValues<Bookmark>(Bookmark.CreateFromDiscriminatorValue).ToList(); } },
+                {"qnas", (o,n) => { (o as SearchEntity).Qnas = n.GetCollectionOfObjectValues<Qna>(Qna.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

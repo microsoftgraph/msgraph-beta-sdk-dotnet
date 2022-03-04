@@ -69,7 +69,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSu
         /// </summary>
         public async Task<SummarizeDeviceRegressionPerformanceWithSummarizeByResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<SummarizeDeviceRegressionPerformanceWithSummarizeByResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SummarizeDeviceRegressionPerformanceWithSummarizeByResponse>(requestInfo, SummarizeDeviceRegressionPerformanceWithSummarizeByResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes userExperienceAnalyticsRegressionSummary</summary>
         public class SummarizeDeviceRegressionPerformanceWithSummarizeByResponse : IParsable {
@@ -83,12 +83,16 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRegressionSu
             public SummarizeDeviceRegressionPerformanceWithSummarizeByResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static SummarizeDeviceRegressionPerformanceWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new SummarizeDeviceRegressionPerformanceWithSummarizeByResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"userExperienceAnalyticsRegressionSummary", (o,n) => { (o as SummarizeDeviceRegressionPerformanceWithSummarizeByResponse).UserExperienceAnalyticsRegressionSummary = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>(); } },
+                    {"userExperienceAnalyticsRegressionSummary", (o,n) => { (o as SummarizeDeviceRegressionPerformanceWithSummarizeByResponse).UserExperienceAnalyticsRegressionSummary = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary>(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsRegressionSummary.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

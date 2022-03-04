@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Print.Printers.Item.Share {
         /// </summary>
         public async Task<PrinterShare> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrinterShare>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrinterShare>(requestInfo, PrinterShare.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get share from print</summary>
         public class GetQueryParameters : QueryParametersBase {

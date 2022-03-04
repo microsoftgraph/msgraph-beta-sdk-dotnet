@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Users.Item.Drive {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Drive.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The user's OneDrive. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

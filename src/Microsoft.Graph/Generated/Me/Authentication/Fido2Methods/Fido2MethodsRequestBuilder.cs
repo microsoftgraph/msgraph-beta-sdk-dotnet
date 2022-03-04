@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods {
         /// </summary>
         public async Task<Fido2MethodsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Fido2MethodsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Fido2MethodsResponse>(requestInfo, Fido2MethodsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to fido2Methods for me
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Authentication.Fido2Methods {
         public async Task<Fido2AuthenticationMethod> PostAsync(Fido2AuthenticationMethod body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Fido2AuthenticationMethod>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Fido2AuthenticationMethod>(requestInfo, Fido2AuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get fido2Methods from me</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.Dimensions {
         /// </summary>
         public async Task<DimensionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DimensionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DimensionsResponse>(requestInfo, DimensionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to dimensions for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.Dimensions {
         public async Task<Dimension> PostAsync(Dimension body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Dimension>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Dimension>(requestInfo, Dimension.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get dimensions from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

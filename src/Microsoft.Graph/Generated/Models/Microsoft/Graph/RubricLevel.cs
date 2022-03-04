@@ -22,13 +22,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static RubricLevel CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RubricLevel();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"description", (o,n) => { (o as RubricLevel).Description = n.GetObjectValue<EducationItemBody>(); } },
+                {"description", (o,n) => { (o as RubricLevel).Description = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as RubricLevel).DisplayName = n.GetStringValue(); } },
-                {"grading", (o,n) => { (o as RubricLevel).Grading = n.GetObjectValue<EducationAssignmentGradeType>(); } },
+                {"grading", (o,n) => { (o as RubricLevel).Grading = n.GetObjectValue<EducationAssignmentGradeType>(EducationAssignmentGradeType.CreateFromDiscriminatorValue); } },
                 {"levelId", (o,n) => { (o as RubricLevel).LevelId = n.GetStringValue(); } },
             };
         }

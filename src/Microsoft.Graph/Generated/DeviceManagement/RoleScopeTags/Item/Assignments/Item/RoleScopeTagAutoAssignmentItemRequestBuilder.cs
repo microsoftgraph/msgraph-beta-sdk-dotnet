@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RoleScopeTags.Item.Assignments.Item
         /// </summary>
         public async Task<RoleScopeTagAutoAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleScopeTagAutoAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleScopeTagAutoAssignment>(requestInfo, RoleScopeTagAutoAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of assignments for this Role Scope Tag.

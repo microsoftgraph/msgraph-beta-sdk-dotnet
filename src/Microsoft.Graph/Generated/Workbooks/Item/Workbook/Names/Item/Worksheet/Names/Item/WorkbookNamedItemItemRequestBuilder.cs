@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Names.I
         /// </summary>
         public async Task<WorkbookNamedItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WorkbookNamedItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookNamedItem>(requestInfo, WorkbookNamedItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Returns collection of names that are associated with the worksheet. Read-only.

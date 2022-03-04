@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.External.Connections.Item {
         /// </summary>
         public async Task<ExternalConnection> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property connections in external

@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RoleScopeTags.Item {
         /// </summary>
         public async Task<RoleScopeTag> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleScopeTag>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleScopeTag>(requestInfo, RoleScopeTag.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Role Scope Tags.

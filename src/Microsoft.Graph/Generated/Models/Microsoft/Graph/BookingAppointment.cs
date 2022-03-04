@@ -73,6 +73,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<string> StaffMemberIds { get; set; }
         public DateTimeTimeZone Start { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new BookingAppointment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new BookingAppointment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -80,17 +88,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"additionalInformation", (o,n) => { (o as BookingAppointment).AdditionalInformation = n.GetStringValue(); } },
                 {"customerEmailAddress", (o,n) => { (o as BookingAppointment).CustomerEmailAddress = n.GetStringValue(); } },
                 {"customerId", (o,n) => { (o as BookingAppointment).CustomerId = n.GetStringValue(); } },
-                {"customerLocation", (o,n) => { (o as BookingAppointment).CustomerLocation = n.GetObjectValue<Location>(); } },
+                {"customerLocation", (o,n) => { (o as BookingAppointment).CustomerLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
                 {"customerName", (o,n) => { (o as BookingAppointment).CustomerName = n.GetStringValue(); } },
                 {"customerNotes", (o,n) => { (o as BookingAppointment).CustomerNotes = n.GetStringValue(); } },
                 {"customerPhone", (o,n) => { (o as BookingAppointment).CustomerPhone = n.GetStringValue(); } },
-                {"customers", (o,n) => { (o as BookingAppointment).Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>().ToList(); } },
+                {"customers", (o,n) => { (o as BookingAppointment).Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>(BookingCustomerInformationBase.CreateFromDiscriminatorValue).ToList(); } },
                 {"customerTimeZone", (o,n) => { (o as BookingAppointment).CustomerTimeZone = n.GetStringValue(); } },
                 {"duration", (o,n) => { (o as BookingAppointment).Duration = n.GetTimeSpanValue(); } },
-                {"end", (o,n) => { (o as BookingAppointment).End = n.GetObjectValue<DateTimeTimeZone>(); } },
+                {"end", (o,n) => { (o as BookingAppointment).End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"filledAttendeesCount", (o,n) => { (o as BookingAppointment).FilledAttendeesCount = n.GetIntValue(); } },
                 {"invoiceAmount", (o,n) => { (o as BookingAppointment).InvoiceAmount = n.GetDoubleValue(); } },
-                {"invoiceDate", (o,n) => { (o as BookingAppointment).InvoiceDate = n.GetObjectValue<DateTimeTimeZone>(); } },
+                {"invoiceDate", (o,n) => { (o as BookingAppointment).InvoiceDate = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"invoiceId", (o,n) => { (o as BookingAppointment).InvoiceId = n.GetStringValue(); } },
                 {"invoiceStatus", (o,n) => { (o as BookingAppointment).InvoiceStatus = n.GetEnumValue<BookingInvoiceStatus>(); } },
                 {"invoiceUrl", (o,n) => { (o as BookingAppointment).InvoiceUrl = n.GetStringValue(); } },
@@ -103,15 +111,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"preBuffer", (o,n) => { (o as BookingAppointment).PreBuffer = n.GetTimeSpanValue(); } },
                 {"price", (o,n) => { (o as BookingAppointment).Price = n.GetDoubleValue(); } },
                 {"priceType", (o,n) => { (o as BookingAppointment).PriceType = n.GetEnumValue<BookingPriceType>(); } },
-                {"reminders", (o,n) => { (o as BookingAppointment).Reminders = n.GetCollectionOfObjectValues<BookingReminder>().ToList(); } },
+                {"reminders", (o,n) => { (o as BookingAppointment).Reminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue).ToList(); } },
                 {"selfServiceAppointmentId", (o,n) => { (o as BookingAppointment).SelfServiceAppointmentId = n.GetStringValue(); } },
                 {"serviceId", (o,n) => { (o as BookingAppointment).ServiceId = n.GetStringValue(); } },
-                {"serviceLocation", (o,n) => { (o as BookingAppointment).ServiceLocation = n.GetObjectValue<Location>(); } },
+                {"serviceLocation", (o,n) => { (o as BookingAppointment).ServiceLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
                 {"serviceName", (o,n) => { (o as BookingAppointment).ServiceName = n.GetStringValue(); } },
                 {"serviceNotes", (o,n) => { (o as BookingAppointment).ServiceNotes = n.GetStringValue(); } },
                 {"smsNotificationsEnabled", (o,n) => { (o as BookingAppointment).SmsNotificationsEnabled = n.GetBoolValue(); } },
                 {"staffMemberIds", (o,n) => { (o as BookingAppointment).StaffMemberIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"start", (o,n) => { (o as BookingAppointment).Start = n.GetObjectValue<DateTimeTimeZone>(); } },
+                {"start", (o,n) => { (o as BookingAppointment).Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

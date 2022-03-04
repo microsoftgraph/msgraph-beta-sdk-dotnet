@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Que
         /// </summary>
         public async Task<ReviewSetQuery> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ReviewSetQuery>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ReviewSetQuery>(requestInfo, ReviewSetQuery.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable.

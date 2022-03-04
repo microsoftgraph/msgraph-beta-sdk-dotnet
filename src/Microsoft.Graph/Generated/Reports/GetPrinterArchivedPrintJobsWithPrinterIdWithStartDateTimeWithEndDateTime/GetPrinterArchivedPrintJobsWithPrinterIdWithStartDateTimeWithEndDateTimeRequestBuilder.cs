@@ -23,14 +23,14 @@ namespace MicrosoftGraphSdk.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWith
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// </summary>
-        public GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string printerId = default, DateTimeOffset? startDateTime = default, DateTimeOffset? endDateTime = default) {
+        public GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string printerId = default, DateTimeOffset? endDateTime = default, DateTimeOffset? startDateTime = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId='{printerId}',startDateTime={startDateTime},endDateTime={endDateTime})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             urlTplParams.Add("printerId", printerId);
-            urlTplParams.Add("startDateTime", startDateTime);
             urlTplParams.Add("endDateTime", endDateTime);
+            urlTplParams.Add("startDateTime", startDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWith
         /// </summary>
         public async Task<IEnumerable<GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime>(requestInfo, GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

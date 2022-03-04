@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories {
         /// </summary>
         public async Task<GroupPolicyCategoriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyCategoriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyCategoriesResponse>(requestInfo, GroupPolicyCategoriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The available group policy categories for this account.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyCategories {
         public async Task<GroupPolicyCategory> PostAsync(GroupPolicyCategory body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyCategory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyCategory>(requestInfo, GroupPolicyCategory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The available group policy categories for this account.</summary>
         public class GetQueryParameters : QueryParametersBase {

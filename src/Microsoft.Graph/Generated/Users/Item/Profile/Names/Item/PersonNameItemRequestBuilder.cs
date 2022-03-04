@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Names.Item {
         /// </summary>
         public async Task<PersonName> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PersonName>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonName>(requestInfo, PersonName.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the names a user has added to their profile.

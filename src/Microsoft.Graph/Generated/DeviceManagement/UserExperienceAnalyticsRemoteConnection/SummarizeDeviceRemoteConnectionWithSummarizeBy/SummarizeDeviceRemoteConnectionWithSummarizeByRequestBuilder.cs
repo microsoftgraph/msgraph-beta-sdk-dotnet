@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsRemoteConnec
         /// </summary>
         public async Task<IEnumerable<SummarizeDeviceRemoteConnectionWithSummarizeBy>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<SummarizeDeviceRemoteConnectionWithSummarizeBy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<SummarizeDeviceRemoteConnectionWithSummarizeBy>(requestInfo, SummarizeDeviceRemoteConnectionWithSummarizeBy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

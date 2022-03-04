@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Me.Tasks.Lists.Item.Tasks.Item.ParentList {
         /// </summary>
         public async Task<BaseTaskList> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BaseTaskList>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BaseTaskList>(requestInfo, BaseTaskList.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list which contains the task.</summary>
         public class GetQueryParameters : QueryParametersBase {

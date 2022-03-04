@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.Categories.Item {
         /// </summary>
         public async Task<DeviceManagementIntentSettingCategory> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementIntentSettingCategory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementIntentSettingCategory>(requestInfo, DeviceManagementIntentSettingCategory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of setting categories within the intent

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantsCustomized
         /// </summary>
         public async Task<TenantsCustomizedInformationResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TenantsCustomizedInformationResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantsCustomizedInformationResponse>(requestInfo, TenantsCustomizedInformationResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of tenant level customized information across managed tenants.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantsCustomized
         public async Task<TenantCustomizedInformation> PostAsync(TenantCustomizedInformation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TenantCustomizedInformation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantCustomizedInformation>(requestInfo, TenantCustomizedInformation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of tenant level customized information across managed tenants.</summary>
         public class GetQueryParameters : QueryParametersBase {

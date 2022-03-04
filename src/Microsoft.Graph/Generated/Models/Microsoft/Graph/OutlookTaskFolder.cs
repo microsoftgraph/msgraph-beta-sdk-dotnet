@@ -20,17 +20,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The tasks in this task folder. Read-only. Nullable.</summary>
         public List<OutlookTask> Tasks { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new OutlookTaskFolder CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OutlookTaskFolder();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"changeKey", (o,n) => { (o as OutlookTaskFolder).ChangeKey = n.GetStringValue(); } },
                 {"isDefaultFolder", (o,n) => { (o as OutlookTaskFolder).IsDefaultFolder = n.GetBoolValue(); } },
-                {"multiValueExtendedProperties", (o,n) => { (o as OutlookTaskFolder).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>().ToList(); } },
+                {"multiValueExtendedProperties", (o,n) => { (o as OutlookTaskFolder).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
                 {"name", (o,n) => { (o as OutlookTaskFolder).Name = n.GetStringValue(); } },
                 {"parentGroupKey", (o,n) => { (o as OutlookTaskFolder).ParentGroupKey = n.GetStringValue(); } },
-                {"singleValueExtendedProperties", (o,n) => { (o as OutlookTaskFolder).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>().ToList(); } },
-                {"tasks", (o,n) => { (o as OutlookTaskFolder).Tasks = n.GetCollectionOfObjectValues<OutlookTask>().ToList(); } },
+                {"singleValueExtendedProperties", (o,n) => { (o as OutlookTaskFolder).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"tasks", (o,n) => { (o as OutlookTaskFolder).Tasks = n.GetCollectionOfObjectValues<OutlookTask>(OutlookTask.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

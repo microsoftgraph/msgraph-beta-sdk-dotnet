@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsNotAutopilot
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsNotAutopilotReadyDevice> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsNotAutopilotReadyDevice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsNotAutopilotReadyDevice>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsNotAutopilotReadyDevice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics devices not Windows Autopilot ready.

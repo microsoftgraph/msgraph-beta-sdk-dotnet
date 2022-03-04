@@ -16,13 +16,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user who created the program control.</summary>
         public UserIdentity Owner { get; set; }
         /// <summary>The program this control is part of.</summary>
-        public Program Program { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Program Program { get; set; }
         /// <summary>The programId of the program this control is a part of. Required on create.</summary>
         public string ProgramId { get; set; }
         /// <summary>The resource, a group or an app, targeted by this program control's access review.</summary>
         public ProgramResource Resource { get; set; }
         /// <summary>The life cycle status of the control.</summary>
         public string Status { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ProgramControl CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ProgramControl();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -32,10 +40,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"controlTypeId", (o,n) => { (o as ProgramControl).ControlTypeId = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as ProgramControl).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as ProgramControl).DisplayName = n.GetStringValue(); } },
-                {"owner", (o,n) => { (o as ProgramControl).Owner = n.GetObjectValue<UserIdentity>(); } },
-                {"program", (o,n) => { (o as ProgramControl).Program = n.GetObjectValue<Program>(); } },
+                {"owner", (o,n) => { (o as ProgramControl).Owner = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"program", (o,n) => { (o as ProgramControl).Program = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Program>(MicrosoftGraphSdk.Models.Microsoft.Graph.Program.CreateFromDiscriminatorValue); } },
                 {"programId", (o,n) => { (o as ProgramControl).ProgramId = n.GetStringValue(); } },
-                {"resource", (o,n) => { (o as ProgramControl).Resource = n.GetObjectValue<ProgramResource>(); } },
+                {"resource", (o,n) => { (o as ProgramControl).Resource = n.GetObjectValue<ProgramResource>(ProgramResource.CreateFromDiscriminatorValue); } },
                 {"status", (o,n) => { (o as ProgramControl).Status = n.GetStringValue(); } },
             };
         }
@@ -51,7 +59,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<UserIdentity>("owner", Owner);
-            writer.WriteObjectValue<Program>("program", Program);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Program>("program", Program);
             writer.WriteStringValue("programId", ProgramId);
             writer.WriteObjectValue<ProgramResource>("resource", Resource);
             writer.WriteStringValue("status", Status);

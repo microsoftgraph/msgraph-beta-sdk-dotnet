@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports {
         /// </summary>
         public async Task<GroupPolicyMigrationReportsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyMigrationReportsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyMigrationReportsResponse>(requestInfo, GroupPolicyMigrationReportsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A list of Group Policy migration reports.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyMigrationReports {
         public async Task<GroupPolicyMigrationReport> PostAsync(GroupPolicyMigrationReport body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyMigrationReport>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyMigrationReport>(requestInfo, GroupPolicyMigrationReport.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A list of Group Policy migration reports.</summary>
         public class GetQueryParameters : QueryParametersBase {

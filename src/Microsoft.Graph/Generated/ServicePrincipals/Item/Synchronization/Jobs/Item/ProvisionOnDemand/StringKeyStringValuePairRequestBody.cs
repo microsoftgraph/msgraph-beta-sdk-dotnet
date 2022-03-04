@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Jobs.Item.Pro
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static StringKeyStringValuePairRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new StringKeyStringValuePairRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"parameters", (o,n) => { (o as StringKeyStringValuePairRequestBody).Parameters = n.GetCollectionOfObjectValues<SynchronizationJobApplicationParameters>().ToList(); } },
+                {"parameters", (o,n) => { (o as StringKeyStringValuePairRequestBody).Parameters = n.GetCollectionOfObjectValues<SynchronizationJobApplicationParameters>(SynchronizationJobApplicationParameters.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

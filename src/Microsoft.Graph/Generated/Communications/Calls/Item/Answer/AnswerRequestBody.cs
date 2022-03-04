@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Answer {
         public IDictionary<string, object> AdditionalData { get; set; }
         public string CallbackUri { get; set; }
         public IncomingCallOptions CallOptions { get; set; }
-        public MediaConfig MediaConfig { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig MediaConfig { get; set; }
         public int? ParticipantCapacity { get; set; }
         /// <summary>
         /// Instantiates a new answerRequestBody and sets the default values.
@@ -20,14 +20,22 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Answer {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AnswerRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AnswerRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"acceptedModalities", (o,n) => { (o as AnswerRequestBody).AcceptedModalities = n.GetCollectionOfEnumValues<Modality>().ToList(); } },
                 {"callbackUri", (o,n) => { (o as AnswerRequestBody).CallbackUri = n.GetStringValue(); } },
-                {"callOptions", (o,n) => { (o as AnswerRequestBody).CallOptions = n.GetObjectValue<IncomingCallOptions>(); } },
-                {"mediaConfig", (o,n) => { (o as AnswerRequestBody).MediaConfig = n.GetObjectValue<MediaConfig>(); } },
+                {"callOptions", (o,n) => { (o as AnswerRequestBody).CallOptions = n.GetObjectValue<IncomingCallOptions>(IncomingCallOptions.CreateFromDiscriminatorValue); } },
+                {"mediaConfig", (o,n) => { (o as AnswerRequestBody).MediaConfig = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig>(MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig.CreateFromDiscriminatorValue); } },
                 {"participantCapacity", (o,n) => { (o as AnswerRequestBody).ParticipantCapacity = n.GetIntValue(); } },
             };
         }
@@ -40,7 +48,7 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.Answer {
             writer.WriteCollectionOfEnumValues<Modality>("acceptedModalities", AcceptedModalities);
             writer.WriteStringValue("callbackUri", CallbackUri);
             writer.WriteObjectValue<IncomingCallOptions>("callOptions", CallOptions);
-            writer.WriteObjectValue<MediaConfig>("mediaConfig", MediaConfig);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MediaConfig>("mediaConfig", MediaConfig);
             writer.WriteIntValue("participantCapacity", ParticipantCapacity);
             writer.WriteAdditionalData(AdditionalData);
         }

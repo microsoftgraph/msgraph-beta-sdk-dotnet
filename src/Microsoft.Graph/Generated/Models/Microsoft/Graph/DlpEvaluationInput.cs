@@ -5,10 +5,10 @@ using System.IO;
 using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DlpEvaluationInput : IParsable {
-        public AccessScope? AccessScope { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessScope? AccessScope { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public CurrentLabel CurrentLabel { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel CurrentLabel { get; set; }
         public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
         /// <summary>
         /// Instantiates a new dlpEvaluationInput and sets the default values.
@@ -17,13 +17,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DlpEvaluationInput CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DlpEvaluationInput();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"accessScope", (o,n) => { (o as DlpEvaluationInput).AccessScope = n.GetEnumValue<AccessScope>(); } },
-                {"currentLabel", (o,n) => { (o as DlpEvaluationInput).CurrentLabel = n.GetObjectValue<CurrentLabel>(); } },
-                {"discoveredSensitiveTypes", (o,n) => { (o as DlpEvaluationInput).DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<DiscoveredSensitiveType>().ToList(); } },
+                {"currentLabel", (o,n) => { (o as DlpEvaluationInput).CurrentLabel = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel>(MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel.CreateFromDiscriminatorValue); } },
+                {"discoveredSensitiveTypes", (o,n) => { (o as DlpEvaluationInput).DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<DiscoveredSensitiveType>(DiscoveredSensitiveType.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -33,7 +41,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AccessScope>("accessScope", AccessScope);
-            writer.WriteObjectValue<CurrentLabel>("currentLabel", CurrentLabel);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CurrentLabel>("currentLabel", CurrentLabel);
             writer.WriteCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", DiscoveredSensitiveTypes);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.DeviceStatuses {
         /// </summary>
         public async Task<DeviceStatusesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceStatusesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceStatusesResponse>(requestInfo, DeviceStatusesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of installation states for this mobile app.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.DeviceStatuses {
         public async Task<MobileAppInstallStatus> PostAsync(MobileAppInstallStatus body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MobileAppInstallStatus>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppInstallStatus>(requestInfo, MobileAppInstallStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of installation states for this mobile app.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Users.Item.FollowedSites {
         /// </summary>
         public async Task<FollowedSitesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<FollowedSitesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<FollowedSitesResponse>(requestInfo, FollowedSitesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get followedSites from users</summary>
         public class GetQueryParameters : QueryParametersBase {

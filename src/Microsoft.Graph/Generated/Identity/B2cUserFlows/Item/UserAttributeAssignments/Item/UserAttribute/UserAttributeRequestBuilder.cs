@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.UserAttributeAssignments.
         /// </summary>
         public async Task<IdentityUserFlowAttribute> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IdentityUserFlowAttribute>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IdentityUserFlowAttribute>(requestInfo, IdentityUserFlowAttribute.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The user attribute that you want to add to your user flow.</summary>
         public class GetQueryParameters : QueryParametersBase {

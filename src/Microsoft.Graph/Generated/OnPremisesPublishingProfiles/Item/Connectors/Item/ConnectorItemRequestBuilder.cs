@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors.Item {
         /// </summary>
         public async Task<Connector> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Connector>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Connector>(requestInfo, Connector.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.

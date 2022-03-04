@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleSettings {
         /// </summary>
         public async Task<GovernanceRoleSettingsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GovernanceRoleSettingsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceRoleSettingsResponse>(requestInfo, GovernanceRoleSettingsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to governanceRoleSettings
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleSettings {
         public async Task<GovernanceRoleSetting> PostAsync(GovernanceRoleSetting body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GovernanceRoleSetting>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceRoleSetting>(requestInfo, GovernanceRoleSetting.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from governanceRoleSettings</summary>
         public class GetQueryParameters : QueryParametersBase {

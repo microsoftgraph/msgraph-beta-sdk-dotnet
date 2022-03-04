@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Photos {
         /// </summary>
         public async Task<PhotosResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PhotosResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PhotosResponse>(requestInfo, PhotosResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Photos {
         public async Task<ProfilePhoto> PostAsync(ProfilePhoto body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

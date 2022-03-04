@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources
         /// </summary>
         public async Task<PublishedResource> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PublishedResource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PublishedResource>(requestInfo, PublishedResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of existing publishedResource objects. Read-only. Nullable.

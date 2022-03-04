@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditionStatements.GetMa
         /// </summary>
         public async Task<IEnumerable<GetManagementConditionStatementsForPlatformWithPlatform>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetManagementConditionStatementsForPlatformWithPlatform>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetManagementConditionStatementsForPlatformWithPlatform>(requestInfo, GetManagementConditionStatementsForPlatformWithPlatform.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

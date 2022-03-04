@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Users.Item.Tasks {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Tasks> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Tasks>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Tasks>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Tasks.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property tasks in users

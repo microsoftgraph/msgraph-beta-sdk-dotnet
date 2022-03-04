@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts {
         /// </summary>
         public async Task<DeviceComplianceScriptsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceComplianceScriptsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceComplianceScriptsResponse>(requestInfo, DeviceComplianceScriptsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of device compliance scripts associated with the tenant.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceComplianceScripts {
         public async Task<DeviceComplianceScript> PostAsync(DeviceComplianceScript body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceComplianceScript>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceComplianceScript>(requestInfo, DeviceComplianceScript.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of device compliance scripts associated with the tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

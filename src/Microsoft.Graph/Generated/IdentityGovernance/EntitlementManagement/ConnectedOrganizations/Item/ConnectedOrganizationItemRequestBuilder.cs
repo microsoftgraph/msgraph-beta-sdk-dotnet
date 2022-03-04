@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.ConnectedOr
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents references to a directory or domain of another organization whose users can request access.

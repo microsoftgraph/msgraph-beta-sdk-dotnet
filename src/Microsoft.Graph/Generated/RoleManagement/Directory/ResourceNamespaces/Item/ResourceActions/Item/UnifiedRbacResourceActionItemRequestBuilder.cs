@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.ResourceNamespaces.Item.Res
         /// </summary>
         public async Task<UnifiedRbacResourceAction> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, UnifiedRbacResourceAction.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Operations that an authorized principal are allowed to perform.

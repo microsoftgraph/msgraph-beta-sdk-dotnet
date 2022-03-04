@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.UpdatableAssets.Item.AddMember
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AddMembersRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AddMembersRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"assets", (o,n) => { (o as AddMembersRequestBody).Assets = n.GetCollectionOfObjectValues<UpdatableAsset>().ToList(); } },
+                {"assets", (o,n) => { (o as AddMembersRequestBody).Assets = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

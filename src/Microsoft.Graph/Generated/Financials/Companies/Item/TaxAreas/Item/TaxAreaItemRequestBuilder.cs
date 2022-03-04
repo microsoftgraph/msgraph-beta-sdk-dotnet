@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.TaxAreas.Item {
         /// </summary>
         public async Task<TaxArea> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TaxArea>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TaxArea>(requestInfo, TaxArea.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property taxAreas in financials

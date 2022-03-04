@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Education {
         /// </summary>
         public async Task<EducationRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EducationRoot>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationRoot>(requestInfo, EducationRoot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update education

@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Me.Planner.FavoritePlans {
         /// </summary>
         public async Task<FavoritePlansResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<FavoritePlansResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<FavoritePlansResponse>(requestInfo, FavoritePlansResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.</summary>
         public class GetQueryParameters : QueryParametersBase {

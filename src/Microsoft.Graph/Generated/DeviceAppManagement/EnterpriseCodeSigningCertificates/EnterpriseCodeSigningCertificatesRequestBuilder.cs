@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.EnterpriseCodeSigningCertificate
         /// </summary>
         public async Task<EnterpriseCodeSigningCertificatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EnterpriseCodeSigningCertificatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EnterpriseCodeSigningCertificatesResponse>(requestInfo, EnterpriseCodeSigningCertificatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Windows Enterprise Code Signing Certificate.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.EnterpriseCodeSigningCertificate
         public async Task<EnterpriseCodeSigningCertificate> PostAsync(EnterpriseCodeSigningCertificate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EnterpriseCodeSigningCertificate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EnterpriseCodeSigningCertificate>(requestInfo, EnterpriseCodeSigningCertificate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The Windows Enterprise Code Signing Certificate.</summary>
         public class GetQueryParameters : QueryParametersBase {

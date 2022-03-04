@@ -24,15 +24,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.</summary>
         public string Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new TeamworkDeviceOperation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkDeviceOperation();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"completedDateTime", (o,n) => { (o as TeamworkDeviceOperation).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdBy", (o,n) => { (o as TeamworkDeviceOperation).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"createdBy", (o,n) => { (o as TeamworkDeviceOperation).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as TeamworkDeviceOperation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"error", (o,n) => { (o as TeamworkDeviceOperation).Error = n.GetObjectValue<OperationError>(); } },
-                {"lastActionBy", (o,n) => { (o as TeamworkDeviceOperation).LastActionBy = n.GetObjectValue<IdentitySet>(); } },
+                {"error", (o,n) => { (o as TeamworkDeviceOperation).Error = n.GetObjectValue<OperationError>(OperationError.CreateFromDiscriminatorValue); } },
+                {"lastActionBy", (o,n) => { (o as TeamworkDeviceOperation).LastActionBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastActionDateTime", (o,n) => { (o as TeamworkDeviceOperation).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"operationType", (o,n) => { (o as TeamworkDeviceOperation).OperationType = n.GetEnumValue<TeamworkDeviceOperationType>(); } },
                 {"startedDateTime", (o,n) => { (o as TeamworkDeviceOperation).StartedDateTime = n.GetDateTimeOffsetValue(); } },

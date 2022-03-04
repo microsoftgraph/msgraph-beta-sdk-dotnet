@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>Adds an additional source to the sourceCollection.</summary>
         public List<DataSource> AdditionalSources { get; set; }
         /// <summary>Adds the results of the sourceCollection to the specified reviewSet.</summary>
-        public AddToReviewSetOperation AddToReviewSetOperation { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.AddToReviewSetOperation AddToReviewSetOperation { get; set; }
         /// <summary>The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.</summary>
         public string ContentQuery { get; set; }
         /// <summary>The user who created the sourceCollection.</summary>
@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>Custodian sources that are included in the sourceCollection.</summary>
         public List<DataSource> CustodianSources { get; set; }
         /// <summary>When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.</summary>
-        public DataSourceScopes? DataSourceScopes { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.DataSourceScopes? DataSourceScopes { get; set; }
         /// <summary>The description of the sourceCollection.</summary>
         public string Description { get; set; }
         /// <summary>The display name of the sourceCollection.</summary>
@@ -32,23 +32,31 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>noncustodialDataSource sources that are included in the sourceCollection</summary>
         public List<NoncustodialDataSource> NoncustodialSources { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SourceCollection CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SourceCollection();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"additionalSources", (o,n) => { (o as SourceCollection).AdditionalSources = n.GetCollectionOfObjectValues<DataSource>().ToList(); } },
-                {"addToReviewSetOperation", (o,n) => { (o as SourceCollection).AddToReviewSetOperation = n.GetObjectValue<AddToReviewSetOperation>(); } },
+                {"additionalSources", (o,n) => { (o as SourceCollection).AdditionalSources = n.GetCollectionOfObjectValues<DataSource>(DataSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"addToReviewSetOperation", (o,n) => { (o as SourceCollection).AddToReviewSetOperation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.AddToReviewSetOperation>(MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.AddToReviewSetOperation.CreateFromDiscriminatorValue); } },
                 {"contentQuery", (o,n) => { (o as SourceCollection).ContentQuery = n.GetStringValue(); } },
-                {"createdBy", (o,n) => { (o as SourceCollection).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"createdBy", (o,n) => { (o as SourceCollection).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as SourceCollection).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"custodianSources", (o,n) => { (o as SourceCollection).CustodianSources = n.GetCollectionOfObjectValues<DataSource>().ToList(); } },
+                {"custodianSources", (o,n) => { (o as SourceCollection).CustodianSources = n.GetCollectionOfObjectValues<DataSource>(DataSource.CreateFromDiscriminatorValue).ToList(); } },
                 {"dataSourceScopes", (o,n) => { (o as SourceCollection).DataSourceScopes = n.GetEnumValue<DataSourceScopes>(); } },
                 {"description", (o,n) => { (o as SourceCollection).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as SourceCollection).DisplayName = n.GetStringValue(); } },
-                {"lastEstimateStatisticsOperation", (o,n) => { (o as SourceCollection).LastEstimateStatisticsOperation = n.GetObjectValue<EstimateStatisticsOperation>(); } },
-                {"lastModifiedBy", (o,n) => { (o as SourceCollection).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"lastEstimateStatisticsOperation", (o,n) => { (o as SourceCollection).LastEstimateStatisticsOperation = n.GetObjectValue<EstimateStatisticsOperation>(EstimateStatisticsOperation.CreateFromDiscriminatorValue); } },
+                {"lastModifiedBy", (o,n) => { (o as SourceCollection).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as SourceCollection).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"noncustodialSources", (o,n) => { (o as SourceCollection).NoncustodialSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>().ToList(); } },
+                {"noncustodialSources", (o,n) => { (o as SourceCollection).NoncustodialSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>(NoncustodialDataSource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -59,7 +67,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<DataSource>("additionalSources", AdditionalSources);
-            writer.WriteObjectValue<AddToReviewSetOperation>("addToReviewSetOperation", AddToReviewSetOperation);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.AddToReviewSetOperation>("addToReviewSetOperation", AddToReviewSetOperation);
             writer.WriteStringValue("contentQuery", ContentQuery);
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

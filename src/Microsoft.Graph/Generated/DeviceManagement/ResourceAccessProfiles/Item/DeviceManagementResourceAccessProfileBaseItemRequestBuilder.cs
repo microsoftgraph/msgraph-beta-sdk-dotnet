@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ResourceAccessProfiles.Item {
         /// </summary>
         public async Task<DeviceManagementResourceAccessProfileBase> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileBase>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileBase>(requestInfo, DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of resource access settings associated with account.

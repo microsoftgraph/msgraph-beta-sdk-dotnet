@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActionT
         /// </summary>
         public async Task<ManagementActionTenantDeploymentStatusesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementActionTenantDeploymentStatusesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementActionTenantDeploymentStatusesResponse>(requestInfo, ManagementActionTenantDeploymentStatusesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The tenant level status of management actions across managed tenants.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementActionT
         public async Task<ManagementActionTenantDeploymentStatus> PostAsync(ManagementActionTenantDeploymentStatus body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagementActionTenantDeploymentStatus>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementActionTenantDeploymentStatus>(requestInfo, ManagementActionTenantDeploymentStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The tenant level status of management actions across managed tenants.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Pages {
         /// </summary>
         public async Task<PagesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PagesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PagesResponse>(requestInfo, PagesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of pages in the SitePages list in this site.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Pages {
         public async Task<SitePage> PostAsync(SitePage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SitePage>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SitePage>(requestInfo, SitePage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of pages in the SitePages list in this site.</summary>
         public class GetQueryParameters : QueryParametersBase {

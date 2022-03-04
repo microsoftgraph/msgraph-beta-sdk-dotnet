@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.UserSettings.Item.A
         /// </summary>
         public async Task<CloudPcUserSettingAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CloudPcUserSettingAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcUserSettingAssignment>(requestInfo, CloudPcUserSettingAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.

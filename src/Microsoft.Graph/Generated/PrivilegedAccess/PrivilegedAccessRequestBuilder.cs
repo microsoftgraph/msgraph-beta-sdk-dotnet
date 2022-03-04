@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess {
         /// </summary>
         public async Task<PrivilegedAccessResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrivilegedAccessResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedAccessResponse>(requestInfo, PrivilegedAccessResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to privilegedAccess
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.PrivilegedAccess {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedAccess> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedAccess body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedAccess>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedAccess>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedAccess.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from privilegedAccess</summary>
         public class GetQueryParameters : QueryParametersBase {

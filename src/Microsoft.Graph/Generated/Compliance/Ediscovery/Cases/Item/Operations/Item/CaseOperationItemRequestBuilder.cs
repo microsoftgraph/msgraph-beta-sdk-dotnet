@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations.Item {
         /// </summary>
         public async Task<CaseOperation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CaseOperation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CaseOperation>(requestInfo, CaseOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Returns a list of case operation objects for this case. Nullable.

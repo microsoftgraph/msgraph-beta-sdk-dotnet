@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetComanagedDevicesSummary {
         /// </summary>
         public async Task<GetComanagedDevicesSummaryResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetComanagedDevicesSummaryResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetComanagedDevicesSummaryResponse>(requestInfo, GetComanagedDevicesSummaryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes comanagedDevicesSummary</summary>
         public class GetComanagedDevicesSummaryResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type comanagedDevicesSummary</summary>
-            public ComanagedDevicesSummary ComanagedDevicesSummary { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ComanagedDevicesSummary ComanagedDevicesSummary { get; set; }
             /// <summary>
             /// Instantiates a new getComanagedDevicesSummaryResponse and sets the default values.
             /// </summary>
             public GetComanagedDevicesSummaryResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GetComanagedDevicesSummaryResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GetComanagedDevicesSummaryResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"comanagedDevicesSummary", (o,n) => { (o as GetComanagedDevicesSummaryResponse).ComanagedDevicesSummary = n.GetObjectValue<ComanagedDevicesSummary>(); } },
+                    {"comanagedDevicesSummary", (o,n) => { (o as GetComanagedDevicesSummaryResponse).ComanagedDevicesSummary = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ComanagedDevicesSummary>(MicrosoftGraphSdk.Models.Microsoft.Graph.ComanagedDevicesSummary.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetComanagedDevicesSummary {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<ComanagedDevicesSummary>("comanagedDevicesSummary", ComanagedDevicesSummary);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ComanagedDevicesSummary>("comanagedDevicesSummary", ComanagedDevicesSummary);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

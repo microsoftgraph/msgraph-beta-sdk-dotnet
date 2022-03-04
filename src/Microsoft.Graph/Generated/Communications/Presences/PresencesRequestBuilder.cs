@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Communications.Presences {
         /// </summary>
         public async Task<PresencesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PresencesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PresencesResponse>(requestInfo, PresencesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to presences for communications
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Communications.Presences {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Presence body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Presence>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Presence.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get presences from communications</summary>
         public class GetQueryParameters : QueryParametersBase {

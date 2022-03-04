@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages {
         /// </summary>
         public async Task<DeviceImagesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceImagesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceImagesResponse>(requestInfo, DeviceImagesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\deviceImages\microsoft.graph.getSourceImages()
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.DeviceImages {
         public async Task<CloudPcDeviceImage> PostAsync(CloudPcDeviceImage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CloudPcDeviceImage>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcDeviceImage>(requestInfo, CloudPcDeviceImage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The image resource on Cloud PC.</summary>
         public class GetQueryParameters : QueryParametersBase {

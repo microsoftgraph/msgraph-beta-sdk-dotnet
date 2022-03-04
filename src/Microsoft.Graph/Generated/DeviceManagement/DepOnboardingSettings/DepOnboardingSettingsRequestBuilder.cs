@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings {
         /// </summary>
         public async Task<DepOnboardingSettingsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DepOnboardingSettingsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DepOnboardingSettingsResponse>(requestInfo, DepOnboardingSettingsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\depOnboardingSettings\microsoft.graph.getExpiringVppTokenCount(expiringBeforeDateTime='{expiringBeforeDateTime}')
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings {
         public async Task<DepOnboardingSetting> PostAsync(DepOnboardingSetting body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DepOnboardingSetting>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DepOnboardingSetting>(requestInfo, DepOnboardingSetting.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>This collections of multiple DEP tokens per-tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

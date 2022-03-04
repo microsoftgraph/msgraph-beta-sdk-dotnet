@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RemoteActionAudits {
         /// </summary>
         public async Task<RemoteActionAuditsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RemoteActionAuditsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteActionAuditsResponse>(requestInfo, RemoteActionAuditsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of device remote action audits with the tenant.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RemoteActionAudits {
         public async Task<RemoteActionAudit> PostAsync(RemoteActionAudit body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RemoteActionAudit>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteActionAudit>(requestInfo, RemoteActionAudit.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of device remote action audits with the tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

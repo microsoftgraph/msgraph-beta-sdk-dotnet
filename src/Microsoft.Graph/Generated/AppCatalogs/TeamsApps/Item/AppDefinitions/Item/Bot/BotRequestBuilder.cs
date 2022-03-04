@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Bot {
         /// </summary>
         public async Task<TeamworkBot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TeamworkBot>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkBot>(requestInfo, TeamworkBot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The details of the bot specified in the Teams app manifest.

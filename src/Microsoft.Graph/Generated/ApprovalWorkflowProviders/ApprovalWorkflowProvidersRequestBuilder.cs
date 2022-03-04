@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders {
         /// </summary>
         public async Task<ApprovalWorkflowProvidersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ApprovalWorkflowProvidersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ApprovalWorkflowProvidersResponse>(requestInfo, ApprovalWorkflowProvidersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to approvalWorkflowProviders
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders {
         public async Task<ApprovalWorkflowProvider> PostAsync(ApprovalWorkflowProvider body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ApprovalWorkflowProvider>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ApprovalWorkflowProvider>(requestInfo, ApprovalWorkflowProvider.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from approvalWorkflowProviders</summary>
         public class GetQueryParameters : QueryParametersBase {

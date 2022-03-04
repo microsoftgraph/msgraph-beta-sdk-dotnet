@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms {
         /// </summary>
         public async Task<AcronymsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AcronymsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AcronymsResponse>(requestInfo, AcronymsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Administrative answer in Microsoft Search results to define common acronyms in a organization.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms {
         public async Task<Acronym> PostAsync(Acronym body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Acronym>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Acronym>(requestInfo, Acronym.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Administrative answer in Microsoft Search results to define common acronyms in a organization.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.TargetedManagedAppConfigurations
         /// </summary>
         public async Task<TargetedManagedAppPolicyAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TargetedManagedAppPolicyAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TargetedManagedAppPolicyAssignment>(requestInfo, TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.

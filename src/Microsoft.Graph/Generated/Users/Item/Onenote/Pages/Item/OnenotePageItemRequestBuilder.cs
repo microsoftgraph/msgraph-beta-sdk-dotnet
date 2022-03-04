@@ -139,7 +139,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Pages.Item {
         /// </summary>
         public async Task<OnenotePage> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.

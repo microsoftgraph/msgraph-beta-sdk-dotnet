@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Xnpv {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static XnpvRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new XnpvRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"dates", (o,n) => { (o as XnpvRequestBody).Dates = n.GetObjectValue<Json>(); } },
-                {"rate", (o,n) => { (o as XnpvRequestBody).Rate = n.GetObjectValue<Json>(); } },
-                {"values", (o,n) => { (o as XnpvRequestBody).Values = n.GetObjectValue<Json>(); } },
+                {"dates", (o,n) => { (o as XnpvRequestBody).Dates = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"rate", (o,n) => { (o as XnpvRequestBody).Rate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"values", (o,n) => { (o as XnpvRequestBody).Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

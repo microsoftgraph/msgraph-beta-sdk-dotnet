@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CredentialUserReg
         /// </summary>
         public async Task<CredentialUserRegistrationsSummariesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CredentialUserRegistrationsSummariesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CredentialUserRegistrationsSummariesResponse>(requestInfo, CredentialUserRegistrationsSummariesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.CredentialUserReg
         public async Task<CredentialUserRegistrationsSummary> PostAsync(CredentialUserRegistrationsSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CredentialUserRegistrationsSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CredentialUserRegistrationsSummary>(requestInfo, CredentialUserRegistrationsSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.</summary>
         public class GetQueryParameters : QueryParametersBase {

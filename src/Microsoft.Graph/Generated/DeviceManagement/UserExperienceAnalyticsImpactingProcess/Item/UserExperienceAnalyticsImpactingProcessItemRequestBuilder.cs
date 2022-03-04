@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsImpactingPro
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics impacting process

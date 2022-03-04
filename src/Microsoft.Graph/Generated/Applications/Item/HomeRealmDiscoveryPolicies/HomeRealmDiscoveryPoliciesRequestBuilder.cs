@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Applications.Item.HomeRealmDiscoveryPolicies {
         /// </summary>
         public async Task<HomeRealmDiscoveryPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<HomeRealmDiscoveryPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<HomeRealmDiscoveryPoliciesResponse>(requestInfo, HomeRealmDiscoveryPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get homeRealmDiscoveryPolicies from applications</summary>
         public class GetQueryParameters : QueryParametersBase {

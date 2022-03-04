@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags {
         /// </summary>
         public async Task<TenantTagsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TenantTagsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantTagsResponse>(requestInfo, TenantTagsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of tenant tags across managed tenants.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantTags {
         public async Task<TenantTag> PostAsync(TenantTag body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TenantTag>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantTag>(requestInfo, TenantTag.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of tenant tags across managed tenants.</summary>
         public class GetQueryParameters : QueryParametersBase {

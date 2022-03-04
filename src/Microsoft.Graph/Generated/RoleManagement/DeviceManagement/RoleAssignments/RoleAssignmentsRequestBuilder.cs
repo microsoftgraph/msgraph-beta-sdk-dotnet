@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments {
         /// </summary>
         public async Task<RoleAssignmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleAssignmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleAssignmentsResponse>(requestInfo, RoleAssignmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to roleAssignments for roleManagement
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments {
         public async Task<UnifiedRoleAssignmentMultiple> PostAsync(UnifiedRoleAssignmentMultiple body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentMultiple>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentMultiple>(requestInfo, UnifiedRoleAssignmentMultiple.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get roleAssignments from roleManagement</summary>
         public class GetQueryParameters : QueryParametersBase {

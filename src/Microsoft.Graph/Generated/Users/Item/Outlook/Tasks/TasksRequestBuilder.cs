@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.Tasks {
         /// </summary>
         public async Task<TasksResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TasksResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TasksResponse>(requestInfo, TasksResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to tasks for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.Tasks {
         public async Task<OutlookTask> PostAsync(OutlookTask body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OutlookTask>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OutlookTask>(requestInfo, OutlookTask.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get tasks from users</summary>
         public class GetQueryParameters : QueryParametersBase {

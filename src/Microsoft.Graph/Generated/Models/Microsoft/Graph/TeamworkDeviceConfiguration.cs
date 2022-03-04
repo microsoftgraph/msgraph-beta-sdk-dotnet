@@ -30,22 +30,30 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The Teams client configuration. Applicable only for Teams Rooms-enabled devices.</summary>
         public TeamworkTeamsClientConfiguration TeamsClientConfiguration { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new TeamworkDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkDeviceConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"cameraConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).CameraConfiguration = n.GetObjectValue<TeamworkCameraConfiguration>(); } },
-                {"createdBy", (o,n) => { (o as TeamworkDeviceConfiguration).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"cameraConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).CameraConfiguration = n.GetObjectValue<TeamworkCameraConfiguration>(TeamworkCameraConfiguration.CreateFromDiscriminatorValue); } },
+                {"createdBy", (o,n) => { (o as TeamworkDeviceConfiguration).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as TeamworkDeviceConfiguration).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).DisplayConfiguration = n.GetObjectValue<TeamworkDisplayConfiguration>(); } },
-                {"hardwareConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).HardwareConfiguration = n.GetObjectValue<TeamworkHardwareConfiguration>(); } },
-                {"lastModifiedBy", (o,n) => { (o as TeamworkDeviceConfiguration).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"displayConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).DisplayConfiguration = n.GetObjectValue<TeamworkDisplayConfiguration>(TeamworkDisplayConfiguration.CreateFromDiscriminatorValue); } },
+                {"hardwareConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).HardwareConfiguration = n.GetObjectValue<TeamworkHardwareConfiguration>(TeamworkHardwareConfiguration.CreateFromDiscriminatorValue); } },
+                {"lastModifiedBy", (o,n) => { (o as TeamworkDeviceConfiguration).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as TeamworkDeviceConfiguration).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"microphoneConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).MicrophoneConfiguration = n.GetObjectValue<TeamworkMicrophoneConfiguration>(); } },
-                {"softwareVersions", (o,n) => { (o as TeamworkDeviceConfiguration).SoftwareVersions = n.GetObjectValue<TeamworkDeviceSoftwareVersions>(); } },
-                {"speakerConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).SpeakerConfiguration = n.GetObjectValue<TeamworkSpeakerConfiguration>(); } },
-                {"systemConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).SystemConfiguration = n.GetObjectValue<TeamworkSystemConfiguration>(); } },
-                {"teamsClientConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).TeamsClientConfiguration = n.GetObjectValue<TeamworkTeamsClientConfiguration>(); } },
+                {"microphoneConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).MicrophoneConfiguration = n.GetObjectValue<TeamworkMicrophoneConfiguration>(TeamworkMicrophoneConfiguration.CreateFromDiscriminatorValue); } },
+                {"softwareVersions", (o,n) => { (o as TeamworkDeviceConfiguration).SoftwareVersions = n.GetObjectValue<TeamworkDeviceSoftwareVersions>(TeamworkDeviceSoftwareVersions.CreateFromDiscriminatorValue); } },
+                {"speakerConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).SpeakerConfiguration = n.GetObjectValue<TeamworkSpeakerConfiguration>(TeamworkSpeakerConfiguration.CreateFromDiscriminatorValue); } },
+                {"systemConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).SystemConfiguration = n.GetObjectValue<TeamworkSystemConfiguration>(TeamworkSystemConfiguration.CreateFromDiscriminatorValue); } },
+                {"teamsClientConfiguration", (o,n) => { (o as TeamworkDeviceConfiguration).TeamsClientConfiguration = n.GetObjectValue<TeamworkTeamsClientConfiguration>(TeamworkTeamsClientConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

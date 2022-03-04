@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MobileThreatDefenseConnectors {
         /// </summary>
         public async Task<MobileThreatDefenseConnectorsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileThreatDefenseConnectorsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileThreatDefenseConnectorsResponse>(requestInfo, MobileThreatDefenseConnectorsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of Mobile threat Defense connectors configured by the tenant.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MobileThreatDefenseConnectors {
         public async Task<MobileThreatDefenseConnector> PostAsync(MobileThreatDefenseConnector body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MobileThreatDefenseConnector>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileThreatDefenseConnector>(requestInfo, MobileThreatDefenseConnector.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of Mobile threat Defense connectors configured by the tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors {
         /// </summary>
         public async Task<ConnectorsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConnectorsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConnectorsResponse>(requestInfo, ConnectorsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Connectors {
         public async Task<Connector> PostAsync(Connector body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Connector>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Connector>(requestInfo, Connector.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

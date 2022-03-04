@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Print.Printers.Item.TaskTriggers.Item {
         /// </summary>
         public async Task<PrintTaskTrigger> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrintTaskTrigger>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintTaskTrigger>(requestInfo, PrintTaskTrigger.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A list of task triggers that are associated with the printer.

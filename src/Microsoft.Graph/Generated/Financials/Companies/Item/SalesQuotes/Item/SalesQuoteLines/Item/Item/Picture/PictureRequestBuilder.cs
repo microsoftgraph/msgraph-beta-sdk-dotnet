@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.SalesQuot
         /// </summary>
         public async Task<PictureResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PictureResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PictureResponse>(requestInfo, PictureResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to picture for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item.SalesQuot
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Picture body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Picture.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get picture from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

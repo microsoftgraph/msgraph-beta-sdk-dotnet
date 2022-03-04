@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Account {
         /// </summary>
         public async Task<AccountResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AccountResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccountResponse>(requestInfo, AccountResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to account for me
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Account {
         public async Task<UserAccountInformation> PostAsync(UserAccountInformation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserAccountInformation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserAccountInformation>(requestInfo, UserAccountInformation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get account from me</summary>
         public class GetQueryParameters : QueryParametersBase {

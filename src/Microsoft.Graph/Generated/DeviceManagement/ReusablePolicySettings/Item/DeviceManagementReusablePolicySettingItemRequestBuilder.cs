@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item {
         /// </summary>
         public async Task<DeviceManagementReusablePolicySetting> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementReusablePolicySetting>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementReusablePolicySetting>(requestInfo, DeviceManagementReusablePolicySetting.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of all reusable settings that can be referred in a policy

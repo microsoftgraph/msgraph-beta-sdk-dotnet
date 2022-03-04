@@ -38,7 +38,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The collection of statuses of the actions performed on the Apple Volume Purchase Program Token.</summary>
         public List<VppTokenActionResult> TokenActionResults { get; set; }
         /// <summary>The type of volume purchase program which the given Apple Volume Purchase Program Token is associated with. Possible values are: business, education. Possible values are: business, education.</summary>
-        public VppTokenAccountType? VppTokenAccountType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.VppTokenAccountType? VppTokenAccountType { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new VppToken CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new VppToken();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -59,7 +67,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"roleScopeTagIds", (o,n) => { (o as VppToken).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"state", (o,n) => { (o as VppToken).State = n.GetEnumValue<VppTokenState>(); } },
                 {"token", (o,n) => { (o as VppToken).Token = n.GetStringValue(); } },
-                {"tokenActionResults", (o,n) => { (o as VppToken).TokenActionResults = n.GetCollectionOfObjectValues<VppTokenActionResult>().ToList(); } },
+                {"tokenActionResults", (o,n) => { (o as VppToken).TokenActionResults = n.GetCollectionOfObjectValues<VppTokenActionResult>(VppTokenActionResult.CreateFromDiscriminatorValue).ToList(); } },
                 {"vppTokenAccountType", (o,n) => { (o as VppToken).VppTokenAccountType = n.GetEnumValue<VppTokenAccountType>(); } },
             };
         }

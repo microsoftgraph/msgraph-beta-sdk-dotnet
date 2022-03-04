@@ -22,19 +22,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A list of task triggers that are associated with the printer.</summary>
         public List<PrintTaskTrigger> TaskTriggers { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Printer CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Printer();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"acceptingJobs", (o,n) => { (o as Printer).AcceptingJobs = n.GetBoolValue(); } },
-                {"connectors", (o,n) => { (o as Printer).Connectors = n.GetCollectionOfObjectValues<PrintConnector>().ToList(); } },
+                {"connectors", (o,n) => { (o as Printer).Connectors = n.GetCollectionOfObjectValues<PrintConnector>(PrintConnector.CreateFromDiscriminatorValue).ToList(); } },
                 {"hasPhysicalDevice", (o,n) => { (o as Printer).HasPhysicalDevice = n.GetBoolValue(); } },
                 {"isShared", (o,n) => { (o as Printer).IsShared = n.GetBoolValue(); } },
                 {"lastSeenDateTime", (o,n) => { (o as Printer).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 {"registeredDateTime", (o,n) => { (o as Printer).RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"share", (o,n) => { (o as Printer).Share = n.GetObjectValue<PrinterShare>(); } },
-                {"shares", (o,n) => { (o as Printer).Shares = n.GetCollectionOfObjectValues<PrinterShare>().ToList(); } },
-                {"taskTriggers", (o,n) => { (o as Printer).TaskTriggers = n.GetCollectionOfObjectValues<PrintTaskTrigger>().ToList(); } },
+                {"share", (o,n) => { (o as Printer).Share = n.GetObjectValue<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue); } },
+                {"shares", (o,n) => { (o as Printer).Shares = n.GetCollectionOfObjectValues<PrinterShare>(PrinterShare.CreateFromDiscriminatorValue).ToList(); } },
+                {"taskTriggers", (o,n) => { (o as Printer).TaskTriggers = n.GetCollectionOfObjectValues<PrintTaskTrigger>(PrintTaskTrigger.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

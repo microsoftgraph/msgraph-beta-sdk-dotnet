@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Print.Shares.Item.Printer.GetCapabilities {
         /// </summary>
         public async Task<GetCapabilitiesResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetCapabilitiesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetCapabilitiesResponse>(requestInfo, GetCapabilitiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes printerCapabilities</summary>
         public class GetCapabilitiesResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type printerCapabilities</summary>
-            public PrinterCapabilities PrinterCapabilities { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.PrinterCapabilities PrinterCapabilities { get; set; }
             /// <summary>
             /// Instantiates a new getCapabilitiesResponse and sets the default values.
             /// </summary>
             public GetCapabilitiesResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GetCapabilitiesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GetCapabilitiesResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"printerCapabilities", (o,n) => { (o as GetCapabilitiesResponse).PrinterCapabilities = n.GetObjectValue<PrinterCapabilities>(); } },
+                    {"printerCapabilities", (o,n) => { (o as GetCapabilitiesResponse).PrinterCapabilities = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrinterCapabilities>(MicrosoftGraphSdk.Models.Microsoft.Graph.PrinterCapabilities.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Print.Shares.Item.Printer.GetCapabilities {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<PrinterCapabilities>("printerCapabilities", PrinterCapabilities);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrinterCapabilities>("printerCapabilities", PrinterCapabilities);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

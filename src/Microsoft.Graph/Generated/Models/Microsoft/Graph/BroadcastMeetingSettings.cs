@@ -26,12 +26,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static BroadcastMeetingSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new BroadcastMeetingSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"allowedAudience", (o,n) => { (o as BroadcastMeetingSettings).AllowedAudience = n.GetEnumValue<BroadcastMeetingAudience>(); } },
-                {"captions", (o,n) => { (o as BroadcastMeetingSettings).Captions = n.GetObjectValue<BroadcastMeetingCaptionSettings>(); } },
+                {"captions", (o,n) => { (o as BroadcastMeetingSettings).Captions = n.GetObjectValue<BroadcastMeetingCaptionSettings>(BroadcastMeetingCaptionSettings.CreateFromDiscriminatorValue); } },
                 {"isAttendeeReportEnabled", (o,n) => { (o as BroadcastMeetingSettings).IsAttendeeReportEnabled = n.GetBoolValue(); } },
                 {"isQuestionAndAnswerEnabled", (o,n) => { (o as BroadcastMeetingSettings).IsQuestionAndAnswerEnabled = n.GetBoolValue(); } },
                 {"isRecordingEnabled", (o,n) => { (o as BroadcastMeetingSettings).IsRecordingEnabled = n.GetBoolValue(); } },

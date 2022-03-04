@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Imported
         /// </summary>
         public async Task<ImportedAppleDeviceIdentitiesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ImportedAppleDeviceIdentitiesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ImportedAppleDeviceIdentitiesResponse>(requestInfo, ImportedAppleDeviceIdentitiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The imported Apple device identities.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.Imported
         public async Task<ImportedAppleDeviceIdentity> PostAsync(ImportedAppleDeviceIdentity body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ImportedAppleDeviceIdentity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ImportedAppleDeviceIdentity>(requestInfo, ImportedAppleDeviceIdentity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The imported Apple device identities.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -28,17 +28,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The WindowsDefenderApplicationControl supplemental policy's version.</summary>
         public string Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WindowsDefenderApplicationControlSupplementalPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WindowsDefenderApplicationControlSupplementalPolicy();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).Assignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).Assignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"content", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).Content = n.GetByteArrayValue(); } },
                 {"contentFileName", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).ContentFileName = n.GetStringValue(); } },
                 {"creationDateTime", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deploySummary", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).DeploySummary = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(); } },
+                {"deploySummary", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).DeploySummary = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 {"description", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).Description = n.GetStringValue(); } },
-                {"deviceStatuses", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).DeviceStatuses = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>().ToList(); } },
+                {"deviceStatuses", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).DeviceStatuses = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicy).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },

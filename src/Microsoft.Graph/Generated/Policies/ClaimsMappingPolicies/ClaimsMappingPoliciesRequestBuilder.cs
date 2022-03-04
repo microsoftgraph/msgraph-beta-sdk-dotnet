@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.ClaimsMappingPolicies {
         /// </summary>
         public async Task<ClaimsMappingPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ClaimsMappingPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ClaimsMappingPoliciesResponse>(requestInfo, ClaimsMappingPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.ClaimsMappingPolicies {
         public async Task<ClaimsMappingPolicy> PostAsync(ClaimsMappingPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ClaimsMappingPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ClaimsMappingPolicy>(requestInfo, ClaimsMappingPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.</summary>
         public class GetQueryParameters : QueryParametersBase {

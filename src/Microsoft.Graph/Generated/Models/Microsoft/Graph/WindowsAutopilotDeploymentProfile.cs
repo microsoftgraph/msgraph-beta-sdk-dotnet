@@ -32,28 +32,36 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>AzureAD management app ID used during client device-based enrollment discovery</summary>
         public string ManagementServiceAppId { get; set; }
         /// <summary>Out of box experience setting</summary>
-        public OutOfBoxExperienceSettings OutOfBoxExperienceSettings { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.OutOfBoxExperienceSettings OutOfBoxExperienceSettings { get; set; }
         /// <summary>Scope tags for the profile.</summary>
         public List<string> RoleScopeTagIds { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WindowsAutopilotDeploymentProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WindowsAutopilotDeploymentProfile();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignedDevices", (o,n) => { (o as WindowsAutopilotDeploymentProfile).AssignedDevices = n.GetCollectionOfObjectValues<WindowsAutopilotDeviceIdentity>().ToList(); } },
-                {"assignments", (o,n) => { (o as WindowsAutopilotDeploymentProfile).Assignments = n.GetCollectionOfObjectValues<WindowsAutopilotDeploymentProfileAssignment>().ToList(); } },
+                {"assignedDevices", (o,n) => { (o as WindowsAutopilotDeploymentProfile).AssignedDevices = n.GetCollectionOfObjectValues<WindowsAutopilotDeviceIdentity>(WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", (o,n) => { (o as WindowsAutopilotDeploymentProfile).Assignments = n.GetCollectionOfObjectValues<WindowsAutopilotDeploymentProfileAssignment>(WindowsAutopilotDeploymentProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as WindowsAutopilotDeploymentProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as WindowsAutopilotDeploymentProfile).Description = n.GetStringValue(); } },
                 {"deviceNameTemplate", (o,n) => { (o as WindowsAutopilotDeploymentProfile).DeviceNameTemplate = n.GetStringValue(); } },
                 {"deviceType", (o,n) => { (o as WindowsAutopilotDeploymentProfile).DeviceType = n.GetEnumValue<WindowsAutopilotDeviceType>(); } },
                 {"displayName", (o,n) => { (o as WindowsAutopilotDeploymentProfile).DisplayName = n.GetStringValue(); } },
                 {"enableWhiteGlove", (o,n) => { (o as WindowsAutopilotDeploymentProfile).EnableWhiteGlove = n.GetBoolValue(); } },
-                {"enrollmentStatusScreenSettings", (o,n) => { (o as WindowsAutopilotDeploymentProfile).EnrollmentStatusScreenSettings = n.GetObjectValue<WindowsEnrollmentStatusScreenSettings>(); } },
+                {"enrollmentStatusScreenSettings", (o,n) => { (o as WindowsAutopilotDeploymentProfile).EnrollmentStatusScreenSettings = n.GetObjectValue<WindowsEnrollmentStatusScreenSettings>(WindowsEnrollmentStatusScreenSettings.CreateFromDiscriminatorValue); } },
                 {"extractHardwareHash", (o,n) => { (o as WindowsAutopilotDeploymentProfile).ExtractHardwareHash = n.GetBoolValue(); } },
                 {"language", (o,n) => { (o as WindowsAutopilotDeploymentProfile).Language = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as WindowsAutopilotDeploymentProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managementServiceAppId", (o,n) => { (o as WindowsAutopilotDeploymentProfile).ManagementServiceAppId = n.GetStringValue(); } },
-                {"outOfBoxExperienceSettings", (o,n) => { (o as WindowsAutopilotDeploymentProfile).OutOfBoxExperienceSettings = n.GetObjectValue<OutOfBoxExperienceSettings>(); } },
+                {"outOfBoxExperienceSettings", (o,n) => { (o as WindowsAutopilotDeploymentProfile).OutOfBoxExperienceSettings = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OutOfBoxExperienceSettings>(MicrosoftGraphSdk.Models.Microsoft.Graph.OutOfBoxExperienceSettings.CreateFromDiscriminatorValue); } },
                 {"roleScopeTagIds", (o,n) => { (o as WindowsAutopilotDeploymentProfile).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
@@ -77,7 +85,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("language", Language);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("managementServiceAppId", ManagementServiceAppId);
-            writer.WriteObjectValue<OutOfBoxExperienceSettings>("outOfBoxExperienceSettings", OutOfBoxExperienceSettings);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OutOfBoxExperienceSettings>("outOfBoxExperienceSettings", OutOfBoxExperienceSettings);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
         }
     }

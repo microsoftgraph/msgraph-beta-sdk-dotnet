@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Policies.AuthenticationMethodsPolicy {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AuthenticationMethodsPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AuthenticationMethodsPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AuthenticationMethodsPolicy>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AuthenticationMethodsPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).

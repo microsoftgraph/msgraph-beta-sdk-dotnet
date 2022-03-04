@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.AuthorizationPolicy.Item.DefaultUserRoleOve
         /// </summary>
         public async Task<DefaultUserRoleOverridesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DefaultUserRoleOverridesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DefaultUserRoleOverridesResponse>(requestInfo, DefaultUserRoleOverridesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to defaultUserRoleOverrides for policies
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.AuthorizationPolicy.Item.DefaultUserRoleOve
         public async Task<DefaultUserRoleOverride> PostAsync(DefaultUserRoleOverride body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DefaultUserRoleOverride>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DefaultUserRoleOverride>(requestInfo, DefaultUserRoleOverride.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get defaultUserRoleOverrides from policies</summary>
         public class GetQueryParameters : QueryParametersBase {

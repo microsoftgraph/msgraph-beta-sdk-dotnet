@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.GetLicensesForAppWithB
         /// </summary>
         public async Task<IEnumerable<GetLicensesForAppWithBundleId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetLicensesForAppWithBundleId>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetLicensesForAppWithBundleId>(requestInfo, GetLicensesForAppWithBundleId.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

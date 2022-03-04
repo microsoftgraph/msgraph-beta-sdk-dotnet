@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Charts.Item.
         /// </summary>
         public async Task<WorkbookChartAxis> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WorkbookChartAxis>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookChartAxis>(requestInfo, WorkbookChartAxis.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the value axis in an axis. Read-only.

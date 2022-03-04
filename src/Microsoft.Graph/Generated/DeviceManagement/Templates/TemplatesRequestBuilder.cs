@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates {
         /// </summary>
         public async Task<TemplatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TemplatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TemplatesResponse>(requestInfo, TemplatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The available templates
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates {
         public async Task<DeviceManagementTemplate> PostAsync(DeviceManagementTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementTemplate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementTemplate>(requestInfo, DeviceManagementTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The available templates</summary>
         public class GetQueryParameters : QueryParametersBase {

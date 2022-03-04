@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
         public List<AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies { get; set; }
         /// <summary>Read-only. Nullable.</summary>
-        public AccessPackageCatalog AccessPackageCatalog { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog AccessPackageCatalog { get; set; }
         /// <summary>Nullable.</summary>
         public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes { get; set; }
         /// <summary>The access packages that are incompatible with this package. Read-only.</summary>
@@ -36,21 +36,29 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ModifiedDateTime { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessPackage CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessPackage();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageAssignmentPolicies", (o,n) => { (o as AccessPackage).AccessPackageAssignmentPolicies = n.GetCollectionOfObjectValues<AccessPackageAssignmentPolicy>().ToList(); } },
-                {"accessPackageCatalog", (o,n) => { (o as AccessPackage).AccessPackageCatalog = n.GetObjectValue<AccessPackageCatalog>(); } },
-                {"accessPackageResourceRoleScopes", (o,n) => { (o as AccessPackage).AccessPackageResourceRoleScopes = n.GetCollectionOfObjectValues<AccessPackageResourceRoleScope>().ToList(); } },
-                {"accessPackagesIncompatibleWith", (o,n) => { (o as AccessPackage).AccessPackagesIncompatibleWith = n.GetCollectionOfObjectValues<AccessPackage>().ToList(); } },
+                {"accessPackageAssignmentPolicies", (o,n) => { (o as AccessPackage).AccessPackageAssignmentPolicies = n.GetCollectionOfObjectValues<AccessPackageAssignmentPolicy>(AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageCatalog", (o,n) => { (o as AccessPackage).AccessPackageCatalog = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog>(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog.CreateFromDiscriminatorValue); } },
+                {"accessPackageResourceRoleScopes", (o,n) => { (o as AccessPackage).AccessPackageResourceRoleScopes = n.GetCollectionOfObjectValues<AccessPackageResourceRoleScope>(AccessPackageResourceRoleScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackagesIncompatibleWith", (o,n) => { (o as AccessPackage).AccessPackagesIncompatibleWith = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue).ToList(); } },
                 {"catalogId", (o,n) => { (o as AccessPackage).CatalogId = n.GetStringValue(); } },
                 {"createdBy", (o,n) => { (o as AccessPackage).CreatedBy = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as AccessPackage).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as AccessPackage).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AccessPackage).DisplayName = n.GetStringValue(); } },
-                {"incompatibleAccessPackages", (o,n) => { (o as AccessPackage).IncompatibleAccessPackages = n.GetCollectionOfObjectValues<AccessPackage>().ToList(); } },
-                {"incompatibleGroups", (o,n) => { (o as AccessPackage).IncompatibleGroups = n.GetCollectionOfObjectValues<Group>().ToList(); } },
+                {"incompatibleAccessPackages", (o,n) => { (o as AccessPackage).IncompatibleAccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue).ToList(); } },
+                {"incompatibleGroups", (o,n) => { (o as AccessPackage).IncompatibleGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
                 {"isHidden", (o,n) => { (o as AccessPackage).IsHidden = n.GetBoolValue(); } },
                 {"isRoleScopesVisible", (o,n) => { (o as AccessPackage).IsRoleScopesVisible = n.GetBoolValue(); } },
                 {"modifiedBy", (o,n) => { (o as AccessPackage).ModifiedBy = n.GetStringValue(); } },
@@ -65,7 +73,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AccessPackageAssignmentPolicy>("accessPackageAssignmentPolicies", AccessPackageAssignmentPolicies);
-            writer.WriteObjectValue<AccessPackageCatalog>("accessPackageCatalog", AccessPackageCatalog);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog>("accessPackageCatalog", AccessPackageCatalog);
             writer.WriteCollectionOfObjectValues<AccessPackageResourceRoleScope>("accessPackageResourceRoleScopes", AccessPackageResourceRoleScopes);
             writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackagesIncompatibleWith", AccessPackagesIncompatibleWith);
             writer.WriteStringValue("catalogId", CatalogId);

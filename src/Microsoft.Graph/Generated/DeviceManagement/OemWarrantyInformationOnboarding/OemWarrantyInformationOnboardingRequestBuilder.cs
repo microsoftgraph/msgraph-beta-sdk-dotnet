@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding {
         /// </summary>
         public async Task<OemWarrantyInformationOnboardingResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OemWarrantyInformationOnboardingResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OemWarrantyInformationOnboardingResponse>(requestInfo, OemWarrantyInformationOnboardingResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of OEM Warranty Statuses
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.OemWarrantyInformationOnboarding {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.OemWarrantyInformationOnboarding.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of OEM Warranty Statuses</summary>
         public class GetQueryParameters : QueryParametersBase {

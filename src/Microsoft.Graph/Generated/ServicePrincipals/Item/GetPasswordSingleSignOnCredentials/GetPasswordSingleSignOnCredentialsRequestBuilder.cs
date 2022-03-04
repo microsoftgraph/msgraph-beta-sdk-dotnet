@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.GetPasswordSingleSignOnCreden
         public async Task<GetPasswordSingleSignOnCredentialsResponse> PostAsync(GetPasswordSingleSignOnCredentialsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GetPasswordSingleSignOnCredentialsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetPasswordSingleSignOnCredentialsResponse>(requestInfo, GetPasswordSingleSignOnCredentialsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes passwordSingleSignOnCredentialSet</summary>
         public class GetPasswordSingleSignOnCredentialsResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type passwordSingleSignOnCredentialSet</summary>
-            public PasswordSingleSignOnCredentialSet PasswordSingleSignOnCredentialSet { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordSingleSignOnCredentialSet PasswordSingleSignOnCredentialSet { get; set; }
             /// <summary>
             /// Instantiates a new getPasswordSingleSignOnCredentialsResponse and sets the default values.
             /// </summary>
             public GetPasswordSingleSignOnCredentialsResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GetPasswordSingleSignOnCredentialsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GetPasswordSingleSignOnCredentialsResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"passwordSingleSignOnCredentialSet", (o,n) => { (o as GetPasswordSingleSignOnCredentialsResponse).PasswordSingleSignOnCredentialSet = n.GetObjectValue<PasswordSingleSignOnCredentialSet>(); } },
+                    {"passwordSingleSignOnCredentialSet", (o,n) => { (o as GetPasswordSingleSignOnCredentialsResponse).PasswordSingleSignOnCredentialSet = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordSingleSignOnCredentialSet>(MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordSingleSignOnCredentialSet.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.GetPasswordSingleSignOnCreden
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<PasswordSingleSignOnCredentialSet>("passwordSingleSignOnCredentialSet", PasswordSingleSignOnCredentialSet);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PasswordSingleSignOnCredentialSet>("passwordSingleSignOnCredentialSet", PasswordSingleSignOnCredentialSet);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

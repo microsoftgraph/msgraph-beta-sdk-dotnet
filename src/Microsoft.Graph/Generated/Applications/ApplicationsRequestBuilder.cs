@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Applications {
         /// </summary>
         public async Task<ApplicationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ApplicationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ApplicationsResponse>(requestInfo, ApplicationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to applications
@@ -131,7 +131,7 @@ namespace MicrosoftGraphSdk.Applications {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Application> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Application body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Application>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Application>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Application.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from applications</summary>
         public class GetQueryParameters : QueryParametersBase {

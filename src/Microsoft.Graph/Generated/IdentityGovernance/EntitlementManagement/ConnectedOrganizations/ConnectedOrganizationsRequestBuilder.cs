@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.ConnectedOr
         /// </summary>
         public async Task<ConnectedOrganizationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConnectedOrganizationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConnectedOrganizationsResponse>(requestInfo, ConnectedOrganizationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents references to a directory or domain of another organization whose users can request access.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.ConnectedOr
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectedOrganization.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents references to a directory or domain of another organization whose users can request access.</summary>
         public class GetQueryParameters : QueryParametersBase {

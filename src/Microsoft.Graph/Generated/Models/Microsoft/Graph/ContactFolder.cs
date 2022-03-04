@@ -20,16 +20,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The name of the folder if the folder is a recognized folder. Currently contacts is the only recognized contacts folder.</summary>
         public string WellKnownName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ContactFolder CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ContactFolder();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"childFolders", (o,n) => { (o as ContactFolder).ChildFolders = n.GetCollectionOfObjectValues<ContactFolder>().ToList(); } },
-                {"contacts", (o,n) => { (o as ContactFolder).Contacts = n.GetCollectionOfObjectValues<Contact>().ToList(); } },
+                {"childFolders", (o,n) => { (o as ContactFolder).ChildFolders = n.GetCollectionOfObjectValues<ContactFolder>(ContactFolder.CreateFromDiscriminatorValue).ToList(); } },
+                {"contacts", (o,n) => { (o as ContactFolder).Contacts = n.GetCollectionOfObjectValues<Contact>(Contact.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as ContactFolder).DisplayName = n.GetStringValue(); } },
-                {"multiValueExtendedProperties", (o,n) => { (o as ContactFolder).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>().ToList(); } },
+                {"multiValueExtendedProperties", (o,n) => { (o as ContactFolder).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
                 {"parentFolderId", (o,n) => { (o as ContactFolder).ParentFolderId = n.GetStringValue(); } },
-                {"singleValueExtendedProperties", (o,n) => { (o as ContactFolder).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>().ToList(); } },
+                {"singleValueExtendedProperties", (o,n) => { (o as ContactFolder).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
                 {"wellKnownName", (o,n) => { (o as ContactFolder).WellKnownName = n.GetStringValue(); } },
             };
         }

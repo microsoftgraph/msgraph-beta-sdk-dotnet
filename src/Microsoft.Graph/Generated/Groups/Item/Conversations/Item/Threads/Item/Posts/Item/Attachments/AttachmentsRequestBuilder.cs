@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.It
         /// </summary>
         public async Task<AttachmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AttachmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttachmentsResponse>(requestInfo, AttachmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable. Supports $expand.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads.Item.Posts.It
         public async Task<Attachment> PostAsync(Attachment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Attachment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
         public class GetQueryParameters : QueryParametersBase {

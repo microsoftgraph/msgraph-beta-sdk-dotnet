@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.Confirm {
         /// </summary>
         public async Task<ConfirmResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<ConfirmResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConfirmResponse>(requestInfo, ConfirmResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes timeCard</summary>
         public class ConfirmResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type timeCard</summary>
-            public TimeCard TimeCard { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.TimeCard TimeCard { get; set; }
             /// <summary>
             /// Instantiates a new confirmResponse and sets the default values.
             /// </summary>
             public ConfirmResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ConfirmResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ConfirmResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"timeCard", (o,n) => { (o as ConfirmResponse).TimeCard = n.GetObjectValue<TimeCard>(); } },
+                    {"timeCard", (o,n) => { (o as ConfirmResponse).TimeCard = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TimeCard>(MicrosoftGraphSdk.Models.Microsoft.Graph.TimeCard.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.Item.Confirm {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<TimeCard>("timeCard", TimeCard);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.TimeCard>("timeCard", TimeCard);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

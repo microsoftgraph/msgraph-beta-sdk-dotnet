@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Activities.Item.ListItem.Creat
         public async Task<CreateLinkResponse> PostAsync(CreateLinkRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CreateLinkResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CreateLinkResponse>(requestInfo, CreateLinkResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes permission</summary>
         public class CreateLinkResponse : IParsable {
@@ -86,12 +86,16 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists.Item.Activities.Item.ListItem.Creat
             public CreateLinkResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CreateLinkResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CreateLinkResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"permission", (o,n) => { (o as CreateLinkResponse).Permission = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(); } },
+                    {"permission", (o,n) => { (o as CreateLinkResponse).Permission = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(MicrosoftGraphSdk.Models.Microsoft.Graph.Permission.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

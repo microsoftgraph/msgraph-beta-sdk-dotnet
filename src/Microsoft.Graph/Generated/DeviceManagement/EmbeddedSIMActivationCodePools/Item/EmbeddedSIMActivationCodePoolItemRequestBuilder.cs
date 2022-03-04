@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
         /// </summary>
         public async Task<EmbeddedSIMActivationCodePool> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EmbeddedSIMActivationCodePool>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EmbeddedSIMActivationCodePool>(requestInfo, EmbeddedSIMActivationCodePool.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The embedded SIM activation code pools created by this account.

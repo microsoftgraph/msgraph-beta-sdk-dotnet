@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Print.Operations {
         /// </summary>
         public async Task<OperationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OperationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OperationsResponse>(requestInfo, OperationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of print long running operations.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Print.Operations {
         public async Task<PrintOperation> PostAsync(PrintOperation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PrintOperation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintOperation>(requestInfo, PrintOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of print long running operations.</summary>
         public class GetQueryParameters : QueryParametersBase {

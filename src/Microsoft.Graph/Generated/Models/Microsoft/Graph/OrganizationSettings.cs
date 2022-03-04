@@ -12,13 +12,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.</summary>
         public List<ProfileCardProperty> ProfileCardProperties { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new OrganizationSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OrganizationSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"itemInsights", (o,n) => { (o as OrganizationSettings).ItemInsights = n.GetObjectValue<InsightsSettings>(); } },
-                {"peopleInsights", (o,n) => { (o as OrganizationSettings).PeopleInsights = n.GetObjectValue<InsightsSettings>(); } },
-                {"profileCardProperties", (o,n) => { (o as OrganizationSettings).ProfileCardProperties = n.GetCollectionOfObjectValues<ProfileCardProperty>().ToList(); } },
+                {"itemInsights", (o,n) => { (o as OrganizationSettings).ItemInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
+                {"peopleInsights", (o,n) => { (o as OrganizationSettings).PeopleInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
+                {"profileCardProperties", (o,n) => { (o as OrganizationSettings).ProfileCardProperties = n.GetCollectionOfObjectValues<ProfileCardProperty>(ProfileCardProperty.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

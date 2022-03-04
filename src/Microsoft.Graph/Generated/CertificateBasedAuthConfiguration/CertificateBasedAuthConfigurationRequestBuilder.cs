@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.CertificateBasedAuthConfiguration {
         /// </summary>
         public async Task<CertificateBasedAuthConfigurationResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CertificateBasedAuthConfigurationResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CertificateBasedAuthConfigurationResponse>(requestInfo, CertificateBasedAuthConfigurationResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to certificateBasedAuthConfiguration
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.CertificateBasedAuthConfiguration {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from certificateBasedAuthConfiguration</summary>
         public class GetQueryParameters : QueryParametersBase {

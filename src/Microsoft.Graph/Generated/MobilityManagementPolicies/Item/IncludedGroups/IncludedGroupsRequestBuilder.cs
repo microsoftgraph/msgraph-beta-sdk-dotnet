@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.MobilityManagementPolicies.Item.IncludedGroups {
         /// </summary>
         public async Task<IncludedGroupsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IncludedGroupsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IncludedGroupsResponse>(requestInfo, IncludedGroupsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Azure AD groups under the scope of the mobility management application if appliesTo is selected</summary>
         public class GetQueryParameters : QueryParametersBase {

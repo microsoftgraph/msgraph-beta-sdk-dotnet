@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.AcceptanceS
         /// </summary>
         public async Task<AcceptanceStatusesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AcceptanceStatusesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AcceptanceStatusesResponse>(requestInfo, AcceptanceStatusesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of acceptance statuses for this T&C policy.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.AcceptanceS
         public async Task<TermsAndConditionsAcceptanceStatus> PostAsync(TermsAndConditionsAcceptanceStatus body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TermsAndConditionsAcceptanceStatus>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsAcceptanceStatus>(requestInfo, TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of acceptance statuses for this T&C policy.</summary>
         public class GetQueryParameters : QueryParametersBase {

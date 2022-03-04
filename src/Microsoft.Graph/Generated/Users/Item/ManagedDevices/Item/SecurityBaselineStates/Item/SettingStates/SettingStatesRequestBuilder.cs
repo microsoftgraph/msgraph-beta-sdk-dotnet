@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.SecurityBaselineState
         /// </summary>
         public async Task<SettingStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SettingStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SettingStatesResponse>(requestInfo, SettingStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The security baseline state for different settings for a device
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.SecurityBaselineState
         public async Task<SecurityBaselineSettingState> PostAsync(SecurityBaselineSettingState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SecurityBaselineSettingState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityBaselineSettingState>(requestInfo, SecurityBaselineSettingState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The security baseline state for different settings for a device</summary>
         public class GetQueryParameters : QueryParametersBase {

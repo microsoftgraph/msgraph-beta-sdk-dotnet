@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary {
         /// </summary>
         public async Task<ApplicationSignInDetailedSummaryResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ApplicationSignInDetailedSummaryResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ApplicationSignInDetailedSummaryResponse>(requestInfo, ApplicationSignInDetailedSummaryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents a detailed summary of an application sign-in.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Reports.ApplicationSignInDetailedSummary {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
         public class GetQueryParameters : QueryParametersBase {

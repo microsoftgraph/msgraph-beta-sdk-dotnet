@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
         /// </summary>
         public async Task<DeviceStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceStatesResponse>(requestInfo, DeviceStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Navigational property to a list of device states for this pool.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
         public async Task<EmbeddedSIMDeviceState> PostAsync(EmbeddedSIMDeviceState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EmbeddedSIMDeviceState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EmbeddedSIMDeviceState>(requestInfo, EmbeddedSIMDeviceState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Navigational property to a list of device states for this pool.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -67,19 +67,23 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Disconne
         /// </summary>
         public async Task<DisconnectResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<DisconnectResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DisconnectResponse>(requestInfo, DisconnectResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes chromeOSOnboardingStatus</summary>
         public class DisconnectResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type chromeOSOnboardingStatus</summary>
-            public ChromeOSOnboardingStatus? ChromeOSOnboardingStatus { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingStatus? ChromeOSOnboardingStatus { get; set; }
             /// <summary>
             /// Instantiates a new disconnectResponse and sets the default values.
             /// </summary>
             public DisconnectResponse() {
                 AdditionalData = new Dictionary<string, object>();
+            }
+            public static DisconnectResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new DisconnectResponse();
             }
             /// <summary>
             /// The deserialization information for the current model

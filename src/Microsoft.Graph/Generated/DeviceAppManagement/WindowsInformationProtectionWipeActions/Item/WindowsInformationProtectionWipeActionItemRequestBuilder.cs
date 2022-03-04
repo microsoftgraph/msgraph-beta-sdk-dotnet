@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionWipe
         /// </summary>
         public async Task<WindowsInformationProtectionWipeAction> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeAction>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeAction>(requestInfo, WindowsInformationProtectionWipeAction.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Windows information protection wipe actions.

@@ -84,7 +84,7 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.UserFlowIdentityProviders
         /// </summary>
         public async Task<UserFlowIdentityProvidersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserFlowIdentityProvidersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserFlowIdentityProvidersResponse>(requestInfo, UserFlowIdentityProvidersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get userFlowIdentityProviders from identity</summary>
         public class GetQueryParameters : QueryParametersBase {

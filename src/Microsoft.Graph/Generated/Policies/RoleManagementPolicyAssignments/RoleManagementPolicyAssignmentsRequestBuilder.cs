@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicyAssignments {
         /// </summary>
         public async Task<RoleManagementPolicyAssignmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleManagementPolicyAssignmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleManagementPolicyAssignmentsResponse>(requestInfo, RoleManagementPolicyAssignmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the role management policy assignments.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicyAssignments {
         public async Task<UnifiedRoleManagementPolicyAssignment> PostAsync(UnifiedRoleManagementPolicyAssignment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicyAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicyAssignment>(requestInfo, UnifiedRoleManagementPolicyAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents the role management policy assignments.</summary>
         public class GetQueryParameters : QueryParametersBase {

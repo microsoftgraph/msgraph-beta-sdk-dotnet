@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Oauth2PermissionGrants {
         /// </summary>
         public async Task<Oauth2PermissionGrantsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Oauth2PermissionGrantsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Oauth2PermissionGrantsResponse>(requestInfo, Oauth2PermissionGrantsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

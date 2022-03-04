@@ -20,16 +20,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.</summary>
         public bool? SelfServiceEnabled { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CloudPcUserSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CloudPcUserSetting();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as CloudPcUserSetting).Assignments = n.GetCollectionOfObjectValues<CloudPcUserSettingAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as CloudPcUserSetting).Assignments = n.GetCollectionOfObjectValues<CloudPcUserSettingAssignment>(CloudPcUserSettingAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as CloudPcUserSetting).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as CloudPcUserSetting).DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as CloudPcUserSetting).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"localAdminEnabled", (o,n) => { (o as CloudPcUserSetting).LocalAdminEnabled = n.GetBoolValue(); } },
-                {"restorePointSetting", (o,n) => { (o as CloudPcUserSetting).RestorePointSetting = n.GetObjectValue<CloudPcRestorePointSetting>(); } },
+                {"restorePointSetting", (o,n) => { (o as CloudPcUserSetting).RestorePointSetting = n.GetObjectValue<CloudPcRestorePointSetting>(CloudPcRestorePointSetting.CreateFromDiscriminatorValue); } },
                 {"selfServiceEnabled", (o,n) => { (o as CloudPcUserSetting).SelfServiceEnabled = n.GetBoolValue(); } },
             };
         }

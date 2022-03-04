@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         /// </summary>
         public async Task<AccessPackageCatalogsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AccessPackageCatalogsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccessPackageCatalogsResponse>(requestInfo, AccessPackageCatalogsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents a group of access packages.
@@ -113,7 +113,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageCatalog.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageCatalogs\microsoft.graph.Search()

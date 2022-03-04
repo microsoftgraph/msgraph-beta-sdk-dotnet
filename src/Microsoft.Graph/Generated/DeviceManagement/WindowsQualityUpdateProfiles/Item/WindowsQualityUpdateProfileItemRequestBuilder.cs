@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsQualityUpdateProfiles.Item {
         /// </summary>
         public async Task<WindowsQualityUpdateProfile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfile>(requestInfo, WindowsQualityUpdateProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of windows quality update profiles

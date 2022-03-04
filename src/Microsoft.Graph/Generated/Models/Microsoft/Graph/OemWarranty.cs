@@ -22,12 +22,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static OemWarranty CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OemWarranty();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"additionalWarranties", (o,n) => { (o as OemWarranty).AdditionalWarranties = n.GetCollectionOfObjectValues<WarrantyOffer>().ToList(); } },
-                {"baseWarranties", (o,n) => { (o as OemWarranty).BaseWarranties = n.GetCollectionOfObjectValues<WarrantyOffer>().ToList(); } },
+                {"additionalWarranties", (o,n) => { (o as OemWarranty).AdditionalWarranties = n.GetCollectionOfObjectValues<WarrantyOffer>(WarrantyOffer.CreateFromDiscriminatorValue).ToList(); } },
+                {"baseWarranties", (o,n) => { (o as OemWarranty).BaseWarranties = n.GetCollectionOfObjectValues<WarrantyOffer>(WarrantyOffer.CreateFromDiscriminatorValue).ToList(); } },
                 {"deviceConfigurationUrl", (o,n) => { (o as OemWarranty).DeviceConfigurationUrl = n.GetStringValue(); } },
                 {"deviceWarrantyUrl", (o,n) => { (o as OemWarranty).DeviceWarrantyUrl = n.GetStringValue(); } },
             };

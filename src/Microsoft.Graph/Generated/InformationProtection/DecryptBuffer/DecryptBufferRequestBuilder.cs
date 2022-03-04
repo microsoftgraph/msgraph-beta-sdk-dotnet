@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.InformationProtection.DecryptBuffer {
         public async Task<DecryptBufferResponse> PostAsync(DecryptBufferRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DecryptBufferResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DecryptBufferResponse>(requestInfo, DecryptBufferResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes bufferDecryptionResult</summary>
         public class DecryptBufferResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type bufferDecryptionResult</summary>
-            public BufferDecryptionResult BufferDecryptionResult { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.BufferDecryptionResult BufferDecryptionResult { get; set; }
             /// <summary>
             /// Instantiates a new decryptBufferResponse and sets the default values.
             /// </summary>
             public DecryptBufferResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static DecryptBufferResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new DecryptBufferResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"bufferDecryptionResult", (o,n) => { (o as DecryptBufferResponse).BufferDecryptionResult = n.GetObjectValue<BufferDecryptionResult>(); } },
+                    {"bufferDecryptionResult", (o,n) => { (o as DecryptBufferResponse).BufferDecryptionResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.BufferDecryptionResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.BufferDecryptionResult.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.InformationProtection.DecryptBuffer {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<BufferDecryptionResult>("bufferDecryptionResult", BufferDecryptionResult);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.BufferDecryptionResult>("bufferDecryptionResult", BufferDecryptionResult);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

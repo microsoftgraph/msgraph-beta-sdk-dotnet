@@ -67,12 +67,12 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions.
         /// </summary>
         public async Task<GenerateDownloadUriResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GenerateDownloadUriResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GenerateDownloadUriResponse>(requestInfo, GenerateDownloadUriResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes accessReviewHistoryInstance</summary>
         public class GenerateDownloadUriResponse : IParsable {
             /// <summary>Union type representation for type accessReviewHistoryInstance</summary>
-            public AccessReviewHistoryInstance AccessReviewHistoryInstance { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewHistoryInstance AccessReviewHistoryInstance { get; set; }
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>
@@ -81,12 +81,16 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions.
             public GenerateDownloadUriResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GenerateDownloadUriResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GenerateDownloadUriResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"accessReviewHistoryInstance", (o,n) => { (o as GenerateDownloadUriResponse).AccessReviewHistoryInstance = n.GetObjectValue<AccessReviewHistoryInstance>(); } },
+                    {"accessReviewHistoryInstance", (o,n) => { (o as GenerateDownloadUriResponse).AccessReviewHistoryInstance = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewHistoryInstance>(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewHistoryInstance.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.AccessReviews.HistoryDefinitions.
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<AccessReviewHistoryInstance>("accessReviewHistoryInstance", AccessReviewHistoryInstance);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessReviewHistoryInstance>("accessReviewHistoryInstance", AccessReviewHistoryInstance);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

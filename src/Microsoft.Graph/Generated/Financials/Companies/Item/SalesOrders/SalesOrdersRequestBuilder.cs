@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesOrders {
         /// </summary>
         public async Task<SalesOrdersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SalesOrdersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesOrdersResponse>(requestInfo, SalesOrdersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to salesOrders for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesOrders {
         public async Task<SalesOrder> PostAsync(SalesOrder body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SalesOrder>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesOrder>(requestInfo, SalesOrder.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get salesOrders from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

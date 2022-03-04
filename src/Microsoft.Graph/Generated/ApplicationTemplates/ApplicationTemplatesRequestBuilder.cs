@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.ApplicationTemplates {
         /// </summary>
         public async Task<ApplicationTemplatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ApplicationTemplatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ApplicationTemplatesResponse>(requestInfo, ApplicationTemplatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to applicationTemplates
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.ApplicationTemplates {
         public async Task<ApplicationTemplate> PostAsync(ApplicationTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ApplicationTemplate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ApplicationTemplate>(requestInfo, ApplicationTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from applicationTemplates</summary>
         public class GetQueryParameters : QueryParametersBase {

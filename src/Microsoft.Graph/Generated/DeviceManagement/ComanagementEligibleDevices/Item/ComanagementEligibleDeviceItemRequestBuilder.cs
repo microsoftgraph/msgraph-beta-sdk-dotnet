@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagementEligibleDevices.Item {
         /// </summary>
         public async Task<ComanagementEligibleDevice> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ComanagementEligibleDevice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ComanagementEligibleDevice>(requestInfo, ComanagementEligibleDevice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of co-management eligible devices report

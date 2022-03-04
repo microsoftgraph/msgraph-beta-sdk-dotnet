@@ -111,7 +111,7 @@ namespace MicrosoftGraphSdk.Organization {
         /// </summary>
         public async Task<OrganizationResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OrganizationResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OrganizationResponse>(requestInfo, OrganizationResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to organization
@@ -124,7 +124,7 @@ namespace MicrosoftGraphSdk.Organization {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Organization> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Organization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Organization>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Organization>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Organization.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from organization</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         /// </summary>
         public async Task<AccessPackageAssignmentResourceRole> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AccessPackageAssignmentResourceRole>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccessPackageAssignmentResourceRole>(requestInfo, AccessPackageAssignmentResourceRole.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The resource roles delivered to the target user for this assignment. Read-only. Nullable.

@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CertificateConnectorDetails.Item.Ge
         public async Task<IEnumerable<GetHealthMetrics>> PostAsync(GetHealthMetricsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<GetHealthMetrics>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetHealthMetrics>(requestInfo, GetHealthMetrics.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.</summary>
-        public DelegatedPrivilegeStatus? DelegatedPrivilegeStatus { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.DelegatedPrivilegeStatus? DelegatedPrivilegeStatus { get; set; }
         /// <summary>The date and time the delegated admin privileges status was updated. Optional. Read-only.</summary>
         public DateTimeOffset? LastDelegatedPrivilegeRefreshDateTime { get; set; }
         /// <summary>The identifier for the account that offboarded the managed tenant. Optional. Read-only.</summary>
@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.</summary>
         public TenantOnboardingStatus? OnboardingStatus { get; set; }
         /// <summary>Organization's onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.</summary>
-        public TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason { get; set; }
         /// <summary>The collection of workload statues for the managed tenant. Optional. Read-only.</summary>
         public List<WorkloadStatus> WorkloadStatuses { get; set; }
         /// <summary>
@@ -30,6 +30,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// </summary>
         public TenantStatusInformation() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TenantStatusInformation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TenantStatusInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +52,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"onboardedDateTime", (o,n) => { (o as TenantStatusInformation).OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"onboardingStatus", (o,n) => { (o as TenantStatusInformation).OnboardingStatus = n.GetEnumValue<TenantOnboardingStatus>(); } },
                 {"tenantOnboardingEligibilityReason", (o,n) => { (o as TenantStatusInformation).TenantOnboardingEligibilityReason = n.GetEnumValue<TenantOnboardingEligibilityReason>(); } },
-                {"workloadStatuses", (o,n) => { (o as TenantStatusInformation).WorkloadStatuses = n.GetCollectionOfObjectValues<WorkloadStatus>().ToList(); } },
+                {"workloadStatuses", (o,n) => { (o as TenantStatusInformation).WorkloadStatuses = n.GetCollectionOfObjectValues<WorkloadStatus>(WorkloadStatus.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

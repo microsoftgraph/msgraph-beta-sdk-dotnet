@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions {
         /// </summary>
         public async Task<AppDefinitionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppDefinitionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppDefinitionsResponse>(requestInfo, AppDefinitionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The details for each version of the app.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.AppCatalogs.TeamsApps.Item.AppDefinitions {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsAppDefinition> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsAppDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsAppDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsAppDefinition>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TeamsAppDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The details for each version of the app.</summary>
         public class GetQueryParameters : QueryParametersBase {

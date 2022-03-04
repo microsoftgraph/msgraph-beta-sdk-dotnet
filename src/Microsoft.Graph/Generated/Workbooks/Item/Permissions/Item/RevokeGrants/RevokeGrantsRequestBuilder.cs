@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Permissions.Item.RevokeGrants {
         public async Task<RevokeGrantsResponse> PostAsync(RevokeGrantsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RevokeGrantsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RevokeGrantsResponse>(requestInfo, RevokeGrantsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes permission</summary>
         public class RevokeGrantsResponse : IParsable {
@@ -86,12 +86,16 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Permissions.Item.RevokeGrants {
             public RevokeGrantsResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static RevokeGrantsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new RevokeGrantsResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"permission", (o,n) => { (o as RevokeGrantsResponse).Permission = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(); } },
+                    {"permission", (o,n) => { (o as RevokeGrantsResponse).Permission = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Permission>(MicrosoftGraphSdk.Models.Microsoft.Graph.Permission.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Publications {
         /// </summary>
         public async Task<PublicationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PublicationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PublicationsResponse>(requestInfo, PublicationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents details of any publications a user has added to their profile.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Publications {
         public async Task<ItemPublication> PostAsync(ItemPublication body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ItemPublication>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemPublication>(requestInfo, ItemPublication.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents details of any publications a user has added to their profile.</summary>
         public class GetQueryParameters : QueryParametersBase {

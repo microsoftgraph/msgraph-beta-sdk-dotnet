@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SearchAlteration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SearchAlteration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"alteredHighlightedQueryString", (o,n) => { (o as SearchAlteration).AlteredHighlightedQueryString = n.GetStringValue(); } },
                 {"alteredQueryString", (o,n) => { (o as SearchAlteration).AlteredQueryString = n.GetStringValue(); } },
-                {"alteredQueryTokens", (o,n) => { (o as SearchAlteration).AlteredQueryTokens = n.GetCollectionOfObjectValues<AlteredQueryToken>().ToList(); } },
+                {"alteredQueryTokens", (o,n) => { (o as SearchAlteration).AlteredQueryTokens = n.GetCollectionOfObjectValues<AlteredQueryToken>(AlteredQueryToken.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

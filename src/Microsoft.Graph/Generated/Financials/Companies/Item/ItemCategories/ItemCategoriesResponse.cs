@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.ItemCategories {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ItemCategoriesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ItemCategoriesResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as ItemCategoriesResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as ItemCategoriesResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory>().ToList(); } },
+                {"value", (o,n) => { (o as ItemCategoriesResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory>(MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

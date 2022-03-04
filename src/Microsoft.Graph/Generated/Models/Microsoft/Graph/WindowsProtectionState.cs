@@ -48,12 +48,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates whether the Windows Defender tamper protection feature is enabled.</summary>
         public bool? TamperProtectionEnabled { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WindowsProtectionState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WindowsProtectionState();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"antiMalwareVersion", (o,n) => { (o as WindowsProtectionState).AntiMalwareVersion = n.GetStringValue(); } },
-                {"detectedMalwareState", (o,n) => { (o as WindowsProtectionState).DetectedMalwareState = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>().ToList(); } },
+                {"detectedMalwareState", (o,n) => { (o as WindowsProtectionState).DetectedMalwareState = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>(WindowsDeviceMalwareState.CreateFromDiscriminatorValue).ToList(); } },
                 {"deviceState", (o,n) => { (o as WindowsProtectionState).DeviceState = n.GetEnumValue<WindowsDeviceHealthState>(); } },
                 {"engineVersion", (o,n) => { (o as WindowsProtectionState).EngineVersion = n.GetStringValue(); } },
                 {"fullScanOverdue", (o,n) => { (o as WindowsProtectionState).FullScanOverdue = n.GetBoolValue(); } },

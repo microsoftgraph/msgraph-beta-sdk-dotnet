@@ -20,22 +20,30 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The type of OS image (custom or gallery) you want to provision on Cloud PCs. Possible values are: gallery, custom.</summary>
         public CloudPcProvisioningPolicyImageType? ImageType { get; set; }
         /// <summary>The specific settings for the Microsoft Managed Desktop, which enables customers to get a managed device experience for the Cloud PC. Before you can enable Microsoft Managed Desktop, an admin must configure it.</summary>
-        public MicrosoftManagedDesktop MicrosoftManagedDesktop { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftManagedDesktop MicrosoftManagedDesktop { get; set; }
         /// <summary>The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.</summary>
         public string OnPremisesConnectionId { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CloudPcProvisioningPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CloudPcProvisioningPolicy();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as CloudPcProvisioningPolicy).Assignments = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as CloudPcProvisioningPolicy).Assignments = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>(CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as CloudPcProvisioningPolicy).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as CloudPcProvisioningPolicy).DisplayName = n.GetStringValue(); } },
-                {"domainJoinConfiguration", (o,n) => { (o as CloudPcProvisioningPolicy).DomainJoinConfiguration = n.GetObjectValue<CloudPcDomainJoinConfiguration>(); } },
+                {"domainJoinConfiguration", (o,n) => { (o as CloudPcProvisioningPolicy).DomainJoinConfiguration = n.GetObjectValue<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
                 {"imageDisplayName", (o,n) => { (o as CloudPcProvisioningPolicy).ImageDisplayName = n.GetStringValue(); } },
                 {"imageId", (o,n) => { (o as CloudPcProvisioningPolicy).ImageId = n.GetStringValue(); } },
                 {"imageType", (o,n) => { (o as CloudPcProvisioningPolicy).ImageType = n.GetEnumValue<CloudPcProvisioningPolicyImageType>(); } },
-                {"microsoftManagedDesktop", (o,n) => { (o as CloudPcProvisioningPolicy).MicrosoftManagedDesktop = n.GetObjectValue<MicrosoftManagedDesktop>(); } },
+                {"microsoftManagedDesktop", (o,n) => { (o as CloudPcProvisioningPolicy).MicrosoftManagedDesktop = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftManagedDesktop>(MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
                 {"onPremisesConnectionId", (o,n) => { (o as CloudPcProvisioningPolicy).OnPremisesConnectionId = n.GetStringValue(); } },
             };
         }
@@ -53,7 +61,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteStringValue("imageId", ImageId);
             writer.WriteEnumValue<CloudPcProvisioningPolicyImageType>("imageType", ImageType);
-            writer.WriteObjectValue<MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
         }
     }

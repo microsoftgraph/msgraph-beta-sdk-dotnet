@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.GetPolicySets {
         public async Task<IEnumerable<GetPolicySets>> PostAsync(GetPolicySetsRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<GetPolicySets>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetPolicySets>(requestInfo, GetPolicySets.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

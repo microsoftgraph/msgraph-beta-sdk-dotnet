@@ -30,15 +30,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SynchronizationRule CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SynchronizationRule();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"editable", (o,n) => { (o as SynchronizationRule).Editable = n.GetBoolValue(); } },
                 {"id", (o,n) => { (o as SynchronizationRule).Id = n.GetStringValue(); } },
-                {"metadata", (o,n) => { (o as SynchronizationRule).Metadata = n.GetCollectionOfObjectValues<StringKeyStringValuePair>().ToList(); } },
+                {"metadata", (o,n) => { (o as SynchronizationRule).Metadata = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"name", (o,n) => { (o as SynchronizationRule).Name = n.GetStringValue(); } },
-                {"objectMappings", (o,n) => { (o as SynchronizationRule).ObjectMappings = n.GetCollectionOfObjectValues<ObjectMapping>().ToList(); } },
+                {"objectMappings", (o,n) => { (o as SynchronizationRule).ObjectMappings = n.GetCollectionOfObjectValues<ObjectMapping>(ObjectMapping.CreateFromDiscriminatorValue).ToList(); } },
                 {"priority", (o,n) => { (o as SynchronizationRule).Priority = n.GetIntValue(); } },
                 {"sourceDirectoryName", (o,n) => { (o as SynchronizationRule).SourceDirectoryName = n.GetStringValue(); } },
                 {"targetDirectoryName", (o,n) => { (o as SynchronizationRule).TargetDirectoryName = n.GetStringValue(); } },

@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests {
         /// </summary>
         public async Task<PrivilegedRoleAssignmentRequestsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequestsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequestsResponse>(requestInfo, PrivilegedRoleAssignmentRequestsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \privilegedRoleAssignmentRequests\microsoft.graph.my()
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.PrivilegedRoleAssignmentRequests {
         public async Task<PrivilegedRoleAssignmentRequest> PostAsync(PrivilegedRoleAssignmentRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from privilegedRoleAssignmentRequests</summary>
         public class GetQueryParameters : QueryParametersBase {

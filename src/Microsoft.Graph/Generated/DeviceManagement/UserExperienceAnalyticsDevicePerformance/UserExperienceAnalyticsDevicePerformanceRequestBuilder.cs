@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicePerfor
         /// </summary>
         public async Task<UserExperienceAnalyticsDevicePerformanceResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDevicePerformanceResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDevicePerformanceResponse>(requestInfo, UserExperienceAnalyticsDevicePerformanceResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics device performance
@@ -113,7 +113,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicePerfor
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsDevicePerformance> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsDevicePerformance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsDevicePerformance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsDevicePerformance>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsDevicePerformance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\userExperienceAnalyticsDevicePerformance\microsoft.graph.summarizeDevicePerformanceDevices(summarizeBy={summarizeBy})

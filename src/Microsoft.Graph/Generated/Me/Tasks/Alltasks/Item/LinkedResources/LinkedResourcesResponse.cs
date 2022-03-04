@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Me.Tasks.Alltasks.Item.LinkedResources {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static LinkedResourcesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new LinkedResourcesResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as LinkedResourcesResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as LinkedResourcesResponse).Value = n.GetCollectionOfObjectValues<LinkedResource_v2>().ToList(); } },
+                {"value", (o,n) => { (o as LinkedResourcesResponse).Value = n.GetCollectionOfObjectValues<LinkedResource_v2>(LinkedResource_v2.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

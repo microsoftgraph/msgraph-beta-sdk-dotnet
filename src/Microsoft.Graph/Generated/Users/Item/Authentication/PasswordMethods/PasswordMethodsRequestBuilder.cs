@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods {
         /// </summary>
         public async Task<PasswordMethodsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PasswordMethodsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PasswordMethodsResponse>(requestInfo, PasswordMethodsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to passwordMethods for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Authentication.PasswordMethods {
         public async Task<PasswordAuthenticationMethod> PostAsync(PasswordAuthenticationMethod body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PasswordAuthenticationMethod>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PasswordAuthenticationMethod>(requestInfo, PasswordAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get passwordMethods from users</summary>
         public class GetQueryParameters : QueryParametersBase {

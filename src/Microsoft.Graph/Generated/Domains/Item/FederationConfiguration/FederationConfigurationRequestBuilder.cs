@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Domains.Item.FederationConfiguration {
         /// </summary>
         public async Task<FederationConfigurationResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<FederationConfigurationResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<FederationConfigurationResponse>(requestInfo, FederationConfigurationResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to federationConfiguration for domains
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Domains.Item.FederationConfiguration {
         public async Task<InternalDomainFederation> PostAsync(InternalDomainFederation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get federationConfiguration from domains</summary>
         public class GetQueryParameters : QueryParametersBase {

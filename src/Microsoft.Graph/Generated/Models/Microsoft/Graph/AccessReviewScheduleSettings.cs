@@ -40,11 +40,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AccessReviewScheduleSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessReviewScheduleSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"applyActions", (o,n) => { (o as AccessReviewScheduleSettings).ApplyActions = n.GetCollectionOfObjectValues<AccessReviewApplyAction>().ToList(); } },
+                {"applyActions", (o,n) => { (o as AccessReviewScheduleSettings).ApplyActions = n.GetCollectionOfObjectValues<AccessReviewApplyAction>(AccessReviewApplyAction.CreateFromDiscriminatorValue).ToList(); } },
                 {"autoApplyDecisionsEnabled", (o,n) => { (o as AccessReviewScheduleSettings).AutoApplyDecisionsEnabled = n.GetBoolValue(); } },
                 {"decisionHistoriesForReviewersEnabled", (o,n) => { (o as AccessReviewScheduleSettings).DecisionHistoriesForReviewersEnabled = n.GetBoolValue(); } },
                 {"defaultDecision", (o,n) => { (o as AccessReviewScheduleSettings).DefaultDecision = n.GetStringValue(); } },
@@ -52,10 +60,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"instanceDurationInDays", (o,n) => { (o as AccessReviewScheduleSettings).InstanceDurationInDays = n.GetIntValue(); } },
                 {"justificationRequiredOnApproval", (o,n) => { (o as AccessReviewScheduleSettings).JustificationRequiredOnApproval = n.GetBoolValue(); } },
                 {"mailNotificationsEnabled", (o,n) => { (o as AccessReviewScheduleSettings).MailNotificationsEnabled = n.GetBoolValue(); } },
-                {"recommendationInsightSettings", (o,n) => { (o as AccessReviewScheduleSettings).RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>().ToList(); } },
+                {"recommendationInsightSettings", (o,n) => { (o as AccessReviewScheduleSettings).RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>(AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue).ToList(); } },
                 {"recommendationLookBackDuration", (o,n) => { (o as AccessReviewScheduleSettings).RecommendationLookBackDuration = n.GetTimeSpanValue(); } },
                 {"recommendationsEnabled", (o,n) => { (o as AccessReviewScheduleSettings).RecommendationsEnabled = n.GetBoolValue(); } },
-                {"recurrence", (o,n) => { (o as AccessReviewScheduleSettings).Recurrence = n.GetObjectValue<PatternedRecurrence>(); } },
+                {"recurrence", (o,n) => { (o as AccessReviewScheduleSettings).Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
                 {"reminderNotificationsEnabled", (o,n) => { (o as AccessReviewScheduleSettings).ReminderNotificationsEnabled = n.GetBoolValue(); } },
             };
         }

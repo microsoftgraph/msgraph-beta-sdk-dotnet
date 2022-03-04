@@ -36,7 +36,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Device enrollment start date.</summary>
         public DateTimeOffset? EnrollmentStartDateTime { get; set; }
         /// <summary>Enrollment state like Enrolled, Failed. Possible values are: unknown, enrolled, pendingReset, failed, notContacted, blocked.</summary>
-        public EnrollmentState? EnrollmentState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.EnrollmentState? EnrollmentState { get; set; }
         /// <summary>Enrollment type. Possible values are: unknown, azureADJoinedWithAutopilotProfile, offlineDomainJoined, azureADJoinedUsingDeviceAuthWithAutopilotProfile, azureADJoinedUsingDeviceAuthWithoutAutopilotProfile, azureADJoinedWithOfflineAutopilotProfile, azureADJoinedWithWhiteGlove, offlineDomainJoinedWithWhiteGlove, offlineDomainJoinedWithOfflineAutopilotProfile.</summary>
         public WindowsAutopilotEnrollmentType? EnrollmentType { get; set; }
         /// <summary>Time when the event occurred .</summary>
@@ -59,6 +59,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Windows10EnrollmentCompletionPageConfigurationId { get; set; }
         /// <summary>Autopilot profile name.</summary>
         public string WindowsAutopilotDeploymentProfileDisplayName { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementAutopilotEvent CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementAutopilotEvent();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -84,7 +92,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"eventDateTime", (o,n) => { (o as DeviceManagementAutopilotEvent).EventDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managedDeviceName", (o,n) => { (o as DeviceManagementAutopilotEvent).ManagedDeviceName = n.GetStringValue(); } },
                 {"osVersion", (o,n) => { (o as DeviceManagementAutopilotEvent).OsVersion = n.GetStringValue(); } },
-                {"policyStatusDetails", (o,n) => { (o as DeviceManagementAutopilotEvent).PolicyStatusDetails = n.GetCollectionOfObjectValues<DeviceManagementAutopilotPolicyStatusDetail>().ToList(); } },
+                {"policyStatusDetails", (o,n) => { (o as DeviceManagementAutopilotEvent).PolicyStatusDetails = n.GetCollectionOfObjectValues<DeviceManagementAutopilotPolicyStatusDetail>(DeviceManagementAutopilotPolicyStatusDetail.CreateFromDiscriminatorValue).ToList(); } },
                 {"targetedAppCount", (o,n) => { (o as DeviceManagementAutopilotEvent).TargetedAppCount = n.GetIntValue(); } },
                 {"targetedPolicyCount", (o,n) => { (o as DeviceManagementAutopilotEvent).TargetedPolicyCount = n.GetIntValue(); } },
                 {"userPrincipalName", (o,n) => { (o as DeviceManagementAutopilotEvent).UserPrincipalName = n.GetStringValue(); } },

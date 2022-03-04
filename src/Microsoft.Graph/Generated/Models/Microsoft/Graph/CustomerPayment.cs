@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string AppliesToInvoiceNumber { get; set; }
         public string Comment { get; set; }
         public string ContactId { get; set; }
-        public Customer Customer { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Customer Customer { get; set; }
         public string CustomerId { get; set; }
         public string CustomerNumber { get; set; }
         public string Description { get; set; }
@@ -22,6 +22,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? LineNumber { get; set; }
         public Date? PostingDate { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CustomerPayment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CustomerPayment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -31,7 +39,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"appliesToInvoiceNumber", (o,n) => { (o as CustomerPayment).AppliesToInvoiceNumber = n.GetStringValue(); } },
                 {"comment", (o,n) => { (o as CustomerPayment).Comment = n.GetStringValue(); } },
                 {"contactId", (o,n) => { (o as CustomerPayment).ContactId = n.GetStringValue(); } },
-                {"customer", (o,n) => { (o as CustomerPayment).Customer = n.GetObjectValue<Customer>(); } },
+                {"customer", (o,n) => { (o as CustomerPayment).Customer = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Customer>(MicrosoftGraphSdk.Models.Microsoft.Graph.Customer.CreateFromDiscriminatorValue); } },
                 {"customerId", (o,n) => { (o as CustomerPayment).CustomerId = n.GetStringValue(); } },
                 {"customerNumber", (o,n) => { (o as CustomerPayment).CustomerNumber = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as CustomerPayment).Description = n.GetStringValue(); } },
@@ -55,7 +63,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("appliesToInvoiceNumber", AppliesToInvoiceNumber);
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("contactId", ContactId);
-            writer.WriteObjectValue<Customer>("customer", Customer);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Customer>("customer", Customer);
             writer.WriteStringValue("customerId", CustomerId);
             writer.WriteStringValue("customerNumber", CustomerNumber);
             writer.WriteStringValue("description", Description);

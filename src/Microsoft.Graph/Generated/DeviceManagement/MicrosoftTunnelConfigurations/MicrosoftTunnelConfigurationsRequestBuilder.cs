@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelConfigurations {
         /// </summary>
         public async Task<MicrosoftTunnelConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftTunnelConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelConfigurationsResponse>(requestInfo, MicrosoftTunnelConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelConfiguration settings associated with account.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelConfigurations {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of MicrosoftTunnelConfiguration settings associated with account.</summary>
         public class GetQueryParameters : QueryParametersBase {

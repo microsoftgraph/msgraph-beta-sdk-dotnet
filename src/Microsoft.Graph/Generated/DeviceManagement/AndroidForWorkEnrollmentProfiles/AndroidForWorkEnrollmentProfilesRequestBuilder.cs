@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles {
         /// </summary>
         public async Task<AndroidForWorkEnrollmentProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AndroidForWorkEnrollmentProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidForWorkEnrollmentProfilesResponse>(requestInfo, AndroidForWorkEnrollmentProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Android for Work enrollment profile entities.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidForWorkEnrollmentProfiles {
         public async Task<AndroidForWorkEnrollmentProfile> PostAsync(AndroidForWorkEnrollmentProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AndroidForWorkEnrollmentProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidForWorkEnrollmentProfile>(requestInfo, AndroidForWorkEnrollmentProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Android for Work enrollment profile entities.</summary>
         public class GetQueryParameters : QueryParametersBase {

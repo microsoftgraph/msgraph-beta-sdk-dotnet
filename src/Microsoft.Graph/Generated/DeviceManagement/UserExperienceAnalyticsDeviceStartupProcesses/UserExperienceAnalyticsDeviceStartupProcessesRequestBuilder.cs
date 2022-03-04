@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDeviceStartu
         /// </summary>
         public async Task<UserExperienceAnalyticsDeviceStartupProcessesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceStartupProcessesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceStartupProcessesResponse>(requestInfo, UserExperienceAnalyticsDeviceStartupProcessesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics device Startup Processes
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDeviceStartu
         public async Task<UserExperienceAnalyticsDeviceStartupProcess> PostAsync(UserExperienceAnalyticsDeviceStartupProcess body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceStartupProcess>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceStartupProcess>(requestInfo, UserExperienceAnalyticsDeviceStartupProcess.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>User experience analytics device Startup Processes</summary>
         public class GetQueryParameters : QueryParametersBase {

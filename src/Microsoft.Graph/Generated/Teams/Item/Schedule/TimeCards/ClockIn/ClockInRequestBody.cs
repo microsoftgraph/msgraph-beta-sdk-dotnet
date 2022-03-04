@@ -18,12 +18,20 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeCards.ClockIn {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ClockInRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ClockInRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"atApprovedLocation", (o,n) => { (o as ClockInRequestBody).AtApprovedLocation = n.GetBoolValue(); } },
-                {"notes", (o,n) => { (o as ClockInRequestBody).Notes = n.GetObjectValue<ItemBody>(); } },
+                {"notes", (o,n) => { (o as ClockInRequestBody).Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"onBehalfOfUserId", (o,n) => { (o as ClockInRequestBody).OnBehalfOfUserId = n.GetStringValue(); } },
             };
         }

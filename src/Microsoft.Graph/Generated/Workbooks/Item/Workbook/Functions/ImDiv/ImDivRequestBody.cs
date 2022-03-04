@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.ImDiv {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ImDivRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ImDivRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"inumber1", (o,n) => { (o as ImDivRequestBody).Inumber1 = n.GetObjectValue<Json>(); } },
-                {"inumber2", (o,n) => { (o as ImDivRequestBody).Inumber2 = n.GetObjectValue<Json>(); } },
+                {"inumber1", (o,n) => { (o as ImDivRequestBody).Inumber1 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"inumber2", (o,n) => { (o as ImDivRequestBody).Inumber2 = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

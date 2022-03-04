@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.Notes {
         /// </summary>
         public async Task<NotesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NotesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NotesResponse>(requestInfo, NotesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of notes associcated with the request.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Privacy.SubjectRightsRequests.Item.Notes {
         public async Task<AuthoredNote> PostAsync(AuthoredNote body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AuthoredNote>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthoredNote>(requestInfo, AuthoredNote.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of notes associcated with the request.</summary>
         public class GetQueryParameters : QueryParametersBase {

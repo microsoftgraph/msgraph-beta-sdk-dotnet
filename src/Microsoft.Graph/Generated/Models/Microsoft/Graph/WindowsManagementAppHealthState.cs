@@ -10,11 +10,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Windows 10 OS version of the device on which Windows management app is installed.</summary>
         public string DeviceOSVersion { get; set; }
         /// <summary>Windows management app health state. Possible values are: unknown, healthy, unhealthy.</summary>
-        public HealthState? HealthState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.HealthState? HealthState { get; set; }
         /// <summary>Windows management app installed version.</summary>
         public string InstalledVersion { get; set; }
         /// <summary>Windows management app last check-in time.</summary>
         public DateTimeOffset? LastCheckInDateTime { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WindowsManagementAppHealthState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WindowsManagementAppHealthState();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

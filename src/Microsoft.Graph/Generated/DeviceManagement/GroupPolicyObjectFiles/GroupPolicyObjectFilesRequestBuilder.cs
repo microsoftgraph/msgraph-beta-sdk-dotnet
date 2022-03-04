@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyObjectFiles {
         /// </summary>
         public async Task<GroupPolicyObjectFilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyObjectFilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyObjectFilesResponse>(requestInfo, GroupPolicyObjectFilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A list of Group Policy Object files uploaded.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyObjectFiles {
         public async Task<GroupPolicyObjectFile> PostAsync(GroupPolicyObjectFile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyObjectFile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyObjectFile>(requestInfo, GroupPolicyObjectFile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A list of Group Policy Object files uploaded.</summary>
         public class GetQueryParameters : QueryParametersBase {

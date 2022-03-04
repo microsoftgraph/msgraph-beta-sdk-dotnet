@@ -10,10 +10,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string BillToCustomerId { get; set; }
         public string BillToCustomerNumber { get; set; }
         public string BillToName { get; set; }
-        public Currency Currency { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Currency Currency { get; set; }
         public string CurrencyCode { get; set; }
         public string CurrencyId { get; set; }
-        public Customer Customer { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Customer Customer { get; set; }
         public string CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string CustomerNumber { get; set; }
@@ -28,14 +28,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Number { get; set; }
         public string OrderId { get; set; }
         public string OrderNumber { get; set; }
-        public PaymentTerm PaymentTerm { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm PaymentTerm { get; set; }
         public string PaymentTermsId { get; set; }
         public string PhoneNumber { get; set; }
         public bool? PricesIncludeTax { get; set; }
         public List<SalesInvoiceLine> SalesInvoiceLines { get; set; }
         public string Salesperson { get; set; }
         public PostalAddressType SellingPostalAddress { get; set; }
-        public ShipmentMethod ShipmentMethod { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ShipmentMethod ShipmentMethod { get; set; }
         public string ShipmentMethodId { get; set; }
         public PostalAddressType ShippingPostalAddress { get; set; }
         public string ShipToContact { get; set; }
@@ -45,18 +45,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public decimal? TotalAmountIncludingTax { get; set; }
         public decimal? TotalTaxAmount { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SalesInvoice CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SalesInvoice();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"billingPostalAddress", (o,n) => { (o as SalesInvoice).BillingPostalAddress = n.GetObjectValue<PostalAddressType>(); } },
+                {"billingPostalAddress", (o,n) => { (o as SalesInvoice).BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"billToCustomerId", (o,n) => { (o as SalesInvoice).BillToCustomerId = n.GetStringValue(); } },
                 {"billToCustomerNumber", (o,n) => { (o as SalesInvoice).BillToCustomerNumber = n.GetStringValue(); } },
                 {"billToName", (o,n) => { (o as SalesInvoice).BillToName = n.GetStringValue(); } },
-                {"currency", (o,n) => { (o as SalesInvoice).Currency = n.GetObjectValue<Currency>(); } },
+                {"currency", (o,n) => { (o as SalesInvoice).Currency = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Currency>(MicrosoftGraphSdk.Models.Microsoft.Graph.Currency.CreateFromDiscriminatorValue); } },
                 {"currencyCode", (o,n) => { (o as SalesInvoice).CurrencyCode = n.GetStringValue(); } },
                 {"currencyId", (o,n) => { (o as SalesInvoice).CurrencyId = n.GetStringValue(); } },
-                {"customer", (o,n) => { (o as SalesInvoice).Customer = n.GetObjectValue<Customer>(); } },
+                {"customer", (o,n) => { (o as SalesInvoice).Customer = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Customer>(MicrosoftGraphSdk.Models.Microsoft.Graph.Customer.CreateFromDiscriminatorValue); } },
                 {"customerId", (o,n) => { (o as SalesInvoice).CustomerId = n.GetStringValue(); } },
                 {"customerName", (o,n) => { (o as SalesInvoice).CustomerName = n.GetStringValue(); } },
                 {"customerNumber", (o,n) => { (o as SalesInvoice).CustomerNumber = n.GetStringValue(); } },
@@ -71,16 +79,16 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"number", (o,n) => { (o as SalesInvoice).Number = n.GetStringValue(); } },
                 {"orderId", (o,n) => { (o as SalesInvoice).OrderId = n.GetStringValue(); } },
                 {"orderNumber", (o,n) => { (o as SalesInvoice).OrderNumber = n.GetStringValue(); } },
-                {"paymentTerm", (o,n) => { (o as SalesInvoice).PaymentTerm = n.GetObjectValue<PaymentTerm>(); } },
+                {"paymentTerm", (o,n) => { (o as SalesInvoice).PaymentTerm = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm>(MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm.CreateFromDiscriminatorValue); } },
                 {"paymentTermsId", (o,n) => { (o as SalesInvoice).PaymentTermsId = n.GetStringValue(); } },
                 {"phoneNumber", (o,n) => { (o as SalesInvoice).PhoneNumber = n.GetStringValue(); } },
                 {"pricesIncludeTax", (o,n) => { (o as SalesInvoice).PricesIncludeTax = n.GetBoolValue(); } },
-                {"salesInvoiceLines", (o,n) => { (o as SalesInvoice).SalesInvoiceLines = n.GetCollectionOfObjectValues<SalesInvoiceLine>().ToList(); } },
+                {"salesInvoiceLines", (o,n) => { (o as SalesInvoice).SalesInvoiceLines = n.GetCollectionOfObjectValues<SalesInvoiceLine>(SalesInvoiceLine.CreateFromDiscriminatorValue).ToList(); } },
                 {"salesperson", (o,n) => { (o as SalesInvoice).Salesperson = n.GetStringValue(); } },
-                {"sellingPostalAddress", (o,n) => { (o as SalesInvoice).SellingPostalAddress = n.GetObjectValue<PostalAddressType>(); } },
-                {"shipmentMethod", (o,n) => { (o as SalesInvoice).ShipmentMethod = n.GetObjectValue<ShipmentMethod>(); } },
+                {"sellingPostalAddress", (o,n) => { (o as SalesInvoice).SellingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                {"shipmentMethod", (o,n) => { (o as SalesInvoice).ShipmentMethod = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ShipmentMethod>(MicrosoftGraphSdk.Models.Microsoft.Graph.ShipmentMethod.CreateFromDiscriminatorValue); } },
                 {"shipmentMethodId", (o,n) => { (o as SalesInvoice).ShipmentMethodId = n.GetStringValue(); } },
-                {"shippingPostalAddress", (o,n) => { (o as SalesInvoice).ShippingPostalAddress = n.GetObjectValue<PostalAddressType>(); } },
+                {"shippingPostalAddress", (o,n) => { (o as SalesInvoice).ShippingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"shipToContact", (o,n) => { (o as SalesInvoice).ShipToContact = n.GetStringValue(); } },
                 {"shipToName", (o,n) => { (o as SalesInvoice).ShipToName = n.GetStringValue(); } },
                 {"status", (o,n) => { (o as SalesInvoice).Status = n.GetStringValue(); } },
@@ -100,10 +108,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("billToCustomerId", BillToCustomerId);
             writer.WriteStringValue("billToCustomerNumber", BillToCustomerNumber);
             writer.WriteStringValue("billToName", BillToName);
-            writer.WriteObjectValue<Currency>("currency", Currency);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Currency>("currency", Currency);
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteStringValue("currencyId", CurrencyId);
-            writer.WriteObjectValue<Customer>("customer", Customer);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Customer>("customer", Customer);
             writer.WriteStringValue("customerId", CustomerId);
             writer.WriteStringValue("customerName", CustomerName);
             writer.WriteStringValue("customerNumber", CustomerNumber);
@@ -118,14 +126,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("number", Number);
             writer.WriteStringValue("orderId", OrderId);
             writer.WriteStringValue("orderNumber", OrderNumber);
-            writer.WriteObjectValue<PaymentTerm>("paymentTerm", PaymentTerm);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm>("paymentTerm", PaymentTerm);
             writer.WriteStringValue("paymentTermsId", PaymentTermsId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteBoolValue("pricesIncludeTax", PricesIncludeTax);
             writer.WriteCollectionOfObjectValues<SalesInvoiceLine>("salesInvoiceLines", SalesInvoiceLines);
             writer.WriteStringValue("salesperson", Salesperson);
             writer.WriteObjectValue<PostalAddressType>("sellingPostalAddress", SellingPostalAddress);
-            writer.WriteObjectValue<ShipmentMethod>("shipmentMethod", ShipmentMethod);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ShipmentMethod>("shipmentMethod", ShipmentMethod);
             writer.WriteStringValue("shipmentMethodId", ShipmentMethodId);
             writer.WriteObjectValue<PostalAddressType>("shippingPostalAddress", ShippingPostalAddress);
             writer.WriteStringValue("shipToContact", ShipToContact);

@@ -158,7 +158,7 @@ namespace MicrosoftGraphSdk.Contacts.Item {
         /// </summary>
         public async Task<OrgContact> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OrgContact>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OrgContact>(requestInfo, OrgContact.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update entity in contacts

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.EmbeddedSIMActivationCodePools.Item
         /// </summary>
         public async Task<EmbeddedSIMDeviceState> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EmbeddedSIMDeviceState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EmbeddedSIMDeviceState>(requestInfo, EmbeddedSIMDeviceState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Navigational property to a list of device states for this pool.

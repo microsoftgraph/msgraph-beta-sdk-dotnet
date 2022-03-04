@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs {
         /// </summary>
         public async Task<CloudPCsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CloudPCsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPCsResponse>(requestInfo, CloudPCsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Cloud managed virtual desktops.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.CloudPCs {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPC.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Cloud managed virtual desktops.</summary>
         public class GetQueryParameters : QueryParametersBase {

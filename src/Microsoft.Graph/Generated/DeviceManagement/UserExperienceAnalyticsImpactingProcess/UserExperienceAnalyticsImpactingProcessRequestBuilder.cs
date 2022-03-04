@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsImpactingPro
         /// </summary>
         public async Task<UserExperienceAnalyticsImpactingProcessResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsImpactingProcessResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsImpactingProcessResponse>(requestInfo, UserExperienceAnalyticsImpactingProcessResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics impacting process
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsImpactingPro
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsImpactingProcess.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>User experience analytics impacting process</summary>
         public class GetQueryParameters : QueryParametersBase {

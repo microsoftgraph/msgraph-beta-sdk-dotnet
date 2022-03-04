@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Convert {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ConvertRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ConvertRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"fromUnit", (o,n) => { (o as ConvertRequestBody).FromUnit = n.GetObjectValue<Json>(); } },
-                {"number", (o,n) => { (o as ConvertRequestBody).Number = n.GetObjectValue<Json>(); } },
-                {"toUnit", (o,n) => { (o as ConvertRequestBody).ToUnit = n.GetObjectValue<Json>(); } },
+                {"fromUnit", (o,n) => { (o as ConvertRequestBody).FromUnit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"number", (o,n) => { (o as ConvertRequestBody).Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"toUnit", (o,n) => { (o as ConvertRequestBody).ToUnit = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

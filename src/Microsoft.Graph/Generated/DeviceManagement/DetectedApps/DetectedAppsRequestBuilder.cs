@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DetectedApps {
         /// </summary>
         public async Task<DetectedAppsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DetectedAppsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DetectedAppsResponse>(requestInfo, DetectedAppsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of detected apps associated with a device.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DetectedApps {
         public async Task<DetectedApp> PostAsync(DetectedApp body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DetectedApp>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DetectedApp>(requestInfo, DetectedApp.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of detected apps associated with a device.</summary>
         public class GetQueryParameters : QueryParametersBase {

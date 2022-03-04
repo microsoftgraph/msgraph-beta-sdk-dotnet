@@ -21,16 +21,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.</summary>
         public DateTimeOffset? ServerCreatedDateTime { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Mention CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Mention();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"application", (o,n) => { (o as Mention).Application = n.GetStringValue(); } },
                 {"clientReference", (o,n) => { (o as Mention).ClientReference = n.GetStringValue(); } },
-                {"createdBy", (o,n) => { (o as Mention).CreatedBy = n.GetObjectValue<EmailAddress>(); } },
+                {"createdBy", (o,n) => { (o as Mention).CreatedBy = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as Mention).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deepLink", (o,n) => { (o as Mention).DeepLink = n.GetStringValue(); } },
-                {"mentioned", (o,n) => { (o as Mention).Mentioned = n.GetObjectValue<EmailAddress>(); } },
+                {"mentioned", (o,n) => { (o as Mention).Mentioned = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
                 {"mentionText", (o,n) => { (o as Mention).MentionText = n.GetStringValue(); } },
                 {"serverCreatedDateTime", (o,n) => { (o as Mention).ServerCreatedDateTime = n.GetDateTimeOffsetValue(); } },
             };

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.GalleryImages {
         /// </summary>
         public async Task<GalleryImagesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GalleryImagesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GalleryImagesResponse>(requestInfo, GalleryImagesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The gallery image resource on Cloud PC.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.GalleryImages {
         public async Task<CloudPcGalleryImage> PostAsync(CloudPcGalleryImage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CloudPcGalleryImage>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcGalleryImage>(requestInfo, CloudPcGalleryImage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The gallery image resource on Cloud PC.</summary>
         public class GetQueryParameters : QueryParametersBase {

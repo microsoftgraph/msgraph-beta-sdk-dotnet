@@ -85,7 +85,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.I
         /// </summary>
         public async Task<NoncustodialSourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NoncustodialSourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NoncustodialSourcesResponse>(requestInfo, NoncustodialSourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>noncustodialDataSource sources that are included in the sourceCollection</summary>
         public class GetQueryParameters : QueryParametersBase {

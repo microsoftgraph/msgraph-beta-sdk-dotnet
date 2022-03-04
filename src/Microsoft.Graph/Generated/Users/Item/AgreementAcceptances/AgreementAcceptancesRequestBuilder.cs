@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Users.Item.AgreementAcceptances {
         /// </summary>
         public async Task<AgreementAcceptancesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AgreementAcceptancesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AgreementAcceptancesResponse>(requestInfo, AgreementAcceptancesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The user's terms of use acceptance statuses. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

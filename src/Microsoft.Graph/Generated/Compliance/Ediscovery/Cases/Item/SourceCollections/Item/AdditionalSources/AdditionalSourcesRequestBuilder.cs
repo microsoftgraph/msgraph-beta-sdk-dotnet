@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.I
         /// </summary>
         public async Task<AdditionalSourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AdditionalSourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AdditionalSourcesResponse>(requestInfo, AdditionalSourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Adds an additional source to the sourceCollection.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.I
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.DataSource> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.DataSource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.DataSource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.DataSource>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.DataSource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Adds an additional source to the sourceCollection.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Onenote.Notebooks.GetRecentNotebooksWith
         /// </summary>
         public async Task<IEnumerable<GetRecentNotebooksWithIncludePersonalNotebooks>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetRecentNotebooksWithIncludePersonalNotebooks>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetRecentNotebooksWithIncludePersonalNotebooks>(requestInfo, GetRecentNotebooksWithIncludePersonalNotebooks.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

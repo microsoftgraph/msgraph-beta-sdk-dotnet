@@ -12,13 +12,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The tasks in this task list. Read-only. Nullable.</summary>
         public List<BaseTask> Tasks { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new BaseTaskList CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new BaseTaskList();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"displayName", (o,n) => { (o as BaseTaskList).DisplayName = n.GetStringValue(); } },
-                {"extensions", (o,n) => { (o as BaseTaskList).Extensions = n.GetCollectionOfObjectValues<Extension>().ToList(); } },
-                {"tasks", (o,n) => { (o as BaseTaskList).Tasks = n.GetCollectionOfObjectValues<BaseTask>().ToList(); } },
+                {"extensions", (o,n) => { (o as BaseTaskList).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"tasks", (o,n) => { (o as BaseTaskList).Tasks = n.GetCollectionOfObjectValues<BaseTask>(BaseTask.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -10,10 +10,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string BillToCustomerId { get; set; }
         public string BillToCustomerNumber { get; set; }
         public string BillToName { get; set; }
-        public Currency Currency { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Currency Currency { get; set; }
         public string CurrencyCode { get; set; }
         public string CurrencyId { get; set; }
-        public Customer Customer { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Customer Customer { get; set; }
         public string CustomerId { get; set; }
         public string CustomerName { get; set; }
         public string CustomerNumber { get; set; }
@@ -26,7 +26,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Number { get; set; }
         public Date? OrderDate { get; set; }
         public bool? PartialShipping { get; set; }
-        public PaymentTerm PaymentTerm { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm PaymentTerm { get; set; }
         public string PaymentTermsId { get; set; }
         public string PhoneNumber { get; set; }
         public bool? PricesIncludeTax { get; set; }
@@ -42,18 +42,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public decimal? TotalAmountIncludingTax { get; set; }
         public decimal? TotalTaxAmount { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SalesOrder CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SalesOrder();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"billingPostalAddress", (o,n) => { (o as SalesOrder).BillingPostalAddress = n.GetObjectValue<PostalAddressType>(); } },
+                {"billingPostalAddress", (o,n) => { (o as SalesOrder).BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"billToCustomerId", (o,n) => { (o as SalesOrder).BillToCustomerId = n.GetStringValue(); } },
                 {"billToCustomerNumber", (o,n) => { (o as SalesOrder).BillToCustomerNumber = n.GetStringValue(); } },
                 {"billToName", (o,n) => { (o as SalesOrder).BillToName = n.GetStringValue(); } },
-                {"currency", (o,n) => { (o as SalesOrder).Currency = n.GetObjectValue<Currency>(); } },
+                {"currency", (o,n) => { (o as SalesOrder).Currency = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Currency>(MicrosoftGraphSdk.Models.Microsoft.Graph.Currency.CreateFromDiscriminatorValue); } },
                 {"currencyCode", (o,n) => { (o as SalesOrder).CurrencyCode = n.GetStringValue(); } },
                 {"currencyId", (o,n) => { (o as SalesOrder).CurrencyId = n.GetStringValue(); } },
-                {"customer", (o,n) => { (o as SalesOrder).Customer = n.GetObjectValue<Customer>(); } },
+                {"customer", (o,n) => { (o as SalesOrder).Customer = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Customer>(MicrosoftGraphSdk.Models.Microsoft.Graph.Customer.CreateFromDiscriminatorValue); } },
                 {"customerId", (o,n) => { (o as SalesOrder).CustomerId = n.GetStringValue(); } },
                 {"customerName", (o,n) => { (o as SalesOrder).CustomerName = n.GetStringValue(); } },
                 {"customerNumber", (o,n) => { (o as SalesOrder).CustomerNumber = n.GetStringValue(); } },
@@ -66,15 +74,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"number", (o,n) => { (o as SalesOrder).Number = n.GetStringValue(); } },
                 {"orderDate", (o,n) => { (o as SalesOrder).OrderDate = n.GetDateValue(); } },
                 {"partialShipping", (o,n) => { (o as SalesOrder).PartialShipping = n.GetBoolValue(); } },
-                {"paymentTerm", (o,n) => { (o as SalesOrder).PaymentTerm = n.GetObjectValue<PaymentTerm>(); } },
+                {"paymentTerm", (o,n) => { (o as SalesOrder).PaymentTerm = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm>(MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm.CreateFromDiscriminatorValue); } },
                 {"paymentTermsId", (o,n) => { (o as SalesOrder).PaymentTermsId = n.GetStringValue(); } },
                 {"phoneNumber", (o,n) => { (o as SalesOrder).PhoneNumber = n.GetStringValue(); } },
                 {"pricesIncludeTax", (o,n) => { (o as SalesOrder).PricesIncludeTax = n.GetBoolValue(); } },
                 {"requestedDeliveryDate", (o,n) => { (o as SalesOrder).RequestedDeliveryDate = n.GetDateValue(); } },
-                {"salesOrderLines", (o,n) => { (o as SalesOrder).SalesOrderLines = n.GetCollectionOfObjectValues<SalesOrderLine>().ToList(); } },
+                {"salesOrderLines", (o,n) => { (o as SalesOrder).SalesOrderLines = n.GetCollectionOfObjectValues<SalesOrderLine>(SalesOrderLine.CreateFromDiscriminatorValue).ToList(); } },
                 {"salesperson", (o,n) => { (o as SalesOrder).Salesperson = n.GetStringValue(); } },
-                {"sellingPostalAddress", (o,n) => { (o as SalesOrder).SellingPostalAddress = n.GetObjectValue<PostalAddressType>(); } },
-                {"shippingPostalAddress", (o,n) => { (o as SalesOrder).ShippingPostalAddress = n.GetObjectValue<PostalAddressType>(); } },
+                {"sellingPostalAddress", (o,n) => { (o as SalesOrder).SellingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                {"shippingPostalAddress", (o,n) => { (o as SalesOrder).ShippingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"shipToContact", (o,n) => { (o as SalesOrder).ShipToContact = n.GetStringValue(); } },
                 {"shipToName", (o,n) => { (o as SalesOrder).ShipToName = n.GetStringValue(); } },
                 {"status", (o,n) => { (o as SalesOrder).Status = n.GetStringValue(); } },
@@ -94,10 +102,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("billToCustomerId", BillToCustomerId);
             writer.WriteStringValue("billToCustomerNumber", BillToCustomerNumber);
             writer.WriteStringValue("billToName", BillToName);
-            writer.WriteObjectValue<Currency>("currency", Currency);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Currency>("currency", Currency);
             writer.WriteStringValue("currencyCode", CurrencyCode);
             writer.WriteStringValue("currencyId", CurrencyId);
-            writer.WriteObjectValue<Customer>("customer", Customer);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Customer>("customer", Customer);
             writer.WriteStringValue("customerId", CustomerId);
             writer.WriteStringValue("customerName", CustomerName);
             writer.WriteStringValue("customerNumber", CustomerNumber);
@@ -110,7 +118,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("number", Number);
             writer.WriteDateValue("orderDate", OrderDate);
             writer.WriteBoolValue("partialShipping", PartialShipping);
-            writer.WriteObjectValue<PaymentTerm>("paymentTerm", PaymentTerm);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm>("paymentTerm", PaymentTerm);
             writer.WriteStringValue("paymentTermsId", PaymentTermsId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteBoolValue("pricesIncludeTax", PricesIncludeTax);

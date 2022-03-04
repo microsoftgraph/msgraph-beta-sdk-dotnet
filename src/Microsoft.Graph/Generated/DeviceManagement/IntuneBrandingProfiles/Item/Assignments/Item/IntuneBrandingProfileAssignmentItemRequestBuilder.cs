@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.IntuneBrandingProfiles.Item.Assignm
         /// </summary>
         public async Task<IntuneBrandingProfileAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IntuneBrandingProfileAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IntuneBrandingProfileAssignment>(requestInfo, IntuneBrandingProfileAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of group assignments for the branding profile

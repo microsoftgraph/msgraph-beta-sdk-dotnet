@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Versions.Item {
         /// </summary>
         public async Task<DriveItemVersion> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DriveItemVersion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DriveItemVersion>(requestInfo, DriveItemVersion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.

@@ -23,6 +23,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Item {
         public decimal? UnitCost { get; set; }
         public decimal? UnitPrice { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Item CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Item();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -32,12 +40,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Item {
                 {"displayName", (o,n) => { (o as Item).DisplayName = n.GetStringValue(); } },
                 {"gtin", (o,n) => { (o as Item).Gtin = n.GetStringValue(); } },
                 {"inventory", (o,n) => { (o as Item).Inventory = n.GetDecimalValue(); } },
-                {"itemCategory", (o,n) => { (o as Item).ItemCategory = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory>(); } },
+                {"itemCategory", (o,n) => { (o as Item).ItemCategory = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory>(MicrosoftGraphSdk.Models.Microsoft.Graph.ItemCategory.CreateFromDiscriminatorValue); } },
                 {"itemCategoryCode", (o,n) => { (o as Item).ItemCategoryCode = n.GetStringValue(); } },
                 {"itemCategoryId", (o,n) => { (o as Item).ItemCategoryId = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Item).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"number", (o,n) => { (o as Item).Number = n.GetStringValue(); } },
-                {"picture", (o,n) => { (o as Item).Picture = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture>().ToList(); } },
+                {"picture", (o,n) => { (o as Item).Picture = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Picture>(MicrosoftGraphSdk.Models.Microsoft.Graph.Picture.CreateFromDiscriminatorValue).ToList(); } },
                 {"priceIncludesTax", (o,n) => { (o as Item).PriceIncludesTax = n.GetBoolValue(); } },
                 {"taxGroupCode", (o,n) => { (o as Item).TaxGroupCode = n.GetStringValue(); } },
                 {"taxGroupId", (o,n) => { (o as Item).TaxGroupId = n.GetStringValue(); } },

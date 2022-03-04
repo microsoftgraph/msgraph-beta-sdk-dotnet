@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssign
         /// </summary>
         public async Task<TermsAndConditionsGroupAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TermsAndConditionsGroupAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsGroupAssignment>(requestInfo, TermsAndConditionsGroupAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of group assignments for this T&C policy.

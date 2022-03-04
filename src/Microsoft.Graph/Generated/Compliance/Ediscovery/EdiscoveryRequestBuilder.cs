@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery {
         /// </summary>
         public async Task<Ediscoveryroot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Ediscoveryroot>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Ediscoveryroot>(requestInfo, Ediscoveryroot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property ediscovery in compliance

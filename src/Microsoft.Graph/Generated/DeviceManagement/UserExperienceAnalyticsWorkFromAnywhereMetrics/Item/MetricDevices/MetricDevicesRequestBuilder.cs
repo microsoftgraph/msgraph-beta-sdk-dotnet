@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsWorkFromAnyw
         /// </summary>
         public async Task<MetricDevicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MetricDevicesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MetricDevicesResponse>(requestInfo, MetricDevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The work from anywhere metric devices.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsWorkFromAnyw
         public async Task<UserExperienceAnalyticsWorkFromAnywhereDevice> PostAsync(UserExperienceAnalyticsWorkFromAnywhereDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsWorkFromAnywhereDevice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsWorkFromAnywhereDevice>(requestInfo, UserExperienceAnalyticsWorkFromAnywhereDevice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The work from anywhere metric devices.</summary>
         public class GetQueryParameters : QueryParametersBase {

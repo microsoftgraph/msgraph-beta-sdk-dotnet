@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item.SyncLicenses {
         /// </summary>
         public async Task<SyncLicensesResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<SyncLicensesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SyncLicensesResponse>(requestInfo, SyncLicensesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes vppToken</summary>
         public class SyncLicensesResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type vppToken</summary>
-            public VppToken VppToken { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.VppToken VppToken { get; set; }
             /// <summary>
             /// Instantiates a new syncLicensesResponse and sets the default values.
             /// </summary>
             public SyncLicensesResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static SyncLicensesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new SyncLicensesResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"vppToken", (o,n) => { (o as SyncLicensesResponse).VppToken = n.GetObjectValue<VppToken>(); } },
+                    {"vppToken", (o,n) => { (o as SyncLicensesResponse).VppToken = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.VppToken>(MicrosoftGraphSdk.Models.Microsoft.Graph.VppToken.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.VppTokens.Item.SyncLicenses {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<VppToken>("vppToken", VppToken);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.VppToken>("vppToken", VppToken);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

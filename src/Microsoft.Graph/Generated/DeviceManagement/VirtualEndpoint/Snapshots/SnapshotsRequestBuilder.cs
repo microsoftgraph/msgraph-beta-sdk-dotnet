@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.Snapshots {
         /// </summary>
         public async Task<SnapshotsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SnapshotsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SnapshotsResponse>(requestInfo, SnapshotsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Cloud PC snapshots.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.Snapshots {
         public async Task<CloudPcSnapshot> PostAsync(CloudPcSnapshot body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CloudPcSnapshot>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcSnapshot>(requestInfo, CloudPcSnapshot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Cloud PC snapshots.</summary>
         public class GetQueryParameters : QueryParametersBase {

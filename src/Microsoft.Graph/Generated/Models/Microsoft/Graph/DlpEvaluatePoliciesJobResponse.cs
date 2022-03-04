@@ -7,11 +7,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class DlpEvaluatePoliciesJobResponse : JobResponseBase, IParsable {
         public DlpPoliciesJobResult Result { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DlpEvaluatePoliciesJobResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DlpEvaluatePoliciesJobResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"result", (o,n) => { (o as DlpEvaluatePoliciesJobResponse).Result = n.GetObjectValue<DlpPoliciesJobResult>(); } },
+                {"result", (o,n) => { (o as DlpEvaluatePoliciesJobResponse).Result = n.GetObjectValue<DlpPoliciesJobResult>(DlpPoliciesJobResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

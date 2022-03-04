@@ -25,20 +25,28 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The processing status of the printer/printerShare, including any errors.</summary>
         public PrinterStatus Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PrinterBase CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrinterBase();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"capabilities", (o,n) => { (o as PrinterBase).Capabilities = n.GetObjectValue<PrinterCapabilities>(); } },
-                {"defaults", (o,n) => { (o as PrinterBase).Defaults = n.GetObjectValue<PrinterDefaults>(); } },
+                {"capabilities", (o,n) => { (o as PrinterBase).Capabilities = n.GetObjectValue<PrinterCapabilities>(PrinterCapabilities.CreateFromDiscriminatorValue); } },
+                {"defaults", (o,n) => { (o as PrinterBase).Defaults = n.GetObjectValue<PrinterDefaults>(PrinterDefaults.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as PrinterBase).DisplayName = n.GetStringValue(); } },
                 {"isAcceptingJobs", (o,n) => { (o as PrinterBase).IsAcceptingJobs = n.GetBoolValue(); } },
-                {"jobs", (o,n) => { (o as PrinterBase).Jobs = n.GetCollectionOfObjectValues<PrintJob>().ToList(); } },
-                {"location", (o,n) => { (o as PrinterBase).Location = n.GetObjectValue<PrinterLocation>(); } },
+                {"jobs", (o,n) => { (o as PrinterBase).Jobs = n.GetCollectionOfObjectValues<PrintJob>(PrintJob.CreateFromDiscriminatorValue).ToList(); } },
+                {"location", (o,n) => { (o as PrinterBase).Location = n.GetObjectValue<PrinterLocation>(PrinterLocation.CreateFromDiscriminatorValue); } },
                 {"manufacturer", (o,n) => { (o as PrinterBase).Manufacturer = n.GetStringValue(); } },
                 {"model", (o,n) => { (o as PrinterBase).Model = n.GetStringValue(); } },
                 {"name", (o,n) => { (o as PrinterBase).Name = n.GetStringValue(); } },
-                {"status", (o,n) => { (o as PrinterBase).Status = n.GetObjectValue<PrinterStatus>(); } },
+                {"status", (o,n) => { (o as PrinterBase).Status = n.GetObjectValue<PrinterStatus>(PrinterStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

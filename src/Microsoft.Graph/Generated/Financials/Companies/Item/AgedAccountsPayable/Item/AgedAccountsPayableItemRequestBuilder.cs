@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.AgedAccountsPayable.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property agedAccountsPayable in financials

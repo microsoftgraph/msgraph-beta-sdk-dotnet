@@ -186,7 +186,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item {
         /// </summary>
         public async Task<Call> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Call>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Call>(requestInfo, Call.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property calls in app

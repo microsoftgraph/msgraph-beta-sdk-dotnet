@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Print.TaskDefinitions.Item.Tasks.Item.Definition {
         /// </summary>
         public async Task<PrintTaskDefinition> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrintTaskDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintTaskDefinition>(requestInfo, PrintTaskDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The printTaskDefinition that was used to create this task. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

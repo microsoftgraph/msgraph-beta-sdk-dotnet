@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionWipe
         /// </summary>
         public async Task<WindowsInformationProtectionWipeActionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeActionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeActionsResponse>(requestInfo, WindowsInformationProtectionWipeActionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Windows information protection wipe actions.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionWipe
         public async Task<WindowsInformationProtectionWipeAction> PostAsync(WindowsInformationProtectionWipeAction body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeAction>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeAction>(requestInfo, WindowsInformationProtectionWipeAction.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Windows information protection wipe actions.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleDefinitions {
         /// </summary>
         public async Task<RoleDefinitionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleDefinitionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleDefinitionsResponse>(requestInfo, RoleDefinitionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of role defintions for the resource.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.GovernanceResources.Item.RoleDefinitions {
         public async Task<GovernanceRoleDefinition> PostAsync(GovernanceRoleDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GovernanceRoleDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceRoleDefinition>(requestInfo, GovernanceRoleDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of role defintions for the resource.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Restore {
         public async Task<RestoreResponse> PostAsync(RestoreRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RestoreResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RestoreResponse>(requestInfo, RestoreResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes driveItem</summary>
         public class RestoreResponse : IParsable {
@@ -86,12 +86,16 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Restore {
             public RestoreResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static RestoreResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new RestoreResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"driveItem", (o,n) => { (o as RestoreResponse).DriveItem = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(); } },
+                    {"driveItem", (o,n) => { (o as RestoreResponse).DriveItem = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem>(MicrosoftGraphSdk.Models.Microsoft.Graph.DriveItem.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

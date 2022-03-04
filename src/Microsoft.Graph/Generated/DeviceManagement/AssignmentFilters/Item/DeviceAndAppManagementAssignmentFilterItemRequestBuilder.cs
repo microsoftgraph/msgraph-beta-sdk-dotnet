@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item {
         /// </summary>
         public async Task<DeviceAndAppManagementAssignmentFilter> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\assignmentFilters\{deviceAndAppManagementAssignmentFilter-id}\microsoft.graph.getSupportedProperties()

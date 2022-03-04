@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.AppManagementPolicies {
         /// </summary>
         public async Task<AppManagementPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppManagementPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppManagementPoliciesResponse>(requestInfo, AppManagementPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.AppManagementPolicies {
         public async Task<AppManagementPolicy> PostAsync(AppManagementPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AppManagementPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppManagementPolicy>(requestInfo, AppManagementPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.</summary>
         public class GetQueryParameters : QueryParametersBase {

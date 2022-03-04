@@ -22,13 +22,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SearchResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SearchResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"hitsContainers", (o,n) => { (o as SearchResponse).HitsContainers = n.GetCollectionOfObjectValues<SearchHitsContainer>().ToList(); } },
-                {"queryAlterationResponse", (o,n) => { (o as SearchResponse).QueryAlterationResponse = n.GetObjectValue<AlterationResponse>(); } },
-                {"resultTemplates", (o,n) => { (o as SearchResponse).ResultTemplates = n.GetObjectValue<ResultTemplateDictionary>(); } },
+                {"hitsContainers", (o,n) => { (o as SearchResponse).HitsContainers = n.GetCollectionOfObjectValues<SearchHitsContainer>(SearchHitsContainer.CreateFromDiscriminatorValue).ToList(); } },
+                {"queryAlterationResponse", (o,n) => { (o as SearchResponse).QueryAlterationResponse = n.GetObjectValue<AlterationResponse>(AlterationResponse.CreateFromDiscriminatorValue); } },
+                {"resultTemplates", (o,n) => { (o as SearchResponse).ResultTemplates = n.GetObjectValue<ResultTemplateDictionary>(ResultTemplateDictionary.CreateFromDiscriminatorValue); } },
                 {"searchTerms", (o,n) => { (o as SearchResponse).SearchTerms = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }

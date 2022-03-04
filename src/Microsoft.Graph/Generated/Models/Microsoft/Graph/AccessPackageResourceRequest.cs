@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageResourceRequest : Entity, IParsable {
         /// <summary>Nullable.</summary>
-        public AccessPackageResource AccessPackageResource { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource AccessPackageResource { get; set; }
         /// <summary>The unique ID of the access package catalog.</summary>
         public string CatalogId { get; set; }
         public bool? ExecuteImmediately { get; set; }
@@ -25,17 +25,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.</summary>
         public string RequestType { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessPackageResourceRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessPackageResourceRequest();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceRequest).AccessPackageResource = n.GetObjectValue<AccessPackageResource>(); } },
+                {"accessPackageResource", (o,n) => { (o as AccessPackageResourceRequest).AccessPackageResource = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource>(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource.CreateFromDiscriminatorValue); } },
                 {"catalogId", (o,n) => { (o as AccessPackageResourceRequest).CatalogId = n.GetStringValue(); } },
                 {"executeImmediately", (o,n) => { (o as AccessPackageResourceRequest).ExecuteImmediately = n.GetBoolValue(); } },
                 {"expirationDateTime", (o,n) => { (o as AccessPackageResourceRequest).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isValidationOnly", (o,n) => { (o as AccessPackageResourceRequest).IsValidationOnly = n.GetBoolValue(); } },
                 {"justification", (o,n) => { (o as AccessPackageResourceRequest).Justification = n.GetStringValue(); } },
-                {"requestor", (o,n) => { (o as AccessPackageResourceRequest).Requestor = n.GetObjectValue<AccessPackageSubject>(); } },
+                {"requestor", (o,n) => { (o as AccessPackageResourceRequest).Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
                 {"requestState", (o,n) => { (o as AccessPackageResourceRequest).RequestState = n.GetStringValue(); } },
                 {"requestStatus", (o,n) => { (o as AccessPackageResourceRequest).RequestStatus = n.GetStringValue(); } },
                 {"requestType", (o,n) => { (o as AccessPackageResourceRequest).RequestType = n.GetStringValue(); } },
@@ -48,7 +56,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AccessPackageResource>("accessPackageResource", AccessPackageResource);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource>("accessPackageResource", AccessPackageResource);
             writer.WriteStringValue("catalogId", CatalogId);
             writer.WriteBoolValue("executeImmediately", ExecuteImmediately);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);

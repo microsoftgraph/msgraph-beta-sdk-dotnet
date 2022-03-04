@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Provides additional detail on the feature identified in requirementProvider.</summary>
         public string Detail { get; set; }
         /// <summary>Identifies what Azure AD feature requires MFA in this policy. Possible values are: user, request, servicePrincipal, v1ConditionalAccess, multiConditionalAccess, tenantSessionRiskPolicy, accountCompromisePolicies, v1ConditionalAccessDependency, v1ConditionalAccessPolicyIdRequested, mfaRegistrationRequiredByIdentityProtectionPolicy, baselineProtection, mfaRegistrationRequiredByBaselineProtection, mfaRegistrationRequiredByMultiConditionalAccess, enforcedForCspAdmins, securityDefaults, mfaRegistrationRequiredBySecurityDefaults, proofUpCodeRequest, crossTenantOutboundRule, gpsLocationCondition, riskBasedPolicy, unknownFutureValue.</summary>
-        public RequirementProvider? RequirementProvider { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RequirementProvider? RequirementProvider { get; set; }
         /// <summary>
         /// Instantiates a new authenticationRequirementPolicy and sets the default values.
         /// </summary>
         public AuthenticationRequirementPolicy() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AuthenticationRequirementPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AuthenticationRequirementPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model

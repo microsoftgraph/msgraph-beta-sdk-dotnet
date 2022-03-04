@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups {
         /// </summary>
         public async Task<TenantGroupsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TenantGroupsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantGroupsResponse>(requestInfo, TenantGroupsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.TenantGroups {
         public async Task<TenantGroup> PostAsync(TenantGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TenantGroup>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantGroup>(requestInfo, TenantGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of a logical grouping of managed tenants used by the multi-tenant management platform.</summary>
         public class GetQueryParameters : QueryParametersBase {

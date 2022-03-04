@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssign
         /// </summary>
         public async Task<GroupAssignmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupAssignmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupAssignmentsResponse>(requestInfo, GroupAssignmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of group assignments for this T&C policy.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.TermsAndConditions.Item.GroupAssign
         public async Task<TermsAndConditionsGroupAssignment> PostAsync(TermsAndConditionsGroupAssignment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TermsAndConditionsGroupAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsGroupAssignment>(requestInfo, TermsAndConditionsGroupAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of group assignments for this T&C policy.</summary>
         public class GetQueryParameters : QueryParametersBase {

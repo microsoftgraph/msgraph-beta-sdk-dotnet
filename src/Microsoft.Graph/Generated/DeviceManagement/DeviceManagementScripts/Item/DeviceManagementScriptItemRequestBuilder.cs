@@ -142,7 +142,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item {
         /// </summary>
         public async Task<DeviceManagementScript> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementScript>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementScript>(requestInfo, DeviceManagementScript.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of device management scripts associated with the tenant.

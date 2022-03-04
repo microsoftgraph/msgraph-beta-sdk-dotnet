@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.Categories.Item.Settin
         /// </summary>
         public async Task<DeviceManagementSettingInstance> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementSettingInstance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementSettingInstance>(requestInfo, DeviceManagementSettingInstance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The settings this category contains

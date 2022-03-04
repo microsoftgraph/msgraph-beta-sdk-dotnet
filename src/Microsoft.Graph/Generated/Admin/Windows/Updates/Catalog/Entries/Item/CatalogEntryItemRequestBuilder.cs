@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog.Entries.Item {
         /// </summary>
         public async Task<CatalogEntry> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CatalogEntry>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CatalogEntry>(requestInfo, CatalogEntry.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Lists the content that you can approve for deployment. Read-only.

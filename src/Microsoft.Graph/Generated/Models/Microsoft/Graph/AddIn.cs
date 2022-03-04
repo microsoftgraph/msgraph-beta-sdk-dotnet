@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AddIn CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AddIn();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"id", (o,n) => { (o as AddIn).Id = n.GetStringValue(); } },
-                {"properties", (o,n) => { (o as AddIn).Properties = n.GetCollectionOfObjectValues<KeyValue>().ToList(); } },
+                {"properties", (o,n) => { (o as AddIn).Properties = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
                 {"type", (o,n) => { (o as AddIn).Type = n.GetStringValue(); } },
             };
         }

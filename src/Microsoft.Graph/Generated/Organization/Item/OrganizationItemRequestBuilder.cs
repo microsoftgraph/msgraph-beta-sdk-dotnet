@@ -162,7 +162,7 @@ namespace MicrosoftGraphSdk.Organization.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Organization> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Organization>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Organization>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Organization.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update entity in organization

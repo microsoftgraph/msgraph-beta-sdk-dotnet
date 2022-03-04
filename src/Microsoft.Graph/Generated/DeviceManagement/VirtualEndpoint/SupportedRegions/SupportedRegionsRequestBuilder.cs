@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.SupportedRegions {
         /// </summary>
         public async Task<SupportedRegionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SupportedRegionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SupportedRegionsResponse>(requestInfo, SupportedRegionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Cloud PC supported regions.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.SupportedRegions {
         public async Task<CloudPcSupportedRegion> PostAsync(CloudPcSupportedRegion body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CloudPcSupportedRegion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcSupportedRegion>(requestInfo, CloudPcSupportedRegion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Cloud PC supported regions.</summary>
         public class GetQueryParameters : QueryParametersBase {

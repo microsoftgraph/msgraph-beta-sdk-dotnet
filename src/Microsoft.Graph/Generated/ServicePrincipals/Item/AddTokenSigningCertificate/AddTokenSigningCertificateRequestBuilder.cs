@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.AddTokenSigningCertificate {
         public async Task<SelfSignedCertificate> PostAsync(SelfSignedCertificateRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SelfSignedCertificate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SelfSignedCertificate>(requestInfo, SelfSignedCertificate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

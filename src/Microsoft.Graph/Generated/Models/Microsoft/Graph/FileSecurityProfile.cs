@@ -22,6 +22,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public SecurityVendorInformation VendorInformation { get; set; }
         public List<VulnerabilityState> VulnerabilityStates { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new FileSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new FileSecurityProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -33,15 +41,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"extensions", (o,n) => { (o as FileSecurityProfile).Extensions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"fileType", (o,n) => { (o as FileSecurityProfile).FileType = n.GetStringValue(); } },
                 {"firstSeenDateTime", (o,n) => { (o as FileSecurityProfile).FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"hashes", (o,n) => { (o as FileSecurityProfile).Hashes = n.GetCollectionOfObjectValues<FileHash>().ToList(); } },
+                {"hashes", (o,n) => { (o as FileSecurityProfile).Hashes = n.GetCollectionOfObjectValues<FileHash>(FileHash.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastSeenDateTime", (o,n) => { (o as FileSecurityProfile).LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"malwareStates", (o,n) => { (o as FileSecurityProfile).MalwareStates = n.GetCollectionOfObjectValues<MalwareState>().ToList(); } },
+                {"malwareStates", (o,n) => { (o as FileSecurityProfile).MalwareStates = n.GetCollectionOfObjectValues<MalwareState>(MalwareState.CreateFromDiscriminatorValue).ToList(); } },
                 {"names", (o,n) => { (o as FileSecurityProfile).Names = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"riskScore", (o,n) => { (o as FileSecurityProfile).RiskScore = n.GetStringValue(); } },
                 {"size", (o,n) => { (o as FileSecurityProfile).Size = n.GetLongValue(); } },
                 {"tags", (o,n) => { (o as FileSecurityProfile).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"vendorInformation", (o,n) => { (o as FileSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(); } },
-                {"vulnerabilityStates", (o,n) => { (o as FileSecurityProfile).VulnerabilityStates = n.GetCollectionOfObjectValues<VulnerabilityState>().ToList(); } },
+                {"vendorInformation", (o,n) => { (o as FileSecurityProfile).VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                {"vulnerabilityStates", (o,n) => { (o as FileSecurityProfile).VulnerabilityStates = n.GetCollectionOfObjectValues<VulnerabilityState>(VulnerabilityState.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

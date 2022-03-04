@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CertificateConnectorDetails {
         /// </summary>
         public async Task<CertificateConnectorDetailsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CertificateConnectorDetailsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CertificateConnectorDetailsResponse>(requestInfo, CertificateConnectorDetailsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CertificateConnectorDetails {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateConnectorDetails> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateConnectorDetails body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateConnectorDetails>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateConnectorDetails>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateConnectorDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.</summary>
         public class GetQueryParameters : QueryParametersBase {

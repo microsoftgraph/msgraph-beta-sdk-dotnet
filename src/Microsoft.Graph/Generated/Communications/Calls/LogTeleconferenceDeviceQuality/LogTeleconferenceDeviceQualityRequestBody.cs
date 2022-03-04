@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.Communications.Calls.LogTeleconferenceDeviceQuality 
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static LogTeleconferenceDeviceQualityRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new LogTeleconferenceDeviceQualityRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"quality", (o,n) => { (o as LogTeleconferenceDeviceQualityRequestBody).Quality = n.GetObjectValue<TeleconferenceDeviceQuality>(); } },
+                {"quality", (o,n) => { (o as LogTeleconferenceDeviceQualityRequestBody).Quality = n.GetObjectValue<TeleconferenceDeviceQuality>(TeleconferenceDeviceQuality.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

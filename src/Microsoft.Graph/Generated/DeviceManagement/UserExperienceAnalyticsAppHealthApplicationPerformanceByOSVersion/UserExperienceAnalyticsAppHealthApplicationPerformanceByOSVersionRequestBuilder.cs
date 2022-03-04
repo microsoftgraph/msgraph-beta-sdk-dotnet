@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthApp
         /// </summary>
         public async Task<UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionResponse>(requestInfo, UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics appHealth Application Performance by OS Version
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthApp
         public async Task<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> PostAsync(UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>(requestInfo, UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>User experience analytics appHealth Application Performance by OS Version</summary>
         public class GetQueryParameters : QueryParametersBase {

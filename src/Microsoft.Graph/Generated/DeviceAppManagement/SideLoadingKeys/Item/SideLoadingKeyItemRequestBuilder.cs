@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.SideLoadingKeys.Item {
         /// </summary>
         public async Task<SideLoadingKey> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SideLoadingKey>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SideLoadingKey>(requestInfo, SideLoadingKey.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.

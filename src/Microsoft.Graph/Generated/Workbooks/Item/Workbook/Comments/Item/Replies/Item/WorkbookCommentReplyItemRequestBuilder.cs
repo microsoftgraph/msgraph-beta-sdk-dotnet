@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Comments.Item.Replies.Item {
         /// </summary>
         public async Task<WorkbookCommentReply> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WorkbookCommentReply>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookCommentReply>(requestInfo, WorkbookCommentReply.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable.

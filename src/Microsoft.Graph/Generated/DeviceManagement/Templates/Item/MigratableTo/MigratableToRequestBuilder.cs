@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo {
         /// </summary>
         public async Task<MigratableToResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MigratableToResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MigratableToResponse>(requestInfo, MigratableToResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of templates this template can migrate to
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Templates.Item.MigratableTo {
         public async Task<DeviceManagementTemplate> PostAsync(DeviceManagementTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementTemplate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementTemplate>(requestInfo, DeviceManagementTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of templates this template can migrate to</summary>
         public class GetQueryParameters : QueryParametersBase {

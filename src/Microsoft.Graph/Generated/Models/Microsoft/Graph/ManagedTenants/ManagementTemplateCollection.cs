@@ -13,6 +13,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public DateTimeOffset? LastActionDateTime { get; set; }
         public List<ManagementTemplate> ManagementTemplates { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagementTemplateCollection CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagementTemplateCollection();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -23,7 +31,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
                 {"displayName", (o,n) => { (o as ManagementTemplateCollection).DisplayName = n.GetStringValue(); } },
                 {"lastActionByUserId", (o,n) => { (o as ManagementTemplateCollection).LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", (o,n) => { (o as ManagementTemplateCollection).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplates", (o,n) => { (o as ManagementTemplateCollection).ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>().ToList(); } },
+                {"managementTemplates", (o,n) => { (o as ManagementTemplateCollection).ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

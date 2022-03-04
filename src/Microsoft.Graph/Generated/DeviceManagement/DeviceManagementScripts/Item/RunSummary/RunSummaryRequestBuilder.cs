@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceManagementScripts.Item.RunSum
         /// </summary>
         public async Task<DeviceManagementScriptRunSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementScriptRunSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementScriptRunSummary>(requestInfo, DeviceManagementScriptRunSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Run summary for device management script.</summary>
         public class GetQueryParameters : QueryParametersBase {

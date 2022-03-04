@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Languages {
         /// </summary>
         public async Task<LanguagesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<LanguagesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<LanguagesResponse>(requestInfo, LanguagesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents detailed information about languages that a user has added to their profile.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Languages {
         public async Task<LanguageProficiency> PostAsync(LanguageProficiency body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<LanguageProficiency>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<LanguageProficiency>(requestInfo, LanguageProficiency.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents detailed information about languages that a user has added to their profile.</summary>
         public class GetQueryParameters : QueryParametersBase {

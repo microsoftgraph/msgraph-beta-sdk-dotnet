@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.ScheduledAc
         /// </summary>
         public async Task<DeviceManagementComplianceActionItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementComplianceActionItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementComplianceActionItem>(requestInfo, DeviceManagementComplianceActionItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.

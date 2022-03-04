@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.OnlineMeetings.Item.AttendanceReports.Ite
         /// </summary>
         public async Task<AttendanceRecord> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AttendanceRecord>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttendanceRecord>(requestInfo, AttendanceRecord.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of attendance records of an attendance report. Read-only.

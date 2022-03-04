@@ -18,7 +18,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Brief description (100 characters or less) of the threat represented by the indicator. Required.</summary>
         public string Description { get; set; }
         /// <summary>The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.</summary>
-        public DiamondModel? DiamondModel { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DiamondModel? DiamondModel { get; set; }
         public string DomainName { get; set; }
         public string EmailEncoding { get; set; }
         public string EmailLanguage { get; set; }
@@ -35,7 +35,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string ExternalId { get; set; }
         public DateTimeOffset? FileCompileDateTime { get; set; }
         public DateTimeOffset? FileCreatedDateTime { get; set; }
-        public FileHashType? FileHashType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.FileHashType? FileHashType { get; set; }
         public string FileHashValue { get; set; }
         public string FileMutexName { get; set; }
         public string FileName { get; set; }
@@ -81,9 +81,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.</summary>
         public string ThreatType { get; set; }
         /// <summary>Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.</summary>
-        public TlpLevel? TlpLevel { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.TlpLevel? TlpLevel { get; set; }
         public string Url { get; set; }
         public string UserAgent { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new TiIndicator CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TiIndicator();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>DisplayName of the PolicySetItem.</summary>
         public string DisplayName { get; set; }
         /// <summary>Error code if any occured. Possible values are: noError, unauthorized, notFound, deleted.</summary>
-        public ErrorCode? ErrorCode { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ErrorCode? ErrorCode { get; set; }
         /// <summary>Tags of the guided deployment</summary>
         public List<string> GuidedDeploymentTags { get; set; }
         /// <summary>policySetType of the PolicySetItem.</summary>
@@ -21,6 +21,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string PayloadId { get; set; }
         /// <summary>Status of the PolicySetItem. Possible values are: unknown, validating, partialSuccess, success, error, notAssigned.</summary>
         public PolicySetStatus? Status { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PolicySetItem();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

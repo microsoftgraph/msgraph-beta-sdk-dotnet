@@ -23,18 +23,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.</summary>
         public EducationSynchronizationProfileState? State { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new EducationSynchronizationProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new EducationSynchronizationProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"dataProvider", (o,n) => { (o as EducationSynchronizationProfile).DataProvider = n.GetObjectValue<EducationSynchronizationDataProvider>(); } },
+                {"dataProvider", (o,n) => { (o as EducationSynchronizationProfile).DataProvider = n.GetObjectValue<EducationSynchronizationDataProvider>(EducationSynchronizationDataProvider.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as EducationSynchronizationProfile).DisplayName = n.GetStringValue(); } },
-                {"errors", (o,n) => { (o as EducationSynchronizationProfile).Errors = n.GetCollectionOfObjectValues<EducationSynchronizationError>().ToList(); } },
+                {"errors", (o,n) => { (o as EducationSynchronizationProfile).Errors = n.GetCollectionOfObjectValues<EducationSynchronizationError>(EducationSynchronizationError.CreateFromDiscriminatorValue).ToList(); } },
                 {"expirationDate", (o,n) => { (o as EducationSynchronizationProfile).ExpirationDate = n.GetDateValue(); } },
                 {"handleSpecialCharacterConstraint", (o,n) => { (o as EducationSynchronizationProfile).HandleSpecialCharacterConstraint = n.GetBoolValue(); } },
-                {"identitySynchronizationConfiguration", (o,n) => { (o as EducationSynchronizationProfile).IdentitySynchronizationConfiguration = n.GetObjectValue<EducationIdentitySynchronizationConfiguration>(); } },
-                {"licensesToAssign", (o,n) => { (o as EducationSynchronizationProfile).LicensesToAssign = n.GetCollectionOfObjectValues<EducationSynchronizationLicenseAssignment>().ToList(); } },
-                {"profileStatus", (o,n) => { (o as EducationSynchronizationProfile).ProfileStatus = n.GetObjectValue<EducationSynchronizationProfileStatus>(); } },
+                {"identitySynchronizationConfiguration", (o,n) => { (o as EducationSynchronizationProfile).IdentitySynchronizationConfiguration = n.GetObjectValue<EducationIdentitySynchronizationConfiguration>(EducationIdentitySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
+                {"licensesToAssign", (o,n) => { (o as EducationSynchronizationProfile).LicensesToAssign = n.GetCollectionOfObjectValues<EducationSynchronizationLicenseAssignment>(EducationSynchronizationLicenseAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"profileStatus", (o,n) => { (o as EducationSynchronizationProfile).ProfileStatus = n.GetObjectValue<EducationSynchronizationProfileStatus>(EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue); } },
                 {"state", (o,n) => { (o as EducationSynchronizationProfile).State = n.GetEnumValue<EducationSynchronizationProfileState>(); } },
             };
         }

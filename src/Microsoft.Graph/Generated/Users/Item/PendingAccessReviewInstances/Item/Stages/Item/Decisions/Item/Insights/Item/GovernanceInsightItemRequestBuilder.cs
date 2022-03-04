@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.PendingAccessReviewInstances.Item.Stages.
         /// </summary>
         public async Task<GovernanceInsight> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GovernanceInsight>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceInsight>(requestInfo, GovernanceInsight.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.

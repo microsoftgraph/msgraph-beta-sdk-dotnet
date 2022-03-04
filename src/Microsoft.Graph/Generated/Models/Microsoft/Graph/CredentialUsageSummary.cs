@@ -14,6 +14,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Provides the count of successful registrations or resets.</summary>
         public long? SuccessfulActivityCount { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CredentialUsageSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CredentialUsageSummary();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {

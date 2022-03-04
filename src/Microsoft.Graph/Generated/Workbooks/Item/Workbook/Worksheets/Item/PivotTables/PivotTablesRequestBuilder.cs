@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.PivotTables 
         /// </summary>
         public async Task<PivotTablesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PivotTablesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PivotTablesResponse>(requestInfo, PivotTablesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of PivotTables that are part of the worksheet.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.PivotTables 
         public async Task<WorkbookPivotTable> PostAsync(WorkbookPivotTable body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WorkbookPivotTable>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookPivotTable>(requestInfo, WorkbookPivotTable.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of PivotTables that are part of the worksheet.</summary>
         public class GetQueryParameters : QueryParametersBase {

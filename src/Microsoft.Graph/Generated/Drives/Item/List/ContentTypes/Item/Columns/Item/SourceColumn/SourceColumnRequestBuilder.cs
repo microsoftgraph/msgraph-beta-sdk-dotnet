@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Drives.Item.List.ContentTypes.Item.Columns.Item.Sour
         /// </summary>
         public async Task<ColumnDefinition> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The source column for the content type column.</summary>
         public class GetQueryParameters : QueryParametersBase {

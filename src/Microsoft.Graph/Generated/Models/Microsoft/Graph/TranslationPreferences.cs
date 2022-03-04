@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Translation override behavior for languages, if any.Returned by default.</summary>
         public List<TranslationLanguageOverride> LanguageOverrides { get; set; }
         /// <summary>The user's preferred translation behavior.Returned by default. Not nullable.</summary>
-        public TranslationBehavior? TranslationBehavior { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.TranslationBehavior? TranslationBehavior { get; set; }
         /// <summary>The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify 'fr' for the neutral French culture, but not 'fr-FR' for the French culture in France. Returned by default. Read only.</summary>
         public List<string> UntranslatedLanguages { get; set; }
         /// <summary>
@@ -20,11 +20,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TranslationPreferences CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TranslationPreferences();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"languageOverrides", (o,n) => { (o as TranslationPreferences).LanguageOverrides = n.GetCollectionOfObjectValues<TranslationLanguageOverride>().ToList(); } },
+                {"languageOverrides", (o,n) => { (o as TranslationPreferences).LanguageOverrides = n.GetCollectionOfObjectValues<TranslationLanguageOverride>(TranslationLanguageOverride.CreateFromDiscriminatorValue).ToList(); } },
                 {"translationBehavior", (o,n) => { (o as TranslationPreferences).TranslationBehavior = n.GetEnumValue<TranslationBehavior>(); } },
                 {"untranslatedLanguages", (o,n) => { (o as TranslationPreferences).UntranslatedLanguages = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };

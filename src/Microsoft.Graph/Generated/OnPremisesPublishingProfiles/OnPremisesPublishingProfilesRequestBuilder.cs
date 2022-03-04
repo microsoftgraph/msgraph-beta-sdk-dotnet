@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles {
         /// </summary>
         public async Task<OnPremisesPublishingProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OnPremisesPublishingProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesPublishingProfilesResponse>(requestInfo, OnPremisesPublishingProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to onPremisesPublishingProfiles
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles {
         public async Task<OnPremisesPublishingProfile> PostAsync(OnPremisesPublishingProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OnPremisesPublishingProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesPublishingProfile>(requestInfo, OnPremisesPublishingProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from onPremisesPublishingProfiles</summary>
         public class GetQueryParameters : QueryParametersBase {

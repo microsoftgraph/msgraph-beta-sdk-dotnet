@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsWorkFromAnyw
         /// </summary>
         public async Task<UserExperienceAnalyticsWorkFromAnywhereDevice> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsWorkFromAnywhereDevice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsWorkFromAnywhereDevice>(requestInfo, UserExperienceAnalyticsWorkFromAnywhereDevice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The work from anywhere metric devices.

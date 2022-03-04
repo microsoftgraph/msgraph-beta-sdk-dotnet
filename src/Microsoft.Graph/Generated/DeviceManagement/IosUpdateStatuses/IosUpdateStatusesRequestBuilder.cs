@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.IosUpdateStatuses {
         /// </summary>
         public async Task<IosUpdateStatusesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IosUpdateStatusesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IosUpdateStatusesResponse>(requestInfo, IosUpdateStatusesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The IOS software update installation statuses for this account.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.IosUpdateStatuses {
         public async Task<IosUpdateDeviceStatus> PostAsync(IosUpdateDeviceStatus body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<IosUpdateDeviceStatus>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IosUpdateDeviceStatus>(requestInfo, IosUpdateDeviceStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The IOS software update installation statuses for this account.</summary>
         public class GetQueryParameters : QueryParametersBase {

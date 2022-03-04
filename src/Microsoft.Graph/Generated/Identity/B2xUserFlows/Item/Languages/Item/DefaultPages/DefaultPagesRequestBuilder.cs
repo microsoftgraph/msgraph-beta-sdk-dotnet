@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.DefaultPag
         /// </summary>
         public async Task<DefaultPagesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DefaultPagesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DefaultPagesResponse>(requestInfo, DefaultPagesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item.Languages.Item.DefaultPag
         public async Task<UserFlowLanguagePage> PostAsync(UserFlowLanguagePage body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserFlowLanguagePage>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserFlowLanguagePage>(requestInfo, UserFlowLanguagePage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.</summary>
         public class GetQueryParameters : QueryParametersBase {

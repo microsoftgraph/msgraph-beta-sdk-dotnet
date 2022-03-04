@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.TermsOfUse.Agreements.Item {
         /// </summary>
         public async Task<Agreement> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Agreement>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Agreement>(requestInfo, Agreement.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).

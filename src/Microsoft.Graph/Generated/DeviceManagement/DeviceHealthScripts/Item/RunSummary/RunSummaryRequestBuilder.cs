@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.Item.RunSummary
         /// </summary>
         public async Task<DeviceHealthScriptRunSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceHealthScriptRunSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceHealthScriptRunSummary>(requestInfo, DeviceHealthScriptRunSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// High level run summary for device health script.

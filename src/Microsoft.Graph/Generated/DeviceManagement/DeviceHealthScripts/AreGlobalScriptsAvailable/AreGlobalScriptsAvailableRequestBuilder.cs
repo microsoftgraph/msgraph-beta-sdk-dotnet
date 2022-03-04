@@ -67,19 +67,23 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.AreGlobalScript
         /// </summary>
         public async Task<AreGlobalScriptsAvailableResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<AreGlobalScriptsAvailableResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AreGlobalScriptsAvailableResponse>(requestInfo, AreGlobalScriptsAvailableResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes globalDeviceHealthScriptState</summary>
         public class AreGlobalScriptsAvailableResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type globalDeviceHealthScriptState</summary>
-            public GlobalDeviceHealthScriptState? GlobalDeviceHealthScriptState { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.GlobalDeviceHealthScriptState? GlobalDeviceHealthScriptState { get; set; }
             /// <summary>
             /// Instantiates a new areGlobalScriptsAvailableResponse and sets the default values.
             /// </summary>
             public AreGlobalScriptsAvailableResponse() {
                 AdditionalData = new Dictionary<string, object>();
+            }
+            public static AreGlobalScriptsAvailableResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new AreGlobalScriptsAvailableResponse();
             }
             /// <summary>
             /// The deserialization information for the current model

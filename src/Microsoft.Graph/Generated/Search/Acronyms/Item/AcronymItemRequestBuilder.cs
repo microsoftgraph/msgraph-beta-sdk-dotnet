@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Search.Acronyms.Item {
         /// </summary>
         public async Task<Acronym> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Acronym>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Acronym>(requestInfo, Acronym.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Administrative answer in Microsoft Search results to define common acronyms in a organization.

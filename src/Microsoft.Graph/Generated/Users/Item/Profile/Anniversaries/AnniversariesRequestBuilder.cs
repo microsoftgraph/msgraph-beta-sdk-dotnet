@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Anniversaries {
         /// </summary>
         public async Task<AnniversariesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AnniversariesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AnniversariesResponse>(requestInfo, AnniversariesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the details of meaningful dates associated with a person.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Anniversaries {
         public async Task<PersonAnnualEvent> PostAsync(PersonAnnualEvent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PersonAnnualEvent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonAnnualEvent>(requestInfo, PersonAnnualEvent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents the details of meaningful dates associated with a person.</summary>
         public class GetQueryParameters : QueryParametersBase {

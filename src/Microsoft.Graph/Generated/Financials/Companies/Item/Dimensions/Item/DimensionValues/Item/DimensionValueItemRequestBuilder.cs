@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.Dimensions.Item.DimensionV
         /// </summary>
         public async Task<DimensionValue> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DimensionValue>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DimensionValue>(requestInfo, DimensionValue.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property dimensionValues in financials

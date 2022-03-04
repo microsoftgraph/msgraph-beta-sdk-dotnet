@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.AppRoleAssignedTo {
         /// </summary>
         public async Task<AppRoleAssignedToResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppRoleAssignedToResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppRoleAssignedToResponse>(requestInfo, AppRoleAssignedToResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.AppRoleAssignedTo {
         public async Task<AppRoleAssignment> PostAsync(AppRoleAssignment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppRoleAssignment>(requestInfo, AppRoleAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.</summary>
         public class GetQueryParameters : QueryParametersBase {

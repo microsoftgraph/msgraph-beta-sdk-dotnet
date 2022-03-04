@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.Employees.Item {
         /// </summary>
         public async Task<Employee> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Employee>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Employee>(requestInfo, Employee.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property employees in financials

@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.OfficeConfiguration.ClientConfigurations.Item {
         /// </summary>
         public async Task<OfficeClientConfiguration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OfficeClientConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OfficeClientConfiguration>(requestInfo, OfficeClientConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of office Client configuration.

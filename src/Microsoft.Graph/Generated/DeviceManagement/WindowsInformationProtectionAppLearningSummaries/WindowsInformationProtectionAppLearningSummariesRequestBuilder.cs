@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionAppLear
         /// </summary>
         public async Task<WindowsInformationProtectionAppLearningSummariesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLearningSummariesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLearningSummariesResponse>(requestInfo, WindowsInformationProtectionAppLearningSummariesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The windows information protection app learning summaries.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionAppLear
         public async Task<WindowsInformationProtectionAppLearningSummary> PostAsync(WindowsInformationProtectionAppLearningSummary body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLearningSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLearningSummary>(requestInfo, WindowsInformationProtectionAppLearningSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The windows information protection app learning summaries.</summary>
         public class GetQueryParameters : QueryParametersBase {

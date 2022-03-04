@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.Item.GetSupported
         /// </summary>
         public async Task<IEnumerable<GetSupportedProperties>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetSupportedProperties>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetSupportedProperties>(requestInfo, GetSupportedProperties.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

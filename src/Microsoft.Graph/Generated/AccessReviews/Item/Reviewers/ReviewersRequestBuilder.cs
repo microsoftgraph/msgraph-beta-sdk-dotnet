@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Reviewers {
         /// </summary>
         public async Task<ReviewersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ReviewersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ReviewersResponse>(requestInfo, ReviewersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.Reviewers {
         public async Task<AccessReviewReviewer> PostAsync(AccessReviewReviewer body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AccessReviewReviewer>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccessReviewReviewer>(requestInfo, AccessReviewReviewer.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of reviewers for an access review, if access review reviewerType is of type delegated.</summary>
         public class GetQueryParameters : QueryParametersBase {

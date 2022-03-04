@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.Identity.B2xUserFlows.Item {
         /// </summary>
         public async Task<B2xIdentityUserFlow> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<B2xIdentityUserFlow>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<B2xIdentityUserFlow>(requestInfo, B2xIdentityUserFlow.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents entry point for B2X/self-service sign-up identity userflows.

@@ -22,14 +22,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static IdentityProtectionRoot CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new IdentityProtectionRoot();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"riskDetections", (o,n) => { (o as IdentityProtectionRoot).RiskDetections = n.GetCollectionOfObjectValues<RiskDetection>().ToList(); } },
-                {"riskyServicePrincipals", (o,n) => { (o as IdentityProtectionRoot).RiskyServicePrincipals = n.GetCollectionOfObjectValues<RiskyServicePrincipal>().ToList(); } },
-                {"riskyUsers", (o,n) => { (o as IdentityProtectionRoot).RiskyUsers = n.GetCollectionOfObjectValues<RiskyUser>().ToList(); } },
-                {"servicePrincipalRiskDetections", (o,n) => { (o as IdentityProtectionRoot).ServicePrincipalRiskDetections = n.GetCollectionOfObjectValues<ServicePrincipalRiskDetection>().ToList(); } },
+                {"riskDetections", (o,n) => { (o as IdentityProtectionRoot).RiskDetections = n.GetCollectionOfObjectValues<RiskDetection>(RiskDetection.CreateFromDiscriminatorValue).ToList(); } },
+                {"riskyServicePrincipals", (o,n) => { (o as IdentityProtectionRoot).RiskyServicePrincipals = n.GetCollectionOfObjectValues<RiskyServicePrincipal>(RiskyServicePrincipal.CreateFromDiscriminatorValue).ToList(); } },
+                {"riskyUsers", (o,n) => { (o as IdentityProtectionRoot).RiskyUsers = n.GetCollectionOfObjectValues<RiskyUser>(RiskyUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"servicePrincipalRiskDetections", (o,n) => { (o as IdentityProtectionRoot).ServicePrincipalRiskDetections = n.GetCollectionOfObjectValues<ServicePrincipalRiskDetection>(ServicePrincipalRiskDetection.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

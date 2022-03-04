@@ -32,11 +32,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>User Principal Name</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MobileAppInstallStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MobileAppInstallStatus();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"app", (o,n) => { (o as MobileAppInstallStatus).App = n.GetObjectValue<MobileApp>(); } },
+                {"app", (o,n) => { (o as MobileAppInstallStatus).App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
                 {"deviceId", (o,n) => { (o as MobileAppInstallStatus).DeviceId = n.GetStringValue(); } },
                 {"deviceName", (o,n) => { (o as MobileAppInstallStatus).DeviceName = n.GetStringValue(); } },
                 {"displayVersion", (o,n) => { (o as MobileAppInstallStatus).DisplayVersion = n.GetStringValue(); } },

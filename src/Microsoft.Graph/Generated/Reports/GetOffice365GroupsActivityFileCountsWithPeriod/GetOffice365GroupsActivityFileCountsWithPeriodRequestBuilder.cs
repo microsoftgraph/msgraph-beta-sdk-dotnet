@@ -69,7 +69,7 @@ namespace MicrosoftGraphSdk.Reports.GetOffice365GroupsActivityFileCountsWithPeri
         /// </summary>
         public async Task<IEnumerable<Office365GroupsActivityFileCounts>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<Office365GroupsActivityFileCounts>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Office365GroupsActivityFileCounts>(requestInfo, Office365GroupsActivityFileCounts.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

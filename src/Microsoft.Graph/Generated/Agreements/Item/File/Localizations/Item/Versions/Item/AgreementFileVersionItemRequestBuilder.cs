@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Agreements.Item.File.Localizations.Item.Versions.Ite
         /// </summary>
         public async Task<AgreementFileVersion> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AgreementFileVersion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AgreementFileVersion>(requestInfo, AgreementFileVersion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.

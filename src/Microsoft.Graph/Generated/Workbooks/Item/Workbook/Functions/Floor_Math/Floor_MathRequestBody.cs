@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Floor_Math {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Floor_MathRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Floor_MathRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"mode", (o,n) => { (o as Floor_MathRequestBody).Mode = n.GetObjectValue<Json>(); } },
-                {"number", (o,n) => { (o as Floor_MathRequestBody).Number = n.GetObjectValue<Json>(); } },
-                {"significance", (o,n) => { (o as Floor_MathRequestBody).Significance = n.GetObjectValue<Json>(); } },
+                {"mode", (o,n) => { (o as Floor_MathRequestBody).Mode = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"number", (o,n) => { (o as Floor_MathRequestBody).Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"significance", (o,n) => { (o as Floor_MathRequestBody).Significance = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

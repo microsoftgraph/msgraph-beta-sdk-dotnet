@@ -39,22 +39,30 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SearchRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SearchRequest();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"aggregationFilters", (o,n) => { (o as SearchRequest).AggregationFilters = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"aggregations", (o,n) => { (o as SearchRequest).Aggregations = n.GetCollectionOfObjectValues<AggregationOption>().ToList(); } },
+                {"aggregations", (o,n) => { (o as SearchRequest).Aggregations = n.GetCollectionOfObjectValues<AggregationOption>(AggregationOption.CreateFromDiscriminatorValue).ToList(); } },
                 {"contentSources", (o,n) => { (o as SearchRequest).ContentSources = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"enableTopResults", (o,n) => { (o as SearchRequest).EnableTopResults = n.GetBoolValue(); } },
                 {"entityTypes", (o,n) => { (o as SearchRequest).EntityTypes = n.GetCollectionOfEnumValues<EntityType>().ToList(); } },
                 {"fields", (o,n) => { (o as SearchRequest).Fields = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"from", (o,n) => { (o as SearchRequest).From = n.GetIntValue(); } },
-                {"query", (o,n) => { (o as SearchRequest).Query = n.GetObjectValue<SearchQuery>(); } },
-                {"queryAlterationOptions", (o,n) => { (o as SearchRequest).QueryAlterationOptions = n.GetObjectValue<SearchAlterationOptions>(); } },
-                {"resultTemplateOptions", (o,n) => { (o as SearchRequest).ResultTemplateOptions = n.GetObjectValue<ResultTemplateOption>(); } },
+                {"query", (o,n) => { (o as SearchRequest).Query = n.GetObjectValue<SearchQuery>(SearchQuery.CreateFromDiscriminatorValue); } },
+                {"queryAlterationOptions", (o,n) => { (o as SearchRequest).QueryAlterationOptions = n.GetObjectValue<SearchAlterationOptions>(SearchAlterationOptions.CreateFromDiscriminatorValue); } },
+                {"resultTemplateOptions", (o,n) => { (o as SearchRequest).ResultTemplateOptions = n.GetObjectValue<ResultTemplateOption>(ResultTemplateOption.CreateFromDiscriminatorValue); } },
                 {"size", (o,n) => { (o as SearchRequest).Size = n.GetIntValue(); } },
-                {"sortProperties", (o,n) => { (o as SearchRequest).SortProperties = n.GetCollectionOfObjectValues<SortProperty>().ToList(); } },
+                {"sortProperties", (o,n) => { (o as SearchRequest).SortProperties = n.GetCollectionOfObjectValues<SortProperty>(SortProperty.CreateFromDiscriminatorValue).ToList(); } },
                 {"stored_fields", (o,n) => { (o as SearchRequest).Stored_fields = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"trimDuplicates", (o,n) => { (o as SearchRequest).TrimDuplicates = n.GetBoolValue(); } },
             };

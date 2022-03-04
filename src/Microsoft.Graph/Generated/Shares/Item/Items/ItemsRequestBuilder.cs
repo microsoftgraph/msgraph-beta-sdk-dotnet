@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Shares.Item.Items {
         /// </summary>
         public async Task<ItemsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ItemsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemsResponse>(requestInfo, ItemsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>All driveItems contained in the sharing root. This collection cannot be enumerated.</summary>
         public class GetQueryParameters : QueryParametersBase {

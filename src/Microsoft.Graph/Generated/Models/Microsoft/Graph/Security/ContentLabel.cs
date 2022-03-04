@@ -7,7 +7,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
     public class ContentLabel : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public AssignmentMethod? AssignmentMethod { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Security.AssignmentMethod? AssignmentMethod { get; set; }
         public DateTimeOffset? CreatedDateTime { get; set; }
         public string SensitivityLabelId { get; set; }
         /// <summary>
@@ -15,6 +15,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
         /// </summary>
         public ContentLabel() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ContentLabel CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ContentLabel();
         }
         /// <summary>
         /// The deserialization information for the current model

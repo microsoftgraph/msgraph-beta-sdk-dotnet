@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SetPositionRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SetPositionRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"endCell", (o,n) => { (o as SetPositionRequestBody).EndCell = n.GetObjectValue<Json>(); } },
-                {"startCell", (o,n) => { (o as SetPositionRequestBody).StartCell = n.GetObjectValue<Json>(); } },
+                {"endCell", (o,n) => { (o as SetPositionRequestBody).EndCell = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"startCell", (o,n) => { (o as SetPositionRequestBody).StartCell = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

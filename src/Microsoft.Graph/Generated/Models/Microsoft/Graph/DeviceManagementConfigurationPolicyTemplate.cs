@@ -30,6 +30,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Template version. Valid values 1 to 2147483647. This property is read-only.</summary>
         public int? Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementConfigurationPolicyTemplate CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementConfigurationPolicyTemplate();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -42,7 +50,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"lifecycleState", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).LifecycleState = n.GetEnumValue<DeviceManagementTemplateLifecycleState>(); } },
                 {"platforms", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
                 {"settingTemplateCount", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).SettingTemplateCount = n.GetIntValue(); } },
-                {"settingTemplates", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).SettingTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>().ToList(); } },
+                {"settingTemplates", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).SettingTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>(DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue).ToList(); } },
                 {"technologies", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
                 {"templateFamily", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
                 {"version", (o,n) => { (o as DeviceManagementConfigurationPolicyTemplate).Version = n.GetIntValue(); } },

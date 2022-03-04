@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilitySchedules {
         /// </summary>
         public async Task<RoleEligibilitySchedulesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleEligibilitySchedulesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleEligibilitySchedulesResponse>(requestInfo, RoleEligibilitySchedulesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to roleEligibilitySchedules for roleManagement
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.RoleManagement.Directory.RoleEligibilitySchedules {
         public async Task<UnifiedRoleEligibilitySchedule> PostAsync(UnifiedRoleEligibilitySchedule body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleEligibilitySchedule>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRoleEligibilitySchedule>(requestInfo, UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get roleEligibilitySchedules from roleManagement</summary>
         public class GetQueryParameters : QueryParametersBase {

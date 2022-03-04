@@ -111,7 +111,7 @@ namespace MicrosoftGraphSdk.DirectoryRoleTemplates {
         /// </summary>
         public async Task<DirectoryRoleTemplatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DirectoryRoleTemplatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DirectoryRoleTemplatesResponse>(requestInfo, DirectoryRoleTemplatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to directoryRoleTemplates
@@ -124,7 +124,7 @@ namespace MicrosoftGraphSdk.DirectoryRoleTemplates {
         public async Task<DirectoryRoleTemplate> PostAsync(DirectoryRoleTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DirectoryRoleTemplate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DirectoryRoleTemplate>(requestInfo, DirectoryRoleTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from directoryRoleTemplates</summary>
         public class GetQueryParameters : QueryParametersBase {

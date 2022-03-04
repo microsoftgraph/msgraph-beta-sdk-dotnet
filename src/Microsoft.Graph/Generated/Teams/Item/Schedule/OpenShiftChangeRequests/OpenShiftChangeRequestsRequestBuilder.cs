@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.OpenShiftChangeRequests {
         /// </summary>
         public async Task<OpenShiftChangeRequestsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OpenShiftChangeRequestsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OpenShiftChangeRequestsResponse>(requestInfo, OpenShiftChangeRequestsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to openShiftChangeRequests for teams
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.OpenShiftChangeRequests {
         public async Task<OpenShiftChangeRequest> PostAsync(OpenShiftChangeRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OpenShiftChangeRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OpenShiftChangeRequest>(requestInfo, OpenShiftChangeRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get openShiftChangeRequests from teams</summary>
         public class GetQueryParameters : QueryParametersBase {

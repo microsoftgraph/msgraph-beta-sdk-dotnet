@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionDevi
         /// </summary>
         public async Task<WindowsInformationProtectionDeviceRegistration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistration>(requestInfo, WindowsInformationProtectionDeviceRegistration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Windows information protection device registrations that are not MDM enrolled.

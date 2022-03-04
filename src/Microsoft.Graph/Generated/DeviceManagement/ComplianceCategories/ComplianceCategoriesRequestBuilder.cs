@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComplianceCategories {
         /// </summary>
         public async Task<ComplianceCategoriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ComplianceCategoriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ComplianceCategoriesResponse>(requestInfo, ComplianceCategoriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of all compliance categories
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComplianceCategories {
         public async Task<DeviceManagementConfigurationCategory> PostAsync(DeviceManagementConfigurationCategory body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementConfigurationCategory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementConfigurationCategory>(requestInfo, DeviceManagementConfigurationCategory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of all compliance categories</summary>
         public class GetQueryParameters : QueryParametersBase {

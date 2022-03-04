@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Security.FileSecurityProfiles {
         /// </summary>
         public async Task<FileSecurityProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<FileSecurityProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<FileSecurityProfilesResponse>(requestInfo, FileSecurityProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to fileSecurityProfiles for security
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Security.FileSecurityProfiles {
         public async Task<FileSecurityProfile> PostAsync(FileSecurityProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<FileSecurityProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<FileSecurityProfile>(requestInfo, FileSecurityProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get fileSecurityProfiles from security</summary>
         public class GetQueryParameters : QueryParametersBase {

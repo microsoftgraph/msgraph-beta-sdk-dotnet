@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.Me.FindRooms {
         /// </summary>
         public async Task<IEnumerable<FindRooms>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<FindRooms>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<FindRooms>(requestInfo, FindRooms.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

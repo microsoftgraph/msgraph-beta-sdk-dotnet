@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesQuotes.Item {
         /// </summary>
         public async Task<SalesQuote> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SalesQuote>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesQuote>(requestInfo, SalesQuote.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property salesQuotes in financials

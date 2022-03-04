@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.ValidateCo
         public async Task<ValidateComplianceScriptResponse> PostAsync(ValidateComplianceScriptRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ValidateComplianceScriptResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ValidateComplianceScriptResponse>(requestInfo, ValidateComplianceScriptResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceComplianceScriptValidationResult</summary>
         public class ValidateComplianceScriptResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceComplianceScriptValidationResult</summary>
-            public DeviceComplianceScriptValidationResult DeviceComplianceScriptValidationResult { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceComplianceScriptValidationResult DeviceComplianceScriptValidationResult { get; set; }
             /// <summary>
             /// Instantiates a new validateComplianceScriptResponse and sets the default values.
             /// </summary>
             public ValidateComplianceScriptResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ValidateComplianceScriptResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ValidateComplianceScriptResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"deviceComplianceScriptValidationResult", (o,n) => { (o as ValidateComplianceScriptResponse).DeviceComplianceScriptValidationResult = n.GetObjectValue<DeviceComplianceScriptValidationResult>(); } },
+                    {"deviceComplianceScriptValidationResult", (o,n) => { (o as ValidateComplianceScriptResponse).DeviceComplianceScriptValidationResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceComplianceScriptValidationResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceComplianceScriptValidationResult.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.ValidateCo
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<DeviceComplianceScriptValidationResult>("deviceComplianceScriptValidationResult", DeviceComplianceScriptValidationResult);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceComplianceScriptValidationResult>("deviceComplianceScriptValidationResult", DeviceComplianceScriptValidationResult);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

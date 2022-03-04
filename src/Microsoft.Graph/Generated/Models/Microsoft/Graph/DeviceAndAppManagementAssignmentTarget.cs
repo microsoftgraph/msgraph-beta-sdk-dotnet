@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The Id of the filter for the target assignment.</summary>
         public string DeviceAndAppManagementAssignmentFilterId { get; set; }
         /// <summary>The type of filter of the target assignment i.e. Exclude or Include. Possible values are: none, include, exclude.</summary>
-        public DeviceAndAppManagementAssignmentFilterType? DeviceAndAppManagementAssignmentFilterType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilterType? DeviceAndAppManagementAssignmentFilterType { get; set; }
         /// <summary>
         /// Instantiates a new deviceAndAppManagementAssignmentTarget and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignmentTarget() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DeviceAndAppManagementAssignmentTarget CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceAndAppManagementAssignmentTarget();
         }
         /// <summary>
         /// The deserialization information for the current model

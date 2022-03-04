@@ -23,14 +23,14 @@ namespace MicrosoftGraphSdk.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStar
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// </summary>
-        public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string groupId = default, DateTimeOffset? startDateTime = default, DateTimeOffset? endDateTime = default) {
+        public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? endDateTime = default, string groupId = default, DateTimeOffset? startDateTime = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId='{groupId}',startDateTime={startDateTime},endDateTime={endDateTime})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
+            urlTplParams.Add("endDateTime", endDateTime);
             urlTplParams.Add("groupId", groupId);
             urlTplParams.Add("startDateTime", startDateTime);
-            urlTplParams.Add("endDateTime", endDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStar
         /// </summary>
         public async Task<IEnumerable<GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime>(requestInfo, GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

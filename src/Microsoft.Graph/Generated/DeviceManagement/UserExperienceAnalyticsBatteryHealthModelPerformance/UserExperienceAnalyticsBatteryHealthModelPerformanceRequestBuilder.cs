@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBatteryHealt
         /// </summary>
         public async Task<UserExperienceAnalyticsBatteryHealthModelPerformanceResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsBatteryHealthModelPerformanceResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsBatteryHealthModelPerformanceResponse>(requestInfo, UserExperienceAnalyticsBatteryHealthModelPerformanceResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User Experience Analytics Battery Health Model Performance
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBatteryHealt
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthModelPerformance> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthModelPerformance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthModelPerformance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthModelPerformance>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsBatteryHealthModelPerformance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>User Experience Analytics Battery Health Model Performance</summary>
         public class GetQueryParameters : QueryParametersBase {

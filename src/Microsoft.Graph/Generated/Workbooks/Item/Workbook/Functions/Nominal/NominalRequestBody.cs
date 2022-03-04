@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Nominal {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static NominalRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new NominalRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"effectRate", (o,n) => { (o as NominalRequestBody).EffectRate = n.GetObjectValue<Json>(); } },
-                {"npery", (o,n) => { (o as NominalRequestBody).Npery = n.GetObjectValue<Json>(); } },
+                {"effectRate", (o,n) => { (o as NominalRequestBody).EffectRate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"npery", (o,n) => { (o as NominalRequestBody).Npery = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

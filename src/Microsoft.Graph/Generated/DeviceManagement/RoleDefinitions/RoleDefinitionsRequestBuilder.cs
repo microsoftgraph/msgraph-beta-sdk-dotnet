@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RoleDefinitions {
         /// </summary>
         public async Task<RoleDefinitionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleDefinitionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleDefinitionsResponse>(requestInfo, RoleDefinitionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Role Definitions.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.RoleDefinitions {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.RoleDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The Role Definitions.</summary>
         public class GetQueryParameters : QueryParametersBase {

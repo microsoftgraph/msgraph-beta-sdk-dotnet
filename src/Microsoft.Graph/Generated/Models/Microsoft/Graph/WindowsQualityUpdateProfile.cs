@@ -24,16 +24,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of Scope Tags for this Quality Update entity.</summary>
         public List<string> RoleScopeTagIds { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WindowsQualityUpdateProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WindowsQualityUpdateProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as WindowsQualityUpdateProfile).Assignments = n.GetCollectionOfObjectValues<WindowsQualityUpdateProfileAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as WindowsQualityUpdateProfile).Assignments = n.GetCollectionOfObjectValues<WindowsQualityUpdateProfileAssignment>(WindowsQualityUpdateProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as WindowsQualityUpdateProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deployableContentDisplayName", (o,n) => { (o as WindowsQualityUpdateProfile).DeployableContentDisplayName = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as WindowsQualityUpdateProfile).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as WindowsQualityUpdateProfile).DisplayName = n.GetStringValue(); } },
-                {"expeditedUpdateSettings", (o,n) => { (o as WindowsQualityUpdateProfile).ExpeditedUpdateSettings = n.GetObjectValue<ExpeditedWindowsQualityUpdateSettings>(); } },
+                {"expeditedUpdateSettings", (o,n) => { (o as WindowsQualityUpdateProfile).ExpeditedUpdateSettings = n.GetObjectValue<ExpeditedWindowsQualityUpdateSettings>(ExpeditedWindowsQualityUpdateSettings.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as WindowsQualityUpdateProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"releaseDateDisplayName", (o,n) => { (o as WindowsQualityUpdateProfile).ReleaseDateDisplayName = n.GetStringValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as WindowsQualityUpdateProfile).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },

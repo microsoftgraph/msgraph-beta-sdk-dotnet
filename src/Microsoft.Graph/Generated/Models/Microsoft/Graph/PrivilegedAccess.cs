@@ -18,16 +18,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A collection of role settings for the provider.</summary>
         public List<GovernanceRoleSetting> RoleSettings { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PrivilegedAccess CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrivilegedAccess();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"displayName", (o,n) => { (o as PrivilegedAccess).DisplayName = n.GetStringValue(); } },
-                {"resources", (o,n) => { (o as PrivilegedAccess).Resources = n.GetCollectionOfObjectValues<GovernanceResource>().ToList(); } },
-                {"roleAssignmentRequests", (o,n) => { (o as PrivilegedAccess).RoleAssignmentRequests = n.GetCollectionOfObjectValues<GovernanceRoleAssignmentRequest>().ToList(); } },
-                {"roleAssignments", (o,n) => { (o as PrivilegedAccess).RoleAssignments = n.GetCollectionOfObjectValues<GovernanceRoleAssignment>().ToList(); } },
-                {"roleDefinitions", (o,n) => { (o as PrivilegedAccess).RoleDefinitions = n.GetCollectionOfObjectValues<GovernanceRoleDefinition>().ToList(); } },
-                {"roleSettings", (o,n) => { (o as PrivilegedAccess).RoleSettings = n.GetCollectionOfObjectValues<GovernanceRoleSetting>().ToList(); } },
+                {"resources", (o,n) => { (o as PrivilegedAccess).Resources = n.GetCollectionOfObjectValues<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignmentRequests", (o,n) => { (o as PrivilegedAccess).RoleAssignmentRequests = n.GetCollectionOfObjectValues<GovernanceRoleAssignmentRequest>(GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignments", (o,n) => { (o as PrivilegedAccess).RoleAssignments = n.GetCollectionOfObjectValues<GovernanceRoleAssignment>(GovernanceRoleAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleDefinitions", (o,n) => { (o as PrivilegedAccess).RoleDefinitions = n.GetCollectionOfObjectValues<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleSettings", (o,n) => { (o as PrivilegedAccess).RoleSettings = n.GetCollectionOfObjectValues<GovernanceRoleSetting>(GovernanceRoleSetting.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -26,16 +26,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkPeripheralsHealth CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkPeripheralsHealth();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"communicationSpeakerHealth", (o,n) => { (o as TeamworkPeripheralsHealth).CommunicationSpeakerHealth = n.GetObjectValue<TeamworkPeripheralHealth>(); } },
-                {"contentCameraHealth", (o,n) => { (o as TeamworkPeripheralsHealth).ContentCameraHealth = n.GetObjectValue<TeamworkPeripheralHealth>(); } },
-                {"displayHealthCollection", (o,n) => { (o as TeamworkPeripheralsHealth).DisplayHealthCollection = n.GetCollectionOfObjectValues<TeamworkPeripheralHealth>().ToList(); } },
-                {"microphoneHealth", (o,n) => { (o as TeamworkPeripheralsHealth).MicrophoneHealth = n.GetObjectValue<TeamworkPeripheralHealth>(); } },
-                {"roomCameraHealth", (o,n) => { (o as TeamworkPeripheralsHealth).RoomCameraHealth = n.GetObjectValue<TeamworkPeripheralHealth>(); } },
-                {"speakerHealth", (o,n) => { (o as TeamworkPeripheralsHealth).SpeakerHealth = n.GetObjectValue<TeamworkPeripheralHealth>(); } },
+                {"communicationSpeakerHealth", (o,n) => { (o as TeamworkPeripheralsHealth).CommunicationSpeakerHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                {"contentCameraHealth", (o,n) => { (o as TeamworkPeripheralsHealth).ContentCameraHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                {"displayHealthCollection", (o,n) => { (o as TeamworkPeripheralsHealth).DisplayHealthCollection = n.GetCollectionOfObjectValues<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue).ToList(); } },
+                {"microphoneHealth", (o,n) => { (o as TeamworkPeripheralsHealth).MicrophoneHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                {"roomCameraHealth", (o,n) => { (o as TeamworkPeripheralsHealth).RoomCameraHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                {"speakerHealth", (o,n) => { (o as TeamworkPeripheralsHealth).SpeakerHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

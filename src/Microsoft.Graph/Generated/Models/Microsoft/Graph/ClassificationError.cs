@@ -7,11 +7,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class ClassificationError : ClassifcationErrorBase, IParsable {
         public List<ClassifcationErrorBase> Details { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ClassificationError CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ClassificationError();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"details", (o,n) => { (o as ClassificationError).Details = n.GetCollectionOfObjectValues<ClassifcationErrorBase>().ToList(); } },
+                {"details", (o,n) => { (o as ClassificationError).Details = n.GetCollectionOfObjectValues<ClassifcationErrorBase>(ClassifcationErrorBase.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

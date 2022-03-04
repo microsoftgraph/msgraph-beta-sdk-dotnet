@@ -11,11 +11,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string DisplayName { get; set; }
         public string ThumbnailUrl { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PersonAnnotation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PersonAnnotation();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"detail", (o,n) => { (o as PersonAnnotation).Detail = n.GetObjectValue<ItemBody>(); } },
+                {"detail", (o,n) => { (o as PersonAnnotation).Detail = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as PersonAnnotation).DisplayName = n.GetStringValue(); } },
                 {"thumbnailUrl", (o,n) => { (o as PersonAnnotation).ThumbnailUrl = n.GetStringValue(); } },
             };

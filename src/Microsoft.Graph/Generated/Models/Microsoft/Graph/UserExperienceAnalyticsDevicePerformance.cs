@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user experience analytics device name.</summary>
         public string DeviceName { get; set; }
         /// <summary>The user experience analytics device disk type. Possible values are: hdd, ssd, unknown.</summary>
-        public DiskType? DiskType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DiskType? DiskType { get; set; }
         /// <summary>The user experience analytics device group policy boot time in milliseconds.</summary>
         public int? GroupPolicyBootTimeInMs { get; set; }
         /// <summary>The user experience analytics device group policy login time in milliseconds.</summary>
@@ -45,6 +45,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? RestartCount { get; set; }
         /// <summary>The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? StartupPerformanceScore { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UserExperienceAnalyticsDevicePerformance CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserExperienceAnalyticsDevicePerformance();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows.Item.IdentityProviders {
         /// </summary>
         public async Task<IdentityProvidersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IdentityProvidersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IdentityProvidersResponse>(requestInfo, IdentityProvidersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get identityProviders from identity</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog.Entries {
         /// </summary>
         public async Task<EntriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EntriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EntriesResponse>(requestInfo, EntriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Lists the content that you can approve for deployment. Read-only.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Catalog.Entries {
         public async Task<CatalogEntry> PostAsync(CatalogEntry body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CatalogEntry>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CatalogEntry>(requestInfo, CatalogEntry.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Lists the content that you can approve for deployment. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

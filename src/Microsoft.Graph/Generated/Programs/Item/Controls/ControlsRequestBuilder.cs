@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Programs.Item.Controls {
         /// </summary>
         public async Task<ControlsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ControlsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ControlsResponse>(requestInfo, ControlsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Controls associated with the program.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Programs.Item.Controls {
         public async Task<ProgramControl> PostAsync(ProgramControl body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, ProgramControl.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Controls associated with the program.</summary>
         public class GetQueryParameters : QueryParametersBase {

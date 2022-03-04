@@ -8,9 +8,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Possible values are: standard, privileged, auto.</summary>
-        public AssignmentMethod? AssignmentMethod { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentMethod? AssignmentMethod { get; set; }
         /// <summary>The downgrade justification object that indicates if downgrade was justified and, if so, the reason.</summary>
-        public DowngradeJustification DowngradeJustification { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DowngradeJustification DowngradeJustification { get; set; }
         /// <summary>Extended properties will be parsed and returned in the standard MIP labeled metadata format as part of the label information.</summary>
         public List<KeyValuePair> ExtendedProperties { get; set; }
         /// <summary>The GUID of the label that should be applied to the information.</summary>
@@ -22,13 +22,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static LabelingOptions CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new LabelingOptions();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"assignmentMethod", (o,n) => { (o as LabelingOptions).AssignmentMethod = n.GetEnumValue<AssignmentMethod>(); } },
-                {"downgradeJustification", (o,n) => { (o as LabelingOptions).DowngradeJustification = n.GetObjectValue<DowngradeJustification>(); } },
-                {"extendedProperties", (o,n) => { (o as LabelingOptions).ExtendedProperties = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"downgradeJustification", (o,n) => { (o as LabelingOptions).DowngradeJustification = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DowngradeJustification>(MicrosoftGraphSdk.Models.Microsoft.Graph.DowngradeJustification.CreateFromDiscriminatorValue); } },
+                {"extendedProperties", (o,n) => { (o as LabelingOptions).ExtendedProperties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"labelId", (o,n) => { (o as LabelingOptions).LabelId = n.GetStringValue(); } },
             };
         }
@@ -39,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AssignmentMethod>("assignmentMethod", AssignmentMethod);
-            writer.WriteObjectValue<DowngradeJustification>("downgradeJustification", DowngradeJustification);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DowngradeJustification>("downgradeJustification", DowngradeJustification);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("extendedProperties", ExtendedProperties);
             writer.WriteStringValue("labelId", LabelId);
             writer.WriteAdditionalData(AdditionalData);

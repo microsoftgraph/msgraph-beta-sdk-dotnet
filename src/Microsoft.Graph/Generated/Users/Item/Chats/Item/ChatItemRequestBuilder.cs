@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.Chats.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Chat.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property chats in users

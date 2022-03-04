@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ExchangeOnPremisesPolicy.Conditiona
         /// </summary>
         public async Task<OnPremisesConditionalAccessSettings> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OnPremisesConditionalAccessSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesConditionalAccessSettings>(requestInfo, OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access

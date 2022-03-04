@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.Use
         /// </summary>
         public async Task<UserSourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserSourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserSourcesResponse>(requestInfo, UserSourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Custodians.Item.Use
         public async Task<UserSource> PostAsync(UserSource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserSource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserSource>(requestInfo, UserSource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -23,13 +23,13 @@ namespace MicrosoftGraphSdk.Me.ReminderViewWithStartDateTimeWithEndDateTime {
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="StartDateTime">Usage: StartDateTime={StartDateTime}</param>
         /// </summary>
-        public ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string startDateTime = default, string endDateTime = default) {
+        public ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string endDateTime = default, string startDateTime = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/me/microsoft.graph.reminderView(StartDateTime='{StartDateTime}',EndDateTime='{EndDateTime}')";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("StartDateTime", startDateTime);
             urlTplParams.Add("EndDateTime", endDateTime);
+            urlTplParams.Add("StartDateTime", startDateTime);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.Me.ReminderViewWithStartDateTimeWithEndDateTime {
         /// </summary>
         public async Task<IEnumerable<Reminder>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<Reminder>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Reminder>(requestInfo, Reminder.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

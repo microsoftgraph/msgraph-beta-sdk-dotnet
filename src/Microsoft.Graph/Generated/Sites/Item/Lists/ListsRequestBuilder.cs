@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists {
         /// </summary>
         public async Task<ListsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ListsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ListsResponse>(requestInfo, ListsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of lists under this site.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Lists {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.List> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.List body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.List>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.List>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.List.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of lists under this site.</summary>
         public class GetQueryParameters : QueryParametersBase {

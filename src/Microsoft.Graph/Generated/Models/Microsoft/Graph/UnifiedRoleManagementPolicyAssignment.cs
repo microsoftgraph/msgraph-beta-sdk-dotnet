@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group.</summary>
         public string ScopeType { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UnifiedRoleManagementPolicyAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UnifiedRoleManagementPolicyAssignment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"policy", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).Policy = n.GetObjectValue<UnifiedRoleManagementPolicy>(); } },
+                {"policy", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).Policy = n.GetObjectValue<UnifiedRoleManagementPolicy>(UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue); } },
                 {"policyId", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).PolicyId = n.GetStringValue(); } },
                 {"roleDefinitionId", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).RoleDefinitionId = n.GetStringValue(); } },
                 {"scopeId", (o,n) => { (o as UnifiedRoleManagementPolicyAssignment).ScopeId = n.GetStringValue(); } },

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Comments {
         /// </summary>
         public async Task<CommentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CommentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CommentsResponse>(requestInfo, CommentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to comments for workbooks
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Comments {
         public async Task<WorkbookComment> PostAsync(WorkbookComment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WorkbookComment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookComment>(requestInfo, WorkbookComment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get comments from workbooks</summary>
         public class GetQueryParameters : QueryParametersBase {

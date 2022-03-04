@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Security.DomainSecurityProfiles {
         /// </summary>
         public async Task<DomainSecurityProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DomainSecurityProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DomainSecurityProfilesResponse>(requestInfo, DomainSecurityProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to domainSecurityProfiles for security
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Security.DomainSecurityProfiles {
         public async Task<DomainSecurityProfile> PostAsync(DomainSecurityProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DomainSecurityProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DomainSecurityProfile>(requestInfo, DomainSecurityProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get domainSecurityProfiles from security</summary>
         public class GetQueryParameters : QueryParametersBase {

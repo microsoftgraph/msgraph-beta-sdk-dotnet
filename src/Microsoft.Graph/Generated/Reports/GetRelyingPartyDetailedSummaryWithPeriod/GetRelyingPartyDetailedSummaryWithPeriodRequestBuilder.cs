@@ -69,7 +69,7 @@ namespace MicrosoftGraphSdk.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
         /// </summary>
         public async Task<IEnumerable<RelyingPartyDetailedSummary>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<RelyingPartyDetailedSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<RelyingPartyDetailedSummary>(requestInfo, RelyingPartyDetailedSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

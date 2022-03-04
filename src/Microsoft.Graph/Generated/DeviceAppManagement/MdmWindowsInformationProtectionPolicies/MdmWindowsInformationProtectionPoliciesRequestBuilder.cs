@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MdmWindowsInformationProtectionP
         /// </summary>
         public async Task<MdmWindowsInformationProtectionPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPoliciesResponse>(requestInfo, MdmWindowsInformationProtectionPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Windows information protection for apps running on devices which are MDM enrolled.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MdmWindowsInformationProtectionP
         public async Task<MdmWindowsInformationProtectionPolicy> PostAsync(MdmWindowsInformationProtectionPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPolicy>(requestInfo, MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Windows information protection for apps running on devices which are MDM enrolled.</summary>
         public class GetQueryParameters : QueryParametersBase {

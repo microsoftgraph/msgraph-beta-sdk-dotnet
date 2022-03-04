@@ -107,7 +107,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals {
         /// </summary>
         public async Task<RiskyServicePrincipalsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RiskyServicePrincipalsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RiskyServicePrincipalsResponse>(requestInfo, RiskyServicePrincipalsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Azure AD service principals that are at risk.
@@ -120,7 +120,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.RiskyServicePrincipals {
         public async Task<RiskyServicePrincipal> PostAsync(RiskyServicePrincipal body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<RiskyServicePrincipal>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RiskyServicePrincipal>(requestInfo, RiskyServicePrincipal.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Azure AD service principals that are at risk.</summary>
         public class GetQueryParameters : QueryParametersBase {

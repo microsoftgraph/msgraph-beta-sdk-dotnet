@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.HostedContent
         /// </summary>
         public async Task<HostedContentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<HostedContentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<HostedContentsResponse>(requestInfo, HostedContentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Content in a message hosted by Microsoft Teams - for example, images or code snippets.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item.Messages.Item.HostedContent
         public async Task<ChatMessageHostedContent> PostAsync(ChatMessageHostedContent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ChatMessageHostedContent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ChatMessageHostedContent>(requestInfo, ChatMessageHostedContent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Content in a message hosted by Microsoft Teams - for example, images or code snippets.</summary>
         public class GetQueryParameters : QueryParametersBase {

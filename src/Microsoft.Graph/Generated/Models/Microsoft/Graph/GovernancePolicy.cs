@@ -16,12 +16,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static GovernancePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GovernancePolicy();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"decisionMakerCriteria", (o,n) => { (o as GovernancePolicy).DecisionMakerCriteria = n.GetCollectionOfObjectValues<GovernanceCriteria>().ToList(); } },
-                {"notificationPolicy", (o,n) => { (o as GovernancePolicy).NotificationPolicy = n.GetObjectValue<GovernanceNotificationPolicy>(); } },
+                {"decisionMakerCriteria", (o,n) => { (o as GovernancePolicy).DecisionMakerCriteria = n.GetCollectionOfObjectValues<GovernanceCriteria>(GovernanceCriteria.CreateFromDiscriminatorValue).ToList(); } },
+                {"notificationPolicy", (o,n) => { (o as GovernancePolicy).NotificationPolicy = n.GetObjectValue<GovernanceNotificationPolicy>(GovernanceNotificationPolicy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

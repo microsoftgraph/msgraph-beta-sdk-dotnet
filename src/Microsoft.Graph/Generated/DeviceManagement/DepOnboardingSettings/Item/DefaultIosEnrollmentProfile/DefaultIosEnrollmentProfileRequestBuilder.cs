@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DepOnboardingSettings.Item.DefaultI
         /// </summary>
         public async Task<DepIOSEnrollmentProfile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DepIOSEnrollmentProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DepIOSEnrollmentProfile>(requestInfo, DepIOSEnrollmentProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Default iOS Enrollment Profile</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -69,26 +69,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetSuggestedEnrollmentLimitWithEnro
         /// </summary>
         public async Task<GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse>(requestInfo, GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes suggestedEnrollmentLimit</summary>
         public class GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type suggestedEnrollmentLimit</summary>
-            public SuggestedEnrollmentLimit SuggestedEnrollmentLimit { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.SuggestedEnrollmentLimit SuggestedEnrollmentLimit { get; set; }
             /// <summary>
             /// Instantiates a new getSuggestedEnrollmentLimitWithEnrollmentTypeResponse and sets the default values.
             /// </summary>
             public GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"suggestedEnrollmentLimit", (o,n) => { (o as GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse).SuggestedEnrollmentLimit = n.GetObjectValue<SuggestedEnrollmentLimit>(); } },
+                    {"suggestedEnrollmentLimit", (o,n) => { (o as GetSuggestedEnrollmentLimitWithEnrollmentTypeResponse).SuggestedEnrollmentLimit = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SuggestedEnrollmentLimit>(MicrosoftGraphSdk.Models.Microsoft.Graph.SuggestedEnrollmentLimit.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -97,7 +101,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetSuggestedEnrollmentLimitWithEnro
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<SuggestedEnrollmentLimit>("suggestedEnrollmentLimit", SuggestedEnrollmentLimit);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SuggestedEnrollmentLimit>("suggestedEnrollmentLimit", SuggestedEnrollmentLimit);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

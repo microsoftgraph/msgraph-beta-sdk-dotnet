@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Chats.Item.PermissionGrants {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static PermissionGrantsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PermissionGrantsResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as PermissionGrantsResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as PermissionGrantsResponse).Value = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>().ToList(); } },
+                {"value", (o,n) => { (o as PermissionGrantsResponse).Value = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

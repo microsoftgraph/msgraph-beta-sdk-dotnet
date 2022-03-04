@@ -15,14 +15,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The month and year the user commenced the activity referenced.</summary>
         public Date? StartMonthYear { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new EducationalActivity CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new EducationalActivity();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"completionMonthYear", (o,n) => { (o as EducationalActivity).CompletionMonthYear = n.GetDateValue(); } },
                 {"endMonthYear", (o,n) => { (o as EducationalActivity).EndMonthYear = n.GetDateValue(); } },
-                {"institution", (o,n) => { (o as EducationalActivity).Institution = n.GetObjectValue<InstitutionData>(); } },
-                {"program", (o,n) => { (o as EducationalActivity).Program = n.GetObjectValue<EducationalActivityDetail>(); } },
+                {"institution", (o,n) => { (o as EducationalActivity).Institution = n.GetObjectValue<InstitutionData>(InstitutionData.CreateFromDiscriminatorValue); } },
+                {"program", (o,n) => { (o as EducationalActivity).Program = n.GetObjectValue<EducationalActivityDetail>(EducationalActivityDetail.CreateFromDiscriminatorValue); } },
                 {"startMonthYear", (o,n) => { (o as EducationalActivity).StartMonthYear = n.GetDateValue(); } },
             };
         }

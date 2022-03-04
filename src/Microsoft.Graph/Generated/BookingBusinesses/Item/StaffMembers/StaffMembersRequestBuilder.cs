@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.StaffMembers {
         /// </summary>
         public async Task<StaffMembersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<StaffMembersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<StaffMembersResponse>(requestInfo, StaffMembersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// All the staff members that provide services in this business. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.StaffMembers {
         public async Task<BookingStaffMember> PostAsync(BookingStaffMember body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<BookingStaffMember>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingStaffMember>(requestInfo, BookingStaffMember.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>All the staff members that provide services in this business. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

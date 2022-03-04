@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsCategories.I
         /// </summary>
         public async Task<MetricValuesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MetricValuesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MetricValuesResponse>(requestInfo, MetricValuesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The metric values for the user experience analytics category.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsCategories.I
         public async Task<UserExperienceAnalyticsMetric> PostAsync(UserExperienceAnalyticsMetric body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetric>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetric>(requestInfo, UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The metric values for the user experience analytics category.</summary>
         public class GetQueryParameters : QueryParametersBase {

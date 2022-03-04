@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Me.Teamwork.InstalledApps.Item.Chat {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Chat>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Chat.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The chat between the user and Teams app.</summary>
         public class GetQueryParameters : QueryParametersBase {

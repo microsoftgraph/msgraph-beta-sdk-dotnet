@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Branding.Localizations {
         /// </summary>
         public async Task<LocalizationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<LocalizationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<LocalizationsResponse>(requestInfo, LocalizationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add different branding based on a locale.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Branding.Localizations {
         public async Task<OrganizationalBrandingLocalization> PostAsync(OrganizationalBrandingLocalization body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OrganizationalBrandingLocalization>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OrganizationalBrandingLocalization>(requestInfo, OrganizationalBrandingLocalization.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Add different branding based on a locale.</summary>
         public class GetQueryParameters : QueryParametersBase {

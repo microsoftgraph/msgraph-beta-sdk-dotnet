@@ -73,7 +73,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         /// </summary>
         public async Task<IEnumerable<GetRoleScopeTagsByIdsWithIds>> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendCollectionAsync<GetRoleScopeTagsByIdsWithIds>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetRoleScopeTagsByIdsWithIds>(requestInfo, GetRoleScopeTagsByIdsWithIds.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Invoke function getRoleScopeTagsByIds</summary>
         public class GetQueryParameters : QueryParametersBase {

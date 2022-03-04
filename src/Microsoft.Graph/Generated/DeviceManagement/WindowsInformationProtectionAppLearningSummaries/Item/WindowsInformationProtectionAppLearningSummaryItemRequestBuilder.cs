@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsInformationProtectionAppLear
         /// </summary>
         public async Task<WindowsInformationProtectionAppLearningSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLearningSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLearningSummary>(requestInfo, WindowsInformationProtectionAppLearningSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The windows information protection app learning summaries.

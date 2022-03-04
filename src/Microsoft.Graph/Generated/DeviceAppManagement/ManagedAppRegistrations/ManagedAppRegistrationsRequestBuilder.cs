@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations {
         /// </summary>
         public async Task<ManagedAppRegistrationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedAppRegistrationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedAppRegistrationsResponse>(requestInfo, ManagedAppRegistrationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceAppManagement\managedAppRegistrations\microsoft.graph.getUserIdsWithFlaggedAppRegistration()
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations {
         public async Task<ManagedAppRegistration> PostAsync(ManagedAppRegistration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedAppRegistration>(requestInfo, ManagedAppRegistration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The managed app registrations.</summary>
         public class GetQueryParameters : QueryParametersBase {

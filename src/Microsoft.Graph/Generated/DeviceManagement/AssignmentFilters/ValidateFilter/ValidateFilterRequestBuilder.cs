@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
         public async Task<ValidateFilterResponse> PostAsync(ValidateFilterRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ValidateFilterResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ValidateFilterResponse>(requestInfo, ValidateFilterResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes assignmentFilterValidationResult</summary>
         public class ValidateFilterResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type assignmentFilterValidationResult</summary>
-            public AssignmentFilterValidationResult AssignmentFilterValidationResult { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterValidationResult AssignmentFilterValidationResult { get; set; }
             /// <summary>
             /// Instantiates a new validateFilterResponse and sets the default values.
             /// </summary>
             public ValidateFilterResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ValidateFilterResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ValidateFilterResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"assignmentFilterValidationResult", (o,n) => { (o as ValidateFilterResponse).AssignmentFilterValidationResult = n.GetObjectValue<AssignmentFilterValidationResult>(); } },
+                    {"assignmentFilterValidationResult", (o,n) => { (o as ValidateFilterResponse).AssignmentFilterValidationResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterValidationResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterValidationResult.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<AssignmentFilterValidationResult>("assignmentFilterValidationResult", AssignmentFilterValidationResult);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterValidationResult>("assignmentFilterValidationResult", AssignmentFilterValidationResult);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

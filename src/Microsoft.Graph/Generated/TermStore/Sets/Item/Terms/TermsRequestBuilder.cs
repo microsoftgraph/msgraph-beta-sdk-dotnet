@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Terms {
         /// </summary>
         public async Task<TermsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TermsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsResponse>(requestInfo, TermsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// All the terms under the set.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TermStore.Sets.Item.Terms {
         public async Task<Term> PostAsync(Term body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Term>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>All the terms under the set.</summary>
         public class GetQueryParameters : QueryParametersBase {

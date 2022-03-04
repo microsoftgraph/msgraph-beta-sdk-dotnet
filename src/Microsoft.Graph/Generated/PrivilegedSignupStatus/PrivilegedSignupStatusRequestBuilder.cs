@@ -115,7 +115,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
         /// </summary>
         public async Task<PrivilegedSignupStatusResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PrivilegedSignupStatusResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedSignupStatusResponse>(requestInfo, PrivilegedSignupStatusResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \privilegedSignupStatus\microsoft.graph.isSignedUp()
@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.PrivilegedSignupStatus {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PrivilegedSignupStatus.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from privilegedSignupStatus</summary>
         public class GetQueryParameters : QueryParametersBase {

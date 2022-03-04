@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups.It
         /// </summary>
         public async Task<Connector> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Connector>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Connector>(requestInfo, Connector.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable.

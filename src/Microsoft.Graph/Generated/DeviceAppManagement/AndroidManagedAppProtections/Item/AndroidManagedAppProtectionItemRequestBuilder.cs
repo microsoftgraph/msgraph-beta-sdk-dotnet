@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.AndroidManagedAppProtections.Ite
         /// </summary>
         public async Task<AndroidManagedAppProtection> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AndroidManagedAppProtection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidManagedAppProtection>(requestInfo, AndroidManagedAppProtection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Android managed app policies.

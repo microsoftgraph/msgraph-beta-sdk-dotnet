@@ -38,16 +38,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Gets or sets the Dep Token Type. Possible values are: none, dep, appleSchoolManager.</summary>
         public DepTokenType? TokenType { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DepOnboardingSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DepOnboardingSetting();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"appleIdentifier", (o,n) => { (o as DepOnboardingSetting).AppleIdentifier = n.GetStringValue(); } },
                 {"dataSharingConsentGranted", (o,n) => { (o as DepOnboardingSetting).DataSharingConsentGranted = n.GetBoolValue(); } },
-                {"defaultIosEnrollmentProfile", (o,n) => { (o as DepOnboardingSetting).DefaultIosEnrollmentProfile = n.GetObjectValue<DepIOSEnrollmentProfile>(); } },
-                {"defaultMacOsEnrollmentProfile", (o,n) => { (o as DepOnboardingSetting).DefaultMacOsEnrollmentProfile = n.GetObjectValue<DepMacOSEnrollmentProfile>(); } },
-                {"enrollmentProfiles", (o,n) => { (o as DepOnboardingSetting).EnrollmentProfiles = n.GetCollectionOfObjectValues<EnrollmentProfile>().ToList(); } },
-                {"importedAppleDeviceIdentities", (o,n) => { (o as DepOnboardingSetting).ImportedAppleDeviceIdentities = n.GetCollectionOfObjectValues<ImportedAppleDeviceIdentity>().ToList(); } },
+                {"defaultIosEnrollmentProfile", (o,n) => { (o as DepOnboardingSetting).DefaultIosEnrollmentProfile = n.GetObjectValue<DepIOSEnrollmentProfile>(DepIOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
+                {"defaultMacOsEnrollmentProfile", (o,n) => { (o as DepOnboardingSetting).DefaultMacOsEnrollmentProfile = n.GetObjectValue<DepMacOSEnrollmentProfile>(DepMacOSEnrollmentProfile.CreateFromDiscriminatorValue); } },
+                {"enrollmentProfiles", (o,n) => { (o as DepOnboardingSetting).EnrollmentProfiles = n.GetCollectionOfObjectValues<EnrollmentProfile>(EnrollmentProfile.CreateFromDiscriminatorValue).ToList(); } },
+                {"importedAppleDeviceIdentities", (o,n) => { (o as DepOnboardingSetting).ImportedAppleDeviceIdentities = n.GetCollectionOfObjectValues<ImportedAppleDeviceIdentity>(ImportedAppleDeviceIdentity.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as DepOnboardingSetting).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSuccessfulSyncDateTime", (o,n) => { (o as DepOnboardingSetting).LastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSyncErrorCode", (o,n) => { (o as DepOnboardingSetting).LastSyncErrorCode = n.GetIntValue(); } },

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations {
         /// </summary>
         public async Task<SimulationAutomationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SimulationAutomationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SimulationAutomationsResponse>(requestInfo, SimulationAutomationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to simulationAutomations for security
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.SimulationAutomations {
         public async Task<SimulationAutomation> PostAsync(SimulationAutomation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SimulationAutomation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SimulationAutomation>(requestInfo, SimulationAutomation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get simulationAutomations from security</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.DeviceComplianceP
         /// </summary>
         public async Task<DeviceCompliancePolicySettingStateSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceCompliancePolicySettingStateSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceCompliancePolicySettingStateSummary>(requestInfo, DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Summary information for device compliance policy setting states across managed tenants.

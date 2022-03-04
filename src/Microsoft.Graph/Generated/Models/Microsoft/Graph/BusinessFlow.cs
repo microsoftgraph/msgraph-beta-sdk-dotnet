@@ -15,6 +15,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string SchemaId { get; set; }
         public BusinessFlowSettings Settings { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new BusinessFlow CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new BusinessFlow();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -23,11 +31,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"deDuplicationId", (o,n) => { (o as BusinessFlow).DeDuplicationId = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as BusinessFlow).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as BusinessFlow).DisplayName = n.GetStringValue(); } },
-                {"policy", (o,n) => { (o as BusinessFlow).Policy = n.GetObjectValue<GovernancePolicy>(); } },
+                {"policy", (o,n) => { (o as BusinessFlow).Policy = n.GetObjectValue<GovernancePolicy>(GovernancePolicy.CreateFromDiscriminatorValue); } },
                 {"policyTemplateId", (o,n) => { (o as BusinessFlow).PolicyTemplateId = n.GetStringValue(); } },
                 {"recordVersion", (o,n) => { (o as BusinessFlow).RecordVersion = n.GetStringValue(); } },
                 {"schemaId", (o,n) => { (o as BusinessFlow).SchemaId = n.GetStringValue(); } },
-                {"settings", (o,n) => { (o as BusinessFlow).Settings = n.GetObjectValue<BusinessFlowSettings>(); } },
+                {"settings", (o,n) => { (o as BusinessFlow).Settings = n.GetObjectValue<BusinessFlowSettings>(BusinessFlowSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Days360 {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Days360RequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Days360RequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"endDate", (o,n) => { (o as Days360RequestBody).EndDate = n.GetObjectValue<Json>(); } },
-                {"method", (o,n) => { (o as Days360RequestBody).Method = n.GetObjectValue<Json>(); } },
-                {"startDate", (o,n) => { (o as Days360RequestBody).StartDate = n.GetObjectValue<Json>(); } },
+                {"endDate", (o,n) => { (o as Days360RequestBody).EndDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"method", (o,n) => { (o as Days360RequestBody).Method = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"startDate", (o,n) => { (o as Days360RequestBody).StartDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

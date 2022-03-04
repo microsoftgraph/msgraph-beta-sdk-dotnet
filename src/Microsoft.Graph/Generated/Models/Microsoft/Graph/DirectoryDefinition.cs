@@ -17,6 +17,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Read only value that indicates version discovered. null if discovery has not yet occurred.</summary>
         public string Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DirectoryDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DirectoryDefinition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -24,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"discoverabilities", (o,n) => { (o as DirectoryDefinition).Discoverabilities = n.GetEnumValue<DirectoryDefinitionDiscoverabilities>(); } },
                 {"discoveryDateTime", (o,n) => { (o as DirectoryDefinition).DiscoveryDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", (o,n) => { (o as DirectoryDefinition).Name = n.GetStringValue(); } },
-                {"objects", (o,n) => { (o as DirectoryDefinition).Objects = n.GetCollectionOfObjectValues<ObjectDefinition>().ToList(); } },
+                {"objects", (o,n) => { (o as DirectoryDefinition).Objects = n.GetCollectionOfObjectValues<ObjectDefinition>(ObjectDefinition.CreateFromDiscriminatorValue).ToList(); } },
                 {"readOnly", (o,n) => { (o as DirectoryDefinition).ReadOnly = n.GetBoolValue(); } },
                 {"version", (o,n) => { (o as DirectoryDefinition).Version = n.GetStringValue(); } },
             };

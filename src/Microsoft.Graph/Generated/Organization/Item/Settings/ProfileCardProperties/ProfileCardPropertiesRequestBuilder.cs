@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings.ProfileCardProperties {
         /// </summary>
         public async Task<ProfileCardPropertiesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ProfileCardPropertiesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProfileCardPropertiesResponse>(requestInfo, ProfileCardPropertiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings.ProfileCardProperties {
         public async Task<ProfileCardProperty> PostAsync(ProfileCardProperty body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ProfileCardProperty>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProfileCardProperty>(requestInfo, ProfileCardProperty.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.</summary>
         public class GetQueryParameters : QueryParametersBase {

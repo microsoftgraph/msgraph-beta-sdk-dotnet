@@ -22,6 +22,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The date time of CodeSigning Cert when it is uploaded.</summary>
         public DateTimeOffset? UploadDateTime { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new EnterpriseCodeSigningCertificate CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new EnterpriseCodeSigningCertificate();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {

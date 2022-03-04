@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.Bu
         public async Task<BulkRestoreCloudPcResponse> PostAsync(BulkRestoreCloudPcRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<BulkRestoreCloudPcResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BulkRestoreCloudPcResponse>(requestInfo, BulkRestoreCloudPcResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes cloudPcBulkRemoteActionResult</summary>
         public class BulkRestoreCloudPcResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type cloudPcBulkRemoteActionResult</summary>
-            public CloudPcBulkRemoteActionResult CloudPcBulkRemoteActionResult { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPcBulkRemoteActionResult CloudPcBulkRemoteActionResult { get; set; }
             /// <summary>
             /// Instantiates a new bulkRestoreCloudPcResponse and sets the default values.
             /// </summary>
             public BulkRestoreCloudPcResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static BulkRestoreCloudPcResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new BulkRestoreCloudPcResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"cloudPcBulkRemoteActionResult", (o,n) => { (o as BulkRestoreCloudPcResponse).CloudPcBulkRemoteActionResult = n.GetObjectValue<CloudPcBulkRemoteActionResult>(); } },
+                    {"cloudPcBulkRemoteActionResult", (o,n) => { (o as BulkRestoreCloudPcResponse).CloudPcBulkRemoteActionResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPcBulkRemoteActionResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPcBulkRemoteActionResult.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices.Bu
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<CloudPcBulkRemoteActionResult>("cloudPcBulkRemoteActionResult", CloudPcBulkRemoteActionResult);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.CloudPcBulkRemoteActionResult>("cloudPcBulkRemoteActionResult", CloudPcBulkRemoteActionResult);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

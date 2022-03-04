@@ -26,6 +26,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>User Principal Name.</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -36,7 +44,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"lastSyncDateTime", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"osDescription", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).OsDescription = n.GetStringValue(); } },
                 {"osVersion", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).OsVersion = n.GetStringValue(); } },
-                {"policy", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).Policy = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicy>(); } },
+                {"policy", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).Policy = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicy>(WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue); } },
                 {"policyVersion", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).PolicyVersion = n.GetStringValue(); } },
                 {"userName", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).UserName = n.GetStringValue(); } },
                 {"userPrincipalName", (o,n) => { (o as WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus).UserPrincipalName = n.GetStringValue(); } },

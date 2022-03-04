@@ -14,9 +14,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</summary>
         public List<AppRole> AppRoles { get; set; }
         /// <summary>Specifies the certification status of the application.</summary>
-        public Certification Certification { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Certification Certification { get; set; }
         /// <summary>The connectorGroup the application is using with Azure AD Application Proxy. Nullable.</summary>
-        public ConnectorGroup ConnectorGroup { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup ConnectorGroup { get; set; }
         /// <summary>The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.</summary>
         public DateTimeOffset? CreatedDateTime { get; set; }
         /// <summary>Read-only.</summary>
@@ -51,13 +51,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Notes relevant for the management of the application.</summary>
         public string Notes { get; set; }
         /// <summary>Represents the set of properties required for configuring Application Proxy for this application. Configuring these properties allows you to publish your on-premises application for secure remote access.</summary>
-        public OnPremisesPublishing OnPremisesPublishing { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.OnPremisesPublishing OnPremisesPublishing { get; set; }
         /// <summary>Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.</summary>
-        public OptionalClaims OptionalClaims { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.OptionalClaims OptionalClaims { get; set; }
         /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> Owners { get; set; }
         /// <summary>Specifies parental control settings for an application.</summary>
-        public ParentalControlSettings ParentalControlSettings { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ParentalControlSettings ParentalControlSettings { get; set; }
         /// <summary>The collection of password credentials associated with the application. Not nullable.</summary>
         public List<PasswordCredential> PasswordCredentials { get; set; }
         /// <summary>Specifies settings for installed clients such as desktop or mobile devices.</summary>
@@ -65,12 +65,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).</summary>
         public string PublisherDomain { get; set; }
         /// <summary>Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).</summary>
-        public List<RequiredResourceAccess> RequiredResourceAccess { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.RequiredResourceAccess> RequiredResourceAccess { get; set; }
         /// <summary>Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).</summary>
         public string SignInAudience { get; set; }
         /// <summary>Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.</summary>
         public SpaApplication Spa { get; set; }
-        public Synchronization Synchronization { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization Synchronization { get; set; }
         /// <summary>Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).</summary>
         public List<string> Tags { get; set; }
         /// <summary>Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.</summary>
@@ -81,58 +81,66 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.</summary>
         public string UniqueName { get; set; }
         /// <summary>Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.</summary>
-        public VerifiedPublisher VerifiedPublisher { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.VerifiedPublisher VerifiedPublisher { get; set; }
         /// <summary>Specifies settings for a web application.</summary>
         public WebApplication Web { get; set; }
         /// <summary>Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.</summary>
         public WindowsApplication Windows { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Application CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Application();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"api", (o,n) => { (o as Application).Api = n.GetObjectValue<ApiApplication>(); } },
+                {"api", (o,n) => { (o as Application).Api = n.GetObjectValue<ApiApplication>(ApiApplication.CreateFromDiscriminatorValue); } },
                 {"appId", (o,n) => { (o as Application).AppId = n.GetStringValue(); } },
-                {"appManagementPolicies", (o,n) => { (o as Application).AppManagementPolicies = n.GetCollectionOfObjectValues<AppManagementPolicy>().ToList(); } },
-                {"appRoles", (o,n) => { (o as Application).AppRoles = n.GetCollectionOfObjectValues<AppRole>().ToList(); } },
-                {"certification", (o,n) => { (o as Application).Certification = n.GetObjectValue<Certification>(); } },
-                {"connectorGroup", (o,n) => { (o as Application).ConnectorGroup = n.GetObjectValue<ConnectorGroup>(); } },
+                {"appManagementPolicies", (o,n) => { (o as Application).AppManagementPolicies = n.GetCollectionOfObjectValues<AppManagementPolicy>(AppManagementPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"appRoles", (o,n) => { (o as Application).AppRoles = n.GetCollectionOfObjectValues<AppRole>(AppRole.CreateFromDiscriminatorValue).ToList(); } },
+                {"certification", (o,n) => { (o as Application).Certification = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Certification>(MicrosoftGraphSdk.Models.Microsoft.Graph.Certification.CreateFromDiscriminatorValue); } },
+                {"connectorGroup", (o,n) => { (o as Application).ConnectorGroup = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as Application).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdOnBehalfOf", (o,n) => { (o as Application).CreatedOnBehalfOf = n.GetObjectValue<DirectoryObject>(); } },
+                {"createdOnBehalfOf", (o,n) => { (o as Application).CreatedOnBehalfOf = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"defaultRedirectUri", (o,n) => { (o as Application).DefaultRedirectUri = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as Application).Description = n.GetStringValue(); } },
                 {"disabledByMicrosoftStatus", (o,n) => { (o as Application).DisabledByMicrosoftStatus = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Application).DisplayName = n.GetStringValue(); } },
-                {"extensionProperties", (o,n) => { (o as Application).ExtensionProperties = n.GetCollectionOfObjectValues<ExtensionProperty>().ToList(); } },
-                {"federatedIdentityCredentials", (o,n) => { (o as Application).FederatedIdentityCredentials = n.GetCollectionOfObjectValues<FederatedIdentityCredential>().ToList(); } },
+                {"extensionProperties", (o,n) => { (o as Application).ExtensionProperties = n.GetCollectionOfObjectValues<ExtensionProperty>(ExtensionProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"federatedIdentityCredentials", (o,n) => { (o as Application).FederatedIdentityCredentials = n.GetCollectionOfObjectValues<FederatedIdentityCredential>(FederatedIdentityCredential.CreateFromDiscriminatorValue).ToList(); } },
                 {"groupMembershipClaims", (o,n) => { (o as Application).GroupMembershipClaims = n.GetStringValue(); } },
-                {"homeRealmDiscoveryPolicies", (o,n) => { (o as Application).HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<HomeRealmDiscoveryPolicy>().ToList(); } },
+                {"homeRealmDiscoveryPolicies", (o,n) => { (o as Application).HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<HomeRealmDiscoveryPolicy>(HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue).ToList(); } },
                 {"identifierUris", (o,n) => { (o as Application).IdentifierUris = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"info", (o,n) => { (o as Application).Info = n.GetObjectValue<InformationalUrl>(); } },
+                {"info", (o,n) => { (o as Application).Info = n.GetObjectValue<InformationalUrl>(InformationalUrl.CreateFromDiscriminatorValue); } },
                 {"isDeviceOnlyAuthSupported", (o,n) => { (o as Application).IsDeviceOnlyAuthSupported = n.GetBoolValue(); } },
                 {"isFallbackPublicClient", (o,n) => { (o as Application).IsFallbackPublicClient = n.GetBoolValue(); } },
-                {"keyCredentials", (o,n) => { (o as Application).KeyCredentials = n.GetCollectionOfObjectValues<KeyCredential>().ToList(); } },
+                {"keyCredentials", (o,n) => { (o as Application).KeyCredentials = n.GetCollectionOfObjectValues<KeyCredential>(KeyCredential.CreateFromDiscriminatorValue).ToList(); } },
                 {"logo", (o,n) => { (o as Application).Logo = n.GetByteArrayValue(); } },
                 {"notes", (o,n) => { (o as Application).Notes = n.GetStringValue(); } },
-                {"onPremisesPublishing", (o,n) => { (o as Application).OnPremisesPublishing = n.GetObjectValue<OnPremisesPublishing>(); } },
-                {"optionalClaims", (o,n) => { (o as Application).OptionalClaims = n.GetObjectValue<OptionalClaims>(); } },
-                {"owners", (o,n) => { (o as Application).Owners = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"parentalControlSettings", (o,n) => { (o as Application).ParentalControlSettings = n.GetObjectValue<ParentalControlSettings>(); } },
-                {"passwordCredentials", (o,n) => { (o as Application).PasswordCredentials = n.GetCollectionOfObjectValues<PasswordCredential>().ToList(); } },
-                {"publicClient", (o,n) => { (o as Application).PublicClient = n.GetObjectValue<PublicClientApplication>(); } },
+                {"onPremisesPublishing", (o,n) => { (o as Application).OnPremisesPublishing = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OnPremisesPublishing>(MicrosoftGraphSdk.Models.Microsoft.Graph.OnPremisesPublishing.CreateFromDiscriminatorValue); } },
+                {"optionalClaims", (o,n) => { (o as Application).OptionalClaims = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OptionalClaims>(MicrosoftGraphSdk.Models.Microsoft.Graph.OptionalClaims.CreateFromDiscriminatorValue); } },
+                {"owners", (o,n) => { (o as Application).Owners = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"parentalControlSettings", (o,n) => { (o as Application).ParentalControlSettings = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ParentalControlSettings>(MicrosoftGraphSdk.Models.Microsoft.Graph.ParentalControlSettings.CreateFromDiscriminatorValue); } },
+                {"passwordCredentials", (o,n) => { (o as Application).PasswordCredentials = n.GetCollectionOfObjectValues<PasswordCredential>(PasswordCredential.CreateFromDiscriminatorValue).ToList(); } },
+                {"publicClient", (o,n) => { (o as Application).PublicClient = n.GetObjectValue<PublicClientApplication>(PublicClientApplication.CreateFromDiscriminatorValue); } },
                 {"publisherDomain", (o,n) => { (o as Application).PublisherDomain = n.GetStringValue(); } },
-                {"requiredResourceAccess", (o,n) => { (o as Application).RequiredResourceAccess = n.GetCollectionOfObjectValues<RequiredResourceAccess>().ToList(); } },
+                {"requiredResourceAccess", (o,n) => { (o as Application).RequiredResourceAccess = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.RequiredResourceAccess>(MicrosoftGraphSdk.Models.Microsoft.Graph.RequiredResourceAccess.CreateFromDiscriminatorValue).ToList(); } },
                 {"signInAudience", (o,n) => { (o as Application).SignInAudience = n.GetStringValue(); } },
-                {"spa", (o,n) => { (o as Application).Spa = n.GetObjectValue<SpaApplication>(); } },
-                {"synchronization", (o,n) => { (o as Application).Synchronization = n.GetObjectValue<Synchronization>(); } },
+                {"spa", (o,n) => { (o as Application).Spa = n.GetObjectValue<SpaApplication>(SpaApplication.CreateFromDiscriminatorValue); } },
+                {"synchronization", (o,n) => { (o as Application).Synchronization = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization>(MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization.CreateFromDiscriminatorValue); } },
                 {"tags", (o,n) => { (o as Application).Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"tokenEncryptionKeyId", (o,n) => { (o as Application).TokenEncryptionKeyId = n.GetStringValue(); } },
-                {"tokenIssuancePolicies", (o,n) => { (o as Application).TokenIssuancePolicies = n.GetCollectionOfObjectValues<TokenIssuancePolicy>().ToList(); } },
-                {"tokenLifetimePolicies", (o,n) => { (o as Application).TokenLifetimePolicies = n.GetCollectionOfObjectValues<TokenLifetimePolicy>().ToList(); } },
+                {"tokenIssuancePolicies", (o,n) => { (o as Application).TokenIssuancePolicies = n.GetCollectionOfObjectValues<TokenIssuancePolicy>(TokenIssuancePolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"tokenLifetimePolicies", (o,n) => { (o as Application).TokenLifetimePolicies = n.GetCollectionOfObjectValues<TokenLifetimePolicy>(TokenLifetimePolicy.CreateFromDiscriminatorValue).ToList(); } },
                 {"uniqueName", (o,n) => { (o as Application).UniqueName = n.GetStringValue(); } },
-                {"verifiedPublisher", (o,n) => { (o as Application).VerifiedPublisher = n.GetObjectValue<VerifiedPublisher>(); } },
-                {"web", (o,n) => { (o as Application).Web = n.GetObjectValue<WebApplication>(); } },
-                {"windows", (o,n) => { (o as Application).Windows = n.GetObjectValue<WindowsApplication>(); } },
+                {"verifiedPublisher", (o,n) => { (o as Application).VerifiedPublisher = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.VerifiedPublisher>(MicrosoftGraphSdk.Models.Microsoft.Graph.VerifiedPublisher.CreateFromDiscriminatorValue); } },
+                {"web", (o,n) => { (o as Application).Web = n.GetObjectValue<WebApplication>(WebApplication.CreateFromDiscriminatorValue); } },
+                {"windows", (o,n) => { (o as Application).Windows = n.GetObjectValue<WindowsApplication>(WindowsApplication.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -146,8 +154,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfObjectValues<AppManagementPolicy>("appManagementPolicies", AppManagementPolicies);
             writer.WriteCollectionOfObjectValues<AppRole>("appRoles", AppRoles);
-            writer.WriteObjectValue<Certification>("certification", Certification);
-            writer.WriteObjectValue<ConnectorGroup>("connectorGroup", ConnectorGroup);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Certification>("certification", Certification);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>("connectorGroup", ConnectorGroup);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("defaultRedirectUri", DefaultRedirectUri);
@@ -165,23 +173,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteByteArrayValue("logo", Logo);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteObjectValue<OnPremisesPublishing>("onPremisesPublishing", OnPremisesPublishing);
-            writer.WriteObjectValue<OptionalClaims>("optionalClaims", OptionalClaims);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OnPremisesPublishing>("onPremisesPublishing", OnPremisesPublishing);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.OptionalClaims>("optionalClaims", OptionalClaims);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("owners", Owners);
-            writer.WriteObjectValue<ParentalControlSettings>("parentalControlSettings", ParentalControlSettings);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ParentalControlSettings>("parentalControlSettings", ParentalControlSettings);
             writer.WriteCollectionOfObjectValues<PasswordCredential>("passwordCredentials", PasswordCredentials);
             writer.WriteObjectValue<PublicClientApplication>("publicClient", PublicClient);
             writer.WriteStringValue("publisherDomain", PublisherDomain);
-            writer.WriteCollectionOfObjectValues<RequiredResourceAccess>("requiredResourceAccess", RequiredResourceAccess);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.RequiredResourceAccess>("requiredResourceAccess", RequiredResourceAccess);
             writer.WriteStringValue("signInAudience", SignInAudience);
             writer.WriteObjectValue<SpaApplication>("spa", Spa);
-            writer.WriteObjectValue<Synchronization>("synchronization", Synchronization);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Synchronization>("synchronization", Synchronization);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("tokenEncryptionKeyId", TokenEncryptionKeyId);
             writer.WriteCollectionOfObjectValues<TokenIssuancePolicy>("tokenIssuancePolicies", TokenIssuancePolicies);
             writer.WriteCollectionOfObjectValues<TokenLifetimePolicy>("tokenLifetimePolicies", TokenLifetimePolicies);
             writer.WriteStringValue("uniqueName", UniqueName);
-            writer.WriteObjectValue<VerifiedPublisher>("verifiedPublisher", VerifiedPublisher);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.VerifiedPublisher>("verifiedPublisher", VerifiedPublisher);
             writer.WriteObjectValue<WebApplication>("web", Web);
             writer.WriteObjectValue<WindowsApplication>("windows", Windows);
         }

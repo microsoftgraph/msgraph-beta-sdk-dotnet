@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurati
         /// </summary>
         public async Task<GroupAssignmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupAssignmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupAssignmentsResponse>(requestInfo, GroupAssignmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The associated group assignments.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurati
         public async Task<MobileAppProvisioningConfigGroupAssignment> PostAsync(MobileAppProvisioningConfigGroupAssignment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MobileAppProvisioningConfigGroupAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppProvisioningConfigGroupAssignment>(requestInfo, MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The associated group assignments.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -18,16 +18,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The associated group policy presentation values with the definition value.</summary>
         public List<GroupPolicyPresentationValue> PresentationValues { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new GroupPolicyDefinitionValue CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GroupPolicyDefinitionValue();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"configurationType", (o,n) => { (o as GroupPolicyDefinitionValue).ConfigurationType = n.GetEnumValue<GroupPolicyConfigurationType>(); } },
                 {"createdDateTime", (o,n) => { (o as GroupPolicyDefinitionValue).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"definition", (o,n) => { (o as GroupPolicyDefinitionValue).Definition = n.GetObjectValue<GroupPolicyDefinition>(); } },
+                {"definition", (o,n) => { (o as GroupPolicyDefinitionValue).Definition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
                 {"enabled", (o,n) => { (o as GroupPolicyDefinitionValue).Enabled = n.GetBoolValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as GroupPolicyDefinitionValue).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"presentationValues", (o,n) => { (o as GroupPolicyDefinitionValue).PresentationValues = n.GetCollectionOfObjectValues<GroupPolicyPresentationValue>().ToList(); } },
+                {"presentationValues", (o,n) => { (o as GroupPolicyDefinitionValue).PresentationValues = n.GetCollectionOfObjectValues<GroupPolicyPresentationValue>(GroupPolicyPresentationValue.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

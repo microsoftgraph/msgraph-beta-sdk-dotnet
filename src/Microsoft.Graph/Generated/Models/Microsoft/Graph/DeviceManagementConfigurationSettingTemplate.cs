@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Setting Instance Template</summary>
         public DeviceManagementConfigurationSettingInstanceTemplate SettingInstanceTemplate { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceManagementConfigurationSettingTemplate CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceManagementConfigurationSettingTemplate();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"settingDefinitions", (o,n) => { (o as DeviceManagementConfigurationSettingTemplate).SettingDefinitions = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDefinition>().ToList(); } },
-                {"settingInstanceTemplate", (o,n) => { (o as DeviceManagementConfigurationSettingTemplate).SettingInstanceTemplate = n.GetObjectValue<DeviceManagementConfigurationSettingInstanceTemplate>(); } },
+                {"settingDefinitions", (o,n) => { (o as DeviceManagementConfigurationSettingTemplate).SettingDefinitions = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDefinition>(DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"settingInstanceTemplate", (o,n) => { (o as DeviceManagementConfigurationSettingTemplate).SettingInstanceTemplate = n.GetObjectValue<DeviceManagementConfigurationSettingInstanceTemplate>(DeviceManagementConfigurationSettingInstanceTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

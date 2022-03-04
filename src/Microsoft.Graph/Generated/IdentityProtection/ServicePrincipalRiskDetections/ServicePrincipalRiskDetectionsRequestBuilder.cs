@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.ServicePrincipalRiskDetections {
         /// </summary>
         public async Task<ServicePrincipalRiskDetectionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetectionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetectionsResponse>(requestInfo, ServicePrincipalRiskDetectionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents information about detected at-risk service principals in an Azure AD tenant.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.IdentityProtection.ServicePrincipalRiskDetections {
         public async Task<ServicePrincipalRiskDetection> PostAsync(ServicePrincipalRiskDetection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetection>(requestInfo, ServicePrincipalRiskDetection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents information about detected at-risk service principals in an Azure AD tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

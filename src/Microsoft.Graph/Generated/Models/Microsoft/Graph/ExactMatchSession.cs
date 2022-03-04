@@ -14,6 +14,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public ExactMatchUploadAgent UploadAgent { get; set; }
         public string UploadAgentId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ExactMatchSession CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ExactMatchSession();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -24,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"fileName", (o,n) => { (o as ExactMatchSession).FileName = n.GetStringValue(); } },
                 {"rowsPerBlock", (o,n) => { (o as ExactMatchSession).RowsPerBlock = n.GetIntValue(); } },
                 {"salt", (o,n) => { (o as ExactMatchSession).Salt = n.GetStringValue(); } },
-                {"uploadAgent", (o,n) => { (o as ExactMatchSession).UploadAgent = n.GetObjectValue<ExactMatchUploadAgent>(); } },
+                {"uploadAgent", (o,n) => { (o as ExactMatchSession).UploadAgent = n.GetObjectValue<ExactMatchUploadAgent>(ExactMatchUploadAgent.CreateFromDiscriminatorValue); } },
                 {"uploadAgentId", (o,n) => { (o as ExactMatchSession).UploadAgentId = n.GetStringValue(); } },
             };
         }

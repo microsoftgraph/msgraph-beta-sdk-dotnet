@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Profile.WebAccounts {
         /// </summary>
         public async Task<WebAccountsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WebAccountsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WebAccountsResponse>(requestInfo, WebAccountsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents web accounts the user has indicated they use or has added to their user profile.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Profile.WebAccounts {
         public async Task<WebAccount> PostAsync(WebAccount body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WebAccount>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WebAccount>(requestInfo, WebAccount.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents web accounts the user has indicated they use or has added to their user profile.</summary>
         public class GetQueryParameters : QueryParametersBase {

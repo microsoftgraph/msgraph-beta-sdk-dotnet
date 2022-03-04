@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Domains.Item.ServiceConfigurationRecords {
         /// </summary>
         public async Task<ServiceConfigurationRecordsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ServiceConfigurationRecordsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceConfigurationRecordsResponse>(requestInfo, ServiceConfigurationRecordsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Domains.Item.ServiceConfigurationRecords {
         public async Task<DomainDnsRecord> PostAsync(DomainDnsRecord body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DomainDnsRecord>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DomainDnsRecord>(requestInfo, DomainDnsRecord.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable</summary>
         public class GetQueryParameters : QueryParametersBase {

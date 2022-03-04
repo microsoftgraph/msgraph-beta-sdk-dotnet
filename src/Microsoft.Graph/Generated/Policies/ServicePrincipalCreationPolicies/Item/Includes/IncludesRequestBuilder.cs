@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies.Item.Inclu
         /// </summary>
         public async Task<IncludesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IncludesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IncludesResponse>(requestInfo, IncludesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to includes for policies
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.ServicePrincipalCreationPolicies.Item.Inclu
         public async Task<ServicePrincipalCreationConditionSet> PostAsync(ServicePrincipalCreationConditionSet body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ServicePrincipalCreationConditionSet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalCreationConditionSet>(requestInfo, ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get includes from policies</summary>
         public class GetQueryParameters : QueryParametersBase {

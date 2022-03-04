@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthOSV
         /// </summary>
         public async Task<UserExperienceAnalyticsAppHealthOSVersionPerformanceResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthOSVersionPerformanceResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthOSVersionPerformanceResponse>(requestInfo, UserExperienceAnalyticsAppHealthOSVersionPerformanceResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics appHealth OS version Performance
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsAppHealthOSV
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthOSVersionPerformance> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthOSVersionPerformance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthOSVersionPerformance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthOSVersionPerformance>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserExperienceAnalyticsAppHealthOSVersionPerformance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>User experience analytics appHealth OS version Performance</summary>
         public class GetQueryParameters : QueryParametersBase {

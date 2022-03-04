@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.Reports.GetAzureADLicenseUsageWithPeriod {
         /// </summary>
         public async Task<IEnumerable<GetAzureADLicenseUsageWithPeriod>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetAzureADLicenseUsageWithPeriod>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetAzureADLicenseUsageWithPeriod>(requestInfo, GetAzureADLicenseUsageWithPeriod.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

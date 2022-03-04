@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.IntuneBrandingProfiles {
         /// </summary>
         public async Task<IntuneBrandingProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IntuneBrandingProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IntuneBrandingProfilesResponse>(requestInfo, IntuneBrandingProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Intune branding profiles targeted to AAD groups
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.IntuneBrandingProfiles {
         public async Task<IntuneBrandingProfile> PostAsync(IntuneBrandingProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<IntuneBrandingProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IntuneBrandingProfile>(requestInfo, IntuneBrandingProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Intune branding profiles targeted to AAD groups</summary>
         public class GetQueryParameters : QueryParametersBase {

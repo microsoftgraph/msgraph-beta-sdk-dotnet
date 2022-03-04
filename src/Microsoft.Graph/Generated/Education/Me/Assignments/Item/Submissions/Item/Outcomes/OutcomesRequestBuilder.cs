@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Submissions.Item.Outco
         /// </summary>
         public async Task<OutcomesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OutcomesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OutcomesResponse>(requestInfo, OutcomesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-Write. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Education.Me.Assignments.Item.Submissions.Item.Outco
         public async Task<EducationOutcome> PostAsync(EducationOutcome body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EducationOutcome>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationOutcome>(requestInfo, EducationOutcome.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-Write. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

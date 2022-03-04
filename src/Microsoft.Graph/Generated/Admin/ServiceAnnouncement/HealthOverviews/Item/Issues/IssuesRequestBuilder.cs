@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issue
         /// </summary>
         public async Task<IssuesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IssuesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IssuesResponse>(requestInfo, IssuesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of issues that happened on the service, with detailed information for each issue.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item.Issue
         public async Task<ServiceHealthIssue> PostAsync(ServiceHealthIssue body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of issues that happened on the service, with detailed information for each issue.</summary>
         public class GetQueryParameters : QueryParametersBase {

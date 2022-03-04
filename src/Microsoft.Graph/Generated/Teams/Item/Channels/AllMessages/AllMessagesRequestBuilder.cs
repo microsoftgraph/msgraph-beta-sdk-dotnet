@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.AllMessages {
         /// </summary>
         public async Task<IEnumerable<AllMessages>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<AllMessages>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<AllMessages>(requestInfo, AllMessages.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

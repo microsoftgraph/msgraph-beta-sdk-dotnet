@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The identities of the recording initiator.</summary>
         public IdentitySet Initiator { get; set; }
         /// <summary>Possible values are: unknown, notRecording, recording, or failed.</summary>
-        public RecordingStatus? RecordingStatus { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RecordingStatus? RecordingStatus { get; set; }
         /// <summary>
         /// Instantiates a new recordingInfo and sets the default values.
         /// </summary>
@@ -20,12 +20,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static RecordingInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RecordingInfo();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"initiatedBy", (o,n) => { (o as RecordingInfo).InitiatedBy = n.GetObjectValue<ParticipantInfo>(); } },
-                {"initiator", (o,n) => { (o as RecordingInfo).Initiator = n.GetObjectValue<IdentitySet>(); } },
+                {"initiatedBy", (o,n) => { (o as RecordingInfo).InitiatedBy = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
+                {"initiator", (o,n) => { (o as RecordingInfo).Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"recordingStatus", (o,n) => { (o as RecordingInfo).RecordingStatus = n.GetEnumValue<RecordingStatus>(); } },
             };
         }

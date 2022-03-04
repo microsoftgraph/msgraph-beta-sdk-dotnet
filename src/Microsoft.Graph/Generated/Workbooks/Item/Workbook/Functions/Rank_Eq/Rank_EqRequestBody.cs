@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Rank_Eq {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Rank_EqRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Rank_EqRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"number", (o,n) => { (o as Rank_EqRequestBody).Number = n.GetObjectValue<Json>(); } },
-                {"order", (o,n) => { (o as Rank_EqRequestBody).Order = n.GetObjectValue<Json>(); } },
-                {"ref", (o,n) => { (o as Rank_EqRequestBody).Ref = n.GetObjectValue<Json>(); } },
+                {"number", (o,n) => { (o as Rank_EqRequestBody).Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"order", (o,n) => { (o as Rank_EqRequestBody).Order = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"ref", (o,n) => { (o as Rank_EqRequestBody).Ref = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

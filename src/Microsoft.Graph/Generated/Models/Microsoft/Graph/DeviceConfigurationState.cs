@@ -21,6 +21,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The version of the policy</summary>
         public int? Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceConfigurationState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceConfigurationState();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -28,7 +36,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"displayName", (o,n) => { (o as DeviceConfigurationState).DisplayName = n.GetStringValue(); } },
                 {"platformType", (o,n) => { (o as DeviceConfigurationState).PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
                 {"settingCount", (o,n) => { (o as DeviceConfigurationState).SettingCount = n.GetIntValue(); } },
-                {"settingStates", (o,n) => { (o as DeviceConfigurationState).SettingStates = n.GetCollectionOfObjectValues<DeviceConfigurationSettingState>().ToList(); } },
+                {"settingStates", (o,n) => { (o as DeviceConfigurationState).SettingStates = n.GetCollectionOfObjectValues<DeviceConfigurationSettingState>(DeviceConfigurationSettingState.CreateFromDiscriminatorValue).ToList(); } },
                 {"state", (o,n) => { (o as DeviceConfigurationState).State = n.GetEnumValue<ComplianceStatus>(); } },
                 {"userId", (o,n) => { (o as DeviceConfigurationState).UserId = n.GetStringValue(); } },
                 {"userPrincipalName", (o,n) => { (o as DeviceConfigurationState).UserPrincipalName = n.GetStringValue(); } },

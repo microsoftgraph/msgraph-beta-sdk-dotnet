@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Represents the value of the result of the current expression.</summary>
         public bool? ExpressionResult { get; set; }
         /// <summary>Defines the name of the property and the value of that property.</summary>
-        public PropertyToEvaluate PropertyToEvaluate { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PropertyToEvaluate PropertyToEvaluate { get; set; }
         /// <summary>
         /// Instantiates a new expressionEvaluationDetails and sets the default values.
         /// </summary>
@@ -22,14 +22,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ExpressionEvaluationDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ExpressionEvaluationDetails();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"expression", (o,n) => { (o as ExpressionEvaluationDetails).Expression = n.GetStringValue(); } },
-                {"expressionEvaluationDetails", (o,n) => { (o as ExpressionEvaluationDetails).ExpressionEvaluationDetails_prop = n.GetCollectionOfObjectValues<ExpressionEvaluationDetails>().ToList(); } },
+                {"expressionEvaluationDetails", (o,n) => { (o as ExpressionEvaluationDetails).ExpressionEvaluationDetails_prop = n.GetCollectionOfObjectValues<ExpressionEvaluationDetails>(ExpressionEvaluationDetails.CreateFromDiscriminatorValue).ToList(); } },
                 {"expressionResult", (o,n) => { (o as ExpressionEvaluationDetails).ExpressionResult = n.GetBoolValue(); } },
-                {"propertyToEvaluate", (o,n) => { (o as ExpressionEvaluationDetails).PropertyToEvaluate = n.GetObjectValue<PropertyToEvaluate>(); } },
+                {"propertyToEvaluate", (o,n) => { (o as ExpressionEvaluationDetails).PropertyToEvaluate = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PropertyToEvaluate>(MicrosoftGraphSdk.Models.Microsoft.Graph.PropertyToEvaluate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -41,7 +49,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("expression", Expression);
             writer.WriteCollectionOfObjectValues<ExpressionEvaluationDetails>("expressionEvaluationDetails", ExpressionEvaluationDetails_prop);
             writer.WriteBoolValue("expressionResult", ExpressionResult);
-            writer.WriteObjectValue<PropertyToEvaluate>("propertyToEvaluate", PropertyToEvaluate);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PropertyToEvaluate>("propertyToEvaluate", PropertyToEvaluate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

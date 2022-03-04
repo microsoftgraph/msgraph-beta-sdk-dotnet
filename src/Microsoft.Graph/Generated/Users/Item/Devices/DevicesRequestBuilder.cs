@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Devices {
         /// </summary>
         public async Task<DevicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DevicesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DevicesResponse>(requestInfo, DevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to devices for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Devices {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.Device> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.Device body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Device>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.Device>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.Device.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get devices from users</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Directory.AdministrativeUnits {
         /// </summary>
         public async Task<AdministrativeUnitsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AdministrativeUnitsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AdministrativeUnitsResponse>(requestInfo, AdministrativeUnitsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Conceptual container for user and group directory objects.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Directory.AdministrativeUnits {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AdministrativeUnit.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Conceptual container for user and group directory objects.</summary>
         public class GetQueryParameters : QueryParametersBase {

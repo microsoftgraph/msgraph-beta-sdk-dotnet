@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.MobileAppManagementPolicies {
         /// </summary>
         public async Task<MobileAppManagementPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileAppManagementPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppManagementPoliciesResponse>(requestInfo, MobileAppManagementPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.MobileAppManagementPolicies {
         public async Task<MobilityManagementPolicy> PostAsync(MobilityManagementPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, MobilityManagementPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.</summary>
         public class GetQueryParameters : QueryParametersBase {

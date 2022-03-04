@@ -138,7 +138,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurati
         /// </summary>
         public async Task<IosLobAppProvisioningConfiguration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IosLobAppProvisioningConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IosLobAppProvisioningConfiguration>(requestInfo, IosLobAppProvisioningConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The IOS Lob App Provisioning Configurations.

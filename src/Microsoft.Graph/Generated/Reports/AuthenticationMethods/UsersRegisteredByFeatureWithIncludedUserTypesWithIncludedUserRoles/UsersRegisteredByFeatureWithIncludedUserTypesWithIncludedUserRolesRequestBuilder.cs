@@ -23,13 +23,13 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByFeatu
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// </summary>
-        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string includedUserTypes = default, string includedUserRoles = default) {
+        public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string includedUserRoles = default, string includedUserTypes = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("includedUserTypes", includedUserTypes);
             urlTplParams.Add("includedUserRoles", includedUserRoles);
+            urlTplParams.Add("includedUserTypes", includedUserTypes);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.Reports.AuthenticationMethods.UsersRegisteredByFeatu
         /// </summary>
         public async Task<UserRegistrationFeatureSummary> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<UserRegistrationFeatureSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserRegistrationFeatureSummary>(requestInfo, UserRegistrationFeatureSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

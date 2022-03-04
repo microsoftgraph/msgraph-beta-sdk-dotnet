@@ -42,6 +42,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Defines if third party keyboards are allowed while accessing a managed app</summary>
         public bool? ThirdPartyKeyboardsBlocked { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new IosManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new IosManagedAppProtection();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -49,13 +57,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"allowedIosDeviceModels", (o,n) => { (o as IosManagedAppProtection).AllowedIosDeviceModels = n.GetStringValue(); } },
                 {"appActionIfIosDeviceModelNotAllowed", (o,n) => { (o as IosManagedAppProtection).AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appDataEncryptionType", (o,n) => { (o as IosManagedAppProtection).AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
-                {"apps", (o,n) => { (o as IosManagedAppProtection).Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>().ToList(); } },
+                {"apps", (o,n) => { (o as IosManagedAppProtection).Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue).ToList(); } },
                 {"customBrowserProtocol", (o,n) => { (o as IosManagedAppProtection).CustomBrowserProtocol = n.GetStringValue(); } },
                 {"customDialerAppProtocol", (o,n) => { (o as IosManagedAppProtection).CustomDialerAppProtocol = n.GetStringValue(); } },
                 {"deployedAppCount", (o,n) => { (o as IosManagedAppProtection).DeployedAppCount = n.GetIntValue(); } },
-                {"deploymentSummary", (o,n) => { (o as IosManagedAppProtection).DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(); } },
+                {"deploymentSummary", (o,n) => { (o as IosManagedAppProtection).DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 {"disableProtectionOfManagedOutboundOpenInData", (o,n) => { (o as IosManagedAppProtection).DisableProtectionOfManagedOutboundOpenInData = n.GetBoolValue(); } },
-                {"exemptedAppProtocols", (o,n) => { (o as IosManagedAppProtection).ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"exemptedAppProtocols", (o,n) => { (o as IosManagedAppProtection).ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"exemptedUniversalLinks", (o,n) => { (o as IosManagedAppProtection).ExemptedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"faceIdBlocked", (o,n) => { (o as IosManagedAppProtection).FaceIdBlocked = n.GetBoolValue(); } },
                 {"filterOpenInToOnlyManagedApps", (o,n) => { (o as IosManagedAppProtection).FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },

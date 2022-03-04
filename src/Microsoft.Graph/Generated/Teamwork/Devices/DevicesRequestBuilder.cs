@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teamwork.Devices {
         /// </summary>
         public async Task<DevicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DevicesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DevicesResponse>(requestInfo, DevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Teams devices provisioned for the tenant.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teamwork.Devices {
         public async Task<TeamworkDevice> PostAsync(TeamworkDevice body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TeamworkDevice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkDevice>(requestInfo, TeamworkDevice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The Teams devices provisioned for the tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

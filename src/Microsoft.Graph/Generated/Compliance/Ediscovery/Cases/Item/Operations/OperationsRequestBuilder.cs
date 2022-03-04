@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations {
         /// </summary>
         public async Task<OperationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OperationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OperationsResponse>(requestInfo, OperationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Returns a list of case operation objects for this case. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.Operations {
         public async Task<CaseOperation> PostAsync(CaseOperation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CaseOperation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CaseOperation>(requestInfo, CaseOperation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Returns a list of case operation objects for this case. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Templates.Item.Sch
         /// </summary>
         public async Task<DiscoverResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<DiscoverResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DiscoverResponse>(requestInfo, DiscoverResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes directoryDefinition</summary>
         public class DiscoverResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type directoryDefinition</summary>
-            public DirectoryDefinition DirectoryDefinition { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.DirectoryDefinition DirectoryDefinition { get; set; }
             /// <summary>
             /// Instantiates a new discoverResponse and sets the default values.
             /// </summary>
             public DiscoverResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static DiscoverResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new DiscoverResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"directoryDefinition", (o,n) => { (o as DiscoverResponse).DirectoryDefinition = n.GetObjectValue<DirectoryDefinition>(); } },
+                    {"directoryDefinition", (o,n) => { (o as DiscoverResponse).DirectoryDefinition = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DirectoryDefinition>(MicrosoftGraphSdk.Models.Microsoft.Graph.DirectoryDefinition.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Templates.Item.Sch
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<DirectoryDefinition>("directoryDefinition", DirectoryDefinition);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DirectoryDefinition>("directoryDefinition", DirectoryDefinition);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

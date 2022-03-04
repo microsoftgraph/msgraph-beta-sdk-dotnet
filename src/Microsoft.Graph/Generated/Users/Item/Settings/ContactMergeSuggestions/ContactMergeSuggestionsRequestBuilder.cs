@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.Settings.ContactMergeSuggestions {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ContactMergeSuggestions.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property contactMergeSuggestions in users

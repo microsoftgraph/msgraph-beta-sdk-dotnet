@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Analytics.ActivityStatistics {
         /// </summary>
         public async Task<ActivityStatisticsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ActivityStatisticsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ActivityStatisticsResponse>(requestInfo, ActivityStatisticsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Analytics.ActivityStatistics {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ActivityStatistics.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

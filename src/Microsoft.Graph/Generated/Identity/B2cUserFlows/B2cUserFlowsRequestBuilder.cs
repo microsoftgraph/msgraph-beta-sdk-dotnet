@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows {
         /// </summary>
         public async Task<B2cUserFlowsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<B2cUserFlowsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<B2cUserFlowsResponse>(requestInfo, B2cUserFlowsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents entry point for B2C identity userflows.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Identity.B2cUserFlows {
         public async Task<B2cIdentityUserFlow> PostAsync(B2cIdentityUserFlow body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents entry point for B2C identity userflows.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Print.TaskDefinitions {
         /// </summary>
         public async Task<TaskDefinitionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TaskDefinitionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TaskDefinitionsResponse>(requestInfo, TaskDefinitionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of abstract definition for a task that can be triggered when various events occur within Universal Print.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Print.TaskDefinitions {
         public async Task<PrintTaskDefinition> PostAsync(PrintTaskDefinition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PrintTaskDefinition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintTaskDefinition>(requestInfo, PrintTaskDefinition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of abstract definition for a task that can be triggered when various events occur within Universal Print.</summary>
         public class GetQueryParameters : QueryParametersBase {

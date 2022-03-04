@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAppConfiguration
         /// </summary>
         public async Task<AndroidManagedStoreAppConfigurationSchemasResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AndroidManagedStoreAppConfigurationSchemasResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidManagedStoreAppConfigurationSchemasResponse>(requestInfo, AndroidManagedStoreAppConfigurationSchemasResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Android Enterprise app configuration schema entities.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AndroidManagedStoreAppConfiguration
         public async Task<AndroidManagedStoreAppConfigurationSchema> PostAsync(AndroidManagedStoreAppConfigurationSchema body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AndroidManagedStoreAppConfigurationSchema>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidManagedStoreAppConfigurationSchema>(requestInfo, AndroidManagedStoreAppConfigurationSchema.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Android Enterprise app configuration schema entities.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Me.WindowsInformationProtectionDeviceRegistrations {
         /// </summary>
         public async Task<WindowsInformationProtectionDeviceRegistrationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationsResponse>(requestInfo, WindowsInformationProtectionDeviceRegistrationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Zero or more WIP device registrations that belong to the user.</summary>
         public class GetQueryParameters : QueryParametersBase {

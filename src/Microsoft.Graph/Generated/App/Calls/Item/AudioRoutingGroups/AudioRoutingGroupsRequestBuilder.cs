@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.AudioRoutingGroups {
         /// </summary>
         public async Task<AudioRoutingGroupsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AudioRoutingGroupsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AudioRoutingGroupsResponse>(requestInfo, AudioRoutingGroupsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.App.Calls.Item.AudioRoutingGroups {
         public async Task<AudioRoutingGroup> PostAsync(AudioRoutingGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -22,12 +22,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UserRegistrationFeatureSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserRegistrationFeatureSummary();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"totalUserCount", (o,n) => { (o as UserRegistrationFeatureSummary).TotalUserCount = n.GetLongValue(); } },
-                {"userRegistrationFeatureCounts", (o,n) => { (o as UserRegistrationFeatureSummary).UserRegistrationFeatureCounts = n.GetCollectionOfObjectValues<UserRegistrationFeatureCount>().ToList(); } },
+                {"userRegistrationFeatureCounts", (o,n) => { (o as UserRegistrationFeatureSummary).UserRegistrationFeatureCounts = n.GetCollectionOfObjectValues<UserRegistrationFeatureCount>(UserRegistrationFeatureCount.CreateFromDiscriminatorValue).ToList(); } },
                 {"userRoles", (o,n) => { (o as UserRegistrationFeatureSummary).UserRoles = n.GetEnumValue<IncludedUserRoles>(); } },
                 {"userTypes", (o,n) => { (o as UserRegistrationFeatureSummary).UserTypes = n.GetEnumValue<IncludedUserTypes>(); } },
             };

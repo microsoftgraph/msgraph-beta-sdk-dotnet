@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.ManagedDevices.Item.AssignmentFilterEvalu
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Managed device mobile app configuration states for this device.

@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.CreateDeviceLog
         public async Task<CreateDeviceLogCollectionRequestResponse> PostAsync(CreateDeviceLogCollectionRequestRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CreateDeviceLogCollectionRequestResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CreateDeviceLogCollectionRequestResponse>(requestInfo, CreateDeviceLogCollectionRequestResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceLogCollectionResponse</summary>
         public class CreateDeviceLogCollectionRequestResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceLogCollectionResponse</summary>
-            public DeviceLogCollectionResponse DeviceLogCollectionResponse { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceLogCollectionResponse DeviceLogCollectionResponse { get; set; }
             /// <summary>
             /// Instantiates a new createDeviceLogCollectionRequestResponse and sets the default values.
             /// </summary>
             public CreateDeviceLogCollectionRequestResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static CreateDeviceLogCollectionRequestResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new CreateDeviceLogCollectionRequestResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"deviceLogCollectionResponse", (o,n) => { (o as CreateDeviceLogCollectionRequestResponse).DeviceLogCollectionResponse = n.GetObjectValue<DeviceLogCollectionResponse>(); } },
+                    {"deviceLogCollectionResponse", (o,n) => { (o as CreateDeviceLogCollectionRequestResponse).DeviceLogCollectionResponse = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceLogCollectionResponse>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceLogCollectionResponse.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagedDevices.Item.CreateDeviceLog
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<DeviceLogCollectionResponse>("deviceLogCollectionResponse", DeviceLogCollectionResponse);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceLogCollectionResponse>("deviceLogCollectionResponse", DeviceLogCollectionResponse);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

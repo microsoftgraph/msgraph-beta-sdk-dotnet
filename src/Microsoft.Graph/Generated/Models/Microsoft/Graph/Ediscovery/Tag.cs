@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
     public class Tag : Entity, IParsable {
         /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
-        public ChildSelectability? ChildSelectability { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.ChildSelectability? ChildSelectability { get; set; }
         /// <summary>Returns the tags that are a child of a tag.</summary>
         public List<Tag> ChildTags { get; set; }
         /// <summary>The user who created the tag.</summary>
@@ -20,17 +20,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>Returns the parent tag of the specified tag.</summary>
         public Tag Parent { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Tag CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Tag();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"childSelectability", (o,n) => { (o as Tag).ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
-                {"childTags", (o,n) => { (o as Tag).ChildTags = n.GetCollectionOfObjectValues<Tag>().ToList(); } },
-                {"createdBy", (o,n) => { (o as Tag).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"childTags", (o,n) => { (o as Tag).ChildTags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue).ToList(); } },
+                {"createdBy", (o,n) => { (o as Tag).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"description", (o,n) => { (o as Tag).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Tag).DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Tag).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"parent", (o,n) => { (o as Tag).Parent = n.GetObjectValue<Tag>(); } },
+                {"parent", (o,n) => { (o as Tag).Parent = n.GetObjectValue<Tag>(Tag.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

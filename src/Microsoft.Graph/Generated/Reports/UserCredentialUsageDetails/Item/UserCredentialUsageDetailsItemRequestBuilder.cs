@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Reports.UserCredentialUsageDetails.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.UserCredentialUsageDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the self-service password reset (SSPR) usage for a given tenant.

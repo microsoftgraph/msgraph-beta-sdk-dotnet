@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Read-only. Required.</summary>
         public List<AccessPackageResource> AccessPackageResources { get; set; }
         /// <summary>Connection information of an environment used to connect to a resource.</summary>
-        public ConnectionInfo ConnectionInfo { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectionInfo ConnectionInfo { get; set; }
         /// <summary>The display name of the user that created this object.</summary>
         public string CreatedBy { get; set; }
         /// <summary>The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -28,12 +28,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).</summary>
         public string OriginSystem { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessPackageResourceEnvironment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessPackageResourceEnvironment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResources", (o,n) => { (o as AccessPackageResourceEnvironment).AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>().ToList(); } },
-                {"connectionInfo", (o,n) => { (o as AccessPackageResourceEnvironment).ConnectionInfo = n.GetObjectValue<ConnectionInfo>(); } },
+                {"accessPackageResources", (o,n) => { (o as AccessPackageResourceEnvironment).AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"connectionInfo", (o,n) => { (o as AccessPackageResourceEnvironment).ConnectionInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectionInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectionInfo.CreateFromDiscriminatorValue); } },
                 {"createdBy", (o,n) => { (o as AccessPackageResourceEnvironment).CreatedBy = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as AccessPackageResourceEnvironment).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as AccessPackageResourceEnvironment).Description = n.GetStringValue(); } },
@@ -53,7 +61,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AccessPackageResource>("accessPackageResources", AccessPackageResources);
-            writer.WriteObjectValue<ConnectionInfo>("connectionInfo", ConnectionInfo);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectionInfo>("connectionInfo", ConnectionInfo);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);

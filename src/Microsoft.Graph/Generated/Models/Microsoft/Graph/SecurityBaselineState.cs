@@ -16,13 +16,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>User Principal Name</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SecurityBaselineState CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SecurityBaselineState();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"displayName", (o,n) => { (o as SecurityBaselineState).DisplayName = n.GetStringValue(); } },
                 {"securityBaselineTemplateId", (o,n) => { (o as SecurityBaselineState).SecurityBaselineTemplateId = n.GetStringValue(); } },
-                {"settingStates", (o,n) => { (o as SecurityBaselineState).SettingStates = n.GetCollectionOfObjectValues<SecurityBaselineSettingState>().ToList(); } },
+                {"settingStates", (o,n) => { (o as SecurityBaselineState).SettingStates = n.GetCollectionOfObjectValues<SecurityBaselineSettingState>(SecurityBaselineSettingState.CreateFromDiscriminatorValue).ToList(); } },
                 {"state", (o,n) => { (o as SecurityBaselineState).State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
                 {"userPrincipalName", (o,n) => { (o as SecurityBaselineState).UserPrincipalName = n.GetStringValue(); } },
             };

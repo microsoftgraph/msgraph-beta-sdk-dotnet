@@ -158,7 +158,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item {
         /// </summary>
         public async Task<Case> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Case>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Case>(requestInfo, Case.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property cases in compliance

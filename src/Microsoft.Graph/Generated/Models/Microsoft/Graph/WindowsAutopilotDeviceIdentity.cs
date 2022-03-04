@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Display Name</summary>
         public string DisplayName { get; set; }
         /// <summary>Intune enrollment state of the Windows autopilot device. Possible values are: unknown, enrolled, pendingReset, failed, notContacted.</summary>
-        public EnrollmentState? EnrollmentState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.EnrollmentState? EnrollmentState { get; set; }
         /// <summary>Group Tag of the Windows autopilot device.</summary>
         public string GroupTag { get; set; }
         /// <summary>Deployment profile intended to be assigned to the Windows autopilot device.</summary>
@@ -50,6 +50,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>User Principal Name.</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WindowsAutopilotDeviceIdentity CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WindowsAutopilotDeviceIdentity();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -57,14 +65,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"addressableUserName", (o,n) => { (o as WindowsAutopilotDeviceIdentity).AddressableUserName = n.GetStringValue(); } },
                 {"azureActiveDirectoryDeviceId", (o,n) => { (o as WindowsAutopilotDeviceIdentity).AzureActiveDirectoryDeviceId = n.GetStringValue(); } },
                 {"azureAdDeviceId", (o,n) => { (o as WindowsAutopilotDeviceIdentity).AzureAdDeviceId = n.GetStringValue(); } },
-                {"deploymentProfile", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeploymentProfile = n.GetObjectValue<WindowsAutopilotDeploymentProfile>(); } },
+                {"deploymentProfile", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeploymentProfile = n.GetObjectValue<WindowsAutopilotDeploymentProfile>(WindowsAutopilotDeploymentProfile.CreateFromDiscriminatorValue); } },
                 {"deploymentProfileAssignedDateTime", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeploymentProfileAssignedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deploymentProfileAssignmentDetailedStatus", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeploymentProfileAssignmentDetailedStatus = n.GetEnumValue<WindowsAutopilotProfileAssignmentDetailedStatus>(); } },
                 {"deploymentProfileAssignmentStatus", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DeploymentProfileAssignmentStatus = n.GetEnumValue<WindowsAutopilotProfileAssignmentStatus>(); } },
                 {"displayName", (o,n) => { (o as WindowsAutopilotDeviceIdentity).DisplayName = n.GetStringValue(); } },
                 {"enrollmentState", (o,n) => { (o as WindowsAutopilotDeviceIdentity).EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
                 {"groupTag", (o,n) => { (o as WindowsAutopilotDeviceIdentity).GroupTag = n.GetStringValue(); } },
-                {"intendedDeploymentProfile", (o,n) => { (o as WindowsAutopilotDeviceIdentity).IntendedDeploymentProfile = n.GetObjectValue<WindowsAutopilotDeploymentProfile>(); } },
+                {"intendedDeploymentProfile", (o,n) => { (o as WindowsAutopilotDeviceIdentity).IntendedDeploymentProfile = n.GetObjectValue<WindowsAutopilotDeploymentProfile>(WindowsAutopilotDeploymentProfile.CreateFromDiscriminatorValue); } },
                 {"lastContactedDateTime", (o,n) => { (o as WindowsAutopilotDeviceIdentity).LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managedDeviceId", (o,n) => { (o as WindowsAutopilotDeviceIdentity).ManagedDeviceId = n.GetStringValue(); } },
                 {"manufacturer", (o,n) => { (o as WindowsAutopilotDeviceIdentity).Manufacturer = n.GetStringValue(); } },

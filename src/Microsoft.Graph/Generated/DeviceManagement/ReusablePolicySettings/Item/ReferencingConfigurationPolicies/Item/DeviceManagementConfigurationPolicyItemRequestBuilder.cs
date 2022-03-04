@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ReusablePolicySettings.Item.Referen
         /// </summary>
         public async Task<DeviceManagementConfigurationPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementConfigurationPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementConfigurationPolicy>(requestInfo, DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// configuration policies referencing the current reusable setting. This property is read-only.

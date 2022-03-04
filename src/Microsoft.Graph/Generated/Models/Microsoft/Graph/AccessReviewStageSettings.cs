@@ -31,6 +31,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AccessReviewStageSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessReviewStageSettings();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -38,11 +46,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"decisionsThatWillMoveToNextStage", (o,n) => { (o as AccessReviewStageSettings).DecisionsThatWillMoveToNextStage = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"dependsOn", (o,n) => { (o as AccessReviewStageSettings).DependsOn = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"durationInDays", (o,n) => { (o as AccessReviewStageSettings).DurationInDays = n.GetIntValue(); } },
-                {"fallbackReviewers", (o,n) => { (o as AccessReviewStageSettings).FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>().ToList(); } },
-                {"recommendationInsightSettings", (o,n) => { (o as AccessReviewStageSettings).RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>().ToList(); } },
+                {"fallbackReviewers", (o,n) => { (o as AccessReviewStageSettings).FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"recommendationInsightSettings", (o,n) => { (o as AccessReviewStageSettings).RecommendationInsightSettings = n.GetCollectionOfObjectValues<AccessReviewRecommendationInsightSetting>(AccessReviewRecommendationInsightSetting.CreateFromDiscriminatorValue).ToList(); } },
                 {"recommendationLookBackDuration", (o,n) => { (o as AccessReviewStageSettings).RecommendationLookBackDuration = n.GetTimeSpanValue(); } },
                 {"recommendationsEnabled", (o,n) => { (o as AccessReviewStageSettings).RecommendationsEnabled = n.GetBoolValue(); } },
-                {"reviewers", (o,n) => { (o as AccessReviewStageSettings).Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>().ToList(); } },
+                {"reviewers", (o,n) => { (o as AccessReviewStageSettings).Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
                 {"stageId", (o,n) => { (o as AccessReviewStageSettings).StageId = n.GetStringValue(); } },
             };
         }

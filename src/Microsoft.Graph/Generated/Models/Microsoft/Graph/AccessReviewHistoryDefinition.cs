@@ -27,21 +27,29 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.</summary>
         public AccessReviewHistoryStatus? Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessReviewHistoryDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessReviewHistoryDefinition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as AccessReviewHistoryDefinition).CreatedBy = n.GetObjectValue<UserIdentity>(); } },
+                {"createdBy", (o,n) => { (o as AccessReviewHistoryDefinition).CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as AccessReviewHistoryDefinition).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"decisions", (o,n) => { (o as AccessReviewHistoryDefinition).Decisions = n.GetCollectionOfEnumValues<AccessReviewHistoryDecisionFilter>().ToList(); } },
                 {"displayName", (o,n) => { (o as AccessReviewHistoryDefinition).DisplayName = n.GetStringValue(); } },
                 {"downloadUri", (o,n) => { (o as AccessReviewHistoryDefinition).DownloadUri = n.GetStringValue(); } },
                 {"fulfilledDateTime", (o,n) => { (o as AccessReviewHistoryDefinition).FulfilledDateTime = n.GetDateTimeOffsetValue(); } },
-                {"instances", (o,n) => { (o as AccessReviewHistoryDefinition).Instances = n.GetCollectionOfObjectValues<AccessReviewHistoryInstance>().ToList(); } },
+                {"instances", (o,n) => { (o as AccessReviewHistoryDefinition).Instances = n.GetCollectionOfObjectValues<AccessReviewHistoryInstance>(AccessReviewHistoryInstance.CreateFromDiscriminatorValue).ToList(); } },
                 {"reviewHistoryPeriodEndDateTime", (o,n) => { (o as AccessReviewHistoryDefinition).ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"reviewHistoryPeriodStartDateTime", (o,n) => { (o as AccessReviewHistoryDefinition).ReviewHistoryPeriodStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"scheduleSettings", (o,n) => { (o as AccessReviewHistoryDefinition).ScheduleSettings = n.GetObjectValue<AccessReviewHistoryScheduleSettings>(); } },
-                {"scopes", (o,n) => { (o as AccessReviewHistoryDefinition).Scopes = n.GetCollectionOfObjectValues<AccessReviewScope>().ToList(); } },
+                {"scheduleSettings", (o,n) => { (o as AccessReviewHistoryDefinition).ScheduleSettings = n.GetObjectValue<AccessReviewHistoryScheduleSettings>(AccessReviewHistoryScheduleSettings.CreateFromDiscriminatorValue); } },
+                {"scopes", (o,n) => { (o as AccessReviewHistoryDefinition).Scopes = n.GetCollectionOfObjectValues<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", (o,n) => { (o as AccessReviewHistoryDefinition).Status = n.GetEnumValue<AccessReviewHistoryStatus>(); } },
             };
         }

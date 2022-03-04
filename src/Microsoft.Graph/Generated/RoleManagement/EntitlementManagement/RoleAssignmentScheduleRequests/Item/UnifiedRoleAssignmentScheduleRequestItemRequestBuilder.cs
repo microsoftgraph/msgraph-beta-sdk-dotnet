@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentS
         /// </summary>
         public async Task<UnifiedRoleAssignmentScheduleRequest> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleRequest>(requestInfo, UnifiedRoleAssignmentScheduleRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property roleAssignmentScheduleRequests in roleManagement

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.Item.SectionGroups {
         /// </summary>
         public async Task<SectionGroupsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SectionGroupsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SectionGroupsResponse>(requestInfo, SectionGroupsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The section groups in the notebook. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.Item.SectionGroups {
         public async Task<SectionGroup> PostAsync(SectionGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SectionGroup>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SectionGroup>(requestInfo, SectionGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The section groups in the notebook. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Percentile_Exc {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Percentile_ExcRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Percentile_ExcRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"array", (o,n) => { (o as Percentile_ExcRequestBody).Array = n.GetObjectValue<Json>(); } },
-                {"k", (o,n) => { (o as Percentile_ExcRequestBody).K = n.GetObjectValue<Json>(); } },
+                {"array", (o,n) => { (o as Percentile_ExcRequestBody).Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"k", (o,n) => { (o as Percentile_ExcRequestBody).K = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

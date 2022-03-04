@@ -22,7 +22,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The MDM CSP URI this group policy setting maps to.</summary>
         public string MdmSettingUri { get; set; }
         /// <summary>Indicates if the setting is supported in Mdm or not. Possible values are: unknown, supported, unsupported, deprecated.</summary>
-        public MdmSupportedState? MdmSupportedState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MdmSupportedState? MdmSupportedState { get; set; }
         /// <summary>Parent Id of the group policy setting.</summary>
         public string ParentId { get; set; }
         /// <summary>The category the group policy setting is in.</summary>
@@ -45,6 +45,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string SettingValueDisplayUnits { get; set; }
         /// <summary>The value type of this group policy setting.</summary>
         public string SettingValueType { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new GroupPolicySettingMapping CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GroupPolicySettingMapping();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

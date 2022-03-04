@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Sites.Item.Drives {
         /// </summary>
         public async Task<DrivesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DrivesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DrivesResponse>(requestInfo, DrivesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of drives (document libraries) under this site.</summary>
         public class GetQueryParameters : QueryParametersBase {

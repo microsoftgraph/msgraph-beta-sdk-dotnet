@@ -32,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).</summary>
         public string ClientAppUsed { get; set; }
         /// <summary>Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).</summary>
-        public ConditionalAccessStatus? ConditionalAccessStatus { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ConditionalAccessStatus? ConditionalAccessStatus { get; set; }
         /// <summary>The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).</summary>
         public string CorrelationId { get; set; }
         /// <summary>Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).</summary>
@@ -40,7 +40,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.</summary>
         public SignInAccessType? CrossTenantAccessType { get; set; }
         /// <summary>Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.</summary>
-        public DeviceDetail DeviceDetail { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceDetail DeviceDetail { get; set; }
         /// <summary>Contains the identifier of an application's federated identity credential, if a federated identity credential was used to sign in.</summary>
         public string FederatedCredentialId { get; set; }
         /// <summary>During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.</summary>
@@ -50,7 +50,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.</summary>
         public string HomeTenantName { get; set; }
         /// <summary>Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed.</summary>
-        public IncomingTokenType? IncomingTokenType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.IncomingTokenType? IncomingTokenType { get; set; }
         /// <summary>IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).</summary>
         public string IpAddress { get; set; }
         /// <summary>The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.</summary>
@@ -61,13 +61,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public bool? IsTenantRestricted { get; set; }
         /// <summary>Provides the city, state, and country code where the sign-in originated. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.</summary>
         public SignInLocation Location { get; set; }
-        public MfaDetail MfaDetail { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MfaDetail MfaDetail { get; set; }
         /// <summary>The network location details including the type of network used and its names.</summary>
         public List<NetworkLocationDetail> NetworkLocationDetails { get; set; }
         /// <summary>The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).</summary>
         public string OriginalRequestId { get; set; }
         /// <summary>Contains information about the Azure AD Private Link policy that is associated with the sign in event.</summary>
-        public PrivateLinkDetails PrivateLinkDetails { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PrivateLinkDetails PrivateLinkDetails { get; set; }
         /// <summary>The request processing time in milliseconds in AD STS.</summary>
         public int? ProcessingTimeInMilliseconds { get; set; }
         /// <summary>Name of the resource the user signed into. Supports $filter (eq operator only).</summary>
@@ -79,7 +79,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The tenant identifier of the resource referenced in the sign in.</summary>
         public string ResourceTenantId { get; set; }
         /// <summary>Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.</summary>
-        public RiskDetail? RiskDetail { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RiskDetail? RiskDetail { get; set; }
         /// <summary>The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).</summary>
         public List<string> RiskEventTypes_v2 { get; set; }
         /// <summary>Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.</summary>
@@ -87,7 +87,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.</summary>
         public RiskLevel? RiskLevelDuringSignIn { get; set; }
         /// <summary>Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).</summary>
-        public RiskState? RiskState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RiskState? RiskState { get; set; }
         /// <summary>The unique identifier of the key credential used by the service principal to authenticate.</summary>
         public string ServicePrincipalCredentialKeyId { get; set; }
         /// <summary>The certificate thumbprint of the certificate used by the service principal to authenticate.</summary>
@@ -103,13 +103,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.</summary>
         public string SignInIdentifier { get; set; }
         /// <summary>The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.</summary>
-        public SignInIdentifierType? SignInIdentifierType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.SignInIdentifierType? SignInIdentifierType { get; set; }
         /// <summary>Sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.</summary>
         public SignInStatus Status { get; set; }
         /// <summary>The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).</summary>
         public string TokenIssuerName { get; set; }
         /// <summary>The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.</summary>
-        public TokenIssuerType? TokenIssuerType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.TokenIssuerType? TokenIssuerType { get; set; }
         /// <summary>A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.</summary>
         public string UniqueTokenIdentifier { get; set; }
         /// <summary>The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).</summary>
@@ -123,20 +123,28 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.</summary>
         public SignInUserType? UserType { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SignIn CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SignIn();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"appDisplayName", (o,n) => { (o as SignIn).AppDisplayName = n.GetStringValue(); } },
                 {"appId", (o,n) => { (o as SignIn).AppId = n.GetStringValue(); } },
-                {"appliedConditionalAccessPolicies", (o,n) => { (o as SignIn).AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>().ToList(); } },
-                {"authenticationContextClassReferences", (o,n) => { (o as SignIn).AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContext>().ToList(); } },
-                {"authenticationDetails", (o,n) => { (o as SignIn).AuthenticationDetails = n.GetCollectionOfObjectValues<AuthenticationDetail>().ToList(); } },
+                {"appliedConditionalAccessPolicies", (o,n) => { (o as SignIn).AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"authenticationContextClassReferences", (o,n) => { (o as SignIn).AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContext>(AuthenticationContext.CreateFromDiscriminatorValue).ToList(); } },
+                {"authenticationDetails", (o,n) => { (o as SignIn).AuthenticationDetails = n.GetCollectionOfObjectValues<AuthenticationDetail>(AuthenticationDetail.CreateFromDiscriminatorValue).ToList(); } },
                 {"authenticationMethodsUsed", (o,n) => { (o as SignIn).AuthenticationMethodsUsed = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"authenticationProcessingDetails", (o,n) => { (o as SignIn).AuthenticationProcessingDetails = n.GetCollectionOfObjectValues<KeyValue>().ToList(); } },
+                {"authenticationProcessingDetails", (o,n) => { (o as SignIn).AuthenticationProcessingDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
                 {"authenticationProtocol", (o,n) => { (o as SignIn).AuthenticationProtocol = n.GetEnumValue<ProtocolType>(); } },
                 {"authenticationRequirement", (o,n) => { (o as SignIn).AuthenticationRequirement = n.GetStringValue(); } },
-                {"authenticationRequirementPolicies", (o,n) => { (o as SignIn).AuthenticationRequirementPolicies = n.GetCollectionOfObjectValues<AuthenticationRequirementPolicy>().ToList(); } },
+                {"authenticationRequirementPolicies", (o,n) => { (o as SignIn).AuthenticationRequirementPolicies = n.GetCollectionOfObjectValues<AuthenticationRequirementPolicy>(AuthenticationRequirementPolicy.CreateFromDiscriminatorValue).ToList(); } },
                 {"autonomousSystemNumber", (o,n) => { (o as SignIn).AutonomousSystemNumber = n.GetIntValue(); } },
                 {"azureResourceId", (o,n) => { (o as SignIn).AzureResourceId = n.GetStringValue(); } },
                 {"clientAppUsed", (o,n) => { (o as SignIn).ClientAppUsed = n.GetStringValue(); } },
@@ -144,7 +152,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"correlationId", (o,n) => { (o as SignIn).CorrelationId = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as SignIn).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"crossTenantAccessType", (o,n) => { (o as SignIn).CrossTenantAccessType = n.GetEnumValue<SignInAccessType>(); } },
-                {"deviceDetail", (o,n) => { (o as SignIn).DeviceDetail = n.GetObjectValue<DeviceDetail>(); } },
+                {"deviceDetail", (o,n) => { (o as SignIn).DeviceDetail = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceDetail>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceDetail.CreateFromDiscriminatorValue); } },
                 {"federatedCredentialId", (o,n) => { (o as SignIn).FederatedCredentialId = n.GetStringValue(); } },
                 {"flaggedForReview", (o,n) => { (o as SignIn).FlaggedForReview = n.GetBoolValue(); } },
                 {"homeTenantId", (o,n) => { (o as SignIn).HomeTenantId = n.GetStringValue(); } },
@@ -154,11 +162,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"ipAddressFromResourceProvider", (o,n) => { (o as SignIn).IpAddressFromResourceProvider = n.GetStringValue(); } },
                 {"isInteractive", (o,n) => { (o as SignIn).IsInteractive = n.GetBoolValue(); } },
                 {"isTenantRestricted", (o,n) => { (o as SignIn).IsTenantRestricted = n.GetBoolValue(); } },
-                {"location", (o,n) => { (o as SignIn).Location = n.GetObjectValue<SignInLocation>(); } },
-                {"mfaDetail", (o,n) => { (o as SignIn).MfaDetail = n.GetObjectValue<MfaDetail>(); } },
-                {"networkLocationDetails", (o,n) => { (o as SignIn).NetworkLocationDetails = n.GetCollectionOfObjectValues<NetworkLocationDetail>().ToList(); } },
+                {"location", (o,n) => { (o as SignIn).Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
+                {"mfaDetail", (o,n) => { (o as SignIn).MfaDetail = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MfaDetail>(MicrosoftGraphSdk.Models.Microsoft.Graph.MfaDetail.CreateFromDiscriminatorValue); } },
+                {"networkLocationDetails", (o,n) => { (o as SignIn).NetworkLocationDetails = n.GetCollectionOfObjectValues<NetworkLocationDetail>(NetworkLocationDetail.CreateFromDiscriminatorValue).ToList(); } },
                 {"originalRequestId", (o,n) => { (o as SignIn).OriginalRequestId = n.GetStringValue(); } },
-                {"privateLinkDetails", (o,n) => { (o as SignIn).PrivateLinkDetails = n.GetObjectValue<PrivateLinkDetails>(); } },
+                {"privateLinkDetails", (o,n) => { (o as SignIn).PrivateLinkDetails = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivateLinkDetails>(MicrosoftGraphSdk.Models.Microsoft.Graph.PrivateLinkDetails.CreateFromDiscriminatorValue); } },
                 {"processingTimeInMilliseconds", (o,n) => { (o as SignIn).ProcessingTimeInMilliseconds = n.GetIntValue(); } },
                 {"resourceDisplayName", (o,n) => { (o as SignIn).ResourceDisplayName = n.GetStringValue(); } },
                 {"resourceId", (o,n) => { (o as SignIn).ResourceId = n.GetStringValue(); } },
@@ -173,11 +181,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"servicePrincipalCredentialThumbprint", (o,n) => { (o as SignIn).ServicePrincipalCredentialThumbprint = n.GetStringValue(); } },
                 {"servicePrincipalId", (o,n) => { (o as SignIn).ServicePrincipalId = n.GetStringValue(); } },
                 {"servicePrincipalName", (o,n) => { (o as SignIn).ServicePrincipalName = n.GetStringValue(); } },
-                {"sessionLifetimePolicies", (o,n) => { (o as SignIn).SessionLifetimePolicies = n.GetCollectionOfObjectValues<SessionLifetimePolicy>().ToList(); } },
+                {"sessionLifetimePolicies", (o,n) => { (o as SignIn).SessionLifetimePolicies = n.GetCollectionOfObjectValues<SessionLifetimePolicy>(SessionLifetimePolicy.CreateFromDiscriminatorValue).ToList(); } },
                 {"signInEventTypes", (o,n) => { (o as SignIn).SignInEventTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"signInIdentifier", (o,n) => { (o as SignIn).SignInIdentifier = n.GetStringValue(); } },
                 {"signInIdentifierType", (o,n) => { (o as SignIn).SignInIdentifierType = n.GetEnumValue<SignInIdentifierType>(); } },
-                {"status", (o,n) => { (o as SignIn).Status = n.GetObjectValue<SignInStatus>(); } },
+                {"status", (o,n) => { (o as SignIn).Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
                 {"tokenIssuerName", (o,n) => { (o as SignIn).TokenIssuerName = n.GetStringValue(); } },
                 {"tokenIssuerType", (o,n) => { (o as SignIn).TokenIssuerType = n.GetEnumValue<TokenIssuerType>(); } },
                 {"uniqueTokenIdentifier", (o,n) => { (o as SignIn).UniqueTokenIdentifier = n.GetStringValue(); } },
@@ -212,7 +220,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteEnumValue<SignInAccessType>("crossTenantAccessType", CrossTenantAccessType);
-            writer.WriteObjectValue<DeviceDetail>("deviceDetail", DeviceDetail);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceDetail>("deviceDetail", DeviceDetail);
             writer.WriteStringValue("federatedCredentialId", FederatedCredentialId);
             writer.WriteBoolValue("flaggedForReview", FlaggedForReview);
             writer.WriteStringValue("homeTenantId", HomeTenantId);
@@ -223,10 +231,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteBoolValue("isInteractive", IsInteractive);
             writer.WriteBoolValue("isTenantRestricted", IsTenantRestricted);
             writer.WriteObjectValue<SignInLocation>("location", Location);
-            writer.WriteObjectValue<MfaDetail>("mfaDetail", MfaDetail);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MfaDetail>("mfaDetail", MfaDetail);
             writer.WriteCollectionOfObjectValues<NetworkLocationDetail>("networkLocationDetails", NetworkLocationDetails);
             writer.WriteStringValue("originalRequestId", OriginalRequestId);
-            writer.WriteObjectValue<PrivateLinkDetails>("privateLinkDetails", PrivateLinkDetails);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.PrivateLinkDetails>("privateLinkDetails", PrivateLinkDetails);
             writer.WriteIntValue("processingTimeInMilliseconds", ProcessingTimeInMilliseconds);
             writer.WriteStringValue("resourceDisplayName", ResourceDisplayName);
             writer.WriteStringValue("resourceId", ResourceId);

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Education.SynchronizationProfiles {
         /// </summary>
         public async Task<SynchronizationProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SynchronizationProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SynchronizationProfilesResponse>(requestInfo, SynchronizationProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to synchronizationProfiles for education
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Education.SynchronizationProfiles {
         public async Task<EducationSynchronizationProfile> PostAsync(EducationSynchronizationProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EducationSynchronizationProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationSynchronizationProfile>(requestInfo, EducationSynchronizationProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get synchronizationProfiles from education</summary>
         public class GetQueryParameters : QueryParametersBase {

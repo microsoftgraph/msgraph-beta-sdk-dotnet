@@ -16,6 +16,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The collection of task folders in the task group. Read-only. Nullable.</summary>
         public List<OutlookTaskFolder> TaskFolders { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new OutlookTaskGroup CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OutlookTaskGroup();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -24,7 +32,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"groupKey", (o,n) => { (o as OutlookTaskGroup).GroupKey = n.GetStringValue(); } },
                 {"isDefaultGroup", (o,n) => { (o as OutlookTaskGroup).IsDefaultGroup = n.GetBoolValue(); } },
                 {"name", (o,n) => { (o as OutlookTaskGroup).Name = n.GetStringValue(); } },
-                {"taskFolders", (o,n) => { (o as OutlookTaskGroup).TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>().ToList(); } },
+                {"taskFolders", (o,n) => { (o as OutlookTaskGroup).TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

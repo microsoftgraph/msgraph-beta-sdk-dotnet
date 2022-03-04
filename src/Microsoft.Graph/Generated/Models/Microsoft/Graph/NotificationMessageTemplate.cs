@@ -18,6 +18,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new NotificationMessageTemplate CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new NotificationMessageTemplate();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -26,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"defaultLocale", (o,n) => { (o as NotificationMessageTemplate).DefaultLocale = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as NotificationMessageTemplate).DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as NotificationMessageTemplate).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"localizedNotificationMessages", (o,n) => { (o as NotificationMessageTemplate).LocalizedNotificationMessages = n.GetCollectionOfObjectValues<LocalizedNotificationMessage>().ToList(); } },
+                {"localizedNotificationMessages", (o,n) => { (o as NotificationMessageTemplate).LocalizedNotificationMessages = n.GetCollectionOfObjectValues<LocalizedNotificationMessage>(LocalizedNotificationMessage.CreateFromDiscriminatorValue).ToList(); } },
                 {"roleScopeTagIds", (o,n) => { (o as NotificationMessageTemplate).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }

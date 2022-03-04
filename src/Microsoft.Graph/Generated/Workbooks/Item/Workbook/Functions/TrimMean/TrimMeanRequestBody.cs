@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.TrimMean {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TrimMeanRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TrimMeanRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"array", (o,n) => { (o as TrimMeanRequestBody).Array = n.GetObjectValue<Json>(); } },
-                {"percent", (o,n) => { (o as TrimMeanRequestBody).Percent = n.GetObjectValue<Json>(); } },
+                {"array", (o,n) => { (o as TrimMeanRequestBody).Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"percent", (o,n) => { (o as TrimMeanRequestBody).Percent = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

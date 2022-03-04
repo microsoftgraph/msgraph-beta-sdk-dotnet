@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Directory.ImpactedResources.Item.Reactivate {
         /// </summary>
         public async Task<ReactivateResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<ReactivateResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ReactivateResponse>(requestInfo, ReactivateResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes recommendationResource</summary>
         public class ReactivateResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type recommendationResource</summary>
-            public RecommendationResource RecommendationResource { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.RecommendationResource RecommendationResource { get; set; }
             /// <summary>
             /// Instantiates a new reactivateResponse and sets the default values.
             /// </summary>
             public ReactivateResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ReactivateResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ReactivateResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"recommendationResource", (o,n) => { (o as ReactivateResponse).RecommendationResource = n.GetObjectValue<RecommendationResource>(); } },
+                    {"recommendationResource", (o,n) => { (o as ReactivateResponse).RecommendationResource = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RecommendationResource>(MicrosoftGraphSdk.Models.Microsoft.Graph.RecommendationResource.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Directory.ImpactedResources.Item.Reactivate {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<RecommendationResource>("recommendationResource", RecommendationResource);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.RecommendationResource>("recommendationResource", RecommendationResource);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

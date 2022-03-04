@@ -24,12 +24,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static RubricQuality CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RubricQuality();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"criteria", (o,n) => { (o as RubricQuality).Criteria = n.GetCollectionOfObjectValues<RubricCriterion>().ToList(); } },
-                {"description", (o,n) => { (o as RubricQuality).Description = n.GetObjectValue<EducationItemBody>(); } },
+                {"criteria", (o,n) => { (o as RubricQuality).Criteria = n.GetCollectionOfObjectValues<RubricCriterion>(RubricCriterion.CreateFromDiscriminatorValue).ToList(); } },
+                {"description", (o,n) => { (o as RubricQuality).Description = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
                 {"displayName", (o,n) => { (o as RubricQuality).DisplayName = n.GetStringValue(); } },
                 {"qualityId", (o,n) => { (o as RubricQuality).QualityId = n.GetStringValue(); } },
                 {"weight", (o,n) => { (o as RubricQuality).Weight = n.GetFloatValue(); } },

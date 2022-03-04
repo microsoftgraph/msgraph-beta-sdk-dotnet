@@ -14,17 +14,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public ManagementTemplateStepVersion TemplateStepVersion { get; set; }
         public string TenantId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagementTemplateStepDeployment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagementTemplateStepDeployment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"createdByUserId", (o,n) => { (o as ManagementTemplateStepDeployment).CreatedByUserId = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as ManagementTemplateStepDeployment).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"error", (o,n) => { (o as ManagementTemplateStepDeployment).Error = n.GetObjectValue<GraphAPIErrorDetails>(); } },
+                {"error", (o,n) => { (o as ManagementTemplateStepDeployment).Error = n.GetObjectValue<GraphAPIErrorDetails>(GraphAPIErrorDetails.CreateFromDiscriminatorValue); } },
                 {"lastActionByUserId", (o,n) => { (o as ManagementTemplateStepDeployment).LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", (o,n) => { (o as ManagementTemplateStepDeployment).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", (o,n) => { (o as ManagementTemplateStepDeployment).Status = n.GetEnumValue<ManagementTemplateDeploymentStatus>(); } },
-                {"templateStepVersion", (o,n) => { (o as ManagementTemplateStepDeployment).TemplateStepVersion = n.GetObjectValue<ManagementTemplateStepVersion>(); } },
+                {"templateStepVersion", (o,n) => { (o as ManagementTemplateStepDeployment).TemplateStepVersion = n.GetObjectValue<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
                 {"tenantId", (o,n) => { (o as ManagementTemplateStepDeployment).TenantId = n.GetStringValue(); } },
             };
         }

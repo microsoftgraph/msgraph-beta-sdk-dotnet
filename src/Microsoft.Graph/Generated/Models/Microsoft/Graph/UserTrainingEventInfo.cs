@@ -24,15 +24,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static UserTrainingEventInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserTrainingEventInfo();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"displayName", (o,n) => { (o as UserTrainingEventInfo).DisplayName = n.GetStringValue(); } },
                 {"latestTrainingStatus", (o,n) => { (o as UserTrainingEventInfo).LatestTrainingStatus = n.GetEnumValue<TrainingStatus>(); } },
-                {"trainingAssignedProperties", (o,n) => { (o as UserTrainingEventInfo).TrainingAssignedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(); } },
-                {"trainingCompletedProperties", (o,n) => { (o as UserTrainingEventInfo).TrainingCompletedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(); } },
-                {"trainingUpdatedProperties", (o,n) => { (o as UserTrainingEventInfo).TrainingUpdatedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(); } },
+                {"trainingAssignedProperties", (o,n) => { (o as UserTrainingEventInfo).TrainingAssignedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
+                {"trainingCompletedProperties", (o,n) => { (o as UserTrainingEventInfo).TrainingCompletedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
+                {"trainingUpdatedProperties", (o,n) => { (o as UserTrainingEventInfo).TrainingUpdatedProperties = n.GetObjectValue<UserTrainingContentEventInfo>(UserTrainingContentEventInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

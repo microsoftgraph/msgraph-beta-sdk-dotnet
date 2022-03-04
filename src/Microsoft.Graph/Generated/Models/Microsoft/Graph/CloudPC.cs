@@ -46,6 +46,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user principal name (UPN) of the user assigned to the Cloud PC.</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CloudPC CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CloudPC();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -54,9 +62,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"displayName", (o,n) => { (o as CloudPC).DisplayName = n.GetStringValue(); } },
                 {"gracePeriodEndDateTime", (o,n) => { (o as CloudPC).GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"imageDisplayName", (o,n) => { (o as CloudPC).ImageDisplayName = n.GetStringValue(); } },
-                {"lastLoginResult", (o,n) => { (o as CloudPC).LastLoginResult = n.GetObjectValue<CloudPcLoginResult>(); } },
+                {"lastLoginResult", (o,n) => { (o as CloudPC).LastLoginResult = n.GetObjectValue<CloudPcLoginResult>(CloudPcLoginResult.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as CloudPC).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastRemoteActionResult", (o,n) => { (o as CloudPC).LastRemoteActionResult = n.GetObjectValue<CloudPcRemoteActionResult>(); } },
+                {"lastRemoteActionResult", (o,n) => { (o as CloudPC).LastRemoteActionResult = n.GetObjectValue<CloudPcRemoteActionResult>(CloudPcRemoteActionResult.CreateFromDiscriminatorValue); } },
                 {"managedDeviceId", (o,n) => { (o as CloudPC).ManagedDeviceId = n.GetStringValue(); } },
                 {"managedDeviceName", (o,n) => { (o as CloudPC).ManagedDeviceName = n.GetStringValue(); } },
                 {"onPremisesConnectionName", (o,n) => { (o as CloudPC).OnPremisesConnectionName = n.GetStringValue(); } },
@@ -67,7 +75,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"servicePlanName", (o,n) => { (o as CloudPC).ServicePlanName = n.GetStringValue(); } },
                 {"servicePlanType", (o,n) => { (o as CloudPC).ServicePlanType = n.GetEnumValue<CloudPcServicePlanType>(); } },
                 {"status", (o,n) => { (o as CloudPC).Status = n.GetEnumValue<CloudPcStatus>(); } },
-                {"statusDetails", (o,n) => { (o as CloudPC).StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(); } },
+                {"statusDetails", (o,n) => { (o as CloudPC).StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
                 {"userAccountType", (o,n) => { (o as CloudPC).UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
                 {"userPrincipalName", (o,n) => { (o as CloudPC).UserPrincipalName = n.GetStringValue(); } },
             };

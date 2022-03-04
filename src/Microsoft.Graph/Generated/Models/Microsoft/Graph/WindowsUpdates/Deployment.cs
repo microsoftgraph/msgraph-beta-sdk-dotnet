@@ -18,16 +18,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates {
         /// <summary>Execution status of the deployment. Returned by default.</summary>
         public DeploymentState State { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Deployment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Deployment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"audience", (o,n) => { (o as Deployment).Audience = n.GetObjectValue<DeploymentAudience>(); } },
-                {"content", (o,n) => { (o as Deployment).Content = n.GetObjectValue<DeployableContent>(); } },
+                {"audience", (o,n) => { (o as Deployment).Audience = n.GetObjectValue<DeploymentAudience>(DeploymentAudience.CreateFromDiscriminatorValue); } },
+                {"content", (o,n) => { (o as Deployment).Content = n.GetObjectValue<DeployableContent>(DeployableContent.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as Deployment).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as Deployment).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"settings", (o,n) => { (o as Deployment).Settings = n.GetObjectValue<DeploymentSettings>(); } },
-                {"state", (o,n) => { (o as Deployment).State = n.GetObjectValue<DeploymentState>(); } },
+                {"settings", (o,n) => { (o as Deployment).Settings = n.GetObjectValue<DeploymentSettings>(DeploymentSettings.CreateFromDiscriminatorValue); } },
+                {"state", (o,n) => { (o as Deployment).State = n.GetObjectValue<DeploymentState>(DeploymentState.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

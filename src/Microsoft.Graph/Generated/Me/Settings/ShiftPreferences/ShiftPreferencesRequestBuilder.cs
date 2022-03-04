@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Me.Settings.ShiftPreferences {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ShiftPreferences.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The shift preferences for the user.

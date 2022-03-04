@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Security.CloudAppSecurityProfiles.Item {
         /// </summary>
         public async Task<CloudAppSecurityProfile> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CloudAppSecurityProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudAppSecurityProfile>(requestInfo, CloudAppSecurityProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property cloudAppSecurityProfiles in security

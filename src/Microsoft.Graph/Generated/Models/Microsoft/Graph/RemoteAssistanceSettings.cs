@@ -8,7 +8,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.</summary>
         public bool? AllowSessionsToUnenrolledDevices { get; set; }
         /// <summary>The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: disabled, enabled.</summary>
-        public RemoteAssistanceState? RemoteAssistanceState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RemoteAssistanceState? RemoteAssistanceState { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RemoteAssistanceSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RemoteAssistanceSettings();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>

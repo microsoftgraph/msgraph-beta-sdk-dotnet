@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Communications.Calls.Item.PlayPrompt {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static PlayPromptRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PlayPromptRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"clientContext", (o,n) => { (o as PlayPromptRequestBody).ClientContext = n.GetStringValue(); } },
                 {"loop", (o,n) => { (o as PlayPromptRequestBody).Loop = n.GetBoolValue(); } },
-                {"prompts", (o,n) => { (o as PlayPromptRequestBody).Prompts = n.GetCollectionOfObjectValues<Prompt>().ToList(); } },
+                {"prompts", (o,n) => { (o as PlayPromptRequestBody).Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

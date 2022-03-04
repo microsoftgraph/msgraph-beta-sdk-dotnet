@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequ
         /// </summary>
         public async Task<BusinessFlowsWithRequestsAwaitingMyDecisionResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BusinessFlowsWithRequestsAwaitingMyDecisionResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BusinessFlowsWithRequestsAwaitingMyDecisionResponse>(requestInfo, BusinessFlowsWithRequestsAwaitingMyDecisionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to businessFlowsWithRequestsAwaitingMyDecision for approvalWorkflowProviders
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.BusinessFlowsWithRequ
         public async Task<BusinessFlow> PostAsync(BusinessFlow body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<BusinessFlow>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BusinessFlow>(requestInfo, BusinessFlow.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders</summary>
         public class GetQueryParameters : QueryParametersBase {

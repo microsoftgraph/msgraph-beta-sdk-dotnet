@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Planner.Rosters.Item.Plans {
         /// </summary>
         public async Task<PlansResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PlansResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlansResponse>(requestInfo, PlansResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Retrieves the plans contained by the plannerRoster.</summary>
         public class GetQueryParameters : QueryParametersBase {

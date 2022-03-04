@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosManagedAppProtections {
         /// </summary>
         public async Task<IosManagedAppProtectionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IosManagedAppProtectionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IosManagedAppProtectionsResponse>(requestInfo, IosManagedAppProtectionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// iOS managed app policies.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosManagedAppProtections {
         public async Task<IosManagedAppProtection> PostAsync(IosManagedAppProtection body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<IosManagedAppProtection>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IosManagedAppProtection>(requestInfo, IosManagedAppProtection.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>iOS managed app policies.</summary>
         public class GetQueryParameters : QueryParametersBase {

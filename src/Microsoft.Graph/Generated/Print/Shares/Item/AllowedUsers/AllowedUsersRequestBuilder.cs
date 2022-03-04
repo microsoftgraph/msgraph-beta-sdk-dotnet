@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Print.Shares.Item.AllowedUsers {
         /// </summary>
         public async Task<AllowedUsersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AllowedUsersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedUsersResponse>(requestInfo, AllowedUsersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The users who have access to print using the printer.</summary>
         public class GetQueryParameters : QueryParametersBase {

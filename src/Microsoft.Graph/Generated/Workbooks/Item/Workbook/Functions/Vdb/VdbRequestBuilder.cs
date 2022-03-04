@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Vdb {
         public async Task<VdbResponse> PostAsync(VdbRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<VdbResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<VdbResponse>(requestInfo, VdbResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes workbookFunctionResult</summary>
         public class VdbResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type workbookFunctionResult</summary>
-            public WorkbookFunctionResult WorkbookFunctionResult { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookFunctionResult WorkbookFunctionResult { get; set; }
             /// <summary>
             /// Instantiates a new vdbResponse and sets the default values.
             /// </summary>
             public VdbResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static VdbResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new VdbResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"workbookFunctionResult", (o,n) => { (o as VdbResponse).WorkbookFunctionResult = n.GetObjectValue<WorkbookFunctionResult>(); } },
+                    {"workbookFunctionResult", (o,n) => { (o as VdbResponse).WorkbookFunctionResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookFunctionResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookFunctionResult.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Vdb {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<WorkbookFunctionResult>("workbookFunctionResult", WorkbookFunctionResult);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookFunctionResult>("workbookFunctionResult", WorkbookFunctionResult);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

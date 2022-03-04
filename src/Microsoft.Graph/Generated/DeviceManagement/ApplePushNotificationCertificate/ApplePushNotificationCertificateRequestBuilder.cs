@@ -129,7 +129,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ApplePushNotificationCertificate {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplePushNotificationCertificate> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplePushNotificationCertificate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ApplePushNotificationCertificate>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ApplePushNotificationCertificate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Apple push notification certificate.

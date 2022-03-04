@@ -17,15 +17,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public GovernanceRoleSetting RoleSetting { get; set; }
         public string TemplateId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new GovernanceRoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GovernanceRoleDefinition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"displayName", (o,n) => { (o as GovernanceRoleDefinition).DisplayName = n.GetStringValue(); } },
                 {"externalId", (o,n) => { (o as GovernanceRoleDefinition).ExternalId = n.GetStringValue(); } },
-                {"resource", (o,n) => { (o as GovernanceRoleDefinition).Resource = n.GetObjectValue<GovernanceResource>(); } },
+                {"resource", (o,n) => { (o as GovernanceRoleDefinition).Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
                 {"resourceId", (o,n) => { (o as GovernanceRoleDefinition).ResourceId = n.GetStringValue(); } },
-                {"roleSetting", (o,n) => { (o as GovernanceRoleDefinition).RoleSetting = n.GetObjectValue<GovernanceRoleSetting>(); } },
+                {"roleSetting", (o,n) => { (o as GovernanceRoleDefinition).RoleSetting = n.GetObjectValue<GovernanceRoleSetting>(GovernanceRoleSetting.CreateFromDiscriminatorValue); } },
                 {"templateId", (o,n) => { (o as GovernanceRoleDefinition).TemplateId = n.GetStringValue(); } },
             };
         }

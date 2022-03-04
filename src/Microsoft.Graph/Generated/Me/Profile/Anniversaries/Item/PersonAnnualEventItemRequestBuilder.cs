@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Anniversaries.Item {
         /// </summary>
         public async Task<PersonAnnualEvent> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PersonAnnualEvent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonAnnualEvent>(requestInfo, PersonAnnualEvent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the details of meaningful dates associated with a person.

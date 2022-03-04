@@ -18,6 +18,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.</summary>
         public List<BookingWorkHours> WorkingHours { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new BookingStaffMember CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new BookingStaffMember();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -27,7 +35,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"role", (o,n) => { (o as BookingStaffMember).Role = n.GetEnumValue<BookingStaffRole>(); } },
                 {"timeZone", (o,n) => { (o as BookingStaffMember).TimeZone = n.GetStringValue(); } },
                 {"useBusinessHours", (o,n) => { (o as BookingStaffMember).UseBusinessHours = n.GetBoolValue(); } },
-                {"workingHours", (o,n) => { (o as BookingStaffMember).WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>().ToList(); } },
+                {"workingHours", (o,n) => { (o as BookingStaffMember).WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs {
         /// </summary>
         public async Task<JobsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<JobsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<JobsResponse>(requestInfo, JobsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs {
         public async Task<SynchronizationJob> PostAsync(SynchronizationJob body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, SynchronizationJob.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.</summary>
         public class GetQueryParameters : QueryParametersBase {

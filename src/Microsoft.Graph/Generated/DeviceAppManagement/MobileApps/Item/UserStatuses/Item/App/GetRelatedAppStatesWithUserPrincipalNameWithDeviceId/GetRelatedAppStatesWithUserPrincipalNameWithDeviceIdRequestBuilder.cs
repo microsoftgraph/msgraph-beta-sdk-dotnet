@@ -70,7 +70,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps.Item.UserStatuses.Ite
         /// </summary>
         public async Task<IEnumerable<GetRelatedAppStatesWithUserPrincipalNameWithDeviceId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetRelatedAppStatesWithUserPrincipalNameWithDeviceId>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetRelatedAppStatesWithUserPrincipalNameWithDeviceId>(requestInfo, GetRelatedAppStatesWithUserPrincipalNameWithDeviceId.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

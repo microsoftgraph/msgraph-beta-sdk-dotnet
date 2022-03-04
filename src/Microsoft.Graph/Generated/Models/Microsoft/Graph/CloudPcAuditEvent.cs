@@ -27,6 +27,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of cloudPcAuditResource objects. Read-only.</summary>
         public List<CloudPcAuditResource> Resources { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CloudPcAuditEvent CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CloudPcAuditEvent();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -36,12 +44,12 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"activityOperationType", (o,n) => { (o as CloudPcAuditEvent).ActivityOperationType = n.GetEnumValue<CloudPcAuditActivityOperationType>(); } },
                 {"activityResult", (o,n) => { (o as CloudPcAuditEvent).ActivityResult = n.GetEnumValue<CloudPcAuditActivityResult>(); } },
                 {"activityType", (o,n) => { (o as CloudPcAuditEvent).ActivityType = n.GetStringValue(); } },
-                {"actor", (o,n) => { (o as CloudPcAuditEvent).Actor = n.GetObjectValue<CloudPcAuditActor>(); } },
+                {"actor", (o,n) => { (o as CloudPcAuditEvent).Actor = n.GetObjectValue<CloudPcAuditActor>(CloudPcAuditActor.CreateFromDiscriminatorValue); } },
                 {"category", (o,n) => { (o as CloudPcAuditEvent).Category = n.GetEnumValue<CloudPcAuditCategory>(); } },
                 {"componentName", (o,n) => { (o as CloudPcAuditEvent).ComponentName = n.GetStringValue(); } },
                 {"correlationId", (o,n) => { (o as CloudPcAuditEvent).CorrelationId = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as CloudPcAuditEvent).DisplayName = n.GetStringValue(); } },
-                {"resources", (o,n) => { (o as CloudPcAuditEvent).Resources = n.GetCollectionOfObjectValues<CloudPcAuditResource>().ToList(); } },
+                {"resources", (o,n) => { (o as CloudPcAuditEvent).Resources = n.GetCollectionOfObjectValues<CloudPcAuditResource>(CloudPcAuditResource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

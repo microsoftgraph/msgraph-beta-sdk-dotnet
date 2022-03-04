@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Defi
         /// </summary>
         public async Task<GroupPolicyDefinitionValue> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyDefinitionValue>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyDefinitionValue>(requestInfo, GroupPolicyDefinitionValue.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The group policy definition value associated with the presentation value.</summary>
         public class GetQueryParameters : QueryParametersBase {

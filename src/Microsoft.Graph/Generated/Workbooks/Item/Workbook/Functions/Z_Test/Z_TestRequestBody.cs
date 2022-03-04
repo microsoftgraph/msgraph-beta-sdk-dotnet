@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Z_Test {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Z_TestRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Z_TestRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"array", (o,n) => { (o as Z_TestRequestBody).Array = n.GetObjectValue<Json>(); } },
-                {"sigma", (o,n) => { (o as Z_TestRequestBody).Sigma = n.GetObjectValue<Json>(); } },
-                {"x", (o,n) => { (o as Z_TestRequestBody).X = n.GetObjectValue<Json>(); } },
+                {"array", (o,n) => { (o as Z_TestRequestBody).Array = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"sigma", (o,n) => { (o as Z_TestRequestBody).Sigma = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"x", (o,n) => { (o as Z_TestRequestBody).X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

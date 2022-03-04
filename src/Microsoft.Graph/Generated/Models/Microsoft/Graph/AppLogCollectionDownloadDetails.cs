@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>DecryptionAlgorithm for Content. Possible values are: aes256.</summary>
-        public AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AppLogDecryptionAlgorithm? AppLogDecryptionAlgorithm { get; set; }
         /// <summary>DecryptionKey as string</summary>
         public string DecryptionKey { get; set; }
         /// <summary>Download SAS Url for completed AppLogUploadRequest</summary>
@@ -18,6 +18,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public AppLogCollectionDownloadDetails() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AppLogCollectionDownloadDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AppLogCollectionDownloadDetails();
         }
         /// <summary>
         /// The deserialization information for the current model

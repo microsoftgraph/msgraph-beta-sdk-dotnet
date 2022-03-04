@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience {
         /// </summary>
         public async Task<DeploymentAudience> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeploymentAudience>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeploymentAudience>(requestInfo, DeploymentAudience.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Specifies the audience to which content is deployed.

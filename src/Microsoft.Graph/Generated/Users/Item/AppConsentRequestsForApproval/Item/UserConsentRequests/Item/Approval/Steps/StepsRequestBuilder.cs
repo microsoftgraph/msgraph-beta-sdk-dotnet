@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.AppConsentRequestsForApproval.Item.UserCo
         /// </summary>
         public async Task<StepsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<StepsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<StepsResponse>(requestInfo, StepsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to steps for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.AppConsentRequestsForApproval.Item.UserCo
         public async Task<ApprovalStep> PostAsync(ApprovalStep body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ApprovalStep>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ApprovalStep>(requestInfo, ApprovalStep.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get steps from users</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks.Item.DeviceStates 
         /// </summary>
         public async Task<DeviceStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceStatesResponse>(requestInfo, DeviceStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of installation states for this eBook.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedEBooks.Item.DeviceStates 
         public async Task<DeviceInstallState> PostAsync(DeviceInstallState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceInstallState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceInstallState>(requestInfo, DeviceInstallState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of installation states for this eBook.</summary>
         public class GetQueryParameters : QueryParametersBase {

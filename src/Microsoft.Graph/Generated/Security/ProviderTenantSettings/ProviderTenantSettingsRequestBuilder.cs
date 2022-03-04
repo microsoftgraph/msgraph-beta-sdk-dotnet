@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Security.ProviderTenantSettings {
         /// </summary>
         public async Task<ProviderTenantSettingsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ProviderTenantSettingsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProviderTenantSettingsResponse>(requestInfo, ProviderTenantSettingsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to providerTenantSettings for security
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Security.ProviderTenantSettings {
         public async Task<ProviderTenantSetting> PostAsync(ProviderTenantSetting body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ProviderTenantSetting>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProviderTenantSetting>(requestInfo, ProviderTenantSetting.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get providerTenantSettings from security</summary>
         public class GetQueryParameters : QueryParametersBase {

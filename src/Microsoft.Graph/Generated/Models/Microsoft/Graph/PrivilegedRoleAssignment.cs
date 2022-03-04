@@ -18,6 +18,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>User identifier. In GUID string format.</summary>
         public string UserId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PrivilegedRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrivilegedRoleAssignment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -26,7 +34,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"isElevated", (o,n) => { (o as PrivilegedRoleAssignment).IsElevated = n.GetBoolValue(); } },
                 {"resultMessage", (o,n) => { (o as PrivilegedRoleAssignment).ResultMessage = n.GetStringValue(); } },
                 {"roleId", (o,n) => { (o as PrivilegedRoleAssignment).RoleId = n.GetStringValue(); } },
-                {"roleInfo", (o,n) => { (o as PrivilegedRoleAssignment).RoleInfo = n.GetObjectValue<PrivilegedRole>(); } },
+                {"roleInfo", (o,n) => { (o as PrivilegedRoleAssignment).RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
                 {"userId", (o,n) => { (o as PrivilegedRoleAssignment).UserId = n.GetStringValue(); } },
             };
         }

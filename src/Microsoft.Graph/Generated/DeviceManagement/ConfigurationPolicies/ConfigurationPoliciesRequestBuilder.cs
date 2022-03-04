@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicies {
         /// </summary>
         public async Task<ConfigurationPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConfigurationPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConfigurationPoliciesResponse>(requestInfo, ConfigurationPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of all Configuration policies
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ConfigurationPolicies {
         public async Task<DeviceManagementConfigurationPolicy> PostAsync(DeviceManagementConfigurationPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementConfigurationPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementConfigurationPolicy>(requestInfo, DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of all Configuration policies</summary>
         public class GetQueryParameters : QueryParametersBase {

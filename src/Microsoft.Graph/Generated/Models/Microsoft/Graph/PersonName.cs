@@ -28,6 +28,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)</summary>
         public string Title { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new PersonName CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PersonName();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -40,7 +48,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"maiden", (o,n) => { (o as PersonName).Maiden = n.GetStringValue(); } },
                 {"middle", (o,n) => { (o as PersonName).Middle = n.GetStringValue(); } },
                 {"nickname", (o,n) => { (o as PersonName).Nickname = n.GetStringValue(); } },
-                {"pronunciation", (o,n) => { (o as PersonName).Pronunciation = n.GetObjectValue<PersonNamePronounciation>(); } },
+                {"pronunciation", (o,n) => { (o as PersonName).Pronunciation = n.GetObjectValue<PersonNamePronounciation>(PersonNamePronounciation.CreateFromDiscriminatorValue); } },
                 {"suffix", (o,n) => { (o as PersonName).Suffix = n.GetStringValue(); } },
                 {"title", (o,n) => { (o as PersonName).Title = n.GetStringValue(); } },
             };

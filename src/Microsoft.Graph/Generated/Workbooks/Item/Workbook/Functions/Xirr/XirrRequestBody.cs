@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Xirr {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static XirrRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new XirrRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"dates", (o,n) => { (o as XirrRequestBody).Dates = n.GetObjectValue<Json>(); } },
-                {"guess", (o,n) => { (o as XirrRequestBody).Guess = n.GetObjectValue<Json>(); } },
-                {"values", (o,n) => { (o as XirrRequestBody).Values = n.GetObjectValue<Json>(); } },
+                {"dates", (o,n) => { (o as XirrRequestBody).Dates = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"guess", (o,n) => { (o as XirrRequestBody).Guess = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"values", (o,n) => { (o as XirrRequestBody).Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

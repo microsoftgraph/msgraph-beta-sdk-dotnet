@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources
         /// </summary>
         public async Task<AgentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AgentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AgentsResponse>(requestInfo, AgentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.PublishedResources
         public async Task<OnPremisesAgent> PostAsync(OnPremisesAgent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OnPremisesAgent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesAgent>(requestInfo, OnPremisesAgent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of onPremisesAgent that are assigned to an onPremisesAgentGroup. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

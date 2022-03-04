@@ -24,12 +24,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AssignmentFilterStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AssignmentFilterStatusDetails();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceProperties", (o,n) => { (o as AssignmentFilterStatusDetails).DeviceProperties = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
-                {"evalutionSummaries", (o,n) => { (o as AssignmentFilterStatusDetails).EvalutionSummaries = n.GetCollectionOfObjectValues<AssignmentFilterEvaluationSummary>().ToList(); } },
+                {"deviceProperties", (o,n) => { (o as AssignmentFilterStatusDetails).DeviceProperties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"evalutionSummaries", (o,n) => { (o as AssignmentFilterStatusDetails).EvalutionSummaries = n.GetCollectionOfObjectValues<AssignmentFilterEvaluationSummary>(AssignmentFilterEvaluationSummary.CreateFromDiscriminatorValue).ToList(); } },
                 {"managedDeviceId", (o,n) => { (o as AssignmentFilterStatusDetails).ManagedDeviceId = n.GetStringValue(); } },
                 {"payloadId", (o,n) => { (o as AssignmentFilterStatusDetails).PayloadId = n.GetStringValue(); } },
                 {"userId", (o,n) => { (o as AssignmentFilterStatusDetails).UserId = n.GetStringValue(); } },

@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.Tasks.Item {
         /// </summary>
         public async Task<OutlookTask> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OutlookTask>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OutlookTask>(requestInfo, OutlookTask.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property tasks in users

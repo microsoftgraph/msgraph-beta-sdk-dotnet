@@ -107,7 +107,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings {
         /// </summary>
         public async Task<ChromeOSOnboardingSettingsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ChromeOSOnboardingSettingsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ChromeOSOnboardingSettingsResponse>(requestInfo, ChromeOSOnboardingSettingsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of ChromeOSOnboardingSettings settings associated with account.
@@ -120,7 +120,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingSettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of ChromeOSOnboardingSettings settings associated with account.</summary>
         public class GetQueryParameters : QueryParametersBase {

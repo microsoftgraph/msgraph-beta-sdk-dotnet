@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.Appointments {
         /// </summary>
         public async Task<AppointmentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppointmentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppointmentsResponse>(requestInfo, AppointmentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// All the appointments of this business. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.Appointments {
         public async Task<BookingAppointment> PostAsync(BookingAppointment body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>All the appointments of this business. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

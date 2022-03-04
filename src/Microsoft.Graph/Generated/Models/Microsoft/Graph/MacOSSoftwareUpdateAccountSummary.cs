@@ -28,11 +28,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user principal name</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MacOSSoftwareUpdateAccountSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MacOSSoftwareUpdateAccountSummary();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"categorySummaries", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).CategorySummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateCategorySummary>().ToList(); } },
+                {"categorySummaries", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).CategorySummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateCategorySummary>(MacOSSoftwareUpdateCategorySummary.CreateFromDiscriminatorValue).ToList(); } },
                 {"deviceId", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).DeviceId = n.GetStringValue(); } },
                 {"deviceName", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).DeviceName = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as MacOSSoftwareUpdateAccountSummary).DisplayName = n.GetStringValue(); } },

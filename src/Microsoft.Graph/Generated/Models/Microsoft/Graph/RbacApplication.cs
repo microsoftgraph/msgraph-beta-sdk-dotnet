@@ -19,21 +19,29 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<UnifiedRoleEligibilitySchedule> RoleEligibilitySchedules { get; set; }
         public List<UnifiedRoleAssignment> TransitiveRoleAssignments { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RbacApplication CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RbacApplication();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"resourceNamespaces", (o,n) => { (o as RbacApplication).ResourceNamespaces = n.GetCollectionOfObjectValues<UnifiedRbacResourceNamespace>().ToList(); } },
-                {"roleAssignmentApprovals", (o,n) => { (o as RbacApplication).RoleAssignmentApprovals = n.GetCollectionOfObjectValues<Approval>().ToList(); } },
-                {"roleAssignments", (o,n) => { (o as RbacApplication).RoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>().ToList(); } },
-                {"roleAssignmentScheduleInstances", (o,n) => { (o as RbacApplication).RoleAssignmentScheduleInstances = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentScheduleInstance>().ToList(); } },
-                {"roleAssignmentScheduleRequests", (o,n) => { (o as RbacApplication).RoleAssignmentScheduleRequests = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentScheduleRequest>().ToList(); } },
-                {"roleAssignmentSchedules", (o,n) => { (o as RbacApplication).RoleAssignmentSchedules = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentSchedule>().ToList(); } },
-                {"roleDefinitions", (o,n) => { (o as RbacApplication).RoleDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>().ToList(); } },
-                {"roleEligibilityScheduleInstances", (o,n) => { (o as RbacApplication).RoleEligibilityScheduleInstances = n.GetCollectionOfObjectValues<UnifiedRoleEligibilityScheduleInstance>().ToList(); } },
-                {"roleEligibilityScheduleRequests", (o,n) => { (o as RbacApplication).RoleEligibilityScheduleRequests = n.GetCollectionOfObjectValues<UnifiedRoleEligibilityScheduleRequest>().ToList(); } },
-                {"roleEligibilitySchedules", (o,n) => { (o as RbacApplication).RoleEligibilitySchedules = n.GetCollectionOfObjectValues<UnifiedRoleEligibilitySchedule>().ToList(); } },
-                {"transitiveRoleAssignments", (o,n) => { (o as RbacApplication).TransitiveRoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>().ToList(); } },
+                {"resourceNamespaces", (o,n) => { (o as RbacApplication).ResourceNamespaces = n.GetCollectionOfObjectValues<UnifiedRbacResourceNamespace>(UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignmentApprovals", (o,n) => { (o as RbacApplication).RoleAssignmentApprovals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignments", (o,n) => { (o as RbacApplication).RoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>(UnifiedRoleAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignmentScheduleInstances", (o,n) => { (o as RbacApplication).RoleAssignmentScheduleInstances = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentScheduleInstance>(UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignmentScheduleRequests", (o,n) => { (o as RbacApplication).RoleAssignmentScheduleRequests = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentScheduleRequest>(UnifiedRoleAssignmentScheduleRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignmentSchedules", (o,n) => { (o as RbacApplication).RoleAssignmentSchedules = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentSchedule>(UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleDefinitions", (o,n) => { (o as RbacApplication).RoleDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleEligibilityScheduleInstances", (o,n) => { (o as RbacApplication).RoleEligibilityScheduleInstances = n.GetCollectionOfObjectValues<UnifiedRoleEligibilityScheduleInstance>(UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleEligibilityScheduleRequests", (o,n) => { (o as RbacApplication).RoleEligibilityScheduleRequests = n.GetCollectionOfObjectValues<UnifiedRoleEligibilityScheduleRequest>(UnifiedRoleEligibilityScheduleRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleEligibilitySchedules", (o,n) => { (o as RbacApplication).RoleEligibilitySchedules = n.GetCollectionOfObjectValues<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue).ToList(); } },
+                {"transitiveRoleAssignments", (o,n) => { (o as RbacApplication).TransitiveRoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>(UnifiedRoleAssignment.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

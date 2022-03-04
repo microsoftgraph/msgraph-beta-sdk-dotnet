@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.AgedAccountsPayable {
         /// </summary>
         public async Task<AgedAccountsPayableResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AgedAccountsPayableResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AgedAccountsPayableResponse>(requestInfo, AgedAccountsPayableResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to agedAccountsPayable for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.AgedAccountsPayable {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AgedAccountsPayable.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get agedAccountsPayable from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item.Assi
         /// </summary>
         public async Task<GroupPolicyConfigurationAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyConfigurationAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyConfigurationAssignment>(requestInfo, GroupPolicyConfigurationAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of group assignments for the configuration.

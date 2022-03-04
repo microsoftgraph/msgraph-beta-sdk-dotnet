@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Names {
         /// </summary>
         public async Task<NamesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<NamesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<NamesResponse>(requestInfo, NamesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the names a user has added to their profile.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Names {
         public async Task<PersonName> PostAsync(PersonName body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PersonName>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonName>(requestInfo, PersonName.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents the names a user has added to their profile.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -15,15 +15,23 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Contains detail of the user's manager in this position.</summary>
         public RelatedPerson Manager { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WorkPosition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WorkPosition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"categories", (o,n) => { (o as WorkPosition).Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"colleagues", (o,n) => { (o as WorkPosition).Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>().ToList(); } },
-                {"detail", (o,n) => { (o as WorkPosition).Detail = n.GetObjectValue<PositionDetail>(); } },
+                {"colleagues", (o,n) => { (o as WorkPosition).Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue).ToList(); } },
+                {"detail", (o,n) => { (o as WorkPosition).Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
                 {"isCurrent", (o,n) => { (o as WorkPosition).IsCurrent = n.GetBoolValue(); } },
-                {"manager", (o,n) => { (o as WorkPosition).Manager = n.GetObjectValue<RelatedPerson>(); } },
+                {"manager", (o,n) => { (o as WorkPosition).Manager = n.GetObjectValue<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

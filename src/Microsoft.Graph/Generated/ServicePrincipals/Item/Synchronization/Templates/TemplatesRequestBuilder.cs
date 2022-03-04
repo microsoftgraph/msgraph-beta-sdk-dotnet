@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates {
         /// </summary>
         public async Task<TemplatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TemplatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TemplatesResponse>(requestInfo, TemplatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Pre-configured synchronization settings for a particular application.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals.Item.Synchronization.Templates {
         public async Task<SynchronizationTemplate> PostAsync(SynchronizationTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SynchronizationTemplate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SynchronizationTemplate>(requestInfo, SynchronizationTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Pre-configured synchronization settings for a particular application.</summary>
         public class GetQueryParameters : QueryParametersBase {

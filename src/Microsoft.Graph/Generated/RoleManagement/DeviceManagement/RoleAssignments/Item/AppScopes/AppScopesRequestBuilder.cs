@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item
         /// </summary>
         public async Task<AppScopesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppScopesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppScopesResponse>(requestInfo, AppScopesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.RoleManagement.DeviceManagement.RoleAssignments.Item
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AppScope.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

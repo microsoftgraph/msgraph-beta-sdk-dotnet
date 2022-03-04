@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.GetRemediationS
         /// </summary>
         public async Task<GetRemediationSummaryResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetRemediationSummaryResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetRemediationSummaryResponse>(requestInfo, GetRemediationSummaryResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceHealthScriptRemediationSummary</summary>
         public class GetRemediationSummaryResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceHealthScriptRemediationSummary</summary>
-            public DeviceHealthScriptRemediationSummary DeviceHealthScriptRemediationSummary { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthScriptRemediationSummary DeviceHealthScriptRemediationSummary { get; set; }
             /// <summary>
             /// Instantiates a new getRemediationSummaryResponse and sets the default values.
             /// </summary>
             public GetRemediationSummaryResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GetRemediationSummaryResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GetRemediationSummaryResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"deviceHealthScriptRemediationSummary", (o,n) => { (o as GetRemediationSummaryResponse).DeviceHealthScriptRemediationSummary = n.GetObjectValue<DeviceHealthScriptRemediationSummary>(); } },
+                    {"deviceHealthScriptRemediationSummary", (o,n) => { (o as GetRemediationSummaryResponse).DeviceHealthScriptRemediationSummary = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthScriptRemediationSummary>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthScriptRemediationSummary.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts.GetRemediationS
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<DeviceHealthScriptRemediationSummary>("deviceHealthScriptRemediationSummary", DeviceHealthScriptRemediationSummary);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthScriptRemediationSummary>("deviceHealthScriptRemediationSummary", DeviceHealthScriptRemediationSummary);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

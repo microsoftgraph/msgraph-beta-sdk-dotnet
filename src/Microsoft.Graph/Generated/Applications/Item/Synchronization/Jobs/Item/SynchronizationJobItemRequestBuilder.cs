@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.Applications.Item.Synchronization.Jobs.Item {
         /// </summary>
         public async Task<SynchronizationJob> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SynchronizationJob>(requestInfo, SynchronizationJob.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.

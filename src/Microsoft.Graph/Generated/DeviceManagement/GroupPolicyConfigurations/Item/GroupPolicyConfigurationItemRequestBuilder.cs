@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.GroupPolicyConfigurations.Item {
         /// </summary>
         public async Task<GroupPolicyConfiguration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GroupPolicyConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyConfiguration>(requestInfo, GroupPolicyConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The group policy configurations created by this account.

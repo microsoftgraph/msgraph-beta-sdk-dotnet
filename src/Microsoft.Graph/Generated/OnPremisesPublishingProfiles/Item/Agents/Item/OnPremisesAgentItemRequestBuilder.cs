@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.Agents.Item {
         /// </summary>
         public async Task<OnPremisesAgent> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OnPremisesAgent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesAgent>(requestInfo, OnPremisesAgent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of existing onPremisesAgent objects. Read-only. Nullable.

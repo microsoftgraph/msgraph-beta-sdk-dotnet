@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignments.Item.Subject {
         /// </summary>
         public async Task<GovernanceSubject> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GovernanceSubject>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceSubject>(requestInfo, GovernanceSubject.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Read-only. The subject associated with the role assignment.

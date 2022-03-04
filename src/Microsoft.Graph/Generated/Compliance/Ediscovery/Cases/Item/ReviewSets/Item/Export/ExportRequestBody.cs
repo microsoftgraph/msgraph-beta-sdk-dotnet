@@ -11,7 +11,7 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Exp
         public string AzureBlobContainer { get; set; }
         public string AzureBlobToken { get; set; }
         public string Description { get; set; }
-        public ExportOptions? ExportOptions { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.ExportOptions? ExportOptions { get; set; }
         public ExportFileStructure? ExportStructure { get; set; }
         public string OutputName { get; set; }
         /// <summary>
@@ -19,6 +19,14 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Exp
         /// </summary>
         public ExportRequestBody() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ExportRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ExportRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

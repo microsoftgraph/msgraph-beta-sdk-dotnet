@@ -10,12 +10,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The task lists in the users mailbox.</summary>
         public List<BaseTaskList> Lists { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Tasks CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Tasks();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"alltasks", (o,n) => { (o as Tasks).Alltasks = n.GetCollectionOfObjectValues<BaseTask>().ToList(); } },
-                {"lists", (o,n) => { (o as Tasks).Lists = n.GetCollectionOfObjectValues<BaseTaskList>().ToList(); } },
+                {"alltasks", (o,n) => { (o as Tasks).Alltasks = n.GetCollectionOfObjectValues<BaseTask>(BaseTask.CreateFromDiscriminatorValue).ToList(); } },
+                {"lists", (o,n) => { (o as Tasks).Lists = n.GetCollectionOfObjectValues<BaseTaskList>(BaseTaskList.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.AuthenticationMethodsPolicy.AuthenticationMethodConf
         /// </summary>
         public async Task<AuthenticationMethodConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AuthenticationMethodConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationMethodConfigurationsResponse>(requestInfo, AuthenticationMethodConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.AuthenticationMethodsPolicy.AuthenticationMethodConf
         public async Task<AuthenticationMethodConfiguration> PostAsync(AuthenticationMethodConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AuthenticationMethodConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationMethodConfiguration>(requestInfo, AuthenticationMethodConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.</summary>
         public class GetQueryParameters : QueryParametersBase {

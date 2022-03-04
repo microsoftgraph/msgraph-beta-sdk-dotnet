@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions {
         /// </summary>
         public async Task<ManagementConditionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementConditionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementConditionsResponse>(requestInfo, ManagementConditionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\managementConditions\microsoft.graph.getManagementConditionsForPlatform(platform={platform})
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ManagementConditions {
         public async Task<ManagementCondition> PostAsync(ManagementCondition body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagementCondition>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementCondition>(requestInfo, ManagementCondition.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The management conditions associated with device management of the company.</summary>
         public class GetQueryParameters : QueryParametersBase {

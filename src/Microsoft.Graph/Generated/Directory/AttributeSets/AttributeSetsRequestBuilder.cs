@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Directory.AttributeSets {
         /// </summary>
         public async Task<AttributeSetsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AttributeSetsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttributeSetsResponse>(requestInfo, AttributeSetsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Group of related custom security attribute definitions.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Directory.AttributeSets {
         public async Task<AttributeSet> PostAsync(AttributeSet body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AttributeSet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AttributeSet>(requestInfo, AttributeSet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Group of related custom security attribute definitions.</summary>
         public class GetQueryParameters : QueryParametersBase {

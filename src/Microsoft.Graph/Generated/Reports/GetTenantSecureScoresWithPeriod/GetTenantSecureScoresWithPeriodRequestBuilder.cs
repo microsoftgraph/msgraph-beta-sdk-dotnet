@@ -69,26 +69,30 @@ namespace MicrosoftGraphSdk.Reports.GetTenantSecureScoresWithPeriod {
         /// </summary>
         public async Task<GetTenantSecureScoresWithPeriodResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<GetTenantSecureScoresWithPeriodResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GetTenantSecureScoresWithPeriodResponse>(requestInfo, GetTenantSecureScoresWithPeriodResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes report</summary>
         public class GetTenantSecureScoresWithPeriodResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type report</summary>
-            public Report Report { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.Report Report { get; set; }
             /// <summary>
             /// Instantiates a new getTenantSecureScoresWithPeriodResponse and sets the default values.
             /// </summary>
             public GetTenantSecureScoresWithPeriodResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static GetTenantSecureScoresWithPeriodResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new GetTenantSecureScoresWithPeriodResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"report", (o,n) => { (o as GetTenantSecureScoresWithPeriodResponse).Report = n.GetObjectValue<Report>(); } },
+                    {"report", (o,n) => { (o as GetTenantSecureScoresWithPeriodResponse).Report = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Report>(MicrosoftGraphSdk.Models.Microsoft.Graph.Report.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -97,7 +101,7 @@ namespace MicrosoftGraphSdk.Reports.GetTenantSecureScoresWithPeriod {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<Report>("report", Report);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Report>("report", Report);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

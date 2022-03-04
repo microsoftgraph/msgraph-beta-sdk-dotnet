@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.SchedulingGroups {
         /// </summary>
         public async Task<SchedulingGroupsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SchedulingGroupsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SchedulingGroupsResponse>(requestInfo, SchedulingGroupsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The logical grouping of users in the schedule (usually by role).
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.SchedulingGroups {
         public async Task<SchedulingGroup> PostAsync(SchedulingGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SchedulingGroup>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SchedulingGroup>(requestInfo, SchedulingGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The logical grouping of users in the schedule (usually by role).</summary>
         public class GetQueryParameters : QueryParametersBase {

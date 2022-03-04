@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.PurchaseInvoices.Item {
         /// </summary>
         public async Task<PurchaseInvoice> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PurchaseInvoice>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PurchaseInvoice>(requestInfo, PurchaseInvoice.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property purchaseInvoices in financials

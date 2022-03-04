@@ -69,26 +69,30 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.
         /// </summary>
         public async Task<ItemWithNameResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<ItemWithNameResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemWithNameResponse>(requestInfo, ItemWithNameResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes workbookChart</summary>
         public class ItemWithNameResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type workbookChart</summary>
-            public WorkbookChart WorkbookChart { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookChart WorkbookChart { get; set; }
             /// <summary>
             /// Instantiates a new itemWithNameResponse and sets the default values.
             /// </summary>
             public ItemWithNameResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ItemWithNameResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ItemWithNameResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"workbookChart", (o,n) => { (o as ItemWithNameResponse).WorkbookChart = n.GetObjectValue<WorkbookChart>(); } },
+                    {"workbookChart", (o,n) => { (o as ItemWithNameResponse).WorkbookChart = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookChart>(MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookChart.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -97,7 +101,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Names.Item.Worksheet.Charts.
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<WorkbookChart>("workbookChart", WorkbookChart);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookChart>("workbookChart", WorkbookChart);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

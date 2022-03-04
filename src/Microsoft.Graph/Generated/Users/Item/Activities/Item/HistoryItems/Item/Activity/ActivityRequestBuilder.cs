@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Users.Item.Activities.Item.HistoryItems.Item.Activit
         /// </summary>
         public async Task<UserActivity> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserActivity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserActivity>(requestInfo, UserActivity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Optional. NavigationProperty/Containment; navigation property to the associated activity.</summary>
         public class GetQueryParameters : QueryParametersBase {

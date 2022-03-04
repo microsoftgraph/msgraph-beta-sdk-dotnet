@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Users.Item.ContactFolders.Item.Contacts.Delta {
         /// </summary>
         public async Task<IEnumerable<Contact>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<Contact>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

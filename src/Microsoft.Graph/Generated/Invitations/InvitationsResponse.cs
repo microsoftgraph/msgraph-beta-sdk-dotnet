@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Invitations {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static InvitationsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new InvitationsResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as InvitationsResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as InvitationsResponse).Value = n.GetCollectionOfObjectValues<Invitation>().ToList(); } },
+                {"value", (o,n) => { (o as InvitationsResponse).Value = n.GetCollectionOfObjectValues<Invitation>(Invitation.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

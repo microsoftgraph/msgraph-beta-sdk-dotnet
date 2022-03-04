@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.EoMonth {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static EoMonthRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new EoMonthRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"months", (o,n) => { (o as EoMonthRequestBody).Months = n.GetObjectValue<Json>(); } },
-                {"startDate", (o,n) => { (o as EoMonthRequestBody).StartDate = n.GetObjectValue<Json>(); } },
+                {"months", (o,n) => { (o as EoMonthRequestBody).Months = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"startDate", (o,n) => { (o as EoMonthRequestBody).StartDate = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

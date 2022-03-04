@@ -68,7 +68,7 @@ namespace MicrosoftGraphSdk.Sites.Item.GetApplicableContentTypesForListWithListI
         /// </summary>
         public async Task<IEnumerable<GetApplicableContentTypesForListWithListId>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetApplicableContentTypesForListWithListId>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetApplicableContentTypesForListWithListId>(requestInfo, GetApplicableContentTypesForListWithListId.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

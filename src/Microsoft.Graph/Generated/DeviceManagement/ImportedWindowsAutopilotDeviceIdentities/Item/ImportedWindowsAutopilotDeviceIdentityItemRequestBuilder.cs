@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ImportedWindowsAutopilotDeviceIdent
         /// </summary>
         public async Task<ImportedWindowsAutopilotDeviceIdentity> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ImportedWindowsAutopilotDeviceIdentity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ImportedWindowsAutopilotDeviceIdentity>(requestInfo, ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of imported Windows autopilot devices.

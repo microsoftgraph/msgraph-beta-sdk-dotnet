@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.SupportedLanguages {
         /// </summary>
         public async Task<IEnumerable<LocaleInfo>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<LocaleInfo>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<LocaleInfo>(requestInfo, LocaleInfo.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ImportedDeviceIdentities.ImportDevi
         public async Task<IEnumerable<ImportDeviceIdentityList>> PostAsync(ImportDeviceIdentityListRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<ImportDeviceIdentityList>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<ImportDeviceIdentityList>(requestInfo, ImportDeviceIdentityList.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

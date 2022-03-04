@@ -36,21 +36,29 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ConditionalAccessConditionSet CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ConditionalAccessConditionSet();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"applications", (o,n) => { (o as ConditionalAccessConditionSet).Applications = n.GetObjectValue<ConditionalAccessApplications>(); } },
-                {"clientApplications", (o,n) => { (o as ConditionalAccessConditionSet).ClientApplications = n.GetObjectValue<ConditionalAccessClientApplications>(); } },
+                {"applications", (o,n) => { (o as ConditionalAccessConditionSet).Applications = n.GetObjectValue<ConditionalAccessApplications>(ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
+                {"clientApplications", (o,n) => { (o as ConditionalAccessConditionSet).ClientApplications = n.GetObjectValue<ConditionalAccessClientApplications>(ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
                 {"clientAppTypes", (o,n) => { (o as ConditionalAccessConditionSet).ClientAppTypes = n.GetCollectionOfEnumValues<ConditionalAccessClientApp>().ToList(); } },
-                {"devices", (o,n) => { (o as ConditionalAccessConditionSet).Devices = n.GetObjectValue<ConditionalAccessDevices>(); } },
-                {"deviceStates", (o,n) => { (o as ConditionalAccessConditionSet).DeviceStates = n.GetObjectValue<ConditionalAccessDeviceStates>(); } },
-                {"locations", (o,n) => { (o as ConditionalAccessConditionSet).Locations = n.GetObjectValue<ConditionalAccessLocations>(); } },
-                {"platforms", (o,n) => { (o as ConditionalAccessConditionSet).Platforms = n.GetObjectValue<ConditionalAccessPlatforms>(); } },
+                {"devices", (o,n) => { (o as ConditionalAccessConditionSet).Devices = n.GetObjectValue<ConditionalAccessDevices>(ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
+                {"deviceStates", (o,n) => { (o as ConditionalAccessConditionSet).DeviceStates = n.GetObjectValue<ConditionalAccessDeviceStates>(ConditionalAccessDeviceStates.CreateFromDiscriminatorValue); } },
+                {"locations", (o,n) => { (o as ConditionalAccessConditionSet).Locations = n.GetObjectValue<ConditionalAccessLocations>(ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
+                {"platforms", (o,n) => { (o as ConditionalAccessConditionSet).Platforms = n.GetObjectValue<ConditionalAccessPlatforms>(ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
                 {"servicePrincipalRiskLevels", (o,n) => { (o as ConditionalAccessConditionSet).ServicePrincipalRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>().ToList(); } },
                 {"signInRiskLevels", (o,n) => { (o as ConditionalAccessConditionSet).SignInRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>().ToList(); } },
                 {"userRiskLevels", (o,n) => { (o as ConditionalAccessConditionSet).UserRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>().ToList(); } },
-                {"users", (o,n) => { (o as ConditionalAccessConditionSet).Users = n.GetObjectValue<ConditionalAccessUsers>(); } },
+                {"users", (o,n) => { (o as ConditionalAccessConditionSet).Users = n.GetObjectValue<ConditionalAccessUsers>(ConditionalAccessUsers.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

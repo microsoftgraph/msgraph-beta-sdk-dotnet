@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsDevicesWitho
         /// </summary>
         public async Task<UserExperienceAnalyticsDeviceWithoutCloudIdentity> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceWithoutCloudIdentity>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceWithoutCloudIdentity>(requestInfo, UserExperienceAnalyticsDeviceWithoutCloudIdentity.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// User experience analytics devices without cloud identity.

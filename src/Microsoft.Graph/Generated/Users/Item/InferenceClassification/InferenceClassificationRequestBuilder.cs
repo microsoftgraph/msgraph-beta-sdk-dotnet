@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Users.Item.InferenceClassification {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.InferenceClassification.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.

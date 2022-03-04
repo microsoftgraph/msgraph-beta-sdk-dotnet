@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CartToClassAssociations {
         /// </summary>
         public async Task<CartToClassAssociationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CartToClassAssociationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CartToClassAssociationsResponse>(requestInfo, CartToClassAssociationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Cart To Class Associations.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CartToClassAssociations {
         public async Task<CartToClassAssociation> PostAsync(CartToClassAssociation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CartToClassAssociation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CartToClassAssociation>(requestInfo, CartToClassAssociation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The Cart To Class Associations.</summary>
         public class GetQueryParameters : QueryParametersBase {

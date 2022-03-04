@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.PurchaseInvoices.Item.Purc
         /// </summary>
         public async Task<PurchaseInvoiceLinesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PurchaseInvoiceLinesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PurchaseInvoiceLinesResponse>(requestInfo, PurchaseInvoiceLinesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to purchaseInvoiceLines for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.PurchaseInvoices.Item.Purc
         public async Task<PurchaseInvoiceLine> PostAsync(PurchaseInvoiceLine body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PurchaseInvoiceLine>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PurchaseInvoiceLine>(requestInfo, PurchaseInvoiceLine.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get purchaseInvoiceLines from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

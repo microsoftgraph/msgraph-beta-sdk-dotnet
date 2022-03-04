@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.UserExperienceAnalyticsBaselines.It
         /// </summary>
         public async Task<UserExperienceAnalyticsCategory> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsCategory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsCategory>(requestInfo, UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The user experience analytics resource performance metrics.</summary>
         public class GetQueryParameters : QueryParametersBase {

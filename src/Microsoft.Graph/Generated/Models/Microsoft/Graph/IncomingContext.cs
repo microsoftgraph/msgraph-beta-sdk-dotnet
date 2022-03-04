@@ -22,14 +22,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static IncomingContext CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new IncomingContext();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"observedParticipantId", (o,n) => { (o as IncomingContext).ObservedParticipantId = n.GetStringValue(); } },
-                {"onBehalfOf", (o,n) => { (o as IncomingContext).OnBehalfOf = n.GetObjectValue<IdentitySet>(); } },
+                {"onBehalfOf", (o,n) => { (o as IncomingContext).OnBehalfOf = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"sourceParticipantId", (o,n) => { (o as IncomingContext).SourceParticipantId = n.GetStringValue(); } },
-                {"transferor", (o,n) => { (o as IncomingContext).Transferor = n.GetObjectValue<IdentitySet>(); } },
+                {"transferor", (o,n) => { (o as IncomingContext).Transferor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

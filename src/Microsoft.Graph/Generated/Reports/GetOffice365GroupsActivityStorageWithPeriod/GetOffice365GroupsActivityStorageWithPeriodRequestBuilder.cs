@@ -69,7 +69,7 @@ namespace MicrosoftGraphSdk.Reports.GetOffice365GroupsActivityStorageWithPeriod 
         /// </summary>
         public async Task<IEnumerable<Office365GroupsActivityStorage>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<Office365GroupsActivityStorage>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Office365GroupsActivityStorage>(requestInfo, Office365GroupsActivityStorage.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

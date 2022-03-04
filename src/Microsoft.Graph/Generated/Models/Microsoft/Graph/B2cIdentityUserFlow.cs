@@ -18,17 +18,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<IdentityUserFlowAttributeAssignment> UserAttributeAssignments { get; set; }
         public List<IdentityProviderBase> UserFlowIdentityProviders { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new B2cIdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new B2cIdentityUserFlow();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"apiConnectorConfiguration", (o,n) => { (o as B2cIdentityUserFlow).ApiConnectorConfiguration = n.GetObjectValue<UserFlowApiConnectorConfiguration>(); } },
+                {"apiConnectorConfiguration", (o,n) => { (o as B2cIdentityUserFlow).ApiConnectorConfiguration = n.GetObjectValue<UserFlowApiConnectorConfiguration>(UserFlowApiConnectorConfiguration.CreateFromDiscriminatorValue); } },
                 {"defaultLanguageTag", (o,n) => { (o as B2cIdentityUserFlow).DefaultLanguageTag = n.GetStringValue(); } },
-                {"identityProviders", (o,n) => { (o as B2cIdentityUserFlow).IdentityProviders = n.GetCollectionOfObjectValues<IdentityProvider>().ToList(); } },
+                {"identityProviders", (o,n) => { (o as B2cIdentityUserFlow).IdentityProviders = n.GetCollectionOfObjectValues<IdentityProvider>(IdentityProvider.CreateFromDiscriminatorValue).ToList(); } },
                 {"isLanguageCustomizationEnabled", (o,n) => { (o as B2cIdentityUserFlow).IsLanguageCustomizationEnabled = n.GetBoolValue(); } },
-                {"languages", (o,n) => { (o as B2cIdentityUserFlow).Languages = n.GetCollectionOfObjectValues<UserFlowLanguageConfiguration>().ToList(); } },
-                {"userAttributeAssignments", (o,n) => { (o as B2cIdentityUserFlow).UserAttributeAssignments = n.GetCollectionOfObjectValues<IdentityUserFlowAttributeAssignment>().ToList(); } },
-                {"userFlowIdentityProviders", (o,n) => { (o as B2cIdentityUserFlow).UserFlowIdentityProviders = n.GetCollectionOfObjectValues<IdentityProviderBase>().ToList(); } },
+                {"languages", (o,n) => { (o as B2cIdentityUserFlow).Languages = n.GetCollectionOfObjectValues<UserFlowLanguageConfiguration>(UserFlowLanguageConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+                {"userAttributeAssignments", (o,n) => { (o as B2cIdentityUserFlow).UserAttributeAssignments = n.GetCollectionOfObjectValues<IdentityUserFlowAttributeAssignment>(IdentityUserFlowAttributeAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"userFlowIdentityProviders", (o,n) => { (o as B2cIdentityUserFlow).UserFlowIdentityProviders = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

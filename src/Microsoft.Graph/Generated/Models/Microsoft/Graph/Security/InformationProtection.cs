@@ -8,12 +8,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Security {
         public InformationProtectionPolicySetting LabelPolicySettings { get; set; }
         public List<SensitivityLabel> SensitivityLabels { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new InformationProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new InformationProtection();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"labelPolicySettings", (o,n) => { (o as InformationProtection).LabelPolicySettings = n.GetObjectValue<InformationProtectionPolicySetting>(); } },
-                {"sensitivityLabels", (o,n) => { (o as InformationProtection).SensitivityLabels = n.GetCollectionOfObjectValues<SensitivityLabel>().ToList(); } },
+                {"labelPolicySettings", (o,n) => { (o as InformationProtection).LabelPolicySettings = n.GetObjectValue<InformationProtectionPolicySetting>(InformationProtectionPolicySetting.CreateFromDiscriminatorValue); } },
+                {"sensitivityLabels", (o,n) => { (o as InformationProtection).SensitivityLabels = n.GetCollectionOfObjectValues<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Communications.OnlineMeetings.Item.Registration.Cust
         /// </summary>
         public async Task<MeetingRegistrationQuestion> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Custom registration questions.

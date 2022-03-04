@@ -26,10 +26,10 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Names.Item.W
         /// <param name="column">Usage: column={column}</param>
         /// <param name="row">Usage: row={row}</param>
         /// </summary>
-        public CellWithRowWithColumnRequestBuilder CellWithRowWithColumn(int? row, int? column) {
+        public CellWithRowWithColumnRequestBuilder CellWithRowWithColumn(int? column, int? row) {
             _ = column ?? throw new ArgumentNullException(nameof(column));
             _ = row ?? throw new ArgumentNullException(nameof(row));
-            return new CellWithRowWithColumnRequestBuilder(PathParameters, RequestAdapter, row, column);
+            return new CellWithRowWithColumnRequestBuilder(PathParameters, RequestAdapter, column, row);
         }
         /// <summary>
         /// Instantiates a new WorksheetRequestBuilder and sets the default values.
@@ -133,7 +133,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Names.Item.W
         /// </summary>
         public async Task<WorkbookWorksheet> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Returns the worksheet on which the named item is scoped to. Available only if the item is scoped to the worksheet. Read-only.

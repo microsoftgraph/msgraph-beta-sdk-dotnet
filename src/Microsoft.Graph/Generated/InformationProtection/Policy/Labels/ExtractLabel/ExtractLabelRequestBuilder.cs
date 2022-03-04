@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.ExtractLabel {
         public async Task<ExtractLabelResponse> PostAsync(ExtractLabelRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ExtractLabelResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExtractLabelResponse>(requestInfo, ExtractLabelResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes informationProtectionContentLabel</summary>
         public class ExtractLabelResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type informationProtectionContentLabel</summary>
-            public InformationProtectionContentLabel InformationProtectionContentLabel { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtectionContentLabel InformationProtectionContentLabel { get; set; }
             /// <summary>
             /// Instantiates a new extractLabelResponse and sets the default values.
             /// </summary>
             public ExtractLabelResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ExtractLabelResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ExtractLabelResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"informationProtectionContentLabel", (o,n) => { (o as ExtractLabelResponse).InformationProtectionContentLabel = n.GetObjectValue<InformationProtectionContentLabel>(); } },
+                    {"informationProtectionContentLabel", (o,n) => { (o as ExtractLabelResponse).InformationProtectionContentLabel = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtectionContentLabel>(MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtectionContentLabel.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.ExtractLabel {
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<InformationProtectionContentLabel>("informationProtectionContentLabel", InformationProtectionContentLabel);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.InformationProtectionContentLabel>("informationProtectionContentLabel", InformationProtectionContentLabel);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

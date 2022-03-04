@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MdmWindowsInformationProtectionP
         /// </summary>
         public async Task<MdmWindowsInformationProtectionPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPolicy>(requestInfo, MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Windows information protection for apps running on devices which are MDM enrolled.

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Tags {
         /// </summary>
         public async Task<TagsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TagsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TagsResponse>(requestInfo, TagsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The tags associated with the team.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Tags {
         public async Task<TeamworkTag> PostAsync(TeamworkTag body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TeamworkTag>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkTag>(requestInfo, TeamworkTag.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The tags associated with the team.</summary>
         public class GetQueryParameters : QueryParametersBase {

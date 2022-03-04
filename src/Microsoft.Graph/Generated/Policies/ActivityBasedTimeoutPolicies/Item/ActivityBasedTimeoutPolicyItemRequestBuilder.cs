@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Policies.ActivityBasedTimeoutPolicies.Item {
         /// </summary>
         public async Task<ActivityBasedTimeoutPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicy>(requestInfo, ActivityBasedTimeoutPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The policy that controls the idle time out for web sessions for applications.

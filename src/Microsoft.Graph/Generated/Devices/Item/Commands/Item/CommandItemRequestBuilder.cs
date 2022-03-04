@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Devices.Item.Commands.Item {
         /// </summary>
         public async Task<Command> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Command>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Command>(requestInfo, Command.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Set of commands sent to this device.

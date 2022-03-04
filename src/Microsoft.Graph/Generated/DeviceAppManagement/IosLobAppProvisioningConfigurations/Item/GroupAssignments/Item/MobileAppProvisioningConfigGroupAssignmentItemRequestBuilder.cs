@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurati
         /// </summary>
         public async Task<MobileAppProvisioningConfigGroupAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileAppProvisioningConfigGroupAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppProvisioningConfigGroupAssignment>(requestInfo, MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The associated group assignments.

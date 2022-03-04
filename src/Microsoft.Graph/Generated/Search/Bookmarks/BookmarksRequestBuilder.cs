@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Search.Bookmarks {
         /// </summary>
         public async Task<BookmarksResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BookmarksResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BookmarksResponse>(requestInfo, BookmarksResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Administrative answer in Microsoft Search results for common search queries in an organization.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Search.Bookmarks {
         public async Task<Bookmark> PostAsync(Bookmark body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Bookmark>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Bookmark>(requestInfo, Bookmark.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Administrative answer in Microsoft Search results for common search queries in an organization.</summary>
         public class GetQueryParameters : QueryParametersBase {

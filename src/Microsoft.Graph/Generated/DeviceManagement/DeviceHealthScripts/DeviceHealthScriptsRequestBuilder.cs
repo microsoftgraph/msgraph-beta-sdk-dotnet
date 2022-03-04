@@ -111,7 +111,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts {
         /// </summary>
         public async Task<DeviceHealthScriptsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceHealthScriptsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceHealthScriptsResponse>(requestInfo, DeviceHealthScriptsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\deviceHealthScripts\microsoft.graph.getRemediationSummary()
@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceHealthScripts {
         public async Task<DeviceHealthScript> PostAsync(DeviceHealthScript body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceHealthScript>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceHealthScript>(requestInfo, DeviceHealthScript.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of device health scripts associated with the tenant.</summary>
         public class GetQueryParameters : QueryParametersBase {

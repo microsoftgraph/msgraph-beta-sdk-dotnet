@@ -134,7 +134,7 @@ namespace MicrosoftGraphSdk.DataClassification.ExactMatchDataStores.Item.Session
         /// </summary>
         public async Task<ExactMatchSession> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExactMatchSession>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchSession>(requestInfo, ExactMatchSession.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property sessions in dataClassification

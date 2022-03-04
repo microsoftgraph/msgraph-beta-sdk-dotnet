@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkOnlineMeetingInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkOnlineMeetingInfo();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"calendarEventId", (o,n) => { (o as TeamworkOnlineMeetingInfo).CalendarEventId = n.GetStringValue(); } },
                 {"joinWebUrl", (o,n) => { (o as TeamworkOnlineMeetingInfo).JoinWebUrl = n.GetStringValue(); } },
-                {"organizer", (o,n) => { (o as TeamworkOnlineMeetingInfo).Organizer = n.GetObjectValue<TeamworkUserIdentity>(); } },
+                {"organizer", (o,n) => { (o as TeamworkOnlineMeetingInfo).Organizer = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

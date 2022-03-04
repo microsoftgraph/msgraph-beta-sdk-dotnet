@@ -115,7 +115,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Excl
         /// </summary>
         public async Task<ExclusionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ExclusionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExclusionsResponse>(requestInfo, ExclusionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Specifies the assets to exclude from the audience.
@@ -128,7 +128,7 @@ namespace MicrosoftGraphSdk.Admin.Windows.Updates.Deployments.Item.Audience.Excl
         public async Task<UpdatableAsset> PostAsync(UpdatableAsset body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, UpdatableAsset.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Specifies the assets to exclude from the audience.</summary>
         public class GetQueryParameters : QueryParametersBase {

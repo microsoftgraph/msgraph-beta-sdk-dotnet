@@ -30,13 +30,13 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).</summary>
         public string RequestId { get; set; }
         /// <summary>Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
-        public RiskDetail? RiskDetail { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RiskDetail? RiskDetail { get; set; }
         /// <summary>The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).</summary>
         public string RiskEventType { get; set; }
         /// <summary>Level of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: low, medium, high, hidden, none, unknownFutureValue.</summary>
-        public RiskLevel? RiskLevel { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RiskLevel? RiskLevel { get; set; }
         /// <summary>The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
-        public RiskState? RiskState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.RiskState? RiskState { get; set; }
         /// <summary>The display name for the service principal.</summary>
         public string ServicePrincipalDisplayName { get; set; }
         /// <summary>The unique identifier for the service principal. Supports $filter (eq).</summary>
@@ -44,7 +44,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Source of the risk detection. For example, identityProtection.</summary>
         public string Source { get; set; }
         /// <summary>Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.</summary>
-        public TokenIssuerType? TokenIssuerType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.TokenIssuerType? TokenIssuerType { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ServicePrincipalRiskDetection CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ServicePrincipalRiskDetection();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -60,7 +68,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"ipAddress", (o,n) => { (o as ServicePrincipalRiskDetection).IpAddress = n.GetStringValue(); } },
                 {"keyIds", (o,n) => { (o as ServicePrincipalRiskDetection).KeyIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"lastUpdatedDateTime", (o,n) => { (o as ServicePrincipalRiskDetection).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"location", (o,n) => { (o as ServicePrincipalRiskDetection).Location = n.GetObjectValue<SignInLocation>(); } },
+                {"location", (o,n) => { (o as ServicePrincipalRiskDetection).Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
                 {"requestId", (o,n) => { (o as ServicePrincipalRiskDetection).RequestId = n.GetStringValue(); } },
                 {"riskDetail", (o,n) => { (o as ServicePrincipalRiskDetection).RiskDetail = n.GetEnumValue<RiskDetail>(); } },
                 {"riskEventType", (o,n) => { (o as ServicePrincipalRiskDetection).RiskEventType = n.GetStringValue(); } },

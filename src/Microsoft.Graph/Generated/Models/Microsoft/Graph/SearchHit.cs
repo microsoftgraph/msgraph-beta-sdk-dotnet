@@ -29,18 +29,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static SearchHit CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SearchHit();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"_id", (o,n) => { (o as SearchHit)._id = n.GetStringValue(); } },
                 {"_score", (o,n) => { (o as SearchHit)._score = n.GetIntValue(); } },
-                {"_source", (o,n) => { (o as SearchHit)._source = n.GetObjectValue<Entity>(); } },
+                {"_source", (o,n) => { (o as SearchHit)._source = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
                 {"_summary", (o,n) => { (o as SearchHit)._summary = n.GetStringValue(); } },
                 {"contentSource", (o,n) => { (o as SearchHit).ContentSource = n.GetStringValue(); } },
                 {"hitId", (o,n) => { (o as SearchHit).HitId = n.GetStringValue(); } },
                 {"rank", (o,n) => { (o as SearchHit).Rank = n.GetIntValue(); } },
-                {"resource", (o,n) => { (o as SearchHit).Resource = n.GetObjectValue<Entity>(); } },
+                {"resource", (o,n) => { (o as SearchHit).Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
                 {"resultTemplateId", (o,n) => { (o as SearchHit).ResultTemplateId = n.GetStringValue(); } },
                 {"summary", (o,n) => { (o as SearchHit).Summary = n.GetStringValue(); } },
             };

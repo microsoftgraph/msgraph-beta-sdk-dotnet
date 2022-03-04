@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Groups.Item.AssignLicense {
         public async Task<AssignLicenseResponse> PostAsync(AssignLicenseRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AssignLicenseResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AssignLicenseResponse>(requestInfo, AssignLicenseResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes group</summary>
         public class AssignLicenseResponse : IParsable {
@@ -86,12 +86,16 @@ namespace MicrosoftGraphSdk.Groups.Item.AssignLicense {
             public AssignLicenseResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static AssignLicenseResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new AssignLicenseResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"group", (o,n) => { (o as AssignLicenseResponse).Group = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>(); } },
+                    {"group", (o,n) => { (o as AssignLicenseResponse).Group = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Group>(MicrosoftGraphSdk.Models.Microsoft.Graph.Group.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>

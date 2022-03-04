@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.AuditLogs.DirectoryProvisioning.Item {
         /// </summary>
         public async Task<ProvisioningObjectSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, ProvisioningObjectSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property directoryProvisioning in auditLogs

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Me.Profile.Awards.Item {
         /// </summary>
         public async Task<PersonAward> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PersonAward>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonAward>(requestInfo, PersonAward.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the details of awards or honors associated with a person.

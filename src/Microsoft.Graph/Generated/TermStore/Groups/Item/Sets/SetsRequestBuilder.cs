@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TermStore.Groups.Item.Sets {
         /// </summary>
         public async Task<SetsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SetsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SetsResponse>(requestInfo, SetsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// All sets under the group in a term [store].
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TermStore.Groups.Item.Sets {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TermStore.Set.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>All sets under the group in a term [store].</summary>
         public class GetQueryParameters : QueryParametersBase {

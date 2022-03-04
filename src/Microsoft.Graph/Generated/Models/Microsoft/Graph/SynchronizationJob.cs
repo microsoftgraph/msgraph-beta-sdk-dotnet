@@ -16,14 +16,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Identifier of the synchronization template this job is based on.</summary>
         public string TemplateId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new SynchronizationJob CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new SynchronizationJob();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"schedule", (o,n) => { (o as SynchronizationJob).Schedule = n.GetObjectValue<SynchronizationSchedule>(); } },
-                {"schema", (o,n) => { (o as SynchronizationJob).Schema = n.GetObjectValue<SynchronizationSchema>(); } },
-                {"status", (o,n) => { (o as SynchronizationJob).Status = n.GetObjectValue<SynchronizationStatus>(); } },
-                {"synchronizationJobSettings", (o,n) => { (o as SynchronizationJob).SynchronizationJobSettings = n.GetCollectionOfObjectValues<KeyValuePair>().ToList(); } },
+                {"schedule", (o,n) => { (o as SynchronizationJob).Schedule = n.GetObjectValue<SynchronizationSchedule>(SynchronizationSchedule.CreateFromDiscriminatorValue); } },
+                {"schema", (o,n) => { (o as SynchronizationJob).Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
+                {"status", (o,n) => { (o as SynchronizationJob).Status = n.GetObjectValue<SynchronizationStatus>(SynchronizationStatus.CreateFromDiscriminatorValue); } },
+                {"synchronizationJobSettings", (o,n) => { (o as SynchronizationJob).SynchronizationJobSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"templateId", (o,n) => { (o as SynchronizationJob).TemplateId = n.GetStringValue(); } },
             };
         }

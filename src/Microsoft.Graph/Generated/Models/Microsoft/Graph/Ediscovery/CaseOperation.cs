@@ -16,9 +16,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>The progress of the operation.</summary>
         public int? PercentProgress { get; set; }
         /// <summary>Contains success and failure-specific result information.</summary>
-        public ResultInfo ResultInfo { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ResultInfo ResultInfo { get; set; }
         /// <summary>The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.</summary>
         public CaseOperationStatus? Status { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new CaseOperation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CaseOperation();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -26,10 +34,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"action", (o,n) => { (o as CaseOperation).Action = n.GetEnumValue<CaseAction>(); } },
                 {"completedDateTime", (o,n) => { (o as CaseOperation).CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdBy", (o,n) => { (o as CaseOperation).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"createdBy", (o,n) => { (o as CaseOperation).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as CaseOperation).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"percentProgress", (o,n) => { (o as CaseOperation).PercentProgress = n.GetIntValue(); } },
-                {"resultInfo", (o,n) => { (o as CaseOperation).ResultInfo = n.GetObjectValue<ResultInfo>(); } },
+                {"resultInfo", (o,n) => { (o as CaseOperation).ResultInfo = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ResultInfo>(MicrosoftGraphSdk.Models.Microsoft.Graph.ResultInfo.CreateFromDiscriminatorValue); } },
                 {"status", (o,n) => { (o as CaseOperation).Status = n.GetEnumValue<CaseOperationStatus>(); } },
             };
         }
@@ -45,7 +53,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteIntValue("percentProgress", PercentProgress);
-            writer.WriteObjectValue<ResultInfo>("resultInfo", ResultInfo);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ResultInfo>("resultInfo", ResultInfo);
             writer.WriteEnumValue<CaseOperationStatus>("status", Status);
         }
     }

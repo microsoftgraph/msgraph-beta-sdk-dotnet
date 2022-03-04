@@ -11,12 +11,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public DateTimeOffset? LastModifiedDateTime { get; set; }
         public DelegatedAdminAccessAssignmentStatus? Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DelegatedAdminAccessAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DelegatedAdminAccessAssignment();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessContainer", (o,n) => { (o as DelegatedAdminAccessAssignment).AccessContainer = n.GetObjectValue<DelegatedAdminAccessContainer>(); } },
-                {"accessDetails", (o,n) => { (o as DelegatedAdminAccessAssignment).AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(); } },
+                {"accessContainer", (o,n) => { (o as DelegatedAdminAccessAssignment).AccessContainer = n.GetObjectValue<DelegatedAdminAccessContainer>(DelegatedAdminAccessContainer.CreateFromDiscriminatorValue); } },
+                {"accessDetails", (o,n) => { (o as DelegatedAdminAccessAssignment).AccessDetails = n.GetObjectValue<DelegatedAdminAccessDetails>(DelegatedAdminAccessDetails.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as DelegatedAdminAccessAssignment).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as DelegatedAdminAccessAssignment).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", (o,n) => { (o as DelegatedAdminAccessAssignment).Status = n.GetEnumValue<DelegatedAdminAccessAssignmentStatus>(); } },

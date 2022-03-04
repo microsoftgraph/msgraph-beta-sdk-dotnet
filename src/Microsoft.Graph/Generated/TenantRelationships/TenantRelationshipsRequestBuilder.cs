@@ -104,7 +104,7 @@ namespace MicrosoftGraphSdk.TenantRelationships {
         /// </summary>
         public async Task<TenantRelationship> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TenantRelationship>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantRelationship>(requestInfo, TenantRelationship.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update tenantRelationships

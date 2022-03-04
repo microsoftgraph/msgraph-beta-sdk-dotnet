@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CertificateConnectorDetails.Item {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateConnectorDetails> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateConnectorDetails>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateConnectorDetails>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.CertificateConnectorDetails.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.

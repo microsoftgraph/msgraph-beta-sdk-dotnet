@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.Dr
         /// </summary>
         public async Task<DriverInventoriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DriverInventoriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DriverInventoriesResponse>(requestInfo, DriverInventoriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Driver inventories for this profile.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.Dr
         public async Task<WindowsDriverUpdateInventory> PostAsync(WindowsDriverUpdateInventory body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WindowsDriverUpdateInventory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsDriverUpdateInventory>(requestInfo, WindowsDriverUpdateInventory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Driver inventories for this profile.</summary>
         public class GetQueryParameters : QueryParametersBase {

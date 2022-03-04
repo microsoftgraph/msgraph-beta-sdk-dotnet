@@ -13,13 +13,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The user principal name (UPN) of the user associated with the account.</summary>
         public string UserPrincipalName { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new UserAccountInformation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new UserAccountInformation();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"ageGroup", (o,n) => { (o as UserAccountInformation).AgeGroup = n.GetStringValue(); } },
                 {"countryCode", (o,n) => { (o as UserAccountInformation).CountryCode = n.GetStringValue(); } },
-                {"preferredLanguageTag", (o,n) => { (o as UserAccountInformation).PreferredLanguageTag = n.GetObjectValue<LocaleInfo>(); } },
+                {"preferredLanguageTag", (o,n) => { (o as UserAccountInformation).PreferredLanguageTag = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
                 {"userPrincipalName", (o,n) => { (o as UserAccountInformation).UserPrincipalName = n.GetStringValue(); } },
             };
         }

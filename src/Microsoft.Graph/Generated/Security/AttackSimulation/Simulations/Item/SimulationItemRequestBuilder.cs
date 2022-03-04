@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Security.AttackSimulation.Simulations.Item {
         /// </summary>
         public async Task<Simulation> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Simulation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Simulation>(requestInfo, Simulation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represent attack simulation and training campaign of a tenant.

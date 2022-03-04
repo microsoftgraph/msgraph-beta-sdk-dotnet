@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ExchangeConnectors.Item {
         /// </summary>
         public async Task<DeviceManagementExchangeConnector> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementExchangeConnector>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementExchangeConnector>(requestInfo, DeviceManagementExchangeConnector.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of Exchange Connectors configured by the tenant.

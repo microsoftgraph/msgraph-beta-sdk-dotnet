@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.Users.Item.Onenote.Notebooks.Item.Sections.Item.Pare
         /// </summary>
         public async Task<SectionGroup> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SectionGroup>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SectionGroup>(requestInfo, SectionGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The section group that contains the section.  Read-only.</summary>
         public class GetQueryParameters : QueryParametersBase {

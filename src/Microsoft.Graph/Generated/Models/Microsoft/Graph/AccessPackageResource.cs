@@ -6,7 +6,7 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class AccessPackageResource : Entity, IParsable {
         /// <summary>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment's originId.Supports $expand.</summary>
-        public AccessPackageResourceEnvironment AccessPackageResourceEnvironment { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResourceEnvironment AccessPackageResourceEnvironment { get; set; }
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
         public List<AccessPackageResourceRole> AccessPackageResourceRoles { get; set; }
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
@@ -32,16 +32,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>A unique resource locator for the resource, such as the URL for signing a user into an application.</summary>
         public string Url { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessPackageResource CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessPackageResource();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"accessPackageResourceEnvironment", (o,n) => { (o as AccessPackageResource).AccessPackageResourceEnvironment = n.GetObjectValue<AccessPackageResourceEnvironment>(); } },
-                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageResource).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>().ToList(); } },
-                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageResource).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>().ToList(); } },
+                {"accessPackageResourceEnvironment", (o,n) => { (o as AccessPackageResource).AccessPackageResourceEnvironment = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResourceEnvironment>(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
+                {"accessPackageResourceRoles", (o,n) => { (o as AccessPackageResource).AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessPackageResourceScopes", (o,n) => { (o as AccessPackageResource).AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue).ToList(); } },
                 {"addedBy", (o,n) => { (o as AccessPackageResource).AddedBy = n.GetStringValue(); } },
                 {"addedOn", (o,n) => { (o as AccessPackageResource).AddedOn = n.GetDateTimeOffsetValue(); } },
-                {"attributes", (o,n) => { (o as AccessPackageResource).Attributes = n.GetCollectionOfObjectValues<AccessPackageResourceAttribute>().ToList(); } },
+                {"attributes", (o,n) => { (o as AccessPackageResource).Attributes = n.GetCollectionOfObjectValues<AccessPackageResourceAttribute>(AccessPackageResourceAttribute.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as AccessPackageResource).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as AccessPackageResource).DisplayName = n.GetStringValue(); } },
                 {"isPendingOnboarding", (o,n) => { (o as AccessPackageResource).IsPendingOnboarding = n.GetBoolValue(); } },
@@ -58,7 +66,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AccessPackageResourceEnvironment>("accessPackageResourceEnvironment", AccessPackageResourceEnvironment);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResourceEnvironment>("accessPackageResourceEnvironment", AccessPackageResourceEnvironment);
             writer.WriteCollectionOfObjectValues<AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
             writer.WriteCollectionOfObjectValues<AccessPackageResourceScope>("accessPackageResourceScopes", AccessPackageResourceScopes);
             writer.WriteStringValue("addedBy", AddedBy);

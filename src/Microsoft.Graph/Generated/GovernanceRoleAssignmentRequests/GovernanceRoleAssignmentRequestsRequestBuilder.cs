@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests {
         /// </summary>
         public async Task<GovernanceRoleAssignmentRequestsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequestsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequestsResponse>(requestInfo, GovernanceRoleAssignmentRequestsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to governanceRoleAssignmentRequests
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.GovernanceRoleAssignmentRequests {
         public async Task<GovernanceRoleAssignmentRequest> PostAsync(GovernanceRoleAssignmentRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequest>(requestInfo, GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from governanceRoleAssignmentRequests</summary>
         public class GetQueryParameters : QueryParametersBase {

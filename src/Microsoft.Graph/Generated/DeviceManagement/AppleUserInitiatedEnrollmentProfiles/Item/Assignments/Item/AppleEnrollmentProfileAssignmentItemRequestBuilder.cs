@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfile
         /// </summary>
         public async Task<AppleEnrollmentProfileAssignment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppleEnrollmentProfileAssignment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppleEnrollmentProfileAssignment>(requestInfo, AppleEnrollmentProfileAssignment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of assignments for this profile.

@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item {
         /// </summary>
         public async Task<MicrosoftTunnelSite> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftTunnelSite>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelSite>(requestInfo, MicrosoftTunnelSite.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelSite settings associated with account.

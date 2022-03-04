@@ -23,13 +23,13 @@ namespace MicrosoftGraphSdk.Users.Item.ExportDeviceAndAppManagementDataWithSkipW
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="top">Usage: top={top}</param>
         /// </summary>
-        public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? skip = default, int? top = default) {
+        public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, int? top = default, int? skip = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
             UrlTemplate = "{+baseurl}/users/{user_id}/microsoft.graph.exportDeviceAndAppManagementData(skip={skip},top={top})";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
-            urlTplParams.Add("skip", skip);
             urlTplParams.Add("top", top);
+            urlTplParams.Add("skip", skip);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
@@ -71,26 +71,30 @@ namespace MicrosoftGraphSdk.Users.Item.ExportDeviceAndAppManagementDataWithSkipW
         /// </summary>
         public async Task<ExportDeviceAndAppManagementDataWithSkipWithTopResponse> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<ExportDeviceAndAppManagementDataWithSkipWithTopResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExportDeviceAndAppManagementDataWithSkipWithTopResponse>(requestInfo, ExportDeviceAndAppManagementDataWithSkipWithTopResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes deviceAndAppManagementData</summary>
         public class ExportDeviceAndAppManagementDataWithSkipWithTopResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type deviceAndAppManagementData</summary>
-            public DeviceAndAppManagementData DeviceAndAppManagementData { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementData DeviceAndAppManagementData { get; set; }
             /// <summary>
             /// Instantiates a new exportDeviceAndAppManagementDataWithSkipWithTopResponse and sets the default values.
             /// </summary>
             public ExportDeviceAndAppManagementDataWithSkipWithTopResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ExportDeviceAndAppManagementDataWithSkipWithTopResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ExportDeviceAndAppManagementDataWithSkipWithTopResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"deviceAndAppManagementData", (o,n) => { (o as ExportDeviceAndAppManagementDataWithSkipWithTopResponse).DeviceAndAppManagementData = n.GetObjectValue<DeviceAndAppManagementData>(); } },
+                    {"deviceAndAppManagementData", (o,n) => { (o as ExportDeviceAndAppManagementDataWithSkipWithTopResponse).DeviceAndAppManagementData = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementData>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementData.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -99,7 +103,7 @@ namespace MicrosoftGraphSdk.Users.Item.ExportDeviceAndAppManagementDataWithSkipW
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<DeviceAndAppManagementData>("deviceAndAppManagementData", DeviceAndAppManagementData);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementData>("deviceAndAppManagementData", DeviceAndAppManagementData);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Tabs {
         /// </summary>
         public async Task<TabsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TabsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TabsResponse>(requestInfo, TabsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of all the tabs in the channel. A navigation property.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.PrimaryChannel.Tabs {
         public async Task<TeamsTab> PostAsync(TeamsTab body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
         public class GetQueryParameters : QueryParametersBase {

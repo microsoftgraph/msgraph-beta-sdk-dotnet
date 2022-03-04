@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.Rules {
         /// </summary>
         public async Task<RulesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RulesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RulesResponse>(requestInfo, RulesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of rules like approval rule, expiration rule, etc.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item.Rules {
         public async Task<UnifiedRoleManagementPolicyRule> PostAsync(UnifiedRoleManagementPolicyRule body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicyRule>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicyRule>(requestInfo, UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of rules like approval rule, expiration rule, etc.</summary>
         public class GetQueryParameters : QueryParametersBase {

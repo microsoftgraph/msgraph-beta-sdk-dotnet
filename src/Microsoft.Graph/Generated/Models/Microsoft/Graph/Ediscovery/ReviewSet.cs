@@ -14,14 +14,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>Read-only. Nullable.</summary>
         public List<ReviewSetQuery> Queries { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ReviewSet CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ReviewSet();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as ReviewSet).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"createdBy", (o,n) => { (o as ReviewSet).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as ReviewSet).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as ReviewSet).DisplayName = n.GetStringValue(); } },
-                {"queries", (o,n) => { (o as ReviewSet).Queries = n.GetCollectionOfObjectValues<ReviewSetQuery>().ToList(); } },
+                {"queries", (o,n) => { (o as ReviewSet).Queries = n.GetCollectionOfObjectValues<ReviewSetQuery>(ReviewSetQuery.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

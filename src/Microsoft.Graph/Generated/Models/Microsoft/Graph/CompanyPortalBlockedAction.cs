@@ -10,7 +10,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Device ownership type. Possible values are: unknown, company, personal.</summary>
-        public OwnerType? OwnerType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.OwnerType? OwnerType { get; set; }
         /// <summary>Device OS/Platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.</summary>
         public DevicePlatformType? Platform { get; set; }
         /// <summary>
@@ -18,6 +18,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public CompanyPortalBlockedAction() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static CompanyPortalBlockedAction CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CompanyPortalBlockedAction();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Directory.FeatureRolloutPolicies.Item.AppliesTo {
         /// </summary>
         public async Task<AppliesToResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppliesToResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppliesToResponse>(requestInfo, AppliesToResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Directory.FeatureRolloutPolicies.Item.AppliesTo {
         public async Task<DirectoryObject> PostAsync(DirectoryObject body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Nullable. Specifies a list of directoryObjects that feature is enabled for.</summary>
         public class GetQueryParameters : QueryParametersBase {

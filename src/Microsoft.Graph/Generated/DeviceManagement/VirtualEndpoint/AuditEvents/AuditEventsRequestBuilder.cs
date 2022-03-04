@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents {
         /// </summary>
         public async Task<AuditEventsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AuditEventsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AuditEventsResponse>(requestInfo, AuditEventsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceManagement\virtualEndpoint\auditEvents\microsoft.graph.getAuditActivityTypes()
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.AuditEvents {
         public async Task<CloudPcAuditEvent> PostAsync(CloudPcAuditEvent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<CloudPcAuditEvent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcAuditEvent>(requestInfo, CloudPcAuditEvent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Cloud PC audit event.</summary>
         public class GetQueryParameters : QueryParametersBase {

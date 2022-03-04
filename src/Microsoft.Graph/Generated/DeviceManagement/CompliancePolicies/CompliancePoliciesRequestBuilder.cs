@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies {
         /// </summary>
         public async Task<CompliancePoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CompliancePoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CompliancePoliciesResponse>(requestInfo, CompliancePoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of all compliance policies
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies {
         public async Task<DeviceManagementCompliancePolicy> PostAsync(DeviceManagementCompliancePolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementCompliancePolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementCompliancePolicy>(requestInfo, DeviceManagementCompliancePolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of all compliance policies</summary>
         public class GetQueryParameters : QueryParametersBase {

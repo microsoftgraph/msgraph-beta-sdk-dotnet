@@ -77,7 +77,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Activities {
         /// </summary>
         public async Task<ActivitiesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ActivitiesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ActivitiesResponse>(requestInfo, ActivitiesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of recent activities that took place on this item.</summary>
         public class GetQueryParameters : QueryParametersBase {

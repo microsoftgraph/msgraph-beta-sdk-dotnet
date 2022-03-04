@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Search.Bookmarks.Item {
         /// </summary>
         public async Task<Bookmark> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Bookmark>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Bookmark>(requestInfo, Bookmark.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Administrative answer in Microsoft Search results for common search queries in an organization.

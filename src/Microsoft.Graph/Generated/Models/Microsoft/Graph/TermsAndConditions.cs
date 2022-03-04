@@ -32,18 +32,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Integer indicating the current version of the terms. Incremented when an administrator makes a change to the terms and wishes to require users to re-accept the modified T&C policy.</summary>
         public int? Version { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new TermsAndConditions CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TermsAndConditions();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"acceptanceStatement", (o,n) => { (o as TermsAndConditions).AcceptanceStatement = n.GetStringValue(); } },
-                {"acceptanceStatuses", (o,n) => { (o as TermsAndConditions).AcceptanceStatuses = n.GetCollectionOfObjectValues<TermsAndConditionsAcceptanceStatus>().ToList(); } },
-                {"assignments", (o,n) => { (o as TermsAndConditions).Assignments = n.GetCollectionOfObjectValues<TermsAndConditionsAssignment>().ToList(); } },
+                {"acceptanceStatuses", (o,n) => { (o as TermsAndConditions).AcceptanceStatuses = n.GetCollectionOfObjectValues<TermsAndConditionsAcceptanceStatus>(TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", (o,n) => { (o as TermsAndConditions).Assignments = n.GetCollectionOfObjectValues<TermsAndConditionsAssignment>(TermsAndConditionsAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"bodyText", (o,n) => { (o as TermsAndConditions).BodyText = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as TermsAndConditions).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", (o,n) => { (o as TermsAndConditions).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as TermsAndConditions).DisplayName = n.GetStringValue(); } },
-                {"groupAssignments", (o,n) => { (o as TermsAndConditions).GroupAssignments = n.GetCollectionOfObjectValues<TermsAndConditionsGroupAssignment>().ToList(); } },
+                {"groupAssignments", (o,n) => { (o as TermsAndConditions).GroupAssignments = n.GetCollectionOfObjectValues<TermsAndConditionsGroupAssignment>(TermsAndConditionsGroupAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as TermsAndConditions).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"modifiedDateTime", (o,n) => { (o as TermsAndConditions).ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as TermsAndConditions).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },

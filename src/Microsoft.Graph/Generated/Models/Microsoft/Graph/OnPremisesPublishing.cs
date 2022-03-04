@@ -14,7 +14,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.</summary>
         public string ApplicationType { get; set; }
         /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.</summary>
-        public ExternalAuthenticationType? ExternalAuthenticationType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ExternalAuthenticationType? ExternalAuthenticationType { get; set; }
         /// <summary>The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.</summary>
         public string ExternalUrl { get; set; }
         /// <summary>The internal url of the application. For example, https://intranet/.</summary>
@@ -37,7 +37,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public OnPremisesPublishingSingleSignOn SingleSignOnSettings { get; set; }
         public bool? UseAlternateUrlForTranslationAndRedirect { get; set; }
         /// <summary>Details of the certificate associated with the application when a custom domain is in use. null when using the default domain. Read-only.</summary>
-        public VerifiedCustomDomainCertificatesMetadata VerifiedCustomDomainCertificatesMetadata { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.VerifiedCustomDomainCertificatesMetadata VerifiedCustomDomainCertificatesMetadata { get; set; }
         /// <summary>The associated key credential for the custom domain used.</summary>
         public KeyCredential VerifiedCustomDomainKeyCredential { get; set; }
         /// <summary>The associated password credential for the custom domain used.</summary>
@@ -47,6 +47,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public OnPremisesPublishing() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static OnPremisesPublishing CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OnPremisesPublishing();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,11 +74,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"isSecureCookieEnabled", (o,n) => { (o as OnPremisesPublishing).IsSecureCookieEnabled = n.GetBoolValue(); } },
                 {"isTranslateHostHeaderEnabled", (o,n) => { (o as OnPremisesPublishing).IsTranslateHostHeaderEnabled = n.GetBoolValue(); } },
                 {"isTranslateLinksInBodyEnabled", (o,n) => { (o as OnPremisesPublishing).IsTranslateLinksInBodyEnabled = n.GetBoolValue(); } },
-                {"singleSignOnSettings", (o,n) => { (o as OnPremisesPublishing).SingleSignOnSettings = n.GetObjectValue<OnPremisesPublishingSingleSignOn>(); } },
+                {"singleSignOnSettings", (o,n) => { (o as OnPremisesPublishing).SingleSignOnSettings = n.GetObjectValue<OnPremisesPublishingSingleSignOn>(OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
                 {"useAlternateUrlForTranslationAndRedirect", (o,n) => { (o as OnPremisesPublishing).UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
-                {"verifiedCustomDomainCertificatesMetadata", (o,n) => { (o as OnPremisesPublishing).VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<VerifiedCustomDomainCertificatesMetadata>(); } },
-                {"verifiedCustomDomainKeyCredential", (o,n) => { (o as OnPremisesPublishing).VerifiedCustomDomainKeyCredential = n.GetObjectValue<KeyCredential>(); } },
-                {"verifiedCustomDomainPasswordCredential", (o,n) => { (o as OnPremisesPublishing).VerifiedCustomDomainPasswordCredential = n.GetObjectValue<PasswordCredential>(); } },
+                {"verifiedCustomDomainCertificatesMetadata", (o,n) => { (o as OnPremisesPublishing).VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.VerifiedCustomDomainCertificatesMetadata>(MicrosoftGraphSdk.Models.Microsoft.Graph.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },
+                {"verifiedCustomDomainKeyCredential", (o,n) => { (o as OnPremisesPublishing).VerifiedCustomDomainKeyCredential = n.GetObjectValue<KeyCredential>(KeyCredential.CreateFromDiscriminatorValue); } },
+                {"verifiedCustomDomainPasswordCredential", (o,n) => { (o as OnPremisesPublishing).VerifiedCustomDomainPasswordCredential = n.GetObjectValue<PasswordCredential>(PasswordCredential.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,7 +102,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteBoolValue("isTranslateLinksInBodyEnabled", IsTranslateLinksInBodyEnabled);
             writer.WriteObjectValue<OnPremisesPublishingSingleSignOn>("singleSignOnSettings", SingleSignOnSettings);
             writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", UseAlternateUrlForTranslationAndRedirect);
-            writer.WriteObjectValue<VerifiedCustomDomainCertificatesMetadata>("verifiedCustomDomainCertificatesMetadata", VerifiedCustomDomainCertificatesMetadata);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.VerifiedCustomDomainCertificatesMetadata>("verifiedCustomDomainCertificatesMetadata", VerifiedCustomDomainCertificatesMetadata);
             writer.WriteObjectValue<KeyCredential>("verifiedCustomDomainKeyCredential", VerifiedCustomDomainKeyCredential);
             writer.WriteObjectValue<PasswordCredential>("verifiedCustomDomainPasswordCredential", VerifiedCustomDomainPasswordCredential);
             writer.WriteAdditionalData(AdditionalData);

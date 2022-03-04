@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.Int
         /// </summary>
         public async Task<IntendedPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IntendedPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IntendedPoliciesResponse>(requestInfo, IntendedPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Zero or more policies admin intended for the app as of now.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.ManagedAppRegistrations.Item.Int
         public async Task<ManagedAppPolicy> PostAsync(ManagedAppPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagedAppPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedAppPolicy>(requestInfo, ManagedAppPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Zero or more policies admin intended for the app as of now.</summary>
         public class GetQueryParameters : QueryParametersBase {

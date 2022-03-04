@@ -26,11 +26,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The windows update rollout settings, including offer start date time, offer end date time, and days between each set of offers.</summary>
         public WindowsUpdateRolloutSettings RolloutSettings { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WindowsFeatureUpdateProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WindowsFeatureUpdateProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"assignments", (o,n) => { (o as WindowsFeatureUpdateProfile).Assignments = n.GetCollectionOfObjectValues<WindowsFeatureUpdateProfileAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as WindowsFeatureUpdateProfile).Assignments = n.GetCollectionOfObjectValues<WindowsFeatureUpdateProfileAssignment>(WindowsFeatureUpdateProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as WindowsFeatureUpdateProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deployableContentDisplayName", (o,n) => { (o as WindowsFeatureUpdateProfile).DeployableContentDisplayName = n.GetStringValue(); } },
                 {"description", (o,n) => { (o as WindowsFeatureUpdateProfile).Description = n.GetStringValue(); } },
@@ -39,7 +47,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"featureUpdateVersion", (o,n) => { (o as WindowsFeatureUpdateProfile).FeatureUpdateVersion = n.GetStringValue(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as WindowsFeatureUpdateProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as WindowsFeatureUpdateProfile).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"rolloutSettings", (o,n) => { (o as WindowsFeatureUpdateProfile).RolloutSettings = n.GetObjectValue<WindowsUpdateRolloutSettings>(); } },
+                {"rolloutSettings", (o,n) => { (o as WindowsFeatureUpdateProfile).RolloutSettings = n.GetObjectValue<WindowsUpdateRolloutSettings>(WindowsUpdateRolloutSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

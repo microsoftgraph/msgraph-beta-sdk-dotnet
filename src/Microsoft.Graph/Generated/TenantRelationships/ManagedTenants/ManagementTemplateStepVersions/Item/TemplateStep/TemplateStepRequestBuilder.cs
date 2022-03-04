@@ -78,7 +78,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplat
         /// </summary>
         public async Task<ManagementTemplateStep> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementTemplateStep>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementTemplateStep>(requestInfo, ManagementTemplateStep.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get templateStep from tenantRelationships</summary>
         public class GetQueryParameters : QueryParametersBase {

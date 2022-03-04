@@ -17,6 +17,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The total number of files in the group's SharePoint document library.</summary>
         public long? Total { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Office365GroupsActivityFileCounts CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Office365GroupsActivityFileCounts();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {

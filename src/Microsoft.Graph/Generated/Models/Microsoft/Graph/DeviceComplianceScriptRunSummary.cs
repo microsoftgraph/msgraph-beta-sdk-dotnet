@@ -16,6 +16,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Number of devices for which the detection script did not find an issue and the device is healthy. Valid values -2147483648 to 2147483647</summary>
         public int? NoIssueDetectedDeviceCount { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DeviceComplianceScriptRunSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DeviceComplianceScriptRunSummary();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {

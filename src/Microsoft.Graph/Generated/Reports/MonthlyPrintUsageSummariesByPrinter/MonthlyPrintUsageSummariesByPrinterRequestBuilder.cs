@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Reports.MonthlyPrintUsageSummariesByPrinter {
         /// </summary>
         public async Task<MonthlyPrintUsageSummariesByPrinterResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MonthlyPrintUsageSummariesByPrinterResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MonthlyPrintUsageSummariesByPrinterResponse>(requestInfo, MonthlyPrintUsageSummariesByPrinterResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to monthlyPrintUsageSummariesByPrinter for reports
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Reports.MonthlyPrintUsageSummariesByPrinter {
         public async Task<PrintUsageByPrinter> PostAsync(PrintUsageByPrinter body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PrintUsageByPrinter>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintUsageByPrinter>(requestInfo, PrintUsageByPrinter.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get monthlyPrintUsageSummariesByPrinter from reports</summary>
         public class GetQueryParameters : QueryParametersBase {

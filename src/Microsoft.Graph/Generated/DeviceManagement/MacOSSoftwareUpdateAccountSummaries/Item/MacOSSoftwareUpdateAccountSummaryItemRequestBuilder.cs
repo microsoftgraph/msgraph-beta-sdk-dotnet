@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MacOSSoftwareUpdateAccountSummaries
         /// </summary>
         public async Task<MacOSSoftwareUpdateAccountSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummary>(requestInfo, MacOSSoftwareUpdateAccountSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The MacOS software update account summaries for this account.

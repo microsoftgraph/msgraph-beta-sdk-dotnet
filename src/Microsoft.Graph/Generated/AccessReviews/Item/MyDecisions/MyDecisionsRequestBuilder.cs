@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.MyDecisions {
         /// </summary>
         public async Task<MyDecisionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MyDecisionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MyDecisionsResponse>(requestInfo, MyDecisionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of decisions for the caller, if the caller is a reviewer.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.AccessReviews.Item.MyDecisions {
         public async Task<AccessReviewDecision> PostAsync(AccessReviewDecision body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AccessReviewDecision>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccessReviewDecision>(requestInfo, AccessReviewDecision.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The collection of decisions for the caller, if the caller is a reviewer.</summary>
         public class GetQueryParameters : QueryParametersBase {

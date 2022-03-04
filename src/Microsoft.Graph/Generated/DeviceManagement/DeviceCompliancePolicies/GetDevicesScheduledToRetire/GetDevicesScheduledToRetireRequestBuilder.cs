@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicies.GetDevices
         /// </summary>
         public async Task<IEnumerable<GetDevicesScheduledToRetire>> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<GetDevicesScheduledToRetire>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<GetDevicesScheduledToRetire>(requestInfo, GetDevicesScheduledToRetire.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

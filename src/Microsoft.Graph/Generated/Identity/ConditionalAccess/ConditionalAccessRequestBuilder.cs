@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.Identity.ConditionalAccess {
         /// </summary>
         public async Task<ConditionalAccessRoot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConditionalAccessRoot>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConditionalAccessRoot>(requestInfo, ConditionalAccessRoot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// the entry point for the Conditional Access (CA) object model.

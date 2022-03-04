@@ -18,14 +18,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>The query string in KQL (Keyword Query Language) query. For details, see Document metadata fields in Advanced eDiscovery.  This field maps directly to the keywords condition.  You can refine searches by using fields listed in the searchable field name paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.</summary>
         public string Query { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ReviewSetQuery CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ReviewSetQuery();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"createdBy", (o,n) => { (o as ReviewSetQuery).CreatedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"createdBy", (o,n) => { (o as ReviewSetQuery).CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as ReviewSetQuery).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as ReviewSetQuery).DisplayName = n.GetStringValue(); } },
-                {"lastModifiedBy", (o,n) => { (o as ReviewSetQuery).LastModifiedBy = n.GetObjectValue<IdentitySet>(); } },
+                {"lastModifiedBy", (o,n) => { (o as ReviewSetQuery).LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as ReviewSetQuery).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"query", (o,n) => { (o as ReviewSetQuery).Query = n.GetStringValue(); } },
             };

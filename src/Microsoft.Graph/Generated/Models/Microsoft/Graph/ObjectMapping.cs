@@ -30,16 +30,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ObjectMapping CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ObjectMapping();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"attributeMappings", (o,n) => { (o as ObjectMapping).AttributeMappings = n.GetCollectionOfObjectValues<AttributeMapping>().ToList(); } },
+                {"attributeMappings", (o,n) => { (o as ObjectMapping).AttributeMappings = n.GetCollectionOfObjectValues<AttributeMapping>(AttributeMapping.CreateFromDiscriminatorValue).ToList(); } },
                 {"enabled", (o,n) => { (o as ObjectMapping).Enabled = n.GetBoolValue(); } },
                 {"flowTypes", (o,n) => { (o as ObjectMapping).FlowTypes = n.GetEnumValue<ObjectFlowTypes>(); } },
-                {"metadata", (o,n) => { (o as ObjectMapping).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>().ToList(); } },
+                {"metadata", (o,n) => { (o as ObjectMapping).Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
                 {"name", (o,n) => { (o as ObjectMapping).Name = n.GetStringValue(); } },
-                {"scope", (o,n) => { (o as ObjectMapping).Scope = n.GetObjectValue<Filter>(); } },
+                {"scope", (o,n) => { (o as ObjectMapping).Scope = n.GetObjectValue<Filter>(Filter.CreateFromDiscriminatorValue); } },
                 {"sourceObjectName", (o,n) => { (o as ObjectMapping).SourceObjectName = n.GetStringValue(); } },
                 {"targetObjectName", (o,n) => { (o as ObjectMapping).TargetObjectName = n.GetStringValue(); } },
             };

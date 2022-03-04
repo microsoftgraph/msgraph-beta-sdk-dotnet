@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.WebAccounts.Item {
         /// </summary>
         public async Task<WebAccount> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WebAccount>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WebAccount>(requestInfo, WebAccount.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents web accounts the user has indicated they use or has added to their user profile.

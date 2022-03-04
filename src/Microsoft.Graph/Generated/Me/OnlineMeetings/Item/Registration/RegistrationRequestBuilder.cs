@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Me.OnlineMeetings.Item.Registration {
         /// </summary>
         public async Task<MeetingRegistration> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.

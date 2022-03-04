@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates whether the post has at least one attachment. This is a default property.</summary>
         public bool? HasAttachments { get; set; }
         /// <summary>The importance of a group post: low, normal, high.</summary>
-        public Importance? Importance { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Importance? Importance { get; set; }
         /// <summary>Read-only. Supports $expand.</summary>
         public Post InReplyTo { get; set; }
         public List<Mention> Mentions { get; set; }
@@ -34,25 +34,33 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The collection of single-value extended properties defined for the post. Read-only. Nullable.</summary>
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Post CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Post();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"attachments", (o,n) => { (o as Post).Attachments = n.GetCollectionOfObjectValues<Attachment>().ToList(); } },
-                {"body", (o,n) => { (o as Post).Body = n.GetObjectValue<ItemBody>(); } },
+                {"attachments", (o,n) => { (o as Post).Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue).ToList(); } },
+                {"body", (o,n) => { (o as Post).Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"conversationId", (o,n) => { (o as Post).ConversationId = n.GetStringValue(); } },
                 {"conversationThreadId", (o,n) => { (o as Post).ConversationThreadId = n.GetStringValue(); } },
-                {"extensions", (o,n) => { (o as Post).Extensions = n.GetCollectionOfObjectValues<Extension>().ToList(); } },
-                {"from", (o,n) => { (o as Post).From = n.GetObjectValue<Recipient>(); } },
+                {"extensions", (o,n) => { (o as Post).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"from", (o,n) => { (o as Post).From = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
                 {"hasAttachments", (o,n) => { (o as Post).HasAttachments = n.GetBoolValue(); } },
                 {"importance", (o,n) => { (o as Post).Importance = n.GetEnumValue<Importance>(); } },
-                {"inReplyTo", (o,n) => { (o as Post).InReplyTo = n.GetObjectValue<Post>(); } },
-                {"mentions", (o,n) => { (o as Post).Mentions = n.GetCollectionOfObjectValues<Mention>().ToList(); } },
-                {"multiValueExtendedProperties", (o,n) => { (o as Post).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>().ToList(); } },
-                {"newParticipants", (o,n) => { (o as Post).NewParticipants = n.GetCollectionOfObjectValues<Recipient>().ToList(); } },
+                {"inReplyTo", (o,n) => { (o as Post).InReplyTo = n.GetObjectValue<Post>(Post.CreateFromDiscriminatorValue); } },
+                {"mentions", (o,n) => { (o as Post).Mentions = n.GetCollectionOfObjectValues<Mention>(Mention.CreateFromDiscriminatorValue).ToList(); } },
+                {"multiValueExtendedProperties", (o,n) => { (o as Post).MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"newParticipants", (o,n) => { (o as Post).NewParticipants = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
                 {"receivedDateTime", (o,n) => { (o as Post).ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"sender", (o,n) => { (o as Post).Sender = n.GetObjectValue<Recipient>(); } },
-                {"singleValueExtendedProperties", (o,n) => { (o as Post).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>().ToList(); } },
+                {"sender", (o,n) => { (o as Post).Sender = n.GetObjectValue<Recipient>(Recipient.CreateFromDiscriminatorValue); } },
+                {"singleValueExtendedProperties", (o,n) => { (o as Post).SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

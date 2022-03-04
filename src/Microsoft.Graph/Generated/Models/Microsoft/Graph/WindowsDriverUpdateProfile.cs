@@ -28,18 +28,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of Scope Tags for this Driver Update entity.</summary>
         public List<string> RoleScopeTagIds { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new WindowsDriverUpdateProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new WindowsDriverUpdateProfile();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"approvalType", (o,n) => { (o as WindowsDriverUpdateProfile).ApprovalType = n.GetEnumValue<DriverUpdateProfileApprovalType>(); } },
-                {"assignments", (o,n) => { (o as WindowsDriverUpdateProfile).Assignments = n.GetCollectionOfObjectValues<WindowsDriverUpdateProfileAssignment>().ToList(); } },
+                {"assignments", (o,n) => { (o as WindowsDriverUpdateProfile).Assignments = n.GetCollectionOfObjectValues<WindowsDriverUpdateProfileAssignment>(WindowsDriverUpdateProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdDateTime", (o,n) => { (o as WindowsDriverUpdateProfile).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deploymentDeferralInDays", (o,n) => { (o as WindowsDriverUpdateProfile).DeploymentDeferralInDays = n.GetIntValue(); } },
                 {"description", (o,n) => { (o as WindowsDriverUpdateProfile).Description = n.GetStringValue(); } },
                 {"deviceReporting", (o,n) => { (o as WindowsDriverUpdateProfile).DeviceReporting = n.GetIntValue(); } },
                 {"displayName", (o,n) => { (o as WindowsDriverUpdateProfile).DisplayName = n.GetStringValue(); } },
-                {"driverInventories", (o,n) => { (o as WindowsDriverUpdateProfile).DriverInventories = n.GetCollectionOfObjectValues<WindowsDriverUpdateInventory>().ToList(); } },
+                {"driverInventories", (o,n) => { (o as WindowsDriverUpdateProfile).DriverInventories = n.GetCollectionOfObjectValues<WindowsDriverUpdateInventory>(WindowsDriverUpdateInventory.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastModifiedDateTime", (o,n) => { (o as WindowsDriverUpdateProfile).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"newUpdates", (o,n) => { (o as WindowsDriverUpdateProfile).NewUpdates = n.GetIntValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as WindowsDriverUpdateProfile).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys.Item {
         /// </summary>
         public async Task<BitlockerRecoveryKey> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BitlockerRecoveryKey>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BitlockerRecoveryKey>(requestInfo, BitlockerRecoveryKey.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The recovery keys associated with the bitlocker entity.

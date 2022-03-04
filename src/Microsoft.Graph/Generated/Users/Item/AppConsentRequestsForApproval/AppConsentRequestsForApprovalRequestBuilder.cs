@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.Users.Item.AppConsentRequestsForApproval {
         /// </summary>
         public async Task<AppConsentRequestsForApprovalResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppConsentRequestsForApprovalResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppConsentRequestsForApprovalResponse>(requestInfo, AppConsentRequestsForApprovalResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to appConsentRequestsForApproval for users
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.Users.Item.AppConsentRequestsForApproval {
         public async Task<AppConsentRequest> PostAsync(AppConsentRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AppConsentRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppConsentRequest>(requestInfo, AppConsentRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get appConsentRequestsForApproval from users</summary>
         public class GetQueryParameters : QueryParametersBase {

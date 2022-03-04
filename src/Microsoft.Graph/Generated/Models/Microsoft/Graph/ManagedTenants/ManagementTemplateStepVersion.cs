@@ -17,19 +17,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         public int? Version { get; set; }
         public string VersionInformation { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagementTemplateStepVersion CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagementTemplateStepVersion();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acceptedFor", (o,n) => { (o as ManagementTemplateStepVersion).AcceptedFor = n.GetObjectValue<ManagementTemplateStep>(); } },
+                {"acceptedFor", (o,n) => { (o as ManagementTemplateStepVersion).AcceptedFor = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
                 {"contentMarkdown", (o,n) => { (o as ManagementTemplateStepVersion).ContentMarkdown = n.GetStringValue(); } },
                 {"createdByUserId", (o,n) => { (o as ManagementTemplateStepVersion).CreatedByUserId = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as ManagementTemplateStepVersion).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deployments", (o,n) => { (o as ManagementTemplateStepVersion).Deployments = n.GetCollectionOfObjectValues<ManagementTemplateStepDeployment>().ToList(); } },
+                {"deployments", (o,n) => { (o as ManagementTemplateStepVersion).Deployments = n.GetCollectionOfObjectValues<ManagementTemplateStepDeployment>(ManagementTemplateStepDeployment.CreateFromDiscriminatorValue).ToList(); } },
                 {"lastActionByUserId", (o,n) => { (o as ManagementTemplateStepVersion).LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", (o,n) => { (o as ManagementTemplateStepVersion).LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", (o,n) => { (o as ManagementTemplateStepVersion).Name = n.GetStringValue(); } },
-                {"templateStep", (o,n) => { (o as ManagementTemplateStepVersion).TemplateStep = n.GetObjectValue<ManagementTemplateStep>(); } },
+                {"templateStep", (o,n) => { (o as ManagementTemplateStepVersion).TemplateStep = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
                 {"version", (o,n) => { (o as ManagementTemplateStepVersion).Version = n.GetIntValue(); } },
                 {"versionInformation", (o,n) => { (o as ManagementTemplateStepVersion).VersionInformation = n.GetStringValue(); } },
             };

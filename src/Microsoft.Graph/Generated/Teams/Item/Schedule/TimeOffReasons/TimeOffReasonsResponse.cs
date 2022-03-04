@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.TimeOffReasons {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TimeOffReasonsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TimeOffReasonsResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as TimeOffReasonsResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as TimeOffReasonsResponse).Value = n.GetCollectionOfObjectValues<TimeOffReason>().ToList(); } },
+                {"value", (o,n) => { (o as TimeOffReasonsResponse).Value = n.GetCollectionOfObjectValues<TimeOffReason>(TimeOffReason.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

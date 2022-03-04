@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.GovernanceSubjects {
         /// </summary>
         public async Task<GovernanceSubjectsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<GovernanceSubjectsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceSubjectsResponse>(requestInfo, GovernanceSubjectsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to governanceSubjects
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.GovernanceSubjects {
         public async Task<GovernanceSubject> PostAsync(GovernanceSubject body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GovernanceSubject>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernanceSubject>(requestInfo, GovernanceSubject.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from governanceSubjects</summary>
         public class GetQueryParameters : QueryParametersBase {

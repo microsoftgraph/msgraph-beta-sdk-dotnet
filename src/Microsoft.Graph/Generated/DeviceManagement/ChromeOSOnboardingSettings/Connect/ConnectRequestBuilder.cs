@@ -72,19 +72,23 @@ namespace MicrosoftGraphSdk.DeviceManagement.ChromeOSOnboardingSettings.Connect 
         public async Task<ConnectResponse> PostAsync(ConnectRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ConnectResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConnectResponse>(requestInfo, ConnectResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes chromeOSOnboardingStatus</summary>
         public class ConnectResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type chromeOSOnboardingStatus</summary>
-            public ChromeOSOnboardingStatus? ChromeOSOnboardingStatus { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.ChromeOSOnboardingStatus? ChromeOSOnboardingStatus { get; set; }
             /// <summary>
             /// Instantiates a new connectResponse and sets the default values.
             /// </summary>
             public ConnectResponse() {
                 AdditionalData = new Dictionary<string, object>();
+            }
+            public static ConnectResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ConnectResponse();
             }
             /// <summary>
             /// The deserialization information for the current model

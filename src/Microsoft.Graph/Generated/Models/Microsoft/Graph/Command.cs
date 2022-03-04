@@ -15,6 +15,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string Status { get; set; }
         public string Type { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Command CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Command();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -22,10 +30,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"appServiceName", (o,n) => { (o as Command).AppServiceName = n.GetStringValue(); } },
                 {"error", (o,n) => { (o as Command).Error = n.GetStringValue(); } },
                 {"packageFamilyName", (o,n) => { (o as Command).PackageFamilyName = n.GetStringValue(); } },
-                {"payload", (o,n) => { (o as Command).Payload = n.GetObjectValue<PayloadRequest>(); } },
+                {"payload", (o,n) => { (o as Command).Payload = n.GetObjectValue<PayloadRequest>(PayloadRequest.CreateFromDiscriminatorValue); } },
                 {"permissionTicket", (o,n) => { (o as Command).PermissionTicket = n.GetStringValue(); } },
                 {"postBackUri", (o,n) => { (o as Command).PostBackUri = n.GetStringValue(); } },
-                {"responsepayload", (o,n) => { (o as Command).Responsepayload = n.GetObjectValue<PayloadResponse>(); } },
+                {"responsepayload", (o,n) => { (o as Command).Responsepayload = n.GetObjectValue<PayloadResponse>(PayloadResponse.CreateFromDiscriminatorValue); } },
                 {"status", (o,n) => { (o as Command).Status = n.GetStringValue(); } },
                 {"type", (o,n) => { (o as Command).Type = n.GetStringValue(); } },
             };

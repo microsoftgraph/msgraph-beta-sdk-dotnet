@@ -8,7 +8,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
     public class ValidateFilterRequestBody : IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        public DeviceAndAppManagementAssignmentFilter DeviceAndAppManagementAssignmentFilter { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilter DeviceAndAppManagementAssignmentFilter { get; set; }
         /// <summary>
         /// Instantiates a new validateFilterRequestBody and sets the default values.
         /// </summary>
@@ -16,11 +16,19 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static ValidateFilterRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ValidateFilterRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"deviceAndAppManagementAssignmentFilter", (o,n) => { (o as ValidateFilterRequestBody).DeviceAndAppManagementAssignmentFilter = n.GetObjectValue<DeviceAndAppManagementAssignmentFilter>(); } },
+                {"deviceAndAppManagementAssignmentFilter", (o,n) => { (o as ValidateFilterRequestBody).DeviceAndAppManagementAssignmentFilter = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilter>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -29,7 +37,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AssignmentFilters.ValidateFilter {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DeviceAndAppManagementAssignmentFilter>("deviceAndAppManagementAssignmentFilter", DeviceAndAppManagementAssignmentFilter);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceAndAppManagementAssignmentFilter>("deviceAndAppManagementAssignmentFilter", DeviceAndAppManagementAssignmentFilter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

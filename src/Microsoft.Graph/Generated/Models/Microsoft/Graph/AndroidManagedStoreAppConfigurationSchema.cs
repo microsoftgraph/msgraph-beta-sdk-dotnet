@@ -12,13 +12,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Collection of items each representing a named configuration option in the schema. It only contains the root-level configuration.</summary>
         public List<AndroidManagedStoreAppConfigurationSchemaItem> SchemaItems { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AndroidManagedStoreAppConfigurationSchema CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AndroidManagedStoreAppConfigurationSchema();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"exampleJson", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchema).ExampleJson = n.GetByteArrayValue(); } },
-                {"nestedSchemaItems", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchema).NestedSchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>().ToList(); } },
-                {"schemaItems", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchema).SchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>().ToList(); } },
+                {"nestedSchemaItems", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchema).NestedSchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>(AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"schemaItems", (o,n) => { (o as AndroidManagedStoreAppConfigurationSchema).SchemaItems = n.GetCollectionOfObjectValues<AndroidManagedStoreAppConfigurationSchemaItem>(AndroidManagedStoreAppConfigurationSchemaItem.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

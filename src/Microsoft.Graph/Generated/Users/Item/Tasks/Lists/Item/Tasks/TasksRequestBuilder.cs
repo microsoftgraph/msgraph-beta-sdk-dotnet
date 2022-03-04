@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.Users.Item.Tasks.Lists.Item.Tasks {
         /// </summary>
         public async Task<TasksResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TasksResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TasksResponse>(requestInfo, TasksResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The tasks in this task list. Read-only. Nullable.
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.Users.Item.Tasks.Lists.Item.Tasks {
         public async Task<BaseTask> PostAsync(BaseTask body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<BaseTask>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BaseTask>(requestInfo, BaseTask.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The tasks in this task list. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

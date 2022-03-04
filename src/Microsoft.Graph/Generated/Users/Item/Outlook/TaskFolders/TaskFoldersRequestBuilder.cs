@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders {
         /// </summary>
         public async Task<TaskFoldersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<TaskFoldersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<TaskFoldersResponse>(requestInfo, TaskFoldersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to taskFolders for users
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Users.Item.Outlook.TaskFolders {
         public async Task<OutlookTaskFolder> PostAsync(OutlookTaskFolder body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get taskFolders from users</summary>
         public class GetQueryParameters : QueryParametersBase {

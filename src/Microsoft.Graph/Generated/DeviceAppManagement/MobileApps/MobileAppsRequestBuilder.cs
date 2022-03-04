@@ -109,7 +109,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         /// </summary>
         public async Task<MobileAppsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MobileAppsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppsResponse>(requestInfo, MobileAppsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Builds and executes requests for operations under \deviceAppManagement\mobileApps\microsoft.graph.getMobileAppCount(status='{status}')
@@ -140,7 +140,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MobileApps {
         public async Task<MobileApp> PostAsync(MobileApp body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MobileApp>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileApp>(requestInfo, MobileApp.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The mobile apps.</summary>
         public class GetQueryParameters : QueryParametersBase {

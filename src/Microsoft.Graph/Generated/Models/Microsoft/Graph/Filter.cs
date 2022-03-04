@@ -20,13 +20,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static Filter CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Filter();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"categoryFilterGroups", (o,n) => { (o as Filter).CategoryFilterGroups = n.GetCollectionOfObjectValues<FilterGroup>().ToList(); } },
-                {"groups", (o,n) => { (o as Filter).Groups = n.GetCollectionOfObjectValues<FilterGroup>().ToList(); } },
-                {"inputFilterGroups", (o,n) => { (o as Filter).InputFilterGroups = n.GetCollectionOfObjectValues<FilterGroup>().ToList(); } },
+                {"categoryFilterGroups", (o,n) => { (o as Filter).CategoryFilterGroups = n.GetCollectionOfObjectValues<FilterGroup>(FilterGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"groups", (o,n) => { (o as Filter).Groups = n.GetCollectionOfObjectValues<FilterGroup>(FilterGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"inputFilterGroups", (o,n) => { (o as Filter).InputFilterGroups = n.GetCollectionOfObjectValues<FilterGroup>(FilterGroup.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

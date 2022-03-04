@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.ManagedDevice
         /// </summary>
         public async Task<ManagedDeviceMobileAppConfigurationStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationStatesResponse>(requestInfo, ManagedDeviceMobileAppConfigurationStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Managed device mobile app configuration states for this device.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.ComanagedDevices.Item.ManagedDevice
         public async Task<ManagedDeviceMobileAppConfigurationState> PostAsync(ManagedDeviceMobileAppConfigurationState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationState>(requestInfo, ManagedDeviceMobileAppConfigurationState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Managed device mobile app configuration states for this device.</summary>
         public class GetQueryParameters : QueryParametersBase {

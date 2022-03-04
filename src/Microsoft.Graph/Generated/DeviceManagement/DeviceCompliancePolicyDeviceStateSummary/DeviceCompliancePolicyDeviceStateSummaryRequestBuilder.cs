@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DeviceCompliancePolicyDeviceStateSu
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCompliancePolicyDeviceStateSummary> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCompliancePolicyDeviceStateSummary>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCompliancePolicyDeviceStateSummary>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCompliancePolicyDeviceStateSummary.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The device compliance state summary for this account.

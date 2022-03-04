@@ -18,11 +18,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.</summary>
         public string DeviceFullQualifiedDomainName { get; set; }
         /// <summary>Local System Authority (LSA) credential guard status. . Possible values are: running, rebootRequired, notLicensed, notConfigured, virtualizationBasedSecurityNotRunning.</summary>
-        public DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState { get; set; }
         /// <summary>Virtualization-based security hardware requirement status. Possible values are: meetHardwareRequirements, secureBootRequired, dmaProtectionRequired, hyperVNotSupportedForGuestVM, hyperVNotAvailable.</summary>
-        public DeviceGuardVirtualizationBasedSecurityHardwareRequirementState? DeviceGuardVirtualizationBasedSecurityHardwareRequirementState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceGuardVirtualizationBasedSecurityHardwareRequirementState? DeviceGuardVirtualizationBasedSecurityHardwareRequirementState { get; set; }
         /// <summary>Virtualization-based security status. . Possible values are: running, rebootRequired, require64BitArchitecture, notLicensed, notConfigured, doesNotMeetHardwareRequirements, other.</summary>
-        public DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState { get; set; }
         /// <summary>eSIM identifier</summary>
         public string EsimIdentifier { get; set; }
         /// <summary>Free storage space of the device.</summary>
@@ -80,6 +80,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static HardwareInformation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new HardwareInformation();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -108,7 +116,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"osBuildNumber", (o,n) => { (o as HardwareInformation).OsBuildNumber = n.GetStringValue(); } },
                 {"phoneNumber", (o,n) => { (o as HardwareInformation).PhoneNumber = n.GetStringValue(); } },
                 {"serialNumber", (o,n) => { (o as HardwareInformation).SerialNumber = n.GetStringValue(); } },
-                {"sharedDeviceCachedUsers", (o,n) => { (o as HardwareInformation).SharedDeviceCachedUsers = n.GetCollectionOfObjectValues<SharedAppleDeviceUser>().ToList(); } },
+                {"sharedDeviceCachedUsers", (o,n) => { (o as HardwareInformation).SharedDeviceCachedUsers = n.GetCollectionOfObjectValues<SharedAppleDeviceUser>(SharedAppleDeviceUser.CreateFromDiscriminatorValue).ToList(); } },
                 {"subnetAddress", (o,n) => { (o as HardwareInformation).SubnetAddress = n.GetStringValue(); } },
                 {"subscriberCarrier", (o,n) => { (o as HardwareInformation).SubscriberCarrier = n.GetStringValue(); } },
                 {"systemManagementBIOSVersion", (o,n) => { (o as HardwareInformation).SystemManagementBIOSVersion = n.GetStringValue(); } },

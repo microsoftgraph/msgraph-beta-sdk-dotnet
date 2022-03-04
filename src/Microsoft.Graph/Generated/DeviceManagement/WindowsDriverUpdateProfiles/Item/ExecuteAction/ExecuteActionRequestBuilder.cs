@@ -72,26 +72,30 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.Ex
         public async Task<ExecuteActionResponse> PostAsync(ExecuteActionRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ExecuteActionResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ExecuteActionResponse>(requestInfo, ExecuteActionResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes bulkDriverActionResult</summary>
         public class ExecuteActionResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type bulkDriverActionResult</summary>
-            public BulkDriverActionResult BulkDriverActionResult { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.BulkDriverActionResult BulkDriverActionResult { get; set; }
             /// <summary>
             /// Instantiates a new executeActionResponse and sets the default values.
             /// </summary>
             public ExecuteActionResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ExecuteActionResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ExecuteActionResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"bulkDriverActionResult", (o,n) => { (o as ExecuteActionResponse).BulkDriverActionResult = n.GetObjectValue<BulkDriverActionResult>(); } },
+                    {"bulkDriverActionResult", (o,n) => { (o as ExecuteActionResponse).BulkDriverActionResult = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.BulkDriverActionResult>(MicrosoftGraphSdk.Models.Microsoft.Graph.BulkDriverActionResult.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -100,7 +104,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.WindowsDriverUpdateProfiles.Item.Ex
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<BulkDriverActionResult>("bulkDriverActionResult", BulkDriverActionResult);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.BulkDriverActionResult>("bulkDriverActionResult", BulkDriverActionResult);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurati
         /// </summary>
         public async Task<IosLobAppProvisioningConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IosLobAppProvisioningConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IosLobAppProvisioningConfigurationsResponse>(requestInfo, IosLobAppProvisioningConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The IOS Lob App Provisioning Configurations.
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.IosLobAppProvisioningConfigurati
         public async Task<IosLobAppProvisioningConfiguration> PostAsync(IosLobAppProvisioningConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<IosLobAppProvisioningConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IosLobAppProvisioningConfiguration>(requestInfo, IosLobAppProvisioningConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The IOS Lob App Provisioning Configurations.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Policies.CrossTenantAccessPolicy.Default {
         /// </summary>
         public async Task<CrossTenantAccessPolicyConfigurationDefault> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationDefault>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationDefault>(requestInfo, CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.

@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.BookingBusinesses.Item.CalendarView.Item {
         /// </summary>
         public async Task<BookingAppointment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The set of appointments of this business in a specified date range. Read-only. Nullable.

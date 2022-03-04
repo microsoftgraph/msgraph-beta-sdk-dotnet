@@ -66,7 +66,7 @@ namespace MicrosoftGraphSdk.AdministrativeUnits.Delta {
         /// </summary>
         public async Task<IEnumerable<Delta>> GetAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(h, o);
-            return await RequestAdapter.SendCollectionAsync<Delta>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<Delta>(requestInfo, Delta.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

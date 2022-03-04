@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.OrganizationSetting
         /// </summary>
         public async Task<CloudPcOrganizationSettings> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CloudPcOrganizationSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcOrganizationSettings>(requestInfo, CloudPcOrganizationSettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The Cloud PC organization settings for a tenant.

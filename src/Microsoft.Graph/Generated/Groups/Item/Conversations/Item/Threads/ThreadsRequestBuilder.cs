@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads {
         /// </summary>
         public async Task<ThreadsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ThreadsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ThreadsResponse>(requestInfo, ThreadsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Conversations.Item.Threads {
         public async Task<ConversationThread> PostAsync(ConversationThread body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ConversationThread>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConversationThread>(requestInfo, ConversationThread.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

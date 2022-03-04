@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Communications.CallRecords.Item.Sessions.Item.Segmen
         /// </summary>
         public async Task<Segment> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Segment>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Segment>(requestInfo, Segment.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of segments involved in the session. Read-only. Nullable.

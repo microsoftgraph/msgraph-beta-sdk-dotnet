@@ -6,12 +6,20 @@ using System.Linq;
 namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
     public class InternalDomainFederation : SamlOrWsFedProvider, IParsable {
         public string ActiveSignInUri { get; set; }
-        public FederatedIdpMfaBehavior? FederatedIdpMfaBehavior { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.FederatedIdpMfaBehavior? FederatedIdpMfaBehavior { get; set; }
         public bool? IsSignedAuthenticationRequestRequired { get; set; }
         public string NextSigningCertificate { get; set; }
-        public PromptLoginBehavior? PromptLoginBehavior { get; set; }
-        public SigningCertificateUpdateStatus SigningCertificateUpdateStatus { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PromptLoginBehavior? PromptLoginBehavior { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.SigningCertificateUpdateStatus SigningCertificateUpdateStatus { get; set; }
         public string SignOutUri { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new InternalDomainFederation CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new InternalDomainFederation();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -22,7 +30,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"isSignedAuthenticationRequestRequired", (o,n) => { (o as InternalDomainFederation).IsSignedAuthenticationRequestRequired = n.GetBoolValue(); } },
                 {"nextSigningCertificate", (o,n) => { (o as InternalDomainFederation).NextSigningCertificate = n.GetStringValue(); } },
                 {"promptLoginBehavior", (o,n) => { (o as InternalDomainFederation).PromptLoginBehavior = n.GetEnumValue<PromptLoginBehavior>(); } },
-                {"signingCertificateUpdateStatus", (o,n) => { (o as InternalDomainFederation).SigningCertificateUpdateStatus = n.GetObjectValue<SigningCertificateUpdateStatus>(); } },
+                {"signingCertificateUpdateStatus", (o,n) => { (o as InternalDomainFederation).SigningCertificateUpdateStatus = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SigningCertificateUpdateStatus>(MicrosoftGraphSdk.Models.Microsoft.Graph.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
                 {"signOutUri", (o,n) => { (o as InternalDomainFederation).SignOutUri = n.GetStringValue(); } },
             };
         }
@@ -38,7 +46,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteBoolValue("isSignedAuthenticationRequestRequired", IsSignedAuthenticationRequestRequired);
             writer.WriteStringValue("nextSigningCertificate", NextSigningCertificate);
             writer.WriteEnumValue<PromptLoginBehavior>("promptLoginBehavior", PromptLoginBehavior);
-            writer.WriteObjectValue<SigningCertificateUpdateStatus>("signingCertificateUpdateStatus", SigningCertificateUpdateStatus);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.SigningCertificateUpdateStatus>("signingCertificateUpdateStatus", SigningCertificateUpdateStatus);
             writer.WriteStringValue("signOutUri", SignOutUri);
         }
     }

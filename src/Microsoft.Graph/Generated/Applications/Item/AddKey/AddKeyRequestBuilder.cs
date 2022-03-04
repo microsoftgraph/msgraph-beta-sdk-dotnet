@@ -72,7 +72,7 @@ namespace MicrosoftGraphSdk.Applications.Item.AddKey {
         public async Task<KeyCredential> PostAsync(KeyCredentialRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<KeyCredential>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<KeyCredential>(requestInfo, KeyCredential.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

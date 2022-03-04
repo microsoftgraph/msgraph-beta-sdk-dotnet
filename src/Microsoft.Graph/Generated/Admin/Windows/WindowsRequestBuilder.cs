@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Admin.Windows {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Windows> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Windows>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Windows>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsUpdates.Windows.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A container for all Windows Update for Business deployment service functionality. Read-only.

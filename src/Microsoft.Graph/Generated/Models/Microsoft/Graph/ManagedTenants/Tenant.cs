@@ -16,18 +16,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
         public string TenantId { get; set; }
         /// <summary>The onboarding status information for the tenant. Optional. Read-only.</summary>
-        public TenantStatusInformation TenantStatusInformation { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantStatusInformation TenantStatusInformation { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Tenant CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Tenant();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"contract", (o,n) => { (o as Tenant).Contract = n.GetObjectValue<TenantContract>(); } },
+                {"contract", (o,n) => { (o as Tenant).Contract = n.GetObjectValue<TenantContract>(TenantContract.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", (o,n) => { (o as Tenant).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as Tenant).DisplayName = n.GetStringValue(); } },
                 {"lastUpdatedDateTime", (o,n) => { (o as Tenant).LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"tenantId", (o,n) => { (o as Tenant).TenantId = n.GetStringValue(); } },
-                {"tenantStatusInformation", (o,n) => { (o as Tenant).TenantStatusInformation = n.GetObjectValue<TenantStatusInformation>(); } },
+                {"tenantStatusInformation", (o,n) => { (o as Tenant).TenantStatusInformation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantStatusInformation>(MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantStatusInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -42,7 +50,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("tenantId", TenantId);
-            writer.WriteObjectValue<TenantStatusInformation>("tenantStatusInformation", TenantStatusInformation);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedTenants.TenantStatusInformation>("tenantStatusInformation", TenantStatusInformation);
         }
     }
 }

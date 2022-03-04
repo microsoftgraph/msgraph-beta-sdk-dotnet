@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.Mentions {
         /// </summary>
         public async Task<MentionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MentionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MentionsResponse>(requestInfo, MentionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.MailFolders.Item.Messages.Item.Mentions {
         public async Task<Mention> PostAsync(Mention body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Mention>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Mention>(requestInfo, Mention.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.</summary>
         public class GetQueryParameters : QueryParametersBase {

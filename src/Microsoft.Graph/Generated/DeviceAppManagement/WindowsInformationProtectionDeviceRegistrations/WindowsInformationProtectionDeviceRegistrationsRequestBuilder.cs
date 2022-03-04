@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionDevi
         /// </summary>
         public async Task<WindowsInformationProtectionDeviceRegistrationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationsResponse>(requestInfo, WindowsInformationProtectionDeviceRegistrationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Windows information protection device registrations that are not MDM enrolled.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.WindowsInformationProtectionDevi
         public async Task<WindowsInformationProtectionDeviceRegistration> PostAsync(WindowsInformationProtectionDeviceRegistration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistration>(requestInfo, WindowsInformationProtectionDeviceRegistration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Windows information protection device registrations that are not MDM enrolled.</summary>
         public class GetQueryParameters : QueryParametersBase {

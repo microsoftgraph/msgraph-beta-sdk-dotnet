@@ -12,11 +12,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The identifier of the service principal.</summary>
         public string ServicePrincipalId { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RiskyServicePrincipalHistoryItem CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RiskyServicePrincipalHistoryItem();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"activity", (o,n) => { (o as RiskyServicePrincipalHistoryItem).Activity = n.GetObjectValue<RiskServicePrincipalActivity>(); } },
+                {"activity", (o,n) => { (o as RiskyServicePrincipalHistoryItem).Activity = n.GetObjectValue<RiskServicePrincipalActivity>(RiskServicePrincipalActivity.CreateFromDiscriminatorValue); } },
                 {"initiatedBy", (o,n) => { (o as RiskyServicePrincipalHistoryItem).InitiatedBy = n.GetStringValue(); } },
                 {"servicePrincipalId", (o,n) => { (o as RiskyServicePrincipalHistoryItem).ServicePrincipalId = n.GetStringValue(); } },
             };

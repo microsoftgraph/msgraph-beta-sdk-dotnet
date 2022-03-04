@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyFileJobs {
         /// </summary>
         public async Task<ClassifyFileJobsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ClassifyFileJobsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ClassifyFileJobsResponse>(requestInfo, ClassifyFileJobsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to classifyFileJobs for dataClassification
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DataClassification.ClassifyFileJobs {
         public async Task<JobResponseBase> PostAsync(JobResponseBase body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<JobResponseBase>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<JobResponseBase>(requestInfo, JobResponseBase.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get classifyFileJobs from dataClassification</summary>
         public class GetQueryParameters : QueryParametersBase {

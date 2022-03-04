@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.Compliance.Ediscovery.Cases.Item.SourceCollections.I
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static CustodianSourcesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new CustodianSourcesResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as CustodianSourcesResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as CustodianSourcesResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.DataSource>().ToList(); } },
+                {"value", (o,n) => { (o as CustodianSourcesResponse).Value = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.DataSource>(MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery.DataSource.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

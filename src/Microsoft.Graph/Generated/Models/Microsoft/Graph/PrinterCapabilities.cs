@@ -78,6 +78,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static PrinterCapabilities CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrinterCapabilities();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -86,7 +94,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"collation", (o,n) => { (o as PrinterCapabilities).Collation = n.GetBoolValue(); } },
                 {"colorModes", (o,n) => { (o as PrinterCapabilities).ColorModes = n.GetCollectionOfEnumValues<PrintColorMode>().ToList(); } },
                 {"contentTypes", (o,n) => { (o as PrinterCapabilities).ContentTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"copiesPerJob", (o,n) => { (o as PrinterCapabilities).CopiesPerJob = n.GetObjectValue<IntegerRange>(); } },
+                {"copiesPerJob", (o,n) => { (o as PrinterCapabilities).CopiesPerJob = n.GetObjectValue<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue); } },
                 {"dpis", (o,n) => { (o as PrinterCapabilities).Dpis = n.GetCollectionOfPrimitiveValues<int?>().ToList(); } },
                 {"duplexModes", (o,n) => { (o as PrinterCapabilities).DuplexModes = n.GetCollectionOfEnumValues<PrintDuplexMode>().ToList(); } },
                 {"feedDirections", (o,n) => { (o as PrinterCapabilities).FeedDirections = n.GetCollectionOfEnumValues<PrinterFeedDirection>().ToList(); } },
@@ -107,7 +115,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"rightMargins", (o,n) => { (o as PrinterCapabilities).RightMargins = n.GetCollectionOfPrimitiveValues<int?>().ToList(); } },
                 {"scalings", (o,n) => { (o as PrinterCapabilities).Scalings = n.GetCollectionOfEnumValues<PrintScaling>().ToList(); } },
                 {"supportedColorConfigurations", (o,n) => { (o as PrinterCapabilities).SupportedColorConfigurations = n.GetCollectionOfEnumValues<PrintColorConfiguration>().ToList(); } },
-                {"supportedCopiesPerJob", (o,n) => { (o as PrinterCapabilities).SupportedCopiesPerJob = n.GetObjectValue<IntegerRange>(); } },
+                {"supportedCopiesPerJob", (o,n) => { (o as PrinterCapabilities).SupportedCopiesPerJob = n.GetObjectValue<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue); } },
                 {"supportedDocumentMimeTypes", (o,n) => { (o as PrinterCapabilities).SupportedDocumentMimeTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"supportedDuplexConfigurations", (o,n) => { (o as PrinterCapabilities).SupportedDuplexConfigurations = n.GetCollectionOfEnumValues<PrintDuplexConfiguration>().ToList(); } },
                 {"supportedFinishings", (o,n) => { (o as PrinterCapabilities).SupportedFinishings = n.GetCollectionOfEnumValues<PrintFinishing>().ToList(); } },
@@ -116,7 +124,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"supportedMediaTypes", (o,n) => { (o as PrinterCapabilities).SupportedMediaTypes = n.GetCollectionOfEnumValues<PrintMediaType>().ToList(); } },
                 {"supportedOrientations", (o,n) => { (o as PrinterCapabilities).SupportedOrientations = n.GetCollectionOfEnumValues<PrintOrientation>().ToList(); } },
                 {"supportedOutputBins", (o,n) => { (o as PrinterCapabilities).SupportedOutputBins = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"supportedPagesPerSheet", (o,n) => { (o as PrinterCapabilities).SupportedPagesPerSheet = n.GetObjectValue<IntegerRange>(); } },
+                {"supportedPagesPerSheet", (o,n) => { (o as PrinterCapabilities).SupportedPagesPerSheet = n.GetObjectValue<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue); } },
                 {"supportedPresentationDirections", (o,n) => { (o as PrinterCapabilities).SupportedPresentationDirections = n.GetCollectionOfEnumValues<PrintPresentationDirection>().ToList(); } },
                 {"supportedPrintQualities", (o,n) => { (o as PrinterCapabilities).SupportedPrintQualities = n.GetCollectionOfEnumValues<PrintQuality>().ToList(); } },
                 {"supportsFitPdfToPage", (o,n) => { (o as PrinterCapabilities).SupportsFitPdfToPage = n.GetBoolValue(); } },

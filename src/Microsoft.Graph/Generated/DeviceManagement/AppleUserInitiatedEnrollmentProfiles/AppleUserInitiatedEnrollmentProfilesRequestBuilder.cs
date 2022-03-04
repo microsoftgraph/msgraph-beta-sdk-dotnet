@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfile
         /// </summary>
         public async Task<AppleUserInitiatedEnrollmentProfilesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfilesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfilesResponse>(requestInfo, AppleUserInitiatedEnrollmentProfilesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Apple user initiated enrollment profiles
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.AppleUserInitiatedEnrollmentProfile
         public async Task<AppleUserInitiatedEnrollmentProfile> PostAsync(AppleUserInitiatedEnrollmentProfile body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfile>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfile>(requestInfo, AppleUserInitiatedEnrollmentProfile.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Apple user initiated enrollment profiles</summary>
         public class GetQueryParameters : QueryParametersBase {

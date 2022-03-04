@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets.Item.Items.Item {
         /// </summary>
         public async Task<PolicySetItem> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PolicySetItem>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicySetItem>(requestInfo, PolicySetItem.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Items of the PolicySet with maximum count 100.

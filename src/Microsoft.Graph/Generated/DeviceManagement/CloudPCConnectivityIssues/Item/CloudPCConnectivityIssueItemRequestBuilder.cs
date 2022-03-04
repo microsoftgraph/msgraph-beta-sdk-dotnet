@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CloudPCConnectivityIssues.Item {
         /// </summary>
         public async Task<CloudPCConnectivityIssue> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CloudPCConnectivityIssue>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPCConnectivityIssue>(requestInfo, CloudPCConnectivityIssue.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of CloudPC Connectivity Issue.

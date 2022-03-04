@@ -130,7 +130,7 @@ namespace MicrosoftGraphSdk.Organization.Item.Settings {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.OrganizationSettings.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Retrieve the properties and relationships of organizationSettings object. Nullable.

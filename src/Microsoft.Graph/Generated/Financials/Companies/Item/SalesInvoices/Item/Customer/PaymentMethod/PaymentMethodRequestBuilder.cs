@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.Custome
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentMethod.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update the navigation property paymentMethod in financials

@@ -126,7 +126,7 @@ namespace MicrosoftGraphSdk.Policies.RoleManagementPolicies.Item {
         /// </summary>
         public async Task<UnifiedRoleManagementPolicy> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicy>(requestInfo, UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the role management policies.

@@ -146,7 +146,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Channels.Item {
         /// </summary>
         public async Task<Channel> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Channel>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of channels and messages associated with the team.

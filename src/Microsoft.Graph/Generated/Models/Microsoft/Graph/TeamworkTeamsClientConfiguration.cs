@@ -18,12 +18,20 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkTeamsClientConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkTeamsClientConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"accountConfiguration", (o,n) => { (o as TeamworkTeamsClientConfiguration).AccountConfiguration = n.GetObjectValue<TeamworkAccountConfiguration>(); } },
-                {"featuresConfiguration", (o,n) => { (o as TeamworkTeamsClientConfiguration).FeaturesConfiguration = n.GetObjectValue<TeamworkFeaturesConfiguration>(); } },
+                {"accountConfiguration", (o,n) => { (o as TeamworkTeamsClientConfiguration).AccountConfiguration = n.GetObjectValue<TeamworkAccountConfiguration>(TeamworkAccountConfiguration.CreateFromDiscriminatorValue); } },
+                {"featuresConfiguration", (o,n) => { (o as TeamworkTeamsClientConfiguration).FeaturesConfiguration = n.GetObjectValue<TeamworkFeaturesConfiguration>(TeamworkFeaturesConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

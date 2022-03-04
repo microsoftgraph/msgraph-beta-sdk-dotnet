@@ -22,6 +22,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new RoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new RoleDefinition();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -30,9 +38,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"displayName", (o,n) => { (o as RoleDefinition).DisplayName = n.GetStringValue(); } },
                 {"isBuiltIn", (o,n) => { (o as RoleDefinition).IsBuiltIn = n.GetBoolValue(); } },
                 {"isBuiltInRoleDefinition", (o,n) => { (o as RoleDefinition).IsBuiltInRoleDefinition = n.GetBoolValue(); } },
-                {"permissions", (o,n) => { (o as RoleDefinition).Permissions = n.GetCollectionOfObjectValues<RolePermission>().ToList(); } },
-                {"roleAssignments", (o,n) => { (o as RoleDefinition).RoleAssignments = n.GetCollectionOfObjectValues<RoleAssignment>().ToList(); } },
-                {"rolePermissions", (o,n) => { (o as RoleDefinition).RolePermissions = n.GetCollectionOfObjectValues<RolePermission>().ToList(); } },
+                {"permissions", (o,n) => { (o as RoleDefinition).Permissions = n.GetCollectionOfObjectValues<RolePermission>(RolePermission.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignments", (o,n) => { (o as RoleDefinition).RoleAssignments = n.GetCollectionOfObjectValues<RoleAssignment>(RoleAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"rolePermissions", (o,n) => { (o as RoleDefinition).RolePermissions = n.GetCollectionOfObjectValues<RolePermission>(RolePermission.CreateFromDiscriminatorValue).ToList(); } },
                 {"roleScopeTagIds", (o,n) => { (o as RoleDefinition).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }

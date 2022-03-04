@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Endpoints {
         /// </summary>
         public async Task<EndpointsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<EndpointsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EndpointsResponse>(requestInfo, EndpointsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Endpoints for the group. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Endpoints {
         public async Task<Endpoint> PostAsync(Endpoint body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Endpoint>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Endpoint>(requestInfo, Endpoint.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Endpoints for the group. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

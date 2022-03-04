@@ -67,26 +67,30 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.
         /// </summary>
         public async Task<ConvertToRangeResponse> PostAsync(Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(h, o);
-            return await RequestAdapter.SendAsync<ConvertToRangeResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConvertToRangeResponse>(requestInfo, ConvertToRangeResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Union type wrapper for classes workbookRange</summary>
         public class ConvertToRangeResponse : IParsable {
             /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
             public IDictionary<string, object> AdditionalData { get; set; }
             /// <summary>Union type representation for type workbookRange</summary>
-            public WorkbookRange WorkbookRange { get; set; }
+            public MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRange WorkbookRange { get; set; }
             /// <summary>
             /// Instantiates a new convertToRangeResponse and sets the default values.
             /// </summary>
             public ConvertToRangeResponse() {
                 AdditionalData = new Dictionary<string, object>();
             }
+            public static ConvertToRangeResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                return new ConvertToRangeResponse();
+            }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
                 return new Dictionary<string, Action<T, IParseNode>> {
-                    {"workbookRange", (o,n) => { (o as ConvertToRangeResponse).WorkbookRange = n.GetObjectValue<WorkbookRange>(); } },
+                    {"workbookRange", (o,n) => { (o as ConvertToRangeResponse).WorkbookRange = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRange>(MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRange.CreateFromDiscriminatorValue); } },
                 };
             }
             /// <summary>
@@ -95,7 +99,7 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Worksheets.Item.Tables.Item.
             /// </summary>
             public void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<WorkbookRange>("workbookRange", WorkbookRange);
+                writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WorkbookRange>("workbookRange", WorkbookRange);
                 writer.WriteAdditionalData(AdditionalData);
             }
         }

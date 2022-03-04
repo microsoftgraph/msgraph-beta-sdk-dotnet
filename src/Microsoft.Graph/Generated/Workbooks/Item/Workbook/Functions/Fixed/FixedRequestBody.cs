@@ -18,13 +18,21 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Fixed {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static FixedRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new FixedRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"decimals", (o,n) => { (o as FixedRequestBody).Decimals = n.GetObjectValue<Json>(); } },
-                {"noCommas", (o,n) => { (o as FixedRequestBody).NoCommas = n.GetObjectValue<Json>(); } },
-                {"number", (o,n) => { (o as FixedRequestBody).Number = n.GetObjectValue<Json>(); } },
+                {"decimals", (o,n) => { (o as FixedRequestBody).Decimals = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"noCommas", (o,n) => { (o as FixedRequestBody).NoCommas = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"number", (o,n) => { (o as FixedRequestBody).Number = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

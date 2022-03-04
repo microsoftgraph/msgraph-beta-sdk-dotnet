@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.DimensionValues {
         /// </summary>
         public async Task<DimensionValuesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DimensionValuesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DimensionValuesResponse>(requestInfo, DimensionValuesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to dimensionValues for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.DimensionValues {
         public async Task<DimensionValue> PostAsync(DimensionValue body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DimensionValue>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DimensionValue>(requestInfo, DimensionValue.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get dimensionValues from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

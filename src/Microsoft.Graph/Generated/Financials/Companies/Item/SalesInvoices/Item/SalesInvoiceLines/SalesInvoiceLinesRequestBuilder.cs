@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.SalesIn
         /// </summary>
         public async Task<SalesInvoiceLinesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SalesInvoiceLinesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesInvoiceLinesResponse>(requestInfo, SalesInvoiceLinesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to salesInvoiceLines for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.SalesInvoices.Item.SalesIn
         public async Task<SalesInvoiceLine> PostAsync(SalesInvoiceLine body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<SalesInvoiceLine>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesInvoiceLine>(requestInfo, SalesInvoiceLine.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get salesInvoiceLines from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

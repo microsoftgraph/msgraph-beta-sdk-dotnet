@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets {
         /// </summary>
         public async Task<PolicySetsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PolicySetsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicySetsResponse>(requestInfo, PolicySetsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The PolicySet of Policies and Applications
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.PolicySets {
         public async Task<PolicySet> PostAsync(PolicySet body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The PolicySet of Policies and Applications</summary>
         public class GetQueryParameters : QueryParametersBase {

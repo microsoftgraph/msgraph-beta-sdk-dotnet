@@ -22,16 +22,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The subject of the meeting.</summary>
         public string Subject { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new MeetingRegistration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MeetingRegistration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"customQuestions", (o,n) => { (o as MeetingRegistration).CustomQuestions = n.GetCollectionOfObjectValues<MeetingRegistrationQuestion>().ToList(); } },
+                {"customQuestions", (o,n) => { (o as MeetingRegistration).CustomQuestions = n.GetCollectionOfObjectValues<MeetingRegistrationQuestion>(MeetingRegistrationQuestion.CreateFromDiscriminatorValue).ToList(); } },
                 {"description", (o,n) => { (o as MeetingRegistration).Description = n.GetStringValue(); } },
                 {"endDateTime", (o,n) => { (o as MeetingRegistration).EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"registrationPageViewCount", (o,n) => { (o as MeetingRegistration).RegistrationPageViewCount = n.GetIntValue(); } },
                 {"registrationPageWebUrl", (o,n) => { (o as MeetingRegistration).RegistrationPageWebUrl = n.GetStringValue(); } },
-                {"speakers", (o,n) => { (o as MeetingRegistration).Speakers = n.GetCollectionOfObjectValues<MeetingSpeaker>().ToList(); } },
+                {"speakers", (o,n) => { (o as MeetingRegistration).Speakers = n.GetCollectionOfObjectValues<MeetingSpeaker>(MeetingSpeaker.CreateFromDiscriminatorValue).ToList(); } },
                 {"startDateTime", (o,n) => { (o as MeetingRegistration).StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"subject", (o,n) => { (o as MeetingRegistration).Subject = n.GetStringValue(); } },
             };

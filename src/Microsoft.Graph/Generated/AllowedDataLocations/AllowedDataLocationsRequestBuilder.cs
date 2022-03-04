@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.AllowedDataLocations {
         /// </summary>
         public async Task<AllowedDataLocationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AllowedDataLocationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedDataLocationsResponse>(requestInfo, AllowedDataLocationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to allowedDataLocations
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.AllowedDataLocations {
         public async Task<AllowedDataLocation> PostAsync(AllowedDataLocation body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<AllowedDataLocation>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedDataLocation>(requestInfo, AllowedDataLocation.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from allowedDataLocations</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.VirtualEndpoint.Snapshots.Item {
         /// </summary>
         public async Task<CloudPcSnapshot> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CloudPcSnapshot>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcSnapshot>(requestInfo, CloudPcSnapshot.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Cloud PC snapshots.

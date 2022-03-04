@@ -18,6 +18,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
         /// <summary>Latest status of the dataSourceContainer. Possible values are: Active, Released.</summary>
         public DataSourceContainerStatus? Status { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new DataSourceContainer CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DataSourceContainer();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -25,7 +33,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph.Ediscovery {
                 {"createdDateTime", (o,n) => { (o as DataSourceContainer).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", (o,n) => { (o as DataSourceContainer).DisplayName = n.GetStringValue(); } },
                 {"holdStatus", (o,n) => { (o as DataSourceContainer).HoldStatus = n.GetEnumValue<DataSourceHoldStatus>(); } },
-                {"lastIndexOperation", (o,n) => { (o as DataSourceContainer).LastIndexOperation = n.GetObjectValue<CaseIndexOperation>(); } },
+                {"lastIndexOperation", (o,n) => { (o as DataSourceContainer).LastIndexOperation = n.GetObjectValue<CaseIndexOperation>(CaseIndexOperation.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", (o,n) => { (o as DataSourceContainer).LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"releasedDateTime", (o,n) => { (o as DataSourceContainer).ReleasedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", (o,n) => { (o as DataSourceContainer).Status = n.GetEnumValue<DataSourceContainerStatus>(); } },

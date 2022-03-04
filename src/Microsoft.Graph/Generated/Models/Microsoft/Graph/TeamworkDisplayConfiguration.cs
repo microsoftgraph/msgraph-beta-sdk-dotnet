@@ -24,13 +24,21 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkDisplayConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkDisplayConfiguration();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"configuredDisplays", (o,n) => { (o as TeamworkDisplayConfiguration).ConfiguredDisplays = n.GetCollectionOfObjectValues<TeamworkConfiguredPeripheral>().ToList(); } },
+                {"configuredDisplays", (o,n) => { (o as TeamworkDisplayConfiguration).ConfiguredDisplays = n.GetCollectionOfObjectValues<TeamworkConfiguredPeripheral>(TeamworkConfiguredPeripheral.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayCount", (o,n) => { (o as TeamworkDisplayConfiguration).DisplayCount = n.GetIntValue(); } },
-                {"inBuiltDisplayScreenConfiguration", (o,n) => { (o as TeamworkDisplayConfiguration).InBuiltDisplayScreenConfiguration = n.GetObjectValue<TeamworkDisplayScreenConfiguration>(); } },
+                {"inBuiltDisplayScreenConfiguration", (o,n) => { (o as TeamworkDisplayConfiguration).InBuiltDisplayScreenConfiguration = n.GetObjectValue<TeamworkDisplayScreenConfiguration>(TeamworkDisplayScreenConfiguration.CreateFromDiscriminatorValue); } },
                 {"isContentDuplicationAllowed", (o,n) => { (o as TeamworkDisplayConfiguration).IsContentDuplicationAllowed = n.GetBoolValue(); } },
                 {"isDualDisplayModeEnabled", (o,n) => { (o as TeamworkDisplayConfiguration).IsDualDisplayModeEnabled = n.GetBoolValue(); } },
             };

@@ -28,19 +28,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Required. Resource type. For example, for Azure resources, the type could be 'Subscription', 'ResourceGroup', 'Microsoft.Sql/server', etc.</summary>
         public string Type { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new GovernanceResource CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new GovernanceResource();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"displayName", (o,n) => { (o as GovernanceResource).DisplayName = n.GetStringValue(); } },
                 {"externalId", (o,n) => { (o as GovernanceResource).ExternalId = n.GetStringValue(); } },
-                {"parent", (o,n) => { (o as GovernanceResource).Parent = n.GetObjectValue<GovernanceResource>(); } },
+                {"parent", (o,n) => { (o as GovernanceResource).Parent = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
                 {"registeredDateTime", (o,n) => { (o as GovernanceResource).RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
                 {"registeredRoot", (o,n) => { (o as GovernanceResource).RegisteredRoot = n.GetStringValue(); } },
-                {"roleAssignmentRequests", (o,n) => { (o as GovernanceResource).RoleAssignmentRequests = n.GetCollectionOfObjectValues<GovernanceRoleAssignmentRequest>().ToList(); } },
-                {"roleAssignments", (o,n) => { (o as GovernanceResource).RoleAssignments = n.GetCollectionOfObjectValues<GovernanceRoleAssignment>().ToList(); } },
-                {"roleDefinitions", (o,n) => { (o as GovernanceResource).RoleDefinitions = n.GetCollectionOfObjectValues<GovernanceRoleDefinition>().ToList(); } },
-                {"roleSettings", (o,n) => { (o as GovernanceResource).RoleSettings = n.GetCollectionOfObjectValues<GovernanceRoleSetting>().ToList(); } },
+                {"roleAssignmentRequests", (o,n) => { (o as GovernanceResource).RoleAssignmentRequests = n.GetCollectionOfObjectValues<GovernanceRoleAssignmentRequest>(GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleAssignments", (o,n) => { (o as GovernanceResource).RoleAssignments = n.GetCollectionOfObjectValues<GovernanceRoleAssignment>(GovernanceRoleAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleDefinitions", (o,n) => { (o as GovernanceResource).RoleDefinitions = n.GetCollectionOfObjectValues<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"roleSettings", (o,n) => { (o as GovernanceResource).RoleSettings = n.GetCollectionOfObjectValues<GovernanceRoleSetting>(GovernanceRoleSetting.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", (o,n) => { (o as GovernanceResource).Status = n.GetStringValue(); } },
                 {"type", (o,n) => { (o as GovernanceResource).Type = n.GetStringValue(); } },
             };

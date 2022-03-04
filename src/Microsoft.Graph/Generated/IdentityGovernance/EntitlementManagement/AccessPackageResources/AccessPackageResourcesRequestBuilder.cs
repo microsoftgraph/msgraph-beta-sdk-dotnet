@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         /// </summary>
         public async Task<AccessPackageResourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<AccessPackageResourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<AccessPackageResourcesResponse>(requestInfo, AccessPackageResourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A reference to a resource associated with an access package catalog.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.IdentityGovernance.EntitlementManagement.AccessPacka
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.AccessPackageResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A reference to a resource associated with an access package catalog.</summary>
         public class GetQueryParameters : QueryParametersBase {

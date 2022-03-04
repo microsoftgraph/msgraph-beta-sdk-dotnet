@@ -21,16 +21,24 @@ namespace MicrosoftGraphSdk.Workbooks.Item.Workbook.Functions.Duration {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static DurationRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new DurationRequestBody();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"basis", (o,n) => { (o as DurationRequestBody).Basis = n.GetObjectValue<Json>(); } },
-                {"coupon", (o,n) => { (o as DurationRequestBody).Coupon = n.GetObjectValue<Json>(); } },
-                {"frequency", (o,n) => { (o as DurationRequestBody).Frequency = n.GetObjectValue<Json>(); } },
-                {"maturity", (o,n) => { (o as DurationRequestBody).Maturity = n.GetObjectValue<Json>(); } },
-                {"settlement", (o,n) => { (o as DurationRequestBody).Settlement = n.GetObjectValue<Json>(); } },
-                {"yld", (o,n) => { (o as DurationRequestBody).Yld = n.GetObjectValue<Json>(); } },
+                {"basis", (o,n) => { (o as DurationRequestBody).Basis = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"coupon", (o,n) => { (o as DurationRequestBody).Coupon = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"frequency", (o,n) => { (o as DurationRequestBody).Frequency = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"maturity", (o,n) => { (o as DurationRequestBody).Maturity = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"settlement", (o,n) => { (o as DurationRequestBody).Settlement = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"yld", (o,n) => { (o as DurationRequestBody).Yld = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

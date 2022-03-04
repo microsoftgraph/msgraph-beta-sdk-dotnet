@@ -100,7 +100,7 @@ namespace MicrosoftGraphSdk.TrustFramework {
         /// </summary>
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.TrustFramework.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Update trustFramework

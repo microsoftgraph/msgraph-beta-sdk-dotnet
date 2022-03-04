@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplat
         /// </summary>
         public async Task<ManagementTemplateStepVersionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagementTemplateStepVersionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementTemplateStepVersionsResponse>(requestInfo, ManagementTemplateStepVersionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to managementTemplateStepVersions for tenantRelationships
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.TenantRelationships.ManagedTenants.ManagementTemplat
         public async Task<ManagementTemplateStepVersion> PostAsync(ManagementTemplateStepVersion body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ManagementTemplateStepVersion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementTemplateStepVersion>(requestInfo, ManagementTemplateStepVersion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get managementTemplateStepVersions from tenantRelationships</summary>
         public class GetQueryParameters : QueryParametersBase {

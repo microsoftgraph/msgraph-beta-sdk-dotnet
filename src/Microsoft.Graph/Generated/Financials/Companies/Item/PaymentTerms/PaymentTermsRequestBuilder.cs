@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.PaymentTerms {
         /// </summary>
         public async Task<PaymentTermsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PaymentTermsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PaymentTermsResponse>(requestInfo, PaymentTermsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to paymentTerms for financials
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Financials.Companies.Item.PaymentTerms {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.PaymentTerm.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get paymentTerms from financials</summary>
         public class GetQueryParameters : QueryParametersBase {

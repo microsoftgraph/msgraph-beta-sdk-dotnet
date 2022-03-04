@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.Microsoft
         /// </summary>
         public async Task<MicrosoftTunnelServersResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftTunnelServersResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelServersResponse>(requestInfo, MicrosoftTunnelServersResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.MicrosoftTunnelSites.Item.Microsoft
         public async Task<MicrosoftTunnelServer> PostAsync(MicrosoftTunnelServer body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftTunnelServer>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelServer>(requestInfo, MicrosoftTunnelServer.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite</summary>
         public class GetQueryParameters : QueryParametersBase {

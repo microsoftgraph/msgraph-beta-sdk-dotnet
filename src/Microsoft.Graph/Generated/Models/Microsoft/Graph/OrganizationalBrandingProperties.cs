@@ -42,7 +42,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The RGB color to apply to customize the color of the header.</summary>
         public string HeaderBackgroundColor { get; set; }
         /// <summary>Represents the various texts that can be hidden on the login page for a tenant.</summary>
-        public LoginPageTextVisibilitySettings LoginPageTextVisibilitySettings { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.LoginPageTextVisibilitySettings LoginPageTextVisibilitySettings { get; set; }
         /// <summary>Text that appears at the bottom of the sign-in box. You can use this to communicate additional information, such as the phone number to your help desk or a legal statement. This text must be Unicode and not exceed 1024 characters.</summary>
         public string SignInPageText { get; set; }
         /// <summary>A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</summary>
@@ -51,6 +51,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public string SquareLogoRelativeUrl { get; set; }
         /// <summary>String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can't exceed 64 characters.</summary>
         public string UsernameHintText { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new OrganizationalBrandingProperties CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OrganizationalBrandingProperties();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -74,7 +82,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"favicon", (o,n) => { (o as OrganizationalBrandingProperties).Favicon = n.GetByteArrayValue(); } },
                 {"faviconRelativeUrl", (o,n) => { (o as OrganizationalBrandingProperties).FaviconRelativeUrl = n.GetStringValue(); } },
                 {"headerBackgroundColor", (o,n) => { (o as OrganizationalBrandingProperties).HeaderBackgroundColor = n.GetStringValue(); } },
-                {"loginPageTextVisibilitySettings", (o,n) => { (o as OrganizationalBrandingProperties).LoginPageTextVisibilitySettings = n.GetObjectValue<LoginPageTextVisibilitySettings>(); } },
+                {"loginPageTextVisibilitySettings", (o,n) => { (o as OrganizationalBrandingProperties).LoginPageTextVisibilitySettings = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LoginPageTextVisibilitySettings>(MicrosoftGraphSdk.Models.Microsoft.Graph.LoginPageTextVisibilitySettings.CreateFromDiscriminatorValue); } },
                 {"signInPageText", (o,n) => { (o as OrganizationalBrandingProperties).SignInPageText = n.GetStringValue(); } },
                 {"squareLogo", (o,n) => { (o as OrganizationalBrandingProperties).SquareLogo = n.GetByteArrayValue(); } },
                 {"squareLogoRelativeUrl", (o,n) => { (o as OrganizationalBrandingProperties).SquareLogoRelativeUrl = n.GetStringValue(); } },
@@ -106,7 +114,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteByteArrayValue("favicon", Favicon);
             writer.WriteStringValue("faviconRelativeUrl", FaviconRelativeUrl);
             writer.WriteStringValue("headerBackgroundColor", HeaderBackgroundColor);
-            writer.WriteObjectValue<LoginPageTextVisibilitySettings>("loginPageTextVisibilitySettings", LoginPageTextVisibilitySettings);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LoginPageTextVisibilitySettings>("loginPageTextVisibilitySettings", LoginPageTextVisibilitySettings);
             writer.WriteStringValue("signInPageText", SignInPageText);
             writer.WriteByteArrayValue("squareLogo", SquareLogo);
             writer.WriteStringValue("squareLogoRelativeUrl", SquareLogoRelativeUrl);

@@ -12,7 +12,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Android security patch level. This property is read-only.</summary>
         public string AndroidSecurityPatchLevel { get; set; }
         /// <summary>Managed device mobile app configuration states for this device.</summary>
-        public List<AssignmentFilterEvaluationStatusDetails> AssignmentFilterEvaluationStatusDetails { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails> AssignmentFilterEvaluationStatusDetails { get; set; }
         /// <summary>Reports if the managed device is enrolled via auto-pilot. This property is read-only.</summary>
         public bool? AutopilotEnrolled { get; set; }
         /// <summary>The unique identifier for the Azure Active Directory device. Read only. This property is read-only.</summary>
@@ -22,26 +22,26 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AzureADRegistered { get; set; }
         /// <summary>Chassis type of the device. This property is read-only. Possible values are: unknown, desktop, laptop, worksWorkstation, enterpriseServer, phone, tablet, mobileOther, mobileUnknown.</summary>
-        public ChassisType? ChassisType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ChassisType? ChassisType { get; set; }
         /// <summary>List of properties of the ChromeOS Device.</summary>
         public List<ChromeOSDeviceProperty> ChromeOSDeviceInfo { get; set; }
         public List<CloudPcRemoteActionResult> CloudPcRemoteActionResults { get; set; }
         /// <summary>The DateTime when device compliance grace period expires. This property is read-only.</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime { get; set; }
         /// <summary>Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.</summary>
-        public ComplianceState? ComplianceState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ComplianceState? ComplianceState { get; set; }
         /// <summary>ConfigrMgr client enabled features. This property is read-only.</summary>
-        public ConfigurationManagerClientEnabledFeatures ConfigurationManagerClientEnabledFeatures { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientEnabledFeatures ConfigurationManagerClientEnabledFeatures { get; set; }
         /// <summary>Configuration manager client health state, valid only for devices managed by MDM/ConfigMgr Agent</summary>
-        public ConfigurationManagerClientHealthState ConfigurationManagerClientHealthState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientHealthState ConfigurationManagerClientHealthState { get; set; }
         /// <summary>Configuration manager client information, valid only for devices managed, duel-managed or tri-managed by ConfigMgr Agent</summary>
-        public ConfigurationManagerClientInformation ConfigurationManagerClientInformation { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientInformation ConfigurationManagerClientInformation { get; set; }
         /// <summary>All applications currently installed on the device</summary>
         public List<DetectedApp> DetectedApps { get; set; }
         /// <summary>List of ComplexType deviceActionResult objects. This property is read-only.</summary>
         public List<DeviceActionResult> DeviceActionResults { get; set; }
         /// <summary>Device category</summary>
-        public DeviceCategory DeviceCategory { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCategory DeviceCategory { get; set; }
         /// <summary>Device category display name. This property is read-only.</summary>
         public string DeviceCategoryDisplayName { get; set; }
         /// <summary>Device compliance policy states for this device.</summary>
@@ -49,15 +49,15 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Device configuration states for this device.</summary>
         public List<DeviceConfigurationState> DeviceConfigurationStates { get; set; }
         /// <summary>Enrollment type of the device. This property is read-only. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth, appleUserEnrollment, appleUserEnrollmentWithServiceAccount.</summary>
-        public DeviceEnrollmentType? DeviceEnrollmentType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceEnrollmentType? DeviceEnrollmentType { get; set; }
         /// <summary>The device health attestation state. This property is read-only.</summary>
-        public DeviceHealthAttestationState DeviceHealthAttestationState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthAttestationState DeviceHealthAttestationState { get; set; }
         /// <summary>Name of the device. This property is read-only.</summary>
         public string DeviceName { get; set; }
         /// <summary>Device registration state. This property is read-only. Possible values are: notRegistered, registered, revoked, keyConflict, approvalPending, certificateReset, notRegisteredPendingEnrollment, unknown.</summary>
-        public DeviceRegistrationState? DeviceRegistrationState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceRegistrationState? DeviceRegistrationState { get; set; }
         /// <summary>Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.</summary>
-        public DeviceType? DeviceType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceType? DeviceType { get; set; }
         /// <summary>Whether the device is Exchange ActiveSync activated. This property is read-only.</summary>
         public bool? EasActivated { get; set; }
         /// <summary>Exchange ActivationSync activation time of the device. This property is read-only.</summary>
@@ -81,7 +81,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Free Storage in Bytes. This property is read-only.</summary>
         public long? FreeStorageSpaceInBytes { get; set; }
         /// <summary>The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. This property is read-only.</summary>
-        public HardwareInformation HardwareInformation { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.HardwareInformation HardwareInformation { get; set; }
         /// <summary>Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.</summary>
         public string Iccid { get; set; }
         /// <summary>IMEI. This property is read-only.</summary>
@@ -93,19 +93,19 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>whether the device is jail broken or rooted. This property is read-only.</summary>
         public string JailBroken { get; set; }
         /// <summary>Device join type. Possible values are: unknown, azureADJoined, azureADRegistered, hybridAzureADJoined.</summary>
-        public JoinType? JoinType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.JoinType? JoinType { get; set; }
         /// <summary>The date and time that the device last completed a successful sync with Intune. This property is read-only.</summary>
         public DateTimeOffset? LastSyncDateTime { get; set; }
         /// <summary>List of log collection requests</summary>
         public List<DeviceLogCollectionResponse> LogCollectionRequests { get; set; }
         /// <summary>Indicates if Lost mode is enabled or disabled. This property is read-only. Possible values are: disabled, enabled.</summary>
-        public LostModeState? LostModeState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.LostModeState? LostModeState { get; set; }
         /// <summary>Managed device mobile app configuration states for this device.</summary>
         public List<ManagedDeviceMobileAppConfigurationState> ManagedDeviceMobileAppConfigurationStates { get; set; }
         /// <summary>Automatically generated name to identify a device. Can be overwritten to a user friendly name.</summary>
         public string ManagedDeviceName { get; set; }
         /// <summary>Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.</summary>
-        public ManagedDeviceOwnerType? ManagedDeviceOwnerType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagedDeviceOwnerType? ManagedDeviceOwnerType { get; set; }
         /// <summary>Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.</summary>
         public ManagementAgentType? ManagementAgent { get; set; }
         /// <summary>Reports device management certificate expiration date. This property is read-only.</summary>
@@ -113,7 +113,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Device management features. Possible values are: none, microsoftManagedDesktop.</summary>
         public ManagedDeviceManagementFeatures? ManagementFeatures { get; set; }
         /// <summary>Management state of the device. This property is read-only. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.</summary>
-        public ManagementState? ManagementState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.ManagementState? ManagementState { get; set; }
         /// <summary>Manufacturer of the device. This property is read-only.</summary>
         public string Manufacturer { get; set; }
         /// <summary>MEID. This property is read-only.</summary>
@@ -127,7 +127,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Operating system version of the device. This property is read-only.</summary>
         public string OsVersion { get; set; }
         /// <summary>Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.</summary>
-        public OwnerType? OwnerType { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.OwnerType? OwnerType { get; set; }
         /// <summary>Indicates the threat state of a device when a Mobile Threat Defense partner is in use by the account and device. Read Only. This property is read-only. Possible values are: unknown, activated, deactivated, secured, lowSeverity, mediumSeverity, highSeverity, unresponsive, compromised, misconfigured.</summary>
         public ManagedDevicePartnerReportedHealthState? PartnerReportedThreatState { get; set; }
         /// <summary>Phone number of the device. This property is read-only.</summary>
@@ -179,9 +179,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Count of active malware for this windows device. This property is read-only.</summary>
         public int? WindowsActiveMalwareCount { get; set; }
         /// <summary>The device protection status. This property is read-only.</summary>
-        public WindowsProtectionState WindowsProtectionState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState WindowsProtectionState { get; set; }
         /// <summary>Count of remediated malware for this windows device. This property is read-only.</summary>
         public int? WindowsRemediatedMalwareCount { get; set; }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new ManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new ManagedDevice();
+        }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
@@ -190,27 +198,27 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"aadRegistered", (o,n) => { (o as ManagedDevice).AadRegistered = n.GetBoolValue(); } },
                 {"activationLockBypassCode", (o,n) => { (o as ManagedDevice).ActivationLockBypassCode = n.GetStringValue(); } },
                 {"androidSecurityPatchLevel", (o,n) => { (o as ManagedDevice).AndroidSecurityPatchLevel = n.GetStringValue(); } },
-                {"assignmentFilterEvaluationStatusDetails", (o,n) => { (o as ManagedDevice).AssignmentFilterEvaluationStatusDetails = n.GetCollectionOfObjectValues<AssignmentFilterEvaluationStatusDetails>().ToList(); } },
+                {"assignmentFilterEvaluationStatusDetails", (o,n) => { (o as ManagedDevice).AssignmentFilterEvaluationStatusDetails = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails>(MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails.CreateFromDiscriminatorValue).ToList(); } },
                 {"autopilotEnrolled", (o,n) => { (o as ManagedDevice).AutopilotEnrolled = n.GetBoolValue(); } },
                 {"azureActiveDirectoryDeviceId", (o,n) => { (o as ManagedDevice).AzureActiveDirectoryDeviceId = n.GetStringValue(); } },
                 {"azureADDeviceId", (o,n) => { (o as ManagedDevice).AzureADDeviceId = n.GetStringValue(); } },
                 {"azureADRegistered", (o,n) => { (o as ManagedDevice).AzureADRegistered = n.GetBoolValue(); } },
                 {"chassisType", (o,n) => { (o as ManagedDevice).ChassisType = n.GetEnumValue<ChassisType>(); } },
-                {"chromeOSDeviceInfo", (o,n) => { (o as ManagedDevice).ChromeOSDeviceInfo = n.GetCollectionOfObjectValues<ChromeOSDeviceProperty>().ToList(); } },
-                {"cloudPcRemoteActionResults", (o,n) => { (o as ManagedDevice).CloudPcRemoteActionResults = n.GetCollectionOfObjectValues<CloudPcRemoteActionResult>().ToList(); } },
+                {"chromeOSDeviceInfo", (o,n) => { (o as ManagedDevice).ChromeOSDeviceInfo = n.GetCollectionOfObjectValues<ChromeOSDeviceProperty>(ChromeOSDeviceProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"cloudPcRemoteActionResults", (o,n) => { (o as ManagedDevice).CloudPcRemoteActionResults = n.GetCollectionOfObjectValues<CloudPcRemoteActionResult>(CloudPcRemoteActionResult.CreateFromDiscriminatorValue).ToList(); } },
                 {"complianceGracePeriodExpirationDateTime", (o,n) => { (o as ManagedDevice).ComplianceGracePeriodExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"complianceState", (o,n) => { (o as ManagedDevice).ComplianceState = n.GetEnumValue<ComplianceState>(); } },
-                {"configurationManagerClientEnabledFeatures", (o,n) => { (o as ManagedDevice).ConfigurationManagerClientEnabledFeatures = n.GetObjectValue<ConfigurationManagerClientEnabledFeatures>(); } },
-                {"configurationManagerClientHealthState", (o,n) => { (o as ManagedDevice).ConfigurationManagerClientHealthState = n.GetObjectValue<ConfigurationManagerClientHealthState>(); } },
-                {"configurationManagerClientInformation", (o,n) => { (o as ManagedDevice).ConfigurationManagerClientInformation = n.GetObjectValue<ConfigurationManagerClientInformation>(); } },
-                {"detectedApps", (o,n) => { (o as ManagedDevice).DetectedApps = n.GetCollectionOfObjectValues<DetectedApp>().ToList(); } },
-                {"deviceActionResults", (o,n) => { (o as ManagedDevice).DeviceActionResults = n.GetCollectionOfObjectValues<DeviceActionResult>().ToList(); } },
-                {"deviceCategory", (o,n) => { (o as ManagedDevice).DeviceCategory = n.GetObjectValue<DeviceCategory>(); } },
+                {"configurationManagerClientEnabledFeatures", (o,n) => { (o as ManagedDevice).ConfigurationManagerClientEnabledFeatures = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientEnabledFeatures>(MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientEnabledFeatures.CreateFromDiscriminatorValue); } },
+                {"configurationManagerClientHealthState", (o,n) => { (o as ManagedDevice).ConfigurationManagerClientHealthState = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientHealthState>(MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientHealthState.CreateFromDiscriminatorValue); } },
+                {"configurationManagerClientInformation", (o,n) => { (o as ManagedDevice).ConfigurationManagerClientInformation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientInformation>(MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientInformation.CreateFromDiscriminatorValue); } },
+                {"detectedApps", (o,n) => { (o as ManagedDevice).DetectedApps = n.GetCollectionOfObjectValues<DetectedApp>(DetectedApp.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceActionResults", (o,n) => { (o as ManagedDevice).DeviceActionResults = n.GetCollectionOfObjectValues<DeviceActionResult>(DeviceActionResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceCategory", (o,n) => { (o as ManagedDevice).DeviceCategory = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCategory>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCategory.CreateFromDiscriminatorValue); } },
                 {"deviceCategoryDisplayName", (o,n) => { (o as ManagedDevice).DeviceCategoryDisplayName = n.GetStringValue(); } },
-                {"deviceCompliancePolicyStates", (o,n) => { (o as ManagedDevice).DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>().ToList(); } },
-                {"deviceConfigurationStates", (o,n) => { (o as ManagedDevice).DeviceConfigurationStates = n.GetCollectionOfObjectValues<DeviceConfigurationState>().ToList(); } },
+                {"deviceCompliancePolicyStates", (o,n) => { (o as ManagedDevice).DeviceCompliancePolicyStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicyState>(DeviceCompliancePolicyState.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceConfigurationStates", (o,n) => { (o as ManagedDevice).DeviceConfigurationStates = n.GetCollectionOfObjectValues<DeviceConfigurationState>(DeviceConfigurationState.CreateFromDiscriminatorValue).ToList(); } },
                 {"deviceEnrollmentType", (o,n) => { (o as ManagedDevice).DeviceEnrollmentType = n.GetEnumValue<DeviceEnrollmentType>(); } },
-                {"deviceHealthAttestationState", (o,n) => { (o as ManagedDevice).DeviceHealthAttestationState = n.GetObjectValue<DeviceHealthAttestationState>(); } },
+                {"deviceHealthAttestationState", (o,n) => { (o as ManagedDevice).DeviceHealthAttestationState = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthAttestationState>(MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthAttestationState.CreateFromDiscriminatorValue); } },
                 {"deviceName", (o,n) => { (o as ManagedDevice).DeviceName = n.GetStringValue(); } },
                 {"deviceRegistrationState", (o,n) => { (o as ManagedDevice).DeviceRegistrationState = n.GetEnumValue<DeviceRegistrationState>(); } },
                 {"deviceType", (o,n) => { (o as ManagedDevice).DeviceType = n.GetEnumValue<DeviceType>(); } },
@@ -225,7 +233,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"exchangeAccessStateReason", (o,n) => { (o as ManagedDevice).ExchangeAccessStateReason = n.GetEnumValue<DeviceManagementExchangeAccessStateReason>(); } },
                 {"exchangeLastSuccessfulSyncDateTime", (o,n) => { (o as ManagedDevice).ExchangeLastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"freeStorageSpaceInBytes", (o,n) => { (o as ManagedDevice).FreeStorageSpaceInBytes = n.GetLongValue(); } },
-                {"hardwareInformation", (o,n) => { (o as ManagedDevice).HardwareInformation = n.GetObjectValue<HardwareInformation>(); } },
+                {"hardwareInformation", (o,n) => { (o as ManagedDevice).HardwareInformation = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.HardwareInformation>(MicrosoftGraphSdk.Models.Microsoft.Graph.HardwareInformation.CreateFromDiscriminatorValue); } },
                 {"iccid", (o,n) => { (o as ManagedDevice).Iccid = n.GetStringValue(); } },
                 {"imei", (o,n) => { (o as ManagedDevice).Imei = n.GetStringValue(); } },
                 {"isEncrypted", (o,n) => { (o as ManagedDevice).IsEncrypted = n.GetBoolValue(); } },
@@ -233,9 +241,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"jailBroken", (o,n) => { (o as ManagedDevice).JailBroken = n.GetStringValue(); } },
                 {"joinType", (o,n) => { (o as ManagedDevice).JoinType = n.GetEnumValue<JoinType>(); } },
                 {"lastSyncDateTime", (o,n) => { (o as ManagedDevice).LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"logCollectionRequests", (o,n) => { (o as ManagedDevice).LogCollectionRequests = n.GetCollectionOfObjectValues<DeviceLogCollectionResponse>().ToList(); } },
+                {"logCollectionRequests", (o,n) => { (o as ManagedDevice).LogCollectionRequests = n.GetCollectionOfObjectValues<DeviceLogCollectionResponse>(DeviceLogCollectionResponse.CreateFromDiscriminatorValue).ToList(); } },
                 {"lostModeState", (o,n) => { (o as ManagedDevice).LostModeState = n.GetEnumValue<LostModeState>(); } },
-                {"managedDeviceMobileAppConfigurationStates", (o,n) => { (o as ManagedDevice).ManagedDeviceMobileAppConfigurationStates = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationState>().ToList(); } },
+                {"managedDeviceMobileAppConfigurationStates", (o,n) => { (o as ManagedDevice).ManagedDeviceMobileAppConfigurationStates = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationState>(ManagedDeviceMobileAppConfigurationState.CreateFromDiscriminatorValue).ToList(); } },
                 {"managedDeviceName", (o,n) => { (o as ManagedDevice).ManagedDeviceName = n.GetStringValue(); } },
                 {"managedDeviceOwnerType", (o,n) => { (o as ManagedDevice).ManagedDeviceOwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
                 {"managementAgent", (o,n) => { (o as ManagedDevice).ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
@@ -259,7 +267,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"requireUserEnrollmentApproval", (o,n) => { (o as ManagedDevice).RequireUserEnrollmentApproval = n.GetBoolValue(); } },
                 {"retireAfterDateTime", (o,n) => { (o as ManagedDevice).RetireAfterDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleScopeTagIds", (o,n) => { (o as ManagedDevice).RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"securityBaselineStates", (o,n) => { (o as ManagedDevice).SecurityBaselineStates = n.GetCollectionOfObjectValues<SecurityBaselineState>().ToList(); } },
+                {"securityBaselineStates", (o,n) => { (o as ManagedDevice).SecurityBaselineStates = n.GetCollectionOfObjectValues<SecurityBaselineState>(SecurityBaselineState.CreateFromDiscriminatorValue).ToList(); } },
                 {"serialNumber", (o,n) => { (o as ManagedDevice).SerialNumber = n.GetStringValue(); } },
                 {"skuFamily", (o,n) => { (o as ManagedDevice).SkuFamily = n.GetStringValue(); } },
                 {"skuNumber", (o,n) => { (o as ManagedDevice).SkuNumber = n.GetIntValue(); } },
@@ -270,11 +278,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"userDisplayName", (o,n) => { (o as ManagedDevice).UserDisplayName = n.GetStringValue(); } },
                 {"userId", (o,n) => { (o as ManagedDevice).UserId = n.GetStringValue(); } },
                 {"userPrincipalName", (o,n) => { (o as ManagedDevice).UserPrincipalName = n.GetStringValue(); } },
-                {"users", (o,n) => { (o as ManagedDevice).Users = n.GetCollectionOfObjectValues<User>().ToList(); } },
-                {"usersLoggedOn", (o,n) => { (o as ManagedDevice).UsersLoggedOn = n.GetCollectionOfObjectValues<LoggedOnUser>().ToList(); } },
+                {"users", (o,n) => { (o as ManagedDevice).Users = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue).ToList(); } },
+                {"usersLoggedOn", (o,n) => { (o as ManagedDevice).UsersLoggedOn = n.GetCollectionOfObjectValues<LoggedOnUser>(LoggedOnUser.CreateFromDiscriminatorValue).ToList(); } },
                 {"wiFiMacAddress", (o,n) => { (o as ManagedDevice).WiFiMacAddress = n.GetStringValue(); } },
                 {"windowsActiveMalwareCount", (o,n) => { (o as ManagedDevice).WindowsActiveMalwareCount = n.GetIntValue(); } },
-                {"windowsProtectionState", (o,n) => { (o as ManagedDevice).WindowsProtectionState = n.GetObjectValue<WindowsProtectionState>(); } },
+                {"windowsProtectionState", (o,n) => { (o as ManagedDevice).WindowsProtectionState = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState>(MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState.CreateFromDiscriminatorValue); } },
                 {"windowsRemediatedMalwareCount", (o,n) => { (o as ManagedDevice).WindowsRemediatedMalwareCount = n.GetIntValue(); } },
             };
         }
@@ -288,7 +296,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteBoolValue("aadRegistered", AadRegistered);
             writer.WriteStringValue("activationLockBypassCode", ActivationLockBypassCode);
             writer.WriteStringValue("androidSecurityPatchLevel", AndroidSecurityPatchLevel);
-            writer.WriteCollectionOfObjectValues<AssignmentFilterEvaluationStatusDetails>("assignmentFilterEvaluationStatusDetails", AssignmentFilterEvaluationStatusDetails);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.AssignmentFilterEvaluationStatusDetails>("assignmentFilterEvaluationStatusDetails", AssignmentFilterEvaluationStatusDetails);
             writer.WriteBoolValue("autopilotEnrolled", AutopilotEnrolled);
             writer.WriteStringValue("azureActiveDirectoryDeviceId", AzureActiveDirectoryDeviceId);
             writer.WriteStringValue("azureADDeviceId", AzureADDeviceId);
@@ -298,17 +306,17 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<CloudPcRemoteActionResult>("cloudPcRemoteActionResults", CloudPcRemoteActionResults);
             writer.WriteDateTimeOffsetValue("complianceGracePeriodExpirationDateTime", ComplianceGracePeriodExpirationDateTime);
             writer.WriteEnumValue<ComplianceState>("complianceState", ComplianceState);
-            writer.WriteObjectValue<ConfigurationManagerClientEnabledFeatures>("configurationManagerClientEnabledFeatures", ConfigurationManagerClientEnabledFeatures);
-            writer.WriteObjectValue<ConfigurationManagerClientHealthState>("configurationManagerClientHealthState", ConfigurationManagerClientHealthState);
-            writer.WriteObjectValue<ConfigurationManagerClientInformation>("configurationManagerClientInformation", ConfigurationManagerClientInformation);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientEnabledFeatures>("configurationManagerClientEnabledFeatures", ConfigurationManagerClientEnabledFeatures);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientHealthState>("configurationManagerClientHealthState", ConfigurationManagerClientHealthState);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.ConfigurationManagerClientInformation>("configurationManagerClientInformation", ConfigurationManagerClientInformation);
             writer.WriteCollectionOfObjectValues<DetectedApp>("detectedApps", DetectedApps);
             writer.WriteCollectionOfObjectValues<DeviceActionResult>("deviceActionResults", DeviceActionResults);
-            writer.WriteObjectValue<DeviceCategory>("deviceCategory", DeviceCategory);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceCategory>("deviceCategory", DeviceCategory);
             writer.WriteStringValue("deviceCategoryDisplayName", DeviceCategoryDisplayName);
             writer.WriteCollectionOfObjectValues<DeviceCompliancePolicyState>("deviceCompliancePolicyStates", DeviceCompliancePolicyStates);
             writer.WriteCollectionOfObjectValues<DeviceConfigurationState>("deviceConfigurationStates", DeviceConfigurationStates);
             writer.WriteEnumValue<DeviceEnrollmentType>("deviceEnrollmentType", DeviceEnrollmentType);
-            writer.WriteObjectValue<DeviceHealthAttestationState>("deviceHealthAttestationState", DeviceHealthAttestationState);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.DeviceHealthAttestationState>("deviceHealthAttestationState", DeviceHealthAttestationState);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteEnumValue<DeviceRegistrationState>("deviceRegistrationState", DeviceRegistrationState);
             writer.WriteEnumValue<DeviceType>("deviceType", DeviceType);
@@ -323,7 +331,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteEnumValue<DeviceManagementExchangeAccessStateReason>("exchangeAccessStateReason", ExchangeAccessStateReason);
             writer.WriteDateTimeOffsetValue("exchangeLastSuccessfulSyncDateTime", ExchangeLastSuccessfulSyncDateTime);
             writer.WriteLongValue("freeStorageSpaceInBytes", FreeStorageSpaceInBytes);
-            writer.WriteObjectValue<HardwareInformation>("hardwareInformation", HardwareInformation);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.HardwareInformation>("hardwareInformation", HardwareInformation);
             writer.WriteStringValue("iccid", Iccid);
             writer.WriteStringValue("imei", Imei);
             writer.WriteBoolValue("isEncrypted", IsEncrypted);
@@ -372,7 +380,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<LoggedOnUser>("usersLoggedOn", UsersLoggedOn);
             writer.WriteStringValue("wiFiMacAddress", WiFiMacAddress);
             writer.WriteIntValue("windowsActiveMalwareCount", WindowsActiveMalwareCount);
-            writer.WriteObjectValue<WindowsProtectionState>("windowsProtectionState", WindowsProtectionState);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.WindowsProtectionState>("windowsProtectionState", WindowsProtectionState);
             writer.WriteIntValue("windowsRemediatedMalwareCount", WindowsRemediatedMalwareCount);
         }
     }

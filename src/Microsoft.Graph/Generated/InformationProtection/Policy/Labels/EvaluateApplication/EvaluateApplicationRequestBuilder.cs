@@ -71,7 +71,7 @@ namespace MicrosoftGraphSdk.InformationProtection.Policy.Labels.EvaluateApplicat
         public async Task<IEnumerable<EvaluateApplication>> PostAsync(EvaluateApplicationRequestBody body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendCollectionAsync<EvaluateApplication>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendCollectionAsync<EvaluateApplication>(requestInfo, EvaluateApplication.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
     }
 }

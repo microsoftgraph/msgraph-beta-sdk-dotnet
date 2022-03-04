@@ -26,16 +26,24 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeamworkSoftwareUpdateHealth CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeamworkSoftwareUpdateHealth();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
-                {"adminAgentSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).AdminAgentSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(); } },
-                {"companyPortalSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).CompanyPortalSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(); } },
-                {"firmwareSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).FirmwareSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(); } },
-                {"operatingSystemSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).OperatingSystemSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(); } },
-                {"partnerAgentSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).PartnerAgentSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(); } },
-                {"teamsClientSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).TeamsClientSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(); } },
+                {"adminAgentSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).AdminAgentSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(TeamworkSoftwareUpdateStatus.CreateFromDiscriminatorValue); } },
+                {"companyPortalSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).CompanyPortalSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(TeamworkSoftwareUpdateStatus.CreateFromDiscriminatorValue); } },
+                {"firmwareSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).FirmwareSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(TeamworkSoftwareUpdateStatus.CreateFromDiscriminatorValue); } },
+                {"operatingSystemSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).OperatingSystemSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(TeamworkSoftwareUpdateStatus.CreateFromDiscriminatorValue); } },
+                {"partnerAgentSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).PartnerAgentSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(TeamworkSoftwareUpdateStatus.CreateFromDiscriminatorValue); } },
+                {"teamsClientSoftwareUpdateStatus", (o,n) => { (o as TeamworkSoftwareUpdateHealth).TeamsClientSoftwareUpdateStatus = n.GetObjectValue<TeamworkSoftwareUpdateStatus>(TeamworkSoftwareUpdateStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

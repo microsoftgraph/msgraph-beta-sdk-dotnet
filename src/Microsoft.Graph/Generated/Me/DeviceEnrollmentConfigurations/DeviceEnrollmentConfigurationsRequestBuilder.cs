@@ -103,7 +103,7 @@ namespace MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations {
         /// </summary>
         public async Task<DeviceEnrollmentConfigurationsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceEnrollmentConfigurationsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceEnrollmentConfigurationsResponse>(requestInfo, DeviceEnrollmentConfigurationsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Get enrollment configurations targeted to the user
@@ -116,7 +116,7 @@ namespace MicrosoftGraphSdk.Me.DeviceEnrollmentConfigurations {
         public async Task<DeviceEnrollmentConfiguration> PostAsync(DeviceEnrollmentConfiguration body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceEnrollmentConfiguration>(requestInfo, DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get enrollment configurations targeted to the user</summary>
         public class GetQueryParameters : QueryParametersBase {

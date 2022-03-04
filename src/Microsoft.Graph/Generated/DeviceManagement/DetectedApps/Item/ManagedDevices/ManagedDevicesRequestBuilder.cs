@@ -93,7 +93,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.DetectedApps.Item.ManagedDevices {
         /// </summary>
         public async Task<ManagedDevicesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ManagedDevicesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDevicesResponse>(requestInfo, ManagedDevicesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The devices that have the discovered application installed</summary>
         public class GetQueryParameters : QueryParametersBase {

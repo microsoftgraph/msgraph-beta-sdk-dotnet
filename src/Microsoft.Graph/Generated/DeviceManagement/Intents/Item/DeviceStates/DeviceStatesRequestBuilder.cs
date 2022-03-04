@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStates {
         /// </summary>
         public async Task<DeviceStatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceStatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceStatesResponse>(requestInfo, DeviceStatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Collection of states of all devices that the intent is applied to
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.DeviceStates {
         public async Task<DeviceManagementIntentDeviceState> PostAsync(DeviceManagementIntentDeviceState body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceState>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceState>(requestInfo, DeviceManagementIntentDeviceState.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Collection of states of all devices that the intent is applied to</summary>
         public class GetQueryParameters : QueryParametersBase {

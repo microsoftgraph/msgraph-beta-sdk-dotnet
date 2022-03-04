@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals {
         /// </summary>
         public async Task<ServicePrincipalsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ServicePrincipalsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalsResponse>(requestInfo, ServicePrincipalsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to servicePrincipals
@@ -131,7 +131,7 @@ namespace MicrosoftGraphSdk.ServicePrincipals {
         public async Task<ServicePrincipal> PostAsync(ServicePrincipal body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from servicePrincipals</summary>
         public class GetQueryParameters : QueryParametersBase {

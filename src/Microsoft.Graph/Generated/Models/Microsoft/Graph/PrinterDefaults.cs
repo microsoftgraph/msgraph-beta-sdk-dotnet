@@ -41,10 +41,10 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public int? PagesPerSheet { get; set; }
         public bool? PdfFitToPage { get; set; }
         public PrintPresentationDirection? PresentationDirection { get; set; }
-        public PrintColorConfiguration? PrintColorConfiguration { get; set; }
-        public PrintQuality? PrintQuality { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PrintColorConfiguration? PrintColorConfiguration { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PrintQuality? PrintQuality { get; set; }
         /// <summary>The default quality to use when printing the document. Valid values are described in the following table.</summary>
-        public PrintQuality? Quality { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.PrintQuality? Quality { get; set; }
         /// <summary>Specifies how the printer scales the document data to fit the requested media. Valid values are described in the following table.</summary>
         public PrintScaling? Scaling { get; set; }
         /// <summary>
@@ -52,6 +52,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// </summary>
         public PrinterDefaults() {
             AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static PrinterDefaults CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new PrinterDefaults();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.Admin.ServiceAnnouncement.HealthOverviews.Item {
         /// </summary>
         public async Task<ServiceHealth> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ServiceHealth>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceHealth>(requestInfo, ServiceHealth.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.

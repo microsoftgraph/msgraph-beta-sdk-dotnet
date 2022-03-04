@@ -106,7 +106,7 @@ namespace MicrosoftGraphSdk.Education.Users.Item.Assignments.Item.Categories {
         /// </summary>
         public async Task<CategoriesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<CategoriesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<CategoriesResponse>(requestInfo, CategoriesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
@@ -119,7 +119,7 @@ namespace MicrosoftGraphSdk.Education.Users.Item.Assignments.Item.Categories {
         public async Task<EducationCategory> PostAsync(EducationCategory body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EducationCategory>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationCategory>(requestInfo, EducationCategory.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>When set, enables users to easily find assignments of a given type.  Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -17,12 +17,20 @@ namespace MicrosoftGraphSdk.DeviceAppManagement.MdmWindowsInformationProtectionP
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static MdmWindowsInformationProtectionPoliciesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new MdmWindowsInformationProtectionPoliciesResponse();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>> {
                 {"@odata.nextLink", (o,n) => { (o as MdmWindowsInformationProtectionPoliciesResponse).NextLink = n.GetStringValue(); } },
-                {"value", (o,n) => { (o as MdmWindowsInformationProtectionPoliciesResponse).Value = n.GetCollectionOfObjectValues<MdmWindowsInformationProtectionPolicy>().ToList(); } },
+                {"value", (o,n) => { (o as MdmWindowsInformationProtectionPoliciesResponse).Value = n.GetCollectionOfObjectValues<MdmWindowsInformationProtectionPolicy>(MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>

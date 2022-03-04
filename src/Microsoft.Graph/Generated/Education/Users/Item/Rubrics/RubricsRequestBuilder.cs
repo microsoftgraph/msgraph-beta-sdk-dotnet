@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Education.Users.Item.Rubrics {
         /// </summary>
         public async Task<RubricsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RubricsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RubricsResponse>(requestInfo, RubricsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to rubrics for education
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Education.Users.Item.Rubrics {
         public async Task<EducationRubric> PostAsync(EducationRubric body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<EducationRubric>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationRubric>(requestInfo, EducationRubric.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get rubrics from education</summary>
         public class GetQueryParameters : QueryParametersBase {

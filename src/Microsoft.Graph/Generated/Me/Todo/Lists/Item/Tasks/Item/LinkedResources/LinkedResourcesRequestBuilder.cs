@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Me.Todo.Lists.Item.Tasks.Item.LinkedResources {
         /// </summary>
         public async Task<LinkedResourcesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<LinkedResourcesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<LinkedResourcesResponse>(requestInfo, LinkedResourcesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// A collection of resources linked to the task.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Me.Todo.Lists.Item.Tasks.Item.LinkedResources {
         public async Task<LinkedResource> PostAsync(LinkedResource body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<LinkedResource>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<LinkedResource>(requestInfo, LinkedResource.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>A collection of resources linked to the task.</summary>
         public class GetQueryParameters : QueryParametersBase {

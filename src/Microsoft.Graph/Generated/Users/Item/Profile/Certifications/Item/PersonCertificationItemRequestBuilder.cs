@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Users.Item.Profile.Certifications.Item {
         /// </summary>
         public async Task<PersonCertification> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PersonCertification>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonCertification>(requestInfo, PersonCertification.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Represents the details of certifications associated with a person.

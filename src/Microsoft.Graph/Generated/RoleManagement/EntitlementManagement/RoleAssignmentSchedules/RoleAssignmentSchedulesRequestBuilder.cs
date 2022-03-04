@@ -108,7 +108,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentS
         /// </summary>
         public async Task<RoleAssignmentSchedulesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RoleAssignmentSchedulesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleAssignmentSchedulesResponse>(requestInfo, RoleAssignmentSchedulesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to roleAssignmentSchedules for roleManagement
@@ -121,7 +121,7 @@ namespace MicrosoftGraphSdk.RoleManagement.EntitlementManagement.RoleAssignmentS
         public async Task<UnifiedRoleAssignmentSchedule> PostAsync(UnifiedRoleAssignmentSchedule body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentSchedule>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRoleAssignmentSchedule>(requestInfo, UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get roleAssignmentSchedules from roleManagement</summary>
         public class GetQueryParameters : QueryParametersBase {

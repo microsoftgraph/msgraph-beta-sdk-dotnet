@@ -16,14 +16,22 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.</summary>
         public OnPremisesPublishingType? PublishingType { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new OnPremisesAgentGroup CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new OnPremisesAgentGroup();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"agents", (o,n) => { (o as OnPremisesAgentGroup).Agents = n.GetCollectionOfObjectValues<OnPremisesAgent>().ToList(); } },
+                {"agents", (o,n) => { (o as OnPremisesAgentGroup).Agents = n.GetCollectionOfObjectValues<OnPremisesAgent>(OnPremisesAgent.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", (o,n) => { (o as OnPremisesAgentGroup).DisplayName = n.GetStringValue(); } },
                 {"isDefault", (o,n) => { (o as OnPremisesAgentGroup).IsDefault = n.GetBoolValue(); } },
-                {"publishedResources", (o,n) => { (o as OnPremisesAgentGroup).PublishedResources = n.GetCollectionOfObjectValues<PublishedResource>().ToList(); } },
+                {"publishedResources", (o,n) => { (o as OnPremisesAgentGroup).PublishedResources = n.GetCollectionOfObjectValues<PublishedResource>(PublishedResource.CreateFromDiscriminatorValue).ToList(); } },
                 {"publishingType", (o,n) => { (o as OnPremisesAgentGroup).PublishingType = n.GetEnumValue<OnPremisesPublishingType>(); } },
             };
         }

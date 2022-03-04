@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups {
         /// </summary>
         public async Task<ConnectorGroupsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<ConnectorGroupsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ConnectorGroupsResponse>(requestInfo, ConnectorGroupsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.OnPremisesPublishingProfiles.Item.ConnectorGroups {
         public async Task<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup> PostAsync(MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup>(requestInfo, MicrosoftGraphSdk.Models.Microsoft.Graph.ConnectorGroup.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.</summary>
         public class GetQueryParameters : QueryParametersBase {

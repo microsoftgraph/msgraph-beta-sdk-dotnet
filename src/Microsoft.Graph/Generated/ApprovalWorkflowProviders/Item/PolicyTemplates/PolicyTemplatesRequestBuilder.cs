@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.PolicyTemplates {
         /// </summary>
         public async Task<PolicyTemplatesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PolicyTemplatesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicyTemplatesResponse>(requestInfo, PolicyTemplatesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to policyTemplates for approvalWorkflowProviders
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.ApprovalWorkflowProviders.Item.PolicyTemplates {
         public async Task<GovernancePolicyTemplate> PostAsync(GovernancePolicyTemplate body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<GovernancePolicyTemplate>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernancePolicyTemplate>(requestInfo, GovernancePolicyTemplate.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get policyTemplates from approvalWorkflowProviders</summary>
         public class GetQueryParameters : QueryParametersBase {

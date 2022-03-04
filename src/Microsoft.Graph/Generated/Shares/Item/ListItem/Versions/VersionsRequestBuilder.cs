@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Shares.Item.ListItem.Versions {
         /// </summary>
         public async Task<VersionsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<VersionsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<VersionsResponse>(requestInfo, VersionsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of previous versions of the list item.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Shares.Item.ListItem.Versions {
         public async Task<ListItemVersion> PostAsync(ListItemVersion body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<ListItemVersion>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<ListItemVersion>(requestInfo, ListItemVersion.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The list of previous versions of the list item.</summary>
         public class GetQueryParameters : QueryParametersBase {

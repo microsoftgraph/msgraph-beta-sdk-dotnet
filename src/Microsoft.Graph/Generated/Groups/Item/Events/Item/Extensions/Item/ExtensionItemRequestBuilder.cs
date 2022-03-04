@@ -118,7 +118,7 @@ namespace MicrosoftGraphSdk.Groups.Item.Events.Item.Extensions.Item {
         /// </summary>
         public async Task<Extension> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<Extension>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Extension>(requestInfo, Extension.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The collection of open extensions defined for the event. Nullable.

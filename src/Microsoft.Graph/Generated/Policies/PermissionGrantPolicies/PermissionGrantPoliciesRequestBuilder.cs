@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Policies.PermissionGrantPolicies {
         /// </summary>
         public async Task<PermissionGrantPoliciesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PermissionGrantPoliciesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PermissionGrantPoliciesResponse>(requestInfo, PermissionGrantPoliciesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The policy that specifies the conditions under which consent can be granted.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Policies.PermissionGrantPolicies {
         public async Task<PermissionGrantPolicy> PostAsync(PermissionGrantPolicy body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PermissionGrantPolicy>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PermissionGrantPolicy>(requestInfo, PermissionGrantPolicy.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The policy that specifies the conditions under which consent can be granted.</summary>
         public class GetQueryParameters : QueryParametersBase {

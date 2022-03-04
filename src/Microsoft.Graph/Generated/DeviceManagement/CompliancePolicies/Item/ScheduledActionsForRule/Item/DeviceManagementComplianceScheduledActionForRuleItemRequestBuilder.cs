@@ -122,7 +122,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.CompliancePolicies.Item.ScheduledAc
         /// </summary>
         public async Task<DeviceManagementComplianceScheduledActionForRule> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementComplianceScheduledActionForRule>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementComplianceScheduledActionForRule>(requestInfo, DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The list of scheduled action for this rule

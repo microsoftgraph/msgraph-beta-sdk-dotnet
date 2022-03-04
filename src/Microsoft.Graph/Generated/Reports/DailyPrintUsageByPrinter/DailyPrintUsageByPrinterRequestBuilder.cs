@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Reports.DailyPrintUsageByPrinter {
         /// </summary>
         public async Task<DailyPrintUsageByPrinterResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<DailyPrintUsageByPrinterResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DailyPrintUsageByPrinterResponse>(requestInfo, DailyPrintUsageByPrinterResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to dailyPrintUsageByPrinter for reports
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Reports.DailyPrintUsageByPrinter {
         public async Task<PrintUsageByPrinter> PostAsync(PrintUsageByPrinter body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<PrintUsageByPrinter>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintUsageByPrinter>(requestInfo, PrintUsageByPrinter.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get dailyPrintUsageByPrinter from reports</summary>
         public class GetQueryParameters : QueryParametersBase {

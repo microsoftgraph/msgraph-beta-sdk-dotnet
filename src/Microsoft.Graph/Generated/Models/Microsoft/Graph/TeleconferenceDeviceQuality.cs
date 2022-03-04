@@ -34,6 +34,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static TeleconferenceDeviceQuality CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new TeleconferenceDeviceQuality();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -46,7 +54,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"deviceDescription", (o,n) => { (o as TeleconferenceDeviceQuality).DeviceDescription = n.GetStringValue(); } },
                 {"deviceName", (o,n) => { (o as TeleconferenceDeviceQuality).DeviceName = n.GetStringValue(); } },
                 {"mediaLegId", (o,n) => { (o as TeleconferenceDeviceQuality).MediaLegId = n.GetStringValue(); } },
-                {"mediaQualityList", (o,n) => { (o as TeleconferenceDeviceQuality).MediaQualityList = n.GetCollectionOfObjectValues<TeleconferenceDeviceMediaQuality>().ToList(); } },
+                {"mediaQualityList", (o,n) => { (o as TeleconferenceDeviceQuality).MediaQualityList = n.GetCollectionOfObjectValues<TeleconferenceDeviceMediaQuality>(TeleconferenceDeviceMediaQuality.CreateFromDiscriminatorValue).ToList(); } },
                 {"participantId", (o,n) => { (o as TeleconferenceDeviceQuality).ParticipantId = n.GetStringValue(); } },
             };
         }

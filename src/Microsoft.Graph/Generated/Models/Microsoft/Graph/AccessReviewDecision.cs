@@ -23,17 +23,25 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The result of the review, one of NotReviewed, Deny, DontKnow or Approve.</summary>
         public string ReviewResult { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new AccessReviewDecision CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AccessReviewDecision();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
                 {"accessRecommendation", (o,n) => { (o as AccessReviewDecision).AccessRecommendation = n.GetStringValue(); } },
                 {"accessReviewId", (o,n) => { (o as AccessReviewDecision).AccessReviewId = n.GetStringValue(); } },
-                {"appliedBy", (o,n) => { (o as AccessReviewDecision).AppliedBy = n.GetObjectValue<UserIdentity>(); } },
+                {"appliedBy", (o,n) => { (o as AccessReviewDecision).AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
                 {"appliedDateTime", (o,n) => { (o as AccessReviewDecision).AppliedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"applyResult", (o,n) => { (o as AccessReviewDecision).ApplyResult = n.GetStringValue(); } },
                 {"justification", (o,n) => { (o as AccessReviewDecision).Justification = n.GetStringValue(); } },
-                {"reviewedBy", (o,n) => { (o as AccessReviewDecision).ReviewedBy = n.GetObjectValue<UserIdentity>(); } },
+                {"reviewedBy", (o,n) => { (o as AccessReviewDecision).ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
                 {"reviewedDateTime", (o,n) => { (o as AccessReviewDecision).ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"reviewResult", (o,n) => { (o as AccessReviewDecision).ReviewResult = n.GetStringValue(); } },
             };

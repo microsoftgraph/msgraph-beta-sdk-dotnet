@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.Categories.Item.Settin
         /// </summary>
         public async Task<SettingsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<SettingsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<SettingsResponse>(requestInfo, SettingsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The settings this category contains
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents.Item.Categories.Item.Settin
         public async Task<DeviceManagementSettingInstance> PostAsync(DeviceManagementSettingInstance body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementSettingInstance>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementSettingInstance>(requestInfo, DeviceManagementSettingInstance.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The settings this category contains</summary>
         public class GetQueryParameters : QueryParametersBase {

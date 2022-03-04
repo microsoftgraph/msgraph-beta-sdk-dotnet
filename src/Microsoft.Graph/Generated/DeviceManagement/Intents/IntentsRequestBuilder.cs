@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents {
         /// </summary>
         public async Task<IntentsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<IntentsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<IntentsResponse>(requestInfo, IntentsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The device management intents
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.DeviceManagement.Intents {
         public async Task<DeviceManagementIntent> PostAsync(DeviceManagementIntent body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<DeviceManagementIntent>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementIntent>(requestInfo, DeviceManagementIntent.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The device management intents</summary>
         public class GetQueryParameters : QueryParametersBase {

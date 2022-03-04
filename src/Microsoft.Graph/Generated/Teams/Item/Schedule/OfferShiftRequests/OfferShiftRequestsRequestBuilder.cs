@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.OfferShiftRequests {
         /// </summary>
         public async Task<OfferShiftRequestsResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<OfferShiftRequestsResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OfferShiftRequestsResponse>(requestInfo, OfferShiftRequestsResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to offerShiftRequests for teams
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Teams.Item.Schedule.OfferShiftRequests {
         public async Task<OfferShiftRequest> PostAsync(OfferShiftRequest body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<OfferShiftRequest>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<OfferShiftRequest>(requestInfo, OfferShiftRequest.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get offerShiftRequests from teams</summary>
         public class GetQueryParameters : QueryParametersBase {

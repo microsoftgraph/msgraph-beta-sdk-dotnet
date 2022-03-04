@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys {
         /// </summary>
         public async Task<RecoveryKeysResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<RecoveryKeysResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<RecoveryKeysResponse>(requestInfo, RecoveryKeysResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// The recovery keys associated with the bitlocker entity.
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.InformationProtection.Bitlocker.RecoveryKeys {
         public async Task<BitlockerRecoveryKey> PostAsync(BitlockerRecoveryKey body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<BitlockerRecoveryKey>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<BitlockerRecoveryKey>(requestInfo, BitlockerRecoveryKey.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>The recovery keys associated with the bitlocker entity.</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -28,6 +28,14 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static AttributeMapping CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new AttributeMapping();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
@@ -37,7 +45,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"flowBehavior", (o,n) => { (o as AttributeMapping).FlowBehavior = n.GetEnumValue<AttributeFlowBehavior>(); } },
                 {"flowType", (o,n) => { (o as AttributeMapping).FlowType = n.GetEnumValue<AttributeFlowType>(); } },
                 {"matchingPriority", (o,n) => { (o as AttributeMapping).MatchingPriority = n.GetIntValue(); } },
-                {"source", (o,n) => { (o as AttributeMapping).Source = n.GetObjectValue<AttributeMappingSource>(); } },
+                {"source", (o,n) => { (o as AttributeMapping).Source = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
                 {"targetAttributeName", (o,n) => { (o as AttributeMapping).TargetAttributeName = n.GetStringValue(); } },
             };
         }

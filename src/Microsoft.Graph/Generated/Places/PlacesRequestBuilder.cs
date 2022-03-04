@@ -99,7 +99,7 @@ namespace MicrosoftGraphSdk.Places {
         /// </summary>
         public async Task<PlacesResponse> GetAsync(Action<GetQueryParameters> q = default, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(q, h, o);
-            return await RequestAdapter.SendAsync<PlacesResponse>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<PlacesResponse>(requestInfo, PlacesResponse.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>
         /// Add new entity to places
@@ -112,7 +112,7 @@ namespace MicrosoftGraphSdk.Places {
         public async Task<Place> PostAsync(Place body, Action<IDictionary<string, string>> h = default, IEnumerable<IRequestOption> o = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, h, o);
-            return await RequestAdapter.SendAsync<Place>(requestInfo, responseHandler, default, cancellationToken);
+            return await RequestAdapter.SendAsync<Place>(requestInfo, Place.CreateFromDiscriminatorValue, responseHandler, default, cancellationToken);
         }
         /// <summary>Get entities from places</summary>
         public class GetQueryParameters : QueryParametersBase {

@@ -19,7 +19,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? AutoSubscribeNewMembers { get; set; }
         /// <summary>The group's calendar. Read-only.</summary>
-        public Calendar Calendar { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar Calendar { get; set; }
         /// <summary>The calendar view for the calendar. Read-only.</summary>
         public List<Event> CalendarView { get; set; }
         /// <summary>Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).</summary>
@@ -37,9 +37,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
         public string DisplayName { get; set; }
         /// <summary>The group's default drive. Read-only.</summary>
-        public Drive Drive { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Drive Drive { get; set; }
         /// <summary>The group's drives. Read-only.</summary>
-        public List<Drive> Drives { get; set; }
+        public List<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive> Drives { get; set; }
         /// <summary>Endpoints for the group. Read-only. Nullable.</summary>
         public List<Endpoint> Endpoints { get; set; }
         /// <summary>The group's calendar events.</summary>
@@ -67,7 +67,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? IsSubscribedByMail { get; set; }
         /// <summary>Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.</summary>
-        public LicenseProcessingState LicenseProcessingState { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseProcessingState LicenseProcessingState { get; set; }
         /// <summary>The SMTP address for the group, for example, 'serviceadmins@contoso.onmicrosoft.com'. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
         public string Mail { get; set; }
         /// <summary>Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not).</summary>
@@ -84,11 +84,11 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).</summary>
         public string MembershipRuleProcessingState { get; set; }
         /// <summary>Describes the processing status for rules-based dynamic groups. The property is null for non-rule based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}). Read-only.</summary>
-        public MembershipRuleProcessingStatus MembershipRuleProcessingStatus { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.MembershipRuleProcessingStatus MembershipRuleProcessingStatus { get; set; }
         /// <summary>A list of group members with license errors from this group-based license assignment. Read-only.</summary>
         public List<DirectoryObject> MembersWithLicenseErrors { get; set; }
         /// <summary>Read-only.</summary>
-        public Onenote Onenote { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote Onenote { get; set; }
         /// <summary>Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.</summary>
         public string OnPremisesDomainName { get; set; }
         /// <summary>Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
@@ -136,7 +136,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         public List<DirectorySetting> Settings { get; set; }
         /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
         public List<Site> Sites { get; set; }
-        public Team Team { get; set; }
+        public MicrosoftGraphSdk.Models.Microsoft.Graph.Team Team { get; set; }
         /// <summary>Specifies a Microsoft 365 group's color theme. Possible values are Teal, Purple, Green, Blue, Pink, Orange or Red. Returned by default.</summary>
         public string Theme { get; set; }
         /// <summary>The group's conversation threads. Nullable.</summary>
@@ -152,33 +152,41 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
         /// <summary>Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or Hiddenmembership. Hiddenmembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.</summary>
         public string Visibility { get; set; }
         /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new Group CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new Group();
+        }
+        /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<T, IParseNode>> GetFieldDeserializers<T>() {
             return new Dictionary<string, Action<T, IParseNode>>(base.GetFieldDeserializers<T>()) {
-                {"acceptedSenders", (o,n) => { (o as Group).AcceptedSenders = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"acceptedSenders", (o,n) => { (o as Group).AcceptedSenders = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"accessType", (o,n) => { (o as Group).AccessType = n.GetEnumValue<GroupAccessType>(); } },
                 {"allowExternalSenders", (o,n) => { (o as Group).AllowExternalSenders = n.GetBoolValue(); } },
-                {"appRoleAssignments", (o,n) => { (o as Group).AppRoleAssignments = n.GetCollectionOfObjectValues<AppRoleAssignment>().ToList(); } },
-                {"assignedLabels", (o,n) => { (o as Group).AssignedLabels = n.GetCollectionOfObjectValues<AssignedLabel>().ToList(); } },
-                {"assignedLicenses", (o,n) => { (o as Group).AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>().ToList(); } },
+                {"appRoleAssignments", (o,n) => { (o as Group).AppRoleAssignments = n.GetCollectionOfObjectValues<AppRoleAssignment>(AppRoleAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignedLabels", (o,n) => { (o as Group).AssignedLabels = n.GetCollectionOfObjectValues<AssignedLabel>(AssignedLabel.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignedLicenses", (o,n) => { (o as Group).AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue).ToList(); } },
                 {"autoSubscribeNewMembers", (o,n) => { (o as Group).AutoSubscribeNewMembers = n.GetBoolValue(); } },
-                {"calendar", (o,n) => { (o as Group).Calendar = n.GetObjectValue<Calendar>(); } },
-                {"calendarView", (o,n) => { (o as Group).CalendarView = n.GetCollectionOfObjectValues<Event>().ToList(); } },
+                {"calendar", (o,n) => { (o as Group).Calendar = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>(MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar.CreateFromDiscriminatorValue); } },
+                {"calendarView", (o,n) => { (o as Group).CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
                 {"classification", (o,n) => { (o as Group).Classification = n.GetStringValue(); } },
-                {"conversations", (o,n) => { (o as Group).Conversations = n.GetCollectionOfObjectValues<Conversation>().ToList(); } },
+                {"conversations", (o,n) => { (o as Group).Conversations = n.GetCollectionOfObjectValues<Conversation>(Conversation.CreateFromDiscriminatorValue).ToList(); } },
                 {"createdByAppId", (o,n) => { (o as Group).CreatedByAppId = n.GetStringValue(); } },
                 {"createdDateTime", (o,n) => { (o as Group).CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdOnBehalfOf", (o,n) => { (o as Group).CreatedOnBehalfOf = n.GetObjectValue<DirectoryObject>(); } },
+                {"createdOnBehalfOf", (o,n) => { (o as Group).CreatedOnBehalfOf = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"description", (o,n) => { (o as Group).Description = n.GetStringValue(); } },
                 {"displayName", (o,n) => { (o as Group).DisplayName = n.GetStringValue(); } },
-                {"drive", (o,n) => { (o as Group).Drive = n.GetObjectValue<Drive>(); } },
-                {"drives", (o,n) => { (o as Group).Drives = n.GetCollectionOfObjectValues<Drive>().ToList(); } },
-                {"endpoints", (o,n) => { (o as Group).Endpoints = n.GetCollectionOfObjectValues<Endpoint>().ToList(); } },
-                {"events", (o,n) => { (o as Group).Events = n.GetCollectionOfObjectValues<Event>().ToList(); } },
+                {"drive", (o,n) => { (o as Group).Drive = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(MicrosoftGraphSdk.Models.Microsoft.Graph.Drive.CreateFromDiscriminatorValue); } },
+                {"drives", (o,n) => { (o as Group).Drives = n.GetCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>(MicrosoftGraphSdk.Models.Microsoft.Graph.Drive.CreateFromDiscriminatorValue).ToList(); } },
+                {"endpoints", (o,n) => { (o as Group).Endpoints = n.GetCollectionOfObjectValues<Endpoint>(Endpoint.CreateFromDiscriminatorValue).ToList(); } },
+                {"events", (o,n) => { (o as Group).Events = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
                 {"expirationDateTime", (o,n) => { (o as Group).ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"extensions", (o,n) => { (o as Group).Extensions = n.GetCollectionOfObjectValues<Extension>().ToList(); } },
-                {"groupLifecyclePolicies", (o,n) => { (o as Group).GroupLifecyclePolicies = n.GetCollectionOfObjectValues<GroupLifecyclePolicy>().ToList(); } },
+                {"extensions", (o,n) => { (o as Group).Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
+                {"groupLifecyclePolicies", (o,n) => { (o as Group).GroupLifecyclePolicies = n.GetCollectionOfObjectValues<GroupLifecyclePolicy>(GroupLifecyclePolicy.CreateFromDiscriminatorValue).ToList(); } },
                 {"groupTypes", (o,n) => { (o as Group).GroupTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"hasMembersWithLicenseErrors", (o,n) => { (o as Group).HasMembersWithLicenseErrors = n.GetBoolValue(); } },
                 {"hideFromAddressLists", (o,n) => { (o as Group).HideFromAddressLists = n.GetBoolValue(); } },
@@ -188,47 +196,47 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
                 {"isAssignableToRole", (o,n) => { (o as Group).IsAssignableToRole = n.GetBoolValue(); } },
                 {"isFavorite", (o,n) => { (o as Group).IsFavorite = n.GetBoolValue(); } },
                 {"isSubscribedByMail", (o,n) => { (o as Group).IsSubscribedByMail = n.GetBoolValue(); } },
-                {"licenseProcessingState", (o,n) => { (o as Group).LicenseProcessingState = n.GetObjectValue<LicenseProcessingState>(); } },
+                {"licenseProcessingState", (o,n) => { (o as Group).LicenseProcessingState = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseProcessingState>(MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseProcessingState.CreateFromDiscriminatorValue); } },
                 {"mail", (o,n) => { (o as Group).Mail = n.GetStringValue(); } },
                 {"mailEnabled", (o,n) => { (o as Group).MailEnabled = n.GetBoolValue(); } },
                 {"mailNickname", (o,n) => { (o as Group).MailNickname = n.GetStringValue(); } },
                 {"mdmAppId", (o,n) => { (o as Group).MdmAppId = n.GetStringValue(); } },
-                {"memberOf", (o,n) => { (o as Group).MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"members", (o,n) => { (o as Group).Members = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"memberOf", (o,n) => { (o as Group).MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"members", (o,n) => { (o as Group).Members = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"membershipRule", (o,n) => { (o as Group).MembershipRule = n.GetStringValue(); } },
                 {"membershipRuleProcessingState", (o,n) => { (o as Group).MembershipRuleProcessingState = n.GetStringValue(); } },
-                {"membershipRuleProcessingStatus", (o,n) => { (o as Group).MembershipRuleProcessingStatus = n.GetObjectValue<MembershipRuleProcessingStatus>(); } },
-                {"membersWithLicenseErrors", (o,n) => { (o as Group).MembersWithLicenseErrors = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"onenote", (o,n) => { (o as Group).Onenote = n.GetObjectValue<Onenote>(); } },
+                {"membershipRuleProcessingStatus", (o,n) => { (o as Group).MembershipRuleProcessingStatus = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MembershipRuleProcessingStatus>(MicrosoftGraphSdk.Models.Microsoft.Graph.MembershipRuleProcessingStatus.CreateFromDiscriminatorValue); } },
+                {"membersWithLicenseErrors", (o,n) => { (o as Group).MembersWithLicenseErrors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"onenote", (o,n) => { (o as Group).Onenote = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>(MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote.CreateFromDiscriminatorValue); } },
                 {"onPremisesDomainName", (o,n) => { (o as Group).OnPremisesDomainName = n.GetStringValue(); } },
                 {"onPremisesLastSyncDateTime", (o,n) => { (o as Group).OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"onPremisesNetBiosName", (o,n) => { (o as Group).OnPremisesNetBiosName = n.GetStringValue(); } },
-                {"onPremisesProvisioningErrors", (o,n) => { (o as Group).OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<OnPremisesProvisioningError>().ToList(); } },
+                {"onPremisesProvisioningErrors", (o,n) => { (o as Group).OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<OnPremisesProvisioningError>(OnPremisesProvisioningError.CreateFromDiscriminatorValue).ToList(); } },
                 {"onPremisesSamAccountName", (o,n) => { (o as Group).OnPremisesSamAccountName = n.GetStringValue(); } },
                 {"onPremisesSecurityIdentifier", (o,n) => { (o as Group).OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 {"onPremisesSyncEnabled", (o,n) => { (o as Group).OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 {"organizationId", (o,n) => { (o as Group).OrganizationId = n.GetStringValue(); } },
-                {"owners", (o,n) => { (o as Group).Owners = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"permissionGrants", (o,n) => { (o as Group).PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>().ToList(); } },
-                {"photo", (o,n) => { (o as Group).Photo = n.GetObjectValue<ProfilePhoto>(); } },
-                {"photos", (o,n) => { (o as Group).Photos = n.GetCollectionOfObjectValues<ProfilePhoto>().ToList(); } },
-                {"planner", (o,n) => { (o as Group).Planner = n.GetObjectValue<PlannerGroup>(); } },
+                {"owners", (o,n) => { (o as Group).Owners = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"permissionGrants", (o,n) => { (o as Group).PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue).ToList(); } },
+                {"photo", (o,n) => { (o as Group).Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
+                {"photos", (o,n) => { (o as Group).Photos = n.GetCollectionOfObjectValues<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue).ToList(); } },
+                {"planner", (o,n) => { (o as Group).Planner = n.GetObjectValue<PlannerGroup>(PlannerGroup.CreateFromDiscriminatorValue); } },
                 {"preferredDataLocation", (o,n) => { (o as Group).PreferredDataLocation = n.GetStringValue(); } },
                 {"preferredLanguage", (o,n) => { (o as Group).PreferredLanguage = n.GetStringValue(); } },
                 {"proxyAddresses", (o,n) => { (o as Group).ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"rejectedSenders", (o,n) => { (o as Group).RejectedSenders = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"rejectedSenders", (o,n) => { (o as Group).RejectedSenders = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"renewedDateTime", (o,n) => { (o as Group).RenewedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"resourceBehaviorOptions", (o,n) => { (o as Group).ResourceBehaviorOptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"resourceProvisioningOptions", (o,n) => { (o as Group).ResourceProvisioningOptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"securityEnabled", (o,n) => { (o as Group).SecurityEnabled = n.GetBoolValue(); } },
                 {"securityIdentifier", (o,n) => { (o as Group).SecurityIdentifier = n.GetStringValue(); } },
-                {"settings", (o,n) => { (o as Group).Settings = n.GetCollectionOfObjectValues<DirectorySetting>().ToList(); } },
-                {"sites", (o,n) => { (o as Group).Sites = n.GetCollectionOfObjectValues<Site>().ToList(); } },
-                {"team", (o,n) => { (o as Group).Team = n.GetObjectValue<Team>(); } },
+                {"settings", (o,n) => { (o as Group).Settings = n.GetCollectionOfObjectValues<DirectorySetting>(DirectorySetting.CreateFromDiscriminatorValue).ToList(); } },
+                {"sites", (o,n) => { (o as Group).Sites = n.GetCollectionOfObjectValues<Site>(Site.CreateFromDiscriminatorValue).ToList(); } },
+                {"team", (o,n) => { (o as Group).Team = n.GetObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>(MicrosoftGraphSdk.Models.Microsoft.Graph.Team.CreateFromDiscriminatorValue); } },
                 {"theme", (o,n) => { (o as Group).Theme = n.GetStringValue(); } },
-                {"threads", (o,n) => { (o as Group).Threads = n.GetCollectionOfObjectValues<ConversationThread>().ToList(); } },
-                {"transitiveMemberOf", (o,n) => { (o as Group).TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
-                {"transitiveMembers", (o,n) => { (o as Group).TransitiveMembers = n.GetCollectionOfObjectValues<DirectoryObject>().ToList(); } },
+                {"threads", (o,n) => { (o as Group).Threads = n.GetCollectionOfObjectValues<ConversationThread>(ConversationThread.CreateFromDiscriminatorValue).ToList(); } },
+                {"transitiveMemberOf", (o,n) => { (o as Group).TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"transitiveMembers", (o,n) => { (o as Group).TransitiveMembers = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"unseenConversationsCount", (o,n) => { (o as Group).UnseenConversationsCount = n.GetIntValue(); } },
                 {"unseenCount", (o,n) => { (o as Group).UnseenCount = n.GetIntValue(); } },
                 {"unseenMessagesCount", (o,n) => { (o as Group).UnseenMessagesCount = n.GetIntValue(); } },
@@ -249,7 +257,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<AssignedLabel>("assignedLabels", AssignedLabels);
             writer.WriteCollectionOfObjectValues<AssignedLicense>("assignedLicenses", AssignedLicenses);
             writer.WriteBoolValue("autoSubscribeNewMembers", AutoSubscribeNewMembers);
-            writer.WriteObjectValue<Calendar>("calendar", Calendar);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Calendar>("calendar", Calendar);
             writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);
             writer.WriteStringValue("classification", Classification);
             writer.WriteCollectionOfObjectValues<Conversation>("conversations", Conversations);
@@ -258,8 +266,8 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteObjectValue<DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<Drive>("drive", Drive);
-            writer.WriteCollectionOfObjectValues<Drive>("drives", Drives);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>("drive", Drive);
+            writer.WriteCollectionOfObjectValues<MicrosoftGraphSdk.Models.Microsoft.Graph.Drive>("drives", Drives);
             writer.WriteCollectionOfObjectValues<Endpoint>("endpoints", Endpoints);
             writer.WriteCollectionOfObjectValues<Event>("events", Events);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
@@ -274,7 +282,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteBoolValue("isAssignableToRole", IsAssignableToRole);
             writer.WriteBoolValue("isFavorite", IsFavorite);
             writer.WriteBoolValue("isSubscribedByMail", IsSubscribedByMail);
-            writer.WriteObjectValue<LicenseProcessingState>("licenseProcessingState", LicenseProcessingState);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.LicenseProcessingState>("licenseProcessingState", LicenseProcessingState);
             writer.WriteStringValue("mail", Mail);
             writer.WriteBoolValue("mailEnabled", MailEnabled);
             writer.WriteStringValue("mailNickname", MailNickname);
@@ -283,9 +291,9 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteCollectionOfObjectValues<DirectoryObject>("members", Members);
             writer.WriteStringValue("membershipRule", MembershipRule);
             writer.WriteStringValue("membershipRuleProcessingState", MembershipRuleProcessingState);
-            writer.WriteObjectValue<MembershipRuleProcessingStatus>("membershipRuleProcessingStatus", MembershipRuleProcessingStatus);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.MembershipRuleProcessingStatus>("membershipRuleProcessingStatus", MembershipRuleProcessingStatus);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("membersWithLicenseErrors", MembersWithLicenseErrors);
-            writer.WriteObjectValue<Onenote>("onenote", Onenote);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Onenote>("onenote", Onenote);
             writer.WriteStringValue("onPremisesDomainName", OnPremisesDomainName);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteStringValue("onPremisesNetBiosName", OnPremisesNetBiosName);
@@ -310,7 +318,7 @@ namespace MicrosoftGraphSdk.Models.Microsoft.Graph {
             writer.WriteStringValue("securityIdentifier", SecurityIdentifier);
             writer.WriteCollectionOfObjectValues<DirectorySetting>("settings", Settings);
             writer.WriteCollectionOfObjectValues<Site>("sites", Sites);
-            writer.WriteObjectValue<Team>("team", Team);
+            writer.WriteObjectValue<MicrosoftGraphSdk.Models.Microsoft.Graph.Team>("team", Team);
             writer.WriteStringValue("theme", Theme);
             writer.WriteCollectionOfObjectValues<ConversationThread>("threads", Threads);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
